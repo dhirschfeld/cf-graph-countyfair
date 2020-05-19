@@ -60,7 +60,13 @@
   }
  },
  "name":"tornado-proxy-handlers",
- "new_version":"0.0.3",
+ "new_version":"0.0.4",
+ "new_version_attempts":{
+  "0.0.4":1
+ },
+ "new_version_errors":{
+  "0.0.4":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.0.4' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
+ },
  "raw_meta_yaml":"{% set name = \"tornado-proxy-handlers\" %}\n{% set version = \"0.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d0858baa8183df96de186a07c83d9c702a829f79c44bdc38accff764eda1a2af\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - tornado >=6.0.2\n\ntest:\n  imports:\n    - tornado_proxy_handlers\n\nabout:\n  home: http://github.com/timkpaine/tornado-proxy-handlers\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Tornado proxy handlers for HTTP requests and web sockets'\n\n  description: |\n    Tornado proxy handlers for HTTP requests and web sockets\n  dev_url: https://github.com/timkpaine/tornado-proxy-handlers\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req":{
   "__set__":true,
