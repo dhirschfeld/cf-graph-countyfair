@@ -46,29 +46,19 @@
   },
   "package":{
    "name":"thrust",
-   "version":"1.9.8"
+   "version":"1.9.9"
   },
   "requirements":{
    "run":[
-    "cub 1.9.8.*",
-    "cub 1.9.8.*",
-    "cub 1.9.8.*"
+    "cub 1.9.9.*",
+    "cub 1.9.9.*",
+    "cub 1.9.9.*"
    ]
   },
-  "source":[
-   {
-    "sha256":"d014396a2128417bd1421ba80d2601422577094c0ff727c60bd3c6eb4856af9b",
-    "url":"https://github.com/thrust/thrust/archive/1.9.8.tar.gz"
-   },
-   {
-    "sha256":"d014396a2128417bd1421ba80d2601422577094c0ff727c60bd3c6eb4856af9b",
-    "url":"https://github.com/thrust/thrust/archive/1.9.8.tar.gz"
-   },
-   {
-    "sha256":"d014396a2128417bd1421ba80d2601422577094c0ff727c60bd3c6eb4856af9b",
-    "url":"https://github.com/thrust/thrust/archive/1.9.8.tar.gz"
-   }
-  ],
+  "source":{
+   "sha256":"74740b94e0c62e1e54f9880cf1eeb2d0bfb2203ae35fd72ece608f9b8e073ef7",
+   "url":"https://github.com/thrust/thrust/archive/1.9.9.tar.gz"
+  },
   "test":{
    "commands":[
     "if not exist \"%LIBRARY_INC%\"\\thrust\\version.h exit 1",
@@ -84,7 +74,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.19.39.08",
- "raw_meta_yaml":"{% set version = \"1.9.8\" %}\n\npackage:\n  name: thrust\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz\n    sha256: d014396a2128417bd1421ba80d2601422577094c0ff727c60bd3c6eb4856af9b\n\nbuild:\n  number: 0\n  script: mkdir -p \"$PREFIX\"/include && cp -r thrust \"$PREFIX\"/include  # [not win]\n\nrequirements:\n  run:\n    - cub {{ version }}.*\n\ntest:\n  commands:\n    - test -e \"$PREFIX\"/include/thrust/version.h  # [not win]\n    - if not exist \"%LIBRARY_INC%\"\\thrust\\version.h exit 1  # [win]\n\nabout:\n  home: https://github.com/thrust/thrust\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Thrust is a C++ parallel programming library which resembles the C++ Standard Library.\n  description: |\n    Thrust's high-level interface greatly enhances programmer productivity while enabling\n    performance portability between GPUs and multicore CPUs. Interoperability with established\n    technologies (such as CUDA, TBB, and OpenMP) facilitates integration with existing software.\n    Develop high-performance applications rapidly with Thrust!\n  doc_url: https://thrust.github.io/\n  dev_url: https://github.com/thrust/thrust\n\nextra:\n  recipe-maintainers:\n    - rongou\n",
+ "raw_meta_yaml":"{% set version = \"1.9.9\" %}\n{% set sha256 = \"74740b94e0c62e1e54f9880cf1eeb2d0bfb2203ae35fd72ece608f9b8e073ef7\" %}\n\npackage:\n  name: thrust\n  version: {{ version }}\n\nsource:\n  url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: mkdir -p \"$PREFIX\"/include && cp -r thrust \"$PREFIX\"/include  # [not win]\n\nrequirements:\n  run:\n    - cub {{ version }}.*\n\ntest:\n  commands:\n    - test -e \"$PREFIX\"/include/thrust/version.h  # [not win]\n    - if not exist \"%LIBRARY_INC%\"\\thrust\\version.h exit 1  # [win]\n\nabout:\n  home: https://github.com/thrust/thrust\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Thrust is a C++ parallel programming library which resembles the C++ Standard Library.\n  description: |\n    Thrust's high-level interface greatly enhances programmer productivity while enabling\n    performance portability between GPUs and multicore CPUs. Interoperability with established\n    technologies (such as CUDA, TBB, and OpenMP) facilitates integration with existing software.\n    Develop high-performance applications rapidly with Thrust!\n  doc_url: https://thrust.github.io/\n  dev_url: https://github.com/thrust/thrust\n\nextra:\n  recipe-maintainers:\n    - rongou\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -125,7 +115,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "cub 1.9.8.*"
+    "cub 1.9.9.*"
    ]
   },
   "test":{
@@ -134,5 +124,5 @@
   }
  },
  "url":"https://github.com/thrust/thrust/archive/1.9.8.tar.gz",
- "version":"1.9.8"
+ "version":"1.9.9"
 }
