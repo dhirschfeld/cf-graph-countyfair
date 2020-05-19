@@ -35,7 +35,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -52,7 +52,7 @@
   },
   "package":{
    "name":"cockroachdb-python",
-   "version":"0.3.3"
+   "version":"0.3.5"
   },
   "requirements":{
    "host":[
@@ -79,8 +79,8 @@
    ]
   },
   "source":{
-   "sha256":"ef7aa1baf47f1ec8b187d7850f7996566a4131457fa69cb9490536e698f4540b",
-   "url":"https://pypi.io/packages/source/c/cockroachdb/cockroachdb-0.3.3.tar.gz"
+   "sha256":"cc36de86bdf8b56b24c6b556b0eaf20b7dd6e6a1cd73addd31c0ccc4c99639a2",
+   "url":"https://pypi.io/packages/source/c/cockroachdb/cockroachdb-0.3.5.tar.gz"
   },
   "test":{
    "imports":[
@@ -100,7 +100,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.13.30.35",
- "raw_meta_yaml":"{% set name = \"cockroachdb\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: \"{{ name|lower }}-python\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: ef7aa1baf47f1ec8b187d7850f7996566a4131457fa69cb9490536e698f4540b\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - setuptools\n    - psycopg2\n    - sqlalchemy\n\ntest:\n  imports:\n    - cockroachdb\n    - cockroachdb.sqlalchemy\n\nabout:\n  home: \"https://github.com/cockroachdb/cockroachdb-python\"\n  license: \"Apache-2.0\"\n  license_family: \"APACHE\"\n  license_file: \"LICENSE\"\n  summary: \"CockroachDB adapter for SQLAlchemy\"\n  doc_url: \"https://pypi.org/project/cockroachdb/\"\n  dev_url: \"https://github.com/cockroachdb/cockroachdb-python\"\n\nextra:\n  recipe-maintainers:\n    - mwilson8\n    - rluria14\n    - benhuff\n",
+ "raw_meta_yaml":"{% set name = \"cockroachdb\" %}\n{% set version = \"0.3.5\" %}\n\npackage:\n  name: {{ name|lower }}-python\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cc36de86bdf8b56b24c6b556b0eaf20b7dd6e6a1cd73addd31c0ccc4c99639a2\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - setuptools\n    - psycopg2\n    - sqlalchemy\n\ntest:\n  imports:\n    - cockroachdb\n    - cockroachdb.sqlalchemy\n\nabout:\n  home: https://github.com/cockroachdb/cockroachdb-python\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: CockroachDB adapter for SQLAlchemy\n  doc_url: https://pypi.org/project/cockroachdb/\n  dev_url: https://github.com/cockroachdb/cockroachdb-python\n\nextra:\n  recipe-maintainers:\n    - mwilson8\n    - rluria14\n    - benhuff\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -166,5 +166,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cockroachdb/cockroachdb-0.3.3.tar.gz",
- "version":"0.3.3"
+ "version":"0.3.5"
 }
