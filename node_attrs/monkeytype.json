@@ -205,7 +205,7 @@
   },
   "package":{
    "name":"monkeytype",
-   "version":"20.4.2"
+   "version":"20.5.0"
   },
   "requirements":{
    "build":[
@@ -217,13 +217,13 @@
     "python >=3.6"
    ],
    "run":[
-    "libcst >=0.3.4",
+    "libcst >=0.3.5",
     "mypy_extensions",
     "python >=3.6",
-    "libcst >=0.3.4",
+    "libcst >=0.3.5",
     "mypy_extensions",
     "python >=3.6",
-    "libcst >=0.3.4",
+    "libcst >=0.3.5",
     "mypy_extensions",
     "python >=3.6"
    ]
@@ -231,33 +231,33 @@
   "source":[
    {
     "folder":"dist",
-    "sha256":"ff04b25f2b0c8003ef000490edba97c79cc2fdb4f51cfabf3053bf8f03f2cf0a",
-    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.4.2.tar.gz"
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
    },
    {
     "folder":"src",
-    "sha256":"e93ee78b1b2d2c361df5b010d7b895136bf3d64920eff1988be740a457753d4f",
-    "url":"https://github.com/Instagram/MonkeyType/archive/v20.4.2.tar.gz"
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
    },
    {
     "folder":"dist",
-    "sha256":"ff04b25f2b0c8003ef000490edba97c79cc2fdb4f51cfabf3053bf8f03f2cf0a",
-    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.4.2.tar.gz"
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
    },
    {
     "folder":"src",
-    "sha256":"e93ee78b1b2d2c361df5b010d7b895136bf3d64920eff1988be740a457753d4f",
-    "url":"https://github.com/Instagram/MonkeyType/archive/v20.4.2.tar.gz"
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
    },
    {
     "folder":"dist",
-    "sha256":"ff04b25f2b0c8003ef000490edba97c79cc2fdb4f51cfabf3053bf8f03f2cf0a",
-    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.4.2.tar.gz"
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
    },
    {
     "folder":"src",
-    "sha256":"e93ee78b1b2d2c361df5b010d7b895136bf3d64920eff1988be740a457753d4f",
-    "url":"https://github.com/Instagram/MonkeyType/archive/v20.4.2.tar.gz"
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
    }
   ],
   "test":{
@@ -311,7 +311,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.18.14.31.44",
- "raw_meta_yaml":"{% set name = \"MonkeyType\" %}\n{% set version = \"20.4.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: dist\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: ff04b25f2b0c8003ef000490edba97c79cc2fdb4f51cfabf3053bf8f03f2cf0a\n  - folder: src\n    url: https://github.com/Instagram/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: e93ee78b1b2d2c361df5b010d7b895136bf3d64920eff1988be740a457753d4f\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - monkeytype=monkeytype.cli:entry_point_main\n  script: cd dist && python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python >=3.6\n  run:\n    - libcst >=0.3.4\n    - mypy_extensions\n    - python >=3.6\n\ntest:\n  source_files:\n    - src/tests\n  requires:\n    - {{ compiler('c') }}\n    - cython\n    - django\n    - pip\n    - pytest\n  imports:\n    - monkeytype\n  commands:\n    - python -m pip check\n    - monkeytype --help\n    - cd src && cd tests\n    - python -m pytest -k \"not test_includes_otherwise\"\n\n\nabout:\n  home: https://github.com/Instagram/MonkeyType\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: src/LICENSE\n  summary: Generating type annotations from sampled production types\n  doc_url: https://monkeytype.readthedocs.io\n  doc_source_url: https://github.com/Instagram/MonkeyType/tree/master/doc\n  description: |\n    MonkeyType collects runtime types of function arguments and return values,\n    and can automatically generate stub files or even add draft type\n    annotations directly to your Python code based on the types collected at\n    runtime.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - nehaljwani\n",
+ "raw_meta_yaml":"{% set name = \"MonkeyType\" %}\n{% set version = \"20.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: dist\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd\n  - folder: src\n    url: https://github.com/Instagram/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - monkeytype=monkeytype.cli:entry_point_main\n  script: cd dist && python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python >=3.6\n  run:\n    - libcst >=0.3.5\n    - mypy_extensions\n    - python >=3.6\n\ntest:\n  source_files:\n    - src/tests\n  requires:\n    - {{ compiler('c') }}\n    - cython\n    - django\n    - pip\n    - pytest\n  imports:\n    - monkeytype\n  commands:\n    - python -m pip check\n    - monkeytype --help\n    - cd src && cd tests\n    - python -m pytest -k \"not test_includes_otherwise\"\n\n\nabout:\n  home: https://github.com/Instagram/MonkeyType\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: src/LICENSE\n  summary: Generating type annotations from sampled production types\n  doc_url: https://monkeytype.readthedocs.io\n  doc_source_url: https://github.com/Instagram/MonkeyType/tree/master/doc\n  description: |\n    MonkeyType collects runtime types of function arguments and return values,\n    and can automatically generate stub files or even add draft type\n    annotations directly to your Python code based on the types collected at\n    runtime.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - nehaljwani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -369,7 +369,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "libcst >=0.3.4",
+    "libcst >=0.3.5",
     "mypy_extensions",
     "python >=3.6"
    ]
@@ -386,5 +386,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-19.5.0.tar.gz",
- "version":"20.4.2"
+ "version":"20.5.0"
 }

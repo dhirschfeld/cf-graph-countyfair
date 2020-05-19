@@ -146,89 +146,80 @@
    "license":"Apache-2.0",
    "license_family":"Apache",
    "license_file":"LICENSE",
-   "summary":"jq wrapper for YAML and XML documents"
+   "summary":"Command-line YAML/XML processor - jq wrapper for YAML/XML documents"
   },
   "build":{
    "entry_points":[
-    "yq = yq:main",
-    "xq = yq:xq_cli",
-    "tq = yq:tq_cli",
-    "yq = yq:main",
-    "xq = yq:xq_cli",
-    "tq = yq:tq_cli",
-    "yq = yq:main",
-    "xq = yq:xq_cli",
-    "tq = yq:tq_cli"
+    "yq=yq:cli",
+    "xq=yq:xq_cli",
+    "yq=yq:cli",
+    "xq=yq:xq_cli",
+    "yq=yq:cli",
+    "xq=yq:xq_cli"
    ],
    "noarch":"python",
-   "number":"0",
-   "script":[
-    "python -m pip install --no-deps --ignore-installed .",
-    "python -m pip install --no-deps --ignore-installed .",
-    "python -m pip install --no-deps --ignore-installed ."
-   ]
+   "number":"1",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "sodre",
+    "xhochy",
     "sodre",
-    "sodre"
+    "xhochy",
+    "sodre",
+    "xhochy"
    ]
   },
   "package":{
    "name":"yq",
-   "version":"2.7.2"
+   "version":"2.10.1"
   },
   "requirements":{
-   "build":[
-    "python",
+   "host":[
     "pip",
     "python",
     "pip",
     "python",
-    "pip"
+    "pip",
+    "python"
    ],
    "run":[
-    "python",
-    "pyyaml >=3.11",
-    "xmltodict >=0.11.0",
-    "toml >=0.9.4",
+    "argcomplete >=1.8.1",
     "jq",
     "python",
     "pyyaml >=3.11",
+    "setuptools",
     "xmltodict >=0.11.0",
-    "toml >=0.9.4",
+    "argcomplete >=1.8.1",
     "jq",
     "python",
     "pyyaml >=3.11",
+    "setuptools",
     "xmltodict >=0.11.0",
-    "toml >=0.9.4",
-    "jq"
+    "argcomplete >=1.8.1",
+    "jq",
+    "python",
+    "pyyaml >=3.11",
+    "setuptools",
+    "xmltodict >=0.11.0"
    ]
   },
   "source":{
-   "fn":"yq-2.7.2.tar.gz",
-   "patches":null,
-   "sha256":"f7dafd1e53d1f806ffe11de6da814e231d866595e2faae0dfc38135b8ee79bbb",
-   "url":"https://pypi.io/packages/source/y/yq/yq-2.7.2.tar.gz"
+   "sha256":"f6252a0757d0c2a9e55b4402e176a7e41a99e0e6dd5be4f9d5a4d651eeb4d6c0",
+   "url":"https://pypi.io/packages/source/y/yq/yq-2.10.1.tar.gz"
   },
   "test":{
    "commands":[
-    "pytest test/test.py",
+    "pip check",
     "yq --help",
     "xq --help",
-    "tq --help",
-    "test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'",
-    "pytest test/test.py",
+    "pip check",
     "yq --help",
     "xq --help",
-    "tq --help",
-    "test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'",
-    "pytest test/test.py",
+    "pip check",
     "yq --help",
-    "xq --help",
-    "tq --help",
-    "test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'"
+    "xq --help"
    ],
    "imports":[
     "yq",
@@ -236,58 +227,55 @@
     "yq"
    ],
    "requires":[
-    "pytest",
-    "pytest",
-    "pytest"
-   ],
-   "source_files":[
-    "test",
-    "test",
-    "test"
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
  "name":"yq",
  "new_version":"2.10.1",
  "pinning_version":"2019.12.18",
- "raw_meta_yaml":"{% set name = \"yq\" %}\n{% set version = \"2.7.2\" %}\n{% set sha256 = \"f7dafd1e53d1f806ffe11de6da814e231d866595e2faae0dfc38135b8ee79bbb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # github.com/sodre/yq:entry_points: replace scripts with entry-points\n    #- github_com__sodre__yq__entry_points.patch\n    # This patch is needed when running on my MacBook Pro, but not on CircleCI\n    #- github_com__sodre__yq__fix-jq-errcode.patch\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - yq = yq:main\n    - xq = yq:xq_cli\n    - tq = yq:tq_cli\n  script: \n    - python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml >=3.11\n    - xmltodict >=0.11.0\n    - toml >=0.9.4\n    - jq\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - test\n  imports:\n    - yq\n  commands:\n    - pytest test/test.py\n    - yq --help\n    - xq --help\n    - tq --help\n    - test $(cat $RECIPE_DIR/meta.yaml | yq -r .package.name) = 'yq'\n\nabout:\n  home: https://github.com/kislyuk/yq\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'jq wrapper for YAML and XML documents'\n\n  doc_url: https://yq.readthedocs.io/en/latest/\n  dev_url: https://github.com/kislyuk/yq\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "raw_meta_yaml":"{% set name = \"yq\" %}\n{% set version = \"2.10.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f6252a0757d0c2a9e55b4402e176a7e41a99e0e6dd5be4f9d5a4d651eeb4d6c0\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - yq=yq:cli\n    - xq=yq:xq_cli\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - argcomplete >=1.8.1\n    - jq\n    - python\n    - pyyaml >=3.11\n    - setuptools\n    - xmltodict >=0.11.0\n\ntest:\n  imports:\n    - yq\n  commands:\n    - pip check\n    - yq --help\n    - xq --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/kislyuk/yq\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Command-line YAML/XML processor - jq wrapper for YAML/XML documents\n  doc_url: https://yq.readthedocs.io/en/latest/\n  dev_url: https://github.com/kislyuk/yq\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
+   "argcomplete",
    "jq",
    "pip",
    "python",
    "pyyaml",
-   "toml",
+   "setuptools",
    "xmltodict"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
    "elements":[
     "pip",
     "python"
    ]
   },
-  "host":{
-   "__set__":true,
-   "elements":[]
-  },
   "run":{
    "__set__":true,
    "elements":[
+    "argcomplete",
     "jq",
     "python",
     "pyyaml",
-    "toml",
+    "setuptools",
     "xmltodict"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "pip"
    ]
   }
  },
@@ -296,32 +284,33 @@
  "total_requirements":{
   "build":{
    "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
    "elements":[
     "pip",
     "python"
    ]
   },
-  "host":{
-   "__set__":true,
-   "elements":[]
-  },
   "run":{
    "__set__":true,
    "elements":[
+    "argcomplete >=1.8.1",
     "jq",
     "python",
     "pyyaml >=3.11",
-    "toml >=0.9.4",
+    "setuptools",
     "xmltodict >=0.11.0"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "pip"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/y/yq/yq-2.7.2.tar.gz",
- "version":"2.7.2"
+ "version":"2.10.1"
 }

@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420316696.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.9.10"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"cub",
@@ -52,7 +71,12 @@
   }
  },
  "name":"cub",
- "new_version":"1.9.8",
+ "new_version":"1.9.10",
+ "new_version_attempts":{
+  "1.9.10":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.19.13.30.35",
  "raw_meta_yaml":"{% set version = \"1.9.8\" %}\n\npackage:\n  name: cub\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/thrust/cub/archive/{{ version }}.tar.gz  # [not win]\n    sha256: b0a0234347938ced00b70d2bf88befc6dbbb79cb229a58098ac69849f893d803  # [not win]\n\n  - url: https://github.com/thrust/cub/archive/{{ version }}.zip  # [win]\n    sha256: 694845bdca04fcc67d52c14d1fe6d9b627f41e6bfec0e0987d846a4e93a136f4  # [win]\n\nbuild:\n  number: 0\n  script: mkdir -p \"$PREFIX\"/include && cp -r cub \"$PREFIX\"/include  # [not win]\n\ntest:\n  commands:\n    - test -e \"$PREFIX\"/include/cub/cub.cuh  # [not win]\n    - if not exist \"%LIBRARY_INC%\"\\cub\\cub.cuh exit 1  # [win]\n\nabout:\n  home: https://github.com/thrust/cub\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.TXT\n  summary: |\n    CUB is a flexible library of cooperative threadblock primitives and other utilities for CUDA\n    kernel programming.\n  description: |\n    CUB provides state-of-the-art, reusable software components for every layer of the CUDA\n    programming model:\n    - Parallel primitives\n      - Warp-wide \"collective\" primitives\n        - Cooperative warp-wide prefix scan, reduction, etc.\n        - Safely specialized for each underlying CUDA architecture\n      - Block-wide \"collective\" primitives\n        - Cooperative I/O, sort, scan, reduction, histogram, etc.\n        - Compatible with arbitrary thread block sizes and types\n      - Device-wide primitives\n        - Parallel sort, prefix scan, reduction, histogram, etc.\n        - Compatible with CUDA dynamic parallelism\n    - Utilities\n      - Fancy iterators\n      - Thread and thread block I/O\n      - PTX intrinsics\n      - Device, kernel, and storage management\n  doc_url: http://nvlabs.github.io/cub/\n  dev_url: https://github.com/thrust/cub\n\nextra:\n  recipe-maintainers:\n    - rongou\n",
  "req":{
   "__set__":true,
@@ -76,6 +100,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

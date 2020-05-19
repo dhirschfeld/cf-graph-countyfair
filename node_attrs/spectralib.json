@@ -6,7 +6,7 @@
  "meta_yaml":{
   "about":{
    "home":"https://spectralib.org/",
-   "license":"MPL2",
+   "license":"MPL-2.0",
    "license_file":"LICENSE",
    "summary":"A header-only C++ library for large scale eigenvalue problems"
   },
@@ -22,9 +22,17 @@
   },
   "package":{
    "name":"spectralib",
-   "version":"0.8.1"
+   "version":"0.9.0"
   },
   "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ],
    "host":[
     "eigen",
     "eigen",
@@ -37,9 +45,9 @@
    ]
   },
   "source":{
-   "fn":"spectralib-0.8.1.tar.gz",
-   "sha256":"339ae9221309a128b8d937ca59b77d9b30aeceacb4ef2d2df13f6f7cde7fa3f3",
-   "url":"https://github.com/yixuan/spectra/archive/v0.8.1.tar.gz"
+   "fn":"spectralib-0.9.0.tar.gz",
+   "sha256":"2966757d432e8fba5958c2a05ad5674ce34eaae3718dd546c1ba8760b80b7a3d",
+   "url":"https://github.com/yixuan/spectra/archive/v0.9.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -51,17 +59,22 @@
  },
  "name":"spectralib",
  "new_version":"0.8.1",
- "raw_meta_yaml":"{% set version = \"0.8.1\" %}\n\npackage:\n  name: spectralib\n  version: {{ version }}\n\nsource:\n  fn: spectralib-{{ version }}.tar.gz\n  url: https://github.com/yixuan/spectra/archive/v{{ version }}.tar.gz\n  sha256: 339ae9221309a128b8d937ca59b77d9b30aeceacb4ef2d2df13f6f7cde7fa3f3\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - eigen\n  run:\n    - eigen\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/Spectra/GenEigsSolver.h  # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\include\\\\Spectra\\\\GenEigsSolver.h exit 1  # [win]\n\nabout:\n  home: https://spectralib.org/\n  license: MPL2\n  license_file: LICENSE\n  summary: A header-only C++ library for large scale eigenvalue problems\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"0.9.0\" %}\n\npackage:\n  name: spectralib\n  version: {{ version }}\n\nsource:\n  fn: spectralib-{{ version }}.tar.gz\n  url: https://github.com/yixuan/spectra/archive/v{{ version }}.tar.gz\n  sha256: 2966757d432e8fba5958c2a05ad5674ce34eaae3718dd546c1ba8760b80b7a3d\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n  host:\n    - eigen\n  run:\n    - eigen\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/Spectra/GenEigsSolver.h  # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\include\\\\Spectra\\\\GenEigsSolver.h exit 1  # [win]\n\nabout:\n  home: https://spectralib.org/\n  license: MPL-2.0\n  license_file: LICENSE\n  summary: A header-only C++ library for large scale eigenvalue problems\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
+   "cmake",
+   "cxx_compiler_stub",
    "eigen"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
   },
   "host":{
    "__set__":true,
@@ -84,7 +97,10 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
   },
   "host":{
    "__set__":true,
@@ -104,5 +120,5 @@
   }
  },
  "url":"https://github.com/yixuan/spectra/archive/v0.8.1.tar.gz",
- "version":"0.8.1"
+ "version":"0.9.0"
 }

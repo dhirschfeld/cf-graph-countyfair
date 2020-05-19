@@ -176,7 +176,7 @@
    "summary":"Open-source Pythonic library to compute landscape metrics within the PyData stack (NumPy, pandas, matplotlib...)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"setup.py install --single-version-externally-managed --record=record.txt"
   },
   "extra":{
@@ -221,7 +221,7 @@
     "numpy",
     "pandas",
     "geopandas",
-    "matplotlib",
+    "matplotlib-base",
     "rasterio",
     "scipy",
     "transonic >=0.4.0",
@@ -230,7 +230,7 @@
     "numpy",
     "pandas",
     "geopandas",
-    "matplotlib",
+    "matplotlib-base",
     "rasterio",
     "scipy",
     "transonic >=0.4.0",
@@ -239,7 +239,7 @@
     "numpy",
     "pandas",
     "geopandas",
-    "matplotlib",
+    "matplotlib-base",
     "rasterio",
     "scipy",
     "transonic >=0.4.0",
@@ -265,13 +265,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.18.14.31.44",
- "raw_meta_yaml":"{% set name = \"pylandstats\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"ed8fd58044e301c167fc903d3e6b6b1b5d682ec618e7f334d4f3a5c708a6b09c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools >=40.8.0\n    - wheel\n    - transonic >=0.4.0\n    - pythran  # [not win]\n    - numba  # [win]\n  run:\n    - python\n    - numpy\n    - pandas\n    - geopandas\n    - matplotlib\n    - rasterio\n    - scipy\n    - transonic >=0.4.0\n    - pythran  # [not win]\n    - numba  # [win]    \ntest:\n  imports:\n    - pylandstats\n\nabout:\n  home: https://github.com/martibosch/pylandstats\n  license: GNU General Public v3 (GPLv3)\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Open-source Pythonic library to compute landscape metrics within the PyData stack (NumPy, pandas, matplotlib...)\n  description: |\n    Open-source Pythonic library to compute landscape metrics within the PyData\n    stack (NumPy, pandas, matplotlib...)\n  doc_url: https://pylandstats.readthedocs.io/\n  dev_url: https://github.com/martibosch/pylandstats\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
+ "raw_meta_yaml":"{% set name = \"pylandstats\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"ed8fd58044e301c167fc903d3e6b6b1b5d682ec618e7f334d4f3a5c708a6b09c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools >=40.8.0\n    - wheel\n    - transonic >=0.4.0\n    - pythran  # [not win]\n    - numba  # [win]\n  run:\n    - python\n    - numpy\n    - pandas\n    - geopandas\n    - matplotlib-base\n    - rasterio\n    - scipy\n    - transonic >=0.4.0\n    - pythran  # [not win]\n    - numba  # [win]    \ntest:\n  imports:\n    - pylandstats\n\nabout:\n  home: https://github.com/martibosch/pylandstats\n  license: GNU General Public v3 (GPLv3)\n  license_family: GPL3\n  license_file: LICENSE\n  summary: Open-source Pythonic library to compute landscape metrics within the PyData stack (NumPy, pandas, matplotlib...)\n  description: |\n    Open-source Pythonic library to compute landscape metrics within the PyData\n    stack (NumPy, pandas, matplotlib...)\n  doc_url: https://pylandstats.readthedocs.io/\n  dev_url: https://github.com/martibosch/pylandstats\n\nextra:\n  recipe-maintainers:\n    - martibosch\n",
  "req":{
   "__set__":true,
   "elements":[
    "cxx_compiler_stub",
    "geopandas",
-   "matplotlib",
+   "matplotlib-base",
    "numba",
    "numpy",
    "pandas",
@@ -308,7 +308,7 @@
    "__set__":true,
    "elements":[
     "geopandas",
-    "matplotlib",
+    "matplotlib-base",
     "numba",
     "numpy",
     "pandas",
@@ -349,7 +349,7 @@
    "__set__":true,
    "elements":[
     "geopandas",
-    "matplotlib",
+    "matplotlib-base",
     "numba",
     "numpy",
     "pandas",

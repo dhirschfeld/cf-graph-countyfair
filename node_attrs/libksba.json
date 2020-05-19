@@ -16,6 +16,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420317013.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -93,8 +110,12 @@
   }
  },
  "name":"libksba",
- "new_version":false,
- "pinning_version":"2018.08.31",
+ "new_version":"1.4.0",
+ "new_version_attempts":{
+  "1.4.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.19.13.30.35",
  "raw_meta_yaml":"{% set name = \"libksba\" %}\n{% set version = \"1.3.5\" %}\n{% set sha256 = \"41444fd7a6ff73a79ad9728f985e71c9ba8cd3e5e53358e70d5f066d35c1a340\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  script:\n    - ./configure --prefix=$PREFIX\n    - make\n    - make install\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('libksba', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://www.gnupg.org/software/libksba/index.html\n  summary: Libksba is a library to make the tasks of working with X.509 certificates\n  license: LGPL-3\n  license_family: GPL\n  license_file: COPYING\n  description: |\n    Libksba is a library to make the tasks of working with X.509 certificates,\n    CMS data and related objects more easy. It provides a highlevel interface to\n    the implemented protocols and presents the data in a consistent way.\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
@@ -127,7 +148,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.1.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

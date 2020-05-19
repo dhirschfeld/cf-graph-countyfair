@@ -226,8 +226,8 @@
    "summary":"Fast interstellar dust extinction laws"
   },
   "build":{
-   "number":"1",
-   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -241,7 +241,7 @@
   },
   "package":{
    "name":"extinction",
-   "version":"0.4.0"
+   "version":"0.4.5"
   },
   "requirements":{
    "build":[
@@ -251,14 +251,17 @@
    ],
    "host":[
     "python",
-    "setuptools",
     "numpy",
+    "pip",
+    "cython",
     "python",
-    "setuptools",
     "numpy",
+    "pip",
+    "cython",
     "python",
-    "setuptools",
-    "numpy"
+    "numpy",
+    "pip",
+    "cython"
    ],
    "run":[
     "python",
@@ -270,9 +273,9 @@
    ]
   },
   "source":{
-   "fn":"extinction-0.4.0.tar.gz",
-   "sha256":"0ae3adb554771a7641b5d4a87183abeb1fb22189377e5ec691687dc0a627a966",
-   "url":"https://pypi.io/packages/source/e/extinction/extinction-0.4.0.tar.gz"
+   "fn":"extinction-0.4.5.tar.gz",
+   "sha256":"e6a90cf8c66cdb0cb747fb1114da4b959b95aa073db4919ad530aa844b8beb42",
+   "url":"https://pypi.io/packages/source/e/extinction/extinction-0.4.5.tar.gz"
   },
   "test":{
    "imports":[
@@ -292,14 +295,15 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.14.17.14.20",
- "raw_meta_yaml":"{% set name = \"extinction\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"0ae3adb554771a7641b5d4a87183abeb1fb22189377e5ec691687dc0a627a966\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - extinction\n\nabout:\n  home: http://github.com/kbarbary/extinction\n  license: MIT\n  license_file: LICENSE\n  summary: 'Fast interstellar dust extinction laws'\n  description: |\n    Cython-optimized implementations of empirical dust exitinction laws\n    found in astronomy literature.\n  dev_url: https://github.com/kbarbary/extinction\n  doc_url: https://extinction.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - kbarbary\n    - guillochon\n",
+ "raw_meta_yaml":"{% set name = \"extinction\" %}\n{% set version = \"0.4.5\" %}\n{% set sha256 = \"e6a90cf8c66cdb0cb747fb1114da4b959b95aa073db4919ad530aa844b8beb42\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: true  # [py27]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - numpy\n    - pip\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - extinction\n\nabout:\n  home: http://github.com/kbarbary/extinction\n  license: MIT\n  license_file: LICENSE\n  summary: Fast interstellar dust extinction laws\n  description: |\n    Cython-optimized implementations of empirical dust exitinction laws\n    found in astronomy literature.\n  dev_url: https://github.com/kbarbary/extinction\n  doc_url: https://extinction.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - kbarbary\n    - guillochon\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
+   "cython",
    "numpy",
-   "python",
-   "setuptools"
+   "pip",
+   "python"
   ]
  },
  "requirements":{
@@ -312,9 +316,10 @@
   "host":{
    "__set__":true,
    "elements":[
+    "cython",
     "numpy",
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "run":{
@@ -341,9 +346,10 @@
   "host":{
    "__set__":true,
    "elements":[
+    "cython",
     "numpy",
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "run":{
@@ -359,5 +365,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/e/extinction/extinction-0.4.0.tar.gz",
- "version":"0.4.0"
+ "version":"0.4.5"
 }
