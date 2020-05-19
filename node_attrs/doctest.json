@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420337598.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.8"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"doctest",
@@ -66,6 +85,11 @@
  },
  "name":"doctest",
  "new_version":"2.3.8",
+ "new_version_attempts":{
+  "2.3.8":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.19.13.30.35",
  "raw_meta_yaml":"{% set name = \"doctest\" %}\n{% set version = \"2.3.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://raw.githubusercontent.com/onqtam/doctest/{{ version }}/doctest/doctest.h\n    sha256: dc617544b70d88b1ab939f1e5cf365a3848d75635e05a68459d8a354e4a89aba\n  - url: https://raw.githubusercontent.com/onqtam/doctest/{{ version }}/LICENSE.txt\n    sha256: 2ab6583af88018c4c6cadf8363bf3625505d117ac279ac174d935d992bac3592\n\nbuild:\n  number: 0\n  script: \"mkdir -p $PREFIX/include && cp doctest.h $PREFIX/include/doctest.h\"  # [unix]\n  skip: true  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/doctest.h  # [unix]\n    - if not exist %LIBRARY_INC%\\\\doctest.h exit 1  # [win]\n\nabout:\n  home: https://github.com/onqtam/doctest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'The fastest feature-rich C++11/14/17/20 single-header testing framework for unit tests and TDD'\n\n  description: |\n    doctest is a new C++ testing framework but is by far\n    the fastest both in compile times (by orders of magnitude) and\n    runtime compared to other feature-rich alternatives.\n    It brings the ability of compiled languages such as D / Rust / Nim to\n    have tests written directly in the production code thanks to a fast,\n    transparent and flexible test runner with a clean interface.\n  doc_url: https://github.com/onqtam/doctest/blob/master/doc/markdown/readme.md#reference\n  dev_url: https://github.com/onqtam/doctest\n\nextra:\n  recipe-maintainers:\n    - elbaro\n",
  "req":{
   "__set__":true,
@@ -89,6 +113,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

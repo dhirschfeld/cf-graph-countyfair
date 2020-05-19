@@ -107,6 +107,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420337259.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.0.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -216,10 +233,11 @@
  "new_version_attempts":{
   "2.6.7":1,
   "2.6.8":1,
-  "3.0.0":1
+  "3.0.0":1,
+  "3.0.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.01.13.16.44",
+ "pinning_version":"2020.05.19.13.30.35",
  "raw_meta_yaml":"{% set name = \"orjson\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: 3aec5ef973372bf5c9cb7c80dd84e0dd98ba77984cd67d47c0995d8fd2918265\n  - url: https://static.rust-lang.org/dist/2020-04-26/rust-nightly-x86_64-unknown-linux-gnu.tar.gz\n    sha256: a723247878b5b65ec511c86108b9adb99bd1fa9b78ed87986283b93bf9e50d20\n    folder: rust-nightly\n\nbuild:\n  number: 0\n  skip: true  # [osx or win or py<35]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}    # [not win]\n    - posix    # [win]\n  host:\n    - python\n    - pip\n    - maturin >=0.8.1\n    - toml\n  run:\n    - python\n\ntest:\n  imports:\n    - orjson\n\nabout:\n  home: https://github.com/ijl/orjson\n  license: Apache-2.0\n  license_family: Apache\n  license_file:\n    - LICENSE-APACHE\n    - LICENSE-MIT\n  summary: orjson is a fast, correct JSON library for Python.\n  doc_url: https://github.com/ijl/orjson\n  dev_url: https://github.com/ijl/orjson\n\nextra:\n  recipe-maintainers:\n    - EntPyle\n    - nehaljwani\n",
  "req":{
   "__set__":true,
@@ -260,7 +278,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
