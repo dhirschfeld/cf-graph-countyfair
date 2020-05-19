@@ -168,7 +168,7 @@
   },
   "package":{
    "name":"r-rsvg",
-   "version":"2.0"
+   "version":"2.1"
   },
   "requirements":{
    "build":[
@@ -210,15 +210,15 @@
    ]
   },
   "source":{
-   "fn":"rsvg_2.0.tar.gz",
-   "sha256":"49c00d8177c37d9f29fcd22fd8e1e165e251834b453415af941a6ee737350664",
+   "fn":"rsvg_2.1.tar.gz",
+   "sha256":"9675d80ec50ca8112e3f739e8e058d7dee80b0ac7ec09f3b95a6ffa593e2b62f",
    "url":[
-    "https://cran.r-project.org/src/contrib/rsvg_2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/rsvg_2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/rsvg_2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/rsvg_2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/rsvg_2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/rsvg_2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_2.1.tar.gz"
    ]
   },
   "test":{
@@ -237,7 +237,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.19.39.08",
- "raw_meta_yaml":"{% set version = \"2.0\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rsvg\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rsvg_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/rsvg_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/rsvg/rsvg_{{ version }}.tar.gz\n  sha256: 49c00d8177c37d9f29fcd22fd8e1e165e251834b453415af941a6ee737350664\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  skip: true  # [win]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\n# Suggests: spelling, svglite, png, jpeg, webp, ggplot2\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}sed               # [win]\n    - {{ posix }}grep              # [win]\n    - {{ posix }}autoconf\n    - {{ posix }}automake          # [not win]\n    - {{ posix }}automake-wrapper  # [win]\n    - {{ posix }}pkg-config\n    - {{ posix }}make\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n    - librsvg              # [not win]\n\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - librsvg              # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('rsvg')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rsvg')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/jeroen/rsvg#readme\n  license: MIT\n  summary: Renders vector-based svg images into high-quality custom-size bitmap arrays using 'librsvg2'. The resulting bitmap can be written to e.g. png, jpeg or webp format. In addition, the package can convert images directly to various formats such as pdf or postscript.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - jenzopr\n",
+ "raw_meta_yaml":"{% set version = \"2.1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rsvg\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rsvg_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/rsvg_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/rsvg/rsvg_{{ version }}.tar.gz\n  sha256: 9675d80ec50ca8112e3f739e8e058d7dee80b0ac7ec09f3b95a6ffa593e2b62f\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  skip: true  # [win]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\n# Suggests: spelling, svglite, png, jpeg, webp, ggplot2\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}sed               # [win]\n    - {{ posix }}grep              # [win]\n    - {{ posix }}autoconf\n    - {{ posix }}automake          # [not win]\n    - {{ posix }}automake-wrapper  # [win]\n    - {{ posix }}pkg-config\n    - {{ posix }}make\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n    - librsvg              # [not win]\n\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - librsvg              # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('rsvg')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rsvg')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/jeroen/rsvg#readme\n  license: MIT\n  summary: Renders vector-based svg images into high-quality custom-size bitmap arrays using 'librsvg2'. The resulting bitmap can be written to e.g. png, jpeg or webp format. In addition, the package can convert images directly to various formats such as pdf or postscript.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - jenzopr\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -344,5 +344,5 @@
   "https://cran.r-project.org/src/contrib/rsvg_1.3.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/rsvg/rsvg_1.3.tar.gz"
  ],
- "version":"2.0"
+ "version":"2.1"
 }
