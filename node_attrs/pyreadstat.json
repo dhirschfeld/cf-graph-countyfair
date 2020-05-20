@@ -221,6 +221,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420889609.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -303,15 +320,16 @@
   }
  },
  "name":"pyreadstat",
- "new_version":"0.3.3",
+ "new_version":"0.3.4",
  "new_version_attempts":{
   "0.3.0":1,
   "0.3.1":1,
   "0.3.2":1,
-  "0.3.3":1
+  "0.3.3":1,
+  "0.3.4":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.24.08.48.19",
+ "pinning_version":"2020.05.20.09.40.28",
  "raw_meta_yaml":"{% set name = \"pyreadstat\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c1be0b2e8497ef7999fd0d7c21d0510a14474459979f431e9d7c9eb9247ff86c\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler(\"m2w64_c\") }}  # [win]\n    - {{ compiler('c') }}  # [not win]\n  host:\n    - python\n    - pip\n    - cython\n    - m2w64-toolchain  # [win]\n    - libpython  # [win]\n    - zlib  # [not win]\n  run:\n    - python\n    - pandas\n    - m2w64-gcc-libs  # [win]\n    - zlib  # [not win]\n\ntest:\n  imports:\n    - pyreadstat\n\nabout:\n  home: https://github.com/Roche/pyreadstat\n  license: Apache\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: read SAS, SPSS and STATA files into pandas data frames\n  description: |\n    A Python package to read SAS (sas7bdat, sas7bcat, xport/xpt), SPSS (sav, zsav, por) and Stata (dta) files into pandas data frames. It is a wrapper around the C library readstat.\n  doc_url: https://github.com/Roche/pyreadstat\n  dev_url: https://github.com/Roche/pyreadstat\n\nextra:\n  recipe-maintainers:\n    - ofajardo\n",
  "req":{
   "__set__":true,
@@ -361,7 +379,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.17",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

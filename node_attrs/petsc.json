@@ -595,6 +595,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/9166edc2-ca0b-4104-a832-a4ccba373bea.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"hdf51106"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "bad":false,
@@ -615,7 +634,7 @@
    "summary":"PETSc: Portable, Extensible Toolkit for Scientific Computation"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "petsc",
     "petsc",
@@ -683,6 +702,7 @@
     "scotch",
     "mumps-mpi",
     "suitesparse",
+    "hdf5",
     "libblas",
     "libcblas",
     "liblapack",
@@ -698,6 +718,7 @@
     "scotch",
     "mumps-mpi",
     "suitesparse",
+    "hdf5",
     "libblas",
     "libcblas",
     "liblapack",
@@ -712,7 +733,8 @@
     "superlu_dist",
     "scotch",
     "mumps-mpi",
-    "suitesparse"
+    "suitesparse",
+    "hdf5"
    ],
    "run":[
     "mpich",
@@ -726,6 +748,7 @@
     "scotch",
     "mumps-mpi",
     "suitesparse",
+    "hdf5",
     "mpich",
     "hypre",
     "metis",
@@ -737,6 +760,7 @@
     "scotch",
     "mumps-mpi",
     "suitesparse",
+    "hdf5",
     "mpich",
     "hypre",
     "metis",
@@ -747,7 +771,8 @@
     "superlu_dist",
     "scotch",
     "mumps-mpi",
-    "suitesparse"
+    "suitesparse",
+    "hdf5"
    ]
   },
   "source":{
@@ -812,8 +837,8 @@
   "3.13.1":2
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.06.22.15.02",
- "raw_meta_yaml":"{% set version = \"3.13.1\" %}\n{% set sha256 = \"74a895e44e2ff1146838aaccb7613e7626d99e0eed64ca032c87c72d084efac3\" %}\n\n{% set mpi = mpi or 'mpich' %}\n\npackage:\n  name: petsc\n  version: {{ version }}\n\nsource:\n  fn: petsc-{{ version }}.tar.gz\n  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ignore-not-invalid.patch\n    - no-cppflags-in-pkgconfig-cflags.patch\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('petsc', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n    - pkg-config\n    - python\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - cmake\n    - {{ mpi }}\n    - hypre\n    - metis\n    - parmetis\n    - ptscotch\n    - scalapack\n    - superlu\n{% if mpi == \"mpich\" %}\n    - superlu_dist\n{% endif %}\n    - scotch\n    - mumps-mpi\n    - suitesparse\n  run:\n    - {{ mpi }}\n    - hypre\n    - metis\n    - parmetis\n    - ptscotch\n    - scalapack\n    - superlu\n{% if mpi == \"mpich\" %}\n    - superlu_dist\n{% endif %}\n    - scotch\n    - mumps-mpi\n    - suitesparse\n\ntest:\n  requires:\n    - pkg-config\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n  files:\n    - tests/ex1.c\n    - tests/ex1f.F90\n    - tests/makefile\n  commands:\n    - pkg-config --validate PETSc\n    - pkg-config --cflags PETSc\n    - pkg-config --libs PETSc\n\nabout:\n  home: http://www.mcs.anl.gov/petsc/\n  summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'\n  license: BSD-2-Clause\n  license_file: LICENSE\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - dalcinl\n    - minrk\n    - davidbrochart\n    - SylvainCorlay\n    - martinRenou\n",
+ "pinning_version":"2020.05.20.09.40.28",
+ "raw_meta_yaml":"{% set version = \"3.13.1\" %}\n{% set sha256 = \"74a895e44e2ff1146838aaccb7613e7626d99e0eed64ca032c87c72d084efac3\" %}\n\n{% set mpi = mpi or 'mpich' %}\n\npackage:\n  name: petsc\n  version: {{ version }}\n\nsource:\n  fn: petsc-{{ version }}.tar.gz\n  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ignore-not-invalid.patch\n    - no-cppflags-in-pkgconfig-cflags.patch\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('petsc', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n    - pkg-config\n    - python\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - cmake\n    - {{ mpi }}\n    - hypre\n    - metis\n    - parmetis\n    - ptscotch\n    - scalapack\n    - superlu\n{% if mpi == \"mpich\" %}\n    - superlu_dist\n{% endif %}\n    - scotch\n    - mumps-mpi\n    - suitesparse\n    - hdf5\n  run:\n    - {{ mpi }}\n    - hypre\n    - metis\n    - parmetis\n    - ptscotch\n    - scalapack\n    - superlu\n{% if mpi == \"mpich\" %}\n    - superlu_dist\n{% endif %}\n    - scotch\n    - mumps-mpi\n    - suitesparse\n    - hdf5\n\ntest:\n  requires:\n    - pkg-config\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n  files:\n    - tests/ex1.c\n    - tests/ex1f.F90\n    - tests/makefile\n  commands:\n    - pkg-config --validate PETSc\n    - pkg-config --cflags PETSc\n    - pkg-config --libs PETSc\n\nabout:\n  home: http://www.mcs.anl.gov/petsc/\n  summary: 'PETSc: Portable, Extensible Toolkit for Scientific Computation'\n  license: BSD-2-Clause\n  license_file: LICENSE\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - dalcinl\n    - minrk\n    - davidbrochart\n    - SylvainCorlay\n    - martinRenou\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -821,6 +846,7 @@
    "cmake",
    "cxx_compiler_stub",
    "fortran_compiler_stub",
+   "hdf5",
    "hypre",
    "libblas",
    "libcblas",
@@ -856,6 +882,7 @@
    "__set__":true,
    "elements":[
     "cmake",
+    "hdf5",
     "hypre",
     "libblas",
     "libcblas",
@@ -875,6 +902,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "hdf5",
     "hypre",
     "metis",
     "mpich",
@@ -899,7 +927,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
@@ -917,6 +945,7 @@
    "__set__":true,
    "elements":[
     "cmake",
+    "hdf5",
     "hypre",
     "libblas",
     "libcblas",
@@ -936,6 +965,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "hdf5",
     "hypre",
     "metis",
     "mpich",

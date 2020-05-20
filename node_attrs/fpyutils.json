@@ -47,13 +47,17 @@
   }
  ],
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"fpyutils",
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
    "home":"https://github.com/frnmst/fpyutils",
-   "license":"GPL-3.0",
+   "license":"GPL-3.0-or-later",
    "license_family":"GPL3",
    "license_file":"LICENSE.txt",
    "summary":"A collection of useful non-standard Python functions which aim to be simple to use, highly readable but not efficient"
@@ -61,7 +65,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -72,7 +76,7 @@
   },
   "package":{
    "name":"fpyutils",
-   "version":"1.1.0"
+   "version":"1.1.2"
   },
   "requirements":{
    "host":[
@@ -85,22 +89,32 @@
    ],
    "run":[
     "python >=3",
-    "atomicwrites ==1.3.0",
+    "atomicwrites ==1.4.0",
     "python >=3",
-    "atomicwrites ==1.3.0",
+    "atomicwrites ==1.4.0",
     "python >=3",
-    "atomicwrites ==1.3.0"
+    "atomicwrites ==1.4.0"
    ]
   },
   "source":{
-   "sha256":"ecf9314733324a82d13ab9941c3fc2f4897d27066e1ba00bfca27d66f43cc5b7",
-   "url":"https://pypi.io/packages/source/f/fpyutils/fpyutils-1.1.0.tar.gz"
+   "sha256":"e6d19c7e2066a961167397883b2e6b3eb127c4cdcbc7937eb3464fd365568299",
+   "url":"https://pypi.io/packages/source/f/fpyutils/fpyutils-1.1.2.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "fpyutils",
     "fpyutils",
     "fpyutils"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -111,7 +125,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.19.39.08",
- "raw_meta_yaml":"{% set version = \"1.1.0\" %}\n\npackage:\n  name: fpyutils\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/fpyutils/fpyutils-{{ version }}.tar.gz\n  sha256: ecf9314733324a82d13ab9941c3fc2f4897d27066e1ba00bfca27d66f43cc5b7\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - atomicwrites ==1.3.0\n\ntest:\n  imports:\n    - fpyutils\n\nabout:\n  home: https://github.com/frnmst/fpyutils\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: 'A collection of useful non-standard Python functions which aim to be simple to use, highly readable but not efficient'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"1.1.2\" %}\n\npackage:\n  name: fpyutils\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/fpyutils/fpyutils-{{ version }}.tar.gz\n  sha256: e6d19c7e2066a961167397883b2e6b3eb127c4cdcbc7937eb3464fd365568299\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - atomicwrites ==1.4.0\n\ntest:\n  imports:\n    - fpyutils\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/frnmst/fpyutils\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: A collection of useful non-standard Python functions which aim to be simple to use, highly readable but not efficient\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -141,7 +155,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -161,15 +177,17 @@
   "run":{
    "__set__":true,
    "elements":[
-    "atomicwrites ==1.3.0",
+    "atomicwrites ==1.4.0",
     "python >=3"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/f/fpyutils/fpyutils-1.1.0.tar.gz",
- "version":"1.1.0"
+ "version":"1.1.2"
 }
