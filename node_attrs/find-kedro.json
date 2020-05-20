@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421052308.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"find-kedro",
@@ -80,7 +99,12 @@
   }
  },
  "name":"find-kedro",
- "new_version":"0.0.5",
+ "new_version":"0.1.0",
+ "new_version_attempts":{
+  "0.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"find-kedro\" %}\n{% set version = \"0.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6d1d6c9e7baf5ddf190c1ff34b5a95a5f3eea2cdd0f8999fe452bb0dfea8f460\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n  entry_points:\n    - find-kedro = find_kedro.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - kedro\n    - click\n    - colorama\n    - pygments\n\ntest:\n  imports:\n    - find_kedro\n  commands:\n    - find-kedro --help\n\nabout:\n  home: https://github.com/WaylonWalker/find-kedro\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'https://github.com/WaylonWalker/find-kedro'\n\n  description: |\n    find-kedro is a small library to enhance your kedro experience. It looks through your modules to find kedro pipelines,\n    nodes, and iterables (lists, sets, tuples) of nodes. It then assembles them into a dictionary of pipelines, each module\n    will create a separate pipeline, and __default__ being a combination of all pipelines. This format is compatible with\n    the kedro _create_pipelines format.\n  doc_url: https://find-kedro.waylonwalker.com/\n  dev_url: https://github.com/WaylonWalker/find-kedro\n\nextra:\n  recipe-maintainers:\n    - WaylonWalker\n",
  "req":{
   "__set__":true,
@@ -120,6 +144,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
