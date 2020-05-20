@@ -177,6 +177,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420701671.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.2.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -257,8 +274,12 @@
   }
  },
  "name":"cfunits",
- "new_version":"3.2.6",
- "pinning_version":"2019.11.26",
+ "new_version":"3.2.7",
+ "new_version_attempts":{
+  "3.2.7":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.09.40.28",
  "raw_meta_yaml":"{% set version = \"3.2.6\" %}\n\npackage:\n  name: cfunits\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cfunits/cfunits-{{ version }}.tar.gz\n  sha256: 3fdbb0473f972a19ff3dd36d6d1302733f03a1ad9e0e86e421f58116c2b1ae28\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - cftime >=1.1.1\n    - numpy >=1.15\n    - udunits2\n\ntest:\n  imports:\n    - cfunits\n\nabout:\n  home: https://bitbucket.org/cfpython/cfunits-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"A python interface to UNIDATA's Udunits-2 package with CF extensions\"\n\n  description: |\n    A python interface to UNIDATA`s Udunits-2 library with CF extensions.\n    Store, combine and compare physical units and convert numeric values to different units.\n    Units are as defined in UNIDATA`s Udunits-2 library <http://www.unidata.ucar.edu/software/udunits/>,\n    except for reference time units (such as 'days since 2000-12-1' in the 'proleptic_gregorian' calendar),\n    which are handled by the netCDF4 python package.\n    In addition, some units are either new to, modified from, or removed from the standard\n    Udunits-2 database in order to be more consistent with the CF conventions <http://cfconventions.org/>.\n  doc_url: http://pythonhosted.org/cfunits/\n  dev_url: https://bitbucket.org/cfpython/cfunits-python/\n\nextra:\n  recipe-maintainers:\n    - cehbrecht\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -296,7 +317,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.3",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
