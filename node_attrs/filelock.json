@@ -146,27 +146,30 @@
   "about":{
    "home":"https://github.com/benediktschmitt/py-filelock",
    "license":"Unlicense",
-   "license_file":"LICENSE.rst",
+   "license_file":"LICENSE",
    "summary":"A platform independent file lock."
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install --no-deps ."
   },
   "extra":{
    "recipe-maintainers":[
     "jakirkham",
     "mariusvniekerk",
+    "nicoddemus",
     "jakirkham",
     "mariusvniekerk",
+    "nicoddemus",
     "jakirkham",
-    "mariusvniekerk"
+    "mariusvniekerk",
+    "nicoddemus"
    ]
   },
   "package":{
    "name":"filelock",
-   "version":"3.0.10"
+   "version":"3.0.12"
   },
   "requirements":{
    "host":[
@@ -184,9 +187,9 @@
    ]
   },
   "source":{
-   "fn":"filelock-3.0.10.tar.gz",
-   "sha256":"d610c1bb404daf85976d7a82eb2ada120f04671007266b708606565dd03b5be6",
-   "url":"https://pypi.io/packages/source/f/filelock/filelock-3.0.10.tar.gz"
+   "fn":"filelock-3.0.12.tar.gz",
+   "sha256":"18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59",
+   "url":"https://pypi.io/packages/source/f/filelock/filelock-3.0.12.tar.gz"
   },
   "test":{
    "imports":[
@@ -199,7 +202,7 @@
  "name":"filelock",
  "new_version":"3.0.12",
  "pinning_version":"2019.05.11",
- "raw_meta_yaml":"{% set name = \"filelock\" %}\n{% set version = \"3.0.10\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n   sha256: d610c1bb404daf85976d7a82eb2ada120f04671007266b708606565dd03b5be6\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - filelock\n\nabout:\n  home: https://github.com/benediktschmitt/py-filelock\n  license: Unlicense\n  license_file: LICENSE.rst\n  summary: 'A platform independent file lock.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mariusvniekerk\n",
+ "raw_meta_yaml":"{% set name = \"filelock\" %}\n{% set version = \"3.0.12\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n   sha256: 18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - filelock\n\nabout:\n  home: https://github.com/benediktschmitt/py-filelock\n  license: Unlicense\n  license_file: LICENSE\n  summary: 'A platform independent file lock.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mariusvniekerk\n    - nicoddemus\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -256,5 +259,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/filelock/filelock-3.0.10.tar.gz",
- "version":"3.0.10"
+ "version":"3.0.12"
 }
