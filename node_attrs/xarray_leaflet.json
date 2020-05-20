@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420951910.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MatplotlibBase",
+    "migrator_version":0,
+    "name":"matplotlib-to-matplotlib-base"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "bad":false,
@@ -80,7 +97,7 @@
   },
   "package":{
    "name":"xarray_leaflet",
-   "version":"0.1.2"
+   "version":"0.1.4"
   },
   "requirements":{
    "host":[
@@ -97,6 +114,7 @@
     "jupyter_server",
     "ipyleaflet",
     "pillow",
+    "matplotlib",
     "rasterio",
     "affine",
     "mercantile",
@@ -105,6 +123,7 @@
     "jupyter_server",
     "ipyleaflet",
     "pillow",
+    "matplotlib",
     "rasterio",
     "affine",
     "mercantile",
@@ -113,14 +132,15 @@
     "jupyter_server",
     "ipyleaflet",
     "pillow",
+    "matplotlib",
     "rasterio",
     "affine",
     "mercantile"
    ]
   },
   "source":{
-   "sha256":"7c02c85e9459e27f392909d37b6a82b4c2d2df04e68690046cfd03aace6bfe99",
-   "url":"https://pypi.io/packages/source/x/xarray_leaflet/xarray_leaflet-0.1.2.tar.gz"
+   "sha256":"4cf48f0b4da68d74c09c4746dfa695f2e1c0cddc35c14f7c5f8a647f9328b699",
+   "url":"https://pypi.io/packages/source/x/xarray_leaflet/xarray_leaflet-0.1.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -149,13 +169,14 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.09.40.28",
- "raw_meta_yaml":"{% set name = \"xarray_leaflet\" %}\n{% set version = \"0.1.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7c02c85e9459e27f392909d37b6a82b4c2d2df04e68690046cfd03aace6bfe99\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5.0\n    - pip\n  run:\n    - python\n    - xarray\n    - jupyter_server\n    - ipyleaflet\n    - pillow\n    - rasterio\n    - affine\n    - mercantile\n\ntest:\n  imports:\n    - xarray_leaflet\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/davidbrochart/xarray-leaflet\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An xarray extension for tiled map plotting.\n  description: |\n    xarray-leaflet uses ipyleaflet as a plotting backend for data arrays. It generates map tiles\n    on the fly, possibly using Dask's lazy evaluation system and Zarr's chunked data storage, and\n    serves them through the Jupyter server, allowing for big data visualization.\n  dev_url: https://github.com/davidbrochart/xarray-leaflet\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
+ "raw_meta_yaml":"{% set name = \"xarray_leaflet\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4cf48f0b4da68d74c09c4746dfa695f2e1c0cddc35c14f7c5f8a647f9328b699\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5.0\n    - pip\n  run:\n    - python\n    - xarray\n    - jupyter_server\n    - ipyleaflet\n    - pillow\n    - matplotlib\n    - rasterio\n    - affine\n    - mercantile\n\ntest:\n  imports:\n    - xarray_leaflet\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/davidbrochart/xarray-leaflet\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An xarray extension for tiled map plotting.\n  description: |\n    xarray-leaflet uses ipyleaflet as a plotting backend for data arrays. It generates map tiles\n    on the fly, possibly using Dask's lazy evaluation system and Zarr's chunked data storage, and\n    serves them through the Jupyter server, allowing for big data visualization.\n  dev_url: https://github.com/davidbrochart/xarray-leaflet\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req":{
   "__set__":true,
   "elements":[
    "affine",
    "ipyleaflet",
    "jupyter_server",
+   "matplotlib",
    "mercantile",
    "pillow",
    "pip",
@@ -182,6 +203,7 @@
     "affine",
     "ipyleaflet",
     "jupyter_server",
+    "matplotlib",
     "mercantile",
     "pillow",
     "python",
@@ -216,6 +238,7 @@
     "affine",
     "ipyleaflet",
     "jupyter_server",
+    "matplotlib",
     "mercantile",
     "pillow",
     "python",
@@ -231,5 +254,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/x/xarray_leaflet/xarray_leaflet-0.1.0.tar.gz",
- "version":"0.1.2"
+ "version":"0.1.4"
 }

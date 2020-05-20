@@ -79,6 +79,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420941380.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -169,7 +186,11 @@
  },
  "name":"cc-plugin-glider",
  "new_version":"2.0.3",
- "pinning_version":"2020.03.24",
+ "new_version_attempts":{
+  "2.0.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.09.40.28",
  "raw_meta_yaml":"{% set version = \"2.0.2\" %}\n\npackage:\n  name: cc-plugin-glider\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ioos/cc-plugin-glider/archive/{{ version }}.tar.gz\n  sha256: 16b0778d3427cba97b617854c5632f63f8ba3c8bb4d979da3f25d7628c10cfbb\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - gliderdac = cc_plugin_glider.glider_dac:GliderCheck\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - compliance-checker >=4.0.0\n\ntest:\n  imports:\n    - cc_plugin_glider\n  commands:\n    - compliance-checker --list-tests | grep -q gliderdac  # [not win]\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/ioos/cc-plugin-glider\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: Compliance Checker Glider DAC plugin\n\nextra:\n  recipe-maintainers:\n    - benjwadams\n    - daf\n    - kwilcox\n    - lukecampbell\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -205,7 +226,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
