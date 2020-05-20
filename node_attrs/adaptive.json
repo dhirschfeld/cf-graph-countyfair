@@ -343,7 +343,7 @@
   },
   "package":{
    "name":"adaptive",
-   "version":"0.10.0"
+   "version":"0.11.0"
   },
   "requirements":{
    "build":[
@@ -356,47 +356,53 @@
    ],
    "run":[
     "python",
-    "bokeh",
-    "scipy",
-    "holoviews >=1.9.1",
-    "ipywidgets",
-    "ipython",
-    "ipykernel >=4.8.0",
-    "jupyter_client >=5.2.2",
-    "sortedcontainers",
-    "sortedcollections",
-    "matplotlib",
     "atomicwrites",
-    "python",
     "bokeh",
-    "scipy",
     "holoviews >=1.9.1",
-    "ipywidgets",
-    "ipython",
     "ipykernel >=4.8.0",
+    "ipyparallel >=6.2.5",
+    "ipython",
+    "ipywidgets",
     "jupyter_client >=5.2.2",
-    "sortedcontainers",
-    "sortedcollections",
+    "loky",
     "matplotlib",
+    "scipy",
+    "sortedcollections >=1.1",
+    "sortedcontainers >=2.0",
+    "python",
     "atomicwrites",
-    "python",
     "bokeh",
-    "scipy",
     "holoviews >=1.9.1",
-    "ipywidgets",
-    "ipython",
     "ipykernel >=4.8.0",
+    "ipyparallel >=6.2.5",
+    "ipython",
+    "ipywidgets",
     "jupyter_client >=5.2.2",
-    "sortedcontainers",
-    "sortedcollections",
+    "loky",
     "matplotlib",
-    "atomicwrites"
+    "scipy",
+    "sortedcollections >=1.1",
+    "sortedcontainers >=2.0",
+    "python",
+    "atomicwrites",
+    "bokeh",
+    "holoviews >=1.9.1",
+    "ipykernel >=4.8.0",
+    "ipyparallel >=6.2.5",
+    "ipython",
+    "ipywidgets",
+    "jupyter_client >=5.2.2",
+    "loky",
+    "matplotlib",
+    "scipy",
+    "sortedcollections >=1.1",
+    "sortedcontainers >=2.0"
    ]
   },
   "source":{
-   "fn":"0.10.0.zip",
-   "sha256":"9b0e87508c3829b5d815f8a456710a3a2856ab60e88606793664734c03d2b87f",
-   "url":"https://pypi.io/packages/source/a/adaptive/adaptive-0.10.0.tar.gz"
+   "fn":"0.11.0.zip",
+   "sha256":"3def1b0ac4275aab0b8d05dfd47edfb42c48ca642b6b9d25e2e0d8073eea1f64",
+   "url":"https://pypi.io/packages/source/a/adaptive/adaptive-0.11.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -413,7 +419,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.19.39.08",
- "raw_meta_yaml":"{% set name = \"adaptive\" %}\n{% set version = \"0.10.0\" %}\n{% set sha256 = \"9b0e87508c3829b5d815f8a456710a3a2856ab60e88606793664734c03d2b87f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/adaptive-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - bokeh\n    - scipy\n    - holoviews >=1.9.1\n    - ipywidgets\n    - ipython\n    - ipykernel >=4.8.0\n    - jupyter_client >=5.2.2\n    - sortedcontainers\n    - sortedcollections\n    - matplotlib\n    - atomicwrites\n\ntest:\n  imports:\n    - adaptive\n\nabout:\n  home: http://github.com/python-adaptive/adaptive\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Adaptive parallel sampling of mathematical functions'\n  description: |\n    adaptive is an open-source Python library designed to make adaptive\n    parallel function evaluation simple. With adaptive you just supply a\n    function with its bounds, and it will be evaluated at the \"best\" points\n    in parameter space. With just a few lines of code you can evaluate\n    functions on a computing cluster, live-plot the data as it returns,\n    and fine-tune the adaptive sampling algorithm.\n  doc_url: http://adaptive.readthedocs.org\n  dev_url: https://github.com/python-adaptive/adaptive/\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - jbweston\n    - akhmerov\n",
+ "raw_meta_yaml":"{% set name = \"adaptive\" %}\n{% set version = \"0.11.0\" %}\n{% set sha256 = \"3def1b0ac4275aab0b8d05dfd47edfb42c48ca642b6b9d25e2e0d8073eea1f64\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/adaptive-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - atomicwrites\n    - bokeh\n    - holoviews >=1.9.1\n    - ipykernel >=4.8.0\n    - ipyparallel >=6.2.5\n    - ipython\n    - ipywidgets\n    - jupyter_client >=5.2.2\n    - loky\n    - matplotlib\n    - scipy\n    - sortedcollections >=1.1\n    - sortedcontainers >=2.0\n\ntest:\n  imports:\n    - adaptive\n\nabout:\n  home: http://github.com/python-adaptive/adaptive\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Adaptive parallel sampling of mathematical functions'\n  description: |\n    adaptive is an open-source Python library designed to make adaptive\n    parallel function evaluation simple. With adaptive you just supply a\n    function with its bounds, and it will be evaluated at the \"best\" points\n    in parameter space. With just a few lines of code you can evaluate\n    functions on a computing cluster, live-plot the data as it returns,\n    and fine-tune the adaptive sampling algorithm.\n  doc_url: http://adaptive.readthedocs.org\n  dev_url: https://github.com/python-adaptive/adaptive/\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - jbweston\n    - akhmerov\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -421,9 +427,11 @@
    "bokeh",
    "holoviews",
    "ipykernel",
+   "ipyparallel",
    "ipython",
    "ipywidgets",
    "jupyter_client",
+   "loky",
    "matplotlib",
    "pip",
    "python",
@@ -451,9 +459,11 @@
     "bokeh",
     "holoviews",
     "ipykernel",
+    "ipyparallel",
     "ipython",
     "ipywidgets",
     "jupyter_client",
+    "loky",
     "matplotlib",
     "python",
     "scipy",
@@ -487,14 +497,16 @@
     "bokeh",
     "holoviews >=1.9.1",
     "ipykernel >=4.8.0",
+    "ipyparallel >=6.2.5",
     "ipython",
     "ipywidgets",
     "jupyter_client >=5.2.2",
+    "loky",
     "matplotlib",
     "python",
     "scipy",
-    "sortedcollections",
-    "sortedcontainers"
+    "sortedcollections >=1.1",
+    "sortedcontainers >=2.0"
    ]
   },
   "test":{
@@ -503,5 +515,5 @@
   }
  },
  "url":"https://github.com/python-adaptive/adaptive/archive/v0.8.1.zip",
- "version":"0.10.0"
+ "version":"0.11.0"
 }
