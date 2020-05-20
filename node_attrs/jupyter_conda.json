@@ -152,6 +152,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420660127.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -229,12 +246,13 @@
   }
  },
  "name":"jupyter_conda",
- "new_version":"3.3.0",
+ "new_version":"3.3.1",
  "new_version_attempts":{
-  "3.3.0":1
+  "3.3.0":1,
+  "3.3.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.19.19.39.08",
+ "pinning_version":"2020.05.20.09.40.28",
  "raw_meta_yaml":"{% set name = \"jupyter_conda\" %}\n{% set version = \"3.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 95f4b89eb0007081ba3dd7409bb40fd3ff21d1f354be7d40897c2e1534efcc4a\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv --no-deps\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python >=3.5\n    - notebook >=4.3.1\n    - nb_conda_kernels >=2.2.0\n    - packaging\n    - requests\n\ntest:\n  imports:\n    - jupyter_conda\n\nabout:\n  home: https://github.com/fcollonval/jupyter_conda\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Conda environment and package access extension from within Jupyter\n\nextra:\n  recipe-maintainers:\n    - fcollonval\n    - dbast\n",
  "req":{
   "__set__":true,
