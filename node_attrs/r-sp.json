@@ -180,7 +180,7 @@
   },
   "build":{
    "merge_build_host":true,
-   "number":"1",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -202,7 +202,7 @@
   },
   "package":{
    "name":"r-sp",
-   "version":"1.4_1"
+   "version":"1.4_2"
   },
   "requirements":{
    "build":[
@@ -236,15 +236,15 @@
    ]
   },
   "source":{
-   "fn":"sp_1.4-1.tar.gz",
-   "sha256":"8f96f1a4827eea2cc02bb35c418ce2bdaf2d5ea47a214bcd4bc85f928b417039",
+   "fn":"sp_1.4-2.tar.gz",
+   "sha256":"73e3959e38b4290a7287328c643f6f5b93060ed63e47ad575bf25f0546d35d0a",
    "url":[
-    "https://cran.r-project.org/src/contrib/sp_1.4-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/sp_1.4-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/sp_1.4-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-1.tar.gz"
+    "https://cran.r-project.org/src/contrib/sp_1.4-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/sp_1.4-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/sp_1.4-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.4-2.tar.gz"
    ]
   },
   "test":{
@@ -262,7 +262,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.09.40.28",
- "raw_meta_yaml":"{% set version = \"1.4-1\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sp\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: sp_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/sp_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sp/sp_{{ version }}.tar.gz\n  sha256: 8f96f1a4827eea2cc02bb35c418ce2bdaf2d5ea47a214bcd4bc85f928b417039\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 1\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-lattice\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-lattice\n\ntest:\n  commands:\n    - $R -e \"library('sp')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sp')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/edzer/sp/ https://edzer.github.io/sp/\n  license: GPL (>= 2)\n  summary: Classes and methods for spatial data; the classes document where the spatial location information resides, for 2D or 3D data. Utility functions are provided,\n    e.g. for plotting data as maps, spatial selection, as well as methods for retrieving coordinates, for subsetting, print, summary, etc.\n  license_family: GPL3\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"1.4-2\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sp\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: sp_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/sp_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sp/sp_{{ version }}.tar.gz\n  sha256: 73e3959e38b4290a7287328c643f6f5b93060ed63e47ad575bf25f0546d35d0a\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-lattice\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-lattice\n\ntest:\n  commands:\n    - $R -e \"library('sp')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sp')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/edzer/sp/ https://edzer.github.io/sp/\n  license: GPL (>= 2)\n  summary: Classes and methods for spatial data; the classes document where the spatial location information resides, for 2D or 3D data. Utility functions are provided, e.g. for plotting data as maps, spatial selection, as well as methods for retrieving coordinates, for subsetting, print, summary, etc.\n  license_family: GPL3\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -354,5 +354,5 @@
   "https://cran.r-project.org/src/contrib/sp_1.3-1.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/sp/sp_1.3-1.tar.gz"
  ],
- "version":"1.4_1"
+ "version":"1.4_2"
 }
