@@ -220,65 +220,69 @@
    "dev_url":"http://git.openstack.org/cgit/openstack/cliff",
    "doc_url":"http://docs.openstack.org/developer/cliff",
    "home":"https://github.com/openstack/cliff",
-   "license":"Apache 2.0",
-   "license_family":"Apache",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
    "license_file":"LICENSE",
    "summary":"Command Line Interface Formulation Framework"
   },
   "build":{
+   "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "anguslees",
     "pmlandwehr",
     "amatthies",
+    "tschoonj",
     "anguslees",
     "pmlandwehr",
     "amatthies",
+    "tschoonj",
     "anguslees",
     "pmlandwehr",
-    "amatthies"
+    "amatthies",
+    "tschoonj"
    ]
   },
   "package":{
    "name":"cliff",
-   "version":"2.15.0"
+   "version":"3.1.0"
   },
   "requirements":{
    "build":[
-    "python",
+    "python >=3.5",
     "pip",
     "pbr !=2.1.0,>=2.0.0",
-    "python",
+    "python >=3.5",
     "pip",
     "pbr !=2.1.0,>=2.0.0",
-    "python",
+    "python >=3.5",
     "pip",
     "pbr !=2.1.0,>=2.0.0"
    ],
    "run":[
-    "python",
+    "python >=3.5",
     "pbr !=2.1.0,>=2.0.0",
     "cmd2 !=0.8.3",
-    "prettytable <0.8,>=0.7.2",
+    "prettytable >=0.7.2",
     "pyparsing >=2.1.0",
     "six >=1.10.0",
     "stevedore >=1.20.0",
     "pyyaml >=3.12",
-    "python",
+    "python >=3.5",
     "pbr !=2.1.0,>=2.0.0",
     "cmd2 !=0.8.3",
-    "prettytable <0.8,>=0.7.2",
+    "prettytable >=0.7.2",
     "pyparsing >=2.1.0",
     "six >=1.10.0",
     "stevedore >=1.20.0",
     "pyyaml >=3.12",
-    "python",
+    "python >=3.5",
     "pbr !=2.1.0,>=2.0.0",
     "cmd2 !=0.8.3",
-    "prettytable <0.8,>=0.7.2",
+    "prettytable >=0.7.2",
     "pyparsing >=2.1.0",
     "six >=1.10.0",
     "stevedore >=1.20.0",
@@ -286,9 +290,9 @@
    ]
   },
   "source":{
-   "fn":"cliff-2.15.0.tar.gz",
-   "sha256":"fe044273539250a99a5b9915843902e40e4e9b32ac5698c1fae89e31200d649f",
-   "url":"https://pypi.org/packages/source/c/cliff/cliff-2.15.0.tar.gz"
+   "fn":"cliff-3.1.0.tar.gz",
+   "sha256":"529b0ee0d2d38c7cbbababbbe3472b43b667a5c36025ef1b6cd00851c4313849",
+   "url":"https://pypi.org/packages/source/c/cliff/cliff-3.1.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -313,7 +317,7 @@
  "name":"cliff",
  "new_version":"3.1.0",
  "pinning_version":"2020.03.03",
- "raw_meta_yaml":"{% set name = \"cliff\" %}\n{% set version = \"2.15.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"fe044273539250a99a5b9915843902e40e4e9b32ac5698c1fae89e31200d649f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python\n    - pbr !=2.1.0,>=2.0.0\n    - cmd2 !=0.8.3,<0.9.0  # [py2k]\n    - cmd2 !=0.8.3  # [py3k]\n    - prettytable <0.8,>=0.7.2\n    - pyparsing >=2.1.0\n    - six >=1.10.0\n    - stevedore >=1.20.0\n    - unicodecsv >=0.8.0  # [py2k]\n    - pyyaml >=3.12\n\ntest:\n  imports:\n    - cliff\n    - cliff.app\n    - cliff.commandmanager\n    - cliff.command\n    - cliff.interactive\n\nabout:\n  home: https://github.com/openstack/cliff\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Command Line Interface Formulation Framework'\n  dev_url: http://git.openstack.org/cgit/openstack/cliff\n  doc_url: http://docs.openstack.org/developer/cliff\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - amatthies\n",
+ "raw_meta_yaml":"{% set name = \"cliff\" %}\n{% set version = \"3.1.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"529b0ee0d2d38c7cbbababbbe3472b43b667a5c36025ef1b6cd00851c4313849\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python >=3.5\n    - pbr !=2.1.0,>=2.0.0\n    - cmd2 !=0.8.3\n    - prettytable >=0.7.2\n    - pyparsing >=2.1.0\n    - six >=1.10.0\n    - stevedore >=1.20.0\n    - pyyaml >=3.12\n\ntest:\n  imports:\n    - cliff\n    - cliff.app\n    - cliff.commandmanager\n    - cliff.command\n    - cliff.interactive\n\nabout:\n  home: https://github.com/openstack/cliff\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'Command Line Interface Formulation Framework'\n  dev_url: http://git.openstack.org/cgit/openstack/cliff\n  doc_url: http://docs.openstack.org/developer/cliff\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - amatthies\n    - tschoonj\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -367,7 +371,7 @@
    "elements":[
     "pbr !=2.1.0,>=2.0.0",
     "pip",
-    "python"
+    "python >=3.5"
    ]
   },
   "host":{
@@ -379,9 +383,9 @@
    "elements":[
     "cmd2 !=0.8.3",
     "pbr !=2.1.0,>=2.0.0",
-    "prettytable <0.8,>=0.7.2",
+    "prettytable >=0.7.2",
     "pyparsing >=2.1.0",
-    "python",
+    "python >=3.5",
     "pyyaml >=3.12",
     "six >=1.10.0",
     "stevedore >=1.20.0"
@@ -393,5 +397,5 @@
   }
  },
  "url":"https://pypi.org/packages/source/c/cliff/cliff-2.15.0.tar.gz",
- "version":"2.15.0"
+ "version":"3.1.0"
 }
