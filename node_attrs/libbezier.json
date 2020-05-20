@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/420508934.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.5.19"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"libbezier",
@@ -53,7 +72,12 @@
   }
  },
  "name":"libbezier",
- "new_version":"2020.2.3",
+ "new_version":"2020.5.19",
+ "new_version_attempts":{
+  "2020.5.19":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.19.19.39.08",
  "raw_meta_yaml":"{% set name = \"libbezier\" %}\n{% set github_org = \"dhermes\" %}\n{% set github_repo = \"bezier\" %}\n{% set version = \"2020.2.3\" %}\n{% set tar_gz_hash = \"d2387f9089d2317a80bc97f278843d5326d1bebde7b08c9c9f6caaed9b0a08b1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ github_org }}/{{ github_repo }}/archive/{{ version }}.tar.gz\n  sha256: {{ tar_gz_hash }}\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler(\"fortran\") }}        # [linux or osx]\n    - make                             # [linux or osx]\n    - {{ compiler(\"m2w64_fortran\") }}  # [win]\n    - m2w64-toolchain                  # [win]\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libbezier${SHLIB_EXT}\"         # [linux or osx]\n    - if not exist %LIBRARY_BIN%\\\\bezier%SHLIB_EXT% exit 1  # [win]\n\nabout:\n  home: https://github.com/dhermes/bezier\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: \"Helper for B\\xe9zier Curves, Triangles, and Higher Order Objects\"\n\n  doc_url: https://bezier.readthedocs.io/en/{{ version }}/\n  dev_url: https://github.com/dhermes/bezier\n\nextra:\n  recipe-maintainers:\n    - dhermes\n",
  "req":{
   "__set__":true,
@@ -89,6 +113,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
