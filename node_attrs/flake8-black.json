@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421063436.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -99,12 +116,13 @@
   }
  },
  "name":"flake8-black",
- "new_version":"0.1.2",
+ "new_version":"0.2.0",
  "new_version_attempts":{
-  "0.1.2":1
+  "0.1.2":1,
+  "0.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.18.14.31.44",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"flake8-black\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"b79d8d868bd42dc2c1f27469b92a984ecab3579ad285a8708ea5f19bf6c1f3a2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - flake8 >=3\n    - black >=19.3b0\n\ntest:\n  commands:\n    - 'flake8 --version | grep black:'\n\nabout:\n  home: https://github.com/peterjc/flake8-black\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: Extension for flake8 for validating Python code style using black\n  dev_url: https://github.com/peterjc/flake8-black\n  description: |\n    Black, \"The Uncompromising Code Formatter\", is normally run to edit your\n    Python code in place to match their coding style, a strict subset of the\n    PEP 8 style guide. The point of this plugin is to be able to run\n    black --check ... from within the flake8 plugin ecosystem. You might use\n    this via a git pre-commit hook, or as part of your continuous integration\n    testing.\n\nextra:\n  recipe-maintainers:\n    - peterjc\n",
  "req":{
   "__set__":true,
