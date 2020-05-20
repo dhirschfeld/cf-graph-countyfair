@@ -68,11 +68,14 @@
   }
  },
  "name":"thrust",
- "new_version":"1.9.10",
+ "new_version":"20.5",
  "new_version_attempts":{
-  "1.9.10":1
+  "1.9.10":1,
+  "20.5":1
  },
- "new_version_errors":{},
+ "new_version_errors":{
+  "20.5":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '20.5' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/thrust/thrust/archive/{{ version }}.tar.gz'\n"
+ },
  "pinning_version":"2020.05.19.19.39.08",
  "raw_meta_yaml":"{% set version = \"1.9.10\" %}\n{% set sha256 = \"5071c995a03e97e2bcfe0c5cc265330160316733336bb87dfcea3fc381065316\" %}\n\npackage:\n  name: thrust\n  version: {{ version }}\n\nsource:\n  url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: mkdir -p \"$PREFIX\"/include && cp -r thrust \"$PREFIX\"/include  # [not win]\n\nrequirements:\n  run:\n    - cub {{ version }}.*\n\ntest:\n  commands:\n    - test -e \"$PREFIX\"/include/thrust/version.h  # [not win]\n    - if not exist \"%LIBRARY_INC%\"\\thrust\\version.h exit 1  # [win]\n\nabout:\n  home: https://github.com/thrust/thrust\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Thrust is a C++ parallel programming library which resembles the C++ Standard Library.\n  description: |\n    Thrust's high-level interface greatly enhances programmer productivity while enabling\n    performance portability between GPUs and multicore CPUs. Interoperability with established\n    technologies (such as CUDA, TBB, and OpenMP) facilitates integration with existing software.\n    Develop high-performance applications rapidly with Thrust!\n  doc_url: https://thrust.github.io/\n  dev_url: https://github.com/thrust/thrust\n\nextra:\n  recipe-maintainers:\n    - rongou\n",
  "req":{
