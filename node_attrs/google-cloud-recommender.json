@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421506221.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"google-cloud-recommender",
@@ -67,7 +86,12 @@
   }
  },
  "name":"google-cloud-recommender",
- "new_version":"0.3.0",
+ "new_version":"1.0.0",
+ "new_version_attempts":{
+  "1.0.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"google-cloud-recommender\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"c19868af824ca685309c169e8d0a67f6b8ba5fa05f50ef9d6fabdd2715beb9a5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip >=18.1\n  run:\n    - python\n    - google-api-core-grpc >=1.14.0,<2.0.0dev\n\ntest:\n  imports:\n    - grpc\n    - google.cloud.recommender\n    - google.cloud.recommender_v1\n\nabout:\n  home: https://github.com/googleapis/python-recommender\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Google Cloud Recommender API client library'\n  description: Google Cloud Recommender API is a Google Cloud service that provides recommendations for\n    cloud customers for various categories like performance optimization, cost savings, reliability, feature\n    discovery, etc. These recommendations are generated automatically based on analysis of user resources,\n    configuration and monitoring metrics.\n\n    See the [quick start guide](https://googleapis.dev/python/recommender/latest/index.html#quick-start).\n\n  doc_url: https://googleapis.dev/python/recommender/latest/index.html\n  dev_url: https://github.com/googleapis/python-recommender\n\nextra:\n  recipe-maintainers:\n    - parthea\n",
  "req":{
   "__set__":true,
@@ -101,6 +125,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
