@@ -204,7 +204,7 @@
    "summary":"This is a set of Python bindings for the scrypt key derivation function."
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "script":[
     "set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0",
     " %RECIPE_DIR%\\fix_openssl_win.py setup.py",
@@ -222,7 +222,7 @@
   },
   "package":{
    "name":"scrypt",
-   "version":"0.8.13"
+   "version":"0.8.15"
   },
   "requirements":{
    "build":[
@@ -257,9 +257,9 @@
    ]
   },
   "source":{
-   "fn":"scrypt-0.8.13.tar.gz",
-   "sha256":"1377b1adc98c4152694bf5d7e93b41a9d2e9060af69b747cfad8c93ac426f9ea",
-   "url":"https://pypi.io/packages/source/s/scrypt/scrypt-0.8.13.tar.gz"
+   "fn":"scrypt-0.8.15.tar.gz",
+   "sha256":"e6298025f6f8470c7137467dfa1e889e57167f48a04b30a85e26d18d24778318",
+   "url":"https://pypi.io/packages/source/s/scrypt/scrypt-0.8.15.tar.gz"
   },
   "test":{
    "commands":[
@@ -280,7 +280,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.03.16",
- "raw_meta_yaml":"{% set name = \"scrypt\" %}\n{% set version = \"0.8.13\" %}\n{% set sha256 = \"1377B1ADC98C4152694BF5D7E93B41A9D2E9060AF69B747CFAD8C93AC426F9EA\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 3\n  script:\n    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win]\n    - \"{{ PYTHON }} %RECIPE_DIR%\\\\fix_openssl_win.py setup.py\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - openssl\n    - cffi >=1.7\n  run:\n    - python\n    - openssl\n    - cffi >=1.7\n\ntest:\n  imports:\n    - scrypt\n  commands:\n    - conda inspect linkages -p $PREFIX scrypt  # [not win]\n    - conda inspect objects -p $PREFIX scrypt   # [osx]\n\nabout:\n  home: https://github.com/holgern/py-scrypt\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/holgern/py-scrypt\n  doc_url: https://github.com/holgern/py-scrypt\n  summary: 'This is a set of Python bindings for the scrypt key derivation function.'\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
+ "raw_meta_yaml":"{% set name = \"scrypt\" %}\n{% set version = \"0.8.15\" %}\n{% set sha256 = \"E6298025F6F8470C7137467DFA1E889E57167F48A04B30A85E26D18D24778318\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  script:\n    - set SCRYPT_WINDOWS_LINK_LEGACY_OPENSSL=0  # [win]\n    - \"{{ PYTHON }} %RECIPE_DIR%\\\\fix_openssl_win.py setup.py\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - openssl\n    - cffi >=1.7\n  run:\n    - python\n    - openssl\n    - cffi >=1.7\n\ntest:\n  imports:\n    - scrypt\n  commands:\n    - conda inspect linkages -p $PREFIX scrypt  # [not win]\n    - conda inspect objects -p $PREFIX scrypt   # [osx]\n\nabout:\n  home: https://github.com/holgern/py-scrypt\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/holgern/py-scrypt\n  doc_url: https://github.com/holgern/py-scrypt\n  summary: 'This is a set of Python bindings for the scrypt key derivation function.'\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -352,5 +352,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/scrypt/scrypt-0.8.13.tar.gz",
- "version":"0.8.13"
+ "version":"0.8.15"
 }
