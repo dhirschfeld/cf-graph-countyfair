@@ -101,7 +101,7 @@
  "meta_yaml":{
   "about":{
    "home":"https://anthony-tuininga.github.io/cx_Freeze",
-   "license":"Python Software Foundation",
+   "license":"PSF-2.0",
    "license_family":"PSF",
    "license_file":"README.md",
    "summary":"create standalone executables from Python scripts"
@@ -115,7 +115,7 @@
     "cxfreeze = cx_Freeze.main:main",
     "cxfreeze-quickstart = cx_Freeze.setupwriter:main"
    ],
-   "number":"2",
+   "number":"3",
    "script":[
     " -m pip install . -vv",
     " -m pip install . -vv",
@@ -157,10 +157,14 @@
    "patches":[
     "script.patch",
     "PR627.patch",
+    "PR647.patch",
     "script.patch",
     "PR627.patch",
+    "PR647.patch",
     "script.patch",
-    "PR627.patch"
+    "PR627.patch",
+    "PR647.patch",
+    "no-lto.patch"
    ],
    "sha256":"a0181bdb0ed16b292f4cfb8cd3afc84e956fc187431f25392bd981460dd73da0",
    "url":"https://pypi.io/packages/source/c/cx_Freeze/cx_Freeze-6.1.tar.gz"
@@ -181,7 +185,7 @@
  "name":"cx_freeze",
  "new_version":"6.1",
  "pinning_version":"2020.03.20",
- "raw_meta_yaml":"{% set version = \"6.1\" %}\n\npackage:\n  name: cx_freeze\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cx_Freeze/cx_Freeze-{{ version }}.tar.gz\n  sha256: a0181bdb0ed16b292f4cfb8cd3afc84e956fc187431f25392bd981460dd73da0\n  patches:\n    # https://github.com/anthony-tuininga/cx_Freeze/issues/560\n    - script.patch\n    # https://github.com/anthony-tuininga/cx_Freeze/issues/353\n    - PR627.patch\n\nbuild:\n  number: 2\n  script:\n    - \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - cxfreeze = cx_Freeze.main:main\n    - cxfreeze-quickstart = cx_Freeze.setupwriter:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cx_Freeze\n  commands:\n    - cxfreeze --version\n\nabout:\n  home: https://anthony-tuininga.github.io/cx_Freeze\n  license: Python Software Foundation\n  license_family: PSF\n  license_file: README.md\n  summary: create standalone executables from Python scripts\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"6.1\" %}\n\npackage:\n  name: cx_freeze\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cx_Freeze/cx_Freeze-{{ version }}.tar.gz\n  sha256: a0181bdb0ed16b292f4cfb8cd3afc84e956fc187431f25392bd981460dd73da0\n  patches:\n    # https://github.com/anthony-tuininga/cx_Freeze/issues/560\n    - script.patch\n    # https://github.com/anthony-tuininga/cx_Freeze/issues/353\n    - PR627.patch\n    # https://github.com/anthony-tuininga/cx_Freeze/pull/647\n    - PR647.patch\n    # libpython3.7m.a' generated with LTO version 6.0 instead of the expected 6.2\n    - no-lto.patch  # [linux]\n\nbuild:\n  number: 3\n  script:\n    - \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - cxfreeze = cx_Freeze.main:main\n    - cxfreeze-quickstart = cx_Freeze.setupwriter:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cx_Freeze\n  commands:\n    - cxfreeze --version\n\nabout:\n  home: https://anthony-tuininga.github.io/cx_Freeze\n  license: PSF-2.0\n  license_family: PSF\n  license_file: README.md\n  summary: create standalone executables from Python scripts\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
