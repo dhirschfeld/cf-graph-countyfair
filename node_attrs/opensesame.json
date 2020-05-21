@@ -48,7 +48,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -62,7 +62,7 @@
   },
   "package":{
    "name":"opensesame",
-   "version":"3.3.0a70"
+   "version":"3.3.1"
   },
   "requirements":{
    "host":[
@@ -125,8 +125,8 @@
    ]
   },
   "source":{
-   "sha256":"dc42326a5a62aa1bd36bd54c5e51396975b3f295d0e7fe678229ea85b0bed0ff",
-   "url":"https://pypi.io/packages/source/p/python-opensesame/python-opensesame-3.3.0a70.tar.gz"
+   "sha256":"53366dc2f9140f8c1ab56377b6046099434f7617c3d71ad7e089e39047961e6d",
+   "url":"https://pypi.io/packages/source/p/python-opensesame/python-opensesame-3.3.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -146,7 +146,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"opensesame\" %}\n{% set pypiname = \"python-\" + name %}\n{% set version = \"3.3.0a70\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz\"\n  sha256: \"dc42326a5a62aa1bd36bd54c5e51396975b3f295d0e7fe678229ea85b0bed0ff\"\n\nbuild:\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  number: 0\n  entry_points:\n    - opensesame = libqtopensesame.__main__:opensesame\n    - opensesamerun = libqtopensesame.__main__:opensesamerun\n\nrequirements:\n  host:\n    - pyyaml\n    - pip\n    - python\n\n  run:\n    - python\n    - pyqt\n    - qdatamatrix >=0.1.21\n    - pseudorandom\n    - fileinspector\n    - qnotifications >=2.0.3\n    - pyyaml\n    - webcolors\n    - pyserial\n    - markdown\n    - pyflakes\n    - shapely\n    - pillow\n    - pyqode.core\n    - pyqode.python\n\ntest:\n  imports:\n    - libopensesame\n    - libqtopensesame\n\napp:\n  entry: opensesame\n  icon: opensesame.png\n  summary: 'Graphical experiment builder for the social sciences'\n\nabout:\n  home: https://github.com/smathot/OpenSesame\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Graphical experiment builder for the social sciences'\n  dev_url: https://github.com/smathot/OpenSesame\n  doc_url: http://osdoc.cogsci.nl\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
+ "raw_meta_yaml":"{% set name = \"opensesame\" %}\n{% set pypiname = \"python-\" + name %}\n{% set version = \"3.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz\n  sha256: 53366dc2f9140f8c1ab56377b6046099434f7617c3d71ad7e089e39047961e6d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 0\n  entry_points:\n    - opensesame = libqtopensesame.__main__:opensesame\n    - opensesamerun = libqtopensesame.__main__:opensesamerun\n\nrequirements:\n  host:\n    - pyyaml\n    - pip\n    - python\n\n  run:\n    - python\n    - pyqt\n    - qdatamatrix >=0.1.21\n    - pseudorandom\n    - fileinspector\n    - qnotifications >=2.0.3\n    - pyyaml\n    - webcolors\n    - pyserial\n    - markdown\n    - pyflakes\n    - shapely\n    - pillow\n    - pyqode.core\n    - pyqode.python\n\ntest:\n  imports:\n    - libopensesame\n    - libqtopensesame\n\napp:\n  entry: opensesame\n  icon: opensesame.png\n  summary: Graphical experiment builder for the social sciences\n\nabout:\n  home: https://github.com/smathot/OpenSesame\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Graphical experiment builder for the social sciences\n  dev_url: https://github.com/smathot/OpenSesame\n  doc_url: http://osdoc.cogsci.nl\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -247,5 +247,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-opensesame/python-opensesame-3.3.0a70.tar.gz",
- "version":"3.3.0a70"
+ "version":"3.3.1"
 }

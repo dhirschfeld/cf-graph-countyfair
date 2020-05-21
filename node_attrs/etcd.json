@@ -323,7 +323,7 @@
   },
   "package":{
    "name":"etcd",
-   "version":"3.4.8"
+   "version":"3.4.9"
   },
   "requirements":{
    "build":[
@@ -333,8 +333,8 @@
    ]
   },
   "source":{
-   "sha256":"457d01d7ce845e1068614d4c734dd189170ea5976949edbc0cf7ed30b3669fdb",
-   "url":"https://github.com/etcd-io/etcd/archive/v3.4.8.tar.gz"
+   "sha256":"4138847113a18213280d049a4cede983784b29f7a324be565ef6aea4711a1f96",
+   "url":"https://github.com/etcd-io/etcd/archive/v3.4.9.tar.gz"
   },
   "test":{
    "commands":[
@@ -356,7 +356,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"etcd\" %}\n{% set version = \"3.4.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/etcd-io/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 457d01d7ce845e1068614d4c734dd189170ea5976949edbc0cf7ed30b3669fdb\n\nbuild:\n  number: 0\n  script:\n    {% for path in [ \".\", \"./etcdctl\" ] %}\n    - go install -v {{ path }}\n    {% endfor %}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n\ntest:\n  commands:\n    - etcd --version\n    - etcdctl version\n\nabout:\n  home: https://etcd.io\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: A distributed, reliable key-value store for the most critical data of a distributed system.\n  doc_url: https://etcd.io/docs\n  dev_url: https://github.com/etcd-io/etcd\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "raw_meta_yaml":"{% set name = \"etcd\" %}\n{% set version = \"3.4.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/etcd-io/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 4138847113a18213280d049a4cede983784b29f7a324be565ef6aea4711a1f96\n\nbuild:\n  number: 0\n  script:\n    {% for path in [ \".\", \"./etcdctl\" ] %}\n    - go install -v {{ path }}\n    {% endfor %}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n\ntest:\n  commands:\n    - etcd --version\n    - etcdctl version\n\nabout:\n  home: https://etcd.io\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: A distributed, reliable key-value store for the most critical data of a distributed system.\n  doc_url: https://etcd.io/docs\n  dev_url: https://github.com/etcd-io/etcd\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -406,5 +406,5 @@
   }
  },
  "url":"https://github.com/etcd-io/etcd/archive/v3.3.15.tar.gz",
- "version":"3.4.8"
+ "version":"3.4.9"
 }
