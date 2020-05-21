@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421341907.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.16.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -131,12 +148,13 @@
   }
  },
  "name":"kedro",
- "new_version":"0.16.0",
+ "new_version":"0.16.1",
  "new_version_attempts":{
-  "0.16.0":1
+  "0.16.0":1,
+  "0.16.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.09.40.28",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"kedro\" %}\n{% set version = \"0.16.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/quantumblacklabs/kedro/archive/{{ version }}.tar.gz\n  sha256: 16a05f51b54bba45f6a876712528e7512bcbf9cf170f8f70d5ebc9d768b05170\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - kedro = kedro.cli:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6,<3.9\n  run:\n   - anyconfig <1.0,>=0.9.7\n   - cachetools <5.0,>=4.1.0\n   - click <8.0\n   - cookiecutter <1.7.0,>=1.6.0\n   - fsspec <0.7.0,>=0.5.1\n   - jmespath <1.0,>=0.9.5\n   - jupyter_client <6.0,>=5.1.0\n   - pip-tools <6.0,>=5.0.0\n   - pluggy <1.0.0,>=0.13.0\n   - python >=3.6,<3.9\n   - python-json-logger <1.0,>=0.1.9\n   - pyyaml <6.0,>=4.2\n   - toposort <2.0,>=1.5\n\ntest:\n  imports:\n    - kedro\n  commands:\n    - kedro --help\n\nabout:\n  home: https://github.com/quantumblacklabs/kedro\n  summary: A Python library that implements software engineering best-practice for data and ML pipelines.\n  license: Apache-2.0\n  license_file: LICENSE.md\n  doc_url: https://kedro.readthedocs.io/\n  dev_url: https://github.com/quantumblacklabs/kedro\n  description: |\n    Kedro is a development workflow framework that implements\n    software engineering best-practice for data pipelines\n    with an eye towards productionising machine learning models.\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n    - lorenabalan\n    - yetudada\n    - idanov\n",
  "req":{
   "__set__":true,
