@@ -1,6 +1,160 @@
 {
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"psdm_qs_cli",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/slaclab/psdm_qs_cli",
+   "home":"https://github.com/slaclab/psdm_qs_cli",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python clients for interacting with SLAC National Accelerator Laboratory's\nPCDS LCLS experimental questionnaire\n"
+  },
+  "build":{
+   "entry_points":[
+    "QSGenerateExcelSpreadSheet.py = psdm_qs_cli.QSGenerateExcelSpreadSheet:main",
+    "QSGenerateJSON.py = psdm_qs_cli.QSGenerateJSON:main",
+    "QSGenerateExcelSpreadSheet.py = psdm_qs_cli.QSGenerateExcelSpreadSheet:main",
+    "QSGenerateJSON.py = psdm_qs_cli.QSGenerateJSON:main",
+    "QSGenerateExcelSpreadSheet.py = psdm_qs_cli.QSGenerateExcelSpreadSheet:main",
+    "QSGenerateJSON.py = psdm_qs_cli.QSGenerateJSON:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "klauer",
+    "hhslepicka",
+    "klauer",
+    "hhslepicka",
+    "klauer",
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"psdm_qs_cli",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "python",
+    "pip",
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "krtc",
+    "six",
+    "requests",
+    "openpyxl",
+    "python",
+    "krtc",
+    "six",
+    "requests",
+    "openpyxl",
+    "python",
+    "krtc",
+    "six",
+    "requests",
+    "openpyxl"
+   ]
+  },
+  "source":{
+   "sha256":"be225c77d5a0941c24bb48e127ee15a9f8a880e134206b38b37ede996c91c7d2",
+   "url":"https://github.com/slaclab/psdm_qs_cli/archive/v0.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "QSGenerateExcelSpreadSheet.py --help",
+    "QSGenerateJSON.py --help",
+    "QSGenerateExcelSpreadSheet.py --help",
+    "QSGenerateJSON.py --help",
+    "QSGenerateExcelSpreadSheet.py --help",
+    "QSGenerateJSON.py --help"
+   ],
+   "imports":[
+    "psdm_qs_cli",
+    "psdm_qs_cli",
+    "psdm_qs_cli"
+   ]
+  }
+ },
+ "name":"psdm_qs_cli",
  "new_version":false,
- "raw_meta_yaml":"{% set name = \"psdm_qs_cli\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: be225c77d5a0941c24bb48e127ee15a9f8a880e134206b38b37ede996c91c7d2\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  noarch: python\n  entry_points:\n    - QSGenerateExcelSpreadSheet.py = psdm_qs_cli.QSGenerateExcelSpreadSheet:main\n    - QSGenerateJSON.py = psdm_qs_cli.QSGenerateJSON:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - krtc\n    - six\n    - requests\n    - openpyxl\n\ntest:\n  imports:\n    - psdm_qs_cli\n  commands:\n    - QSGenerateExcelSpreadSheet.py --help\n    - QSGenerateJSON.py --help\n\nabout:\n  home: https://github.com/slaclab/psdm_qs_cli\n  dev_url: https://github.com/slaclab/psdm_qs_cli\n  summary: |\n     Python clients for interacting with SLAC National Accelerator Laboratory's\n     PCDS LCLS experimental questionnaire\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - klauer\n    - hhslepicka\n"
+ "raw_meta_yaml":"{% set name = \"psdm_qs_cli\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: be225c77d5a0941c24bb48e127ee15a9f8a880e134206b38b37ede996c91c7d2\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  noarch: python\n  entry_points:\n    - QSGenerateExcelSpreadSheet.py = psdm_qs_cli.QSGenerateExcelSpreadSheet:main\n    - QSGenerateJSON.py = psdm_qs_cli.QSGenerateJSON:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - krtc\n    - six\n    - requests\n    - openpyxl\n\ntest:\n  imports:\n    - psdm_qs_cli\n  commands:\n    - QSGenerateExcelSpreadSheet.py --help\n    - QSGenerateJSON.py --help\n\nabout:\n  home: https://github.com/slaclab/psdm_qs_cli\n  dev_url: https://github.com/slaclab/psdm_qs_cli\n  summary: |\n     Python clients for interacting with SLAC National Accelerator Laboratory's\n     PCDS LCLS experimental questionnaire\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - klauer\n    - hhslepicka\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "krtc",
+   "openpyxl",
+   "pip",
+   "python",
+   "requests",
+   "six"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krtc",
+    "openpyxl",
+    "python",
+    "requests",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krtc",
+    "openpyxl",
+    "python",
+    "requests",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/slaclab/psdm_qs_cli/archive/v0.3.1.tar.gz",
+ "version":"0.3.1"
 }
