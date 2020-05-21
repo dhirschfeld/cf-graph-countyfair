@@ -124,7 +124,7 @@
   },
   "build":{
    "binary_relocation":false,
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -141,9 +141,9 @@
   "requirements":{
    "host":null,
    "run":[
-    "nodejs 12.*",
-    "nodejs 12.*",
-    "nodejs 12.*"
+    "nodejs >=12",
+    "nodejs >=12",
+    "nodejs >=12"
    ]
   },
   "source":{
@@ -171,7 +171,7 @@
   "3.3.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '3.3.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/cdr/code-server/releases/download/{{ version }}/code-server-{{ version }}-linux-x86_64.tar.gz'\n - could not hash URL template 'https://github.com/cdr/code-server/releases/download/{{ version }}/code-server-{{ version }}-darwin-x86_64.zip'\n"
  },
  "pinning_version":"2020.04.10",
- "raw_meta_yaml":"{% set name = \"code-server\" %}\n{% set version = \"3.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url: https://github.com/cdr/code-server/releases/download/v{{ version }}/code-server-{{ version }}-linux-amd64.tar.gz  # [linux]\n  sha256: 57b9855b20f511e22776ee8a53d1ff30f864498814c4c0b0af3510f71d7a2969  # [linux]\n  url: https://github.com/cdr/code-server/releases/download/v{{ version }}/code-server-{{ version }}-macos-amd64.tar.gz  # [osx]\n  sha256: b72b46476204b69c57df35f765c1e82d1770bc5970e2addfdbb21552e6967199  # [osx]\n  folder:\n    code-server\n\nbuild:\n  number: 0\n  binary_relocation: False  # [osx]\n  skip: true  # [win]\n\nrequirements:\n  host:\n  run:\n    - nodejs 12.*\n\ntest:\n  commands:\n    - code-server --help\n\nabout:\n  home: https://github.com/cdr/code-server\n  license: MIT\n  license_family: MIT\n  license_file:\n   - code-server/LICENSE.txt\n   - code-server/ThirdPartyNotices.txt\n  summary: 'Run VS Code on a remote server.'\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"code-server\" %}\n{% set version = \"3.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url: https://github.com/cdr/code-server/releases/download/v{{ version }}/code-server-{{ version }}-linux-amd64.tar.gz  # [linux]\n  sha256: 57b9855b20f511e22776ee8a53d1ff30f864498814c4c0b0af3510f71d7a2969  # [linux]\n  url: https://github.com/cdr/code-server/releases/download/v{{ version }}/code-server-{{ version }}-macos-amd64.tar.gz  # [osx]\n  sha256: b72b46476204b69c57df35f765c1e82d1770bc5970e2addfdbb21552e6967199  # [osx]\n  folder:\n    code-server\n\nbuild:\n  number: 1\n  binary_relocation: False  # [osx]\n  skip: true  # [win]\n\nrequirements:\n  host:\n  run:\n    - nodejs >=12\n\ntest:\n  commands:\n    - code-server --help\n\nabout:\n  home: https://github.com/cdr/code-server\n  license: MIT\n  license_family: MIT\n  license_file:\n   - code-server/LICENSE.txt\n   - code-server/ThirdPartyNotices.txt\n  summary: 'Run VS Code on a remote server.'\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -212,7 +212,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "nodejs 12.*"
+    "nodejs >=12"
    ]
   },
   "test":{
