@@ -87,7 +87,7 @@
   }
  },
  "name":"nn",
- "new_version":false,
+ "new_version":"1.85.0",
  "pinning_version":"2018.08.14",
  "raw_meta_yaml":"{% set version = \"1.86.0\" %}\n{% set commit = \"33cbf70dec4f64836a26dcb4a885cb09b7279dd3\" %}\n\npackage:\n  name: nn\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sakov/nn-c/archive/{{ commit }}.tar.gz\n  sha256: eb00f951bbe36e933d16de520db44acf93e9becf6e0182e391c1c7f98441972b\n\nbuild:\n  number: 2003\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n\ntest:\n  commands:\n    - nnbathy -V\n    - conda inspect linkages -p $PREFIX nn  # [not win]\n    - conda inspect objects -p $PREFIX nn  # [osx]\n\nabout:\n  home: https://github.com/sakov/nn-c\n  license: BSD 2-Clause (bundled triangle code is non-free for commercial use)\n  license_file: nn/LICENSE\n  summary: 'Natural Neighbours interpolation.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
