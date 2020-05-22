@@ -98,7 +98,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"memory_profiler",
  "hash_type":"sha256",
@@ -175,7 +175,7 @@
   }
  },
  "name":"memory_profiler",
- "new_version":"0.57.0",
+ "new_version":false,
  "pinning_version":"2020.01.10",
  "raw_meta_yaml":"{% set version = \"0.57.0\" %}\n\npackage:\n  name: memory_profiler\n  version: {{ version }}\n\nsource:\n  fn: memory_profiler-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/memory_profiler/memory_profiler-{{ version }}.tar.gz\n  sha256: 23b196f91ea9ac9996e30bfab1e82fecc30a4a1d24870e81d1e81625f786a2c3\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - mprof = mprof:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - psutil\n\ntest:\n  imports:\n    - memory_profiler\n  commands:\n    - mprof list\n    - python -m memory_profiler --help\n\nabout:\n  home: http://pypi.python.org/pypi/memory_profiler\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'A module for monitoring memory usage of a python program'\n  dev_url: https://github.com/pythonprofilers/memory_profiler\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - carlodri\n",
  "req":{

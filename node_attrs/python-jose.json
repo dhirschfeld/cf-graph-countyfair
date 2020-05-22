@@ -52,7 +52,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"python-jose",
  "hash_type":"sha256",
@@ -148,7 +148,7 @@
   }
  },
  "name":"python-jose",
- "new_version":"3.1.0",
+ "new_version":false,
  "pinning_version":"2019.12.02",
  "raw_meta_yaml":"{% set name = \"python-jose\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8484b7fdb6962e9d242cce7680469ecf92bda95d10bbcbbeb560cacdff3abfce\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - cryptography\n    - future <1.0\n    - python\n    - six <2.0\n\ntest:\n  files:\n    - usage.py\n  source_files:\n    - tests\n  commands:\n    - python usage.py\n    - pytest -m \"not (pycryptodome or pycrypto or backend_compatibility)\" tests\n  requires:\n    - pytest\n  imports:\n    - jose\n    - jose.backends\n\nabout:\n  home: http://github.com/mpdavis/python-jose\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: JOSE implementation in Python\n  doc_url: https://python-jose.readthedocs.io\n  dev_url: https://github.com/mpdavis/python-jose\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{

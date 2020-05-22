@@ -86,7 +86,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"keras-applications",
  "hash_type":"sha256",
@@ -160,7 +160,7 @@
   }
  },
  "name":"keras-applications",
- "new_version":"1.0.8",
+ "new_version":false,
  "pinning_version":"2019.05.29",
  "raw_meta_yaml":"{% set name = \"Keras-Applications\" %}\n{% set version = \"1.0.8\" %}\n{% set sha256 = \"7c37f9e9ef93efac9b4956301cb21ce46c474ce9da41fac9a46753bab6823dfc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/keras-team/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # - 0001-correct-version-number.patch\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.9.1\n    - h5py\n  # avoid a direct requirement on keras to prevent a circular dependency\n  run_constrained:\n    - keras >=2.1.6\n\ntest:\n  imports:\n    - keras_applications\n\nabout:\n  home: https://github.com/keras-team/keras-applications\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Applications module of the Keras deep learning library.\n  description: |\n     Keras Applications is the applications module of the Keras deep learning\n     library. It provides model definitions and pre-trained weights for a\n     number of popular archictures, such as VGG16, ResNet50, Xception, \n     MobileNet, and more.\n  doc_url: https://keras.io/applications/\n  dev_url: https://github.com/keras-team/keras-applications\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n    - jjhelmus\n",
  "req":{

@@ -49,7 +49,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"livereload",
  "hash_type":"sha256",
@@ -123,7 +123,7 @@
   }
  },
  "name":"livereload",
- "new_version":"2.6.1",
+ "new_version":false,
  "pinning_version":"2019.05.06",
  "raw_meta_yaml":"{% set version = \"2.6.1\" %}\n\npackage:\n  name: livereload\n  version: {{ version }}\n\nsource:\n  url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz\n  sha256: f432db9266f80a2a30144cdf1ea4d3c6f39ebf58a636fd64c4e8dc18c601ffaf\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - livereload = livereload.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - tornado\n    - six\n\ntest:\n  imports:\n    - livereload\n  commands:\n    - livereload --help\n\nabout:\n  home: https://github.com/lepture/python-livereload\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'Python LiveReload is an awesome tool for web developers'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

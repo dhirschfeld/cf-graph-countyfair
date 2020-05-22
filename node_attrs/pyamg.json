@@ -88,7 +88,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -178,7 +178,7 @@
   }
  },
  "name":"pyamg",
- "new_version":"4.0.0",
+ "new_version":false,
  "pinning_version":"2020.03.28",
  "raw_meta_yaml":"{% set name = \"pyamg\" %}\n{% set version = \"4.0.0\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: 3ceb38ffd86e29774e759486f2961599c8ed847459c68727493cadeaf115a38a\n\nbuild:\n    number: 1001\n    script: \"{{ PYTHON }} -m pip install --no-deps . -vv\"\n    skip: True   # [win and vc<14]\n\nrequirements:\n    build:\n        - {{ compiler('cxx') }}\n    host:\n        - python\n        - numpy\n        - pybind11\n        - setuptools\n        - pip\n    run:\n        - {{ pin_compatible(\"numpy\") }}\n        - python\n        - scipy\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - pyamg\n\nabout:\n    home: https://github.com/pyamg/pyamg\n    license: MIT\n    license_file: LICENSE.txt\n    summary: \"Algebraic Multigrid Solvers in Python\"\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - lukeolson\n",
  "req":{

@@ -104,7 +104,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "provider":{
    "linux_aarch64":"default",
@@ -180,7 +180,7 @@
   }
  },
  "name":"pytest-benchmark",
- "new_version":"3.2.3",
+ "new_version":false,
  "pinning_version":"2020.03.12",
  "raw_meta_yaml":"{% set version = \"3.2.3\" %}\n\npackage:\n  name: pytest-benchmark\n  version: {{ version }}\n\nsource:\n  fn: pytest-benchmark-{{ version }}.zip\n  url: https://pypi.python.org/packages/source/p/pytest-benchmark/pytest-benchmark-{{ version }}.tar.gz\n  sha256: ad4314d093a3089701b24c80a05121994c7765ce373478c8f4ba8d23c9ba9528\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - pytest >=2.6\n    - py-cpuinfo\n\ntest:\n  imports:\n    - pytest_benchmark\n  commands:\n    - \"py.test --traceconfig | grep pytest-benchmark-{{version}}\"\n\nabout:\n  home: https://github.com/ionelmc/pytest-benchmark\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: \"A py.test fixture for benchmarking code\"\n\nextra:\n  recipe-maintainers:\n    - astrojuanlu\n    - esloch\n",
  "req":{

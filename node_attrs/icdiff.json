@@ -1,5 +1,5 @@
 {
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"icdiff",
  "hash_type":"sha256",
@@ -65,7 +65,7 @@
   }
  },
  "name":"icdiff",
- "new_version":"1.9.1",
+ "new_version":false,
  "raw_meta_yaml":"{% set name = \"icdiff\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 66972dd03318da55280991db375d3ef6b66d948c67af96c1ebdb21587e86655e\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - icdiff=icdiff:start\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  commands:\n    - icdiff --help\n\n  imports:\n    - icdiff\n\nabout:\n  home: http://www.jefftk.com/icdiff\n  license: Python 2.6.2\n  license_family: OTHER\n  # https://github.com/jeffkaufman/icdiff/issues/137\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: improved colored diff\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "req":{
   "__set__":true,

@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"jsondiff",
  "hash_type":"sha256",
@@ -101,7 +101,7 @@
   }
  },
  "name":"jsondiff",
- "new_version":"1.2.0",
+ "new_version":false,
  "pinning_version":"2019.06.19",
  "raw_meta_yaml":"{% set name = \"jsondiff\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 34941bc431d10aa15828afe1cbb644977a114e75eef6cc74fb58951312326303\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - jdiff=jsondiff.cli:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - jsondiff\n  commands:\n    - jdiff --help\n\nabout:\n  home: https://github.com/ZoomerAnalytics/jsondiff\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Diff JSON and JSON-like structures in Python\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{

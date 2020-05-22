@@ -63,7 +63,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -167,7 +167,7 @@
   }
  },
  "name":"lua",
- "new_version":"5.3.5",
+ "new_version":false,
  "pinning_version":"2019.07.01",
  "raw_meta_yaml":"{% set version = \"5.3.4\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  - fn: lua-{{ version }}.tar.gz\n    url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n    sha256: f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c\n    patches:\n      # Enables Lua to look for packages on a relative path\n      - luaconf.patch\n      # Enables readline on linux\n      - Makefile.patch\n  - path: CMakeLists.txt\n\nbuild:\n  number: 1003\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - ninja  # [win]\n    - cmake  # [win]\n\n  host:\n    - readline  # [not win]\n    - ncurses  # [not win]\n  run:\n    - readline  # [not win]\n    - ncurses  # [not win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\lua.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.dll exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n  license_file: doc/readme.html\n\nextra:\n  recipe-maintainers:\n    - alexbw\n    - seanyen\n",
  "req":{

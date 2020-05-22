@@ -46,7 +46,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"rx",
  "hash_type":"sha256",
@@ -131,7 +131,7 @@
   }
  },
  "name":"rx",
- "new_version":"3.1.0",
+ "new_version":false,
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set name = \"Rx\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: aaf409848e24dd514926eb8467e2764762bfd258325717fca4628d32d8721252\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - python >=3.6\n  run:\n    - python >=3.6\n\ntest:\n  requires:\n    - pip\n  imports:\n    - rx\n    - rx.disposable\n    - rx.operators\n    - rx.scheduler\n    - rx.subject\n    - rx.testing\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/ReactiveX/RxPY\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Reactive Extensions (Rx) for Python\n  description: |\n    A library for composing asynchronous and event-based programs using\n    observable collections and query operator functions in Python\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{

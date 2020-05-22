@@ -73,7 +73,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"fastdtw",
  "hash_type":"sha256",
@@ -149,7 +149,7 @@
   }
  },
  "name":"fastdtw",
- "new_version":"0.3.4",
+ "new_version":false,
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"fastdtw\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"09a24d62a8eb72f87c03692dffae4b8d8499b53f503e9abce5e717c5b705dff9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - Cython\n    - numpy\n    - setuptools\n    - six\n    - pytest-runner\n\n  run:\n    - python\n    - six\n    - {{ pin_compatible('numpy') }}\n\n\ntest:\n  imports:\n    - fastdtw\n\nabout:\n  home: https://github.com/slaypni/fastdtw\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Dynamic Time Warping (DTW) algorithm with an O(N) time and memory complexity'\n\nextra:\n  recipe-maintainers:\n    - jakakokosar\n",
  "req":{

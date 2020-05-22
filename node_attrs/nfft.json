@@ -81,7 +81,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -191,7 +191,7 @@
   }
  },
  "name":"nfft",
- "new_version":"3.5.1",
+ "new_version":false,
  "pinning_version":"2019.08.08",
  "raw_meta_yaml":"{% set version = \"3.5.1\" %}\n\npackage:\n  name: nfft\n  version: {{ version }}\n\nsource:\n  fn: nfft-{{ version }}.tar.gz\n  url: https://github.com/NFFT/nfft/releases/download/{{ version }}/nfft-{{ version }}.tar.gz\n  sha256: bb95b2c240c6d972d4bb20740751a8efeba8b48b3be1d61fd59883909776fee3\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libtool\n    - autoconf\n    - automake\n  host:\n{% if not compiler('c').startswith(\"toolchain\") %}\n    - llvm-openmp  # [osx]\n{% else %}\n    - openmp 4.0.*  # [osx]\n{% endif %}\n    - fftw\n    - cunit\n    - ncurses\n  run:\n{% if not compiler('c').startswith(\"toolchain\") %}\n    - llvm-openmp  # [osx]\n{% else %}\n    - openmp 4.0.*  # [osx]\n{% endif %}\n    - fftw\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libnfft3.a\n    - test -f ${PREFIX}/lib/libnfft3f.a\n    - test -f ${PREFIX}/lib/libnfft3l.a\n    - test -f ${PREFIX}/lib/libnfft3.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3f.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3l.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libnfft3f.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libnfft3l.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libnfft3_threads.a\n    - test -f ${PREFIX}/lib/libnfft3f_threads.a\n    - test -f ${PREFIX}/lib/libnfft3l_threads.a\n    - test -f ${PREFIX}/lib/libnfft3_threads.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3f_threads.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3l_threads.so  # [linux]\n    - test -f ${PREFIX}/lib/libnfft3_threads.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libnfft3f_threads.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libnfft3l_threads.dylib  # [osx]\n\nabout:\n  home: http://www.nfft.org/\n  license: GPLv2\n  summary: Non-equispaced fast Fourier transform (NFFT) library\n\nextra:\n  recipe-maintainers:\n    - ghisvail\n    - grlee77\n    - kohr-h\n",
  "req":{

@@ -325,7 +325,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "provider":{
    "linux_aarch64":"azure",
@@ -408,7 +408,7 @@
   }
  },
  "name":"pyrsistent",
- "new_version":"0.16.0",
+ "new_version":false,
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"0.16.0\" %}\n\npackage:\n  name: pyrsistent\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pyrsistent/pyrsistent-{{ version }}.tar.gz\n  sha256: 28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n    - python\n    - six\n    - pytest-runner\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - pyrsistent\n  requires:\n    - hypothesis\n    - pytest\n\nabout:\n  home: http://github.com/tobgu/pyrsistent/\n  license: MIT\n  license_family: MIT\n  license_file: LICENCE.mit\n  summary: Persistent/Functional/Immutable data structures\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

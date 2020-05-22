@@ -148,7 +148,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -260,7 +260,7 @@
   }
  },
  "name":"giflib",
- "new_version":"5.2.1",
+ "new_version":false,
  "pinning_version":"2019.06.19",
  "raw_meta_yaml":"{% set version = \"5.2.1\" %}\n\npackage:\n  name: giflib\n  version: {{ version }}\n\nsource:\n  - url: http://downloads.sourceforge.net/project/giflib/giflib-{{ version }}.tar.gz\n    sha256: 31da5562f44c5f15d63340a09a4fd62b48c45620cd302f77a6d9acf0077879bd\n    patches:\n      - fix_win.patch  # [win]\n  # add a getopt polyfill\n  - path: getopt.h  # [win]\n\nbuild:\n  number: 2\n  skip: true  # [win and vc<14]\n  run_exports:\n    # SONAME changes at minor revs.\n    #    https://abi-laboratory.pro/tracker/timeline/giflib/\n    - {{ pin_subpackage('giflib', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make  # [not win]\n    - git  # [win]\n    - cmake\n\ntest:\n  commands:\n    - gif2rgb -h\n    - gifbuild -h\n    - giffix -h\n    - giftext -h\n    - gifclrmp -h\n\nabout:\n  home: http://giflib.sourceforge.net\n  license: MIT\n  license_file:\n    - COPYING\n    - getopt_LICENSE.txt  # [win]\n  summary: Library for reading and writing gif images\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - 183amir\n    - msarahan\n    - isuruf\n    - wolfv\n",
  "req":{

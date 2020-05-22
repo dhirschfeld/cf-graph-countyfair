@@ -52,7 +52,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -123,7 +123,7 @@
   }
  },
  "name":"spglm",
- "new_version":"1.0.7",
+ "new_version":false,
  "pinning_version":"2019.07.15",
  "raw_meta_yaml":"{% set version = \"1.0.7\" %}\n\npackage:\n  name: spglm\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/spglm/spglm-{{ version }}.tar.gz\n  sha256: 75262ae0c0583ac29b540b9e24713b722774dfd54e887e0c97d2e6c4b0f0e6f6\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - libpysal\n    - numpy\n    - scipy\n    - spreg\n\ntest:\n  imports:\n    - spglm\n\nabout:\n  home: https://github.com/pysal/spglm\n  license: BSD-3-Clause\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Sparse generalized linear models\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

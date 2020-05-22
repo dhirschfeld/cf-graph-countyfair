@@ -67,7 +67,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"graphql-relay",
  "hash_type":"sha256",
@@ -158,7 +158,7 @@
   }
  },
  "name":"graphql-relay",
- "new_version":"3.0.0",
+ "new_version":false,
  "pinning_version":"2019.12.18",
  "raw_meta_yaml":"{% set name = \"graphql-relay\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/graphql-python/{{ name }}-py/archive/v{{ version }}.tar.gz\n  sha256: 56b9a3f10da74ba6305d9f1ddf9e3e50ce68dcbd54311c4f83cc8ea55c2dde79\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - python -c '__import__(\"os\").unlink(\"pyproject.toml\")'\n    - {{ PYTHON }} -m pip install -vv .\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6,<4.0.0a0\n  run:\n    - python >=3.6,<4.0.0a0\n    - graphql-core >=3.0.0\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest-cov >=2.8,<3\n    - pytest-describe >=0.12,<1\n    - pytest-asyncio >=0.10,<1\n  imports:\n    - graphql_relay\n  commands:\n    - pytest --cov graphql_relay\n\nabout:\n  home: https://github.com/graphql-python/graphql-relay-py\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Relay library for graphql-core'\n  dev_url: https://github.com/graphql-python/graphql-relay-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - bollwyvl\n",
  "req":{

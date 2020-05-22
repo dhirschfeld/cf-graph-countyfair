@@ -154,7 +154,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"dramatiq",
  "hash_type":"sha256",
@@ -245,7 +245,7 @@
   }
  },
  "name":"dramatiq",
- "new_version":"1.8.1",
+ "new_version":false,
  "pinning_version":"2020.01.28",
  "raw_meta_yaml":"{% set name = \"dramatiq\" %}\n{% set version = \"1.8.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 36302574963fb9bfaed871c2b0d7fbffbcfe9fadaecc8938540901f8aea17eb8\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - dramatiq = dramatiq.__main__:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - prometheus_client >=0.2\n    - python >=3.5\n\ntest:\n  imports:\n    - dramatiq\n    - dramatiq.brokers\n    - dramatiq.middleware\n    - dramatiq.rate_limits\n    - dramatiq.rate_limits.backends\n    - dramatiq.results\n    - dramatiq.results.backends\n  commands:\n    - dramatiq --help\n\nabout:\n  home: https://dramatiq.io\n  license: GNU Lesser General Public v3 or later (LGPLv3+)\n  license_family: LGPL\n  license_file: COPYING \n  summary: Background Processing for Python 3.\n  dev_url: https://github.com/Bogdanp/dramatiq\n\nextra:\n  recipe-maintainers:\n    - lincrosenbach\n    - nicoddemus  \n",
  "req":{

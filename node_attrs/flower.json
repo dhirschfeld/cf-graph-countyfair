@@ -128,7 +128,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -232,7 +232,7 @@
   }
  },
  "name":"flower",
- "new_version":"0.9.4",
+ "new_version":false,
  "pinning_version":"2020.03.28",
  "raw_meta_yaml":"{% set name = \"flower\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256 = \"25782840f7ffc25dcf478d94535a2d815448de4aa6c71426be6abfa9ca417448\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - flower = flower.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - celery >=3.1.0  # [py<37]\n    - celery >=4.3.0  # [py>=37]\n    - tornado >=5.0.0,<6.0.0  # [py<36]\n    - tornado >=5.0.0,<7.0.0  # [py>=36]\n    - humanize >=0.5.1\n    - pytz\n    - futures  # [py27]\n\ntest:\n  imports:\n    - flower\n    - flower.api\n    - flower.utils\n    - flower.views\n\n  commands:\n    - flower --help\n\n  requires:\n    - mock\n\nabout:\n  home: https://github.com/mher/flower\n  license: BSD 3-Clause\n  summary: Celery Flower\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ukaratay\n    - thebestnom\n",
  "req":{

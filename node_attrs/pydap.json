@@ -70,7 +70,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -166,7 +166,7 @@
   }
  },
  "name":"pydap",
- "new_version":"3.2.2",
+ "new_version":false,
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"3.2.2\" %}\n\npackage:\n  name: pydap\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/P/Pydap/Pydap-{{ version }}.tar.gz\n  sha256: 86326642e24f421595a74b0f9986da76d7932b277768f501fe214d72592bdc40\n  patches:\n    - gzip_PR126.patch\n\nbuild:\n  number: 1000\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n  entry_points:\n    - pydap = pydap.wsgi.app:main\n    - dods = pydap.handlers.dap:dump\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - webob\n    - jinja2\n    - docopt\n    - six >=1.4.0\n    - mechanicalsoup\n    - singledispatch  # [py27]\n\ntest:\n  imports:\n    - pydap\n  requires:\n    - gunicorn  # [not win]\n    - pastedeploy  # [not win]\n  commands:\n    - pydap -h  # [not win]\n\nabout:\n  home: http://pydap.org/\n  license: MIT\n  license_file: docs/license.rst\n  summary: 'Pure Python Opendap/DODS client and server'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

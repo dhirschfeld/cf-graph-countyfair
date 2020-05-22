@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"azure-storage-nspkg",
  "hash_type":"sha256",
@@ -84,7 +84,7 @@
   }
  },
  "name":"azure-storage-nspkg",
- "new_version":"3.1.0",
+ "new_version":false,
  "pinning_version":"2018.11.9",
  "raw_meta_yaml":"{% set name = \"azure-storage-nspkg\" %}\n{% set version = \"3.1.0\" %}\n{% set sha256 = \"6f3bbe8652d5f542767d8433e7f96b8df7f518774055ac7c92ed7ca85f653811\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - azure-nspkg >=2.0.0\n\ntest:\n  imports:\n    - azure\n    - azure.storage\n\nabout:\n  home: https://github.com/Azure/azure-storage-python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: {{ RECIPE_DIR }}/LICENSE.txt\n  summary: 'Microsoft Azure Storage Namespace Package [Internal]'\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{

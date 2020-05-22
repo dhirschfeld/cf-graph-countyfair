@@ -86,7 +86,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"neotime",
  "hash_type":"sha256",
@@ -157,7 +157,7 @@
   }
  },
  "name":"neotime",
- "new_version":"1.7.4",
+ "new_version":false,
  "pinning_version":"2018.11.27",
  "raw_meta_yaml":"{% set name = \"neotime\" %}\n{% set version = \"1.7.4\" %}\n{% set sha256 = \"4e0477ba0f24e004de2fa79a3236de2bd941f20de0b5db8d976c52a86d7363eb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    # the run requirements are needed at build time since setup.py imports\n    # neotime to determine the package version\n    - pytz\n    - six\n  run:\n    - python\n    - pytz\n    - six\n\ntest:\n  imports:\n    - neotime\n\nabout:\n  home: http://neotime.readthedocs.io\n  license: Apache-2.0\n  license_family: Apache\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Nanosecond resolution temporal types\n  description: |\n    The neotime module defines classes for working with temporal data to \n    nanosecond precision.  These classes comprise a similar set to that \n    provided by the standard library datetime module.\n  doc_url: http://neotime.readthedocs.io/en/latest/\n  dev_url: https://github.com/technige/neotime \n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
  "req":{

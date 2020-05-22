@@ -131,7 +131,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "provider":{
    "linux":"azure",
@@ -244,7 +244,7 @@
   }
  },
  "name":"cf-units",
- "new_version":"2.1.4",
+ "new_version":false,
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set version = \"2.1.4\" %}\n\npackage:\n  name: cf-units\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cf-units/cf-units-{{ version }}.tar.gz\n  sha256: 25f81ad994af30713ee8f5ef18ffddd83c6ec1ac308e1bd89d45de9d2e0f1c31\n\nbuild:\n  number: 0\n  skip: true  # [win and py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n    - udunits2\n    # It isn't clear that this really is needed, but it is listed in setup.py.\n    - pytest-runner\n  run:\n    - {{ pin_compatible('udunits2', max_pin='x.x') }}\n    - python\n    - cftime\n    - {{ pin_compatible('numpy') }}\n    - antlr-python-runtime 4.7.2.*  # [py3k]\n    - six\n\ntest:\n  requires:\n    - pytest\n    - pip\n  imports:\n    - cf_units\n  commands:\n    - pip check\n    - pytest --pyargs cf_units                                   # [not (win and py2k)]\n      # On win py2 we are getting an unexpected test failure. See also\n      # https://github.com/SciTools/cf-units/issues/148.\n    - pytest --pyargs cf_units -k=\"-test_read_xml_invalid_path\"  # [win and py2k]\n\nabout:\n  home: https://scitools.org.uk/cf-units/docs/latest/\n  license: LGPL-3.0\n  license_file: COPYING.LESSER\n  summary: Units of measure as required by the Climate and Forecast (CF) metadata conventions.\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - ocefpaf\n    - pelson\n",
  "req":{

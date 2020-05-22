@@ -226,7 +226,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -318,7 +318,7 @@
   }
  },
  "name":"configparser",
- "new_version":"5.0.0",
+ "new_version":false,
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set version = \"5.0.0\" %}\n\npackage:\n  name: configparser\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/configparser/configparser-{{ version }}.tar.gz\n  sha256: 2ca44140ee259b5e3d8aaf47c79c36a7ab0d5e94d70bd4105c03ede7a20ea5a1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools_scm >=3.4.1\n    - toml\n  run:\n    - python >=3.6\n\ntest:\n  requires:\n    - pip\n  imports:\n    - backports\n    - backports.configparser\n    - configparser\n  commands:\n    - pip check\n\nabout:\n  home: http://docs.python.org/3/library/configparser.html\n  license: MIT\n  license_file: LICENSE\n  summary: Updated configparser from Python 3.8 for Python 2.6+.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n    - bgruening\n",
  "req":{

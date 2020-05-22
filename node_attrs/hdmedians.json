@@ -56,7 +56,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"hdmedians",
  "hash_type":"sha256",
@@ -132,7 +132,7 @@
   }
  },
  "name":"hdmedians",
- "new_version":"0.13",
+ "new_version":false,
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"hdmedians\" %}\n{% set version = \"0.13\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 230f80e064d905c49a1941af1b7e806e2f22b3c9a90ad5c21fd17d72636ea277\n\nbuild:\n  number: 1002\n  skip: true  # [win]\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - cython >=0.23\n    - numpy\n    - pip\n    - python\n    - nose\n  run:\n    - cython >=0.23\n    - {{ pin_compatible('numpy') }}\n    - python\ntest:\n  imports:\n    - hdmedians\n\nabout:\n  home: http://github.com/daleroberts/hdmedians\n  license: GPL3\n  license_family: GPL3\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: High-dimensional medians\n\nextra:\n  recipe-maintainers:\n    - ElDeveloper\n",
  "req":{

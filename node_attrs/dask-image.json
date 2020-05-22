@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"dask-image",
  "hash_type":"sha256",
@@ -126,7 +126,7 @@
   }
  },
  "name":"dask-image",
- "new_version":"0.2.0",
+ "new_version":false,
  "pinning_version":"2018.10.08",
  "raw_meta_yaml":"{% set name = \"dask-image\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"bece2ea347f963dc0168c7d5fdfd11e51b47d9c857d3bc56144d7c146964a23f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - dask >=0.16.1\n    - numpy >=1.11.3\n    - scipy >=0.19.1\n    - pims >=0.4.1\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - dask_image\n\n  requires:\n    - pytest >=3.0.5\n    - scikit-image >=0.12.3\n\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/dask/dask-image\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Distributed image processing\n  doc_url: https://dask-image.readthedocs.io/\n  dev_url: https://github.com/dask/dask-image\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{

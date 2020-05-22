@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -118,7 +118,7 @@
   }
  },
  "name":"r-fselector",
- "new_version":"0.31",
+ "new_version":false,
  "pinning_version":"2019.07.20",
  "raw_meta_yaml":"{% set version = '0.31' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-fselector\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/FSelector_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/FSelector/FSelector_{{ version }}.tar.gz\n  sha256: 2f2b0c7c99be2bf335cf8ec168e2c9a3ed49a58a9b70dfebeeef1d983ecfd8e7\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{posix}}zip               # [win]\n  host:\n    - r-base\n    - r-rweka\n    - r-digest\n    - r-entropy\n    - r-randomforest\n  run:\n    - r-base\n    - r-rweka\n    - r-digest\n    - r-entropy\n    - r-randomforest\n\ntest:\n  commands:\n    - $R -e \"library('FSelector')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('FSelector')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=FSelector\n  license: GPL-2\n  summary: Functions for selecting attributes from a given dataset. Attribute subset selection\n    is the process of identifying and removing as much of the irrelevant and redundant\n    information as possible.\n  license_family: GPL2\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: FSelector\n# Type: Package\n# Title: Selecting Attributes\n# Version: 0.31\n# Date: 2018-05-16\n# Author: Piotr Romanski, Lars Kotthoff\n# Maintainer: Lars Kotthoff <larsko@uwyo.edu>\n# Description: Functions for selecting attributes from a given dataset. Attribute subset selection is the process of identifying and removing as much of the irrelevant and redundant information as possible.\n# License: GPL-2\n# Imports: randomForest, RWeka, digest, entropy\n# Suggests: mlbench, rpart\n# LazyLoad: yes\n# NeedsCompilation: no\n# Packaged: 2018-05-16 20:59:58 UTC; larsko\n# Repository: CRAN\n# Date/Publication: 2018-05-16 21:38:09 UTC\n",
  "req":{

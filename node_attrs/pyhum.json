@@ -67,7 +67,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -185,7 +185,7 @@
   }
  },
  "name":"pyhum",
- "new_version":"1.4.6",
+ "new_version":false,
  "pinning_version":"2019.12.02",
  "raw_meta_yaml":"{% set version = \"1.4.6\" %}\n\npackage:\n  name: pyhum\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/P/PyHum/PyHum-{{ version }}.tar.gz\n  sha256: 58032ba3383334f40142750a4ea472d5b450476d989df9d614e63964b49a4b68\n\nbuild:\n  number: 1002\n  skip: True  # [py3k]\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - pillow\n    - matplotlib-base\n    - pyproj\n    - scikit-image\n    - simplekml\n    - joblib\n    - basemap\n    - scikit-learn\n    - pyresample\n    - dask\n    - toolz\n    - pandas\n\ntest:\n  imports:\n    - PyHum\n\nabout:\n  home: https://github.com/dbuscombe-usgs/PyHum\n  license: LGPL-3.0\n  license_file: LICENSE.txt\n  summary: 'Python/Cython scripts to read Humminbird DAT'\n\nextra:\n  recipe-maintainers:\n    - dbuscombe-usgs\n    - ocefpaf\n",
  "req":{

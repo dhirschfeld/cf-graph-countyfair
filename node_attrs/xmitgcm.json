@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"xmitgcm",
  "hash_type":"sha256",
@@ -116,7 +116,7 @@
   }
  },
  "name":"xmitgcm",
- "new_version":"0.4.1",
+ "new_version":false,
  "pinning_version":"2019.07.10",
  "raw_meta_yaml":"{% set name = \"xmitgcm\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d98533afa46f005727bb12d2bd9677c8d51db6ed9394a997b9781db2b4365a0f\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - python\n    - xarray >=0.10.1\n    - dask >=0.12\n    - numpy\n\ntest:\n  imports:\n    - xmitgcm\n\nabout:\n  home: https://github.com/xgcm/xmitgcm\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n# next release will not need to manually package the license_file\n  summary: Read MITgcm mds binary files into xarray\n  dev_url: https://github.com/xgcm/xmitgcm\n  doc_url: https://xmitgcm.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - raphaeldussin\n    - ocefpaf\n    - jbusecke\n    - rabernat\n    - timothyas\n",
  "req":{

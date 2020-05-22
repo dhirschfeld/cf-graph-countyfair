@@ -1,5 +1,5 @@
 {
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"mms-python-client",
  "hash_type":"sha256",
@@ -70,7 +70,7 @@
   }
  },
  "name":"mms-python-client",
- "new_version":"3.4.2.1",
+ "new_version":false,
  "raw_meta_yaml":"{% set name = \"mms-python-client\" %}\n{% set version = \"3.4.2.1\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"6855d99218ed7e219e37d6cb6628443ac3abeb1921c16e0f778b1aee3e625290\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - urllib3 >=1.15\n    - six >=1.10\n    - certifi\n    - python-dateutil\n\ntest:\n  imports:\n    - mms_python_client\n\nabout:\n  home: http://openmbee.org\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: Model Management Service\n  description: 'Model Management System (MMS) is a version control system for structured data. It exposes model information through RESTful web services that can be used for CRUD operations, branching,\n    and tagging of the model repository.'\n\nextra:\n  recipe-maintainers: \n    - HuiJun\n",
  "req":{
   "__set__":true,

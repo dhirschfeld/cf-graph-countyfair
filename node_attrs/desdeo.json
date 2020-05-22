@@ -69,7 +69,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"desdeo",
  "hash_type":"sha256",
@@ -164,7 +164,7 @@
   }
  },
  "name":"desdeo",
- "new_version":"0.2.1",
+ "new_version":false,
  "pinning_version":"2018.08.31",
  "raw_meta_yaml":"{% set name = \"desdeo\" %}\n{% set version = \"0.2.1\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"5bbe8c7d9ccb82e9faf7ba6f66d82674171eab482b3eff795aacae9d214ec22d\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python >=3.6\n    - pytest-runner\n  run:\n    - python >=3.6\n    - numpy\n    - prompt_toolkit <2\n    - scikit-learn\n    - scipy\n\ntest:\n  imports:\n    - desdeo\n    - desdeo.core\n    - desdeo.method\n    - desdeo.optimization\n    - desdeo.preference\n    - desdeo.problem\n    - desdeo.result\n    - desdeo.utils\n\nabout:\n  home: https://github.com/industrial-optimization-group/DESDEO\n  license: MPL-2.0\n  license_file: 'LICENSE'\n  summary: Open source library for for interactive multiobjective optimization\n  description: |\n    DESDEO is a free and open source Python-based framework for developing and\n    experimenting with interactive multiobjective optimization. It includes the\n    NIMBUS and NAUTILUS methods for finding Petero optimal solutions according\n    to a descion maker's preferences.\n  doc_url: 'https://desdeo.readthedocs.io/'\n  dev_url: 'https://github.com/industrial-optimization-group/DESDEO'\n\nextra:\n  recipe-maintainers:\n    - frankier\n",
  "req":{

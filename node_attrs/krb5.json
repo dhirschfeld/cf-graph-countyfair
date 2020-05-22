@@ -176,7 +176,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -283,7 +283,7 @@
   }
  },
  "name":"krb5",
- "new_version":"1.16.4",
+ "new_version":false,
  "pinning_version":"2019.12.02",
  "raw_meta_yaml":"{% set version = \"1.17.1\" %}\n\npackage:\n  name: krb5\n  version: {{ version }}\n\nsource:\n  url: https://github.com/krb5/krb5/archive/krb5-{{ version }}-final.tar.gz\n  sha256: 8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b\n\nbuild:\n  number: 0\n  skip: True  # [win and vc<14]\n  run_exports:\n    # stable within minor revisions: https://abi-laboratory.pro/tracker/timeline/krb5/\n    - {{ pin_subpackage('krb5', max_pin='x.x') }}\n  missing_dso_whitelist:          # [osx]\n    - /usr/lib/libresolv.9.dylib  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - bison       # [not win]\n    - autoconf    # [not win]\n    - posix       # [win]\n    - perl        # [win]\n    - pkg-config  # [unix]\n    - make        # [unix]\n    - python 3.7  # [not win]\n    - python      # [win]\n    - openssl\n  host:\n    - libedit     # [unix]\n    - openssl\n    - tk\n  run:\n    - {{ pin_compatible('libedit') }}  # [unix]\n\ntest:\n  requires:\n    # without this the solver goes into a strange corner and returns python 2.0\n    - python 3.7.*  # [not win]\n    - python        # [win]\n  commands:\n    - conda inspect linkages -p $PREFIX krb5  # [not win]\n    - conda inspect objects -p $PREFIX krb5  # [osx]\n\nabout:\n  home: http://web.mit.edu/kerberos/\n  license: MIT\n  license_file: doc/notice.rst\n  summary: 'A network authentication protocol.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n    - mingwandroid\n    - mariusvniekerk\n",
  "req":{

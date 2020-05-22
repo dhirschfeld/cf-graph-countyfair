@@ -66,7 +66,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"gridgeo",
  "hash_type":"sha256",
@@ -140,7 +140,7 @@
   }
  },
  "name":"gridgeo",
- "new_version":"1.5.2",
+ "new_version":false,
  "pinning_version":"2019.02.21",
  "raw_meta_yaml":"{% set version = \"1.5.2\" %}\n\npackage:\n  name: gridgeo\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/gridgeo/gridgeo-{{ version }}.tar.gz\n  sha256: 07da02062558d76f565b766fe71f3b46aa3bd3a65fb5579a8140cc8052afeff8\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - gridio = gridgeo.gridio:main\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - netcdf4\n    - shapely\n    - docopt\n\ntest:\n  imports:\n    - gridgeo\n  commands:\n    - gridio -h\n\nabout:\n  home: https://github.com/pyoceans/gridgeo\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Quick grid visualization and conversion to GIS formats'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

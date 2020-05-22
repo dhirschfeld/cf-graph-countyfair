@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -114,7 +114,7 @@
   }
  },
  "name":"gpstime",
- "new_version":"0.3.3",
+ "new_version":false,
  "pinning_version":"2018.12.18",
  "raw_meta_yaml":"{% set version = \"0.4.4\" %}\n\npackage:\n  name: gpstime\n  version: {{ version }}\n\nsource:\n  url: https://git.ligo.org/cds/gpstime/-/archive/{{ version }}/gpstime-{{ version }}.tar.gz\n  sha256: 5908069f99884083881aee663a6c9bbb7b87a67b768d61eb299a04dd1c2db091\n  patches:\n    - entry_point.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - coreutils\n    - python\n    - python-dateutil\n    - requests\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - gpstime\n  commands:\n    - gpstime --help\n    - python -m unittest discover gpstime.test\n\nabout:\n  home: https://git.ligo.org/cds/gpstime\n  dev_url: https://git.ligo.org/cds/gpstime\n  doc_url: https://cds.docs.ligo.org/gpstime/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: GPS-aware datetime module\n  description: |\n    This package provides GPS time conversion utilities, including a\n    gpstime subclass of the built-in datetime class with the addition\n    of GPS time parsing and conversion methods.\n\n    Leap second data, necessary for GPS time conversion, is expected\n    to be provided by the core libc Time Zone Database tzdata.  If for\n    some reason the tzdata leapsecond file is not available, a local\n    cache of the IETF leap second record will be maintained:\n\n      https://www.ietf.org/timezones/data/leap-seconds.list\n\n    The package can be executed as a command-line GPS conversion utility.\n    that uses the gpstime module is also included.  It is a rough\n    work-alike to LIGO 'tconvert' utility.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - jrollins\n",
  "req":{

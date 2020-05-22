@@ -1,5 +1,5 @@
 {
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"notedown",
  "hash_type":"sha256",
@@ -80,7 +80,7 @@
   }
  },
  "name":"notedown",
- "new_version":"1.5.1",
+ "new_version":false,
  "raw_meta_yaml":"{% set name = \"notedown\" %}\n{% set version = \"1.5.1\" %}\n{% set sha256 = \"36e033ebbbe5aca0fab031ffaf3611d5bc5c50237df68ff81bb95f8be353a1ee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - notedown = notedown.main:app\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - nbformat\n    - nbconvert\n    - pandoc-attributes\n    - six\n\ntest:\n  imports:\n    - notedown\n  commands:\n    - notedown --help\n\nabout:\n  home: http://github.com/aaren/notedown\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Convert markdown to IPython notebook.\n  description: |\n   notedown separates your markdown into code and not code. Code blocks\n   (fenced or indented) go into input cells, everything else goes into\n   markdown cells.\n  doc_url: http://github.com/aaren/notedown\n  dev_url: http://github.com/aaren/notedown\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n",
  "req":{
   "__set__":true,

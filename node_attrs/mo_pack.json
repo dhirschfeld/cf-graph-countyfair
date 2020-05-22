@@ -71,7 +71,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"mo_pack",
  "hash_type":"sha256",
@@ -148,7 +148,7 @@
   }
  },
  "name":"mo_pack",
- "new_version":"0.2.0",
+ "new_version":false,
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"0.2.0\" %}\n\npackage:\n  name: mo_pack\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/mo_pack/archive/v{{ version }}.tar.gz\n  sha256: 4aa70e1f846b666670843bc2514435dedf7393203e88abaf74d48f8f2717a726\n\nbuild:\n  number: 1004\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - cython\n    - numpy\n    - libmo_unpack\n  run:\n    - python\n    - libmo_unpack\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - mo_pack\n\nabout:\n    home: https://github.com/SciTools/mo_pack\n    license: LGPL-3.0\n    license_file: COPYING.LESSER\n    summary: 'Python wrapper to libmo_unpack'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
  "req":{

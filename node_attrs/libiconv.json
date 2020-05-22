@@ -52,7 +52,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -127,7 +127,7 @@
   }
  },
  "name":"libiconv",
- "new_version":"1.16",
+ "new_version":false,
  "pinning_version":"2019.04.25",
  "raw_meta_yaml":"{% set version = \"1.15\" %}\n\npackage:\n  name: libiconv\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnu.org/pub/gnu/libiconv/libiconv-{{ version }}.tar.gz\n  sha256: ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178\n  patches:\n    - glibc.patch  # [linux]\n    - CMakeLists.txt.patch  # [win]\n    - config.h.patch  # [win]\n    - configure.cmake.patch  # [win]\n\nbuild:\n  number: 1006\n  run_exports:\n    # Pretty good recently, let's trust them.\n    #   https://abi-laboratory.pro/tracker/timeline/libiconv/\n    - {{ pin_subpackage('libiconv') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake     # [win]\n    - ninja     # [win]\n    - m2-patch  # [win]\n    - make      # [unix]\n\ntest:\n  commands:\n    - iconv --help  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.gnu.org/software/libiconv/\n  license: GPL and LGPL\n  license_file: COPYING\n  summary: \"Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jakirkham\n    - jhamman\n    - scopatz\n",
  "req":{

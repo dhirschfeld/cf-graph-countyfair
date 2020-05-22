@@ -51,7 +51,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -138,7 +138,7 @@
   }
  },
  "name":"psy-strat",
- "new_version":"0.1.1",
+ "new_version":false,
  "pinning_version":"2019.11.01",
  "raw_meta_yaml":"{% set name = \"psy-strat\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"ca70e62a76d87cd9539d9db3fd3f34818321465f518a4d15c4b4e3d8fbd08468\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed -vvv\n  skip: true  # [py == 27]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.12  # [win]\n    - psy-simple >=1.2.0\n    - psyplot >=1.2.0\n    - xarray !=0.13.0\n\ntest:\n  requires:\n    - psyplot-gui\n    - pyqt >=5\n  imports:\n    - psy_strat\n    - psy_strat.stratplot\n    - psy_strat.strat_widget\n\n\nabout:\n  home: https://github.com/Chilipp/psy-strat\n  license: GPLv2\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Python package for creating stratigraphic diagrams'\n\n  description: |\n    This package defines a function to make a stratigraphic diagram that\n    interfaces with the interactive psyplot visualization framework. It is\n    especially useful to create pollen diagrams.\n  doc_url: http://psy-strat.readthedocs.io/\n  dev_url: https://github.com/Chilipp/psy-strat\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "req":{

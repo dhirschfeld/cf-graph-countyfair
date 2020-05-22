@@ -52,7 +52,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"dateutils",
  "hash_type":"sha256",
@@ -131,7 +131,7 @@
   }
  },
  "name":"dateutils",
- "new_version":"0.6.8",
+ "new_version":false,
  "pinning_version":"2020.03.30",
  "raw_meta_yaml":"{% set version = \"0.6.8\" %}\n\npackage:\n  name: dateutils\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dateutils/dateutils-{{ version }}.tar.gz\n  sha256: 15e564d9cd34e4260cf96625a3249c938c3aada2e5eaddf8218dd3fbc8dbdba4\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - dateadd = dateutils.dateadd:main\n    - datediff = dateutils.datediff:main\n\nrequirements:\n  build:\n    - python <3\n    - pip\n  run:\n    - python <3\n    - python-dateutil\n    - pytz\n\ntest:\n  imports:\n    - dateutils\n  commands:\n    - dateadd --help\n    - datediff --help\n\nabout:\n  home: https://pypi.org/project/dateutils\n  license: BSD\n  summary: Various utilities for working with date and datetime objects\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "req":{

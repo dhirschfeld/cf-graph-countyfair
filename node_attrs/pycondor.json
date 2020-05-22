@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"pycondor",
  "hash_type":"sha256",
@@ -111,7 +111,7 @@
   }
  },
  "name":"pycondor",
- "new_version":"0.5.0",
+ "new_version":false,
  "pinning_version":"2018.11.3",
  "raw_meta_yaml":"{% set name = \"PyCondor\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"9cf8b54159fe3a654d71ffc815840c642f3bd0c89edb401952d6b9092abf0cc2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  entry_points:\n    - pycondor = pycondor.cli:cli\n\n\nrequirements:\n  build:\n    - python >=2.7\n    - pip\n  run:\n    - python >=2.7\n    - click\n\ntest:\n  imports:\n    - pycondor\n    - pycondor.job\n    - pycondor.dagman\n    - pycondor.utils\n    - pycondor.basenode\n    - pycondor.cli\n    - pycondor.visualize\n    - pycondor.compatibility\n  commands:\n    - pycondor -h\n\nabout:\n  home: https://github.com/jrbourbeau/pycondor\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python utility for HTCondor'\n  description: |\n    PyCondor (Python HTCondor) is a tool to help build and submit workflows to\n    HTCondor in a straight-forward manner with minimal hassle.\n  doc_url: https://jrbourbeau.github.io/pycondor/\n  dev_url: https://github.com/jrbourbeau/pycondor\n\nextra:\n  recipe-maintainers:\n    - jrbourbeau\n",
  "req":{

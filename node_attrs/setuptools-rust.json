@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":false,
+ "bad":"make_graph: 500",
  "conda-forge.yml":{},
  "feedstock_name":"setuptools-rust",
  "hash_type":"sha256",
@@ -83,7 +83,7 @@
   }
  },
  "name":"setuptools-rust",
- "new_version":"0.10.6",
+ "new_version":false,
  "pinning_version":"2018.11.3",
  "raw_meta_yaml":"{% set name = \"setuptools-rust\" %}\n{% set version = \"0.10.6\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://github.com/PyO3/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 1446d3985e4aaf4cc679fda8a48a73ac1390b627c8ae1bebe7d9e08bb3b33769\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - semantic_version >=2.6.0\n    - setuptools\n    - toml >=0.9.0\n\ntest:\n  imports:\n    - setuptools_rust\n\nabout:\n  home: https://github.com/PyO3/setuptools-rust\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Setuptools rust extension plugin\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "req":{
