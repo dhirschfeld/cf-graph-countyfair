@@ -18,6 +18,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421700705.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -102,8 +119,12 @@
   }
  },
  "name":"pygmt",
- "new_version":"0.1.0",
- "pinning_version":"2020.05.04.19.59.17",
+ "new_version":"0.1.1",
+ "new_version_attempts":{
+  "0.1.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"pygmt\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d95c2825c3bc368b17e6c5c308179a05f4539aaf2fef4379b6c7bb6125882113\n\nbuild:\n  number: 0\n  # TODO : pygmt does not yet work with gmt on Windows, see this PR:\n  # https://github.com/GenericMappingTools/pygmt/pull/313. Once that is merged,\n  # the Windows builds here can likely be enabled.\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - gmt >=6.0.0,<7.0\n    - netCDF4\n    - numpy\n    - packaging\n    - pandas\n    - python\n    - xarray\n\ntest:\n  imports:\n    - pygmt\n    - pygmt.tests\n\nabout:\n  home: https://www.pygmt.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A Python interface for the Generic Mapping Tools'\n  doc_url: https://www.pygmt.org/\n  dev_url: https://github.com/GenericMappingTools/pygmt\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - weiji14\n",
  "req":{
   "__set__":true,
@@ -147,7 +168,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
