@@ -1,5 +1,6 @@
 {
- "bad":"make_graph: 404",
+ "bad":"Upstream: Error getting upstream version",
  "feedstock_name":"jinxed",
- "new_version":false
+ "new_version":false,
+ "raw_meta_yaml":"{% set name = \"jinxed\" %}\n{% set version = \"1.0.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 094d0e1c92b8bcf324d1fb4dceaa82cb79e4524790caf524eca0499807a0fbd8\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - ansicon  # [win]\n    - python\n\ntest:\n  imports:\n    - jinxed\n    - jinxed.terminfo\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/jinxed/\n  summary: Jinxed Terminal Library\n  license: MPL-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hadim\n"
 }
