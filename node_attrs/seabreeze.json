@@ -88,7 +88,12 @@
    "summary":"Python module for Ocean Optics spectrometer"
   },
   "build":{
-   "number":"2"
+   "entry_points":[
+    "seabreeze_os_setup = seabreeze.os_setup:main",
+    "seabreeze_os_setup = seabreeze.os_setup:main",
+    "seabreeze_os_setup = seabreeze.os_setup:main"
+   ],
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -99,7 +104,7 @@
   },
   "package":{
    "name":"seabreeze",
-   "version":"1.0.1"
+   "version":"1.1.0"
   },
   "requirements":{
    "build":[
@@ -156,10 +161,20 @@
    ]
   },
   "source":{
-   "sha256":"48edf8b61f0966d4c08a341040027ee8f4f586aad25ae26617727e4687cbb5cd",
-   "url":"https://pypi.io/packages/source/s/seabreeze/seabreeze-1.0.1.tar.gz"
+   "patches":[
+    "0001-ci-fix-pytest-on-conda-ci.patch",
+    "0001-ci-fix-pytest-on-conda-ci.patch",
+    "0001-ci-fix-pytest-on-conda-ci.patch"
+   ],
+   "sha256":"87e1a93cb582fb2cbe78ce94a578de1d8ca5e93cde080ca37bb1560b3e3a05e6",
+   "url":"https://pypi.io/packages/source/s/seabreeze/seabreeze-1.1.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pytest -v tests/",
+    "pytest -v tests/",
+    "pytest -v tests/"
+   ],
    "imports":[
     "seabreeze",
     "seabreeze.cseabreeze",
@@ -193,7 +208,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"seabreeze\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 48edf8b61f0966d4c08a341040027ee8f4f586aad25ae26617727e4687cbb5cd\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pkg-config  # [not win]\n  host:\n    - python\n    - pip\n    - setuptools\n    - wheel\n    - cython\n    - setuptools_scm\n    - pkgconfig\n    - libusb-compat  # [linux]\n    - pytest-runner\n  run:\n    - python\n    - libusb-compat  # [linux]\n    - numpy\n    - pyusb\n    - future\n    - enum34  # [py<34]\n\ntest:\n  imports:\n    - seabreeze\n    - seabreeze.cseabreeze\n    - seabreeze.pyseabreeze\n  requires:\n    - pytest <5\n    - mock\n  source_files:\n    - tests\n\nabout:\n  home: http://github.com/ap--/python-seabreeze\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Python module for Ocean Optics spectrometer'\n  dev_url: https://github.com/ap--/python-seabreeze\n  doc_url: https://python-seabreeze.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - 'ap--'\n",
+ "raw_meta_yaml":"{% set name = \"seabreeze\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 87e1a93cb582fb2cbe78ce94a578de1d8ca5e93cde080ca37bb1560b3e3a05e6\n  patches:\n      - 0001-ci-fix-pytest-on-conda-ci.patch\n\nbuild:\n  number: 0\n  entry_points:\n    - seabreeze_os_setup = seabreeze.os_setup:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pkg-config  # [not win]\n  host:\n    - python\n    - pip\n    - setuptools\n    - wheel\n    - cython\n    - setuptools_scm\n    - pkgconfig\n    - libusb-compat  # [linux]\n    - pytest-runner\n  run:\n    - python\n    - libusb-compat  # [linux]\n    - numpy\n    - pyusb\n    - future\n    - enum34  # [py<34]\n\ntest:\n  imports:\n    - seabreeze\n    - seabreeze.cseabreeze\n    - seabreeze.pyseabreeze\n  requires:\n    - pytest <5\n    - mock\n  source_files:\n    - tests\n  commands:\n    - pytest -v tests/\n\nabout:\n  home: http://github.com/ap--/python-seabreeze\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Python module for Ocean Optics spectrometer'\n  dev_url: https://github.com/ap--/python-seabreeze\n  doc_url: https://python-seabreeze.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - 'ap--'\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -299,5 +314,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/seabreeze/seabreeze-1.0.0.tar.gz",
- "version":"1.0.1"
+ "version":"1.1.0"
 }

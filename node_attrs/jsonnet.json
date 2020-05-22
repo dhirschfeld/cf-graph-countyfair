@@ -156,6 +156,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422053351.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.16.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -239,8 +256,12 @@
   }
  },
  "name":"jsonnet",
- "new_version":"0.15.0",
- "pinning_version":"2020.03.24",
+ "new_version":"0.16.0",
+ "new_version_attempts":{
+  "0.16.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"jsonnet\" %}\n{% set version = \"0.15.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e8fcf1049df374c0e81ed13288bdc6d826fd381e7fc2671b0946f4964b06f915\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - _jsonnet\n\nabout:\n  home: http://github.com/google/jsonnet\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python bindings for Jsonnet - The data templating language'\n\nextra:\n  recipe-maintainers:\n    - nelson-liu\n    - michamucha\n    - synapticarbors\n",
  "req":{
   "__set__":true,
@@ -281,7 +302,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
