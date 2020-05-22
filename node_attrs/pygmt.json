@@ -53,8 +53,7 @@
   },
   "build":{
    "number":"0",
-   "script":" -m pip install . -vv",
-   "skip":true
+   "script":" -m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -68,7 +67,7 @@
   },
   "package":{
    "name":"pygmt",
-   "version":"0.1.0"
+   "version":"0.1.1"
   },
   "requirements":{
    "host":[
@@ -104,8 +103,8 @@
    ]
   },
   "source":{
-   "sha256":"d95c2825c3bc368b17e6c5c308179a05f4539aaf2fef4379b6c7bb6125882113",
-   "url":"https://pypi.io/packages/source/p/pygmt/pygmt-0.1.0.tar.gz"
+   "sha256":"7eb1d4957b10b2281376606d7f40896da4d657988e1c93a2d1224750d3e1dbd0",
+   "url":"https://pypi.io/packages/source/p/pygmt/pygmt-0.1.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -125,7 +124,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"pygmt\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d95c2825c3bc368b17e6c5c308179a05f4539aaf2fef4379b6c7bb6125882113\n\nbuild:\n  number: 0\n  # TODO : pygmt does not yet work with gmt on Windows, see this PR:\n  # https://github.com/GenericMappingTools/pygmt/pull/313. Once that is merged,\n  # the Windows builds here can likely be enabled.\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - gmt >=6.0.0,<7.0\n    - netCDF4\n    - numpy\n    - packaging\n    - pandas\n    - python\n    - xarray\n\ntest:\n  imports:\n    - pygmt\n    - pygmt.tests\n\nabout:\n  home: https://www.pygmt.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A Python interface for the Generic Mapping Tools'\n  doc_url: https://www.pygmt.org/\n  dev_url: https://github.com/GenericMappingTools/pygmt\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - weiji14\n",
+ "raw_meta_yaml":"{% set name = \"pygmt\" %}\n{% set version = \"0.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7eb1d4957b10b2281376606d7f40896da4d657988e1c93a2d1224750d3e1dbd0\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - gmt >=6.0.0,<7.0\n    - netCDF4\n    - numpy\n    - packaging\n    - pandas\n    - python\n    - xarray\n\ntest:\n  imports:\n    - pygmt\n    - pygmt.tests\n\nabout:\n  home: https://www.pygmt.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A Python interface for the Generic Mapping Tools'\n  doc_url: https://www.pygmt.org/\n  dev_url: https://github.com/GenericMappingTools/pygmt\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - weiji14\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -200,5 +199,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pygmt/pygmt-0.1.0.tar.gz",
- "version":"0.1.0"
+ "version":"0.1.1"
 }
