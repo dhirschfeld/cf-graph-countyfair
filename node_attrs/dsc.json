@@ -314,7 +314,7 @@
   },
   "package":{
    "name":"dsc",
-   "version":"0.4.2"
+   "version":"0.4.3"
   },
   "requirements":{
    "host":[
@@ -368,8 +368,8 @@
    ]
   },
   "source":{
-   "sha256":"d339d3041bfd612c2171d245ef86a551d68507f2d833c0713d71dce08d4aa44c",
-   "url":"https://pypi.io/packages/source/d/dsc/dsc-0.4.2.tar.gz"
+   "sha256":"c431147f1c76e57e08167bdf3c084f03084fb4bb0ff5b9a23589d65cdd53fdbb",
+   "url":"https://pypi.io/packages/source/d/dsc/dsc-0.4.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -400,7 +400,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"dsc\" %}\n{% set version = \"0.4.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d339d3041bfd612c2171d245ef86a551d68507f2d833c0713d71dce08d4aa44c\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - dsc = dsc.__main__:main\n    - dsc-query = dsc.__query__:main\n    - dsc-io = dsc.dsc_io:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - h5py\n    - msgpack-python\n    - numexpr\n    - numpy\n    - pandas >=0.24.1\n    - ptable\n    - pyarrow >=0.5.0\n    - python >=3.6\n    - sos >=0.19.7\n    - sos-pbs >=0.19.6\n    - sqlalchemy\n    - sympy\n    - tzlocal\n\ntest:\n  imports:\n    - dsc\n    - dsc.parser\n  commands:\n    - dsc --help\n    - dsc-query --help\n    - dsc-io --help\n\nabout:\n  home: https://github.com/stephenslab/dsc\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Implementation of Dynamic Statistical Comparisons\n  doc_url: https://stephenslab.github.io/dsc-wiki/\n\nextra:\n  recipe-maintainers:\n    - gaow\n    - jdblischak\n",
+ "raw_meta_yaml":"{% set name = \"dsc\" %}\n{% set version = \"0.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c431147f1c76e57e08167bdf3c084f03084fb4bb0ff5b9a23589d65cdd53fdbb\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - dsc = dsc.__main__:main\n    - dsc-query = dsc.__query__:main\n    - dsc-io = dsc.dsc_io:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - h5py\n    - msgpack-python\n    - numexpr\n    - numpy\n    - pandas >=0.24.1\n    - ptable\n    - pyarrow >=0.5.0\n    - python >=3.6\n    - sos >=0.19.7\n    - sos-pbs >=0.19.6\n    - sqlalchemy\n    - sympy\n    - tzlocal\n\ntest:\n  imports:\n    - dsc\n    - dsc.parser\n  commands:\n    - dsc --help\n    - dsc-query --help\n    - dsc-io --help\n\nabout:\n  home: https://github.com/stephenslab/dsc\n  license: MIT\n  license_family: MIT\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE\n  summary: Implementation of Dynamic Statistical Comparisons\n  doc_url: https://stephenslab.github.io/dsc-wiki/\n\nextra:\n  recipe-maintainers:\n    - gaow\n    - jdblischak\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -493,5 +493,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/dsc/dsc-0.3.9.tar.gz",
- "version":"0.4.2"
+ "version":"0.4.3"
 }
