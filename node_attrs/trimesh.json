@@ -5138,6 +5138,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421998699.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.6.41"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -5265,7 +5282,7 @@
   }
  },
  "name":"trimesh",
- "new_version":"3.6.39",
+ "new_version":"3.6.41",
  "new_version_attempts":{
   "3.6.23":1,
   "3.6.24":1,
@@ -5278,10 +5295,11 @@
   "3.6.36":1,
   "3.6.37":1,
   "3.6.38":1,
-  "3.6.39":1
+  "3.6.39":1,
+  "3.6.41":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.18.14.31.44",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"trimesh\" %}\n{% set version = \"3.6.39\" %}\n{% set sha256 = \"13362c23e97050e64b36aa32a8c354234e42d93bc908d846602916ad9b7e6838\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n  run_constrained:\n    - scikit-image\n    - msgpack-python\n    - requests\n    - pycollada\n    - shapely\n    - colorlog\n    - meshio\n    - setuptools\n    - sympy\n    - jsonschema\n    - lxml\n    - xxhash\n    - rtree\n    - pyglet\n    - triangle\n    - psutil\n    - networkx\n    - scipy\n    - pillow\n    - chardet\n\ntest:\n  commands:\n    - python -c \"import trimesh\"\n\nabout:\n  home: https://github.com/mikedh/trimesh\n  license: MIT\n\n  # We can remove LICENSE.md from\n  # the recipe when it is included\n  # in the trimesh source dist:\n  #\n  # https://github.com/mikedh/trimesh/pull/176\n  license_file: LICENSE.md\n  summary: Import, export, process, analyze and view triangular meshes.\n  dev_url: https://github.com/mikedh/trimesh\n\nextra:\n  recipe-maintainers:\n    - mikedh\n    - pauldmccarthy\n",
  "req":{
   "__set__":true,
