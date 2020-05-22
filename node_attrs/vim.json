@@ -1856,6 +1856,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421692398.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"8.2.0806"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -1937,7 +1954,7 @@
   }
  },
  "name":"vim",
- "new_version":"8.2.0803",
+ "new_version":"8.2.0806",
  "new_version_attempts":{
   "8.2.0515":1,
   "8.2.0516":1,
@@ -2019,10 +2036,11 @@
   "8.2.0795":1,
   "8.2.0796":1,
   "8.2.0801":1,
-  "8.2.0803":1
+  "8.2.0803":1,
+  "8.2.0806":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.09.40.28",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"vim\" %}\n{% set version = \"8.2.0803\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/vim/vim/archive/v{{ version }}.tar.gz\n  sha256: cf266b741f54064c8d9cb55855f372f3ca2ee54ea5cb5af76ca9813f28c57736\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - python\n    - ncurses\n  run:\n    - python\n    - ncurses\n\ntest:\n  commands:\n    - vim --version\n\nabout:\n  home: https://www.vim.org/\n  # vi(m) is licensed as charity-ware\n  license: OTHER\n  license_file: runtime/doc/uganda.txt\n  summary: Vim is a greatly improved version of the good old UNIX editor Vi\n  dev_url: https://github.com/vim/vim\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - scopatz\n    - asford\n",
  "req":{
   "__set__":true,
