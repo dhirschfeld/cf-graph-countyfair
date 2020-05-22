@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"txmongo",
  "hash_type":"sha256",
@@ -105,7 +105,7 @@
   }
  },
  "name":"txmongo",
- "new_version":false,
+ "new_version":"19.2.0",
  "pinning_version":"2019.09.08",
  "raw_meta_yaml":"{% set name = \"txmongo\" %}\n{% set version = \"19.1.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e353b49f2c1f09848b43538b2c7e6ecece4423e2623d9fad24a3352c288608fc\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - pymongo >=3.0\n    - python\n    - twisted >=14.0\n\ntest:\n  imports:\n    - txmongo\n    - txmongo._gridfs\n    - txmongo.utils\n\nabout:\n  home: https://github.com/twisted/txmongo\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Asynchronous Python/Twisted driver for MongoDB\n  doc_url: https://txmongo.readthedocs.io\n  dev_url: https://github.com/twisted/txmongo\n\nextra:\n  recipe-maintainers:\n    - holymonson\n",
  "req":{

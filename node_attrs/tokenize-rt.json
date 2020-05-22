@@ -50,7 +50,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "linux":"azure",
@@ -131,7 +131,7 @@
   }
  },
  "name":"tokenize-rt",
- "new_version":false,
+ "new_version":"4.0.0",
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set name = \"tokenize-rt\" %}\n{% set version = \"4.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tokenize_rt-{{ version }}.tar.gz\n  sha256: 07d5f88b6a953612159b160129bcf9425677c8d062b0cb83250968ba803e1c64\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - tokenize-rt = tokenize_rt:main\n\nrequirements:\n  host:\n    - python >=3.6.1\n    - pip\n    - setuptools\n  run:\n    - python >=3.6.1\n\ntest:\n  imports:\n    - tokenize_rt\n  commands:\n    - tokenize-rt --help\n\nabout:\n  home: https://github.com/asottile/tokenize-rt\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A wrapper around the stdlib `tokenize` which roundtrips.\n\nextra:\n  recipe-maintainers:\n    - sterlingbaldwin\n    - deadsnakes-issues-bot\n    - nicoddemus\n",
  "req":{

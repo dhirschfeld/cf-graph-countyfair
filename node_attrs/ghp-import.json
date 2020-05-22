@@ -16,7 +16,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"ghp-import",
  "hash_type":"sha256",
@@ -76,7 +76,7 @@
   }
  },
  "name":"ghp-import",
- "new_version":false,
+ "new_version":"0.5.5",
  "pinning_version":"2018.07.01",
  "raw_meta_yaml":"{% set name = \"ghp-import\" %}\n{% set version = \"0.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3e924ea720e4e1f82d56753db2154bfb86067472c5830732159c3a4c4fbc75d7\n\nbuild:\n  noarch: python\n  number: 2\n  entry_points:\n    - ghp-import = ghp_import:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  commands:\n    - ghp-import --help\n\nabout:\n  home: http://github.com/davisp/ghp-import\n  license: Tumbolia Public\n  license_file: LICENSE\n  summary: 'Copy your docs directly to the gh-pages branch.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

@@ -1,5 +1,5 @@
 {
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"atomic-hpc",
  "hash_type":"sha256",
@@ -103,7 +103,7 @@
   }
  },
  "name":"atomic-hpc",
- "new_version":false,
+ "new_version":"0.4.0",
  "raw_meta_yaml":"{% set name = \"atomic-hpc\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3d216272985bc39058bdb2fb5d29ce98fe58bd83d20a916e4bef94a31235a588\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - run_config = atomic_hpc.frontend.run_config:main\n    - retrieve_config = atomic_hpc.frontend.retrieve_config:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - jsonextended >=0.5.6\n    - jsonschema\n    - paramiko\n    - python\n    - ruamel.yaml >=0.15.3\n\ntest:\n  imports:\n    - atomic_hpc\n    - atomic_hpc.config_yaml\n    - atomic_hpc.context_folder\n    - atomic_hpc.deploy_runs\n    - atomic_hpc.frontend\n    - atomic_hpc.mockssh\n    - atomic_hpc.utils\n  commands:\n    - run_config --help\n    - retrieve_config --help\n\nabout:\n  home: https://github.com/chrisjsewell/atomic-hpc\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A package for running multiple executable scripts on both local and remote hosts, configured using a YAML file\n  doc_url: https://pypi.org/project/atomic-hpc\n  dev_url: https://github.com/chrisjsewell/atomic-hpc\n\nextra:\n  recipe-maintainers:\n    - chrisjsewell\n",
  "req":{
   "__set__":true,

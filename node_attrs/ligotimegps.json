@@ -49,7 +49,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"ligotimegps",
  "hash_type":"sha256",
@@ -123,7 +123,7 @@
   }
  },
  "name":"ligotimegps",
- "new_version":false,
+ "new_version":"2.0.1",
  "pinning_version":"2019.04.24",
  "raw_meta_yaml":"{% set name = \"ligotimegps\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"88626c02ad9a464d1242a1147b40074792f424bafa2ab013eee629c7d1b6469c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3.4\n    - setuptools\n    - pip\n  run:\n    - python >=3.4\n    - six\n\ntest:\n  imports:\n    - ligotimegps\n  requires:\n    - pytest>=2.8\n  commands:\n    - python -m pytest --pyargs {{ name }}\n\nabout:\n  home: https://pypi.org/project/{{ name }}/\n  license: GPLv3\n  license_file: LICENSE\n  license_family: GPL\n  summary: A pure-python version of lal.LIGOTimeGPS\n  description: |\n    This module provides a pure-python version of the `LIGOTimeGPS` class,\n    used to represent GPS times (number of seconds elapsed since GPS epoch)\n    with nanoseconds precision.\n\n    This module is primarily for use as a drop-in replacement for the\n    'official' `LIGOTimeGPS` class (provided by `lal`) for use on those\n    environments where LAL is not available (e.g. Windows), or when\n    building LAL is unnecessary for the application (e.g. testing).\n\n    The code provided here is much slower than the C-implementation\n    provided by LAL, so if you really care about performance,\n    don't use this module.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{

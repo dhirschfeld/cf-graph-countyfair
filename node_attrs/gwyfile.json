@@ -1,5 +1,5 @@
 {
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"gwyfile",
  "hash_type":"sha256",
@@ -63,7 +63,7 @@
   }
  },
  "name":"gwyfile",
- "new_version":false,
+ "new_version":"0.2.0",
  "raw_meta_yaml":"{% set name = \"gwyfile\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cf72fedd6af15c952067dbbe87978a4a6262b4e2cd3aa9f2e7bee4ced4071e40\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - six\n\ntest:\n  imports:\n    - gwyfile\n\nabout:\n  home: https://github.com/tuxu/gwyfile\n  license: MIT\n  license_family: MIT\n  # Pull request to add license_file to the source distribution:\n  # https://github.com/tuxu/gwyfile/pull/1\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.rst'\n  summary: 'A pure Python interface to reading and writing `Gwyddion\n<hhttp://www.gwyddion.net/>`_. files.'\n  doc_url: https://github.com/tuxu/gwyfile\n  dev_url: https://github.com/tuxu/gwyfile\n\nextra:\n  recipe-maintainers:\n    - carlodri\n",
  "req":{
   "__set__":true,

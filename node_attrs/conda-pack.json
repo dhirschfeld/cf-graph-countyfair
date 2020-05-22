@@ -103,7 +103,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -179,7 +179,7 @@
   }
  },
  "name":"conda-pack",
- "new_version":false,
+ "new_version":"0.4.0",
  "pinning_version":"2019.07.19",
  "raw_meta_yaml":"{% set name = \"conda-pack\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"70bf587cacfabd93d2ec4f3eda3e50e2661e7f92e994879ca1e2d61a8f9a225f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - conda-pack = conda_pack.cli:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - setuptools\n    - python\n\ntest:\n  commands:\n    - conda-pack --help\n  imports:\n    - conda_pack\n\nabout:\n  home: https://conda.github.io/conda-pack/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Package conda environments for redistribution'\n  description: |\n    ``conda-pack`` is a command line tool for creating relocatable conda\n    environments. This is useful for deploying code in a consistent environment,\n    potentially in a location where python/conda isn't already installed.\n  doc_url: https://conda.github.io/conda-pack/\n  dev_url: https://github.com/conda/conda-pack\n\nextra:\n  recipe-maintainers:\n    - jcrist\n",
  "req":{

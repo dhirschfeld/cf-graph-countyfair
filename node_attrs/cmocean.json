@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"cmocean",
  "hash_type":"sha256",
@@ -99,7 +99,7 @@
   }
  },
  "name":"cmocean",
- "new_version":false,
+ "new_version":"2.0",
  "pinning_version":"2019.01.09",
  "raw_meta_yaml":"{% set version = \"2.0\" %}\n\npackage:\n  name: cmocean\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cmocean/cmocean-{{ version }}.tar.gz\n  sha256: 13eea3c8994d8e303e32a2db0b3e686f6edfb41cb21e7b0e663c2b17eea9b03a\n\nbuild:\n  number: 3\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - matplotlib-base\n    # colorspacious is imported directly, not a soft optional dep\n    - colorspacious\n\ntest:\n  imports:\n    - cmocean\n\nabout:\n  home: https://github.com/matplotlib/cmocean\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Colormaps for Oceanography'\n\nextra:\n  recipe-maintainers:\n    - kthyng\n    - ocefpaf\n",
  "req":{

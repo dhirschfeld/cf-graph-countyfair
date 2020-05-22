@@ -107,7 +107,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pypolyagamma",
  "hash_type":"sha256",
@@ -187,7 +187,7 @@
   }
  },
  "name":"pypolyagamma",
- "new_version":false,
+ "new_version":"1.2.2",
  "pinning_version":"2020.05.08.11.44.00",
  "raw_meta_yaml":"{% set name = \"pypolyagamma\" %}\n{% set version = \"1.2.3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slinderman/pypolyagamma/archive/{{ version }}.tar.gz\n  sha256: c98828ad630586c516a4e69698914d1132682eb39d48822fd804b7163eecee83\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n    {% if not compiler('c').startswith('toolchain') %}\n    - llvm-openmp  # [osx]\n    {% endif %}\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    {% if not compiler('c').startswith('toolchain') %}\n    - llvm-openmp  # [osx]\n    {% endif %}\n\ntest:\n  imports:\n    - pypolyagamma\n\nabout:\n  home: https://github.com/slinderman/pypolyagamma\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  summary: A port of Jesse Windles PolyaGamma sampling code using Cython.\n\nextra:\n  recipe-maintainers:\n    - slinderman\n    - beckermr\n",
  "req":{

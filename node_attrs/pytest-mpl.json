@@ -52,7 +52,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pytest-mpl",
  "hash_type":"sha256",
@@ -128,7 +128,7 @@
   }
  },
  "name":"pytest-mpl",
- "new_version":false,
+ "new_version":"0.11",
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"pytest-mpl\" %}\n{% set version = \"0.11\" %}\n{% set sha256 = \"26c5a47a8fdbc04652f18b65c587da642c6cc0354680ee44b16c161d9800a2ce\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{name}}-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/{{name[0]}}/{{name}}/{{name}}-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n    number: 1\n    noarch: python\n    script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n\n  run:\n    - python\n    - pytest\n    - matplotlib-base\n    - nose\n    - pillow\n\ntest:\n  commands:\n    - \"py.test --traceconfig | grep pytest-mpl-{{version}}\"\n\nabout:\n  home: https://github.com/matplotlib/pytest-mpl\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'pytest plugin to help with testing figures output from Matplotlib'\n  dev_url: https://github.com/matplotlib/pytest-mpl\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - astrofrog-conda-forge\n",
  "req":{

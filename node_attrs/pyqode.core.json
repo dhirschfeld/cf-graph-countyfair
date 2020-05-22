@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pyqode.core",
  "hash_type":"sha256",
@@ -171,7 +171,7 @@
   }
  },
  "name":"pyqode.core",
- "new_version":false,
+ "new_version":"2.12.1",
  "pinning_version":"2019.07.26",
  "raw_meta_yaml":"{% set name = \"pyqode.core\" %}\n{% set version = \"2.12.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 776bdb3c0fb6b5de73b24ffaf36466499b96eede5a042be23c3ad09169f30b68\n\nbuild:\n  number: 0\n  noarch: python\n  preserve_egg_dir: True\n  entry_points:\n    - pyqode-console = pyqode.core.tools.console:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv \"\n\nrequirements:\n  host:\n    - future\n    - pip\n    - pygments\n    - pyqode.qt\n    - python\n    - setuptools\n  run:\n    - future\n    - pygments\n    - pyqode.qt\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - pyqode\n    - pyqode.core\n    - pyqode.core._designer_plugins\n    - pyqode.core._forms\n    - pyqode.core.api\n    - pyqode.core.backend\n    - pyqode.core.dialogs\n    - pyqode.core.managers\n    - pyqode.core.modes\n    - pyqode.core.panels\n    - pyqode.core.styles\n    - pyqode.core.tools\n    - pyqode.core.widgets\n  commands:\n    - echo input > input.txt\n    - pyqode-console < input.txt\n  requires:\n    - pyqt\n\nabout:\n  home: https://github.com/pyQode/pyqode.core\n  license: MIT\n  license_family: MIT\n  summary: PyQt/PySide Source Code Editor Widget\n  doc_url: https://github.com/pyQode/pyQode/wiki\n  dev_url: https://github.com/pyQode/pyQode\n\nextra:\n  recipe-maintainers:\n    - ericpre\n",
  "req":{

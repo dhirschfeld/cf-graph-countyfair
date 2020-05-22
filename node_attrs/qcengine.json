@@ -222,7 +222,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"qcengine",
  "hash_type":"sha256",
@@ -308,7 +308,7 @@
   }
  },
  "name":"qcengine",
- "new_version":false,
+ "new_version":"0.14.0",
  "pinning_version":"2020.01.28",
  "raw_meta_yaml":"{% set name = \"qcengine\" %}\n{% set version = \"0.14.0\" %}\n{% set sha256 = \"69d6042fa3e0cc962d66b7ac40eefdb9e8d785e1ecf48e9a6b50233c6b96a978\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vvv\"\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - pydantic >=1.0.0\n    - pyyaml\n    - py-cpuinfo\n    - psutil\n    - qcelemental >=0.12.0\n\ntest:\n  imports:\n    - qcengine\n  requires:\n    - pytest\n  commands:\n    - pytest --pyargs qcengine\n\nabout:\n  home: http://github.com/MolSSI/QCEngine\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A wrapper for Quantum Chemistry engines that adheres to the MolSSI (molssi.org) QCSchema.'\n\n  doc_url: https://qcengine.readthedocs.io/en/latest/\n  dev_url: http://github.com/MolSSI/QCEngine\n\nextra:\n  recipe-maintainers:\n    - dgasmith\n    - lnaden\n",
  "req":{

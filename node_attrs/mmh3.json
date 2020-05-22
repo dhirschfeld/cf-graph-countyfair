@@ -39,7 +39,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -106,7 +106,7 @@
   }
  },
  "name":"mmh3",
- "new_version":false,
+ "new_version":"2.5.1",
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"mmh3\" %}\n{% set version = \"2.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hajimes/{{ name|lower }}/archive/v{{ version }}.tar.gz\n  sha256: 2fe4ee15ca09ea48a7bb6493f2a6d2e7659f33af4d46e6b39ff35d77b549e80f\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  imports:\n    - mmh3\n\nabout:\n  home: http://packages.python.org/mmh3\n  license: CC0-1.0\n  license_family: CC\n  license_file: LICENSE\n  summary: 'Python wrapper for MurmurHash (MurmurHash3), a set of fast and robust hash functions.'\n\nextra:\n  recipe-maintainers:\n    - johnlees\n",
  "req":{

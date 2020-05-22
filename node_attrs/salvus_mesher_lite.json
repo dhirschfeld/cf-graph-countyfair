@@ -54,7 +54,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"salvus_mesher_lite",
  "hash_type":"sha256",
@@ -145,7 +145,7 @@
   }
  },
  "name":"salvus_mesher_lite",
- "new_version":false,
+ "new_version":"1.0.6",
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"salvus_mesher_lite\" %}\n{% set version = \"1.0.6\" %}\n{% set sha256 = \"7845275d1bd627f6358c586c44feb479e973ea3e6aea808ed65f373c827e3ac8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - numpy\n    - scipy\n    - matplotlib\n    - jsonschema\n    - pyyaml\n    - pyexodus\n\ntest:\n  imports:\n    - salvus_mesher_lite\n    - salvus_mesher_lite.tests\n  requires:\n    - pytest\n    - flake8\n    - pytest-mpl\n    - mock  # [py27]\n\nabout:\n  home: https://salvus.io\n  license: GPL-3.0\n  summary: 'Salvus mesher for AxiSEM meshes'\n\nextra:\n  recipe-maintainers:\n    - krischer\n    - martinvandriel\n",
  "req":{

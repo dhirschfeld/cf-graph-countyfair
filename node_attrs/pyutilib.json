@@ -175,7 +175,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -411,7 +411,7 @@
   }
  },
  "name":"pyutilib",
- "new_version":false,
+ "new_version":"5.8.0",
  "pinning_version":"2020.03.14",
  "raw_meta_yaml":"{% set version = \"5.8.0\" %}\n\npackage:\n  name: pyutilib\n  version: {{ version }}\n\nsource:\n  fn: PyUtilib-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/P/PyUtilib/PyUtilib-{{ version }}.tar.gz\n  sha256: fe31b4d6a96bf1032a2096e9daf5cff6a36a4b6b6ed62dd079e4e1e5e2560e99\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\n  entry_points:\n    - test.pyutilib=pyutilib.dev.runtests:runPyUtilibTests\n    - lbin=pyutilib.dev.lbin:main\n    - lpython=pyutilib.dev.lpython:main\n    - pypi_downloads=pyutilib.dev.pypi_downloads:main\n    - replacecopyright=pyutilib.dev.replaceCopyright:main\n    - checkcopyright=pyutilib.dev.checkCopyright:main\n    - pyutilib_test_driver=pyutilib.autotest.driver:main\n    - dispatch_srvr=pyutilib.pyro.dispatch_srvr:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - six\n    - nose\n\n  run:\n    - python\n    - setuptools\n    - nose\n    - six\n\ntest:\n  imports:\n    - pyutilib\n    - pyutilib.autotest\n    - pyutilib.autotest.tests\n    - pyutilib.common\n    - pyutilib.component\n    - pyutilib.component.app\n    - pyutilib.component.app.tests\n    - pyutilib.component.config\n    - pyutilib.component.config.tests\n    - pyutilib.component.core\n    - pyutilib.component.core.tests\n    - pyutilib.component.executables\n    - pyutilib.component.loader\n    - pyutilib.component.loader.tests\n    - pyutilib.dev\n    - pyutilib.dev.tests\n    - pyutilib.enum\n    - pyutilib.enum.tests\n    - pyutilib.excel\n    - pyutilib.excel.tests\n    - pyutilib.factory\n    - pyutilib.math\n    - pyutilib.math.tests\n    - pyutilib.misc\n    - pyutilib.misc.tests\n    - pyutilib.misc.tests.import_data\n    - pyutilib.misc.tests.import_data.a\n    - pyutilib.misc.tests.import_data.b\n    - pyutilib.ply\n    - pyutilib.pyro\n    - pyutilib.services\n    - pyutilib.subprocess\n    - pyutilib.subprocess.tests\n    - pyutilib.th\n    - pyutilib.th.tests\n    - pyutilib.workflow\n    - pyutilib.workflow.tests\n\n  commands:\n    - test.pyutilib --help\n    - pyutilib_test_driver --help\n    - command -v lbin       # [unix]\n    - where lbin            # [win]\n    - command -v lpython    # [unix]\n    - where lpython         # [win]\n    - dispatch_srvr --help\n\nabout:\n  home: https://github.com/PyUtilib/pyutilib\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/PyUtilib-LICENSE.txt'\n  summary: 'PyUtilib: A collection of Python utilities'\n\nextra:\n  recipe-maintainers:\n    - whart222\n    - jsiirola\n    - astrojuanlu\n    - blnicho\n",
  "req":{

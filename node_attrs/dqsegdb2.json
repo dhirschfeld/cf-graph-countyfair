@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -107,7 +107,7 @@
   }
  },
  "name":"dqsegdb2",
- "new_version":false,
+ "new_version":"1.0.1",
  "pinning_version":"2018.10.08",
  "raw_meta_yaml":"{% set name = \"dqsegdb2\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"51bbe3fc6adf1ca7bb06305dfc684a9f45de96db67c6003eecff1ab26dd8dcc5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - ligo-segments\n    - gwdatafind\n\ntest:\n  requires:\n    - pytest\n    - mock  # [py2k]\n  imports:\n    - dqsegdb2.api\n    - dqsegdb2.http\n    - dqsegdb2.query\n  commands:\n    - python -m pytest --pyargs dqsegdb2\n\nabout:\n  home: https://dqsegdb2.readthedocs.io\n  doc_url: https://dqsegdb2.readthedocs.io\n  dev_url: https://github.com/duncanmmacleod/{{ name }}\n  license: GPLv3\n  license_file: LICENSE\n  license_family: GPL\n  summary: A simplified Python implementation of the DQSegDB API\n  description: |\n    This package only provides a query interface for `GET` requests for a\n    subset of information available from a DQSegDB server.\n    Any users wishing to make `POST` requests should refer to the official\n    DQSegDB Python client available from https://pypi.org/project/dqsegdb.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{

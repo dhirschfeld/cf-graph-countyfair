@@ -54,7 +54,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -197,7 +197,7 @@
   }
  },
  "name":"r-webdriver",
- "new_version":false,
+ "new_version":"1.0.5",
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"1.0.5\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-webdriver\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/webdriver_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/webdriver/webdriver_{{ version }}.tar.gz\n  sha256: eebffc1794b4550b7d58ee527b741bbfe70bec76dde962e79e540ae3def97650\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 1002\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-r6\n    - r-base64enc\n    - r-callr >=2.0.0\n    - r-curl >=2.0\n    - r-debugme\n    - r-httr\n    - r-jsonlite\n    - r-showimage\n    - r-withr\n    - phantomjs\n  run:\n    - r-base\n    - r-r6\n    - r-base64enc\n    - r-callr >=2.0.0\n    - r-curl >=2.0\n    - r-debugme\n    - r-httr\n    - r-jsonlite\n    - r-showimage\n    - r-withr\n    - phantomjs\n\ntest:\n  commands:\n    - $R -e \"library('webdriver')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('webdriver')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/rstudio/webdriver\n  license: MIT\n  summary: A client for the 'WebDriver' 'API'. It allows driving a (probably headless) web browser, and can be used to test web applications, including 'Shiny' apps. In theory it works with any 'WebDriver' implementation, but it was only tested with 'PhantomJS'.\n  license_family: MIT\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{

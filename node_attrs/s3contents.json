@@ -120,7 +120,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -133,14 +133,14 @@
    "description":"\nA S3 and GCS backed ContentsManager implementation for Jupyter.\n\nIt aims to a be a transparent, drop-in replacement for Jupyter standard\nfilesystem-backed storage system. With this implementation of a Jupyter\nContents Manager you can save all your notebooks, regular files, directories\nstructure directly to a S3/GCS bucket, this could be on AWS/GCP or a self\nhosted S3 API compatible like minio.\n",
    "dev_url":"https://github.com/danielfrg/s3contents",
    "home":"https://github.com/danielfrg/s3contents",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"APACHE",
-   "license_file":"LICENSE",
+   "license_file":"LICENSE.txt",
    "summary":"A S3-backed ContentsManager implementation for Jupyter"
   },
   "build":{
    "noarch":"python",
-   "number":"1",
+   "number":"0",
    "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
@@ -158,16 +158,19 @@
   },
   "package":{
    "name":"s3contents",
-   "version":"0.4.0"
+   "version":"0.5.1"
   },
   "requirements":{
    "host":[
     "python >=3",
     "pip",
+    "setuptools_scm",
     "python >=3",
     "pip",
+    "setuptools_scm",
     "python >=3",
-    "pip"
+    "pip",
+    "setuptools_scm"
    ],
    "run":[
     "python >=3",
@@ -194,9 +197,9 @@
    ]
   },
   "source":{
-   "fn":"s3contents-0.4.0.tar.gz",
-   "sha256":"648c956859d6d3a9a83d214b39654a490d34c8a3829d79c3ad316ef5fd8ba821",
-   "url":"https://pypi.io/packages/source/s/s3contents/s3contents-0.4.0.tar.gz"
+   "fn":"s3contents-0.5.1.tar.gz",
+   "sha256":"d335d0401bb5066ea1ab57bea064f99ada4ee68da12cf0bd478f32a37c31b837",
+   "url":"https://pypi.io/packages/source/s/s3contents/s3contents-0.5.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -218,14 +221,14 @@
   }
  },
  "name":"s3contents",
- "new_version":false,
+ "new_version":"0.5.1",
  "new_version_attempts":{
   "0.5.0":126,
   "0.5.1":1
  },
  "new_version_errors":{},
  "pinning_version":"2020.01.16",
- "raw_meta_yaml":"{% set name = \"s3contents\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 648c956859d6d3a9a83d214b39654a490d34c8a3829d79c3ad316ef5fd8ba821\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - notebook\n    - requests\n    - boto3\n    - s3fs >=0.3.4\n    - gcsfs >=0.2.1\n    - nose\n\ntest:\n  requires:\n    - nose\n    - mock\n  imports:\n    - s3contents\n    - s3contents.tests\n\nabout:\n  home: https://github.com/danielfrg/s3contents\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: 'LICENSE'\n  summary: A S3-backed ContentsManager implementation for Jupyter\n  description: |\n\n    A S3 and GCS backed ContentsManager implementation for Jupyter.\n\n    It aims to a be a transparent, drop-in replacement for Jupyter standard\n    filesystem-backed storage system. With this implementation of a Jupyter\n    Contents Manager you can save all your notebooks, regular files, directories\n    structure directly to a S3/GCS bucket, this could be on AWS/GCP or a self\n    hosted S3 API compatible like minio.\n  dev_url: 'https://github.com/danielfrg/s3contents'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - danielfrg\n    - ericdill\n",
+ "raw_meta_yaml":"{% set name = \"s3contents\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d335d0401bb5066ea1ab57bea064f99ada4ee68da12cf0bd478f32a37c31b837\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools_scm\n  run:\n    - python >=3\n    - notebook\n    - requests\n    - boto3\n    - s3fs >=0.3.4\n    - gcsfs >=0.2.1\n    - nose\n\ntest:\n  requires:\n    - nose\n    - mock\n  imports:\n    - s3contents\n    - s3contents.tests\n\nabout:\n  home: https://github.com/danielfrg/s3contents\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: 'LICENSE.txt'\n  summary: A S3-backed ContentsManager implementation for Jupyter\n  description: |\n\n    A S3 and GCS backed ContentsManager implementation for Jupyter.\n\n    It aims to a be a transparent, drop-in replacement for Jupyter standard\n    filesystem-backed storage system. With this implementation of a Jupyter\n    Contents Manager you can save all your notebooks, regular files, directories\n    structure directly to a S3/GCS bucket, this could be on AWS/GCP or a self\n    hosted S3 API compatible like minio.\n  dev_url: 'https://github.com/danielfrg/s3contents'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - danielfrg\n    - ericdill\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -236,7 +239,8 @@
    "pip",
    "python",
    "requests",
-   "s3fs"
+   "s3fs",
+   "setuptools_scm"
   ]
  },
  "requirements":{
@@ -248,7 +252,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -282,7 +287,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python >=3"
+    "python >=3",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -306,5 +312,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/s3contents/s3contents-0.3.0.tar.gz",
- "version":"0.4.0"
+ "version":"0.5.1"
 }

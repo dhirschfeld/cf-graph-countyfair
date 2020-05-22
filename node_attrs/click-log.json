@@ -1,5 +1,5 @@
 {
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"click-log",
  "hash_type":"sha256",
@@ -76,7 +76,7 @@
   }
  },
  "name":"click-log",
- "new_version":false,
+ "new_version":"0.3.2",
  "raw_meta_yaml":"{% set name = \"click-log\" %}\n{% set version = \"0.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 16fd1ca3fc6b16c98cea63acf1ab474ea8e676849dc669d86afafb0ed7003124\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - click\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - tests\n  imports:\n    - click_log\n  commands:\n    - pytest tests/\n\nabout:\n  home: https://github.com/click-contrib/click-log\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Logging integration for Click\n  description: |\n    Simple and beautiful logging for click applications\n  doc_url: https://click-log.readthedocs.io\n  dev_url: https://github.com/click-contrib/click-log \n\nextra:\n  recipe-maintainers:\n    - CurtLH\n",
  "req":{
   "__set__":true,

@@ -1,5 +1,5 @@
 {
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"joommf",
  "hash_type":"sha256",
@@ -85,7 +85,7 @@
   }
  },
  "name":"joommf",
- "new_version":false,
+ "new_version":"0.8.4",
  "raw_meta_yaml":"{% set name = \"joommf\" %}\n{% set version = \"0.8.4\" %}\n{% set sha256 = \"58b9f18768b2d4a9d51a17803f523ce94c11cc64dc7090b75a2cf37a5f91240d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    \n  run:\n    - python >=3.5\n    - oommfc\n    - jupyter\n    - pytest\n\ntest:\n  imports:\n    - joommf\n\n  commands:\n    - python -c \"import sys; import joommf as m; sys.exit(m.test())\"\n\nabout:\n  home: http://joommf.github.io/\n  license: BSD 3-clause\n  summary: A Python interface to the OOMMF micromagnetic calculator\n  license_family: BSD\n  license_file: LICENSE\n\n  description: |\n    joommf is a meta package for JOOMMF project.\n\n  doc_url: http://joommf.readthedocs.io\n  dev_url: https://github.com/joommf/joommf\n\nextra:\n  recipe-maintainers:\n    - marijanbeg\n    - fangohr\n    - takluyver\n    - davidcortesortuno\n    - rpep\n",
  "req":{
   "__set__":true,

@@ -90,7 +90,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -172,7 +172,7 @@
   }
  },
  "name":"bump2version",
- "new_version":false,
+ "new_version":"1.0.0",
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"bump2version\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cd4f3a231305e405ed8944d8ff35bd742d9bc740ad62f483bd0ca21ce7131984\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - bumpversion = bumpversion.cli:main\n    - bump2version = bumpversion.cli:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - bumpversion\n  commands:\n    - bumpversion -h\n    - bump2version -h\n\nabout:\n  home: https://github.com/c4urself/bump2version\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: 'Version-bump your software with a single command!'\n\n  description: |\n    A small command line tool to simplify releasing software by updating all\n    version strings in your source code by the correct increment. Also creates\n    commits and tags:\n\n    * version formats are highly configurable\n    * works without any VCS, but happily reads tag information from and writes\n      commits and tags to Git and Mercurial if available\n    * just handles text files, so it's not specific to any programming language\n    * supports Python2, Python3 and Pypy\n  doc_url: https://github.com/c4urself/bump2version\n  dev_url: https://github.com/c4urself/bump2version\n\nextra:\n  recipe-maintainers:\n    - fcollonval\n    - kynan\n",
  "req":{

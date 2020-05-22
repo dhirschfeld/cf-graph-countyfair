@@ -137,7 +137,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"tensorflow-hub",
  "hash_type":"sha256",
@@ -226,7 +226,7 @@
   }
  },
  "name":"tensorflow-hub",
- "new_version":false,
+ "new_version":"0.8.0",
  "pinning_version":"2020.03.30",
  "raw_meta_yaml":"{% set version = \"0.8.0\" %}\n\npackage:\n  name: tensorflow-hub\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz\n  sha256: 8b8d7b121855d43c52af4899552f1458ecd83bc9e50748dc4180e62e1d2bedd9\n\nbuild:\n  number: 0\n  # This is a noarch: python package, it contains no compiled code but a\n  # compiler is required to convert protocol buffer definitions.\n  # The build has only been tested on linux-64\n  noarch: python\n  skip: true  # [not linux]\n  ignore_run_exports:\n    - libgcc-ng\n    - libstdcxx-ng\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - bazel >=0.24\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.12.0\n    - six >=1.12.0\n    - protobuf >=3.8.0\n    - tensorflow >=1.14.0\n\ntest:\n  imports:\n    - tensorflow_hub\n\nabout:\n  home: https://www.tensorflow.org/hub/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A library for transfer learning by reusing parts of TensorFlow models.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jjhelmus\n",
  "req":{

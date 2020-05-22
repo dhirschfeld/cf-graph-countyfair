@@ -126,7 +126,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -194,7 +194,7 @@
   }
  },
  "name":"rtree",
- "new_version":false,
+ "new_version":"0.9.4",
  "pinning_version":"2020.03.12",
  "raw_meta_yaml":"{% set version = \"0.9.4\" %}\n\npackage:\n  name: rtree\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/R/Rtree/Rtree-{{ version }}.tar.gz\n  sha256: cae327e2c03b3da4ea40d0fdf68f3e55fe9f302c56b9f31e1bfeb36dbea73f44\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"  # [not win]\n\nrequirements:\n  host:\n    - python\n    - pip\n    - libspatialindex\n  run:\n    - python\n    - libspatialindex\n\ntest:\n  imports:\n    - rtree\n\nabout:\n  home: http://toblerity.github.com/rtree/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'R-Tree spatial index for Python GIS'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - hobu\n",
  "req":{

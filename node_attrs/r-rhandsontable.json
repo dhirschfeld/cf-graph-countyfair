@@ -71,7 +71,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -191,7 +191,7 @@
   }
  },
  "name":"r-rhandsontable",
- "new_version":false,
+ "new_version":"0.3.7",
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"0.3.7\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rhandsontable\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rhandsontable_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/rhandsontable_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/rhandsontable/rhandsontable_{{ version }}.tar.gz\n  sha256: 088eb17c0727bc4b8e500c59d517b81cd281dfa97ec2fb4097579516ffa5cdf8\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 2\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-htmlwidgets >=0.3.3\n    - r-jsonlite\n    - r-magrittr\n  run:\n    - r-base\n    - r-htmlwidgets >=0.3.3\n    - r-jsonlite\n    - r-magrittr\n\ntest:\n  commands:\n    - $R -e \"library('rhandsontable')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rhandsontable')\\\"\"  # [win]\n\nabout:\n  home: http://jrowen.github.io/rhandsontable/\n  license: MIT\n  summary: An R interface to the 'Handsontable' JavaScript library, which is a minimalist Excel-like data grid editor.  See <https://handsontable.com/> for details.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{

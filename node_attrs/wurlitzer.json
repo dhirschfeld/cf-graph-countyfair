@@ -107,7 +107,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "linux_aarch64":"default",
@@ -174,7 +174,7 @@
   }
  },
  "name":"wurlitzer",
- "new_version":false,
+ "new_version":"2.0.0",
  "pinning_version":"2020.03.14",
  "raw_meta_yaml":"{% set name = \"wurlitzer\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 86a510c0d34fcc9786ad1a9f557ac980f30ef2f821a75c2e4333311e0fd9cd76\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - selectors2  # [py2k]\n\ntest:\n  imports:\n    - wurlitzer\n\nabout:\n  home: https://github.com/minrk/wurlitzer\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Capture C-level stdout/stderr in Python'\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - bjodah\n    - asmeurer\n",
  "req":{

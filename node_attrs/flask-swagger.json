@@ -33,7 +33,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"flask-swagger",
  "hash_type":"sha256",
@@ -113,7 +113,7 @@
   }
  },
  "name":"flask-swagger",
- "new_version":false,
+ "new_version":"0.2.14",
  "pinning_version":"2019.03.17",
  "raw_meta_yaml":"{% set name = \"flask-swagger\" %}\n{% set version = \"0.2.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 42420efbed1aad86f7ca6bb869df550e09591e1d540ebd3040c197906c0f0be6\n\nbuild:\n  noarch: python\n  number: 2\n  script: python -m pip install --no-deps --ignore-installed .\n\n  entry_points:\n    - flaskswagger=build_swagger_spec:run\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - flask >=0.10\n    - pyyaml >=5.1\n\ntest:\n  commands:\n    - flaskswagger --help\n\n  imports:\n    - flask_swagger\n\nabout:\n  home: http://github.com/gangverk/flask-swagger\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Extract swagger specs from your flask project'\n\n  dev_url: https://github.com/gangverk/flask-swagger\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - xylar\n",
  "req":{

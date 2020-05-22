@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pyemma_tutorials",
  "hash_type":"sha256",
@@ -118,7 +118,7 @@
   }
  },
  "name":"pyemma_tutorials",
- "new_version":false,
+ "new_version":"0.3",
  "pinning_version":"2018.07.24",
  "raw_meta_yaml":"{% set name = \"pyemma_tutorials\" %}\n{% set version = \"1.0\" %}\n{% set sha256 = \"9ce0b5e16a8f732fbf295e691029068395cd401eebd8dead3e6615c3c1945b2d\" %}\n\npackage:\n  name: {{ name }} \n  version: {{ version }} \n\nsource:\n  url: https://github.com/markovmodel/{{name}}/archive/final-published-version-V1.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python -m pip install --no-deps --ignore-installed . -v\n  number: 0\n  entry_points:\n    - pyemma_tutorials = pyemma_tutorials.cli:main\n\n  osx_is_app: True\n  noarch: python\n\n\nrequirements:\n  build:\n    - pip\n  run:\n    - pyemma >=2.5.5\n    - mdshare >=0.4.0\n    - notebook\n    - nglview >=1.1.3\n    - jupyter_contrib_nbextensions\n    - nbexamples\n\ntest:\n  imports:\n    - pyemma_tutorials\n  commands:\n    - which pyemma_tutorials  # [linux or osx]\n\nabout:\n  home: https://github.com/markovmodel/pyemma_tutorials\n  license: Creative Commons Attribution 4.0 \n  license_family: CC \n  license_file: LICENSE\n  summary: 'PyEMMA tutorial notebooks'\n  description: |\n    A collection of Jupyter notebooks, which introduce the usage of PyEMMA to build kinetic models\n  doc_url: https://github.com/markovmodel/pyemma_tutorials\n  dev_url: https://github.com/markovmodel/pyemma_tutorials\n\nextra:\n  recipe-maintainers:\n    - marscher \n    - cwehmeyer\n",
  "req":{

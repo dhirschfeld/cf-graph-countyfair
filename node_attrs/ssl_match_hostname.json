@@ -35,7 +35,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -113,7 +113,7 @@
   }
  },
  "name":"ssl_match_hostname",
- "new_version":false,
+ "new_version":"3.7.0.1",
  "pinning_version":"2019.01.09",
  "raw_meta_yaml":"{% set version = \"3.7.0.1\" %}\npackage:\n  name: ssl_match_hostname\n  version: {{ version }}\n\nsource:\n  fn: backports.ssl_match_hostname-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/b/backports.ssl_match_hostname/backports.ssl_match_hostname-{{ version }}.tar.gz\n  sha256: bb82e60f9fbf4c080eabd957c39f0641f0fc247d9a16e31e26d594d8f42b9fd2\n\nbuild:\n  number: 1000\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - backports\n  run:\n    - python\n    - backports\n\ntest:\n  imports:\n    - backports\n    - backports.ssl_match_hostname\n\nabout:\n  home: http://bitbucket.org/brandon/backports.ssl_match_hostname\n  license: PSF 2\n  license_file: LICENSE.txt\n  summary: 'The ssl.match_hostname() function from Python 3.5'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mwcraig\n    - pelson\n",
  "req":{

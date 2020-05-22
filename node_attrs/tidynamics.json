@@ -18,7 +18,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"tidynamics",
  "hash_type":"sha256",
@@ -84,7 +84,7 @@
   }
  },
  "name":"tidynamics",
- "new_version":false,
+ "new_version":"1.0.0",
  "pinning_version":"2018.08.14",
  "raw_meta_yaml":"{% set name = \"tidynamics\" %}\n{% set version = \"1.0.0\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"b7bd669d380b0f469f3a8aedfbc0e5fa967fe8dc44e196f54baf0edb59846976\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - tidynamics\n\nabout:\n  home: ' https://pypi.python.org/pypi/tidynamics'\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Tiny package to compute dynamics correlations\n  description: |\n    tidynamics performs the computation of mean-square displacements and correlation functions.\n    tidynamics implements the so-called Fast Correlation Algorithm proposed by Kneller and others for the nMOLDYN analysis program.\n    tidynamics depends only Python and NumPy.\n  doc_url: 'http://lab.pdebuyl.be/tidynamics/'\n  dev_url: 'https://github.com/pdebuyl-lab/tidynamics'\n\nextra:\n  recipe-maintainers:\n    - pdebuyl\n",
  "req":{

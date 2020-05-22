@@ -69,7 +69,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"qimage2ndarray",
  "hash_type":"sha256",
@@ -142,7 +142,7 @@
   }
  },
  "name":"qimage2ndarray",
- "new_version":false,
+ "new_version":"1.8.3",
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"qimage2ndarray\" %}\n{% set version = \"1.7\" %}\n{% set sha256 = \"c8616fefcd725875ea614ab0976f0cfa4d7db3d12046ae8485370e91a50ab3b7\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n\ntest:\n  requires:\n    - pyqt 5*\n\n  imports:\n    # Need to import Python-bindings first\n    # so that qimage2ndarray recognizes them.\n    - PyQt5\n    - qimage2ndarray\n\nabout:\n  home: https://github.com/hmeine/qimage2ndarray\n  license: BSD 3-Clause\n  license_family: BSD\n  # Requested the license file be packaged upstream.\n  #\n  # https://github.com/hmeine/qimage2ndarray/pull/10\n  #\n  #license_file: LICENSE.txt\n  summary: Conversion between QImages and numpy.ndarrays.\n  description: |\n    qimage2ndarray is a small python extension for quickly converting\n    between ``QImages`` and ``numpy.ndarrays`` (in both directions).\n  doc_url: http://hmeine.github.io/qimage2ndarray\n  dev_url: https://github.com/hmeine/qimage2ndarray\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - stuarteberg\n",
  "req":{

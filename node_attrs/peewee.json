@@ -424,7 +424,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -510,7 +510,7 @@
   }
  },
  "name":"peewee",
- "new_version":false,
+ "new_version":"3.13.3",
  "pinning_version":"2020.03.16",
  "raw_meta_yaml":"{% set name = \"peewee\" %}\n{% set version = \"3.13.3\" %}\n{% set bundle = \"tar.gz\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: 1269a9736865512bd4056298003aab190957afe07d2616cf22eaf56cb6398369\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cython >=0.22.1\n    - msinttypes  # [win]\n    - sqlite\n  run:\n    - python\n\ntest:\n  imports:\n    - playhouse\n    - peewee\n\nabout:\n  home: https://github.com/coleifer/peewee/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A little ORM'\n  dev_url: https://github.com/coleifer/peewee/\n  doc_url: http://docs.peewee-orm.com/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - dharhas\n    - synapticarbors\n",
  "req":{

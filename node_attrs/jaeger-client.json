@@ -162,7 +162,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -233,7 +233,7 @@
   }
  },
  "name":"jaeger-client",
- "new_version":false,
+ "new_version":"4.3.0",
  "pinning_version":"2020.05.12.18.03.58",
  "raw_meta_yaml":"{% set name = \"jaeger-client\" %}\n{% set version = \"4.3.0\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: 86d27b8446d3e4c96332896b41307bf7\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n  # uses fcntl module, which is not on windows.\n  #    see https://stackoverflow.com/questions/1422368/fcntl-substitute-on-windows for potential substitute.\n  skip: True   # [win]\n  # can't be noarch because of windows incompatbility\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - threadloop\n    - opentracing\n    - thrift\n    - tornado\n\ntest:\n  imports:\n    - jaeger_client\n\nabout:\n  home: https://github.com/uber/jaeger-client-python\n  license: MIT\n  summary: Jaeger Python OpenTracing Tracer implementation\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
  "req":{

@@ -54,7 +54,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -146,7 +146,7 @@
   }
  },
  "name":"r-propcis",
- "new_version":false,
+ "new_version":"0.3_0",
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = '0.3-0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n{% set cran_mirror = 'https://cran.r-project.org' %}\n\npackage:\n  name: r-propcis\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: PropCIs_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/PropCIs_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/PropCIs/PropCIs_{{ version }}.tar.gz\n  sha256: cd35775f4d36e642663e727450c53708f17b3c4340e1bc2c1752fd17118a9ffb\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('PropCIs')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('PropCIs')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/shearer/PropCIs\n  license: GPL-2 and GPL-3\n  summary: Computes two-sample confidence intervals for single, paired and independent proportions.\n  license_family: GPL\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-2'  # [win]\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "req":{

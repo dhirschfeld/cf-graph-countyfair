@@ -207,7 +207,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -338,7 +338,7 @@
   }
  },
  "name":"responder",
- "new_version":false,
+ "new_version":"2.0.5",
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set version = \"2.0.5\" %}\n\npackage:\n  name: responder\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/responder/responder-{{ version }}.tar.gz\n  sha256: 92cd3daf9d5c58f9c5ad40a2cd310af619e6bd66dab6eb45501c26d1758afada\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - responder = responder.cli:cli\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - aiofiles\n    - apispec >=1.0.0b1\n    - apistar\n    - chardet\n    - docopt\n    - graphene <3.0\n    - graphql-server-core >=1.1\n    - itsdangerous\n    - jinja2\n    - marshmallow\n    - python-multipart\n    - pyyaml\n    - requests\n    - requests-toolbelt\n    - rfc3986\n    - starlette =0.12\n    - uvicorn =0.10\n    - whitenoise\n\ntest:\n  imports:\n    - responder\n  commands:\n    - responder --help\n\nabout:\n  home: https://github.com/taoufik07/responder\n  license: APACHE-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'A familiar HTTP Service Framework for Python'\n  doc_url: http://python-responder.org/\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n    - carlodri\n",
  "req":{

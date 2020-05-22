@@ -83,7 +83,7 @@
    ]
   }
  ],
- "bad":"make_graph: 500",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -155,7 +155,7 @@
   }
  },
  "name":"hydrotrend",
- "new_version":false,
+ "new_version":"3.0.8",
  "pinning_version":"2019.10.08",
  "raw_meta_yaml":"{% set version = \"3.0.8\" %}\n\npackage:\n  name: hydrotrend\n  version: {{ version }}\n\nsource:\n  url: https://github.com/csdms-contrib/hydrotrend/archive/v{{ version }}.tar.gz\n  sha256: 22000ce02d48f3ba9050225b54c00f6e9884d307a104a085595ebeba01ada9ba\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n\ntest:\n  commands:\n    - hydrotrend -h\n    - hydrotrend -v\n    - curl https://raw.githubusercontent.com/csdms-contrib/hydrotrend/master/data/input/HYDRO.IN > ./HYDRO.IN\n    - curl https://raw.githubusercontent.com/csdms-contrib/hydrotrend/master/data/input/HYDRO0.HYPS > ./HYDRO0.HYPS\n    - hydrotrend --prefix=HYDRO --in-dir=. --out-dir=.  # [not win]\n    - hydrotrend  # [win]\nabout:\n  home: http://csdms.colorado.edu/wiki/Model:HydroTrend\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Climate driven hydrological transport model\n  description:\n    HydroTrend v3.0 is a climate-driven hydrological water balance\n    and transport model that simulates water discharge and sediment\n    load at a river outlet.\n  doc_url: http://csdms.colorado.edu/wiki/Model:HydroTrend\n  dev_url: http://github.com/csdms-contrib/hydrotrend\n\nextra:\n  recipe-maintainers:\n    - mcflugen\n",
  "req":{
