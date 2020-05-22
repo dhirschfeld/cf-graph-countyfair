@@ -33,7 +33,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -47,7 +47,7 @@
   },
   "package":{
    "name":"pyspellchecker",
-   "version":"0.5.3"
+   "version":"0.5.4"
   },
   "requirements":{
    "host":[
@@ -65,8 +65,8 @@
    ]
   },
   "source":{
-   "sha256":"d02b5566ca7d76a8c571de8997b06d84565ce500c15377adac3daac060564af8",
-   "url":"https://pypi.io/packages/source/p/pyspellchecker/pyspellchecker-0.5.3.tar.gz"
+   "sha256":"87075048d61ca971fa9f4fbcc23ca6755cef9844a15a81bd2bf9637ca3914da7",
+   "url":"https://pypi.io/packages/source/p/pyspellchecker/pyspellchecker-0.5.4.tar.gz"
   },
   "test":{
    "imports":[
@@ -83,7 +83,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"pyspellchecker\" %}\n{% set version = \"0.5.3\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: d02b5566ca7d76a8c571de8997b06d84565ce500c15377adac3daac060564af8\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - spellchecker\n\nabout:\n  home: \"https://github.com/barrust/pyspellchecker\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Pure python spell checker based on work by Peter Norvig\"\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
+ "raw_meta_yaml":"{% set name = \"pyspellchecker\" %}\n{% set version = \"0.5.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 87075048d61ca971fa9f4fbcc23ca6755cef9844a15a81bd2bf9637ca3914da7\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - spellchecker\n\nabout:\n  home: https://github.com/barrust/pyspellchecker\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Pure python spell checker based on work by Peter Norvig\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -140,5 +140,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyspellchecker/pyspellchecker-0.5.3.tar.gz",
- "version":"0.5.3"
+ "version":"0.5.4"
 }
