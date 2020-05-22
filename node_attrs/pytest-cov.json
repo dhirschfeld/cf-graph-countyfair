@@ -99,6 +99,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422067772.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.9.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -174,8 +191,12 @@
   }
  },
  "name":"pytest-cov",
- "new_version":"2.8.1",
- "pinning_version":"2019.10.01",
+ "new_version":"2.9.0",
+ "new_version_attempts":{
+  "2.9.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"pytest-cov\" %}\n{% set version = \"2.8.1\" %}\n{% set sha256 = \"cc6742d8bac45070217169f5f72ceee1e0e55b0221f54bcf24845972d3a47f2b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n    noarch: python\n    script: {{ PYTHON }} -m pip install . --no-deps -vv\n    number: 0\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pytest >=3.6\n    - coverage >=4.4\n\ntest:\n  commands:\n    - \"pytest --traceconfig | grep pytest-cov-{{version}}\"\n\nabout:\n  home: https://github.com/pytest-dev/pytest-cov\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Pytest plugin for measuring coverage'\n  dev_url: https://github.com/pytest-dev/pytest-cov\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - nicoddemus\n",
  "req":{
   "__set__":true,
@@ -214,7 +235,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.5.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

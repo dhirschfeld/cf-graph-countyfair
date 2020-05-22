@@ -50,7 +50,7 @@
    "summary":"Orocos Kinematics and Dynamics C++ library\n"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "orocos-kdl",
     "python-orocos-kdl",
@@ -100,7 +100,7 @@
       "if not exist %LIBRARY_PREFIX%\\\\lib\\\\orocos-kdl.dll exit 1"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    },
    {
     "name":"python-orocos-kdl",
@@ -131,7 +131,7 @@
       "PyKDL"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    },
    {
     "name":"orocos-kdl",
@@ -156,7 +156,7 @@
       "test -f $PREFIX/lib/liborocos-kdl${SHLIB_EXT}"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    },
    {
     "name":"python-orocos-kdl",
@@ -187,7 +187,7 @@
       "PyKDL"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    },
    {
     "name":"orocos-kdl",
@@ -212,7 +212,7 @@
       "test -f $PREFIX/lib/liborocos-kdl${SHLIB_EXT}"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    },
    {
     "name":"python-orocos-kdl",
@@ -243,12 +243,12 @@
       "PyKDL"
      ]
     },
-    "version":"1.3.2"
+    "version":"1.4.0"
    }
   ],
   "package":{
    "name":"orocos-kdl",
-   "version":"1.3.2"
+   "version":"1.4.0"
   },
   "source":{
    "patches":[
@@ -260,8 +260,8 @@
     "orocos_kdl.patch",
     "python_orocos_kdl.patch"
    ],
-   "sha256":"987cdcf7c7e98db32668e8e5aa14067b5e16217a8ba44b18bfd10447a3f60af0",
-   "url":"https://github.com/orocos/orocos_kinematics_dynamics/archive/1.3.2.tar.gz"
+   "sha256":"05b93e759923684dc07433ccae1e476d158d89b3c2be5079c20062406da7b4dd",
+   "url":"https://github.com/orocos/orocos_kinematics_dynamics/archive/v1.4.0.tar.gz"
   }
  },
  "name":"orocos-kdl",
@@ -275,7 +275,7 @@
   "python-orocos-kdl"
  ],
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"orocos-kdl\" %}\n{% set version = \"1.3.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/orocos/orocos_kinematics_dynamics/archive/{{ version }}.tar.gz\n  sha256: 987cdcf7c7e98db32668e8e5aa14067b5e16217a8ba44b18bfd10447a3f60af0\n  patches:\n    - orocos_kdl.patch\n    - python_orocos_kdl.patch\n    - python_osx.patch  # [osx]\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n  script: \"echo 'do nothing'\"  # [unix]\n  run_exports:\n    - {{ pin_subpackage('orocos-kdl', max_pin='x.x') }}\n    - {{ pin_subpackage('python-orocos-kdl', max_pin='x.x') }}\n\noutputs:\n  - name: orocos-kdl\n    version: {{ version }}\n    script: buildpkg.sh  # [unix]\n    script: bldpkg.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - cmake\n        - ninja  # [win]\n        - make  # [not win]\n        - pkg-config\n      host:\n        - eigen\n      run:\n        - eigen\n    test:\n      commands:\n        - if not exist %LIBRARY_PREFIX%\\\\lib\\\\orocos-kdl.lib exit 1  # [win]\n        - if not exist %LIBRARY_PREFIX%\\\\lib\\\\orocos-kdl.dll exit 1  # [win]\n        - test -f $PREFIX/lib/liborocos-kdl${SHLIB_EXT}  # [unix]\n  - name: python-orocos-kdl\n    version: {{ version }}\n    script: buildpkg.sh  # [unix]\n    script: bldpkg.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - cmake\n        - ninja  # [win]\n        - make  # [not win]\n        - pkg-config\n      host:\n        - python\n        - eigen\n        - orocos-kdl\n        - sip 4.19.20  # [win]\n        - sip  # [not win]\n      run:\n        - python\n        - eigen\n        - orocos-kdl\n        - sip 4.19.20  # [win]\n        - sip  # [not win]\n    test:\n      imports:\n        - PyKDL\n\nabout:\n  home: https://github.com/orocos/orocos_kinematics_dynamics\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: orocos_kdl/COPYING\n  summary: |\n    Orocos Kinematics and Dynamics C++ library\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - Tobias-Fischer\n",
+ "raw_meta_yaml":"{% set name = \"orocos-kdl\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/orocos/orocos_kinematics_dynamics/archive/v{{ version }}.tar.gz\n  sha256: 05b93e759923684dc07433ccae1e476d158d89b3c2be5079c20062406da7b4dd\n  patches:\n    - orocos_kdl.patch\n    - python_orocos_kdl.patch\n    - python_osx.patch  # [osx]\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  script: \"echo 'do nothing'\"  # [unix]\n  run_exports:\n    - {{ pin_subpackage('orocos-kdl', max_pin='x.x') }}\n    - {{ pin_subpackage('python-orocos-kdl', max_pin='x.x') }}\n\noutputs:\n  - name: orocos-kdl\n    version: {{ version }}\n    script: buildpkg.sh  # [unix]\n    script: bldpkg.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - cmake\n        - ninja  # [win]\n        - make  # [not win]\n        - pkg-config\n      host:\n        - eigen\n      run:\n        - eigen\n    test:\n      commands:\n        - if not exist %LIBRARY_PREFIX%\\\\lib\\\\orocos-kdl.lib exit 1  # [win]\n        - if not exist %LIBRARY_PREFIX%\\\\lib\\\\orocos-kdl.dll exit 1  # [win]\n        - test -f $PREFIX/lib/liborocos-kdl${SHLIB_EXT}  # [unix]\n  - name: python-orocos-kdl\n    version: {{ version }}\n    script: buildpkg.sh  # [unix]\n    script: bldpkg.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - cmake\n        - ninja  # [win]\n        - make  # [not win]\n        - pkg-config\n      host:\n        - python\n        - eigen\n        - orocos-kdl\n        - sip 4.19.20  # [win]\n        - sip  # [not win]\n      run:\n        - python\n        - eigen\n        - orocos-kdl\n        - sip 4.19.20  # [win]\n        - sip  # [not win]\n    test:\n      imports:\n        - PyKDL\n\nabout:\n  home: https://github.com/orocos/orocos_kinematics_dynamics\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: orocos_kdl/COPYING\n  summary: |\n    Orocos Kinematics and Dynamics C++ library\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - Tobias-Fischer\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -366,5 +366,5 @@
   }
  },
  "url":"https://github.com/orocos/orocos_kinematics_dynamics/archive/1.3.2.tar.gz",
- "version":"1.3.2"
+ "version":"1.4.0"
 }
