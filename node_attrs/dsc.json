@@ -254,6 +254,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/421727114.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -377,8 +394,12 @@
   }
  },
  "name":"dsc",
- "new_version":"0.4.2",
- "pinning_version":"2019.12.18",
+ "new_version":"0.4.3",
+ "new_version_attempts":{
+  "0.4.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"dsc\" %}\n{% set version = \"0.4.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d339d3041bfd612c2171d245ef86a551d68507f2d833c0713d71dce08d4aa44c\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - dsc = dsc.__main__:main\n    - dsc-query = dsc.__query__:main\n    - dsc-io = dsc.dsc_io:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - h5py\n    - msgpack-python\n    - numexpr\n    - numpy\n    - pandas >=0.24.1\n    - ptable\n    - pyarrow >=0.5.0\n    - python >=3.6\n    - sos >=0.19.7\n    - sos-pbs >=0.19.6\n    - sqlalchemy\n    - sympy\n    - tzlocal\n\ntest:\n  imports:\n    - dsc\n    - dsc.parser\n  commands:\n    - dsc --help\n    - dsc-query --help\n    - dsc-io --help\n\nabout:\n  home: https://github.com/stephenslab/dsc\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Implementation of Dynamic Statistical Comparisons\n  doc_url: https://stephenslab.github.io/dsc-wiki/\n\nextra:\n  recipe-maintainers:\n    - gaow\n    - jdblischak\n",
  "req":{
   "__set__":true,
@@ -434,7 +455,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
