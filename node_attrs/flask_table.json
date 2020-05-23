@@ -84,7 +84,7 @@
   }
  },
  "name":"flask_table",
- "new_version":false,
+ "new_version":"0.5.0",
  "raw_meta_yaml":"{% set name = \"flask_table\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/plumdog/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: bb8a15307cd4ea1f2b6be93b3ffe60a397099827439b4c389d624bf9c2939086\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - rd /s /q \"docs\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - flask\n    - flask-babel\n\ntest:\n  requires:\n    - flask-testing\n  source_files:\n    - tests\n  imports:\n    - flask_table\n  commands:\n    - python -m unittest discover\n\nabout:\n  home: https://pypi.org/project/Flask-Table/ \n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'HTML tables for use with the Flask micro-framework'\n  description: |\n    Because writing HTML is fiddly and all of your tables are basically the same.\n  doc_url: https://flask-table.readthedocs.io\n  dev_url: https://github.com/plumdog/flask_table\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n",
  "req":{
   "__set__":true,

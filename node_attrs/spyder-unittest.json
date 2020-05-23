@@ -45,6 +45,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422274211.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -124,8 +141,12 @@
   }
  },
  "name":"spyder-unittest",
- "new_version":"0.4.0",
- "pinning_version":"2020.01.06",
+ "new_version":"0.4.1",
+ "new_version_attempts":{
+  "0.4.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"spyder-unittest\" %}\n{% set version = \"0.4.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"f48894d7b31255f4f2b195236d99abc800e74fd768222862ed188653e2321273\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - lxml\n    - python\n    - spyder >=4,<5\n    - pyzmq\n\ntest:\n  imports:\n    - spyder_unittest\n\nabout:\n  home: https://github.com/spyder-ide/spyder-unittest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Spyder plugin that integrates popular unit test frameworks.\n  description: |\n    It allows you to run tests and view the results.\n  dev_url: https://github.com/spyder-ide/spyder-unittest\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - jitseniesen\n    - goanpeca\n",
  "req":{
   "__set__":true,
@@ -165,7 +186,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
