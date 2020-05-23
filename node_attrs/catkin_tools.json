@@ -1,6 +1,211 @@
 {
- "bad":"make_graph: 404",
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422289940.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422290644.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"catkin_tools",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/catkin/catkin_tools",
+   "home":"https://catkin-tools.readthedocs.io/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"This Python package provides command line tools for working with the catkin meta-buildsystem and catkin workspaces."
+  },
+  "build":{
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wolfv",
+    "lesteve",
+    "wolfv",
+    "lesteve",
+    "wolfv",
+    "lesteve"
+   ]
+  },
+  "package":{
+   "name":"catkin_tools",
+   "version":"0.4.5"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "python",
+    "pip",
+    "setuptools",
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "catkin_pkg >0.2.9",
+    "pyyaml",
+    "psutil",
+    "osrf_pycommon >0.1.1",
+    "python",
+    "catkin_pkg >0.2.9",
+    "pyyaml",
+    "psutil",
+    "osrf_pycommon >0.1.1",
+    "python",
+    "catkin_pkg >0.2.9",
+    "pyyaml",
+    "psutil",
+    "osrf_pycommon >0.1.1"
+   ]
+  },
+  "source":{
+   "fn":"catkin_tools-0.4.5.tar.gz",
+   "patches":[
+    "remove_trollius.patch",
+    "remove_trollius.patch",
+    "remove_trollius.patch"
+   ],
+   "sha256":"6a9a2512183824a8250979c7772dc9487e3d2830a956fbd52fd2d8d71fba6d58",
+   "url":"https://github.com/catkin/catkin_tools/archive/0.4.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "catkin --help",
+    "catkin init --help",
+    "catkin build --help",
+    "catkin list --help",
+    "catkin env --help",
+    "catkin --help",
+    "catkin init --help",
+    "catkin build --help",
+    "catkin list --help",
+    "catkin env --help",
+    "catkin --help",
+    "catkin init --help",
+    "catkin build --help",
+    "catkin list --help",
+    "catkin env --help"
+   ]
+  }
+ },
+ "name":"catkin_tools",
  "new_version":false,
- "time":1568135310.9246185
+ "pinning_version":"2020.05.20.21.21.18",
+ "raw_meta_yaml":"{% set name = \"catkin_tools\" %}\n{% set version = \"0.4.5\" %}\n{% set sha256 = \"6a9a2512183824a8250979c7772dc9487e3d2830a956fbd52fd2d8d71fba6d58\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/catkin/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - remove_trollius.patch\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [win]\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - catkin_pkg >0.2.9\n    - pyyaml\n    - psutil\n    - osrf_pycommon >0.1.1\n    - trollius  # [py < 34]\n\ntest:\n  commands:\n    - catkin --help\n    - catkin init --help\n    - catkin build --help\n    - catkin list --help\n    - catkin env --help\nabout:\n  home: https://catkin-tools.readthedocs.io/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'This Python package provides command line tools for working with the catkin meta-buildsystem and catkin workspaces.'\n  dev_url: https://github.com/catkin/catkin_tools\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - lesteve\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "catkin_pkg",
+   "osrf_pycommon",
+   "pip",
+   "psutil",
+   "python",
+   "pyyaml",
+   "setuptools"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "catkin_pkg",
+    "osrf_pycommon",
+    "psutil",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "strong_exports":false,
+ "time":1568135310.9246185,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "catkin_pkg >0.2.9",
+    "osrf_pycommon >0.1.1",
+    "psutil",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/catkin/catkin_tools/archive/0.4.5.tar.gz",
+ "version":"0.4.5"
 }

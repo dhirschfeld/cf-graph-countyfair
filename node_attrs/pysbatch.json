@@ -58,7 +58,7 @@
   }
  },
  "name":"pysbatch",
- "new_version":false,
+ "new_version":"0.1.6",
  "raw_meta_yaml":"{% set name = \"pysbatch\" %}\n{% set version = \"0.1.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/luptior/pysbatch/archive/v{{ version }}.zip\n  sha256: 466195724e6e272557f54ebd36680451b1756a390c086a2b70384dfb36f2620d\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - python >=3.5\n\ntest:\n  imports:\n    - pysbatch\n\nabout:\n  home: https://github.com/luptior/pysbatch\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Submit slurm cluster job(Sbatch) inside python and avoid shell script.'\n\n  description: |\n    Submit(sbatch) slurm cluster job inside python and avoid shell script for complicated pipeline jobs. \n    For sbatch options, now only supports job name, memory size(in GBs), time limit(in days), dependency \n    and ouput file. But you can use add_option parameter to add more.\n  doc_url: https://github.com/luptior/pysbatch/blob/master/README.md\n  dev_url: https://github.com/luptior/pysbatch\n\nextra:\n  recipe-maintainers:\n    - luptior\n",
  "req":{
   "__set__":true,
