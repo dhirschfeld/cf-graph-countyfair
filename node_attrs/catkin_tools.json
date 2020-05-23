@@ -132,7 +132,7 @@
   }
  },
  "name":"catkin_tools",
- "new_version":false,
+ "new_version":"0.4.5",
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"catkin_tools\" %}\n{% set version = \"0.4.5\" %}\n{% set sha256 = \"6a9a2512183824a8250979c7772dc9487e3d2830a956fbd52fd2d8d71fba6d58\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/catkin/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - remove_trollius.patch\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [win]\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - catkin_pkg >0.2.9\n    - pyyaml\n    - psutil\n    - osrf_pycommon >0.1.1\n    - trollius  # [py < 34]\n\ntest:\n  commands:\n    - catkin --help\n    - catkin init --help\n    - catkin build --help\n    - catkin list --help\n    - catkin env --help\nabout:\n  home: https://catkin-tools.readthedocs.io/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'This Python package provides command line tools for working with the catkin meta-buildsystem and catkin workspaces.'\n  dev_url: https://github.com/catkin/catkin_tools\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - lesteve\n",
  "req":{
