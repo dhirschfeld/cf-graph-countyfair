@@ -119,7 +119,7 @@
  "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
-  "max_py_ver":"37",
+  "max_py_ver":"38",
   "max_r_ver":"35",
   "provider":{
    "win":"azure"
@@ -132,13 +132,14 @@
    "description":"Astro-SCRAPPY is designed to detect cosmic rays in images\n(numpy arrays), originally based on Pieter van Dokkum\u2019s L.A.Cosmic\nalgorithm.\n",
    "dev_url":"https://github.com/astropy/astroscrappy",
    "home":"https://github.com/astropy/astroscrappy",
-   "license":"BSD 3-clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"licenses/LICENSE.rst",
    "summary":"Speedy Cosmic Ray Annihilation Package in Python"
   },
   "build":{
-   "number":"1001"
+   "number":"1002",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -159,17 +160,17 @@
    ],
    "host":[
     "python",
-    "setuptools",
+    "pip",
     "astropy",
     "cython",
     "numpy 1.14.*",
     "python",
-    "setuptools",
+    "pip",
     "astropy",
     "cython",
     "numpy 1.14.*",
     "python",
-    "setuptools",
+    "pip",
     "astropy",
     "cython",
     "numpy 1.14.*"
@@ -188,6 +189,11 @@
   },
   "source":{
    "fn":"astroscrappy-1.0.8.tar.gz",
+   "patches":[
+    "setup.cfg.patch",
+    "setup.cfg.patch",
+    "setup.cfg.patch"
+   ],
    "sha256":"5480d7ff87eb3aaf400f8fde389a299f21a3b7fff4c1ba4c0795a09fbbad5f71",
    "url":"https://pypi.io/packages/source/a/astroscrappy/astroscrappy-1.0.8.tar.gz"
   },
@@ -208,7 +214,7 @@
  "name":"astroscrappy",
  "new_version":"1.0.8",
  "pinning_version":"2020.03.28",
- "raw_meta_yaml":"{% set name = \"astroscrappy\" %}\n{% set version = \"1.0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5480d7ff87eb3aaf400f8fde389a299f21a3b7fff4c1ba4c0795a09fbbad5f71\n\nbuild:\n  number: 1001\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - astropy\n    - cython\n    - numpy 1.13.*  # [py35]\n    - numpy 1.13.*  # [py36]\n    - numpy 1.14.*  # [py>=37]\n  run:\n    - python\n    - astropy\n    - numpy >=1.13.*  # [py35]\n    - numpy >=1.13.*  # [py36]\n    - numpy >=1.14.*  # [py>=37]\n\ntest:\n  # Python imports\n  imports:\n    - astroscrappy\n    - astroscrappy.tests\n    - astroscrappy.utils\n\nabout:\n  home: https://github.com/astropy/astroscrappy\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: licenses/LICENSE.rst\n  summary: 'Speedy Cosmic Ray Annihilation Package in Python'\n  description: |\n      Astro-SCRAPPY is designed to detect cosmic rays in images\n      (numpy arrays), originally based on Pieter van Dokkum\u2019s L.A.Cosmic\n      algorithm.\n  dev_url: https://github.com/astropy/astroscrappy\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
+ "raw_meta_yaml":"{% set name = \"astroscrappy\" %}\n{% set version = \"1.0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5480d7ff87eb3aaf400f8fde389a299f21a3b7fff4c1ba4c0795a09fbbad5f71\n  patches:\n    - setup.cfg.patch\n\nbuild:\n  number: 1002\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - astropy\n    - cython\n    - numpy 1.13.*  # [py35]\n    - numpy 1.13.*  # [py36]\n    - numpy 1.14.*  # [py>=37]\n  run:\n    - python\n    - astropy\n    - numpy >=1.13.*  # [py35]\n    - numpy >=1.13.*  # [py36]\n    - numpy >=1.14.*  # [py>=37]\n\ntest:\n  # Python imports\n  imports:\n    - astroscrappy\n    - astroscrappy.tests\n    - astroscrappy.utils\n\nabout:\n  home: https://github.com/astropy/astroscrappy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: licenses/LICENSE.rst\n  summary: 'Speedy Cosmic Ray Annihilation Package in Python'\n  description: |\n      Astro-SCRAPPY is designed to detect cosmic rays in images\n      (numpy arrays), originally based on Pieter van Dokkum\u2019s L.A.Cosmic\n      algorithm.\n  dev_url: https://github.com/astropy/astroscrappy\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -216,8 +222,8 @@
    "c_compiler_stub",
    "cython",
    "numpy",
-   "python",
-   "setuptools"
+   "pip",
+   "python"
   ]
  },
  "requirements":{
@@ -233,8 +239,8 @@
     "astropy",
     "cython",
     "numpy",
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "run":{
@@ -265,8 +271,8 @@
     "astropy",
     "cython",
     "numpy 1.14.*",
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "run":{
