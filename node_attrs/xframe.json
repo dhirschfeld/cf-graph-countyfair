@@ -151,7 +151,7 @@
   }
  },
  "name":"xframe",
- "new_version":false,
+ "new_version":"0.3.0",
  "pinning_version":"2019.05.11",
  "raw_meta_yaml":"{% set name = \"xframe\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"1e8755b7a8b54dd8b7c7b65d99cc896e587ebf563c937f4aae1f73ad4f4c6be1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xframe/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - xtensor >=0.21,<0.22\n  run:\n    - xtensor >=0.21,<0.22\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xframe  # [unix]\n    - test -f ${PREFIX}/include/xframe/xvariable.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xframe/xframeConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xframe/xframeConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xframe\\xvariable.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xframeConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xframeConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xframe\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ dataframe'\n  description: 'C++ data frame based on xtensor'\n  doc_url: http://xframe.readthedocs.io\n  dev_url: https://github.com/QuantStack/xframe\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
