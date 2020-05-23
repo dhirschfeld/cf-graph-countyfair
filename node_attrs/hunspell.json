@@ -175,7 +175,7 @@
   }
  },
  "name":"hunspell",
- "new_version":false,
+ "new_version":"1.7.0",
  "pinning_version":"2019.07.01",
  "raw_meta_yaml":"{% set name = \"hunspell\" %}\n{% set version = \"1.7.0\" %}\n{% set sha256 = \"bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/hunspell/hunspell/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  skip: True  # [win]\n  has_prefix_files:\n    - bin/hunspell\n\nrequirements:\n  build:\n    - autoconf\n    - automake\n    - libtool\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - gettext\n    - readline\n  run:\n    - gettext\n    - readline\n\ntest:\n  commands:\n    - hunspell --help\n\nabout:\n  home: http://hunspell.github.io/\n  license: MPL 1.1/GPL 2.0/LGPL 2.1\n  license_family: GPL\n  license_file: COPYING\n  summary: 'The most popular spellchecking library.'\n  description: |\n    Hunspell is the spell checker of LibreOffice, OpenOffice.org, Mozilla Firefox 3 & Thunderbird,\n    Google Chrome, and it is also used by proprietary software packages, like macOS, InDesign,\n    memoQ, Opera and SDL Trados.\n  doc_url: http://hunspell.github.io/\n  dev_url: https://github.com/hunspell/hunspell\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - asmeurer\n",
  "req":{
