@@ -122,7 +122,7 @@
   }
  },
  "name":"scripting",
- "new_version":false,
+ "new_version":"0.2.4",
  "pinning_version":"2019.04.24",
  "raw_meta_yaml":"{% set version = \"0.2.4\" %}\n\npackage:\n  name: scripting\n  version: {{ version }}\n\nsource:\n  url: https://github.com/csdms/py-scripting/archive/v{{ version }}.tar.gz\n  fn: py-scripting-{{ version }}.tar.gz\n  sha256: 9d262e210ce2129df07716b528cef079bd655c2aacfa63d63971143ad8c9cdf3\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - setuptools\n    - python\n    - pip\n  run:\n    - python\n    - pytest\n    - six\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - pytest --pyargs scripting --doctest-modules -o doctest_optionflags=\"NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE\"\n\nabout:\n  home: https://github.com/csdms/py-scripting\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python utilities for shell scripting\n  dev_url: https://github.com/csdms/py-scripting\n\nextra:\n  recipe-maintainers:\n    - mcflugen\n",
  "req":{
