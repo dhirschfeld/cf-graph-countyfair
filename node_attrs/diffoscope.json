@@ -858,7 +858,7 @@
   },
   "package":{
    "name":"diffoscope",
-   "version":"144"
+   "version":"145"
   },
   "requirements":{
    "build":[
@@ -885,8 +885,8 @@
    ]
   },
   "source":{
-   "sha256":"9a45464b7b7184fa1ad2af9c52ebac8f00b3dd5dcf9e15dfc00c653c26fcc345",
-   "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-144.tar.gz"
+   "sha256":"3c4fe21e49f1f3be18dbfc9f6b92d7aefe3e8f0a8aca733a9aaafd6ec95c32f2",
+   "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-145.tar.gz"
   },
   "test":{
    "commands":[
@@ -938,7 +938,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"diffoscope\" %}\n{% set version = \"144\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9a45464b7b7184fa1ad2af9c52ebac8f00b3dd5dcf9e15dfc00c653c26fcc345\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - diffoscope = diffoscope.main:main\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - python-libarchive-c\n    - python-magic\n    - python-tlsh\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n    - pip\n  imports:\n    - diffoscope\n  commands:\n    - pip check\n    - diffoscope --help\n    - diffoscope --list-tools\n    - diffoscope --version\n    - |-\n      pytest ./tests -k \"\\\n        not assert_non_existing \\\n        and not berkeley_db \\\n        and not test_icc \\\n        and not test_item1_elf \\\n        and not test_code_is_black_clean \\\n        and not ocaml \\\n        and not test_ignore_readelf_errors \\\n        and not test_libmix_differences \\\n      \"\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0-or-later\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  dev_url: https://anonscm.debian.org/cgit/reproducible/diffoscope.git\n  description: >\n    diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml":"{% set name = \"diffoscope\" %}\n{% set version = \"145\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3c4fe21e49f1f3be18dbfc9f6b92d7aefe3e8f0a8aca733a9aaafd6ec95c32f2\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - diffoscope = diffoscope.main:main\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - python-libarchive-c\n    - python-magic\n    - python-tlsh\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n    - pip\n  imports:\n    - diffoscope\n  commands:\n    - pip check\n    - diffoscope --help\n    - diffoscope --list-tools\n    - diffoscope --version\n    - |-\n      pytest ./tests -k \"\\\n        not assert_non_existing \\\n        and not berkeley_db \\\n        and not test_icc \\\n        and not test_item1_elf \\\n        and not test_code_is_black_clean \\\n        and not ocaml \\\n        and not test_ignore_readelf_errors \\\n        and not test_libmix_differences \\\n      \"\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0-or-later\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  dev_url: https://anonscm.debian.org/cgit/reproducible/diffoscope.git\n  description: >\n    diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1010,5 +1010,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-123.tar.gz",
- "version":"144"
+ "version":"145"
 }
