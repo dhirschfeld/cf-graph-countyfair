@@ -156,7 +156,7 @@
   }
  },
  "name":"xo",
- "new_version":false,
+ "new_version":"0.3.3",
  "pinning_version":"2020.03.16",
  "raw_meta_yaml":"{% set version = \"0.3.3\" %}\n{% set sha256 = \"1033a326b55295e183f6a1283c9fbed47263903e8a14ec7048755db0d65c92ed\" %}\n\npackage:\n  name: xo\n  version: {{ version }}\n\nsource:\n  url: https://github.com/scopatz/xo/releases/download/{{ version }}/xo-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n  entry_points:\n    - xo = xo:main\n\nrequirements:\n  host:\n    - python >=3.4\n    - pip\n  run:\n    - python >=3.4\n    - urwid\n    - pygments\n    - pygments-cache\n\ntest:\n  commands:\n    - xo --help\n\nabout:\n  home: http://exofrills.org/\n  license: WTFPL v2\n  license_family: OTHER\n  summary: \"exofrills text editor\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{

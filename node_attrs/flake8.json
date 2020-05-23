@@ -272,6 +272,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422199991.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.8.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -395,12 +412,13 @@
   }
  },
  "name":"flake8",
- "new_version":"3.8.1",
+ "new_version":"3.8.2",
  "new_version_attempts":{
-  "3.8.1":1
+  "3.8.1":1,
+  "3.8.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.12.18.03.58",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set version = \"3.8.1\" %}\n\npackage:\n  name: flake8\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/flake8/flake8-{{ version }}.tar.gz\n  sha256: ea6623797bf9a52f4c9577d780da0bb17d65f870213f7b5bcc9fca82540c31d5\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - flake8 = flake8.main.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest-runner\n    - setuptools >=30.0.0\n  run:\n    - mccabe >=0.6.0,<0.7.0\n    - pycodestyle >=2.6.0,<2.7.0\n    - pyflakes >=2.2.0,<2.3.0\n    - python\n    - importlib-metadata\n    - setuptools >=30.0.0\ntest:\n  imports:\n    - flake8\n  source_files:\n    - src/flake8\n    - tests/integration\n    - tests/unit\n    - setup.py\n\n  commands:\n    - flake8 --ignore=D203,W503,E203 src/flake8 tests/integration tests/unit setup.py  # [unix]\n    - flake8 --ignore=D203,W503,E203 src\\\\flake8 tests\\\\integration tests\\\\unit setup.py  # [win]\n\nabout:\n  home: http://flake8.pycqa.org/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Your Tool For Style Guide Enforcement\n  doc_url: http://flake8.pycqa.org/\n  dev_url: https://gitlab.com/pycqa/flake8\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n    - croth1\n    - dopplershift\n    - goanpeca\n    - aydinhan\n",
  "req":{
   "__set__":true,
@@ -445,7 +463,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.1\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

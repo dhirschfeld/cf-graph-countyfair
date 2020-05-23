@@ -65,7 +65,7 @@
   }
  },
  "name":"pygdp",
- "new_version":false,
+ "new_version":"2.1.2",
  "raw_meta_yaml":"{% set version = \"2.1.2\" %}\n\npackage:\n  name: pygdp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/USGS-CIDA/pyGDP/archive/v{{ version }}.tar.gz\n  sha256: a0489b0fb48b1b9f81fbc6cc0518c8bcb784e69ceb696503463b3685b9dee7e2\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed  --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - owslib\n    - lxml\n\ntest:\n  imports:\n    - pyGDP\n\nabout:\n  home: https://github.com/USGS-CIDA/pyGDP\n  license: Public Domain\n  summary: 'Python interface to facilitate working with USGS-CIDA Geo Data Portal web services.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ayan-usgs\n    - rsignell-usgs\n",
  "req":{
   "__set__":true,

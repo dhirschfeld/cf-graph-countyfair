@@ -105,7 +105,7 @@
   }
  },
  "name":"packmol",
- "new_version":false,
+ "new_version":"20.010",
  "pinning_version":"2020.01.10",
  "raw_meta_yaml":"{% set version = \"18.169\" %}\n{% set sha256 = \"8acf2cbc742a609e763eb00cae55aecd09af2edb4cc4e931706e2f06ac380de9\" %}\n\npackage:\n  name: packmol\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mcubeg/packmol/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n\ntest:\n  commands:\n    - which packmol\n\nabout:\n  home: http://m3g.iqm.unicamp.br/packmol\n  license: MIT\n  license_file: LICENSE\n  license_family: BSD\n  summary: Packing Optimization for Molecular Dynamics Simulations\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - kyleabeauchamp\n",
  "req":{
