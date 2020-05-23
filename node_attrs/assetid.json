@@ -77,7 +77,7 @@
   }
  },
  "name":"assetid",
- "new_version":false,
+ "new_version":"1.0.0",
  "pinning_version":"2018.07.01",
  "raw_meta_yaml":"{% set name = \"assetid\" %}\n{% set version = \"1.0.0\" %}\n{% set build = 1 %}\n{% set hash = \"dd81d75e589bd6702da0ec48d3b83414cddf109e7eee0c4eb03d7978c4106de0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: assetid-{{ version}}.tar.gz\n  url: https://github.com/axiom-data-science/assetid/archive/{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - assetid\n    - assetid.tests\n\nabout:\n  home: \"https://github.com/axiom-data-science/{{ name }}\"\n  license: MIT\n  summary: 'An ocean data asset ID parser developed and used by Axiom Data Science'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "req":{
