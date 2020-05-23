@@ -83,7 +83,7 @@
   }
  },
  "name":"valideer",
- "new_version":false,
+ "new_version":"0.4.2",
  "pinning_version":"2018.07.01",
  "raw_meta_yaml":"{% set version = \"0.4.2\" %}\n\npackage:\n  name: valideer\n  version: {{ version }}\n\nsource:\n  fn: valideer-{{ version }}.tar.gz\n  url: https://github.com/podio/valideer/archive/{{ version }}.tar.gz\n  sha256: be554a6f93eab049dd419a181c409a2e6421696263c7eb472cbdfaa46df9d1b1\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - decorator\n\ntest:\n  imports:\n    - valideer\n    - valideer.tests\n\nabout:\n  home: https://github.com/podio/valideer\n  license: MIT\n  summary: 'Lightweight data validation and adaptation library for Python.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - emiliom\n",
  "req":{
