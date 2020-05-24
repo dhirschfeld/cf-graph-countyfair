@@ -39,7 +39,7 @@
    ]
   }
  ],
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"ros-cv-bridge",
  "hash_type":"sha256",
@@ -53,7 +53,7 @@
    "summary":"A Python and C++ implementation to convert ROS Image messages and OpenCV images.\n"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "ros-cv-bridge",
     "ros-cv-bridge",
@@ -99,6 +99,7 @@
     "libopencv",
     "boost",
     "boost-cpp",
+    "console_bridge 0.4",
     "ros-conda-mutex * melodic",
     "ros-conda-base",
     "ros-cpp-common",
@@ -111,6 +112,7 @@
     "libopencv",
     "boost",
     "boost-cpp",
+    "console_bridge 0.4",
     "ros-conda-mutex * melodic",
     "ros-conda-base",
     "ros-cpp-common",
@@ -122,7 +124,8 @@
     "opencv",
     "libopencv",
     "boost",
-    "boost-cpp"
+    "boost-cpp",
+    "console_bridge 0.4"
    ],
    "run":[
     "ros-conda-mutex * melodic",
@@ -134,6 +137,7 @@
     "libopencv",
     "boost",
     "boost-cpp",
+    "console_bridge 0.4",
     "ros-conda-mutex * melodic",
     "ros-conda-base",
     "ros-cpp-common",
@@ -143,6 +147,7 @@
     "libopencv",
     "boost",
     "boost-cpp",
+    "console_bridge 0.4",
     "ros-conda-mutex * melodic",
     "ros-conda-base",
     "ros-cpp-common",
@@ -151,7 +156,8 @@
     "opencv",
     "libopencv",
     "boost",
-    "boost-cpp"
+    "boost-cpp",
+    "console_bridge 0.4"
    ]
   },
   "source":{
@@ -191,7 +197,7 @@
  "name":"ros-cv-bridge",
  "new_version":"1.13.0",
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"ros-cv-bridge\" %}\n{% set version = \"1.13.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/cv_bridge/{{ version }}-0.tar.gz\n  fn: ros-cv-bridge-{{ version }}.tar.gz\n  sha256: fb812741718a40399f538eaef7c887b79004afcdbe0271b3258c5c8ee9c55023\n  patches:\n    - fix_boost_opencv.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('ros-cv-bridge') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - ros-conda-mutex * melodic\n    - ros-conda-base\n    - ros-cpp-common\n    - ros-catkin\n    - ros-rosconsole\n    - ros-sensor-msgs\n    - catkin_pkg\n    - python\n    - opencv\n    - libopencv\n    - boost\n    - boost-cpp\n  run:\n    - ros-conda-mutex * melodic\n    - ros-conda-base\n    - ros-cpp-common\n    - ros-rosconsole\n    - python\n    - opencv\n    - libopencv\n    - boost\n    - boost-cpp\n\ntest:\n  requires:\n    - rospkg\n    - ros-sensor-msgs\n    - numpy\n  commands:\n    - export ROS_ROOT=$PREFIX && python -c \"import rospkg;s = rospkg.RosPack();ret = s.get_path('cv_bridge');print(ret)\"\n  imports:\n    - cv_bridge\n\nabout:\n  home: https://wiki.ros.org\n  summary: |\n    A Python and C++ implementation to convert ROS Image messages and OpenCV images.\n  description: |\n    This contains CvBridge, which converts between ROS\n    Image messages and OpenCV images.\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: include/cv_bridge/cv_bridge.h\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
+ "raw_meta_yaml":"{% set name = \"ros-cv-bridge\" %}\n{% set version = \"1.13.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ros-gbp/vision_opencv-release/archive/release/melodic/cv_bridge/{{ version }}-0.tar.gz\n  fn: ros-cv-bridge-{{ version }}.tar.gz\n  sha256: fb812741718a40399f538eaef7c887b79004afcdbe0271b3258c5c8ee9c55023\n  patches:\n    - fix_boost_opencv.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('ros-cv-bridge') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - ros-conda-mutex * melodic\n    - ros-conda-base\n    - ros-cpp-common\n    - ros-catkin\n    - ros-rosconsole\n    - ros-sensor-msgs\n    - catkin_pkg\n    - python\n    - opencv\n    - libopencv\n    - boost\n    - boost-cpp\n    - console_bridge 0.4\n  run:\n    - ros-conda-mutex * melodic\n    - ros-conda-base\n    - ros-cpp-common\n    - ros-rosconsole\n    - python\n    - opencv\n    - libopencv\n    - boost\n    - boost-cpp\n    - console_bridge 0.4\n\ntest:\n  requires:\n    - rospkg\n    - ros-sensor-msgs\n    - numpy\n  commands:\n    - export ROS_ROOT=$PREFIX && python -c \"import rospkg;s = rospkg.RosPack();ret = s.get_path('cv_bridge');print(ret)\"\n  imports:\n    - cv_bridge\n\nabout:\n  home: https://wiki.ros.org\n  summary: |\n    A Python and C++ implementation to convert ROS Image messages and OpenCV images.\n  description: |\n    This contains CvBridge, which converts between ROS\n    Image messages and OpenCV images.\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: include/cv_bridge/cv_bridge.h\n\nextra:\n  recipe-maintainers:\n    - Tobias-Fischer\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -200,6 +206,7 @@
    "c_compiler_stub",
    "catkin_pkg",
    "cmake",
+   "console_bridge",
    "cxx_compiler_stub",
    "libopencv",
    "make",
@@ -229,6 +236,7 @@
     "boost",
     "boost-cpp",
     "catkin_pkg",
+    "console_bridge",
     "libopencv",
     "opencv",
     "python",
@@ -245,6 +253,7 @@
    "elements":[
     "boost",
     "boost-cpp",
+    "console_bridge",
     "libopencv",
     "opencv",
     "python",
@@ -281,6 +290,7 @@
     "boost",
     "boost-cpp",
     "catkin_pkg",
+    "console_bridge 0.4",
     "libopencv",
     "opencv",
     "python",
@@ -297,6 +307,7 @@
    "elements":[
     "boost",
     "boost-cpp",
+    "console_bridge 0.4",
     "libopencv",
     "opencv",
     "python",
