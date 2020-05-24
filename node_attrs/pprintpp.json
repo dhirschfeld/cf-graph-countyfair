@@ -64,7 +64,7 @@
   "about":{
    "dev_url":"https://github.com/wolever/pprintpp",
    "home":"https://github.com/wolever/pprintpp",
-   "license":"BSD 2-clause",
+   "license":"BSD-2-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.txt",
    "summary":"pprint++: a drop-in replacement for pprint that's actually pretty"
@@ -75,28 +75,31 @@
     "pypprint = pprintpp:console",
     "pypprint = pprintpp:console"
    ],
-   "number":"1001",
-   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+   "number":"0",
+   "script":" -m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "scopatz",
+    "synapticarbors",
     "scopatz",
-    "scopatz"
+    "synapticarbors",
+    "scopatz",
+    "synapticarbors"
    ]
   },
   "package":{
    "name":"pprintpp",
-   "version":"0.3.0"
+   "version":"0.4.0"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -105,9 +108,8 @@
    ]
   },
   "source":{
-   "fn":"pprintpp-0.3.0.tar.gz",
-   "sha256":"06d206c43ef7c2bfdf98fe33f48d61170ab3b2b65718ec415e9bfabe887f6233",
-   "url":"https://github.com/wolever/pprintpp/archive/0.3.0.tar.gz"
+   "sha256":"ea826108e2c7f49dc6d66c752973c3fc9749142a798d6b254e1e301cfdbc6403",
+   "url":"https://pypi.io/packages/source/p/pprintpp/pprintpp-0.4.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -123,25 +125,25 @@
  "name":"pprintpp",
  "new_version":"0.3.0",
  "pinning_version":"2020.03.16",
- "raw_meta_yaml":"{% set name = \"pprintpp\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"06d206c43ef7c2bfdf98fe33f48d61170ab3b2b65718ec415e9bfabe887f6233\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/wolever/pprintpp/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pypprint = pprintpp:console\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pprintpp\n  commands:\n    - \"echo \\\"{'hello': 'world'}\\\" | pypprint\"  # [unix]\n\nabout:\n  home: https://github.com/wolever/pprintpp\n  license: BSD 2-clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: \"pprint++: a drop-in replacement for pprint that's actually pretty\"\n  dev_url: https://github.com/wolever/pprintpp\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"pprintpp\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ea826108e2c7f49dc6d66c752973c3fc9749142a798d6b254e1e301cfdbc6403\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\n  entry_points:\n    - pypprint = pprintpp:console\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - pprintpp\n  commands:\n    - \"echo \\\"{'hello': 'world'}\\\" | pypprint\"  # [unix]\n\nabout:\n  home: https://github.com/wolever/pprintpp\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: \"pprint++: a drop-in replacement for pprint that's actually pretty\"\n  dev_url: https://github.com/wolever/pprintpp\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - synapticarbors\n",
  "req":{
   "__set__":true,
   "elements":[
-   "python",
-   "setuptools"
+   "pip",
+   "python"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -159,14 +161,14 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -180,5 +182,5 @@
   }
  },
  "url":"https://github.com/wolever/pprintpp/archive/0.3.0.tar.gz",
- "version":"0.3.0"
+ "version":"0.4.0"
 }

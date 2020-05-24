@@ -144,13 +144,13 @@
    "summary":"The secure Argon2 password hashing algorithm."
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "script":[
-    " -m pip install . -vv",
+    "-m pip install . -vv",
     "ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib",
-    " -m pip install . -vv",
+    "-m pip install . -vv",
     "ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib",
-    " -m pip install . -vv"
+    "-m pip install . -vv"
    ]
   },
   "extra":{
@@ -162,7 +162,7 @@
   },
   "package":{
    "name":"argon2-cffi",
-   "version":"19.2.0"
+   "version":"20.1.0"
   },
   "requirements":{
    "build":[
@@ -197,9 +197,9 @@
    ]
   },
   "source":{
-   "fn":"argon2-cffi-19.2.0.tar.gz",
-   "sha256":"ffaa623eea77b497ffbdd1a51e941b33d3bf552c60f14dbee274c4070677bda3",
-   "url":"https://pypi.io/packages/source/a/argon2-cffi/argon2-cffi-19.2.0.tar.gz"
+   "fn":"argon2-cffi-20.1.0.tar.gz",
+   "sha256":"d8029b2d3e4b4cea770e9e5a0104dd8fa185c1724a0f01528ae4826a6d25f97d",
+   "url":"https://pypi.io/packages/source/a/argon2-cffi/argon2-cffi-20.1.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -216,7 +216,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.10.05.52.45",
- "raw_meta_yaml":"{% set name = \"argon2-cffi\" %}\n{% set version = \"19.2.0\" %}\n{% set sha256 = \"ffaa623eea77b497ffbdd1a51e941b33d3bf552c60f14dbee274c4070677bda3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script:\n    - ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib  # [unix]\n    - \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n\n  host:\n    - python\n    - pip\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\n  run:\n    - python\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - argon2\n\nabout:\n  home: https://argon2-cffi.readthedocs.org/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The secure Argon2 password hashing algorithm.'\n  description: |\n    Argon2 won the Password Hashing Competition and argon2_cffi is the simplest\n    way to use it in Python and PyPy\n  doc_url: https://argon2-cffi.readthedocs.io/en/stable/\n  dev_url: https://github.com/hynek/argon2_cffi/\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
+ "raw_meta_yaml":"{% set name = \"argon2-cffi\" %}\n{% set version = \"20.1.0\" %}\n{% set sha256 = \"d8029b2d3e4b4cea770e9e5a0104dd8fa185c1724a0f01528ae4826a6d25f97d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - ln -sf $RANLIB $BUILD_PREFIX/bin/ranlib  # [unix]\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n\n  host:\n    - python\n    - pip\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\n  run:\n    - python\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - argon2\n\nabout:\n  home: https://argon2-cffi.readthedocs.org/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: The secure Argon2 password hashing algorithm.\n  description: |\n    Argon2 won the Password Hashing Competition and argon2_cffi is the simplest\n    way to use it in Python and PyPy\n  doc_url: https://argon2-cffi.readthedocs.io/en/stable/\n  dev_url: https://github.com/hynek/argon2_cffi/\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -288,5 +288,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/argon2_cffi/argon2_cffi-19.1.0.tar.gz",
- "version":"19.2.0"
+ "version":"20.1.0"
 }

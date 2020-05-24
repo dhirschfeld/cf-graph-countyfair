@@ -170,7 +170,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -186,6 +186,75 @@
     "isuruf"
    ]
   },
+  "outputs":[
+   {
+    "name":"pocl"
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "name":"pocl-cuda",
+    "requirements":{
+     "host":[
+      "pocl"
+     ],
+     "run":[
+      "pocl"
+     ]
+    },
+    "script":"install-cuda.sh",
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "name":"pocl"
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "name":"pocl-cuda",
+    "requirements":{
+     "host":[
+      "pocl"
+     ],
+     "run":[
+      "pocl"
+     ]
+    },
+    "script":"install-cuda.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/pocl/libpocl-devices-cuda.so"
+     ]
+    }
+   },
+   {
+    "name":"pocl"
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "name":"pocl-cuda",
+    "requirements":{
+     "host":[
+      "pocl"
+     ],
+     "run":[
+      "pocl"
+     ]
+    },
+    "script":"install-cuda.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/pocl/libpocl-devices-cuda.so"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"pocl",
    "version":"1.5"
@@ -239,21 +308,36 @@
   "source":[
    {
     "patches":[
-     "gh814.patch"
+     "patches/gh814.patch",
+     "patches/gh819.patch",
+     "patches/gh822.patch",
+     "patches/gh824.patch",
+     "patches/gh821.patch",
+     "patches/gh-459d0bb.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "gh814.patch"
+     "patches/gh814.patch",
+     "patches/gh819.patch",
+     "patches/gh822.patch",
+     "patches/gh824.patch",
+     "patches/gh821.patch",
+     "patches/gh-459d0bb.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "gh814.patch"
+     "patches/gh814.patch",
+     "patches/gh819.patch",
+     "patches/gh822.patch",
+     "patches/gh824.patch",
+     "patches/gh821.patch",
+     "patches/gh-459d0bb.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -284,8 +368,12 @@
  },
  "name":"pocl",
  "new_version":"1.5",
+ "outputs_names":[
+  "pocl",
+  "pocl-cuda"
+ ],
  "pinning_version":"2020.04.03",
- "raw_meta_yaml":"{% set name = \"pocl\" %}\n{% set version = \"1.5\" %}\n{% set build_number = 0 %}\n{% set sha256 = \"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e\" %}\n{% set llvm_version = \"6.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    patches:\n      - gh814.patch\n      - revert-abce310.patch  # [ppc64le]\n  #- git_url: https://github.com/pocl/pocl.git\n  #  git_rev: v1.3-RC3\n\nbuild:\n  number: {{ build_number }}\n  skip: true  # [win]\n  merge_build_host: true  # [cxx_compiler=='gxx']\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - pkg-config\n    - {{ compiler('cxx') }}\n  host:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - libhwloc\n    - libtool\n    - llvmdev =={{ llvm_version }}\n    - clangdev =={{ llvm_version }}\n    - lld =={{ llvm_version }}\n    - zlib                               # [osx]\n  run:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - {{ pin_compatible('libhwloc') }}\n    - libtool\n\ntest:\n  requires:\n    - pyopencl  # [x86_64]\n    - curl  # [x86_64]\n  commands:\n    - test -f $PREFIX/lib/libpocl${SHLIB_EXT}     # [unix]\n    # Remove apple icd so that only pocl is found\n    - rm $PREFIX/etc/OpenCL/vendors/apple.icd     # [osx]\n    - export OCL_ICD_DEBUG=15                     # [linux]\n    - curl -O https://raw.githubusercontent.com/inducer/pyopencl/master/examples/demo.py  # [x86_64]\n    - python demo.py  # [x86_64]\n\nabout:\n  home: http://portablecl.org/\n  license: MIT\n  license_file: LICENSE\n  summary: Portable Computing Language -- a CPU OpenCL implementation\n  dev_url: https://github.com/pocl/pocl\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - mattwala\n    - isuruf\n",
+ "raw_meta_yaml":"{% set name = \"pocl\" %}\n{% set version = \"1.5\" %}\n{% set build_number = 1 %}\n{% set sha256 = \"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e\" %}\n{% set llvm_version = \"6.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    patches:\n      - patches/gh814.patch\n      - patches/gh819.patch\n      - patches/gh822.patch\n      - patches/gh824.patch\n      - patches/gh821.patch\n      - patches/gh-459d0bb.patch\n\nbuild:\n  number: {{ build_number }}\n  skip: true  # [win]\n  merge_build_host: true  # [cxx_compiler=='gxx']\n  script_env:     # [enable_cuda]\n    - CUDA_HOME   # [enable_cuda]\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - pkg-config\n    - {{ compiler('cxx') }}\n  host:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - libhwloc\n    - libtool\n    - llvmdev =={{ llvm_version }}\n    - clangdev =={{ llvm_version }}\n    - lld =={{ llvm_version }}\n    - zlib                               # [osx]\n  run:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - {{ pin_compatible('libhwloc') }}\n    - libtool\n\ntest:\n  requires:\n    - pyopencl  # [x86_64]\n    - curl  # [x86_64]\n  commands:\n    - test -f $PREFIX/lib/libpocl${SHLIB_EXT}     # [unix]\n    # Remove apple icd so that only pocl is found\n    - rm $PREFIX/etc/OpenCL/vendors/apple.icd     # [osx]\n    - export OCL_ICD_DEBUG=15                     # [linux]\n    - curl -O https://raw.githubusercontent.com/inducer/pyopencl/master/examples/demo.py  # [x86_64]\n    - python demo.py  # [x86_64]\n\noutputs:\n  - name: pocl\n\n  - name: pocl-cuda\n    build:\n      skip: True   # [not enable_cuda]\n    script: install-cuda.sh\n    requirements:\n      host:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n      run:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n    test:\n      commands:\n        - test -f $PREFIX/lib/pocl/libpocl-devices-cuda.so     # [unix]\n\nabout:\n  home: http://portablecl.org/\n  license: MIT\n  license_file: LICENSE\n  summary: Portable Computing Language -- a CPU OpenCL implementation\n  dev_url: https://github.com/pocl/pocl\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - mattwala\n    - isuruf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -300,6 +388,7 @@
    "make",
    "ocl-icd",
    "pkg-config",
+   "pocl",
    "zlib"
   ]
  },
@@ -323,6 +412,7 @@
     "lld",
     "llvmdev",
     "ocl-icd",
+    "pocl",
     "zlib"
    ]
   },
@@ -332,7 +422,8 @@
     "khronos-opencl-icd-loader",
     "libhwloc",
     "libtool",
-    "ocl-icd"
+    "ocl-icd",
+    "pocl"
    ]
   },
   "test":{
@@ -365,6 +456,7 @@
     "lld ==6.0.1",
     "llvmdev ==6.0.1",
     "ocl-icd",
+    "pocl",
     "zlib"
    ]
   },
@@ -374,7 +466,8 @@
     "khronos-opencl-icd-loader",
     "libhwloc",
     "libtool",
-    "ocl-icd"
+    "ocl-icd",
+    "pocl"
    ]
   },
   "test":{

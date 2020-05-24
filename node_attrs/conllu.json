@@ -373,6 +373,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422460438.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -435,8 +452,12 @@
   }
  },
  "name":"conllu",
- "new_version":"2.3.2",
- "pinning_version":"2020.03.13",
+ "new_version":"3.0",
+ "new_version_attempts":{
+  "3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"conllu\" %}\n{% set version = \"2.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 73721d17e3346d8423704fe75bfe296f0c4a693489e0c650b71f504c2a300dda\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python ==2.7|>=3.4\n    - pip\n  run:\n    - python ==2.7|>=3.4\n\ntest:\n  imports:\n    - conllu\n\nabout:\n  home: https://github.com/EmilStenstrom/conllu/\n  license: MIT\n  license_family: MIT\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE\n  summary: CoNLL-U Parser parses a CoNLL-U formatted string into a nested python dictionary\n  description: CoNLL-U Parser parses a CoNLL-U formatted string into a nested python dictionary\n  doc_url: https://github.com/EmilStenstrom/conllu/\n  dev_url: https://github.com/EmilStenstrom/conllu/\n\nextra:\n  recipe-maintainers:\n    - nelson-liu\n",
  "req":{
   "__set__":true,
@@ -468,7 +489,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
