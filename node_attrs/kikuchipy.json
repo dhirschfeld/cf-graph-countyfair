@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422470954.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -147,12 +164,13 @@
   }
  },
  "name":"kikuchipy",
- "new_version":"0.2.1",
+ "new_version":"0.2.2",
  "new_version_attempts":{
-  "0.2.1":1
+  "0.2.1":1,
+  "0.2.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.09.40.28",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"kikuchipy\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 995c38fbd18c9f22da8941174cc74d7d702f37b391730c3e4093add952ba6591\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n  run:\n    - python >=3\n    - dask\n    - hyperspy >=1.5.2\n    - h5py\n    - matplotlib\n    - numpy >=1.17\n    - scikit-image >=0.16,<0.17\n    - scikit-learn\n    - scipy\n\ntest:\n  requires:\n    - pytest >=5.3.2\n  imports:\n    - kikuchipy\n    - kikuchipy.filters\n    - kikuchipy.generators\n    - kikuchipy.io\n    - kikuchipy.pattern\n    - kikuchipy.pattern.chunk\n    - kikuchipy.signals\n    - kikuchipy.release\n  commands:\n    - pytest --pyargs kikuchipy\n\nabout:\n  home: https://kikuchipy.org\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: |\n    kikuchipy is an open-source Python library for processing and analysis of\n    electron backscatter diffraction (EBSD) patterns\n  doc_url: https://kikuchipy.org\n  dev_url: https://github.com/kikuchipy/kikuchipy\n\nextra:\n  recipe-maintainers:\n    - hakonanes\n",
  "req":{
   "__set__":true,
