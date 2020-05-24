@@ -55,7 +55,7 @@
    "summary":"Open Source Color Management Engine"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "lcms2",
     "lcms2",
@@ -66,8 +66,11 @@
   "extra":{
    "recipe-maintainers":[
     "isuruf",
+    "hmaarrfk",
     "isuruf",
-    "isuruf"
+    "hmaarrfk",
+    "isuruf",
+    "hmaarrfk"
    ]
   },
   "package":{
@@ -77,7 +80,6 @@
   "requirements":{
    "build":[
     "c_compiler_stub",
-    "make",
     "c_compiler_stub",
     "make",
     "c_compiler_stub",
@@ -93,19 +95,20 @@
    ]
   },
   "source":{
+   "patches":null,
    "sha256":"48c6fdf98396fa245ed86e622028caf49b96fa22f3e5734f853f806fbc8e7d20",
    "url":"https://ayera.dl.sourceforge.net/project/lcms/lcms/2.9/lcms2-2.9.tar.gz"
   },
   "test":{
    "commands":[
-    "test -f ${PREFIX}/include/lcms2.h",
-    "test -f ${PREFIX}/lib/liblcms2.a",
-    "test -f ${PREFIX}/lib/liblcms2${SHLIB_EXT}",
     "jpgicc",
     "tificc",
     "linkicc",
     "transicc",
     "psicc",
+    "if not exist %LIBRARY_INC%\\\\lcms2.h exit 1",
+    "if not exist %LIBRARY_LIB%\\\\lcms2.lib exit 1",
+    "if not exist %LIBRARY_BIN%\\\\lcms2.dll exit 1",
     "test -f ${PREFIX}/include/lcms2.h",
     "test -f ${PREFIX}/lib/liblcms2.a",
     "test -f ${PREFIX}/lib/liblcms2${SHLIB_EXT}",
@@ -128,7 +131,7 @@
  "name":"lcms2",
  "new_version":false,
  "pinning_version":"2019.11.18",
- "raw_meta_yaml":"{% set name = \"lcms2\" %}\n{% set version = \"2.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ayera.dl.sourceforge.net/project/lcms/lcms/{{ version }}/lcms2-{{ version }}.tar.gz\n  sha256: 48c6fdf98396fa245ed86e622028caf49b96fa22f3e5734f853f806fbc8e7d20\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"lcms2\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n  host:\n    - jpeg\n    - libtiff\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/lcms2.h\n    - test -f ${PREFIX}/lib/liblcms2.a\n    - test -f ${PREFIX}/lib/liblcms2${SHLIB_EXT}\n    - jpgicc\n    - tificc\n    - linkicc\n    - transicc\n    - psicc\n\nabout:\n  home: http://www.littlecms.com/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Open Source Color Management Engine'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "raw_meta_yaml":"{% set name = \"lcms2\" %}\n{% set version = \"2.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ayera.dl.sourceforge.net/project/lcms/lcms/{{ version }}/lcms2-{{ version }}.tar.gz\n  sha256: 48c6fdf98396fa245ed86e622028caf49b96fa22f3e5734f853f806fbc8e7d20\n  patches:\n    - windows_linux_compat.patch          # [win]\n\nbuild:\n  number: 2\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(\"lcms2\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make  # [not win]\n  host:\n    - jpeg\n    - libtiff\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/lcms2.h  # [not win]\n    - test -f ${PREFIX}/lib/liblcms2.a  # [not win]\n    - test -f ${PREFIX}/lib/liblcms2${SHLIB_EXT}  # [not win]\n    - jpgicc\n    - tificc\n    - linkicc\n    - transicc\n    - psicc\n    - if not exist %LIBRARY_INC%\\\\lcms2.h exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\lcms2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lcms2.dll exit 1  # [win]\n\nabout:\n  home: http://www.littlecms.com/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Open Source Color Management Engine'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
