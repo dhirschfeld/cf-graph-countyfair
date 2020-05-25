@@ -137,7 +137,7 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "home":"https://www.github.com/maartenbreddels/vaex",
+   "home":"https://www.github.com/vaexio/vaex",
    "license":"MIT",
    "license_family":"MIT",
    "license_file":"LICENSE.txt",
@@ -145,9 +145,9 @@
   },
   "build":{
    "noarch":"python",
-   "number":"1",
+   "number":"0",
    "preserve_egg_dir":true,
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -158,7 +158,7 @@
   },
   "package":{
    "name":"vaex-viz",
-   "version":"0.3.8"
+   "version":"0.4.0"
   },
   "requirements":{
    "build":[
@@ -174,23 +174,23 @@
    ],
    "run":[
     "python",
-    "vaex-core >=1.0.0,<2",
+    "vaex-core >=2.0.0,<3",
     "matplotlib-base >=1.3.1",
     "pillow",
     "python",
-    "vaex-core >=1.0.0,<2",
+    "vaex-core >=2.0.0,<3",
     "matplotlib-base >=1.3.1",
     "pillow",
     "python",
-    "vaex-core >=1.0.0,<2",
+    "vaex-core >=2.0.0,<3",
     "matplotlib-base >=1.3.1",
     "pillow"
    ]
   },
   "source":{
-   "fn":"vaex-viz-0.3.8.tar.gz",
-   "sha256":"2d14252e0ba46a123dc47dd151fdca737a46afaef7ee642456320d9ccde67077",
-   "url":"https://pypi.io/packages/source/v/vaex-viz/vaex-viz-0.3.8.tar.gz"
+   "fn":"vaex-viz-0.4.0.tar.gz",
+   "sha256":"2417d7c01747cf4f7512150b44f6c275dacd5ba0aa22a69b6f11a32d2184d4b6",
+   "url":"https://pypi.io/packages/source/v/vaex-viz/vaex-viz-0.4.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -207,7 +207,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"vaex-viz\" %}\n{% set version = \"0.3.8\" %}\n{% set sha256 = \"2d14252e0ba46a123dc47dd151fdca737a46afaef7ee642456320d9ccde67077\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  preserve_egg_dir: True\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - vaex-core >=1.0.0,<2\n    - matplotlib-base >=1.3.1\n    - pillow\n\ntest:\n  imports:\n    - vaex.viz\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Visualization for vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
+ "raw_meta_yaml":"{% set name = \"vaex-viz\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"2417d7c01747cf4f7512150b44f6c275dacd5ba0aa22a69b6f11a32d2184d4b6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  preserve_egg_dir: true\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - vaex-core >=2.0.0,<3\n    - matplotlib-base >=1.3.1\n    - pillow\n\ntest:\n  imports:\n    - vaex.viz\n\nabout:\n  home: https://www.github.com/vaexio/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Visualization for vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -267,7 +267,7 @@
     "matplotlib-base >=1.3.1",
     "pillow",
     "python",
-    "vaex-core >=1.0.0,<2"
+    "vaex-core >=2.0.0,<3"
    ]
   },
   "test":{
@@ -276,5 +276,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/v/vaex-viz/vaex-viz-0.3.7.tar.gz",
- "version":"0.3.8"
+ "version":"0.4.0"
 }
