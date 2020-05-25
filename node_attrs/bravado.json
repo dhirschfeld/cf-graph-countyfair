@@ -229,7 +229,7 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/Yelp/bravado",
-   "license":"BSD",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.txt",
    "summary":"Library for accessing Swagger-enabled API's"
@@ -251,68 +251,53 @@
   },
   "package":{
    "name":"bravado",
-   "version":"10.6.0"
+   "version":"10.6.1"
   },
   "requirements":{
    "host":[
-    "bravado-core >=5.0.1",
-    "monotonic",
-    "msgpack-python",
     "pip",
     "python",
-    "python-dateutil",
-    "pyyaml",
-    "requests >=2.4",
-    "six",
-    "bravado-core >=5.0.1",
-    "monotonic",
-    "msgpack-python",
     "pip",
     "python",
-    "python-dateutil",
-    "pyyaml",
-    "requests >=2.4",
-    "six",
-    "bravado-core >=5.0.1",
-    "monotonic",
-    "msgpack-python",
     "pip",
-    "python",
-    "python-dateutil",
-    "pyyaml",
-    "requests >=2.4",
-    "six"
+    "python"
    ],
    "run":[
-    "bravado-core >=5.0.1",
+    "bravado-core >=5.16.1",
     "monotonic",
     "msgpack-python",
     "python",
     "python-dateutil",
     "pyyaml",
-    "requests >=2.4",
+    "requests >=2.17",
+    "simplejson",
     "six",
-    "bravado-core >=5.0.1",
+    "typing-extensions",
+    "bravado-core >=5.16.1",
     "monotonic",
     "msgpack-python",
     "python",
     "python-dateutil",
     "pyyaml",
-    "requests >=2.4",
+    "requests >=2.17",
+    "simplejson",
     "six",
-    "bravado-core >=5.0.1",
+    "typing-extensions",
+    "bravado-core >=5.16.1",
     "monotonic",
     "msgpack-python",
     "python",
     "python-dateutil",
     "pyyaml",
-    "requests >=2.4",
-    "six"
+    "requests >=2.17",
+    "simplejson",
+    "six",
+    "typing-extensions"
    ]
   },
   "source":{
-   "sha256":"f1e81041f1e48478cce4e6805d57572b29ad2cf3187aae393c4eb3a2b8a053c2",
-   "url":"https://pypi.io/packages/source/b/bravado/bravado-10.6.0.tar.gz"
+   "sha256":"202af8fe621a4dc3f0e58047e2dcdd6019e710793c2e0ea9b75c95ac47d4a6c5",
+   "url":"https://pypi.io/packages/source/b/bravado/bravado-10.6.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -332,7 +317,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"bravado\" %}\n{% set version = \"10.6.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f1e81041f1e48478cce4e6805d57572b29ad2cf3187aae393c4eb3a2b8a053c2\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - bravado-core >=5.0.1\n    - monotonic\n    - msgpack-python\n    - pip\n    - python\n    - python-dateutil\n    - pyyaml\n    - requests >=2.4\n    - six\n  run:\n    - bravado-core >=5.0.1\n    - monotonic\n    - msgpack-python\n    - python\n    - python-dateutil\n    - pyyaml\n    - requests >=2.4\n    - six\n\ntest:\n  imports:\n    - bravado\n    - bravado.testing\n\nabout:\n  home: https://github.com/Yelp/bravado\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Library for accessing Swagger-enabled API's\n\nextra:\n  recipe-maintainers:\n    - chapmanb\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"bravado\" %}\n{% set version = \"10.6.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 202af8fe621a4dc3f0e58047e2dcdd6019e710793c2e0ea9b75c95ac47d4a6c5\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - bravado-core >=5.16.1\n    - monotonic\n    - msgpack-python\n    - python\n    - python-dateutil\n    - pyyaml\n    - requests >=2.17\n    - simplejson\n    - six\n    - typing-extensions\n\ntest:\n  imports:\n    - bravado\n    - bravado.testing\n\nabout:\n  home: https://github.com/Yelp/bravado\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Library for accessing Swagger-enabled API's\n\nextra:\n  recipe-maintainers:\n    - chapmanb\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -344,7 +329,9 @@
    "python-dateutil",
    "pyyaml",
    "requests",
-   "six"
+   "simplejson",
+   "six",
+   "typing-extensions"
   ]
  },
  "requirements":{
@@ -355,15 +342,8 @@
   "host":{
    "__set__":true,
    "elements":[
-    "bravado-core",
-    "monotonic",
-    "msgpack-python",
     "pip",
-    "python",
-    "python-dateutil",
-    "pyyaml",
-    "requests",
-    "six"
+    "python"
    ]
   },
   "run":{
@@ -376,7 +356,9 @@
     "python-dateutil",
     "pyyaml",
     "requests",
-    "six"
+    "simplejson",
+    "six",
+    "typing-extensions"
    ]
   },
   "test":{
@@ -394,28 +376,23 @@
   "host":{
    "__set__":true,
    "elements":[
-    "bravado-core >=5.0.1",
-    "monotonic",
-    "msgpack-python",
     "pip",
-    "python",
-    "python-dateutil",
-    "pyyaml",
-    "requests >=2.4",
-    "six"
+    "python"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "bravado-core >=5.0.1",
+    "bravado-core >=5.16.1",
     "monotonic",
     "msgpack-python",
     "python",
     "python-dateutil",
     "pyyaml",
-    "requests >=2.4",
-    "six"
+    "requests >=2.17",
+    "simplejson",
+    "six",
+    "typing-extensions"
    ]
   },
   "test":{
@@ -424,5 +401,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/bravado/bravado-10.4.1.tar.gz",
- "version":"10.6.0"
+ "version":"10.6.1"
 }
