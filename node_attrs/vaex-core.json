@@ -306,9 +306,6 @@
  ],
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "linux":"azure",
    "osx":"azure",
@@ -345,7 +342,7 @@
   },
   "package":{
    "name":"vaex-core",
-   "version":"1.5.0"
+   "version":"2.0.0"
   },
   "requirements":{
    "build":[
@@ -376,7 +373,7 @@
    "run":[
     "python",
     "numpy",
-    "astropy >=1",
+    "astropy >=2",
     "aplus",
     "future >=0.15.2",
     "pyyaml",
@@ -385,12 +382,13 @@
     "requests",
     "six",
     "cloudpickle",
-    "tabulate",
+    "tabulate >=0.8.3",
     "pandas",
     "dask",
+    "nest-asyncio >=1.3.3",
     "python",
     "numpy",
-    "astropy >=1",
+    "astropy >=2",
     "aplus",
     "future >=0.15.2",
     "pyyaml",
@@ -399,12 +397,13 @@
     "requests",
     "six",
     "cloudpickle",
-    "tabulate",
+    "tabulate >=0.8.3",
     "pandas",
     "dask",
+    "nest-asyncio >=1.3.3",
     "python",
     "numpy",
-    "astropy >=1",
+    "astropy >=2",
     "aplus",
     "future >=0.15.2",
     "pyyaml",
@@ -413,15 +412,16 @@
     "requests",
     "six",
     "cloudpickle",
-    "tabulate",
+    "tabulate >=0.8.3",
     "pandas",
-    "dask"
+    "dask",
+    "nest-asyncio >=1.3.3"
    ]
   },
   "source":{
-   "fn":"vaex-core-1.5.0.tar.gz",
-   "sha256":"721689ddda20e70e47eefde22ac5aedcd593aa3d16ef9cc3527beba2b0d4711c",
-   "url":"https://pypi.io/packages/source/v/vaex-core/vaex-core-1.5.0.tar.gz"
+   "fn":"vaex-core-2.0.0.tar.gz",
+   "sha256":"75b65cb535ffc0d368a55e24393f969daa0a9b936d2e8366e667410120251bb0",
+   "url":"https://pypi.io/packages/source/v/vaex-core/vaex-core-2.0.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -444,7 +444,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"vaex-core\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"721689ddda20e70e47eefde22ac5aedcd593aa3d16ef9cc3527beba2b0d4711c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [win and py27]\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n     - vaex = vaex.__main__:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n    - pip\n    - pcre\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - astropy >=1\n    - aplus\n    - futures >=2.2.0  # [py27]\n    - future >=0.15.2\n    - pyyaml\n    - progressbar2\n    - psutil >=1.2.1\n    - requests\n    - six\n    - cloudpickle\n    - tabulate\n    - pandas\n    - dask\n\ntest:\n  imports:\n    - vaex\n    - vaex.vaexfast\n    - vaex.core\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Core of vaex'\n  doc_url: http://vaex.astro.rug.nl/latest\n  dev_url: https://www.github.com/maartenbreddels/vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
+ "raw_meta_yaml":"{% set name = \"vaex-core\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"75b65cb535ffc0d368a55e24393f969daa0a9b936d2e8366e667410120251bb0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win and py27]\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - vaex = vaex.__main__:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n    - pip\n    - pcre\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - astropy >=2\n    - aplus\n    - futures >=2.2.0  # [py27]\n    - future >=0.15.2\n    - pyyaml\n    - progressbar2\n    - psutil >=1.2.1\n    - requests\n    - six\n    - cloudpickle\n    - tabulate >=0.8.3\n    - pandas\n    - dask\n    - nest-asyncio >=1.3.3\n\ntest:\n  imports:\n    - vaex\n    - vaex.vaexfast\n    - vaex.core\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Core of vaex\n  doc_url: http://vaex.astro.rug.nl/latest\n  dev_url: https://www.github.com/maartenbreddels/vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -455,6 +455,7 @@
    "cxx_compiler_stub",
    "dask",
    "future",
+   "nest-asyncio",
    "numpy",
    "pandas",
    "pcre",
@@ -495,6 +496,7 @@
     "cloudpickle",
     "dask",
     "future",
+    "nest-asyncio",
     "numpy",
     "pandas",
     "progressbar2",
@@ -535,10 +537,11 @@
    "__set__":true,
    "elements":[
     "aplus",
-    "astropy >=1",
+    "astropy >=2",
     "cloudpickle",
     "dask",
     "future >=0.15.2",
+    "nest-asyncio >=1.3.3",
     "numpy",
     "pandas",
     "progressbar2",
@@ -547,7 +550,7 @@
     "pyyaml",
     "requests",
     "six",
-    "tabulate"
+    "tabulate >=0.8.3"
    ]
   },
   "test":{
@@ -556,5 +559,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/v/vaex-core/vaex-core-1.0.0.tar.gz",
- "version":"1.5.0"
+ "version":"2.0.0"
 }
