@@ -44,11 +44,8 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "ivoflipse",
     "jankatins",
-    "ivoflipse",
     "jankatins",
-    "ivoflipse",
     "jankatins"
    ]
   },
@@ -95,7 +92,7 @@
  "name":"miktex",
  "new_version":false,
  "pinning_version":"2018.08.21",
- "raw_meta_yaml":"{% set version = \"2.9.6753\" %}\n\npackage:\n  name: miktex\n  version: {{ version }}\n\nsource:\n  url: http://mirrors.ctan.org/systems/win32/miktex/setup/windows-x86/miktex-portable-{{ version }}.exe\n  sha256: c8b85fc4694d748e8e481ea8e9a31057688c9e16dda8ea7686c00b29b9d6f6e2\n\nbuild:\n  skip: True  # [not win]\n  skip: True  # [win and vc!=14]\n  number: 1000\n  binary_relocation: false\n  ignore_run_exports:\n    - vc\n\nrequirements:\n  build:\n    - 7za\n    - {{ compiler(\"c\") }}\n  run:\n    - vs2015_runtime\n\ntest:\n  commands:\n    - pdflatex.exe --help\n    - mpm --help\n    - initexmf.exe --report\n    # this is from the problem in matplotlib: it needs to find that font file\n    - kpsewhich cmss10.tfm | findstr cmss10\n\nabout:\n  home: http://miktex.org/\n  license: various, see http://miktex.org/copying\n  summary: Implementation of TeX/LaTeX for Windows (repackaged binaries)\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - jankatins\n",
+ "raw_meta_yaml":"{% set version = \"2.9.6753\" %}\n\npackage:\n  name: miktex\n  version: {{ version }}\n\nsource:\n  url: http://mirrors.ctan.org/systems/win32/miktex/setup/windows-x86/miktex-portable-{{ version }}.exe\n  sha256: c8b85fc4694d748e8e481ea8e9a31057688c9e16dda8ea7686c00b29b9d6f6e2\n\nbuild:\n  skip: True  # [not win]\n  skip: True  # [win and vc!=14]\n  number: 1000\n  binary_relocation: false\n  ignore_run_exports:\n    - vc\n\nrequirements:\n  build:\n    - 7za\n    - {{ compiler(\"c\") }}\n  run:\n    - vs2015_runtime\n\ntest:\n  commands:\n    - pdflatex.exe --help\n    - mpm --help\n    - initexmf.exe --report\n    # this is from the problem in matplotlib: it needs to find that font file\n    - kpsewhich cmss10.tfm | findstr cmss10\n\nabout:\n  home: http://miktex.org/\n  license: various, see http://miktex.org/copying\n  summary: Implementation of TeX/LaTeX for Windows (repackaged binaries)\n\nextra:\n  recipe-maintainers:\n    - jankatins\n",
  "req":{
   "__set__":true,
   "elements":[
