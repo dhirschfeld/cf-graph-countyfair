@@ -67,6 +67,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422685340.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.6"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -161,14 +178,15 @@
   }
  },
  "name":"xarray_leaflet",
- "new_version":"0.1.4",
+ "new_version":"0.1.6",
  "new_version_attempts":{
   "0.1.1":1,
   "0.1.2":1,
-  "0.1.4":1
+  "0.1.4":1,
+  "0.1.6":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.09.40.28",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"xarray_leaflet\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4cf48f0b4da68d74c09c4746dfa695f2e1c0cddc35c14f7c5f8a647f9328b699\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5.0\n    - pip\n  run:\n    - python\n    - xarray\n    - jupyter_server\n    - ipyleaflet\n    - pillow\n    - matplotlib-base\n    - rasterio\n    - affine\n    - mercantile\n\ntest:\n  imports:\n    - xarray_leaflet\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/davidbrochart/xarray-leaflet\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An xarray extension for tiled map plotting.\n  description: |\n    xarray-leaflet uses ipyleaflet as a plotting backend for data arrays. It generates map tiles\n    on the fly, possibly using Dask's lazy evaluation system and Zarr's chunked data storage, and\n    serves them through the Jupyter server, allowing for big data visualization.\n  dev_url: https://github.com/davidbrochart/xarray-leaflet\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req":{
   "__set__":true,
