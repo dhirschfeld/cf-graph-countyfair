@@ -419,22 +419,22 @@
   },
   "build":{
    "entry_points":[
-    "labelme = labelme.main:main",
+    "labelme = labelme.__main__:main",
     "labelme_draw_json = labelme.cli.draw_json:main",
     "labelme_draw_label_png = labelme.cli.draw_label_png:main",
     "labelme_json_to_dataset = labelme.cli.json_to_dataset:main",
-    "labelme = labelme.main:main",
+    "labelme = labelme.__main__:main",
     "labelme_draw_json = labelme.cli.draw_json:main",
     "labelme_draw_label_png = labelme.cli.draw_label_png:main",
     "labelme_json_to_dataset = labelme.cli.json_to_dataset:main",
-    "labelme = labelme.main:main",
+    "labelme = labelme.__main__:main",
     "labelme_draw_json = labelme.cli.draw_json:main",
     "labelme_draw_label_png = labelme.cli.draw_label_png:main",
     "labelme_json_to_dataset = labelme.cli.json_to_dataset:main"
    ],
-   "number":"1",
+   "number":"0",
    "osx_is_app":true,
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -445,7 +445,7 @@
   },
   "package":{
    "name":"labelme",
-   "version":"3.21.1"
+   "version":"4.2.10"
   },
   "requirements":{
    "host":[
@@ -484,13 +484,8 @@
    ]
   },
   "source":{
-   "patches":[
-    "disable_automatic_install_of_qt.patch",
-    "disable_automatic_install_of_qt.patch",
-    "disable_automatic_install_of_qt.patch"
-   ],
-   "sha256":"84e4486c00fb5d9c6e804233788ef8fad11c4a42b9c37498d2e00fdb76a8cff7",
-   "url":"https://pypi.io/packages/source/l/labelme/labelme-3.21.1.tar.gz"
+   "sha256":"c11dd4e281d926e3da5450fd64009d46e6cf23577b6750717d643150955b62d8",
+   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.2.10.tar.gz"
   },
   "test":{
    "commands":[
@@ -512,7 +507,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"labelme\" %}\n{% set version = \"3.21.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 84e4486c00fb5d9c6e804233788ef8fad11c4a42b9c37498d2e00fdb76a8cff7\n  patches:\n    - disable_automatic_install_of_qt.patch\n\nbuild:\n  number: 1\n  # too lazy to build python 2.7 for an interactive tool\n  skip: true  # [py==27]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - labelme = labelme.main:main\n    - labelme_draw_json = labelme.cli.draw_json:main\n    - labelme_draw_label_png = labelme.cli.draw_label_png:main\n    - labelme_json_to_dataset = labelme.cli.json_to_dataset:main\n  osx_is_app: True\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - imgviz >=0.10.2\n    - matplotlib-base\n    - numpy\n    - pillow\n    - pyyaml\n    - termcolor\n    - qtpy\n\ntest:\n  requires:\n    - pyqt\n  commands:\n    - labelme --help\n\napp:\n  entry: labelme\n  icon: {{ SRC_DIR }}/labelme/icons/icon.png\n  summary: 'Image Polygonal Annotation with Python'\n  type: desk\n\nabout:\n  home: https://github.com/wkentaro/labelme\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).'\n  description: |\n    Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\n    It is written in Python and uses Qt for its graphical interface.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml":"{% set name = \"labelme\" %}\n{% set version = \"4.2.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c11dd4e281d926e3da5450fd64009d46e6cf23577b6750717d643150955b62d8\n  # patches:\n  #   - disable_automatic_install_of_qt.patch\n\nbuild:\n  number: 0\n  # too lazy to build python 2.7 for an interactive tool\n  skip: true  # [py==27]\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - labelme = labelme.__main__:main\n    - labelme_draw_json = labelme.cli.draw_json:main\n    - labelme_draw_label_png = labelme.cli.draw_label_png:main\n    - labelme_json_to_dataset = labelme.cli.json_to_dataset:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - imgviz >=0.10.2\n    - matplotlib-base\n    - numpy\n    - pillow\n    - pyyaml\n    - termcolor\n    - qtpy\n\ntest:\n  requires:\n    - pyqt\n  commands:\n    - labelme --help\n\napp:\n  entry: labelme\n  icon: {{ SRC_DIR }}/labelme/icons/icon.png\n  summary: Image Polygonal Annotation with Python\n  type: desk\n\nabout:\n  home: https://github.com/wkentaro/labelme\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).\n  description: |\n    Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\n    It is written in Python and uses Qt for its graphical interface.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -594,5 +589,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/l/labelme/labelme-3.16.7.tar.gz",
- "version":"3.21.1"
+ "version":"4.2.10"
 }

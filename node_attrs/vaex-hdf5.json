@@ -98,6 +98,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422876149.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -169,8 +186,12 @@
   }
  },
  "name":"vaex-hdf5",
- "new_version":"0.5.6",
- "pinning_version":"2019.11.26",
+ "new_version":"0.6.0",
+ "new_version_attempts":{
+  "0.6.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"vaex-hdf5\" %}\n{% set version = \"0.5.6\" %}\n{% set sha256 = \"2418334f7b0b63ffe992e1a26d0933eb2c81ccae3dec550c2f452cdb8c9d88a8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - vaex-core >=1.3.0,<2\n    - h5py >=2.9\n    - s3fs <0.3\n\ntest:\n  imports:\n    - vaex.hdf5\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: hdf5 file support for vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
   "__set__":true,
@@ -210,7 +231,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

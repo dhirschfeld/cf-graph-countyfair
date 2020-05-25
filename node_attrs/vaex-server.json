@@ -13,6 +13,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422876285.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -85,7 +102,12 @@
   }
  },
  "name":"vaex-server",
- "new_version":"0.2.1",
+ "new_version":"0.3.0",
+ "new_version_attempts":{
+  "0.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"vaex-server\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"658bf3eb3cc859f693e5ef8c5efe806f8db3d3bc3676bfd8389cb0f50822e005\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - vaex-core\n    - tornado >4.1\n    - cachetools\n\ntest:\n  imports:\n    - vaex.server\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  doc_url: https://docs.vaex.io/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Webserver and client for vaex for a remote dataset\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
   "__set__":true,
@@ -125,7 +147,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.1.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
