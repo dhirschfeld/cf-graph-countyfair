@@ -37,6 +37,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422533318.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.17.6"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -110,7 +127,11 @@
   }
  },
  "name":"blessed",
- "new_version":"1.17.5",
+ "new_version":"1.17.6",
+ "new_version_attempts":{
+  "1.17.6":1
+ },
+ "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"blessed\" %}\n{% set version = \"1.17.5\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 926916492220af741657ec4668aba95f54a8c32445e765cfa38c7ccd3343cc6f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - backports.functools_lru_cache >=1.2.1  # [py<32]\n    - jinxed >=0.5.4  # [win]\n    - ordereddict ==1.1  # [py<27]\n    - python\n    - six >=1.9.0\n    - wcwidth >=0.1.4\n\ntest:\n  imports:\n    - blessed\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/blessed/\n  summary: Easy, practical library for making terminal apps, by providing an elegant, well-documented interface to Colors, Keyboard input, and screen Positioning capabilities.\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
  "req":{
