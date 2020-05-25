@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422866396.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.7.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -110,12 +127,13 @@
   }
  },
  "name":"hiphive",
- "new_version":"0.7",
+ "new_version":"0.7.1",
  "new_version_attempts":{
-  "0.7":1
+  "0.7":1,
+  "0.7.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.27.17.45.41",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"hiphive\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5c8f92ae85195d00afdece5a121dda99fad9cdd66eac1b9d28f26bdeabf167e3\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - pip\n    - ase\n    - h5py\n    - numba\n    - numpy >=1.12\n    - scikit-learn\n    - spglib\n    - sympy >=1.1\n\ntest:\n  imports:\n    - hiphive\n  commands:\n    - pip check\n\nabout:\n  home: https://hiphive.materialsmodeling.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: High-order force constants for the masses\n\n  description: |\n    hiPhive is a tool for efficiently extracting high-order force \n    constants from atomistic simulations, most commonly density \n    functional theory calculations. It has been implemented in the \n    form of a Python library, which allows it to be readily \n    integrated with many first-principles codes and analysis tools \n    accessible in Python.\n  doc_url: https://hiphive.materialsmodeling.org\n  dev_url: https://gitlab.com/materials-modeling/hiphive\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
   "__set__":true,
@@ -162,7 +180,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

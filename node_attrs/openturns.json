@@ -241,7 +241,7 @@
   },
   "package":{
    "name":"openturns",
-   "version":"1.15rc1"
+   "version":"1.15"
   },
   "requirements":{
    "build":[
@@ -249,6 +249,7 @@
     "swig",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "curl",
     "cmake",
     "swig",
     "c_compiler_stub",
@@ -301,9 +302,9 @@
    ]
   },
   "source":{
-   "fn":"openturns-1.15rc1.tar.gz",
-   "sha256":"c96d1d4c2e06c5a976f09a2557f17bcfeb343f2c4d9c4307592594655e031d55",
-   "url":"https://github.com/openturns/openturns/archive/v1.15rc1.tar.gz"
+   "fn":"openturns-1.15.tar.gz",
+   "sha256":"116f30b36f5c1df15cffbbfa4b5dc103d42e746d85d5b9f9c7c3bcc02155934a",
+   "url":"https://github.com/openturns/openturns/archive/v1.15.tar.gz"
   },
   "test":{
    "imports":[
@@ -316,7 +317,7 @@
  "name":"openturns",
  "new_version":"1.14",
  "pinning_version":"2020.02.20",
- "raw_meta_yaml":"{% set version = \"1.15rc1\" %}\n\npackage:\n  name: openturns\n  version: {{ version }}\n\nsource:\n  fn: openturns-{{ version }}.tar.gz\n  url: https://github.com/openturns/openturns/archive/v{{ version }}.tar.gz\n  sha256: c96d1d4c2e06c5a976f09a2557f17bcfeb343f2c4d9c4307592594655e031d55\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('openturns', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - boost-cpp\n    - matplotlib-base\n    - liblapack  # [not win]\n    - libxml2  # [not win]\n    - tbb-devel  # [not win]\n    - hmat-oss  # [not win]\n    - cminpack  # [not win]\n    - ceres-solver  # [not win]\n    - nlopt  # [not win]\n    - dlib-cpp  # [not win]\n    - coinbonmin  # [not win]\n    - spectralib  # [not win]\n  run:\n    - python\n    - psutil\n    - tbb-devel  # [not win]\n\ntest:\n  imports:\n    - openturns\n\nabout:\n  home: http://openturns.org/\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: Uncertainty treatment library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"1.15\" %}\n\npackage:\n  name: openturns\n  version: {{ version }}\n\nsource:\n  fn: openturns-{{ version }}.tar.gz\n  url: https://github.com/openturns/openturns/archive/v{{ version }}.tar.gz\n  sha256: 116f30b36f5c1df15cffbbfa4b5dc103d42e746d85d5b9f9c7c3bcc02155934a\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('openturns', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - curl  # [win]\n  host:\n    - python\n    - boost-cpp\n    - matplotlib-base\n    - liblapack  # [not win]\n    - libxml2  # [not win]\n    - tbb-devel  # [not win]\n    - hmat-oss  # [not win]\n    - cminpack  # [not win]\n    - ceres-solver  # [not win]\n    - nlopt  # [not win]\n    - dlib-cpp  # [not win]\n    - coinbonmin  # [not win]\n    - spectralib  # [not win]\n  run:\n    - python\n    - psutil\n    - tbb-devel  # [not win]\n\ntest:\n  imports:\n    - openturns\n\nabout:\n  home: http://openturns.org/\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: Uncertainty treatment library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -326,6 +327,7 @@
    "cmake",
    "cminpack",
    "coinbonmin",
+   "curl",
    "cxx_compiler_stub",
    "dlib-cpp",
    "hmat-oss",
@@ -346,6 +348,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]
@@ -389,6 +392,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]
@@ -425,5 +429,5 @@
   }
  },
  "url":"https://github.com/openturns/openturns/archive/v1.13.tar.gz",
- "version":"1.15rc1"
+ "version":"1.15"
 }
