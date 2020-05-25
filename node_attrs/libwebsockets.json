@@ -261,7 +261,7 @@
   },
   "package":{
    "name":"libwebsockets",
-   "version":"4.0.12"
+   "version":"4.0.13"
   },
   "requirements":{
    "build":[
@@ -293,8 +293,8 @@
    ]
   },
   "source":{
-   "sha256":"85209da900ccac8a417b204bdc4f95a83657bc58cc8bb7f047e0080a93b26b19",
-   "url":"https://github.com/warmcat/libwebsockets/archive/v4.0.12.tar.gz"
+   "sha256":"fb73e26868daeb819e0c1f73a8f50eb2fa0b5c1fc1811a87a2b7dc77479ae291",
+   "url":"https://github.com/warmcat/libwebsockets/archive/v4.0.13.tar.gz"
   },
   "test":{
    "commands":[
@@ -321,7 +321,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"libwebsockets\" %}\n{% set version = \"4.0.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/warmcat/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 85209da900ccac8a417b204bdc4f95a83657bc58cc8bb7f047e0080a93b26b19\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - pkg-config\n  host:\n    - libuv\n    - openssl\n  run:\n    - openssl\n    - libuv\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/libwebsockets\n    - test -e ${PREFIX}/lib/libwebsockets.so\n\nabout:\n  home: https://libwebsockets.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: canonical libwebsockets.org websocket library\n\n  description: |\n    Libwebsockets is a simple-to-use, pure C library providing client and server\n    for **http/1**, **http/2**, **websockets** and other protocols in a security-minded,\n    lightweight, configurable, scalable and flexible way.  It's easy to build and\n    cross-build via cmake and is suitable for tasks from embedded RTOS through mass\n    cloud serving.\n  dev_url: https://github.com/warmcat/libwebsockets\n  doc_url: https://libwebsockets.org/lws-api-doc-master/html/index.html\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "raw_meta_yaml":"{% set name = \"libwebsockets\" %}\n{% set version = \"4.0.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/warmcat/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: fb73e26868daeb819e0c1f73a8f50eb2fa0b5c1fc1811a87a2b7dc77479ae291\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - pkg-config\n  host:\n    - libuv\n    - openssl\n  run:\n    - openssl\n    - libuv\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/libwebsockets\n    - test -e ${PREFIX}/lib/libwebsockets.so\n\nabout:\n  home: https://libwebsockets.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: canonical libwebsockets.org websocket library\n\n  description: |\n    Libwebsockets is a simple-to-use, pure C library providing client and server\n    for **http/1**, **http/2**, **websockets** and other protocols in a security-minded,\n    lightweight, configurable, scalable and flexible way.  It's easy to build and\n    cross-build via cmake and is suitable for tasks from embedded RTOS through mass\n    cloud serving.\n  dev_url: https://github.com/warmcat/libwebsockets\n  doc_url: https://libwebsockets.org/lws-api-doc-master/html/index.html\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -391,5 +391,5 @@
   }
  },
  "url":"https://github.com/warmcat/libwebsockets/archive/v3.2.0.tar.gz",
- "version":"4.0.12"
+ "version":"4.0.13"
 }

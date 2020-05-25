@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422768429.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"8.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -122,13 +139,14 @@
   }
  },
  "name":"fd-find",
- "new_version":"8.1.0",
+ "new_version":"8.1.1",
  "new_version_attempts":{
   "8.0.0":1,
-  "8.1.0":1
+  "8.1.0":1,
+  "8.1.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.19.19.39.08",
+ "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set version = \"8.1.0\" %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: fd-find\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sharkdp/fd/archive/v{{ version }}.tar.gz\n  sha256: a58f0d74533a6e79a955c961c7228c53abfa3ca56051713be2395e56ac7212ce\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - rust\n    - {{ compiler('c') }}   # [unix]\n    - {{ native }}binutils    # [win]\n\ntest:\n  commands:\n    - fd --help\n\nabout:\n  home: https://github.com/sharkdp/fd\n  license: MIT\n  license_family: MIT\n  summary: A simple, fast and user-friendly alternative to 'find'\n  license_file: LICENSE-MIT\n\nextra:\n  recipe-maintainers:\n    - dbast\n",
  "req":{
   "__set__":true,
