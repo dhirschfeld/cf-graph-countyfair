@@ -165,7 +165,7 @@
   },
   "package":{
    "name":"ffmpeg",
-   "version":"4.2"
+   "version":"4.2.2"
   },
   "requirements":{
    "build":[
@@ -208,20 +208,20 @@
   },
   "source":[
    {
-    "sha256":"600ac804820fb12b989ff7f19f13f7866e1b79fbfe5e50f3bc43aee5fccdc392",
-    "url":"https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-4.2-win64-shared.zip"
+    "sha256":"5aedf268952b7d9f6541dbfcb47cd86a7e7881a3b7ba482fd3bc4ca33bda7bf5",
+    "url":"https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-4.2.2-win64-shared.zip"
    },
    {
-    "sha256":"1beb19f168778fb631621c2eead96f9791fd6b63456ddc20ded5f2693cbdb5fc",
-    "url":"https://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-4.2-win64-dev.zip"
+    "sha256":"f4885f859c5b0d6663c2a0a4c1cf035b1c60b146402790b796bd3ad84f4f3ca2",
+    "url":"https://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-4.2.2-win64-dev.zip"
    },
    {
-    "sha256":"9353228c2a397d1c62df7ca16033ec8a0cd2b12296de83a1c74948fe7395bb87",
-    "url":"https://ffmpeg.org/releases/ffmpeg-4.2.tar.gz"
+    "sha256":"83f9a9aa0acf8036daf47494d99a8c31154a18ebb6841d89878ba47783559bd0",
+    "url":"https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz"
    },
    {
-    "sha256":"9353228c2a397d1c62df7ca16033ec8a0cd2b12296de83a1c74948fe7395bb87",
-    "url":"https://ffmpeg.org/releases/ffmpeg-4.2.tar.gz"
+    "sha256":"83f9a9aa0acf8036daf47494d99a8c31154a18ebb6841d89878ba47783559bd0",
+    "url":"https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz"
    }
   ],
   "test":{
@@ -268,9 +268,15 @@
   }
  },
  "name":"ffmpeg",
- "new_version":false,
+ "new_version":"4.2.3",
+ "new_version_attempts":{
+  "4.2.3":1
+ },
+ "new_version_errors":{
+  "4.2.3":"We found a problem parsing the recipe: \n\nwhile parsing a block collection\n  in \"<unicode string>\", line 53, column 5:\n        - ffmpeg --help\n        ^ (line: 53)\nexpected <block end>, but found '<scalar>'\n  in \"<unicode string>\", line 62, column 9:\n            \"avcodec\",\n            ^ (line: 62)"
+ },
  "pinning_version":"2019.06.17",
- "raw_meta_yaml":"{% set version = \"4.2\" %}\n\npackage:\n  name: ffmpeg\n  version: {{ version }}\n\nsource:\n  - url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]\n    sha256: 9353228c2a397d1c62df7ca16033ec8a0cd2b12296de83a1c74948fe7395bb87  # [not win]\n\n  - url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win]\n    sha256: 600ac804820fb12b989ff7f19f13f7866e1b79fbfe5e50f3bc43aee5fccdc392  # [win]\n\n  - url: https://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-{{ version }}-win64-dev.zip  # [win]\n    sha256: 1beb19f168778fb631621c2eead96f9791fd6b63456ddc20ded5f2693cbdb5fc  # [win]\n\nbuild:\n  number: 0\n  run_exports:\n  # seems to be minor version compatibility\n  # https://abi-laboratory.pro/tracker/timeline/ffmpeg/\n    - {{ pin_subpackage('ffmpeg', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - pkg-config  # [not win]\n    - libtool  # [not win]\n    - nasm  # [not win]\n    - lame  # [not win]\n    - make  # [not win]\n  host:\n    - bzip2  # [not win]\n    - freetype  # [not win]\n    - gnutls  # [not win]\n    - libiconv  # [not win]\n    - x264  # [not win]\n    - zlib  # [not win]\n    - openh264  # [not win]\n    - lame  # [not win]\n    - gmp  # [unix]\n  run:\n    - bzip2  # [not win]\n    - freetype  # [not win]\n    - gnutls  # [not win]\n    - openh264  # [not win]\n    - lame  # [not win]\n    - gmp  # [unix]\n\ntest:\n  commands:\n    - ffmpeg --help\n    - ffmpeg -loglevel panic -protocols | grep \"https\"  # [not win]\n    - ffmpeg -loglevel panic -codecs | grep \"libmp3lame\"  # [not win]\n    - ffmpeg -loglevel panic -codecs | grep \"DEVI.S zlib\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"DEV.LS h264\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"libx264\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"libopenh264\"  # [unix]\n    # Verify dynamic libraries on all systems\n    {% set ffmpeg_libs = [\n        \"avcodec\",\n        \"avdevice\",\n        \"swresample\",\n        \"postproc\",\n        \"avfilter\",\n        \"swresample\",\n        \"avcodec\",\n        \"avformat\",\n        \"swscale\",\n        \"avresample\"\n    ] %}\n    {% for each_ffmpeg_lib in ffmpeg_libs %}\n    - test -f $PREFIX/lib/lib{{ each_ffmpeg_lib }}.dylib  # [osx]\n    - test -f $PREFIX/lib/lib{{ each_ffmpeg_lib }}.so     # [linux]\n    {% endfor %}\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.ffmpeg.org/\n  license: GPL 3\n  license_file: COPYING.GPLv3  # [unix]\n  summary: Cross-platform solution to record, convert and stream audio and video.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - jakirkham\n    - 183amir\n    - caspervdw\n    - patricksnape\n    - ocefpaf\n    - sdvillal\n    - carlodri\n",
+ "raw_meta_yaml":"{% set version = \"4.2.2\" %}\n\npackage:\n  name: ffmpeg\n  version: {{ version }}\n\nsource:\n  - url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]\n    sha256: 83f9a9aa0acf8036daf47494d99a8c31154a18ebb6841d89878ba47783559bd0  # [not win]\n\n  - url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win]\n    sha256: 5aedf268952b7d9f6541dbfcb47cd86a7e7881a3b7ba482fd3bc4ca33bda7bf5  # [win]\n\n  - url: https://ffmpeg.zeranoe.com/builds/win64/dev/ffmpeg-{{ version }}-win64-dev.zip  # [win]\n    sha256: f4885f859c5b0d6663c2a0a4c1cf035b1c60b146402790b796bd3ad84f4f3ca2  # [win]\n\nbuild:\n  number: 0\n  run_exports:\n  # seems to be minor version compatibility\n  # https://abi-laboratory.pro/tracker/timeline/ffmpeg/\n    - {{ pin_subpackage('ffmpeg', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - pkg-config  # [not win]\n    - libtool  # [not win]\n    - nasm  # [not win]\n    - lame  # [not win]\n    - make  # [not win]\n  host:\n    - bzip2  # [not win]\n    - freetype  # [not win]\n    - gnutls  # [not win]\n    - libiconv  # [not win]\n    - x264  # [not win]\n    - zlib  # [not win]\n    - openh264  # [not win]\n    - lame  # [not win]\n    - gmp  # [unix]\n  run:\n    - bzip2  # [not win]\n    - freetype  # [not win]\n    - gnutls  # [not win]\n    - openh264  # [not win]\n    - lame  # [not win]\n    - gmp  # [unix]\n\ntest:\n  commands:\n    - ffmpeg --help\n    - ffmpeg -loglevel panic -protocols | grep \"https\"  # [not win]\n    - ffmpeg -loglevel panic -codecs | grep \"libmp3lame\"  # [not win]\n    - ffmpeg -loglevel panic -codecs | grep \"DEVI.S zlib\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"DEV.LS h264\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"libx264\"  # [unix]\n    - ffmpeg -loglevel panic -codecs | grep \"libopenh264\"  # [unix]\n    # Verify dynamic libraries on all systems\n    {% set ffmpeg_libs = [\n        \"avcodec\",\n        \"avdevice\",\n        \"swresample\",\n        \"postproc\",\n        \"avfilter\",\n        \"swresample\",\n        \"avcodec\",\n        \"avformat\",\n        \"swscale\",\n        \"avresample\"\n    ] %}\n    {% for each_ffmpeg_lib in ffmpeg_libs %}\n    - test -f $PREFIX/lib/lib{{ each_ffmpeg_lib }}.dylib  # [osx]\n    - test -f $PREFIX/lib/lib{{ each_ffmpeg_lib }}.so     # [linux]\n    {% endfor %}\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.ffmpeg.org/\n  license: GPL 3\n  license_file: COPYING.GPLv3  # [unix]\n  summary: Cross-platform solution to record, convert and stream audio and video.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - jakirkham\n    - 183amir\n    - caspervdw\n    - patricksnape\n    - ocefpaf\n    - sdvillal\n    - carlodri\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -380,5 +386,5 @@
   }
  },
  "url":"https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-4.2-win64-shared.zip",
- "version":"4.2"
+ "version":"4.2.2"
 }
