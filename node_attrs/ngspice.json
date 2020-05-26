@@ -16,7 +16,7 @@
    "summary":"The open source spice simulator for electric and electronic circuits"
   },
   "build":{
-   "number":"2",
+   "number":"3",
    "skip":true
   },
   "extra":{
@@ -31,26 +31,16 @@
     "name":"ngspice-lib",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline"
-     ],
-     "run":[
-      "ncurses",
-      "readline"
+      "winflexbison"
      ]
     },
+    "script":"build_lib.bat",
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
      ]
     }
    },
@@ -58,32 +48,16 @@
     "name":"ngspice-exe",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
-     ],
-     "run":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
+      "winflexbison"
      ]
     },
+    "script":"build_exe.bat",
     "test":{
      "commands":[
-      "$PREFIX/bin/ngspice --version"
+      "call %PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    },
@@ -97,8 +71,8 @@
     },
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice",
-      "$PREFIX/bin/ngspice --version"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    },
@@ -106,28 +80,16 @@
     "name":"ngspice-lib",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "llvm-openmp",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline"
-     ],
-     "run":[
-      "ncurses",
-      "readline"
+      "winflexbison"
      ]
     },
-    "script":"build_lib.sh",
+    "script":"build_lib.bat",
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
      ]
     }
    },
@@ -135,34 +97,16 @@
     "name":"ngspice-exe",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "llvm-openmp",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
-     ],
-     "run":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
+      "winflexbison"
      ]
     },
-    "script":"build_exe.sh",
+    "script":"build_exe.bat",
     "test":{
      "commands":[
-      "$PREFIX/bin/ngspice --version"
+      "call %PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    },
@@ -176,8 +120,8 @@
     },
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice",
-      "$PREFIX/bin/ngspice --version"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    },
@@ -185,28 +129,16 @@
     "name":"ngspice-lib",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "libgomp",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline"
-     ],
-     "run":[
-      "ncurses",
-      "readline"
+      "winflexbison"
      ]
     },
-    "script":"build_lib.sh",
+    "script":"build_lib.bat",
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
      ]
     }
    },
@@ -214,34 +146,16 @@
     "name":"ngspice-exe",
     "requirements":{
      "build":[
-      "c_compiler_stub",
-      "libgomp",
-      "autoconf",
-      "automake",
-      "libtool",
-      "texinfo",
-      "bison",
-      "flex"
+      "c_compiler_stub"
      ],
      "host":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
-     ],
-     "run":[
-      "ncurses",
-      "readline",
-      "xorg-libx11",
-      "xorg-libxaw",
-      "xorg-libxt"
+      "winflexbison"
      ]
     },
-    "script":"build_exe.sh",
+    "script":"build_exe.bat",
     "test":{
      "commands":[
-      "$PREFIX/bin/ngspice --version"
+      "call %PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    },
@@ -255,8 +169,8 @@
     },
     "test":{
      "commands":[
-      "test -f $PREFIX/lib/libngspice",
-      "$PREFIX/bin/ngspice --version"
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
      ]
     }
    }
@@ -278,63 +192,34 @@
   "ngspice-exe",
   "ngspice-lib"
  ],
- "raw_meta_yaml":"{% set name = \"ngspice\" %}\n{% set version = \"32\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ayera.dl.sourceforge.net/project/ngspice/ng-spice-rework/{{ version }}/ngspice-{{ version }}.tar.gz\n  sha256: 3cd90c4e94516d87c5b4d02a3a6405b1136b25d05c871d4fee1fd7c4c0d03ef2\n\n  patches:\n   - patches/libtoolize-name.patch  # [osx]\n\nbuild:\n  skip: true  # [win]\n  number: 2\n\noutputs:\n  - name: ngspice-lib\n    script: build_lib.sh  # [unix]\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - autoconf\n        - automake\n        - libtool\n        - texinfo\n        - bison\n        - flex\n\n      host:\n        - ncurses\n        - readline\n\n      run:\n        - ncurses\n        - readline\n\n    test:\n      commands:\n        - test -f $PREFIX/lib/libngspice{{ SHLIB_EXT }}\n\n  - name: ngspice-exe\n    script: build_exe.sh  # [unix]\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - autoconf\n        - automake\n        - libtool\n        - texinfo\n        - bison\n        - flex\n\n      host:\n        - ncurses\n        - readline\n        - xorg-libx11\n        - xorg-libxaw\n        - xorg-libxt\n\n      run:\n        - ncurses\n        - readline\n        - xorg-libx11\n        - xorg-libxaw\n        - xorg-libxt\n\n    test:\n      commands:\n        - $PREFIX/bin/ngspice --version\n\n  - name: ngspice\n    requirements:\n      run:\n        - {{ pin_subpackage('ngspice-lib', max_pin=\"x.x.x.x\") }}\n        - {{ pin_subpackage('ngspice-exe', max_pin=\"x.x.x.x\") }}\n\n    test:\n      commands:\n        - test -f $PREFIX/lib/libngspice{{ SHLIB_EXT }}\n        - $PREFIX/bin/ngspice --version\n\nabout:\n  home: http://ngspice.sourceforge.net\n  doc_url: http://ngspice.sourceforge.net/docs.html\n  dev_url: http://ngspice.sourceforge.net/devel.html\n\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n\n  summary: 'The open source spice simulator for electric and electronic circuits'\n  description: |\n    ngspice is the open source spice simulator for electric and electronic circuits.\n    \n    Such a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\n    like R, L, or C, diodes, transmission lines and other devices, all interconnected\n    in a netlist. Digital circuits are simulated as well, event driven and fast, from\n    single gates to complex circuits. And you may enter the combination of both analog\n    and digital as a mixed-signal circuit.\n    \n    ngspice offers a wealth of device models for active, passive, analog, and digital\n    elements. Model parameters are provided by the semiconductor manufacturers.\n    The user add her circuits as a netlist, and the output is one or more graphs of\n    currents, voltages and other electrical quantities or is saved in a data file.\n\n    Note:\n      This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n      See the [build script](https://git.io/JfVZX) for more specifics.\n\nextra:\n  recipe-maintainers:\n    - stuarteberg\n",
+ "raw_meta_yaml":"{% set name = \"ngspice\" %}\n{% set version = \"32\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ayera.dl.sourceforge.net/project/ngspice/ng-spice-rework/{{ version }}/ngspice-{{ version }}.tar.gz\n  sha256: 3cd90c4e94516d87c5b4d02a3a6405b1136b25d05c871d4fee1fd7c4c0d03ef2\n\n  patches:\n   - patches/libtoolize-name.patch  # [osx]\n   - patches/vngspice-install-location.patch  # [win]\n\nbuild:\n  number: 3\n  skip: True  # [win and vc<14]\n\n# Due to how 'conda render' extracts metadata info, the 'outputs'\n# key must appear OUTSIDE of the jinja conditional below!\noutputs:\n\n##\n## UNIX\n##\n{% if unix %}\n\n  - name: ngspice-lib\n    script: build_lib.sh\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - autoconf\n        - automake\n        - libtool\n        - texinfo\n        - bison\n        - flex\n\n      host:\n        - ncurses\n        - readline\n\n      run:\n        - ncurses\n        - readline\n\n    test:\n      commands:\n        - test -f $PREFIX/lib/libngspice{{ SHLIB_EXT }}\n\n  - name: ngspice-exe\n    script: build_exe.sh\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - llvm-openmp  # [osx]\n        - libgomp      # [linux]\n        - autoconf\n        - automake\n        - libtool\n        - texinfo\n        - bison\n        - flex\n\n      host:\n        - ncurses\n        - readline\n        - xorg-libx11\n        - xorg-libxaw\n        - xorg-libxt\n\n      run:\n        - ncurses\n        - readline\n        - xorg-libx11\n        - xorg-libxaw\n        - xorg-libxt\n\n    test:\n      commands:\n        - $PREFIX/bin/ngspice --version\n\n  - name: ngspice\n    requirements:\n      run:\n        - {{ pin_subpackage('ngspice-lib', max_pin=\"x.x.x.x\") }}\n        - {{ pin_subpackage('ngspice-exe', max_pin=\"x.x.x.x\") }}\n\n    test:\n      commands:\n        - test -f $PREFIX/lib/libngspice{{ SHLIB_EXT }}\n        - $PREFIX/bin/ngspice --version\n\n##\n## WINDOWS\n##\n{% else %}\n\n  - name: ngspice-lib\n    script: build_lib.bat\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n\n      host:\n        # technically this ought to be in the 'build' requirements,\n        # but it's easier to locate if we put it here, via LIBRARY_BIN\n        - winflexbison\n\n    test:\n      commands:\n        - if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1\n\n  - name: ngspice-exe\n    script: build_exe.bat\n\n    requirements:\n      build:\n        - {{ compiler('c') }}\n\n      host:\n        # technically this ought to be in the 'build' requirements,\n        # but it's easier to locate if we put it here, via LIBRARY_BIN\n        - winflexbison\n\n    test:\n      commands:\n        - \"call %PREFIX%\\\\bin\\\\ngspice_con.exe --version\"\n\n  - name: ngspice\n    requirements:\n      run:\n        - {{ pin_subpackage('ngspice-lib', max_pin=\"x.x.x.x\") }}\n        - {{ pin_subpackage('ngspice-exe', max_pin=\"x.x.x.x\") }}\n\n    test:\n      commands:\n        - if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1\n        - \"%PREFIX%\\\\bin\\\\ngspice_con.exe --version\"\n\n{% endif %}\n\nabout:\n  home: http://ngspice.sourceforge.net\n  doc_url: http://ngspice.sourceforge.net/docs.html\n  dev_url: http://ngspice.sourceforge.net/devel.html\n\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n\n  summary: 'The open source spice simulator for electric and electronic circuits'\n  description: |\n    ngspice is the open source spice simulator for electric and electronic circuits.\n    \n    Such a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\n    like R, L, or C, diodes, transmission lines and other devices, all interconnected\n    in a netlist. Digital circuits are simulated as well, event driven and fast, from\n    single gates to complex circuits. And you may enter the combination of both analog\n    and digital as a mixed-signal circuit.\n    \n    ngspice offers a wealth of device models for active, passive, analog, and digital\n    elements. Model parameters are provided by the semiconductor manufacturers.\n    The user add her circuits as a netlist, and the output is one or more graphs of\n    currents, voltages and other electrical quantities or is saved in a data file.\n\n    Note:\n      This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n      See the [build script](https://git.io/JfVZX) for more specifics.\n\nextra:\n  recipe-maintainers:\n    - stuarteberg\n",
  "req":{
   "__set__":true,
   "elements":[
-   "autoconf",
-   "automake",
-   "bison",
    "c_compiler_stub",
-   "flex",
-   "libgomp",
-   "libtool",
-   "llvm-openmp",
-   "ncurses",
    "ngspice-exe",
    "ngspice-lib",
-   "readline",
-   "texinfo",
-   "xorg-libx11",
-   "xorg-libxaw",
-   "xorg-libxt"
+   "winflexbison"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "autoconf",
-    "automake",
-    "bison",
-    "c_compiler_stub",
-    "flex",
-    "libgomp",
-    "libtool",
-    "llvm-openmp",
-    "texinfo"
+    "c_compiler_stub"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "ncurses",
-    "readline",
-    "xorg-libx11",
-    "xorg-libxaw",
-    "xorg-libxt"
+    "winflexbison"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "ncurses",
     "ngspice-exe",
-    "ngspice-lib",
-    "readline",
-    "xorg-libx11",
-    "xorg-libxaw",
-    "xorg-libxt"
+    "ngspice-lib"
    ]
   },
   "test":{
@@ -347,37 +232,20 @@
   "build":{
    "__set__":true,
    "elements":[
-    "autoconf",
-    "automake",
-    "bison",
-    "c_compiler_stub",
-    "flex",
-    "libgomp",
-    "libtool",
-    "llvm-openmp",
-    "texinfo"
+    "c_compiler_stub"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "ncurses",
-    "readline",
-    "xorg-libx11",
-    "xorg-libxaw",
-    "xorg-libxt"
+    "winflexbison"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "ncurses",
     "ngspice-exe",
-    "ngspice-lib",
-    "readline",
-    "xorg-libx11",
-    "xorg-libxaw",
-    "xorg-libxt"
+    "ngspice-lib"
    ]
   },
   "test":{
