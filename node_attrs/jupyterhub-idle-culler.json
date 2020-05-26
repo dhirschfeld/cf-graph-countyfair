@@ -1,5 +1,147 @@
 {
- "bad":"make_graph: 404",
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"jupyterhub-idle-culler",
- "new_version":false
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"jupyterhub-idle-culler provides a JupyterHub service to cull and shut down\nidle notebook servers and users on a JupyterHub deployment.\n",
+   "dev_url":"https://github.com/jupyterhub/jupyterhub-idle-culler",
+   "doc_url":"https://github.com/jupyterhub/jupyterhub-idle-culler/blob/master/README.rst",
+   "home":"https://github.com/jupyterhub/jupyterhub-idle-culler",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING.md",
+   "summary":"JupyterHub service to cull idle servers and users"
+  },
+  "build":{
+   "entry_points":[
+    "cull_idle_servers.py = jupyterhub_idle_culler:main",
+    "jupyterhub-idle-culler = jupyterhub_idle_culler:main",
+    "cull_idle_servers.py = jupyterhub_idle_culler:main",
+    "jupyterhub-idle-culler = jupyterhub_idle_culler:main",
+    "cull_idle_servers.py = jupyterhub_idle_culler:main",
+    "jupyterhub-idle-culler = jupyterhub_idle_culler:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill",
+    "ericdill",
+    "ericdill"
+   ]
+  },
+  "package":{
+   "name":"jupyterhub-idle-culler",
+   "version":"1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "python",
+    "pip",
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "tornado",
+    "python-dateutil",
+    "python",
+    "tornado",
+    "python-dateutil",
+    "python",
+    "tornado",
+    "python-dateutil"
+   ]
+  },
+  "source":{
+   "sha256":"d9e58baa48cba6a79b83c43d8dcab7b758a66c2c4a9bc8394f7b43e03d891621",
+   "url":"https://pypi.io/packages/source/j/jupyterhub-idle-culler/jupyterhub-idle-culler-1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cull_idle_servers.py --help",
+    "jupyterhub-idle-culler --help",
+    "cull_idle_servers.py --help",
+    "jupyterhub-idle-culler --help",
+    "cull_idle_servers.py --help",
+    "jupyterhub-idle-culler --help"
+   ],
+   "imports":[
+    "jupyterhub_idle_culler",
+    "jupyterhub_idle_culler",
+    "jupyterhub_idle_culler"
+   ]
+  }
+ },
+ "name":"jupyterhub-idle-culler",
+ "new_version":"1.0",
+ "raw_meta_yaml":"{% set name = \"jupyterhub-idle-culler\" %}\n{% set version = \"1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d9e58baa48cba6a79b83c43d8dcab7b758a66c2c4a9bc8394f7b43e03d891621\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n  entry_points:\n    - cull_idle_servers.py = jupyterhub_idle_culler:main\n    - jupyterhub-idle-culler = jupyterhub_idle_culler:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - tornado\n    - python-dateutil\n\ntest:\n  imports:\n    - jupyterhub_idle_culler\n  commands:\n    - cull_idle_servers.py --help\n    - jupyterhub-idle-culler --help\n\nabout:\n  home: https://github.com/jupyterhub/jupyterhub-idle-culler\n  license: BSD-3-Clause\n  license_family: BSD\n  # Opened license packaging PR upstream: https://github.com/jupyterhub/jupyterhub-idle-culler/pull/3\n  license_file: COPYING.md\n  summary:\n    JupyterHub service to cull idle servers and users\n  description: |\n    jupyterhub-idle-culler provides a JupyterHub service to cull and shut down\n    idle notebook servers and users on a JupyterHub deployment.\n  doc_url: https://github.com/jupyterhub/jupyterhub-idle-culler/blob/master/README.rst\n  dev_url: https://github.com/jupyterhub/jupyterhub-idle-culler\n\nextra:\n  recipe-maintainers:\n    - ericdill\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "pip",
+   "python",
+   "python-dateutil",
+   "tornado"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "python-dateutil",
+    "tornado"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "python-dateutil",
+    "tornado"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://pypi.io/packages/source/j/jupyterhub-idle-culler/jupyterhub-idle-culler-1.0.tar.gz",
+ "version":"1.0"
 }

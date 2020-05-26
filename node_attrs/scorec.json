@@ -20,9 +20,26 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/423302334.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.2.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"scorec",
  "hash_type":"sha256",
@@ -98,8 +115,12 @@
   }
  },
  "name":"scorec",
- "new_version":false,
- "pinning_version":"2019.10.11",
+ "new_version":"2.2.3",
+ "new_version_attempts":{
+  "2.2.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"scorec\" %}\n{% set version = \"2.2.2\" %}\n{% set build = 0 %}\n{% set sha256 = \"201ba8ad9f71e75fd2d6d7dc6da43dafd69233a16e022786c85f62c207fcbf0f\" %}\n\n{% set mpi = mpi or 'mpich' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SCOREC/core/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n#  patches:\n#    - 0001-fix-malloc-usage.patch  # [osx]\n#    - 0002-fmemopen-memstream-ports-for-darwin.patch  # [osx]\n\nbuild:\n  number: {{ build }}\n  skip: true  # [win]\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  string: \"{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}\"\n  run_exports:\n    - {{ name }} * {{ mpi_prefix }}_*\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - {{ mpi }}\n    - metis 5.1\n    - parmetis 4.0\n    - zoltan 3\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/zoltan.h  # [unix]\n\nabout:\n  home: https://www.scorec.rpi.edu/software.php\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: The SCOREC Core is a set of C/C++ libraries for unstructured mesh simulations on supercomputers.\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n    - SylvainCorlay\n    - zhang-alvin\n",
  "req":{
   "__set__":true,
@@ -140,7 +161,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
