@@ -37,49 +37,55 @@
  ],
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "provider":{
-   "win":"appveyor"
-  }
+  "compiler_stack":"comp7"
  },
  "feedstock_name":"simbody",
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
+   "dev_url":"https://github.com/simbody/simbody",
+   "doc_url":"https://simbody.github.io",
    "home":"https://simtk.org/home/simbody",
    "license":"Apache-2.0",
+   "license_file":"LICENSE.txt",
    "summary":"High-performance C++ multibody dynamics/physics library for simulating articulated biomechanical and mechanical systems like vehicles, robots, and the human skeleton.\n"
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "number":"1003",
+   "number":"0",
    "run_exports":[
     "simbody",
     "simbody",
     "simbody"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
     "moorepants",
+    "chrisdembia",
     "moorepants",
-    "moorepants"
+    "chrisdembia",
+    "moorepants",
+    "chrisdembia"
    ]
   },
   "package":{
    "name":"simbody",
-   "version":"3.6.1"
+   "version":"3.7"
   },
   "requirements":{
    "build":[
     "cmake >=3.8",
+    "ninja",
+    "doxygen",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake >=3.8",
+    "doxygen",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake >=3.8",
+    "doxygen",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cdt_stub",
@@ -111,14 +117,10 @@
     "cdt_stub"
    ],
    "host":[
+    "openblas",
     "libblas",
-    "libcblas",
     "liblapack",
     "libblas",
-    "libcblas",
-    "liblapack",
-    "libblas",
-    "libcblas",
     "liblapack",
     "libglu",
     "freeglut",
@@ -130,9 +132,9 @@
    ]
   },
   "source":{
-   "fn":"Simbody-3.6.1.tar.gz",
-   "sha256":"7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639",
-   "url":"https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
+   "fn":"Simbody-3.7.tar.gz",
+   "sha256":"d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a",
+   "url":"https://github.com/simbody/simbody/archive/Simbody-3.7.tar.gz"
   },
   "test":{
    "commands":[
@@ -146,7 +148,7 @@
     "if not exist %LIBRARY_BIN%\\\\SimTKcommon.dll exit 1",
     "if not exist %LIBRARY_BIN%\\\\SimTKmath.dll exit 1",
     "if not exist %LIBRARY_BIN%\\\\SimTKsimbody.dll exit 1",
-    "test -f $PREFIX/libexec/simbody/simbody-visualizer",
+    "test -f $PREFIX/libexec/simbody/simbody-visualizer.app/Contents/MacOS/simbody-visualizer",
     "test -f $PREFIX/include/simbody/Simbody.h",
     "test -f $PREFIX/include/simbody/SimTKcommon.h",
     "test -f $PREFIX/include/simbody/SimTKlapack.h",
@@ -166,14 +168,13 @@
     "test -f $PREFIX/lib/libSimTKcommon.so",
     "test -f $PREFIX/lib/libSimTKmath.so",
     "test -f $PREFIX/lib/libSimTKsimbody.so"
-   ],
-   "requires":null
+   ]
   }
  },
  "name":"simbody",
  "new_version":false,
  "pinning_version":"2019.03.17",
- "raw_meta_yaml":"{% set version = \"3.6.1\" %}\n\npackage:\n    name: simbody\n    version: {{ version }}\n\nsource:\n    fn: Simbody-{{ version }}.tar.gz\n    url: https://github.com/simbody/simbody/archive/Simbody-{{ version }}.tar.gz\n    sha256: 7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639\n\nbuild:\n    number: 1003\n    run_exports:\n        - {{ pin_subpackage('simbody', max_pin='x.x') }}\n    # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets\n    # which only Python 3.5 supports. So skip previous Python versions.\n    skip: true                # [win and vc<14]\n    # NOTE : This is needed to ensure the paths to Simbody's binaries, like\n    # simbody-visualizer, are corrected.\n    detect_binary_files_with_prefix: true\n\n# NOTE: This installs Simbody and the optional visualizer on Linux, Windows, and\n# OSX. We build against the openblas available in conda-forge which includes\n# lapack on Linux and OSX. blas and lapack are not needed on Windows because\n# Simbody includes them. For the visualizer, FreeGLUT is available via\n# anaconda.org. Glut is included with Simbody for Windows and OSX includes a\n# Glut implementation.\n# https://github.com/AnacondaRecipes/r-rgl-feedstock/blob/master/recipe/meta.yaml#L48-L67\nrequirements:\n    build:\n        # CMake 3.8 provides imported targets for OpenGL.\n        - cmake >=3.8\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n        - {{ cdt('mesa-libgl-devel') }}      # [linux]\n        - {{ cdt('libx11-devel') }}          # [linux]\n        - {{ cdt('libxext-devel') }}         # [linux]\n        - {{ cdt('libxrender-devel') }}      # [linux]\n        - {{ cdt('mesa-libegl-devel') }}     # [linux]\n        - {{ cdt('mesa-dri-drivers') }}      # [linux]\n        - {{ cdt('libxau-devel') }}          # [linux]\n        - {{ cdt('libdrm-devel') }}          # [linux]\n        - {{ cdt('libxcomposite-devel') }}   # [linux]\n        - {{ cdt('libxcursor-devel') }}      # [linux]\n        - {{ cdt('libxi-devel') }}           # [linux]\n        - {{ cdt('libxrandr-devel') }}       # [linux]\n        - {{ cdt('libxscrnsaver-devel') }}   # [linux]\n        - {{ cdt('libxtst-devel') }}         # [linux]\n        - {{ cdt('libselinux-devel') }}      # [linux]\n        - {{ cdt('libxdamage') }}            # [linux]\n        - {{ cdt('libxcb') }}                # [linux]\n        - {{ cdt('libx11-devel') }}          # [linux]\n        - {{ cdt('libxfixes-devel') }}       # [linux]\n        - {{ cdt('libsm-devel') }}           # [linux]\n        - {{ cdt('libice-devel') }}          # [linux]\n        - {{ cdt('libxt') }}                 # [linux]\n        - {{ cdt('libxt-devel') }}           # [linux]\n        - {{ cdt('libxcb') }}                # [linux]\n        - {{ cdt('libxau') }}                # [linux]\n        - {{ cdt('libxxf86vm') }}            # [linux]\n    host:\n        - libblas\n        - libcblas\n        - liblapack\n        - libglu                  # [linux]\n        - freeglut                # [linux]\n        - xorg-libxmu             # [linux]\n    run:\n        - libglu                  # [linux]\n        - freeglut                # [linux]\n        \ntest:\n  requires:\n    - python 3.5.*  # [win and py35]\n  commands:\n    - test -f $PREFIX/libexec/simbody/simbody-visualizer              # [unix]\n    - if not exist %LIBRARY_BIN%\\\\simbody-visualizer.exe exit 1       # [win]\n    - test -f $PREFIX/include/simbody/Simbody.h                       # [unix]\n    - test -f $PREFIX/include/simbody/SimTKcommon.h                   # [unix]\n    - test -f $PREFIX/include/simbody/SimTKlapack.h                   # [unix]\n    - test -f $PREFIX/include/simbody/SimTKmath.h                     # [unix]\n    - test -f $PREFIX/include/simbody/SimTKsimbody_aux.h              # [unix]\n    - test -f $PREFIX/include/simbody/SimTKsimbody.h                  # [unix]\n    - if not exist %LIBRARY_INC%\\\\Simbody.h exit 1                    # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKcommon.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKlapack.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKmath.h exit 1                  # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKsimbody_aux.h exit 1           # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKsimbody.h exit 1               # [win]\n    - test -f $PREFIX/lib/libSimTKcommon.so                           # [linux]\n    - test -f $PREFIX/lib/libSimTKmath.so                             # [linux]\n    - test -f $PREFIX/lib/libSimTKsimbody.so                          # [linux]\n    - test -f $PREFIX/lib/libSimTKcommon.dylib                        # [osx]\n    - test -f $PREFIX/lib/libSimTKmath.dylib                          # [osx]\n    - test -f $PREFIX/lib/libSimTKsimbody.dylib                       # [osx]\n    - if not exist %LIBRARY_BIN%\\\\SimTKcommon.dll exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\\\SimTKmath.dll exit 1                # [win]\n    - if not exist %LIBRARY_BIN%\\\\SimTKsimbody.dll exit 1             # [win]\n\nabout:\n    home: https://simtk.org/home/simbody\n    license: Apache-2.0\n    summary: >\n        High-performance C++ multibody dynamics/physics library for simulating\n        articulated biomechanical and mechanical systems like vehicles, robots,\n        and the human skeleton.\n\nextra:\n    recipe-maintainers:\n        - moorepants\n",
+ "raw_meta_yaml":"{% set version = \"3.7\" %}\n\npackage:\n    name: simbody\n    version: {{ version }}\n\nsource:\n    fn: Simbody-{{ version }}.tar.gz\n    url: https://github.com/simbody/simbody/archive/Simbody-{{ version }}.tar.gz\n    sha256: d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a\n\nbuild:\n    number: 0\n    run_exports:\n        - {{ pin_subpackage('simbody', max_pin='x.x') }}\n    # NOTE : This is needed to ensure the paths to Simbody's binaries, like\n    # simbody-visualizer, are corrected.\n    detect_binary_files_with_prefix: true\n\n# NOTE: This installs Simbody and the optional visualizer on Linux, Windows,\n# and OSX. On Windows, we build against the openblas available in conda-forge,\n# which includes lapack, because the other blas/lapack packages do not provide\n# import libraries (*.lib). We only depend on Glut on Linux, because Glut is\n# included with Simbody for Windows and OSX includes a Glut implementation.\n# https://github.com/AnacondaRecipes/r-rgl-feedstock/blob/master/recipe/meta.yaml#L48-L67\nrequirements:\n    build:\n        # CMake 3.8 provides imported targets for OpenGL.\n        - cmake >=3.8\n        - ninja  # [win]\n        - doxygen\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n        - {{ cdt('mesa-libgl-devel') }}      # [linux]\n        - {{ cdt('libx11-devel') }}          # [linux]\n        - {{ cdt('libxext-devel') }}         # [linux]\n        - {{ cdt('libxrender-devel') }}      # [linux]\n        - {{ cdt('mesa-libegl-devel') }}     # [linux]\n        - {{ cdt('mesa-dri-drivers') }}      # [linux]\n        - {{ cdt('libxau-devel') }}          # [linux]\n        - {{ cdt('libdrm-devel') }}          # [linux]\n        - {{ cdt('libxcomposite-devel') }}   # [linux]\n        - {{ cdt('libxcursor-devel') }}      # [linux]\n        - {{ cdt('libxi-devel') }}           # [linux]\n        - {{ cdt('libxrandr-devel') }}       # [linux]\n        - {{ cdt('libxscrnsaver-devel') }}   # [linux]\n        - {{ cdt('libxtst-devel') }}         # [linux]\n        - {{ cdt('libselinux-devel') }}      # [linux]\n        - {{ cdt('libxdamage') }}            # [linux]\n        - {{ cdt('libxcb') }}                # [linux]\n        - {{ cdt('libx11-devel') }}          # [linux]\n        - {{ cdt('libxfixes-devel') }}       # [linux]\n        - {{ cdt('libsm-devel') }}           # [linux]\n        - {{ cdt('libice-devel') }}          # [linux]\n        - {{ cdt('libxt') }}                 # [linux]\n        - {{ cdt('libxt-devel') }}           # [linux]\n        - {{ cdt('libxcb') }}                # [linux]\n        - {{ cdt('libxau') }}                # [linux]\n        - {{ cdt('libxxf86vm') }}            # [linux]\n    host:\n        - openblas  # [win]\n        - libblas  # [not win]\n        - liblapack  # [not win]\n        - libglu  # [linux]\n        - freeglut  # [linux]\n        - xorg-libxmu  # [linux]\n    run:\n        - libglu  # [linux]\n        - freeglut  # [linux]\n        \ntest:\n  commands:\n    - test -f $PREFIX/libexec/simbody/simbody-visualizer              # [linux]\n    - test -f $PREFIX/libexec/simbody/simbody-visualizer.app/Contents/MacOS/simbody-visualizer  # [osx]\n    - if not exist %LIBRARY_BIN%\\\\simbody-visualizer.exe exit 1       # [win]\n    - test -f $PREFIX/include/simbody/Simbody.h                       # [unix]\n    - test -f $PREFIX/include/simbody/SimTKcommon.h                   # [unix]\n    - test -f $PREFIX/include/simbody/SimTKlapack.h                   # [unix]\n    - test -f $PREFIX/include/simbody/SimTKmath.h                     # [unix]\n    - test -f $PREFIX/include/simbody/SimTKsimbody_aux.h              # [unix]\n    - test -f $PREFIX/include/simbody/SimTKsimbody.h                  # [unix]\n    - if not exist %LIBRARY_INC%\\\\Simbody.h exit 1                    # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKcommon.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKlapack.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKmath.h exit 1                  # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKsimbody_aux.h exit 1           # [win]\n    - if not exist %LIBRARY_INC%\\\\SimTKsimbody.h exit 1               # [win]\n    - test -f $PREFIX/lib/libSimTKcommon.so                           # [linux]\n    - test -f $PREFIX/lib/libSimTKmath.so                             # [linux]\n    - test -f $PREFIX/lib/libSimTKsimbody.so                          # [linux]\n    - test -f $PREFIX/lib/libSimTKcommon.dylib                        # [osx]\n    - test -f $PREFIX/lib/libSimTKmath.dylib                          # [osx]\n    - test -f $PREFIX/lib/libSimTKsimbody.dylib                       # [osx]\n    - if not exist %LIBRARY_BIN%\\\\SimTKcommon.dll exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\\\SimTKmath.dll exit 1                # [win]\n    - if not exist %LIBRARY_BIN%\\\\SimTKsimbody.dll exit 1             # [win]\n\nabout:\n    home: https://simtk.org/home/simbody\n    license: Apache-2.0\n    license_file: LICENSE.txt\n    dev_url: https://github.com/simbody/simbody\n    doc_url: https://simbody.github.io\n    summary: >\n        High-performance C++ multibody dynamics/physics library for simulating\n        articulated biomechanical and mechanical systems like vehicles, robots,\n        and the human skeleton.\n\nextra:\n    recipe-maintainers:\n        - moorepants\n        - chrisdembia\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -181,11 +182,13 @@
    "cdt_stub",
    "cmake",
    "cxx_compiler_stub",
+   "doxygen",
    "freeglut",
    "libblas",
-   "libcblas",
    "libglu",
    "liblapack",
+   "ninja",
+   "openblas",
    "xorg-libxmu"
   ]
  },
@@ -196,7 +199,9 @@
     "c_compiler_stub",
     "cdt_stub",
     "cmake",
-    "cxx_compiler_stub"
+    "cxx_compiler_stub",
+    "doxygen",
+    "ninja"
    ]
   },
   "host":{
@@ -204,9 +209,9 @@
    "elements":[
     "freeglut",
     "libblas",
-    "libcblas",
     "libglu",
     "liblapack",
+    "openblas",
     "xorg-libxmu"
    ]
   },
@@ -231,7 +236,9 @@
     "c_compiler_stub",
     "cdt_stub",
     "cmake >=3.8",
-    "cxx_compiler_stub"
+    "cxx_compiler_stub",
+    "doxygen",
+    "ninja"
    ]
   },
   "host":{
@@ -239,9 +246,9 @@
    "elements":[
     "freeglut",
     "libblas",
-    "libcblas",
     "libglu",
     "liblapack",
+    "openblas",
     "xorg-libxmu"
    ]
   },
@@ -258,5 +265,5 @@
   }
  },
  "url":"https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz",
- "version":"3.6.1"
+ "version":"3.7"
 }
