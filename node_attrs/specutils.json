@@ -162,15 +162,14 @@
    "dev_url":"https://github.com/astropy/specutils",
    "doc_url":"http://specutils.readthedocs.io/",
    "home":"http://specutils.readthedocs.io/",
-   "license":"BSD-3-clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.rst",
    "summary":"Astropy affiliated package for astronomical spectral operations."
   },
   "build":{
    "noarch":"python",
-   "number":"0",
-   "script":"python setup.py install --offline --single-version-externally-managed --record=record.txt"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -179,64 +178,75 @@
     "nmearl",
     "crawfordsm",
     "keflavich",
+    "eteq",
     "mwcraig",
     "bsipocz",
     "nmearl",
     "crawfordsm",
     "keflavich",
+    "eteq",
     "mwcraig",
     "bsipocz",
     "nmearl",
     "crawfordsm",
-    "keflavich"
+    "keflavich",
+    "eteq"
    ]
   },
   "package":{
    "name":"specutils",
-   "version":"0.7"
+   "version":"1.0"
   },
   "requirements":{
    "host":[
     "python >=3",
-    "setuptools",
+    "pip",
     "astropy >=4",
-    "six",
+    "astropy-helpers >=4",
     "gwcs >=0.12",
     "scipy",
+    "wget",
     "python >=3",
-    "setuptools",
+    "pip",
     "astropy >=4",
-    "six",
+    "astropy-helpers >=4",
     "gwcs >=0.12",
     "scipy",
+    "wget",
     "python >=3",
-    "setuptools",
+    "pip",
     "astropy >=4",
-    "six",
+    "astropy-helpers >=4",
     "gwcs >=0.12",
-    "scipy"
+    "scipy",
+    "wget"
    ],
    "run":[
     "python >=3",
     "astropy >=4",
-    "six",
     "gwcs >=0.12",
+    "asdf >=2.5",
     "scipy",
     "python >=3",
     "astropy >=4",
-    "six",
     "gwcs >=0.12",
+    "asdf >=2.5",
     "scipy",
     "python >=3",
     "astropy >=4",
-    "six",
     "gwcs >=0.12",
+    "asdf >=2.5",
     "scipy"
    ]
   },
   "source":{
-   "sha256":"c885ee7b41c9f9f663435b51850908dd5d178391ac3d9d271568e25d38bfd826",
-   "url":"https://pypi.io/packages/source/s/specutils/specutils-0.7.tar.gz"
+   "patches":[
+    "setup.cfg.patch",
+    "setup.cfg.patch",
+    "setup.cfg.patch"
+   ],
+   "sha256":"69da591cba1f0501c6a13bb705fa1fb5e9bab748d0220e5996342caa4d5737c9",
+   "url":"https://pypi.io/packages/source/s/specutils/specutils-1.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -270,16 +280,18 @@
  "name":"specutils",
  "new_version":"1.0",
  "pinning_version":"2020.03.20",
- "raw_meta_yaml":"{% set name = \"specutils\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c885ee7b41c9f9f663435b51850908dd5d178391ac3d9d271568e25d38bfd826\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --offline --single-version-externally-managed --record=record.txt\n\nrequirements:\n  host:\n    - python >=3\n    - setuptools\n    - astropy >=4\n    - six\n    - gwcs >=0.12\n    - scipy\n  run:\n    - python >=3\n    - astropy >=4\n    - six\n    - gwcs >=0.12\n    - scipy\n\ntest:\n  imports:\n    - specutils\n    - specutils.analysis\n    - specutils.fitting\n    - specutils.io\n    - specutils.io.default_loaders\n    - specutils.manipulation\n    - specutils.spectra\n    - specutils.utils\n\nabout:\n  home: http://specutils.readthedocs.io/\n  license: BSD-3-clause\n  license_family: BSD\n  license_file: 'LICENSE.rst'\n  summary: Astropy affiliated package for astronomical spectral operations.\n  description: \"The specutils package implements base classes and utilities for\\r\\ninteracting with astronomical spectra in Python and the Astropy\\r\\nproject.  It is intended for eventual merger with the\\\n    \\ `astropy`\\r\\npackage, but for now is being developed independently.\"\n  doc_url: http://specutils.readthedocs.io/\n  dev_url: https://github.com/astropy/specutils\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - nmearl\n    - crawfordsm\n    - keflavich\n",
+ "raw_meta_yaml":"{% set name = \"specutils\" %}\n{% set version = \"1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 69da591cba1f0501c6a13bb705fa1fb5e9bab748d0220e5996342caa4d5737c9\n  patches:\n    - setup.cfg.patch\n\nbuild:\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - astropy >=4\n    - astropy-helpers >=4\n    - gwcs >=0.12\n    - scipy\n    - wget\n  run:\n    - python >=3\n    - astropy >=4\n    - gwcs >=0.12\n    - asdf >=2.5\n    - scipy\n\ntest:\n  imports:\n    - specutils\n    - specutils.analysis\n    - specutils.fitting\n    - specutils.io\n    - specutils.io.default_loaders\n    - specutils.manipulation\n    - specutils.spectra\n    - specutils.utils\n\nabout:\n  home: http://specutils.readthedocs.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Astropy affiliated package for astronomical spectral operations.\n  description: \"The specutils package implements base classes and utilities for\\r\\ninteracting with astronomical spectra in Python and the Astropy\\r\\nproject.  It\\\n    \\ is intended for eventual merger with the `astropy`\\r\\npackage, but for now is being developed independently.\"\n  doc_url: http://specutils.readthedocs.io/\n  dev_url: https://github.com/astropy/specutils\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - nmearl\n    - crawfordsm\n    - keflavich\n    - eteq\n",
  "req":{
   "__set__":true,
   "elements":[
+   "asdf",
    "astropy",
+   "astropy-helpers",
    "gwcs",
+   "pip",
    "python",
    "scipy",
-   "setuptools",
-   "six"
+   "wget"
   ]
  },
  "requirements":{
@@ -291,21 +303,22 @@
    "__set__":true,
    "elements":[
     "astropy",
+    "astropy-helpers",
     "gwcs",
+    "pip",
     "python",
     "scipy",
-    "setuptools",
-    "six"
+    "wget"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "asdf",
     "astropy",
     "gwcs",
     "python",
-    "scipy",
-    "six"
+    "scipy"
    ]
   },
   "test":{
@@ -324,21 +337,22 @@
    "__set__":true,
    "elements":[
     "astropy >=4",
+    "astropy-helpers >=4",
     "gwcs >=0.12",
+    "pip",
     "python >=3",
     "scipy",
-    "setuptools",
-    "six"
+    "wget"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "asdf >=2.5",
     "astropy >=4",
     "gwcs >=0.12",
     "python >=3",
-    "scipy",
-    "six"
+    "scipy"
    ]
   },
   "test":{
@@ -347,5 +361,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/specutils/specutils-0.5.2.tar.gz",
- "version":"0.7"
+ "version":"1.0"
 }

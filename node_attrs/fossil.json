@@ -105,6 +105,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422950561.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.11"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -192,8 +209,12 @@
   }
  },
  "name":"fossil",
- "new_version":false,
- "pinning_version":"2019.10.01",
+ "new_version":"2.11",
+ "new_version_attempts":{
+  "2.11":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"fossil\" %}\n{% set version = \"2.10\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://www.fossil-scm.org/xfer/uv/{{ name }}-src-{{ version }}.tar.gz\n  sha256: d8a3776d2ce77385ed5ff20a2776d13bb534fb2508e87351e14e94f91cd12b10\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - ccache  # [unix]\n    - cmake  # [win]\n    - make  # [unix]\n    - perl  # [win]\n  host:\n    - openssl\n    - sqlite  # [unix]\n    - tk\n    - zlib\n  run:\n    - openssl\n    - sqlite  # [unix]\n    - tk\n    - zlib\n\ntest:\n  commands:\n    - fossil --help\n\nabout:\n  home: https://fossil-scm.org\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: COPYRIGHT-BSD2.txt\n  summary: >\n    Fossil is a simple, high-reliability, distributed software configuration\n    management system with these advanced features:\n\n  doc_url: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html\n  dev_url: https://fossil-scm.org/index.html/dir?ci=tip\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
@@ -243,7 +264,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.5.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
