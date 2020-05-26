@@ -126,9 +126,6 @@
  ],
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -144,7 +141,7 @@
    "summary":"Inverse subset simulation"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "otsubsetinverse",
     "otsubsetinverse",
@@ -171,6 +168,7 @@
     "swig",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "curl",
     "cmake",
     "swig",
     "c_compiler_stub",
@@ -217,12 +215,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set version = \"1.6\" %}\n\npackage:\n  name: otsubsetinverse\n  version: {{ version }}\n\nsource:\n  fn: otsubsetinverse-{{ version }}.tar.gz\n  url: https://github.com/openturns/otsubsetinverse/archive/v{{ version }}.tar.gz\n  sha256: db4357c6d33e8c1c37bb9d8c25bfdedeebf56f269ef5f1abbfdf0546a1fa7fca\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('otsubsetinverse', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - openturns 1.15*\n  run:\n    - python\n    - openturns 1.15*\n\ntest:\n  imports:\n    - otsubsetinverse\n\nabout:\n  home: http://openturns.org/\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: Inverse subset simulation\n\nextra:\n  recipe-maintainers:\n    - adumasphi\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"1.6\" %}\n\npackage:\n  name: otsubsetinverse\n  version: {{ version }}\n\nsource:\n  fn: otsubsetinverse-{{ version }}.tar.gz\n  url: https://github.com/openturns/otsubsetinverse/archive/v{{ version }}.tar.gz\n  sha256: db4357c6d33e8c1c37bb9d8c25bfdedeebf56f269ef5f1abbfdf0546a1fa7fca\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('otsubsetinverse', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - curl  # [win]\n  host:\n    - python\n    - openturns 1.15*\n  run:\n    - python\n    - openturns 1.15*\n\ntest:\n  imports:\n    - otsubsetinverse\n\nabout:\n  home: http://openturns.org/\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: Inverse subset simulation\n\nextra:\n  recipe-maintainers:\n    - adumasphi\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cmake",
+   "curl",
    "cxx_compiler_stub",
    "openturns",
    "python",
@@ -235,6 +234,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]
@@ -266,6 +266,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]

@@ -57,7 +57,7 @@
     "napari = napari.__main__:main"
    ],
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -104,7 +104,7 @@
     "fsspec",
     "imageio",
     "ipykernel",
-    "jupyter_client <6.0.0",
+    "jupyter_client",
     "qtpy",
     "qtconsole",
     "IPython",
@@ -116,6 +116,7 @@
     "numpydoc",
     "napari-plugin-engine",
     "napari-svg",
+    "tifffile",
     "python >=3.6",
     "numpy",
     "scipy",
@@ -127,7 +128,7 @@
     "fsspec",
     "imageio",
     "ipykernel",
-    "jupyter_client <6.0.0",
+    "jupyter_client",
     "qtpy",
     "qtconsole",
     "IPython",
@@ -139,6 +140,7 @@
     "numpydoc",
     "napari-plugin-engine",
     "napari-svg",
+    "tifffile",
     "python >=3.6",
     "numpy",
     "scipy",
@@ -150,7 +152,7 @@
     "fsspec",
     "imageio",
     "ipykernel",
-    "jupyter_client <6.0.0",
+    "jupyter_client",
     "qtpy",
     "qtconsole",
     "IPython",
@@ -161,7 +163,8 @@
     "wrapt",
     "numpydoc",
     "napari-plugin-engine",
-    "napari-svg"
+    "napari-svg",
+    "tifffile"
    ]
   },
   "source":{
@@ -218,7 +221,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.12.18.03.58",
- "raw_meta_yaml":"{% set name = \"napari\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fb33f4d63ae90ddf10461e81b56f53622c6bfa28697910e6eaec9c5521e67039\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - napari = napari.__main__:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy\n    - scipy\n    - scikit-image\n    - vispy\n    - dask\n    - cachey\n    - zarr\n    - fsspec\n    - imageio\n    - ipykernel\n    - jupyter_client <6.0.0\n    - qtpy\n    - qtconsole\n    - IPython\n    - backcall\n    - pluggy\n    - PyOpenGl\n    - PySide2\n    - wrapt\n    - numpydoc\n    - napari-plugin-engine\n    - napari-svg\n\ntest:\n  requires:\n    - pytest\n    - pytest-faulthandler\n    - pytest-qt\n    - xarray\n    - pandas\n    - pytest-ordering\n    - pytest-timeout\n    - zarr\n  imports:\n    - napari\n  commands:\n    - setx QT_API \"pyside2\"  # [win]\n    - export QT_API=pyside2  # [unix]\n    - which napari\n    #- DISPLAY=localhost:1.0 xvfb-run -a bash -c 'napari --info'\n    #- pytest --pyargs napari\n\nabout:\n  home: http://napari.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: a fast n-dimensional image viewer in Python\n\n  description: |\n    a fast n-dimensional image viewer in Python\n  doc_url: http://napari.org\n  dev_url: https://github.com/napari/napari\n\nextra:\n  recipe-maintainers:\n    - jni\n    - sofroniewn\n    - kne42\n    - royerloic\n    - AhmetCanSolak\n",
+ "raw_meta_yaml":"{% set name = \"napari\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fb33f4d63ae90ddf10461e81b56f53622c6bfa28697910e6eaec9c5521e67039\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - napari = napari.__main__:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy\n    - scipy\n    - scikit-image\n    - vispy\n    - dask\n    - cachey\n    - zarr\n    - fsspec\n    - imageio\n    - ipykernel\n    - jupyter_client\n    - qtpy\n    - qtconsole\n    - IPython\n    - backcall\n    - pluggy\n    - PyOpenGl\n    - PySide2\n    - wrapt\n    - numpydoc\n    - napari-plugin-engine\n    - napari-svg\n    - tifffile\n\ntest:\n  requires:\n    - pytest\n    - pytest-faulthandler\n    - pytest-qt\n    - xarray\n    - pandas\n    - pytest-ordering\n    - pytest-timeout\n    - zarr\n  imports:\n    - napari\n  commands:\n    - setx QT_API \"pyside2\"  # [win]\n    - export QT_API=pyside2  # [unix]\n    - which napari\n    #- DISPLAY=localhost:1.0 xvfb-run -a bash -c 'napari --info'\n    #- pytest --pyargs napari\n\nabout:\n  home: http://napari.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: a fast n-dimensional image viewer in Python\n\n  description: |\n    a fast n-dimensional image viewer in Python\n  doc_url: http://napari.org\n  dev_url: https://github.com/napari/napari\n\nextra:\n  recipe-maintainers:\n    - jni\n    - sofroniewn\n    - kne42\n    - royerloic\n    - AhmetCanSolak\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -243,6 +246,7 @@
    "qtpy",
    "scikit-image",
    "scipy",
+   "tifffile",
    "vispy",
    "wrapt",
    "zarr"
@@ -283,6 +287,7 @@
     "qtpy",
     "scikit-image",
     "scipy",
+    "tifffile",
     "vispy",
     "wrapt",
     "zarr"
@@ -328,7 +333,7 @@
     "fsspec",
     "imageio",
     "ipykernel",
-    "jupyter_client <6.0.0",
+    "jupyter_client",
     "napari-plugin-engine",
     "napari-svg",
     "numpy",
@@ -339,6 +344,7 @@
     "qtpy",
     "scikit-image",
     "scipy",
+    "tifffile",
     "vispy",
     "wrapt",
     "zarr"

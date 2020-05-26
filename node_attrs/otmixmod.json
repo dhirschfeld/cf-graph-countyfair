@@ -123,9 +123,6 @@
  ],
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -141,7 +138,7 @@
    "summary":"MixMod module"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "otmixmod",
     "otmixmod",
@@ -165,6 +162,7 @@
     "swig",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "curl",
     "cmake",
     "swig",
     "c_compiler_stub",
@@ -211,12 +209,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set version = \"0.10\" %}\n\npackage:\n  name: otmixmod\n  version: {{ version }}\n\nsource:\n  fn: otmixmod-{{ version }}.tar.gz\n  url: https://github.com/openturns/otmixmod/archive/v{{ version }}.tar.gz\n  sha256: fb7c704a73d315b08fc681cd0eb2b3dd81378fce71ca896b50a0e6485b8787e1\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('otmixmod', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - openturns 1.15*\n  run:\n    - python\n    - openturns 1.15*\n\ntest:\n  imports:\n    - otmixmod\n\nabout:\n  home: http://openturns.org/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: MixMod module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"0.10\" %}\n\npackage:\n  name: otmixmod\n  version: {{ version }}\n\nsource:\n  fn: otmixmod-{{ version }}.tar.gz\n  url: https://github.com/openturns/otmixmod/archive/v{{ version }}.tar.gz\n  sha256: fb7c704a73d315b08fc681cd0eb2b3dd81378fce71ca896b50a0e6485b8787e1\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('otmixmod', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - curl  # [win]\n  host:\n    - python\n    - openturns 1.15*\n  run:\n    - python\n    - openturns 1.15*\n\ntest:\n  imports:\n    - otmixmod\n\nabout:\n  home: http://openturns.org/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: MixMod module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cmake",
+   "curl",
    "cxx_compiler_stub",
    "openturns",
    "python",
@@ -229,6 +228,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]
@@ -260,6 +260,7 @@
    "elements":[
     "c_compiler_stub",
     "cmake",
+    "curl",
     "cxx_compiler_stub",
     "swig"
    ]

@@ -242,7 +242,7 @@
   },
   "package":{
    "name":"r-gss",
-   "version":"2.2_1"
+   "version":"2.2_2"
   },
   "requirements":{
    "build":[
@@ -266,15 +266,15 @@
    ]
   },
   "source":{
-   "fn":"gss_2.2-1.tar.gz",
-   "sha256":"9e595981a151d02a8d5018b1809a3e7153c0516f73d19e11bc77d83b88a3d2e9",
+   "fn":"gss_2.2-2.tar.gz",
+   "sha256":"1da4da894378ee730cff9628e8b4d2a0d7dfa344b94e5bce6953e66723c21fe4",
    "url":[
-    "https://cran.r-project.org/src/contrib/gss_2.2-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/gss_2.2-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/gss_2.2-1.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-1.tar.gz"
+    "https://cran.r-project.org/src/contrib/gss_2.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/gss_2.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/gss_2.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.2-2.tar.gz"
    ]
   },
   "test":{
@@ -294,7 +294,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set version = \"2.2-1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gss\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gss_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/gss_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/gss/gss_{{ version }}.tar.gz\n  sha256: 9e595981a151d02a8d5018b1809a3e7153c0516f73d19e11bc77d83b88a3d2e9\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('gss')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gss')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=gss\n  license: GPL (>= 2)\n  summary: A comprehensive package for structural multivariate function estimation using smoothing splines.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
+ "raw_meta_yaml":"{% set version = \"2.2-2\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gss\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gss_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/gss_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/gss/gss_{{ version }}.tar.gz\n  sha256: 1da4da894378ee730cff9628e8b4d2a0d7dfa344b94e5bce6953e66723c21fe4\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('gss')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gss')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=gss\n  license: GPL (>= 2)\n  summary: A comprehensive package for structural multivariate function estimation using smoothing splines.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -372,5 +372,5 @@
   "https://cran.r-project.org/src/contrib/gss_2.1-10.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/gss/gss_2.1-10.tar.gz"
  ],
- "version":"2.2_1"
+ "version":"2.2_2"
 }
