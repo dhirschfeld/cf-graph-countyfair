@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/423472270.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -131,8 +148,12 @@
   }
  },
  "name":"edalize",
- "new_version":"0.2.0",
- "pinning_version":"2019.11.01",
+ "new_version":"0.2.1",
+ "new_version_attempts":{
+  "0.2.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"edalize\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9641624bc8d1ee2bf801143bc867c89685bbf40ac8bdc921cc1ec3a56e0fbf54\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    # Avoid Jinja 2.11 until https://github.com/pallets/jinja/issues/1138\n    - jinja2 >=2.8,<2.11\n    - pytest >=3.3.0\n\ntest:\n  imports:\n    - edalize\n\nabout:\n  home: https://github.com/olofk/edalize\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Edalize is a library for interfacing EDA tools, primarily for FPGA development\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
@@ -168,7 +189,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

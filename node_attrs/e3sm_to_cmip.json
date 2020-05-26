@@ -76,7 +76,7 @@
     "e3sm_to_cmip = e3sm_to_cmip.__main__:main"
    ],
    "number":"0",
-   "script":" -m pip install . -vv",
+   "script":"-m pip install . -vv",
    "skip":true
   },
   "extra":{
@@ -91,7 +91,7 @@
   },
   "package":{
    "name":"e3sm_to_cmip",
-   "version":"1.3"
+   "version":"1.4"
   },
   "requirements":{
    "host":[
@@ -118,6 +118,7 @@
     "netcdf4",
     "dask",
     "scipy",
+    "tqdm",
     "python",
     "nco",
     "cmor >=3.5.0",
@@ -130,6 +131,7 @@
     "netcdf4",
     "dask",
     "scipy",
+    "tqdm",
     "python",
     "nco",
     "cmor >=3.5.0",
@@ -141,12 +143,13 @@
     "xarray",
     "netcdf4",
     "dask",
-    "scipy"
+    "scipy",
+    "tqdm"
    ]
   },
   "source":{
-   "sha256":"70940786609c5166cf2396fd298661193f2eb4289cb52de10597eaa422783cfb",
-   "url":"https://github.com/E3SM-Project/e3sm_to_cmip/archive/v1.3.tar.gz"
+   "sha256":"b552f78c30c33c0457cd89e541d485b9e0b5996a50e71d89650f21cb9f54ea1c",
+   "url":"https://github.com/E3SM-Project/e3sm_to_cmip/archive/v1.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -168,7 +171,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set name = \"e3sm_to_cmip\" %}\n{% set version = \"1.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/E3SM-Project/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 70940786609c5166cf2396fd298661193f2eb4289cb52de10597eaa422783cfb\n\nbuild:\n  skip: True  # [win or py<36]\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - e3sm_to_cmip = e3sm_to_cmip.__main__:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - nco\n    - cmor >=3.5.0\n    - cdutil\n    - cdms2 >=3.1\n    - progressbar2\n    - pathos\n    - pyyaml\n    - xarray\n    - netcdf4\n    - dask\n    - scipy\n\ntest:\n  commands:\n    - e3sm_to_cmip --help\n  imports:\n    - e3sm_to_cmip\n\nabout:\n  home: https://github.com/E3SM-Project/e3sm_to_cmip\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A cli utility to transform E3SM model output into CMIP compatible data.'\n  description: |\n    Transform e3sm time series variables into cmip compatible data. Each\n    variable needs its own handler script, implemented in the cmor_handlers\n    directory (see directory for current handlers). In addition, you will need\n    to clone the cmor repo (https://github.com/PCMDI/cmor) to access the Test\n    and Tables directories. Test holds the common_user_input.json file which\n    can be used as a placeholder for the user supplied metadata, and Tables\n    holds all the CMIP6 variable tables.\n  doc_url: https://github.com/E3SM-Project/e3sm_to_cmip\n  dev_url: https://github.com/E3SM-Project/e3sm_to_cmip\n\nextra:\n  recipe-maintainers:\n    - xylar\n    - sterlingbaldwin\n",
+ "raw_meta_yaml":"{% set name = \"e3sm_to_cmip\" %}\n{% set version = \"1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/E3SM-Project/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: b552f78c30c33c0457cd89e541d485b9e0b5996a50e71d89650f21cb9f54ea1c\n\nbuild:\n  skip: true  # [win or py<36]\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - e3sm_to_cmip = e3sm_to_cmip.__main__:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - nco\n    - cmor >=3.5.0\n    - cdutil\n    - cdms2 >=3.1\n    - progressbar2\n    - pathos\n    - pyyaml\n    - xarray\n    - netcdf4\n    - dask\n    - scipy\n    - tqdm\n\ntest:\n  commands:\n    - e3sm_to_cmip --help\n  imports:\n    - e3sm_to_cmip\n\nabout:\n  home: https://github.com/E3SM-Project/e3sm_to_cmip\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A cli utility to transform E3SM model output into CMIP compatible data.\n  description: |\n    Transform e3sm time series variables into cmip compatible data. Each\n    variable needs its own handler script, implemented in the cmor_handlers\n    directory (see directory for current handlers). In addition, you will need\n    to clone the cmor repo (https://github.com/PCMDI/cmor) to access the Test\n    and Tables directories. Test holds the common_user_input.json file which\n    can be used as a placeholder for the user supplied metadata, and Tables\n    holds all the CMIP6 variable tables.\n  doc_url: https://github.com/E3SM-Project/e3sm_to_cmip\n  dev_url: https://github.com/E3SM-Project/e3sm_to_cmip\n\nextra:\n  recipe-maintainers:\n    - xylar\n    - sterlingbaldwin\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -185,6 +188,7 @@
    "pyyaml",
    "scipy",
    "setuptools",
+   "tqdm",
    "xarray"
   ]
  },
@@ -215,6 +219,7 @@
     "python",
     "pyyaml",
     "scipy",
+    "tqdm",
     "xarray"
    ]
   },
@@ -252,6 +257,7 @@
     "python",
     "pyyaml",
     "scipy",
+    "tqdm",
     "xarray"
    ]
   },
@@ -261,5 +267,5 @@
   }
  },
  "url":"https://github.com/E3SM-Project/e3sm_to_cmip/archive/v1.1.tar.gz",
- "version":"1.3"
+ "version":"1.4"
 }
