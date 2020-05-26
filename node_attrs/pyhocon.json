@@ -163,6 +163,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/422974690.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.55"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -244,8 +261,12 @@
   }
  },
  "name":"pyhocon",
- "new_version":"0.3.54",
- "pinning_version":"2020.01.05",
+ "new_version":"0.3.55",
+ "new_version_attempts":{
+  "0.3.55":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set pkgname = \"pyhocon\" %}\n{% set version = \"0.3.54\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"fb2b0f7a75e5781451fe673129c9b17f4f74ddd7bbc9cb79edc2e69bbdea9e97\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: '{{ pkgname }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - pyhocon=pyhocon.tool:main\n\nrequirements:\n  build:\n    - pip\n    - python\n    - pyparsing >=2.0.3\n\n  run:\n    - python\n    - pyparsing >=2.0.3\n\ntest:\n  imports:\n    - pyhocon\n\n  commands:\n    - pyhocon --help\n\nabout:\n  home: http://github.com/chimpler/pyhocon/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'HOCON parser for Python'\n  description: 'HOCON parser for Python'\n  doc_url: https://pythonhosted.org/pyhocon/\n  dev_url: http://github.com/chimpler/pyhocon/\n\nextra:\n  recipe-maintainers:\n    - nelson-liu\n    - shahin\n",
  "req":{
   "__set__":true,
@@ -280,7 +301,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
