@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/423758536.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"openscm-units",
@@ -67,7 +86,12 @@
   }
  },
  "name":"openscm-units",
- "new_version":"0.1.2",
+ "new_version":"0.1.3",
+ "new_version_attempts":{
+  "0.1.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"openscm-units\" %}\n{% set version = \"0.1.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: {{ version }}\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: d3d97be6e1ef223725e5ec746cc09d9517719fbf4e5ed2be80b5d9fef691d65c\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pandas\n    - pint\n\ntest:\n  imports:\n    - openscm_units\n\n  commands: python -c \"import openscm_units; assert openscm_units.__version__ == '{{ version }}'\"\n\nabout:\n  home: https://github.com/openscm/openscm-units\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Units for use with simple climate modelling\n  doc_url: https://openscm-units.readthedocs.io/en/latest/\n  dev_url: https://github.com/openscm/openscm-units\n\nextra:\n  recipe-maintainers:\n    - znicholls\n    - lewisjared\n",
  "req":{
   "__set__":true,
@@ -103,6 +127,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

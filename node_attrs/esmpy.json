@@ -68,9 +68,9 @@
    "summary":"ESMPy is a Python interface to the Earth System Modeling Framework (ESMF) regridding utility."
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "skip":true,
-   "string":"nompi_pyh_1"
+   "string":"nompi_pyh_0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -90,25 +90,25 @@
   },
   "package":{
    "name":"esmpy",
-   "version":"8.0.0"
+   "version":"8.0.1"
   },
   "requirements":{
    "host":[
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nose",
     "nompi",
     "mpi4py",
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nose",
     "nompi",
     "mpi4py",
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nose",
     "nompi",
     "mpi4py"
@@ -116,24 +116,24 @@
    "run":[
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nompi",
     "mpi4py",
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nompi",
     "mpi4py",
     "python",
     "numpy",
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "nompi",
     "mpi4py"
    ]
   },
   "source":{
-   "sha256":"75c34c41806e703551b6b79566edf34c23f1eebcf821749e5320e860e565d94f",
-   "url":"http://www.earthsystemmodeling.org/esmf_releases/public/ESMF_8_0_0/esmf_8_0_0_src.tar.gz"
+   "sha256":"9172fb73f3fe95c8188d889ee72fdadb4f978b1d969e1d8e401e8d106def1d84",
+   "url":"https://github.com/esmf-org/esmf/archive/ESMF_8_0_1/esmf_8_0_1_src.tar.gz"
   },
   "test":{
    "imports":[
@@ -146,7 +146,7 @@
  "name":"esmpy",
  "new_version":false,
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set version = \"8.0.0\" %}\n{% set ver = version.replace(\".\", \"_\") %}\n{% set build = 1 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'mpich' %}\n# prioritize mpich variant, which was previously the only option, via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: esmpy\n  version: {{ version }}\n\nsource:\n  url: http://www.earthsystemmodeling.org/esmf_releases/public/ESMF_{{ ver }}/esmf_{{ ver }}_src.tar.gz\n  sha256: 75c34c41806e703551b6b79566edf34c23f1eebcf821749e5320e860e565d94f\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `esmf * mpi_mpich_*` for mpich\n  # `esmf * mpi_*` for any mpi\n  # `esmf * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: \"{{ mpi_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  host:\n    - python\n    - numpy\n    - esmf {{ version }} {{ mpi_prefix }}_*\n    - nose\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n  run:\n    - python\n    - numpy\n    - esmf {{ version }} {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    - openssh  # [mpi == 'openmpi']\n\ntest:\n  imports:\n    - ESMF\n\nabout:\n  home: https://www.earthsystemcog.org/projects/esmpy/\n  license: The University of Illinois/NCSA\n  license_file: LICENSE\n  summary: ESMPy is a Python interface to the Earth System Modeling Framework (ESMF) regridding utility.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bekozi\n    - rokuingh\n    - xylar\n",
+ "raw_meta_yaml":"{% set version = \"8.0.1\" %}\n{% set ver = version.replace(\".\", \"_\") %}\n{% set build = 0 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'mpich' %}\n# prioritize mpich variant, which was previously the only option, via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: esmpy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/esmf-org/esmf/archive/ESMF_{{ ver }}/esmf_{{ ver }}_src.tar.gz\n  sha256: 9172fb73f3fe95c8188d889ee72fdadb4f978b1d969e1d8e401e8d106def1d84\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `esmf * mpi_mpich_*` for mpich\n  # `esmf * mpi_*` for any mpi\n  # `esmf * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: \"{{ mpi_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  host:\n    - python\n    - numpy\n    - esmf {{ version }} {{ mpi_prefix }}_*\n    - nose\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n  run:\n    - python\n    - numpy\n    - esmf {{ version }} {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    - openssh  # [mpi == 'openmpi']\n\ntest:\n  imports:\n    - ESMF\n\nabout:\n  home: https://www.earthsystemcog.org/projects/esmpy/\n  license: The University of Illinois/NCSA\n  license_file: LICENSE\n  summary: ESMPy is a Python interface to the Earth System Modeling Framework (ESMF) regridding utility.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bekozi\n    - rokuingh\n    - xylar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -199,7 +199,7 @@
   "host":{
    "__set__":true,
    "elements":[
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "mpi4py",
     "nompi",
     "nose",
@@ -210,7 +210,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "esmf 8.0.0 nompi_*",
+    "esmf 8.0.1 nompi_*",
     "mpi4py",
     "nompi",
     "numpy",
@@ -223,5 +223,5 @@
   }
  },
  "url":"http://www.earthsystemmodeling.org/esmf_releases/public/ESMF_7_1_0r/esmf_7_1_0r_src.tar.gz",
- "version":"8.0.0"
+ "version":"8.0.1"
 }
