@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/423614707.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"cpputest",
@@ -68,11 +87,12 @@
  "name":"cpputest",
  "new_version":"4.0",
  "new_version_attempts":{
-  "4.0":5
+  "4.0":6
  },
  "new_version_errors":{
   "4.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '4.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/cpputest/cpputest/releases/download/v{{ version }}/cpputest-{{ version }}.tar.gz'\n"
  },
+ "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"cpputest\" %}\n{% set version = \"3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cpputest/cpputest/releases/download/v{{ version }}/cpputest-{{ version }}.tar.gz\n  sha256: c81dccc5a1bfc7fc6511590c0a61def5f78e3fb19cb8e1f889d8d3395a476456\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n\ntest:\n  files:\n    - test/\n  requires:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n\nabout:\n  home: https://github.com/cpputest/cpputest\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING.txt\n  summary: 'Unit testing and mocking framework for C/C++'\n\n  description: |\n    CppUTest is a C /C++ based unit xUnit test framework for unit testing\n    and for test-driving your code. It is written in C++ but is used in C\n    and C++ projects and frequently used in embedded systems but it works\n    for any C/C++ project.\n  doc_url: http://cpputest.github.io/\n  dev_url: https://github.com/cpputest/cpputest/\n\nextra:\n  recipe-maintainers:\n    - avrahamshukron\n",
  "req":{
   "__set__":true,
@@ -108,6 +128,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
