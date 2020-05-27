@@ -53,7 +53,7 @@
   },
   "build":{
    "number":"0",
-   "script":" -m pip install . --no-deps -vv",
+   "script":"-m pip install . --no-deps -vv",
    "skip":true
   },
   "extra":{
@@ -65,7 +65,7 @@
   },
   "package":{
    "name":"pint-pulsar",
-   "version":"0.6.3"
+   "version":"0.7"
   },
   "requirements":{
    "host":[
@@ -115,8 +115,8 @@
    ]
   },
   "source":{
-   "sha256":"3ab01cb3d7f6ddbad9fd62a7e7f4049105fbffa326d193d7fed1ba3e66408dae",
-   "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.6.3.tar.gz"
+   "sha256":"426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01",
+   "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.7.tar.gz"
   },
   "test":{
    "imports":[
@@ -133,7 +133,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"pint-pulsar\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3ab01cb3d7f6ddbad9fd62a7e7f4049105fbffa326d193d7fed1ba3e66408dae\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: true  # [py27]\n  skip: true  # [win]\n# Add [skip appveyor] to commit messages to prevent windows from starting at all\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.16\n    - astropy >=3.2,<=4.0\n    - scipy >=0.18.1\n    - jplephem >=2.6\n    - matplotlib-base >=1.5.3\n    - emcee >=3.0\n    - corner >=2.0.1\n    - uncertainties\n\n# The PyPI package \"pint\" is a units package whose package name conflicts with ours so they must not both be installed\n# This should prevent that\n  run_constrained:\n    - pint ==9999999999\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/nanograv/PINT\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: \"A Pulsar Timing Package, written in Python from scratch\"\n  doc_url: https://nanograv-pint.readthedocs.io/en/latest/\n  dev_url: https://github.com/nanograv/PINT\n\nextra:\n  recipe-maintainers:\n    - paulray\n",
+ "raw_meta_yaml":"{% set name = \"pint-pulsar\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [py27]\n  skip: true  # [win]\n# Add [skip appveyor] to commit messages to prevent windows from starting at all\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.16\n    - astropy >=3.2,<=4.0\n    - scipy >=0.18.1\n    - jplephem >=2.6\n    - matplotlib-base >=1.5.3\n    - emcee >=3.0\n    - corner >=2.0.1\n    - uncertainties\n\n# The PyPI package \"pint\" is a units package whose package name conflicts with ours so they must not both be installed\n# This should prevent that\n  run_constrained:\n    - pint ==9999999999\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/nanograv/PINT\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: A Pulsar Timing Package, written in Python from scratch\n  doc_url: https://nanograv-pint.readthedocs.io/en/latest/\n  dev_url: https://github.com/nanograv/PINT\n\nextra:\n  recipe-maintainers:\n    - paulray\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -217,5 +217,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.6.3.tar.gz",
- "version":"0.6.3"
+ "version":"0.7"
 }
