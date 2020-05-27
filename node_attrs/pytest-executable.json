@@ -1,4 +1,25 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424031026.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pytest-executable",
@@ -14,7 +35,7 @@
    "summary":"pytest plugin for testing executables"
   },
   "build":{
-   "number":"1",
+   "number":"3",
    "script":"-m pip install . --no-deps -vv",
    "skip":true
   },
@@ -86,7 +107,8 @@
  },
  "name":"pytest-executable",
  "new_version":"0.4.0",
- "raw_meta_yaml":"{% set name = \"pytest_executable\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: pytest-executable\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 316b7982bcdb923ad6b8453f54b348bf81328dcdcecad212034acdf592bd3a4d\n\nbuild:\n  number: 1\n  skip: True  # [win,py<36]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytest >=4.3,<6\n    - pyyaml >=3,<6\n    - jsonschema >=2,<4\n    - jinja2 >=2.7,<3\n    - dataclasses\n\ntest:\n  requires:\n    - pip\n  commands:\n    - python -m pip check\n    - \"pytest --traceconfig | grep pytest-executable-{{ version }}\"\n  imports:\n    - pytest_executable\n\nabout:\n  home: https://pytest-executable.readthedocs.io\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE.txt\n  summary: pytest plugin for testing executables\n  doc_url: https://github.com/CS-SI/pytest-executable\n  dev_url: https://pytest-executable.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
+ "pinning_version":"2020.05.27.14.19.32",
+ "raw_meta_yaml":"{% set name = \"pytest_executable\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: pytest-executable\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 316b7982bcdb923ad6b8453f54b348bf81328dcdcecad212034acdf592bd3a4d\n\nbuild:\n  number: 3\n  skip: True  # [win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytest >=4.3,<6\n    - pyyaml >=3,<6\n    - jsonschema >=2,<4\n    - jinja2 >=2.7,<3\n    - dataclasses\n\ntest:\n  requires:\n    - pip\n  commands:\n    - python -m pip check\n    - \"pytest --traceconfig | grep pytest-executable-{{ version }}\"\n  imports:\n    - pytest_executable\n\nabout:\n  home: https://pytest-executable.readthedocs.io\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE.txt\n  summary: pytest plugin for testing executables\n  doc_url: https://github.com/CS-SI/pytest-executable\n  dev_url: https://pytest-executable.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -129,6 +151,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
