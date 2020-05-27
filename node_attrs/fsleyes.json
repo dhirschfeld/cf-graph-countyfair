@@ -350,10 +350,10 @@
   },
   "package":{
    "name":"fsleyes",
-   "version":"0.32.3"
+   "version":"0.33.0"
   },
   "requirements":{
-   "host":[
+   "build":[
     "python",
     "pip",
     "sphinx >=1.7",
@@ -373,7 +373,7 @@
    "run":[
     "python",
     "freeglut",
-    "fslpy >=2.8",
+    "fslpy >=3.1",
     "fsleyes-props >=1.6.7",
     "fsleyes-widgets >=0.8.4",
     "jinja2 2.*",
@@ -401,7 +401,7 @@
     "python",
     "python.app",
     "tk !=8.6.9",
-    "fslpy >=2.8",
+    "fslpy >=3.1",
     "fsleyes-props >=1.6.7",
     "fsleyes-widgets >=0.8.4",
     "jinja2 2.*",
@@ -428,7 +428,7 @@
     "dcm2niix 1.0.20181114",
     "python",
     "freeglut",
-    "fslpy >=2.8",
+    "fslpy >=3.1",
     "fsleyes-props >=1.6.7",
     "fsleyes-widgets >=0.8.4",
     "jinja2 2.*",
@@ -461,8 +461,8 @@
     "logging.patch",
     "logging.patch"
    ],
-   "sha256":"9fd5cb142be394547192d8fc16f5558f4b3f24998ea4a1bfd3b9bf486742f49a",
-   "url":"https://pypi.io/packages/source/f/fsleyes/fsleyes-0.32.3.tar.gz"
+   "sha256":"55e847c7092625cffe51fa1d96a069adf4513bd88ef52c89ffb34153af570e2e",
+   "url":"https://pypi.io/packages/source/f/fsleyes/fsleyes-0.33.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -511,7 +511,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set version = \"0.32.3\" %}\n\npackage:\n  name: fsleyes\n  version: {{ version }}\n\n\nsource:\n  url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz\n  sha256: 9fd5cb142be394547192d8fc16f5558f4b3f24998ea4a1bfd3b9bf486742f49a\n  patches:\n    - logging.patch\n\nbuild:\n  number: 0\n  skip: true  # [py27]\n  osx_is_app: true\n  entry_points:\n    - render             = fsleyes.render:main\n    - fsleyes_unfiltered = fsleyes.main:main\n    - fsleyes            = fsleyes.filtermain:main\n\n\nrequirements:\n  host:\n    - python\n    - pip\n    - sphinx >=1.7\n    - sphinx_rtd_theme\n    - mock\n  run:\n    - python\n    - python.app  # [osx]\n    - tk !=8.6.9  # [osx]\n    - freeglut    # [linux or win]\n    - fslpy >=2.8\n    - fsleyes-props >=1.6.7\n    - fsleyes-widgets >=0.8.4\n    - jinja2 2.*\n    - matplotlib-base >=1.5\n    - nibabel >=2.3\n    - numpy >=1.14\n    - pillow >=3.2.0\n    - pyopengl >=3.1.0\n    - pyparsing 2.*\n    - scipy >=0.18\n    - six 1.*\n    - trimesh >=2.37.29\n    - rtree >=0.8.3.*\n    - wxpython >=4\n    - xnat >=0.3.3\n    - wxnatpy >=0.3.0\n    - indexed_gzip >=0.7\n    - ipykernel >=4.8\n    - ipython >=5\n    - jupyter_client >=5.2\n    - notebook >=5.5\n    - pyzmq >=17.0\n    - tornado >=5.0\n    - dcm2niix 1.0.20181114\n\ntest:\n  imports:\n    - fsleyes\n    - fsleyes.actions\n    - fsleyes.displaycontext\n    - fsleyes.editor\n    - fsleyes.gl\n    - fsleyes.controls\n    - fsleyes.plotting\n    - fsleyes.profiles\n    - fsleyes.views\n  commands:\n    - fsleyes -V\n    - fsleyes -h\n\napp:\n  entry: fsleyes\n  summary: The FSL image viewer\n  type: desk\n  icon: logo.png\n\nabout:\n  home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: The FSL image viewer\n  dev_url: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/\n\nextra:\n  recipe-maintainers:\n    - pauldmccarthy\n",
+ "raw_meta_yaml":"{% set version = \"0.33.0\" %}\n\npackage:\n  name: fsleyes\n  version: {{ version }}\n\n\nsource:\n  url: https://pypi.io/packages/source/f/fsleyes/fsleyes-{{ version }}.tar.gz\n  sha256: 55e847c7092625cffe51fa1d96a069adf4513bd88ef52c89ffb34153af570e2e\n  patches:\n    - logging.patch\n\nbuild:\n  number: 0\n  skip: true  # [py<37]\n  osx_is_app: true\n  entry_points:\n    - render             = fsleyes.render:main\n    - fsleyes_unfiltered = fsleyes.main:main\n    - fsleyes            = fsleyes.filtermain:main\n\n\nrequirements:\n  build:\n    - python\n    - pip\n    - sphinx >=1.7\n    - sphinx_rtd_theme\n    - mock\n  run:\n    - python\n    - python.app  # [osx]\n    - tk !=8.6.9  # [osx]\n    - freeglut    # [linux or win]\n    - fslpy >=3.1\n    - fsleyes-props >=1.6.7\n    - fsleyes-widgets >=0.8.4\n    - jinja2 2.*\n    - matplotlib-base >=1.5\n    - nibabel >=2.3\n    - numpy >=1.14\n    - pillow >=3.2.0\n    - pyopengl >=3.1.0\n    - pyparsing 2.*\n    - scipy >=0.18\n    - six 1.*\n    - trimesh >=2.37.29\n    - rtree >=0.8.3.*\n    - wxpython >=4\n    - xnat >=0.3.3\n    - wxnatpy >=0.3.0\n    - indexed_gzip >=0.7\n    - ipykernel >=4.8\n    - ipython >=5\n    - jupyter_client >=5.2\n    - notebook >=5.5\n    - pyzmq >=17.0\n    - tornado >=5.0\n    - dcm2niix 1.0.20181114\n\ntest:\n  imports:\n    - fsleyes\n    - fsleyes.actions\n    - fsleyes.displaycontext\n    - fsleyes.editor\n    - fsleyes.gl\n    - fsleyes.controls\n    - fsleyes.plotting\n    - fsleyes.profiles\n    - fsleyes.views\n  commands:\n    - fsleyes -V\n    - fsleyes -h\n\napp:\n  entry: fsleyes\n  summary: The FSL image viewer\n  type: desk\n  icon: logo.png\n\nabout:\n  home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: The FSL image viewer\n  dev_url: https://git.fmrib.ox.ac.uk/fsl/fsleyes/fsleyes/\n\nextra:\n  recipe-maintainers:\n    - pauldmccarthy\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -553,10 +553,6 @@
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
-  },
-  "host":{
-   "__set__":true,
    "elements":[
     "mock",
     "pip",
@@ -564,6 +560,10 @@
     "sphinx",
     "sphinx_rtd_theme"
    ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -609,10 +609,6 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
-  },
-  "host":{
-   "__set__":true,
    "elements":[
     "mock",
     "pip",
@@ -621,6 +617,10 @@
     "sphinx_rtd_theme"
    ]
   },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
   "run":{
    "__set__":true,
    "elements":[
@@ -628,7 +628,7 @@
     "freeglut",
     "fsleyes-props >=1.6.7",
     "fsleyes-widgets >=0.8.4",
-    "fslpy >=2.8",
+    "fslpy >=3.1",
     "indexed_gzip >=0.7",
     "ipykernel >=4.8",
     "ipython >=5",
@@ -661,5 +661,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/fsleyes/fsleyes-0.30.1.tar.gz",
- "version":"0.32.3"
+ "version":"0.33.0"
 }
