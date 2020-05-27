@@ -1,19 +1,10 @@
 {
   "done": [
-    "shogun-cpp",
-    "octave",
-    "mbsolve",
-    "numcosmo",
+    "conduit",
+    "pytables",
     "libmatio",
     "openmeeg",
     "libvips",
-    "highfive",
-    "ecell4_base",
-    "conduit",
-    "flann",
-    "nexus",
-    "lal",
-    "hdf5-external-filter-plugins",
     "libnetcdf",
     "vtk",
     "freecad",
@@ -32,46 +23,56 @@
     "nco",
     "eccodes",
     "abinit",
-    "dakota",
-    "cgns",
-    "paraview",
+    "vigra",
+    "highfive",
+    "octave",
     "petsc",
     "damask",
-    "libmed",
+    "mbsolve",
+    "moab",
+    "lal",
+    "numcosmo",
+    "dakota",
+    "ecell4_base",
+    "hdf5-external-filter-plugins",
     "opencv",
-    "libitk",
     "gdal",
     "pdal",
     "kealib",
     "gmt",
+    "libitk",
     "libcdms",
-    "pytables",
+    "flann",
     "gwollum",
-    "moab",
     "casacore",
-    "vigra"
+    "cgns",
+    "paraview",
+    "nexus",
+    "libmed",
+    "shogun-cpp"
   ],
   "in-pr": [
-    "shogun",
+    "hyperion-fortran",
+    "cyclus",
     "h5py",
-    "marray",
-    "mpb",
-    "scilab",
     "bonsu",
     "nccmp",
     "cmor",
-    "hyperion-fortran",
-    "alps",
-    "graph",
-    "adios2",
-    "r-hdf5r",
-    "yaafe",
+    "cdo",
     "hdfeos5",
+    "graph",
     "fenics",
-    "spdlib",
-    "cyclus",
+    "alps",
     "pyne",
-    "dagmc"
+    "dagmc",
+    "r-hdf5r",
+    "scilab",
+    "yaafe",
+    "adios2",
+    "spdlib",
+    "mpb",
+    "marray",
+    "shogun"
   ],
   "awaiting-pr": [],
   "awaiting-parents": [
@@ -85,13 +86,13 @@
     "blosc-hdf5-plugin",
     "bitshuffle",
     "pp-sketchlib",
-    "pymeep",
     "openpmd-api",
     "pynio",
     "ncl",
     "rsgislib",
     "isce2",
-    "caffe"
+    "caffe",
+    "pymeep"
   ],
   "bot-error": [],
   "_feedstock_status": {
@@ -108,6 +109,13 @@
       ],
       "pr_url": "https://github.com/conda-forge/casacore-feedstock/pull/42"
     },
+    "cdo": {
+      "num_descendants": 1,
+      "immediate_children": [
+        "conda-forge-pinning"
+      ],
+      "pr_url": "https://github.com/conda-forge/cdo-feedstock/pull/82"
+    },
     "cyclus": {
       "num_descendants": 1,
       "immediate_children": [
@@ -116,8 +124,9 @@
       "pr_url": "https://github.com/conda-forge/cyclus-feedstock/pull/56"
     },
     "eccodes": {
-      "num_descendants": 1,
+      "num_descendants": 2,
       "immediate_children": [
+        "cdo",
         "conda-forge-pinning"
       ],
       "pr_url": "https://github.com/conda-forge/eccodes-feedstock/pull/103"
@@ -246,9 +255,10 @@
       "pr_url": "https://github.com/conda-forge/libmatio-feedstock/pull/28"
     },
     "libnetcdf": {
-      "num_descendants": 36,
+      "num_descendants": 37,
       "immediate_children": [
         "abinit",
+        "cdo",
         "cmor",
         "conda-forge-pinning",
         "eccodes",
