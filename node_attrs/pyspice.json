@@ -70,28 +70,15 @@
    "summary":"Simulate electronic circuit using Python and the Ngspice / Xyce simulators"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":[
-    "sed -i.bak s/@VERSION@/1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_TAG@/v1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_SHA@/UNSPECIFIED/g PySpice/__init__.py.in",
-    "rm PySpice/__init__.py.in.bak",
-    "mv PySpice/__init__.py.in PySpice/__init__.py",
+    " %RECIPE_DIR%\\write_init.py 1.4.2",
     "-m pip install . -vv",
-    "sed -i.bak s/@VERSION@/1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_TAG@/v1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_SHA@/UNSPECIFIED/g PySpice/__init__.py.in",
-    "rm PySpice/__init__.py.in.bak",
-    "mv PySpice/__init__.py.in PySpice/__init__.py",
+    " ${RECIPE_DIR}/write_init.py 1.4.2",
     "-m pip install . -vv",
-    "sed -i.bak s/@VERSION@/1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_TAG@/v1.4.2/g PySpice/__init__.py.in",
-    "sed -i.bak s/@GIT_SHA@/UNSPECIFIED/g PySpice/__init__.py.in",
-    "rm PySpice/__init__.py.in.bak",
-    "mv PySpice/__init__.py.in PySpice/__init__.py",
+    " ${RECIPE_DIR}/write_init.py 1.4.2",
     "-m pip install . -vv"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -124,7 +111,7 @@
     "scipy",
     "matplotlib-base",
     "ply",
-    "ngspice",
+    "ngspice-lib",
     "python",
     "pyyaml",
     "cffi",
@@ -132,7 +119,7 @@
     "scipy",
     "matplotlib-base",
     "ply",
-    "ngspice",
+    "ngspice-lib",
     "python",
     "pyyaml",
     "cffi",
@@ -140,18 +127,32 @@
     "scipy",
     "matplotlib-base",
     "ply",
-    "ngspice"
+    "ngspice-lib"
    ]
   },
   "source":{
+   "patches":[
+    "patches/fix-netlist-linesep.patch",
+    "patches/fix-check-install-NameError.patch",
+    "patches/fix-netlist-linesep.patch",
+    "patches/fix-check-install-NameError.patch",
+    "patches/fix-netlist-linesep.patch",
+    "patches/fix-check-install-NameError.patch"
+   ],
    "sha256":"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82",
    "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.2.tar.gz"
   },
   "test":{
    "commands":[
+    "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
+    "ngspice-check-installation",
+    "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "pytest unit-test"
+    "ngspice-check-installation",
+    "python -c \"import PySpice; print(PySpice.__version__)\"",
+    "pytest unit-test",
+    "ngspice-check-installation"
    ],
    "imports":[
     "PySpice",
@@ -208,13 +209,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.14.17.14.20",
- "raw_meta_yaml":"{% set name = \"PySpice\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/FabriceSalvaire/PySpice/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script:\n    # Create __init__.py this way instead of running tasks.release.update_git_sha(),\n    # which doesn't work because we're not using a git repo.\n    - sed -i.bak s/@VERSION@/{{ version }}/g PySpice/__init__.py.in\n    - sed -i.bak s/@GIT_TAG@/v{{ version }}/g PySpice/__init__.py.in\n    - sed -i.bak s/@GIT_SHA@/UNSPECIFIED/g PySpice/__init__.py.in\n    - rm PySpice/__init__.py.in.bak\n    - mv PySpice/__init__.py.in PySpice/__init__.py\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml\n    - cffi\n    - numpy\n    - scipy\n    - matplotlib-base\n    - ply\n    - ngspice\n\ntest:\n  imports:\n    - PySpice\n    - PySpice.Config\n    - PySpice.Doc\n    - PySpice.Logging\n    - PySpice.Math\n    - PySpice.Physics\n    - PySpice.Plot\n    - PySpice.Probe\n    - PySpice.Spice\n    - PySpice.Tools\n    - PySpice.Unit\n  requires:\n    - pytest\n  source_files:\n    - unit-test\n  commands:\n    - pytest unit-test\n\nabout:\n  home: https://pyspice.fabrice-salvaire.fr\n  doc_url: https://pyspice.fabrice-salvaire.fr\n  dev_url: https://github.com/FabriceSalvaire/PySpice\n\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n\n  summary: Simulate electronic circuit using Python and the Ngspice / Xyce simulators\n  description: |\n    PySpice is a free and open source Python module which interfaces Python to\n    the Ngspice and Xyce circuit simulators. PySpice implements a Ngspice\n    binding and provides an oriented object API on top of SPICE, the simulation\n    output is converted to Numpy arrays for convenience.\n\nextra:\n  recipe-maintainers:\n    - FabriceSalvaire\n    - stuarteberg\n",
+ "raw_meta_yaml":"{% set name = \"PySpice\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/FabriceSalvaire/PySpice/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n  patches:\n    # This fixes an issue in the test suite.\n    # Test were failing on Windows due to line ending mismatches.\n    - patches/fix-netlist-linesep.patch\n\n    # This will probably be fixed in the next release\n    - patches/fix-check-install-NameError.patch\n\nbuild:\n  number: 1\n  script:\n    # Create __init__.py this way instead of running tasks.release.update_git_sha(),\n    # which doesn't work because we're not using a git repo.\n    - \"{{ PYTHON }} ${RECIPE_DIR}/write_init.py {{ version }}\"  # [unix]\n    - \"{{ PYTHON }} %RECIPE_DIR%\\\\write_init.py {{ version }}\"  # [win]\n\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml\n    - cffi\n    - numpy\n    - scipy\n    - matplotlib-base\n    - ply\n    - ngspice-lib\n\ntest:\n  imports:\n    - PySpice\n    - PySpice.Config\n    - PySpice.Doc\n    - PySpice.Logging\n    - PySpice.Math\n    - PySpice.Physics\n    - PySpice.Plot\n    - PySpice.Probe\n    - PySpice.Spice\n    - PySpice.Tools\n    - PySpice.Unit\n  requires:\n    - pytest\n  source_files:\n    - unit-test\n  commands:\n    - python -c \"import PySpice; print(PySpice.__version__)\"\n    - pytest unit-test\n\n    # Note: In the next version of PySpice, this command will be renamed:\n    # pyspice_post_installation --check-install\n    - ngspice-check-installation\n\nabout:\n  home: https://pyspice.fabrice-salvaire.fr\n  doc_url: https://pyspice.fabrice-salvaire.fr\n  dev_url: https://github.com/FabriceSalvaire/PySpice\n\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n\n  summary: Simulate electronic circuit using Python and the Ngspice / Xyce simulators\n  description: |\n    PySpice is a free and open source Python module which interfaces Python to\n    the Ngspice and Xyce circuit simulators. PySpice implements a Ngspice\n    binding and provides an oriented object API on top of SPICE, the simulation\n    output is converted to Numpy arrays for convenience.\n\nextra:\n  recipe-maintainers:\n    - FabriceSalvaire\n    - stuarteberg\n",
  "req":{
   "__set__":true,
   "elements":[
    "cffi",
    "matplotlib-base",
-   "ngspice",
+   "ngspice-lib",
    "numpy",
    "pip",
    "ply",
@@ -240,7 +241,7 @@
    "elements":[
     "cffi",
     "matplotlib-base",
-    "ngspice",
+    "ngspice-lib",
     "numpy",
     "ply",
     "python",
@@ -274,7 +275,7 @@
    "elements":[
     "cffi",
     "matplotlib-base",
-    "ngspice",
+    "ngspice-lib",
     "numpy",
     "ply",
     "python",
