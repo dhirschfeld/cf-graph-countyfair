@@ -1,5 +1,250 @@
 {
- "bad":"make_graph: 404",
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424684738.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424685410.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"sourmash-minimal",
- "new_version":false
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"This is a minimal version that avoids heavy dependencies and is as cross-platform\nas possible. For the complete version check the sourmash package in bioconda.\n",
+   "dev_url":"https://github.com/dib-lab/sourmash",
+   "doc_url":"http://sourmash.bio/",
+   "home":"https://github.com/dib-lab/sourmash",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Compute and compare MinHash signatures for DNA data sets."
+  },
+  "build":{
+   "entry_points":[
+    "sourmash = sourmash.__main__:main",
+    "sourmash = sourmash.__main__:main",
+    "sourmash = sourmash.__main__:main"
+   ],
+   "missing_dso_whitelist":[
+    "/usr/lib/libresolv.9.dylib"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "luizirber",
+    "ctb",
+    "luizirber",
+    "ctb",
+    "luizirber",
+    "ctb"
+   ]
+  },
+  "package":{
+   "name":"sourmash-minimal",
+   "version":"3.3.1"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "rust >=1.34.0",
+    "c_compiler_stub",
+    "rust >=1.34.0",
+    "c_compiler_stub",
+    "rust >=1.34.0"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=38.6.0",
+    "milksnake",
+    "setuptools_scm",
+    "setuptools_scm_git_archive",
+    "sccache",
+    "python",
+    "pip",
+    "setuptools >=38.6.0",
+    "milksnake",
+    "setuptools_scm",
+    "setuptools_scm_git_archive",
+    "sccache",
+    "python",
+    "pip",
+    "setuptools >=38.6.0",
+    "milksnake",
+    "setuptools_scm",
+    "setuptools_scm_git_archive",
+    "sccache"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "screed >=1.0",
+    "cffi >=1.14",
+    "deprecation",
+    "python",
+    "setuptools",
+    "screed >=1.0",
+    "cffi >=1.14",
+    "deprecation",
+    "python",
+    "setuptools",
+    "screed >=1.0",
+    "cffi >=1.14",
+    "deprecation"
+   ]
+  },
+  "source":{
+   "sha256":"8d3404f095a90ed3365c429104f3a9526ef3a3b4db8c9bd944f4b0cde8b59f28",
+   "url":"https://pypi.io/packages/source/s/sourmash/sourmash-3.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "sourmash --help",
+    "sourmash info",
+    "sourmash --help",
+    "sourmash info",
+    "sourmash --help",
+    "sourmash info"
+   ],
+   "imports":[
+    "sourmash",
+    "sourmash",
+    "sourmash"
+   ]
+  }
+ },
+ "name":"sourmash-minimal",
+ "new_version":"3.3.1",
+ "pinning_version":"2020.05.27.14.19.32",
+ "raw_meta_yaml":"{% set version = \"3.3.1\" %}\n\npackage:\n  name: sourmash-minimal\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sourmash/sourmash-{{ version }}.tar.gz\n  sha256: 8d3404f095a90ed3365c429104f3a9526ef3a3b4db8c9bd944f4b0cde8b59f28\n\nbuild:\n  entry_points:\n    - sourmash = sourmash.__main__:main\n  number: 0\n  missing_dso_whitelist:          # [osx]\n    - /usr/lib/libresolv.9.dylib  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - rust >=1.34.0\n  host:\n    - python\n    - pip\n    - setuptools >=38.6.0\n    - milksnake\n    - setuptools_scm\n    - setuptools_scm_git_archive\n    - sccache\n\n  run:\n    - python\n    - setuptools\n    - enum34  # [py27]\n    - screed >=1.0\n    - cffi >=1.14\n    - deprecation\n\ntest:\n  imports:\n    - sourmash\n\n  commands:\n    - sourmash --help\n    - sourmash info\n\nabout:\n  home: https://github.com/dib-lab/sourmash\n  summary: 'Compute and compare MinHash signatures for DNA data sets.'\n  description: |\n    This is a minimal version that avoids heavy dependencies and is as cross-platform\n    as possible. For the complete version check the sourmash package in bioconda.\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/dib-lab/sourmash\n  doc_url: http://sourmash.bio/\n\nextra:\n  recipe-maintainers:\n    - luizirber\n    - ctb\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "c_compiler_stub",
+   "cffi",
+   "deprecation",
+   "m2w64_c_compiler_stub",
+   "milksnake",
+   "pip",
+   "python",
+   "rust",
+   "sccache",
+   "screed",
+   "setuptools",
+   "setuptools_scm",
+   "setuptools_scm_git_archive"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "m2w64_c_compiler_stub",
+    "rust"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "milksnake",
+    "pip",
+    "python",
+    "sccache",
+    "setuptools",
+    "setuptools_scm",
+    "setuptools_scm_git_archive"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "deprecation",
+    "python",
+    "screed",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "m2w64_c_compiler_stub",
+    "rust >=1.34.0"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "milksnake",
+    "pip",
+    "python",
+    "sccache",
+    "setuptools >=38.6.0",
+    "setuptools_scm",
+    "setuptools_scm_git_archive"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cffi >=1.14",
+    "deprecation",
+    "python",
+    "screed >=1.0",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://pypi.io/packages/source/s/sourmash/sourmash-3.3.1.tar.gz",
+ "version":"3.3.1"
 }

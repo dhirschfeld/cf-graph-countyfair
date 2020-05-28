@@ -33,7 +33,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -44,7 +44,7 @@
   },
   "package":{
    "name":"pytest-session2file",
-   "version":"0.1.9"
+   "version":"0.1.10"
   },
   "requirements":{
    "host":[
@@ -65,13 +65,8 @@
    ]
   },
   "source":{
-   "patches":[
-    "fixes-for-py3.patch",
-    "fixes-for-py3.patch",
-    "fixes-for-py3.patch"
-   ],
-   "sha256":"68a8c023c370d80e26d5655c0087d2f1d97117a2e519e4da39651762bce413e9",
-   "url":"https://pypi.io/packages/source/p/pytest-session2file/pytest-session2file-0.1.9.tar.gz"
+   "sha256":"575a290c6dd28eb71c7fd20373645b3c7ad91769ea66852004632a70a290e11c",
+   "url":"https://pypi.io/packages/source/p/pytest-session2file/pytest-session2file-0.1.10.tar.gz"
   },
   "test":{
    "imports":[
@@ -88,7 +83,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"pytest-session2file\" %}\n{% set version = \"0.1.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 68a8c023c370d80e26d5655c0087d2f1d97117a2e519e4da39651762bce413e9\n  patches:\n    - fixes-for-py3.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pytest\n\ntest:\n  imports:\n    - pytest_session2file\n\nabout:\n  home: https://github.com/BuhtigithuB/pytest_session2file\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE.txt\n  summary: 'pytest plugin to save failure or test session information to a file'\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
+ "raw_meta_yaml":"{% set name = \"pytest-session2file\" %}\n{% set version = \"0.1.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 575a290c6dd28eb71c7fd20373645b3c7ad91769ea66852004632a70a290e11c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pytest\n\ntest:\n  imports:\n    - pytest_session2file\n\nabout:\n  home: https://github.com/BuhtigithuB/pytest_session2file\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE.txt\n  summary: pytest plugin to save failure or test session information to a file\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -148,5 +143,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pytest-session2file/pytest-session2file-0.1.9.tar.gz",
- "version":"0.1.9"
+ "version":"0.1.10"
 }
