@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424354081.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.0.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"pandasdmx",
@@ -78,7 +97,12 @@
   }
  },
  "name":"pandasdmx",
- "new_version":"1.0.0",
+ "new_version":"1.0.1",
+ "new_version_attempts":{
+  "1.0.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"pandaSDMX\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 799d53f8c8a49321fc92d8bf0f6bf7101b0ffe14c7f2768aef33776b7eae48f6\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\" \n\nrequirements:\n  host:\n    - python >=3.7\n    - flit >=2.3\n    - pip\n  run:\n    - python >=3.7\n    - lxml >=3.6\n    - pandas >=0.24\n    - pydantic >=1.1\n    - requests >=2.7\n\ntest:\n  imports:\n    - pandasdmx\n    - pandasdmx.reader.sdmxml\n    - pandasdmx.writer\n    \nabout:\n  home: \"https://github.com/dr-leo/pandasdmx\"\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE \n  summary: \"Statistical Data and Metadata eXchange (SDMX) for the Python data ecosystem\"\n  doc_url: \"https://pandasdmx.readthedocs.io/\" \n  dev_url: \"https://github.com/dr-leo/pandasdmx\" \n\nextra:\n  recipe-maintainers:\n    - dr-leo\n",
  "req":{
   "__set__":true,
@@ -120,6 +144,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
