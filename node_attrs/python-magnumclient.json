@@ -39,7 +39,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -50,7 +50,7 @@
   },
   "package":{
    "name":"python-magnumclient",
-   "version":"3.0.0"
+   "version":"3.1.0"
   },
   "requirements":{
    "host":[
@@ -116,8 +116,8 @@
    ]
   },
   "source":{
-   "sha256":"b16c719c017e9e415e15b24c661537165427c5a2c6df7f5e314ae8efa65d5004",
-   "url":"https://pypi.io/packages/source/p/python-magnumclient/python-magnumclient-3.0.0.tar.gz"
+   "sha256":"f37c8ba19eba643281e97e6f275b353a8178059c5b767e221a060e5720b01dbb",
+   "url":"https://pypi.io/packages/source/p/python-magnumclient/python-magnumclient-3.1.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -139,7 +139,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"python-magnumclient\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: b16c719c017e9e415e15b24c661537165427c5a2c6df7f5e314ae8efa65d5004\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - magnum = magnumclient.shell:main\n\nrequirements:\n  host:\n    - pbr !=2.1.0,>=2.0.0\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - pbr !=2.1.0,>=2.0.0\n    - babel >=2.3.4\n    - six >=1.10.0\n    - keystoneauth1 >=3.4.0\n    - stevedore >=1.20.0\n    - requests >=2.14.2\n    - oslo.i18n >=3.15.3\n    - oslo.log >=3.36.0\n    - oslo.serialization >=2.18.0\n    - oslo.utils >=3.33.0\n    - os-client-config >=1.28.0\n    - osc-lib >=1.8.0\n    - prettytable >=0.7.2\n    - cryptography >=2.1\n    - decorator >=3.4.0\n\ntest:\n  imports:\n    - magnumclient\n\n  commands:\n    - magnum -h\n\nabout:\n  home: https://docs.openstack.org/python-magnumclient/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Client library for Openstack Magnum API\n  dev_url: https://docs.openstack.org/infra/manual/developers.html\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
+ "raw_meta_yaml":"{% set name = \"python-magnumclient\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f37c8ba19eba643281e97e6f275b353a8178059c5b767e221a060e5720b01dbb\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - magnum = magnumclient.shell:main\n\nrequirements:\n  host:\n    - pbr !=2.1.0,>=2.0.0\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - pbr !=2.1.0,>=2.0.0\n    - babel >=2.3.4\n    - six >=1.10.0\n    - keystoneauth1 >=3.4.0\n    - stevedore >=1.20.0\n    - requests >=2.14.2\n    - oslo.i18n >=3.15.3\n    - oslo.log >=3.36.0\n    - oslo.serialization >=2.18.0\n    - oslo.utils >=3.33.0\n    - os-client-config >=1.28.0\n    - osc-lib >=1.8.0\n    - prettytable >=0.7.2\n    - cryptography >=2.1\n    - decorator >=3.4.0\n\ntest:\n  imports:\n    - magnumclient\n\n  commands:\n    - magnum -h\n\nabout:\n  home: https://docs.openstack.org/python-magnumclient/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Client library for Openstack Magnum API\n  dev_url: https://docs.openstack.org/infra/manual/developers.html\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -243,5 +243,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-magnumclient/python-magnumclient-3.0.0.tar.gz",
- "version":"3.0.0"
+ "version":"3.1.0"
 }
