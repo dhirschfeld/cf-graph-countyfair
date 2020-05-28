@@ -253,6 +253,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424773904.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.6.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -324,13 +341,14 @@
   }
  },
  "name":"slackclient",
- "new_version":"2.6.1",
+ "new_version":"2.6.2",
  "new_version_attempts":{
   "2.6.0":1,
-  "2.6.1":1
+  "2.6.1":1,
+  "2.6.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"slackclient\" %}\n{% set version = \"2.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 124323a94151bf28619d3db5d298b5523762b7d4b255040333781ab82ae25ee6\n\nbuild:\n  number: 0\n  skip: true  # [py<=35]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - python\n    - aiohttp >3.5.2\n    - aiodns >1.0\n\ntest:\n  imports:\n    - slack\n\nabout:\n  home: https://github.com/slackhq/python-slackclient\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python client for Slack.com\n  doc_url: https://slackapi.github.io/python-slackclient/\n  dev_url: https://github.com/slackhq/python-slackclient\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - CurtLH\n",
  "req":{
   "__set__":true,
