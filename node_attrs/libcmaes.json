@@ -165,7 +165,7 @@
   },
   "package":{
    "name":"libcmaes",
-   "version":"0.9.6"
+   "version":"0.9.6.1"
   },
   "requirements":{
    "build":[
@@ -210,14 +210,9 @@
    ]
   },
   "source":{
-   "fn":"libcmaes-0.9.6.tar.gz",
-   "patches":[
-    "dynamic_lookup.patch",
-    "dynamic_lookup.patch",
-    "dynamic_lookup.patch"
-   ],
-   "sha256":"1b23e53eb4acb123348e7d00dfdd7c7699c513950347fcde7425376ad333f6c5",
-   "url":"https://github.com/beniz/libcmaes/archive/0.9.6.tar.gz"
+   "fn":"libcmaes-0.9.6.1.tar.gz",
+   "sha256":"45765a9aaf102733e76f5f60a24fa177b026e71d74f6ecddc2e9a33a6a1d7cb6",
+   "url":"https://github.com/beniz/libcmaes/archive/0.9.6.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -239,7 +234,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set version = \"0.9.6\" %}\n\npackage:\n  name: libcmaes\n  version: {{ version }}\n\nsource:\n  fn: libcmaes-{{ version }}.tar.gz\n  url: https://github.com/beniz/libcmaes/archive/{{ version }}.tar.gz\n  sha256: 1b23e53eb4acb123348e7d00dfdd7c7699c513950347fcde7425376ad333f6c5\n  patches:\n    # https://github.com/beniz/libcmaes/pull/206\n    - dynamic_lookup.patch\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - libtool  # [unix]\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - cmake >=3.12.1\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - boost\n    - eigen\n    - numpy\n  run:\n    - python\n    - numpy\n    - boost\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libcmaes/cmaes.h  # [unix]\n    - test -f ${PREFIX}/lib/libcmaes${SHLIB_EXT}  # [unix]\n  imports:\n    - lcmaes\n\nabout:\n  home: https://github.com/beniz/libcmaes\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: High performance blackbox stochastic optimization using the CMA-ES algorithm\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"0.9.6.1\" %}\n\npackage:\n  name: libcmaes\n  version: {{ version }}\n\nsource:\n  fn: libcmaes-{{ version }}.tar.gz\n  url: https://github.com/beniz/libcmaes/archive/{{ version }}.tar.gz\n  sha256: 45765a9aaf102733e76f5f60a24fa177b026e71d74f6ecddc2e9a33a6a1d7cb6\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - libtool  # [unix]\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - cmake >=3.12.1\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - boost\n    - eigen\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - boost\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libcmaes/cmaes.h  # [unix]\n    - test -f ${PREFIX}/lib/libcmaes${SHLIB_EXT}  # [unix]\n  imports:\n    - lcmaes\n\nabout:\n  home: https://github.com/beniz/libcmaes\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: High performance blackbox stochastic optimization using the CMA-ES algorithm\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -326,5 +321,5 @@
   }
  },
  "url":"https://github.com/beniz/libcmaes/archive/0.9.5.tar.gz",
- "version":"0.9.6"
+ "version":"0.9.6.1"
 }

@@ -40,7 +40,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -54,7 +54,7 @@
   },
   "package":{
    "name":"yaqd-control",
-   "version":"0.2.0"
+   "version":"2020.5.0"
   },
   "requirements":{
    "host":[
@@ -90,8 +90,8 @@
    ]
   },
   "source":{
-   "sha256":"3e292ee3d55fd310dc58d9ae5d7d4736ebf924cc428d376988ed46f48fa594ce",
-   "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-0.2.0.tar.gz"
+   "sha256":"7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b",
+   "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-2020.5.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -113,7 +113,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"yaqd-control\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3e292ee3d55fd310dc58d9ae5d7d4736ebf924cc428d376988ed46f48fa594ce\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - yaqd=yaqd_control.__main__:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - appdirs\n    - click\n    - colorama\n    - msgpack-python >=1.0.0\n    - prettytable\n    - python >=3.7\n    - toml\n\ntest:\n  imports:\n    - yaqd_control\n  commands:\n    - yaqd --help\n\nabout:\n  home: \"https://yaq.fyi\"\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: \"Command line tools for inspecting and controlling yaq daemons.\"\n  doc_url: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-control\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
+ "raw_meta_yaml":"{% set name = \"yaqd-control\" %}\n{% set version = \"2020.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - yaqd=yaqd_control.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - appdirs\n    - click\n    - colorama\n    - msgpack-python >=1.0.0\n    - prettytable\n    - python >=3.7\n    - toml\n\ntest:\n  imports:\n    - yaqd_control\n  commands:\n    - yaqd --help\n\nabout:\n  home: https://yaq.fyi\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Command line tools for inspecting and controlling yaq daemons.\n  doc_url: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-control\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -188,5 +188,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-0.2.0.tar.gz",
- "version":"0.2.0"
+ "version":"2020.5.0"
 }
