@@ -506,6 +506,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424602815.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"23.0.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -611,17 +628,18 @@
   }
  },
  "name":"erlang",
- "new_version":"23.0.1",
+ "new_version":"23.0.2",
  "new_version_attempts":{
   "22.3.1":1,
   "22.3.2":1,
   "22.3.3":1,
   "22.3.4":1,
   "23.0":1,
-  "23.0.1":1
+  "23.0.1":1,
+  "23.0.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set version = \"23.0.1\" %}\n\npackage:\n  name: erlang\n  version: {{ version }}\n\nsource:\n  fn: otp_src_{{ version }}.tar.gz\n  url: https://github.com/erlang/otp/archive/OTP-{{ version }}.tar.gz\n  sha256: 25e9d9d4903701e4b86c60b68ac34b4a85f5a5bccfd55fa6a2345f70d84f3de8\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - autoconf 2.*\n    - m4 1.4.*\n  host:\n    - perl\n    - readline\n    - openssl\n    - ncurses\n    - zlib\n  run:\n    - readline\n    - openssl\n    - ncurses\n    - zlib\n\ntest:\n  commands:\n    - erl -version\n    - erlc\n\nabout:\n  home: http://www.erlang.org/\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: A programming language used to build massively scalable soft real-time systems with requirements on high availability.\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - jakirkham\n    - sodre\n",
  "req":{
   "__set__":true,
