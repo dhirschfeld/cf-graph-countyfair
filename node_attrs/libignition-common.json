@@ -47,7 +47,7 @@
    "summary":"Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libignition-common3",
     "libignition-common3",
@@ -58,8 +58,11 @@
   "extra":{
    "recipe-maintainers":[
     "seanyen",
+    "Tobias-Fischer",
     "seanyen",
-    "seanyen"
+    "Tobias-Fischer",
+    "seanyen",
+    "Tobias-Fischer"
    ]
   },
   "package":{
@@ -121,8 +124,7 @@
   "source":[
    {
     "patches":[
-     "fix_test_break.patch",
-     "librt_linkage.patch"
+     "fix_test_break.patch"
     ],
     "sha256":"68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f",
     "url":"https://bitbucket.org/ignitionrobotics/ign-common/get/ignition-common3_3.5.0.tar.gz"
@@ -130,7 +132,7 @@
    {
     "patches":[
      "fix_test_break.patch",
-     "librt_linkage.patch"
+     "framework.patch"
     ],
     "sha256":"68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f",
     "url":"https://bitbucket.org/ignitionrobotics/ign-common/get/ignition-common3_3.5.0.tar.gz"
@@ -159,7 +161,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.04.10",
- "raw_meta_yaml":"{% set base_name = \"libignition-common\" %}\n{% set version = \"3.5.0\" %}\n{% set major_version = version.split('.')[0] %}\n{% set name = base_name + major_version %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/ignitionrobotics/ign-common/get/ignition-common{{ major_version }}_{{ version }}.tar.gz\n    sha256: 68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f\n    patches:\n      - fix_test_break.patch\n      - librt_linkage.patch\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14 or osx]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ compiler('c') }}    # [not win]\n    - vs2017_win-64          # [win64]\n    - vs2017_win-32          # [win32]\n    - cmake\n    - ninja\n    - pkgconfig\n  host:\n    - libignition-math6\n    - dlfcn-win32  # [win]\n    - libuuid      # [not win]\n    - freeimage\n    - gts\n    - tinyxml2\n  run:\n    - libignition-math6\n    - dlfcn-win32  # [win]\n    - libuuid      # [not win]\n    - freeimage\n    - gts\n    - tinyxml2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/ignition/common{{ major_version }}/ignition/common.hh  # [not win]\n    - if exist %PREFIX%\\\\Library\\\\include\\\\ignition\\common{{ major_version }}\\ignition\\common.hh (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://bitbucket.org/ignitionrobotics/ign-common\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.\n\nextra:\n  recipe-maintainers:\n    - seanyen\n",
+ "raw_meta_yaml":"{% set base_name = \"libignition-common\" %}\n{% set version = \"3.5.0\" %}\n{% set major_version = version.split('.')[0] %}\n{% set name = base_name + major_version %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/ignitionrobotics/ign-common/get/ignition-common{{ major_version }}_{{ version }}.tar.gz\n    sha256: 68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f\n    patches:\n      - fix_test_break.patch\n      - librt_linkage.patch  # [linux]\n      - framework.patch  # [osx]\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ compiler('c') }}    # [not win]\n    - vs2017_win-64          # [win64]\n    - vs2017_win-32          # [win32]\n    - cmake\n    - ninja\n    - pkgconfig\n  host:\n    - libignition-math6\n    - dlfcn-win32  # [win]\n    - libuuid      # [not win]\n    - freeimage\n    - gts\n    - tinyxml2\n  run:\n    - libignition-math6\n    - dlfcn-win32  # [win]\n    - libuuid      # [not win]\n    - freeimage\n    - gts\n    - tinyxml2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/ignition/common{{ major_version }}/ignition/common.hh  # [not win]\n    - if exist %PREFIX%\\\\Library\\\\include\\\\ignition\\common{{ major_version }}\\ignition\\common.hh (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://bitbucket.org/ignitionrobotics/ign-common\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - Tobias-Fischer\n",
  "req":{
   "__set__":true,
   "elements":[
