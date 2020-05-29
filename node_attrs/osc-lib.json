@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425066465.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -132,8 +149,12 @@
   }
  },
  "name":"osc-lib",
- "new_version":"2.0.0",
- "pinning_version":"2020.01.10",
+ "new_version":"2.1.0",
+ "new_version_attempts":{
+  "2.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"osc-lib\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: b1cd4467b72a73f7a4de51789581f63de6b93f0e0d15e916191aa26234b01ffa\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pbr\n    - pip\n    - python\n    - setuptools\n  run:\n    - babel\n    - cliff\n    - keystoneauth1\n    - openstacksdk\n    - oslo.i18n\n    - oslo.utils\n    - pbr\n    - python\n    - setuptools\n    - simplejson\n    - six\n    - stevedore\n\ntest:\n  imports:\n    - osc_lib\n\nabout:\n  home: https://opendev.org/openstack/osc-lib\n  license: Apache Software\n  license_family: APACHE\n  license_file: LICENSE\n  summary: \"OpenStackClient Library\"\n  doc_url: https://docs.openstack.org/osc-lib/latest/\n  dev_url: https://opendev.org/openstack/osc-lib\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
@@ -189,7 +210,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
