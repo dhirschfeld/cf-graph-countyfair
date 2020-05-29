@@ -20,7 +20,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . --no-deps  -vv"
   },
   "extra":{
@@ -54,14 +54,17 @@
     "matplotlib-base",
     "numpy >=1.14",
     "scipy",
+    "scooby",
     "python >=3.6",
     "matplotlib-base",
     "numpy >=1.14",
     "scipy",
+    "scooby",
     "python >=3.6",
     "matplotlib-base",
     "numpy >=1.14",
-    "scipy"
+    "scipy",
+    "scooby"
    ]
   },
   "source":{
@@ -78,7 +81,7 @@
  },
  "name":"tephi",
  "new_version":"0.2.4",
- "raw_meta_yaml":"{% set version = \"0.2.4\" %}\n\npackage:\n  name: tephi\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/tephi/archive/v{{ version }}.tar.gz\n  sha256: 38dcc397b105d50dc50b99699715e92801a9d7a57bda27b64b8b96890dc08386\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps  -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools\n  run:\n    - python >=3.6\n    - matplotlib-base\n    - numpy >=1.14\n    - scipy\n\ntest:\n  imports:\n    - tephi\n\nabout:\n  home: http://tephi.readthedocs.org/\n  license: LGPL-3.0-or-later\n  license_family: GPL\n  license_file:\n    - COPYING\n    - COPYING.LESSER\n  summary: Tephigram plotting in Python\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - trexfeathers\n",
+ "raw_meta_yaml":"{% set version = \"0.2.4\" %}\n\npackage:\n  name: tephi\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/tephi/archive/v{{ version }}.tar.gz\n  sha256: 38dcc397b105d50dc50b99699715e92801a9d7a57bda27b64b8b96890dc08386\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps  -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools\n  run:\n    - python >=3.6\n    - matplotlib-base\n    - numpy >=1.14\n    - scipy\n    - scooby\n\ntest:\n  imports:\n    - tephi\n\nabout:\n  home: http://tephi.readthedocs.org/\n  license: LGPL-3.0-or-later\n  license_family: GPL\n  license_file:\n    - COPYING\n    - COPYING.LESSER\n  summary: Tephigram plotting in Python\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - trexfeathers\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -87,6 +90,7 @@
    "pip",
    "python",
    "scipy",
+   "scooby",
    "setuptools"
   ]
  },
@@ -109,7 +113,8 @@
     "matplotlib-base",
     "numpy",
     "python",
-    "scipy"
+    "scipy",
+    "scooby"
    ]
   },
   "test":{
@@ -137,7 +142,8 @@
     "matplotlib-base",
     "numpy >=1.14",
     "python >=3.6",
-    "scipy"
+    "scipy",
+    "scooby"
    ]
   },
   "test":{
