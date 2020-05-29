@@ -84,6 +84,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424868503.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.17"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -199,8 +216,12 @@
   }
  },
  "name":"georasters",
- "new_version":"0.5.16",
- "pinning_version":"2020.02.12",
+ "new_version":"0.5.17",
+ "new_version_attempts":{
+  "0.5.17":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"georasters\" %}\n{% set version = \"0.5.16\" %}\n{% set sha256 = \"49305431b3cededa19046b4ddfc0347b2a7cf67382625efd6706957c9339462b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python\n  run:\n    - python\n    - numpy\n    - pandas\n    - docopt\n    - gdal\n    - pyproj\n    - scikit-image\n    - matplotlib-base\n    - coverage\n    - fiona\n    - geopandas\n    - pysal\n    - affine\n    - rasterstats >=0.12\n\ntest:\n  imports:\n    - georasters\n  requires:\n    - coverage\n    - pyshp >=1.1.4\n    - pytest\n    - pytest-cov >=2.2.0\n\nabout:\n  home: http://github.com/ozak/georasters\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'Tools for working with Geographical Information System Rasters'\n\n  description: |\n    The GeoRasters package is a python module that provides\n    a fast and flexible tool to work with GIS raster files.\n    It provides the GeoRaster class, which makes working with\n    rasters quite transparent and easy. In a way it tries to do\n    for rasters what GeoPandas does for geometries.\n\n    It includes tools to\n\n    * Merge rasters\n    * Plot rasters\n    * Extract information from rasters\n    * Given a point (lat,lon) find its location in a raster\n    * Aggregate rasters to lower resolutions\n    * Align two rasters of different sizes to common area and size\n    * Get all the geographical information of raster\n    * Create GeoTiff files easily\n    * Load GeoTiff files as masked numpy rasters\n    * Clip raster using geometries\n    * Get zonal statistics using geometries\n    * Spatial analysis tools\n\n  doc_url: http://georasters.readthedocs.io/\n  dev_url: https://github.com/ozak/georasters\n\nextra:\n  recipe-maintainers:\n    - ozak\n",
  "req":{
   "__set__":true,
@@ -263,7 +284,7 @@
    ]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
