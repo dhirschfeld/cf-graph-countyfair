@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425366812.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -140,8 +157,12 @@
   }
  },
  "name":"json-e",
- "new_version":"4.0.1",
- "pinning_version":"2020.03.06",
+ "new_version":"4.1.0",
+ "new_version_attempts":{
+  "4.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"json-e\" %}\n{% set version = \"4.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/taskcluster/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: ccbd9728087da342c17d570d89be4f0553901cd38c27f6b40fefb119103707ee\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} setup.py sdist\n    - cd dist && {{ PYTHON }} -m pip install {{ name }}-{{ version }}.tar.gz -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  source_files:\n    - test\n    - specification.yml\n  requires:\n    - freezegun\n    - hypothesis\n    - nose\n    - pyyaml\n    - python-dateutil\n    - pep8\n    - pip\n  imports:\n    - jsone\n  commands:\n    - python -m pip check\n    - cd test && nosetests\n\nabout:\n  home: https://taskcluster.github.io/json-e\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENSE\n  summary: A data-structure parameterization system written for embedding context in JSON objects\n  doc_url: https://simplejson.readthedocs.io\n  dev_url: https://github.com/taskcluster/json-e\n  description: >\n    The central idea is to treat a data structure as a \"template\" and transform it, using another data structure as context, to produce an output data structure.\n\n    There are countless libraries to do this with strings, such as mustache. What makes JSON-e unique is that it operates on data structures, not on their textual\n    representation. This allows input to be written in a number of formats (JSON, YAML, etc.) or even generated dynamically. It also means that the output cannot\n    be \"invalid\", even when including large chunks of contextual data.\n\n    JSON-e is also designed to be safe for use on untrusted data. It never uses eval or any other function that might result in arbitrary code execution. It also\n    disallows unbounded iteration, so any JSON-e rendering operation will finish in finite time.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
@@ -181,7 +202,7 @@
    ]
   }
  },
- "smithy_version":"3.6.9",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
