@@ -16,6 +16,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425266722.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.0.8"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -84,8 +101,12 @@
   }
  },
  "name":"bar_chart_race",
- "new_version":"0.0.6",
- "pinning_version":"2020.04.28.13.02.26",
+ "new_version":"0.0.8",
+ "new_version_attempts":{
+  "0.0.8":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"bar_chart_race\" %}\n{% set version = \"0.0.6\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 70c0f6f897a4746472123e509431e75e75a13d5613c27ef8c5b90c8fabdb80b6\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python \n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pandas\n    - numpy\n    - matplotlib-base\n\ntest:\n  imports:\n    - bar_chart_race\n\nabout:\n  home: https://github.com/dexplo/bar_chart_race\n  license: MIT\n  license_family: MIT\n  # https://github.com/dexplo/bar_chart_race/issues/2\n  license_file: LICENSE\n  summary: \"Create animated bar chart races using matplotlib\"\n  doc_url: https://github.com/dexplo/bar_chart_race\n\nextra:\n  recipe-maintainers:\n    - rpanai\n",
  "req":{
   "__set__":true,
@@ -123,7 +144,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
