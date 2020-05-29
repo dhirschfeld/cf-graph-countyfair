@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424996708.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.8.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"abipy",
@@ -111,7 +130,12 @@
   }
  },
  "name":"abipy",
- "new_version":"0.7.0",
+ "new_version":"0.8.0",
+ "new_version_attempts":{
+  "0.8.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"abipy\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 535028ce5a8721edfdaea454926af31f01abc42f769ae5bcae62b4e9ee85dbd8\n  patches:\n    - mixins.patch\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - monty\n    - tabulate\n    - apscheduler\n    - pydispatcher >=2.0.5\n    - tqdm\n    - pyyaml >=3.11\n    - pandas\n    - numpy\n    - scipy\n    - sympy\n    - spglib\n    - pymatgen >=2019.12.22\n    - netcdf4\n    - matplotlib-base\n    - seaborn\n\ntest:\n  imports:\n    - abipy\n\nabout:\n  home: http://abinit.github.io/abipy\n  license: GPL-2.0-only \n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Open-source library for analyzing the results produced by ABINIT'\n\n  description: |\n    AbiPy is a Python library to analyze the results produced by \n    Abinit, an open-source program for the ab-initio calculations \n    of the physical properties of materials within Density Functional \n    Theory and Many-Body perturbation theory. It also provides tools \n    to generate input files and workflows to automate ab-initio \n    calculations and typical convergence studies. AbiPy is \n    interfaced with pymatgen and this allows users to benefit from \n    the different tools and python objects available in the pymatgen \n    ecosystem.\n  doc_url: http://abinit.github.io/abipy\n  dev_url: https://github.com/abinit/abipy\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - gmatteo\n",
  "req":{
   "__set__":true,
@@ -173,6 +197,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
