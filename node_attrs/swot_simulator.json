@@ -21,7 +21,7 @@
     "swot_simulator = swot_simulator.launcher:main"
    ],
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -54,7 +54,7 @@
     "netcdf4",
     "numba",
     "numpy",
-    "pyinterp",
+    "pyinterp >=0.3.2",
     "python >=3.6",
     "python-dateutil",
     "scipy",
@@ -65,7 +65,7 @@
     "netcdf4",
     "numba",
     "numpy",
-    "pyinterp",
+    "pyinterp >=0.3.2",
     "python >=3.6",
     "python-dateutil",
     "scipy",
@@ -76,7 +76,7 @@
     "netcdf4",
     "numba",
     "numpy",
-    "pyinterp",
+    "pyinterp >=0.3.2",
     "python >=3.6",
     "python-dateutil",
     "scipy",
@@ -84,7 +84,7 @@
    ]
   },
   "source":{
-   "sha256":"6e5ad18694cc774c1b2affc7f01bc1073e5392ecaa4ce50049f9c0bce5b6f85b",
+   "sha256":"b4d8052a7806baa16da04082c28c5d7c72a0ea16493ec2d07ff9da99469f681e",
    "url":"https://github.com/CNES/swot_simulator/releases/download/0.1.0/swot_simulator-0.1.0.tar.gz"
   },
   "test":{
@@ -97,7 +97,7 @@
  },
  "name":"swot_simulator",
  "new_version":"0.1.0",
- "raw_meta_yaml":"{% set name = \"swot_simulator\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    url: https://github.com/CNES/swot_simulator/releases/download/{{ version }}/swot_simulator-{{ version }}.tar.gz\n    sha256: 6e5ad18694cc774c1b2affc7f01bc1073e5392ecaa4ce50049f9c0bce5b6f85b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - swot_simulator = swot_simulator.launcher:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools\n  run:\n    - dask\n    - distributed\n    - mkl_fft\n    - netcdf4\n    - numba\n    - numpy\n    - pyinterp\n    - python >=3.6\n    - python-dateutil\n    - scipy\n    - xarray\ntest:\n  imports:\n    - swot_simulator.launcher\n\n\nabout:\n  home: https://github.com/CNES/swot_simulator\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'SWOT Simulator for Ocean Science'\n  description: |\n    This software simulates SWOT observations of sea surface height (SSH) that\n    can be applied to an ocean general circulation model (OGCM), allowing the\n    exploration of ideas and methods to optimize information retrieval from the\n    SWOT Mission in the future\n  doc_url: https://swot-simulator.readthedocs.io/\n  dev_url: https://github.com/CNES/swot_simulator\n\nextra:\n  recipe-maintainers:\n    - fbriol\n",
+ "raw_meta_yaml":"{% set name = \"swot_simulator\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    url: https://github.com/CNES/swot_simulator/releases/download/{{ version }}/swot_simulator-{{ version }}.tar.gz\n    sha256: b4d8052a7806baa16da04082c28c5d7c72a0ea16493ec2d07ff9da99469f681e\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - swot_simulator = swot_simulator.launcher:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools\n  run:\n    - dask\n    - distributed\n    - mkl_fft\n    - netcdf4\n    - numba\n    - numpy\n    - pyinterp >=0.3.2\n    - python >=3.6\n    - python-dateutil\n    - scipy\n    - xarray\ntest:\n  imports:\n    - swot_simulator.launcher\n\n\nabout:\n  home: https://github.com/CNES/swot_simulator\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'SWOT Simulator for Ocean Science'\n  description: |\n    This software simulates SWOT observations of sea surface height (SSH) that\n    can be applied to an ocean general circulation model (OGCM), allowing the\n    exploration of ideas and methods to optimize information retrieval from the\n    SWOT Mission in the future\n  doc_url: https://swot-simulator.readthedocs.io/\n  dev_url: https://github.com/CNES/swot_simulator\n\nextra:\n  recipe-maintainers:\n    - fbriol\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -173,7 +173,7 @@
     "netcdf4",
     "numba",
     "numpy",
-    "pyinterp",
+    "pyinterp >=0.3.2",
     "python >=3.6",
     "python-dateutil",
     "scipy",

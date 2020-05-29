@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/424954953.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -140,12 +157,13 @@
   }
  },
  "name":"opensesame",
- "new_version":"3.3.1",
+ "new_version":"3.3.2",
  "new_version_attempts":{
-  "3.3.1":1
+  "3.3.1":1,
+  "3.3.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"opensesame\" %}\n{% set pypiname = \"python-\" + name %}\n{% set version = \"3.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz\n  sha256: 53366dc2f9140f8c1ab56377b6046099434f7617c3d71ad7e089e39047961e6d\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 0\n  entry_points:\n    - opensesame = libqtopensesame.__main__:opensesame\n    - opensesamerun = libqtopensesame.__main__:opensesamerun\n\nrequirements:\n  host:\n    - pyyaml\n    - pip\n    - python\n\n  run:\n    - python\n    - pyqt\n    - qdatamatrix >=0.1.21\n    - pseudorandom\n    - fileinspector\n    - qnotifications >=2.0.3\n    - pyyaml\n    - webcolors\n    - pyserial\n    - markdown\n    - pyflakes\n    - shapely\n    - pillow\n    - pyqode.core\n    - pyqode.python\n\ntest:\n  imports:\n    - libopensesame\n    - libqtopensesame\n\napp:\n  entry: opensesame\n  icon: opensesame.png\n  summary: Graphical experiment builder for the social sciences\n\nabout:\n  home: https://github.com/smathot/OpenSesame\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Graphical experiment builder for the social sciences\n  dev_url: https://github.com/smathot/OpenSesame\n  doc_url: http://osdoc.cogsci.nl\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
  "req":{
   "__set__":true,
