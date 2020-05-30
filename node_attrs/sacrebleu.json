@@ -27,7 +27,6 @@
    "description":"SacreBLEU (Post, 2018) provides hassle-free computation of shareable,\ncomparable, and reproducible BLEU scores. Inspired by Rico Sennrich's\nmulti-bleu-detok.perl, it produces the official WMT scores but works with\nplain text. It also knows all the standard test sets and handles\ndownloading, processing, and tokenization for you.\n",
    "home":"https://github.com/mjpost/sacrebleu",
    "license":"Apache-2.0",
-   "license_family":"Apache",
    "license_file":"LICENSE.txt",
    "summary":"Reference BLEU implementation that auto-downloads test sets and reports a version string to facilitate cross-lab comparisons"
   },
@@ -39,7 +38,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -50,7 +49,7 @@
   },
   "package":{
    "name":"sacrebleu",
-   "version":"1.4.9"
+   "version":"1.4.10"
   },
   "requirements":{
    "host":[
@@ -74,8 +73,8 @@
    ]
   },
   "source":{
-   "sha256":"f7bf5875bc0878093443ecb556aa3297e304b5b26d664539c87fcc470e81e006",
-   "url":"https://pypi.io/packages/source/s/sacrebleu/sacrebleu-1.4.9.tar.gz"
+   "sha256":"1a534dda4d74a1c9681722ed386b2174788b14d9fc76cbb3910f09e82e663cac",
+   "url":"https://pypi.io/packages/source/s/sacrebleu/sacrebleu-1.4.10.tar.gz"
   },
   "test":{
    "imports":[
@@ -92,7 +91,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"sacrebleu\" %}\n{% set version = \"1.4.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f7bf5875bc0878093443ecb556aa3297e304b5b26d664539c87fcc470e81e006\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - sacrebleu = sacrebleu.sacrebleu:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - typing\n    - portalocker\n\ntest:\n  imports:\n    - sacrebleu\n\nabout:\n  home: https://github.com/mjpost/sacrebleu\n  license: Apache-2.0\n  license_family: Apache\n  # PR Made to get License file in sdist\n  # https://github.com/mjpost/sacrebleu/pull/84\n  license_file: LICENSE.txt\n  summary: 'Reference BLEU implementation that auto-downloads test sets and reports a version string to facilitate cross-lab comparisons'\n\n  description: |\n    SacreBLEU (Post, 2018) provides hassle-free computation of shareable,\n    comparable, and reproducible BLEU scores. Inspired by Rico Sennrich's\n    multi-bleu-detok.perl, it produces the official WMT scores but works with\n    plain text. It also knows all the standard test sets and handles\n    downloading, processing, and tokenization for you.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml":"{% set name = \"sacrebleu\" %}\n{% set version = \"1.4.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1a534dda4d74a1c9681722ed386b2174788b14d9fc76cbb3910f09e82e663cac\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - sacrebleu = sacrebleu.sacrebleu:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - typing\n    - portalocker\n\ntest:\n  imports:\n    - sacrebleu\n\nabout:\n  home: https://github.com/mjpost/sacrebleu\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: Reference BLEU implementation that auto-downloads test sets and reports a version string to facilitate cross-lab comparisons\n\n  description: |\n    SacreBLEU (Post, 2018) provides hassle-free computation of shareable,\n    comparable, and reproducible BLEU scores. Inspired by Rico Sennrich's\n    multi-bleu-detok.perl, it produces the official WMT scores but works with\n    plain text. It also knows all the standard test sets and handles\n    downloading, processing, and tokenization for you.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -155,5 +154,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/sacrebleu/sacrebleu-1.4.9.tar.gz",
- "version":"1.4.9"
+ "version":"1.4.10"
 }
