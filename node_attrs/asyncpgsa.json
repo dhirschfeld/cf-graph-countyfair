@@ -135,9 +135,6 @@
  ],
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -151,7 +148,7 @@
    "doc_source_url":"https://github.com/CanopyTax/asyncpgsa/blob/master/docs/index.rst",
    "doc_url":"http://asyncpgsa.readthedocs.io",
    "home":"https://github.com/canopytax/asyncpgsa",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"Apache",
    "license_file":"/LICENSE",
    "summary":"A fast PostgreSQL Database Client Library for Python/asyncio."
@@ -169,7 +166,7 @@
   },
   "package":{
    "name":"asyncpgsa",
-   "version":"0.26.1"
+   "version":"0.26.3"
   },
   "requirements":{
    "host":[
@@ -199,9 +196,9 @@
    ]
   },
   "source":{
-   "fn":"asyncpgsa-0.26.1.tar.gz",
-   "sha256":"1101fa0bd5c83ea0cd3c4c5d1b8efcf36307d33ae8b14357c3a1acbcaeef9e41",
-   "url":"https://pypi.io/packages/source/a/asyncpgsa/asyncpgsa-0.26.1.tar.gz"
+   "fn":"asyncpgsa-0.26.3.tar.gz",
+   "sha256":"3bcea15768925f10779aa03c01f9774d3da687031016eee7ebf799cf435540f7",
+   "url":"https://pypi.io/packages/source/a/asyncpgsa/asyncpgsa-0.26.3.tar.gz"
   },
   "test":{
    "imports":[
@@ -221,7 +218,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"asyncpgsa\" %}\n{% set version = \"0.26.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"1101fa0bd5c83ea0cd3c4c5d1b8efcf36307d33ae8b14357c3a1acbcaeef9e41\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_value }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n  skip: True  # [py2k]\n\nrequirements:\n  host:\n    - python\n    - pip\n    # Project imports itself to find out version during build\n    # time which results into importing runtime dependencies\n    - asyncpg\n    - sqlalchemy\n  run:\n    - python\n    - asyncpg\n    - sqlalchemy\n\ntest:\n  imports:\n    - asyncpgsa\n    - asyncpgsa.testing\n\nabout:\n  home: https://github.com/canopytax/asyncpgsa\n  license: Apache 2.0\n  license_family: Apache\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: A fast PostgreSQL Database Client Library for Python/asyncio.\n  description: |\n    asyncpgsa is a database interface library designed specifically for\n    PostgreSQL and Python/asyncio. asyncpgsa is an efficient, clean\n    implementation of PostgreSQL server binary protocol for use with Python's\n    asyncio framework.\n  dev_url: https://github.com/CanopyTax/asyncpgsa\n  doc_url: http://asyncpgsa.readthedocs.io\n  doc_source_url: https://github.com/CanopyTax/asyncpgsa/blob/master/docs/index.rst\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
+ "raw_meta_yaml":"{% set name = \"asyncpgsa\" %}\n{% set version = \"0.26.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3bcea15768925f10779aa03c01f9774d3da687031016eee7ebf799cf435540f7\n\nbuild:\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '\n  skip: true  # [py2k]\n\nrequirements:\n  host:\n    - python\n    - pip\n    # Project imports itself to find out version during build\n    # time which results into importing runtime dependencies\n    - asyncpg\n    - sqlalchemy\n  run:\n    - python\n    - asyncpg\n    - sqlalchemy\n\ntest:\n  imports:\n    - asyncpgsa\n    - asyncpgsa.testing\n\nabout:\n  home: https://github.com/canopytax/asyncpgsa\n  license: Apache-2.0\n  license_family: Apache\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE\n  summary: A fast PostgreSQL Database Client Library for Python/asyncio.\n  description: |\n    asyncpgsa is a database interface library designed specifically for\n    PostgreSQL and Python/asyncio. asyncpgsa is an efficient, clean\n    implementation of PostgreSQL server binary protocol for use with Python's\n    asyncio framework.\n  dev_url: https://github.com/CanopyTax/asyncpgsa\n  doc_url: http://asyncpgsa.readthedocs.io\n  doc_source_url: https://github.com/CanopyTax/asyncpgsa/blob/master/docs/index.rst\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -288,5 +285,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/asyncpgsa/asyncpgsa-0.26.0.tar.gz",
- "version":"0.26.1"
+ "version":"0.26.3"
 }
