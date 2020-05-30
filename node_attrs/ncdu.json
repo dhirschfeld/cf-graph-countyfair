@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425438516.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.15"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"ncdu",
@@ -68,7 +87,12 @@
   }
  },
  "name":"ncdu",
- "new_version":false,
+ "new_version":"1.15",
+ "new_version_attempts":{
+  "1.15":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"ncdu\" %}\n{% set version = \"1.14\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://dev.yorhel.nl/download/{{ name }}-{{ version }}.tar.gz\n  sha256: c694783aab21e27e64baad314b7c1ff34541bfa219fe9645ef6780f1c5558c44\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - autoconf\n    - pkg-config\n  host:\n    - ncurses\n  run:\n    - ncurses\n\ntest:\n  commands:\n    - ncdu --version\n\nabout:\n  home: https://dev.yorhel.nl/ncdu\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: NCurses Disk Usage\n  description: |\n    Ncdu is a disk usage analyzer with an ncurses interface. It is designed to\n    find space hogs on a remote server where you don't have an entire graphical\n    setup available, but it is a useful tool even on regular desktop systems.\n    Ncdu aims to be fast, simple and easy to use, and should be able to run\n    in any minimal POSIX-like environment with ncurses installed.\n  doc_url: https://dev.yorhel.nl/ncdu/man\n  dev_url: https://g.blicky.net/ncdu.git/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req":{
   "__set__":true,
@@ -107,6 +131,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
