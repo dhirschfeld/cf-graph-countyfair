@@ -59,6 +59,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425508035.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.26.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -120,12 +137,13 @@
   }
  },
  "name":"mpg123",
- "new_version":"1.26.0",
+ "new_version":"1.26.1",
  "new_version_attempts":{
-  "1.26.0":1
+  "1.26.0":1,
+  "1.26.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"mpg123\" %}\n{% set version = \"1.25.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://sourceforge.net/projects/{{ name }}/files/{{ name }}/{{ version }}/{{ name }}-{{ version }}.tar.bz2/download\n  sha256: 79da51efae011814491f07c95cb5e46de0476aca7a0bf240ba61cfc27af8499b\n\nbuild:\n    number: 1000\n    skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libmpg123${SHLIB_EXT}  # [not win]\n    - test -f $PREFIX/lib/libout123${SHLIB_EXT}  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n\nabout:\n    home: https://www.mpg123.de/\n    license: LGPL-2.1\n    license_family: LGPL\n    license_file: COPYING\n    summary: \"mpg123 - fast console MPEG Audio Player and decoder library\"\n\nextra:\n    recipe-maintainers:\n        - hbredin\n        - thomasfillon\n",
  "req":{
   "__set__":true,
