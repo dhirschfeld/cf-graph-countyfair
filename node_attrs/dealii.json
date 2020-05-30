@@ -122,6 +122,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425471738.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "bad":false,
@@ -132,14 +151,14 @@
   "about":{
    "description":"deal.II is a C++ program library targeted at the computational solution of\npartial differential equations using adaptive finite elements. It uses\nstate-of-the-art programming techniques to offer you a modern interface to\nthe complex data structures and algorithms required.\n",
    "dev_url":"https://github.com/dealii/dealii",
-   "doc_url":"https://dealii.org/developer/doxygen/deal.II/Tutorial.html",
+   "doc_url":"https://dealii.org/current/doxygen/deal.II/Tutorial.html",
    "home":"https://dealii.org/",
    "license":"LGPL-2.1",
    "license_file":"LICENSE.md",
    "summary":"The deal.ii finite element package"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "skip":true
   },
   "extra":{
@@ -154,7 +173,7 @@
   },
   "package":{
    "name":"dealii",
-   "version":"9.1.1"
+   "version":"9.2.0"
   },
   "requirements":{
    "build":[
@@ -175,36 +194,52 @@
     "zlib",
     "tbb-devel",
     "muparser",
-    "boost-cpp",
+    "python",
+    "boost",
     "zlib",
     "tbb-devel",
     "muparser",
-    "boost-cpp",
+    "python",
+    "boost",
     "zlib",
     "tbb-devel",
     "muparser",
-    "boost-cpp"
+    "python",
+    "boost"
    ],
    "run":[
     "zlib",
     "tbb",
     "muparser",
-    "boost-cpp",
+    "python",
+    "boost",
     "zlib",
     "tbb",
     "muparser",
-    "boost-cpp",
+    "python",
+    "boost",
     "zlib",
     "tbb",
     "muparser",
-    "boost-cpp"
+    "python",
+    "boost"
    ]
   },
   "source":{
-   "sha256":"fc5b483f7fe58dfeb52d05054011280f115498e337af3e085bf272fd1fd81276",
-   "url":"https://dealii.kyomu.43-1.org/downloads/dealii-9.1.1.tar.gz"
+   "patches":[
+    "osx_fix.diff",
+    "osx_fix.diff",
+    "osx_fix.diff"
+   ],
+   "sha256":"d05a82fb40f1f1e24407451814b5a6004e39366a44c81208b1ae9d65f3efa43a",
+   "url":"https://dealii.kyomu.43-1.org/downloads/dealii-9.2.0.tar.gz"
   },
   "test":{
+   "imports":[
+    "PyDealII",
+    "PyDealII",
+    "PyDealII"
+   ],
    "requires":[
     "cxx_compiler_stub",
     "fortran_compiler_stub",
@@ -231,16 +266,17 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"dealii\" %}\n{% set version = \"9.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://dealii.kyomu.43-1.org/downloads/dealii-{{ version }}.tar.gz\n  sha256: fc5b483f7fe58dfeb52d05054011280f115498e337af3e085bf272fd1fd81276\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - cmake\n    - make\n  host:\n    - zlib\n    - tbb-devel\n    - muparser\n    - boost-cpp\n  run:\n    - zlib\n    - tbb\n    - {{ pin_compatible(\"muparser\") }}\n    - boost-cpp\n\ntest:\n  requires:\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - cmake\n    - make\n    - tbb-devel\n\nabout:\n  home: https://dealii.org/\n  license: LGPL-2.1\n  license_file: LICENSE.md\n  summary: 'The deal.ii finite element package'\n\n  description: |\n    deal.II is a C++ program library targeted at the computational solution of\n    partial differential equations using adaptive finite elements. It uses\n    state-of-the-art programming techniques to offer you a modern interface to\n    the complex data structures and algorithms required.\n  doc_url: https://dealii.org/developer/doxygen/deal.II/Tutorial.html\n  dev_url: https://github.com/dealii/dealii\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - xywei\n",
+ "raw_meta_yaml":"{% set name = \"dealii\" %}\n{% set version = \"9.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://dealii.kyomu.43-1.org/downloads/dealii-{{ version }}.tar.gz\n  sha256: d05a82fb40f1f1e24407451814b5a6004e39366a44c81208b1ae9d65f3efa43a\n  patches:\n    - osx_fix.diff\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - cmake\n    - make\n  host:\n    - zlib\n    - tbb-devel\n    - muparser\n    - python\n    - boost\n  run:\n    - zlib\n    - tbb\n    - {{ pin_compatible(\"muparser\") }}\n    - python\n    - boost\n\ntest:\n  imports:\n    - PyDealII\n  requires:\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - cmake\n    - make\n    - tbb-devel\n\nabout:\n  home: https://dealii.org/\n  license: LGPL-2.1\n  license_file: LICENSE.md\n  summary: 'The deal.ii finite element package'\n\n  description: |\n    deal.II is a C++ program library targeted at the computational solution of\n    partial differential equations using adaptive finite elements. It uses\n    state-of-the-art programming techniques to offer you a modern interface to\n    the complex data structures and algorithms required.\n  doc_url: https://dealii.org/current/doxygen/deal.II/Tutorial.html\n  dev_url: https://github.com/dealii/dealii\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - xywei\n",
  "req":{
   "__set__":true,
   "elements":[
-   "boost-cpp",
+   "boost",
    "cmake",
    "cxx_compiler_stub",
    "fortran_compiler_stub",
    "make",
    "muparser",
+   "python",
    "tbb",
    "tbb-devel",
    "zlib"
@@ -259,8 +295,9 @@
   "host":{
    "__set__":true,
    "elements":[
-    "boost-cpp",
+    "boost",
     "muparser",
+    "python",
     "tbb-devel",
     "zlib"
    ]
@@ -268,8 +305,9 @@
   "run":{
    "__set__":true,
    "elements":[
-    "boost-cpp",
+    "boost",
     "muparser",
+    "python",
     "tbb",
     "zlib"
    ]
@@ -300,8 +338,9 @@
   "host":{
    "__set__":true,
    "elements":[
-    "boost-cpp",
+    "boost",
     "muparser",
+    "python",
     "tbb-devel",
     "zlib"
    ]
@@ -309,8 +348,9 @@
   "run":{
    "__set__":true,
    "elements":[
-    "boost-cpp",
+    "boost",
     "muparser",
+    "python",
     "tbb",
     "zlib"
    ]
@@ -327,5 +367,5 @@
   }
  },
  "url":"https://dealii.kyomu.43-1.org/downloads/dealii-9.1.1.tar.gz",
- "version":"9.1.1"
+ "version":"9.2.0"
 }

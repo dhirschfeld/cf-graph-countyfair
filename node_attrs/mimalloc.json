@@ -36,7 +36,12 @@
   }
  ],
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "provider":{
+   "linux_aarch64":"default",
+   "win":"azure"
+  }
+ },
  "feedstock_name":"mimalloc",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -50,8 +55,7 @@
    "summary":"mimalloc is a compact general purpose allocator with excellent performance."
   },
   "build":{
-   "number":"1",
-   "skip":true
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -65,7 +69,7 @@
   },
   "package":{
    "name":"mimalloc",
-   "version":"1.6.2"
+   "version":"1.6.3"
   },
   "requirements":{
    "build":[
@@ -85,17 +89,18 @@
   },
   "source":{
    "patches":[
-    "0001-update-install-path-patch.patch",
-    "0001-update-install-path-patch.patch",
-    "0001-update-install-path-patch.patch"
+    "0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch",
+    "0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch",
+    "0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch"
    ],
-   "sha256":"a4bf4e1e0764230e8abbcec88e2ffaf170804fdfcda15e6a17f63f7088d8e692",
-   "url":"https://github.com/microsoft/mimalloc/archive/v1.6.2.tar.gz"
+   "sha256":"85034d1705b1897b1005d3a4746b1ed66ae5840a31b1cb3e463c6ca6c8422a5e",
+   "url":"https://github.com/microsoft/mimalloc/archive/v1.6.3.tar.gz"
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}",
-    "test -f $PREFIX/include/mimalloc.h",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\mimalloc.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\mimalloc.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\include\\\\mimalloc.h exit 1",
     "test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}",
     "test -f $PREFIX/include/mimalloc.h",
     "test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}",
@@ -114,7 +119,7 @@
   "4":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '4' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.05.04.19.59.17",
- "raw_meta_yaml":"{% set name = \"mimalloc\" %}\n{% set version = \"1.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz\n  sha256: a4bf4e1e0764230e8abbcec88e2ffaf170804fdfcda15e6a17f63f7088d8e692\n  patches:\n    - 0001-update-install-path-patch.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n\n# .\n# \u251c\u2500\u2500 include\n# \u2502  \u251c\u2500\u2500 mimalloc-new-delete.h\n# \u2502  \u251c\u2500\u2500 mimalloc-override.h\n# \u2502  \u2514\u2500\u2500 mimalloc.h\n# \u2514\u2500\u2500 lib\n#    \u251c\u2500\u2500 libmimalloc.a\n#    \u251c\u2500\u2500 libmimalloc.so -> libmimalloc.so.1.6\n#    \u251c\u2500\u2500 libmimalloc.so.1.6\n#    \u2514\u2500\u2500 mimalloc.o\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}\n    - test -f $PREFIX/include/mimalloc.h\n\nabout:\n  home: https://github.com/microsoft/mimalloc\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: mimalloc is a compact general purpose allocator with excellent performance.\n\n  description: |\n    mimalloc (pronounced \"me-malloc\") is a general purpose allocator with\n    excellent performance characteristics. Initially developed by Daan Leijen\n    for the run-time systems of the Koka and Lean languages.\n  dev_url: https://github.com/microsoft/mimalloc\n\nextra:\n  recipe-maintainers:\n    - elbaro\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"mimalloc\" %}\n{% set version = \"1.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/microsoft/mimalloc/archive/v{{ version }}.tar.gz\n  sha256: 85034d1705b1897b1005d3a4746b1ed66ae5840a31b1cb3e463c6ca6c8422a5e\n  patches:\n    - 0001-Add-option-to-install-directly-in-CMAKE_INSTALL_PREF.patch\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n\n# .\n# \u251c\u2500\u2500 include\n# \u2502  \u251c\u2500\u2500 mimalloc-new-delete.h\n# \u2502  \u251c\u2500\u2500 mimalloc-override.h\n# \u2502  \u2514\u2500\u2500 mimalloc.h\n# \u2514\u2500\u2500 lib\n#    \u251c\u2500\u2500 libmimalloc.a\n#    \u251c\u2500\u2500 libmimalloc.so -> libmimalloc.so.1.6\n#    \u251c\u2500\u2500 libmimalloc.so.1.6\n#    \u2514\u2500\u2500 mimalloc.o\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libmimalloc${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/include/mimalloc.h           # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\bin\\\\mimalloc.dll exit 1    # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\lib\\\\mimalloc.lib exit 1    # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\include\\\\mimalloc.h exit 1  # [win]\n\nabout:\n  home: https://github.com/microsoft/mimalloc\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: mimalloc is a compact general purpose allocator with excellent performance.\n\n  description: |\n    mimalloc (pronounced \"me-malloc\") is a general purpose allocator with\n    excellent performance characteristics. Initially developed by Daan Leijen\n    for the run-time systems of the Koka and Lean languages.\n  dev_url: https://github.com/microsoft/mimalloc\n\nextra:\n  recipe-maintainers:\n    - elbaro\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -173,5 +178,5 @@
   }
  },
  "url":"https://github.com/microsoft/mimalloc/archive/v1.6.1.tar.gz",
- "version":"1.6.2"
+ "version":"1.6.3"
 }

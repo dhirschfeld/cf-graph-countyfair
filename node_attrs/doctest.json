@@ -34,9 +34,7 @@
    "summary":"The fastest feature-rich C++11/14/17/20 single-header testing framework for unit tests and TDD"
   },
   "build":{
-   "number":"0",
-   "script":"mkdir -p $PREFIX/include && cp doctest.h $PREFIX/include/doctest.h",
-   "skip":true
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -49,37 +47,41 @@
    "name":"doctest",
    "version":"2.3.8"
   },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.1",
+    "ninja",
+    "cxx_compiler_stub",
+    "cmake >=3.1",
+    "ninja",
+    "cxx_compiler_stub",
+    "cmake >=3.1",
+    "ninja"
+   ]
+  },
   "source":[
    {
-    "sha256":"8c5b8c4adbe423b29a990ba4cfc2765be482d2f3214c241bfcdc178ad7bae8fa",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/doctest/doctest.h"
+    "sha256":"2819d59d60ca78403da5dfbda7153a23ea5da73776cd6e49bf407d2dff78f4dd",
+    "url":"https://github.com/onqtam/doctest/archive/2.3.8.zip"
    },
    {
-    "sha256":"2ab6583af88018c4c6cadf8363bf3625505d117ac279ac174d935d992bac3592",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/LICENSE.txt"
+    "sha256":"2819d59d60ca78403da5dfbda7153a23ea5da73776cd6e49bf407d2dff78f4dd",
+    "url":"https://github.com/onqtam/doctest/archive/2.3.8.zip"
    },
    {
-    "sha256":"8c5b8c4adbe423b29a990ba4cfc2765be482d2f3214c241bfcdc178ad7bae8fa",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/doctest/doctest.h"
-   },
-   {
-    "sha256":"2ab6583af88018c4c6cadf8363bf3625505d117ac279ac174d935d992bac3592",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/LICENSE.txt"
-   },
-   {
-    "sha256":"8c5b8c4adbe423b29a990ba4cfc2765be482d2f3214c241bfcdc178ad7bae8fa",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/doctest/doctest.h"
-   },
-   {
-    "sha256":"2ab6583af88018c4c6cadf8363bf3625505d117ac279ac174d935d992bac3592",
-    "url":"https://raw.githubusercontent.com/onqtam/doctest/2.3.8/LICENSE.txt"
+    "sha256":"2819d59d60ca78403da5dfbda7153a23ea5da73776cd6e49bf407d2dff78f4dd",
+    "url":"https://github.com/onqtam/doctest/archive/2.3.8.zip"
    }
   ],
   "test":{
    "commands":[
-    "if not exist %LIBRARY_INC%\\\\doctest.h exit 1",
-    "test -f $PREFIX/include/doctest.h",
-    "test -f $PREFIX/include/doctest.h"
+    "if not exist %LIBRARY_PREFIX%\\\\include\\\\doctest\\\\doctest.h exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\cmake\\\\doctest\\\\doctestConfig.cmake exit 1",
+    "test -f $PREFIX/include/doctest/doctest.h",
+    "test -f $PREFIX/lib/cmake/doctest/doctestConfig.cmake",
+    "test -f $PREFIX/include/doctest/doctest.h",
+    "test -f $PREFIX/lib/cmake/doctest/doctestConfig.cmake"
    ]
   }
  },
@@ -90,15 +92,23 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.13.30.35",
- "raw_meta_yaml":"{% set name = \"doctest\" %}\n{% set version = \"2.3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://raw.githubusercontent.com/onqtam/doctest/{{ version }}/doctest/doctest.h\n    sha256: 8c5b8c4adbe423b29a990ba4cfc2765be482d2f3214c241bfcdc178ad7bae8fa\n  - url: https://raw.githubusercontent.com/onqtam/doctest/{{ version }}/LICENSE.txt\n    sha256: 2ab6583af88018c4c6cadf8363bf3625505d117ac279ac174d935d992bac3592\n\nbuild:\n  number: 0\n  script: mkdir -p $PREFIX/include && cp doctest.h $PREFIX/include/doctest.h  # [unix]\n  skip: true  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/doctest.h  # [unix]\n    - if not exist %LIBRARY_INC%\\\\doctest.h exit 1  # [win]\n\nabout:\n  home: https://github.com/onqtam/doctest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: The fastest feature-rich C++11/14/17/20 single-header testing framework for unit tests and TDD\n\n  description: |\n    doctest is a new C++ testing framework but is by far\n    the fastest both in compile times (by orders of magnitude) and\n    runtime compared to other feature-rich alternatives.\n    It brings the ability of compiled languages such as D / Rust / Nim to\n    have tests written directly in the production code thanks to a fast,\n    transparent and flexible test runner with a clean interface.\n  doc_url: https://github.com/onqtam/doctest/blob/master/doc/markdown/readme.md#reference\n  dev_url: https://github.com/onqtam/doctest\n\nextra:\n  recipe-maintainers:\n    - elbaro\n",
+ "raw_meta_yaml":"{% set name = \"doctest\" %}\n{% set version = \"2.3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/onqtam/doctest/archive/{{ version }}.zip\n    sha256: 2819d59d60ca78403da5dfbda7153a23ea5da73776cd6e49bf407d2dff78f4dd\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake >=3.1\n    - ninja\n\ntest:\n  commands:\n    - test -f $PREFIX/include/doctest/doctest.h                              # [unix]\n    - test -f $PREFIX/lib/cmake/doctest/doctestConfig.cmake                  # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\include\\\\doctest\\\\doctest.h exit 1               # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\lib\\\\cmake\\\\doctest\\\\doctestConfig.cmake exit 1  # [win]\n\nabout:\n  home: https://github.com/onqtam/doctest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: The fastest feature-rich C++11/14/17/20 single-header testing framework for unit tests and TDD\n\n  description: |\n    doctest is a new C++ testing framework but is by far\n    the fastest both in compile times (by orders of magnitude) and\n    runtime compared to other feature-rich alternatives.\n    It brings the ability of compiled languages such as D / Rust / Nim to\n    have tests written directly in the production code thanks to a fast,\n    transparent and flexible test runner with a clean interface.\n  doc_url: https://github.com/onqtam/doctest/blob/master/doc/markdown/readme.md#reference\n  dev_url: https://github.com/onqtam/doctest\n\nextra:\n  recipe-maintainers:\n    - elbaro\n",
  "req":{
   "__set__":true,
-  "elements":[]
+  "elements":[
+   "cmake",
+   "cxx_compiler_stub",
+   "ninja"
+  ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
   },
   "host":{
    "__set__":true,
@@ -118,7 +128,11 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake >=3.1",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
   },
   "host":{
    "__set__":true,
