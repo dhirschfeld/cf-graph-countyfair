@@ -51,7 +51,7 @@
    "summary":"flake8 plugin which checks that typing imports are properly guarded"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -109,8 +109,9 @@
   }
  },
  "name":"flake8-typing-imports",
+ "new_version":"1.9.0",
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"flake8-typing-imports\" %}\n{% set version = \"1.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/asottile/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 0d370755609eefec9496704b9bc37658de3f68c6a145c0181b5eea35c2272772\n\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - flake8 >=3.7\n    - importlib-metadata >=0.9  # [py<38]\n    - python\n\ntest:\n  imports:\n    - flake8_typing_imports\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/flake8-typing-imports/\n  summary: flake8 plugin which checks that typing imports are properly guarded\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"flake8-typing-imports\" %}\n{% set version = \"1.9.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/asottile/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 0d370755609eefec9496704b9bc37658de3f68c6a145c0181b5eea35c2272772\n\nbuild:\n  number: 1\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - flake8 >=3.7\n    - importlib-metadata >=0.9  # [py<38]\n    - python\n\ntest:\n  imports:\n    - flake8_typing_imports\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/flake8-typing-imports/\n  summary: flake8 plugin which checks that typing imports are properly guarded\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
