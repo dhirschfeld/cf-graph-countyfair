@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425487981.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -113,12 +130,13 @@
   }
  },
  "name":"jupyter-project",
- "new_version":"0.2.0",
+ "new_version":"0.3.0",
  "new_version_attempts":{
-  "0.2.0":1
+  "0.2.0":1,
+  "0.3.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"jupyter-project\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: 50edad0efa6c7dc26f49fc232d13f06411bc5272d714b260975e8667e082b87c\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - jupyter-packaging\n    - jupyterlab ~=1.2\n    - nodejs\n    - python ~=3.6\n    - pip\n  run:\n    - cookiecutter\n    - jinja2 ~=2.9\n    - jsonschema\n    - jupyterlab ~=1.2\n    - python ~=3.6\n\ntest:\n  requires:\n    - nodejs\n  imports:\n    - jupyter_project\n  commands:\n    - jupyter serverextension list\n    - jupyter labextension list\n    - jupyter lab build\n\nabout:\n  home: https://github.com/fcollonval/jupyter-project\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: An JupyterLab extension to handle project and files templates; optionally coupled with an conda environment.\n  description: |\n    An JupyterLab extension to handle (a unique) project and files templates. It adds the ability\n    to generate projects from a cookiecutter <https://cookiecutter.readthedocs.io/en/latest/> \n    template as well as generate files from Jinja2 <https://jinja.palletsprojects.com/en/master/>\n    templates. Those templates can be parametrized directly from the frontend by specifying JSON \n    schemas <https://json-schema.org/>.\n    If you install jupyter-conda and its JupyterLab extension jupyterlab_conda <https://github.com/fcollonval/jupyter_conda>,\n    you can synchronize a conda environment with the project.\n  dev_url: https://github.com/fcollonval/jupyter-project\n\nextra:\n  recipe-maintainers:\n    - fcollonval\n",
  "req":{
   "__set__":true,
