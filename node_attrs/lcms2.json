@@ -35,6 +35,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425649257.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.10"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -131,12 +148,12 @@
  "name":"lcms2",
  "new_version":"2.10",
  "new_version_attempts":{
-  "2.10":1
+  "2.10":2
  },
  "new_version_errors":{
   "2.10":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2.10' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://ayera.dl.sourceforge.net/project/lcms/lcms/{{ version }}/lcms2-{{ version }}.tar.gz'\n"
  },
- "pinning_version":"2019.11.18",
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"lcms2\" %}\n{% set version = \"2.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ayera.dl.sourceforge.net/project/lcms/lcms/{{ version }}/lcms2-{{ version }}.tar.gz\n  sha256: 48c6fdf98396fa245ed86e622028caf49b96fa22f3e5734f853f806fbc8e7d20\n  patches:\n    - windows_linux_compat.patch          # [win]\n\nbuild:\n  number: 2\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(\"lcms2\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make  # [not win]\n  host:\n    - jpeg\n    - libtiff\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/lcms2.h  # [not win]\n    - test -f ${PREFIX}/lib/liblcms2.a  # [not win]\n    - test -f ${PREFIX}/lib/liblcms2${SHLIB_EXT}  # [not win]\n    - jpgicc\n    - tificc\n    - linkicc\n    - transicc\n    - psicc\n    - if not exist %LIBRARY_INC%\\\\lcms2.h exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\lcms2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lcms2.dll exit 1  # [win]\n\nabout:\n  home: http://www.littlecms.com/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Open Source Color Management Engine'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
@@ -171,7 +188,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
