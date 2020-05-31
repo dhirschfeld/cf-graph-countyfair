@@ -135,6 +135,23 @@
     "__lazy_json__":"pr_json/340843439.json"
    },
    "data":{
+    "bot_rerun":1590886041.8293607,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425543202.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"Version",
     "migrator_version":0,
@@ -261,7 +278,11 @@
  },
  "name":"seapy",
  "new_version":"0.5.0",
- "pinning_version":"2019.11.13",
+ "new_version_attempts":{
+  "0.5.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set version = \"0.4.1\" %}\n\npackage:\n  name: seapy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/powellb/seapy/archive/{{ version }}.tar.gz\n  sha256: b4af0c36174a14ed6943261321620cf4cea7aca7f2db925895027c7210e9a903\n\nbuild:\n  number: 1\n  skip: True  # [py2k]\n  script:\n    - rm \"C:\\ProgramData\\Chocolatey\\bin\\gfortran.exe\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - flang  # [win and py3k]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - libflang  # [win and py3k]\n    - basemap\n    - h5py\n    - joblib\n    - netcdf4\n    - numpy_groupies\n    - scipy\n\ntest:\n  imports:\n    - seapy\n    - seapy.seawater\n    - seapy.roms\n    - seapy.model\n    - seapy.external.oalib\n    - seapy.external.hindices\n\nabout:\n  home: https://github.com/powellb/seapy/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'State Estimation and Analysis in PYthon'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -317,7 +338,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
