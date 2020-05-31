@@ -54,8 +54,8 @@
     "ncem2png = ncempy.command_line.ncem2png:main"
    ],
    "noarch":"python",
-   "number":"1",
-   "script":" -m pip install . -vv"
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -66,7 +66,7 @@
   },
   "package":{
    "name":"ncempy",
-   "version":"1.5.0"
+   "version":"1.6.0"
   },
   "requirements":{
    "host":[
@@ -102,16 +102,8 @@
    ]
   },
   "source":{
-   "patches":[
-    "long_description.diff",
-    "h5py_cache.diff",
-    "long_description.diff",
-    "h5py_cache.diff",
-    "long_description.diff",
-    "h5py_cache.diff"
-   ],
-   "sha256":"fd08bb09baf467b69c64983993ce133ca21cc9b6f3294ceffbab95110ab3c062",
-   "url":"https://pypi.io/packages/source/n/ncempy/ncempy-1.5.0.tar.gz"
+   "sha256":"8372fb04721dbe325660ba19f11b04f864f670a1983ffab912f21c9d20fa43de",
+   "url":"https://pypi.io/packages/source/n/ncempy/ncempy-1.6.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -133,7 +125,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"ncempy\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fd08bb09baf467b69c64983993ce133ca21cc9b6f3294ceffbab95110ab3c062\n  patches:\n    - long_description.diff\n    - h5py_cache.diff\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n  entry_points:\n    - ncem2png = ncempy.command_line.ncem2png:main\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools\n  run:\n    - python >=3\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - setuptools\n\ntest:\n  imports:\n    - ncempy\n  commands:\n    - ncem2png --help\n\nabout:\n  home: https://github.com/ercius/openNCEM\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: A collection of packages and tools for electron microscopy data analysis supported by the National Center for Electron Microscopy facility of the Molecular Foundry\n  doc_url: https://openncem.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
+ "raw_meta_yaml":"{% set name = \"ncempy\" %}\n{% set version = \"1.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8372fb04721dbe325660ba19f11b04f864f670a1983ffab912f21c9d20fa43de\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - ncem2png = ncempy.command_line.ncem2png:main\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools\n  run:\n    - python >=3\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - setuptools\n\ntest:\n  imports:\n    - ncempy\n  commands:\n    - ncem2png --help\n\nabout:\n  home: https://github.com/ercius/openNCEM\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: A collection of packages and tools for electron microscopy data analysis supported by the National Center for Electron Microscopy facility of the Molecular Foundry\n  doc_url: https://openncem.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -207,5 +199,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/n/ncempy/ncempy-1.5.0.tar.gz",
- "version":"1.5.0"
+ "version":"1.6.0"
 }
