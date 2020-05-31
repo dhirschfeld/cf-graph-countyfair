@@ -110,16 +110,19 @@
     "gazebo",
     "gazebo"
    ],
-   "skip":true
+   "skip":false
   },
   "extra":{
    "recipe-maintainers":[
     "seanyen",
     "wolfv",
+    "Tobias-Fischer",
     "seanyen",
     "wolfv",
+    "Tobias-Fischer",
     "seanyen",
-    "wolfv"
+    "wolfv",
+    "Tobias-Fischer"
    ]
   },
   "package":{
@@ -138,6 +141,8 @@
     "cmake 3.16.*",
     "pkg-config",
     "ninja",
+    "cdt_stub",
+    "cdt_stub",
     "cxx_compiler_stub",
     "c_compiler_stub",
     "cmake 3.16.*",
@@ -151,12 +156,11 @@
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
-    "cdt_stub",
     "cdt_stub"
    ],
    "host":[
     "libprotobuf",
-    "libsdformat 9.*",
+    "libsdformat",
     "libignition-transport8",
     "libignition-common3",
     "libignition-fuel-tools4",
@@ -171,8 +175,17 @@
     "boost-cpp",
     "libcurl",
     "tinyxml",
+    "xorg-libxext",
+    "xorg-libxdmcp",
+    "xorg-libxau",
+    "libxcb",
+    "xorg-libxfixes",
+    "xorg-libxrender",
+    "xorg-libx11",
+    "xorg-libice",
+    "xorg-libsm",
     "libprotobuf",
-    "libsdformat 9.*",
+    "libsdformat",
     "libignition-transport8",
     "libignition-common3",
     "libignition-fuel-tools4",
@@ -183,9 +196,13 @@
     "tbb-devel",
     "qwt",
     "tinyxml2",
+    "libtar",
+    "libccd",
     "boost-cpp",
     "libcurl",
     "tinyxml",
+    "bzip2",
+    "zlib",
     "xorg-libxext",
     "xorg-libxdmcp",
     "xorg-libxau",
@@ -197,7 +214,7 @@
     "xorg-libsm",
     "libglu",
     "libprotobuf",
-    "libsdformat 9.*",
+    "libsdformat",
     "libignition-transport8",
     "libignition-common3",
     "libignition-fuel-tools4",
@@ -232,6 +249,15 @@
     "boost-cpp",
     "libcurl",
     "tinyxml",
+    "xorg-libxext",
+    "xorg-libxdmcp",
+    "xorg-libxau",
+    "libxcb",
+    "xorg-libxfixes",
+    "xorg-libxrender",
+    "xorg-libx11",
+    "xorg-libice",
+    "xorg-libsm",
     "libprotobuf",
     "libsdformat",
     "libignition-transport8",
@@ -244,9 +270,13 @@
     "tbb-devel",
     "qwt",
     "tinyxml2",
+    "libtar",
+    "libccd",
     "boost-cpp",
     "libcurl",
     "tinyxml",
+    "bzip2",
+    "zlib",
     "xorg-libxext",
     "xorg-libxdmcp",
     "xorg-libxau",
@@ -288,7 +318,9 @@
     "url":"https://bitbucket.org/osrf/gazebo/get/gazebo11_11.0.0.tar.gz"
    },
    {
-    "patches":null,
+    "patches":[
+     "fix_build.patch"
+    ],
     "sha256":"f1c873dfa17c1653332321ef4f10430fb22825de0688017455a2983f176cd69e",
     "url":"https://bitbucket.org/osrf/gazebo/get/gazebo11_11.0.0.tar.gz"
    },
@@ -317,11 +349,12 @@
  "name":"gazebo",
  "new_version":false,
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"gazebo\" %}\n{% set version = \"11.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/osrf/{{ name }}/get/{{ name }}{{ version.split('.')[0] }}_{{ version }}.tar.gz\n    sha256: f1c873dfa17c1653332321ef4f10430fb22825de0688017455a2983f176cd69e\n    patches:\n      - fix_build.patch  # [linux]\n      - use-external-libs-config.patch  # [win]\n      - qwt-fix.patch  # [win]\n      - normalize-ogre-path.patch  # [win]\n\nbuild:\n  number: 8\n  skip: true  # [osx]\n  run_exports:\n    - {{ pin_subpackage('gazebo', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake 3.16.*\n    - pkg-config\n    - ninja\n\n    # x11 stuff\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('libselinux') }}        # [linux]\n    - {{ cdt('libxcb') }}            # [linux]\n    - {{ cdt('libxdamage') }}        # [linux]\n    - {{ cdt('libxfixes') }}         # [linux]\n    - {{ cdt('libxxf86vm') }}        # [linux]\n    - {{ cdt('libxext') }}           # [linux]\n    - {{ cdt('libxau') }}            # [linux]\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n  host:\n    - xorg-libxext      # [linux]\n    - xorg-libxdmcp     # [linux]\n    - xorg-libxau       # [linux]\n    - libxcb            # [linux]\n    - xorg-libxfixes    # [linux]\n    - xorg-libxrender   # [linux]\n    - xorg-libx11       # [linux]\n    - xorg-libice       # [linux]\n    - xorg-libsm        # [linux]\n    - libglu            # [linux]\n    # deps\n    - libprotobuf\n    - libsdformat 9.*\n    - libignition-transport8\n    - libignition-common3\n    - libignition-fuel-tools4\n    - qt\n    - ogre 1.10.*\n    - freeimage\n    - curl\n    - tbb-devel\n    - qwt\n    - tinyxml2\n    - libtar   # [linux]\n    - libccd   # [linux]\n    # - hdf5     # [linux]\n    # - simbody  # [linux]\n    - dlfcn-win32  # [win]\n    - boost-cpp\n    # additional deps\n    - libuuid  # [linux]\n    - libcurl\n    - tinyxml\n    # - gts\n\n  run:\n    - xorg-libxext      # [linux]\n    - xorg-libxdmcp     # [linux]\n    - xorg-libxau       # [linux]\n    - libxcb            # [linux]\n    - xorg-libxfixes    # [linux]\n    - xorg-libxrender   # [linux]\n    - xorg-libx11       # [linux]\n    - xorg-libice       # [linux]\n    - xorg-libsm        # [linux]\n    - libglu            # [linux]\n    # deps\n    - libprotobuf\n    - libsdformat\n    - libignition-transport8\n    - libignition-common3\n    - libignition-fuel-tools4\n    - qt\n    - ogre\n    - freeimage\n    - curl\n    - tbb-devel\n    - qwt\n    - tinyxml2\n    - libtar   # [linux]\n    - libccd   # [linux]\n    # - hdf5     # [linux]\n    # - simbody  # [linux]\n    # - gts\n    - dlfcn-win32  # [win]\n    - boost-cpp\n    - libuuid  # [linux]\n    - libcurl\n    - tinyxml\n\ntest:\n  commands:\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gzserver.exe (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gzclient.exe (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gazebo.dll (exit 0) else (exit 1)  # [win]\n    - test -f $PREFIX/bin/gzserver  # [unix]\n    - test -f $PREFIX/bin/gzclient  # [unix]\n    - test -f $PREFIX/bin/gazebo    # [unix]\n\nabout:\n  home: http://gazebosim.org/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Advanced robot simulator for research, design, and development.'\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n",
+ "raw_meta_yaml":"{% set name = \"gazebo\" %}\n{% set version = \"11.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/osrf/{{ name }}/get/{{ name }}{{ version.split('.')[0] }}_{{ version }}.tar.gz\n    sha256: f1c873dfa17c1653332321ef4f10430fb22825de0688017455a2983f176cd69e\n    patches:\n      - fix_build.patch  # [unix]\n      - use-external-libs-config.patch  # [win]\n      - qwt-fix.patch  # [win]\n      - normalize-ogre-path.patch  # [win]\n\nbuild:\n  number: 8\n  skip: false\n  run_exports:\n    - {{ pin_subpackage('gazebo', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake 3.16.*\n    - pkg-config\n    - ninja\n\n    # x11 stuff\n    - {{ cdt('mesa-libgl-devel') }}  # [unix]\n    - {{ cdt('mesa-dri-drivers') }}  # [unix]\n    - {{ cdt('libselinux') }}        # [linux]\n    - {{ cdt('libxcb') }}            # [linux]\n    - {{ cdt('libxdamage') }}        # [linux]\n    - {{ cdt('libxfixes') }}         # [linux]\n    - {{ cdt('libxxf86vm') }}        # [linux]\n    - {{ cdt('libxext') }}           # [linux]\n    - {{ cdt('libxau') }}            # [linux]\n  host:\n    - xorg-libxext      # [unix]\n    - xorg-libxdmcp     # [unix]\n    - xorg-libxau       # [unix]\n    - libxcb            # [unix]\n    - xorg-libxfixes    # [unix]\n    - xorg-libxrender   # [unix]\n    - xorg-libx11       # [unix]\n    - xorg-libice       # [unix]\n    - xorg-libsm        # [unix]\n    - libglu            # [linux]\n    # deps\n    - libprotobuf\n    - libsdformat\n    - libignition-transport8\n    - libignition-common3\n    - libignition-fuel-tools4\n    - qt\n    - ogre 1.10.*\n    - freeimage\n    - curl\n    - tbb-devel\n    - qwt\n    - tinyxml2\n    - libtar   # [unix]\n    - libccd   # [unix]\n    # - hdf5     # [linux]\n    # - simbody  # [linux]\n    - dlfcn-win32  # [win]\n    - boost-cpp\n    # additional deps\n    - libuuid  # [linux]\n    - libcurl\n    - tinyxml\n    # - gts\n    - bzip2  # [osx]\n    - zlib  # [osx]\n\n  run:\n    - xorg-libxext      # [unix]\n    - xorg-libxdmcp     # [unix]\n    - xorg-libxau       # [unix]\n    - libxcb            # [unix]\n    - xorg-libxfixes    # [unix]\n    - xorg-libxrender   # [unix]\n    - xorg-libx11       # [unix]\n    - xorg-libice       # [unix]\n    - xorg-libsm        # [unix]\n    - libglu            # [linux]\n    # deps\n    - libprotobuf\n    - libsdformat\n    - libignition-transport8\n    - libignition-common3\n    - libignition-fuel-tools4\n    - qt\n    - ogre\n    - freeimage\n    - curl\n    - tbb-devel\n    - qwt\n    - tinyxml2\n    - libtar   # [unix]\n    - libccd   # [unix]\n    # - hdf5     # [linux]\n    # - simbody  # [linux]\n    # - gts\n    - dlfcn-win32  # [win]\n    - boost-cpp\n    - libuuid  # [linux]\n    - libcurl\n    - tinyxml\n    - bzip2  # [osx]\n    - zlib  # [osx]\n\ntest:\n  commands:\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gzserver.exe (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gzclient.exe (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\gazebo.dll (exit 0) else (exit 1)  # [win]\n    - test -f $PREFIX/bin/gzserver  # [unix]\n    - test -f $PREFIX/bin/gzclient  # [unix]\n    - test -f $PREFIX/bin/gazebo    # [unix]\n\nabout:\n  home: http://gazebosim.org/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Advanced robot simulator for research, design, and development.'\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - Tobias-Fischer\n",
  "req":{
   "__set__":true,
   "elements":[
    "boost-cpp",
+   "bzip2",
    "c_compiler_stub",
    "cdt_stub",
    "cmake",
@@ -355,7 +388,8 @@
    "xorg-libxdmcp",
    "xorg-libxext",
    "xorg-libxfixes",
-   "xorg-libxrender"
+   "xorg-libxrender",
+   "zlib"
   ]
  },
  "requirements":{
@@ -374,6 +408,7 @@
    "__set__":true,
    "elements":[
     "boost-cpp",
+    "bzip2",
     "curl",
     "dlfcn-win32",
     "freeimage",
@@ -401,13 +436,15 @@
     "xorg-libxdmcp",
     "xorg-libxext",
     "xorg-libxfixes",
-    "xorg-libxrender"
+    "xorg-libxrender",
+    "zlib"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "boost-cpp",
+    "bzip2",
     "curl",
     "dlfcn-win32",
     "freeimage",
@@ -435,7 +472,8 @@
     "xorg-libxdmcp",
     "xorg-libxext",
     "xorg-libxfixes",
-    "xorg-libxrender"
+    "xorg-libxrender",
+    "zlib"
    ]
   },
   "test":{
@@ -461,6 +499,7 @@
    "__set__":true,
    "elements":[
     "boost-cpp",
+    "bzip2",
     "curl",
     "dlfcn-win32",
     "freeimage",
@@ -471,7 +510,7 @@
     "libignition-fuel-tools4",
     "libignition-transport8",
     "libprotobuf",
-    "libsdformat 9.*",
+    "libsdformat",
     "libtar",
     "libuuid",
     "libxcb",
@@ -488,13 +527,15 @@
     "xorg-libxdmcp",
     "xorg-libxext",
     "xorg-libxfixes",
-    "xorg-libxrender"
+    "xorg-libxrender",
+    "zlib"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "boost-cpp",
+    "bzip2",
     "curl",
     "dlfcn-win32",
     "freeimage",
@@ -522,7 +563,8 @@
     "xorg-libxdmcp",
     "xorg-libxext",
     "xorg-libxfixes",
-    "xorg-libxrender"
+    "xorg-libxrender",
+    "zlib"
    ]
   },
   "test":{
