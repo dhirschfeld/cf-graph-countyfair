@@ -15,7 +15,7 @@
    "summary":"The software ATOMPAW generates projector and basis functions"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -53,10 +53,13 @@
    "host":[
     "libblas",
     "liblapack",
+    "libxc <5.0",
     "libblas",
     "liblapack",
+    "libxc <5.0",
     "libblas",
-    "liblapack"
+    "liblapack",
+    "libxc <5.0"
    ]
   },
   "source":{
@@ -76,7 +79,7 @@
  },
  "name":"atompaw",
  "new_version":false,
- "raw_meta_yaml":"{% set name = \"atompaw\" %}\n{% set version = \"4.1.0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://users.wfu.edu/natalie/papers/pwpaw/{{ name }}-{{ version }}.tar.gz\n  sha256: 42a46c0569367c0b971fbc3dcaf5eaec7020bdff111022b6f320de9f11c41c2c\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n    - make\n    - automake\n    - autoconf\n    - libtool\n  host:\n    - libblas\n    - liblapack\n\ntest:\n  commands:\n    - atompaw --help\n    - test -f ${PREFIX}/lib/libatompaw.so\n\nabout:\n  home: http://users.wfu.edu/natalie/papers/pwpaw/man.html\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'The software ATOMPAW generates projector and basis functions'\n\n  description: |\n    The software ATOMPAW generates projector and basis functions which \n    are needed for performing electronic structure calculations \n    (Density-Functional Theory) based on the Projector Augmented Wave (PAW) \n    method.\n  doc_url: http://users.wfu.edu/natalie/papers/pwpaw/man.html\n  dev_url: https://github.com/atompaw/atompaw\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml":"{% set name = \"atompaw\" %}\n{% set version = \"4.1.0.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://users.wfu.edu/natalie/papers/pwpaw/{{ name }}-{{ version }}.tar.gz\n  sha256: 42a46c0569367c0b971fbc3dcaf5eaec7020bdff111022b6f320de9f11c41c2c\n\nbuild:\n  number: 1\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n    - make\n    - automake\n    - autoconf\n    - libtool\n  host:\n    - libblas\n    - liblapack\n    - libxc <5.0\n\ntest:\n  commands:\n    - atompaw --help\n    - test -f ${PREFIX}/lib/libatompaw.so\n\nabout:\n  home: http://users.wfu.edu/natalie/papers/pwpaw/man.html\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'The software ATOMPAW generates projector and basis functions'\n\n  description: |\n    The software ATOMPAW generates projector and basis functions which \n    are needed for performing electronic structure calculations \n    (Density-Functional Theory) based on the Projector Augmented Wave (PAW) \n    method.\n  doc_url: http://users.wfu.edu/natalie/papers/pwpaw/man.html\n  dev_url: https://github.com/atompaw/atompaw\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -87,6 +90,7 @@
    "libblas",
    "liblapack",
    "libtool",
+   "libxc",
    "make"
   ]
  },
@@ -106,7 +110,8 @@
    "__set__":true,
    "elements":[
     "libblas",
-    "liblapack"
+    "liblapack",
+    "libxc"
    ]
   },
   "run":{
@@ -135,7 +140,8 @@
    "__set__":true,
    "elements":[
     "libblas",
-    "liblapack"
+    "liblapack",
+    "libxc <5.0"
    ]
   },
   "run":{
