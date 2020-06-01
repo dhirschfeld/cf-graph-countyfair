@@ -498,7 +498,7 @@
   }
  },
  "name":"nco",
- "new_version":"4.9.2",
+ "new_version":"4.9.3",
  "pinning_version":"2020.04.17.09.06.29",
  "raw_meta_yaml":"{% set version = \"4.9.2\" %}\n{% set build = 104 %}\n\npackage:\n  name: nco\n  version: {{ version }}\n\nsource:\n  url: https://github.com/nco/nco/archive/{{ version }}.tar.gz\n  sha256: 1a98c37c946c00232fa7319d00d1d80f77603adda7c9239d10d68a8a3545a4d5\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake  # [win]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libblas\n    - libcblas\n    - antlr >=2.7.7,<3\n    - bison  # [not win]\n    - texinfo  # [not win]\n    - flex  # [not win]\n    - m4  # [not win]\n    - curl\n    - expat\n    - gsl\n    - krb5  # [not win]\n    - udunits2\n    - zlib\n    # need to list these twice to get version pinning from conda_build_config\n    # and nompi build pinning\n    - hdf5\n    - hdf5 * nompi_*\n    - libnetcdf\n    - libnetcdf * nompi_*\n  run:\n    - curl\n    - esmf  # [not win]\n    - expat\n    - gsl\n    - hdf5\n    - krb5  # [not win]\n    - libnetcdf\n    - udunits2\n    - tempest-remap  # [not win]\n\ntest:\n  source_files:\n    - data/in.cdl\n  commands:\n    - ncks --help\n    - ncap2 --help\n    - ncks -M \"http://tds.marine.rutgers.edu/thredds/dodsC/roms/espresso/2013_da/his/ESPRESSO_Real-Time_v2_History_Best\"\n\nabout:\n  home: http://nco.sourceforge.net/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: Suite of programs for manipulating NetCDF/HDF4 files\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n    - xylar\n",
  "req":{

@@ -156,7 +156,7 @@
    "summary":"Slycot: a wrapper for the SLICOT control and systems library"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -245,7 +245,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set version = \"0.4.0.0\" %}\n{% set sha256 = \"1d9921e9b04a5b9892870fd3481f7b08e6fa083a1a3848ad262819de19eb5e02\" %}\n\npackage:\n  name: slycot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/slycot/slycot-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - python\n    - numpy\n    # conda-forge::scikit-build>=0.10.0 includes MACOSX_DEPLOYMENT_TARGET\n    # patches from https://github.com/scikit-build/scikit-build/pull/441\n    - scikit-build >=0.10.0\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n    - scipy\n  imports:\n    - slycot\n  commands:\n    - pytest --pyargs slycot  # [not win]\n    - pytest --pyargs slycot -k \"not test_xerbla_override\"  # [win]\n\nabout:\n  home: https://github.com/python-control/Slycot\n  dev_url: https://github.com/python-control/Slycot\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Slycot: a wrapper for the SLICOT control and systems library'\n  description: |\n    Slycot wraps the SLICOT library which is used for control and systems\n    analysis.\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - murrayrm\n    - repagh\n",
+ "raw_meta_yaml":"{% set version = \"0.4.0.0\" %}\n{% set sha256 = \"1d9921e9b04a5b9892870fd3481f7b08e6fa083a1a3848ad262819de19eb5e02\" %}\n\npackage:\n  name: slycot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/slycot/slycot-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - python\n    - numpy\n    # conda-forge::scikit-build>=0.10.0 includes MACOSX_DEPLOYMENT_TARGET\n    # patches from https://github.com/scikit-build/scikit-build/pull/441\n    - scikit-build >=0.10.0\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n    - scipy\n  imports:\n    - slycot\n  commands:\n    - pytest --pyargs slycot  # [not win]\n    - pytest --pyargs slycot -k \"not test_xerbla_override\"  # [win]\n\nabout:\n  home: https://github.com/python-control/Slycot\n  dev_url: https://github.com/python-control/Slycot\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Slycot: a wrapper for the SLICOT control and systems library'\n  description: |\n    Slycot wraps the SLICOT library which is used for control and systems\n    analysis.\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - murrayrm\n    - repagh\n",
  "req":{
   "__set__":true,
   "elements":[
