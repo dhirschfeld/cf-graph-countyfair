@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/425906207.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.11.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -81,12 +98,13 @@
   }
  },
  "name":"respx",
- "new_version":"0.11.0",
+ "new_version":"0.11.1",
  "new_version_attempts":{
-  "0.11.0":1
+  "0.11.0":1,
+  "0.11.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.05.31.21.10.28",
  "raw_meta_yaml":"{% set name = \"respx\" %}\n{% set version = \"0.11.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7bf8369f4caeb494b424291617f0d26d3f64b3cab4b47f8aac25e034ff3526c3\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - asynctest\n    - httpx <0.14,>=0.13\n    - python >=3.6\n\ntest:\n  imports:\n    - respx\n\nabout:\n  home: https://lundberg.github.io/respx\n  summary: A utility for mocking out the Python HTTPX library.\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n  dev_url: https://github.com/lundberg/respx\n  doc_url: https://lundberg.github.io/respx\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "req":{
   "__set__":true,
