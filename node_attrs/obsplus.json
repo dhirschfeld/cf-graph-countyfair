@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426269735.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"obsplus",
@@ -87,7 +106,12 @@
   }
  },
  "name":"obsplus",
- "new_version":"0.1.0",
+ "new_version":"0.1.1",
+ "new_version_attempts":{
+  "0.1.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.01.18.18.56",
  "raw_meta_yaml":"{% set name = \"obsplus\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"9d3d2fe7e8ce243103790cd49d3421ff200fc2e12394e99d11b792f02ef40a38\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - pip\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.13.0\n    - obspy >=1.2.1\n    - pandas >=0.24.0\n    - progressbar2\n    - scipy\n    - setuptools\n    - pytables\n\ntest:\n  imports:\n    - obsplus\n\nabout:\n  home: https://github.com/niosh-mining/obsplus\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: LICENSE.txt\n  summary: An Pandas-Centric ObsPy Expansion Pack\n  description: |\n    ObsPlus is a utility package for ObsPy.\n  doc_url: https://github.com/niosh-mining/obsplus\n  dev_url: https://github.com/niosh-mining/obsplus\n\nextra:\n  recipe-maintainers:\n    - d-chambers\n",
  "req":{
   "__set__":true,
@@ -137,6 +161,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
