@@ -46,6 +46,23 @@
     "migrator_name",
     "migrator_version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426134076.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -121,8 +138,12 @@
   }
  },
  "name":"ctd",
- "new_version":"1.0.0",
- "pinning_version":"2020.02.12",
+ "new_version":"1.1.0",
+ "new_version_attempts":{
+  "1.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.01.17.08.18",
  "raw_meta_yaml":"{% set version = \"1.0.0\" %}\n\npackage:\n  name: ctd\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/ctd/ctd-{{ version }}.tar.gz\n  sha256: c354b87d0ba4af2b39105ce1f2e91339da5d2bf2a869b8f74da6be5dab3dbaec\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - gsw >=3.3.0\n    - matplotlib-base\n    - numpy\n    - pandas-flavor\n    - pandas >=0.24.0\n    - scipy\n\n\ntest:\n  imports:\n    - ctd\n\nabout:\n  home: https://github.com/pyoceans/python-ctd\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: 'Tools to load hydrographic data formats as pandas DataFrames'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -166,7 +187,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
