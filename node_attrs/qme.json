@@ -52,7 +52,7 @@
   },
   "package":{
    "name":"qme",
-   "version":"0.0.11"
+   "version":"0.0.12"
   },
   "requirements":{
    "host":[
@@ -88,8 +88,8 @@
    ]
   },
   "source":{
-   "sha256":"eddfe5a12559a85c7a60d5dd3ee8299aa994ca1be6a95ee5a0e2d46a8548f158",
-   "url":"https://pypi.io/packages/source/q/qme/qme-0.0.11.tar.gz"
+   "sha256":"2b8a429084baaffdc7c562e528bf740b2f2114d4d2010da766146c0865e57527",
+   "url":"https://pypi.io/packages/source/q/qme/qme-0.0.12.tar.gz"
   },
   "test":{
    "commands":[
@@ -216,7 +216,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.31.21.10.28",
- "raw_meta_yaml":"{% set name = \"qme\" %}\n{% set version = \"0.0.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: eddfe5a12559a85c7a60d5dd3ee8299aa994ca1be6a95ee5a0e2d46a8548f158\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - qme=qme.client:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n    - pytest-runner\n  run:\n    - python >=3\n    - sqlalchemy\n    - flask\n    - flask-restful\n    - flask-socketio\n    - gevent-websocket\n\ntest:\n  imports:\n    - qme\n    - qme.defaults\n    - qme.version\n    - qme.app\n    - qme.app.server\n    - qme.client\n    - qme.client.config\n    - qme.client.get\n    - qme.client.listing\n    - qme.client.run\n    - qme.client.start\n    - qme.client.clear\n    - qme.client.generate\n    - qme.client.search\n    - qme.logger\n    - qme.logger.message\n    - qme.logger.namer\n    - qme.logger.progress\n    - qme.logger.spinner\n    - qme.main\n    - qme.main.executor\n    - qme.main.executor.base\n    - qme.main.executor.shell\n    - qme.main.executor.slurm\n    - qme.main.config\n    - qme.main.database\n    - qme.main.database.base\n    - qme.main.database.models\n    - qme.main.database.sqlite\n    - qme.main.database.relational\n    - qme.main.database.filesystem\n    - qme.utils\n    - qme.utils.command\n    - qme.utils.file\n    - qme.utils.prompt\n    - qme.utils.regex\n  commands:\n    - qme --help\n\n\nabout:\n  home: https://github.com/vsoch/qme\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE\n  summary: 'reproducible job submission and dashboard library'\n  description: |\n    \"Queue-me\" is a jobs queue and dashboard generation tool that can be used\n    to specify executors (entities that run jobs) and actions for them. You can\n    use qme only on the command line, or if desired, via an interactive web dashboard.\n    The dashboard (and it's dependencies) are not required for using the base library.\n  doc_url: https://vsoch.github.io/qme\n  dev_url: https://github.com/vsoch/qme\n\nextra:\n  recipe-maintainers:\n    - vsoch\n",
+ "raw_meta_yaml":"{% set name = \"qme\" %}\n{% set version = \"0.0.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2b8a429084baaffdc7c562e528bf740b2f2114d4d2010da766146c0865e57527\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - qme=qme.client:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n    - pytest-runner\n  run:\n    - python >=3\n    - sqlalchemy\n    - flask\n    - flask-restful\n    - flask-socketio\n    - gevent-websocket\n\ntest:\n  imports:\n    - qme\n    - qme.defaults\n    - qme.version\n    - qme.app\n    - qme.app.server\n    - qme.client\n    - qme.client.config\n    - qme.client.get\n    - qme.client.listing\n    - qme.client.run\n    - qme.client.start\n    - qme.client.clear\n    - qme.client.generate\n    - qme.client.search\n    - qme.logger\n    - qme.logger.message\n    - qme.logger.namer\n    - qme.logger.progress\n    - qme.logger.spinner\n    - qme.main\n    - qme.main.executor\n    - qme.main.executor.base\n    - qme.main.executor.shell\n    - qme.main.executor.slurm\n    - qme.main.config\n    - qme.main.database\n    - qme.main.database.base\n    - qme.main.database.models\n    - qme.main.database.sqlite\n    - qme.main.database.relational\n    - qme.main.database.filesystem\n    - qme.utils\n    - qme.utils.command\n    - qme.utils.file\n    - qme.utils.prompt\n    - qme.utils.regex\n  commands:\n    - qme --help\n\n\nabout:\n  home: https://github.com/vsoch/qme\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE\n  summary: reproducible job submission and dashboard library\n  description: |\n    \"Queue-me\" is a jobs queue and dashboard generation tool that can be used\n    to specify executors (entities that run jobs) and actions for them. You can\n    use qme only on the command line, or if desired, via an interactive web dashboard.\n    The dashboard (and it's dependencies) are not required for using the base library.\n  doc_url: https://vsoch.github.io/qme\n  dev_url: https://github.com/vsoch/qme\n\nextra:\n  recipe-maintainers:\n    - vsoch\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -291,5 +291,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/q/qme/qme-0.0.11.tar.gz",
- "version":"0.0.11"
+ "version":"0.0.12"
 }
