@@ -580,7 +580,7 @@
   },
   "package":{
    "name":"librdkafka",
-   "version":"1.4.0"
+   "version":"1.4.2"
   },
   "requirements":{
    "build":[
@@ -625,9 +625,9 @@
    ]
   },
   "source":{
-   "fn":"librdkafka-1.4.0.tar.gz",
-   "sha256":"ae27ea3f3d0d32d29004e7f709efbba2666c5383a107cc45b3a1949486b2eb84",
-   "url":"https://github.com/edenhill/librdkafka/archive/v1.4.0.tar.gz"
+   "fn":"librdkafka-1.4.2.tar.gz",
+   "sha256":"3b99a36c082a67ef6295eabd4fb3e32ab0bff7c6b0d397d6352697335f4e57eb",
+   "url":"https://github.com/edenhill/librdkafka/archive/v1.4.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -644,7 +644,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.04.19.59.17",
- "raw_meta_yaml":"{% set name = \"librdkafka\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"ae27ea3f3d0d32d29004e7f709efbba2666c5383a107cc45b3a1949486b2eb84\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/edenhill/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"librdkafka\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - zlib\n    - openssl\n    - libgsasl  # [not osx]\n    - cyrus-sasl\n    - lz4-c\n  run:\n    - zlib\n    - openssl\n    - libgsasl  # [not osx]\n    - cyrus-sasl\n    - lz4-c\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/librdkafka${SHLIB_EXT}  # [not win]\n    - test -f ${PREFIX}/lib/librdkafka++${SHLIB_EXT}  # [not win]\n\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://github.com/edenhill/librdkafka\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: The Apache Kafka C/C++ client library\n  description: |\n    librdkafka is a C library implementation of the Apache Kafka protocol,\n    containing both Producer and Consumer support. It was designed with message\n    delivery reliability and high performance in mind, current figures exceed 1\n    million msgs/second for the producer and 3 million msgs/second for the\n    consumer.\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - stuarteberg\n",
+ "raw_meta_yaml":"{% set name = \"librdkafka\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"3b99a36c082a67ef6295eabd4fb3e32ab0bff7c6b0d397d6352697335f4e57eb\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/edenhill/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"librdkafka\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - zlib\n    - openssl\n    - libgsasl  # [not osx]\n    - cyrus-sasl\n    - lz4-c\n  run:\n    - zlib\n    - openssl\n    - libgsasl  # [not osx]\n    - cyrus-sasl\n    - lz4-c\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/librdkafka${SHLIB_EXT}  # [not win]\n    - test -f ${PREFIX}/lib/librdkafka++${SHLIB_EXT}  # [not win]\n\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://github.com/edenhill/librdkafka\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: The Apache Kafka C/C++ client library\n  description: |\n    librdkafka is a C library implementation of the Apache Kafka protocol,\n    containing both Producer and Consumer support. It was designed with message\n    delivery reliability and high performance in mind, current figures exceed 1\n    million msgs/second for the producer and 3 million msgs/second for the\n    consumer.\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - stuarteberg\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -726,5 +726,5 @@
   }
  },
  "url":"https://github.com/edenhill/librdkafka/archive/v1.1.0.tar.gz",
- "version":"1.4.0"
+ "version":"1.4.2"
 }

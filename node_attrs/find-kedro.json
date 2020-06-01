@@ -41,7 +41,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -52,7 +52,7 @@
   },
   "package":{
    "name":"find-kedro",
-   "version":"0.0.5"
+   "version":"0.1.0"
   },
   "requirements":{
    "host":[
@@ -82,8 +82,8 @@
    ]
   },
   "source":{
-   "sha256":"6d1d6c9e7baf5ddf190c1ff34b5a95a5f3eea2cdd0f8999fe452bb0dfea8f460",
-   "url":"https://pypi.io/packages/source/f/find-kedro/find-kedro-0.0.5.tar.gz"
+   "sha256":"2f722d5c3b1b4a11ef736c1932c8b07278a849a3e81e6343ccf0c9ef4654f28d",
+   "url":"https://pypi.io/packages/source/f/find-kedro/find-kedro-0.1.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -105,7 +105,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"find-kedro\" %}\n{% set version = \"0.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6d1d6c9e7baf5ddf190c1ff34b5a95a5f3eea2cdd0f8999fe452bb0dfea8f460\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n  entry_points:\n    - find-kedro = find_kedro.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - kedro\n    - click\n    - colorama\n    - pygments\n\ntest:\n  imports:\n    - find_kedro\n  commands:\n    - find-kedro --help\n\nabout:\n  home: https://github.com/WaylonWalker/find-kedro\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'https://github.com/WaylonWalker/find-kedro'\n\n  description: |\n    find-kedro is a small library to enhance your kedro experience. It looks through your modules to find kedro pipelines,\n    nodes, and iterables (lists, sets, tuples) of nodes. It then assembles them into a dictionary of pipelines, each module\n    will create a separate pipeline, and __default__ being a combination of all pipelines. This format is compatible with\n    the kedro _create_pipelines format.\n  doc_url: https://find-kedro.waylonwalker.com/\n  dev_url: https://github.com/WaylonWalker/find-kedro\n\nextra:\n  recipe-maintainers:\n    - WaylonWalker\n",
+ "raw_meta_yaml":"{% set name = \"find-kedro\" %}\n{% set version = \"0.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2f722d5c3b1b4a11ef736c1932c8b07278a849a3e81e6343ccf0c9ef4654f28d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - find-kedro = find_kedro.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - kedro\n    - click\n    - colorama\n    - pygments\n\ntest:\n  imports:\n    - find_kedro\n  commands:\n    - find-kedro --help\n\nabout:\n  home: https://github.com/WaylonWalker/find-kedro\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: https://github.com/WaylonWalker/find-kedro\n\n  description: |\n    find-kedro is a small library to enhance your kedro experience. It looks through your modules to find kedro pipelines,\n    nodes, and iterables (lists, sets, tuples) of nodes. It then assembles them into a dictionary of pipelines, each module\n    will create a separate pipeline, and __default__ being a combination of all pipelines. This format is compatible with\n    the kedro _create_pipelines format.\n  doc_url: https://find-kedro.waylonwalker.com/\n  dev_url: https://github.com/WaylonWalker/find-kedro\n\nextra:\n  recipe-maintainers:\n    - WaylonWalker\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -174,5 +174,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/find-kedro/find-kedro-0.0.5.tar.gz",
- "version":"0.0.5"
+ "version":"0.1.0"
 }
