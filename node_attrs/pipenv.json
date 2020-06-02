@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426482121.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.6.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -123,12 +140,13 @@
   }
  },
  "name":"pipenv",
- "new_version":"2020.5.28",
+ "new_version":"2020.6.2",
  "new_version_attempts":{
-  "2020.5.28":1
+  "2020.5.28":1,
+  "2020.6.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.01.18.18.56",
  "raw_meta_yaml":"{% set name = \"pipenv\" %}\n{% set version = \"2020.5.28\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 81862314929e3e532502e25bab3c6ba969c0cf67dcaa9d63c2c931ee2d61541c\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - pipenv=pipenv:cli\n    - pewtwo=pipenv.patched.pew.pew:pew\n    - pipenv-resolver=pipenv.resolver:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip >=18.0\n    - python\n  run:\n    - certifi\n    - pip >=18.0\n    - python\n    - setuptools >=36.2.1\n    - virtualenv\n    - virtualenv-clone >=0.2.5\n\ntest:\n  imports:\n    - pipenv\n\n  commands:\n    - pipenv --help\n\nabout:\n  home: https://github.com/pypa/pipenv\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Development Workflow for Humans.\n  doc_url: https://pipenv-fork.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - roccqqck\n",
  "req":{
   "__set__":true,

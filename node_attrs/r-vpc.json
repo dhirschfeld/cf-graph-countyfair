@@ -99,7 +99,7 @@
   },
   "package":{
    "name":"r-vpc",
-   "version":"1.2.0"
+   "version":"1.2.1"
   },
   "requirements":{
    "build":null,
@@ -110,24 +110,27 @@
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
+    "r-stringr",
     "r-survival",
+    "r-tidyr",
     "r-base",
     "r-mass",
     "r-classint",
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
+    "r-stringr",
     "r-survival",
+    "r-tidyr",
     "r-base",
     "r-mass",
     "r-classint",
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ],
    "run":[
     "r-base",
@@ -136,35 +139,38 @@
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
+    "r-stringr",
     "r-survival",
+    "r-tidyr",
     "r-base",
     "r-mass",
     "r-classint",
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
+    "r-stringr",
     "r-survival",
+    "r-tidyr",
     "r-base",
     "r-mass",
     "r-classint",
     "r-dplyr",
     "r-ggplot2",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ]
   },
   "source":{
-   "sha256":"bd1a4b0f02df521aeca341ce11938b9d5214fcec0ce267400dddcfc89c831f17",
+   "sha256":"8754272ccc98e5e611fee878c1db0123db010648dc1c32424e75384f22bae370",
    "url":[
-    "https://cran.r-project.org/src/contrib/vpc_1.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/vpc_1.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/vpc_1.2.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/vpc_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/vpc_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/vpc_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.2.1.tar.gz"
    ]
   },
   "test":{
@@ -183,7 +189,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set version = \"1.2.0\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-vpc\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/vpc_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/vpc/vpc_{{ version }}.tar.gz\n  sha256: bd1a4b0f02df521aeca341ce11938b9d5214fcec0ce267400dddcfc89c831f17\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-mass\n    - r-classint\n    - r-dplyr\n    - r-ggplot2\n    - r-readr\n    - r-reshape2\n    - r-survival\n  run:\n    - r-base\n    - r-mass\n    - r-classint\n    - r-dplyr\n    - r-ggplot2\n    - r-readr\n    - r-reshape2\n    - r-survival\n\ntest:\n  commands:\n    - $R -e \"library('vpc')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('vpc')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ronkeizer/vpc\n  license: MIT\n  summary: Visual predictive checks are a commonly used diagnostic plot in pharmacometrics, showing how certain statistics (percentiles) for observed data compare to those same statistics for data simulated from a model. The package can generate VPCs for continuous, categorical, censored, and (repeated) time-to-event data.\n  license_family: MIT\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: vpc\n# Title: Create Visual Predictive Checks\n# Version: 1.1.0\n# Date: 2018-08-27\n# Author: Ron Keizer <ronkeizer@gmail.com>\n# Maintainer: Ron Keizer <ronkeizer@gmail.com>\n# Description: Visual predictive checks are a commonly used diagnostic plot in pharmacometrics, showing how certain statistics (percentiles) for observed data compare to those same statistics for data simulated from a model. The package can generate VPCs for continuous, categorical, censored, and (repeated) time-to-event data.\n# Depends: R (>= 3.1.0)\n# Imports: classInt, dplyr, reshape2, MASS, survival, ggplot2, readr\n# License: MIT + file LICENSE\n# LazyData: true\n# URL: https://github.com/ronkeizer/vpc\n# Suggests: knitr, testit\n# RoxygenNote: 6.0.1\n# NeedsCompilation: no\n# Packaged: 2018-08-27 20:41:53 UTC; ronkeizer\n# Repository: CRAN\n# Date/Publication: 2018-08-27 21:00:03 UTC\n",
+ "raw_meta_yaml":"{% set version = \"1.2.1\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-vpc\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/vpc_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/vpc/vpc_{{ version }}.tar.gz\n  sha256: 8754272ccc98e5e611fee878c1db0123db010648dc1c32424e75384f22bae370\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-mass\n    - r-classint\n    - r-dplyr\n    - r-ggplot2\n    - r-readr\n    - r-stringr\n    - r-survival\n    - r-tidyr\n  run:\n    - r-base\n    - r-mass\n    - r-classint\n    - r-dplyr\n    - r-ggplot2\n    - r-readr\n    - r-stringr\n    - r-survival\n    - r-tidyr\n\ntest:\n  commands:\n    - $R -e \"library('vpc')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('vpc')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ronkeizer/vpc\n  license: MIT\n  summary: Visual predictive checks are a commonly used diagnostic plot in pharmacometrics, showing how certain statistics (percentiles) for observed data compare to those same statistics for data simulated from a model. The package can generate VPCs for continuous, categorical, censored, and (repeated) time-to-event data.\n  license_family: MIT\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: vpc\n# Title: Create Visual Predictive Checks\n# Version: 1.1.0\n# Date: 2018-08-27\n# Author: Ron Keizer <ronkeizer@gmail.com>\n# Maintainer: Ron Keizer <ronkeizer@gmail.com>\n# Description: Visual predictive checks are a commonly used diagnostic plot in pharmacometrics, showing how certain statistics (percentiles) for observed data compare to those same statistics for data simulated from a model. The package can generate VPCs for continuous, categorical, censored, and (repeated) time-to-event data.\n# Depends: R (>= 3.1.0)\n# Imports: classInt, dplyr, reshape2, MASS, survival, ggplot2, readr\n# License: MIT + file LICENSE\n# LazyData: true\n# URL: https://github.com/ronkeizer/vpc\n# Suggests: knitr, testit\n# RoxygenNote: 6.0.1\n# NeedsCompilation: no\n# Packaged: 2018-08-27 20:41:53 UTC; ronkeizer\n# Repository: CRAN\n# Date/Publication: 2018-08-27 21:00:03 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -193,8 +199,9 @@
    "r-ggplot2",
    "r-mass",
    "r-readr",
-   "r-reshape2",
-   "r-survival"
+   "r-stringr",
+   "r-survival",
+   "r-tidyr"
   ]
  },
  "requirements":{
@@ -211,8 +218,9 @@
     "r-ggplot2",
     "r-mass",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ]
   },
   "run":{
@@ -224,8 +232,9 @@
     "r-ggplot2",
     "r-mass",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ]
   },
   "test":{
@@ -249,8 +258,9 @@
     "r-ggplot2",
     "r-mass",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ]
   },
   "run":{
@@ -262,8 +272,9 @@
     "r-ggplot2",
     "r-mass",
     "r-readr",
-    "r-reshape2",
-    "r-survival"
+    "r-stringr",
+    "r-survival",
+    "r-tidyr"
    ]
   },
   "test":{
@@ -279,5 +290,5 @@
   "https://cran.r-project.org/src/contrib/vpc_1.1.0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/vpc/vpc_1.1.0.tar.gz"
  ],
- "version":"1.2.0"
+ "version":"1.2.1"
 }

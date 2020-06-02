@@ -64,6 +64,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426483745.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.10.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -157,8 +174,12 @@
   }
  },
  "name":"yacron",
- "new_version":"0.10.0",
- "pinning_version":"2019.11.01",
+ "new_version":"0.10.1",
+ "new_version_attempts":{
+  "0.10.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.01.18.18.56",
  "raw_meta_yaml":"{% set name = \"yacron\" %}\n{% set version = \"0.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 613a5900e4f7a0d4cda5062b0d95016545f79e664c71806e7633ca2d40014bbc\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - yacron = yacron.__main__:main\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - pytest-runner\n    - setuptools_scm\n  run:\n    - python >=3.5\n    - strictyaml >=0.7.2\n    - crontab\n    - aiohttp\n    - sentry-sdk\n    - aiosmtplib\n    - jinja2\n\ntest:\n  imports:\n    - yacron\n  commands:\n    - yacron --version\n\nabout:\n  home: https://github.com/gjcarneiro/yacron\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A modern Cron replacement that is Docker-friendly'\n  dev_url: https://github.com/gjcarneiro/yacron\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "req":{
   "__set__":true,
@@ -206,7 +227,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
