@@ -16,14 +16,20 @@
   },
   "build":{
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra":{
    "recipe-maintainers":[
     "winni2k",
+    "jeromekelleher",
+    "petrelharp",
     "winni2k",
-    "winni2k"
+    "jeromekelleher",
+    "petrelharp",
+    "winni2k",
+    "jeromekelleher",
+    "petrelharp"
    ]
   },
   "package":{
@@ -74,7 +80,7 @@
  },
  "name":"pyslim",
  "new_version":"0.401",
- "raw_meta_yaml":"{% set name = \"pyslim\" %}\n{% set version = \"0.401\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3557e66f83812c86204d9ce9a8df14c48a59f1471c8573bbf83978e37e3208d3\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - attrs\n    - kastore\n    - msprime >=0.7.0\n    - numpy\n    - tskit\n\ntest:\n  imports:\n    - pyslim\n\nabout:\n  home: \"https://github.com/tskit-dev/pyslim\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Tools for dealing with tree sequences coming to and from SLiM. \n  description: |\n    pyslim is a python module to allow reading and writing of SLiM-produced tree\n    sequences as a thin interface to tskit. \n  doc_url: https://pyslim.readthedocs.io/en/latest/\n  dev_url: https://pyslim.readthedocs.io/en/latest/development.html\n\nextra:\n  recipe-maintainers:\n    - winni2k\n",
+ "raw_meta_yaml":"{% set name = \"pyslim\" %}\n{% set version = \"0.401\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3557e66f83812c86204d9ce9a8df14c48a59f1471c8573bbf83978e37e3208d3\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - attrs\n    - kastore\n    - msprime >=0.7.0\n    - numpy\n    - tskit\n\ntest:\n  imports:\n    - pyslim\n\nabout:\n  home: \"https://github.com/tskit-dev/pyslim\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Tools for dealing with tree sequences coming to and from SLiM. \n  description: |\n    pyslim is a python module to allow reading and writing of SLiM-produced tree\n    sequences as a thin interface to tskit. \n  doc_url: https://pyslim.readthedocs.io/en/latest/\n  dev_url: https://pyslim.readthedocs.io/en/latest/development.html\n\nextra:\n  recipe-maintainers:\n    - winni2k\n    - jeromekelleher\n    - petrelharp\n",
  "req":{
   "__set__":true,
   "elements":[
