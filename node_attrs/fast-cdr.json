@@ -47,7 +47,7 @@
    "summary":"eProsima FastCDR\n"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "fast-cdr",
     "fast-cdr",
@@ -58,8 +58,11 @@
   "extra":{
    "recipe-maintainers":[
     "seanyen",
+    "wolfv",
     "seanyen",
-    "seanyen"
+    "wolfv",
+    "seanyen",
+    "wolfv"
    ]
   },
   "package":{
@@ -100,7 +103,14 @@
    }
   ],
   "test":{
-   "commands":null
+   "commands":[
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\fastcdr-1.0.dll exit 1",
+    "test -f $PREFIX/lib/libfastcdr${SHLIB_EXT}",
+    "test -f $PREFIX/include/fastcdr/Cdr.h",
+    "test -f $PREFIX/lib/libfastcdr${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libfastcdr${SHLIB_EXT}.1.0.14",
+    "test -f $PREFIX/include/fastcdr/Cdr.h"
+   ]
   }
  },
  "name":"fast-cdr",
@@ -111,7 +121,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set name = \"fast-cdr\" %}\n{% set version = \"1.0.14\" %}\n{% set major_minor_version = version.split('.')[0] + '.' + version.split('.')[1] %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/eProsima/Fast-CDR/archive/v{{ version }}.tar.gz\n    sha256: 43af2b6f335a561f60564d4fbf47bbb67cbdf898a692413cf7c17a226143b93f\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14 or unix]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - ninja\n    - pkg-config\n\ntest:\n  commands:\n    - if not exist %LIBRARY_PREFIX%\\\\bin\\\\fastcdr-{{ major_minor_version }}.dll exit 1  # [win]\n\nabout:\n  home: https://github.com/eProsima/Fast-CDR\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    eProsima FastCDR\n\nextra:\n  recipe-maintainers:\n    - seanyen\n",
+ "raw_meta_yaml":"{% set name = \"fast-cdr\" %}\n{% set version = \"1.0.14\" %}\n{% set major_minor_version = version.split('.')[0] + '.' + version.split('.')[1] %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/eProsima/Fast-CDR/archive/v{{ version }}.tar.gz\n    sha256: 43af2b6f335a561f60564d4fbf47bbb67cbdf898a692413cf7c17a226143b93f\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - ninja\n    - pkg-config\n\ntest:\n  commands:\n    - if not exist %LIBRARY_PREFIX%\\\\bin\\\\fastcdr-{{ major_minor_version }}.dll exit 1  # [win]\n    - test -f $PREFIX/lib/libfastcdr${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/libfastcdr${SHLIB_EXT}.{{ version }}  # [linux]\n    - test -f $PREFIX/include/fastcdr/Cdr.h  # [unix]\n\nabout:\n  home: https://github.com/eProsima/Fast-CDR\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    eProsima FastCDR\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n",
  "req":{
   "__set__":true,
   "elements":[
