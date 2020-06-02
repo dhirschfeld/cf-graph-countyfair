@@ -100,7 +100,7 @@
   "build":{
    "merge_build_host":true,
    "noarch":"generic",
-   "number":"1003",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -137,7 +137,7 @@
   },
   "package":{
    "name":"r-ggedit",
-   "version":"0.3.0"
+   "version":"0.3.1"
   },
   "requirements":{
    "build":null,
@@ -237,15 +237,15 @@
    ]
   },
   "source":{
-   "fn":"ggedit_0.3.0.tar.gz",
-   "sha256":"f66704142b6d79e926cbb5c85eb4d6dffc97c08b68ef2ca1c74c1e52a7bb2aed",
+   "fn":"ggedit_0.3.1.tar.gz",
+   "sha256":"452ae8a558a9590d7122c7c5404aaefea17df81004d762e28a8e1f6a3096cb81",
    "url":[
-    "https://cran.r-project.org/src/contrib/ggedit_0.3.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/ggedit_0.3.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/ggedit_0.3.0.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.0.tar.gz"
+    "https://cran.r-project.org/src/contrib/ggedit_0.3.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/ggedit_0.3.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/ggedit_0.3.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.1.tar.gz"
    ]
   },
   "test":{
@@ -263,7 +263,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set version = \"0.3.0\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ggedit\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ggedit_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/ggedit_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/ggedit/ggedit_{{ version }}.tar.gz\n  sha256: f66704142b6d79e926cbb5c85eb4d6dffc97c08b68ef2ca1c74c1e52a7bb2aed\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-colourpicker >=0.2\n    - r-dplyr >=0.7.5\n    - r-ggplot2 >=3.0.0\n    - r-magrittr\n    - r-miniui\n    - r-plyr\n    - r-purrr\n    - r-rlang\n    - r-rstudioapi\n    - r-scales\n    - r-shiny\n    - r-shinyace\n    - r-shinybs\n    - r-tidyr\n  run:\n    - r-base\n    - r-colourpicker >=0.2\n    - r-dplyr >=0.7.5\n    - r-ggplot2 >=3.0.0\n    - r-magrittr\n    - r-miniui\n    - r-plyr\n    - r-purrr\n    - r-rlang\n    - r-rstudioapi\n    - r-scales\n    - r-shiny\n    - r-shinyace\n    - r-shinybs\n    - r-tidyr\n\ntest:\n  commands:\n    - $R -e \"library('ggedit')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ggedit')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/metrumresearchgroup/ggedit\n  license: MIT\n  summary: Interactively edit 'ggplot2' layer and theme aesthetics definitions.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
+ "raw_meta_yaml":"{% set version = \"0.3.1\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ggedit\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ggedit_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/ggedit_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/ggedit/ggedit_{{ version }}.tar.gz\n  sha256: 452ae8a558a9590d7122c7c5404aaefea17df81004d762e28a8e1f6a3096cb81\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-colourpicker >=0.2\n    - r-dplyr >=0.7.5\n    - r-ggplot2 >=3.0.0\n    - r-magrittr\n    - r-miniui\n    - r-plyr\n    - r-purrr\n    - r-rlang\n    - r-rstudioapi\n    - r-scales\n    - r-shiny\n    - r-shinyace\n    - r-shinybs\n    - r-tidyr\n  run:\n    - r-base\n    - r-colourpicker >=0.2\n    - r-dplyr >=0.7.5\n    - r-ggplot2 >=3.0.0\n    - r-magrittr\n    - r-miniui\n    - r-plyr\n    - r-purrr\n    - r-rlang\n    - r-rstudioapi\n    - r-scales\n    - r-shiny\n    - r-shinyace\n    - r-shinybs\n    - r-tidyr\n\ntest:\n  commands:\n    - $R -e \"library('ggedit')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ggedit')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/metrumresearchgroup/ggedit\n  license: MIT\n  summary: Interactively edit 'ggplot2' layer and theme aesthetics definitions.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -394,5 +394,5 @@
   "https://cran.r-project.org/src/contrib/ggedit_0.3.0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/ggedit/ggedit_0.3.0.tar.gz"
  ],
- "version":"0.3.0"
+ "version":"0.3.1"
 }

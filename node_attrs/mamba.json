@@ -427,7 +427,7 @@
   },
   "package":{
    "name":"mamba",
-   "version":"0.2.12"
+   "version":"0.3.0"
   },
   "requirements":{
    "build":[
@@ -441,7 +441,7 @@
     "pip",
     "pybind11",
     "conda >=4.8",
-    "libsolv >=0.7.13",
+    "libsolv >=0.7.14",
     "libcurl",
     "openssl",
     "libarchive",
@@ -451,7 +451,7 @@
     "pip",
     "pybind11",
     "conda >=4.8",
-    "libsolv >=0.7.13",
+    "libsolv >=0.7.14",
     "libcurl",
     "openssl",
     "libarchive",
@@ -461,7 +461,7 @@
     "pip",
     "pybind11",
     "conda >=4.8",
-    "libsolv >=0.7.13",
+    "libsolv >=0.7.14",
     "libcurl",
     "openssl",
     "libarchive",
@@ -477,8 +477,8 @@
    ]
   },
   "source":{
-   "sha256":"fabb40e0a1cf7ba1f639ad588a39e274104cc9e2cc0b27b4c4a18c82088917f0",
-   "url":"https://github.com/QuantStack/mamba/archive/0.2.12.tar.gz"
+   "sha256":"ea93b9e3f87796c8068007e0934eb2ddf6f96d3815559adb0cbb96d0a9d0d351",
+   "url":"https://github.com/QuantStack/mamba/archive/0.3.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -515,7 +515,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set name = \"mamba\" %}\n{% set version = \"0.2.12\" %}\n{% set sha256 = \"fabb40e0a1cf7ba1f639ad588a39e274104cc9e2cc0b27b4c4a18c82088917f0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/QuantStack/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  entry_points:\n    - mamba = mamba.mamba:main\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - pybind11\n    - conda >=4.8\n    - libsolv >=0.7.13\n    - libcurl\n    - openssl\n    - libarchive\n    - nlohmann_json\n  run:\n    - python\n    - conda >=4.8\n\ntest:\n  imports:\n    - mamba\n    - mamba.mamba_api\n  commands:\n    - mamba --help\n    # these tests work when run on win, but for some reason not during conda build\n    - mamba create -n test_py2 python=2.7 --dry-run  # [linux]\n    - mamba install xtensor xsimd -c conda-forge --dry-run  # [linux]\n\nabout:\n  home: https://github.com/QuantStack/mamba\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  description: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  dev_url: https://github.com/QuantStack/mamba\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n",
+ "raw_meta_yaml":"{% set name = \"mamba\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"ea93b9e3f87796c8068007e0934eb2ddf6f96d3815559adb0cbb96d0a9d0d351\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/QuantStack/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  entry_points:\n    - mamba = mamba.mamba:main\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - pybind11\n    - conda >=4.8\n    - libsolv >=0.7.14\n    - libcurl\n    - openssl\n    - libarchive\n    - nlohmann_json\n  run:\n    - python\n    - conda >=4.8\n\ntest:\n  imports:\n    - mamba\n    - mamba.mamba_api\n  commands:\n    - mamba --help\n    # these tests work when run on win, but for some reason not during conda build\n    - mamba create -n test_py2 python=2.7 --dry-run  # [linux]\n    - mamba install xtensor xsimd -c conda-forge --dry-run  # [linux]\n\nabout:\n  home: https://github.com/QuantStack/mamba\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  description: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  dev_url: https://github.com/QuantStack/mamba\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -581,7 +581,7 @@
     "conda >=4.8",
     "libarchive",
     "libcurl",
-    "libsolv >=0.7.13",
+    "libsolv >=0.7.14",
     "nlohmann_json",
     "openssl",
     "pip",
@@ -603,5 +603,5 @@
   }
  },
  "url":"https://github.com/QuantStack/mamba/archive/0.0.8.tar.gz",
- "version":"0.2.12"
+ "version":"0.3.0"
 }
