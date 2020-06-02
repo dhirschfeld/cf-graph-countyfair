@@ -68,7 +68,7 @@
    "summary":"Library targeting Intel Architecture for specialized dense and sparse matrix operations, and deep learning primitives."
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "libxsmm",
     "libxsmm",
@@ -85,7 +85,7 @@
   },
   "package":{
    "name":"libxsmm",
-   "version":"1.13"
+   "version":"1.14"
   },
   "requirements":{
    "build":[
@@ -105,15 +105,21 @@
    "host":[
     "libblas",
     "libcblas",
+    "liblapack",
+    "liblapacke",
     "libblas",
     "libcblas",
+    "liblapack",
+    "liblapacke",
     "libblas",
-    "libcblas"
+    "libcblas",
+    "liblapack",
+    "liblapacke"
    ]
   },
   "source":{
-   "sha256":"47c034e169820a9633770eece0e0fdd8d4a744e09b81da2af8c2608a4625811e",
-   "url":"https://github.com/hfp/libxsmm/archive/1.13.tar.gz"
+   "sha256":"9c0af4509ea341d1ee2c6c19fc6f19289318c3bd4b17844efeb9e7f9691abf76",
+   "url":"https://github.com/hfp/libxsmm/archive/1.14.tar.gz"
   },
   "test":{
    "commands":[
@@ -129,7 +135,7 @@
  "name":"libxsmm",
  "new_version":"1.15",
  "pinning_version":"2020.03.12",
- "raw_meta_yaml":"{% set name = \"libxsmm\" %}\n{% set version = \"1.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hfp/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 47c034e169820a9633770eece0e0fdd8d4a744e09b81da2af8c2608a4625811e\n\nbuild:\n  number: 3\n  skip: True  # [win]\n  run_exports:\n    - {{ pin_subpackage('libxsmm', max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n  host:\n    - libblas\n    - libcblas\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [not win]\n    - conda inspect objects {{ name }}  # [osx]\n    - test -f $PREFIX/lib/libxsmmnoblas.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmgen.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmext.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmf.so  # [linux]\n    - test -f $PREFIX/lib/libxsmm.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmnoblas.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmgen.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmext.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmf.a  # [osx]\n    - test -f $PREFIX/lib/libxsmm.a  # [osx]\n\nabout:\n  home: https://github.com/hfp/libxsmm\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Library targeting Intel Architecture for specialized dense and sparse matrix operations, and deep learning primitives.'\n\n  description: |\n    LIBXSMM is a library for specialized dense and sparse matrix operations \n    as well as for deep learning primitives such as small convolutions \n    targeting Intel Architecture.\n  doc_url: https://libxsmm.readthedocs.io\n  dev_url: https://github.com/hfp/libxsmm\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml":"{% set name = \"libxsmm\" %}\n{% set version = \"1.14\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hfp/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 9c0af4509ea341d1ee2c6c19fc6f19289318c3bd4b17844efeb9e7f9691abf76\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  run_exports:\n    - {{ pin_subpackage('libxsmm', max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - make\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - liblapacke\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [not win]\n    - conda inspect objects {{ name }}  # [osx]\n    - test -f $PREFIX/lib/libxsmmnoblas.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmgen.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmext.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmf.so  # [linux]\n    - test -f $PREFIX/lib/libxsmm.so  # [linux]\n    - test -f $PREFIX/lib/libxsmmnoblas.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmgen.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmext.a  # [osx]\n    - test -f $PREFIX/lib/libxsmmf.a  # [osx]\n    - test -f $PREFIX/lib/libxsmm.a  # [osx]\n\nabout:\n  home: https://github.com/hfp/libxsmm\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Library targeting Intel Architecture for specialized dense and sparse matrix operations, and deep learning primitives.'\n\n  description: |\n    LIBXSMM is a library for specialized dense and sparse matrix operations \n    as well as for deep learning primitives such as small convolutions \n    targeting Intel Architecture.\n  doc_url: https://libxsmm.readthedocs.io\n  dev_url: https://github.com/hfp/libxsmm\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -138,6 +144,8 @@
    "fortran_compiler_stub",
    "libblas",
    "libcblas",
+   "liblapack",
+   "liblapacke",
    "make"
   ]
  },
@@ -155,7 +163,9 @@
    "__set__":true,
    "elements":[
     "libblas",
-    "libcblas"
+    "libcblas",
+    "liblapack",
+    "liblapacke"
    ]
   },
   "run":{
@@ -183,7 +193,9 @@
    "__set__":true,
    "elements":[
     "libblas",
-    "libcblas"
+    "libcblas",
+    "liblapack",
+    "liblapacke"
    ]
   },
   "run":{
@@ -196,5 +208,5 @@
   }
  },
  "url":"https://github.com/hfp/libxsmm/archive/1.13.tar.gz",
- "version":"1.13"
+ "version":"1.14"
 }

@@ -65,6 +65,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426714850.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -136,12 +153,13 @@
   }
  },
  "name":"wcwidth",
- "new_version":"0.2.2",
+ "new_version":"0.2.3",
  "new_version_attempts":{
-  "0.2.2":1
+  "0.2.2":1,
+  "0.2.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.01.14.18.30",
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set version = \"0.2.2\" %}\n\npackage:\n  name: wcwidth\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/wcwidth/wcwidth-{{ version }}.tar.gz\n  sha256: 3de2e41158cb650b91f9654cbf9a3e053cee0719c9df4ddc11e4b568669e9829\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - wcwidth\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jquast/wcwidth\n  license: MIT\n  license_file: LICENSE\n  summary: Measures number of Terminal column cells of wide-character codes.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
