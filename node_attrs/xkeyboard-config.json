@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426812241.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.30"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -137,8 +154,12 @@
   }
  },
  "name":"xkeyboard-config",
- "new_version":"2.29",
- "pinning_version":"2020.01.27",
+ "new_version":"2.30",
+ "new_version_attempts":{
+  "2.30":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set name = \"xkeyboard-config\" %}\n{% set version = \"2.29\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.x.org/releases/individual/data/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: 1d4175278bf06000683656763a8b1d3282c61a314b6db41260c8efe92d621802\n  patches:\n    # use conda's Python\n    - map-variants.py.patch\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - autoconf\n    - pkg-config\n    # the following are expected in the build environment for some reason\n    - intltool\n    - perl-xml-parser\n    - libxslt\n    - python >=3\n  host:\n    - xorg-xproto\n    - xorg-libx11\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/share/X11/xkb/geometry/hp\"\n\nabout:\n  home: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The non-arch keyboard configuration database for X Windows'\n  description: |\n    The goal is to provide the consistent, well-structured, frequently\n    released open source of X keyboard configuration data for X Window\n    System implementations (free, open source and commercial).\n    The project is targeted to XKB-based systems.\n  doc_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/\n  dev_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
@@ -185,7 +206,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.6",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
