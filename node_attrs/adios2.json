@@ -94,7 +94,7 @@
     "__lazy_json__":"pr_json/404244238.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1591127007.3044531,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
     "migrator_version":0,
@@ -124,6 +124,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426802119.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"hdf51106"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -148,7 +167,7 @@
    "summary":"Next generation of ADIOS developed in the Exascale Computing Program"
   },
   "build":{
-   "number":"102",
+   "number":"100",
    "run_exports":[
     "adios2 * nompi_*",
     "adios2",
@@ -157,7 +176,7 @@
     "adios2 * nompi_*",
     "adios2"
    ],
-   "string":"nompi_pyh_102"
+   "string":"nompi_pyh_100"
   },
   "extra":{
    "recipe-maintainers":[
@@ -174,24 +193,24 @@
   },
   "package":{
    "name":"adios2",
-   "version":"2.5.0"
+   "version":"2.6.0"
   },
   "requirements":{
    "build":[
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "cmake >=3.11",
+    "cmake >=3.12",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "make",
     "pkg-config",
-    "cmake >=3.11",
+    "cmake >=3.12",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "fortran_compiler_stub",
     "make",
     "pkg-config",
-    "cmake >=3.11"
+    "cmake >=3.12"
    ],
    "host":[
     "nompi",
@@ -243,22 +262,17 @@
    ]
   },
   "source":{
-   "patches":[
-    "0001-string-compare.patch",
-    "0001-string-compare.patch",
-    "0001-string-compare.patch"
-   ],
-   "sha256":"7c8ff3bf5441dd662806df9650c56a669359cb0185ea232ecb3578de7b065329",
-   "url":"https://github.com/ornladios/ADIOS2/archive/v2.5.0.tar.gz"
+   "sha256":"45b41889065f8b840725928db092848b8a8b8d1bfae1b92e72f8868d1c76216c",
+   "url":"https://github.com/ornladios/ADIOS2/archive/v2.6.0.tar.gz"
   },
   "test":{
    "commands":[
-    "if exist %LIBRARY_PREFIX%\\bin\\adios2.dll (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\bin\\adios2_cxx11.dll (exit 0) else (exit 1)",
     "if exist %LIBRARY_PREFIX%\\lib\\cmake\\adios2\\adios2-config.cmake (exit 0) else (exit 1)",
     "test -f ${PREFIX}/lib/cmake/adios2/adios2-config.cmake",
-    "otool -L ${PREFIX}/lib/libadios2.dylib",
+    "otool -L ${PREFIX}/lib/libadios2_cxx11.dylib",
     "test -f ${PREFIX}/lib/cmake/adios2/adios2-config.cmake",
-    "test -f ${PREFIX}/lib/libadios2.so"
+    "test -f ${PREFIX}/lib/libadios2_cxx11.so"
    ],
    "imports":[
     "adios2",
@@ -273,8 +287,8 @@
   "2.6.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"adios2\" %}\n{% set version = \"2.5.0\" %}\n{% set build = 2 %}\n{% set sha256 = \"7c8ff3bf5441dd662806df9650c56a669359cb0185ea232ecb3578de7b065329\" %}\n\n# ensure mpi is defined (needed for conda-smithy recipe-lint)\n{% set mpi = mpi or 'nompi' %}\n\n# prioritize nompi variant via build number\n{% if mpi == 'nompi' %}\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ornladios/ADIOS2/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # FIXME: https://github.com/ornladios/ADIOS2/pull/1805\n    - 0001-string-compare.patch\n\nbuild:\n  number: {{ build }}\n  # https://github.com/ornladios/ADIOS2/issues/2068\n  skip: True  # [python_impl == 'pypy']\n\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `pkg * mpi_mpich_*` for mpich\n  # `pkg * mpi_*` for any mpi\n  # `pkg * nompi_*` for no mpi\n  {% if mpi == 'nompi' %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% else %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% endif %}\n  string: \"{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}\"\n\n  run_exports:\n    # strict runtime dependency on build-time MPI flavor\n    - {{ name }} * {{ mpi_prefix }}_*\n    # https://conda.io/docs/user-guide/tasks/build-packages/variants.html#referencing-subpackages\n    # in 0.X.*, newer minor versions are compatible\n    - {{ pin_subpackage('adios2', min_pin='x.x', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    # TODO: seams incompatible on OSX and too experimental for Windows\n    - {{ compiler('fortran') }}  # [linux]\n    - make          # [unix]\n    - pkg-config    # [unix]\n    - cmake >=3.11\n  host:\n    - {{ mpi }}  # [mpi != 'nompi'] \n    - mpi4py     # [mpi != 'nompi']\n    - python\n    - numpy >=1.15.0\n    - libffi\n    # need to list hdf5 twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - hdf5\n    - hdf5  >=1.8.13 = {{ mpi_prefix }}_*\n    # TODO: Could NOT find ZeroMQ (missing: ZeroMQ_LIBRARY) on Windows\n    - zeromq >=4.1  # [not win]\n    - bzip2\n    - blosc\n    - libpng\n    # TODO: zfp, sz, mgard\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py     # [mpi != 'nompi']\n    - python\n    - numpy >=1.15.0\n\ntest:\n  imports:\n    - adios2\n  commands:\n    # - python -c \"import adios2; print(adios2.__version__);\"\n    - test -f ${PREFIX}/lib/cmake/adios2/adios2-config.cmake                      # [unix]\n    - test -f ${PREFIX}/lib/libadios2.so                                          # [linux]\n    - otool -L ${PREFIX}/lib/libadios2.dylib                                      # [osx]\n    - if exist %LIBRARY_PREFIX%\\bin\\adios2.dll (exit 0) else (exit 1)             # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\adios2\\adios2-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://www.olcf.ornl.gov/center-projects/adios/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Next generation of ADIOS developed in the Exascale Computing Program'\n\n  description: |\n    ADIOS2 is the latest implementation of the ADaptable Input Output System,\n    ADIOS. This brand new architecture was designed to continue supporting the\n    performance legacy of ADIOS, and extend its current capabilities to address\n    current and future input/output (IO) challenges in the scientific data\n    lifecycle through effective research and development (R&D) activities.\n  doc_url: https://adios2.readthedocs.io\n  dev_url: https://github.com/ornladios/ADIOS2\n\nextra:\n  recipe-maintainers:\n    - ax3l\n    - chuckatkins\n    - williamfgc\n",
+ "pinning_version":"2020.06.02.12.20.38",
+ "raw_meta_yaml":"{% set name = \"adios2\" %}\n{% set version = \"2.6.0\" %}\n{% set build = 0 %}\n{% set sha256 = \"45b41889065f8b840725928db092848b8a8b8d1bfae1b92e72f8868d1c76216c\" %}\n\n# ensure mpi is defined (needed for conda-smithy recipe-lint)\n{% set mpi = mpi or 'nompi' %}\n\n# prioritize nompi variant via build number\n{% if mpi == 'nompi' %}\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ornladios/ADIOS2/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  # https://github.com/ornladios/ADIOS2/issues/2068\n  skip: true  # [python_impl == 'pypy']\n\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `pkg * mpi_mpich_*` for mpich\n  # `pkg * mpi_*` for any mpi\n  # `pkg * nompi_*` for no mpi\n  {% if mpi == 'nompi' %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% else %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% endif %}\n  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}\n\n  run_exports:\n    # strict runtime dependency on build-time MPI flavor\n    - {{ name }} * {{ mpi_prefix }}_*\n    # patch-releases are not ABI compatible:\n    #   https://docs.conda.io/projects/conda-build/en/latest/resources/variants.html#referencing-subpackages\n    #   https://abi-laboratory.pro/?view=timeline&l=adios2\n    - {{ pin_subpackage('adios2', min_pin='x.x.x', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    # TODO: seams incompatible on OSX and too experimental for Windows\n    - {{ compiler('fortran') }}  # [linux]\n    - make          # [unix]\n    - pkg-config    # [unix]\n    - cmake >=3.12\n  host:\n    - {{ mpi }}  # [mpi != 'nompi'] \n    - mpi4py     # [mpi != 'nompi']\n    - python\n    - numpy >=1.15.0\n    - libffi\n    # need to list hdf5 twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - hdf5\n    - hdf5  >=1.8.13 = {{ mpi_prefix }}_*\n    # TODO: Could NOT find ZeroMQ (missing: ZeroMQ_LIBRARY) on Windows\n    - zeromq >=4.1  # [not win]\n    - bzip2\n    - blosc\n    - libpng\n    # TODO: zfp, sz, mgard\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py     # [mpi != 'nompi']\n    - python\n    - numpy >=1.15.0\n\ntest:\n  imports:\n    - adios2\n  commands:\n    # - python -c \"import adios2; print(adios2.__version__);\"\n    - test -f ${PREFIX}/lib/cmake/adios2/adios2-config.cmake                      # [unix]\n    - test -f ${PREFIX}/lib/libadios2_cxx11.so                                    # [linux]\n    - otool -L ${PREFIX}/lib/libadios2_cxx11.dylib                                # [osx]\n    - if exist %LIBRARY_PREFIX%\\bin\\adios2_cxx11.dll (exit 0) else (exit 1)       # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\adios2\\adios2-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://www.olcf.ornl.gov/center-projects/adios/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Next generation of ADIOS developed in the Exascale Computing Program\n\n  description: |\n    ADIOS2 is the latest implementation of the ADaptable Input Output System,\n    ADIOS. This brand new architecture was designed to continue supporting the\n    performance legacy of ADIOS, and extend its current capabilities to address\n    current and future input/output (IO) challenges in the scientific data\n    lifecycle through effective research and development (R&D) activities.\n  doc_url: https://adios2.readthedocs.io\n  dev_url: https://github.com/ornladios/ADIOS2\n\nextra:\n  recipe-maintainers:\n    - ax3l\n    - chuckatkins\n    - williamfgc\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -344,7 +358,7 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
-    "cmake >=3.11",
+    "cmake >=3.12",
     "cxx_compiler_stub",
     "fortran_compiler_stub",
     "make",
@@ -382,5 +396,5 @@
   }
  },
  "url":"https://github.com/ornladios/ADIOS2/archive/v2.4.0.tar.gz",
- "version":"2.5.0"
+ "version":"2.6.0"
 }
