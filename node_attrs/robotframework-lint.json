@@ -52,7 +52,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -63,7 +63,7 @@
   },
   "package":{
    "name":"robotframework-lint",
-   "version":"1.0"
+   "version":"1.1"
   },
   "requirements":{
    "build":[
@@ -84,19 +84,27 @@
    ]
   },
   "source":{
-   "sha256":"55c26e76f9b11ed54446252b1df71ed993497b36b971ce9bc52d3b86f6501b4d",
-   "url":"https://pypi.io/packages/source/r/robotframework-lint/robotframework-lint-1.0.tar.gz"
+   "sha256":"2b5ac22ed59acbdf65f340ef3ddf10c7e88c9efd37cb03d7470d7c8e869cc0c1",
+   "url":"https://pypi.io/packages/source/r/robotframework-lint/robotframework-lint-1.1.tar.gz"
   },
   "test":{
    "commands":[
+    "python -m pip check",
     "rflint --help",
+    "python -m pip check",
     "rflint --help",
+    "python -m pip check",
     "rflint --help"
    ],
    "imports":[
     "rflint",
     "rflint",
     "rflint"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -107,7 +115,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set name = \"robotframework-lint\" %}\n{% set version = \"1.0\" %}\n{% set sha256 = \"55c26e76f9b11ed54446252b1df71ed993497b36b971ce9bc52d3b86f6501b4d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - rflint = rflint.__main__:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - robotframework\n\ntest:\n  imports:\n    - rflint\n  commands:\n    - rflint --help\n\nabout:\n  home: https://github.com/boakley/robotframework-lint\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Linter for robot framework plain text files'\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "raw_meta_yaml":"{% set name = \"robotframework-lint\" %}\n{% set version = \"1.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2b5ac22ed59acbdf65f340ef3ddf10c7e88c9efd37cb03d7470d7c8e869cc0c1\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - rflint = rflint.__main__:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - robotframework\n\ntest:\n  requires:\n    - pip\n  imports:\n    - rflint\n  commands:\n    - python -m pip check\n    - rflint --help\n\nabout:\n  home: https://github.com/boakley/robotframework-lint\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Linter for robot framework plain text files\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -137,7 +145,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -163,9 +173,11 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/r/robotframework-lint/robotframework-lint-1.0.tar.gz",
- "version":"1.0"
+ "version":"1.1"
 }
