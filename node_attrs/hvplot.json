@@ -118,7 +118,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -138,7 +138,7 @@
   },
   "package":{
    "name":"hvplot",
-   "version":"0.5.2"
+   "version":"0.6.0"
   },
   "requirements":{
    "host":[
@@ -151,37 +151,47 @@
    ],
    "run":[
     "python",
-    "bokeh >=1.0",
-    "holoviews >=1.11.2",
+    "bokeh >=1.0.0",
+    "colorcet >=2",
+    "holoviews >=1.11.0",
+    "numpy >=1.15",
     "pandas",
-    "colorcet",
     "python",
-    "bokeh >=1.0",
-    "holoviews >=1.11.2",
+    "bokeh >=1.0.0",
+    "colorcet >=2",
+    "holoviews >=1.11.0",
+    "numpy >=1.15",
     "pandas",
-    "colorcet",
     "python",
-    "bokeh >=1.0",
-    "holoviews >=1.11.2",
-    "pandas",
-    "colorcet"
+    "bokeh >=1.0.0",
+    "colorcet >=2",
+    "holoviews >=1.11.0",
+    "numpy >=1.15",
+    "pandas"
    ]
   },
   "source":{
-   "sha256":"408a7756b980df148d1f2fd59cd690ad4870d7e3c3c5e46c6b5c2e71fc6a097c",
-   "url":"https://pypi.io/packages/source/h/hvplot/hvplot-0.5.2.tar.gz"
+   "sha256":"8fcf2f251bd9d4b0390d9c272c992aa75e11174829e416a22de8fba38acc1ce9",
+   "url":"https://pypi.io/packages/source/h/hvplot/hvplot-0.6.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "hvplot",
     "hvplot.pandas",
-    "hvplot.tests",
     "hvplot",
     "hvplot.pandas",
-    "hvplot.tests",
     "hvplot",
-    "hvplot.pandas",
-    "hvplot.tests"
+    "hvplot.pandas"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -192,13 +202,14 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set version = \"0.5.2\" %}\n\npackage:\n  name: hvplot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/hvplot/hvplot-{{ version }}.tar.gz\n  sha256: 408a7756b980df148d1f2fd59cd690ad4870d7e3c3c5e46c6b5c2e71fc6a097c\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - bokeh >=1.0\n    - holoviews >=1.11.2\n    - pandas\n    - colorcet\n\ntest:\n  imports:\n    - hvplot\n    - hvplot.pandas\n    - hvplot.tests\n\nabout:\n  home: https://pyviz.github.io/hvplot\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A high-level plotting API for the PyData ecosystem built on HoloViews\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n    - jbednar\n    - ocefpaf\n    - philippjfr\n",
+ "raw_meta_yaml":"{% set version = \"0.6.0\" %}\n\npackage:\n  name: hvplot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/hvplot/hvplot-{{ version }}.tar.gz\n  sha256: 8fcf2f251bd9d4b0390d9c272c992aa75e11174829e416a22de8fba38acc1ce9\n\nbuild:\n  number: 0\n  noarch: python\n  # ModuleNotFoundError: No module named 'hvplot.__main__'\n  # entry_points:\n  #   - hvplot = hvplot.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - bokeh >=1.0.0\n    - colorcet >=2\n    - holoviews >=1.11.0\n    - numpy >=1.15\n    - pandas\n\ntest:\n  imports:\n    - hvplot\n    - hvplot.pandas\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pyviz.github.io/hvplot\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A high-level plotting API for the PyData ecosystem built on HoloViews\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n    - jbednar\n    - ocefpaf\n    - philippjfr\n",
  "req":{
   "__set__":true,
   "elements":[
    "bokeh",
    "colorcet",
    "holoviews",
+   "numpy",
    "pandas",
    "pip",
    "python"
@@ -222,13 +233,16 @@
     "bokeh",
     "colorcet",
     "holoviews",
+    "numpy",
     "pandas",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -248,18 +262,21 @@
   "run":{
    "__set__":true,
    "elements":[
-    "bokeh >=1.0",
-    "colorcet",
-    "holoviews >=1.11.2",
+    "bokeh >=1.0.0",
+    "colorcet >=2",
+    "holoviews >=1.11.0",
+    "numpy >=1.15",
     "pandas",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/h/hvplot/hvplot-0.4.0.tar.gz",
- "version":"0.5.2"
+ "version":"0.6.0"
 }

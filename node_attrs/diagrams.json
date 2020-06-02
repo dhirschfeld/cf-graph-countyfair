@@ -105,6 +105,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426579815.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.13.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "bad":false,
@@ -206,15 +223,16 @@
   }
  },
  "name":"diagrams",
- "new_version":"0.13.0",
+ "new_version":"0.13.1",
  "new_version_attempts":{
   "0.10.0":1,
   "0.11.0":1,
   "0.12.0":1,
-  "0.13.0":1
+  "0.13.0":1,
+  "0.13.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set name = \"diagrams\" %}\n{% set version = \"0.13.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b565c15b090d0c5a95d46d6798e1eeace2659ae4414a166cb968a3ea89da0552\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - posix  # [win]\n  host:\n    - pip\n    - python\n  run:\n    - python-graphviz >=0.13.2,<0.14.0\n    - jinja2 >=2.10,<3.0\n    - python\n    - contextvars >=2.4,<3.0  # [py36]\n\ntest:\n  imports:\n    - diagrams\n    - diagrams.alibabacloud\n    - diagrams.aws\n    - diagrams.azure\n    - diagrams.base\n    - diagrams.custom\n    - diagrams.gcp\n    - diagrams.k8s\n    - diagrams.oci\n    - diagrams.onprem\n\nabout:\n  home: https://diagrams.mingrammer.com\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Diagram as Code\n  doc_url: https://diagrams.mingrammer.com/\n  dev_url: https://github.com/mingrammer/diagrams\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n    - dhirschfeld\n",
  "req":{
   "__set__":true,
