@@ -1,5 +1,5 @@
 {
- "archived":true,
+ "archived":false,
  "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"distlib",
@@ -69,7 +69,7 @@
   }
  },
  "name":"distlib",
- "new_version":false,
+ "new_version":"0.3.0",
  "raw_meta_yaml":"{% set name = \"distlib\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: 2e166e231a26b36d6dfe35a48c4464346620f8645ed0ace01ee31822b288de21\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - distlib\n    - distlib._backport\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/distlib/\n  summary: Distribution utilities\n  doc_url: https://pythonhosted.org/distlib/\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "req":{
   "__set__":true,

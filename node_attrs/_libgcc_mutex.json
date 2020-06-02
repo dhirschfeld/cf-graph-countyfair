@@ -1,5 +1,24 @@
 {
- "archived":true,
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426759006.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"ArchRebuild",
+    "migrator_version":1,
+    "name":"aarch64 and ppc64le addition"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
+ "archived":false,
  "bad":false,
  "conda-forge.yml":{
   "provider":{
@@ -43,6 +62,7 @@
  },
  "name":"_libgcc_mutex",
  "new_version":false,
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set version = \"0.1\" %}\n\npackage:\n  name: _libgcc_mutex\n  version: {{ version }}\n\nbuild:\n  skip: True  # [not (linux64 or ppc64le)]\n  string: {{ libgcc_mutex_build_string }}\n  number: 0\n  {% if libgcc_mutex_build_string == \"free\" %}\n  track_features:\n    - free_channel_libgcc\n  {% endif %}\n\ntest:\n  commands:\n    - echo \"Hello World!\"\n\nabout:\n  home: https://github.com/AnacondaRecipes/_libgcc_mutex-feedstock\n  license: None\n  summary: 'Mutex for libgcc and libgcc-ng'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - beckermr\n",
  "req":{
   "__set__":true,
@@ -66,6 +86,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
