@@ -42,7 +42,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -59,7 +59,7 @@
   },
   "package":{
    "name":"conda-lock",
-   "version":"0.2.2"
+   "version":"0.3.0"
   },
   "requirements":{
    "host":[
@@ -92,8 +92,8 @@
    ]
   },
   "source":{
-   "sha256":"9466a7defd4559432c78532af21bf120ecbff018d69c34039d335c2695dfb91a",
-   "url":"https://pypi.io/packages/source/c/conda_lock/conda_lock-0.2.2.tar.gz"
+   "sha256":"6225c208f054e7e520a68b46606dfef93a58702198393d7992fdf2a655096faa",
+   "url":"https://pypi.io/packages/source/c/conda_lock/conda_lock-0.3.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -120,7 +120,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.03.13.41.50",
- "raw_meta_yaml":"{% set name = \"conda-lock\" %}\n{% set version = \"0.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name.replace('-', '_') }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 9466a7defd4559432c78532af21bf120ecbff018d69c34039d335c2695dfb91a\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n  entry_points:\n    - conda-lock = conda_lock:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools >=41.2\n    - setuptools_scm\n  run:\n    - python >=3.6\n    - pyyaml\n    - requests\n    - setuptools\n\ntest:\n  imports:\n    - conda_lock\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/mariusvniekerk/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Lightweight lockfile for conda environments\n  description: |\n    Conda lock is a lightweight library that can be used to generate fully\n    reproducible lock files for conda environments.\n    It does this by performing multiple solves for conda targeting a set of\n    platforms you desire lockfiles for.\n    This also has the added benefit of acting as an external presolve for conda\n    as the lockfiles it generates results in the conda solver not being invoked\n    when installing the packages from the generated lockfile.\n  doc_url: https://github.com/mariusvniekerk/conda-lock/blob/master/README.md\n  dev_url: https://github.com/mariusvniekerk/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set name = \"conda-lock\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name.replace('-', '_') }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 6225c208f054e7e520a68b46606dfef93a58702198393d7992fdf2a655096faa\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - conda-lock = conda_lock:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools >=41.2\n    - setuptools_scm\n  run:\n    - python >=3.6\n    - pyyaml\n    - requests\n    - setuptools\n\ntest:\n  imports:\n    - conda_lock\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/mariusvniekerk/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Lightweight lockfile for conda environments\n  description: |\n    Conda lock is a lightweight library that can be used to generate fully\n    reproducible lock files for conda environments.\n    It does this by performing multiple solves for conda targeting a set of\n    platforms you desire lockfiles for.\n    This also has the added benefit of acting as an external presolve for conda\n    as the lockfiles it generates results in the conda solver not being invoked\n    when installing the packages from the generated lockfile.\n  doc_url: https://github.com/mariusvniekerk/conda-lock/blob/master/README.md\n  dev_url: https://github.com/mariusvniekerk/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -195,5 +195,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/conda_lock/conda_lock-0.2.2.tar.gz",
- "version":"0.2.2"
+ "version":"0.3.0"
 }
