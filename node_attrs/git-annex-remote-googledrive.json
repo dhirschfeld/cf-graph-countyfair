@@ -62,12 +62,17 @@
    "dev_url":"https://github.com/Lykos153/git-annex-remote-googledrive",
    "doc_url":"https://github.com/Lykos153/git-annex-remote-googledrive",
    "home":"https://github.com/Lykos153/git-annex-remote-googledrive",
-   "license":"GPL-3.0",
+   "license":"GPL-3.0-only",
    "license_family":"GPL",
    "license_file":"LICENSE",
-   "summary":"git annex special remote for Google Drive"
+   "summary":"git-annex special remote for Google Drive"
   },
   "build":{
+   "entry_points":[
+    "git-annex-remote-googledrive=git_annex_remote_googledrive.run:main",
+    "git-annex-remote-googledrive=git_annex_remote_googledrive.run:main",
+    "git-annex-remote-googledrive=git_annex_remote_googledrive.run:main"
+   ],
    "noarch":"python",
    "number":"0",
    "script":" -m pip install . --no-deps --ignore-installed -vv "
@@ -81,7 +86,7 @@
   },
   "package":{
    "name":"git-annex-remote-googledrive",
-   "version":"0.11.1"
+   "version":"1.1"
   },
   "requirements":{
    "host":[
@@ -94,28 +99,50 @@
    ],
    "run":[
     "annexremote",
-    "pydrive",
+    "drivelib ==0.1.4",
+    "gitpython",
+    "git",
+    "humanfriendly",
     "python >=3",
     "tenacity",
     "annexremote",
-    "pydrive",
+    "drivelib ==0.1.4",
+    "gitpython",
+    "git",
+    "humanfriendly",
     "python >=3",
     "tenacity",
     "annexremote",
-    "pydrive",
+    "drivelib ==0.1.4",
+    "gitpython",
+    "git",
+    "humanfriendly",
     "python >=3",
     "tenacity"
    ]
   },
   "source":{
-   "sha256":"8d3edcd9cbcf7c7f5617eaacd14f275ed6b5cbafd3e66f4f3a0f75d86b675eed",
-   "url":"https://pypi.io/packages/source/g/git-annex-remote-googledrive/git-annex-remote-googledrive-0.11.1.tar.gz"
+   "sha256":"db7d01be1701407e3d3e079e87a266e9e091510538e691f02fc4ab2c50f15fac",
+   "url":"https://pypi.io/packages/source/g/git-annex-remote-googledrive/git-annex-remote-googledrive-1.1.tar.gz"
   },
   "test":{
    "commands":[
-    "git-annex-remote-googledrive version",
-    "git-annex-remote-googledrive version",
-    "git-annex-remote-googledrive version"
+    "pip check",
+    "git-annex-remote-googledrive < /dev/null | grep 'VERSION 1'",
+    "pip check",
+    "git-annex-remote-googledrive < /dev/null | grep 'VERSION 1'",
+    "pip check",
+    "git-annex-remote-googledrive < /dev/null | grep 'VERSION 1'"
+   ],
+   "imports":[
+    "git_annex_remote_googledrive",
+    "git_annex_remote_googledrive",
+    "git_annex_remote_googledrive"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -130,13 +157,16 @@
   "1.0.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.0.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.05.31.21.10.28",
- "raw_meta_yaml":"{% set name = \"git-annex-remote-googledrive\" %}\n{% set version = \"0.11.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"8d3edcd9cbcf7c7f5617eaacd14f275ed6b5cbafd3e66f4f3a0f75d86b675eed\"\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n  run:\n    - annexremote\n    - pydrive\n    - python >=3\n    - tenacity\n\ntest:\n  commands:\n    - git-annex-remote-googledrive version\n\nabout:\n  home: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n  license: \"GPL-3.0\"\n  license_family: \"GPL\"\n  license_file: LICENSE\n  summary: \"git annex special remote for Google Drive\"\n  doc_url: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n  dev_url: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n\nextra:\n  recipe-maintainers:\n    - notestaff\n",
+ "raw_meta_yaml":"{% set name = \"git-annex-remote-googledrive\" %}\n{% set version = \"1.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"db7d01be1701407e3d3e079e87a266e9e091510538e691f02fc4ab2c50f15fac\"\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n  noarch: python\n  entry_points:\n    - git-annex-remote-googledrive=git_annex_remote_googledrive.run:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n  run:\n    - annexremote\n    - drivelib ==0.1.4\n    - gitpython\n    - git\n    - humanfriendly\n    - python >=3\n    - tenacity\n\ntest:\n  imports:\n    - git_annex_remote_googledrive\n  commands:\n    - pip check\n    - git-annex-remote-googledrive < /dev/null | grep 'VERSION 1'\n  requires:\n    - pip\n\nabout:\n  home: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n  license: \"GPL-3.0-only\"\n  license_family: \"GPL\"\n  license_file: LICENSE\n  summary: \"git-annex special remote for Google Drive\"\n  doc_url: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n  dev_url: \"https://github.com/Lykos153/git-annex-remote-googledrive\"\n\nextra:\n  recipe-maintainers:\n    - notestaff\n",
  "req":{
   "__set__":true,
   "elements":[
    "annexremote",
+   "drivelib",
+   "git",
+   "gitpython",
+   "humanfriendly",
    "pip",
-   "pydrive",
    "python",
    "tenacity"
   ]
@@ -157,14 +187,19 @@
    "__set__":true,
    "elements":[
     "annexremote",
-    "pydrive",
+    "drivelib",
+    "git",
+    "gitpython",
+    "humanfriendly",
     "python",
     "tenacity"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -185,16 +220,21 @@
    "__set__":true,
    "elements":[
     "annexremote",
-    "pydrive",
+    "drivelib ==0.1.4",
+    "git",
+    "gitpython",
+    "humanfriendly",
     "python >=3",
     "tenacity"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/g/git-annex-remote-googledrive/git-annex-remote-googledrive-0.11.1.tar.gz",
- "version":"0.11.1"
+ "version":"1.1"
 }
