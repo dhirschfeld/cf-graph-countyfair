@@ -72,7 +72,7 @@
    "summary":"PyTorch Extension Library of Optimized Graph Cluster Algorithms"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -122,15 +122,15 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
-      "scipy",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4",
+      "scipy"
      ],
      "run_constrained":[
       "pytorch_cluster_proc * cpu"
@@ -180,15 +180,15 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
-      "scipy",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4",
+      "scipy"
      ],
      "run_constrained":[
       "pytorch_cluster_proc * cpu"
@@ -239,15 +239,15 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
-      "scipy",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4",
+      "scipy"
      ],
      "run_constrained":[
       "pytorch_cluster_proc * cpu"
@@ -281,7 +281,7 @@
   "pytorch_cluster_proc"
  ],
  "pinning_version":"2020.05.31.21.10.28",
- "raw_meta_yaml":"{% set name = \"torch_cluster\" %}\n{% set version = \"1.5.4\" %}\n\n{% set pytorch_cluster_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_cluster_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_cluster build.\n  - name: pytorch_cluster_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: \"{{ pytorch_cluster_proc_type }}\"\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_cluster\n    version: {{ version }}\n    build:\n      number: 1\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch\n        - setuptools\n        - scipy\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch\n      run_constrained:\n        - pytorch_cluster_proc * {{ pytorch_cluster_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_cluster\n    about:\n      home: https://github.com/rusty1s/pytorch_cluster\n      summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/pytorch_cluster\n\nabout:\n  home: https://github.com/rusty1s/pytorch_cluster\n  summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/pytorch_cluster\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
+ "raw_meta_yaml":"{% set name = \"torch_cluster\" %}\n{% set version = \"1.5.4\" %}\n\n{% set pytorch_cluster_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_cluster_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c\n\nbuild:\n  number: 1\n  skip: true  # [win or py37]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_cluster build.\n  - name: pytorch_cluster_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: \"{{ pytorch_cluster_proc_type }}\"\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_cluster\n    version: {{ version }}\n    build:\n      number: 1\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch >=1.4\n        - setuptools\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch >=1.4\n        - scipy\n      run_constrained:\n        - pytorch_cluster_proc * {{ pytorch_cluster_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_cluster\n    about:\n      home: https://github.com/rusty1s/pytorch_cluster\n      summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/pytorch_cluster\n\nabout:\n  home: https://github.com/rusty1s/pytorch_cluster\n  summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/pytorch_cluster\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -312,7 +312,6 @@
     "pytest-runner",
     "python",
     "pytorch",
-    "scipy",
     "setuptools"
    ]
   },
@@ -320,7 +319,8 @@
    "__set__":true,
    "elements":[
     "python",
-    "pytorch"
+    "pytorch",
+    "scipy"
    ]
   },
   "test":{
@@ -348,8 +348,7 @@
     "pip",
     "pytest-runner",
     "python",
-    "pytorch",
-    "scipy",
+    "pytorch >=1.4",
     "setuptools"
    ]
   },
@@ -357,7 +356,8 @@
    "__set__":true,
    "elements":[
     "python",
-    "pytorch"
+    "pytorch >=1.4",
+    "scipy"
    ]
   },
   "test":{
