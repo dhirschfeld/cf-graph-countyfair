@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426926372.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -249,15 +266,16 @@
   }
  },
  "name":"napari",
- "new_version":"0.3.3",
+ "new_version":"0.3.4",
  "new_version_attempts":{
   "0.3.0":1,
   "0.3.1":1,
   "0.3.2":1,
-  "0.3.3":1
+  "0.3.3":1,
+  "0.3.4":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set name = \"napari\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e57b65d77f0f2e91c15054f58e1e1d90a81c70d21647b2a38eaa507bbaf7280a\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - napari = napari.__main__:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy\n    - scipy\n    - scikit-image\n    - vispy\n    - dask\n    - cachey\n    - zarr\n    - fsspec\n    - imageio\n    - ipykernel\n    - jupyter_client\n    - qtpy\n    - qtconsole\n    - IPython\n    - backcall\n    - pluggy\n    - PyOpenGl\n    - PySide2\n    - wrapt\n    - numpydoc\n    - napari-plugin-engine\n    - napari-svg\n    - tifffile\n\ntest:\n  requires:\n    - pytest\n    - pytest-faulthandler\n    - pytest-qt\n    - xarray\n    - pandas\n    - pytest-ordering\n    - pytest-timeout\n    - zarr\n  imports:\n    - napari\n  commands:\n    - setx QT_API \"pyside2\"  # [win]\n    - export QT_API=pyside2  # [unix]\n    - which napari\n    #- DISPLAY=localhost:1.0 xvfb-run -a bash -c 'napari --info'\n    #- pytest --pyargs napari\n\nabout:\n  home: http://napari.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: a fast n-dimensional image viewer in Python\n\n  description: |\n    a fast n-dimensional image viewer in Python\n  doc_url: http://napari.org\n  dev_url: https://github.com/napari/napari\n\nextra:\n  recipe-maintainers:\n    - jni\n    - sofroniewn\n    - kne42\n    - royerloic\n    - AhmetCanSolak\n",
  "req":{
   "__set__":true,
