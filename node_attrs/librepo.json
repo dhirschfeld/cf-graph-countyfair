@@ -246,7 +246,7 @@
   ],
   "package":{
    "name":"librepo",
-   "version":"1.11.3"
+   "version":"1.12.0"
   },
   "requirements":{
    "build":[
@@ -297,8 +297,8 @@
    ]
   },
   "source":{
-   "sha256":"ca30d38ac22a811a27bc86bd28fd2ebc21d3729baa0d7ca15ace248d11507e9b",
-   "url":"https://github.com/rpm-software-management/librepo/archive/1.11.3.tar.gz"
+   "sha256":"e26e142582ae32b2f6ee8f1f384f7d502ca9ea416b9db77a76b12f9cf339c133",
+   "url":"https://github.com/rpm-software-management/librepo/archive/1.12.0.tar.gz"
   }
  },
  "name":"librepo",
@@ -312,7 +312,7 @@
   "py-librepo"
  ],
  "pinning_version":"2020.06.01.18.18.56",
- "raw_meta_yaml":"{% set name = \"librepo\" %}\n{% set version = \"1.11.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rpm-software-management/librepo/archive/{{ version }}.tar.gz\n  sha256: ca30d38ac22a811a27bc86bd28fd2ebc21d3729baa0d7ca15ace248d11507e9b\n\nbuild:\n  number: 0\n  skip: true  # [win or osx]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x' ) }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [unix]\n    - pkg-config\n  host:\n    - libcurl\n    - gpgme\n    - attr\n    - openssl\n    - expat\n    - glib\n    - check\n    - zchunk  # [linux]\n    - libxml2\n    - zstd\n    - python\n\noutputs:\n  - name: librepo\n    files:\n      - lib/librepo*\n      - lib/pkgconfig/librepo*\n      - include/librepo/*\n    test:\n      commands:\n        - test -d ${PREFIX}/include/librepo  # [unix]\n        - test -f ${PREFIX}/include/librepo/librepo.h  # [unix]\n        - test -f ${PREFIX}/include/librepo/checksum.h  # [unix]\n        - test -f ${PREFIX}/lib/librepo${SHLIB_EXT}  # [unix]\n        - test -f ${PREFIX}/lib/pkgconfig/librepo.pc  # [unix]\n\n  - name: py-librepo\n    files:\n      - lib/python*/site-packages/librepo/**\n    requirements:\n      build:\n        - cmake\n        - {{ compiler('cxx') }}\n      host:\n        - {{ pin_subpackage('librepo', exact=True) }}\n        - libcurl\n        - gpgme\n        - attr\n        - openssl\n        - expat\n        - glib\n        - check\n        - zchunk\n        - libxml2\n        - zstd\n        - python\n      run:\n        - {{ pin_subpackage('librepo', exact=True) }}\n        - python\n    test:\n      imports:\n        - librepo\n\nabout:\n  home: https://github.com/rpm-software-management/librepo\n  license: LGPL-2.1\n  license_family: GPL\n  license_file: COPYING\n  summary: 'A library providing C and Python (libcURL like) API for downloading repository metadata and packages'\n  doc_url: https://rpm-software-management.github.io/librepo\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - JohanMabille\n    - SylvainCorlay\n",
+ "raw_meta_yaml":"{% set name = \"librepo\" %}\n{% set version = \"1.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rpm-software-management/librepo/archive/{{ version }}.tar.gz\n  sha256: e26e142582ae32b2f6ee8f1f384f7d502ca9ea416b9db77a76b12f9cf339c133\n\nbuild:\n  number: 0\n  skip: true  # [win or osx]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x' ) }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [unix]\n    - pkg-config\n  host:\n    - libcurl\n    - gpgme\n    - attr\n    - openssl\n    - expat\n    - glib\n    - check\n    - zchunk  # [linux]\n    - libxml2\n    - zstd\n    - python\n\noutputs:\n  - name: librepo\n    files:\n      - lib/librepo*\n      - lib/pkgconfig/librepo*\n      - include/librepo/*\n    test:\n      commands:\n        - test -d ${PREFIX}/include/librepo  # [unix]\n        - test -f ${PREFIX}/include/librepo/librepo.h  # [unix]\n        - test -f ${PREFIX}/include/librepo/checksum.h  # [unix]\n        - test -f ${PREFIX}/lib/librepo${SHLIB_EXT}  # [unix]\n        - test -f ${PREFIX}/lib/pkgconfig/librepo.pc  # [unix]\n\n  - name: py-librepo\n    files:\n      - lib/python*/site-packages/librepo/**\n    requirements:\n      build:\n        - cmake\n        - {{ compiler('cxx') }}\n      host:\n        - {{ pin_subpackage('librepo', exact=True) }}\n        - libcurl\n        - gpgme\n        - attr\n        - openssl\n        - expat\n        - glib\n        - check\n        - zchunk\n        - libxml2\n        - zstd\n        - python\n      run:\n        - {{ pin_subpackage('librepo', exact=True) }}\n        - python\n    test:\n      imports:\n        - librepo\n\nabout:\n  home: https://github.com/rpm-software-management/librepo\n  license: LGPL-2.1\n  license_family: GPL\n  license_file: COPYING\n  summary: A library providing C and Python (libcURL like) API for downloading repository metadata and packages\n  doc_url: https://rpm-software-management.github.io/librepo\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - JohanMabille\n    - SylvainCorlay\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -418,5 +418,5 @@
   }
  },
  "url":"https://github.com/rpm-software-management/librepo/archive/1.11.3.tar.gz",
- "version":"1.11.3"
+ "version":"1.12.0"
 }
