@@ -120,7 +120,7 @@
    "summary":"general purpose malloc(3) implementation"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "jemalloc",
     "jemalloc",
@@ -158,6 +158,11 @@
   },
   "source":{
    "fn":"5.2.1.tar.bz2",
+   "patches":[
+    "export-mangled-syms.patch",
+    "export-mangled-syms.patch",
+    "export-mangled-syms.patch"
+   ],
    "sha256":"34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6",
    "url":"https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2"
   },
@@ -166,21 +171,34 @@
     "test -f $PREFIX/lib/libjemalloc.a",
     "test -f $PREFIX/lib/libjemalloc_pic.a",
     "test -f $PREFIX/include/jemalloc/jemalloc.h",
+    "$CC -I$PREFIX/include -L$PREFIX/lib -ljemalloc test.c",
     "test -f $PREFIX/lib/libjemalloc.a",
     "test -f $PREFIX/lib/libjemalloc_pic.a",
     "test -f $PREFIX/lib/libjemalloc.2.dylib",
     "test -f $PREFIX/include/jemalloc/jemalloc.h",
+    "$CC -I$PREFIX/include -L$PREFIX/lib -ljemalloc test.c",
     "test -f $PREFIX/lib/libjemalloc.so.2",
     "test -f $PREFIX/lib/libjemalloc.a",
     "test -f $PREFIX/lib/libjemalloc_pic.a",
-    "test -f $PREFIX/include/jemalloc/jemalloc.h"
+    "test -f $PREFIX/include/jemalloc/jemalloc.h",
+    "$CC -I$PREFIX/include -L$PREFIX/lib -ljemalloc test.c"
+   ],
+   "files":[
+    "test.c",
+    "test.c",
+    "test.c"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "c_compiler_stub",
+    "c_compiler_stub"
    ]
   }
  },
  "name":"jemalloc",
  "new_version":"5.2.1",
  "pinning_version":"2019.07.26",
- "raw_meta_yaml":"{% set name = \"jemalloc\" %}\n{% set version = \"5.2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.bz2\n  url: https://github.com/jemalloc/jemalloc/releases/download/{{ version }}/jemalloc-{{ version }}.tar.bz2\n  sha256: 34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6\n\nbuild:\n  number: 1\n  run_exports:\n    # Symbols were only removed in update from 3 to 4\n    # https://abi-laboratory.pro/index.php?view=timeline&l=jemalloc\n    - {{ pin_subpackage(name, max_pin=None) }}\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libjemalloc.so.2  # [linux]\n    - test -f $PREFIX/lib/libjemalloc.a\n    - test -f $PREFIX/lib/libjemalloc_pic.a\n    - test -f $PREFIX/lib/libjemalloc.2.dylib  # [osx]\n    - test -f $PREFIX/include/jemalloc/jemalloc.h\n\nabout:\n  home: http://jemalloc.net\n  dev_url: https://github.com/jemalloc/jemalloc\n  license: BSD-2-Clause\n  license_file: COPYING\n  summary: 'general purpose malloc(3) implementation'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"jemalloc\" %}\n{% set version = \"5.2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.bz2\n  url: https://github.com/jemalloc/jemalloc/releases/download/{{ version }}/jemalloc-{{ version }}.tar.bz2\n  sha256: 34330e5ce276099e2e8950d9335db5a875689a4c6a56751ef3b1d8c537f887f6\n  patches:\n    - export-mangled-syms.patch\n\nbuild:\n  number: 2\n  run_exports:\n    # Symbols were only removed in update from 3 to 4\n    # https://abi-laboratory.pro/index.php?view=timeline&l=jemalloc\n    - {{ pin_subpackage(name, max_pin=None) }}\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n\ntest:\n  requires:\n    - {{ compiler('c') }}\n  files:\n    - test.c\n  commands:\n    - test -f $PREFIX/lib/libjemalloc.so.2  # [linux]\n    - test -f $PREFIX/lib/libjemalloc.a\n    - test -f $PREFIX/lib/libjemalloc_pic.a\n    - test -f $PREFIX/lib/libjemalloc.2.dylib  # [osx]\n    - test -f $PREFIX/include/jemalloc/jemalloc.h\n    - $CC -I$PREFIX/include -L$PREFIX/lib -ljemalloc test.c\n\nabout:\n  home: http://jemalloc.net\n  dev_url: https://github.com/jemalloc/jemalloc\n  license: BSD-2-Clause\n  license_file: COPYING\n  summary: 'general purpose malloc(3) implementation'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -208,7 +226,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "smithy_version":"3.4.1",
@@ -232,7 +252,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "url":"https://github.com/jemalloc/jemalloc/releases/download/5.2.1/jemalloc-5.2.1.tar.bz2",

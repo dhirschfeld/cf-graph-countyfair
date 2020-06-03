@@ -375,7 +375,7 @@
   },
   "package":{
    "name":"smt",
-   "version":"0.3.4"
+   "version":"0.5.2"
   },
   "requirements":{
    "build":[
@@ -405,18 +405,21 @@
    ],
    "run":[
     "python",
+    "packaging",
     "pydoe2",
     "scikit-learn",
     "numpy",
     "six",
     "matplotlib-base",
     "python",
+    "packaging",
     "pydoe2",
     "scikit-learn",
     "numpy",
     "six",
     "matplotlib-base",
     "python",
+    "packaging",
     "pydoe2",
     "scikit-learn",
     "numpy",
@@ -425,9 +428,9 @@
    ]
   },
   "source":{
-   "fn":"smt-0.3.4.tar.gz",
+   "fn":"smt-0.5.2.tar.gz",
    "sha256":"900d77f04c34a29959b18ec486cd5b5c7b25ea1a626215726c5110bea68e3fa9",
-   "url":"https://github.com/SMTorg/smt/archive/v0.3.4.tar.gz"
+   "url":"https://github.com/SMTorg/smt/archive/v0.5.2.tar.gz"
   },
   "test":{
    "imports":[
@@ -458,7 +461,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.03.13.41.50",
- "raw_meta_yaml":"{% set version = \"0.3.4\" %}\n\npackage:\n  name: smt\n  version: {{ version }}\n\nsource:\n  fn: smt-{{ version }}.tar.gz\n  url: https://github.com/SMTorg/smt/archive/v{{ version }}.tar.gz\n  sha256: 900d77f04c34a29959b18ec486cd5b5c7b25ea1a626215726c5110bea68e3fa9\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: true  # [py35]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - setuptools\n    - cython\n    - python\n    - numpy\n\n\n  run:\n    - python\n    - pydoe2\n    - scikit-learn\n    - {{ pin_compatible('numpy') }}\n    - six\n    - matplotlib-base\n\ntest:\n  imports:\n    - smt\n    - smt.surrogate_models\n    - smt.problems\n    - smt.sampling_methods\n    - smt.utils\n\nabout:\n  home: https://github.com/SMTorg/smt\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: surrogate model toolbox\n\nextra:\n  recipe-maintainers:\n    - relf\n",
+ "raw_meta_yaml":"{% set version = \"0.5.2\" %}\n\npackage:\n  name: smt\n  version: {{ version }}\n\nsource:\n  fn: smt-{{ version }}.tar.gz\n  url: https://github.com/SMTorg/smt/archive/v{{ version }}.tar.gz\n  sha256: 900d77f04c34a29959b18ec486cd5b5c7b25ea1a626215726c5110bea68e3fa9\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: true  # [py35]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - setuptools\n    - cython\n    - python\n    - numpy\n\n\n  run:\n    - python\n    - packaging\n    - pydoe2\n    - scikit-learn\n    - {{ pin_compatible('numpy') }}\n    - six\n    - matplotlib-base\n\ntest:\n  imports:\n    - smt\n    - smt.surrogate_models\n    - smt.problems\n    - smt.sampling_methods\n    - smt.utils\n\nabout:\n  home: https://github.com/SMTorg/smt\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: surrogate model toolbox\n\nextra:\n  recipe-maintainers:\n    - relf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -467,6 +470,7 @@
    "cython",
    "matplotlib-base",
    "numpy",
+   "packaging",
    "pip",
    "pydoe2",
    "python",
@@ -498,6 +502,7 @@
    "elements":[
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pydoe2",
     "python",
     "scikit-learn",
@@ -534,6 +539,7 @@
    "elements":[
     "matplotlib-base",
     "numpy",
+    "packaging",
     "pydoe2",
     "python",
     "scikit-learn",
@@ -546,5 +552,5 @@
   }
  },
  "url":"https://github.com/SMTorg/smt/archive/v0.3.4.tar.gz",
- "version":"0.3.4"
+ "version":"0.5.2"
 }
