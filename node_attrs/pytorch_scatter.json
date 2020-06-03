@@ -53,7 +53,7 @@
    "summary":"PyTorch Extension Library of Optimized Scatter Operations"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -92,7 +92,7 @@
      "summary":"PyTorch Extension Library of Optimized Scatter Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_scatter",
@@ -103,14 +103,14 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4"
      ],
      "run_constrained":[
       "pytorch_scatter_proc * cpu"
@@ -149,7 +149,7 @@
      "summary":"PyTorch Extension Library of Optimized Scatter Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_scatter",
@@ -160,14 +160,14 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4"
      ],
      "run_constrained":[
       "pytorch_scatter_proc * cpu"
@@ -206,7 +206,7 @@
      "summary":"PyTorch Extension Library of Optimized Scatter Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_scatter",
@@ -218,14 +218,14 @@
      ],
      "host":[
       "python",
-      "pytorch",
+      "pytorch >=1.4",
       "setuptools",
       "pytest-runner",
       "pip"
      ],
      "run":[
       "python",
-      "pytorch"
+      "pytorch >=1.4"
      ],
      "run_constrained":[
       "pytorch_scatter_proc * cpu"
@@ -259,7 +259,7 @@
   "pytorch_scatter_proc"
  ],
  "pinning_version":"2020.06.01.14.18.30",
- "raw_meta_yaml":"{% set name = \"torch_scatter\" %}\n{% set version = \"2.0.4\" %}\n\n{% set pytorch_scatter_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_scatter_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: db6c9eca919b86f3eb6102dd0e1215af72e39ed3a4e8d142e6a21d3f20d5c244\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_scatter build.\n  - name: pytorch_scatter_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: \"{{ pytorch_scatter_proc_type }}\"\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_scatter\n    version: {{ version }}\n    build:\n      number: 0\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch\n        - setuptools\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch\n      run_constrained:\n        - pytorch_scatter_proc * {{ pytorch_scatter_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_scatter\n    about:\n      home: https://github.com/rusty1s/torch-scatter\n      summary: PyTorch Extension Library of Optimized Scatter Operations\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/torch-scatter\n\nabout:\n  home: https://github.com/rusty1s/torch-scatter\n  summary: PyTorch Extension Library of Optimized Scatter Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/torch-scatter\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
+ "raw_meta_yaml":"{% set name = \"torch_scatter\" %}\n{% set version = \"2.0.4\" %}\n\n{% set pytorch_scatter_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_scatter_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: db6c9eca919b86f3eb6102dd0e1215af72e39ed3a4e8d142e6a21d3f20d5c244\n\nbuild:\n  number: 1\n  skip: True  # [win or py37]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_scatter build.\n  - name: pytorch_scatter_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: \"{{ pytorch_scatter_proc_type }}\"\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_scatter\n    version: {{ version }}\n    build:\n      number: 1\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch >=1.4\n        - setuptools\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch >=1.4\n      run_constrained:\n        - pytorch_scatter_proc * {{ pytorch_scatter_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_scatter\n    about:\n      home: https://github.com/rusty1s/torch-scatter\n      summary: PyTorch Extension Library of Optimized Scatter Operations\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/torch-scatter\n\nabout:\n  home: https://github.com/rusty1s/torch-scatter\n  summary: PyTorch Extension Library of Optimized Scatter Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/torch-scatter\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -324,7 +324,7 @@
     "pip",
     "pytest-runner",
     "python",
-    "pytorch",
+    "pytorch >=1.4",
     "setuptools"
    ]
   },
@@ -332,7 +332,7 @@
    "__set__":true,
    "elements":[
     "python",
-    "pytorch"
+    "pytorch >=1.4"
    ]
   },
   "test":{
