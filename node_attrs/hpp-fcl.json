@@ -173,6 +173,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/427179235.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -293,13 +310,14 @@
   }
  },
  "name":"hpp-fcl",
- "new_version":"1.4.4",
+ "new_version":"1.4.5",
  "new_version_attempts":{
   "1.4.3":1,
-  "1.4.4":1
+  "1.4.4":1,
+  "1.4.5":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.28.13.02.26",
+ "pinning_version":"2020.06.03.11.59.27",
  "raw_meta_yaml":"{% set name = \"hpp-fcl\" %}\n{% set version = \"1.4.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/hpp-fcl-{{ version }}.tar.gz\n  sha256: d09086f148a149745794334384efa4f7f43fda29fe64697869e06b89e6d111ef\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - pkg-config\n  host:\n    - eigen\n    - boost\n    - python\n    - eigenpy\n    - assimp\n    - octomap\n  run:\n    - assimp\n    - octomap\n    - boost\n    - python\n    - eigenpy\n\ntest:\n  requires:\n    - pkg-config\n  imports:\n    - hppfcl\n  commands:\n    - pkg-config --modversion {{ name }}\n    - test -f $PREFIX/lib/lib{{ name }}${SHLIB_EXT}  # [unix]\n\nabout:\n  home: https://github.com/humanoid-path-planner/hpp-fcl\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: An extension of the Flexible Collision Library\n  dev_url: https://github.com/humanoid-path-planner/hpp-fcl\n\nextra:\n  recipe-maintainers:\n    - jcarpent\n    - wolfv\n    - lesteve\n",
  "req":{
   "__set__":true,
@@ -354,7 +372,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
