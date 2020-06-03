@@ -171,6 +171,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/426991195.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -273,8 +290,12 @@
   }
  },
  "name":"mnelab",
- "new_version":"0.5.3",
- "pinning_version":"2020.02.12",
+ "new_version":"0.5.5",
+ "new_version_attempts":{
+  "0.5.5":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set name = \"mnelab\" %}\n{% set version = \"0.5.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 39bc8a38f7a71fa70661ba19c61774fff3bf0d2bc5d74349c1b711f4531fbdfa\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - mnelab = mnelab.__main__:main\n  osx_is_app: True\n  skip: True  # [py<36]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python.app                      # [osx]\n    - pyobjc-framework-cocoa >=5.2.0  # [osx]\n    - matplotlib >=2.0.0\n    - mne >=0.19.0\n    - numpy >=1.14.0\n    - pebble >=4.5.0\n    - pybv\n    - pyedflib\n    - pyqt >=5.10.0\n    - python-picard\n    - pyxdf\n    - scikit-learn\n    - scipy >=1.0.0\n\ntest:\n  imports:\n    - mnelab\n    - mnelab.utils\n\nabout:\n  home: https://github.com/cbrnr/mnelab\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis.'\n\nextra:\n  recipe-maintainers:\n    - hoechenberger\n",
  "req":{
   "__set__":true,
@@ -332,7 +353,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
