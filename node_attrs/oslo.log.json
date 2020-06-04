@@ -35,6 +35,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/427755445.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.2.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -132,12 +149,13 @@
   }
  },
  "name":"oslo.log",
- "new_version":"4.2.0",
+ "new_version":"4.2.1",
  "new_version_attempts":{
-  "4.2.0":1
+  "4.2.0":1,
+  "4.2.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.31.21.10.28",
+ "pinning_version":"2020.06.04.02.43.14",
  "raw_meta_yaml":"{% set name = \"oslo.log\" %}\n{% set version = \"4.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 309a856284a6b66d47f46d41ac42f8c422f09b9b0735da02749aab9f4dad39ee\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - convert-json = oslo_log.cmds.convert_json:main\n\nrequirements:\n  host:\n    - pbr >=3.1.1\n    - pip\n    - python\n  run:\n    - python\n    - pbr >=3.1.1\n    - oslo.config >=5.2.0\n    - oslo.context >=2.20.0\n    - oslo.i18n >=3.20.0\n    - oslo.utils >=3.36.0\n    - oslo.serialization >=2.25.0\n    - debtcollector >=1.19.0\n    - pyinotify >=0.9.6  # [linux]\n    - python-dateutil >=2.7.0\n\ntest:\n  imports:\n    - oslo_log\n  commands:\n    - convert-json -h\n\nabout:\n  home: https://docs.openstack.org/oslo.log/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: A library provides standardized configuration for all openstack projects\n  dev_url: https://bugs.launchpad.net/oslo.log\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
