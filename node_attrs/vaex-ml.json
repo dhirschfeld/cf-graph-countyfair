@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428048806.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -141,10 +158,11 @@
  "name":"vaex-ml",
  "new_version":"0.10.0",
  "new_version_attempts":{
+  "0.10.0":1,
   "0.9.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"vaex-ml\" %}\n{% set version = \"0.9.0\" %}\n{% set sha256 = \"dc576841e9f0ec41fca1c8e66f981f43ee2194497d31d12456ea45d581752015\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - vaex-core >=2.0.0,<3\n    - numba\n    - traitlets\n    - jinja2\n\ntest:\n  imports:\n    - vaex.ml\n\nabout:\n  home: https://www.github.com/vaexio/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Machine learning support for vaex\n  description: |\n    Wrappers for various machine learning libraries to make them integrate into\n    vaex.\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
   "__set__":true,
