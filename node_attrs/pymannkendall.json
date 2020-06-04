@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/427674760.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -87,12 +104,13 @@
   }
  },
  "name":"pymannkendall",
- "new_version":"1.4",
+ "new_version":"1.4.1",
  "new_version_attempts":{
-  "1.4":1
+  "1.4":1,
+  "1.4.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.04.02.43.14",
  "raw_meta_yaml":"{% set name = \"pymannkendall\" %}\n{% set version = \"1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 72b7a033e7311380a4d36858c08ba2fdb9445ee3a3efb1aadde30dedc8a5106c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - numpy\n    - pip\n    - python\n    - scipy\n  run:\n    - numpy\n    - python\n    - scipy\n\ntest:\n  imports:\n    - pymannkendall\n\nabout:\n  home: https://github.com/mmhs013/pymannkendall\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A python package for non-parametric Mann-Kendall family of trend tests.\n\nextra:\n  recipe-maintainers:\n    - dpryan79\n",
  "req":{
   "__set__":true,
