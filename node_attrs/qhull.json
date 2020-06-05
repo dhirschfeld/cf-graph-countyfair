@@ -19,7 +19,7 @@
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -32,13 +32,12 @@
    "dev_url":"https://github.com/qhull/qhull",
    "doc_url":"http://www.qhull.org/html",
    "home":"http://www.qhull.org/",
-   "license":"Qhull(BSD-like) For details, see COPYING.txt",
-   "license_family":"BSD",
+   "license":"Qhull",
    "license_file":"COPYING.txt",
    "summary":"Qhull computes the convex hull"
   },
   "build":{
-   "number":"1000"
+   "number":"1001"
   },
   "extra":{
    "recipe-maintainers":[
@@ -67,8 +66,9 @@
    "run":null
   },
   "source":{
-   "sha256":"78b010925c3b577adc3d58278787d7df08f7c8fb02c3490e375eab91bb58a436",
-   "url":"http://www.qhull.org/download/qhull-2015-src-7.2.0.tgz"
+   "fn":"2015.2.tar.gz",
+   "sha256":"8b6dd67ff77ce1ee814da84f4134ef4bdce1f1031e570b8d83019ccef58b1c00",
+   "url":"https://github.com/qhull/qhull/archive/2015.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -108,7 +108,7 @@
  "name":"qhull",
  "new_version":false,
  "pinning_version":"2018.09.11",
- "raw_meta_yaml":"{% set name = \"qhull\" %}\n{% set version = \"2015.2\" %}\n{% set year = version.split(\".\")[0] %}\n{% set minor = version.split(\".\")[1] %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.qhull.org/download/qhull-{{ year }}-src-7.{{ minor }}.0.tgz\n  sha256: 78b010925c3b577adc3d58278787d7df08f7c8fb02c3490e375eab91bb58a436\n\nbuild:\n  number: 1000\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n  run:\n\ntest:\n  commands:\n    # Verify libraries.\n    {% set qhull_libs = [\"qhullcpp\", \"qhullstatic\", \"qhullstatic_r\"] %}\n    {% for each_qhull_lib in qhull_libs %}\n    - test -f $PREFIX/lib/lib{{ each_qhull_lib }}.a                           # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ each_qhull_lib }}.lib exit 1    # [win]\n    {% endfor %}\n    {% set qhull_dynlibs = [\"qhull\", \"qhull_r\", \"qhull_p\"] %}\n    {% for each_qhull_lib in qhull_dynlibs %}\n    - test -f $PREFIX/lib/lib{{ each_qhull_lib }}${SHLIB_EXT}                 # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ each_qhull_lib }}.lib exit 1    # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\{{ each_qhull_lib }}.dll exit 1    # [win]\n    {% endfor %}\n    - rbox c P0 D2 | qvoronoi s o\n    - rbox c | qconvex FQ FV n | qhalf Fp\n    - rbox 1000 D3 | qhull C-1e-4 FO Ts\n\nabout:\n  home: http://www.qhull.org/\n  license: Qhull(BSD-like) For details, see COPYING.txt\n  license_family: BSD\n  license_file: COPYING.txt\n  summary: 'Qhull computes the convex hull'\n  doc_url: http://www.qhull.org/html\n  dev_url: https://github.com/qhull/qhull\n\nextra:\n  recipe-maintainers:\n    - sirokujira\n",
+ "raw_meta_yaml":"{% set name = \"qhull\" %}\n{% set version = \"2015.2\" %}\n{% set sha256 = \"8b6dd67ff77ce1ee814da84f4134ef4bdce1f1031e570b8d83019ccef58b1c00\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/qhull/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n  run:\n\ntest:\n  commands:\n    # Verify libraries.\n    {% set qhull_libs = [\"qhullcpp\", \"qhullstatic\", \"qhullstatic_r\"] %}\n    {% for each_qhull_lib in qhull_libs %}\n    - test -f $PREFIX/lib/lib{{ each_qhull_lib }}.a                           # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ each_qhull_lib }}.lib exit 1    # [win]\n    {% endfor %}\n    {% set qhull_dynlibs = [\"qhull\", \"qhull_r\", \"qhull_p\"] %}\n    {% for each_qhull_lib in qhull_dynlibs %}\n    - test -f $PREFIX/lib/lib{{ each_qhull_lib }}${SHLIB_EXT}                 # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ each_qhull_lib }}.lib exit 1    # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\{{ each_qhull_lib }}.dll exit 1    # [win]\n    {% endfor %}\n    - rbox c P0 D2 | qvoronoi s o\n    - rbox c | qconvex FQ FV n | qhalf Fp\n    - rbox 1000 D3 | qhull C-1e-4 FO Ts\n\nabout:\n  home: http://www.qhull.org/\n  license: Qhull\n  license_file: COPYING.txt\n  summary: 'Qhull computes the convex hull'\n  doc_url: http://www.qhull.org/html\n  dev_url: https://github.com/qhull/qhull\n\nextra:\n  recipe-maintainers:\n    - sirokujira\n",
  "req":{
   "__set__":true,
   "elements":[
