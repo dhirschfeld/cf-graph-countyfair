@@ -110,7 +110,7 @@
   "about":{
    "description":"Python toolbox for biomechanics analysis\n",
    "dev_url":"https://github.com/pyomeca/pyomeca",
-   "doc_url":"https://github.com/pyomeca/pyomeca",
+   "doc_url":"https://pyomeca.github.io",
    "home":"http://github.com/pyomeca/pyomeca",
    "license":"Apache-2.0",
    "license_file":"LICENSE",
@@ -118,7 +118,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"3",
+   "number":"4",
    "script":" -m pip install . -vv"
   },
   "extra":{
@@ -155,6 +155,8 @@
     "scipy",
     "ezc3d",
     "xlrd",
+    "xarray",
+    "bottleneck",
     "python",
     "numpy",
     "pandas",
@@ -162,13 +164,17 @@
     "scipy",
     "ezc3d",
     "xlrd",
+    "xarray",
+    "bottleneck",
     "python",
     "numpy",
     "pandas",
     "matplotlib-base",
     "scipy",
     "ezc3d",
-    "xlrd"
+    "xlrd",
+    "xarray",
+    "bottleneck"
    ]
   },
   "source":{
@@ -199,10 +205,11 @@
  "name":"pyomeca",
  "new_version":"2019.8.1",
  "pinning_version":"2020.01.28",
- "raw_meta_yaml":"{% set name = \"pyomeca\" %}\n{% set version = \"2019.8.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: d21cad164cacbe7fa5835696954222cbfa36ae5fda89695e61a508885cc8697e\n\nbuild:\n  noarch: python\n  number: 3\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - setuptools\n    - python >=3\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - matplotlib-base\n    - scipy\n    - {{ pin_compatible('ezc3d') }}\n    - xlrd\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n    - pytest-cov\n  commands:\n    - pytest tests\n\nabout:\n  home: http://github.com/{{ name }}/{{ name }}\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way'\n  description: |\n    Python toolbox for biomechanics analysis\n  doc_url: https://github.com/{{ name }}/{{ name }}\n  dev_url: https://github.com/{{ name }}/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - romainmartinez\n    - pariterre\n",
+ "raw_meta_yaml":"{% set name = \"pyomeca\" %}\n{% set version = \"2019.8.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: d21cad164cacbe7fa5835696954222cbfa36ae5fda89695e61a508885cc8697e\n\nbuild:\n  noarch: python\n  number: 4\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - setuptools\n    - python >=3\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - matplotlib-base\n    - scipy\n    - {{ pin_compatible('ezc3d') }}\n    - xlrd\n    - xarray\n    - bottleneck\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n    - pytest-cov\n  commands:\n    - pytest tests\n\nabout:\n  home: http://github.com/{{ name }}/{{ name }}\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way'\n  description: |\n    Python toolbox for biomechanics analysis\n  doc_url: https://pyomeca.github.io\n  dev_url: https://github.com/{{ name }}/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - romainmartinez\n    - pariterre\n",
  "req":{
   "__set__":true,
   "elements":[
+   "bottleneck",
    "ezc3d",
    "matplotlib-base",
    "numpy",
@@ -211,6 +218,7 @@
    "python",
    "scipy",
    "setuptools",
+   "xarray",
    "xlrd"
   ]
  },
@@ -230,12 +238,14 @@
   "run":{
    "__set__":true,
    "elements":[
+    "bottleneck",
     "ezc3d",
     "matplotlib-base",
     "numpy",
     "pandas",
     "python",
     "scipy",
+    "xarray",
     "xlrd"
    ]
   },
@@ -265,12 +275,14 @@
   "run":{
    "__set__":true,
    "elements":[
+    "bottleneck",
     "ezc3d",
     "matplotlib-base",
     "numpy",
     "pandas",
     "python",
     "scipy",
+    "xarray",
     "xlrd"
    ]
   },

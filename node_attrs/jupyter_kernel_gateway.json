@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428799347.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -192,8 +209,12 @@
   }
  },
  "name":"jupyter_kernel_gateway",
- "new_version":"2.4.0",
- "pinning_version":"2019.08.11",
+ "new_version":"2.4.1",
+ "new_version_attempts":{
+  "2.4.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set version = \"2.4.0\" %}\n{% set sha256 = \"dff74763ed6c6c7910906e5320505e4780204a169aae50d1767f5a6383ccb2be\" %}\n\npackage:\n  name: jupyter_kernel_gateway\n  version: {{ version }}\n\nsource:\n  fn: jupyter-kernel-gateway-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyter_kernel_gateway/jupyter_kernel_gateway-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jupyter-kernelgateway = kernel_gateway:launch_instance\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jupyter_client >=5.2.0\n    - jupyter_core >=4.4.0\n    - notebook >=5.7.6,<7.0\n    - traitlets >=4.2.0\n    - requests >=2.7,<3.0\n    - tornado >=4.2.0\n\ntest:\n  imports:\n    - kernel_gateway\n    - kernel_gateway.base\n    - kernel_gateway.jupyter_websocket\n    - kernel_gateway.notebook_http\n    - kernel_gateway.notebook_http.cell\n    - kernel_gateway.notebook_http.swagger\n    - kernel_gateway.services\n    - kernel_gateway.services.kernels\n    - kernel_gateway.services.kernelspecs\n    - kernel_gateway.services.sessions\n  commands:\n    - jupyter-kernelgateway --help\n    - jupyter kernelgateway --help\n\nabout:\n  home: http://github.com/jupyter/kernel_gateway\n  license: BSD 3-Clause\n  license_file: LICENSE.md\n  summary: Jupyter Kernel Gateway\n  doc_url: https://jupyter-kernel-gateway.readthedocs.io\n  dev_url: https://github.com/jupyter/kernel_gateway\n\nextra:\n  recipe-maintainers:\n    - parente\n    - lresende\n    - kevin-bates\n",
  "req":{
   "__set__":true,
@@ -237,7 +258,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
