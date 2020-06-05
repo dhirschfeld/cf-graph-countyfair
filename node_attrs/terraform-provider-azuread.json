@@ -56,9 +56,9 @@
   "build":{
    "number":"0",
    "script":[
-    "go build -v -o terraform-provider-azuread_v0.9.0_x4",
-    "go build -v -o terraform-provider-azuread_v0.9.0_x4",
-    "go build -v -o terraform-provider-azuread_v0.9.0_x4"
+    "go build -v -o terraform-provider-azuread_v0.10.0_x4",
+    "go build -v -o terraform-provider-azuread_v0.10.0_x4",
+    "go build -v -o terraform-provider-azuread_v0.10.0_x4"
    ]
   },
   "extra":{
@@ -73,7 +73,7 @@
   },
   "package":{
    "name":"terraform-provider-azuread",
-   "version":"0.9.0"
+   "version":"0.10.0"
   },
   "requirements":{
    "build":[
@@ -88,23 +88,23 @@
    ]
   },
   "source":{
-   "sha256":"aea94b05ca28732c955554ce436286381c2e0701e228b48fcba6676dee012306",
-   "url":"https://github.com/terraform-providers/terraform-provider-azuread/archive/v0.9.0.tar.gz"
+   "sha256":"26b04309c5fc102f260b634b04d256bfed7f93c479a7cea9ea6696121923a799",
+   "url":"https://github.com/terraform-providers/terraform-provider-azuread/archive/v0.10.0.tar.gz"
   },
   "test":{
    "commands":[
-    "echo provider \"azuread\" { version=\"0.9.0\" } > init.tf",
+    "echo provider \"azuread\" { version=\"0.10.0\" } > init.tf",
     "terraform init",
     "if not exist .terraform\\plugins\\_\\lock.json exit 1",
-    "if exist .terraform\\plugins\\_\\terraform-provider-azuread_v0.9.0_x4 exit 1",
-    "echo 'provider \"azuread\" { version=\"0.9.0\" }' > init.tf",
+    "if exist .terraform\\plugins\\_\\terraform-provider-azuread_v0.10.0_x4 exit 1",
+    "echo 'provider \"azuread\" { version=\"0.10.0\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-azuread_v0.9.0_x4",
-    "echo 'provider \"azuread\" { version=\"0.9.0\" }' > init.tf",
+    "test ! -f .terraform/plugins/_/terraform-provider-azuread_v0.10.0_x4",
+    "echo 'provider \"azuread\" { version=\"0.10.0\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-azuread_v0.9.0_x4"
+    "test ! -f .terraform/plugins/_/terraform-provider-azuread_v0.10.0_x4"
    ]
   }
  },
@@ -116,7 +116,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set provider = \"azuread\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"0.9.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: aea94b05ca28732c955554ce436286381c2e0701e228b48fcba6676dee012306\n\nbuild:\n  number: 0\n  script:\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_family: MOZILLA\n  summary: Terraform provider for Azure Active Directory\n  doc_url: https://www.terraform.io/docs/providers/{{ provider }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n    - dhirschfeld\n",
+ "raw_meta_yaml":"{% set provider = \"azuread\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"0.10.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: 26b04309c5fc102f260b634b04d256bfed7f93c479a7cea9ea6696121923a799\n\nbuild:\n  number: 0\n  script:\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_family: MOZILLA\n  summary: Terraform provider for Azure Active Directory\n  doc_url: https://www.terraform.io/docs/providers/{{ provider }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n    - dhirschfeld\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -171,5 +171,5 @@
   }
  },
  "url":"https://github.com/terraform-providers/terraform-provider-azuread/archive/v0.8.0.tar.gz",
- "version":"0.9.0"
+ "version":"0.10.0"
 }
