@@ -111,7 +111,7 @@
    "home":"https://github.com/iiasa/ixmp",
    "license":"Apache-2.0",
    "license_file":"LICENSE",
-   "summary":"The ix modeling platform for integrated and cross-cutting scenario analysis"
+   "summary":"The ix modeling platform for integrated and cross-cutting scenario analysis\n"
   },
   "build":{
    "entry_points":[
@@ -120,7 +120,7 @@
     "ixmp = ixmp.cli:main"
    ],
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
@@ -153,7 +153,7 @@
     "graphviz",
     "jpype1 >=0.7",
     "jupyter",
-    "matplotlib",
+    "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
@@ -169,7 +169,7 @@
     "graphviz",
     "jpype1 >=0.7",
     "jupyter",
-    "matplotlib",
+    "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
@@ -185,7 +185,7 @@
     "graphviz",
     "jpype1 >=0.7",
     "jupyter",
-    "matplotlib",
+    "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
@@ -198,7 +198,7 @@
    ]
   },
   "source":{
-   "sha256":"bb64bebfd3aea0d88e2555a382702e2fdd4c1b6ee013e8d495bb14d3d32f0a7a",
+   "sha256":"1e1bcc22efc0de4790b9ad37a067f63cba721a2f5846b493dd95cd7292b20f0e",
    "url":"https://github.com/iiasa/ixmp/archive/v2.0.0.tar.gz"
   },
   "test":{
@@ -225,7 +225,7 @@
  "name":"ixmp",
  "new_version":"2.0.0",
  "pinning_version":"2020.02.12",
- "raw_meta_yaml":"{% set version = \"2.0.0\" %}\n{% set sha256 = \"bb64bebfd3aea0d88e2555a382702e2fdd4c1b6ee013e8d495bb14d3d32f0a7a\" %}\n\npackage:\n  name: ixmp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/iiasa/ixmp/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - ixmp = ixmp.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - click\n    - cython\n    - dask\n    - graphviz\n    - jpype1 >=0.7\n    - jupyter\n    - matplotlib\n    - nbformat\n    - numpy\n    - openjdk\n    - pandas\n    - pint\n    - PyYAML\n    - xarray\n    - xlrd\n    - xlsxwriter\n\ntest:\n  imports:\n    - ixmp\n  requires:\n    - pytest\n  commands:\n    - python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '{{ version }}'\"\n    - ixmp --help\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'The ix modeling platform for integrated and cross-cutting scenario analysis'\n\nextra:\n  recipe-maintainers:\n    - gidden\n    - khaeru\n",
+ "raw_meta_yaml":"{% set name = \"ixmp\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"1e1bcc22efc0de4790b9ad37a067f63cba721a2f5846b493dd95cd7292b20f0e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  # TODO switch to PyPI after v3.0.0\n  url: https://github.com/iiasa/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n  - ixmp = ixmp.cli:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  run:\n  - click\n  - cython\n  - dask\n  - graphviz\n  - jpype1 >=0.7\n  - jupyter\n  - matplotlib-base\n  - nbformat\n  - numpy\n  - openjdk\n  - pandas\n  - pint\n  - PyYAML\n  - xarray\n  - xlrd\n  - xlsxwriter\n\ntest:\n  imports:\n  - ixmp\n  requires:\n  - pytest\n  commands:\n  - python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '{{ version }}'\"\n  - ixmp --help\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    The ix modeling platform for integrated and cross-cutting scenario analysis\n\nextra:\n  recipe-maintainers:\n  - gidden\n  - khaeru\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -235,7 +235,7 @@
    "graphviz",
    "jpype1",
    "jupyter",
-   "matplotlib",
+   "matplotlib-base",
    "nbformat",
    "numpy",
    "openjdk",
@@ -270,7 +270,7 @@
     "graphviz",
     "jpype1",
     "jupyter",
-    "matplotlib",
+    "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
@@ -313,7 +313,7 @@
     "graphviz",
     "jpype1 >=0.7",
     "jupyter",
-    "matplotlib",
+    "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
