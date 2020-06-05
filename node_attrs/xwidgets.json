@@ -126,7 +126,7 @@
    "summary":"C++ implementation of the Jupyter Interactive widgets"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "xwidgets",
     "xwidgets",
@@ -164,17 +164,17 @@
     "cxx_compiler_stub"
    ],
    "host":[
-    "xeus >=0.23.3,<0.24",
+    "xeus >=0.23.3,<0.25",
     "xproperty >=0.10.0,<0.11",
     "cppzmq",
     "xtl",
     "nlohmann_json",
-    "xeus >=0.23.3,<0.24",
+    "xeus >=0.23.3,<0.25",
     "xproperty >=0.10.0,<0.11",
     "cppzmq",
     "xtl",
     "nlohmann_json",
-    "xeus >=0.23.3,<0.24",
+    "xeus >=0.23.3,<0.25",
     "xproperty >=0.10.0,<0.11",
     "cppzmq",
     "xtl",
@@ -223,7 +223,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.06.22.15.02",
- "raw_meta_yaml":"{% set name = \"xwidgets\" %}\n{% set version = \"0.20.1\" %}\n{% set sha256 = \"350f976851093cf503822c6610673b17c5f37b3444513338a25c32346fe5ff07\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/jupyter-xeus/xwidgets/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n  host:\n    - xeus >=0.23.3,<0.24\n    - xproperty >=0.10.0,<0.11\n    # Version contraints of xtl, nlohmann_json, and cppzmq are set as run_contraints of xeus\n    - cppzmq\n    - xtl\n    - nlohmann_json\n  run:\n    # cppzmq, xtl, xproperty and nlohmann_json\n    # are header-only but required at runtime (!)\n    # in the context of xwidgets being used in xeus-cling\n    - {{ pin_compatible('cppzmq', max_pin='x.x') }}\n    - {{ pin_compatible('xtl', max_pin='x.x') }}\n    - {{ pin_compatible('xproperty', max_pin='x.x') }}\n    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xwidgets  # [unix]\n    - test -f ${PREFIX}/include/xwidgets/xtransport.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xwidgets/xwidgetsConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xwidgets/xwidgetsConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xwidgets\\xtransport.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\xwidgetsConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\xwidgetsConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xwidgets\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ implementation of the Jupyter Interactive widgets'\n  doc_url: http://xwidgets.readthedocs.io\n  dev_url: https://github.com/jupyter-xeus/xwidgets\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - gouarin\n    - martinRenou\n",
+ "raw_meta_yaml":"{% set name = \"xwidgets\" %}\n{% set version = \"0.20.1\" %}\n{% set sha256 = \"350f976851093cf503822c6610673b17c5f37b3444513338a25c32346fe5ff07\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/jupyter-xeus/xwidgets/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n  host:\n    - xeus >=0.23.3,<0.25\n    - xproperty >=0.10.0,<0.11\n    # Version contraints of xtl, nlohmann_json, and cppzmq are set as run_contraints of xeus\n    - cppzmq\n    - xtl\n    - nlohmann_json\n  run:\n    # cppzmq, xtl, xproperty and nlohmann_json\n    # are header-only but required at runtime (!)\n    # in the context of xwidgets being used in xeus-cling\n    - {{ pin_compatible('cppzmq', max_pin='x.x') }}\n    - {{ pin_compatible('xtl', max_pin='x.x') }}\n    - {{ pin_compatible('xproperty', max_pin='x.x') }}\n    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xwidgets  # [unix]\n    - test -f ${PREFIX}/include/xwidgets/xtransport.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xwidgets/xwidgetsConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xwidgets/xwidgetsConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xwidgets\\xtransport.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\xwidgetsConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\xwidgetsConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xwidgets\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ implementation of the Jupyter Interactive widgets'\n  doc_url: http://xwidgets.readthedocs.io\n  dev_url: https://github.com/jupyter-xeus/xwidgets\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - gouarin\n    - martinRenou\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -283,7 +283,7 @@
    "elements":[
     "cppzmq",
     "nlohmann_json",
-    "xeus >=0.23.3,<0.24",
+    "xeus >=0.23.3,<0.25",
     "xproperty >=0.10.0,<0.11",
     "xtl"
    ]
