@@ -101,6 +101,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428646525.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.2.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -214,7 +231,11 @@
  },
  "name":"python-geotiepoints",
  "new_version":"1.2.0",
- "pinning_version":"2019.11.01",
+ "new_version_attempts":{
+  "1.2.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set version = \"1.1.8\" %}\n\npackage:\n  name: python-geotiepoints\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-{{ version }}.tar.gz\n  sha256: 02c8a832a8aafd63305280e6d93f860fc94fcb1af7a1bc06a3105195bb6cd310\n\nbuild:\n  number: 0\n  script:\n    - USE_CYTHON=true  # [not win]\n    - set USE_CYTHON=true  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - pandas\n\ntest:\n  imports:\n    - geotiepoints\n  requires:\n    - h5py\n    - unittest2\n\nabout:\n  home: https://github.com/pytroll/python-geotiepoints\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Interpolation of geographic tiepoints in Python\n  description: Interpolation and extrapolation of geographic (lon, lat) tie points\n  doc_url: http://python-geotiepoints.readthedocs.io\n  dev_url: https://github.com/pytroll/python-geotiepoints\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "req":{
   "__set__":true,
@@ -261,7 +282,7 @@
    ]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

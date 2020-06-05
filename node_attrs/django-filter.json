@@ -101,7 +101,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -115,7 +115,7 @@
   },
   "package":{
    "name":"django-filter",
-   "version":"2.2.0"
+   "version":"2.3.0"
   },
   "requirements":{
    "host":[
@@ -136,8 +136,8 @@
    ]
   },
   "source":{
-   "sha256":"b79b3e40b3c4ddabec8b1ba7e083351129950d9ec8ea155a96e3ff965033c2d3",
-   "url":"https://github.com/carltongibson/django-filter/archive/2.2.0.tar.gz"
+   "sha256":"b60ad8daf511389ef3244fb8d1bd91c66badbfe5e685b86dd41ac88bd13529b0",
+   "url":"https://github.com/carltongibson/django-filter/archive/2.3.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -154,7 +154,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set version = \"2.2.0\" %}\n\npackage:\n  name: django-filter\n  version: {{ version }}\n\nsource:\n  url: https://github.com/carltongibson/django-filter/archive/{{ version }}.tar.gz\n  sha256: b79b3e40b3c4ddabec8b1ba7e083351129950d9ec8ea155a96e3ff965033c2d3\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3.4\n    - pip\n  run:\n    - python >=3.4\n    - django >=1.11\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(); django.setup(); import django_filters; import django_filters.rest_framework\"\n\nabout:\n  home: http://github.com/carltongibson/django-filter/tree/master\n  summary: 'Django-filter is a a generic system for filtering Django QuerySets based on user selections'\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  doc_url: https://django-filter.readthedocs.io/en/latest/\n  dev_url: https://github.com/carltongibson/django-filter\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"2.3.0\" %}\n\npackage:\n  name: django-filter\n  version: {{ version }}\n\nsource:\n  url: https://github.com/carltongibson/django-filter/archive/{{ version }}.tar.gz\n  sha256: b60ad8daf511389ef3244fb8d1bd91c66badbfe5e685b86dd41ac88bd13529b0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.4\n    - pip\n  run:\n    - python >=3.4\n    - django >=1.11\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(); django.setup(); import django_filters; import django_filters.rest_framework\"\n\nabout:\n  home: http://github.com/carltongibson/django-filter/tree/master\n  summary: Django-filter is a a generic system for filtering Django QuerySets based on user selections\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  doc_url: https://django-filter.readthedocs.io/en/latest/\n  dev_url: https://github.com/carltongibson/django-filter\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -214,5 +214,5 @@
   }
  },
  "url":"https://github.com/carltongibson/django-filter/archive/2.2.0.tar.gz",
- "version":"2.2.0"
+ "version":"2.3.0"
 }

@@ -407,6 +407,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428643765.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"10.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -519,6 +536,7 @@
  "name":"workalendar",
  "new_version":"10.0.0",
  "new_version_attempts":{
+  "10.0.0":1,
   "8.2.2":1,
   "8.3.0":1,
   "8.4.0":1,
@@ -527,7 +545,7 @@
   "9.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.01.18.18.56",
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"workalendar\" %}\n{% set version = \"9.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c85db0a3d772087f01eac9176d8a4f1f4245bc0df5d5c9926d2dde95d5ab9516\n\nbuild:\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - lunardate\n    - pycalverter\n    - skyfield\n    - skyfield-data\n    - pyluach\n    - python\n    - python-dateutil\n    - pytz\n    - setuptools >=1.0\n\ntest:\n  imports:\n    - workalendar\n    - workalendar.africa\n    - workalendar.america\n    - workalendar.asia\n    - workalendar.europe\n    - workalendar.europe.scotland\n    - workalendar.europe.scotland.mixins\n    - workalendar.oceania\n    - workalendar.tests\n    - workalendar.usa\n\nabout:\n  home: https://github.com/peopledoc/workalendar\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Worldwide holidays and working days helper and toolkit.\n\nextra:\n  recipe-maintainers:\n    - Matt-BF\n",
  "req":{
   "__set__":true,

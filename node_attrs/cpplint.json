@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428646893.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -104,10 +121,11 @@
  "name":"cpplint",
  "new_version":"1.5.1",
  "new_version_attempts":{
-  "1.5.0":1
+  "1.5.0":1,
+  "1.5.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"cpplint\" %}\n{% set version = \"1.4.4\" %}\n{% set sha256 = \"05f879aab5a04307e916e32afb547567d8a44149ddc2f91bf846ce2650ce6d7d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cpplint/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - cpplint = cpplint:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cpplint\n\nabout:\n  description: |\n    Cpplint is a command-line tool to check C/C++ files for style issues\n    following Google's C++ style guide. Cpplint is developed and maintained by\n    Google Inc. at google/styleguide, also see see the wikipedia entry.\n\n    While Google maintains cpplint, Google is not (very) responsive to issues\n    and pull requests, this fork aims to be (somewhat) more open to add fixes to\n    cpplint to enable fixes, when those fixes make cpplint usable in wider\n    contexts.\n  home: 'https://github.com/cpplint/cpplint'\n  dev_url: 'https://github.com/cpplint/cpplint'\n  license: 'BSD-3-Clause'\n  license_family: 'BSD'\n  license_file: LICENSE\n  summary:\n    A publicly maintained version of Google's static analysis tool for C/C++ code.\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n",
  "req":{
   "__set__":true,
