@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428615352.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -82,7 +101,12 @@
   }
  },
  "name":"drivelib",
- "new_version":"0.1.4",
+ "new_version":"0.1.5",
+ "new_version_attempts":{
+  "0.1.5":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"drivelib\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 8e00c9981225ed7eae9f217f12242d98130aff59c2ff3e6026570589968a8fe3\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n  run:\n    - google-api-python-client\n    - google-auth\n    - google-auth-httplib2\n    - google-auth-oauthlib\n    - oauth2client\n    - python >=3.7\n\ntest:\n  imports:\n    - drivelib\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: \"https://github.com/Lykos153/python-drivelib\"\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE\n  summary: \"Easy access to the most common Google Drive API calls\"\n  dev_url: https://github.com/Lykos153/python-drivelib\n\nextra:\n  recipe-maintainers:\n    - notestaff\n",
  "req":{
   "__set__":true,
@@ -126,6 +150,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
