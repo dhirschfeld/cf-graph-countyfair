@@ -313,9 +313,6 @@
   "bot":{
    "automerge":true
   },
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -334,9 +331,9 @@
   "build":{
    "number":"0",
    "script":[
-    "go build -v -o terraform-provider-docker_v2.7.0_x4",
-    "go build -v -o terraform-provider-docker_v2.7.0_x4",
-    "go build -v -o terraform-provider-docker_v2.7.0_x4"
+    "go build -v -o terraform-provider-docker_v2.7.1_x4",
+    "go build -v -o terraform-provider-docker_v2.7.1_x4",
+    "go build -v -o terraform-provider-docker_v2.7.1_x4"
    ]
   },
   "extra":{
@@ -357,7 +354,7 @@
   },
   "package":{
    "name":"terraform-provider-docker",
-   "version":"2.7.0"
+   "version":"2.7.1"
   },
   "requirements":{
    "build":[
@@ -372,23 +369,23 @@
    ]
   },
   "source":{
-   "sha256":"430297f5df5fc8fd26ebb36848f782b1090a30734bdd3073f99c720796517d8b",
-   "url":"https://github.com/terraform-providers/terraform-provider-docker/archive/v2.7.0.tar.gz"
+   "sha256":"4d52018e11365c6d5cf45a549ef5d8df4525b6e23a6eca9360c6574bf9e857ad",
+   "url":"https://github.com/terraform-providers/terraform-provider-docker/archive/v2.7.1.tar.gz"
   },
   "test":{
    "commands":[
-    "echo provider \"docker\" { version=\"2.7.0\" } > init.tf",
+    "echo provider \"docker\" { version=\"2.7.1\" } > init.tf",
     "terraform init",
     "if not exist .terraform\\plugins\\_\\lock.json exit 1",
-    "if exist .terraform\\plugins\\_\\terraform-provider-docker_v2.7.0_x4 exit 1",
-    "echo 'provider \"docker\" { version=\"2.7.0\" }' > init.tf",
+    "if exist .terraform\\plugins\\_\\terraform-provider-docker_v2.7.1_x4 exit 1",
+    "echo 'provider \"docker\" { version=\"2.7.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-docker_v2.7.0_x4",
-    "echo 'provider \"docker\" { version=\"2.7.0\" }' > init.tf",
+    "test ! -f .terraform/plugins/_/terraform-provider-docker_v2.7.1_x4",
+    "echo 'provider \"docker\" { version=\"2.7.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-docker_v2.7.0_x4"
+    "test ! -f .terraform/plugins/_/terraform-provider-docker_v2.7.1_x4"
    ]
   }
  },
@@ -399,7 +396,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set provider = \"Docker\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"2.7.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: 430297f5df5fc8fd26ebb36848f782b1090a30734bdd3073f99c720796517d8b\n\nbuild:\n  number: 0\n  script:\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_file: LICENSE\n  summary: The Terraform {{ provider }} provider\n  doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n    - agcopenhaver\n    - oblute\n    - rluria14\n",
+ "raw_meta_yaml":"{% set provider = \"Docker\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"2.7.1\" %}\n\n{% set name = goname.split('/')[-1] %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: 4d52018e11365c6d5cf45a549ef5d8df4525b6e23a6eca9360c6574bf9e857ad\n\nbuild:\n  number: 0\n  script:\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_file: LICENSE\n  summary: The Terraform {{ provider }} provider\n  doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n    - agcopenhaver\n    - oblute\n    - rluria14\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -454,5 +451,5 @@
   }
  },
  "url":"https://github.com/terraform-providers/terraform-provider-docker/archive/v2.2.0.tar.gz",
- "version":"2.7.0"
+ "version":"2.7.1"
 }
