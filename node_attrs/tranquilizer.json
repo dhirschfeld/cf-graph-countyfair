@@ -148,7 +148,7 @@
   }
  },
  "name":"tranquilizer",
- "new_version":"0.4.1",
+ "new_version":"0.4.2",
  "pinning_version":"2019.11.01",
  "raw_meta_yaml":"{% set name = \"tranquilizer\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0d91858f2b6d1c70724347fa417c72547c07493ff674f9daef79cdebf202031b\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - tranquilizer = tranquilizer.main:run\n\nrequirements:\n  host:\n    - python >=3.5, <3.8\n    - pip\n  run:\n    - python >=3.5, <3.8\n    - flask\n    - werkzeug >=0.15\n    - flask-restplus\n    - python-dateutil\n\ntest:\n  imports:\n    - tranquilizer\n  commands:\n    - tranquilizer --help\n\nabout:\n  home: http://github.com/AlbertDeFusco/tranquilizer\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Put your Python functions to REST; deploy a REST API with one line by decorating your functions.'\n\nextra:\n  recipe-maintainers:\n    - AlbertDeFusco\n",
  "req":{
