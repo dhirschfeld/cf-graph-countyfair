@@ -88,10 +88,13 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "python",
     "pip",
+    "setuptools",
     "python",
-    "pip"
+    "pip",
+    "setuptools"
    ],
    "run":[
     "python",
@@ -150,7 +153,7 @@
   "1.0.2":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.0.2' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/mheikenfeld/<{name}}/archive/v<{version}}.tar.gz'\n"
  },
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set name = \"wrfcube\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mheikenfeld/{{name}}/archive/v{{version}}.tar.gz\n  sha256: fef752428754b82d43bfb39ec2526aba704f429214ccebc5e8356dde63af9cb6\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - scipy\n    - iris \n    - xarray \n    - cf_units\n\ntest:\n  imports:\n    - wrfcube\n  source_files:\n    - wrfcube/tests/test_dummy.py\n  requires:\n    - pytest\n  commands:\n    - pytest wrfcube/tests\nabout:\n  home: http://github.com/mheikenfeld/wrfcube\n  license:  BSD-3-Clause \n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Load data from WRF output files (NetCDF) to iris cubes'\n\n  description:  'Load data from WRF output files (NetCDF) to iris cubes'\n  doc_url: http://wrfcube.readthedocs.io/\n  dev_url: https://github.com/mheikenfeld/wrfcube\n\nextra:\n  recipe-maintainers:\n    - mheikenfeld\n",
+ "raw_meta_yaml":"{% set name = \"wrfcube\" %}\n{% set version = \"1.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mheikenfeld/{{name}}/archive/v{{version}}.tar.gz\n  sha256: fef752428754b82d43bfb39ec2526aba704f429214ccebc5e8356dde63af9cb6\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - iris \n    - xarray \n    - cf_units\n\ntest:\n  imports:\n    - wrfcube\n  source_files:\n    - wrfcube/tests/test_dummy.py\n  requires:\n    - pytest\n  commands:\n    - pytest wrfcube/tests\nabout:\n  home: http://github.com/mheikenfeld/wrfcube\n  license:  BSD-3-Clause \n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Load data from WRF output files (NetCDF) to iris cubes'\n\n  description:  'Load data from WRF output files (NetCDF) to iris cubes'\n  doc_url: http://wrfcube.readthedocs.io/\n  dev_url: https://github.com/mheikenfeld/wrfcube\n\nextra:\n  recipe-maintainers:\n    - mheikenfeld\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -160,6 +163,7 @@
    "pip",
    "python",
    "scipy",
+   "setuptools",
    "xarray"
   ]
  },
@@ -172,7 +176,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{
@@ -204,7 +209,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{

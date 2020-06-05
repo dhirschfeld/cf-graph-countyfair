@@ -71,6 +71,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428726673.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -209,13 +226,14 @@
   }
  },
  "name":"ddsp",
- "new_version":"0.4.0",
+ "new_version":"0.5.0",
  "new_version_attempts":{
   "0.2.4":1,
-  "0.4.0":1
+  "0.4.0":1,
+  "0.5.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.02.12.20.38",
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"ddsp\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d2425336b2e8e18a068c93e58c4731787a91bbb8c3ab9ac40fbac8b3f8beecfe\n\nbuild:\n  number: 0\n  entry_points:\n    - ddsp_run = ddsp.training.ddsp_run:console_entry_point\n    - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - absl-py\n    - crepe\n    - future\n    - gin-config\n    - librosa\n    - numpy\n    - pydub\n    - python\n    - scipy\n    - six\n    - tensorflow\n    - tensorflow-datasets\n    - apache-beam  # [unix]\n\ntest:\n  imports:\n    - ddsp\n    - ddsp.colab\n    - ddsp.training\n    - ddsp.training.data_preparation  # [unix]\n    - ddsp.training.gin\n    - ddsp.training.gin.datasets\n    - ddsp.training.gin.models\n    - ddsp.training.gin.optimization\n    - ddsp.training.gin.papers\n    - ddsp.training.gin.papers.iclr2020\n\nabout:\n  home: http://github.com/magenta/ddsp\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Differentiable Digital Signal Processing\n  doc_url: https://pypi.org/project/ddsp/\n  dev_url: https://github.com/magenta/ddsp\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n",
  "req":{
   "__set__":true,
