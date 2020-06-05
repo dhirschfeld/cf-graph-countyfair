@@ -839,7 +839,7 @@
    "summary":"Forecast and observation research and evaluation survey tool"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv",
    "skip":true
   },
@@ -874,16 +874,19 @@
     "bokeh >=2.0.2",
     "datashader",
     "xarray",
+    "geojson",
     "python",
     "iris",
     "bokeh >=2.0.2",
     "datashader",
     "xarray",
+    "geojson",
     "python",
     "iris",
     "bokeh >=2.0.2",
     "datashader",
-    "xarray"
+    "xarray",
+    "geojson"
    ]
   },
   "source":{
@@ -922,12 +925,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.20.09.40.28",
- "raw_meta_yaml":"{% set name = \"forest\" %}\n{% set version = \"0.17.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/informatics-lab/forest/archive/v{{ version }}.tar.gz\n  sha256: fea306e389fb0b832bd41c6abcdeee785d4847dddce4ba76c40eb463d68296ed\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<35]\n\nrequirements:\n  build:\n    - nodejs >=10.13\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - iris\n    - bokeh >=2.0.2\n    - datashader\n    - xarray\n    - dataclasses  # [py36]\n\ntest:\n  imports:\n    - forest\n\nabout:\n  home: http://github.com/informatics-lab/forest\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Forecast and observation research and evaluation survey tool\n  description: |\n    FOREST is a web viewer built on top of the bokeh Python package\n    designed to offer a fast and simple way to explore geophysical\n    data sets\n  doc_url: http://forest-informaticslab.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - andrewgryan\n",
+ "raw_meta_yaml":"{% set name = \"forest\" %}\n{% set version = \"0.17.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/informatics-lab/forest/archive/v{{ version }}.tar.gz\n  sha256: fea306e389fb0b832bd41c6abcdeee785d4847dddce4ba76c40eb463d68296ed\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<35]\n\nrequirements:\n  build:\n    - nodejs >=10.13\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - iris\n    - bokeh >=2.0.2\n    - datashader\n    - xarray\n    - dataclasses  # [py36]\n    - geojson\n\ntest:\n  imports:\n    - forest\n\nabout:\n  home: http://github.com/informatics-lab/forest\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Forecast and observation research and evaluation survey tool\n  description: |\n    FOREST is a web viewer built on top of the bokeh Python package\n    designed to offer a fast and simple way to explore geophysical\n    data sets\n  doc_url: http://forest-informaticslab.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - andrewgryan\n",
  "req":{
   "__set__":true,
   "elements":[
    "bokeh",
    "datashader",
+   "geojson",
    "iris",
    "nodejs",
    "pip",
@@ -954,6 +958,7 @@
    "elements":[
     "bokeh",
     "datashader",
+    "geojson",
     "iris",
     "python",
     "xarray"
@@ -985,6 +990,7 @@
    "elements":[
     "bokeh >=2.0.2",
     "datashader",
+    "geojson",
     "iris",
     "python",
     "xarray"

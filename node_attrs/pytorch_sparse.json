@@ -70,7 +70,7 @@
    "summary":"PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -109,14 +109,15 @@
      "summary":"PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_sparse",
     "requirements":{
      "build":[
       "c_compiler_stub",
-      "cxx_compiler_stub"
+      "cxx_compiler_stub",
+      "cuda_compiler_stub"
      ],
      "host":[
       "python",
@@ -167,14 +168,15 @@
      "summary":"PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_sparse",
     "requirements":{
      "build":[
       "c_compiler_stub",
-      "cxx_compiler_stub"
+      "cxx_compiler_stub",
+      "cuda_compiler_stub"
      ],
      "host":[
       "python",
@@ -225,7 +227,7 @@
      "summary":"PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations"
     },
     "build":{
-     "number":"0",
+     "number":"1",
      "script":"python -m pip install . -vv"
     },
     "name":"pytorch_sparse",
@@ -283,7 +285,7 @@
   "pytorch_sparse_proc"
  ],
  "pinning_version":"2020.06.01.14.18.30",
- "raw_meta_yaml":"{% set name = \"torch_sparse\" %}\n{% set version = \"0.6.3\" %}\n\n{% set pytorch_sparse_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_sparse_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2d2bb488e14207187f9856d2a9349851e7a3cc37d0f5cf7c7ed930d0fc8c7531\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_sparse build.\n  - name: pytorch_sparse_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: {{ pytorch_sparse_proc_type }}\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_sparse\n    version: {{ version }}\n    build:\n      number: 0\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch\n        - setuptools\n        - scipy\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch\n      run_constrained:\n        - pytorch_sparse_proc * {{ pytorch_sparse_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_sparse\n    about:\n      home: https://github.com/rusty1s/pytorch_sparse\n      summary: PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/pytorch_sparse\n\nabout:\n  home: https://github.com/rusty1s/pytorch_sparse\n  summary: PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/pytorch_sparse\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
+ "raw_meta_yaml":"{% set name = \"torch_sparse\" %}\n{% set version = \"0.6.3\" %}\n\n{% set pytorch_sparse_proc_type = \"cpu\" if cuda_compiler_version == \"None\" else \"gpu\" %}  # [linux or win]\n{% set pytorch_sparse_proc_type = \"cpu\" %}                                                # [osx]\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2d2bb488e14207187f9856d2a9349851e7a3cc37d0f5cf7c7ed930d0fc8c7531\n\nbuild:\n  number: 1\n  # skip win and gpu builds for now\n  skip: true  # [win]\n  skip: true  # [cuda_compiler_version != \"None\"]\n\noutputs:\n  # A meta-package to select CPU or GPU pytorch_sparse build.\n  - name: pytorch_sparse_proc\n    version: 1.0.0\n    build:\n      number: 0\n      string: {{ pytorch_sparse_proc_type }}\n    test:\n      commands:\n        - exit 0\n\n  - name: pytorch_sparse\n    version: {{ version }}\n    build:\n      number: 1\n      script: python -m pip install . -vv\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - {{ compiler('cuda') }}  # [cuda_compiler_version != \"None\"]\n      host:\n        - python\n        - pytorch\n        - setuptools\n        - scipy\n        - pytest-runner\n        - pip\n      run:\n        - python\n        - pytorch\n      run_constrained:\n        - pytorch_sparse_proc * {{ pytorch_sparse_proc_type }}\n    test:\n      requires:\n        - pytest\n        - pytest-cov\n      imports:\n        - torch_sparse\n    about:\n      home: https://github.com/rusty1s/pytorch_sparse\n      summary: PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations\n      license: MIT\n      license_file: LICENSE\n      dev_url: https://github.com/rusty1s/pytorch_sparse\n\nabout:\n  home: https://github.com/rusty1s/pytorch_sparse\n  summary: PyTorch Extension Library of Optimized Autograd Sparse Matrix Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/pytorch_sparse\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
  "req":{
   "__set__":true,
   "elements":[

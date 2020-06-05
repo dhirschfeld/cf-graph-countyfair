@@ -84,6 +84,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428441886.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.7.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -203,8 +220,12 @@
   }
  },
  "name":"plotnine",
- "new_version":"0.6.0",
- "pinning_version":"2020.02.12",
+ "new_version":"0.7.0",
+ "new_version_attempts":{
+  "0.7.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set name = \"plotnine\" %}\n{% set version = \"0.6.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"aae2c8164abb209ef4f28cab01132d23f6879fcf8d492657487359e1241459e5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build:\n    - python >=3.6.0\n    - pip\n\n  run:\n    - python >=3.6.0\n    - mizani >=0.6.0\n    - matplotlib-base >=3.1.1\n    - numpy >=1.16.0\n    - scipy >=1.2.0\n    - patsy >=0.4.1\n    - statsmodels >=0.9.0\n    - pandas >=0.25.0\n    # - geopandas >=0.3.0\n    - descartes >=1.1.0\n\ntest:\n  imports:\n    - plotnine\n    - plotnine.coords\n    - plotnine.data\n    - plotnine.facets\n    - plotnine.geoms\n    - plotnine.guides\n    - plotnine.positions\n    - plotnine.scales\n    - plotnine.stats\n    - plotnine.tests\n    - plotnine.themes\n\nabout:\n  home: https://github.com/has2k1/plotnine\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: GPL 2.0\n  license_family: GPL2\n  summary: 'A grammar of graphics for python'\n  dev_url: https://github.com/has2k1/plotnine\n  doc_url: https://plotnine.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - has2k1\n",
  "req":{
   "__set__":true,
@@ -252,7 +273,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -17,7 +17,7 @@
   }
  ],
  "archived":false,
- "bad":"Upstream: Could not find version on github",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"markdown-checklist",
  "hash_type":"sha256",
@@ -81,7 +81,13 @@
   }
  },
  "name":"markdown-checklist",
- "new_version":"0.4.1",
+ "new_version":"0.4.2",
+ "new_version_attempts":{
+  "0.4.2":1
+ },
+ "new_version_errors":{
+  "0.4.2":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.4.2' to make sure they exist!\n\nWe also found the following errors:\n\n - recipe did not appear to change even though the bot said it should have\n"
+ },
  "pinning_version":"2018.07.01",
  "raw_meta_yaml":"{% set version = \"0.4.1\" %}\n\npackage:\n  name: markdown-checklist\n  version: {{ version }}\n\nsource:\n  fn: markdown-checklist-0.4.1.tar.gz\n  url: https://github.com/FND/markdown-checklist/archive/v0.4.1.tar.gz\n  sha256: b5b07c6a364df845fafc03cacb862e8123bd76e223fd821282eddf8998d001d7\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - markdown\n  run:\n    - python\n    - markdown\n\ntest:\n  imports:\n    - markdown_checklist\n\nabout:\n  home: https://github.com/FND/markdown-checklist\n  license: MIT\n  summary: 'Python Markdown extension for task lists with checkboxes'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{

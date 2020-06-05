@@ -154,6 +154,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/428439939.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -240,8 +257,12 @@
   }
  },
  "name":"lazy-object-proxy",
- "new_version":"1.4.3",
- "pinning_version":"2020.03.12",
+ "new_version":"1.5.0",
+ "new_version_attempts":{
+  "1.5.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set version = \"1.4.3\" %}\n\npackage:\n  name: lazy-object-proxy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/l/lazy-object-proxy/lazy-object-proxy-{{ version }}.tar.gz\n  sha256: f3900e8a5de27447acbf900b4750b0ddfd7ec1ea7fbaf11dfa911141bc522af0\n\nbuild:\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools_scm >=3.3.1\n  run:\n    - python\n\ntest:\n  imports:\n    - lazy_object_proxy\n    - lazy_object_proxy.cext  # [python_impl != \"pypy\"]\n\nabout:\n  home: https://github.com/ionelmc/python-lazy-object-proxy\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: 'A fast and thorough lazy object proxy'\n  doc_url: https://python-lazy-object-proxy.readthedocs.org\n  doc_source_url: https://github.com/ionelmc/python-lazy-object-proxy/blob/master/docs/index.rst\n  dev_url: https://github.com/ionelmc/python-lazy-object-proxy\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - nehaljwani\n    - ocefpaf\n    - xylar\n",
  "req":{
   "__set__":true,
@@ -278,7 +299,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
