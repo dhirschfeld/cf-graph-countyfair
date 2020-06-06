@@ -149,6 +149,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/429138857.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -291,12 +308,13 @@
   }
  },
  "name":"r-microseq",
- "new_version":"2.1",
+ "new_version":"2.1.1",
  "new_version_attempts":{
-  "2.1":1
+  "2.1":1,
+  "2.1.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.06.02.30.37",
  "raw_meta_yaml":"{% set version = \"2.1\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-microseq\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/microseq_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/microseq/microseq_{{ version }}.tar.gz\n  sha256: 700cf07a6c3e34fe57f7b64335162d130bd610ed6d1f5d891b20f4cf664bdf74\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('cxx') }}            # [not win]\n    - {{ compiler('m2w64_cxx') }}      # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-rcpp >=0.12.0\n    - r-data.table\n    - r-dplyr\n    - r-rlang\n    - r-stringr\n    - r-tibble\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-rcpp >=0.12.0\n    - r-data.table\n    - r-dplyr\n    - r-rlang\n    - r-stringr\n    - r-tibble\n\ntest:\n  commands:\n    - $R -e \"library('microseq')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('microseq')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=microseq\n  license: GPL-2.0-only\n  summary: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.\n  license_family: GPL2\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n\n# Package: microseq\n# Type: Package\n# Title: Basic Biological Sequence Handling\n# Version: 2.0\n# Date: 2020-01-09\n# Author: Lars Snipen, Kristian Hovde Liland\n# Maintainer: Lars Snipen <lars.snipen@nmbu.no>\n# Description: Basic functions for microbial sequence data analysis. The idea is to use generic R data structures as much as possible, making R data wrangling possible also for sequence data.\n# License: GPL-2\n# Depends: R (>= 3.5.0), tibble, stringr, dplyr, rlang\n# Imports: Rcpp (>= 0.12.0)\n# LinkingTo: Rcpp (>= 0.12.0)\n# RoxygenNote: 7.0.2\n# NeedsCompilation: yes\n# Packaged: 2020-01-09 08:12:45 UTC; larssn\n# Repository: CRAN\n# Date/Publication: 2020-01-09 13:00:02 UTC\n",
  "req":{
   "__set__":true,
