@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/429168124.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -101,10 +118,11 @@
  "name":"pydrift",
  "new_version":"0.2.3",
  "new_version_attempts":{
-  "0.2.2":1
+  "0.2.2":1,
+  "0.2.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.01.14.18.30",
+ "pinning_version":"2020.06.06.02.30.37",
  "raw_meta_yaml":"{% set name = \"pydrift\" %}\n{% set version = \"0.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1132d0c3cebcc3b419a95cfcac5d002acaee67aa84a21e6b309cab03f30b6484\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - poetry\n  run:\n    - python\n    - pip\n    - catboost >=0.23\n    - pandas >=1.0.3\n    - scikit-learn >=0.23.1\n    - shap >=0.35.0\n    - typing-extensions >=3.7.4\n\ntest:\n  imports:\n    - pydrift\n\nabout:\n  home: https://github.com/sergiocalde94/Data-And-Model-Drift-Checker\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Measuring the degradation of a machine learning model\n\n  description: |\n    How do we measure the degradation of a machine learning process?\n    Why does the performance of our predictive models decrease? Maybe it is\n    that a data source has changed (one or more variables) or maybe what\n    changes is the relationship of these variables with the target we want\n    to predict. `pydrift` tries to facilitate this task to the data scientist,\n    performing this kind of checks and somehow measuring that degradation.\n  doc_url: https://sergiocalde94.github.io/Data-And-Model-Drift-Checker/\n  dev_url: https://github.com/sergiocalde94/Data-And-Model-Drift-Checker/\n\nextra:\n  recipe-maintainers:\n    - sergiocalde94\n",
  "req":{
   "__set__":true,
