@@ -324,8 +324,8 @@
   },
   "build":{
    "features":null,
-   "number":"100",
-   "string":"no_osmesa_pyh_100"
+   "number":"101",
+   "string":"no_osmesa_pyh_101"
   },
   "extra":{
    "recipe-maintainers":[
@@ -519,6 +519,7 @@
     "sqlite",
     "gl2ps",
     "pugixml",
+    "tbb-devel",
     "python",
     "zlib",
     "freetype",
@@ -546,6 +547,7 @@
     "sqlite",
     "gl2ps",
     "pugixml",
+    "tbb-devel",
     "python",
     "zlib",
     "freetype",
@@ -573,7 +575,8 @@
     "loguru",
     "sqlite",
     "gl2ps",
-    "pugixml"
+    "pugixml",
+    "tbb-devel"
    ],
    "run_constrained":[
     "paraview ==9999999999",
@@ -691,7 +694,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.18.14.31.44",
- "raw_meta_yaml":"{% set version = \"9.0.0\" %}\n{% set build = 0 %}\n\n{% set minor_version = \".\".join(version.split(\".\")[:2]) %}\n\n{% set build = build + 100 %}   # [not VTK_WITH_OSMESA]\n\npackage:\n  name: vtk\n  version: {{ version }}\n\nsource:\n  url: http://www.vtk.org/files/release/{{ minor_version }}/VTK-{{ version }}.tar.gz\n  sha256: 15def4e6f84d72f82386617fe595ec124dda3cbd13ea19a0dcd91583197d8715\n\nbuild:\n  skip: True  # [win and py27]\n  number: {{ build }}\n\n  # typically, osmesa is selected by installing or not installing\n  # mesalib, but it could also be selected via the build string:\n  # `vtk * with_osmesa*` for osmesa\n  # `vtk * no_osmesa*` for no osmesa\n\n  {% if VTK_WITH_OSMESA == \"True\" %}\n  {% set osmesa_prefix = \"with_osmesa\" %}\n  {% else %}\n  {% set osmesa_prefix = \"no_osmesa\" %}\n  {% endif %}\n  string: \"{{ osmesa_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\n  features:\n    - mesalib   # [VTK_WITH_OSMESA]\n\nrequirements:\n  build:\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja\n    - {{ cdt('libxcb') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxau') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libuuid') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxext') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxfixes') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxxf86vm') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxdamage') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libselinux') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libsm-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libice-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libx11-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('mesa-libgl-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [linux and not VTK_WITH_OSMESA]\n\n  host:\n    - python\n    - zlib\n    - freetype\n    - hdf5\n    - hdf5 * nompi_*\n    - libxml2\n    - libpng\n    - jpeg\n    - libtiff\n    - jsoncpp\n    - expat\n    - tbb\n    - tbb-devel\n    - mesalib   # [VTK_WITH_OSMESA]\n    - libnetcdf\n    - libnetcdf * nompi_*\n    - lz4-c\n    - xorg-libxt  # [linux]\n    - boost-cpp\n    - tk  # [not win and not VTK_WITH_OSMESA]\n    - ffmpeg\n    - utfcpp\n    - eigen\n    - double-conversion\n    - pugixml\n    - glew\n    - libogg\n    - libtheora\n    - proj\n    - loguru\n    - sqlite\n    - gl2ps\n    - pugixml\n\n  run:\n    - python\n    - zlib\n    - freetype\n    - hdf5\n    - libxml2\n    - libpng\n    - jpeg\n    - libtiff\n    - jsoncpp\n    - expat\n    - tbb\n    - mesalib   # [VTK_WITH_OSMESA]\n    - libnetcdf\n    - lz4-c\n    - xorg-libxt  # [linux]\n    - tk  # [not win and not VTK_WITH_OSMESA]\n    - ffmpeg\n    - utfcpp\n    - eigen\n    - double-conversion\n    - pugixml\n    - glew\n    - libogg\n    - libtheora\n    - proj\n    - loguru\n    - sqlite\n    - gl2ps\n    - pugixml\n\n  run_constrained:\n    # Paraview bundles its own VTK that has conflicting Python vtkmodules\n    - paraview ==9999999999\n\ntest:\n  imports:\n    - vtk\n    - vtk.vtkChartsCore\n    - vtk.vtkCommonCore\n    - vtk.vtkFiltersCore\n    - vtk.vtkFiltersGeneric\n    - vtk.vtkGeovisCore\n    - vtk.vtkFiltersHybrid\n    - vtk.vtkIOCore\n    - vtk.vtkImagingCore\n    - vtk.vtkInfovisCore\n    - vtk.vtkRenderingCore\n    - vtk.vtkViewsCore\n    - vtk.vtkRenderingVolume\n    - vtk.vtkInteractionWidgets\n    - vtk.vtkWebGLExporter\n    - vtk.tk.vtkTkRenderWidget  # [not win and not VTK_WITH_OSMESA]\n    - vtkmodules\n    - vtkmodules.vtkChartsCore\n    - vtkmodules.vtkCommonCore\n    - vtkmodules.vtkFiltersCore\n    - vtkmodules.vtkFiltersGeneric\n    - vtkmodules.vtkGeovisCore\n    - vtkmodules.vtkFiltersHybrid\n    - vtkmodules.vtkIOCore\n    - vtkmodules.vtkImagingCore\n    - vtkmodules.vtkInfovisCore\n    - vtkmodules.vtkRenderingCore\n    - vtkmodules.vtkViewsCore\n    - vtkmodules.vtkRenderingVolume\n    - vtkmodules.vtkInteractionWidgets\n\n  requires:\n    - setuptools\n\nabout:\n  home: http://www.vtk.org/\n  license: BSD-3-Clause\n  license_file: Copyright.txt\n  summary: >\n    The Visualization Toolkit (VTK) is an open-source, freely available software\n    system for 3D computer graphics, modeling, image processing, volume\n    rendering, scientific visualization, and information visualization.\n\nextra:\n  recipe-maintainers:\n    - Maxyme\n    - ccordoba12\n    - grlee77\n    - msarahan\n    - patricksnape\n    - dfroger\n    - tadeu\n    - marcelotrevisani\n    - xylar\n    - muryanto1\n    - downiec\n    - jasonb5\n",
+ "raw_meta_yaml":"{% set version = \"9.0.0\" %}\n{% set build = 1 %}\n\n{% set minor_version = \".\".join(version.split(\".\")[:2]) %}\n\n{% set build = build + 100 %}   # [not VTK_WITH_OSMESA]\n\npackage:\n  name: vtk\n  version: {{ version }}\n\nsource:\n  url: http://www.vtk.org/files/release/{{ minor_version }}/VTK-{{ version }}.tar.gz\n  sha256: 15def4e6f84d72f82386617fe595ec124dda3cbd13ea19a0dcd91583197d8715\n\nbuild:\n  skip: True  # [win and py27]\n  number: {{ build }}\n\n  # typically, osmesa is selected by installing or not installing\n  # mesalib, but it could also be selected via the build string:\n  # `vtk * with_osmesa*` for osmesa\n  # `vtk * no_osmesa*` for no osmesa\n\n  {% if VTK_WITH_OSMESA == \"True\" %}\n  {% set osmesa_prefix = \"with_osmesa\" %}\n  {% else %}\n  {% set osmesa_prefix = \"no_osmesa\" %}\n  {% endif %}\n  string: \"{{ osmesa_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\n  features:\n    - mesalib   # [VTK_WITH_OSMESA]\n\nrequirements:\n  build:\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja\n    - {{ cdt('libxcb') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxau') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libuuid') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxext') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxfixes') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxxf86vm') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libxdamage') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libselinux') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libsm-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libice-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('libx11-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('mesa-libgl-devel') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux and not VTK_WITH_OSMESA]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [linux and not VTK_WITH_OSMESA]\n\n  host:\n    - python\n    - zlib\n    - freetype\n    - hdf5\n    - hdf5 * nompi_*\n    - libxml2\n    - libpng\n    - jpeg\n    - libtiff\n    - jsoncpp\n    - expat\n    - tbb\n    - tbb-devel\n    - mesalib   # [VTK_WITH_OSMESA]\n    - libnetcdf\n    - libnetcdf * nompi_*\n    - lz4-c\n    - xorg-libxt  # [linux]\n    - boost-cpp\n    - tk  # [not win and not VTK_WITH_OSMESA]\n    - ffmpeg\n    - utfcpp\n    - eigen\n    - double-conversion\n    - pugixml\n    - glew\n    - libogg\n    - libtheora\n    - proj\n    - loguru\n    - sqlite\n    - gl2ps\n    - pugixml\n\n  run:\n    - python\n    - zlib\n    - freetype\n    - hdf5\n    - libxml2\n    - libpng\n    - jpeg\n    - libtiff\n    - jsoncpp\n    - expat\n    - tbb\n    - mesalib   # [VTK_WITH_OSMESA]\n    - libnetcdf\n    - lz4-c\n    - xorg-libxt  # [linux]\n    - tk  # [not win and not VTK_WITH_OSMESA]\n    - ffmpeg\n    - utfcpp\n    - eigen\n    - double-conversion\n    - pugixml\n    - glew\n    - libogg\n    - libtheora\n    - proj\n    - loguru\n    - sqlite\n    - gl2ps\n    - pugixml\n    - tbb-devel\n\n  run_constrained:\n    # Paraview bundles its own VTK that has conflicting Python vtkmodules\n    - paraview ==9999999999\n\ntest:\n  imports:\n    - vtk\n    - vtk.vtkChartsCore\n    - vtk.vtkCommonCore\n    - vtk.vtkFiltersCore\n    - vtk.vtkFiltersGeneric\n    - vtk.vtkGeovisCore\n    - vtk.vtkFiltersHybrid\n    - vtk.vtkIOCore\n    - vtk.vtkImagingCore\n    - vtk.vtkInfovisCore\n    - vtk.vtkRenderingCore\n    - vtk.vtkViewsCore\n    - vtk.vtkRenderingVolume\n    - vtk.vtkInteractionWidgets\n    - vtk.vtkWebGLExporter\n    - vtk.tk.vtkTkRenderWidget  # [not win and not VTK_WITH_OSMESA]\n    - vtkmodules\n    - vtkmodules.vtkChartsCore\n    - vtkmodules.vtkCommonCore\n    - vtkmodules.vtkFiltersCore\n    - vtkmodules.vtkFiltersGeneric\n    - vtkmodules.vtkGeovisCore\n    - vtkmodules.vtkFiltersHybrid\n    - vtkmodules.vtkIOCore\n    - vtkmodules.vtkImagingCore\n    - vtkmodules.vtkInfovisCore\n    - vtkmodules.vtkRenderingCore\n    - vtkmodules.vtkViewsCore\n    - vtkmodules.vtkRenderingVolume\n    - vtkmodules.vtkInteractionWidgets\n\n  requires:\n    - setuptools\n\nabout:\n  home: http://www.vtk.org/\n  license: BSD-3-Clause\n  license_file: Copyright.txt\n  summary: >\n    The Visualization Toolkit (VTK) is an open-source, freely available software\n    system for 3D computer graphics, modeling, image processing, volume\n    rendering, scientific visualization, and information visualization.\n\nextra:\n  recipe-maintainers:\n    - Maxyme\n    - ccordoba12\n    - grlee77\n    - msarahan\n    - patricksnape\n    - dfroger\n    - tadeu\n    - marcelotrevisani\n    - xylar\n    - muryanto1\n    - downiec\n    - jasonb5\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -800,6 +803,7 @@
     "python",
     "sqlite",
     "tbb",
+    "tbb-devel",
     "tk",
     "utfcpp",
     "xorg-libxt",
@@ -887,6 +891,7 @@
     "python",
     "sqlite",
     "tbb",
+    "tbb-devel",
     "tk",
     "utfcpp",
     "xorg-libxt",
