@@ -123,9 +123,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -147,11 +144,11 @@
    "number":"0",
    "script":[
     "set USE_CYTHON=true",
-    " -m pip install . --no-deps --ignore-installed -vvv",
+    "-m pip install . --no-deps --ignore-installed -vvv",
     "USE_CYTHON=true",
-    " -m pip install . --no-deps --ignore-installed -vvv",
+    "-m pip install . --no-deps --ignore-installed -vvv",
     "USE_CYTHON=true",
-    " -m pip install . --no-deps --ignore-installed -vvv"
+    "-m pip install . --no-deps --ignore-installed -vvv"
    ]
   },
   "extra":{
@@ -172,7 +169,7 @@
   },
   "package":{
    "name":"python-geotiepoints",
-   "version":"1.1.8"
+   "version":"1.2.0"
   },
   "requirements":{
    "build":[
@@ -210,8 +207,8 @@
    ]
   },
   "source":{
-   "sha256":"02c8a832a8aafd63305280e6d93f860fc94fcb1af7a1bc06a3105195bb6cd310",
-   "url":"https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-1.1.8.tar.gz"
+   "sha256":"f9b0b541c6e5b1748cde8ddc8f3de1a28fe5aafc270e1ff53f0131ad6571cb11",
+   "url":"https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-1.2.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -236,7 +233,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set version = \"1.1.8\" %}\n\npackage:\n  name: python-geotiepoints\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-{{ version }}.tar.gz\n  sha256: 02c8a832a8aafd63305280e6d93f860fc94fcb1af7a1bc06a3105195bb6cd310\n\nbuild:\n  number: 0\n  script:\n    - USE_CYTHON=true  # [not win]\n    - set USE_CYTHON=true  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - pandas\n\ntest:\n  imports:\n    - geotiepoints\n  requires:\n    - h5py\n    - unittest2\n\nabout:\n  home: https://github.com/pytroll/python-geotiepoints\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Interpolation of geographic tiepoints in Python\n  description: Interpolation and extrapolation of geographic (lon, lat) tie points\n  doc_url: http://python-geotiepoints.readthedocs.io\n  dev_url: https://github.com/pytroll/python-geotiepoints\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
+ "raw_meta_yaml":"{% set version = \"1.2.0\" %}\n\npackage:\n  name: python-geotiepoints\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-{{ version }}.tar.gz\n  sha256: f9b0b541c6e5b1748cde8ddc8f3de1a28fe5aafc270e1ff53f0131ad6571cb11\n\nbuild:\n  number: 0\n  script:\n    - USE_CYTHON=true  # [not win]\n    - set USE_CYTHON=true  # [win]\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - pandas\n\ntest:\n  imports:\n    - geotiepoints\n  requires:\n    - h5py\n    - unittest2\n\nabout:\n  home: https://github.com/pytroll/python-geotiepoints\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Interpolation of geographic tiepoints in Python\n  description: Interpolation and extrapolation of geographic (lon, lat) tie points\n  doc_url: http://python-geotiepoints.readthedocs.io\n  dev_url: https://github.com/pytroll/python-geotiepoints\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -318,5 +315,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-geotiepoints/python-geotiepoints-1.1.8.tar.gz",
- "version":"1.1.8"
+ "version":"1.2.0"
 }
