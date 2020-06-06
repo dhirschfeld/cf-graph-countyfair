@@ -79,7 +79,7 @@
     "__lazy_json__":"pr_json/424172374.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1591466112.6636639,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
     "migrator_version":0,
@@ -125,6 +125,25 @@
     "migrator_name",
     "migrator_version",
     "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/429360045.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
    ]
   }
  ],
@@ -220,7 +239,7 @@
   "0.4.12":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.06.02.30.37",
+ "pinning_version":"2020.06.06.15.39.47",
  "raw_meta_yaml":"{% set version = \"0.4.12\" %}\n\npackage:\n  name: discretize\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/discretize/discretize-{{ version }}.tar.gz\n  sha256: b90ba8ab32c4009c4b6af1962f27a15bc69d47b4d752eaf71c033be0551d2387\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython >=0.2\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=0.13\n    - properties\n    - vectormath\n\ntest:\n  imports:\n    - discretize\n\nabout:\n  home: http://github.com/simpeg/discretize\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Discretization tools for finite volume and inverse problems\"\n\nextra:\n  recipe-maintainers:\n    - lheagy\n    - jcapriot\n",
  "req":{
   "__set__":true,
