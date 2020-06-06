@@ -44,8 +44,8 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "dev_url":"https://pytest-executable.readthedocs.io",
-   "doc_url":"https://github.com/CS-SI/pytest-executable",
+   "dev_url":"https://github.com/CS-SI/pytest-executable",
+   "doc_url":"https://pytest-executable.readthedocs.io",
    "home":"https://pytest-executable.readthedocs.io",
    "license":"Apache-2.0",
    "license_family":"APACHE",
@@ -53,7 +53,7 @@
    "summary":"pytest plugin for testing executables"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "script":"-m pip install . --no-deps -vv",
    "skip":true
   },
@@ -66,7 +66,7 @@
   },
   "package":{
    "name":"pytest-executable",
-   "version":"0.4.0"
+   "version":"0.5.0"
   },
   "requirements":{
    "host":[
@@ -83,33 +83,33 @@
     "pyyaml >=3,<6",
     "jsonschema >=2,<4",
     "jinja2 >=2.7,<3",
+    "delta ==0.4.*",
     "dataclasses",
     "python",
     "pytest >=4.3,<6",
     "pyyaml >=3,<6",
     "jsonschema >=2,<4",
     "jinja2 >=2.7,<3",
+    "delta ==0.4.*",
     "dataclasses",
     "python",
     "pytest >=4.3,<6",
     "pyyaml >=3,<6",
     "jsonschema >=2,<4",
     "jinja2 >=2.7,<3",
+    "delta ==0.4.*",
     "dataclasses"
    ]
   },
   "source":{
-   "sha256":"316b7982bcdb923ad6b8453f54b348bf81328dcdcecad212034acdf592bd3a4d",
-   "url":"https://pypi.io/packages/source/p/pytest_executable/pytest_executable-0.4.0.tar.gz"
+   "sha256":"ca63890a5f9aa64834665f141d31301c3fd641187521dd466e045af1a7cd068b",
+   "url":"https://pypi.io/packages/source/p/pytest_executable/pytest-executable-0.5.0.zip"
   },
   "test":{
    "commands":[
-    "python -m pip check",
-    "pytest --traceconfig | grep pytest-executable-0.4.0",
-    "python -m pip check",
-    "pytest --traceconfig | grep pytest-executable-0.4.0",
-    "python -m pip check",
-    "pytest --traceconfig | grep pytest-executable-0.4.0"
+    "pytest --traceconfig | grep pytest-executable-0.5.0",
+    "pytest --traceconfig | grep pytest-executable-0.5.0",
+    "pytest --traceconfig | grep pytest-executable-0.5.0"
    ],
    "imports":[
     "pytest_executable",
@@ -130,11 +130,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set name = \"pytest_executable\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: pytest-executable\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 316b7982bcdb923ad6b8453f54b348bf81328dcdcecad212034acdf592bd3a4d\n\nbuild:\n  number: 3\n  skip: True  # [win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytest >=4.3,<6\n    - pyyaml >=3,<6\n    - jsonschema >=2,<4\n    - jinja2 >=2.7,<3\n    - dataclasses\n\ntest:\n  requires:\n    - pip\n  commands:\n    - python -m pip check\n    - \"pytest --traceconfig | grep pytest-executable-{{ version }}\"\n  imports:\n    - pytest_executable\n\nabout:\n  home: https://pytest-executable.readthedocs.io\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE.txt\n  summary: pytest plugin for testing executables\n  doc_url: https://github.com/CS-SI/pytest-executable\n  dev_url: https://pytest-executable.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
+ "raw_meta_yaml":"{% set name = \"pytest-executable\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name.replace('-', '_') }}/{{ name }}-{{ version }}.zip\n  sha256: ca63890a5f9aa64834665f141d31301c3fd641187521dd466e045af1a7cd068b\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytest >=4.3,<6\n    - pyyaml >=3,<6\n    - jsonschema >=2,<4\n    - jinja2 >=2.7,<3\n    - delta ==0.4.*\n    - dataclasses\n\ntest:\n  requires:\n    - pip\n  commands:\n    #- python -m pip check\n    - pytest --traceconfig | grep pytest-executable-{{ version }}\n  imports:\n    - pytest_executable\n\nabout:\n  home: https://pytest-executable.readthedocs.io\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE.txt\n  summary: pytest plugin for testing executables\n  doc_url: https://pytest-executable.readthedocs.io\n  dev_url: https://github.com/CS-SI/pytest-executable\n\nextra:\n  recipe-maintainers:\n    - AntoineD\n",
  "req":{
   "__set__":true,
   "elements":[
    "dataclasses",
+   "delta",
    "jinja2",
    "jsonschema",
    "pip",
@@ -159,6 +160,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "delta",
     "jinja2",
     "jsonschema",
     "pytest",
@@ -191,6 +193,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "delta ==0.4.*",
     "jinja2 >=2.7,<3",
     "jsonschema >=2,<4",
     "pytest >=4.3,<6",
@@ -206,5 +209,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pytest_executable/pytest_executable-0.4.0.tar.gz",
- "version":"0.4.0"
+ "version":"0.5.0"
 }
