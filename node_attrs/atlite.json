@@ -26,9 +26,9 @@
  "meta_yaml":{
   "about":{
    "description":"Atlite is a free software, xarray-based Python library for converting\nweather data (such as wind speeds, solar radiation, temperature and\nrunoff) into power systems data (such as wind power, solar power, hydro\npower and heating demand time series). It is designed to work with big\ndatasets, such as hourly global weather data over several years at spatial\nresolutions down to e.g. 0.1 x 0.1 degree resolution.\n",
-   "dev_url":"https://github.com/FRESNA/atlite",
-   "home":"https://github.com/FRESNA/atlite",
-   "license":"GPL-3.0",
+   "dev_url":"https://github.com/PyPSA/atlite",
+   "home":"https://github.com/PyPSA/atlite",
+   "license":"GPL-3.0-or-later",
    "license_family":"GPL",
    "license_file":"LICENSE.txt",
    "summary":"Atlite converts climate weather data for Power Systems Analysis"
@@ -47,19 +47,22 @@
   },
   "package":{
    "name":"atlite",
-   "version":"0.0.2"
+   "version":"0.0.3"
   },
   "requirements":{
    "host":[
     "python >=3",
     "pip",
     "six",
+    "setuptools_scm",
     "python >=3",
     "pip",
     "six",
+    "setuptools_scm",
     "python >=3",
     "pip",
-    "six"
+    "six",
+    "setuptools_scm"
    ],
    "run":[
     "python >=3",
@@ -104,8 +107,8 @@
    ]
   },
   "source":{
-   "sha256":"2e53da5900597aeb38e50615b3d725e1241b7215af3ce8541fa230d8082bce57",
-   "url":"https://pypi.io/packages/source/a/atlite/atlite-0.0.2.tar.gz"
+   "sha256":"30c7e446d0804d7ca0e56856dedfd0a90e9fc71c539369a47bc12b2f488fc439",
+   "url":"https://pypi.io/packages/source/a/atlite/atlite-0.0.3.tar.gz"
   },
   "test":{
    "imports":[
@@ -122,7 +125,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"atlite\" %}\n{% set version = \"0.0.2\" %}\n{% set sha256 = \"2e53da5900597aeb38e50615b3d725e1241b7215af3ce8541fa230d8082bce57\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - six\n  run:\n    - python >=3\n    - six\n    - numpy\n    - scipy\n    - pandas >=0.22\n    - bottleneck\n    - numexpr\n    - xarray >=0.11.2\n    - dask >=0.18.0\n    - rasterio\n    - shapely\n    - progressbar2\n    - geopandas\n\ntest:\n  imports:\n    - atlite\n\nabout:\n  home: https://github.com/FRESNA/atlite\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Atlite converts climate weather data for Power Systems Analysis\n  description: |\n      Atlite is a free software, xarray-based Python library for converting\n      weather data (such as wind speeds, solar radiation, temperature and\n      runoff) into power systems data (such as wind power, solar power, hydro\n      power and heating demand time series). It is designed to work with big\n      datasets, such as hourly global weather data over several years at spatial\n      resolutions down to e.g. 0.1 x 0.1 degree resolution.\n  dev_url: https://github.com/FRESNA/atlite\n\nextra:\n  recipe-maintainers:\n    - coroa\n",
+ "raw_meta_yaml":"{% set name = \"atlite\" %}\n{% set version = \"0.0.3\" %}\n{% set sha256 = \"30c7e446d0804d7ca0e56856dedfd0a90e9fc71c539369a47bc12b2f488fc439\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - six\n    - setuptools_scm\n  run:\n    - python >=3\n    - six\n    - numpy\n    - scipy\n    - pandas >=0.22\n    - bottleneck\n    - numexpr\n    - xarray >=0.11.2\n    - dask >=0.18.0\n    - rasterio\n    - shapely\n    - progressbar2\n    - geopandas\n\ntest:\n  imports:\n    - atlite\n\nabout:\n  home: https://github.com/PyPSA/atlite\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Atlite converts climate weather data for Power Systems Analysis\n  description: |\n      Atlite is a free software, xarray-based Python library for converting\n      weather data (such as wind speeds, solar radiation, temperature and\n      runoff) into power systems data (such as wind power, solar power, hydro\n      power and heating demand time series). It is designed to work with big\n      datasets, such as hourly global weather data over several years at spatial\n      resolutions down to e.g. 0.1 x 0.1 degree resolution.\n  dev_url: https://github.com/PyPSA/atlite\n\nextra:\n  recipe-maintainers:\n    - coroa\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -137,6 +140,7 @@
    "python",
    "rasterio",
    "scipy",
+   "setuptools_scm",
    "shapely",
    "six",
    "xarray"
@@ -152,6 +156,7 @@
    "elements":[
     "pip",
     "python",
+    "setuptools_scm",
     "six"
    ]
   },
@@ -190,6 +195,7 @@
    "elements":[
     "pip",
     "python >=3",
+    "setuptools_scm",
     "six"
    ]
   },
@@ -217,5 +223,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/atlite/atlite-0.0.2.tar.gz",
- "version":"0.0.2"
+ "version":"0.0.3"
 }
