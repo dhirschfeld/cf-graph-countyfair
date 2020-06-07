@@ -101,6 +101,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/429635114.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.81"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -184,10 +201,11 @@
  "new_version":"0.1.81",
  "new_version_attempts":{
   "0.1.79":1,
-  "0.1.80":1
+  "0.1.80":1,
+  "0.1.81":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.06.18.33.32",
  "raw_meta_yaml":"{% set name = \"fluids\" %}\n{% set version = \"0.1.80\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3a6eedd9983eb287c5c58c5796dd0f00061897028e981b10b843b9ec01ed2e83\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - numpy >=1.5.0\n    - python\n    - scipy >=0.9.0\n    - sympy\n    - pint\n    - fuzzywuzzy\n\ntest:\n  imports:\n    - fluids\n\nabout:\n  home: https://github.com/CalebBell/fluids\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Fluid dynamics component of Chemical Engineering Design Library (ChEDL)\n  description: |\n    Fluids is open-source software for engineers and technicians working in\n    the fields of chemical, mechanical, or civil engineering. It includes\n    modules for piping, fittings, pumps, tanks, compressible flow, open-channel\n    flow, and more.\n\n    The fluids library depends on the SciPy library to provide numerical \n    constants, interpolation, integration, and numerical solving functionality. \n    fluids runs on all operating systems which support Python, is quick to \n    install, and is free of charge. fluids is designed to be easy to use while \n    still providing powerful functionality. If you need to perform some fluid \n    dynamics calculations, give fluids a try.\n  doc_url: https://fluids.readthedocs.io/\n  dev_url: https://github.com/CalebBell/fluids\n\nextra:\n  recipe-maintainers:\n    - volpatto\n    - CalebBell\n",
  "req":{
   "__set__":true,
