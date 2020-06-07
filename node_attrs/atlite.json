@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/430365761.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.0.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -97,7 +116,12 @@
   }
  },
  "name":"atlite",
- "new_version":"0.0.2",
+ "new_version":"0.0.3",
+ "new_version_attempts":{
+  "0.0.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"atlite\" %}\n{% set version = \"0.0.2\" %}\n{% set sha256 = \"2e53da5900597aeb38e50615b3d725e1241b7215af3ce8541fa230d8082bce57\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - six\n  run:\n    - python >=3\n    - six\n    - numpy\n    - scipy\n    - pandas >=0.22\n    - bottleneck\n    - numexpr\n    - xarray >=0.11.2\n    - dask >=0.18.0\n    - rasterio\n    - shapely\n    - progressbar2\n    - geopandas\n\ntest:\n  imports:\n    - atlite\n\nabout:\n  home: https://github.com/FRESNA/atlite\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Atlite converts climate weather data for Power Systems Analysis\n  description: |\n      Atlite is a free software, xarray-based Python library for converting\n      weather data (such as wind speeds, solar radiation, temperature and\n      runoff) into power systems data (such as wind power, solar power, hydro\n      power and heating demand time series). It is designed to work with big\n      datasets, such as hourly global weather data over several years at spatial\n      resolutions down to e.g. 0.1 x 0.1 degree resolution.\n  dev_url: https://github.com/FRESNA/atlite\n\nextra:\n  recipe-maintainers:\n    - coroa\n",
  "req":{
   "__set__":true,
@@ -154,6 +178,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
