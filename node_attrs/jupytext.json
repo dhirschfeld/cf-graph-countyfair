@@ -492,6 +492,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/430300392.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -569,11 +586,13 @@
   }
  },
  "name":"jupytext",
- "new_version":"1.4.2",
+ "new_version":"1.5.0",
  "new_version_attempts":{
-  "1.4.2":1
+  "1.4.2":1,
+  "1.5.0":1
  },
- "pinning_version":"2020.04.03",
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"jupytext\" %}\n{% set version = \"1.4.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 58b4c6bf48ba2e18bfc2d8358e852b6e3538ff664843398be09157c184ee1a27\n\nbuild:\n  number: 0\n  entry_points:\n    - jupytext = jupytext.cli:jupytext\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vvv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - nbformat >=4.0.0\n    - pyyaml\n\ntest:\n  imports:\n    - jupytext\n  commands:\n    - jupytext --help\n\nabout:\n  home: https://github.com/mwouts/jupytext\n  doc_url: https://github.com/mwouts/jupytext/blob/master/README.md\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Jupyter notebooks as Markdown documents, Julia, Python or R scripts\n  description: |\n    Represent Jupyter notebooks as Markdown documents or Julia, Python or R scripts. Convert any\n    script or Markdown document to a Jupyter notebook. Round trip conversion is robust and well tested.\n\n    Use these simpler representations to do version control and collaborate on Jupyter notebooks.\n    And refactor your notebooks encoded as scripts in your favorite IDE.\n\n    Jupytext is available directly in Jupyter Notebook and JupyterLab, and also on the command line.\n\nextra:\n  recipe-maintainers:\n    - grst\n    - mwouts\n",
  "req":{
   "__set__":true,
@@ -608,7 +627,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

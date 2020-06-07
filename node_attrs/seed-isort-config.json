@@ -20,7 +20,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"seed-isort-config",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -40,7 +44,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -51,7 +55,7 @@
   },
   "package":{
    "name":"seed-isort-config",
-   "version":"2.1.1"
+   "version":"2.2.0"
   },
   "requirements":{
    "host":[
@@ -72,8 +76,8 @@
    ]
   },
   "source":{
-   "sha256":"fbaf28b850c9c4f205dc90fbcc99cf422bce144df1b570340c973dd3fac77578",
-   "url":"https://pypi.io/packages/source/s/seed-isort-config/seed_isort_config-2.1.1.tar.gz"
+   "sha256":"be4cfef8f9a3fe8ea1817069c6b624538ac0b429636ec746edeb27e98ed628c8",
+   "url":"https://pypi.io/packages/source/s/seed-isort-config/seed_isort_config-2.2.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -95,7 +99,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.06.18.33.32",
- "raw_meta_yaml":"{% set name = \"seed-isort-config\" %}\n{% set version = \"2.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: fbaf28b850c9c4f205dc90fbcc99cf422bce144df1b570340c973dd3fac77578\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - seed-isort-config = seed_isort_config:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - aspy.refactor-imports\n\ntest:\n  imports:\n    - seed_isort_config\n  commands:\n    - seed-isort-config --help\n\nabout:\n  home: https://github.com/asottile/seed-isort-config\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Statically populate the known_third_party isort setting'\n  dev_url: https://github.com/asottile/seed-isort-config\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"seed-isort-config\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace(\"-\", \"_\") }}-{{ version }}.tar.gz\n  sha256: be4cfef8f9a3fe8ea1817069c6b624538ac0b429636ec746edeb27e98ed628c8\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - seed-isort-config = seed_isort_config:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - aspy.refactor-imports\n\ntest:\n  imports:\n    - seed_isort_config\n  commands:\n    - seed-isort-config --help\n\nabout:\n  home: https://github.com/asottile/seed-isort-config\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Statically populate the known_third_party isort setting\n  dev_url: https://github.com/asottile/seed-isort-config\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -155,5 +159,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/seed-isort-config/seed_isort_config-2.1.1.tar.gz",
- "version":"2.1.1"
+ "version":"2.2.0"
 }

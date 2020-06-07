@@ -94,7 +94,7 @@
    "home":"https://github.com/iiasa/message_ix",
    "license":"Apache-2.0",
    "license_file":"LICENSE",
-   "summary":"The integrated assessment and energy systems model MESSAGEix https://MESSAGEix.iiasa.ac.at/"
+   "summary":"The MESSAGE integrated assessment and energy systems model"
   },
   "build":{
    "entry_points":[
@@ -104,7 +104,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":"-m pip install . --no-deps -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -118,49 +118,43 @@
   },
   "package":{
    "name":"message-ix",
-   "version":"2.0.0"
+   "version":"3.0.1"
   },
   "requirements":{
    "build":[
     "python",
     "pip",
+    "setuptools-scm",
     "python",
     "pip",
+    "setuptools-scm",
     "python",
-    "pip"
+    "pip",
+    "setuptools-scm"
    ],
    "run":[
-    "ixmp ==2.0.0",
-    "ixmp ==2.0.0",
-    "ixmp ==2.0.0"
+    "ixmp ==3.0.0",
+    "ixmp ==3.0.0",
+    "ixmp ==3.0.0"
    ]
   },
   "source":{
-   "sha256":"ecaf4d7a5023dbb8196baff3f121715236ec99df8ea7789d8f00213607cbb67c",
-   "url":"https://github.com/iiasa/message_ix/archive/v2.0.0.tar.gz"
+   "sha256":"48db07fdd6692b60cb121490ca6bd2affcef4380b9c9fa1c531c46414e53cfba",
+   "url":"https://pypi.io/packages/source/m/message_ix/message_ix-3.0.1.tar.gz"
   },
   "test":{
    "commands":[
-    "python -c \"import ixmp; assert ixmp.__version__ == '2.0.0'\"",
-    "python -c \"import message_ix; assert message_ix.__version__ == '2.0.0'\"",
     "message-ix --help",
     "message-ix dl tutorial",
     "message-ix add-years --help",
-    "python -c \"import message_ix.testing.nightly\"",
     "message-ix nightly --help",
-    "python -c \"import ixmp; assert ixmp.__version__ == '2.0.0'\"",
-    "python -c \"import message_ix; assert message_ix.__version__ == '2.0.0'\"",
     "message-ix --help",
     "message-ix dl tutorial",
     "message-ix add-years --help",
-    "python -c \"import message_ix.testing.nightly\"",
     "message-ix nightly --help",
-    "python -c \"import ixmp; assert ixmp.__version__ == '2.0.0'\"",
-    "python -c \"import message_ix; assert message_ix.__version__ == '2.0.0'\"",
     "message-ix --help",
     "message-ix dl tutorial",
     "message-ix add-years --help",
-    "python -c \"import message_ix.testing.nightly\"",
     "message-ix nightly --help"
    ],
    "imports":[
@@ -185,13 +179,14 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.06.18.33.32",
- "raw_meta_yaml":"{% set version = \"2.0.0\" %}\n{% set ixmp_version = \"2.0.0\" %}\n{% set ixmp_conda_version = \"2.0.0\" %}\n{% set sha256 = \"ecaf4d7a5023dbb8196baff3f121715236ec99df8ea7789d8f00213607cbb67c\" %}\n\npackage:\n  name: message-ix\n  version: {{ version }}\n\nsource:\n  url: https://github.com/iiasa/message_ix/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - message-ix=message_ix.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - ixmp =={{ ixmp_conda_version }}\n\ntest:\n  imports:\n    - message_ix\n  requires:\n    - asyncssh\n    - requests\n  commands:\n    - python -c \"import ixmp; assert ixmp.__version__ == '{{ ixmp_version }}'\"\n    - python -c \"import message_ix; assert message_ix.__version__ == '{{ version }}'\"\n    # General CLI help\n    - message-ix --help\n    # Download the tutorials\n    - message-ix dl tutorial\n    # Special CLI commands loaded from modules\n    - message-ix add-years --help\n    - python -c \"import message_ix.testing.nightly\"\n    - message-ix nightly --help\n\nabout:\n  home: https://github.com/iiasa/message_ix\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'The integrated assessment and energy systems model MESSAGEix https://MESSAGEix.iiasa.ac.at/'\n\nextra:\n  recipe-maintainers:\n    - gidden\n    - khaeru\n",
+ "raw_meta_yaml":"{% set name = \"message-ix\" %}\n{% set name_ = \"message_ix\" %}\n{% set version = \"3.0.1\" %}\n{% set hash = \"48db07fdd6692b60cb121490ca6bd2affcef4380b9c9fa1c531c46414e53cfba\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name_ }}/{{ name_ }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n  - message-ix=message_ix.cli:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  - setuptools-scm\n  run:\n  - ixmp ==3.0.0\n\ntest:\n  imports:\n  - message_ix\n  requires:\n  - asyncssh\n  - requests\n  commands:\n  # General CLI help\n  - message-ix --help\n  # Download the tutorials\n  - message-ix dl tutorial\n  # Special CLI commands loaded from modules\n  - message-ix add-years --help\n  - message-ix nightly --help\n\nabout:\n  home: https://github.com/iiasa/message_ix\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: The MESSAGE integrated assessment and energy systems model\n\nextra:\n  recipe-maintainers:\n  - gidden\n  - khaeru\n",
  "req":{
   "__set__":true,
   "elements":[
    "ixmp",
    "pip",
-   "python"
+   "python",
+   "setuptools-scm"
   ]
  },
  "requirements":{
@@ -199,7 +194,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -227,7 +223,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -237,7 +234,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "ixmp ==2.0.0"
+    "ixmp ==3.0.0"
    ]
   },
   "test":{
@@ -249,5 +246,5 @@
   }
  },
  "url":"https://github.com/iiasa/message_ix/archive/v1.2.0.tar.gz",
- "version":"2.0.0"
+ "version":"3.0.1"
 }
