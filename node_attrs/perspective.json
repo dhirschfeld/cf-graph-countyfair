@@ -1,6 +1,212 @@
 {
  "archived":false,
- "bad":"make_graph: 404",
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"perspective",
- "new_version":false
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"Streaming pivot visualization via WebAssembly\n",
+   "dev_url":"https://github.com/finos/perspective",
+   "home":"http://github.com/finos/perspective",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"dist/LICENSE",
+   "summary":"Streaming pivot visualization via WebAssembly"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "timkpaine",
+    "texodus",
+    "neilslinger",
+    "sc1f",
+    "timkpaine",
+    "texodus",
+    "neilslinger",
+    "sc1f",
+    "timkpaine",
+    "texodus",
+    "neilslinger",
+    "sc1f"
+   ]
+  },
+  "package":{
+   "name":"perspective",
+   "version":"0.4.8"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "pybind11",
+    "boost",
+    "numpy >=1.13.1",
+    "pyarrow ==0.15.1",
+    "arrow-cpp ==0.15.1",
+    "python",
+    "pip",
+    "pybind11",
+    "boost",
+    "numpy >=1.13.1",
+    "pyarrow ==0.15.1",
+    "arrow-cpp ==0.15.1",
+    "python",
+    "pip",
+    "pybind11",
+    "boost",
+    "numpy >=1.13.1",
+    "pyarrow ==0.15.1",
+    "arrow-cpp ==0.15.1"
+   ],
+   "run":[
+    "python",
+    "ipywidgets >=7.5.1",
+    "numpy",
+    "python-dateutil >=2.8.0",
+    "six >=1.11.0",
+    "traitlets >=4.3.2",
+    "pandas >=0.22.0",
+    "python",
+    "ipywidgets >=7.5.1",
+    "numpy",
+    "python-dateutil >=2.8.0",
+    "six >=1.11.0",
+    "traitlets >=4.3.2",
+    "pandas >=0.22.0",
+    "python",
+    "ipywidgets >=7.5.1",
+    "numpy",
+    "python-dateutil >=2.8.0",
+    "six >=1.11.0",
+    "traitlets >=4.3.2",
+    "pandas >=0.22.0"
+   ]
+  },
+  "source":{
+   "sha256":"08e6f8f6baba3c8867dacf0b1116e1ca1024fbef0c1377bd1d1123428248a767",
+   "url":"https://pypi.io/packages/source/p/perspective-python/perspective-python-0.4.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "perspective",
+    "perspective.table",
+    "perspective",
+    "perspective.table",
+    "perspective",
+    "perspective.table"
+   ]
+  }
+ },
+ "name":"perspective",
+ "new_version":"0.5.0",
+ "raw_meta_yaml":"{% set name = \"perspective\" %}\n{% set pypi_name = \"perspective-python\" %}\n{% set version = \"0.4.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  sha256: 08e6f8f6baba3c8867dacf0b1116e1ca1024fbef0c1377bd1d1123428248a767\n\nbuild:\n  number: 0\n  skip: True  # [py<37 or win or osx]\n  # skip: True  # [py<37 or (win and vc<14)]  # keep this for future reference\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - pip\n    - pybind11\n    - boost\n    - numpy >=1.13.1\n    - pyarrow ==0.15.1\n    - arrow-cpp ==0.15.1\n  run:\n    - python\n    - ipywidgets >=7.5.1\n    - {{ pin_compatible('numpy') }}\n    - python-dateutil >=2.8.0\n    - six >=1.11.0\n    - traitlets >=4.3.2\n    - pandas >=0.22.0\ntest:\n  imports:\n    - perspective\n    - perspective.table\n\nabout:\n  home: http://github.com/finos/perspective\n  license: Apache-2.0\n  license_family: Apache\n  license_file: dist/LICENSE\n  summary: 'Streaming pivot visualization via WebAssembly'\n\n  description: |\n    Streaming pivot visualization via WebAssembly\n  dev_url: https://github.com/finos/perspective\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n    - texodus\n    - neilslinger\n    - sc1f\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "arrow-cpp",
+   "boost",
+   "cmake",
+   "cxx_compiler_stub",
+   "ipywidgets",
+   "numpy",
+   "pandas",
+   "pip",
+   "pyarrow",
+   "pybind11",
+   "python",
+   "python-dateutil",
+   "six",
+   "traitlets"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "arrow-cpp",
+    "boost",
+    "numpy",
+    "pip",
+    "pyarrow",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ipywidgets",
+    "numpy",
+    "pandas",
+    "python",
+    "python-dateutil",
+    "six",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "arrow-cpp ==0.15.1",
+    "boost",
+    "numpy >=1.13.1",
+    "pip",
+    "pyarrow ==0.15.1",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ipywidgets >=7.5.1",
+    "numpy",
+    "pandas >=0.22.0",
+    "python",
+    "python-dateutil >=2.8.0",
+    "six >=1.11.0",
+    "traitlets >=4.3.2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://pypi.io/packages/source/p/perspective-python/perspective-python-0.4.8.tar.gz",
+ "version":"0.4.8"
 }
