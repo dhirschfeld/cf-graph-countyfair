@@ -1,6 +1,25 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/429916003.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.12"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"xalan-c",
  "hash_type":"sha256",
@@ -72,6 +91,12 @@
   }
  },
  "name":"xalan-c",
+ "new_version":"1.12",
+ "new_version_attempts":{
+  "1.12":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.06.18.33.32",
  "raw_meta_yaml":"{% set name = \"xalan-c\" %}\n{% set version = \"1.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  # xalan lib uses <major>_<minor> in links intead of <major>.<minor>\n  url: https://github.com/apache/xalan-c/archive/Xalan-C_{{ version|replace(\".\",\"_\") }}_0.tar.gz\n  sha256: edfaee4562d9dec4d0a971e06cc6355f8c822ce49f18beba095f8a4dc93b4285\n\nbuild:\n  skip: True  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - make\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  \n  host:\n    - xerces-c >=3\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/xalanc/XPathCAPI/XPathCAPI.h\n    - test -f ${PREFIX}/include/xalanc/XPath/XPath.hpp\n    - test -f ${PREFIX}/lib/libxalan-c${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libxalanMsg${SHLIB_EXT}\n    - test -f ${PREFIX}/bin/Xalan\n\nabout:\n  home: https://github.com/simplejson/simplejson\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Command line program to transform XML documents using a stylesheet that conforms to XSLT 1.0 standards.'\n\n  description: |\n    The Apache Xalan C/C++ Project provides a library and a \n    comand line program to transform XML documents using a\n    stylesheet that conforms to XSLT 1.0 standards.\n\n    The source package contains all the code to create the library,\n    a command line transform utility and the documentation.\n\n    The documentation packages provide pre-built html documents\n    for web browser use.\n\n    Binary prebuilt packages are available for some platforms.\n    We could use help providing packages for more platforms.\n\n    Xalan is a project of the Apache Software Foundation.\n\n  doc_url: https://xalan.apache.org/xalan-c/index.html\n  dev_url: https://github.com/apache/xalan-c\n\nextra:\n  recipe-maintainers:\n    - kelvinrr\n",
  "req":{
   "__set__":true,
@@ -106,6 +131,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
