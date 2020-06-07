@@ -120,8 +120,8 @@
     "ixmp = ixmp.cli:main"
    ],
    "noarch":"python",
-   "number":"1",
-   "script":"-m pip install . --no-deps -vv"
+   "number":"0",
+   "script":" -m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -135,29 +135,32 @@
   },
   "package":{
    "name":"ixmp",
-   "version":"2.0.0"
+   "version":"3.0.0"
   },
   "requirements":{
    "build":[
     "python",
     "pip",
+    "setuptools-scm",
     "python",
     "pip",
+    "setuptools-scm",
     "python",
-    "pip"
+    "pip",
+    "setuptools-scm"
    ],
    "run":[
     "click",
     "cython",
-    "dask",
+    "dask >=2.14",
     "graphviz",
-    "jpype1 >=0.7",
+    "jpype1 >=0.7.5",
     "jupyter",
     "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
-    "pandas",
+    "pandas >=1.0",
     "pint",
     "PyYAML",
     "xarray",
@@ -165,15 +168,15 @@
     "xlsxwriter",
     "click",
     "cython",
-    "dask",
+    "dask >=2.14",
     "graphviz",
-    "jpype1 >=0.7",
+    "jpype1 >=0.7.5",
     "jupyter",
     "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
-    "pandas",
+    "pandas >=1.0",
     "pint",
     "PyYAML",
     "xarray",
@@ -181,15 +184,15 @@
     "xlsxwriter",
     "click",
     "cython",
-    "dask",
+    "dask >=2.14",
     "graphviz",
-    "jpype1 >=0.7",
+    "jpype1 >=0.7.5",
     "jupyter",
     "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
-    "pandas",
+    "pandas >=1.0",
     "pint",
     "PyYAML",
     "xarray",
@@ -198,16 +201,13 @@
    ]
   },
   "source":{
-   "sha256":"1e1bcc22efc0de4790b9ad37a067f63cba721a2f5846b493dd95cd7292b20f0e",
-   "url":"https://github.com/iiasa/ixmp/archive/v2.0.0.tar.gz"
+   "sha256":"f8786737e41e2fd0896b2c8bd5b777e61404ae5c63a33cbeadbbf8f6f2a6c71a",
+   "url":"https://pypi.io/packages/source/i/ixmp/ixmp-3.0.0.tar.gz"
   },
   "test":{
    "commands":[
-    "python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '2.0.0'\"",
     "ixmp --help",
-    "python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '2.0.0'\"",
     "ixmp --help",
-    "python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '2.0.0'\"",
     "ixmp --help"
    ],
    "imports":[
@@ -225,7 +225,7 @@
  "name":"ixmp",
  "new_version":"2.0.0",
  "pinning_version":"2020.02.12",
- "raw_meta_yaml":"{% set name = \"ixmp\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"1e1bcc22efc0de4790b9ad37a067f63cba721a2f5846b493dd95cd7292b20f0e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  # TODO switch to PyPI after v3.0.0\n  url: https://github.com/iiasa/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n  - ixmp = ixmp.cli:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  run:\n  - click\n  - cython\n  - dask\n  - graphviz\n  - jpype1 >=0.7\n  - jupyter\n  - matplotlib-base\n  - nbformat\n  - numpy\n  - openjdk\n  - pandas\n  - pint\n  - PyYAML\n  - xarray\n  - xlrd\n  - xlsxwriter\n\ntest:\n  imports:\n  - ixmp\n  requires:\n  - pytest\n  commands:\n  - python -c \"import ixmp; print(ixmp.__version__); assert ixmp.__version__ == '{{ version }}'\"\n  - ixmp --help\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    The ix modeling platform for integrated and cross-cutting scenario analysis\n\nextra:\n  recipe-maintainers:\n  - gidden\n  - khaeru\n",
+ "raw_meta_yaml":"{% set name = \"ixmp\" %}\n{% set version = \"3.0.0\" %}\n{% set hash = \"f8786737e41e2fd0896b2c8bd5b777e61404ae5c63a33cbeadbbf8f6f2a6c71a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n  - ixmp = ixmp.cli:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  - setuptools-scm\n  run:\n  - click\n  - cython\n  - dask >=2.14\n  - graphviz\n  - jpype1 >=0.7.5\n  - jupyter\n  - matplotlib-base\n  - nbformat\n  - numpy\n  - openjdk\n  - pandas >=1.0\n  - pint\n  - PyYAML\n  - xarray\n  - xlrd\n  - xlsxwriter\n\ntest:\n  imports:\n  - ixmp\n  requires:\n  - pytest\n  commands:\n  - ixmp --help\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    The ix modeling platform for integrated and cross-cutting scenario analysis\n\nextra:\n  recipe-maintainers:\n  - gidden\n  - khaeru\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -244,6 +244,7 @@
    "pip",
    "python",
    "pyyaml",
+   "setuptools-scm",
    "xarray",
    "xlrd",
    "xlsxwriter"
@@ -254,7 +255,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -296,7 +298,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -309,15 +312,15 @@
     "PyYAML",
     "click",
     "cython",
-    "dask",
+    "dask >=2.14",
     "graphviz",
-    "jpype1 >=0.7",
+    "jpype1 >=0.7.5",
     "jupyter",
     "matplotlib-base",
     "nbformat",
     "numpy",
     "openjdk",
-    "pandas",
+    "pandas >=1.0",
     "pint",
     "xarray",
     "xlrd",
@@ -332,5 +335,5 @@
   }
  },
  "url":"https://github.com/iiasa/ixmp/archive/v0.2.0.tar.gz",
- "version":"2.0.0"
+ "version":"3.0.0"
 }

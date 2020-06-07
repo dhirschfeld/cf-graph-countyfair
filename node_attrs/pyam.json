@@ -171,7 +171,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"1",
+   "number":"0",
    "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
@@ -186,7 +186,7 @@
   },
   "package":{
    "name":"pyam",
-   "version":"0.5.0"
+   "version":"0.6.0"
   },
   "requirements":{
    "build":[
@@ -201,63 +201,45 @@
     "numpy",
     "pandas",
     "pyyaml",
-    "xlrd",
-    "xlsxwriter",
     "matplotlib-base",
     "seaborn",
     "six",
     "requests",
-    "pint",
+    "iam-units",
     "numpy",
     "pandas",
     "pyyaml",
-    "xlrd",
-    "xlsxwriter",
     "matplotlib-base",
     "seaborn",
     "six",
     "requests",
-    "pint",
+    "iam-units",
     "numpy",
     "pandas",
     "pyyaml",
-    "xlrd",
-    "xlsxwriter",
     "matplotlib-base",
     "seaborn",
     "six",
     "requests",
-    "pint"
+    "iam-units"
    ]
   },
   "source":[
    {
-    "sha256":"6a19f8d80865c919d20c7fe674c36a4dd54eac9aad51777d3c2c5a4c6dc63997",
-    "url":"https://github.com/IAMconsortium/pyam/archive/v0.5.0.tar.gz"
+    "sha256":"a09a13ae0a52249eee85c63ab250fa230fb8d1b16f25d7f018bd61e7612d03fe",
+    "url":"https://github.com/IAMconsortium/pyam/archive/v0.6.0.tar.gz"
    },
    {
-    "folder":"units",
-    "git_url":"https://github.com/IAMconsortium/units"
+    "sha256":"a09a13ae0a52249eee85c63ab250fa230fb8d1b16f25d7f018bd61e7612d03fe",
+    "url":"https://github.com/IAMconsortium/pyam/archive/v0.6.0.tar.gz"
    },
    {
-    "sha256":"6a19f8d80865c919d20c7fe674c36a4dd54eac9aad51777d3c2c5a4c6dc63997",
-    "url":"https://github.com/IAMconsortium/pyam/archive/v0.5.0.tar.gz"
-   },
-   {
-    "folder":"units",
-    "git_url":"https://github.com/IAMconsortium/units"
-   },
-   {
-    "sha256":"6a19f8d80865c919d20c7fe674c36a4dd54eac9aad51777d3c2c5a4c6dc63997",
-    "url":"https://github.com/IAMconsortium/pyam/archive/v0.5.0.tar.gz"
-   },
-   {
-    "folder":"units",
-    "git_url":"https://github.com/IAMconsortium/units"
+    "sha256":"a09a13ae0a52249eee85c63ab250fa230fb8d1b16f25d7f018bd61e7612d03fe",
+    "url":"https://github.com/IAMconsortium/pyam/archive/v0.6.0.tar.gz"
    }
   ],
   "test":{
-   "commands":"python -c \"import pyam; assert pyam.__version__ == '0.5.0'\"",
+   "commands":"python -c \"import pyam; assert pyam.__version__ == '0.6.0'\"",
    "imports":[
     "pyam",
     "pyam",
@@ -274,22 +256,20 @@
   "0.6.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.6.0' to make sure they exist!\n\nWe also found the following errors:\n\n - migrations do not work on `git_url`s\n"
  },
  "pinning_version":"2020.03.30",
- "raw_meta_yaml":"{% set version = \"0.5.0\" %}\n{% set sha256 = \"6a19f8d80865c919d20c7fe674c36a4dd54eac9aad51777d3c2c5a4c6dc63997\" %}\n\npackage:\n  name: pyam\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/IAMconsortium/pyam/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n  # GitHub does not include submodules in the release archives,\n  # so get the latest version of the units repository directly\n  - git_url: https://github.com/IAMconsortium/units\n    folder: units\n  \n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - numpy\n    - pandas\n    - pyyaml\n    - xlrd\n    - xlsxwriter\n    - matplotlib-base\n    - seaborn\n    - six\n    - requests\n    - pint\n\ntest:\n  imports:\n    - pyam\n  commands: python -c \"import pyam; assert pyam.__version__ == '{{ version }}'\"\n\nabout:\n  home: https://pyam-iamc.readthedocs.io/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: a Python package for integrated-assessment scenario analysis and visualization\n  description: |\n    The open-source Python package `pyam` provides a suite of tools and\n    functions for analyzing and visualizing input data\n    (i.e., assumptions/parametrization) and results (model output) of\n    integrated-assessment scenarios.\n\n    # Key features:\n    - Simple analysis of timeseries data in the IAMC format with an interface\n      similar in feel and style to the widely used pandas.DataFrame\n    - Advanced visualization and plotting function\n    - Diagnostic checks for scripted validation of scenario data and results\n  doc_url: https://pyam-iamc.readthedocs.io/\n  dev_url: https://github.com/IAMconsortium/pyam\n\nextra:\n  recipe-maintainers:\n    - gidden\n    - danielhuppmann\n",
+ "raw_meta_yaml":"{% set version = \"0.6.0\" %}\n{% set sha256 = \"a09a13ae0a52249eee85c63ab250fa230fb8d1b16f25d7f018bd61e7612d03fe\" %}\n\npackage:\n  name: pyam\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/IAMconsortium/pyam/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n  \n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - numpy\n    - pandas\n    - pyyaml\n    - matplotlib-base\n    - seaborn\n    - six\n    - requests\n    - iam-units\n\ntest:\n  imports:\n    - pyam\n  commands: python -c \"import pyam; assert pyam.__version__ == '{{ version }}'\"\n\nabout:\n  home: https://pyam-iamc.readthedocs.io/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: a Python package for integrated-assessment scenario analysis and visualization\n  description: |\n    The open-source Python package `pyam` provides a suite of tools and\n    functions for analyzing and visualizing input data\n    (i.e., assumptions/parametrization) and results (model output) of\n    integrated-assessment scenarios.\n\n    # Key features:\n    - Simple analysis of timeseries data in the IAMC format with an interface\n      similar in feel and style to the widely used pandas.DataFrame\n    - Advanced visualization and plotting function\n    - Diagnostic checks for scripted validation of scenario data and results\n  doc_url: https://pyam-iamc.readthedocs.io/\n  dev_url: https://github.com/IAMconsortium/pyam\n\nextra:\n  recipe-maintainers:\n    - gidden\n    - danielhuppmann\n",
  "req":{
   "__set__":true,
   "elements":[
+   "iam-units",
    "matplotlib-base",
    "numpy",
    "pandas",
-   "pint",
    "pip",
    "python",
    "pyyaml",
    "requests",
    "seaborn",
-   "six",
-   "xlrd",
-   "xlsxwriter"
+   "six"
   ]
  },
  "requirements":{
@@ -307,16 +287,14 @@
   "run":{
    "__set__":true,
    "elements":[
+    "iam-units",
     "matplotlib-base",
     "numpy",
     "pandas",
-    "pint",
     "pyyaml",
     "requests",
     "seaborn",
-    "six",
-    "xlrd",
-    "xlsxwriter"
+    "six"
    ]
   },
   "test":{
@@ -341,16 +319,14 @@
   "run":{
    "__set__":true,
    "elements":[
+    "iam-units",
     "matplotlib-base",
     "numpy",
     "pandas",
-    "pint",
     "pyyaml",
     "requests",
     "seaborn",
-    "six",
-    "xlrd",
-    "xlsxwriter"
+    "six"
    ]
   },
   "test":{
@@ -359,5 +335,5 @@
   }
  },
  "url":"https://github.com/IAMconsortium/pyam/archive/v0.2.0.tar.gz",
- "version":"0.5.0"
+ "version":"0.6.0"
 }

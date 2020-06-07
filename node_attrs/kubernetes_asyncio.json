@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/430137727.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"11.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -182,12 +199,13 @@
   }
  },
  "name":"kubernetes_asyncio",
- "new_version":"11.2.0",
+ "new_version":"11.3.0",
  "new_version_attempts":{
-  "11.2.0":1
+  "11.2.0":1,
+  "11.3.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.12.13.56.44",
+ "pinning_version":"2020.06.06.18.33.32",
  "raw_meta_yaml":"{% set version = \"11.2.0\" %}\n\npackage:\n  name: kubernetes_asyncio\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/k/kubernetes_asyncio/kubernetes_asyncio-{{ version }}.tar.gz\n  sha256: e46b0c6608d1ccb2c335e3dfe6f68103df30d20e543ea837c23ef1d3c57a7af8\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - aiohttp >=2.3.10,<4.0.0\n    - certifi >=14.05.14\n    - python-dateutil >=2.5.3\n    - pyyaml >=3.12\n    - setuptools >=21.0.0\n    - six >=1.9.0\n    - urllib3 >=1.24.2\n\ntest:\n  imports:\n    - kubernetes_asyncio\n    - kubernetes_asyncio.client\n    - kubernetes_asyncio.client.api\n    - kubernetes_asyncio.client.models\n    - kubernetes_asyncio.config\n    - kubernetes_asyncio.stream\n    - kubernetes_asyncio.utils\n    - kubernetes_asyncio.watch\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/tomplus/kubernetes_asyncio\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Kubernetes asynchronous python client\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -235,7 +253,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
