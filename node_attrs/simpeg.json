@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431358932.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.14.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -231,12 +248,13 @@
   }
  },
  "name":"simpeg",
- "new_version":"0.14.0",
+ "new_version":"0.14.1",
  "new_version_attempts":{
-  "0.14.0":1
+  "0.14.0":1,
+  "0.14.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"0.14.0\" %}\n\npackage:\n  name: simpeg\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/S/SimPEG/SimPEG-{{ version }}.tar.gz\n  sha256: 28df374f57b3a8910ddf0270909adfedcc8e23034c93a5fb42d4b16a6a00e927\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.7\n    - scipy >=0.13\n    - pymatsolver >=0.1.1\n    - matplotlib-base\n    - properties >=0.5.2\n    - vectormath >=0.2.0\n    - discretize >=0.4.0\n    - geoana >=0.0.4\n    - empymod\n    - pandas\n\ntest:\n  imports:\n    - SimPEG\n    - SimPEG.electromagnetics\n    - SimPEG.electromagnetics.analytics\n    - SimPEG.electromagnetics.frequency_domain\n    - SimPEG.electromagnetics.natural_source\n    - SimPEG.electromagnetics.natural_source.utils\n    - SimPEG.electromagnetics.static\n    - SimPEG.electromagnetics.static.resistivity\n    - SimPEG.electromagnetics.static.induced_polarization\n    - SimPEG.electromagnetics.static.spectral_induced_polarization\n    - SimPEG.electromagnetics.static.utils\n    - SimPEG.electromagnetics.time_domain\n    - SimPEG.electromagnetics.utils\n    - SimPEG.electromagnetics.viscous_remanent_magnetization\n    - SimPEG.flow\n    - SimPEG.flow.richards\n    - SimPEG.potential_fields\n    - SimPEG.potential_fields.gravity\n    - SimPEG.potential_fields.magnetics\n    - SimPEG.seismic\n    - SimPEG.seismic.straight_ray_tomography\n    - SimPEG.utils\n    - SimPEG.utils.drivers\n    - SimPEG.regularization\n\nabout:\n  home: http://simpeg.xyz/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'SimPEG: Simulation and Parameter Estimation in Geophysics'\n\nextra:\n  recipe-maintainers:\n    - lheagy\n    - jcapriot\n    - thast\n",
  "req":{
   "__set__":true,

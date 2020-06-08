@@ -120,6 +120,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431359271.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.0.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -200,8 +217,12 @@
   }
  },
  "name":"swig",
- "new_version":false,
- "pinning_version":"2020.03.10",
+ "new_version":"4.0.2",
+ "new_version_attempts":{
+  "4.0.2":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"4.0.1\" %}\n\npackage:\n  name: swig\n  version: {{ version }}\n\nsource:\n  fn: swig-{{ version }}.tar.gz  # [unix]\n  url: http://prdownloads.sourceforge.net/swig/swig-{{ version }}.tar.gz  # [unix]\n  sha256: 7a00b4d0d53ad97a14316135e2d702091cd5f193bb58bcfcd8bc59d41e7887a9  # [unix]\n  fn: swigwin-{{ version }}.zip  # [win]\n  url: http://prdownloads.sourceforge.net/swig/swigwin-{{ version }}.zip  # [win]\n  sha256: 8c504241ad4fb4f8ba7828deaef1ea0b4972e86eb128b46cb75efabf19ab4745  # [win]\n\nbuild:\n  number: 0\n  skip: true  # [not py27 and unix]\n  detect_binary_files_with_prefix: true  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - {{ compiler('cxx') }}  # [unix]\n    - make\n  host:\n    - pcre  # [unix]\n    - python  # [unix]\n  run:\n    - pcre  # [unix]\n\ntest:\n  commands:\n    - swig  -help\n\nabout:\n  home: http://www.swig.org/\n  license: GPL 3\n  license_file: LICENSE\n  summary: C/C++ parser code generator\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jschueller\n    - msarahan\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -240,7 +261,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.11",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
