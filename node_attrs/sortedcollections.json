@@ -101,7 +101,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -118,7 +118,7 @@
   },
   "package":{
    "name":"sortedcollections",
-   "version":"1.1.2"
+   "version":"1.2.1"
   },
   "requirements":{
    "host":[
@@ -142,9 +142,9 @@
    ]
   },
   "source":{
-   "fn":"sortedcollections-1.1.2.tar.gz",
-   "sha256":"b93e0decbd7f8f19e40c320709e70e4845b6c8b3a0e96c3c4f707b4b93e1d38a",
-   "url":"https://pypi.io/packages/source/s/sortedcollections/sortedcollections-1.1.2.tar.gz"
+   "fn":"sortedcollections-1.2.1.tar.gz",
+   "sha256":"58c31f35e3d052ada6a1fbfc235a408e9ec5e2cfc64a02731cf97cac4afd306a",
+   "url":"https://pypi.io/packages/source/s/sortedcollections/sortedcollections-1.2.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -161,7 +161,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"sortedcollections\" %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"b93e0decbd7f8f19e40c320709e70e4845b6c8b3a0e96c3c4f707b4b93e1d38a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - sortedcontainers\n\ntest:\n  imports:\n    - sortedcollections\n\n\nabout:\n  home: http://www.grantjenks.com/docs/sortedcollections/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python Sorted Collections'\n\n  description: Extends the sortedcontainers library with recipes for other \n               collections.\n  doc_url: http://www.grantjenks.com/docs/sortedcollections/\n  dev_url: https://github.com/grantjenks/sortedcollections\n  doc_source_url: https://github.com/grantjenks/sortedcollections/blob/master/docs/index.rst\n\nextra:\n  recipe-maintainers:\n    - grantjenks\n    - mrocklin\n    - nehaljwani\n",
+ "raw_meta_yaml":"{% set name = \"sortedcollections\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"58c31f35e3d052ada6a1fbfc235a408e9ec5e2cfc64a02731cf97cac4afd306a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - sortedcontainers\n\ntest:\n  imports:\n    - sortedcollections\n\n\nabout:\n  home: http://www.grantjenks.com/docs/sortedcollections/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Python Sorted Collections\n\n  description: Extends the sortedcontainers library with recipes for other collections.\n  doc_url: http://www.grantjenks.com/docs/sortedcollections/\n  dev_url: https://github.com/grantjenks/sortedcollections\n  doc_source_url: https://github.com/grantjenks/sortedcollections/blob/master/docs/index.rst\n\nextra:\n  recipe-maintainers:\n    - grantjenks\n    - mrocklin\n    - nehaljwani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -224,5 +224,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/sortedcollections/sortedcollections-1.1.2.tar.gz",
- "version":"1.1.2"
+ "version":"1.2.1"
 }

@@ -169,6 +169,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/430615513.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -247,8 +264,12 @@
   }
  },
  "name":"whitebox",
- "new_version":"1.2.0",
- "pinning_version":"2020.02.20",
+ "new_version":"1.3.0",
+ "new_version_attempts":{
+  "1.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"whitebox\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7d2c62abbb7e8f29b7c21b2d817c3c09c8cf5fafa17b1794834597277aa8a9da\n\nbuild:\n  number: 0\n  entry_points:\n    - whitebox=whitebox.cli:main\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n\nrequirements:\n  host:\n    - click >=6.0\n    - pip\n    - python >=3.6\n    - setuptools\n  run:\n    - click >=6.0\n    - python >=3.6\n    - setuptools\n\ntest:\n  imports:\n    - os\n    \nabout:\n  home: https://github.com/giswqs/whitebox\n  license: MIT\n  license_family: MIT\n  license_file: \n  summary: An advanced geospatial data analysis platform\n  doc_url: https://whitebox.readthedocs.io\n  dev_url: https://github.com/giswqs/whitebox\n\nextra:\n  recipe-maintainers:\n    - giswqs\n",
  "req":{
   "__set__":true,
@@ -286,7 +307,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
