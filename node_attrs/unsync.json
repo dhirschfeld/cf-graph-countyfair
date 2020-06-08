@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"unsync",
  "hash_type":"sha256",
@@ -59,6 +59,7 @@
   }
  },
  "name":"unsync",
+ "new_version":"1.2.1",
  "raw_meta_yaml":"{% set name = \"unsync\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/alex-sherman/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7a799a21fa7f7564c55e7de781109390e47213e17f676e9b88211cb0f4ceef50\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - unsync\n\nabout:\n  home: https://github.com/alex-sherman/unsync\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Unsynchronize asyncio by using an ambient event loop in a separate thread.'\n\n  description: |\n    unsync implements a unsync function decorator that will implement\n    minimal boilerplate threading, asyncio or multiprocessing depending\n    on the context. It is pure Python code with no dependencies.\n  doc_url: https://asherman.io/projects/unsync.html\n  dev_url: https://github.com/alex-sherman/unsync\n\nextra:\n  recipe-maintainers:\n    - owenlamont\n",
  "req":{
   "__set__":true,
