@@ -761,6 +761,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431194274.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.16.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -890,13 +907,14 @@
   }
  },
  "name":"compas",
- "new_version":"0.16.0",
+ "new_version":"0.16.1",
  "new_version_attempts":{
   "0.15.6":1,
-  "0.16.0":1
+  "0.16.0":1,
+  "0.16.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.04.13.55.38",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"COMPAS\" %}\n{% set version = \"0.16.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5ab59c14fabd8603deb99ee8e10d80496244a7fd68adbb98a0a15ba9618a6b21\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - compas_rpc=compas.rpc.__main__:main\n    - compas_install_rhinoplugin=compas_rhino.install_plugin:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - binaryornot\n    - cython\n    - ezdxf\n    - python\n    - imageio >=2.7\n    - matplotlib-base >=2.2,<3.1  # [win and py<=37]\n    - matplotlib-base >=3.1       # [win and py>=38]\n    - matplotlib-base >=2.2       # [not win]\n    - networkx\n    - numba\n    - numpy >=1.15\n    - pillow\n    - python-planarity\n    - scipy >=1.1\n    - sympy\n\ntest:\n  imports:\n    - compas\n    - compas_blender\n    - compas_ghpython\n    - compas_rhino\n\nabout:\n  home: http://compas-dev.github.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: The COMPAS framework\n  description: |\n    COMPAS is an open-source, Python-based computational framework\n    for collaboration and research in architecture, engineering and\n    digital fabrication. It is developed by the Block Research\n    Group (https://block.arch.ethz.ch) of ETH Zurich (http://www.ethz.ch),\n    with the support of the National Centre for Competence in\n    Research on \"Digital Fabrication\" (http://www.dfab.ch).\n  doc_url: https://compas-dev.github.io\n  dev_url: https://github.com/compas-dev/compas\n\nextra:\n  recipe-maintainers:\n    - brgcode\n    - gonzalocasas\n",
  "req":{
   "__set__":true,
