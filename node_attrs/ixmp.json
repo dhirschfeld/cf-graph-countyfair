@@ -223,7 +223,7 @@
   }
  },
  "name":"ixmp",
- "new_version":"2.0.0",
+ "new_version":"3.0.0",
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"ixmp\" %}\n{% set version = \"3.0.0\" %}\n{% set hash = \"f8786737e41e2fd0896b2c8bd5b777e61404ae5c63a33cbeadbbf8f6f2a6c71a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n  - ixmp = ixmp.cli:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  - setuptools-scm\n  run:\n  - click\n  - cython\n  - dask >=2.14\n  - graphviz\n  - jpype1 >=0.7.5\n  - jupyter\n  - matplotlib-base\n  - nbformat\n  - numpy\n  - openjdk\n  - pandas >=1.0\n  - pint\n  - PyYAML\n  - xarray\n  - xlrd\n  - xlsxwriter\n\ntest:\n  imports:\n  - ixmp\n  requires:\n  - pytest\n  commands:\n  - ixmp --help\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: |\n    The ix modeling platform for integrated and cross-cutting scenario analysis\n\nextra:\n  recipe-maintainers:\n  - gidden\n  - khaeru\n",
  "req":{
