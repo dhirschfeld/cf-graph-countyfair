@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431240075.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -129,8 +146,12 @@
   }
  },
  "name":"climpred",
- "new_version":"2.0.0",
- "pinning_version":"2020.01.07",
+ "new_version":"2.1.0",
+ "new_version_attempts":{
+  "2.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"climpred\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 106061c8357ee12bdc9f824f2df9e675a0b118c9c2eee004ba629a1b3a36abae\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv --no-deps\"\n\nrequirements:\n  host:\n    - python >3.5\n    - pip\n    - setuptools_scm\n    - setuptools_scm_git_archive\n  run:\n    - python >3.5\n    - eofs\n    - matplotlib-base\n    - netcdf4\n    - numpy\n    - pandas\n    - scipy\n    - tqdm\n    - xarray >=0.14.1\n    - xrft\n    - xskillscore >=0.0.12\n\ntest:\n  imports:\n    - climpred \n\nabout:\n  home: http://github.com/bradyrx/climpred\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'an xarray wrapper for analysis of ensemble forecast models for climate prediction'\n  doc_url: http://climpred.readthedocs.io/\n  dev_url: https://github.com/bradyrx/climpred\n\nextra:\n  recipe-maintainers:\n    - bradyrx \n",
  "req":{
   "__set__":true,
@@ -186,7 +207,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

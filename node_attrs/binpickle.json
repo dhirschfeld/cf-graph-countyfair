@@ -54,7 +54,7 @@
   },
   "build":{
    "number":"0",
-   "script":" -m pip install --no-deps ."
+   "script":"-m pip install --no-deps ."
   },
   "extra":{
    "recipe-maintainers":[
@@ -65,7 +65,7 @@
   },
   "package":{
    "name":"binpickle",
-   "version":"0.3.1"
+   "version":"0.3.2"
   },
   "requirements":{
    "host":[
@@ -92,8 +92,8 @@
    ]
   },
   "source":{
-   "sha256":"41544aac0ce5725d7a6e535fa361f86a64b14bdad649872b495b04823eb2bb3a",
-   "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.1.tar.gz"
+   "sha256":"fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1",
+   "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.2.tar.gz"
   },
   "test":{
    "imports":[
@@ -113,7 +113,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"binpickle\" %}\n{% set version = \"0.3.1\" %}\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 41544aac0ce5725d7a6e535fa361f86a64b14bdad649872b495b04823eb2bb3a\n\nbuild:\n  number: 0\n  # Binpickle is only tested on Python 3.6 and later.\n  skip: True  # [py<36]\n  script: \"{{ PYTHON }} -m pip install --no-deps .\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python-blosc\n    - msgpack-python >=1.0\n    - pickle5  # [py<38]\n\ntest:\n  imports:\n    - binpickle\n    - binpickle.codecs.blosc\n\nabout:\n  home: https://binpickle.lenskit.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Efficient binary storage of ML models\n  description: |\n    The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\n    Scientific Python models, such as those learned by scikit-learn, to disk in with\n    their large arrays either compressed (optionall with Blosc) or configured for\n    memory-mapped use to support shared memory multiprocessing.\n  dev_url: https://github.com/lenskit/binpickle\n\nextra:\n  recipe-maintainers:\n    - mdekstrand\n",
+ "raw_meta_yaml":"{% set name = \"binpickle\" %}\n{% set version = \"0.3.2\" %}\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1\n\nbuild:\n  number: 0\n  # Binpickle is only tested on Python 3.6 and later.\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python-blosc\n    - msgpack-python >=1.0\n    - pickle5  # [py<38]\n\ntest:\n  imports:\n    - binpickle\n    - binpickle.codecs.blosc\n\nabout:\n  home: https://binpickle.lenskit.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Efficient binary storage of ML models\n  description: |\n    The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\n    Scientific Python models, such as those learned by scikit-learn, to disk in with\n    their large arrays either compressed (optionall with Blosc) or configured for\n    memory-mapped use to support shared memory multiprocessing.\n  dev_url: https://github.com/lenskit/binpickle\n\nextra:\n  recipe-maintainers:\n    - mdekstrand\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -179,5 +179,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.1.tar.gz",
- "version":"0.3.1"
+ "version":"0.3.2"
 }
