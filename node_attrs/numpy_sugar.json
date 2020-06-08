@@ -144,6 +144,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431138323.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -243,8 +260,12 @@
   }
  },
  "name":"numpy-sugar",
- "new_version":"1.5.0",
- "pinning_version":"2019.05.11",
+ "new_version":"1.5.1",
+ "new_version_attempts":{
+  "1.5.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"numpy-sugar\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"b8c08c135b369f0fd140bc2113e55fc5c838b26ba62c8fe93c118111f7d7018d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/numpy_sugar-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - pytest-runner\n    - numpy >=1.14.1\n    - pypandoc\n    - wheel\n    - pip\n  run:\n    - python\n    - numpy >=1.14.1\n    - scipy >=0.19\n    - dask >=0.15.2\n\ntest:\n  requires:\n    - pytest >=3.2.0\n    - pytest-pep8 >=1.0.5\n  imports:\n    - numpy_sugar\n  commands:\n    - python -c \"import sys; import numpy_sugar; sys.exit(numpy_sugar.test())\"\n\nabout:\n  home: https://github.com/limix/numpy-sugar\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Missing NumPy functionalities'\n  doc_url: https://numpy-sugar.readthedocs.io\n  dev_url: https://github.com/limix/numpy-sugar\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "req":{
   "__set__":true,
@@ -294,7 +315,7 @@
    ]
   }
  },
- "smithy_version":"3.3.4",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
