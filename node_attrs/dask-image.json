@@ -69,7 +69,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -83,7 +83,7 @@
   },
   "package":{
    "name":"dask-image",
-   "version":"0.2.0"
+   "version":"0.3.0"
   },
   "requirements":{
    "build":[
@@ -116,9 +116,9 @@
    ]
   },
   "source":{
-   "fn":"dask-image-0.2.0.tar.gz",
-   "sha256":"bece2ea347f963dc0168c7d5fdfd11e51b47d9c857d3bc56144d7c146964a23f",
-   "url":"https://pypi.io/packages/source/d/dask-image/dask-image-0.2.0.tar.gz"
+   "fn":"dask-image-0.3.0.tar.gz",
+   "sha256":"603f9ddf59e4c69b8bdafcd5eadc99768160fb05cdcb78d14160c4533cf25b97",
+   "url":"https://pypi.io/packages/source/d/dask-image/dask-image-0.3.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -133,11 +133,11 @@
    ],
    "requires":[
     "pytest >=3.0.5",
-    "scikit-image >=0.12.3",
+    "scikit-image >=0.12.3,<0.17.0",
     "pytest >=3.0.5",
-    "scikit-image >=0.12.3",
+    "scikit-image >=0.12.3,<0.17.0",
     "pytest >=3.0.5",
-    "scikit-image >=0.12.3"
+    "scikit-image >=0.12.3,<0.17.0"
    ],
    "source_files":[
     "tests",
@@ -153,7 +153,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.06.02.30.37",
- "raw_meta_yaml":"{% set name = \"dask-image\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"bece2ea347f963dc0168c7d5fdfd11e51b47d9c857d3bc56144d7c146964a23f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - dask >=0.16.1\n    - numpy >=1.11.3\n    - scipy >=0.19.1\n    - pims >=0.4.1\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - dask_image\n\n  requires:\n    - pytest >=3.0.5\n    - scikit-image >=0.12.3\n\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/dask/dask-image\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: Distributed image processing\n  doc_url: https://dask-image.readthedocs.io/\n  dev_url: https://github.com/dask/dask-image\n\nextra:\n  recipe-maintainers:\n    - GenevieveBuckley\n    - jakirkham\n",
+ "raw_meta_yaml":"{% set name = \"dask-image\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"603f9ddf59e4c69b8bdafcd5eadc99768160fb05cdcb78d14160c4533cf25b97\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - dask >=0.16.1\n    - numpy >=1.11.3\n    - scipy >=0.19.1\n    - pims >=0.4.1\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - dask_image\n\n  requires:\n    - pytest >=3.0.5\n    - scikit-image >=0.12.3,<0.17.0\n\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/dask/dask-image\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: Distributed image processing\n  doc_url: https://dask-image.readthedocs.io/\n  dev_url: https://github.com/dask/dask-image\n\nextra:\n  recipe-maintainers:\n    - GenevieveBuckley\n    - jakirkham\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -226,10 +226,10 @@
    "__set__":true,
    "elements":[
     "pytest >=3.0.5",
-    "scikit-image >=0.12.3"
+    "scikit-image >=0.12.3,<0.17.0"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/d/dask-image/dask-image-0.2.0.tar.gz",
- "version":"0.2.0"
+ "version":"0.3.0"
 }
