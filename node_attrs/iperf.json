@@ -79,6 +79,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431449846.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.8"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -139,8 +156,12 @@
   }
  },
  "name":"iperf",
- "new_version":"3.7",
- "pinning_version":"2019.06.19",
+ "new_version":"3.8",
+ "new_version_attempts":{
+  "3.8":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"iperf\" %}\n{% set version = \"3.6\" %}\n{% set sha256 = \"1ad23f70a8eb4b892a3cbb247cafa956e0f5c7d8b8601b1d9c8031c2a806f23f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/esnet/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n  host:\n\ntest:\n  commands:\n    - iperf3 --help\n\nabout:\n  home: http://software.es.net/iperf/\n  license: PUBLIC-DOMAIN\n  license_file: LICENSE\n  summary: 'A TCP, UDP, and SCTP network bandwidth measurement tool'\n\n  doc_url: http://software.es.net/iperf/\n  dev_url: https://github.com/esnet/iperf/\n\nextra:\n  recipe-maintainers:\n    - brainstorm \n",
  "req":{
   "__set__":true,
@@ -170,7 +191,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.3.7",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

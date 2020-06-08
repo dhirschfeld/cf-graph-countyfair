@@ -175,7 +175,7 @@
    "summary":"Python interface to Epics Channel Access"
   },
   "build":{
-   "number":"2"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -195,7 +195,7 @@
   },
   "package":{
    "name":"pyepics",
-   "version":"3.4.1"
+   "version":"3.4.2"
   },
   "requirements":{
    "host":[
@@ -225,9 +225,9 @@
    ]
   },
   "source":{
-   "fn":"pyepics-3.4.1.tar.gz",
-   "sha256":"a995685638c01a9326d3414de9b5471fb7b0bf6b1c60de1efae778c25dedaabf",
-   "url":"https://github.com/pyepics/pyepics/archive/3.4.1.tar.gz"
+   "fn":"pyepics-3.4.2.tar.gz",
+   "sha256":"771dcdab47c8b6be84505a17860b2e4dce203917efd87b75ce7ad4e61a096390",
+   "url":"https://github.com/pyepics/pyepics/archive/3.4.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -258,7 +258,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"pyepics\" %}\n{% set version = \"3.4.1\" %}\n{% set sha256 = \"a995685638c01a9326d3414de9b5471fb7b0bf6b1c60de1efae778c25dedaabf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz\n   sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n\nrequirements:\n  host:\n      - python\n      - pip\n  run:\n      - python\n      # pkg_resources used in epics/ca.py\n      - setuptools\n      - epics-base\n      - numpy\n      - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n  commands:\n    - python -c \"import epics; epics.ca.find_libca()\"\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  summary: Python interface to Epics Channel Access\n  # https://github.com/pyepics/pyepics/pull/108\n  license_file: LICENSE\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - jrmlhermitte\n    - stuartcampbell\n    - mrakitin\n    - hhslepicka\n",
+ "raw_meta_yaml":"{% set name = \"pyepics\" %}\n{% set version = \"3.4.2\" %}\n{% set sha256 = \"771dcdab47c8b6be84505a17860b2e4dce203917efd87b75ce7ad4e61a096390\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n      # pkg_resources used in epics/ca.py\n    - setuptools\n    - epics-base\n    - numpy\n    - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n  commands:\n    - python -c \"import epics; epics.ca.find_libca()\"\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  summary: Python interface to Epics Channel Access\n  # https://github.com/pyepics/pyepics/pull/108\n  license_file: LICENSE\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - jrmlhermitte\n    - stuartcampbell\n    - mrakitin\n    - hhslepicka\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -327,5 +327,5 @@
   }
  },
  "url":"https://github.com/pyepics/pyepics/archive/3.4.0.tar.gz",
- "version":"3.4.1"
+ "version":"3.4.2"
 }
