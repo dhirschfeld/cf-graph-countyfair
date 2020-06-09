@@ -69,9 +69,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "linux_aarch64":"azure",
    "linux_ppc64le":"azure"
@@ -85,7 +82,7 @@
    "dev_url":"https://github.com/NixOS/patchelf",
    "doc_url":"http://nixos.org/patchelf.html",
    "home":"http://nixos.org/patchelf.html",
-   "license":"GPL 3",
+   "license":"GPL-3.0-or-later",
    "license_file":"COPYING",
    "summary":"A small utility to modify the dynamic linker and RPATH of ELF executables."
   },
@@ -106,7 +103,7 @@
   },
   "package":{
    "name":"patchelf",
-   "version":"0.10"
+   "version":"0.11"
   },
   "requirements":{
    "build":[
@@ -122,15 +119,15 @@
    ]
   },
   "source":{
-   "fn":"patchelf-0.10.tar.gz",
-   "sha256":"99c1d47a27afc52dedcf80379c789ae67113d043bafc5bc88f9293eb198b011a",
-   "url":"http://nixos.org/releases/patchelf/patchelf-0.10/patchelf-0.10.tar.gz"
+   "fn":"patchelf-0.11.tar.gz",
+   "sha256":"e52378cc2f9379c6e84a04ac100a3589145533a7b0cd26ef23c79dfd8a9038f9",
+   "url":"http://nixos.org/releases/patchelf/patchelf-0.11/patchelf-0.11.tar.gz"
   },
   "test":{
    "commands":[
-    "test \"$(patchelf --version)\" == \"patchelf 0.10\"",
-    "test \"$(patchelf --version)\" == \"patchelf 0.10\"",
-    "test \"$(patchelf --version)\" == \"patchelf 0.10\""
+    "bash -c '[[ \"$(patchelf --version)\" =~ \"patchelf 0.11\".* ]]'",
+    "bash -c '[[ \"$(patchelf --version)\" =~ \"patchelf 0.11\".* ]]'",
+    "bash -c '[[ \"$(patchelf --version)\" =~ \"patchelf 0.11\".* ]]'"
    ]
   }
  },
@@ -141,7 +138,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"0.10\" %}\n\npackage:\n  name: patchelf\n  version: {{ version }}\n\nsource:\n  fn: patchelf-{{ version }}.tar.gz\n  url: http://nixos.org/releases/patchelf/patchelf-{{ version }}/patchelf-{{ version }}.tar.gz\n  sha256: 99c1d47a27afc52dedcf80379c789ae67113d043bafc5bc88f9293eb198b011a\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  binary_relocation: False\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n\ntest:\n  commands:\n    - test \"$(patchelf --version)\" == \"patchelf {{ version }}\"\n\nabout:\n  home: http://nixos.org/patchelf.html\n  license: GPL 3\n  license_file: COPYING\n  summary: A small utility to modify the dynamic linker and RPATH of ELF executables.\n  description: |\n    PatchELF is a small utility to modify the dynamic linker and RPATH of ELF\n    executables.\n  doc_url: http://nixos.org/patchelf.html\n  dev_url: https://github.com/NixOS/patchelf\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mjuric\n",
+ "raw_meta_yaml":"{% set version = \"0.11\" %}\n\npackage:\n  name: patchelf\n  version: {{ version }}\n\nsource:\n  fn: patchelf-{{ version }}.tar.gz\n  url: http://nixos.org/releases/patchelf/patchelf-{{ version }}/patchelf-{{ version }}.tar.gz\n  sha256: e52378cc2f9379c6e84a04ac100a3589145533a7b0cd26ef23c79dfd8a9038f9\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  binary_relocation: false\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n\ntest:\n  commands:\n    - bash -c '[[ \"$(patchelf --version)\" =~ \"patchelf {{ version }}\".* ]]'\n\nabout:\n  home: http://nixos.org/patchelf.html\n  license: GPL-3.0-or-later\n  license_file: COPYING\n  summary: A small utility to modify the dynamic linker and RPATH of ELF executables.\n  description: |\n    PatchELF is a small utility to modify the dynamic linker and RPATH of ELF\n    executables.\n  doc_url: http://nixos.org/patchelf.html\n  dev_url: https://github.com/NixOS/patchelf\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mjuric\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -197,5 +194,5 @@
   }
  },
  "url":"http://nixos.org/releases/patchelf/patchelf-0.10/patchelf-0.10.tar.gz",
- "version":"0.10"
+ "version":"0.11"
 }

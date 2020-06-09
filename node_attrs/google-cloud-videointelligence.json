@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432076127.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.15.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -65,7 +84,12 @@
   }
  },
  "name":"google-cloud-videointelligence",
- "new_version":"1.14.0",
+ "new_version":"1.15.0",
+ "new_version_attempts":{
+  "1.15.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"google-cloud-videointelligence\" %}\n{% set version = \"1.14.0\" %}\n{% set sha256 = \"c91f605d00926416bcd4d32d6ca195e0e5bd6fb794bc67b09910a19ee2ca6570\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip >=18.1\n  run:\n    - python\n    - google-api-core-grpc >=1.14.0,<2.0.0dev\n\ntest:\n  imports:\n    - grpc\n    - google.cloud.videointelligence\n\nabout:\n  home: https://github.com/googleapis/python-videointelligence\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Google Cloud Video Intelligence API client library'\n  description: Google Cloud Video Intelligence API is a Google Cloud service that makes videos searchable,\n    and discoverable, by extracting metadata with an easy to use API. You can now search every moment of every\n    video file in your catalog and find every occurrence as well as its significance. It quickly annotates videos\n    stored in Google Cloud Storage, and helps you identify key nouns entities of your video, and when they occur\n    within the video. Separate signal from noise, by retrieving relevant information at the video, shot or per\n    frame.\n\n    See the [quick start guide](https://googleapis.dev/python/videointelligence/latest/index.html#quick-start).\n\n  doc_url: https://googleapis.dev/python/videointelligence/latest/index.html\n  dev_url: https://github.com/googleapis/python-videointelligence\n\nextra:\n  recipe-maintainers:\n    - parthea\n",
  "req":{
   "__set__":true,
@@ -99,6 +123,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
