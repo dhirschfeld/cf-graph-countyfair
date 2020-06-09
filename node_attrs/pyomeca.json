@@ -190,7 +190,7 @@
   }
  },
  "name":"pyomeca",
- "new_version":"2019.8.1",
+ "new_version":"2020.0.1",
  "pinning_version":"2020.01.28",
  "raw_meta_yaml":"{% set owner = \"pyomeca\" %}\n{% set name = \"pyomeca\" %}\n{% set version = \"2020.0.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ owner }}/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f28c8d1ab3bc0bed36f8048a2b75a6fd8a7c263129d817fbc900285a3b380c5a\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - setuptools\n    - python >=3\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - matplotlib-base\n    - scipy\n    - {{ pin_compatible('ezc3d') }}\n    - xlrd\n    - xarray\n    - bottleneck\n\ntest:\n  imports: \n    - pyomeca\n\nabout:\n  home: http://github.com/{{ owner }}/{{ name }}\n  license: Apache-2.0\n  license_file: LICENSE.md\n  summary: 'Pyomeca is a python library allowing to carry out a complete biomechanical analysis; in a simple, logical and concise way'\n  description: |\n    Python toolbox for biomechanics analysis\n  doc_url: https://pyomeca.github.io\n  dev_url: https://github.com/{{ owner }}/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - romainmartinez\n    - pariterre\n",
  "req":{
