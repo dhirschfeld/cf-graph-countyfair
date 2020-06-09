@@ -188,7 +188,7 @@
    "summary":"A C library for arbitrary-precision interval arithmetic"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "arb",
     "arb",
@@ -208,7 +208,7 @@
   },
   "package":{
    "name":"arb",
-   "version":"2.17.0"
+   "version":"2.18.0"
   },
   "requirements":{
    "build":[
@@ -235,13 +235,8 @@
    "run":null
   },
   "source":{
-   "patches":[
-    "flint26.patch",
-    "flint26.patch",
-    "flint26.patch"
-   ],
-   "sha256":"145a7a8e0e449b8a30de68c75c10b146c4f199544262711bef6fb49d3012d6e1",
-   "url":"https://github.com/fredrik-johansson/arb/archive/2.17.0.tar.gz"
+   "sha256":"42a584d657f2f20540a185f9e384378206494fe8f6c16d9f52b81ec2c7d6b1d2",
+   "url":"https://github.com/fredrik-johansson/arb/archive/2.18.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -262,7 +257,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"2.17.0\" %}\n\npackage:\n  name: arb\n  version: {{ version }}\n\nsource:\n  url: https://github.com/fredrik-johansson/arb/archive/{{ version }}.tar.gz\n  sha256: 145a7a8e0e449b8a30de68c75c10b146c4f199544262711bef6fb49d3012d6e1\n  patches:\n    - flint26.patch\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('arb', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make      # [unix]\n    - cmake     # [win]\n    - ninja     # [win]\n  host:\n    - gmp       # [unix]\n    - mpir      # [win]\n    - mpfr\n    - libflint\n    - pthreads-win32    # [win]\n  run:\n    - pthreads-win32    # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/arb.h                     # [unix]\n    - if not exist %LIBRARY_INC%\\arb.h exit 1           # [win]\n    - if not exist %LIBRARY_LIB%\\arb.lib exit 1         # [win]\n    - if not exist %LIBRARY_BIN%\\arb-2.dll exit 1         # [win]\n    - test -f $PREFIX/lib/libarb.so         # [linux]\n    - test -f $PREFIX/lib/libarb.dylib      # [osx]\n\nabout:\n  home: http://arblib.org\n  license: LGPL-2.1-or-later\n  license_file: LICENSE\n  summary: 'A C library for arbitrary-precision interval arithmetic'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
+ "raw_meta_yaml":"{% set version = \"2.18.0\" %}\n\npackage:\n  name: arb\n  version: {{ version }}\n\nsource:\n  url: https://github.com/fredrik-johansson/arb/archive/{{ version }}.tar.gz\n  sha256: 42a584d657f2f20540a185f9e384378206494fe8f6c16d9f52b81ec2c7d6b1d2\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('arb', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make      # [unix]\n    - cmake     # [win]\n    - ninja     # [win]\n  host:\n    - gmp       # [unix]\n    - mpir      # [win]\n    - mpfr\n    - libflint\n    - pthreads-win32    # [win]\n  run:\n    - pthreads-win32    # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/arb.h                     # [unix]\n    - if not exist %LIBRARY_INC%\\arb.h exit 1           # [win]\n    - if not exist %LIBRARY_LIB%\\arb.lib exit 1         # [win]\n    - if not exist %LIBRARY_BIN%\\arb-2.dll exit 1         # [win]\n    - test -f $PREFIX/lib/libarb.so         # [linux]\n    - test -f $PREFIX/lib/libarb.dylib      # [osx]\n\nabout:\n  home: http://arblib.org\n  license: LGPL-2.1-or-later\n  license_file: LICENSE\n  summary: A C library for arbitrary-precision interval arithmetic\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -338,5 +333,5 @@
   }
  },
  "url":"https://github.com/fredrik-johansson/arb/archive/2.16.0.tar.gz",
- "version":"2.17.0"
+ "version":"2.18.0"
 }
