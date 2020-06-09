@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431641851.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.9.14"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -100,12 +117,13 @@
   }
  },
  "name":"dnslib",
- "new_version":"0.9.13",
+ "new_version":"0.9.14",
  "new_version_attempts":{
-  "0.9.13":1
+  "0.9.13":1,
+  "0.9.14":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"dnslib\" %}\n{% set version = \"0.9.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a0fed3e139c12ee4884b19bcde1d4a170745bcabb6026397876e3236ce38b9db\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - dnslib\n\nabout:\n  home: http://bitbucket.org/paulc/dnslib/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Simple library to encode/decode DNS wire-format packets\n  doc_url: https://pypi.org/project/dnslib/\n  dev_url: https://bitbucket.org/paulc/dnslib/src/default/\n\nextra:\n  recipe-maintainers:\n    - mwilson8\n    - oblute\n    - benhuff\n",
  "req":{
   "__set__":true,
