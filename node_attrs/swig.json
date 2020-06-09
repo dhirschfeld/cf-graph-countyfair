@@ -184,10 +184,6 @@
   },
   "requirements":{
    "build":[
-    "make",
-    "c_compiler_stub",
-    "cxx_compiler_stub",
-    "make",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "make"
@@ -219,7 +215,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"4.0.2\" %}\n\npackage:\n  name: swig\n  version: {{ version }}\n\nsource:\n  fn: swig-{{ version }}.tar.gz  # [unix]\n  url: http://prdownloads.sourceforge.net/swig/swig-{{ version }}.tar.gz  # [unix]\n  sha256: d53be9730d8d58a16bf0cbd1f8ac0c0c3e1090573168bfa151b01eb47fa906fc  # [unix]\n  fn: swigwin-{{ version }}.zip  # [win]\n  url: http://prdownloads.sourceforge.net/swig/swigwin-{{ version }}.zip  # [win]\n  sha256: daadb32f19fe818cb9b0015243233fc81584844c11a48436385e87c050346559  # [win]\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - {{ compiler('cxx') }}  # [unix]\n    - make\n  host:\n    - pcre  # [unix]\n  run:\n    - pcre  # [unix]\n\ntest:\n  commands:\n    - swig  -help\n\nabout:\n  home: http://www.swig.org/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: C/C++ parser code generator\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jschueller\n    - msarahan\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"4.0.2\" %}\n\npackage:\n  name: swig\n  version: {{ version }}\n\nsource:\n  fn: swig-{{ version }}.tar.gz  # [unix]\n  url: http://prdownloads.sourceforge.net/swig/swig-{{ version }}.tar.gz  # [unix]\n  sha256: d53be9730d8d58a16bf0cbd1f8ac0c0c3e1090573168bfa151b01eb47fa906fc  # [unix]\n  fn: swigwin-{{ version }}.zip  # [win]\n  url: http://prdownloads.sourceforge.net/swig/swigwin-{{ version }}.zip  # [win]\n  sha256: daadb32f19fe818cb9b0015243233fc81584844c11a48436385e87c050346559  # [win]\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - {{ compiler('cxx') }}  # [unix]\n    - make  # [unix]\n  host:\n    - pcre  # [unix]\n  run:\n    - pcre  # [unix]\n\ntest:\n  commands:\n    - swig  -help\n\nabout:\n  home: http://www.swig.org/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: C/C++ parser code generator\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jschueller\n    - msarahan\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
