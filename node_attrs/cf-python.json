@@ -18,6 +18,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431820954.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -115,8 +132,12 @@
   }
  },
  "name":"cf-python",
- "new_version":"3.4.0",
- "pinning_version":"2020.05.18.14.31.44",
+ "new_version":"3.5.0",
+ "new_version_attempts":{
+  "3.5.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"cf-python\" %}\n{% set version = \"3.4.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d7622d60357811599352a31cce9d8055ed82fc3710db498ee2d376d52726d50a\n\nbuild:\n  number: 0\n  skip: True  # [win or py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - cfdm ==1.8.3\n    - cftime >=1.1.1\n    - cfunits >=3.2.5\n    - netcdf4 >=1.5.3\n    - numpy >=1.15\n    - psutil >=0.6.0\n\ntest:\n  imports:\n    - cf\n    - cf.abstract\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/cf-python/\n  summary: A CF-compliant earth science data analysis library\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,

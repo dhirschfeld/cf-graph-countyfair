@@ -64,14 +64,13 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/google/benchmark",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"Apache",
    "license_file":"LICENSE",
    "summary":"A microbenchmark support library"
   },
   "build":{
-   "number":"3",
-   "skip":true
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -94,7 +93,7 @@
   },
   "package":{
    "name":"benchmark",
-   "version":"1.5.0"
+   "version":"1.5.1"
   },
   "requirements":{
    "build":[
@@ -113,9 +112,9 @@
    ]
   },
   "source":{
-   "fn":"benchmark-1.5.0.tar.gz",
-   "sha256":"3c6a165b6ecc948967a1ead710d4a181d7b0fbcaa183ef7ea84604994966221a",
-   "url":"https://github.com/google/benchmark/archive/v1.5.0.tar.gz"
+   "fn":"benchmark-1.5.1.tar.gz",
+   "sha256":"23082937d1663a53b90cb5b61df4bcc312f6dee7018da78ba00dd6bd669dfef2",
+   "url":"https://github.com/google/benchmark/archive/v1.5.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -142,7 +141,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"benchmark\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/google/benchmark/archive/v{{ version }}.tar.gz\n  sha256: 3c6a165b6ecc948967a1ead710d4a181d7b0fbcaa183ef7ea84604994966221a\n\nbuild:\n  number: 3\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake\n    - ninja\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - test -f $PREFIX/include/benchmark/benchmark.h  # [unix]\n    - if not exist %LIBRARY_INC%\\\\benchmark\\\\benchmark.h exit 1  # [win]\n    - test -f $PREFIX/lib/libbenchmark.a  # [unix]\n    - test -f $PREFIX/lib/libbenchmark_main.a  # [unix]\n    - test -f $PREFIX/lib/libbenchmark${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/libbenchmark_main${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\benchmark.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\benchmark_main.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/google/benchmark\n  license: Apache 2.0\n  license_family: Apache\n  license_file: 'LICENSE'\n  summary: 'A microbenchmark support library'\n\nextra:\n  recipe-maintainers:\n    - xhochy\n    - wesm\n    - pitrou\n    - kszucs\n    - saraedum\n",
+ "raw_meta_yaml":"{% set name = \"benchmark\" %}\n{% set version = \"1.5.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/google/benchmark/archive/v{{ version }}.tar.gz\n  sha256: 23082937d1663a53b90cb5b61df4bcc312f6dee7018da78ba00dd6bd669dfef2\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n    - ninja\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - test -f $PREFIX/include/benchmark/benchmark.h  # [unix]\n    - if not exist %LIBRARY_INC%\\\\benchmark\\\\benchmark.h exit 1  # [win]\n    - test -f $PREFIX/lib/libbenchmark.a  # [unix]\n    - test -f $PREFIX/lib/libbenchmark_main.a  # [unix]\n    - test -f $PREFIX/lib/libbenchmark${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/libbenchmark_main${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\benchmark.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\benchmark_main.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/google/benchmark\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: A microbenchmark support library\n\nextra:\n  recipe-maintainers:\n    - xhochy\n    - wesm\n    - pitrou\n    - kszucs\n    - saraedum\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -201,5 +200,5 @@
   }
  },
  "url":"https://github.com/google/benchmark/archive/v1.5.0.tar.gz",
- "version":"1.5.0"
+ "version":"1.5.1"
 }

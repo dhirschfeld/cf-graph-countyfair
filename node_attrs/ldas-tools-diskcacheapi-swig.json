@@ -35,6 +35,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431829545.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -240,7 +259,7 @@
   "ldas-tools-diskcacheapi-swig",
   "python-ldas-tools-diskcacheapi"
  ],
- "pinning_version":"2019.11.01",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"ldas-tools-diskcacheAPI-swig\" %}\n{% set version = \"2.6.8\" %}\n\n# dependencies\n{% set ldas_tools_cmake_version = \"1.0.8\" %}\n{% set ldas_tools_diskcacheapi_version = \"2.7.0\" %}\n{% set ldas_tools_ldasgen_swig_version = \"2.6.7\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 187c5cc3630e8fb0fb615212dddba5e6131aba44637529b15563153fcdfe3391\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake >=3.6\n    - pkg-config  # [unix]\n  host:\n    - ldas-tools-cmake >={{ ldas_tools_cmake_version }}\n    - ldas-tools-diskcacheapi {{ ldas_tools_diskcacheapi_version }}\n    - swig >=3.0.7,<4.0.0a0\n  run:\n    - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/diskcacheAPI/diskCache.i  # [unix]\n\noutputs:\n  - name: ldas-tools-diskcacheapi-swig\n\n  - name: python-ldas-tools-diskcacheapi\n    script: install-python.sh\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - cmake >=3.6\n        - pkg-config  # [unix]\n      host:\n        - ldas-tools-cmake >={{ ldas_tools_cmake_version }}\n        - ldas-tools-diskcacheapi {{ ldas_tools_diskcacheapi_version }}\n        - {{ pin_subpackage('ldas-tools-diskcacheapi-swig', exact=True) }}\n        - python\n        - python-ldas-tools-ldasgen >={{ ldas_tools_ldasgen_swig_version }}\n        - swig >=3.0.7,<4.0.0a0\n      run:\n        - python\n        - python-ldas-tools-al\n        - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}\n        - {{ pin_subpackage('ldas-tools-diskcacheapi-swig', exact=True) }}\n        - python-ldas-tools-ldasgen >={{ ldas_tools_ldasgen_swig_version }}\n    test:\n      imports:\n        - LDAStools.diskCache\n    about:\n      home: https://wiki.ligo.org/Computing/LDASTools\n      dev_url: https://git.ligo.org/ldastools/LDAS_Tools\n      license: GPL-3.0-or-later\n      license_family: GPL\n      license_file: COPYING\n      summary: Python bindings for the LDAS Tools disk cache library\n\nabout:\n  home: https://wiki.ligo.org/Computing/LDASTools\n  dev_url: https://git.ligo.org/ldastools/LDAS_Tools\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: SWIG interface for the LDAS Tools disk cache library\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - emaros\n",
  "req":{
   "__set__":true,
@@ -292,7 +311,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
