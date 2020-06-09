@@ -204,7 +204,7 @@
    "summary":"A modern C++ library for multiprecision arithmetic"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "mppp",
     "mppp",
@@ -237,16 +237,18 @@
    ],
    "host":[
     "mpir",
+    "arb",
+    "libflint",
     "mpfr",
     "mpc",
     "gmp",
-    "libflint",
     "arb",
+    "libflint",
     "mpfr",
     "mpc",
     "gmp",
-    "libflint",
     "arb",
+    "libflint",
     "mpfr",
     "mpc"
    ]
@@ -270,7 +272,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"0.20\" %}\n\npackage:\n  name: mppp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/bluescarni/mppp/archive/v{{ version }}.tar.gz\n  sha256: c736daeaac30e38e1c09a19d249209ad49f8ec92ab1315a8fb9a47cc1f54e607\n\nbuild:\n  number: 1\n  run_exports:\n    # SO name changes at minor rev bumps.\n    - {{ pin_subpackage('mppp', max_pin='x.x') }}\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - gmp                 # [unix]\n    - libflint            # [unix]\n    - arb                 # [unix]\n    - mpir                # [win]\n    - mpfr\n    - mpc\n    # NOTE: gmp/mpir, mpfr, mpc, libflint and arb all use run_exports.\n\ntest:\n  commands:\n    - test -f $PREFIX/include/mp++/mp++.hpp               # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\mp++\\\\mp++.hpp exit 1   # [win]\n\nabout:\n  home: https://bluescarni.github.io/mppp/\n  license: MPL-2.0\n  license_file: COPYING\n  summary: A modern C++ library for multiprecision arithmetic\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n",
+ "raw_meta_yaml":"{% set version = \"0.20\" %}\n\npackage:\n  name: mppp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/bluescarni/mppp/archive/v{{ version }}.tar.gz\n  sha256: c736daeaac30e38e1c09a19d249209ad49f8ec92ab1315a8fb9a47cc1f54e607\n\nbuild:\n  number: 2\n  run_exports:\n    # SO name changes at minor rev bumps.\n    - {{ pin_subpackage('mppp', max_pin='x.x') }}\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - gmp                 # [unix]\n    - mpir                # [win]\n    - arb\n    - libflint\n    - mpfr\n    - mpc\n    # NOTE: gmp/mpir, mpfr, mpc, libflint and arb all use run_exports.\n\ntest:\n  commands:\n    - test -f $PREFIX/include/mp++/mp++.hpp               # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\mp++\\\\mp++.hpp exit 1   # [win]\n\nabout:\n  home: https://bluescarni.github.io/mppp/\n  license: MPL-2.0\n  license_file: COPYING\n  summary: A modern C++ library for multiprecision arithmetic\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n",
  "req":{
   "__set__":true,
   "elements":[
