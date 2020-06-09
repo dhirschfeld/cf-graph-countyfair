@@ -13,6 +13,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/431460217.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.11.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -90,8 +107,12 @@
   }
  },
  "name":"pyqtgraph",
- "new_version":"0.10.0",
- "pinning_version":"2019.05.21",
+ "new_version":"0.11.0",
+ "new_version_attempts":{
+  "0.11.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"pyqtgraph\" %}\n{% set version = \"0.11.0rc0\" %}\n{% set sha256 = \"556a09aeafea537b9dd7e199bc5a6f05cea4ffee8aaf5a75f90aafeabe70155d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - numpy\n    # pyqtgraph works with pyqt4 or pyqt5. Don't pin it here.\n    - pyqt\n\ntest:\n  imports:\n    - pyqtgraph\n\nabout:\n  home: http://www.pyqtgraph.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Scientific Graphics and GUI Library for Python\n\n  description: |\n    PyQtGraph is a pure-python graphics and GUI library built on PyQt4 / \n    PySide and numpy. It is intended for use in mathematics / scientific / \n    engineering applications. Despite being written entirely in python, the\n    library is very fast due to its heavy leverage of numpy for number\n    crunching and Qt's GraphicsView framework for fast display.\n  doc_url: http://www.pyqtgraph.org/documentation/ \n  dev_url: https://github.com/pyqtgraph/pyqtgraph\n\nextra:\n  recipe-maintainers:\n    - astaric\n    - marcelotrevisani\n    - ksunden\n",
  "req":{
   "__set__":true,
@@ -129,7 +150,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.3.4",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
