@@ -119,6 +119,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432056076.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.0.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -224,10 +241,11 @@
  "name":"nbformat",
  "new_version":"5.0.7",
  "new_version_attempts":{
-  "5.0.6":1
+  "5.0.6":1,
+  "5.0.7":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.18.00.00.57",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"5.0.6\" %}\n\npackage:\n  name: nbformat\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz\n  sha256: 049af048ed76b95c3c44043620c17e56bc001329e07f83fec4f177f0e3d7b757\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - ipython_genutils\n    - traitlets >=4.1\n    - jsonschema >=2.4,!=2.5.0\n    - jupyter_core\n\ntest:\n  commands:\n    - pip check\n    - jupyter-trust -h\n  requires:\n    - pip\n  imports:\n    - nbformat\n\nabout:\n  home: http://jupyter.org\n  license: BSD-3-Clause\n  summary: The Jupyter Notebook format\n  license_file: COPYING.md\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - takluyver\n    - ocefpaf\n    - mpacer\n",
  "req":{
   "__set__":true,
@@ -269,7 +287,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
