@@ -34,19 +34,24 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"python-markdown-math",
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
    "home":"https://github.com/mitya57/python-markdown-math",
-   "license":"BSD 3-Clause",
-   "summary":"Math extension for Python-Markdown."
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Math extension for Python-Markdown"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -57,35 +62,45 @@
   },
   "package":{
    "name":"python-markdown-math",
-   "version":"0.6"
+   "version":"0.7"
   },
   "requirements":{
-   "build":[
-    "python",
+   "host":[
     "pip",
-    "python",
+    "python >=3.4",
     "pip",
-    "python",
-    "pip"
+    "python >=3.4",
+    "pip",
+    "python >=3.4"
    ],
    "run":[
-    "python",
-    "markdown",
-    "python",
-    "markdown",
-    "python",
-    "markdown"
+    "markdown >=3.0",
+    "python >=3.4",
+    "markdown >=3.0",
+    "python >=3.4",
+    "markdown >=3.0",
+    "python >=3.4"
    ]
   },
   "source":{
-   "sha256":"c68d8cb9695cb7b435484403dc18941d1bad0ff148e4166d9417046a0d5d3022",
-   "url":"https://pypi.io/packages/source/p/python-markdown-math/python-markdown-math-0.6.tar.gz"
+   "sha256":"17a12175e8b2052a1c3402fca410841c551c678046293b1f7c280ccfe7b302a0",
+   "url":"https://pypi.io/packages/source/p/python-markdown-math/python-markdown-math-0.7.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "mdx_math",
     "mdx_math",
     "mdx_math"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -96,7 +111,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"0.6\" %}\n\npackage:\n  name: python-markdown-math\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/python-markdown-math/python-markdown-math-{{ version }}.tar.gz\n  sha256: c68d8cb9695cb7b435484403dc18941d1bad0ff148e4166d9417046a0d5d3022\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - markdown\n\ntest:\n  imports:\n    - mdx_math\n\nabout:\n  home: https://github.com/mitya57/python-markdown-math\n  license: BSD 3-Clause\n  summary: 'Math extension for Python-Markdown.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set name = \"python-markdown-math\" %}\n{% set version = \"0.7\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 17a12175e8b2052a1c3402fca410841c551c678046293b1f7c280ccfe7b302a0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.4\n  run:\n    - markdown >=3.0\n    - python >=3.4\n\ntest:\n  imports:\n    - mdx_math\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/mitya57/python-markdown-math\n  summary: Math extension for Python-Markdown\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -108,14 +123,14 @@
  "requirements":{
   "build":{
    "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
    "elements":[
     "pip",
     "python"
    ]
-  },
-  "host":{
-   "__set__":true,
-   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -126,7 +141,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -134,27 +151,29 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "pip",
-    "python"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python >=3.4"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "markdown",
-    "python"
+    "markdown >=3.0",
+    "python >=3.4"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/p/python-markdown-math/python-markdown-math-0.6.tar.gz",
- "version":"0.6"
+ "version":"0.7"
 }

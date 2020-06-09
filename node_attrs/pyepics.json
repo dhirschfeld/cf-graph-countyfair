@@ -179,18 +179,18 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "jrmlhermitte",
-    "stuartcampbell",
-    "mrakitin",
     "hhslepicka",
-    "jrmlhermitte",
-    "stuartcampbell",
     "mrakitin",
+    "stuartcampbell",
+    "tacaswell",
     "hhslepicka",
-    "jrmlhermitte",
-    "stuartcampbell",
     "mrakitin",
-    "hhslepicka"
+    "stuartcampbell",
+    "tacaswell",
+    "hhslepicka",
+    "mrakitin",
+    "stuartcampbell",
+    "tacaswell"
    ]
   },
   "package":{
@@ -225,9 +225,8 @@
    ]
   },
   "source":{
-   "fn":"pyepics-3.4.2.tar.gz",
-   "sha256":"771dcdab47c8b6be84505a17860b2e4dce203917efd87b75ce7ad4e61a096390",
-   "url":"https://github.com/pyepics/pyepics/archive/3.4.2.tar.gz"
+   "sha256":"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068",
+   "url":"https://pypi.io/packages/source/p/pyepics/pyepics-3.4.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -258,7 +257,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"pyepics\" %}\n{% set version = \"3.4.2\" %}\n{% set sha256 = \"771dcdab47c8b6be84505a17860b2e4dce203917efd87b75ce7ad4e61a096390\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n      # pkg_resources used in epics/ca.py\n    - setuptools\n    - epics-base\n    - numpy\n    - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n  commands:\n    - python -c \"import epics; epics.ca.find_libca()\"\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  summary: Python interface to Epics Channel Access\n  # https://github.com/pyepics/pyepics/pull/108\n  license_file: LICENSE\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - jrmlhermitte\n    - stuartcampbell\n    - mrakitin\n    - hhslepicka\n",
+ "raw_meta_yaml":"{% set name = \"pyepics\" %}\n{% set version = \"3.4.2\" %}\n{% set sha256 = \"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n      # pkg_resources used in epics/ca.py\n    - setuptools\n    - epics-base\n    - numpy\n    - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n  commands:\n    - python -c \"import epics; epics.ca.find_libca()\"\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  license_file: LICENSE\n  summary: Python interface to Epics Channel Access\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n    - mrakitin\n    - stuartcampbell\n    - tacaswell\n",
  "req":{
   "__set__":true,
   "elements":[

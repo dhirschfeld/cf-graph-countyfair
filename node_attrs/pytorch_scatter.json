@@ -53,7 +53,7 @@
    "summary":"PyTorch Extension Library of Optimized Scatter Operations"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "script":[
     "-m pip install . -vv",
     "-m pip install . -vv",
@@ -142,7 +142,7 @@
   "pytorch_scatter_proc"
  ],
  "pinning_version":"2020.06.01.14.18.30",
- "raw_meta_yaml":"{% set name = \"torch_scatter\" %}\n{% set version = \"2.0.4\" %}\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: db6c9eca919b86f3eb6102dd0e1215af72e39ed3a4e8d142e6a21d3f20d5c244\n\nbuild:\n  number: 1\n  skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']\n  script:\n    - export FORCE_CUDA=\"1\"    # [linux64 and cuda_compiler_version != 'None']\n    - export CC=\"$GCC\"   # [linux64 and cuda_compiler_version != 'None']\n    - export NVCC_FLAGS=\"--compiler-bindir=${CC}\"    # [linux64 and cuda_compiler_version != 'None']\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != 'None']\n  host:\n    - python\n    - pip\n    - pytorch\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - pytorch\n    - pytest\n    - pytest-cov\ntest:\n  imports:\n    - torch_scatter\nabout:\n  home: https://github.com/rusty1s/torch-scatter\n  summary: PyTorch Extension Library of Optimized Scatter Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/torch-scatter\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
+ "raw_meta_yaml":"{% set name = \"torch_scatter\" %}\n{% set version = \"2.0.4\" %}\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: db6c9eca919b86f3eb6102dd0e1215af72e39ed3a4e8d142e6a21d3f20d5c244\n\nbuild:\n  number: 2\n  skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']\n  script:\n    - export FORCE_CUDA=\"1\"    # [linux64 and cuda_compiler_version != 'None']\n    - export CC=\"$GCC\"   # [linux64 and cuda_compiler_version != 'None']\n    - export NVCC_FLAGS=\"--compiler-bindir=${CC}\"    # [linux64 and cuda_compiler_version != 'None']\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != 'None']\n  host:\n    - python\n    - pip\n    - pytorch\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - pytorch\n    - pytest\n    - pytest-cov\ntest:\n  imports:\n    - torch_scatter\nabout:\n  home: https://github.com/rusty1s/torch-scatter\n  summary: PyTorch Extension Library of Optimized Scatter Operations\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/torch-scatter\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
  "req":{
   "__set__":true,
   "elements":[
