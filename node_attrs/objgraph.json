@@ -1,19 +1,25 @@
 {
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"objgraph",
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "home":"https://pypi.org/project/objgraph/",
+   "dev_url":"https://github.com/mgedmin/objgraph",
+   "doc_url":"https://mg.pov.lt/objgraph",
+   "home":"https://pypi.org/project/objgraph",
    "license":"MIT",
    "license_file":"LICENSE",
    "summary":"Draws Python object reference graphs with graphviz"
   },
   "build":{
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -37,11 +43,11 @@
     "python"
    ],
    "run":[
-    "graphviz",
+    "python-graphviz",
     "python",
-    "graphviz",
+    "python-graphviz",
     "python",
-    "graphviz",
+    "python-graphviz",
     "python"
    ]
   },
@@ -50,22 +56,43 @@
    "url":"https://pypi.io/packages/source/o/objgraph/objgraph-3.4.1.tar.gz"
   },
   "test":{
+   "commands":[
+    "python -m pip check",
+    "pytest tests.py -k \"not setup_py\"",
+    "python -m pip check",
+    "pytest tests.py -k \"not setup_py\"",
+    "python -m pip check",
+    "pytest tests.py -k \"not setup_py\""
+   ],
    "imports":[
     "objgraph",
     "objgraph",
     "objgraph"
+   ],
+   "requires":[
+    "pip",
+    "pytest",
+    "pip",
+    "pytest",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "tests.py",
+    "tests.py",
+    "tests.py"
    ]
   }
  },
  "name":"objgraph",
  "new_version":"3.4.1",
- "raw_meta_yaml":"{% set name = \"objgraph\" %}\n{% set version = \"3.4.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bf29512d7f8b457b53fa0722ea59f516abb8abc59b78f97f0ef81394a0c615a7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - graphviz\n    - python\n\ntest:\n  imports:\n    - objgraph\n\nabout:\n  home: https://pypi.org/project/objgraph/\n  summary: Draws Python object reference graphs with graphviz\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"objgraph\" %}\n{% set version = \"3.4.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bf29512d7f8b457b53fa0722ea59f516abb8abc59b78f97f0ef81394a0c615a7\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python-graphviz\n    - python\n\ntest:\n  source_files:\n    - tests.py\n  requires:\n    - pip\n    - pytest\n  imports:\n    - objgraph\n  commands:\n    - python -m pip check\n    - pytest tests.py -k \"not setup_py\"\n\nabout:\n  home: https://pypi.org/project/objgraph\n  summary: Draws Python object reference graphs with graphviz\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://mg.pov.lt/objgraph\n  dev_url: https://github.com/mgedmin/objgraph\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
-   "graphviz",
    "pip",
-   "python"
+   "python",
+   "python-graphviz"
   ]
  },
  "requirements":{
@@ -83,13 +110,16 @@
   "run":{
    "__set__":true,
    "elements":[
-    "graphviz",
-    "python"
+    "python",
+    "python-graphviz"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "pytest"
+   ]
   }
  },
  "strong_exports":false,
@@ -108,13 +138,16 @@
   "run":{
    "__set__":true,
    "elements":[
-    "graphviz",
-    "python"
+    "python",
+    "python-graphviz"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "pytest"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/o/objgraph/objgraph-3.4.1.tar.gz",
