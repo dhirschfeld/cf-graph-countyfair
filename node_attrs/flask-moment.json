@@ -41,6 +41,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432743096.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -108,8 +125,12 @@
   }
  },
  "name":"flask-moment",
- "new_version":"0.9.0",
- "pinning_version":"2019.07.26",
+ "new_version":"0.10.0",
+ "new_version_attempts":{
+  "0.10.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"Flask-Moment\" %}\n{% set version = \"0.7.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8379acdc9cda1227573ae52aac2e5b4b391e77ed300c70d49b0a929d0aa76680\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_moment\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-moment/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Formatting of dates and times in Flask templates using moment.js.'\n  dev_url: http://github.com/miguelgrinberg/flask-moment/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "req":{
   "__set__":true,
@@ -144,7 +165,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
