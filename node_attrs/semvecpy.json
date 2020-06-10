@@ -84,6 +84,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432135719.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.10"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -164,8 +181,12 @@
   }
  },
  "name":"semvecpy",
- "new_version":"0.1.8",
- "pinning_version":"2019.09.08",
+ "new_version":"0.1.10",
+ "new_version_attempts":{
+  "0.1.10":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"semvecpy\" %}\n{% set version = \"0.1.8\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: be43a8c95b3611a4b1062ba95eb4fa82f33c72709a5a24d4549bb313929e307d\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >3.5\n    - bitarray\n    - numpy\n  run:\n    - python >3.5\n    - bitarray\n    - numpy\n\ntest:\n  imports:\n    - semvecpy\n    - semvecpy.permutations\n    - semvecpy.vectors\n\nabout:\n  home: https://github.com/semanticvector/semvecpy\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Semantic Vectors work in Python\n\nextra:\n  recipe-maintainers:\n    - hannahburkhardt\n    - jusger\n",
  "req":{
   "__set__":true,
@@ -203,7 +224,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
