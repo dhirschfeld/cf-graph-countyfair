@@ -14,7 +14,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"1",
+   "number":"2",
    "script":"PBR_VERSION=${PKG_VERSION} && export PBR_VERSION &&  -m pip install . --no-deps --ignore-installed -vv"
   },
   "extra":{
@@ -49,31 +49,25 @@
    "run":[
     "python >=3.5",
     "joblib",
-    "scikit-learn <=0.22.1",
-    "networkx",
-    "xgboost",
+    "numpy",
     "pandas",
-    "zlib",
-    "requests",
-    "rdkit",
+    "pillow",
+    "scikit-learn <=0.22.1",
+    "scipy",
     "python >=3.5",
     "joblib",
-    "scikit-learn <=0.22.1",
-    "networkx",
-    "xgboost",
+    "numpy",
     "pandas",
-    "zlib",
-    "requests",
-    "rdkit",
+    "pillow",
+    "scikit-learn <=0.22.1",
+    "scipy",
     "python >=3.5",
     "joblib",
-    "scikit-learn <=0.22.1",
-    "networkx",
-    "xgboost",
+    "numpy",
     "pandas",
-    "zlib",
-    "requests",
-    "rdkit"
+    "pillow",
+    "scikit-learn <=0.22.1",
+    "scipy"
    ]
   },
   "source":{
@@ -92,30 +86,31 @@
     "deepchem"
    ],
    "requires":[
-    "tensorflow =1.14.0",
-    "tensorflow =1.14.0",
-    "tensorflow =1.14.0"
+    "tensorflow =1.14",
+    "rdkit",
+    "tensorflow =1.14",
+    "rdkit",
+    "tensorflow =1.14",
+    "rdkit"
    ]
   }
  },
  "name":"deepchem",
  "new_version":"2.3.0",
- "raw_meta_yaml":"{% set name = \"deepchem\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/deepchem/deepchem/archive/{{ version }}.tar.gz\n  sha256: eec0d4dfa23e234d26d171ef20c62a699052a1bc230bbace341047e0c2673030\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"PBR_VERSION=${PKG_VERSION} && export PBR_VERSION && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - setuptools\n    - pbr\n\n  run:\n    - python >=3.5\n    - joblib\n    - scikit-learn <=0.22.1\n    - networkx\n    - xgboost\n    - pandas\n    - zlib\n    - requests\n    - rdkit\n\ntest:\n  requires:\n    - tensorflow =1.14.0\n  imports:\n    - deepchem\n  commands:\n    - python run_test.py\n\nabout:\n  home: https://github.com/deepchem/deepchem\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Democratizing Deep-Learning for Drug Discovery, Quantum Chemistry, Materials Science and Biology'\n\nextra:\n  recipe-maintainers:\n    - rbharath\n    - simonbray\n",
+ "raw_meta_yaml":"{% set name = \"deepchem\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/deepchem/deepchem/archive/{{ version }}.tar.gz\n  sha256: eec0d4dfa23e234d26d171ef20c62a699052a1bc230bbace341047e0c2673030\n\nbuild:\n  noarch: python\n  number: 2\n  script: \"PBR_VERSION=${PKG_VERSION} && export PBR_VERSION && {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - setuptools\n    - pbr\n\n  run:\n    - python >=3.5\n    - joblib\n    - numpy\n    - pandas\n    - pillow # pillow will remove from v2.4.0\n    - scikit-learn <=0.22.1\n    - scipy\n\ntest:\n  requires:\n    - tensorflow =1.14\n    - rdkit\n  imports:\n    - deepchem\n  commands:\n    - python run_test.py\n\nabout:\n  home: https://github.com/deepchem/deepchem\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Democratizing Deep-Learning for Drug Discovery, Quantum Chemistry, Materials Science and Biology'\n\nextra:\n  recipe-maintainers:\n    - rbharath\n    - simonbray\n",
  "req":{
   "__set__":true,
   "elements":[
    "joblib",
-   "networkx",
+   "numpy",
    "pandas",
    "pbr",
+   "pillow",
    "pip",
    "python",
-   "rdkit",
-   "requests",
    "scikit-learn",
-   "setuptools",
-   "xgboost",
-   "zlib"
+   "scipy",
+   "setuptools"
   ]
  },
  "requirements":{
@@ -136,19 +131,18 @@
    "__set__":true,
    "elements":[
     "joblib",
-    "networkx",
+    "numpy",
     "pandas",
+    "pillow",
     "python",
-    "rdkit",
-    "requests",
     "scikit-learn",
-    "xgboost",
-    "zlib"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
+    "rdkit",
     "tensorflow"
    ]
   }
@@ -172,20 +166,19 @@
    "__set__":true,
    "elements":[
     "joblib",
-    "networkx",
+    "numpy",
     "pandas",
+    "pillow",
     "python >=3.5",
-    "rdkit",
-    "requests",
     "scikit-learn <=0.22.1",
-    "xgboost",
-    "zlib"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "tensorflow =1.14.0"
+    "rdkit",
+    "tensorflow =1.14"
    ]
   }
  },

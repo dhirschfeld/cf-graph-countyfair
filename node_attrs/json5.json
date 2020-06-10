@@ -101,6 +101,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432652533.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.9.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -167,7 +184,11 @@
  },
  "name":"json5",
  "new_version":"0.9.5",
- "pinning_version":"2020.03.24",
+ "new_version_attempts":{
+  "0.9.5":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"json5\" %}\n{% set version = \"0.9.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2ebfad1cd502dca6aecab5b5c36a21c732c3461ddbc412fb0e9a52b07ddfe586\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps -vv '\n  entry_points:\n    - pyjson5 = json5.tool:main\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - json5\n\nabout:\n  home: https://github.com/dpranke/pyjson5\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: A Python implementation of the JSON5 data format\n  dev_url: https://github.com/dpranke/pyjson5\n\nextra:\n  recipe-maintainers:\n    - ian-r-rose\n",
  "req":{
   "__set__":true,
@@ -199,7 +220,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

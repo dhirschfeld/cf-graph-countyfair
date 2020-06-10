@@ -84,6 +84,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432652236.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"6.8.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -164,7 +181,11 @@
  },
  "name":"rb-jekyll-scholar",
  "new_version":"6.8.0",
- "pinning_version":"2019.11.14",
+ "new_version_attempts":{
+  "6.8.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"jekyll-scholar\" %}\n{% set version = \"6.6.0\" %}\n\npackage:\n  name: rb-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem\n  sha256: 7e9411d2c42ee30fb28b389e5ccbb92bada35be7532d669378c42bd974295ad5\n\nbuild:\n  noarch: generic\n  number: 0\n  script:\n    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem\n    - gem unpack {{ name }}-{{ version }}.gem\n  skip: {{ win }}\n\nrequirements:\n  host:\n    - ruby\n  run:\n    - ruby\n    - rb-bibtex-ruby >=5.0,<6\n    - rb-citeproc-ruby >=1.0,<2\n    - rb-csl-styles >=1.0,<2\n    - rb-jekyll >=4.0,<5\n\ntest:\n  commands:\n    - ruby -r {{ name|replace('-','/') }} -e 'exit 0'\n\nabout:\n  home: https://rubygems.org/gems/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: {{ name }}-{{ version }}/LICENSE\n  summary: Jekyll-Scholar is for all the academic bloggers out there.\n\n  # The remaining entries in this section are optional, but recommended.\n  description: |\n      Jekyll-Scholar is for all the academic bloggers out there. It is a set of\n      extensions for Jekyll the awesome, blog aware, static site generator; it\n      formats your BibTeX bibliographies for the web using CSL citation styles\n      and generally gives your blog posts citation super-powers.\n\n  doc_url: https://www.rubydoc.info/gems/{{ name }}\n  dev_url: https://github.com/inukshuk/jekyll-scholar\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
   "__set__":true,
@@ -202,7 +223,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

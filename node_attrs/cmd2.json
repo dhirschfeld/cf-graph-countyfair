@@ -458,6 +458,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432651640.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -548,6 +565,10 @@
  },
  "name":"cmd2",
  "new_version":"1.1.0",
+ "new_version_attempts":{
+  "1.1.0":1
+ },
+ "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"cmd2\" %}\n{% set version = \"0.9.22\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"ba244b07c0b465ff54a6838dc61919599141dc92de1bf00bb0a70875189155e6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  skip: True  # [py2k]\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n\n  run:\n    - python\n    - setuptools\n    - pyperclip >=1.5.27\n    - colorama\n    - attrs\n    - pyreadline  # [win]\n    - wcwidth\n    - contextlib2  # [py<35]\n    - typing  # [py<35]\n    \n\ntest:\n  imports:\n    - cmd2\n\nabout:\n  home: https://github.com/python-cmd2/cmd2\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: \"Extra features for standard library's cmd module\"\n  dev_url: https://github.com/python-cmd2/cmd2\n  doc_url: https://cmd2.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "req":{
