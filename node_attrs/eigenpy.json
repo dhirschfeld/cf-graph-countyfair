@@ -566,7 +566,7 @@
    "summary":"Bindings between Numpy and Eigen using Boost.Python"
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "skip":true
   },
   "extra":{
@@ -587,7 +587,7 @@
   },
   "package":{
    "name":"eigenpy",
-   "version":"2.4.0"
+   "version":"2.4.1"
   },
   "requirements":{
    "build":[
@@ -633,13 +633,8 @@
    ]
   },
   "source":{
-   "patches":[
-    "cmake.patch",
-    "cmake.patch",
-    "cmake.patch"
-   ],
-   "sha256":"dc554a0b45eb4ffe3b1c3d8aa31e7d5db82b0151402c706f3eb7fea4a72bf24d",
-   "url":"https://github.com/stack-of-tasks/eigenpy/releases/download/v2.4.0/eigenpy-2.4.0.tar.gz"
+   "sha256":"750211e05a4010fccf4090b912815af55aa203b7c689fa40996d0cfac7ee5dd1",
+   "url":"https://github.com/stack-of-tasks/eigenpy/releases/download/v2.4.1/eigenpy-2.4.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -670,7 +665,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"eigenpy\" %}\n{% set version = \"2.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/stack-of-tasks/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: dc554a0b45eb4ffe3b1c3d8aa31e7d5db82b0151402c706f3eb7fea4a72bf24d\n  patches:\n    - cmake.patch\n\nbuild:\n  number: 2\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - cmake\n    - make  # [not win]\n    - pkg-config\n  host:\n    - eigen\n    - boost\n    - python\n    - numpy\n  run:\n    - eigen\n    - boost\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pkg-config\n  imports:\n    - eigenpy\n  commands:\n    - pkg-config --modversion eigenpy\n\nabout:\n  home: http://github.com/stack-of-tasks/eigenpy\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: COPYING.LESSER\n  summary: Bindings between Numpy and Eigen using Boost.Python\n  dev_url: https://github.com/stack-of-tasks/eigenpy\n\nextra:\n  recipe-maintainers:\n    - jcarpent\n    - wolfv\n    - lesteve\n    - seanyen\n",
+ "raw_meta_yaml":"{% set name = \"eigenpy\" %}\n{% set version = \"2.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/stack-of-tasks/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 750211e05a4010fccf4090b912815af55aa203b7c689fa40996d0cfac7ee5dd1\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - cmake\n    - make  # [not win]\n    - pkg-config\n  host:\n    - eigen\n    - boost\n    - python\n    - numpy\n  run:\n    - eigen\n    - boost\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pkg-config\n  imports:\n    - eigenpy\n  commands:\n    - pkg-config --modversion eigenpy\n\nabout:\n  home: http://github.com/stack-of-tasks/eigenpy\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: COPYING.LESSER\n  summary: Bindings between Numpy and Eigen using Boost.Python\n  dev_url: https://github.com/stack-of-tasks/eigenpy\n\nextra:\n  recipe-maintainers:\n    - jcarpent\n    - wolfv\n    - lesteve\n    - seanyen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -760,5 +755,5 @@
   }
  },
  "url":"https://github.com/stack-of-tasks/eigenpy/releases/download/v1.5.7/eigenpy-1.5.7.tar.gz",
- "version":"2.4.0"
+ "version":"2.4.1"
 }
