@@ -40,7 +40,7 @@
   }
  ],
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"xtb-python",
  "hash_type":"sha256",
@@ -149,6 +149,7 @@
   }
  },
  "name":"xtb-python",
+ "new_version":"20.1",
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"xtb-python\" %}\n{% set version = \"20.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/grimme-lab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: fc0cfad603324c4a41c575c7c3bf671bf68f03b1b9f0e40e8dc501a56b1b9b1e\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - meson >=0.51\n    - ninja\n    - python\n    - cffi\n  host:\n    - python\n    - pip\n    - xtb\n  run:\n    - python\n    - cffi\n    - {{ pin_compatible('numpy') }}\n    - {{ pin_compatible('xtb', max_pin='x.x') }}\n\n\ntest:\n  imports:\n    - xtb\n  requires:\n    - pytest\n    - ase\n    - qcelemental\n  commands:\n    - pytest --pyargs xtb -vv\n\nabout:\n  home: https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/xtb\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - \"COPYING\"\n    - \"COPYING.LESSER\"\n  summary: 'Python API of the Extended Tight-Binding Program Package'\n  doc_url: https://{{ name }}.readthedocs.io/\n  dev_url: https://github.com/grimme-lab/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - awvwgk\n",
  "req":{

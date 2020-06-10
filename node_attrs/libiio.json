@@ -1,0 +1,307 @@
+{
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432148071.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"icu67"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432148689.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432150134.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
+ "archived":false,
+ "bad":false,
+ "conda-forge.yml":{},
+ "feedstock_name":"libiio",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"libiio is used to interface to the Linux Industrial Input/Output (IIO) Subsystem.\nThe Linux IIO subsystem is intended to provide support for devices that in some\nsense are analog to digital or digital to analog converters (ADCs, DACs). This\nincludes, but is not limited to ADCs, Accelerometers, Gyros, IMUs, Capacitance to\nDigital Converters (CDCs), Pressure Sensors, Color, Light and Proximity Sensors,\nTemperature Sensors, Magnetometers, DACs, DDS (Direct Digital Synthesis), PLLs\n(Phase Locked Loops), Variable/Programmable Gain Amplifiers (VGA, PGA), and RF\ntransceivers. You can use libiio natively on an embedded Linux target (local mode),\nor use libiio to communicate remotely to that same target from a host Linux,\nWindows or MAC over USB or Ethernet or Serial.\n",
+   "dev_url":"https://github.com/analogdevicesinc/libiio",
+   "doc_url":"https://analogdevicesinc.github.io/libiio/",
+   "home":"https://github.com/analogdevicesinc/libiio",
+   "license":"LGPL-2.1-or-later AND GPL-3.0-or-later",
+   "license_family":"LGPL",
+   "license_file":[
+    "COPYING.txt",
+    "COPYING_GPL.txt",
+    "LICENSE_WINGETOPT.txt",
+    "COPYING.txt",
+    "COPYING_GPL.txt",
+    "COPYING.txt",
+    "COPYING_GPL.txt"
+   ],
+   "summary":"Library for interfacing with Linux IIO devices"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libiio",
+    "libiio",
+    "libiio"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz",
+    "ryanvolz",
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"libiio",
+   "version":"0.19"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cmake",
+    "make",
+    "c_compiler_stub",
+    "cmake",
+    "cdt_stub",
+    "make"
+   ],
+   "host":[
+    "libusb >=1",
+    "libxml2",
+    "python",
+    "libusb >=1",
+    "libxml2",
+    "python",
+    "icu",
+    "libiconv",
+    "xz",
+    "zlib",
+    "bison",
+    "flex",
+    "libaio",
+    "libusb >=1",
+    "libxml2",
+    "python"
+   ],
+   "run":[
+    "python",
+    "python",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "patches":null,
+    "sha256":"81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d",
+    "url":"https://github.com/analogdevicesinc/libiio/archive/v0.19.tar.gz"
+   },
+   {
+    "folder":"deps/wingetopt",
+    "sha256":"482082f678aba30edd3b5008b72e1c6c984bc8fb4c181abf0f8880e893169ff0",
+    "url":"https://github.com/alex85k/wingetopt/archive/76a5d1ab15f684d4c9479a32624d65b3bd1a726b.tar.gz"
+   },
+   {
+    "patches":[
+     "0001-Make-Framework-creation-optional-through-OSX_FRAMEWO.patch"
+    ],
+    "sha256":"81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d",
+    "url":"https://github.com/analogdevicesinc/libiio/archive/v0.19.tar.gz"
+   },
+   {
+    "patches":null,
+    "sha256":"81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d",
+    "url":"https://github.com/analogdevicesinc/libiio/archive/v0.19.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "iio_attr --help",
+    "iio_genxml --help",
+    "iio_info --help",
+    "iio_readdev --help",
+    "iio_reg --help",
+    "iio_writedev --help",
+    "iio_adi_xflow_check --help",
+    "iiod --help",
+    "if not exist %PREFIX%\\\\Library\\\\include\\\\iio.h exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\libiio.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\lib\\\\libiio.lib exit 1",
+    "iio_attr --help",
+    "iio_genxml --help",
+    "iio_info --help",
+    "iio_readdev --help",
+    "iio_reg --help",
+    "iio_writedev --help",
+    "iio_adi_xflow_check --help",
+    "iiod --help",
+    "test -f $PREFIX/include/iio.h",
+    "test -f $PREFIX/lib/libiio${SHLIB_EXT}",
+    "iio_attr --help",
+    "iio_genxml --help",
+    "iio_info --help",
+    "iio_readdev --help",
+    "iio_reg --help",
+    "iio_writedev --help",
+    "iio_adi_xflow_check --help",
+    "iiod --help",
+    "test -f $PREFIX/include/iio.h",
+    "test -f $PREFIX/lib/libiio${SHLIB_EXT}"
+   ],
+   "imports":[
+    "iio",
+    "iio",
+    "iio"
+   ]
+  }
+ },
+ "name":"libiio",
+ "pinning_version":"2020.06.07.16.42.19",
+ "raw_meta_yaml":"{% set name = \"libiio\" %}\n{% set version = \"0.19\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: 81c414d5c47b715d9bc9275b9fabbfd9e9483e60c035f3001b5977932049595d\n    patches:\n      - 0001-Make-Framework-creation-optional-through-OSX_FRAMEWO.patch  # [osx]\n  # wingetopt submodule is not included in above sources, download by git hash used\n  - url: https://github.com/alex85k/wingetopt/archive/76a5d1ab15f684d4c9479a32624d65b3bd1a726b.tar.gz  # [win]\n    folder: deps/wingetopt  # [win]\n    sha256: 482082f678aba30edd3b5008b72e1c6c984bc8fb4c181abf0f8880e893169ff0  # [win]\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('libiio', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - {{ cdt('libudev-devel') }}  # [linux]\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - bison  # [linux]\n    - flex  # [linux]\n    - libaio  # [linux]\n    - libusb >=1\n    - libxml2\n    - python\n    # these are pulled in by libxml2 and make it into the link, so add explicitly\n    - icu  # [osx]\n    - libiconv  # [osx]\n    - xz  # [osx]\n    - zlib  # [osx]\n  run:\n    - python\n\ntest:\n  commands:\n    # verify that executables can be run\n    {% set cmds = [\n        \"iio_attr\",\n        \"iio_genxml\",\n        \"iio_info\",\n        \"iio_readdev\",\n        \"iio_reg\",\n        \"iio_writedev\",\n    ] %}\n    {% set cmds = cmds + [\"iio_adi_xflow_check\"] %}  # [not win]\n    {% set cmds = cmds + [\"iiod\"] %}  # [linux]\n    {% for each_cmd in cmds %}\n    - {{ each_cmd }} --help\n    {% endfor %}\n\n    # verify that headers get installed\n    - test -f $PREFIX/include/iio.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\iio.h exit 1  # [win]\n\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/libiio${SHLIB_EXT}  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\libiio.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\libiio.lib exit 1  # [win]\n  imports:\n    - iio\n\nabout:\n  home: https://github.com/analogdevicesinc/libiio\n  license: LGPL-2.1-or-later AND GPL-3.0-or-later\n  license: LGPL-2.1-or-later AND GPL-3.0-or-later AND ISC AND BSD-2-Clause  # [win]\n  license_family: LGPL\n  license_file:\n    - COPYING.txt\n    - COPYING_GPL.txt\n    - LICENSE_WINGETOPT.txt  # [win]\n  summary: 'Library for interfacing with Linux IIO devices'\n  description: |\n    libiio is used to interface to the Linux Industrial Input/Output (IIO) Subsystem.\n    The Linux IIO subsystem is intended to provide support for devices that in some\n    sense are analog to digital or digital to analog converters (ADCs, DACs). This\n    includes, but is not limited to ADCs, Accelerometers, Gyros, IMUs, Capacitance to\n    Digital Converters (CDCs), Pressure Sensors, Color, Light and Proximity Sensors,\n    Temperature Sensors, Magnetometers, DACs, DDS (Direct Digital Synthesis), PLLs\n    (Phase Locked Loops), Variable/Programmable Gain Amplifiers (VGA, PGA), and RF\n    transceivers. You can use libiio natively on an embedded Linux target (local mode),\n    or use libiio to communicate remotely to that same target from a host Linux,\n    Windows or MAC over USB or Ethernet or Serial.\n  doc_url: https://analogdevicesinc.github.io/libiio/\n  dev_url: https://github.com/analogdevicesinc/libiio\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "bison",
+   "c_compiler_stub",
+   "cdt_stub",
+   "cmake",
+   "flex",
+   "icu",
+   "libaio",
+   "libiconv",
+   "libusb",
+   "libxml2",
+   "make",
+   "ninja",
+   "python",
+   "xz",
+   "zlib"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "make",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "flex",
+    "icu",
+    "libaio",
+    "libiconv",
+    "libusb",
+    "libxml2",
+    "python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "make",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "flex",
+    "icu",
+    "libaio",
+    "libiconv",
+    "libusb >=1",
+    "libxml2",
+    "python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/analogdevicesinc/libiio/archive/v0.19.tar.gz",
+ "version":"0.19"
+}
