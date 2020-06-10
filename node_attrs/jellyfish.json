@@ -106,11 +106,7 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35"
- },
+ "conda-forge.yml":{},
  "feedstock_name":"jellyfish",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -183,7 +179,7 @@
   "0.8.2":"We found a problem parsing the recipe: \n\nwhile constructing a mapping\n  in \"<unicode string>\", line 21, column 3:\n      build:\n      ^ (line: 21)\nfound duplicate key \"host\" with value \"['python', 'pip']\" (original value: \"[\"<{ compiler('c') }}\"]\")\n  in \"<unicode string>\", line 25, column 3:\n      host:\n      ^ (line: 25)\n\nTo suppress this check see:\n    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys\n\nDuplicate keys will become an error in future releases, and are errors\nby default when using the new API.\n"
  },
  "pinning_version":"2020.06.02.12.20.38",
- "raw_meta_yaml":"{% set name = \"jellyfish\" %}\n{% set version = \"0.7.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - jellyfish\n\nabout:\n  home: http://github.com/jamesturk/jellyfish\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'a library for doing approximate and phonetic matching of strings.'\n  dev_url: http://github.com/jamesturk/jellyfish\n  doc_url: https://jellyfish.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - blabalme\n",
+ "raw_meta_yaml":"{% set name = \"jellyfish\" %}\n{% set version = \"0.7.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash = \"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - jellyfish\n\nabout:\n  home: http://github.com/jamesturk/jellyfish\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'a library for doing approximate and phonetic matching of strings.'\n  dev_url: http://github.com/jamesturk/jellyfish\n  doc_url: https://jellyfish.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - blabalme\n",
  "req":{
   "__set__":true,
   "elements":[
