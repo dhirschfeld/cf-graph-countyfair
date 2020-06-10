@@ -102,7 +102,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -113,7 +113,7 @@
   },
   "package":{
    "name":"macholib",
-   "version":"1.11"
+   "version":"1.14"
   },
   "requirements":{
    "build":[
@@ -134,9 +134,9 @@
    ]
   },
   "source":{
-   "fn":"macholib-1.11.tar.gz",
-   "sha256":"c4180ffc6f909bf8db6cd81cff4b6f601d575568f4d5dee148c830e9851eb9db",
-   "url":"https://pypi.io/packages/source/m/macholib/macholib-1.11.tar.gz"
+   "fn":"macholib-1.14.tar.gz",
+   "sha256":"0c436bc847e7b1d9bda0560351bf76d7caf930fb585a828d13608839ef42c432",
+   "url":"https://pypi.io/packages/source/m/macholib/macholib-1.14.tar.gz"
   },
   "test":{
    "commands":[
@@ -154,7 +154,7 @@
  "name":"macholib",
  "new_version":"1.14",
  "pinning_version":"2020.01.10",
- "raw_meta_yaml":"{% set name = \"macholib\" %}\n{% set version = \"1.11\" %}\n{% set sha256 = \"c4180ffc6f909bf8db6cd81cff4b6f601d575568f4d5dee148c830e9851eb9db\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - altgraph >=0.15\n\ntest:\n  imports:\n    - macholib\n  commands:\n    - python -m macholib find /tmp/\n\nabout:\n  home: http://bitbucket.org/ronaldoussoren/macholib\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Mach-O header analysis and editing'\n  description: |\n      macholib can be used to analyze and edit Mach-O headers,\n      the executable format used by Mac OS X.\n  doc_url: https://macholib.readthedocs.io/en/latest/\n  dev_url: http://bitbucket.org/ronaldoussoren/macholib\n\nextra:\n  recipe-maintainers:\n    - rth\n",
+ "raw_meta_yaml":"{% set name = \"macholib\" %}\n{% set version = \"1.14\" %}\n{% set sha256 = \"0c436bc847e7b1d9bda0560351bf76d7caf930fb585a828d13608839ef42c432\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - altgraph >=0.15\n\ntest:\n  imports:\n    - macholib\n  commands:\n    - python -m macholib find /tmp/\n\nabout:\n  home: http://bitbucket.org/ronaldoussoren/macholib\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Mach-O header analysis and editing'\n  description: |\n      macholib can be used to analyze and edit Mach-O headers,\n      the executable format used by Mac OS X.\n  doc_url: https://macholib.readthedocs.io/en/latest/\n  dev_url: http://bitbucket.org/ronaldoussoren/macholib\n\nextra:\n  recipe-maintainers:\n    - rth\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -214,5 +214,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/macholib/macholib-1.11.tar.gz",
- "version":"1.11"
+ "version":"1.14"
 }

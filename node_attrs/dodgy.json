@@ -59,12 +59,13 @@
   "about":{
    "home":"https://github.com/landscapeio/dodgy",
    "license":"MIT",
+   "license_file":"LICENSE",
    "summary":"Dodgy: Searches for dodgy looking lines in Python code"
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -75,7 +76,7 @@
   },
   "package":{
    "name":"dodgy",
-   "version":"0.1.9"
+   "version":"0.2.1"
   },
   "requirements":{
    "host":[
@@ -96,9 +97,9 @@
    ]
   },
   "source":{
-   "fn":"dodgy-0.1.9.tar.gz",
-   "sha256":"65e13cf878d7aff129f1461c13cb5fd1bb6dfe66bb5327e09379c3877763280c",
-   "url":"https://pypi.io/packages/source/d/dodgy/dodgy-0.1.9.tar.gz"
+   "fn":"dodgy-0.2.1.tar.gz",
+   "sha256":"28323cbfc9352139fdd3d316fa17f325cc0e9ac74438cbba51d70f9b48f86c3a",
+   "url":"https://pypi.io/packages/source/d/dodgy/dodgy-0.2.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -111,7 +112,7 @@
  "name":"dodgy",
  "new_version":"0.2.1",
  "pinning_version":"2019.12.18",
- "raw_meta_yaml":"{% set name = \"dodgy\" %}\n{% set version = \"0.1.9\" %}\n{% set sha256 = \"65e13cf878d7aff129f1461c13cb5fd1bb6dfe66bb5327e09379c3877763280c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dodgy\n\nabout:\n  home: https://github.com/landscapeio/dodgy\n  license: MIT\n  summary: 'Dodgy: Searches for dodgy looking lines in Python code'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "raw_meta_yaml":"{% set name = \"dodgy\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"28323cbfc9352139fdd3d316fa17f325cc0e9ac74438cbba51d70f9b48f86c3a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dodgy\n\nabout:\n  home: https://github.com/landscapeio/dodgy\n  license: MIT\n  license_file: LICENSE\n  summary: 'Dodgy: Searches for dodgy looking lines in Python code'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -171,5 +172,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/dodgy/dodgy-0.1.9.tar.gz",
- "version":"0.1.9"
+ "version":"0.2.1"
 }
