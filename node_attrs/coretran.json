@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"coretran",
  "hash_type":"sha256",
@@ -55,6 +55,7 @@
   }
  },
  "name":"coretran",
+ "new_version":"1.0",
  "raw_meta_yaml":"{% set name = \"coretran\" %}\n{% set version = \"1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/leonfoks/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 7e39d0115020ea5b986ce900319c30649e94d0698dc6f760d5622a51d348ec04\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - cmake\n    - make  # [unix]\n\ntest:\n  commands:\n    - test -s $PREFIX/lib/lib{{ name }}$SHLIB_EXT\n\nabout:\n  home: https://github.com/leonfoks/coretran\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: The coretran numerical library\n  description: |\n    Coretran is an easy to follow library to make Fortran easier in\n    general with wrapped interfaces, sorting routines, kD-Trees, and\n    other algorithms to handle scientific data and concepts. The\n    library contains core Fortran routines and object-oriented\n    classes.\n  doc_url: https://leonfoks.github.io/coretran\n  dev_url: https://github.com/leonfoks/coretran\n\nextra:\n  recipe-maintainers:\n    - mdpiper\n",
  "req":{
   "__set__":true,
