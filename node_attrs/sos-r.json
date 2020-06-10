@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432714056.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.19.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -147,10 +164,11 @@
  "new_version":"0.19.5",
  "new_version_attempts":{
   "0.19.3":1,
-  "0.19.4":1
+  "0.19.4":1,
+  "0.19.5":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"sos-r\" %}\n{% set version = \"0.19.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: de7c6d52ffa1708ad7ba8e7f24b9a5d4aa4825e41d93b1489c1dd07702358e26\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - sos-notebook >=0.19.4\n    - pandas\n    - numpy\n    - feather-format\n    - r-irkernel\n    - r-feather\n\ntest:\n  requires:\n    - nose\n    - pytest\n    - selenium\n  imports:\n    - sos_r\n\nabout:\n  home: https://github.com/vatlab/sos-r\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: SoS language module for the R programming language\n  doc_url: https://vatlab.github.io/sos-docs/\n  dev_url: https://github.com/vatlab/sos-r\n\nextra:\n  recipe-maintainers:\n    - BoPeng\n",
  "req":{
   "__set__":true,

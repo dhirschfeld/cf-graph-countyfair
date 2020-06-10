@@ -203,6 +203,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432713539.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.0.10"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -296,7 +313,11 @@
  },
  "name":"minio",
  "new_version":"5.0.10",
- "pinning_version":"2020.03.13",
+ "new_version_attempts":{
+  "5.0.10":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"minio\" %}\n{% set version = \"5.0.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: daed642e6b3c19b6ca9ba42b35e81c93e653c7db5b595342028204ce5a8d2b2e\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - future\n    - urllib3\n    - pytz\n    - certifi\n    - python-dateutil\n\ntest:\n  imports:\n    - minio\n    - minio.api\n    - minio.helpers\n    - minio.error\n    - minio.sse\n\nabout:\n  home: https://github.com/minio/minio-py\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: MinIO Python Library for Amazon S3 Compatible Cloud Storage for Python\n\n  description: |\n    The MinIO Python Client SDK provides simple APIs to access any Amazon S3\n    compatible object storage server.\n  doc_url: https://docs.min.io/docs/python-client-api-reference\n  dev_url: https://github.com/minio/minio-py\n\nextra:\n  recipe-maintainers:\n    - tjd2002\n    - guzman-raphael\n",
  "req":{
   "__set__":true,
@@ -338,7 +359,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

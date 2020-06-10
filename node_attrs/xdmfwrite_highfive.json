@@ -1,0 +1,134 @@
+{
+ "archived":false,
+ "bad":"Upstream: Error getting upstream version",
+ "conda-forge.yml":{},
+ "feedstock_name":"xdmfwrite_highfive",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"Write XDMF files to interpret HDF5 files.",
+   "dev_url":"https://github.com/tdegeus/XDMFWrite_HighFive",
+   "doc_url":"https://github.com/tdegeus/XDMFWrite_HighFive",
+   "home":"https://github.com/tdegeus/XDMFWrite_HighFive",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Write XDMF files to interpret HDF5 files."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tdegeus",
+    "tdegeus",
+    "tdegeus"
+   ]
+  },
+  "package":{
+   "name":"xdmfwrite_highfive",
+   "version":"0.0.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "highfive",
+    "highfive",
+    "highfive"
+   ],
+   "run":[
+    "highfive",
+    "highfive",
+    "highfive"
+   ]
+  },
+  "source":{
+   "sha256":"e0694cdddfc4e0c3b8b78c40bc1c1332fbe9f3b69f82388e816e6156eb0baf57",
+   "url":"https://github.com/tdegeus/XDMFWrite_HighFive/archive/v0.0.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\XDMFWrite_HighFive.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\XDMFWrite_HighFiveConfig.cmake (exit 0) else (exit 1)",
+    "test -f ${PREFIX}/include/XDMFWrite_HighFive.hpp",
+    "test -f ${PREFIX}/lib/cmake/XDMFWrite_HighFive/XDMFWrite_HighFiveConfig.cmake",
+    "test -f ${PREFIX}/include/XDMFWrite_HighFive.hpp",
+    "test -f ${PREFIX}/lib/cmake/XDMFWrite_HighFive/XDMFWrite_HighFiveConfig.cmake"
+   ]
+  }
+ },
+ "name":"xdmfwrite_highfive",
+ "raw_meta_yaml":"{% set version = \"0.0.1\" %}\n\npackage:\n  name: xdmfwrite_highfive\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tdegeus/XDMFWrite_HighFive/archive/v{{ version }}.tar.gz\n  sha256: e0694cdddfc4e0c3b8b78c40bc1c1332fbe9f3b69f82388e816e6156eb0baf57\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - highfive\n  run:\n    - highfive\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/XDMFWrite_HighFive.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/XDMFWrite_HighFive/XDMFWrite_HighFiveConfig.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\XDMFWrite_HighFive.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\XDMFWrite_HighFiveConfig.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/tdegeus/XDMFWrite_HighFive\n  license: MIT\n  license_file: LICENSE\n  summary: Write XDMF files to interpret HDF5 files.\n  description: Write XDMF files to interpret HDF5 files.\n  doc_url: https://github.com/tdegeus/XDMFWrite_HighFive\n  dev_url: https://github.com/tdegeus/XDMFWrite_HighFive\n\nextra:\n  recipe-maintainers:\n    - tdegeus\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "cmake",
+   "cxx_compiler_stub",
+   "highfive",
+   "make"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "highfive"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "highfive"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "highfive"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "highfive"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/tdegeus/XDMFWrite_HighFive/archive/v0.0.1.tar.gz",
+ "version":"0.0.1"
+}
