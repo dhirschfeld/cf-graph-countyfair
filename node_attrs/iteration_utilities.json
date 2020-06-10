@@ -142,9 +142,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -162,7 +159,7 @@
    "summary":"Utilities based on Pythons iterators and generators."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":" -m pip install . --no-deps -vv"
   },
   "extra":{
@@ -220,7 +217,7 @@
  "name":"iteration_utilities",
  "new_version":"0.10.1",
  "pinning_version":"2020.03.20",
- "raw_meta_yaml":"{% set name = \"iteration_utilities\" %}\n{% set version = \"0.10.1\" %}\n{% set sha256 = \"536e3e87c5c139c775f9d95bb771c4b366a1d58eb7a39436d4ac839b53742569\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: true  # [py27]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - iteration_utilities\n\nabout:\n  home: https://github.com/MSeifert04/iteration_utilities\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'Utilities based on Pythons iterators and generators.'\n  doc_url: https://iteration-utilities.readthedocs.io/en/stable/\n  dev_url: https://github.com/MSeifert04/iteration_utilities\n\nextra:\n  recipe-maintainers:\n    - MSeifert04\n",
+ "raw_meta_yaml":"{% set name = \"iteration_utilities\" %}\n{% set version = \"0.10.1\" %}\n{% set sha256 = \"536e3e87c5c139c775f9d95bb771c4b366a1d58eb7a39436d4ac839b53742569\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: true  # [py27]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - iteration_utilities\n\nabout:\n  home: https://github.com/MSeifert04/iteration_utilities\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'Utilities based on Pythons iterators and generators.'\n  doc_url: https://iteration-utilities.readthedocs.io/en/stable/\n  dev_url: https://github.com/MSeifert04/iteration_utilities\n\nextra:\n  recipe-maintainers:\n    - MSeifert04\n",
  "req":{
   "__set__":true,
   "elements":[

@@ -106,6 +106,25 @@
     "__lazy_json__":"pr_json/390603955.json"
    },
    "data":{
+    "bot_rerun":1591813198.0964363,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432640989.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
@@ -206,7 +225,7 @@
  },
  "name":"xattr",
  "new_version":"0.9.7",
- "pinning_version":"2020.03.16",
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"xattr\" %}\n{% set version = \"0.9.7\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"b0bbca828e04ef2d484a6522ae7b3a7ccad5e43fa1c6f54d78e24bb870f49d44\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  skip: True  # [win]\n  entry_points:\n    - xattr = xattr.tool:main\n\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    \n  host:\n    - python\n    - pip\n    - cffi >=1.0.0\n\n  run:\n    - python\n    - cffi >=1.0.0\n\ntest:\n  imports:\n    - xattr\n\n  commands:\n    - xattr --help\n\nabout:\n  home: https://github.com/xattr/xattr\n  license_file: LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'Python wrapper for extended filesystem attributes'\n  dev_url: https://github.com/xattr/xattr\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "req":{
   "__set__":true,
@@ -244,7 +263,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

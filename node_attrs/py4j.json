@@ -98,8 +98,8 @@
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -113,7 +113,7 @@
   },
   "package":{
    "name":"py4j",
-   "version":"0.10.8.1"
+   "version":"0.10.9"
   },
   "requirements":{
    "host":[
@@ -134,8 +134,8 @@
    ]
   },
   "source":{
-   "sha256":"8329bb156a0cf37be9642a2a060dbdb627b5fcb827919be65d95102daccca274",
-   "url":"https://pypi.io/packages/source/p/py4j/py4j-0.10.8.1.zip"
+   "sha256":"36ec57f43ff8ced260a18aa9a4e46c3500a730cac8860e259cbaa546c2b9db2f",
+   "url":"https://pypi.io/packages/source/p/py4j/py4j-0.10.9.tar.gz"
   },
   "test":{
    "imports":[
@@ -151,7 +151,7 @@
  "name":"py4j",
  "new_version":"0.10.9",
  "pinning_version":"2020.03.24",
- "raw_meta_yaml":"{% set name = \"py4j\" %}\n{% set version = \"0.10.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: 8329bb156a0cf37be9642a2a060dbdb627b5fcb827919be65d95102daccca274\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - py4j\n    - py4j.tests\n\nabout:\n  home: http://py4j.sourceforge.net/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Enables Python programs to dynamically access arbitrary Java objects'\n  dev_url: https://github.com/bartdag/py4j\n  doc_url: http://py4j.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - parente\n",
+ "raw_meta_yaml":"{% set name = \"py4j\" %}\n{% set version = \"0.10.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 36ec57f43ff8ced260a18aa9a4e46c3500a730cac8860e259cbaa546c2b9db2f\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - py4j\n    - py4j.tests\n\nabout:\n  home: http://py4j.sourceforge.net/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Enables Python programs to dynamically access arbitrary Java objects\n  dev_url: https://github.com/bartdag/py4j\n  doc_url: http://py4j.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - parente\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -211,5 +211,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/py4j/py4j-0.10.8.1.zip",
- "version":"0.10.8.1"
+ "version":"0.10.9"
 }

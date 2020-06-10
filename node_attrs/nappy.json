@@ -58,11 +58,7 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35"
- },
+ "conda-forge.yml":{},
  "feedstock_name":"nappy",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -74,7 +70,7 @@
    "summary":"A NASA AMes I/O package"
   },
   "build":{
-   "number":"1000",
+   "number":"1001",
    "script":[
     " -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
     " -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
@@ -153,7 +149,7 @@
  "name":"nappy",
  "new_version":"1.1.4",
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set name = \"nappy\" %}\n{% set version = \"1.1.4\" %}\n{% set sha256 = \"2bc123250e559c574c57ad8d7e4c05814d58f3dc45f70622b1be401d30ec1b20\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win or py3k]\n  number: 1000\n  script:\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - numpy\n    - cdat-lite\n    - python\n\ntest:\n  imports:\n    - nappy\n    - nappy.utils.compare_na\n    - nappy.utils.common_utils\n    - nappy.utils.text_parser\n\nabout:\n  home: https://github.com/cedadev/nappy\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: A NASA AMes I/O package\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
+ "raw_meta_yaml":"{% set name = \"nappy\" %}\n{% set version = \"1.1.4\" %}\n{% set sha256 = \"2bc123250e559c574c57ad8d7e4c05814d58f3dc45f70622b1be401d30ec1b20\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win or py3k]\n  number: 1001\n  script:\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - numpy\n    - cdat-lite\n    - python\n\ntest:\n  imports:\n    - nappy\n    - nappy.utils.compare_na\n    - nappy.utils.common_utils\n    - nappy.utils.text_parser\n\nabout:\n  home: https://github.com/cedadev/nappy\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: A NASA AMes I/O package\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "req":{
   "__set__":true,
   "elements":[
