@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"libad9361-iio",
  "hash_type":"sha256",
@@ -74,6 +74,7 @@
   }
  },
  "name":"libad9361-iio",
+ "new_version":"0.2",
  "raw_meta_yaml":"{% set name = \"libad9361-iio\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f0d935eb7f70fde8596d98e9eb1f311b408b87662fc1fff45ae3ed455697b747\n  patches:\n    - 0001-Remove-ifdefs-for-special-location-for-IIO-header-on.patch  # [osx]\n    - 0001-Make-Framework-creation-optional-through-OSX_FRAMEWO.patch  # [osx]\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('libad9361-iio', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - {{ cdt('libudev-devel') }}  # [linux]\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - libiio\n\ntest:\n  commands:\n    # verify that headers get installed\n    - test -f $PREFIX/include/ad9361.h  # [not win]\n    - test -f $PREFIX/include/ad9361-wrapper.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\ad9361.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\ad9361-wrapper.h exit 1  # [win]\n\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/libad9361${SHLIB_EXT}  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\libad9361.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\libad9361.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/analogdevicesinc/libad9361-iio\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'IIO AD9361 library for filter design and handling, multi-chip sync, etc. '\n  description: |\n    This is a simple library used for userspace which manages multi-chip sync (on\n    platforms [FMCOMMS5] where multiple AD9361 devices are use) and can create AD9361\n    specific FIR filters on the fly\n  doc_url: https://analogdevicesinc.github.io/libad9361-iio\n  dev_url: https://github.com/analogdevicesinc/libad9361-iio\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
   "__set__":true,
