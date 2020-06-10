@@ -100,6 +100,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432324469.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -190,8 +207,12 @@
   }
  },
  "name":"mdanalysistests",
- "new_version":"0.20.1",
- "pinning_version":"2019.12.02",
+ "new_version":"1.0.0",
+ "new_version_attempts":{
+  "1.0.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"MDAnalysisTests\" %}\n{% set version = \"0.20.1\" %}\n{% set sha256 = \"105337d682aafde17c08e46bff04046ef9446daeb902055eb6426af139c8a062\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win and py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - mdanalysis =={{ version }}\n    - psutil\n    - mock\n    - pytest\n    - hypothesis\n\ntest:\n  imports:\n    - MDAnalysisTests\n    - MDAnalysisTests.datafiles\n\nabout:\n  home: https://github.com/MDAnalysis/mdanalysis\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Tests and test files for MDAnalysis package'\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n    - richardjgowers\n",
  "req":{
   "__set__":true,
@@ -233,7 +254,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.3",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

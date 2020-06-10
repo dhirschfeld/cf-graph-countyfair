@@ -191,9 +191,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -204,9 +201,9 @@
   "about":{
    "description":"sisl is a tool to manipulate density functional\ntheory code input and/or output. It also implements tight-binding\ntools to create and manipulate multi-orbital (non)-orthogonal basis sets.\n",
    "dev_url":"https://github.com/zerothi/sisl",
-   "doc_url":"http://sisl.readthedocs.io/",
-   "home":"http://github.com/zerothi/sisl",
-   "license":"LGPL-3.0",
+   "doc_url":"https://zerothi.github.io/sisl",
+   "home":"https://github.com/zerothi/sisl",
+   "license":"LGPL-3.0-or-later",
    "license_family":"LGPL",
    "license_file":"LICENSE",
    "summary":"Toolbox for electronic structure calculations and large scale transport"
@@ -224,7 +221,7 @@
   },
   "package":{
    "name":"sisl",
-   "version":"0.9.8"
+   "version":"0.10.0"
   },
   "requirements":{
    "build":[
@@ -243,6 +240,7 @@
     "six",
     "numpy <=1.15.3",
     "scipy >=0.18",
+    "cython",
     "pyparsing",
     "netcdf4",
     "libcblas",
@@ -252,6 +250,7 @@
     "six",
     "numpy <=1.15.3",
     "scipy >=0.18",
+    "cython",
     "pyparsing",
     "netcdf4",
     "libcblas",
@@ -261,6 +260,7 @@
     "six",
     "numpy <=1.15.3",
     "scipy >=0.18",
+    "cython",
     "pyparsing",
     "netcdf4"
    ],
@@ -289,9 +289,9 @@
    ]
   },
   "source":{
-   "fn":"sisl-0.9.8.tar.gz",
-   "sha256":"7873e251c1a3f33e80ed1b87043800e59614a5e09a1c5d7a19f2ce289524c946",
-   "url":"https://github.com/zerothi/sisl/archive/v0.9.8.tar.gz"
+   "fn":"sisl-0.10.0.tar.gz",
+   "sha256":"6c395c00aed4d3f7604adcd4bb0231053262ef7240e452e70b55b422e2467edb",
+   "url":"https://github.com/zerothi/sisl/archive/v0.10.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -316,11 +316,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"sisl\" %}\n{% set version = \"0.9.8\" %}\n{% set sha256 = \"7873e251c1a3f33e80ed1b87043800e59614a5e09a1c5d7a19f2ce289524c946\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/zerothi/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - libcblas\n    - liblapack\n    - python\n    - setuptools\n    - six\n    # once we hit 1.16.3 it should be fine again\n    # I read that numpy-devel should work, so...\n    - numpy <=1.15.3\n    - scipy >=0.18\n    - pyparsing\n    - netcdf4\n  run:\n    - liblapack\n    - python\n    - six\n    - pyparsing\n    - {{ pin_compatible('numpy') }}\n    - {{ pin_compatible('scipy') }}\n    - netcdf4\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - sisl\n    - sisl.io\n\nabout:\n  home: http://github.com/zerothi/sisl\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'Toolbox for electronic structure calculations and large scale transport'\n  description: |\n    sisl is a tool to manipulate density functional\n    theory code input and/or output. It also implements tight-binding\n    tools to create and manipulate multi-orbital (non)-orthogonal basis sets.\n  doc_url: http://sisl.readthedocs.io/\n  dev_url: https://github.com/zerothi/sisl\n\nextra:\n  recipe-maintainers:\n    - zerothi\n",
+ "raw_meta_yaml":"{% set name = \"sisl\" %}\n{% set version = \"0.10.0\" %}\n{% set sha256 = \"6c395c00aed4d3f7604adcd4bb0231053262ef7240e452e70b55b422e2467edb\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/zerothi/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - libcblas\n    - liblapack\n    - python\n    - setuptools\n    - six\n    # once we hit 1.16.3 it should be fine again\n    # I read that numpy-devel should work, so...\n    - numpy <=1.15.3\n    - scipy >=0.18\n    # For cythonizing stuff\n    - cython\n    - pyparsing\n    - netcdf4\n  run:\n    - liblapack\n    - python\n    - six\n    - pyparsing\n    - {{ pin_compatible('numpy') }}\n    - {{ pin_compatible('scipy') }}\n    - netcdf4\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - sisl\n    - sisl.io\n\nabout:\n  home: https://github.com/zerothi/sisl\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Toolbox for electronic structure calculations and large scale transport\n  description: |\n    sisl is a tool to manipulate density functional\n    theory code input and/or output. It also implements tight-binding\n    tools to create and manipulate multi-orbital (non)-orthogonal basis sets.\n  doc_url: https://zerothi.github.io/sisl\n  dev_url: https://github.com/zerothi/sisl\n\nextra:\n  recipe-maintainers:\n    - zerothi\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
+   "cython",
    "fortran_compiler_stub",
    "libcblas",
    "liblapack",
@@ -344,6 +345,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "cython",
     "libcblas",
     "liblapack",
     "netcdf4",
@@ -387,6 +389,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "cython",
     "libcblas",
     "liblapack",
     "netcdf4",
@@ -418,5 +421,5 @@
   }
  },
  "url":"https://github.com/zerothi/sisl/archive/v0.9.6.tar.gz",
- "version":"0.9.8"
+ "version":"0.10.0"
 }
