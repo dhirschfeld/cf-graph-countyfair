@@ -71,7 +71,7 @@
   },
   "build":{
    "number":"0",
-   "script":" -m pip install . -vv",
+   "script":"-m pip install . -vv",
    "skip":true
   },
   "extra":{
@@ -83,7 +83,7 @@
   },
   "package":{
    "name":"cyvlfeat",
-   "version":"0.5.1"
+   "version":"0.6.0"
   },
   "requirements":{
    "build":[
@@ -93,36 +93,48 @@
    ],
    "host":[
     "python",
+    "setuptools",
     "pip",
     "numpy",
     "cython",
     "vlfeat",
+    "scipy",
     "python",
+    "setuptools",
     "pip",
     "numpy",
     "cython",
     "vlfeat",
+    "scipy",
     "python",
+    "setuptools",
     "pip",
     "numpy",
     "cython",
-    "vlfeat"
+    "vlfeat",
+    "scipy"
    ],
    "run":[
     "python",
+    "setuptools",
     "vlfeat",
     "numpy",
+    "scipy",
     "python",
+    "setuptools",
     "vlfeat",
     "numpy",
+    "scipy",
     "python",
+    "setuptools",
     "vlfeat",
-    "numpy"
+    "numpy",
+    "scipy"
    ]
   },
   "source":{
-   "sha256":"95e63e4451a0368aa26fcc45175b36d3990c271329855ea155b687dc6ca26f57",
-   "url":"https://pypi.io/packages/source/c/cyvlfeat/cyvlfeat-0.5.1.tar.gz"
+   "sha256":"f6c315075d4bde8d6b14dcab32d84c315e40304de2c52894bcaed11c68bd58ce",
+   "url":"https://pypi.io/packages/source/c/cyvlfeat/cyvlfeat-0.6.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -154,7 +166,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"cyvlfeat\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 95e63e4451a0368aa26fcc45175b36d3990c271329855ea155b687dc6ca26f57\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [win]\n\nrequirements:\n  build:\n     - {{ compiler('c') }}\n\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n    - vlfeat\n\n  run:\n    - python\n    - {{ pin_compatible('vlfeat', min_pin='x.x.x', max_pin='x.x.x') }}\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cyvlfeat.sift.sift\n    - cyvlfeat.sift.dsift\n    - cyvlfeat.fisher.fisher\n    - cyvlfeat.hog.hog\n    - cyvlfeat.kmeans.kmeans\n    - cyvlfeat.generic.generic\n\nabout:\n  home: https://github.com/menpo/cyvlfeat\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A Python (cython) wrapper of the VLFeat library'\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n",
+ "raw_meta_yaml":"{% set name = \"cyvlfeat\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f6c315075d4bde8d6b14dcab32d84c315e40304de2c52894bcaed11c68bd58ce\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\n  host:\n    - python\n    - setuptools\n    - pip\n    - numpy\n    - cython\n    - vlfeat\n    - scipy\n\n  run:\n    - python\n    - setuptools\n    - {{ pin_compatible('vlfeat', min_pin='x.x.x', max_pin='x.x.x') }}\n    - {{ pin_compatible('numpy') }}\n    - scipy\n\ntest:\n  imports:\n    - cyvlfeat.sift.sift\n    - cyvlfeat.sift.dsift\n    - cyvlfeat.fisher.fisher\n    - cyvlfeat.hog.hog\n    - cyvlfeat.kmeans.kmeans\n    - cyvlfeat.generic.generic\n\nabout:\n  home: https://github.com/menpo/cyvlfeat\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A Python (cython) wrapper of the VLFeat library\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -163,6 +175,8 @@
    "numpy",
    "pip",
    "python",
+   "scipy",
+   "setuptools",
    "vlfeat"
   ]
  },
@@ -180,6 +194,8 @@
     "numpy",
     "pip",
     "python",
+    "scipy",
+    "setuptools",
     "vlfeat"
    ]
   },
@@ -188,6 +204,8 @@
    "elements":[
     "numpy",
     "python",
+    "scipy",
+    "setuptools",
     "vlfeat"
    ]
   },
@@ -212,6 +230,8 @@
     "numpy",
     "pip",
     "python",
+    "scipy",
+    "setuptools",
     "vlfeat"
    ]
   },
@@ -220,6 +240,8 @@
    "elements":[
     "numpy",
     "python",
+    "scipy",
+    "setuptools",
     "vlfeat"
    ]
   },
@@ -229,5 +251,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cyvlfeat/cyvlfeat-0.5.1.tar.gz",
- "version":"0.5.1"
+ "version":"0.6.0"
 }
