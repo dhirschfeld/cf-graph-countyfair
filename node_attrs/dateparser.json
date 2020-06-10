@@ -47,6 +47,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432450830.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.7.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -139,8 +156,12 @@
   }
  },
  "name":"dateparser",
- "new_version":"0.7.4",
- "pinning_version":"2020.03.06",
+ "new_version":"0.7.5",
+ "new_version_attempts":{
+  "0.7.5":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"0.7.4\" %}\n\npackage:\n  name: dateparser\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dateparser/dateparser-{{ version }}.tar.gz\n  sha256: fb5bfde4795fa4b179fe05c2c25b3981f785de26bec37e247dee1079c63d5689\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - python-dateutil\n    - pytz\n    - regex !=2019.02.19\n    - tzlocal\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - dateparser\n    - dateparser.calendars\n    - dateparser.languages\n    - dateparser.utils\n\nabout:\n  home: https://github.com/scrapinghub/dateparser\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Date parsing library designed to parse dates from HTML pages.\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -182,7 +203,7 @@
    ]
   }
  },
- "smithy_version":"3.6.9",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
