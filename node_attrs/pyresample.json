@@ -318,13 +318,13 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/pytroll/pyresample/",
-   "license":"LGPL-3.0",
+   "license":"LGPL-3.0-or-later",
    "license_file":"LICENSE.txt",
-   "summary":"Resampling of remote sensing data in Python"
+   "summary":"Geospatial image resampling in Python"
   },
   "build":{
    "number":"0",
-   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -344,7 +344,7 @@
   },
   "package":{
    "name":"pyresample",
-   "version":"1.15.0"
+   "version":"1.16.0"
   },
   "requirements":{
    "build":[
@@ -368,54 +368,71 @@
    ],
    "run":[
     "python",
-    "pyproj >=1.9.5.1",
-    "numpy",
     "configobj",
+    "numpy >=1.10.0",
     "pykdtree >=1.3.1",
+    "pyproj >=1.9.5.1",
     "pyyaml",
-    "six",
+    "setuptools >=3.2",
+    "numpy",
     "python",
-    "pyproj >=1.9.5.1",
-    "numpy",
     "configobj",
+    "numpy >=1.10.0",
     "pykdtree >=1.3.1",
+    "pyproj >=1.9.5.1",
     "pyyaml",
-    "six",
+    "setuptools >=3.2",
+    "numpy",
     "python",
-    "pyproj >=1.9.5.1",
-    "numpy",
     "configobj",
+    "numpy >=1.10.0",
     "pykdtree >=1.3.1",
+    "pyproj >=1.9.5.1",
     "pyyaml",
-    "six"
+    "setuptools >=3.2",
+    "numpy"
    ]
   },
   "source":{
-   "sha256":"bd9113734b2f66ddce4bdb401f600e9fbda4633444437796cdb135afbbde95fb",
-   "url":"https://pypi.io/packages/source/p/pyresample/pyresample-1.15.0.tar.gz"
+   "sha256":"2fe3f050772b84a5440d72c47ef7bf3d1a75f59911d37f0cd2e3df5969c9a470",
+   "url":"https://pypi.io/packages/source/p/pyresample/pyresample-1.16.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "pyresample",
+    "pyresample.bilinear",
     "pyresample.ewa._ll2cr",
     "pyresample.ewa._fornav",
     "pyresample.gradient._gradient_search",
     "pyresample",
+    "pyresample.bilinear",
     "pyresample.ewa._ll2cr",
     "pyresample.ewa._fornav",
     "pyresample.gradient._gradient_search",
     "pyresample",
+    "pyresample.bilinear",
     "pyresample.ewa._ll2cr",
     "pyresample.ewa._fornav",
     "pyresample.gradient._gradient_search"
    ],
    "requires":[
+    "pip",
     "dask",
     "xarray",
+    "shapely",
+    "pip",
     "dask",
     "xarray",
+    "shapely",
+    "pip",
     "dask",
-    "xarray"
+    "xarray",
+    "shapely"
    ]
   }
  },
@@ -426,7 +443,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"1.15.0\" %}\n\npackage:\n  name: pyresample\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pyresample/pyresample-{{ version }}.tar.gz\n  sha256: bd9113734b2f66ddce4bdb401f600e9fbda4633444437796cdb135afbbde95fb\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - pyproj >=1.9.5.1\n    - {{ pin_compatible('numpy') }}\n    - configobj\n    - pykdtree >=1.3.1\n    - pyyaml\n    - six\n\ntest:\n  imports:\n    - pyresample\n    - pyresample.ewa._ll2cr\n    - pyresample.ewa._fornav\n    - pyresample.gradient._gradient_search\n  requires:\n    - dask\n    - xarray\n\nabout:\n  home: https://github.com/pytroll/pyresample/\n  license: LGPL-3.0\n  license_file: LICENSE.txt\n  summary: Resampling of remote sensing data in Python\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - djhoese\n    - mraspaud\n    - pnuu\n",
+ "raw_meta_yaml":"{% set version = \"1.16.0\" %}\n\npackage:\n  name: pyresample\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pyresample/pyresample-{{ version }}.tar.gz\n  sha256: 2fe3f050772b84a5440d72c47ef7bf3d1a75f59911d37f0cd2e3df5969c9a470\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - configobj\n    - numpy >=1.10.0\n    - pykdtree >=1.3.1\n    - pyproj >=1.9.5.1\n    - pyyaml\n    - setuptools >=3.2\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pyresample\n    - pyresample.bilinear\n    - pyresample.ewa._ll2cr\n    - pyresample.ewa._fornav\n    - pyresample.gradient._gradient_search\n  requires:\n    - pip\n    - dask\n    - xarray\n    - shapely\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/pytroll/pyresample/\n  summary: Geospatial image resampling in Python\n  license: LGPL-3.0-or-later\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - djhoese\n    - mraspaud\n    - pnuu\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -439,7 +456,7 @@
    "pyproj",
    "python",
    "pyyaml",
-   "six"
+   "setuptools"
   ]
  },
  "requirements":{
@@ -467,13 +484,15 @@
     "pyproj",
     "python",
     "pyyaml",
-    "six"
+    "setuptools"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
     "dask",
+    "pip",
+    "shapely",
     "xarray"
    ]
   }
@@ -501,21 +520,24 @@
    "elements":[
     "configobj",
     "numpy",
+    "numpy >=1.10.0",
     "pykdtree >=1.3.1",
     "pyproj >=1.9.5.1",
     "python",
     "pyyaml",
-    "six"
+    "setuptools >=3.2"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
     "dask",
+    "pip",
+    "shapely",
     "xarray"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/p/pyresample/pyresample-1.12.3.tar.gz",
- "version":"1.15.0"
+ "version":"1.16.0"
 }

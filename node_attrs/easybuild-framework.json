@@ -270,6 +270,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432696778.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.2.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -400,7 +417,11 @@
  },
  "name":"easybuild-framework",
  "new_version":"4.2.1",
- "pinning_version":"2019.12.02",
+ "new_version_attempts":{
+  "4.2.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"4.1.0\" %}\n\npackage:\n  name: easybuild-framework\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/e/easybuild-framework/easybuild-framework-{{ version }}.tar.gz\n  sha256: 336b1adc3ea410aabf900a07f6a55dcf316dc55658afc1d665d3565040be0641\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml\n    - coloredlogs\n    - humanfriendly\n    - vsc-install >=0.9.19\n    - vsc-base >=2.5.4\n\ntest:\n  imports:\n    - easybuild\n    - easybuild.framework\n    - easybuild.framework.easyconfig\n    - easybuild.framework.easyconfig.format\n    - easybuild.toolchains\n    - easybuild.toolchains.compiler\n    - easybuild.toolchains.fft\n    - easybuild.toolchains.linalg\n    - easybuild.toolchains.mpi\n    - easybuild.tools\n    - easybuild.tools.deprecated\n    - easybuild.tools.job\n    - easybuild.tools.module_naming_scheme\n    - easybuild.tools.package\n    - easybuild.tools.package.package_naming_scheme\n    - easybuild.tools.repository\n    - easybuild.tools.toolchain\n\nabout:\n  home: http://hpcugent.github.com/easybuild\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: 'The EasyBuild framework supports the creation of custom framework that implement support for installing particular (groups of) software packages.'\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - jerowe\n    - boegel\n",
  "req":{
   "__set__":true,
@@ -442,7 +463,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.3",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
