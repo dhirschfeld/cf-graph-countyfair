@@ -69,6 +69,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433241484.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"6.10.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -163,14 +180,15 @@
   }
  },
  "name":"rocksdb",
- "new_version":"6.10.1",
+ "new_version":"6.10.2",
  "new_version_attempts":{
   "6.10.1":1,
+  "6.10.2":1,
   "6.7.3":1,
   "6.8.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"rocksdb\" %}\n{% set version = \"6.10.1\" %}\n\npackage:\n  name: rocksdb\n  version: {{ version }}\n\nsource:\n  folder: src\n  url: https://github.com/facebook/rocksdb/archive/v{{ version }}.tar.gz\n  sha256: d573d2f15cdda883714f7e0bc87b814a8d4a53a82edde558f08f940e905541ee\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    # Symbols are removed from a minor release to the next.\n    # https://abi-laboratory.pro/index.php?view=timeline&l=rocksdb\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler(\"cxx\") }}\n    - cmake >=3.5.1,<4\n    - ninja >=1.10,<2\n  host:\n    - gflags\n    - jemalloc\n    - lz4-c\n    - snappy\n    - zstd\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/librocksdb.a\n    - test -f ${PREFIX}/lib/librocksdb.dylib  # [osx]\n    - test -f ${PREFIX}/lib/librocksdb.so     # [linux]\n    - test -f ${PREFIX}/include/rocksdb/db.h\n\nabout:\n  home: https://rocksdb.org\n  license: Apache-2.0\n  license_file: src/LICENSE.Apache\n  summary: A library that provides an embeddable, persistent key-value store for fast storage.\n\n  dev_url: https://github.com/facebook/rocksdb\n  doc_url: https://rocksdb.org/docs\n\nextra:\n  recipe-maintainers:\n    - benhuff\n    - oblute\n    - rluria14\n    - sodre\n",
  "req":{
   "__set__":true,
