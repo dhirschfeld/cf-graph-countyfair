@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"xdmfwrite_highfive",
  "hash_type":"sha256",
@@ -66,6 +66,7 @@
   }
  },
  "name":"xdmfwrite_highfive",
+ "new_version":"0.0.1",
  "raw_meta_yaml":"{% set version = \"0.0.1\" %}\n\npackage:\n  name: xdmfwrite_highfive\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tdegeus/XDMFWrite_HighFive/archive/v{{ version }}.tar.gz\n  sha256: e0694cdddfc4e0c3b8b78c40bc1c1332fbe9f3b69f82388e816e6156eb0baf57\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - highfive\n  run:\n    - highfive\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/XDMFWrite_HighFive.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/XDMFWrite_HighFive/XDMFWrite_HighFiveConfig.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\XDMFWrite_HighFive.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\XDMFWrite_HighFiveConfig.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/tdegeus/XDMFWrite_HighFive\n  license: MIT\n  license_file: LICENSE\n  summary: Write XDMF files to interpret HDF5 files.\n  description: Write XDMF files to interpret HDF5 files.\n  doc_url: https://github.com/tdegeus/XDMFWrite_HighFive\n  dev_url: https://github.com/tdegeus/XDMFWrite_HighFive\n\nextra:\n  recipe-maintainers:\n    - tdegeus\n",
  "req":{
   "__set__":true,
