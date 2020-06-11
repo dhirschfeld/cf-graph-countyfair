@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432835729.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -73,7 +92,12 @@
   }
  },
  "name":"beartype",
- "new_version":"0.1.0",
+ "new_version":"0.1.1",
+ "new_version_attempts":{
+  "0.1.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"beartype\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"3f09340bd95259031d29916216d7f01c965c40ea21ba14e6314faa11e858d79d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - setuptools\n  run:\n    - python >=3.5\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - beartype_test\n  commands:\n    - pytest beartype_test\n\nabout:\n  home: https://github.com/beartype/beartype\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Unbearably fast runtime type checking in pure Python.\n  description: |\n    Beartype is an open-source pure-Python runtime type checker emphasizing\n    efficiency, portability, and thrilling puns. Unlike comparable static type\n    checkers operating at the coarse-grained application level (e.g., Pyre,\n    mypy, pyright, pytype), beartype operates exclusively at the fine-grained\n    callable level of pure-Python functions and methods via the standard\n    decorator design pattern. This renders beartype natively compatible with\n    all interpreters and compilers targeting the Python language \u2013 including\n    CPython, PyPy, and Numba. Unlike comparable runtime type checkers (e.g.,\n    pytypes, typeguard), beartype wraps each decorated callable with a\n    dynamically generated wrapper efficiently type-checking that specific\n    callable. Since \"performance by default\" is our first-class concern, all\n    wrappers are guaranteed to exhibit O(1) time complexity with negligible\n    constant factors and be either more efficient (in the common case) or\n    exactly as efficient minus the cost of an additional stack frame (in the\n    worst case) as equivalent type-checking implemented by hand. Beartype thus\n    brings Rust- and C++-inspired zero-cost abstractions into the deliciously\n    lawless world of pure Python.\n  doc_url: https://github.com/beartype/beartype/blob/master/README.rst\n  dev_url: https://github.com/beartype/beartype\n\nextra:\n  recipe-maintainers:\n    - leycec\n",
  "req":{
   "__set__":true,
@@ -109,6 +133,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
