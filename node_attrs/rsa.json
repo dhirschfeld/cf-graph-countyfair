@@ -48,6 +48,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433258950.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -153,12 +170,13 @@
   }
  },
  "name":"rsa",
- "new_version":"4.1",
+ "new_version":"4.1.1",
  "new_version_attempts":{
-  "4.1":1
+  "4.1":1,
+  "4.1.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.07.16.42.19",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"rsa\" %}\n{% set version = \"4.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"1a836406405730121ae9823e19c6e806c62bbad73f890574fff50efa4122c487\"\n\nbuild:\n  number: 0\n  entry_points:\n    - pyrsa-priv2pub = rsa.util:private_to_public\n    - pyrsa-keygen = rsa.cli:keygen\n    - pyrsa-encrypt = rsa.cli:encrypt\n    - pyrsa-decrypt = rsa.cli:decrypt\n    - pyrsa-sign = rsa.cli:sign\n    - pyrsa-verify = rsa.cli:verify\n  noarch: \"python\"\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - pyasn1 >=0.1.3\n    - python\n\ntest:\n  imports:\n    - rsa\n  commands:\n    - pyrsa-priv2pub --help\n    - pyrsa-keygen --help\n    - pyrsa-encrypt --help\n    - pyrsa-decrypt --help\n    - pyrsa-sign --help\n    - pyrsa-verify --help\n\nabout:\n  home: https://stuvel.eu/rsa\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'Pure-Python RSA implementation'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - dbast\n",
  "req":{
   "__set__":true,
