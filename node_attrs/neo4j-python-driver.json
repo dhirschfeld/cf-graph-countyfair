@@ -181,6 +181,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432938831.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -269,8 +286,12 @@
   }
  },
  "name":"neo4j-python-driver",
- "new_version":"1.7.6",
- "pinning_version":"2019.11.01",
+ "new_version":"4.0.0",
+ "new_version_attempts":{
+  "4.0.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set version = \"1.7.6\" %}\n\npackage:\n  name: neo4j-python-driver\n  version: {{ version }}\n\nsource:\n  url: https://github.com/neo4j/neo4j-python-driver/archive/{{ version }}.tar.gz\n  sha256: b58e28f397a1defd8debe32c3ccd1bf19c31d9265598832615955cffec2910df\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - cython\n    - pip\n  run:\n    - python\n    - neotime >=1.7.1,<1.8.0\n    - neobolt >=1.7.15,<1.8.0\n\ntest:\n  imports:\n    - neo4j\n    - neo4j.compat\n    - neo4j.v1\n\nabout:\n  home: https://github.com/neo4j/neo4j-python-driver\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: 'Database connector for Neo4j graph database'\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n    - thebestnom\n",
  "req":{
   "__set__":true,
@@ -311,7 +332,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
