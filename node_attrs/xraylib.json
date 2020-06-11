@@ -120,13 +120,13 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/tschoonj/xraylib/wiki",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"license_all.txt",
    "summary":"A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -210,6 +210,12 @@
   },
   "test":{
    "commands":[
+    "if not exist %LIBRARY_LIB%\\\\pkgconfig\\\\libxrl.pc exit 1",
+    "if not exist %LIBRARY_LIB%\\\\libxrl.dll.a exit 1",
+    "if not exist %LIBRARY_INC%\\\\xraylib\\\\xraylib.h exit 1",
+    "if not exist %LIBRARY_BIN%\\\\libxrl-11.dll exit 1",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME",
     "conda inspect linkages -p $PREFIX $PKG_NAME"
    ],
    "imports":[
@@ -225,7 +231,7 @@
  "name":"xraylib",
  "new_version":false,
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set version = \"4.0.0\" %}\n\npackage:\n  name: xraylib\n  version: {{ version }}\n\nsource:\n  url: http://lvserver.ugent.be/xraylib/xraylib-{{version}}.tar.gz\n  sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - m2-bash  # [win]\n    - m2-curl  # [win]\n    - m2-findutils  # [win]\n    - m2-diffutils  # [win]\n    - m2-gawk  # [win]\n    - m2-grep  # [win]\n    - m2-make  # [win]\n    - m2-sed  # [win]\n    - m2-which  # [win]\n    - m2-tar  # [win]\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - python\n    - setuptools\n    - cython\n    - numpy\n    - swig  # [not win]\n    - m2w64-binutils  # [win]\n    - m2w64-gcc  # [win]\n    - m2w64-tools-git  # [win]\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}   # [not (win and (py35 or py36))]\n    - {{ pin_compatible('numpy') }}   # [win and py35]\n    - {{ pin_compatible('numpy') }}   # [win and py36]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n  imports:\n    - xraylib\n    - xraylib_np\n\nabout:\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: license_all.txt\n  home: https://github.com/tschoonj/xraylib/wiki\n  summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - tschoonj\n    - CJ-Wright\n    - mrakitin\n",
+ "raw_meta_yaml":"{% set version = \"4.0.0\" %}\n\npackage:\n  name: xraylib\n  version: {{ version }}\n\nsource:\n  url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz\n  sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - m2-bash  # [win]\n    - m2-curl  # [win]\n    - m2-findutils  # [win]\n    - m2-diffutils  # [win]\n    - m2-gawk  # [win]\n    - m2-grep  # [win]\n    - m2-make  # [win]\n    - m2-sed  # [win]\n    - m2-which  # [win]\n    - m2-tar  # [win]\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - python\n    - setuptools\n    - cython\n    - numpy\n    - swig  # [not win]\n    - m2w64-binutils  # [win]\n    - m2w64-gcc  # [win]\n    - m2w64-tools-git  # [win]\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}   # [not (win and (py35 or py36))]\n    - {{ pin_compatible('numpy') }}   # [win and py35]\n    - {{ pin_compatible('numpy') }}   # [win and py36]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - if not exist %LIBRARY_LIB%\\\\pkgconfig\\\\libxrl.pc exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libxrl.dll.a exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\xraylib\\\\xraylib.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\libxrl-11.dll exit 1  # [win]\n  imports:\n    - xraylib\n    - xraylib_np\n\nabout:\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: license_all.txt\n  home: https://github.com/tschoonj/xraylib/wiki\n  summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - tschoonj\n    - CJ-Wright\n    - mrakitin\n",
  "req":{
   "__set__":true,
   "elements":[

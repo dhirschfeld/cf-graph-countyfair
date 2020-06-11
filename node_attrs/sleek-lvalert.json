@@ -39,6 +39,23 @@
     "__lazy_json__":"pr_json/386936337.json"
    },
    "data":{
+    "bot_rerun":1591894551.8362143,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433216167.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"Version",
     "migrator_version":0,
@@ -144,7 +161,11 @@
  },
  "name":"sleek-lvalert",
  "new_version":"2.0.0",
- "pinning_version":"2020.03.10",
+ "new_version_attempts":{
+  "2.0.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"sleek-lvalert\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a2b9fbdbbd99c2c618140a235cbe5c4e5548652e4833fd14107367bb39159e81\n\nbuild:\n  entry_points:\n    - lvalert = sleek_lvalert.tool:main\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . -vv'\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools >=30.3.0\n  run:\n    - pyasn1 >=0.1.8\n    - pyasn1-modules >=0.0.5\n    - python >=2.7\n    - safe-netrc\n    - sleekxmpp\n    - setuptools\n  run_constrained:\n    # this package conflicts with ligo-lvalert\n    - ligo-lvalert >=9999\n\ntest:\n  imports:\n    - sleek_lvalert\n  commands:\n    - lvalert --help\n\nabout:\n  home: https://git.ligo.org/emfollow/sleek-lvalert\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.md\n  summary: LIGO/Virgo LVAlert client powered by SleekXMPP\n  description: |\n    sleek-lvalert is a client for the LIGO/Virgo LVAlert pubsub\n    infrastructure that is powered by SleekXMPP and is compatible\n    with Python 3.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{
   "__set__":true,
@@ -187,7 +208,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
