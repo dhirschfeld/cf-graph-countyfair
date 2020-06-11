@@ -5,7 +5,7 @@
     "__lazy_json__":"pr_json/391516297.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1591847417.1874952,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
     "migrator_version":0,
@@ -46,6 +46,25 @@
     "migrator_object_version":1,
     "migrator_version":0,
     "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432823999.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
    },
    "keys":[
     "bot_rerun",
@@ -165,7 +184,7 @@
   "3.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.07.16.42.19",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"exchangelib\" %}\n{% set version = \"3.2.0\" %}\n{% set sha256 = \"aef6066f7ea2ba7c8afbbb910c198a7f68f0ffb914734310100b2583d026b427\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [py<35]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - cached-property\n    - defusedxml >=0.6.0\n    - dnspython >=1.14.0\n    - isodate\n    - lxml >3.0\n    - oauthlib\n    - pygments\n    - python\n    - python-dateutil\n    - pytz\n    - requests >=2.7\n    - requests_ntlm >=0.2.0\n    - requests-kerberos\n    - requests-negotiate-sspi  # [win]\n    - requests-oauthlib\n    - tzlocal\n\ntest:\n  imports:\n    - exchangelib\n\nabout:\n  home: https://github.com/ecederstrand/exchangelib\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Client for Microsoft Exchange Web Services (EWS)\n  doc_url: https://github.com/ecederstrand/exchangelib\n  dev_url: https://github.com/ecederstrand/exchangelib\n\nextra:\n  recipe-maintainers:\n    - dhirschfeld\n    - rzillman\n",
  "req":{
   "__set__":true,
