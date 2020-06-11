@@ -94,6 +94,23 @@
     "__lazy_json__":"pr_json/432077366.json"
    },
    "data":{
+    "bot_rerun":1591870877.1122367,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.6.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432985279.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"Version",
     "migrator_version":0,
@@ -189,10 +206,10 @@
  "name":"moderngl",
  "new_version":"5.6.1",
  "new_version_attempts":{
-  "5.6.1":1
+  "5.6.1":2
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.07.16.42.19",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"moderngl\" %}\n{% set version = \"5.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/moderngl/moderngl/archive/{{ version }}.tar.gz\n  sha256: 8253231c7d6e0a1ddb0daf5a50cd3ae9b5dac63de48f8b01425a664ce806cc15\n\nbuild:\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [py<35]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ cdt('libx11-devel') }}  # [linux]\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n\n  host:\n    - python\n    - pip\n    - numpy\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - moderngl\n    - moderngl.mgl\n\nabout:\n  home: https://github.com/moderngl/moderngl\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Modern OpenGL binding for python'\n\nextra:\n  recipe-maintainers:\n    - cprogrammer1994\n    - patricksnape\n",
  "req":{
   "__set__":true,
