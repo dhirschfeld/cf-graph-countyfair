@@ -71,7 +71,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -82,7 +82,7 @@
   },
   "package":{
    "name":"py-cpuinfo",
-   "version":"5.0.0"
+   "version":"6.0.0"
   },
   "requirements":{
    "build":[
@@ -103,9 +103,9 @@
    ]
   },
   "source":{
-   "fn":"py-cpuinfo-5.0.0.tar.gz",
-   "sha256":"2cf6426f776625b21d1db8397d3297ef7acfa59018f02a8779123f3190f18500",
-   "url":"https://pypi.io/packages/source/p/py-cpuinfo/py-cpuinfo-5.0.0.tar.gz"
+   "fn":"py-cpuinfo-6.0.0.tar.gz",
+   "sha256":"7ffb31dea845b9f359b99bd5f7eea72dc70f852e0e34547d261a630f2b8c9c61",
+   "url":"https://pypi.io/packages/source/p/py-cpuinfo/py-cpuinfo-6.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -127,7 +127,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.10.22.19.47",
- "raw_meta_yaml":"{% set name = \"py-cpuinfo\" %}\n{% set version = \"5.0.0\" %}\n{% set sha256 = \"2cf6426f776625b21d1db8397d3297ef7acfa59018f02a8779123f3190f18500\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - cpuinfo = cpuinfo:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cpuinfo\n  commands:\n    - cpuinfo\n\nabout:\n  home: https://github.com/workhorsy/py-cpuinfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A module for getting CPU info with Python 2 & 3'\n  dev_url: https://github.com/workhorsy/py-cpuinfo\n\nextra:\n  recipe-maintainers:\n    - mstimberg\n",
+ "raw_meta_yaml":"{% set name = \"py-cpuinfo\" %}\n{% set version = \"6.0.0\" %}\n{% set sha256 = \"7ffb31dea845b9f359b99bd5f7eea72dc70f852e0e34547d261a630f2b8c9c61\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - cpuinfo = cpuinfo:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cpuinfo\n  commands:\n    - cpuinfo\n\nabout:\n  home: https://github.com/workhorsy/py-cpuinfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A module for getting CPU info with Python 2 & 3\n  dev_url: https://github.com/workhorsy/py-cpuinfo\n\nextra:\n  recipe-maintainers:\n    - mstimberg\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -187,5 +187,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/py-cpuinfo/py-cpuinfo-5.0.0.tar.gz",
- "version":"5.0.0"
+ "version":"6.0.0"
 }
