@@ -186,6 +186,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433006718.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.8.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -285,15 +302,16 @@
   }
  },
  "name":"goosehdf5",
- "new_version":"0.7.4",
+ "new_version":"0.8.0",
  "new_version_attempts":{
   "0.7.0":1,
   "0.7.1":1,
   "0.7.3":1,
-  "0.7.4":1
+  "0.7.4":1,
+  "0.8.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.25.23.01.15",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"goosehdf5\" %}\n{% set version = \"0.7.4\" %}\n{% set sha256 = \"771b5e607b2a6389845cf258cc9c1df6a569f4344b548fe439d0304020f9815d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tdegeus/GooseHDF5/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - G5check = GooseHDF5.cli.G5check:main\n    - G5compare = GooseHDF5.cli.G5compare:main\n    - G5list = GooseHDF5.cli.G5list:main\n    - G5repair = GooseHDF5.cli.G5repair:main\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools\n  run:\n    - python >=3\n    - docopt\n    - h5py\n\ntest:\n  imports:\n    - GooseHDF5\n  commands:\n    - G5check --help\n    - G5compare --help\n    - G5list --help\n    - G5repair --help\n\nabout:\n  home: https://github.com/tdegeus/GooseHDF5\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Simple tools to inspect HDF5 files (wraps around h5py).\n  description: Simple tools to inspect HDF5 files (wraps around h5py).\n  doc_url: https://github.com/tdegeus/GooseHDF5\n  dev_url: https://github.com/tdegeus/GooseHDF5\n\nextra:\n  recipe-maintainers:\n    - tdegeus\n",
  "req":{
   "__set__":true,
