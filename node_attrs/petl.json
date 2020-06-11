@@ -31,6 +31,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433375670.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -111,8 +128,12 @@
   }
  },
  "name":"petl",
- "new_version":"1.3.0",
- "pinning_version":"2019.07.26",
+ "new_version":"1.4.0",
+ "new_version_attempts":{
+  "1.4.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"petl\" %}\n{% set version = \"1.3.0\" %}\n{% set sha256 = \"943a6e3211616d25ebc4dcd900ca4f96f53ccd9dbb612271a23a7efdaf3f8c00\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n\ntest:\n  requires:\n    - nose\n  imports:\n    - petl\n  commands:\n    - nosetests -v petl\n\nabout:\n  home: http://github.com/petl-developers/petl\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'A Python package for extracting, transforming and loading tables of data.'\n  doc_url: http://petl.readthedocs.io/\n  dev_url: https://github.com/petl-developers/petl\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - timbledum\n",
  "req":{
   "__set__":true,
@@ -150,7 +171,7 @@
    ]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
