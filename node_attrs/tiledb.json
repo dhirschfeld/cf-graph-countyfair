@@ -559,6 +559,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433302598.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -680,15 +697,16 @@
   }
  },
  "name":"tiledb",
- "new_version":"2.0.3",
+ "new_version":"2.0.4",
  "new_version_attempts":{
   "2.0.0":1,
   "2.0.1":1,
   "2.0.2":1,
-  "2.0.3":1
+  "2.0.3":1,
+  "2.0.4":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"TileDB\" %}\n{% set version = \"2.0.3\" %}\n{% set sha256 = \"639a5df207bde4317dcccb0496f1fd217dffd14cff8c1c2f90e0735751499594\" %}\n\npackage:\n  name: tiledb\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/TileDB-Inc/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-Conda-only-patch-capnproto-build-to-work-with-anacon.patch\n\nbuild:\n  number: 0\n  run_exports:\n    # https://abi-laboratory.pro/?view=timeline&l=tiledb\n    - {{ pin_subpackage('tiledb', 'x.x') }}\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config  # [not win]\n    - {{ compiler('cxx') }}\n  host:\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - tbb-devel 2019.9\n  run:\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - curl\n\ntest:\n  #  downstreams:\n  #  - tiledb-py\n  commands:\n    - test -e $PREFIX/include/tiledb/tiledb.h  # [not win]\n    - test -e $PREFIX/include/tiledb/tiledb  # [not win]\n    - test -e $PREFIX/lib/libtiledb$SHLIB_EXT  # [linux]\n    - test -e $PREFIX/lib/libtiledb$SHLIB_EXT  # [osx]\n\n    - if exist %LIBRARY_INC%\\\\tiledb\\\\tiledb (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_INC%\\\\tiledb\\\\tiledb.h (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_LIB%\\\\tiledb.lib (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_LIB%\\\\cmake\\\\TileDB\\\\TileDBConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\\\Library\\\\bin\\\\tiledb.dll (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://tiledb.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: TileDB sparse and dense multi-dimensional array data management\n  description: |\n    TileDB is an efficient multi-dimensional array management system which introduces\n    a novel on-disk format that can effectively store dense and sparse array data with\n    support for fast updates and reads. It features excellent compression, and an efficient\n    parallel I/O system with high scalability.\n  doc_url: http://docs.tiledb.io\n  dev_url: https://github.com/TileDB-Inc/TileDB\n\nextra:\n  recipe-maintainers:\n    - stavrospapadopoulos\n    - shelnutt2\n    - ihnorton\n",
  "req":{
   "__set__":true,

@@ -72,7 +72,7 @@
    "summary":"Polycapillary X-ray raytracing"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -162,7 +162,7 @@
  "name":"polycap",
  "new_version":"1.0",
  "pinning_version":"2020.06.10.22.19.47",
- "raw_meta_yaml":"{% set version = \"1.0\" %}\n\npackage:\n  name: polycap\n  version: {{ version }}\n\nsource:\n  url: https://github.com/PieterTack/polycap/releases/download/v{{ version }}/polycap-{{ version }}.tar.gz\n  sha256: e181378eb3eb3479e87cdedc8bfb326e524999abf06b99e3a1a9528ba4f0608b\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - pkg-config\n  host:\n    - python\n    - cython\n    - hdf5\n    - gsl\n    - numpy >=1.14\n    - xraylib >=4.0.0\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - gsl\n    - libopenblas\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - xraylib >=4.0.0\n    - zlib\n\ntest:\n  imports:\n    - polycap\n\nabout:\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  home: https://github.com/PieterTack/polycap\n  summary: Polycapillary X-ray raytracing\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - PieterTack\n",
+ "raw_meta_yaml":"{% set version = \"1.0\" %}\n\npackage:\n  name: polycap\n  version: {{ version }}\n\nsource:\n  url: https://github.com/PieterTack/polycap/releases/download/v{{ version }}/polycap-{{ version }}.tar.gz\n  sha256: e181378eb3eb3479e87cdedc8bfb326e524999abf06b99e3a1a9528ba4f0608b\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - pkg-config\n  host:\n    - python\n    - cython\n    - hdf5\n    - gsl\n    - numpy >=1.14\n    - xraylib >=4.0.0\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - gsl\n    - libopenblas\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - xraylib >=4.0.0\n    - zlib\n\ntest:\n  imports:\n    - polycap\n\nabout:\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  home: https://github.com/PieterTack/polycap\n  summary: Polycapillary X-ray raytracing\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - PieterTack\n",
  "req":{
   "__set__":true,
   "elements":[
