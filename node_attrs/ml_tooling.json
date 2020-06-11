@@ -167,6 +167,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/432964045.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.10.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -251,8 +268,12 @@
   }
  },
  "name":"ml_tooling",
- "new_version":"0.10.2",
- "pinning_version":"2020.02.12",
+ "new_version":"0.10.3",
+ "new_version_attempts":{
+  "0.10.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"ml_tooling\" %}\n{% set version = \"0.10.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5f0213f52cd8cff1ec9dc56aa7f21964a2af6c4f050ab83c1f567fa7afad72d9\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - pandas\n    - scikit-learn\n    - matplotlib-base\n    - pyyaml\n    - joblib\n    - sqlalchemy\n    - attrs\n\n\ntest:\n  imports:\n    - ml_tooling\n    - ml_tooling.plots\n\nabout:\n  home: http://github.com/andersbogsnes/ml_tooling\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Modelling framework to simplify machine learning workflows'\n\n  description: |\n    ML Tooling is a framework for standardising modelling tasks. It includes many utilities\n    for plotting and viz as well as standardised interfaces for training and testing\n\nextra:\n  recipe-maintainers:\n    - andersbogsnes\n",
  "req":{
   "__set__":true,
@@ -298,7 +319,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
