@@ -102,7 +102,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -119,39 +119,42 @@
   },
   "package":{
    "name":"pytest-openfiles",
-   "version":"0.4.0"
+   "version":"0.5.0"
   },
   "requirements":{
    "build":[
-    "python",
+    "python >=3.6",
     "pip",
-    "pytest >=3.1",
+    "setuptools_scm",
+    "pytest >=4.6",
     "psutil",
-    "python",
+    "python >=3.6",
     "pip",
-    "pytest >=3.1",
+    "setuptools_scm",
+    "pytest >=4.6",
     "psutil",
-    "python",
+    "python >=3.6",
     "pip",
-    "pytest >=3.1",
+    "setuptools_scm",
+    "pytest >=4.6",
     "psutil"
    ],
    "run":[
-    "python",
-    "pytest >=3.1",
+    "python >=3.6",
+    "pytest >=4.6",
     "psutil",
-    "python",
-    "pytest >=3.1",
+    "python >=3.6",
+    "pytest >=4.6",
     "psutil",
-    "python",
-    "pytest >=3.1",
+    "python >=3.6",
+    "pytest >=4.6",
     "psutil"
    ]
   },
   "source":{
-   "fn":"pytest-openfiles-0.4.0.tar.gz",
-   "sha256":"af591422f2bfa95f7690d83aeb8d76bd5421cb8b1dcaf085d58cd92e8d92058d",
-   "url":"https://pypi.io/packages/source/p/pytest-openfiles/pytest-openfiles-0.4.0.tar.gz"
+   "fn":"pytest-openfiles-0.5.0.tar.gz",
+   "sha256":"179c2911d8aee3441fee051aba08e0d9b4dab61b829ae4811906d5c49a3b0a58",
+   "url":"https://pypi.io/packages/source/p/pytest-openfiles/pytest-openfiles-0.5.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -168,14 +171,15 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.04.16.07.55.54",
- "raw_meta_yaml":"{% set name = \"pytest-openfiles\" %}\n{% set version = \"0.4.0\" %}\n{% set git_url = \"https://github.com/astropy/pytest-openfiles\" %}\n{% set sha256 = \"af591422f2bfa95f7690d83aeb8d76bd5421cb8b1dcaf085d58cd92e8d92058d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest >=3.1\n    - psutil\n  run:\n    - python\n    - pytest >=3.1\n    - psutil\n\ntest:\n  imports:\n    - pytest_openfiles\n\nabout:\n  home: {{ git_url }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: 'Pytest plugin for detecting inadvertent open file handles'\n  description: |\n    This package provides a plugin for the pytest framework that allows\n    developers to detect whether any file handles or other file-like objects\n    were inadvertently left open at the end of a unit test.\n  doc_url: {{ git_url }}\n  dev_url: {{ git_url }}\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - drdavella\n    - mwcraig\n",
+ "raw_meta_yaml":"{% set name = \"pytest-openfiles\" %}\n{% set version = \"0.5.0\" %}\n{% set git_url = \"https://github.com/astropy/pytest-openfiles\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 179c2911d8aee3441fee051aba08e0d9b4dab61b829ae4811906d5c49a3b0a58\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n    - setuptools_scm\n    - pytest >=4.6\n    - psutil\n  run:\n    - python >=3.6\n    - pytest >=4.6\n    - psutil\n\ntest:\n  imports:\n    - pytest_openfiles\n\nabout:\n  home: {{ git_url }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Pytest plugin for detecting inadvertent open file handles\n  description: |\n    This package provides a plugin for the pytest framework that allows\n    developers to detect whether any file handles or other file-like objects\n    were inadvertently left open at the end of a unit test.\n  doc_url: {{ git_url }}\n  dev_url: {{ git_url }}\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - drdavella\n    - mwcraig\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
    "psutil",
    "pytest",
-   "python"
+   "python",
+   "setuptools_scm"
   ]
  },
  "requirements":{
@@ -185,7 +189,8 @@
     "pip",
     "psutil",
     "pytest",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "host":{
@@ -213,8 +218,9 @@
    "elements":[
     "pip",
     "psutil",
-    "pytest >=3.1",
-    "python"
+    "pytest >=4.6",
+    "python >=3.6",
+    "setuptools_scm"
    ]
   },
   "host":{
@@ -225,8 +231,8 @@
    "__set__":true,
    "elements":[
     "psutil",
-    "pytest >=3.1",
-    "python"
+    "pytest >=4.6",
+    "python >=3.6"
    ]
   },
   "test":{
@@ -235,5 +241,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pytest-openfiles/pytest-openfiles-0.4.0.tar.gz",
- "version":"0.4.0"
+ "version":"0.5.0"
 }
