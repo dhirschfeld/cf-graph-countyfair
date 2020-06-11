@@ -223,7 +223,7 @@
     "__lazy_json__":"pr_json/392570369.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1591879042.3554506,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
     "migrator_version":0,
@@ -242,6 +242,23 @@
     "__lazy_json__":"pr_json/429395909.json"
    },
    "data":{
+    "bot_rerun":1591879042.355837,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"19.20"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433052996.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"Version",
     "migrator_version":0,
@@ -252,6 +269,25 @@
     "migrator_name",
     "migrator_version",
     "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433055724.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
    ]
   }
  ],
@@ -272,7 +308,7 @@
    "summary":"Modern C++ toolkit containing machine learning algorithms with Python bindings"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "dlib",
     "dlib",
@@ -378,11 +414,11 @@
  "name":"dlib",
  "new_version":"19.20",
  "new_version_attempts":{
-  "19.20":1
+  "19.20":2
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.06.18.33.32",
- "raw_meta_yaml":"{% set name = \"dlib\" %}\n{% set version = \"19.19\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/davisking/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7af455bb422d3ae5ef369c51ee64e98fa68c39435b0fa23be2e5d593a3d45b87\n\n  patches:\n    - lapack_sgetrf.patch      # [unix]\n    - cxx11_detection.patch\n\nbuild:\n  skip: true  # [win and py<35]\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('dlib', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - pybind11\n    - liblapack   # [not win]\n    - libcblas  # [not win]\n    - numpy\n    - jpeg\n    - libpng\n    - sqlite  # [not win]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  files:\n    - test_data/face.jpg\n    - test_data/face.png\n    - test_data/images.xml\n\n  requires:\n    - tqdm\n    - pillow\n\n  imports:\n    - dlib\n\nabout:\n  home: http://dlib.net/\n  license: BSL-1.0\n  license_file: dlib/LICENSE.txt\n  summary: Modern C++ toolkit containing machine learning algorithms with Python bindings\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n    - aldanor\n",
+ "pinning_version":"2020.06.10.22.19.47",
+ "raw_meta_yaml":"{% set name = \"dlib\" %}\n{% set version = \"19.19\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/davisking/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 7af455bb422d3ae5ef369c51ee64e98fa68c39435b0fa23be2e5d593a3d45b87\n\n  patches:\n    - lapack_sgetrf.patch      # [unix]\n    - cxx11_detection.patch\n\nbuild:\n  skip: true  # [win and py<35]\n  number: 2\n  run_exports:\n    - {{ pin_subpackage('dlib', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - pybind11\n    - liblapack   # [not win]\n    - libcblas  # [not win]\n    - numpy\n    - jpeg\n    - libpng\n    - sqlite  # [not win]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  files:\n    - test_data/face.jpg\n    - test_data/face.png\n    - test_data/images.xml\n\n  requires:\n    - tqdm\n    - pillow\n\n  imports:\n    - dlib\n\nabout:\n  home: http://dlib.net/\n  license: BSL-1.0\n  license_file: dlib/LICENSE.txt\n  summary: Modern C++ toolkit containing machine learning algorithms with Python bindings\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n    - aldanor\n",
  "req":{
   "__set__":true,
   "elements":[

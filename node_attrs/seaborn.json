@@ -85,8 +85,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"0",
-   "script":"-m pip install . --no-deps -vv"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -101,39 +100,107 @@
     "croth1"
    ]
   },
+  "outputs":[
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.bat"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   },
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   },
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   }
+  ],
   "package":{
-   "name":"seaborn",
+   "name":"seaborn-base",
    "version":"0.10.1"
-  },
-  "requirements":{
-   "host":[
-    "python >=3.6",
-    "pip",
-    "python >=3.6",
-    "pip",
-    "python >=3.6",
-    "pip"
-   ],
-   "run":[
-    "python >=3.6",
-    "numpy >=1.13.3",
-    "matplotlib-base >=2.1.2",
-    "scipy >=1.0.1",
-    "pandas >=0.22.0",
-    "statsmodels >=0.8.0",
-    "python >=3.6",
-    "numpy >=1.13.3",
-    "matplotlib-base >=2.1.2",
-    "scipy >=1.0.1",
-    "pandas >=0.22.0",
-    "statsmodels >=0.8.0",
-    "python >=3.6",
-    "numpy >=1.13.3",
-    "matplotlib-base >=2.1.2",
-    "scipy >=1.0.1",
-    "pandas >=0.22.0",
-    "statsmodels >=0.8.0"
-   ]
   },
   "source":{
    "sha256":"2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0",
@@ -157,14 +224,18 @@
    ]
   }
  },
- "name":"seaborn",
+ "name":"seaborn-base",
  "new_version":"0.10.1",
  "new_version_attempts":{
   "0.10.1":1
  },
  "new_version_errors":{},
+ "outputs_names":[
+  "seaborn",
+  "seaborn-base"
+ ],
  "pinning_version":"2020.04.26.19.17.14",
- "raw_meta_yaml":"{% set version = \"0.10.1\" %}\n\npackage:\n  name: seaborn\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/seaborn/seaborn-{{ version }}.tar.gz\n  sha256: 2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.13.3\n    - matplotlib-base >=2.1.2\n    - scipy >=1.0.1\n    - pandas >=0.22.0\n    - statsmodels >=0.8.0\n\ntest:\n  imports:\n    - seaborn\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://seaborn.pydata.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Statistical data visualization\n  description: |\n    Seaborn is a Python visualization library based on matplotlib. It\n    provides a high-level interface for drawing attractive statistical graphics.\n  doc_url: https://seaborn.pydata.org\n  dev_url: https://github.com/mwaskom/seaborn\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - r-jain1\n    - croth1\n",
+ "raw_meta_yaml":"{% set version = \"0.10.1\" %}\n\npackage:\n  name: seaborn-base\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/seaborn/seaborn-{{ version }}.tar.gz\n  sha256: 2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0\n\nbuild:\n  number: 1\n  noarch: python\n\ntest:\n  imports:\n    - seaborn\n  requires:\n    - pip\n  commands:\n    - pip check\n\noutputs:\n  - name: seaborn-base\n    script: build_base.bat  # [win]\n    script: build_base.sh  # [not win]\n    requirements:\n      host:\n        - python >=3.6\n        - pip\n      run:\n        - python >=3.6\n        - numpy >=1.13.3\n        - matplotlib-base >=2.1.2\n        - scipy >=1.0.1\n        - pandas >=0.22.0\n      test:\n        imports:\n          - seaborn\n  \n  - name: seaborn\n    build:\n    requirements:\n      run:\n        - statsmodels >=0.8.0\n        - {{ pin_subpackage('seaborn-base', max_pin=\"x.x.x.x\") }}\n\nabout:\n  home: https://seaborn.pydata.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Statistical data visualization\n  description: |\n    Seaborn is a Python visualization library based on matplotlib. It\n    provides a high-level interface for drawing attractive statistical graphics.\n  doc_url: https://seaborn.pydata.org\n  dev_url: https://github.com/mwaskom/seaborn\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - r-jain1\n    - croth1\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -174,6 +245,7 @@
    "pip",
    "python",
    "scipy",
+   "seaborn-base",
    "statsmodels"
   ]
  },
@@ -197,6 +269,7 @@
     "pandas",
     "python",
     "scipy",
+    "seaborn-base",
     "statsmodels"
    ]
   },
@@ -229,6 +302,7 @@
     "pandas >=0.22.0",
     "python >=3.6",
     "scipy >=1.0.1",
+    "seaborn-base",
     "statsmodels >=0.8.0"
    ]
   },

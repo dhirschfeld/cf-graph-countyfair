@@ -34,7 +34,7 @@
   },
   "package":{
    "name":"libnetworkit",
-   "version":"6.1"
+   "version":"7.0"
   },
   "requirements":{
    "build":[
@@ -58,16 +58,16 @@
   },
   "source":[
    {
-    "sha256":"22c953ea1054c356663b31c77114c2f0c8fec17e0e707aeec23026241beab9b2",
-    "url":"https://github.com/networkit/networkit/archive/6.1.tar.gz"
+    "sha256":"4faf16c5fae3e14d3c1b6f30e25c6e093dcf6a3dbf021235f3161ac2a527f682",
+    "url":"https://github.com/networkit/networkit/archive/7.0.tar.gz"
    },
    {
-    "sha256":"22c953ea1054c356663b31c77114c2f0c8fec17e0e707aeec23026241beab9b2",
-    "url":"https://github.com/networkit/networkit/archive/6.1.tar.gz"
+    "sha256":"4faf16c5fae3e14d3c1b6f30e25c6e093dcf6a3dbf021235f3161ac2a527f682",
+    "url":"https://github.com/networkit/networkit/archive/7.0.tar.gz"
    },
    {
-    "sha256":"22c953ea1054c356663b31c77114c2f0c8fec17e0e707aeec23026241beab9b2",
-    "url":"https://github.com/networkit/networkit/archive/6.1.tar.gz"
+    "sha256":"4faf16c5fae3e14d3c1b6f30e25c6e093dcf6a3dbf021235f3161ac2a527f682",
+    "url":"https://github.com/networkit/networkit/archive/7.0.tar.gz"
    }
   ],
   "test":{
@@ -87,7 +87,7 @@
  "new_version_errors":{
   "7.0":"We found a problem parsing the recipe: \n\nwhile constructing a mapping\n  in \"<unicode string>\", line 4, column 1:\n    package:\n    ^ (line: 4)\nfound duplicate key \"package\" with value \"ordereddict([('name', '<{ name|lower }}'), ('version', '<{ version }}')])\" (original value: \"ordereddict([('name', '<{ name|lower }}'), ('version', '<{ version }}')])\")\n  in \"<unicode string>\", line 12, column 1:\n    package:\n    ^ (line: 12)\n\nTo suppress this check see:\n    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys\n\nDuplicate keys will become an error in future releases, and are errors\nby default when using the new API.\n"
  },
- "raw_meta_yaml":"{% set name = \"libnetworkit\" %}\n{% set version = \"6.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"22c953ea1054c356663b31c77114c2f0c8fec17e0e707aeec23026241beab9b2\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  - url: 'https://github.com/networkit/networkit/archive/{{version}}.tar.gz'\n    {{hash_type}}: {{hash_value}}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake  >=3.5\n    - make\n    - llvm-openmp  # [osx]\n    - libtlx\n  host:\n    - _openmp_mutex  # [linux]\n\ntest:\n  commands:\n    # Verify headers are present\n    - test -f $PREFIX/include/networkit/Globals.hpp  # [unix]\n\n    # Verify pkg-config file is present\n    - test -f $PREFIX/lib/pkgconfig/networkit.pc  # [unix]\n\n    # Verify shared library is present\n    - test -f $PREFIX/lib/libnetworkit.so  # [linux]\n    - test -f $PREFIX/lib/libnetworkit.dylib  # [osx]\n\n    # conda tools\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/networkit/networkit\n  license: MIT\n  license_family: MIT\n  license_file: License.txt\n  summary: 'NetworKit is a growing open-source toolkit for large-scale network analysis.'\n  description: |\n           NetworKit is a growing open-source toolkit for large-scale network analysis. Its aim is to provide tools for the analysis of large networks in the size range from thousands to billions of edges. For this purpose, it implements efficient graph algorithms, many of them parallel to utilize multicore architectures. These are meant to compute standard measures of network analysis, such as degree sequences, clustering coefficients, and centrality measures. In this respect, NetworKit is comparable to packages such as NetworkX, albeit with a focus on parallelism and scalability. NetworKit is also a testbed for algorithm engineering and contains novel algorithms from recently published research (see list of Publications).\n  doc_url: https://networkit.github.io/\n  dev_url: https://github.com/networkit/networkit\n\nextra:\n  recipe-maintainers:\n    - angriman\n    - avdgrinten\n    - fabratu\n",
+ "raw_meta_yaml":"{% set name = \"libnetworkit\" %}\n{% set version = \"7.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"4faf16c5fae3e14d3c1b6f30e25c6e093dcf6a3dbf021235f3161ac2a527f682\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  - url: 'https://github.com/networkit/networkit/archive/{{ version }}.tar.gz'\n    {{ hash_type }}: {{ hash_value }}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake  >=3.5\n    - make\n    - llvm-openmp  # [osx]\n    - libtlx\n  host:\n    - _openmp_mutex  # [linux]\n\ntest:\n  commands:\n    # Verify headers are present\n    - test -f $PREFIX/include/networkit/Globals.hpp  # [unix]\n\n    # Verify pkg-config file is present\n    - test -f $PREFIX/lib/pkgconfig/networkit.pc  # [unix]\n\n    # Verify shared library is present\n    - test -f $PREFIX/lib/libnetworkit.so  # [linux]\n    - test -f $PREFIX/lib/libnetworkit.dylib  # [osx]\n\n    # conda tools\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/networkit/networkit\n  license: MIT\n  license_family: MIT\n  license_file: License.txt\n  summary: 'NetworKit is a growing open-source toolkit for large-scale network analysis.'\n  description: |\n           NetworKit is a growing open-source toolkit for large-scale network analysis. Its aim is to provide tools for the analysis of large networks in the size range from thousands to billions of edges. For this purpose, it implements efficient graph algorithms, many of them parallel to utilize multicore architectures. These are meant to compute standard measures of network analysis, such as degree sequences, clustering coefficients, and centrality measures. In this respect, NetworKit is comparable to packages such as NetworkX, albeit with a focus on parallelism and scalability. NetworKit is also a testbed for algorithm engineering and contains novel algorithms from recently published research (see list of Publications).\n  doc_url: https://networkit.github.io/\n  dev_url: https://github.com/networkit/networkit\n\nextra:\n  recipe-maintainers:\n    - angriman\n    - avdgrinten\n    - fabratu\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -153,5 +153,5 @@
   }
  },
  "url":"https://github.com/networkit/networkit/archive/6.1.tar.gz",
- "version":"6.1"
+ "version":"7.0"
 }
