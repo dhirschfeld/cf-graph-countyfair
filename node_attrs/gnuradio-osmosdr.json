@@ -18,6 +18,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433151027.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -146,7 +165,7 @@
  },
  "name":"gnuradio-osmosdr",
  "new_version":"0.2.0",
- "pinning_version":"2020.06.07.16.42.19",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"gnuradio-osmosdr\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/osmocom/gr-osmosdr/archive/v{{ version }}.tar.gz\n  sha256: 9812429d97bc54f0a8917b880ca9e7e2421c66aeaac8ce5608161a8ae7007122\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('gnuradio-osmosdr', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [not win]\n    - ninja  # [win]\n    - pkg-config  # [not win]\n  host:\n    - boost-cpp\n    - gnuradio-core\n    - pip  # [win]\n    - python\n    - soapysdr\n    - swig\n    - volk\n    # pulled in by gnuradio-core and linked against, so include explicitly\n    - log4cpp\n  run:\n    - boost-cpp\n    - python\n    # pulled in by gnuradio-core and linked against, so include explicitly\n    - log4cpp\n\ntest:\n  commands:\n    # verify that binaries get installed\n    {% set bins = [\n        \"osmocom_fft\",\n        \"osmocom_siggen_nogui\",\n        \"osmocom_spectrum_sense\",\n    ] %}\n    {% for bin in bins %}\n    - test -f $PREFIX/bin/{{ bin }}  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\{{ bin }}.exe exit 1  # [win]\n    {% endfor %}\n\n    # verify that (some) headers get installed\n    - test -f $PREFIX/include/osmosdr/api.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\osmosdr\\\\api.h exit 1  # [win]\n\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/lib{{ name }}${SHLIB_EXT}  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\{{ name }}.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ name }}.lib exit 1  # [win]\n\n    # verify that GRC blocks get installed\n    {% set blocks = [\n        \"osmosdr_sink\",\n        \"osmosdr_source\",\n    ] %}\n    {% for block in blocks %}\n    - test -f $PREFIX/share/gnuradio/grc/blocks/{{ block }}.block.yml  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\share\\\\gnuradio\\\\grc\\\\blocks\\\\{{ block }}.block.yml exit 1  # [win]\n    {% endfor %}\n  imports:\n    - osmosdr\n\nabout:\n  home: https://osmocom.org/projects/gr-osmosdr/wiki\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'osmocom GNU Radio blocks'\n  description: |\n    This package provides a minimal build of the osmocom GNU Radio blocks, supporting\n    only the SoapySDR plugin. Support for a variety of SDR hardware can be achieved by\n    using the appropriate module for SoapySDR.\n  doc_url: https://osmocom.org/projects/gr-osmosdr/wiki\n  dev_url: https://github.com/osmocom/gr-osmosdr\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
   "__set__":true,
