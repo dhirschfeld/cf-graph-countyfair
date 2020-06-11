@@ -36,7 +36,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -47,7 +47,7 @@
   },
   "package":{
    "name":"graphene-sqlalchemy",
-   "version":"2.2.2"
+   "version":"2.3.0"
   },
   "requirements":{
    "host":[
@@ -60,16 +60,19 @@
    ],
    "run":[
     "python",
+    "promise",
     "graphene",
     "sqlalchemy",
     "six",
     "singledispatch",
     "python",
+    "promise",
     "graphene",
     "sqlalchemy",
     "six",
     "singledispatch",
     "python",
+    "promise",
     "graphene",
     "sqlalchemy",
     "six",
@@ -77,8 +80,8 @@
    ]
   },
   "source":{
-   "sha256":"fda3a131149a96f02b18c4d8276102edd80ba22b92939c9a3fc94bda699c1477",
-   "url":"https://pypi.io/packages/source/g/graphene-sqlalchemy/graphene-sqlalchemy-2.2.2.tar.gz"
+   "sha256":"2b1a9cf4ed44aec78140605f38061a79b51be5902400d10c3d19b2cf64046215",
+   "url":"https://pypi.io/packages/source/g/graphene-sqlalchemy/graphene-sqlalchemy-2.3.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -95,12 +98,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set name = \"graphene-sqlalchemy\" %}\n{% set version = \"2.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fda3a131149a96f02b18c4d8276102edd80ba22b92939c9a3fc94bda699c1477\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - graphene\n    - sqlalchemy\n    - six\n    - singledispatch\n\ntest:\n  imports:\n    - graphene_sqlalchemy\n\nabout:\n  home: https://github.com/graphql-python/graphene-sqlalchemy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Graphene SQLAlchemy integration'\n  doc_url: http://docs.graphene-python.org/projects/sqlalchemy/en/latest/\n  dev_url: https://github.com/graphql-python/graphene-sqlalchemy\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
+ "raw_meta_yaml":"{% set name = \"graphene-sqlalchemy\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2b1a9cf4ed44aec78140605f38061a79b51be5902400d10c3d19b2cf64046215\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - promise\n    - graphene\n    - sqlalchemy\n    - six\n    - singledispatch\n\ntest:\n  imports:\n    - graphene_sqlalchemy\n\nabout:\n  home: https://github.com/graphql-python/graphene-sqlalchemy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: Graphene SQLAlchemy integration\n  doc_url: http://docs.graphene-python.org/projects/sqlalchemy/en/latest/\n  dev_url: https://github.com/graphql-python/graphene-sqlalchemy\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "req":{
   "__set__":true,
   "elements":[
    "graphene",
    "pip",
+   "promise",
    "python",
    "singledispatch",
    "six",
@@ -123,6 +127,7 @@
    "__set__":true,
    "elements":[
     "graphene",
+    "promise",
     "python",
     "singledispatch",
     "six",
@@ -152,6 +157,7 @@
    "__set__":true,
    "elements":[
     "graphene",
+    "promise",
     "python",
     "singledispatch",
     "six",
@@ -164,5 +170,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/graphene-sqlalchemy/graphene-sqlalchemy-2.2.2.tar.gz",
- "version":"2.2.2"
+ "version":"2.3.0"
 }
