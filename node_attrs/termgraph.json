@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433087824.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -126,13 +143,14 @@
   }
  },
  "name":"termgraph",
- "new_version":"0.2.3",
+ "new_version":"0.3.0",
  "new_version_attempts":{
   "0.2.2":1,
-  "0.2.3":1
+  "0.2.3":1,
+  "0.3.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.19.19.39.08",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"termgraph\" %}\n{% set version = \"0.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 08b3d22dfe255f9c6ad405d9016c3a85571baa4fb2a8c075669d6e4e1e597b59\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - termgraph=termgraph.termgraph:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - colorama\n\ntest:\n  imports:\n    - termgraph\n  commands:\n    - termgraph --help\n\nabout:\n  home: https://github.com/mkaz/termgraph\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: a python command-line tool which draws basic graphs in the terminal\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
   "__set__":true,

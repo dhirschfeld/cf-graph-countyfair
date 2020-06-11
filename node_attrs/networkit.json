@@ -92,7 +92,7 @@
    "summary":"NetworKit is a growing open-source toolkit for large-scale network analysis."
   },
   "build":{
-   "number":"3",
+   "number":"4",
    "script":[
     " -m pip install --install-option=\"build_ext\" --install-option=\"--networkit-external-core\" --ignore-installed -vv .",
     " -m pip install --install-option=\"build_ext\" --install-option=\"--networkit-external-core\" --ignore-installed -vv .",
@@ -168,15 +168,15 @@
     "numpy",
     "python",
     "scipy",
-    "libnetworkit",
+    "libnetworkit =6.1",
     "numpy",
     "python",
     "scipy",
-    "libnetworkit",
+    "libnetworkit =6.1",
     "numpy",
     "python",
     "scipy",
-    "libnetworkit"
+    "libnetworkit =6.1"
    ]
   },
   "source":[
@@ -210,7 +210,7 @@
   "7.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '7.0' to make sure they exist!\n\nWe also found the following errors:\n\n - migrations do not work on `git_url`s\n"
  },
  "pinning_version":"2020.04.07",
- "raw_meta_yaml":"{% set name = \"networkit\" %}\n{% set version = \"6.1\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  - git_url: 'https://github.com/networkit/networkit.git'\n    git_tag: '{{ version }}'\n  \nbuild:\n  skip: True  # [py27 or py33 or win or win_64 or python_impl == 'pypy']\n  number: 3\n  script:\n     - '{{ PYTHON }} -m pip install --install-option=\"build_ext\" --install-option=\"--networkit-external-core\" --ignore-installed -vv .'\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.5\n    - cython >=0.21\n    - ninja >=1.9.0\n    - libnetworkit =6.1\n\n  host:\n    - numpy\n    - pip\n    - python\n    - scipy\n    - setuptools\n    - wheel >=0.28\n    - libnetworkit =6.1\n\n  run:\n    - numpy\n    - python\n    - scipy\n    - libnetworkit\n\ntest:\n  imports:\n    - networkit\n\nabout:\n  home: https://github.com/networkit/networkit\n  license: MIT\n  license_family: MIT\n  license_file: License.txt\n  summary: 'NetworKit is a growing open-source toolkit for large-scale network analysis.'\n  description: |\n           NetworKit is a growing open-source toolkit for large-scale network analysis. Its aim is to provide tools for the analysis of large networks in the size range from thousands to billions of edges. For this purpose, it implements efficient graph algorithms, many of them parallel to utilize multicore architectures. These are meant to compute standard measures of network analysis, such as degree sequences, clustering coefficients, and centrality measures. In this respect, NetworKit is comparable to packages such as NetworkX, albeit with a focus on parallelism and scalability. NetworKit is also a testbed for algorithm engineering and contains novel algorithms from recently published research (see list of Publications).\n  doc_url: https://networkit.github.io/\n  dev_url: https://github.com/networkit/networkit\n\nextra:\n  recipe-maintainers:\n    - angriman\n    - avdgrinten\n    - fabratu\n    - lucventurini  # Temporary, I am not involved with the development itself\n",
+ "raw_meta_yaml":"{% set name = \"networkit\" %}\n{% set version = \"6.1\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  - git_url: 'https://github.com/networkit/networkit.git'\n    git_tag: '{{ version }}'\n  \nbuild:\n  skip: True  # [py27 or py33 or win or win_64 or python_impl == 'pypy']\n  number: 4\n  script:\n     - '{{ PYTHON }} -m pip install --install-option=\"build_ext\" --install-option=\"--networkit-external-core\" --ignore-installed -vv .'\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.5\n    - cython >=0.21\n    - ninja >=1.9.0\n    - libnetworkit =6.1\n\n  host:\n    - numpy\n    - pip\n    - python\n    - scipy\n    - setuptools\n    - wheel >=0.28\n    - libnetworkit =6.1\n\n  run:\n    - numpy\n    - python\n    - scipy\n    - libnetworkit =6.1\n\ntest:\n  imports:\n    - networkit\n\nabout:\n  home: https://github.com/networkit/networkit\n  license: MIT\n  license_family: MIT\n  license_file: License.txt\n  summary: 'NetworKit is a growing open-source toolkit for large-scale network analysis.'\n  description: |\n           NetworKit is a growing open-source toolkit for large-scale network analysis. Its aim is to provide tools for the analysis of large networks in the size range from thousands to billions of edges. For this purpose, it implements efficient graph algorithms, many of them parallel to utilize multicore architectures. These are meant to compute standard measures of network analysis, such as degree sequences, clustering coefficients, and centrality measures. In this respect, NetworKit is comparable to packages such as NetworkX, albeit with a focus on parallelism and scalability. NetworKit is also a testbed for algorithm engineering and contains novel algorithms from recently published research (see list of Publications).\n  doc_url: https://networkit.github.io/\n  dev_url: https://github.com/networkit/networkit\n\nextra:\n  recipe-maintainers:\n    - angriman\n    - avdgrinten\n    - fabratu\n    - lucventurini  # Temporary, I am not involved with the development itself\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -295,7 +295,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "libnetworkit",
+    "libnetworkit =6.1",
     "numpy",
     "python",
     "scipy"
