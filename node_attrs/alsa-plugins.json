@@ -1,4 +1,25 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/0a1d4d6d-be67-42e6-861c-c92eaf66f912.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"alsa_lib123"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
@@ -152,6 +173,7 @@
  },
  "name":"alsa-plugins",
  "new_version":false,
+ "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"alsa-plugins\" %}\n{% set version = \"1.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.alsa-project.org/pub/plugins/{{ name }}-{{ version }}.tar.bz2\n  sha256: 797da5f8f53379fbea28817bc466de16affd2c07849e84f1af8d5e22f7bb7f1c\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n    - pkg-config\n  host:\n    - alsa-lib >=1.0.11\n    # until alsa-plugins 1.1.7, ffmpeg with av_resample functions in avcodec needed\n    - ffmpeg <4\n    - jack >=0.98\n    - pulseaudio >=0.9.11\n  run:\n    # newer ffmpeg have a run_exports\n    - {{ pin_compatible('ffmpeg', max_pin='x.x') }}\n    - {{ pin_compatible('jack', max_pin='x.x.x') }}\n\ntest:\n  commands:\n    {% set mods = [\n        \"conf_pulse\",\n        \"ctl_arcam_av\",\n        \"ctl_oss\",\n        \"ctl_pulse\",\n        \"pcm_a52\",\n        \"pcm_jack\",\n        \"pcm_oss\",\n        \"pcm_pulse\",\n        \"pcm_upmix\",\n        \"pcm_usb_stream\",\n        \"pcm_vdownmix\",\n        \"rate_lavcrate\",\n        \"rate_lavcrate_fast\",\n        \"rate_lavcrate_faster\",\n        \"rate_lavcrate_high\",\n        \"rate_lavcrate_higher\",\n        \"rate_speexrate\",\n        \"rate_speexrate_best\",\n        \"rate_speexrate_medium\",\n    ] %}\n    {% for mod in mods %}\n    - test -f $PREFIX/lib/alsa-lib/libasound_module_{{ mod }}$SHLIB_EXT\n    {% endfor %}\n\nabout:\n  home: http://www.alsa-project.org/main/index.php/Main_Page\n  license: LGPL-2.1-or-later AND GPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - COPYING\n    - COPYING.GPL\n  summary: 'The Advanced Linux Sound Architecture (ALSA) - plugins'\n  description: |\n    Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\n    stream conversions.\n  dev_url: https://github.com/alsa-project/alsa-plugins\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
   "__set__":true,
@@ -201,6 +223,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
