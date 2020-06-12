@@ -152,6 +152,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433408528.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"ArchRebuild",
+    "migrator_version":1,
+    "name":"aarch64 and ppc64le addition"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -230,7 +247,7 @@
   "2.36":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.02.12.20.38",
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"libcap\" %}\n{% set version = \"2.36\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-{{ version }}.tar.xz\n  sha256: 5048c849bdbbe24d2ca59463142cb279abec5edf3ab6731ab35a596bcf538a49\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('libcap', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - pkg-config\n  host:\n    - attr\n\ntest:\n  commands:\n    - test -f \"$PREFIX/lib/libcap.so\"\n\nabout:\n  home: https://directory.fsf.org/wiki/Libcap\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: License\n  summary: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
