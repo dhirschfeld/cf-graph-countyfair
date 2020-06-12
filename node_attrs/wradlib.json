@@ -212,6 +212,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433586250.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.7.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -311,8 +328,12 @@
   }
  },
  "name":"wradlib",
- "new_version":"1.6.2",
- "pinning_version":"2020.03.12",
+ "new_version":"1.7.0",
+ "new_version_attempts":{
+  "1.7.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set version = \"1.6.2\" %}\n\npackage:\n  name: wradlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n  sha256: 7477108f3fd15514bf130758e1198e8b483c9a797d163a4eecec4a2e4597b8a3\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - semver\n  run:\n    - python >=3\n    - deprecation\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - h5netcdf\n    - netcdf4\n    - gdal\n    - xarray\n    - cartopy\n    - semver\n    - xmltodict\n\ntest:\n  imports:\n    - wradlib  # [not osx]\n  commands:\n    # hack to get macosx matplotlib running\n    # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n    - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n  home: http://wradlib.org/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Open Source Library for Weather Radar Data Processing\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - kmuehlbauer\n",
  "req":{
   "__set__":true,
@@ -369,7 +390,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

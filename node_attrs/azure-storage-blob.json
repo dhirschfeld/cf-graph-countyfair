@@ -181,14 +181,14 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "home":"https://github.com/Azure/azure-storage-python",
-   "license":"Apache-2.0",
-   "license_family":"Apache",
+   "home":"https://pypi.org/project/azure-storage-blob/",
+   "license":"MIT",
    "license_file":"LICENSE.txt",
-   "summary":"Microsoft Azure Storage Blob Client Library for Python"
+   "summary":"Microsoft Azure Blob Storage Client Library for Python"
   },
   "build":{
-   "number":"1",
+   "noarch":"python",
+   "number":"0",
    "script":" -m pip install . --no-deps -vv"
   },
   "extra":{
@@ -200,89 +200,94 @@
   },
   "package":{
    "name":"azure-storage-blob",
-   "version":"2.1.0"
+   "version":"12.3.1"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools",
     "pip",
     "python",
-    "setuptools",
     "pip",
     "python",
-    "setuptools",
     "pip"
    ],
    "run":[
     "python",
-    "azure-common >=1.1.5",
-    "azure-storage-common ~=2.1",
+    "azure-core <2.0.0,>=1.4.0",
+    "cryptography >=2.1.4",
+    "msrest >=0.6.10",
     "python",
-    "azure-common >=1.1.5",
-    "azure-storage-common ~=2.1",
+    "azure-core <2.0.0,>=1.4.0",
+    "cryptography >=2.1.4",
+    "msrest >=0.6.10",
     "python",
-    "azure-common >=1.1.5",
-    "azure-storage-common ~=2.1"
+    "azure-core <2.0.0,>=1.4.0",
+    "cryptography >=2.1.4",
+    "msrest >=0.6.10"
    ]
   },
   "source":{
-   "fn":"azure-storage-blob-2.1.0.tar.gz",
-   "sha256":"b90323aad60f207f9f90a0c4cf94c10acc313c20b39403398dfba51f25f7b454",
-   "url":"https://pypi.io/packages/source/a/azure-storage-blob/azure-storage-blob-2.1.0.tar.gz"
+   "sha256":"02030d657914c221961f6e7ebafc6ec36761649c04396b368e0b102cbcdcf26c",
+   "url":"https://pypi.io/packages/source/a/azure-storage-blob/azure-storage-blob-12.3.1.zip"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
-    "azure",
-    "azure.storage",
     "azure.storage.blob",
-    "azure",
-    "azure.storage",
     "azure.storage.blob",
-    "azure",
-    "azure.storage",
     "azure.storage.blob"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
  "name":"azure-storage-blob",
  "new_version":"12.3.1",
  "pinning_version":"2020.02.12",
- "raw_meta_yaml":"{% set name = \"azure-storage-blob\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"b90323aad60f207f9f90a0c4cf94c10acc313c20b39403398dfba51f25f7b454\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - azure-common >=1.1.5\n    - azure-storage-common ~=2.1\n    - futures  # [py2k]\n\ntest:\n  imports:\n    - azure\n    - azure.storage\n    - azure.storage.blob\n\nabout:\n  home: https://github.com/Azure/azure-storage-python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'Microsoft Azure Storage Blob Client Library for Python'\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"azure-storage-blob\" %}\n{% set version = \"12.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: 02030d657914c221961f6e7ebafc6ec36761649c04396b368e0b102cbcdcf26c\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n   - python\n   - azure-core <2.0.0,>=1.4.0\n   - cryptography >=2.1.4\n   - msrest >=0.6.10\n\ntest:\n  imports:\n    - azure.storage.blob\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/azure-storage-blob/\n  summary: Microsoft Azure Blob Storage Client Library for Python\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
-   "azure-common",
-   "azure-storage-common",
+   "azure-core",
+   "cryptography",
+   "msrest",
    "pip",
-   "python",
-   "setuptools"
+   "python"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "pip",
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "azure-common",
-    "azure-storage-common",
+    "azure-core",
+    "cryptography",
+    "msrest",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"3.6.8",
@@ -290,29 +295,31 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "pip",
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "azure-common >=1.1.5",
-    "azure-storage-common ~=2.1",
+    "azure-core <2.0.0,>=1.4.0",
+    "cryptography >=2.1.4",
+    "msrest >=0.6.10",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/a/azure-storage-blob/azure-storage-blob-2.1.0.tar.gz",
- "version":"2.1.0"
+ "version":"12.3.1"
 }
