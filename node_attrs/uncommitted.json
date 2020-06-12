@@ -66,7 +66,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"uncommitted",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -98,7 +102,7 @@
   },
   "package":{
    "name":"uncommitted",
-   "version":"2.2"
+   "version":"2.3"
   },
   "requirements":{
    "host":[
@@ -116,9 +120,9 @@
    ]
   },
   "source":{
-   "fn":"uncommitted-2.2.tar.gz",
-   "sha256":"11bec8509649810561e3940c38ad9e3dec54a2c98b71ea47f5dad8ab874edffd",
-   "url":"https://pypi.io/packages/source/u/uncommitted/uncommitted-2.2.tar.gz"
+   "fn":"uncommitted-2.3.tar.gz",
+   "sha256":"4e5e51a2c2acbf2ef2d4c96e7f910a7df94a1d274e3f520a002e249525bba41e",
+   "url":"https://pypi.io/packages/source/u/uncommitted/uncommitted-2.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -140,7 +144,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.14.17.14.20",
- "raw_meta_yaml":"{% set name = \"uncommitted\" %}\n{% set version = \"2.2\" %}\n{% set sha256 = \"11bec8509649810561e3940c38ad9e3dec54a2c98b71ea47f5dad8ab874edffd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  preserve_egg_dir: True\n  entry_points:\n    - uncommitted = uncommitted.command:main\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - uncommitted\n\n  commands:\n    - uncommitted --help\n\nabout:\n  home: https://github.com/brandon-rhodes/uncommitted\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Scan filesystem for changes not committed to version control'\n  dev_url: https://github.com/brandon-rhodes/uncommitted\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "raw_meta_yaml":"{% set name = \"uncommitted\" %}\n{% set version = \"2.3\" %}\n{% set sha256 = \"4e5e51a2c2acbf2ef2d4c96e7f910a7df94a1d274e3f520a002e249525bba41e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  preserve_egg_dir: true\n  entry_points:\n    - uncommitted = uncommitted.command:main\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - uncommitted\n\n  commands:\n    - uncommitted --help\n\nabout:\n  home: https://github.com/brandon-rhodes/uncommitted\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Scan filesystem for changes not committed to version control\n  dev_url: https://github.com/brandon-rhodes/uncommitted\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -197,5 +201,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/u/uncommitted/uncommitted-2.1.tar.gz",
- "version":"2.2"
+ "version":"2.3"
 }
