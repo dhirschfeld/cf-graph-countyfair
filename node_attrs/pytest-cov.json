@@ -116,6 +116,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433717298.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -192,12 +209,13 @@
   }
  },
  "name":"pytest-cov",
- "new_version":"2.9.0",
+ "new_version":"2.10.0",
  "new_version_attempts":{
+  "2.10.0":1,
   "2.9.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.12.12.07.36",
  "raw_meta_yaml":"{% set name = \"pytest-cov\" %}\n{% set version = \"2.9.0\" %}\n{% set sha256 = \"b6a814b8ed6247bd81ff47f038511b57fe1ce7f4cc25b9106f1a4b106f1d9322\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pytest >=3.6\n    - coverage >=4.4\n\ntest:\n  commands:\n    - pytest --traceconfig | grep pytest-cov-{{ version }}\n\nabout:\n  home: https://github.com/pytest-dev/pytest-cov\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Pytest plugin for measuring coverage\n  dev_url: https://github.com/pytest-dev/pytest-cov\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - nicoddemus\n",
  "req":{
   "__set__":true,
