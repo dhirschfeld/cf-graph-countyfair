@@ -16,6 +16,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433779343.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"alsa_lib123"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -81,7 +100,7 @@
  },
  "name":"portaudio",
  "new_version":false,
- "pinning_version":"2019.01.21",
+ "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set version = \"190600_20161030\" %}\n\npackage:\n  name: portaudio\n  version: 19.6.0\n\nsource:\n  url: http://www.portaudio.com/archives/pa_stable_v{{ version }}.tgz\n  sha256: f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513\n\nbuild:\n  number: 2\n  skip: True  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}          # [unix]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_c') }}    # [win]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - posix  # [win]\n    - m2w64-toolchain  # [win]\n    - alsa-lib  # [linux]\n  run:\n    - alsa-lib  # [linux]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libportaudio$SHLIB_EXT  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.portaudio.com/\n  license: PortAudio\n  license_file: LICENSE.txt\n  summary: 'PortAudio is a free, cross-platform, open-source, audio I/O library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - scopatz\n",
  "req":{
   "__set__":true,
@@ -120,7 +139,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.2.10",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -204,6 +204,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433769904.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"6.2.2005"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -300,13 +317,14 @@
   }
  },
  "name":"netgen",
- "new_version":"6.2.2004",
+ "new_version":"6.2.2005",
  "new_version_attempts":{
   "6.2.1809":1,
-  "6.2.2004":1
+  "6.2.2004":1,
+  "6.2.2005":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.27.17.45.41",
+ "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"netgen\" %}\n{% set version = \"6.2.2004\" %}\n{% set sha256 = \"a41111470baf65090066df85957aea8afdcb568a18f1915946228f3918d91928\" %}\n\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: netgen_v{{ version }}.tar.gz\n  url: https://github.com/NGSolve/netgen/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - cmake.patch\n    - dll_header.patch\n\nbuild:\n  number: 1\n  skip: true  # [py27]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - ninja\n    - cmake\n  host:\n    - occt\n    - python\n    - pybind11\n    - zlib\n  run:\n    - occt\n    - python\n    - zlib\n\ntest:\n  commands:\n    - python -c \"import sys; print(sys.version); import netgen;\"\n\nabout:\n  home: https://sourceforge.net/projects/netgen-mesher/\n  license: LGPL2.1\n  license_family: LGPL\n  license_file: LICENSE\n  summary: this is netgen\n  description: NETGEN is an automatic 3d tetrahedral mesh generator. It accepts input from constructive solid geometry (CSG) or boundary representation (BRep) from STL file format. The connection to a geometry kernel allows the handling of IGES and STEP files. NETGEN contains modules for mesh optimization and hierarchical\n    mesh refinement. Netgen is open source based on the LGPL license. It is available for Unix/Linux and Windows.\n  doc_url: http://www.hpfem.jku.at/netgen/\n  dev_url: https://sourceforge.net/projects/netgen-mesher/\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
  "req":{
   "__set__":true,
@@ -351,7 +369,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -16,6 +16,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433771135.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.7.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -138,8 +155,12 @@
   }
  },
  "name":"geemap",
- "new_version":"0.7.0",
- "pinning_version":"2020.06.02.12.20.38",
+ "new_version":"0.7.1",
+ "new_version_attempts":{
+  "0.7.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"geemap\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3c4208c97feb659c2a7c3c4eab5211c64a0c6daa78319108f8f4e1324e52a29e\n\nbuild:\n  number: 0\n  entry_points:\n    - geemap=geemap.cli:main\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - bqplot\n    - click\n    - colour\n    - dulwich\n    - earthengine-api\n    - folium >=0.11.0\n    - geeadd\n    - geocoder\n    - ipyfilechooser\n    - ipyleaflet >=0.12.6\n    - ipynb-py-convert\n    - ipytree\n    - matplotlib\n    - mss\n    - pillow\n    - pyshp\n    - python\n    - pip\n\ntest:\n  imports:\n    - geemap\n  commands:\n    - geemap --help\n\nabout:\n  home: \"https://github.com/giswqs/geemap\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"A Python package for interactive mapping using Google Earth Engine and ipyleaflet\"\n  doc_url: https://geemap.readthedocs.io\n  dev_url: https://github.com/giswqs/geemap\n\nextra:\n  recipe-maintainers:\n    - giswqs\n",
  "req":{
   "__set__":true,
