@@ -20,13 +20,18 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
+  }
+ },
  "feedstock_name":"attr",
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
    "home":"http://savannah.nongnu.org/projects/attr",
-   "license":"GPLv2",
+   "license":"GPL-2.0-or-later",
    "license_family":"GPL",
    "license_file":[
     "doc/COPYING",
@@ -50,13 +55,16 @@
   "extra":{
    "recipe-maintainers":[
     "scopatz",
+    "saraedum",
     "scopatz",
-    "scopatz"
+    "saraedum",
+    "scopatz",
+    "saraedum"
    ]
   },
   "package":{
    "name":"attr",
-   "version":"2.4.47"
+   "version":"2.4.48"
   },
   "requirements":{
    "build":[
@@ -69,8 +77,8 @@
    ]
   },
   "source":{
-   "sha256":"25772f653ac5b2e3ceeb89df50e4688891e21f723c460636548971652af0a859",
-   "url":"http://download.savannah.gnu.org/releases/attr/attr-2.4.47.src.tar.gz"
+   "sha256":"5ead72b358ec709ed00bbf7a9eaef1654baad937c001c044fe8b74c57f5324e7",
+   "url":"http://download.savannah.gnu.org/releases/attr/attr-2.4.48.tar.gz"
   },
   "test":{
    "commands":[
@@ -83,7 +91,7 @@
  "name":"attr",
  "new_version":false,
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"attr\" %}\n{% set version = \"2.4.47\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://download.savannah.gnu.org/releases/attr/attr-{{ version }}.src.tar.gz\n  sha256: 25772f653ac5b2e3ceeb89df50e4688891e21f723c460636548971652af0a859\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('attr', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n\ntest:\n  commands:\n    - attr -l \"${PREFIX}/bin/attr\"\n\nabout:\n  home: http://savannah.nongnu.org/projects/attr\n  license: GPLv2\n  license_family: GPL\n  license_file:\n    - doc/COPYING\n    - doc/COPYING.LGPL\n  summary: 'Commands for Manipulating Filesystem Extended Attributes'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"attr\" %}\n{% set version = \"2.4.48\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://download.savannah.gnu.org/releases/attr/attr-{{ version }}.tar.gz\n  sha256: 5ead72b358ec709ed00bbf7a9eaef1654baad937c001c044fe8b74c57f5324e7\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('attr', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n\ntest:\n  commands:\n    - attr -l \"${PREFIX}/bin/attr\"\n\nabout:\n  home: http://savannah.nongnu.org/projects/attr\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file:\n    - doc/COPYING\n    - doc/COPYING.LGPL\n  summary: 'Commands for Manipulating Filesystem Extended Attributes'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - saraedum\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -136,5 +144,5 @@
   }
  },
  "url":"http://download.savannah.gnu.org/releases/attr/attr-2.4.47.src.tar.gz",
- "version":"2.4.47"
+ "version":"2.4.48"
 }
