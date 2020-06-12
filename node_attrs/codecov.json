@@ -115,6 +115,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433796103.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -210,16 +227,17 @@
   }
  },
  "name":"codecov",
- "new_version":"2.1.4",
+ "new_version":"2.1.5",
  "new_version_attempts":{
   "2.0.18":1,
   "2.0.19":1,
   "2.0.20":1,
   "2.0.22":1,
-  "2.1.4":1
+  "2.1.4":1,
+  "2.1.5":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.03.13.41.50",
+ "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"codecov\" %}\n{% set version = \"2.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bf30a41f65e747b159e2a749d1f9c92042d358bba0905fd94d3def3a368e592c\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - codecov=codecov:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - coverage\n    - requests >=2.7.9\n\ntest:\n  imports:\n    - codecov\n  commands:\n    - codecov -h\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/codecov/codecov-python\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Hosted coverage reports for Github, Bitbucket and Gitlab\n  doc_url: https://github.com/codecov/codecov-python\n  dev_url: https://github.com/codecov/codecov-python\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
