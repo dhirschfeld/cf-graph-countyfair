@@ -1,0 +1,14 @@
+"{% set name = \"jupyter_core\" %}\n{% set version = 4.6.3 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 394fd5dd787e7c8861741880bdf8a00ce39f95de5d18e579c74b882522219e7e\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32 or py==33 or py==34]\n\
+\  entry_points:\n    - jupyter              = jupyter_core.command:main\n    - jupyter-migrate\
+\      = jupyter_core.migrate:main\n    - jupyter-troubleshoot = jupyter_core.troubleshoot:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python\n  run:\n    - python\n    - pywin32 >=1.0  # [win]\n    - traitlets\n\
+\ntest:\n  imports:\n    - jupyter_core\n    - jupyter_core.tests\n  commands:\n \
+\   - pip check\n    - jupyter --help\n    - jupyter-migrate --help\n    - jupyter-troubleshoot\
+\ --help\n  requires:\n    - pip\n\nabout:\n  home: https://jupyter.org\n  summary:\
+\ Jupyter core package. A base package on which Jupyter projects rely.\n  license:\
+\ BSD-3-Clause\n  license_file: COPYING.md\n\nextra:\n  recipe-maintainers:\n    -\
+\ jakirkham\n    - pelson\n    - minrk\n    - ocefpaf\n    - bollwyvl\n    - Carreau\n"

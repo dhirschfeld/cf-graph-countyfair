@@ -1,0 +1,10 @@
+"{% set name = \"pytz\" %}\n{% set version = 2020.1 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - pytz\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
+about:\n  home: http://pythonhosted.org/pytz\n  summary: World timezone definitions,\
+\ modern and historical\n  doc_url: https://pythonhosted.org/pytz/\n  license: MIT\n\
+\  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - msarahan\n  \
+\  - ocefpaf\n"

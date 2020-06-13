@@ -1,0 +1,10 @@
+"{% set name = \"tqdm\" %}\n{% set version = 4.46.1 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cd140979c2bebd2311dfb14781d8f19bd5a9debb92dcab9f6ef899c987fcf71f\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - tqdm=tqdm.cli:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python !=3.0,!=3.1\n  run:\n    - python !=3.0,!=3.1\n\ntest:\n  imports:\n\
+\    - tqdm\n    - tqdm.contrib\n  commands:\n    - pip check\n    - tqdm --help\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://github.com/tqdm/tqdm\n  summary:\
+\ Fast, Extensible Progress Meter\n  license: MIT\n  license_file: PLEASE_ADD_LICENSE_FILE\n\
+\nextra:\n  recipe-maintainers:\n    - casperdcl\n    - pmlandwehr\n    - ericdill\n"

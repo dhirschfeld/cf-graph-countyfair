@@ -1,0 +1,11 @@
+"{% set name = \"pyzmq\" %}\n{% set version = 19.0.1 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 13a5638ab24d628a6ade8f794195e1a1acd573496c3b85af2f1183603b7bf5e0\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32]\n  script: {{\
+\ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c')\
+\ }}\n  host:\n    - cython\n    - pip\n    - python\n    - zmq\n  run:\n    - python\n\
+\ntest:\n  imports:\n    - zmq\n    - zmq.asyncio\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://pyzmq.readthedocs.org\n  summary:\
+\ Python bindings for 0MQ\n  license: BSD-3-Clause\n  license_file: COPYING.BSD\n\n\
+extra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - msarahan\n    -\
+\ pelson\n    - SylvainCorlay\n    - JohanMabille\n    - ocefpaf\n"

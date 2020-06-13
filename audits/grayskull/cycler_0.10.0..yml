@@ -1,0 +1,9 @@
+"{% set name = \"cycler\" %}\n{% set version = 0.10.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - six\n\
+\ntest:\n  imports:\n    - cycler\n  commands:\n    - pip check\n  requires:\n   \
+\ - pip\n\nabout:\n  home: http://github.com/matplotlib/cycler\n  summary: Composable\
+\ style cycles\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - pelson\n    - tacaswell\n    - jankatins\n    - ocefpaf\n"

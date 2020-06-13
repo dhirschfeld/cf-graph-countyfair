@@ -1,0 +1,9 @@
+"{% set name = \"brotlipy\" %}\n{% set version = 0.7.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 36def0b859beaf21910157b4c33eb3b06d8ce459c942102f16988cca6ea164df\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - cffi >=1.0.0\n    - pip\n    - python\n  run:\n  \
+\  - cffi >=1.0.0\n    - python\n\ntest:\n  imports:\n    - brotli\n  commands:\n\
+\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/python-hyper/brotlipy/\n\
+\  summary: Python binding to the Brotli library\n  license: MIT\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - primozgodec\n    - astaric\n"

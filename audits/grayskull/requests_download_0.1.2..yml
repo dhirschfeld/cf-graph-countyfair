@@ -1,0 +1,10 @@
+"{% set name = \"requests_download\" %}\n{% set version = 0.1.2 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 92d895a6ca51ea51aa42bab864bddaee31b5601c7e7e1ade4c27b0eb6695d846\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - requests\n\
+\ntest:\n  imports:\n    - requests_download\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://www.github.com/takluyver/requests_download\n\
+\  summary: Download files using requests and save them to a target path\n  license:\
+\ MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - Carreau\n \
+\   - minrk\n    - takluyver\n    - ocefpaf\n"
