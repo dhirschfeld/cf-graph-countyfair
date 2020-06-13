@@ -61,7 +61,7 @@
   },
   "package":{
    "name":"libfuse",
-   "version":"3.9.1"
+   "version":"3.9.2"
   },
   "requirements":{
    "build":[
@@ -93,8 +93,8 @@
    ]
   },
   "source":{
-   "sha256":"1bafcfd6c66ba35b7b0beb822532a9106eb8409ad6cde988888fde85f89be645",
-   "url":"https://github.com/libfuse/libfuse/releases/download/fuse-3.9.1/fuse-3.9.1.tar.xz"
+   "sha256":"6999b6d48e7c0a79628fa901f6e66def3513cab4ffdd8097821e7dc3cdeae08a",
+   "url":"https://github.com/libfuse/libfuse/releases/download/fuse-3.9.2/fuse-3.9.2.tar.xz"
   },
   "test":{
    "commands":[
@@ -114,7 +114,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.12.14.12.47",
- "raw_meta_yaml":"{% set name = \"libfuse\" %}\n{% set version = \"3.9.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz\n  sha256: 1bafcfd6c66ba35b7b0beb822532a9106eb8409ad6cde988888fde85f89be645\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - meson\n    - ninja\n    - pkg-config\n  host:\n    - libiconv\n  run:\n    - libiconv\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libfuse3${SHLIB_EXT}\n    - test -f ${PREFIX}/include/fuse3/fuse.h\n\nabout:\n  home: https://github.com/libfuse/libfuse\n  license: LGPL-2.1\n  license_file: LICENSE\n  license_family: LGPL\n  summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface\n\nextra:\n  recipe-maintainers:\n    - asafkahlon\n",
+ "raw_meta_yaml":"{% set name = \"libfuse\" %}\n{% set version = \"3.9.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/fuse-{{ version }}/fuse-{{ version }}.tar.xz\n  sha256: 6999b6d48e7c0a79628fa901f6e66def3513cab4ffdd8097821e7dc3cdeae08a\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - meson\n    - ninja\n    - pkg-config\n  host:\n    - libiconv\n  run:\n    - libiconv\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libfuse3${SHLIB_EXT}\n    - test -f ${PREFIX}/include/fuse3/fuse.h\n\nabout:\n  home: https://github.com/libfuse/libfuse\n  license: LGPL-2.1\n  license_file: LICENSE\n  license_family: LGPL\n  summary: The reference implementation of the Linux FUSE (Filesystem in Userspace) interface\n\nextra:\n  recipe-maintainers:\n    - asafkahlon\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -185,5 +185,5 @@
   }
  },
  "url":"https://github.com/libfuse/libfuse/releases/download/fuse-3.9.0/fuse-3.9.0.tar.xz",
- "version":"3.9.1"
+ "version":"3.9.2"
 }
