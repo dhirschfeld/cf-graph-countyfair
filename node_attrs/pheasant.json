@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/433955881.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.5.9"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -114,12 +131,13 @@
   }
  },
  "name":"pheasant",
- "new_version":"2.5.8",
+ "new_version":"2.5.9",
  "new_version_attempts":{
-  "2.5.8":1
+  "2.5.8":1,
+  "2.5.9":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.04.13.55.38",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"pheasant\" %}\n{% set version = \"2.5.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c648330166ffabaf7f93017cbca98be016abbea493ea9fb69468b1ba0f7df284\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - pheasant = pheasant.main:cli\n\nrequirements:\n  host:\n    - python >3.7\n    - pip\n    - setuptools\n  run:\n    - python >3.7\n    - click\n    - ipykernel\n    - markdown\n    - jinja2\n    - termcolor\n    - colorama\n    - pyyaml\n\ntest:\n  imports:\n    - pheasant\n  commands:\n    - pheasant list\n\nabout:\n  home: https://github.com/daizutabi/pheasant\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Documentation tool for Markdown conversion by Jupyter client\n  doc_url: https://pheasant.daizutabi.net/\n  dev_url: https://github.com/daizutabi/pheasant\n\nextra:\n  recipe-maintainers:\n    - daizutabi\n    - pkestene\n",
  "req":{
   "__set__":true,

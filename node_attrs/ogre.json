@@ -258,7 +258,7 @@
   },
   "package":{
    "name":"ogre",
-   "version":"1.12.6"
+   "version":"1.12.7"
   },
   "requirements":{
    "build":[
@@ -357,8 +357,8 @@
     "patches":[
      "0001-enable-pkg-config-for-Windows.patch"
     ],
-    "sha256":"c6347094733b459b6e8bb10f6ae234a66b635e3ef4212ba536b8fa146a775acf",
-    "url":"https://github.com/OGRECave/ogre/archive/v1.12.6.tar.gz"
+    "sha256":"8866a6ab32c424f4ecf53f452f5c2812f35b6643ed18266eb26c607d8b2f5eb5",
+    "url":"https://github.com/OGRECave/ogre/archive/v1.12.7.tar.gz"
    },
    {
     "folder":"Components/Overlay/src/imgui/",
@@ -367,11 +367,10 @@
    },
    {
     "patches":[
-     "0002-osx-no-framework.patch",
-     "0003-osx-fix-libs.patch"
+     "0002-osx-no-framework.patch"
     ],
-    "sha256":"c6347094733b459b6e8bb10f6ae234a66b635e3ef4212ba536b8fa146a775acf",
-    "url":"https://github.com/OGRECave/ogre/archive/v1.12.6.tar.gz"
+    "sha256":"8866a6ab32c424f4ecf53f452f5c2812f35b6643ed18266eb26c607d8b2f5eb5",
+    "url":"https://github.com/OGRECave/ogre/archive/v1.12.7.tar.gz"
    },
    {
     "folder":"Components/Overlay/src/imgui/",
@@ -380,8 +379,8 @@
    },
    {
     "patches":null,
-    "sha256":"c6347094733b459b6e8bb10f6ae234a66b635e3ef4212ba536b8fa146a775acf",
-    "url":"https://github.com/OGRECave/ogre/archive/v1.12.6.tar.gz"
+    "sha256":"8866a6ab32c424f4ecf53f452f5c2812f35b6643ed18266eb26c607d8b2f5eb5",
+    "url":"https://github.com/OGRECave/ogre/archive/v1.12.7.tar.gz"
    },
    {
     "folder":"Components/Overlay/src/imgui/",
@@ -401,7 +400,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.12.14.12.47",
- "raw_meta_yaml":"{% set name = \"ogre\" %}\n{% set version = \"1.12.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/OGRECave/ogre/archive/v{{ version }}.tar.gz\n    sha256: c6347094733b459b6e8bb10f6ae234a66b635e3ef4212ba536b8fa146a775acf\n    patches:\n      - 0001-enable-pkg-config-for-Windows.patch  # [win]\n      - 0002-osx-no-framework.patch  # [osx]\n      - 0003-osx-fix-libs.patch  # [osx]\n  - url: https://github.com/ocornut/imgui/archive/v1.73.tar.gz\n    sha256: 4c7255f49d814a389c23d170ac4f25dfe9b84a392307b92abc77fa63114ce2b5\n    folder: Components/Overlay/src/imgui/\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('ogre', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - pkg-config\n    - make  # [unix]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [unix]\n    - {{ cdt('mesa-libgl-devel') }}      # [unix]\n    - {{ cdt('mesa-dri-drivers') }}      # [unix]\n    - {{ cdt('libxrender-devel') }}      # [unix]\n    - {{ cdt('libxrandr-devel') }}       # [unix]\n    - {{ cdt('libxrandr') }}             # [unix]\n  host:\n    - xorg-libx11  # [unix]\n    - xorg-libxaw  # [unix]\n    - xorg-libxt   # [unix]\n    - libglu       # [linux]\n    - freetype\n    - pugixml\n    - zlib\n    - zziplib\n    - freeimage\n    - openexr\n    - sdl2\n    - swig         # [unix]\n    - mono         # [unix]\n  run:\n    - xorg-libx11  # [unix]\n    - xorg-libxaw  # [unix]\n    - xorg-libxt   # [unix]\n    - freetype\n    - zlib\n    - zziplib\n    - freeimage\n    - openexr\n    - sdl2\n    - swig         # [unix]\n\ntest:\n  commands:\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\OgreMain.dll exit 1  # [win]\n\nabout:\n  home: https://www.ogre3d.org/\n  license: MIT\n  license_file: LICENSE\n  summary: OGRE is a scene-oriented, flexible 3D engine written in C++ designed to make it easier and more intuitive for developers to produce games and demos utilising 3D hardware.\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - Tobias-Fischer\n",
+ "raw_meta_yaml":"{% set name = \"ogre\" %}\n{% set version = \"1.12.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/OGRECave/ogre/archive/v{{ version }}.tar.gz\n    sha256: 8866a6ab32c424f4ecf53f452f5c2812f35b6643ed18266eb26c607d8b2f5eb5\n    patches:\n      - 0001-enable-pkg-config-for-Windows.patch  # [win]\n      - 0002-osx-no-framework.patch  # [osx]\n  - url: https://github.com/ocornut/imgui/archive/v1.73.tar.gz\n    sha256: 4c7255f49d814a389c23d170ac4f25dfe9b84a392307b92abc77fa63114ce2b5\n    folder: Components/Overlay/src/imgui/\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('ogre', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - pkg-config\n    - make  # [unix]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [unix]\n    - {{ cdt('mesa-libgl-devel') }}      # [unix]\n    - {{ cdt('mesa-dri-drivers') }}      # [unix]\n    - {{ cdt('libxrender-devel') }}      # [unix]\n    - {{ cdt('libxrandr-devel') }}       # [unix]\n    - {{ cdt('libxrandr') }}             # [unix]\n  host:\n    - xorg-libx11  # [unix]\n    - xorg-libxaw  # [unix]\n    - xorg-libxt   # [unix]\n    - libglu       # [linux]\n    - freetype\n    - pugixml\n    - zlib\n    - zziplib\n    - freeimage\n    - openexr\n    - sdl2\n    - swig         # [unix]\n    - mono         # [unix]\n  run:\n    - xorg-libx11  # [unix]\n    - xorg-libxaw  # [unix]\n    - xorg-libxt   # [unix]\n    - freetype\n    - zlib\n    - zziplib\n    - freeimage\n    - openexr\n    - sdl2\n    - swig         # [unix]\n\ntest:\n  commands:\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\OgreMain.dll exit 1  # [win]\n\nabout:\n  home: https://www.ogre3d.org/\n  license: MIT\n  license_file: LICENSE\n  summary: OGRE is a scene-oriented, flexible 3D engine written in C++ designed to make it easier and more intuitive for developers to produce games and demos utilising 3D hardware.\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - Tobias-Fischer\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -529,5 +528,5 @@
   }
  },
  "url":"https://github.com/OGRECave/ogre/archive/v1.10.12.tar.gz",
- "version":"1.12.6"
+ "version":"1.12.7"
 }
