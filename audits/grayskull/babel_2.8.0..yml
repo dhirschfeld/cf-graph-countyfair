@@ -1,0 +1,10 @@
+"{% set name = \"babel\" %}\n{% set version = 2.8.0 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1aac2ae2d0d8ea368fa90906567f5c08463d98ade155c0c4bfedd6a0f7160e38\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n  run:\n\
+\    - python !=3.0,!=3.1,!=3.2,!=3.3\n    - pytz >=2015.7\n\ntest:\n  imports:\n\
+\    - babel\n    - babel.localtime\n  commands:\n    - pip check\n  requires:\n \
+\   - pip\n\nabout:\n  home: http://babel.pocoo.org/\n  summary: Internationalization\
+\ utilities\n  doc_url: https://pythonhosted.org/Babel/\n  license: BSD-3-Clause\n\
+\  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - frol\n    - nehaljwani\n"

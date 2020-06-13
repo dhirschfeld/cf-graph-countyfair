@@ -1,0 +1,19 @@
+"{% set name = \"notebook\" %}\n{% set version = 6.0.3 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 47a9092975c9e7965ada00b9a20f0cf637d001db60d241d479f53c0be117ad48\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - jupyter-notebook =\
+\ notebook.notebookapp:main\n    - jupyter-nbextension = notebook.nbextensions:main\n\
+\    - jupyter-serverextension = notebook.serverextensions:main\n    - jupyter-bundlerextension\
+\ = notebook.bundler.bundlerextensions:main\n  script: {{ PYTHON }} -m pip install\
+\ . -vv\n\nrequirements:\n  host:\n    - pip\n    - wheel\n  run:\n    - ipykernel\n\
+\    - ipython_genutils\n    - jinja2\n    - jupyter_client >=5.3.4\n    - jupyter_core\
+\ >=4.6.1\n    - nbconvert\n    - nbformat\n    - prometheus_client\n    - python\
+\ >=3.5\n    - pyzmq >=17\n    - send2trash\n    - terminado >=0.8.1\n    - tornado\
+\ >=5.0\n    - traitlets >=4.2.1\n\ntest:\n  imports:\n    - notebook\n    - notebook.auth\n\
+\  commands:\n    - pip check\n    - jupyter-notebook --help\n    - jupyter-nbextension\
+\ --help\n    - jupyter-serverextension --help\n    - jupyter-bundlerextension --help\n\
+\  requires:\n    - pip\n\nabout:\n  home: http://jupyter.org\n  summary: A web-based\
+\ notebook environment for interactive computing\n  license: BSD-3-Clause\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - jakirkham\n\
+\    - minrk\n    - pelson\n    - gnestor\n    - takluyver\n    - lresende\n    -\
+\ bollwyvl\n    - blink1073\n"

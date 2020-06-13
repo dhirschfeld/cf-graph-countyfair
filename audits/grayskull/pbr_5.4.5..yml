@@ -1,0 +1,10 @@
+"{% set name = \"pbr\" %}\n{% set version = 5.4.5 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 07f558fece33b05caf857474a366dfcc00562bca13dd8b47b2b3e22d9f9bf55c\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - pbr = pbr.cmd.main:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - pbr\n    - pbr.cmd\n\
+\  commands:\n    - pip check\n    - pbr --help\n  requires:\n    - pip\n\nabout:\n\
+\  home: https://docs.openstack.org/pbr/latest/\n  summary: Python Build Reasonableness\n\
+\  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - jakirkham\n    - pmlandwehr\n    - tschoonj\n"

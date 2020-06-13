@@ -1,0 +1,10 @@
+"{% set name = \"sqlalchemy\" %}\n{% set version = 1.3.17 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 156a27548ba4e1fed944ff9fcdc150633e61d350d673ae7baaf6c25c04ac1f71\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32 or py==33]\n \
+\ script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c')\
+\ }}\n  host:\n    - pip\n    - pytest\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - sqlalchemy\n    - sqlalchemy.connectors\n  commands:\n    - pip\
+\ check\n  requires:\n    - pip\n\nabout:\n  home: http://www.sqlalchemy.org\n  summary:\
+\ Database Abstraction Library\n  license: MIT\n  license_file: LICENSE\n\nextra:\n\
+\  recipe-maintainers:\n    - ocefpaf\n    - mcs07\n    - nehaljwani\n    - igortg\n"

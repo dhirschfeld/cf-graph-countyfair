@@ -1,0 +1,10 @@
+"{% set name = \"networkx\" %}\n{% set version = 2.4 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f8f4ff0b6f96e4f9b16af6b84622597b5334bf9cae8cf9b2e42e7985d5c95c64\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - decorator >=4.3.0\n\
+\    - python >=3.5\n\ntest:\n  imports:\n    - networkx\n    - networkx.algorithms\n\
+\  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: http://networkx.github.io/\n\
+\  summary: Python package for creating and manipulating graphs and networks\n  license:\
+\ BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n   \
+\ - synapticarbors\n    - ocefpaf\n    - SylvainCorlay\n"

@@ -1,0 +1,10 @@
+"{% set name = \"pyasn1-modules\" %}\n{% set version = 0.2.7 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0c35a52e00b672f832e5846826f1fb7507907f7d52fba6faa9e3c4cbe874fe4b\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n    - unittest2\n  run:\n    -\
+\ pyasn1 >=0.4.6,<0.5.0\n    - python\n\ntest:\n  imports:\n    - pyasn1_modules\n\
+\  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/etingof/pyasn1-modules\n\
+\  summary: A collection of ASN.1-based protocols modules.\n  license: BSD-2-Clause\n\
+\  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n \
+\   - pmlandwehr\n"

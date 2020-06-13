@@ -1,0 +1,12 @@
+"{% set name = \"nbformat\" %}\n{% set version = 5.0.6 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 049af048ed76b95c3c44043620c17e56bc001329e07f83fec4f177f0e3d7b757\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python >=3.5\n  run:\n    - ipython_genutils\n    - jsonschema >=2.4,!=2.5.0\n\
+\    - jupyter_core\n    - python >=3.5\n    - traitlets >=4.1\n\ntest:\n  imports:\n\
+\    - nbformat\n    - nbformat.tests\n  commands:\n    - pip check\n    - jupyter-trust\
+\ --help\n  requires:\n    - pip\n\nabout:\n  home: http://jupyter.org\n  summary:\
+\ The Jupyter Notebook format\n  license: BSD-3-Clause\n  license_file: COPYING.md\n\
+\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    -\
+\ takluyver\n    - ocefpaf\n    - mpacer\n"

@@ -1,0 +1,9 @@
+"{% set name = \"heapdict\" %}\n{% set version = 1.0.1 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8495f57b3e03d8e46d5f1b2cc62ca881aca392fd5cc048dc0aa2e1a6d23ecdb6\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - heapdict\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: http://stutzbachenterprises.com/\n  summary: a heap with decrease-key\
+\ and increase-key operations\n  license: BSD-3-Clause\n  license_file: LICENSE\n\n\
+extra:\n  recipe-maintainers:\n    - mrocklin\n    - ocefpaf\n"

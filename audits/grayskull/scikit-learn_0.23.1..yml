@@ -1,0 +1,13 @@
+"{% set name = \"scikit-learn\" %}\n{% set version = 0.23.1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e3fec1c8831f8f93ad85581ca29ca1bb88e2da377fb097cf8322aa89c21bc9b8\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - numpy\n    - pip\n    - python >=3.6\n    - sklearn\n\
+\    - wheelhouse_uploader\n  run:\n    - joblib >=0.11\n    - numpy >=1.13.3\n  \
+\  - python >=3.6\n    - scipy >=0.19.1\n    - threadpoolctl >=2.0.0\n\ntest:\n  imports:\n\
+\    - scikit_learn\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n\
+\  home: http://scikit-learn.org\n  summary: A set of python modules for machine learning\
+\ and data mining\n  license: BSD-3-Clause\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n\
+\    - amueller\n    - astaric\n    - jakirkham\n    - ogrisel\n    - ocefpaf\n  \
+\  - lesteve\n    - jnothman\n    - rth\n    - adrinjalali\n    - glemaitre\n    -\
+\ jeremiedbb\n"

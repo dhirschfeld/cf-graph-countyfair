@@ -1,0 +1,10 @@
+"{% set name = \"shapely\" %}\n{% set version = 1.7.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e21a9fe1a416463ff11ae037766fe410526c95700b9e545372475d2361cc951e\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - cython\n    - numpy\n    - pip\n    - python\n  run:\n\
+\    - python\n\ntest:\n  imports:\n    - shapely\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://github.com/Toblerity/Shapely\n\
+\  summary: Geometric objects, predicates, and operations\n  license: BSD-3-Clause\n\
+\  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n   \
+\ - pelson\n    - phobson\n    - xylar\n"

@@ -1,0 +1,14 @@
+"{% set name = \"flake8\" %}\n{% set version = 3.8.3 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32 or py==33]\n \
+\ entry_points:\n    - flake8 = flake8.main.cli:main\n  script: {{ PYTHON }} -m pip\
+\ install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    -\
+\ configparser  # [py<32]\n    - enum34  # [py<34]\n    - functools32  # [py<32]\n\
+\    - importlib-metadata  # [py<38]\n    - mccabe >=0.6.0,<0.7.0\n    - pycodestyle\
+\ >=2.6.0a1,<2.7.0\n    - pyflakes >=2.2.0,<2.3.0\n    - python\n    - typing  # [py<35]\n\
+\ntest:\n  imports:\n    - flake8\n    - flake8.api\n  commands:\n    - pip check\n\
+\    - flake8 --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.com/pycqa/flake8\n\
+\  summary: 'the modular source code checker: pep8 pyflakes and co'\n  license: MIT\n\
+\  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n  \
+\  - croth1\n    - dopplershift\n    - goanpeca\n    - aydinhan\n"

@@ -1,0 +1,9 @@
+"{% set name = \"locket\" %}\n{% set version = 0.2.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1fee63c1153db602b50154684f5725564e63a0f6d09366a1cb13dffcec179fb4\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - locket\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
+about:\n  home: http://github.com/mwilliamson/locket.py\n  summary: File-based locks\
+\ for Python for Linux and Windows\n  license: BSD-2-Clause\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - jcrist\n"
