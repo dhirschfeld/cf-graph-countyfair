@@ -1,0 +1,9 @@
+"{% set name = \"pycparser\" %}\n{% set version = 2.20 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python !=3.0,!=3.1,!=3.2,!=3.3\n  run:\n\
+\    - python !=3.0,!=3.1,!=3.2,!=3.3\n\ntest:\n  imports:\n    - pycparser\n    -\
+\ pycparser.ply\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n\
+\  home: https://github.com/eliben/pycparser\n  summary: C parser in Python\n  license:\
+\ BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n"

@@ -1,0 +1,12 @@
+"{% set name = \"coverage\" %}\n{% set version = 5.1 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f90bfc4ad18450c80b024036eaf91e4a246ae287701aaa88eaebebf150868052\n\
+\nbuild:\n  number: 0\n  skip: true   # [py>=40]\n  entry_points:\n    - coverage\
+\ = coverage.cmdline:main\n    - coverage3 = coverage.cmdline:main\n    - coverage-3.7\
+\ = coverage.cmdline:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\
+\  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n    - python\n  run:\n \
+\   - python\n\ntest:\n  imports:\n    - coverage\n  commands:\n    - pip check\n\
+\    - coverage --help\n    - coverage3 --help\n    - coverage-3.7 --help\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/nedbat/coveragepy\n  summary: Code\
+\ coverage measurement for Python\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\
+\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - jakirkham\n    - ocefpaf\n"

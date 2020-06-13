@@ -1,0 +1,10 @@
+"{% set name = \"pexpect\" %}\n{% set version = 4.8.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - ptyprocess >=0.5\n\
+\    - python\n\ntest:\n  imports:\n    - pexpect\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://pexpect.readthedocs.io/\n  summary:\
+\ Pexpect allows easy control of interactive console applications.\n  license: MIT\n\
+\  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jquast\n    - pelson\n\
+\    - takluyver\n    - ocefpaf\n"

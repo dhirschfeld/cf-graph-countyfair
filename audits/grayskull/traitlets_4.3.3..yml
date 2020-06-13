@@ -1,0 +1,10 @@
+"{% set name = \"traitlets\" %}\n{% set version = 4.3.3 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d023ee369ddd2763310e4c3eae1ff649689440d4ae59d7485eb4cfbbe3e359f7\n\
+\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\
+\  host:\n    - pip\n    - python\n  run:\n    - decorator\n    - enum34  # [py==27]\n\
+\    - ipython_genutils\n    - python\n    - six\n\ntest:\n  imports:\n    - traitlets\n\
+\    - traitlets.config\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
+about:\n  home: http://ipython.org\n  summary: Traitlets Python config system\n  license:\
+\ BSD-3-Clause\n  license_file: COPYING.md\n\nextra:\n  recipe-maintainers:\n    -\
+\ jakirkham\n    - pelson\n    - minrk\n    - SylvainCorlay\n    - ocefpaf\n"

@@ -1,0 +1,9 @@
+"{% set name = \"backcall\" %}\n{% set version = 0.1.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - backcall\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: https://github.com/takluyver/backcall\n  summary: Specifications\
+\ for callback functions passed in to an API\n  license: BSD-1-Clause\n  license_file:\
+\ PLEASE_ADD_LICENSE_FILE\n\nextra:\n  recipe-maintainers:\n    - takluyver\n"

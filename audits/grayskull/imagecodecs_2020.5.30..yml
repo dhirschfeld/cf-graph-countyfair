@@ -1,0 +1,12 @@
+"{% set name = \"imagecodecs\" %}\n{% set version = 2020.5.30 %}\n\n\npackage:\n \
+\ name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c8c776922d3a60824d8d3d31ba674a250d1b4d429e81349b5c88c34d4353ddb5\n\
+\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  entry_points:\n    - imagecodecs=imagecodecs.__main__:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{\
+\ compiler('c') }}\n  host:\n    - numpy >=1.15\n    - pip\n    - python\n    - setuptools\
+\ >=18.0\n  run:\n    - numpy >=1.15.1\n    - python\n    - {{ pin_compatible('numpy')\
+\ }}\n\ntest:\n  imports:\n    - imagecodecs\n  commands:\n    - pip check\n    -\
+\ imagecodecs --help\n  requires:\n    - pip\n\nabout:\n  home: https://www.lfd.uci.edu/~gohlke/\n\
+\  summary: Image transformation, compression, and decompression codecs\n  license:\
+\ BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - csachs\n\
+\    - hmaarrfk\n    - sdvillal\n"

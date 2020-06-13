@@ -1,0 +1,12 @@
+"{% set name = \"wcwidth\" %}\n{% set version = 0.2.4 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8c6b5b6ee1360b842645f336d9e5d68c55817c26d3050f46b235ef2bc650e48f\n\
+\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\
+\  host:\n    - pip\n    - python\n  run:\n    - '-'\n    - .\n    - '1'\n    - '2'\n\
+\    - '3'\n    - a\n    - b\n    - backports.functools_lru_cache >=1.2.1  # [py<32]\n\
+\    - c\n    - e\n    - f\n    - h\n    - i\n    - k\n    - l\n    - n\n    - o\n\
+\    - p\n    - python\n    - r\n    - s\n    - t\n    - u\n    - v\n    - y\n\ntest:\n\
+\  imports:\n    - wcwidth\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: https://github.com/jquast/wcwidth\n  summary: Measures the displayed\
+\ width of unicode strings in a terminal\n  license: MIT\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

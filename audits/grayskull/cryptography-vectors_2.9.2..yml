@@ -1,0 +1,9 @@
+"{% set name = \"cryptography-vectors\" %}\n{% set version = 2.9.2 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 99ac91c4d89572399b097240809af1b8f67f4bedf43398d290c9b2b3d9f491b4\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - cryptography_vectors\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/pyca/cryptography\n  summary: Test\
+\ vectors for the cryptography package.\n  license: AFL-2.0\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - jakirkham\n"

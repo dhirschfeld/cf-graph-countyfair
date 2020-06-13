@@ -1,0 +1,11 @@
+"{% set name = \"nose\" %}\n{% set version = 1.3.7 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f1bffef9cbc82628f6e7d7b40d7e255aefaa1adb6a1b1d26c69a8b79e6208a98\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - nosetests = nose:run_exit\n\
+\    - nosetests-3.7 = nose:run_exit\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - nose\n    - nose.ext\n  commands:\n    - pip check\n    - nosetests\
+\ --help\n    - nosetests-3.7 --help\n  requires:\n    - pip\n\nabout:\n  home: http://readthedocs.org/docs/nose/\n\
+\  summary: nose extends unittest to make testing easier\n  doc_url: https://pythonhosted.org/nose/\n\
+\  license: AGPL-3.0-only\n  license_file: PLEASE_ADD_LICENSE_FILE\n\nextra:\n  recipe-maintainers:\n\
+\    - jakirkham\n    - msarahan\n    - scopatz\n    - ocefpaf\n"
