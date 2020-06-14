@@ -272,6 +272,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434118003.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -390,7 +407,11 @@
  },
  "name":"clickhouse-driver",
  "new_version":"0.1.4",
- "pinning_version":"2020.03.16",
+ "new_version_attempts":{
+  "0.1.4":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"clickhouse-driver\" %}\n{% set version = \"0.1.3\" %}\n{% set sha256 = \"1a9a0815bddc0082d2155c1803c4ae79b1fbe28ae276fe9703650208acbc5ec3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n    - cython\n    - python\n\n  run:\n    - python\n    - six\n    - pytz\n    - tzlocal\n    - ipaddress  # [py27]\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - clickhouse_driver\n    - clickhouse_driver.columns\n    - clickhouse_driver.compression\n    - clickhouse_driver.settings\n    - clickhouse_driver.streams\n    - clickhouse_driver.util\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/mymarilyn/clickhouse-driver\n  license: MIT\n  summary: 'Python driver with native interface for ClickHouse'\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xzkostyan\n    - cpcloud\n    - xmnlab\n    - xhochy\n",
  "req":{
   "__set__":true,
@@ -435,7 +456,7 @@
    ]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

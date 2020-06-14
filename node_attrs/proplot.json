@@ -169,6 +169,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434117903.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -248,15 +265,16 @@
   }
  },
  "name":"proplot",
- "new_version":"0.6.3",
+ "new_version":"0.6.4",
  "new_version_attempts":{
   "0.6.0":1,
   "0.6.1":1,
   "0.6.2":1,
-  "0.6.3":1
+  "0.6.3":1,
+  "0.6.4":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.02.12.20.38",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"proplot\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7595fe8d785ddc2d43e8c6c055cca441650a5d1eac4c9d15c496574479c7d6f5\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - setuptools_scm\n    - setuptools_scm_git_archive\n    - setuptools >=30.3.0\n  run:\n    - python >=3.6\n    - matplotlib-base\n\ntest:\n  imports:\n    - proplot\n\nabout:\n  home: https://proplot.readthedocs.io/en/latest/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A comprehensive, easy-to-use matplotlib wrapper for making beautiful, publication-quality graphics.\n  dev_url: https://github.com/lukelbd/proplot\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n    - lukelbd\n",
  "req":{
   "__set__":true,

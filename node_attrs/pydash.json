@@ -187,7 +187,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"pydash",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -217,7 +221,7 @@
   },
   "package":{
    "name":"pydash",
-   "version":"4.7.6"
+   "version":"4.8.0"
   },
   "requirements":{
    "build":[
@@ -235,14 +239,24 @@
    ]
   },
   "source":{
-   "sha256":"a7733886ab811e36510b44ff1de7ccc980327d701fb444a4b2ce395e6f4a4a87",
-   "url":"https://pypi.io/packages/source/p/pydash/pydash-4.7.6.tar.gz"
+   "sha256":"546afa043ed1defa3122383bebe8b7072f43554ccc5f0c4360638f99e5ed7327",
+   "url":"https://pypi.io/packages/source/p/pydash/pydash-4.8.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "pydash",
     "pydash",
     "pydash"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -253,7 +267,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set version = \"4.7.6\" %}\n\npackage:\n  name: pydash\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pydash/pydash-{{ version }}.tar.gz\n  sha256: a7733886ab811e36510b44ff1de7ccc980327d701fb444a4b2ce395e6f4a4a87\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - pydash\n\nabout:\n  home: https://github.com/dgilland/pydash\n  license: MIT\n  license_file: LICENSE.rst\n  summary: The kitchen sink of Python utility libraries for doing \"stuff\" in a functional way. \n  description: \"The kitchen sink of Python utility libraries for doing stuff in a functional way. Based on Lo-Dash JS library\"\n  doc_url: https://pydash.readthedocs.io/en/latest/\n  dev_url: https://github.com/dgilland/pydash\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n    - dbast\n",
+ "raw_meta_yaml":"{% set version = \"4.8.0\" %}\n\npackage:\n  name: pydash\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pydash/pydash-{{ version }}.tar.gz\n  sha256: 546afa043ed1defa3122383bebe8b7072f43554ccc5f0c4360638f99e5ed7327\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - pydash\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/dgilland/pydash\n  license: MIT\n  license_file: LICENSE.rst\n  summary: The kitchen sink of Python utility libraries for doing \"stuff\" in a functional way.\n  description: The kitchen sink of Python utility libraries for doing stuff in a functional way. Based on Lo-Dash JS library\n  doc_url: https://pydash.readthedocs.io/en/latest/\n  dev_url: https://github.com/dgilland/pydash\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n    - dbast\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -281,7 +295,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -306,9 +322,11 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/p/pydash/pydash-4.7.5.tar.gz",
- "version":"4.7.6"
+ "version":"4.8.0"
 }
