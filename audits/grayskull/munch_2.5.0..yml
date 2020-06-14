@@ -1,9 +1,0 @@
-"{% set name = \"munch\" %}\n{% set version = 2.5.0 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2d735f6f24d4dba3417fa448cae40c6e896ec1fdab6cdb5e6510999758a4dbd2\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pbr >=3.0\n    - pip\n    - python\n    - setuptools\
-\ >=17.1\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - munch\n  commands:\n\
-\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/Infinidat/munch\n\
-\  summary: A dot-accessible dictionary (a la JavaScript objects)\n  license: MIT\n\
-\  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

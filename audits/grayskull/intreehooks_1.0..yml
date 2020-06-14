@@ -1,9 +1,0 @@
-"{% set name = \"intreehooks\" %}\n{% set version = 1.0 %}\n\n\npackage:\n  name:\
-\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 87e600d3b16b97ed219c078681260639e77ef5a17c0e0dbdd5a302f99b4e34e1\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytoml\n\
-\ntest:\n  imports:\n    - intreehooks\n  commands:\n    - pip check\n  requires:\n\
-\    - pip\n\nabout:\n  home: https://github.com/takluyver/intreehooks\n  summary:\
-\ Load a PEP 517 backend from inside the source tree\n  license_file: PLEASE_ADD_LICENSE_FILE\n\
-\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

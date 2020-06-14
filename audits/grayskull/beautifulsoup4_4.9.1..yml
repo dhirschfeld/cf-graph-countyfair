@@ -1,9 +1,0 @@
-"{% set name = \"beautifulsoup4\" %}\n{% set version = 4.9.1 %}\n\n\npackage:\n  name:\
-\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 73cc4d115b96f79c7d77c1c7f7a0a8d4c57860d1041df407dd1aae7f07a77fd7\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - soupsieve\
-\ >1.2\n\ntest:\n  imports:\n    - bs4\n    - bs4.builder\n  commands:\n    - pip\
-\ check\n  requires:\n    - pip\n\nabout:\n  home: http://www.crummy.com/software/BeautifulSoup/bs4/\n\
-\  summary: Screen-scraping library\n  license: MIT\n  license_file: COPYING.txt\n\
-\nextra:\n  recipe-maintainers:\n    - jschueller\n    - nehaljwani\n"

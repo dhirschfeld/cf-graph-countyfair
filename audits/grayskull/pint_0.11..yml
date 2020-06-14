@@ -1,9 +1,0 @@
-"{% set name = \"pint\" %}\n{% set version = 0.11 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 308f1070500e102f83b6adfca6db53debfce2ffc5d3cbe3f6c367da359b5cf4d\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools\n    - setuptools_scm\n\
-\  run:\n    - python >=3.6\n    - setuptools\n\ntest:\n  imports:\n    - pint\n \
-\ commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/hgrecco/pint\n\
-\  summary: Physical quantities module\n  license: BSD-3-Clause\n  license_file: LICENSE\n\
-\nextra:\n  recipe-maintainers:\n    - dopplershift\n"

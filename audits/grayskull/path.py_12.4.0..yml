@@ -1,9 +1,0 @@
-"{% set name = \"path.py\" %}\n{% set version = 12.4.0 %}\n\n\npackage:\n  name: {{\
-\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6647ca22523f5e868b110cc3d958be01aa92e662a8241e464f7416779427bf3e\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools_scm >=1.15.0\n\
-\  run:\n    - path <13.2\n    - python >=3.5\n\ntest:\n  imports:\n    - path.py\n\
-\  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jaraco/path\n\
-\  summary: A module wrapper for os.path\n  license: MIT\n  license_file: LICENSE\n\
-\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - nehaljwani\n"

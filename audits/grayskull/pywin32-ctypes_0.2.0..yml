@@ -1,9 +1,0 @@
-"{% set name = \"pywin32-ctypes\" %}\n{% set version = 0.2.0 %}\n\n\npackage:\n  name:\
-\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 24ffc3b341d457d48e8922352130cf2644024a4ff09762a2261fd34c36ee5942\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
-\  imports:\n    - win32ctypes\n    - win32ctypes.core\n  commands:\n    - pip check\n\
-\  requires:\n    - pip\n\nabout:\n  home: https://github.com/enthought/pywin32-ctypes\n\
-\  license: BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n\
-\    - ccordoba12\n"

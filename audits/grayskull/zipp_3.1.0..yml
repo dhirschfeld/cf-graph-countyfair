@@ -1,9 +1,0 @@
-"{% set name = \"zipp\" %}\n{% set version = 3.1.0 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools_scm >=3.4.1\n\
-\  run:\n    - python >=3.6\n\ntest:\n  imports:\n    - zipp\n  commands:\n    - pip\
-\ check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/jaraco/zipp\n\
-\  summary: Backport of pathlib-compatible object wrapper for zip files\n  license:\
-\ MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n"

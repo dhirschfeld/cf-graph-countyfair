@@ -1,9 +1,0 @@
-"{% set name = \"pytoml\" %}\n{% set version = 0.1.21 %}\n\n\npackage:\n  name: {{\
-\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8eecf7c8d0adcff3b375b09fe403407aa9b645c499e5ab8cac670ac4a35f61e7\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
-\  imports:\n    - pytoml\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
-about:\n  home: https://github.com/avakar/pytoml\n  summary: A parser for TOML-0.4.0\n\
-\  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - pkgw\n\
-\    - ocefpaf\n"

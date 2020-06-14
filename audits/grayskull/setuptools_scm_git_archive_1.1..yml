@@ -1,9 +1,0 @@
-"{% set name = \"setuptools_scm_git_archive\" %}\n{% set version = 1.1 %}\n\n\npackage:\n\
-\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6026f61089b73fa1b5ee737e95314f41cb512609b393530385ed281d0b46c062\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools_scm\n  run:\n\
-\    - python\n\ntest:\n  imports:\n    - setuptools_scm_git_archive\n  commands:\n\
-\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/Changaco/setuptools_scm_git_archive/\n\
-\  summary: setuptools_scm plugin for git archives\n  license: MIT\n  license_file:\
-\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n"

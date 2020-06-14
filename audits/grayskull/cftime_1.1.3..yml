@@ -1,9 +1,0 @@
-"{% set name = \"cftime\" %}\n{% set version = 1.1.3 %}\n\n\npackage:\n  name: {{\
-\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fd84b8631dca1db9b40a75e18671b9edafd3515580d8ab33ce1ebafee75451f0\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - cython\n    - numpy\n    - pip\n    - python\n  run:\n\
-\    - numpy\n    - python\n\ntest:\n  imports:\n    - cftime\n  commands:\n    -\
-\ pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/cftime/\n\
-\  summary: Time-handling functionality from netcdf4-python\n  license: GPL-3.0\n\
-\  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - ocefpaf\n"

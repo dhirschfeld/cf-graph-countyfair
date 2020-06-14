@@ -1,9 +1,0 @@
-"{% set name = \"curio\" %}\n{% set version = 1.2 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 90f320fafb3f5b791f25ffafa7b561cc980376de173afd575a2114380de7939b\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n\
-\ntest:\n  imports:\n    - curio\n  commands:\n    - pip check\n  requires:\n    -\
-\ pip\n\nabout:\n  home: https://github.com/dabeaz/curio\n  summary: Curio\n  license:\
-\ BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - scopatz\n\
-\    - jochym\n"

@@ -1,9 +1,0 @@
-"{% set name = \"pep8\" %}\n{% set version = 1.7.1 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374\n\
-\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - pep8 = pep8:_main\n\
-\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
-\    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - pep8\n  commands:\n\
-\    - pip check\n    - pep8 --help\n  requires:\n    - pip\n\nabout:\n  home: http://pep8.readthedocs.org/\n\
-\  summary: Python style guide checker\n  license: MIT\n  license_file: PLEASE_ADD_LICENSE_FILE\n\
-\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pmlandwehr\n    - jjhelmus\n"

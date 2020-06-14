@@ -1,9 +1,0 @@
-"{% set name = \"distro\" %}\n{% set version = 1.5.0 %}\n\n\npackage:\n  name: {{\
-\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0e58756ae38fbd8fc3020d54badb8eae17c5b9dcbed388b17bb55b8a5928df92\n\
-\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - distro = distro:main\n\
-\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
-\    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - distro\n  commands:\n\
-\    - pip check\n    - distro --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/nir0s/distro\n\
-\  summary: Distro - an OS platform information API\n  license: Apache-2.0\n  license_file:\
-\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - windelbouwman\n    - abloemert\n"

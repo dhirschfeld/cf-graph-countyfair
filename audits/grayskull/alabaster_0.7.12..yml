@@ -1,9 +1,0 @@
-"{% set name = \"alabaster\" %}\n{% set version = 0.7.12 %}\n\n\npackage:\n  name:\
-\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a661d72d58e6ea8a57f7a86e37d86716863ee5e92788398526d58b26a4e4dc02\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
-\  imports:\n    - alabaster\n  commands:\n    - pip check\n  requires:\n    - pip\n\
-\nabout:\n  home: https://alabaster.readthedocs.io\n  summary: A configurable sidebar-enabled\
-\ Sphinx theme\n  license: BSD-3-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
-\    - msarahan\n    - r-jain1\n    - ocefpaf\n"

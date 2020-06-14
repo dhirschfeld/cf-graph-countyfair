@@ -1,9 +1,0 @@
-"{% set name = \"pyasn1\" %}\n{% set version = 0.4.8 %}\n\n\npackage:\n  name: {{\
-\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n    - unittest2\n  run:\n    -\
-\ python\n\ntest:\n  imports:\n    - pyasn1\n    - pyasn1.codec\n  commands:\n   \
-\ - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/etingof/pyasn1\n\
-\  summary: ASN.1 types and codecs\n  license: BSD-2-Clause\n  license_file: LICENSE.rst\n\
-\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n"

@@ -1,9 +1,0 @@
-"{% set name = \"tzlocal\" %}\n{% set version = 2.1 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - pytz\n\
-\ntest:\n  imports:\n    - tzlocal\n  commands:\n    - pip check\n  requires:\n  \
-\  - pip\n\nabout:\n  home: https://github.com/regebro/tzlocal\n  summary: tzinfo\
-\ object for the local timezone\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n\
-\  recipe-maintainers:\n    - ericdill\n    - licode\n    - tacaswell\n    - synapticarbors\n"

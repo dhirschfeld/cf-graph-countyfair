@@ -1,9 +1,0 @@
-"{% set name = \"jdcal\" %}\n{% set version = 1.4.1 %}\n\n\npackage:\n  name: {{ name|lower\
-\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
-\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 472872e096eb8df219c23f2689fc336668bdb43d194094b5cc1707e1640acfc8\n\
-\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
-\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
-\  imports:\n    - jdcal\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
-about:\n  home: https://github.com/phn/jdcal\n  summary: Julian dates from proleptic\
-\ Gregorian and Julian calendars.\n  license: BSD-2-Clause\n  license_file: LICENSE.txt\n\
-\nextra:\n  recipe-maintainers:\n    - curtisalexander\n"
