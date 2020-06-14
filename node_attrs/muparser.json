@@ -131,7 +131,7 @@
   },
   "package":{
    "name":"muparser",
-   "version":"2.3.0"
+   "version":"2.3.1"
   },
   "requirements":{
    "build":[
@@ -149,14 +149,9 @@
    "run":null
   },
   "source":{
-   "fn":"v2.3.0.tar.gz",
-   "patches":[
-    "isgraph.patch",
-    "isgraph.patch",
-    "isgraph.patch"
-   ],
-   "sha256":"b324c738a6bd5d4c7651e4d0e2a7e6d601b7cb1b8b17d11c097ce2128b772da0",
-   "url":"https://github.com/beltoforion/muparser/archive/v2.3.0.tar.gz"
+   "fn":"v2.3.1.tar.gz",
+   "sha256":"b076af992551313244fd5796b3ec1f565e7619213cb36e2e1a80d6efb4f4be51",
+   "url":"https://github.com/beltoforion/muparser/archive/v2.3.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -178,7 +173,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set version = \"2.3.0\" %}\n\npackage:\n  name: muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz\n  sha256: b324c738a6bd5d4c7651e4d0e2a7e6d601b7cb1b8b17d11c097ce2128b772da0\n  patches:\n    - isgraph.patch\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('muparser', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - llvm-openmp  # [osx]\n  run:\n    - llvm-openmp  # [osx]\ntest:\n  commands:\n    - test -f ${PREFIX}/include/muParser.h  # [unix]\n    - test -f ${PREFIX}/lib/libmuparser${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\muParser.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\muparser.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\muparser.dll exit 1  # [win]\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "raw_meta_yaml":"{% set version = \"2.3.1\" %}\n\npackage:\n  name: muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz\n  sha256: b076af992551313244fd5796b3ec1f565e7619213cb36e2e1a80d6efb4f4be51\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('muparser', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - llvm-openmp  # [osx]\n  run:\n    - llvm-openmp  # [osx]\ntest:\n  commands:\n    - test -f ${PREFIX}/include/muParser.h  # [unix]\n    - test -f ${PREFIX}/lib/libmuparser${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\muParser.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\muparser.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\muparser.dll exit 1  # [win]\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -234,5 +229,5 @@
   }
  },
  "url":"https://github.com/beltoforion/muparser/archive/v2.2.6.1.tar.gz",
- "version":"2.3.0"
+ "version":"2.3.1"
 }

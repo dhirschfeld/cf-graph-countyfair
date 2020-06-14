@@ -25,30 +25,32 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "description":"`ubermag` is a Python meta package of the Ubermag project.\nIt is available on all major operating systems (Windows, MacOS, Linux) and requires Python 3.6 or higher.\n",
    "dev_url":"https://github.com/ubermag/ubermag",
    "doc_url":"http://ubermag.readthedocs.io",
    "home":"http://ubermag.github.io/",
-   "license":"BSD-3-clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE",
-   "summary":"A Python meta package for the Ubermag project."
+   "summary":"Meta package for Ubermag project."
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"pip install --no-deps . -vvv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "marijanbeg",
+    "fangohr",
     "marijanbeg",
-    "marijanbeg"
+    "fangohr",
+    "marijanbeg",
+    "fangohr"
    ]
   },
   "package":{
    "name":"ubermag",
-   "version":"0.1"
+   "version":"0.1.1"
   },
   "requirements":{
    "build":[
@@ -61,19 +63,16 @@
    ],
    "run":[
     "python >=3.6",
-    "oommfc",
-    "pytest",
+    "oommfc ==0.8.17",
     "python >=3.6",
-    "oommfc",
-    "pytest",
+    "oommfc ==0.8.17",
     "python >=3.6",
-    "oommfc",
-    "pytest"
+    "oommfc ==0.8.17"
    ]
   },
   "source":{
-   "sha256":"8cacbb83f1f3c61338194ae83029c06b54ec9f4a10cb9ec365cccac16b42f0d4",
-   "url":"https://pypi.io/packages/source/u/ubermag/ubermag-0.1.tar.gz"
+   "sha256":"428d206c93644f570287e6b0e21daa745174dfbd27f2a11757bbcb1e30f45a72",
+   "url":"https://pypi.io/packages/source/u/ubermag/ubermag-0.1.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -95,13 +94,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"ubermag\" %}\n{% set version = \"0.1\" %}\n{% set sha256 = \"8cacbb83f1f3c61338194ae83029c06b54ec9f4a10cb9ec365cccac16b42f0d4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: pip install --no-deps . -vvv\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - oommfc\n    - pytest\n\ntest:\n  imports:\n    - ubermag\n\n  commands:\n    - python -c \"import sys; import ubermag as um; sys.exit(um.test())\"\n\nabout:\n  home: http://ubermag.github.io/\n  license: BSD-3-clause\n  summary: A Python meta package for the Ubermag project.\n  license_family: BSD\n  license_file: LICENSE\n\n  description: |\n    `ubermag` is a Python meta package of the Ubermag project.\n    It is available on all major operating systems (Windows, MacOS, Linux) and requires Python 3.6 or higher.\n  doc_url: http://ubermag.readthedocs.io\n  dev_url: https://github.com/ubermag/ubermag\n\nextra:\n  recipe-maintainers:\n    - marijanbeg\n",
+ "raw_meta_yaml":"{% set name = \"ubermag\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"428d206c93644f570287e6b0e21daa745174dfbd27f2a11757bbcb1e30f45a72\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - oommfc ==0.8.17\n\ntest:\n  imports:\n    - ubermag\n\n  commands:\n    - python -c \"import sys; import ubermag as um; sys.exit(um.test())\"\n\nabout:\n  home: http://ubermag.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Meta package for Ubermag project.\n  doc_url: http://ubermag.readthedocs.io\n  dev_url: https://github.com/ubermag/ubermag\n\nextra:\n  recipe-maintainers:\n    - marijanbeg\n    - fangohr\n",
  "req":{
   "__set__":true,
   "elements":[
    "oommfc",
    "pip",
-   "pytest",
    "python"
   ]
  },
@@ -121,7 +119,6 @@
    "__set__":true,
    "elements":[
     "oommfc",
-    "pytest",
     "python"
    ]
   },
@@ -147,8 +144,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "oommfc",
-    "pytest",
+    "oommfc ==0.8.17",
     "python >=3.6"
    ]
   },
@@ -158,5 +154,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/u/ubermag/ubermag-0.1.tar.gz",
- "version":"0.1"
+ "version":"0.1.1"
 }
