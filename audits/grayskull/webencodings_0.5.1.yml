@@ -1,0 +1,10 @@
+"{% set name = \"webencodings\" %}\n{% set version = 0.5.1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - webencodings\n  commands:\n    - pip check\n  requires:\n    -\
+\ pip\n\nabout:\n  home: https://github.com/SimonSapin/python-webencodings\n  summary:\
+\ Character encoding aliases for legacy web content\n  doc_url: https://pythonhosted.org/webencodings/\n\
+\  license: BSD-1-Clause\n  license_file: PLEASE_ADD_LICENSE_FILE\n\nextra:\n  recipe-maintainers:\n\
+\    - jschueller\n    - ocefpaf\n"

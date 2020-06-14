@@ -1,0 +1,12 @@
+"{% set name = \"flit\" %}\n{% set version = 2.3.0 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 017012b809ec489918afd68af7a70bd7c8c770c87b60159d875c126866e97a4b\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - flit = flit:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python >=3.5\n  run:\n    - docutils\n    - flit-core >=2.3.0\n    - python\
+\ >=3.5\n    - pytoml\n    - requests\n    - zipfile36\n\ntest:\n  imports:\n    -\
+\ flit\n    - flit.vcs\n  commands:\n    - pip check\n    - flit --help\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/takluyver/flit\n  summary: A simple\
+\ packaging tool for simple packages.\n  license: BSD-3-Clause\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - Carreau\n    - minrk\n    - takluyver\n   \
+\ - ocefpaf\n"

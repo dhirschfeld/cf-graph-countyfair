@@ -1,0 +1,10 @@
+"{% set name = \"win_inet_pton\" %}\n{% set version = 1.1.0 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: dd03d942c0d3e2b1cf8bab511844546dfa5f74cb61b241699fa379ad707dea4f\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - win_inet_pton\n  commands:\n    - pip check\n  requires:\n    -\
+\ pip\n\nabout:\n  home: https://github.com/hickeroar/win_inet_pton\n  summary: Native\
+\ inet_pton and inet_ntop implementation for Python on Windows (with ctypes).\n  license:\
+\ AFL-1.1\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n\
+\    - ocefpaf\n"

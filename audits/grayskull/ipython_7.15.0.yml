@@ -1,0 +1,14 @@
+"{% set name = \"ipython\" %}\n{% set version = 7.15.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0ef1433879816a960cd3ae1ae1dc82c64732ca75cec8dab5a4e29783fb571d0e\n\
+\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install\
+\ . -vv\n\nrequirements:\n  host:\n    - pip\n  run:\n    - appnope  # [darwin]\n\
+\    - backcall\n    - colorama  # [win]\n    - decorator\n    - jedi >=0.10\n   \
+\ - pexpect  # [not win]\n    - pickleshare\n    - prompt-toolkit !=3.0.0,!=3.0.1,<3.1.0,>=2.0.0\n\
+\    - pygments\n    - python\n    - setuptools >=18.5\n    - traitlets >=4.2\n\n\
+test:\n  imports:\n    - ipython\n  commands:\n    - pip check\n  requires:\n    -\
+\ pip\n\nabout:\n  home: https://ipython.org\n  summary: 'IPython: Productive Interactive\
+\ Computing'\n  dev_url: https://github.com/ipython/ipython\n  license: BSD-2-Clause\n\
+\  license_file: COPYING.rst\n\nextra:\n  recipe-maintainers:\n    - Carreau\n   \
+\ - jakirkham\n    - fperez\n    - ellisonbg\n    - minrk\n    - ocefpaf\n    - pelson\n\
+\    - takluyver\n    - bollwyvl\n    - blink1073\n"

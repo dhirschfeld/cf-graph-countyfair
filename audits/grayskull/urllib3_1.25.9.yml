@@ -1,0 +1,10 @@
+"{% set name = \"urllib3\" %}\n{% set version = 1.25.9 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python <4.0\n  run:\n    - python <4.0\n\
+\ntest:\n  imports:\n    - urllib3\n    - urllib3.contrib\n  commands:\n    - pip\
+\ check\n  requires:\n    - pip\n\nabout:\n  home: https://urllib3.readthedocs.io/\n\
+\  summary: HTTP library with thread-safe connection pooling, file post, and more.\n\
+\  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n  \
+\  - pmlandwehr\n    - sigmavirus24\n    - ocefpaf\n    - sethmlarson\n"

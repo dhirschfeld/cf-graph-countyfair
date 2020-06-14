@@ -1,0 +1,11 @@
+"{% set name = \"cryptography\" %}\n{% set version = 2.9.2 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a0c30272fb4ddda5f5ffc1089d7405b7a71b0b0f51993cb4e5dbb4590b2fc229\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - cffi >=1.8,!=1.11.3\n    - pip\n    - python !=3.0,!=3.1,!=3.2,!=3.3,!=3.4\n\
+\  run:\n    - cffi >=1.8,!=1.11.3\n    - python !=3.0,!=3.1,!=3.2,!=3.3,!=3.4\n \
+\   - six >=1.4.1\n\ntest:\n  imports:\n    - cryptography\n    - cryptography.hazmat\n\
+\  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pyca/cryptography\n\
+\  summary: cryptography is a package which provides cryptographic recipes and primitives\
+\ to Python developers.\n  license: Apache-2.0\n  license_file: LICENSE.APACHE\n\n\
+extra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - ocefpaf\n"

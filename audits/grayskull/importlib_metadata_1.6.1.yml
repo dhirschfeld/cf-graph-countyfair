@@ -1,0 +1,11 @@
+"{% set name = \"importlib_metadata\" %}\n{% set version = 1.6.1 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0505dd08068cfec00f53a74a0ad927676d7757da81b7436a6eefe4c7cf75c545\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32 or py==33 or py==34]\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n\
+\    - python\n    - setuptools_scm\n  run:\n    - configparser >=3.5  # [py<3]\n\
+\    - contextlib2  # [py<3]\n    - pathlib2  # [py<3]\n    - python\n    - zipp >=0.5\n\
+\ntest:\n  imports:\n    - importlib_metadata\n    - importlib_metadata.docs\n  commands:\n\
+\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: http://importlib-metadata.readthedocs.io/\n\
+\  summary: Read metadata from Python packages\n  license: Apache-2.0\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n    - nicoddemus\n"

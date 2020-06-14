@@ -1,0 +1,9 @@
+"{% set name = \"ptyprocess\" %}\n{% set version = 0.6.0 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 923f299cc5ad920c68f2bc0bc98b75b9f838b93b599941a6b63ddbc2476394c0\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - ptyprocess\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: https://github.com/pexpect/ptyprocess\n  summary: Run a subprocess\
+\ in a pseudo terminal\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - pelson\n    - takluyver\n    - ocefpaf\n"
