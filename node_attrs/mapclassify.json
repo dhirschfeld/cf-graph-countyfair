@@ -120,7 +120,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"mapclassify",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -135,7 +139,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -155,7 +159,7 @@
   },
   "package":{
    "name":"mapclassify",
-   "version":"2.2.0"
+   "version":"2.3.0"
   },
   "requirements":{
    "host":[
@@ -168,40 +172,47 @@
    ],
    "run":[
     "python >=3.5",
+    "networkx",
     "numpy >=1.3",
-    "pandas",
-    "scipy >=0.11",
+    "pandas >=1.0",
     "scikit-learn",
-    "deprecated",
+    "scipy >=1.0",
     "python >=3.5",
+    "networkx",
     "numpy >=1.3",
-    "pandas",
-    "scipy >=0.11",
+    "pandas >=1.0",
     "scikit-learn",
-    "deprecated",
+    "scipy >=1.0",
     "python >=3.5",
+    "networkx",
     "numpy >=1.3",
-    "pandas",
-    "scipy >=0.11",
+    "pandas >=1.0",
     "scikit-learn",
-    "deprecated"
+    "scipy >=1.0"
    ]
   },
   "source":{
-   "sha256":"d8cce990f2df905ec7ba0d61a0de60a64635822684a2074cb412da9992dbf999",
-   "url":"https://pypi.io/packages/source/m/mapclassify/mapclassify-2.2.0.tar.gz"
+   "sha256":"bfe1ec96afe7f866560d25f9f00e5c4dae97d5b69dfe758dbe02c4993261365b",
+   "url":"https://pypi.io/packages/source/m/mapclassify/mapclassify-2.3.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "mapclassify",
     "mapclassify.datasets",
-    "mapclassify.datasets.calemp",
     "mapclassify",
     "mapclassify.datasets",
-    "mapclassify.datasets.calemp",
     "mapclassify",
-    "mapclassify.datasets",
-    "mapclassify.datasets.calemp"
+    "mapclassify.datasets"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -212,11 +223,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set version = \"2.2.0\" %}\n\npackage:\n  name: mapclassify\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/mapclassify/mapclassify-{{ version }}.tar.gz\n  sha256: d8cce990f2df905ec7ba0d61a0de60a64635822684a2074cb412da9992dbf999\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - numpy >=1.3\n    - pandas\n    - scipy >=0.11\n    - scikit-learn\n    - deprecated\n\ntest:\n  imports:\n    - mapclassify\n    - mapclassify.datasets\n    - mapclassify.datasets.calemp\n\nabout:\n  home: https://github.com/pysal/mapclassify\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Classification schemes for choropleth maps\n  dev_url: https://github.com/pysal/mapclassify\n\nextra:\n  recipe-maintainers:\n    - sjsrey\n    - ljwolf\n    - jorisvandenbossche\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"2.3.0\" %}\n\npackage:\n  name: mapclassify\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/mapclassify/mapclassify-{{ version }}.tar.gz\n  sha256: bfe1ec96afe7f866560d25f9f00e5c4dae97d5b69dfe758dbe02c4993261365b\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - networkx\n    - numpy >=1.3\n    - pandas >=1.0\n    - scikit-learn\n    - scipy >=1.0\n\ntest:\n  imports:\n    - mapclassify\n    - mapclassify.datasets\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pysal/mapclassify\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Classification schemes for choropleth maps\n  dev_url: https://github.com/pysal/mapclassify\n\nextra:\n  recipe-maintainers:\n    - sjsrey\n    - ljwolf\n    - jorisvandenbossche\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
-   "deprecated",
+   "networkx",
    "numpy",
    "pandas",
    "pip",
@@ -240,7 +251,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "deprecated",
+    "networkx",
     "numpy",
     "pandas",
     "python",
@@ -250,7 +261,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -270,19 +283,21 @@
   "run":{
    "__set__":true,
    "elements":[
-    "deprecated",
+    "networkx",
     "numpy >=1.3",
-    "pandas",
+    "pandas >=1.0",
     "python >=3.5",
     "scikit-learn",
-    "scipy >=0.11"
+    "scipy >=1.0"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/m/mapclassify/mapclassify-2.1.1.tar.gz",
- "version":"2.2.0"
+ "version":"2.3.0"
 }

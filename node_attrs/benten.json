@@ -171,7 +171,7 @@
   },
   "package":{
    "name":"benten",
-   "version":"2020.03.10"
+   "version":"2020.06.03.1"
   },
   "requirements":{
    "host":[
@@ -184,25 +184,28 @@
    ],
    "run":[
     "python >=3.7",
-    "dukpy",
+    "cwlformat",
     "ruamel.yaml",
-    "python >=3.7",
     "dukpy",
+    "python >=3.7",
+    "cwlformat",
     "ruamel.yaml",
-    "python >=3.7",
     "dukpy",
-    "ruamel.yaml"
+    "python >=3.7",
+    "cwlformat",
+    "ruamel.yaml",
+    "dukpy"
    ]
   },
   "source":{
-   "sha256":"58aa06614d6d6e8bcc7dc6d1918282b6894e80b7d481adfa946177dc994719f9",
-   "url":"https://github.com/rabix/benten/archive/2020.03.10.tar.gz"
+   "sha256":"5cd981c13c991e704af7304899d32406a38c09d69f7f624ce3bebd5541025a07",
+   "url":"https://github.com/rabix/benten/archive/2020.06.03.1.tar.gz"
   },
   "test":{
    "commands":[
-    "benten-ls -h",
-    "benten-ls -h",
-    "benten-ls -h"
+    "benten-ls --help",
+    "benten-ls --help",
+    "benten-ls --help"
    ],
    "imports":[
     "benten",
@@ -218,10 +221,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.03.13.41.50",
- "raw_meta_yaml":"{% set name = \"benten\" %}\n{% set version = \"2020.03.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rabix/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 58aa06614d6d6e8bcc7dc6d1918282b6894e80b7d481adfa946177dc994719f9\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - benten-ls=benten.__main__:main\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - dukpy\n    - ruamel.yaml\n\ntest:\n  imports:\n    - benten\n  commands:\n    - benten-ls -h\n\nabout:\n  home: https://github.com/rabix/benten\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A language server for Common Workflow Language documents.\n  description: |\n    benten implements the language server protocol to allow editors like VSCode to provide\n    syntax highlighting, autocomplete and other features for editing CWL (Common Workflow Language)\n    documents\n  doc_url: https://github.com/rabix/benten\n  dev_url: https://github.com/rabix/benten\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
+ "raw_meta_yaml":"{% set name = \"benten\" %}\n{% set version = \"2020.06.03.1\" %}\n{% set sha256 = \"5cd981c13c991e704af7304899d32406a38c09d69f7f624ce3bebd5541025a07\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rabix/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n  entry_points:\n    - benten-ls=benten.__main__:main\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - cwlformat\n    - ruamel.yaml\n    - dukpy\n\ntest:\n  imports:\n    - benten\n  commands:\n    - benten-ls --help\n\nabout:\n  home: https://github.com/rabix/benten\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A language server for Common Workflow Language documents.\n  description: |\n    benten implements the language server protocol to allow editors like VSCode to provide\n    syntax highlighting, autocomplete and other features for editing CWL (Common Workflow Language)\n    documents\n  doc_url: https://github.com/rabix/benten\n  dev_url: https://github.com/rabix/benten\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
  "req":{
   "__set__":true,
   "elements":[
+   "cwlformat",
    "dukpy",
    "pip",
    "python",
@@ -243,6 +247,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "cwlformat",
     "dukpy",
     "python",
     "ruamel.yaml"
@@ -270,6 +275,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "cwlformat",
     "dukpy",
     "python >=3.7",
     "ruamel.yaml"
@@ -281,5 +287,5 @@
   }
  },
  "url":"https://github.com/rabix/benten/archive/2019.10.28.tar.gz",
- "version":"2020.03.10"
+ "version":"2020.06.03.1"
 }

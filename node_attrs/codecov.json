@@ -149,6 +149,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434195129.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -192,7 +209,7 @@
   },
   "package":{
    "name":"codecov",
-   "version":"2.1.5"
+   "version":"2.1.6"
   },
   "requirements":{
    "host":[
@@ -219,32 +236,24 @@
    ]
   },
   "source":{
-   "sha256":"46ea90211df4991a449cf6d3bb56175292ce4136186976aa5d3ec738261b5209",
-   "url":"https://pypi.io/packages/source/c/codecov/codecov-2.1.5.tar.gz"
+   "sha256":"5bf4e752844566087c287cb7c43522210c28ac5db089005966109f58cbcbe135",
+   "url":"https://pypi.io/packages/source/c/codecov/codecov-2.1.6.tar.gz"
   },
   "test":{
    "commands":[
     "codecov -h",
-    "pip check",
     "codecov -h",
-    "pip check",
-    "codecov -h",
-    "pip check"
+    "codecov -h"
    ],
    "imports":[
     "codecov",
     "codecov",
     "codecov"
-   ],
-   "requires":[
-    "pip",
-    "pip",
-    "pip"
    ]
   }
  },
  "name":"codecov",
- "new_version":"2.1.6",
+ "new_version":"2.1.7",
  "new_version_attempts":{
   "2.0.18":1,
   "2.0.19":1,
@@ -252,11 +261,12 @@
   "2.0.22":1,
   "2.1.4":1,
   "2.1.5":1,
-  "2.1.6":1
+  "2.1.6":1,
+  "2.1.7":1
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"codecov\" %}\n{% set version = \"2.1.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 46ea90211df4991a449cf6d3bb56175292ce4136186976aa5d3ec738261b5209\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - codecov=codecov:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - coverage\n    - requests >=2.7.9\n\ntest:\n  imports:\n    - codecov\n  commands:\n    - codecov -h\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/codecov/codecov-python\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Hosted coverage reports for Github, Bitbucket and Gitlab\n  doc_url: https://github.com/codecov/codecov-python\n  dev_url: https://github.com/codecov/codecov-python\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"codecov\" %}\n{% set version = \"2.1.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5bf4e752844566087c287cb7c43522210c28ac5db089005966109f58cbcbe135\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - codecov=codecov:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - coverage\n    - requests >=2.7.9\n\ntest:\n  imports:\n    - codecov\n  commands:\n    - codecov -h\n\nabout:\n  home: https://github.com/codecov/codecov-python\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Hosted coverage reports for Github, Bitbucket and Gitlab\n  doc_url: https://github.com/codecov/codecov-python\n  dev_url: https://github.com/codecov/codecov-python\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -290,9 +300,7 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "pip"
-   ]
+   "elements":[]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -320,11 +328,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "pip"
-   ]
+   "elements":[]
   }
  },
  "url":"https://github.com/codecov/codecov-python/archive/v2.0.15.tar.gz",
- "version":"2.1.5"
+ "version":"2.1.6"
 }

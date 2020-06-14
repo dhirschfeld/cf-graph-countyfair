@@ -414,7 +414,7 @@
    "summary":"Open Source Mathematical Software"
   },
   "build":{
-   "number":"4",
+   "number":"0",
    "skip":true
   },
   "extra":{
@@ -429,24 +429,30 @@
   },
   "package":{
    "name":"sagelib",
-   "version":"9.0"
+   "version":"9.1"
   },
   "requirements":{
    "build":[
     "libtool",
     "automake",
+    "m4",
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "fortran_compiler_stub",
     "make",
     "libtool",
     "automake",
+    "m4",
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "fortran_compiler_stub",
     "make",
     "libtool",
     "automake",
+    "m4",
     "cxx_compiler_stub",
     "c_compiler_stub",
+    "fortran_compiler_stub",
     "make"
    ],
    "host":[
@@ -463,7 +469,7 @@
     "cliquer       1.21.*",
     "cypari2       2.1.*",
     "cysignals     1.10.*",
-    "cython        >=0.29.12",
+    "cython        0.29.12",
     "ecl           16.1.2",
     "eclib         20190909",
     "ecm           7.*",
@@ -479,15 +485,15 @@
     "lcalc         1.23",
     "lrcalc        1.2",
     "libbraiding   1.0",
-    "libflint      2.5.*",
+    "libflint",
     "libgd         2.2.*",
     "libhomfly     1.02.*",
     "libpng",
     "linbox        >=1.6.3",
     "givaro        4.1.*",
     "fflas-ffpack  2.4.*",
-    "m4ri          20140914",
-    "m4rie         20150908",
+    "m4ri",
+    "m4rie",
     "mpc           1.1.*",
     "mpfi          1.5.*",
     "mpfr",
@@ -528,7 +534,7 @@
     "cliquer       1.21.*",
     "cypari2       2.1.*",
     "cysignals     1.10.*",
-    "cython        >=0.29.12",
+    "cython        0.29.12",
     "ecl           16.1.2",
     "eclib         20190909",
     "ecm           7.*",
@@ -544,15 +550,15 @@
     "lcalc         1.23",
     "lrcalc        1.2",
     "libbraiding   1.0",
-    "libflint      2.5.*",
+    "libflint",
     "libgd         2.2.*",
     "libhomfly     1.02.*",
     "libpng",
     "linbox        >=1.6.3",
     "givaro        4.1.*",
     "fflas-ffpack  2.4.*",
-    "m4ri          20140914",
-    "m4rie         20150908",
+    "m4ri",
+    "m4rie",
     "mpc           1.1.*",
     "mpfi          1.5.*",
     "mpfr",
@@ -593,7 +599,7 @@
     "cliquer       1.21.*",
     "cypari2       2.1.*",
     "cysignals     1.10.*",
-    "cython        >=0.29.12",
+    "cython        0.29.12",
     "ecl           16.1.2",
     "eclib         20190909",
     "ecm           7.*",
@@ -609,15 +615,15 @@
     "lcalc         1.23",
     "lrcalc        1.2",
     "libbraiding   1.0",
-    "libflint      2.5.*",
+    "libflint",
     "libgd         2.2.*",
     "libhomfly     1.02.*",
     "libpng",
     "linbox        >=1.6.3",
     "givaro        4.1.*",
     "fflas-ffpack  2.4.*",
-    "m4ri          20140914",
-    "m4rie         20150908",
+    "m4ri",
+    "m4rie",
     "mpc           1.1.*",
     "mpfi          1.5.*",
     "mpfr",
@@ -803,8 +809,8 @@
    ]
   },
   "source":{
-   "sha256":"6f5d42b306a2c03073dd95086f80602bd1a0b929b8ad19c6d219c8ca8e96da26",
-   "url":"https://github.com/sagemath/sage/archive/9.0.tar.gz"
+   "sha256":"07f3da5ca3e48f92c5a55b690408a3c87642689c28675a1f25b55a0f48ce5023",
+   "url":"https://github.com/sagemath/sage/archive/9.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -848,7 +854,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set version = \"9.0\" %}\n{% set name = \"sagelib\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sagemath/sage/archive/{{ version }}.tar.gz\n  sha256: 6f5d42b306a2c03073dd95086f80602bd1a0b929b8ad19c6d219c8ca8e96da26\n\nbuild:\n  number: 4\n  skip: true  # [win]\n  skip: true  # [py3k and py<36]\n\nrequirements:\n  build:\n    - libtool\n    - automake\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - make\n  host:\n    - pip\n    - setuptools\n    - libblas\n    - libcblas\n    - liblapack\n    - liblapacke\n    - arb\n    - boost-cpp\n    - brial         1.2.*\n    - libbrial      1.2.*\n    - cliquer       1.21.*\n    - cypari2       2.1.*\n    - cysignals     1.10.*\n    - cython        >=0.29.12\n    # There are issues with ecl 16.1.3\n    - ecl           16.1.2\n    - eclib         20190909\n    - ecm           7.*\n    - future\n    - gap-core      4.10.*\n    - glpk\n    - gmp\n    - gmpy2         2.1.*\n    - gsl\n    - iml           1.0.*\n    - jinja2        2.10.*\n    - jupyter_core  4.*\n    - lcalc         1.23\n    - lrcalc        1.2\n    - libbraiding   1.0\n    - libflint      2.5.*\n    - libgd         2.2.*\n    - libhomfly     1.02.*\n    - libpng\n    - linbox        >=1.6.3\n    - givaro        4.1.*\n    - fflas-ffpack  2.4.*\n    - m4ri          20140914\n    - m4rie         20150908\n    - mpc           1.1.*\n    - mpfi          1.5.*\n    - mpfr\n    - ntl\n    - numpy\n    - pari\n    - pkgconfig\n    - pkg-config\n    - planarity     3.*\n    - ppl           1.2\n    - pplpy         0.8.*\n    - pynac         0.7.26\n    - python\n    - ratpoints     2.1.*\n    - readline\n    - rw            0.7\n    - singular      4.1.1.*\n    - six\n    - symmetrica    2.0\n    - zlib\n    - zn_poly       0.9.*\n    # sageruntime deps\n    - ipython       >=5.8.0,<6\n    - psutil        >=5\n    - pexpect       >=4.6.0,<5\n    # for the symlinks\n    - three.js\n    - notebook      >=5.7.6,<6\n    - jmol          >=14.6.1,<15\n\n  # We can not include all actual runtime dependencies of Sage here as some of\n  # them require Sage to build, such as some of the database packages.\n  # The packages listed here are taken from the `SAGERUNTIME` variable in\n  # `build/make/Makefile`.\n  # These dependencies are enough to `import sage` and start `sage` but lots of\n  # things do not work. To get all the standard dependencies of Sage, install\n  # the \"sage\" package (which requires this \"sagelib\" package.)\n  run:\n    - {{ pin_compatible(\"libbrial\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"cliquer\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"cypari2\") }}\n    - {{ pin_compatible(\"cysignals\") }}\n    - {{ pin_compatible(\"cython\") }}\n    - {{ pin_compatible(\"ecl\", max_pin=\"x.x\") }}\n    - eclib\n    - {{ pin_compatible(\"ecm\") }}\n    - future\n    - {{ pin_compatible(\"gap-core\", max_pin=\"x.x\") }}\n    - glpk\n    - gmp\n    - {{ pin_compatible(\"gmpy2\", max_pin=\"x.x\") }}\n    - gsl\n    - {{ pin_compatible(\"iml\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"jinja2\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"jupyter_core\") }}\n    - {{ pin_compatible(\"lcalc\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"lrcalc\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libbraiding\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libflint\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libgd\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libhomfly\", max_pin=\"x.x\") }}\n    - libpng\n    - {{ pin_compatible(\"linbox\", max_pin=\"x.x\") }}\n    - givaro\n    - fflas-ffpack\n    - m4ri\n    - {{ pin_compatible(\"m4rie\") }}\n    - mpc\n    - mpfi\n    - mpfr\n    - ntl\n    - {{ pin_compatible(\"numpy\") }}\n    - pari\n    - {{ pin_compatible(\"planarity\") }}\n    - {{ pin_compatible(\"ppl\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"pplpy\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"pynac\", max_pin=\"x.x.x\") }}\n    - python\n    - {{ pin_compatible(\"ratpoints\", max_pin=\"x.x\") }}\n    - readline\n    - {{ pin_compatible(\"rw\", max_pin=\"x.x\") }}\n    - singular\n    - six\n    - {{ pin_compatible(\"symmetrica\", max_pin=\"x.x\") }}\n    - zlib\n    - {{ pin_compatible(\"zn_poly\", max_pin=\"x.x\") }}\n    # sageruntime deps\n    - ipython       >=5.8.0,<6\n    - psutil        >=5\n    - pexpect       >=4.6.0,<5\n\ntest:\n  requires:\n    # Sage's doctesting framework uses a pretty printing command from sympy\n    - sympy\n    - ipywidgets\n    - pip\n  source_files:\n    - src/sage/version.py\n  imports:\n    - sage\n  commands:\n    - sage -v\n    - sage -c 1+1\n    # too many doctests fail still but we test that the doctesting framework works by testing a trivial file\n    - sage -tp src/sage/version.py\n\nabout:\n  home: https://www.sagemath.org\n  license: GPLv2+\n  license_file: COPYING.txt\n  summary: Open Source Mathematical Software\n  dev_url: https://trac.sagemath.org\n  doc_url: https://doc.sagemath.org\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
+ "raw_meta_yaml":"{% set version = \"9.1\" %}\n{% set name = \"sagelib\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sagemath/sage/archive/{{ version }}.tar.gz\n  sha256: 07f3da5ca3e48f92c5a55b690408a3c87642689c28675a1f25b55a0f48ce5023\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  skip: true  # [py3k and py<36]\n\nrequirements:\n  build:\n    - libtool\n    - automake\n    - m4\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n    - make\n  host:\n    - pip\n    - setuptools\n    - libblas\n    - libcblas\n    - liblapack\n    - liblapacke\n    - arb\n    - boost-cpp\n    - brial         1.2.*\n    - libbrial      1.2.*\n    - cliquer       1.21.*\n    - cypari2       2.1.*\n    - cysignals     1.10.*\n    - cython        0.29.12\n    # There are issues with ecl 16.1.3\n    - ecl           16.1.2\n    - eclib         20190909\n    - ecm           7.*\n    - future\n    - gap-core      4.10.*\n    - glpk\n    - gmp\n    - gmpy2         2.1.*\n    - gsl\n    - iml           1.0.*\n    - jinja2        2.10.*\n    - jupyter_core  4.*\n    - lcalc         1.23\n    - lrcalc        1.2\n    - libbraiding   1.0\n    - libflint\n    - libgd         2.2.*\n    - libhomfly     1.02.*\n    - libpng\n    - linbox        >=1.6.3\n    - givaro        4.1.*\n    - fflas-ffpack  2.4.*\n    - m4ri\n    - m4rie\n    - mpc           1.1.*\n    - mpfi          1.5.*\n    - mpfr\n    - ntl\n    - numpy\n    - pari\n    - pkgconfig\n    - pkg-config\n    - planarity     3.*\n    - ppl           1.2\n    - pplpy         0.8.*\n    - pynac         0.7.26\n    - python\n    - ratpoints     2.1.*\n    - readline\n    - rw            0.7\n    - singular      4.1.1.*\n    - six\n    - symmetrica    2.0\n    - zlib\n    - zn_poly       0.9.*\n    # sageruntime deps\n    - ipython       >=5.8.0,<6\n    - psutil        >=5\n    - pexpect       >=4.6.0,<5\n    # for the symlinks\n    - three.js\n    - notebook      >=5.7.6,<6\n    - jmol          >=14.6.1,<15\n\n  # We can not include all actual runtime dependencies of Sage here as some of\n  # them require Sage to build, such as some of the database packages.\n  # The packages listed here are taken from the `SAGERUNTIME` variable in\n  # `build/make/Makefile`.\n  # These dependencies are enough to `import sage` and start `sage` but lots of\n  # things do not work. To get all the standard dependencies of Sage, install\n  # the \"sage\" package (which requires this \"sagelib\" package.)\n  run:\n    - {{ pin_compatible(\"libbrial\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"cliquer\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"cypari2\") }}\n    - {{ pin_compatible(\"cysignals\") }}\n    - {{ pin_compatible(\"cython\") }}\n    - {{ pin_compatible(\"ecl\", max_pin=\"x.x\") }}\n    - eclib\n    - {{ pin_compatible(\"ecm\") }}\n    - future\n    - {{ pin_compatible(\"gap-core\", max_pin=\"x.x\") }}\n    - glpk\n    - gmp\n    - {{ pin_compatible(\"gmpy2\", max_pin=\"x.x\") }}\n    - gsl\n    - {{ pin_compatible(\"iml\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"jinja2\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"jupyter_core\") }}\n    - {{ pin_compatible(\"lcalc\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"lrcalc\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libbraiding\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libflint\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libgd\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"libhomfly\", max_pin=\"x.x\") }}\n    - libpng\n    - {{ pin_compatible(\"linbox\", max_pin=\"x.x\") }}\n    - givaro\n    - fflas-ffpack\n    - {{ pin_compatible(\"m4ri\") }}\n    - {{ pin_compatible(\"m4rie\") }}\n    - mpc\n    - mpfi\n    - mpfr\n    - ntl\n    - {{ pin_compatible(\"numpy\") }}\n    - pari\n    - {{ pin_compatible(\"planarity\") }}\n    - {{ pin_compatible(\"ppl\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"pplpy\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"pynac\", max_pin=\"x.x.x\") }}\n    - python\n    - {{ pin_compatible(\"ratpoints\", max_pin=\"x.x\") }}\n    - readline\n    - {{ pin_compatible(\"rw\", max_pin=\"x.x\") }}\n    - singular\n    - six\n    - {{ pin_compatible(\"symmetrica\", max_pin=\"x.x\") }}\n    - zlib\n    - {{ pin_compatible(\"zn_poly\", max_pin=\"x.x\") }}\n    # sageruntime deps\n    - ipython       >=5.8.0,<6\n    - psutil        >=5\n    - pexpect       >=4.6.0,<5\n\ntest:\n  requires:\n    # Sage's doctesting framework uses a pretty printing command from sympy\n    - sympy\n    - ipywidgets\n    - pip\n  source_files:\n    - src/sage/version.py\n  imports:\n    - sage\n  commands:\n    - sage -v\n    - sage -c 1+1\n    # too many doctests fail still but we test that the doctesting framework works by testing a trivial file\n    - sage -tp src/sage/version.py\n\nabout:\n  home: https://www.sagemath.org\n  license: GPLv2+\n  license_file: COPYING.txt\n  summary: Open Source Mathematical Software\n  dev_url: https://trac.sagemath.org\n  doc_url: https://doc.sagemath.org\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -866,6 +872,7 @@
    "eclib",
    "ecm",
    "fflas-ffpack",
+   "fortran_compiler_stub",
    "future",
    "gap-core",
    "givaro",
@@ -892,6 +899,7 @@
    "libtool",
    "linbox",
    "lrcalc",
+   "m4",
    "m4ri",
    "m4rie",
    "make",
@@ -931,7 +939,9 @@
     "automake",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "fortran_compiler_stub",
     "libtool",
+    "m4",
     "make"
    ]
   },
@@ -1079,7 +1089,9 @@
     "automake",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "fortran_compiler_stub",
     "libtool",
+    "m4",
     "make"
    ]
   },
@@ -1092,7 +1104,7 @@
     "cliquer       1.21.*",
     "cypari2       2.1.*",
     "cysignals     1.10.*",
-    "cython        >=0.29.12",
+    "cython        0.29.12",
     "ecl           16.1.2",
     "eclib         20190909",
     "ecm           7.*",
@@ -1114,7 +1126,7 @@
     "libbraiding   1.0",
     "libbrial      1.2.*",
     "libcblas",
-    "libflint      2.5.*",
+    "libflint",
     "libgd         2.2.*",
     "libhomfly     1.02.*",
     "liblapack",
@@ -1122,8 +1134,8 @@
     "libpng",
     "linbox        >=1.6.3",
     "lrcalc        1.2",
-    "m4ri          20140914",
-    "m4rie         20150908",
+    "m4ri",
+    "m4rie",
     "mpc           1.1.*",
     "mpfi          1.5.*",
     "mpfr",
@@ -1219,5 +1231,5 @@
   }
  },
  "url":"https://github.com/sagemath/sage/archive/8.9.beta5.tar.gz",
- "version":"9.0"
+ "version":"9.1"
 }
