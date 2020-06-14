@@ -1,0 +1,10 @@
+"{% set name = \"widgetsnbextension\" %}\n{% set version = 3.5.1 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 079f87d87270bce047512400efd70238820751a11d2d8cb137a5a5bdbaf255c7\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - notebook >=4.4.1\n\
+\    - python\n\ntest:\n  imports:\n    - widgetsnbextension\n  commands:\n    - pip\
+\ check\n  requires:\n    - pip\n\nabout:\n  home: http://ipython.org\n  summary:\
+\ IPython HTML widgets for Jupyter\n  license: BSD-3-Clause\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - jakirkham\n    - minrk\n\
+\    - pelson\n    - SylvainCorlay\n    - willingc\n    - pbugnion\n    - ocefpaf\n"

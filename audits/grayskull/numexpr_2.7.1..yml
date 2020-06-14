@@ -1,0 +1,10 @@
+"{% set name = \"numexpr\" %}\n{% set version = 2.7.1 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b0d239d9827e1bcee08344fd05835823bc60aff97232e35a928214d03ff802b1\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - numpy\n    - pip\n    - python\n  run:\n    - numpy\
+\ >=1.7\n    - python\n\ntest:\n  imports:\n    - numexpr\n  commands:\n    - pip\
+\ check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pydata/numexpr\n\
+\  summary: Fast numerical expression evaluator for NumPy\n  license: MIT\n  license_file:\
+\ LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n  \
+\  - scopatz\n    - djkirkham\n    - jjhelmus\n"

@@ -1,0 +1,11 @@
+"{% set name = \"qtpy\" %}\n{% set version = 1.9.0 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2db72c44b55d0fe1407be8fba35c838ad0d6d3bb81f23007886dc1fc0f459c8d\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - qtpy\n    - qtpy._patch\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/spyder-ide/qtpy\n  summary: Provides\
+\ an abstraction layer on top of the various Qt bindings (PyQt5, PyQt4 and PySide)\
+\ and additional custom QWidgets.\n  license: MIT\n  license_file: LICENSE.txt\n\n\
+extra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n    - astrofrog-conda-forge\n\
+\    - Nodd\n"

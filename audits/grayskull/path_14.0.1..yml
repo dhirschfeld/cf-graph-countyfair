@@ -1,0 +1,10 @@
+"{% set name = \"path\" %}\n{% set version = 14.0.1 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: aedf5be64bcfe34dcc17b2bcf379e86f8f5e4d06588b3697e1bba4a1563794b4\n\
+\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install\
+\ . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools_scm >=3.4.1\n\
+\  run:\n    - importlib-metadata >=0.5  # [py<38]\n    - python\n\ntest:\n  imports:\n\
+\    - path\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home:\
+\ https://github.com/jaraco/path\n  summary: A module wrapper for os.path\n  license:\
+\ MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n\
+\    - nehaljwani\n"

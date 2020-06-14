@@ -1,0 +1,9 @@
+"{% set name = \"grpcio\" %}\n{% set version = 1.23.0 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3cd3d99a8b5568d0d186f9520c16121a0f2a4bcad8e2b9884b76fb88a85a7774\n\
+\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n\
+\  host:\n    - cython\n    - pip\n    - python\n  run:\n    - enum34 >=1.0.4  # [py<34]\n\
+\    - futures >=2.2.0  # [py<32]\n    - python\n    - six >=1.5.2\n\ntest:\n  imports:\n\
+\    - grpcio\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home:\
+\ https://grpc.io\n  summary: HTTP/2-based RPC framework\n  license: Apache-2.0\n\
+\  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jcrist\n"

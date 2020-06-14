@@ -1,0 +1,9 @@
+"{% set name = \"termcolor\" %}\n{% set version = 1.1.0 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - termcolor\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: http://pypi.python.org/pypi/termcolor\n  summary: ANSII Color formatting\
+\ for output in terminal.\n  license: MIT\n  license_file: COPYING.txt\n\nextra:\n\
+\  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n"

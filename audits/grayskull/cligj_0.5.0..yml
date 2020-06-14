@@ -1,0 +1,9 @@
+"{% set name = \"cligj\" %}\n{% set version = 0.5.0 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6c7d52d529a78712491974f975c33473f430c0f7beb18c0d7a402a743dcb460a\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - click >=4.0,<8\n\
+\    - python\n\ntest:\n  imports:\n    - cligj\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/mapbox/cligj\n  summary: Click params\
+\ for commmand line interfaces to GeoJSON\n  license: BSD-3-Clause\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

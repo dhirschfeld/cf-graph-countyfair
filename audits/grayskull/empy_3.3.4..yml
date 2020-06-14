@@ -1,0 +1,9 @@
+"{% set name = \"empy\" %}\n{% set version = 3.3.4 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 73ac49785b601479df4ea18a7c79bc1304a8a7c34c02b9472cf1206ae88f01b3\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - empy\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
+about:\n  home: http://www.alcyone.com/software/empy\n  summary: A templating system\
+\ for Python.\n  license: 0BSD\n  license_file: PLEASE_ADD_LICENSE_FILE\n\nextra:\n\
+\  recipe-maintainers:\n    - wolfv\n    - lesteve\n"

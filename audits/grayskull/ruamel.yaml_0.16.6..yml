@@ -1,0 +1,11 @@
+"{% set name = \"ruamel.yaml\" %}\n{% set version = 0.16.6 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 966e5a049eebf011c90424b9ec7dab6358cee8de0907354b27a27f20a8c4c2ec\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - wheel\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - ruamel\n    - ruamel.yaml\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://bitbucket.org/ruamel/yaml\n  summary: ruamel.yaml\
+\ is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map\
+\ flow style, and map key order\n  license: MIT\n  license_file: LICENSE\n\nextra:\n\
+\  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - mwcraig\n    - ocefpaf\n\
+\    - mbargull\n"

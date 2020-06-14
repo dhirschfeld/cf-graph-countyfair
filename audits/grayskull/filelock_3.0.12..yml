@@ -1,0 +1,9 @@
+"{% set name = \"filelock\" %}\n{% set version = 3.0.12 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - filelock\n  commands:\n    - pip check\n  requires:\n    - pip\n\
+\nabout:\n  home: https://github.com/benediktschmitt/py-filelock\n  summary: A platform\
+\ independent file lock.\n  license: Unlicense\n  license_file: LICENSE\n\nextra:\n\
+\  recipe-maintainers:\n    - jakirkham\n    - mariusvniekerk\n    - nicoddemus\n"

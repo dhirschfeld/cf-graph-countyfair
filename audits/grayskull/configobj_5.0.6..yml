@@ -1,0 +1,9 @@
+"{% set name = \"configobj\" %}\n{% set version = 5.0.6 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a2f5650770e1c87fb335af19a9b7eb73fc05ccf22144eb68db7d00cd2bcb0902\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - six\n\
+\ntest:\n  imports:\n    - configobj\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/DiffSK/configobj\n  summary: Config\
+\ file reading, writing and validation.\n  license: EUPL-1.1\n  license_file: PLEASE_ADD_LICENSE_FILE\n\
+\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

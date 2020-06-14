@@ -1,0 +1,10 @@
+"{% set name = \"xarray\" %}\n{% set version = 0.15.1 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 64e3138d87b641e22fe7a003c94abc685896b247b63e434505c1e6b38c91a8fb\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools >=41.2\n\
+\    - setuptools_scm\n  run:\n    - numpy >=1.15\n    - pandas >=0.25\n    - python\
+\ >=3.6\n    - setuptools >=41.2\n\ntest:\n  imports:\n    - xarray\n  commands:\n\
+\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pydata/xarray\n\
+\  summary: N-D labeled arrays and datasets in Python\n  license: Apache-2.0\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - ocefpaf\n    - shoyer\n"

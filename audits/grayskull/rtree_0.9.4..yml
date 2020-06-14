@@ -1,0 +1,9 @@
+"{% set name = \"rtree\" %}\n{% set version = 0.9.4 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cae327e2c03b3da4ea40d0fdf68f3e55fe9f302c56b9f31e1bfeb36dbea73f44\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - rtree\n  commands:\n    - pip check\n  requires:\n    - pip\n\n\
+about:\n  home: https://github.com/Toblerity/rtree\n  summary: R-Tree spatial index\
+\ for Python GIS\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n\
+\    - ocefpaf\n    - hobu\n"

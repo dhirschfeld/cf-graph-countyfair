@@ -1,0 +1,10 @@
+"{% set name = \"pytest-astropy-header\" %}\n{% set version = 0.1.2 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: afdc79650b24d175d54da459fc88f597144e65af3e7eb85fe9e61231f25307f9\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - pytest >=2.8\n  \
+\  - python\n\ntest:\n  imports:\n    - pytest_astropy_header\n  commands:\n    -\
+\ pip check\n  requires:\n    - pip\n\nabout:\n  home: http://astropy.org\n  summary:\
+\ pytest plugin to add diagnostic information to the header of the test output\n \
+\ license: BSD-3-Clause\n  license_file: LICENSE.rst\n\nextra:\n  recipe-maintainers:\n\
+\    - astrofrog-conda-forge\n    - bsipocz\n"

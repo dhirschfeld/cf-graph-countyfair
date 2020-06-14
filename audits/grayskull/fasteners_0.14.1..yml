@@ -1,0 +1,10 @@
+"{% set name = \"fasteners\" %}\n{% set version = 0.14.1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 427c76773fe036ddfa41e57d89086ea03111bbac57c55fc55f3006d027107e18\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - monotonic >=0.1\n\
+\    - python\n    - six\n\ntest:\n  imports:\n    - fasteners\n    - fasteners.tests\n\
+\  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/harlowja/fasteners\n\
+\  summary: A python package that provides useful locks.\n  doc_url: https://pythonhosted.org/fasteners/\n\
+\  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - alimanfoo\n"

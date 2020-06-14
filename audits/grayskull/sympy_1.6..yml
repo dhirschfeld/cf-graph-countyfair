@@ -1,0 +1,11 @@
+"{% set name = \"sympy\" %}\n{% set version = 1.6 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9769e3d2952e211b1245f1d0dfdbfbdde1f7779a3953832b7dd2b88a21ca6cc6\n\
+\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - isympy = isympy:main\n\
+\  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - mpmath\n\
+\    - pip\n    - pyflakes\n    - python >=3.5\n  run:\n    - mpmath >=0.19\n    -\
+\ python >=3.5\n\ntest:\n  imports:\n    - sympy\n    - sympy.algebras\n  commands:\n\
+\    - pip check\n    - isympy --help\n  requires:\n    - pip\n\nabout:\n  home: https://sympy.org\n\
+\  summary: Computer algebra system (CAS) in Python\n  doc_url: https://pythonhosted.org/sympy/\n\
+\  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - asmeurer\n    - msarahan\n    - scopatz\n"

@@ -1,0 +1,9 @@
+"{% set name = \"pytest-localserver\" %}\n{% set version = 0.5.0 %}\n\n\npackage:\n\
+\  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3a5427909d1dfda10772c1bae4b9803679c0a8f04adb66c338ac607773bfefc2\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - werkzeug\
+\ >=0.10\n\ntest:\n  imports:\n    - pytest_localserver\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: http://bitbucket.org/pytest-dev/pytest-localserver/\n\
+\  summary: py.test plugin to test server connections locally.\n  license: MIT\n \
+\ license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n"

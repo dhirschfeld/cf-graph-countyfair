@@ -1,0 +1,11 @@
+"{% set name = \"pyproj\" %}\n{% set version = 2.6.1.post1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4f5b02b4abbd41610397c635b275a8ee4a2b5bc72a75572b98ac6ae7befa471e\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - cython\n    - pip\n    - python >=3.5\n  run:\n  \
+\  - python >=3.5\n\ntest:\n  imports:\n    - pyproj\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://github.com/pyproj4/pyproj\n  summary:\
+\ Python interface to PROJ (cartographic projections and coordinate transformations\
+\ library)\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n\
+\    - mingwandroid\n    - ocefpaf\n    - snowman2\n    - jorisvandenbossche\n   \
+\ - xylar\n"

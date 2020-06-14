@@ -1,0 +1,9 @@
+"{% set name = \"multidict\" %}\n{% set version = 4.7.5 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: aee283c49601fa4c13adc64c09c978838a7e812f85377ae130a24d7198c0331e\n\
+\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install\
+\ . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n\
+\    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - multidict\n  commands:\n\
+\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/aio-libs/multidict\n\
+\  summary: multidict implementation\n  license: Apache-2.0\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - sodre\n    - kszucs\n"

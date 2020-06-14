@@ -1,0 +1,10 @@
+"{% set name = \"pytest-catchlog\" %}\n{% set version = 1.2.2 %}\n\n\npackage:\n \
+\ name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4be15dc5ac1750f83960897f591453040dff044b5966fe24a91c2f7d04ecfcf0\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - py >=1.1.1\n    -\
+\ pytest >=2.6\n    - python\n\ntest:\n  imports:\n    - pytest_catchlog\n  commands:\n\
+\    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/eisensheng/pytest-catchlog\n\
+\  summary: py.test plugin to catch log messages. This is a fork of pytest-capturelog.\n\
+\  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n  \
+\  - nicoddemus\n"

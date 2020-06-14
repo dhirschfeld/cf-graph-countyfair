@@ -1,0 +1,21 @@
+"{% set name = \"poetry\" %}\n{% set version = 1.0.5 %}\n\n\npackage:\n  name: {{\
+\ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8e195ea8a4bce4f418a23fd828aa2f9ce06be7655720efd1d95beb0ee641030a\n\
+\nbuild:\n  number: 0\n  skip: true   # [py==30 or py==31 or py==32 or py==33]\n \
+\ entry_points:\n    - poetry = poetry.console:main\n  script: {{ PYTHON }} -m pip\
+\ install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    -\
+\ cachecontrol>=0.12.4,<0.13.0\n    - cachy >=0.3.0,<0.4.0\n    - cleo >=0.7.6,<0.8.0\n\
+\    - clikit >=0.4.2,<0.5.0\n    - functools32 >=3.2.3,<4.0.0  # [py>=27 and py<28]\n\
+\    - glob2 >=0.6,<0.7  # [py>=27 and py<28 or py>=34 and py<35]\n    - html5lib\
+\ >=1.0,<2.0\n    - importlib-metadata >=1.1.3,<1.2.0  # [py<38]\n    - jsonschema\
+\ >=3.1,<4.0\n    - keyring >=18.0.1,<19.0.0  # [py>=27 and py<28 or py>=34 and py<35]\n\
+\    - pathlib2 >=2.3,<3.0  # [py>=27 and py<28 or py>=34 and py<35]\n    - pexpect\
+\ >=4.7.0,<5.0.0\n    - pkginfo >=1.4,<2.0\n    - pyparsing >=2.2,<3.0\n    - pyrsistent\
+\ >=0.14.2,<0.15.0\n    - python\n    - requests >=2.18,<3.0\n    - requests-toolbelt\
+\ >=0.8.0,<0.9.0\n    - shellingham >=1.1,<2.0\n    - subprocess32 >=3.5,<4.0  # [py>=27\
+\ and py<28 or py>=34 and py<35]\n    - tomlkit >=0.5.11,<0.6.0\n    - typing >=3.6,<4.0\
+\  # [py>=27 and py<28 or py>=34 and py<35]\n    - virtualenv >=16.7.9,<17.0.0  #\
+\ [py>=27 and py<28]\n\ntest:\n  imports:\n    - poetry\n    - poetry.config\n  commands:\n\
+\    - pip check\n    - poetry --help\n  requires:\n    - pip\n\nabout:\n  home: https://python-poetry.org/\n\
+\  summary: Python dependency management and packaging made easy.\n  license: MIT\n\
+\  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n"

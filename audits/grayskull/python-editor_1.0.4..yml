@@ -1,0 +1,9 @@
+"{% set name = \"python-editor\" %}\n{% set version = 1.0.4 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 51fda6bcc5ddbbb7063b2af7509e43bd84bfc32a4ff71349ec7847713882327b\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n\
+\  imports:\n    - python_editor\n  commands:\n    - pip check\n  requires:\n    -\
+\ pip\n\nabout:\n  home: https://github.com/fmoo/python-editor\n  summary: Programmatically\
+\ open an editor, capture the result.\n  license: Apache-2.0\n  license_file: LICENSE\n\
+\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n"

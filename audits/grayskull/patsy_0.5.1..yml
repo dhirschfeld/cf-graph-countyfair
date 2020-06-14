@@ -1,0 +1,10 @@
+"{% set name = \"patsy\" %}\n{% set version = 0.5.1 %}\n\n\npackage:\n  name: {{ name|lower\
+\ }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f115cec4201e1465cd58b9866b0b0e7b941caafec129869057405bfe5b5e3991\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - numpy >=1.4\n   \
+\ - python\n    - six\n\ntest:\n  imports:\n    - patsy\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://github.com/pydata/patsy\n  summary:\
+\ A Python package for describing statistical models and for building design matrices.\n\
+\  license: BSD-3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n\
+\    - bollwyvl\n    - croth1\n"

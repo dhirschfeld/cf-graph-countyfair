@@ -1,0 +1,9 @@
+"{% set name = \"async-timeout\" %}\n{% set version = 3.0.1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n  run:\n    - python >=3.5\n\
+\ntest:\n  imports:\n    - async_timeout\n  commands:\n    - pip check\n  requires:\n\
+\    - pip\n\nabout:\n  home: https://github.com/aio-libs/async_timeout/\n  summary:\
+\ Timeout context manager for asyncio programs\n  license: Apache-2.0\n  license_file:\
+\ LICENSE\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - carlodri\n"

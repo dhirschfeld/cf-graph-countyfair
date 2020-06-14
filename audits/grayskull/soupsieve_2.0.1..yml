@@ -1,0 +1,9 @@
+"{% set name = \"soupsieve\" %}\n{% set version = 2.0.1 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a59dc181727e95d25f781f0eb4fd1825ff45590ec8ff49eadfd7f1a537cc0232\n\
+\nbuild:\n  number: 0\n  skip: true   # [py2k]\n  script: {{ PYTHON }} -m pip install\
+\ . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - backports.functools_lru_cache\
+\  # [py<3]\n    - python\n\ntest:\n  imports:\n    - soupsieve\n  commands:\n   \
+\ - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/facelessuser/soupsieve\n\
+\  summary: A modern CSS selector implementation for Beautiful Soup.\n  license: MIT\n\
+\  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - jschueller\n"

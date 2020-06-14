@@ -1,0 +1,9 @@
+"{% set name = \"grpcio-gcp\" %}\n{% set version = 0.2.2 %}\n\n\npackage:\n  name:\
+\ {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{\
+\ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e292605effc7da39b7a8734c719afb12ec4b5362add3528d8afad3aa3aa9057c\n\
+\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\
+\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - grpcio >=1.12.0\n\
+\    - python\n\ntest:\n  imports:\n    - grpcio_gcp\n  commands:\n    - pip check\n\
+\  requires:\n    - pip\n\nabout:\n  home: https://grpc.io\n  summary: gRPC extensions\
+\ for Google Cloud Platform\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n\
+\  recipe-maintainers:\n    - BrentDorsey\n"
