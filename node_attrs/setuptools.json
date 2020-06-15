@@ -952,7 +952,7 @@
   },
   "package":{
    "name":"setuptools",
-   "version":"47.1.1"
+   "version":"47.2.0"
   },
   "requirements":{
    "host":[
@@ -983,8 +983,8 @@
     "0001-Remove-exact-pinning-on-certifi-and-wincertstore.patch",
     "0002-disable-downloads-inside-conda-build.patch"
    ],
-   "sha256":"e0cfb23178cb2d1d06a17567c81c47d3bfd3a881ca02e988bf990b61d871109b",
-   "url":"https://github.com/pypa/setuptools/archive/v47.1.1.tar.gz"
+   "sha256":"df532e08923ab27d47d531694ab5adb27d07ce63be8c79ad383de0ddc7c8faf3",
+   "url":"https://github.com/pypa/setuptools/archive/v47.2.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -1020,7 +1020,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.11.48.40",
- "raw_meta_yaml":"{% set version = \"47.1.1\" %}\n\npackage:\n  name: setuptools\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pypa/setuptools/archive/v{{ version }}.tar.gz\n  sha256: e0cfb23178cb2d1d06a17567c81c47d3bfd3a881ca02e988bf990b61d871109b\n  patches:\n    # Don't create requires.txt with exact pinnings\n    - 0001-Remove-exact-pinning-on-certifi-and-wincertstore.patch\n    # Modify setuptools to fail if used in conda build (encourage people to add all deps in meta.yaml).\n    - 0002-disable-downloads-inside-conda-build.patch\n\nbuild:\n  skip: true  # [py<35]\n  number: 0\n  entry_points:\n    - easy_install = setuptools.command.easy_install:main\n\nrequirements:\n  host:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n  run:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n\ntest:\n  commands:\n    - easy_install --help\n  imports:\n    - setuptools\n    - easy_install\n    - pkg_resources\n\nabout:\n  home: https://github.com/pypa/setuptools\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Download, build, install, upgrade, and uninstall Python packages\n  description: |\n    Setuptools is a fully-featured, actively-maintained, and stable library\n    designed to facilitate packaging Python projects.\n  doc_url: http://pythonhosted.org/setuptools/\n  dev_url: https://github.com/pypa/setuptools\n  doc_source_url: https://github.com/pypa/setuptools/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - ocefpaf\n    - nicoddemus\n    - mingwandroid\n",
+ "raw_meta_yaml":"{% set version = \"47.2.0\" %}\n\npackage:\n  name: setuptools\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pypa/setuptools/archive/v{{ version }}.tar.gz\n  sha256: df532e08923ab27d47d531694ab5adb27d07ce63be8c79ad383de0ddc7c8faf3\n  patches:\n    # Don't create requires.txt with exact pinnings\n    - 0001-Remove-exact-pinning-on-certifi-and-wincertstore.patch\n    # Modify setuptools to fail if used in conda build (encourage people to add all deps in meta.yaml).\n    - 0002-disable-downloads-inside-conda-build.patch\n\nbuild:\n  skip: true  # [py<35]\n  number: 0\n  entry_points:\n    - easy_install = setuptools.command.easy_install:main\n\nrequirements:\n  host:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n  run:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n\ntest:\n  commands:\n    - easy_install --help\n  imports:\n    - setuptools\n    - easy_install\n    - pkg_resources\n\nabout:\n  home: https://github.com/pypa/setuptools\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Download, build, install, upgrade, and uninstall Python packages\n  description: |\n    Setuptools is a fully-featured, actively-maintained, and stable library\n    designed to facilitate packaging Python projects.\n  doc_url: http://pythonhosted.org/setuptools/\n  dev_url: https://github.com/pypa/setuptools\n  doc_source_url: https://github.com/pypa/setuptools/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - ocefpaf\n    - nicoddemus\n    - mingwandroid\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1084,5 +1084,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/setuptools/setuptools-41.2.0.zip",
- "version":"47.1.1"
+ "version":"47.2.0"
 }
