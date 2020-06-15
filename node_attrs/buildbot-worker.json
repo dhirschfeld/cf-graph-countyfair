@@ -222,7 +222,7 @@
   },
   "package":{
    "name":"buildbot-worker",
-   "version":"2.8.1"
+   "version":"2.8.2"
   },
   "requirements":{
    "host":[
@@ -246,8 +246,8 @@
    ]
   },
   "source":{
-   "sha256":"92570bea7a71b0f41c61b4f474fca25d6edbf3da049fae661cdcbd51eb0f6ab1",
-   "url":"https://pypi.io/packages/source/b/buildbot-worker/buildbot-worker-2.8.1.tar.gz"
+   "sha256":"624614ed06c0da243bfeb5a847872ebdd3380291f9163a9951b79b4ba3323c5c",
+   "url":"https://pypi.io/packages/source/b/buildbot-worker/buildbot-worker-2.8.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -303,7 +303,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"buildbot-worker\" %}\n{% set version = \"2.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 92570bea7a71b0f41c61b4f474fca25d6edbf3da049fae661cdcbd51eb0f6ab1\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - buildbot-worker=buildbot_worker.scripts.runner:run\n    - buildbot_worker_windows_service=buildbot_worker.scripts.windows_service: HandleCommandLine  # [win]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >3.5\n  run:\n    - future\n    - python >3.5\n    - twisted >=17.9.0\n\ntest:\n  imports:\n    - buildbot_worker\n    - buildbot_worker.backports\n    - buildbot_worker.commands\n    - buildbot_worker.monkeypatches\n    - buildbot_worker.scripts\n    - buildbot_worker.test\n    - buildbot_worker.test.fake\n    - buildbot_worker.test.unit\n    - buildbot_worker.test.util\n    - buildbot_worker.util\n  commands:\n    - buildbot-worker --help\n  requires:\n    - mock\n\nabout:\n  home: https://buildbot.net/\n  license: GNU General Public (GPL)\n  license_family: LGPL\n  license_file: COPYING\n  summary: Buildbot worker daemon\n  doc_url: https://docs.buildbot.net\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xhochy\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"buildbot-worker\" %}\n{% set version = \"2.8.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 624614ed06c0da243bfeb5a847872ebdd3380291f9163a9951b79b4ba3323c5c\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - buildbot-worker=buildbot_worker.scripts.runner:run\n    - buildbot_worker_windows_service=buildbot_worker.scripts.windows_service: HandleCommandLine  # [win]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >3.5\n  run:\n    - future\n    - python >3.5\n    - twisted >=17.9.0\n\ntest:\n  imports:\n    - buildbot_worker\n    - buildbot_worker.backports\n    - buildbot_worker.commands\n    - buildbot_worker.monkeypatches\n    - buildbot_worker.scripts\n    - buildbot_worker.test\n    - buildbot_worker.test.fake\n    - buildbot_worker.test.unit\n    - buildbot_worker.test.util\n    - buildbot_worker.util\n  commands:\n    - buildbot-worker --help\n  requires:\n    - mock\n\nabout:\n  home: https://buildbot.net/\n  license: GNU General Public (GPL)\n  license_family: LGPL\n  license_file: COPYING\n  summary: Buildbot worker daemon\n  doc_url: https://docs.buildbot.net\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xhochy\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -370,5 +370,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/buildbot-worker/buildbot-worker-2.4.0.tar.gz",
- "version":"2.8.1"
+ "version":"2.8.2"
 }

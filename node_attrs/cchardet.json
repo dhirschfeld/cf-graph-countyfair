@@ -138,7 +138,12 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
+  }
+ },
  "feedstock_name":"cchardet",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -152,14 +157,17 @@
    "summary":"cChardet is high speed universal character encoding detector"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "pmlandwehr",
+    "Ryan-Dmello",
     "pmlandwehr",
-    "pmlandwehr"
+    "Ryan-Dmello",
+    "pmlandwehr",
+    "Ryan-Dmello"
    ]
   },
   "package":{
@@ -217,7 +225,7 @@
  "name":"cchardet",
  "new_version":"2.1.6",
  "pinning_version":"2020.03.14",
- "raw_meta_yaml":"{% set version = \"2.1.6\" %}\n\npackage:\n  name: cchardet\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cchardet/cchardet-{{ version }}.tar.gz\n  sha256: b76afb2059ad69eab576949980a17413c1e9e5a5624abf9e43542d8853f146b3\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - cchardet\n\nabout:\n  home: https://github.com/PyYoshi/cChardet\n  license_file: COPYING\n  license: GPL-3.0\n  license_family: GPL\n  summary: cChardet is high speed universal character encoding detector\n  dev_url: https://github.com/PyYoshi/cChardet\n  doc_url: https://github.com/PyYoshi/cChardet\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "raw_meta_yaml":"{% set version = \"2.1.6\" %}\n\npackage:\n  name: cchardet\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cchardet/cchardet-{{ version }}.tar.gz\n  sha256: b76afb2059ad69eab576949980a17413c1e9e5a5624abf9e43542d8853f146b3\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - cchardet\n\nabout:\n  home: https://github.com/PyYoshi/cChardet\n  license_file: COPYING\n  license: GPL-3.0\n  license_family: GPL\n  summary: cChardet is high speed universal character encoding detector\n  dev_url: https://github.com/PyYoshi/cChardet\n  doc_url: https://github.com/PyYoshi/cChardet\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - Ryan-Dmello\n",
  "req":{
   "__set__":true,
   "elements":[
