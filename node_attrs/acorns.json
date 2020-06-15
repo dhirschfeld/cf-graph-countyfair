@@ -37,6 +37,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434288085.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.0.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -115,7 +132,11 @@
   }
  },
  "name":"acorns",
- "new_version":"0.0.1",
+ "new_version":"0.0.2",
+ "new_version_attempts":{
+  "0.0.2":1
+ },
+ "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"acorns\" %}\n{% set version = \"0.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/deshanadesai/autodiff/archive/v0.0.1.tar.gz\n  sha256: 64c1de7798d247b3987b886b84da367d189a7debe4670c9f9d687a67c4eb7ce0\n\nbuild:\n  number: 0\n  skip: True  # [win or py<35]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pycparser\n\ntest:\n  imports:\n    - src\n    - tests\n\nabout:\n  home: https://github.com/deshanadesai/autodiff\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'An Easy-To-Use Code Generator for Gradients and Hessians'\n\n  description: |\n    ACORNS is an algorithm for automatic differention of algorithms \n    written in a subset of C99 code and its efficient implementation as a Python script. \n  dev_url: https://github.com/deshanadesai/autodiff\n\nextra:\n  recipe-maintainers:\n    - DeshanaDesai\n",
  "req":{
