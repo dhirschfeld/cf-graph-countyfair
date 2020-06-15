@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"conda-docker",
  "hash_type":"sha256",
@@ -80,6 +80,7 @@
   }
  },
  "name":"conda-docker",
+ "new_version":"0.0.1",
  "raw_meta_yaml":"{% set name = \"conda-docker\" %}\n{% set version = \"0.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/regro/conda-docker/releases/download/{{ version }}/conda-docker-{{ version }}.tar.gz\n  sha256: 6b9019901c5c701cdf9bbbc31042fcb7785aa0c57a9169883919be0c1b98b279\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - conda-docker=conda_docker.cli:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - conda\n    - mamba\n    - conda-standalone\n    - fakechroot\n\ntest:\n  imports:\n    - conda_docker\n  commands:\n    - conda-docker --help\n\nabout:\n  home: https://github.com/regro/conda-docker\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Create minimal docker images from conda environments'\n  description: |\n    Conda Docker is an extension to the docker concept by having declarative\n    environments that are associated with docker images. In addition this tool\n    does not require docker to build images. Thus allowing for interesting\n    caching behavior and tricks that docker would not normally allow.\n  dev_url: https://github.com/regro/conda-docker\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
