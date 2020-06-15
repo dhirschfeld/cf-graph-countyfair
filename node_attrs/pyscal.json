@@ -169,6 +169,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434225217.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.6"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -265,10 +282,11 @@
  "name":"pyscal",
  "new_version":"2.3.6",
  "new_version_attempts":{
-  "2.3.5":1
+  "2.3.5":1,
+  "2.3.6":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.22.03.51.02",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"pyscal\" %}\n{% set version = \"2.3.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 32f19678082402ea2cf810828604bad7e670dc7100afe0c40fb5a8f04525b52f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py2k or win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - pip\n    - matplotlib-base >=3\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pyscal\n  commands:\n    - pip check\n\nabout:\n  home: https://pyscal.com\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Python library written in C++ for calculation of local atomic structural environment\n\n  description: |\n    pyscal is a python module for the calculation of local \n    atomic structural environments including Steinhardt's bond \n    orientational order parameters [1] during post-processing \n    of atomistic simulation data. The core functionality of \n    pyscal is written in C++ with python wrappers using \n    pybind11 which allows for fast calculations with possibilities \n    for easy expansion in python.\n  doc_url: https://pyscal.com\n  dev_url: https://github.com/srmnitc/pyscal/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - srmnitc\n",
  "req":{
   "__set__":true,
@@ -311,7 +329,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.17",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
