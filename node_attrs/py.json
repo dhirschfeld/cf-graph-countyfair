@@ -98,6 +98,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434523237.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.8.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -178,8 +195,12 @@
   }
  },
  "name":"py",
- "new_version":"1.8.1",
- "pinning_version":"2019.12.18",
+ "new_version":"1.8.2",
+ "new_version_attempts":{
+  "1.8.2":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.15.11.48.40",
  "raw_meta_yaml":"{% set name = \"py\" %}\n{% set version = \"1.8.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"5e27081401262157467ad6e7f851b7aa402c5852dbcb3dae06768434de5752aa\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/py/py-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools_scm\n  run:\n    - python\n\ntest:\n  imports:\n    - py\n    - py.code\n    - py.io\n    - py.log\n    - py.path\n    - py.process\n\nabout:\n  home: https://github.com/pytest-dev/py\n  license: MIT\n  license_file: LICENSE\n  summary: \"library with cross-python path, ini-parsing, io, code, log facilities\"\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n    - jakirkham\n",
  "req":{
   "__set__":true,
@@ -213,7 +234,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
