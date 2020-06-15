@@ -461,7 +461,7 @@
   },
   "package":{
    "name":"libtiledb-sql",
-   "version":"0.5.6"
+   "version":"0.5.7"
   },
   "requirements":{
    "build":[
@@ -562,9 +562,9 @@
    ]
   },
   "source":{
-   "fn":"TileDB-MariaDB-0.5.6.tar.gz",
-   "sha256":"1869507692867690a9193421268cb6cd44c43e4e8e80c5119acb9da6d459db5b",
-   "url":"https://github.com/TileDB-Inc/TileDB-MariaDB/archive/0.5.6.tar.gz"
+   "fn":"TileDB-MariaDB-0.5.7.tar.gz",
+   "sha256":"e4144c513ed6125a1a21a5af65d7043616e03f16d7ac06d8d82051b8919145e3",
+   "url":"https://github.com/TileDB-Inc/TileDB-MariaDB/archive/0.5.7.tar.gz"
   },
   "test":{
    "commands":[
@@ -590,7 +590,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"libtiledb-sql\" %}\n{% set version = \"0.5.6\" %}\n{% set sha256 = \"1869507692867690a9193421268cb6cd44c43e4e8e80c5119acb9da6d459db5b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: TileDB-MariaDB-{{ version }}.tar.gz\n  url: https://github.com/TileDB-Inc/TileDB-MariaDB/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  missing_dso_whitelist:\n    - /usr/lib/libncurses.5.4.dylib  # [osx]\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config  # [not win]\n    - wget  # [unix]\n    - git\n    - libiconv  # [osx]\n    - {{ compiler('cxx') }}\n  host:\n    - openssl\n    - libaio  # [linux]\n    - libiconv  # [osx]\n    - tiledb 2.0.*\n    - curl\n    - bison\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - libedit\n    - ncurses\n    - xz\n    - krb5\n  run:\n    - openssl\n    - libaio  # [linux]\n    - libiconv  # [osx]\n    - tiledb 2.0.*\n    - curl\n    - bison\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - libedit\n    - ncurses\n    - xz\n    - krb5\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\n    - test -e $PREFIX/lib/libmariadb$SHLIB_EXT  # [linux]\n    - test -e $PREFIX/lib/libmariadbd$SHLIB_EXT  # [linux]\n    - test -e $PREFIX/lib/libmariadb$SHLIB_EXT  # [osx]\n    - test -e $PREFIX/lib/libmariadbd$SHLIB_EXT  # [osx]\n    - test -e $PREFIX/bin/mysql_config  # [unix]\n\nabout:\n  home: https://tiledb.com\n  license: GPLv2\n  license_family: GPL\n  license_file: COPYING\n  summary: libtiledb-sql is a SQL interface for TileDB arrays using the MyTile storage engine\n  description: |\n    MyTile is a storage engine for MariaDB which allows dynamic access to TileDB array. libtiledb-sql is a limited build of mariadb to produce a minimum embeddable library for a SQL interface.\\n\n\n    Docs: https://docs.tiledb.com/developer/api-usage/embedded-sql\n\n    Source: https://github.com/TileDB-Inc/TileDB-MariaDB\n\n    Upstream source: https://mariadb.org\n\n  doc_url: https://docs.tiledb.com/developer/api-usage/embedded-sql\n  dev_url: https://github.com/TileDB-Inc/TileDB-MariaDB\n\nextra:\n  recipe-maintainers:\n    - shelnutt2\n    - tdenniston\n    - ihnorton\n",
+ "raw_meta_yaml":"{% set name = \"libtiledb-sql\" %}\n{% set version = \"0.5.7\" %}\n{% set sha256 = \"e4144c513ed6125a1a21a5af65d7043616e03f16d7ac06d8d82051b8919145e3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: TileDB-MariaDB-{{ version }}.tar.gz\n  url: https://github.com/TileDB-Inc/TileDB-MariaDB/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  missing_dso_whitelist:\n    - /usr/lib/libncurses.5.4.dylib  # [osx]\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config  # [not win]\n    - wget  # [unix]\n    - git\n    - libiconv  # [osx]\n    - {{ compiler('cxx') }}\n  host:\n    - openssl\n    - libaio  # [linux]\n    - libiconv  # [osx]\n    - tiledb 2.0.*\n    - curl\n    - bison\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - libedit\n    - ncurses\n    - xz\n    - krb5\n  run:\n    - openssl\n    - libaio  # [linux]\n    - libiconv  # [osx]\n    - tiledb 2.0.*\n    - curl\n    - bison\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - libedit\n    - ncurses\n    - xz\n    - krb5\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\n    - test -e $PREFIX/lib/libmariadb$SHLIB_EXT  # [linux]\n    - test -e $PREFIX/lib/libmariadbd$SHLIB_EXT  # [linux]\n    - test -e $PREFIX/lib/libmariadb$SHLIB_EXT  # [osx]\n    - test -e $PREFIX/lib/libmariadbd$SHLIB_EXT  # [osx]\n    - test -e $PREFIX/bin/mysql_config  # [unix]\n\nabout:\n  home: https://tiledb.com\n  license: GPLv2\n  license_family: GPL\n  license_file: COPYING\n  summary: libtiledb-sql is a SQL interface for TileDB arrays using the MyTile storage engine\n  description: |\n    MyTile is a storage engine for MariaDB which allows dynamic access to TileDB array. libtiledb-sql is a limited build of mariadb to produce a minimum embeddable library for a SQL interface.\\n\n\n    Docs: https://docs.tiledb.com/developer/api-usage/embedded-sql\n\n    Source: https://github.com/TileDB-Inc/TileDB-MariaDB\n\n    Upstream source: https://mariadb.org\n\n  doc_url: https://docs.tiledb.com/developer/api-usage/embedded-sql\n  dev_url: https://github.com/TileDB-Inc/TileDB-MariaDB\n\nextra:\n  recipe-maintainers:\n    - shelnutt2\n    - tdenniston\n    - ihnorton\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -728,5 +728,5 @@
   }
  },
  "url":"https://github.com/TileDB-Inc/TileDB-MariaDB/archive/0.1.0.tar.gz",
- "version":"0.5.6"
+ "version":"0.5.7"
 }
