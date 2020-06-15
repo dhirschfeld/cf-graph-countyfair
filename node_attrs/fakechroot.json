@@ -46,7 +46,7 @@
   },
   "package":{
    "name":"fakechroot",
-   "version":"2.19"
+   "version":"2.20"
   },
   "requirements":{
    "build":[
@@ -65,8 +65,8 @@
    ]
   },
   "source":{
-   "sha256":"39ffbbbe3a823be7450928b8e3b99ae4cb339c47213b2f1d8ff903e0246f2e15",
-   "url":"https://github.com/dex4er/fakechroot/archive/2.19.tar.gz"
+   "sha256":"ab9b0d91b8a9b6369f019716aab1bc9512009eda106c4fabac3e7adc2eafd076",
+   "url":"https://github.com/dex4er/fakechroot/archive/2.20.tar.gz"
   },
   "test":{
    "commands":[
@@ -77,13 +77,13 @@
   }
  },
  "name":"fakechroot",
- "new_version":"2.20",
+ "new_version":"2.20.1",
  "new_version_attempts":{
   "2.20":1
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"fakechroot\" %}\n{% set version = \"2.19\" %}\n{% set sha256 = \"39ffbbbe3a823be7450928b8e3b99ae4cb339c47213b2f1d8ff903e0246f2e15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dex4er/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libtool >=2.0\n    - automake >=1.10\n    - make\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/fakechroot\"\n\nabout:\n  home: http://github.com/dex4er/fakechroot\n  license: LGPL-2.1-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'fakechroot runs a command in an environment without requiring root privileges'\n\n  description: |\n    fakechroot runs a command in an environment were is additional possibility\n    to use chroot(8) command without root privileges. This is useful for\n    allowing users to create own chrooted environment with possibility to\n    install another packages without need for root privileges.\n  dev_url: http://github.com/dex4er/fakechroot\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"fakechroot\" %}\n{% set version = \"2.20\" %}\n{% set sha256 = \"ab9b0d91b8a9b6369f019716aab1bc9512009eda106c4fabac3e7adc2eafd076\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dex4er/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libtool >=2.0\n    - automake >=1.10\n    - make\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/fakechroot\"\n\nabout:\n  home: http://github.com/dex4er/fakechroot\n  license: LGPL-2.1-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: fakechroot runs a command in an environment without requiring root privileges\n\n  description: |\n    fakechroot runs a command in an environment were is additional possibility\n    to use chroot(8) command without root privileges. This is useful for\n    allowing users to create own chrooted environment with possibility to\n    install another packages without need for root privileges.\n  dev_url: http://github.com/dex4er/fakechroot\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -142,5 +142,5 @@
   }
  },
  "url":"https://github.com/dex4er/fakechroot/archive/2.19.tar.gz",
- "version":"2.19"
+ "version":"2.20"
 }

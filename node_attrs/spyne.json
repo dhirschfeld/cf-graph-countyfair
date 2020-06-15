@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434705561.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.13.15"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -254,8 +271,12 @@
   }
  },
  "name":"spyne",
- "new_version":"2.12.16",
- "pinning_version":"2019.01.16",
+ "new_version":"2.13.15",
+ "new_version_attempts":{
+  "2.13.15":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.15.11.48.40",
  "raw_meta_yaml":"{% set version = \"2.12.16\" %}\n\npackage:\n  name: spyne\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/spyne/spyne-{{ version }}.tar.gz\n  sha256: 4793b1b22cc90b4896f14560f5bd587fe9ba2a04479f24d055ad5a43c09dc97b\n\nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - sort_wsdl = spyne.test.sort_wsdl:main\n\nrequirements:\n  host:\n    - python <3.7\n    - pip\n  run:\n    - python <3.7\n    - pytz\n\ntest:\n  requires:\n    - lxml\n    - zope.interface\n    - sqlalchemy <1.0.99\n    - pyzmq\n    - werkzeug\n    - pyparsing\n    - twisted\n    - django\n    - pyramid\n    - msgpack-python\n    - pyyaml\n    - simplejson\n  imports:\n    - spyne\n    - spyne.auxproc\n    - spyne.client\n    # - spyne.client.twisted  # [not py3k]\n    - spyne.const\n    - spyne.interface\n    - spyne.interface.wsdl\n    - spyne.interface.xml_schema\n    - spyne.model\n    - spyne.model.primitive\n    - spyne.protocol\n    - spyne.protocol.cloth\n    - spyne.protocol.dictdoc\n    - spyne.protocol.html\n    - spyne.protocol.soap\n    - spyne.server\n    # - spyne.server.twisted  # [not py3k]\n    - spyne.store\n    - spyne.store.relational\n    - spyne.test\n    - spyne.test.interface\n    - spyne.test.interface.wsdl\n    - spyne.test.interop\n    - spyne.test.interop.server\n    - spyne.test.interop.server.soap11\n    - spyne.test.interop.server.soap12\n    - spyne.test.model\n    - spyne.test.multipython\n    - spyne.test.multipython.model\n    - spyne.test.protocol\n    - spyne.test.transport\n    - spyne.util\n    - spyne.util.oset\n\nabout:\n  home: http://spyne.io\n  license: LGPL-2.1\n  license_file: LICENSE\n  summary: 'A transport and architecture agnostic rpc library that focuses on exposing public services with a well-defined API.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - emiliom\n",
  "req":{
   "__set__":true,
@@ -302,7 +323,7 @@
    ]
   }
  },
- "smithy_version":"3.2.9",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
