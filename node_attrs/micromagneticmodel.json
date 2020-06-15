@@ -285,6 +285,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434322891.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.8.19"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -359,10 +376,11 @@
  "name":"micromagneticmodel",
  "new_version":"0.8.19",
  "new_version_attempts":{
-  "0.8.18":1
+  "0.8.18":1,
+  "0.8.19":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.10.22.19.47",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"micromagneticmodel\" %}\n{% set version = \"0.8.18\" %}\n{% set sha256 = \"7fdbf848599773f19e36372cdfeaa4e925bc26f4da4a5a1d1baffff9b7b8b0ca\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - discretisedfield ==0.8.12\n\ntest:\n  imports:\n    - micromagneticmodel\n  commands:\n    - python -c \"import sys; import micromagneticmodel as mm; sys.exit(mm.test())\"\n\nabout:\n  home: http://ubermag.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python domain-specific language for defining micromagnetic models.\n  doc_url: http://micromagneticmodel.readthedocs.io\n  dev_url: https://github.com/ubermag/micromagneticmodel\n\nextra:\n  recipe-maintainers:\n    - marijanbeg\n    - fangohr\n",
  "req":{
   "__set__":true,

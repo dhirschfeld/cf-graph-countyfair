@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434323625.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.20"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -59,6 +78,11 @@
  },
  "name":"fakechroot",
  "new_version":"2.20",
+ "new_version_attempts":{
+  "2.20":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"fakechroot\" %}\n{% set version = \"2.19\" %}\n{% set sha256 = \"39ffbbbe3a823be7450928b8e3b99ae4cb339c47213b2f1d8ff903e0246f2e15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dex4er/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libtool >=2.0\n    - automake >=1.10\n    - make\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/fakechroot\"\n\nabout:\n  home: http://github.com/dex4er/fakechroot\n  license: LGPL-2.1-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'fakechroot runs a command in an environment without requiring root privileges'\n\n  description: |\n    fakechroot runs a command in an environment were is additional possibility\n    to use chroot(8) command without root privileges. This is useful for\n    allowing users to create own chrooted environment with possibility to\n    install another packages without need for root privileges.\n  dev_url: http://github.com/dex4er/fakechroot\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
@@ -92,6 +116,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
