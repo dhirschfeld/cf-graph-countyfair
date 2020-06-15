@@ -381,6 +381,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434303179.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -498,10 +515,11 @@
   "1.2.7":1,
   "1.2.8":1,
   "1.2.9":1,
-  "1.3.0":1
+  "1.3.0":1,
+  "1.3.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.04.13.55.38",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"biorbd\" %}\n{% set version = \"1.2.9\" %}\n{% set build_num = 1 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz\n  sha256: b53684d86e90ecfde47229d4ed95fc83e34bdc22bc1504e86af04a10f7a83efe\n\nbuild:\n  number: {{ build_num }}\n  skip: true  # [win and vc<14]\n  rpaths:\n    - lib/\n    - lib/{{ name }}/\n  run_exports:\n    - {{ pin_subpackage('biorbd', max_pin='x.x') }}\n    - biorbd * {{ backend }}_*\n  string: py{{ py }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}\n  track_features:\n    - casadi  # [backend == \"casadi\"]\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n    - rbdl =*=*casadi*  # [backend == \"casadi\"]\n    - rbdl  # [backend == \"eigen\"]\n    - tinyxml\n    - ipopt  # [not win]\n    - python\n    - numpy  # [backend == \"eigen\"]\n    - swig\n  run:\n    - {{ pin_compatible('rbdl') }}  # [backend == \"casadi\" and not osx]\n    - rbdl =*=casadi*   # [backend == \"casadi\" and osx]\n    - rbdl  # [backend == \"eigen\"]\n    - ipopt  # [not win]\n    - python\n    - {{ pin_compatible('numpy') }}  # [backend == \"eigen\"]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/biorbd/libbiorbd$SHLIB_EXT  # [unix]\n    - if not exist %PREFIX%\\\\Lib\\\\biorbd*.lib exit 1  # [win]\n  imports:\n    - biorbd\n\nabout:\n  home: http://github.com/pyomeca/biorbd\n  license: MIT\n  license_file: LICENSE\n  summary: 'Biomechanical add-ons to the RigidBody Dynamics Library '\n\n  description: |\n    Biomechanical add-ons to the RigidBody Dynamics Library .\n  doc_url: https://github.com/pyomeca/biorbd/\n  dev_url: https://github.com/pyomeca/biorbd/\n\nextra:\n  recipe-maintainers:\n    - pariterre\n",
  "req":{
   "__set__":true,

@@ -273,6 +273,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434303600.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -382,10 +399,11 @@
  "name":"iminuit",
  "new_version":"1.4.2",
  "new_version_attempts":{
-  "1.4.0":1
+  "1.4.0":1,
+  "1.4.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.12.14.12.47",
+ "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"iminuit\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d4478b837a265d2eba5549d766bac5323ea835596b9f48b3f3bdfde3fd2af66b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - python -c \"import iminuit, sys; sys.exit(iminuit.test())\"\n\nabout:\n  home: https://github.com/scikit-hep/iminuit\n  license: LGPL-2.0-or-later\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Interactive Minimization Tools based on MINUIT\n  description: |\n    iminuit is designed from ground up to be fast, interactive and cython\n    friendly. iminuit extract function signature very permissively starting\n    from checking func_code down to last resort of parsing docstring (or you\n    could tell iminuit to stop looking and take your answer). The interface is\n    inspired heavily by PyMinuit and the status printout is inspired by ROOT\n    Minuit. iminuit is mostly compatible with PyMinuit (with few exceptions).\n    Existing PyMinuit code can be ported to iminuit by just changing the\n    import statement.\n  doc_url: http://iminuit.readthedocs.io\n  dev_url: https://github.com/scikit-hep/iminuit\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - piti118\n    - HDembinski\n    - beckermr\n    - chrisburr\n    - henryiii\n",
  "req":{
   "__set__":true,
