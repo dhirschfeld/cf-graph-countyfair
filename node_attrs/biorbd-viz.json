@@ -137,6 +137,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/434802670.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -229,10 +246,11 @@
  "new_version":"1.3.3",
  "new_version_attempts":{
   "1.3.0":1,
-  "1.3.1":1
+  "1.3.1":1,
+  "1.3.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.07.16.42.19",
+ "pinning_version":"2020.06.15.11.48.40",
  "raw_meta_yaml":"{% set name = \"biorbd-viz\" %}\n{% set version = \"1.3.2\" %}\n{% set build_num = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyomeca/{{ name }}/archive/Release_{{ version }}.tar.gz\n  sha256: 40a3b8dba921a00fc1cc92d0eb4042a6392b341919fa042c629771ff9e69959d\n\nbuild:\n  number: {{ build_num }}\n  script: {{ PYTHON }} -m pip install . -vv\n  string: py{{ py }}_{{ backend }}_h{{ PKG_HASH }}_{{ build_num }}\n  track_features:\n    - casadi  # [backend == \"casadi\"]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - {{ backend|default(\"eigen\") }}\n    - {{ pin_compatible('rbdl') }}\n    - {{ pin_compatible('biorbd') }}\n    - vtk\n    - pyqt\n    - pyomeca\n    - packaging\n\ntest:\n  imports:\n    - biorbd\n    - BiorbdViz  # [not linux]\n\nabout:\n  home: http://github.com/pyomeca/biorbd-viz\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Biorbd visualization toolkit\n  description: |\n    Biorbd visualization toolkit \n  doc_url: https://github.com/{{ name }}/{{ name }}\n  dev_url: https://github.com/{{ name }}/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - pariterre\n",
  "req":{
   "__set__":true,
