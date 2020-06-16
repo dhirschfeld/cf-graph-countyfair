@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435434216.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.0.24"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -107,7 +126,12 @@
   }
  },
  "name":"schemaorg",
- "new_version":"0.0.23",
+ "new_version":"0.0.24",
+ "new_version_attempts":{
+  "0.0.24":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.14.10.58",
  "raw_meta_yaml":"{% set name = \"schemaorg\" %}\n{% set version = \"0.0.23\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d8cf37ac540bc48753aaa0953668aeddbac9e7bf01f297788e5c400fda11cf71\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n    - pytest-runner\n  run:\n    - python >=3\n    - pyaml\n    - lxml\n\ntest:\n  imports:\n    - schemaorg\n    - schemaorg.version\n    - schemaorg.utils\n    - schemaorg.defaults\n    - schemaorg.data\n    - schemaorg.logger\n    - schemaorg.main\n    - schemaorg.main.parse\n    - schemaorg.main.parse.base\n    - schemaorg.main.parse.validate\n    - schemaorg.main.parse.recipe\n    - schemaorg.templates\n    - schemaorg.templates.google\n    - schemaorg.templates.metadata\n\n\nabout:\n  home: https://github.com/openschemas/schemaorg\n  license: AGPL-3.0-or-later\n  license_family: AGPL\n  license_file: LICENSE\n  summary: \"Python functions for applied use of schema.org\"\n  description: \"Python functions for instantiating and validating schemas.\"\n  doc_url: https://openschemas.github.io/schemaorg\n  dev_url: https://github.com/openschemas/schemaorg\n\nextra:\n  recipe-maintainers:\n    - vsoch\n",
  "req":{
   "__set__":true,
@@ -145,6 +169,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
