@@ -96,6 +96,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435509270.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -166,13 +183,14 @@
   }
  },
  "name":"muparser",
- "new_version":"2.3.1",
+ "new_version":"2.3.2",
  "new_version_attempts":{
   "2.3.0":1,
-  "2.3.1":1
+  "2.3.1":1,
+  "2.3.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set version = \"2.3.1\" %}\n\npackage:\n  name: muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz\n  sha256: b076af992551313244fd5796b3ec1f565e7619213cb36e2e1a80d6efb4f4be51\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('muparser', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - llvm-openmp  # [osx]\n  run:\n    - llvm-openmp  # [osx]\ntest:\n  commands:\n    - test -f ${PREFIX}/include/muParser.h  # [unix]\n    - test -f ${PREFIX}/lib/libmuparser${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\muParser.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\muparser.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\muparser.dll exit 1  # [win]\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
   "__set__":true,
