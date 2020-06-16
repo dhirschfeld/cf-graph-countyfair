@@ -133,84 +133,109 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "description":"scikit-multiflow is inspired by MOA, the most popular open source framework for machine learning for data streams,\nand MEKA, an open source implementation of methods for multi-label learning. scikit-multiflow is also inspired on\nscikit-learn, the most popular framework for machine learning in Python. Following the SciKits philosophy,\nscikit-multiflow is an open source machine learning framework for multi-output/multi-label and stream data.\n",
+   "description":"scikit-multiflow is an open-source machine learning package for streaming data.\nIt extends the scientific tools available in the Python ecosystem.\nscikit-multiflow is intended for streaming data applications where data is\ncontinuously generated and must be processed and analyzed on the go.\nData samples are not stored, so learning methods are exposed to new data only once.\n",
    "dev_url":"https://github.com/scikit-multiflow/scikit-multiflow",
    "doc_url":"https://scikit-multiflow.github.io/scikit-multiflow/",
    "home":"https://scikit-multiflow.github.io/",
    "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE",
-   "summary":"A machine learning framework for multi-output/multi-label and stream data."
+   "summary":"A machine learning package for streaming data in Python."
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "script":[
-    " -m pip install . --no-deps -vv",
-    " -m pip install . --no-deps -vv",
-    " -m pip install . --no-deps -vv"
-   ]
+    "-m pip install . --no-deps -vv",
+    "-m pip install . --no-deps -vv",
+    "-m pip install . --no-deps -vv"
+   ],
+   "skip":true
   },
   "extra":{
    "recipe-maintainers":[
     "jacobmontiel",
+    "smastelini",
     "jacobmontiel",
-    "jacobmontiel"
+    "smastelini",
+    "jacobmontiel",
+    "smastelini"
    ]
   },
   "package":{
    "name":"scikit-multiflow",
-   "version":"0.4.1"
+   "version":"0.5.0"
   },
   "requirements":{
    "build":[
+    "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_compiler_stub",
     "cxx_compiler_stub",
+    "c_compiler_stub",
     "cxx_compiler_stub"
    ],
    "host":[
     "python",
     "pip",
-    "setuptools",
-    "numpy",
+    "cython",
+    "libcblas",
+    "numpy >=1.14.0",
+    "scipy >=1.0.0",
+    "scikit-learn >=0.20",
+    "sortedcontainers >=1.5.7",
+    "matplotlib-base >=2.0.0",
+    "pandas >=0.25.3",
     "pytest-runner",
     "python",
     "pip",
-    "setuptools",
-    "numpy",
+    "cython",
+    "libcblas",
+    "numpy >=1.14.0",
+    "scipy >=1.0.0",
+    "scikit-learn >=0.20",
+    "sortedcontainers >=1.5.7",
+    "matplotlib-base >=2.0.0",
+    "pandas >=0.25.3",
     "pytest-runner",
     "python",
     "pip",
-    "setuptools",
-    "numpy",
+    "cython",
+    "libcblas",
+    "numpy >=1.14.0",
+    "scipy >=1.0.0",
+    "scikit-learn >=0.20",
+    "sortedcontainers >=1.5.7",
+    "matplotlib-base >=2.0.0",
+    "pandas >=0.25.3",
     "pytest-runner"
    ],
    "run":[
     "python",
     "numpy",
-    "scipy >1.0.0",
+    "scipy >=1.0.0",
     "scikit-learn >=0.20",
     "sortedcontainers >=1.5.7",
     "matplotlib-base >=2.0.0",
-    "pandas >=0.21.0",
+    "pandas >=0.25.3",
     "python",
     "numpy",
-    "scipy >1.0.0",
+    "scipy >=1.0.0",
     "scikit-learn >=0.20",
     "sortedcontainers >=1.5.7",
     "matplotlib-base >=2.0.0",
-    "pandas >=0.21.0",
+    "pandas >=0.25.3",
     "python",
     "numpy",
-    "scipy >1.0.0",
+    "scipy >=1.0.0",
     "scikit-learn >=0.20",
     "sortedcontainers >=1.5.7",
     "matplotlib-base >=2.0.0",
-    "pandas >=0.21.0"
+    "pandas >=0.25.3"
    ]
   },
   "source":{
-   "sha256":"ed4f791107cb7f789f0bb0620c50e743a4d397905146a4d06c62eb98607aa101",
-   "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.4.1.tar.gz"
+   "sha256":"5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a",
+   "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.5.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -221,17 +246,23 @@
   }
  },
  "name":"scikit-multiflow",
- "new_version":"0.5.0",
+ "new_version":"0.5.1",
  "new_version_attempts":{
-  "0.5.0":1
+  "0.5.0":1,
+  "0.5.1":1
  },
- "new_version_errors":{},
+ "new_version_errors":{
+  "0.5.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.5.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
+ },
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"scikit-multiflow\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"ed4f791107cb7f789f0bb0620c50e743a4d397905146a4d06c62eb98607aa101\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script:\n    - \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: True  # [py<35]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy\n    - pytest-runner\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.21.0\n\ntest:\n  imports:\n    - skmultiflow\n\nabout:\n  home: https://scikit-multiflow.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A machine learning framework for multi-output/multi-label and stream data.'\n\n  description: |\n    scikit-multiflow is inspired by MOA, the most popular open source framework for machine learning for data streams,\n    and MEKA, an open source implementation of methods for multi-label learning. scikit-multiflow is also inspired on\n    scikit-learn, the most popular framework for machine learning in Python. Following the SciKits philosophy,\n    scikit-multiflow is an open source machine learning framework for multi-output/multi-label and stream data.\n  doc_url: https://scikit-multiflow.github.io/scikit-multiflow/\n  dev_url: https://github.com/scikit-multiflow/scikit-multiflow\n\nextra:\n  recipe-maintainers:\n    - jacobmontiel\n",
+ "raw_meta_yaml":"{% set name = \"scikit-multiflow\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  skip: True  # [win]\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - libcblas\n    - numpy >=1.14.0\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n    - pytest-runner\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n\ntest:\n  imports:\n    - skmultiflow\n\nabout:\n  home: https://scikit-multiflow.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A machine learning package for streaming data in Python.\n\n  description: |\n    scikit-multiflow is an open-source machine learning package for streaming data.\n    It extends the scientific tools available in the Python ecosystem.\n    scikit-multiflow is intended for streaming data applications where data is \n    continuously generated and must be processed and analyzed on the go.\n    Data samples are not stored, so learning methods are exposed to new data only once.\n  doc_url: https://scikit-multiflow.github.io/scikit-multiflow/\n  dev_url: https://github.com/scikit-multiflow/scikit-multiflow\n\nextra:\n  recipe-maintainers:\n    - jacobmontiel\n    - smastelini\n",
  "req":{
   "__set__":true,
   "elements":[
+   "c_compiler_stub",
    "cxx_compiler_stub",
+   "cython",
+   "libcblas",
    "matplotlib-base",
    "numpy",
    "pandas",
@@ -240,7 +271,6 @@
    "python",
    "scikit-learn",
    "scipy",
-   "setuptools",
    "sortedcontainers"
   ]
  },
@@ -248,17 +278,24 @@
   "build":{
    "__set__":true,
    "elements":[
+    "c_compiler_stub",
     "cxx_compiler_stub"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
+    "cython",
+    "libcblas",
+    "matplotlib-base",
     "numpy",
+    "pandas",
     "pip",
     "pytest-runner",
     "python",
-    "setuptools"
+    "scikit-learn",
+    "scipy",
+    "sortedcontainers"
    ]
   },
   "run":{
@@ -284,17 +321,24 @@
   "build":{
    "__set__":true,
    "elements":[
+    "c_compiler_stub",
     "cxx_compiler_stub"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "numpy",
+    "cython",
+    "libcblas",
+    "matplotlib-base >=2.0.0",
+    "numpy >=1.14.0",
+    "pandas >=0.25.3",
     "pip",
     "pytest-runner",
     "python",
-    "setuptools"
+    "scikit-learn >=0.20",
+    "scipy >=1.0.0",
+    "sortedcontainers >=1.5.7"
    ]
   },
   "run":{
@@ -302,10 +346,10 @@
    "elements":[
     "matplotlib-base >=2.0.0",
     "numpy",
-    "pandas >=0.21.0",
+    "pandas >=0.25.3",
     "python",
     "scikit-learn >=0.20",
-    "scipy >1.0.0",
+    "scipy >=1.0.0",
     "sortedcontainers >=1.5.7"
    ]
   },
@@ -315,5 +359,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.3.0.tar.gz",
- "version":"0.4.1"
+ "version":"0.5.0"
 }
