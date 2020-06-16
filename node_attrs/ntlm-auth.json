@@ -70,14 +70,14 @@
    "description":"This library handles the low-level details of NTLM authentication for use in authenticating\nwith a service that uses NTLM. It will create and parse the 3 different message types in\nthe order required and produce a base64 encoded value that can be attached to the HTTP header.\n",
    "dev_url":"https://github.com/jborean93/ntlm-auth",
    "home":"https://github.com/jborean93/ntlm-auth",
-   "license":"LGPL-3.0",
+   "license":"MIT",
    "license_file":"LICENSE",
    "summary":"Calculates NTLM Authentication codes"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -88,10 +88,10 @@
   },
   "package":{
    "name":"ntlm-auth",
-   "version":"1.4.0"
+   "version":"1.5.0"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
     "pip",
     "python",
@@ -101,17 +101,14 @@
    ],
    "run":[
     "python",
-    "six",
     "python",
-    "six",
-    "python",
-    "six"
+    "python"
    ]
   },
   "source":{
-   "fn":"ntlm-auth-1.4.0.tar.gz",
-   "sha256":"350f2389c8ee5517f47db55a36ac2f8efc9742a60a678d6e2caa92385bdcaa9a",
-   "url":"https://pypi.io/packages/source/n/ntlm-auth/ntlm-auth-1.4.0.tar.gz"
+   "fn":"ntlm-auth-1.5.0.tar.gz",
+   "sha256":"c9667d361dc09f6b3750283d503c689070ff7d89f2f6ff0d38088d5436ff8543",
+   "url":"https://pypi.io/packages/source/n/ntlm-auth/ntlm-auth-1.5.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -128,32 +125,30 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.22.23.24",
- "raw_meta_yaml":"{% set name = \"ntlm-auth\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"350f2389c8ee5517f47db55a36ac2f8efc9742a60a678d6e2caa92385bdcaa9a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - ntlm_auth\n\nabout:\n  home: https://github.com/jborean93/ntlm-auth\n  license: LGPL-3.0\n  license_file: LICENSE\n  summary: 'Calculates NTLM Authentication codes'\n\n  description: |\n    This library handles the low-level details of NTLM authentication for use in authenticating \n    with a service that uses NTLM. It will create and parse the 3 different message types in \n    the order required and produce a base64 encoded value that can be attached to the HTTP header.\n  dev_url: https://github.com/jborean93/ntlm-auth\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "raw_meta_yaml":"{% set name = \"ntlm-auth\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"c9667d361dc09f6b3750283d503c689070ff7d89f2f6ff0d38088d5436ff8543\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - ntlm_auth\n\nabout:\n  home: https://github.com/jborean93/ntlm-auth\n  license: MIT\n  license_file: LICENSE\n  summary: Calculates NTLM Authentication codes\n\n  description: |\n    This library handles the low-level details of NTLM authentication for use in authenticating \n    with a service that uses NTLM. It will create and parse the 3 different message types in \n    the order required and produce a base64 encoded value that can be attached to the HTTP header.\n  dev_url: https://github.com/jborean93/ntlm-auth\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
-   "python",
-   "six"
+   "python"
   ]
  },
  "requirements":{
   "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
    "__set__":true,
    "elements":[
     "pip",
     "python"
    ]
   },
-  "host":{
-   "__set__":true,
-   "elements":[]
-  },
   "run":{
    "__set__":true,
    "elements":[
-    "python",
-    "six"
+    "python"
    ]
   },
   "test":{
@@ -166,20 +161,19 @@
  "total_requirements":{
   "build":{
    "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
    "elements":[
     "pip",
     "python"
    ]
   },
-  "host":{
-   "__set__":true,
-   "elements":[]
-  },
   "run":{
    "__set__":true,
    "elements":[
-    "python",
-    "six"
+    "python"
    ]
   },
   "test":{
@@ -188,5 +182,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/n/ntlm-auth/ntlm-auth-1.4.0.tar.gz",
- "version":"1.4.0"
+ "version":"1.5.0"
 }

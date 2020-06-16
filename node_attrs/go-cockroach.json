@@ -39,7 +39,7 @@
     "__lazy_json__":"pr_json/424093183.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1592315697.8157067,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
     "migrator_version":0,
@@ -63,6 +63,25 @@
     "migrator_object_version":1,
     "migrator_version":0,
     "name":"rocksdb610"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435249832.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"libprotobuf312"
    },
    "keys":[
     "bot_rerun",
@@ -181,7 +200,7 @@
   "19.2.7":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.12.09.54.30",
+ "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"cockroach\" %}\n{% set version = \"19.2.7\" %}\n\npackage:\n  name: go-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  folder: gopath\n  url: https://binaries.cockroachdb.com/{{ name }}-v{{ version }}.src.tgz\n  sha256: e8ed021d8e06a236fc72b907373fefc50ebd0147661b2816a2299749cf4d7a09\n  patches:\n    - 0001-use-conda-forge-dependencies.patch\n\nbuild:\n  number: 1\n  #pin_depends: strict\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler(\"go-cgo\") }} >=1.12.17,<1.13\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - cmake >=3.8,<4\n    - protobuf ==3.6.0\n    - yarn\n  host:\n    - jemalloc\n    - libprotobuf\n    - libedit\n    - rocksdb\n  run:\n    - {{ pin_compatible('libedit', max_pin=\"x.x\") }}\n\ntest:\n  commands:\n    - cockroach version\n    - cockroach start-single-node --insecure --background --host localhost\n    - cockroach workload init startrek\n    - cockroach sql --insecure -d startrek -e 'select quote from quotes limit 1;'\n    - cockroach quit --insecure\n\nabout:\n  home: http://cockroachlabs.com\n  license: LicenseRef-BSL-1.1\n  license_file: gopath/src/github.com/cockroachdb/cockroach/licenses/BSL.txt\n  summary: A disaster-surviving, cloud-native SQL database for building global, scalable cloud services.\n  description: |\n    CockroachDB is a distributed SQL database built on a transactional and\n    strongly-consistent key-value store. It scales horizontally; survives disk,\n    machine, rack, and even datacenter failures with minimal latency disruption and\n    no manual intervention; supports strongly-consistent ACID transactions; and\n    provides a familiar SQL API for structuring, manipulating, and querying data.\n  doc_url: https://www.cockroachlabs.com/docs\n  dev_url: https://github.com/cockroachdb/cockroach\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
   "__set__":true,
