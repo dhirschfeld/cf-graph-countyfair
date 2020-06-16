@@ -243,36 +243,36 @@
   },
   "package":{
    "name":"pyspark",
-   "version":"2.4.6"
+   "version":"3.0.0"
   },
   "requirements":{
    "host":[
     "pip",
-    "pypandoc",
-    "python <3.8",
+    "python",
     "setuptools",
     "pip",
-    "pypandoc",
-    "python <3.8",
+    "python",
     "setuptools",
     "pip",
-    "pypandoc",
-    "python <3.8",
+    "python",
     "setuptools"
    ],
    "run":[
     "numpy >=1.7",
-    "pandas >=0.19.2",
-    "py4j ==0.10.7",
-    "python <3.8",
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python",
     "numpy >=1.7",
-    "pandas >=0.19.2",
-    "py4j ==0.10.7",
-    "python <3.8",
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python",
     "numpy >=1.7",
-    "pandas >=0.19.2",
-    "py4j ==0.10.7",
-    "python <3.8"
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python"
    ]
   },
   "source":{
@@ -281,8 +281,8 @@
     "0001-Disable-symlinks-on-Windows.patch",
     "0001-Disable-symlinks-on-Windows.patch"
    ],
-   "sha256":"b4b319a3ffd187a3019f654ae1c8ac38048bcec2940f8cecdef829302d166feb",
-   "url":"https://pypi.io/packages/source/p/pyspark/pyspark-2.4.6.tar.gz"
+   "sha256":"8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f",
+   "url":"https://pypi.io/packages/source/p/pyspark/pyspark-3.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -337,7 +337,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.22.23.24",
- "raw_meta_yaml":"{% set name = \"pyspark\" %}\n{% set version = \"2.4.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b4b319a3ffd187a3019f654ae1c8ac38048bcec2940f8cecdef829302d166feb\n  patches:\n    - 0001-Disable-symlinks-on-Windows.patch\n\nbuild:\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - pypandoc\n    - python <3.8\n    - setuptools\n  run:\n    - numpy >=1.7\n    - pandas >=0.19.2\n    - py4j ==0.10.7\n    - python <3.8\n\ntest:\n  commands:\n    - pip check\n    - bash -c \"compgen -c spark && compgen -c pyspark\"  # [not win]\n    - where *spark*                                     # [win]\n  imports:\n    - pyspark\n    - pyspark.ml\n    - pyspark.ml.linalg\n    - pyspark.ml.param\n    - pyspark.mllib\n    - pyspark.mllib.linalg\n    - pyspark.mllib.stat\n    - pyspark.sql\n    - pyspark.streaming\n  requires:\n    - pip\n\nabout:\n  home: http://spark.apache.org/\n  license: Apache-2.0\n  # Not yet available in the pypi release\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt\n  summary: Apache Spark\n  description: Apache Spark is a fast and general engine for large-scale data processing.\n\nextra:\n  recipe-maintainers:\n    - parente\n    - ericdill\n    - quasiben\n    - dbast\n    - mariusvniekerk\n",
+ "raw_meta_yaml":"{% set name = \"pyspark\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f\n  patches:\n    - 0001-Disable-symlinks-on-Windows.patch\n\nbuild:\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - numpy >=1.7\n    - pandas >=0.23.2\n    - py4j ==0.10.9\n    - pyarrow >=0.15.1\n    - python\n\ntest:\n  commands:\n    - pip check\n    - bash -c \"compgen -c spark && compgen -c pyspark\"  # [not win]\n    - where *spark*                                     # [win]\n  imports:\n    - pyspark\n    - pyspark.ml\n    - pyspark.ml.linalg\n    - pyspark.ml.param\n    - pyspark.mllib\n    - pyspark.mllib.linalg\n    - pyspark.mllib.stat\n    - pyspark.sql\n    - pyspark.streaming\n  requires:\n    - pip\n\nabout:\n  home: http://spark.apache.org/\n  license: Apache-2.0\n  # Not yet available in the pypi release\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt\n  summary: Apache Spark\n  description: Apache Spark is a fast and general engine for large-scale data processing.\n\nextra:\n  recipe-maintainers:\n    - parente\n    - ericdill\n    - quasiben\n    - dbast\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -345,7 +345,7 @@
    "pandas",
    "pip",
    "py4j",
-   "pypandoc",
+   "pyarrow",
    "python",
    "setuptools"
   ]
@@ -359,7 +359,6 @@
    "__set__":true,
    "elements":[
     "pip",
-    "pypandoc",
     "python",
     "setuptools"
    ]
@@ -370,6 +369,7 @@
     "numpy",
     "pandas",
     "py4j",
+    "pyarrow",
     "python"
    ]
   },
@@ -391,8 +391,7 @@
    "__set__":true,
    "elements":[
     "pip",
-    "pypandoc",
-    "python <3.8",
+    "python",
     "setuptools"
    ]
   },
@@ -400,9 +399,10 @@
    "__set__":true,
    "elements":[
     "numpy >=1.7",
-    "pandas >=0.19.2",
-    "py4j ==0.10.7",
-    "python <3.8"
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python"
    ]
   },
   "test":{
@@ -413,5 +413,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyspark/pyspark-2.4.4.tar.gz",
- "version":"2.4.6"
+ "version":"3.0.0"
 }
