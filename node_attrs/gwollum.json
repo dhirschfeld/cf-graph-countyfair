@@ -111,6 +111,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435001446.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"root_base622"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -242,7 +261,7 @@
   "2.4.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.04.19.59.17",
+ "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"gwollum\" %}\n{% set version = \"2.4.0\" %}\n{% set versions = version.split('.') %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.xz\n  sha256: 834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259\n  patches:\n    # use C++17 standard (required to link against ROOT>=6.14)\n    - c++17.patch\n    # update links\n    - streams-libraries.patch\n    - triggers-libraries.patch\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"gwollum\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.9.0\n    - make  # [unix]\n    - pkg-config  # [unix]\n  host:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n    - root-binaries\n  run:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n\ntest:\n  requires:\n    - pkg-config\n  commands:\n    # sanity check\n    - echo -e \"1 2 3\\n4 5 6\" > triggers.txt\n    - TxtToTree triggers.txt triggers a/I:b/I:c/I\n    # check pkg-config\n    - test \"$(pkg-config --print-errors --modversion gwollum)\" == \"${PKG_VERSION}\"  # [unix]\n\nabout:\n  home: http://virgo.in2p3.fr/GWOLLUM/v{{ versions[0] }}r{{ versions[1] }}/index.html?Main\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Tools for gravitational-wave analyses\n  description: |\n    The GWOLLUM package contains a set of software tools designed to perform\n    GW analyses.  Most of the code source is written with the C++ language\n    and it also heavily relies on the CERN ROOT libraries (also C++).\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{
   "__set__":true,
@@ -299,7 +318,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
