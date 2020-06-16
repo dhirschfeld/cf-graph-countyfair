@@ -443,6 +443,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435303245.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.5.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -553,15 +570,16 @@
   }
  },
  "name":"labelme",
- "new_version":"4.5.0",
+ "new_version":"4.5.1",
  "new_version_attempts":{
   "4.2.10":1,
   "4.3.0":1,
   "4.4.0":1,
-  "4.5.0":1
+  "4.5.0":1,
+  "4.5.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.06.16.14.10.58",
  "raw_meta_yaml":"{% set name = \"labelme\" %}\n{% set version = \"4.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1838185bcde86e3287f7a3c7fae0958182304e266953b9bbd6ed447c0d2c3a8c\n  # patches:\n  #   - disable_automatic_install_of_qt.patch\n\nbuild:\n  number: 0\n  # too lazy to build python 2.7 for an interactive tool\n  skip: true  # [py==27]\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - labelme = labelme.__main__:main\n    - labelme_draw_json = labelme.cli.draw_json:main\n    - labelme_draw_label_png = labelme.cli.draw_label_png:main\n    - labelme_json_to_dataset = labelme.cli.json_to_dataset:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - imgviz >=0.10.2\n    - matplotlib-base\n    - numpy\n    - pillow\n    - pyyaml\n    - termcolor\n    - qtpy\n\ntest:\n  requires:\n    - pyqt\n  commands:\n    - labelme --help\n\napp:\n  entry: labelme\n  icon: {{ SRC_DIR }}/labelme/icons/icon.png\n  summary: Image Polygonal Annotation with Python\n  type: desk\n\nabout:\n  home: https://github.com/wkentaro/labelme\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).\n  description: |\n    Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\n    It is written in Python and uses Qt for its graphical interface.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
