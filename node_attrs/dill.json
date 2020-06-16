@@ -202,8 +202,9 @@
    "summary":"Serialize all of python (almost)"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . --no-deps -vv"
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -214,7 +215,7 @@
   },
   "package":{
    "name":"dill",
-   "version":"0.3.1.1"
+   "version":"0.3.2"
   },
   "requirements":{
    "host":[
@@ -227,20 +228,29 @@
    ],
    "run":[
     "python",
-    "pyreadline >=1.7.1",
     "python",
     "python"
    ]
   },
   "source":{
-   "sha256":"42d8ef819367516592a825746a18073ced42ca169ab1f5f4044134703e7a049c",
-   "url":"https://pypi.io/packages/source/d/dill/dill-0.3.1.1.tar.gz"
+   "sha256":"6e12da0d8e49c220e8d6e97ee8882002e624f1160289ce85ec2cc0a5246b3a2e",
+   "url":"https://pypi.io/packages/source/d/dill/dill-0.3.2.zip"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "dill",
     "dill",
     "dill"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -251,12 +261,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.11.48.40",
- "raw_meta_yaml":"{% set version = \"0.3.1.1\" %}\n\npackage:\n  name: dill\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dill/dill-{{ version }}.tar.gz\n  sha256: 42d8ef819367516592a825746a18073ced42ca169ab1f5f4044134703e7a049c\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyreadline >=1.7.1  # [win]\n\ntest:\n  imports:\n    - dill\n\nabout:\n  home: http://www.cacr.caltech.edu/~mmckerns/dill.htm\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Serialize all of python (almost)\n  description: |\n    Dill extends Python's 'pickle' module for serializing and\n    de-serializing Python objects to he majority of the built-in python\n    types.\n  doc_url: http://trac.mystic.cacr.caltech.edu/project/pathos/wiki/dill.html\n  doc_source_url: https://github.com/uqfoundation/dill/blob/master/README.md\n  dev_url: https://github.com/uqfoundation/dill\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"0.3.2\" %}\n\npackage:\n  name: dill\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dill/dill-{{ version }}.zip\n  sha256: 6e12da0d8e49c220e8d6e97ee8882002e624f1160289ce85ec2cc0a5246b3a2e\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - dill\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: http://www.cacr.caltech.edu/~mmckerns/dill.htm\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Serialize all of python (almost)\n  description: |\n    Dill extends Python's 'pickle' module for serializing and\n    de-serializing Python objects to he majority of the built-in python\n    types.\n  doc_url: http://trac.mystic.cacr.caltech.edu/project/pathos/wiki/dill.html\n  doc_source_url: https://github.com/uqfoundation/dill/blob/master/README.md\n  dev_url: https://github.com/uqfoundation/dill\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
-   "pyreadline",
    "python"
   ]
  },
@@ -275,13 +284,14 @@
   "run":{
    "__set__":true,
    "elements":[
-    "pyreadline",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -301,15 +311,16 @@
   "run":{
    "__set__":true,
    "elements":[
-    "pyreadline >=1.7.1",
     "python"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/d/dill/dill-0.3.0.tar.gz",
- "version":"0.3.1.1"
+ "version":"0.3.2"
 }
