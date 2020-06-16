@@ -919,13 +919,12 @@
    "summary":"gRPC - A high-performance, open-source universal RPC framework"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "grpc-cpp",
     "grpc-cpp",
     "grpc-cpp"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -991,20 +990,11 @@
     "zlib"
    ]
   },
-  "source":[
-   {
-    "sha256":"c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983",
-    "url":"https://github.com/grpc/grpc/archive/v1.29.0.tar.gz"
-   },
-   {
-    "sha256":"c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983",
-    "url":"https://github.com/grpc/grpc/archive/v1.29.0.tar.gz"
-   },
-   {
-    "sha256":"c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983",
-    "url":"https://github.com/grpc/grpc/archive/v1.29.0.tar.gz"
-   }
-  ]
+  "source":{
+   "patches":null,
+   "sha256":"c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983",
+   "url":"https://github.com/grpc/grpc/archive/v1.29.0.tar.gz"
+  }
  },
  "name":"grpc-cpp",
  "new_version":"1.29.1",
@@ -1014,7 +1004,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"grpc-cpp\" %}\n{% set version = \"1.29.0\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/grpc/grpc/archive/v{{ version }}.tar.gz\n    sha256: c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983\n\nbuild:\n  number: 0\n  # Requires C++ 11, VS 2008 is not supported\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('grpc-cpp', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    # `protoc` is also used for building\n    - libprotobuf\n    - ninja\n  host:\n    - abseil-cpp\n    - c-ares\n    - gflags\n    - libprotobuf\n    - openssl\n    - zlib\n  run:\n    - abseil-cpp\n    - zlib\n\nabout:\n  home: https://grpc.io/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: gRPC - A high-performance, open-source universal RPC framework\n  description: |\n    gRPC is a modern, open source, high-performance remote procedure call\n    (RPC) framework that can run anywhere. gRPC enables client and server\n    applications to communicate transparently, and simplifies the building\n    of connected systems.\n\n    This package contains the gRPC C++ libraries and header files, as well\n    as the code generation plugins.\n  doc_url: https://grpc.io/docs/\n\nextra:\n  recipe-maintainers:\n    - pitrou\n    - xhochy\n    - wesm\n",
+ "raw_meta_yaml":"{% set name = \"grpc-cpp\" %}\n{% set version = \"1.29.0\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/grpc/grpc/archive/v{{ version }}.tar.gz\n  sha256: c0a6b40a222e51bea5c53090e9e65de46aee2d84c7fa7638f09cb68c3331b983\n  patches:\n    - aarch64-tcp-header.patch  # [aarch64]\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('grpc-cpp', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    # `protoc` is also used for building\n    - libprotobuf\n    - ninja\n  host:\n    - abseil-cpp\n    - c-ares\n    - gflags\n    - libprotobuf\n    - openssl\n    - zlib\n  run:\n    - abseil-cpp\n    - zlib\n\nabout:\n  home: https://grpc.io/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: gRPC - A high-performance, open-source universal RPC framework\n  description: |\n    gRPC is a modern, open source, high-performance remote procedure call\n    (RPC) framework that can run anywhere. gRPC enables client and server\n    applications to communicate transparently, and simplifies the building\n    of connected systems.\n\n    This package contains the gRPC C++ libraries and header files, as well\n    as the code generation plugins.\n  doc_url: https://grpc.io/docs/\n\nextra:\n  recipe-maintainers:\n    - pitrou\n    - xhochy\n    - wesm\n",
  "req":{
   "__set__":true,
   "elements":[
