@@ -270,7 +270,7 @@
   },
   "package":{
    "name":"cppcheck",
-   "version":"2.0"
+   "version":"2.1"
   },
   "requirements":{
    "build":[
@@ -313,17 +313,14 @@
    ]
   },
   "source":{
-   "fn":"2.0.tar.gz",
+   "fn":"2.1.tar.gz",
    "patches":[
     "fix-binary-relocation-issue-1.90.patch",
-    "fix-cmake-version-2.0.patch",
     "fix-binary-relocation-issue-1.90.patch",
-    "fix-cmake-version-2.0.patch",
-    "fix-binary-relocation-issue-1.90.patch",
-    "fix-cmake-version-2.0.patch"
+    "fix-binary-relocation-issue-1.90.patch"
    ],
-   "sha256":"fdba69d9f8db4bbe27ee00bb88839d212b6a848372add7ad8f567236deb0f00f",
-   "url":"https://github.com/danmar/cppcheck/archive/2.0.tar.gz"
+   "sha256":"447d44bbaa555fa78b89dd2cb0203fd4c6f18269db8a78638b968ba7c72cb02e",
+   "url":"https://github.com/danmar/cppcheck/archive/2.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -344,7 +341,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"cppcheck\" %}\n{% set version = \"2.0\" %}\n{% set sha256 = \"fdba69d9f8db4bbe27ee00bb88839d212b6a848372add7ad8f567236deb0f00f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - fix-binary-relocation-issue-1.90.patch\n    - fix-cmake-version-2.0.patch\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make  # [osx or unix]\n    - cmake\n    - pygments\n  host:\n    - python\n    - setuptools\n    - pcre\n  run:\n    - pcre\n    - python\n    - pygments\n\ntest:\n  commands:\n    - cppcheck --version\n    - echo ';' > test.h; cppcheck --check-config test.h\n\nabout:\n  description: Cppcheck is a static analysis tool for C/C++ code. Unlike C/C++ compilers and many other analysis tools it does not detect syntax errors in the code. Cppcheck primarily detects the types of bugs that the compilers normally do not detect. The goal is to detect only real errors in the code (i.e. have zero false\n    positives).\n  home: http://cppcheck.sourceforge.net/\n  dev_url: https://github.com/danmar/cppcheck\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: A static analysis tool for C/C++ code.\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n    - seanyen\n",
+ "raw_meta_yaml":"{% set name = \"cppcheck\" %}\n{% set version = \"2.1\" %}\n{% set sha256 = \"447d44bbaa555fa78b89dd2cb0203fd4c6f18269db8a78638b968ba7c72cb02e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - fix-binary-relocation-issue-1.90.patch\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make  # [osx or unix]\n    - cmake\n    - pygments\n  host:\n    - python\n    - setuptools\n    - pcre\n  run:\n    - pcre\n    - python\n    - pygments\n\ntest:\n  commands:\n    - cppcheck --version\n    - echo ';' > test.h; cppcheck --check-config test.h\n\nabout:\n  description: Cppcheck is a static analysis tool for C/C++ code. Unlike C/C++ compilers and many other analysis tools it does not detect syntax errors in the code. Cppcheck primarily detects the types of bugs that the compilers normally do not detect. The goal is to detect only real errors in the code (i.e. have zero false\n    positives).\n  home: http://cppcheck.sourceforge.net/\n  dev_url: https://github.com/danmar/cppcheck\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: A static analysis tool for C/C++ code.\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n    - seanyen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -425,5 +422,5 @@
   }
  },
  "url":"https://github.com/danmar/cppcheck/archive/1.88.tar.gz",
- "version":"2.0"
+ "version":"2.1"
 }
