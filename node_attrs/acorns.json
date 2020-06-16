@@ -64,17 +64,17 @@
  "meta_yaml":{
   "about":{
    "description":"ACORNS is an algorithm for automatic differention of algorithms\nwritten in a subset of C99 code and its efficient implementation as a Python script.\n",
-   "dev_url":"https://github.com/deshanadesai/autodiff",
-   "home":"https://github.com/deshanadesai/autodiff",
+   "dev_url":"https://github.com/deshanadesai/acorns",
+   "home":"https://github.com/deshanadesai/acorns",
    "license":"MIT",
    "license_family":"MIT",
-   "license_file":"LICENSE",
+   "license_file":"LICENSE.txt",
    "summary":"An Easy-To-Use Code Generator for Gradients and Hessians"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv",
-   "skip":true
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -85,20 +85,9 @@
   },
   "package":{
    "name":"acorns",
-   "version":"0.0.1"
+   "version":"0.0.2"
   },
   "requirements":{
-   "build":[
-    "cxx_compiler_stub",
-    "cmake",
-    "make",
-    "cxx_compiler_stub",
-    "cmake",
-    "make",
-    "cxx_compiler_stub",
-    "cmake",
-    "make"
-   ],
    "host":[
     "python",
     "pip",
@@ -110,23 +99,23 @@
    "run":[
     "python",
     "pycparser",
+    "numpy",
     "python",
     "pycparser",
+    "numpy",
     "python",
-    "pycparser"
+    "pycparser",
+    "numpy"
    ]
   },
   "source":{
-   "sha256":"64c1de7798d247b3987b886b84da367d189a7debe4670c9f9d687a67c4eb7ce0",
-   "url":"https://github.com/deshanadesai/autodiff/archive/v0.0.1.tar.gz"
+   "sha256":"5253ca7342fa63ec14eb454e72241bd57c21d9c2a1cf2673bcc133bf66c1a54a",
+   "url":"https://github.com/deshanadesai/autodiff/archive/v0.0.2.tar.gz"
   },
   "test":{
    "imports":[
-    "src",
     "tests",
-    "src",
     "tests",
-    "src",
     "tests"
    ]
   }
@@ -138,13 +127,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"acorns\" %}\n{% set version = \"0.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/deshanadesai/autodiff/archive/v0.0.1.tar.gz\n  sha256: 64c1de7798d247b3987b886b84da367d189a7debe4670c9f9d687a67c4eb7ce0\n\nbuild:\n  number: 1\n  skip: True  # [win or py<35]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pycparser\n\ntest:\n  imports:\n    - src\n    - tests\n\nabout:\n  home: https://github.com/deshanadesai/autodiff\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'An Easy-To-Use Code Generator for Gradients and Hessians'\n\n  description: |\n    ACORNS is an algorithm for automatic differention of algorithms \n    written in a subset of C99 code and its efficient implementation as a Python script. \n  dev_url: https://github.com/deshanadesai/autodiff\n\nextra:\n  recipe-maintainers:\n    - DeshanaDesai\n",
+ "raw_meta_yaml":"{% set name = \"acorns\" %}\n{% set version = \"0.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/deshanadesai/autodiff/archive/v{{ version }}.tar.gz\n  sha256: 5253ca7342fa63ec14eb454e72241bd57c21d9c2a1cf2673bcc133bf66c1a54a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pycparser\n    - numpy\n\ntest:\n  imports:\n    - tests\n\nabout:\n  home: https://github.com/deshanadesai/acorns\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: An Easy-To-Use Code Generator for Gradients and Hessians\n\n  description: |\n    ACORNS is an algorithm for automatic differention of algorithms \n    written in a subset of C99 code and its efficient implementation as a Python script. \n  dev_url: https://github.com/deshanadesai/acorns\n\nextra:\n  recipe-maintainers:\n    - DeshanaDesai\n",
  "req":{
   "__set__":true,
   "elements":[
-   "cmake",
-   "cxx_compiler_stub",
-   "make",
+   "numpy",
    "pip",
    "pycparser",
    "python"
@@ -153,11 +140,7 @@
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "cmake",
-    "cxx_compiler_stub",
-    "make"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
@@ -169,6 +152,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "numpy",
     "pycparser",
     "python"
    ]
@@ -183,11 +167,7 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "cmake",
-    "cxx_compiler_stub",
-    "make"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
@@ -199,6 +179,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "numpy",
     "pycparser",
     "python"
    ]
@@ -209,5 +190,5 @@
   }
  },
  "url":"https://github.com/deshanadesai/autodiff/archive/v0.0.1.tar.gz",
- "version":"0.0.1"
+ "version":"0.0.2"
 }

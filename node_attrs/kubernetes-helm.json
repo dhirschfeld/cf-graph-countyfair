@@ -168,7 +168,7 @@
   },
   "package":{
    "name":"kubernetes-helm",
-   "version":"3.2.3"
+   "version":"3.2.4"
   },
   "requirements":{
    "build":[
@@ -184,17 +184,17 @@
   "source":[
    {
     "folder":"src/k8s.io/helm",
-    "sha256":"c8c4b1ed6d96faa7ed45066ad4fef073ad1be49375dfad61e036928b09a22e06",
-    "url":"https://get.helm.sh/helm-v3.2.3-windows-amd64.zip"
+    "sha256":"d42ba3b8f1ff5eecba3074240127323b612380aa343b62b5998cc291e65ddcc3",
+    "url":"https://get.helm.sh/helm-v3.2.4-windows-amd64.zip"
    },
    {
     "folder":"src/k8s.io/helm",
-    "git_rev":"v3.2.3",
+    "git_rev":"v3.2.4",
     "git_url":"https://github.com/helm/helm"
    },
    {
     "folder":"src/k8s.io/helm",
-    "git_rev":"v3.2.3",
+    "git_rev":"v3.2.4",
     "git_url":"https://github.com/helm/helm"
    }
   ],
@@ -209,7 +209,7 @@
  "name":"kubernetes-helm",
  "new_version":false,
  "pinning_version":"2019.01.09",
- "raw_meta_yaml":"{% set goname = \"k8s.io/helm\" %}\n{% set version = \"3.2.3\" %}\n\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('src/'+goname).replace(\"/\", \"\\\\\" if win else \"/\") %}\n\npackage:\n  name: kubernetes-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    git_url: https://github.com/helm/helm  # [unix]\n    git_tag: v{{ version }}                # [unix]\n    url: https://get.helm.sh/{{ name }}-v{{ version }}-windows-amd64.zip  # [win]\n    sha256: c8c4b1ed6d96faa7ed45066ad4fef073ad1be49375dfad61e036928b09a22e06  # [win]\n\nbuild:\n  number: 0\n  script:\n    - pushd {{ pkg_src }}\n    - export USER=$(id -u -n)  # [osx]\n    - make build test-unit  # [unix]\n    - pushd bin  # [unix]\n\n    - mkdir {{ target_gobin }}\n    - cp helm{{ target_goexe }} {{ target_gobin }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} >=1.13\n    - go-gox\n    - m2-coreutils  # [win]\ntest:\n  commands:\n    - helm --help\n\nabout:\n  home: https://www.helm.sh\n  license: Apache-2.0\n  license_family: Apache\n  license_file: {{ pkg_src }}/LICENSE\n  summary: Helm is a package manager for kubernetes\n  doc_url: https://docs.helm.sh\n  dev_url: https://github.com/helm/helm\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - dhirschfeld\n",
+ "raw_meta_yaml":"{% set goname = \"k8s.io/helm\" %}\n{% set version = \"3.2.4\" %}\n\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('src/'+goname).replace(\"/\", \"\\\\\" if win else \"/\") %}\n\npackage:\n  name: kubernetes-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    git_url: https://github.com/helm/helm  # [unix]\n    git_tag: v{{ version }}                # [unix]\n    url: https://get.helm.sh/{{ name }}-v{{ version }}-windows-amd64.zip  # [win]\n    sha256: d42ba3b8f1ff5eecba3074240127323b612380aa343b62b5998cc291e65ddcc3  # [win]\n\nbuild:\n  number: 0\n  script:\n    - pushd {{ pkg_src }}\n    - export USER=$(id -u -n)  # [osx]\n    - make build test-unit  # [unix]\n    - pushd bin  # [unix]\n\n    - mkdir {{ target_gobin }}\n    - cp helm{{ target_goexe }} {{ target_gobin }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} >=1.13\n    - go-gox\n    - m2-coreutils  # [win]\ntest:\n  commands:\n    - helm --help\n\nabout:\n  home: https://www.helm.sh\n  license: Apache-2.0\n  license_family: Apache\n  license_file: {{ pkg_src }}/LICENSE\n  summary: Helm is a package manager for kubernetes\n  doc_url: https://docs.helm.sh\n  dev_url: https://github.com/helm/helm\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - dhirschfeld\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -265,5 +265,5 @@
   }
  },
  "url":"https://storage.googleapis.com/kubernetes-helm/helm-v2.14.1-windows-amd64.tar.gz",
- "version":"3.2.3"
+ "version":"3.2.4"
 }
