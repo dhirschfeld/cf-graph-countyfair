@@ -6,70 +6,446 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "home":"https://extensions.openoffice.org/en/project/english-dictionaries-apache-openoffice",
-   "license":"GPL v1",
-   "license_family":"GPL",
-   "license_file":"license.txt",
-   "summary":"English dictionaries for Apache OpenOffice"
+   "home":"https://github.com/marcoagpinto/aoo-mozilla-en-dict",
+   "license":"LGPL-3.0-or-later",
+   "license_file":"README_en_GB.txt",
+   "summary":"English Dictionaries Project (AOO+Mozilla+others)"
   },
   "build":{
-   "number":"0",
-   "skip":true
+   "noarch":"generic",
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
     "scopatz",
+    "bollwyvl",
     "scopatz",
-    "scopatz"
+    "bollwyvl",
+    "scopatz",
+    "bollwyvl"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"hunspell-en",
+    "requirements":{
+     "run":[
+      "hunspell",
+      "aoo-mozilla-en-dict-au",
+      "aoo-mozilla-en-dict-ca",
+      "aoo-mozilla-en-dict-gb",
+      "aoo-mozilla-en-dict-us",
+      "aoo-mozilla-en-dict-za"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_AU.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-au",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_CA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-ca",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_GB.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-gb",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_US.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-us",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_ZA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-za",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"hunspell-en",
+    "requirements":{
+     "run":[
+      "hunspell",
+      "aoo-mozilla-en-dict-au",
+      "aoo-mozilla-en-dict-ca",
+      "aoo-mozilla-en-dict-gb",
+      "aoo-mozilla-en-dict-us",
+      "aoo-mozilla-en-dict-za"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_AU.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-au",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_CA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-ca",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_GB.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-gb",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_US.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-us",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_ZA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-za",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"hunspell-en",
+    "requirements":{
+     "run":[
+      "hunspell",
+      "aoo-mozilla-en-dict-au",
+      "aoo-mozilla-en-dict-ca",
+      "aoo-mozilla-en-dict-gb",
+      "aoo-mozilla-en-dict-us",
+      "aoo-mozilla-en-dict-za"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_AU.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-au",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_CA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-ca",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_GB.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-gb",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"MIT",
+     "license_file":"README_en_US.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-us",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license":"LGPL-3.0-or-later",
+     "license_file":"README_en_ZA.txt"
+    },
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"aoo-mozilla-en-dict-za",
+    "script":"copy_files.py",
+    "test":{
+     "commands":[
+      "cd  && python hunspell_test.py"
+     ],
+     "requires":[
+      "hunspell",
+      "python >=3.6"
+     ]
+    }
+   }
+  ],
   "package":{
-   "name":"hunspell-en",
-   "version":"2017.09.01"
+   "name":"aoo-mozilla-en-dict",
+   "version":"2020.06.01"
   },
   "requirements":{
    "build":[
-    "unzip",
-    "unzip",
-    "unzip"
-   ],
-   "run":[
-    "hunspell",
-    "hunspell",
-    "hunspell"
+    "python >=3.6",
+    "python >=3.6",
+    "python >=3.6"
    ]
   },
   "source":{
-   "fn":"dict-en.oxt",
-   "sha256":"7517ef848c6e6e829a7d737369b92fdc35551f3ff2a49fe870bb94038776b0ea",
-   "url":"https://extensions.openoffice.org/en/download/18746"
-  },
-  "test":{
-   "commands":[
-    "echo 'test' | hunspell",
-    "echo 'mispellled' | hunspell",
-    "echo 'test' | hunspell",
-    "echo 'mispellled' | hunspell",
-    "echo 'test' | hunspell",
-    "echo 'mispellled' | hunspell"
-   ]
+   "sha256":"02fca6f1d4218c37769fb10f87c30bc5e7cf49716fa07b592874a9ef1edb4f72",
+   "url":"https://github.com/marcoagpinto/aoo-mozilla-en-dict/archive/2020-06-01gb.tar.gz"
   }
  },
- "name":"hunspell-en",
+ "name":"aoo-mozilla-en-dict",
  "new_version":false,
- "raw_meta_yaml":"{% set name = \"hunspell-en\" %}\n{% set version = \"2017.09.01\" %}\n{% set sha256 = \"7517ef848c6e6e829a7d737369b92fdc35551f3ff2a49fe870bb94038776b0ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: dict-en.oxt\n  url: https://extensions.openoffice.org/en/download/18746\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - unzip\n  run:\n    - hunspell\n\ntest:\n  commands:\n    - echo 'test' | hunspell\n    - echo 'mispellled' | hunspell\n\nabout:\n  home: https://extensions.openoffice.org/en/project/english-dictionaries-apache-openoffice\n  license: GPL v1\n  license_family: GPL\n  license_file: license.txt\n  summary: 'English dictionaries for Apache OpenOffice'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "outputs_names":[
+  "aoo-mozilla-en-dict-au",
+  "aoo-mozilla-en-dict-ca",
+  "aoo-mozilla-en-dict-gb",
+  "aoo-mozilla-en-dict-us",
+  "aoo-mozilla-en-dict-za",
+  "hunspell-en"
+ ],
+ "raw_meta_yaml":"{% set name = \"aoo-mozilla-en-dict\" %}\n{% set version = \"2020-06-01\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version.replace(\"-\", \".\") }}\n\nsource:\n  url: https://github.com/marcoagpinto/{{ name }}/archive/{{ version }}gb.tar.gz\n  sha256: 02fca6f1d4218c37769fb10f87c30bc5e7cf49716fa07b592874a9ef1edb4f72\n\nbuild:\n  number: 0\n  noarch: generic\n\nrequirements:\n  build:\n    - python >=3.6\n\noutputs:\n  - name: hunspell-en\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - hunspell\n        - {{ name }}-au\n        - {{ name }}-ca\n        - {{ name }}-gb\n        - {{ name }}-us\n        - {{ name }}-za\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\n  - name: {{ name }}-au\n    build:\n      noarch: generic\n    script: copy_files.py\n    about:\n      license: MIT\n      license_file: README_en_AU.txt\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\n  - name: {{ name }}-ca\n    build:\n      noarch: generic\n    script: copy_files.py\n    about:\n      license: MIT\n      license_file: README_en_CA.txt\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\n  - name: {{ name }}-gb\n    build:\n      noarch: generic\n    script: copy_files.py\n    about:\n      license: LGPL-3.0-or-later\n      license_file: README_en_GB.txt\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\n  - name: {{ name }}-us\n    build:\n      noarch: generic\n    script: copy_files.py\n    about:\n      license: MIT\n      license_file: README_en_US.txt\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\n  - name: {{ name }}-za\n    build:\n      noarch: generic\n    script: copy_files.py\n    about:\n      license: LGPL-3.0-or-later\n      license_file: README_en_ZA.txt\n    test:\n      requires:\n        - hunspell\n        - python >=3.6\n      commands:\n        - cd {{ RECIPE_DIR }} && python hunspell_test.py\n\nabout:\n  home: https://github.com/marcoagpinto/aoo-mozilla-en-dict\n  summary: 'English Dictionaries Project (AOO+Mozilla+others)'\n  license: LGPL-3.0-or-later\n  license_file: README_en_GB.txt\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - bollwyvl\n",
  "req":{
   "__set__":true,
   "elements":[
+   "aoo-mozilla-en-dict-au",
+   "aoo-mozilla-en-dict-ca",
+   "aoo-mozilla-en-dict-gb",
+   "aoo-mozilla-en-dict-us",
+   "aoo-mozilla-en-dict-za",
    "hunspell",
-   "unzip"
+   "python"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "unzip"
+    "python"
    ]
   },
   "host":{
@@ -79,12 +455,20 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aoo-mozilla-en-dict-au",
+    "aoo-mozilla-en-dict-ca",
+    "aoo-mozilla-en-dict-gb",
+    "aoo-mozilla-en-dict-us",
+    "aoo-mozilla-en-dict-za",
     "hunspell"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "hunspell",
+    "python"
+   ]
   }
  },
  "strong_exports":false,
@@ -92,7 +476,7 @@
   "build":{
    "__set__":true,
    "elements":[
-    "unzip"
+    "python >=3.6"
    ]
   },
   "host":{
@@ -102,14 +486,22 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aoo-mozilla-en-dict-au",
+    "aoo-mozilla-en-dict-ca",
+    "aoo-mozilla-en-dict-gb",
+    "aoo-mozilla-en-dict-us",
+    "aoo-mozilla-en-dict-za",
     "hunspell"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "hunspell",
+    "python >=3.6"
+   ]
   }
  },
  "url":"https://extensions.openoffice.org/en/download/18746",
- "version":"2017.09.01"
+ "version":"2020.06.01"
 }

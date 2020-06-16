@@ -611,13 +611,15 @@
   }
  },
  "name":"descarteslabs",
- "new_version":"1.2.0",
+ "new_version":"1.3.0",
  "new_version_attempts":{
   "1.1.3":364,
-  "1.2.0":2
+  "1.2.0":2,
+  "1.3.0":1
  },
  "new_version_errors":{
-  "1.1.3":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.1.3' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/d/descarteslabs/descarteslabs-{{ version }}.tar.gz'\n"
+  "1.1.3":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.1.3' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/d/descarteslabs/descarteslabs-{{ version }}.tar.gz'\n",
+  "1.3.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.3.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/d/descarteslabs/descarteslabs-{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.04.28.13.02.26",
  "raw_meta_yaml":"{% set version = \"1.2.0\" %}\n\npackage:\n  name: descarteslabs\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/descarteslabs/descarteslabs-{{ version }}.tar.gz\n  sha256: 496b338d07c3b9e20f97483efdf628261c5f3c28f1a126887c735a78c6885f96\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - descarteslabs = descarteslabs.client.scripts.__main__:main\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - affine >=2.2.1\n    - cachetools >=2.0.1\n    - cloudpickle ==0.4.0\n    - geojson >=2.5.0\n    - grpcio >=1.16.1,<2\n    - protobuf ==3.11.2,<4\n    - numpy >=1.17.4\n    - pyarrow\n    - pytz >=2019.1\n    # requests [security]\n    - pyopenssl\n    - cryptography\n    - requests >=2.20.1,<3\n    - six >=1.12.0\n    - shapely >=1.6.3,<2\n\ntest:\n  imports:\n    - descarteslabs\n\nabout:\n  home: https://github.com/descarteslabs/descarteslabs-python\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Descartes Labs Python Library\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",

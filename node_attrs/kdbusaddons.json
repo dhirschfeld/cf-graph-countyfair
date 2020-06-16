@@ -122,7 +122,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"kdbusaddons",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -153,7 +157,7 @@
   },
   "package":{
    "name":"kdbusaddons",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -161,17 +165,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -189,8 +193,8 @@
    ]
   },
   "source":{
-   "sha256":"2c3e04031320eea6ea8d5ef6a9a63fd223cb3efe456c142f986e7374cb83e2ef",
-   "url":"https://download.kde.org/stable/frameworks/5.70/kdbusaddons-5.70.0.tar.xz"
+   "sha256":"b441f525248d9d675333cebedf97ee0232a3a9b7aa9aff84d825dfcdb3bcd23c",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kdbusaddons-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -210,7 +214,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"kdbusaddons\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kdbusaddons-{{ version }}.tar.xz\n  sha256: 2c3e04031320eea6ea8d5ef6a9a63fd223cb3efe456c142f986e7374cb83e2ef\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kdbusaddons', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5DBusAddons.so\n\nabout:\n  home: https://api.kde.org/frameworks/kdbusaddons/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Convenience classes for D-Bus\n  description: |\n    KDBusAddons provides convenience classes on top of QtDBus, as well as an API to create KDED modules.\n  dev_url: https://cgit.kde.org/kdbusaddons.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"kdbusaddons\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kdbusaddons-{{ version }}.tar.xz\n  sha256: b441f525248d9d675333cebedf97ee0232a3a9b7aa9aff84d825dfcdb3bcd23c\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kdbusaddons', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5DBusAddons.so\n\nabout:\n  home: https://api.kde.org/frameworks/kdbusaddons/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Convenience classes for D-Bus\n  description: |\n    KDBusAddons provides convenience classes on top of QtDBus, as well as an API to create KDED modules.\n  dev_url: https://cgit.kde.org/kdbusaddons.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -264,7 +268,7 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
@@ -286,5 +290,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/kdbusaddons-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }
