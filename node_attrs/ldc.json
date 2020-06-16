@@ -291,11 +291,14 @@
   }
  },
  "name":"ldc",
- "new_version":"1.21.0",
+ "new_version":"1.22.0",
  "new_version_attempts":{
-  "1.21.0":1
+  "1.21.0":1,
+  "1.22.0":1
  },
- "new_version_errors":{},
+ "new_version_errors":{
+  "1.22.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.22.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz'\n - could not hash URL template 'https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z'\n"
+ },
  "pinning_version":"2020.04.23.16.40.11",
  "raw_meta_yaml":"{% set name = \"ldc\" %}\n{% set version = \"1.20.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz       # [unix]\n  sha256: 49c9fdfe3a51c978385aae94f2e102f306102f6282215638f2ae3fb9ea8d3ab9  # [unix]\n\n  # Use the pre-built binaries for windows.\n  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]\n  sha256: 95218ef73f7cabad8139e7fd4c165b8a2d05db3be3e996526bdaab78d220f0ad  # [win]\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n\nrequirements:\n    build:\n      - {{ compiler('c') }}      # [unix]\n      - {{ compiler('cxx') }}    # [unix]\n      - git                      # [unix]\n      - cmake                    # [unix]\n      - ninja                    # [unix]\n      - 7za                      # [win]\n    host:\n      - libconfig                # [unix]\n      - libedit                  # [unix]\n      - ncurses                  # [unix]\n      - curl                     # [unix]\n      - llvmdev <=7              # [unix]\n\ntest:\n  commands:\n    - ldc2 --version\n\nabout:\n  home: https://github.com/ldc-developers/ldc\n  license: BSD, MIT, LDC\n  license_file: LICENSE\n  summary: 'The LLVM-based D Compiler'\n\n  description: |\n    The LDC project provides a portable D programming language compiler with modern optimization and code generation capabilities.\n    The compiler uses the official DMD frontend to support the latest version of D2, and relies on the LLVM Core libraries for code generation.\n  doc_url: https://wiki.dlang.org/LDC\n  dev_url: https://github.com/ldc-developers/ldc \n\nextra:\n  recipe-maintainers:\n    - brainstorm\n",
  "req":{
