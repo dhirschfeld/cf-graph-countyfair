@@ -41,6 +41,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/435019450.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -105,8 +122,12 @@
   }
  },
  "name":"ntlm-auth",
- "new_version":"1.4.0",
- "pinning_version":"2019.08.12",
+ "new_version":"1.5.0",
+ "new_version_attempts":{
+  "1.5.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"ntlm-auth\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"350f2389c8ee5517f47db55a36ac2f8efc9742a60a678d6e2caa92385bdcaa9a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - ntlm_auth\n\nabout:\n  home: https://github.com/jborean93/ntlm-auth\n  license: LGPL-3.0\n  license_file: LICENSE\n  summary: 'Calculates NTLM Authentication codes'\n\n  description: |\n    This library handles the low-level details of NTLM authentication for use in authenticating \n    with a service that uses NTLM. It will create and parse the 3 different message types in \n    the order required and produce a base64 encoded value that can be attached to the HTTP header.\n  dev_url: https://github.com/jborean93/ntlm-auth\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "req":{
   "__set__":true,
@@ -140,7 +161,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -164,14 +164,17 @@
   }
  },
  "name":"typedpy",
- "new_version":"0.61",
+ "new_version":"062",
  "new_version_attempts":{
   "0.50":1,
   "0.51":1,
   "0.60":1,
-  "0.61":1
+  "0.61":1,
+  "062":1
  },
- "new_version_errors":{},
+ "new_version_errors":{
+  "062":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '062' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/loyada/{{ name }}/archive/v{{ version }}.tar.gz'\n"
+ },
  "pinning_version":"2020.05.19.19.39.08",
  "raw_meta_yaml":"{% set name = \"typedpy\" %}\n{% set version = \"0.61\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/loyada/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 8150b07e99b1e5f61cacb10cde5fd38b494ba5b5c7b5b2856501d73f1c9e9b9b\n  patches:\n    - setup_py.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - typedpy\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/typedpy/\n  summary: Type-safe Python\n  license: BSD-2-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - loyada\n",
  "req":{
