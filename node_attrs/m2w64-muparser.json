@@ -146,7 +146,7 @@
   },
   "package":{
    "name":"m2w64-muparser",
-   "version":"2.3.1"
+   "version":"2.3.2"
   },
   "requirements":{
    "build":[
@@ -164,9 +164,9 @@
    "run":null
   },
   "source":{
-   "fn":"v2.3.1.tar.gz",
-   "sha256":"b076af992551313244fd5796b3ec1f565e7619213cb36e2e1a80d6efb4f4be51",
-   "url":"https://github.com/beltoforion/muparser/archive/v2.3.1.tar.gz"
+   "fn":"v2.3.2.tar.gz",
+   "sha256":"b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301",
+   "url":"https://github.com/beltoforion/muparser/archive/v2.3.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -193,7 +193,7 @@
   "2.3.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2.3.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set version = \"2.3.1\" %}\n\npackage:\n  name: m2w64-muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz\n  sha256: b076af992551313244fd5796b3ec1f565e7619213cb36e2e1a80d6efb4f4be51\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n  run:\n\ntest:\n  commands:\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\include\\\\muParser.h exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\lib\\\\libmuparser.dll.a exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\bin\\\\libmuparser.dll exit 1\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - mingwandroid\n",
+ "raw_meta_yaml":"{% set version = \"2.3.2\" %}\n\npackage:\n  name: m2w64-muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz\n  sha256: b35fc84e3667d432e3414c8667d5764dfa450ed24a99eeef7ee3f6647d44f301\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n  run:\n\ntest:\n  commands:\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\include\\\\muParser.h exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\lib\\\\libmuparser.dll.a exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\bin\\\\libmuparser.dll exit 1\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - mingwandroid\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -255,5 +255,5 @@
   }
  },
  "url":"https://github.com/beltoforion/muparser/archive/v2.2.6.1.tar.gz",
- "version":"2.3.1"
+ "version":"2.3.2"
 }
