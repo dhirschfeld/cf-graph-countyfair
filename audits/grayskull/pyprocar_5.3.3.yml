@@ -1,0 +1,48 @@
+{% set name = "pyprocar" %}
+{% set version = 5.3.3 %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b2f2c1b2670a4c4ea6baaf2dbf793ffe5b40b13152906968e85bbf186da48146
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - ase
+    - matplotlib-base
+    - mayavi
+    - python
+    - scikit-image
+    - scipy
+    - seekpath
+
+test:
+  imports:
+    - pyprocar
+    - pyprocar.abinitparser
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/romerogroup/pyprocar
+  summary: A Python library for electronic structure pre/post-processing.
+  license: 0BSD
+  license_file: PLEASE_ADD_LICENSE_FILE
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
