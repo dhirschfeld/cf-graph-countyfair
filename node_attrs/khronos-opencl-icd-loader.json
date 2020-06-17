@@ -160,7 +160,7 @@
   },
   "package":{
    "name":"khronos-opencl-icd-loader",
-   "version":"2020.03.13"
+   "version":"2020.06.16"
   },
   "requirements":{
    "build":[
@@ -182,31 +182,31 @@
   },
   "source":[
    {
-    "sha256":"8f49bb9d50779795b18adb56f8f0a9489c5e205c99489faa1680834ef2abb181",
-    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.03.13.zip"
+    "sha256":"e4c27a5adcef4dbc0fee98864af203dc78dfc967ca7287c9bad9add030e7516e",
+    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.zip"
    },
    {
     "folder":"inc",
-    "sha256":"318c155af9df601148be6c04e0f7b06738aef9f6cfbc9dcc0db15e89ff3dec4c",
-    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.03.13.zip"
+    "sha256":"518703d3c3a6333bcf8e4f80758e4e98f7af30fbd72a09fe8c2673da1628d80c",
+    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.06.16.zip"
    },
    {
-    "sha256":"8f49bb9d50779795b18adb56f8f0a9489c5e205c99489faa1680834ef2abb181",
-    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.03.13.zip"
-   },
-   {
-    "folder":"inc",
-    "sha256":"318c155af9df601148be6c04e0f7b06738aef9f6cfbc9dcc0db15e89ff3dec4c",
-    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.03.13.zip"
-   },
-   {
-    "sha256":"8f49bb9d50779795b18adb56f8f0a9489c5e205c99489faa1680834ef2abb181",
-    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.03.13.zip"
+    "sha256":"e4c27a5adcef4dbc0fee98864af203dc78dfc967ca7287c9bad9add030e7516e",
+    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.zip"
    },
    {
     "folder":"inc",
-    "sha256":"318c155af9df601148be6c04e0f7b06738aef9f6cfbc9dcc0db15e89ff3dec4c",
-    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.03.13.zip"
+    "sha256":"518703d3c3a6333bcf8e4f80758e4e98f7af30fbd72a09fe8c2673da1628d80c",
+    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.06.16.zip"
+   },
+   {
+    "sha256":"e4c27a5adcef4dbc0fee98864af203dc78dfc967ca7287c9bad9add030e7516e",
+    "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v2020.06.16.zip"
+   },
+   {
+    "folder":"inc",
+    "sha256":"518703d3c3a6333bcf8e4f80758e4e98f7af30fbd72a09fe8c2673da1628d80c",
+    "url":"https://github.com/KhronosGroup/OpenCL-Headers/archive/v2020.06.16.zip"
    }
   ],
   "test":{
@@ -227,7 +227,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set version = \"2020.03.13\" %}\n{% set sha256 = \"8f49bb9d50779795b18adb56f8f0a9489c5e205c99489faa1680834ef2abb181\" %}\n{% set headers_sha256 = \"318c155af9df601148be6c04e0f7b06738aef9f6cfbc9dcc0db15e89ff3dec4c\" %}\n\npackage:\n  name: khronos-opencl-icd-loader\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v{{ version }}.zip\n    sha256: {{ sha256 }}\n\n  - url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v{{ version }}.zip\n    sha256: {{ headers_sha256 }}\n    folder: inc\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(\"khronos-opencl-icd-loader\", max_pin=None) }}\n\n  # We've got ocl-icd on Linux. No need to use\n  # this ... fantastic piece of software ... anywhere else.\n  # new versions don't support older MSVC\n  skip: true  # [linux or (win and vc<14)]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - python\n    - make   # [not win]\n    - ninja  # [win]\n  host:\n  run:\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\CL\\\\cl.h exit 1       # [win]\n    - if not exist %LIBRARY_BIN%\\\\OpenCL.dll exit 1     # [win]\n    - test -f $PREFIX/include/OpenCL/cl.h               # [osx]\n    - test -f $PREFIX/include/CL/cl.h                   # [linux]\n    - test -f $PREFIX/lib/libOpenCL${SHLIB_EXT}         # [unix]\n\n    # This crashes with a segfault. Likely for a lack of ICD to talk to.\n    # - cd %SRC_DIR%/build && ctest\n\nabout:\n  home: https://www.khronos.org/registry/cl/\n  dev_url: https://github.com/KhronosGroup/OpenCL-ICD-Loader\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A driver loader for OpenCL\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - isuruf\n",
+ "raw_meta_yaml":"{% set version = \"2020.06.16\" %}\n{% set sha256 = \"e4c27a5adcef4dbc0fee98864af203dc78dfc967ca7287c9bad9add030e7516e\" %}\n{% set headers_sha256 = \"518703d3c3a6333bcf8e4f80758e4e98f7af30fbd72a09fe8c2673da1628d80c\" %}\n\npackage:\n  name: khronos-opencl-icd-loader\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/v{{ version }}.zip\n    sha256: {{ sha256 }}\n\n  - url: https://github.com/KhronosGroup/OpenCL-Headers/archive/v{{ version }}.zip\n    sha256: {{ headers_sha256 }}\n    folder: inc\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(\"khronos-opencl-icd-loader\", max_pin=None) }}\n\n  # We've got ocl-icd on Linux. No need to use\n  # this ... fantastic piece of software ... anywhere else.\n  # new versions don't support older MSVC\n  skip: true  # [linux or (win and vc<14)]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - python\n    - make   # [not win]\n    - ninja  # [win]\n  host:\n  run:\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\CL\\\\cl.h exit 1       # [win]\n    - if not exist %LIBRARY_BIN%\\\\OpenCL.dll exit 1     # [win]\n    - test -f $PREFIX/include/OpenCL/cl.h               # [osx]\n    - test -f $PREFIX/include/CL/cl.h                   # [linux]\n    - test -f $PREFIX/lib/libOpenCL${SHLIB_EXT}         # [unix]\n\n    # This crashes with a segfault. Likely for a lack of ICD to talk to.\n    # - cd %SRC_DIR%/build && ctest\n\nabout:\n  home: https://www.khronos.org/registry/cl/\n  dev_url: https://github.com/KhronosGroup/OpenCL-ICD-Loader\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: A driver loader for OpenCL\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - isuruf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -289,5 +289,5 @@
   }
  },
  "url":"https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/44f384ae624675d6b0b92ce39a97cb7f4899d92a.zip",
- "version":"2020.03.13"
+ "version":"2020.06.16"
 }
