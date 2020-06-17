@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436040031.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -71,7 +90,12 @@
   }
  },
  "name":"reverse-geocode",
- "new_version":"1.4",
+ "new_version":"1.4.1",
+ "new_version_attempts":{
+  "1.4.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"reverse-geocode\" %}\n{% set version = \"1.4\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/reverse_geocode-{{ version }}.tar.gz\"\n  sha256: ae533a78a09b4c3918229425d58ceff38fd7c8195522b2adec02ff29283cac7b\n  patches:\n    - 0001_python_int_too_large_for_c_long.patch  # [win]\n    \nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - future\n    - numpy\n    - python\n    - scipy\n\ntest:\n  imports:\n    - reverse_geocode\n\nabout:\n  home: \"https://bitbucket.org/richardpenman/reverse_geocode\"\n  license: \"LGPL\"\n  license_family: \"LGPL\"\n  license_file: \"\"\n  summary: \"Reverse geocode the given latitude / longitude\"\n  doc_url: \"https://pypi.org/project/reverse-geocode/\"\n  dev_url: \"https://bitbucket.org/richardpenman/reverse_geocode/src/default/\"\n\nextra:\n  recipe-maintainers:\n    - mwilson8\n    - rluria14\n",
  "req":{
   "__set__":true,
@@ -109,6 +133,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

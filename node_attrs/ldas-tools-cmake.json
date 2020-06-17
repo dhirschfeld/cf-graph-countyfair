@@ -171,9 +171,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -189,6 +186,10 @@
    "summary":"CMake functions used by LDAS Tools"
   },
   "build":{
+   "ignore_run_exports":[
+    "libgcc-ng",
+    "libstdcxx-ng"
+   ],
    "number":"0"
   },
   "extra":{
@@ -203,29 +204,43 @@
   },
   "package":{
    "name":"ldas-tools-cmake",
-   "version":"1.1.1"
+   "version":"1.2.1"
   },
   "requirements":{
    "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
     "cmake >=3.2",
+    "pkg-config",
     "cmake >=3.2",
-    "cmake >=3.2"
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=3.2",
+    "pkg-config"
+   ],
+   "host":[
+    "igwn-cmake >=1.2.1",
+    "igwn-cmake >=1.2.1",
+    "igwn-cmake >=1.2.1"
+   ],
+   "run":[
+    "igwn-cmake >=1.2.1",
+    "igwn-cmake >=1.2.1",
+    "igwn-cmake >=1.2.1"
    ]
   },
   "source":{
-   "sha256":"1b4a2989bf087b948a82f54edd311dc5f99261d01258b284b7ac8daaff740499",
-   "url":"http://software.ligo.org/lscsoft/source/ldas-tools-cmake-1.1.1.tar.gz"
+   "sha256":"bc4b447717753f7bde8fbc17b8f05f2f3f7f21ad4764c0530cb42bdf42c0dde3",
+   "url":"http://software.ligo.org/lscsoft/source/ldas-tools-cmake-1.2.1.tar.gz"
   },
   "test":{
    "commands":[
-    "if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\LDASToolsInstallDirs.cmake exit 1",
-    "if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\Autotools\\ArchiveX\\cx_ldas_pkg_check.cmake exit 1",
-    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsInstallDirs.cmake",
-    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/Autotools/ArchiveX/cx_ldas_pkg_check.cmake",
-    "test \"$(pkg-config --modversion ldastoolscmake)\" == \"1.1.1\"",
-    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsInstallDirs.cmake",
-    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/Autotools/ArchiveX/cx_ldas_pkg_check.cmake",
-    "test \"$(pkg-config --modversion ldastoolscmake)\" == \"1.1.1\""
+    "if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\LDASToolsCMakeConfig.cmake exit 1",
+    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsCMakeConfig.cmake",
+    "test \"$(pkg-config --modversion ldastoolscmake)\" == \"1.2.1\"",
+    "test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsCMakeConfig.cmake",
+    "test \"$(pkg-config --modversion ldastoolscmake)\" == \"1.2.1\""
    ],
    "requires":[
     "pkg-config"
@@ -240,27 +255,38 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.10.22.19.47",
- "raw_meta_yaml":"{% set name = \"ldas-tools-cmake\" %}\n{% set version = \"1.1.1\" %}\n{% set sha256 = \"1b4a2989bf087b948a82f54edd311dc5f99261d01258b284b7ac8daaff740499\" %}\n\npackage:\n  name: \"{{ name }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"{{ sha256 }}\"\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - cmake >=3.2\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsInstallDirs.cmake  # [unix]\n    - test -f ${PREFIX}/share/ldas-tools/cmake/Modules/Autotools/ArchiveX/cx_ldas_pkg_check.cmake  # [unix]\n    - test \"$(pkg-config --modversion ldastoolscmake)\" == \"{{ version }}\"  # [unix]\n    - if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\LDASToolsInstallDirs.cmake exit 1  # [win]\n    - if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\Autotools\\ArchiveX\\cx_ldas_pkg_check.cmake exit 1  # [win]\n\nabout:\n  home: \"https://git.ligo.org/ldastools/LDAS_Tools\"\n  license: \"GPL-2.0-or-later\"\n  license_family: \"GPL\"\n  license_file: \"COPYING\"\n  summary: \"CMake functions used by LDAS Tools\"\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - emaros\n",
+ "raw_meta_yaml":"{% set name = \"ldas-tools-cmake\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"bc4b447717753f7bde8fbc17b8f05f2f3f7f21ad4764c0530cb42bdf42c0dde3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  ignore_run_exports:\n    # we don't actually use the compiler\n    - libgcc-ng  # [linux]\n    - libstdcxx-ng  # [linux]\n    - vc  # [win]\n    - vs2015_runtime  # [win]\n  number: 0\n\nrequirements:\n  build:\n    # we need a compiler present, osx has one by default\n    - {{ compiler('c') }}  # [not osx]\n    - {{ compiler('cxx') }}  # [not osx]\n    - cmake >=3.2\n    - pkg-config\n  host:\n    - igwn-cmake >=1.2.1\n  run:\n    - igwn-cmake >=1.2.1\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - test -f ${PREFIX}/share/ldas-tools/cmake/Modules/LDASToolsCMakeConfig.cmake  # [unix]\n    - if not exist %LIBRARY_PREFIX%\\share\\ldas-tools\\cmake\\Modules\\LDASToolsCMakeConfig.cmake exit 1  # [win]\n    - test \"$(pkg-config --modversion ldastoolscmake)\" == \"{{ version }}\"  # [unix]\n\nabout:\n  home: https://git.ligo.org/ldastools/LDAS_Tools\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: CMake functions used by LDAS Tools\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - emaros\n",
  "req":{
   "__set__":true,
   "elements":[
-   "cmake"
+   "c_compiler_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "igwn-cmake",
+   "pkg-config"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "cmake"
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "igwn-cmake"
+   ]
   },
   "run":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "igwn-cmake"
+   ]
   },
   "test":{
    "__set__":true,
@@ -275,16 +301,23 @@
   "build":{
    "__set__":true,
    "elements":[
-    "cmake >=3.2"
+    "c_compiler_stub",
+    "cmake >=3.2",
+    "cxx_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "igwn-cmake >=1.2.1"
+   ]
   },
   "run":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "igwn-cmake >=1.2.1"
+   ]
   },
   "test":{
    "__set__":true,
@@ -294,5 +327,5 @@
   }
  },
  "url":"http://software.ligo.org/lscsoft/source/ldas-tools-cmake-1.0.7.tar.gz",
- "version":"1.1.1"
+ "version":"1.2.1"
 }
