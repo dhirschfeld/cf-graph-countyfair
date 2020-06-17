@@ -19,7 +19,7 @@
   }
  ],
  "archived":false,
- "bad":false,
+ "bad":"make_graph: 503",
  "conda-forge.yml":{
   "bot":{
    "automerge":true
@@ -113,7 +113,7 @@
   }
  },
  "name":"pymatgen-diffusion",
- "new_version":"2019.8.18",
+ "new_version":false,
  "pinning_version":"2019.08.12",
  "raw_meta_yaml":"{% set name = \"pymatgen-diffusion\" %}\n{% set version = \"2019.8.18\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c8ed6e9426abc06af66b51155f80b8fd29f3d6957ce4bd83ca34fb5005feda4f\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - setuptools\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pip\n    - pymatgen >=2019.5.8\n    - monty >=2.0.4\n\ntest:\n  imports:\n    - pymatgen_diffusion\n    - pymatgen_diffusion.aimd\n    - pymatgen_diffusion.neb\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/materialvirtuallab/pymatgen-diffusion/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'This add-on to pymatgen provides tools for analyzing diffusion in materials.'\n\n  description: |\n    This is an add-on to pymatgen for diffusion analysis that is \n    developed by the Materials Virtual Lab. Note that it relies on \n    pymatgen for structural manipulations, file io, and preliminary \n    analyses. In particular, pymatgen's DiffusionAnalyzer is used \n    heavily. The purpose of this add-on is to provide other diffusion \n    analyses, using trajectories extracted using the DiffusionAnalyzer \n    class.\n  doc_url: https://github.com/materialvirtuallab/pymatgen-diffusion/\n  dev_url: https://github.com/materialvirtuallab/pymatgen-diffusion/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - shyuep\n    - mkhorton\n",
  "req":{
