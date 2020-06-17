@@ -182,8 +182,7 @@
     "-m pip install . --no-deps -vv",
     "-m pip install . --no-deps -vv",
     "-m pip install . --no-deps -vv"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -197,7 +196,7 @@
   },
   "package":{
    "name":"scikit-multiflow",
-   "version":"0.5.0"
+   "version":"0.5.3"
   },
   "requirements":{
    "build":[
@@ -268,8 +267,8 @@
    ]
   },
   "source":{
-   "sha256":"5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a",
-   "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.5.0.tar.gz"
+   "sha256":"a720e0d7ad1af3cf1ea7ae2c0d371ec5a924a9db2aa2ba0be8d0ad99daadcfcf",
+   "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.5.3.tar.gz"
   },
   "test":{
    "imports":[
@@ -291,7 +290,7 @@
   "0.5.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.5.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"scikit-multiflow\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"5585428d8b88316e775f7e164cd1bb82edcb65ec0031a0e8a77527a8108b089a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  skip: True  # [win]\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - libcblas\n    - numpy >=1.14.0\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n    - pytest-runner\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n\ntest:\n  imports:\n    - skmultiflow\n\nabout:\n  home: https://scikit-multiflow.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A machine learning package for streaming data in Python.\n\n  description: |\n    scikit-multiflow is an open-source machine learning package for streaming data.\n    It extends the scientific tools available in the Python ecosystem.\n    scikit-multiflow is intended for streaming data applications where data is \n    continuously generated and must be processed and analyzed on the go.\n    Data samples are not stored, so learning methods are exposed to new data only once.\n  doc_url: https://scikit-multiflow.github.io/scikit-multiflow/\n  dev_url: https://github.com/scikit-multiflow/scikit-multiflow\n\nextra:\n  recipe-maintainers:\n    - jacobmontiel\n    - smastelini\n",
+ "raw_meta_yaml":"{% set name = \"scikit-multiflow\" %}\n{% set version = \"0.5.3\" %}\n{% set sha256 = \"a720e0d7ad1af3cf1ea7ae2c0d371ec5a924a9db2aa2ba0be8d0ad99daadcfcf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - libcblas\n    - numpy >=1.14.0\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n    - pytest-runner\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=1.0.0\n    - scikit-learn >=0.20\n    - sortedcontainers >=1.5.7\n    - matplotlib-base >=2.0.0\n    - pandas >=0.25.3\n\ntest:\n  imports:\n    - skmultiflow\n\nabout:\n  home: https://scikit-multiflow.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A machine learning package for streaming data in Python.\n\n  description: |\n    scikit-multiflow is an open-source machine learning package for streaming data.\n    It extends the scientific tools available in the Python ecosystem.\n    scikit-multiflow is intended for streaming data applications where data is \n    continuously generated and must be processed and analyzed on the go.\n    Data samples are not stored, so learning methods are exposed to new data only once.\n  doc_url: https://scikit-multiflow.github.io/scikit-multiflow/\n  dev_url: https://github.com/scikit-multiflow/scikit-multiflow\n\nextra:\n  recipe-maintainers:\n    - jacobmontiel\n    - smastelini\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -395,5 +394,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/scikit-multiflow/scikit-multiflow-0.3.0.tar.gz",
- "version":"0.5.0"
+ "version":"0.5.3"
 }
