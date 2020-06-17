@@ -210,7 +210,7 @@
     "transonic = transonic.run:run"
    ],
    "noarch":"python",
-   "number":"1",
+   "number":"0",
    "script":" -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra":{
@@ -228,7 +228,7 @@
   },
   "package":{
    "name":"transonic",
-   "version":"0.4.2"
+   "version":"0.4.3"
   },
   "requirements":{
    "host":[
@@ -261,8 +261,8 @@
    ]
   },
   "source":{
-   "sha256":"e929a62fbb4d380212d4735c599e0adf20d6a4334200f508c66b29cb1fda336e",
-   "url":"https://pypi.io/packages/source/t/transonic/transonic-0.4.2.tar.gz"
+   "sha256":"da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4",
+   "url":"https://pypi.io/packages/source/t/transonic/transonic-0.4.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -293,7 +293,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"transonic\" %}\n{% set version = \"0.4.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e929a62fbb4d380212d4735c599e0adf20d6a4334200f508c66b29cb1fda336e\n\nbuild:\n  number: 1\n  entry_points:\n    - transonic = transonic.run:run\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - astunparse\n    - beniget\n    - gast\n    - numpy\n    - autopep8\n\ntest:\n  imports:\n    - transonic\n    - transonic.analyses\n    - transonic.backends\n    - transonic_cl\n  commands:\n    - transonic --help\n\nabout:\n  home: https://bitbucket.org/fluiddyn/transonic\n  license: CeCILL-B\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: Make your Python code fly at transonic speeds!\n  description: |\n    Transonic is a pure Python package (requiring Python >= 3.6) to easily\n    accelerate modern Python-Numpy code with different accelerators (like\n    Cython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n    (i.e. if/when they are available).\n    The accelerators are not hard dependencies of Transonic; Python codes\n    using Transonic run fine without any accelerators installed (of course\n    without speedup)!\n  doc_url: https://transonic.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - CyrilleBonamy\n    - paugier\n    - ashwinvis\n",
+ "raw_meta_yaml":"{% set name = \"transonic\" %}\n{% set version = \"0.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4\n\nbuild:\n  number: 0\n  entry_points:\n    - transonic = transonic.run:run\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - astunparse\n    - beniget\n    - gast\n    - numpy\n    - autopep8\n\ntest:\n  imports:\n    - transonic\n    - transonic.analyses\n    - transonic.backends\n    - transonic_cl\n  commands:\n    - transonic --help\n\nabout:\n  home: https://bitbucket.org/fluiddyn/transonic\n  license: CeCILL-B\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: Make your Python code fly at transonic speeds!\n  description: |\n    Transonic is a pure Python package (requiring Python >= 3.6) to easily\n    accelerate modern Python-Numpy code with different accelerators (like\n    Cython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n    (i.e. if/when they are available).\n    The accelerators are not hard dependencies of Transonic; Python codes\n    using Transonic run fine without any accelerators installed (of course\n    without speedup)!\n  doc_url: https://transonic.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - CyrilleBonamy\n    - paugier\n    - ashwinvis\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -365,5 +365,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/t/transonic/transonic-0.3.3.tar.gz",
- "version":"0.4.2"
+ "version":"0.4.3"
 }
