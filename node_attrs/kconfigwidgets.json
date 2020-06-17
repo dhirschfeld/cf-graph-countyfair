@@ -122,7 +122,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"kconfigwidgets",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -153,7 +157,7 @@
   },
   "package":{
    "name":"kconfigwidgets",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -161,17 +165,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -181,37 +185,37 @@
    "host":[
     "xorg-libxext",
     "qt",
-    "kauth >=5.70.0",
-    "ki18n >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kconfig >=5.70.0",
-    "kguiaddons >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kauth >=5.71.0",
+    "ki18n >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kconfig >=5.71.0",
+    "kguiaddons >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "xorg-libxext",
     "qt",
-    "kauth >=5.70.0",
-    "ki18n >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kconfig >=5.70.0",
-    "kguiaddons >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kauth >=5.71.0",
+    "ki18n >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kconfig >=5.71.0",
+    "kguiaddons >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "xorg-libxfixes",
     "xorg-libxext",
     "qt",
-    "kauth >=5.70.0",
-    "ki18n >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kconfig >=5.70.0",
-    "kguiaddons >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwidgetsaddons >=5.70.0"
+    "kauth >=5.71.0",
+    "ki18n >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kconfig >=5.71.0",
+    "kguiaddons >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwidgetsaddons >=5.71.0"
    ]
   },
   "source":{
-   "sha256":"bfa73d28d33397c91aaaac71809c21933f0e0194deba3d3c3ad78decede1ada4",
-   "url":"https://download.kde.org/stable/frameworks/5.70/kconfigwidgets-5.70.0.tar.xz"
+   "sha256":"5778523c49a5294e9376ce8ee6db1a51ffaa506418a19e8632f73287a596276f",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kconfigwidgets-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -231,7 +235,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"kconfigwidgets\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kconfigwidgets-{{ version }}.tar.xz\n  sha256: bfa73d28d33397c91aaaac71809c21933f0e0194deba3d3c3ad78decede1ada4\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kconfigwidgets', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - kauth >={{ version }}\n    - ki18n >={{ version }}\n    - kcodecs >={{ version }}\n    - kconfig >={{ version }}\n    - kguiaddons >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kwidgetsaddons >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5ConfigWidgets.so\n\nabout:\n  home: https://api.kde.org/frameworks/kconfigwidgets/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: Widgets for configuration dialogs\n  description: |\n    KConfigWidgets provides easy-to-use classes to create configuration dialogs,\n    as well as a set of widgets which uses KConfig to store their settings.\n  dev_url: https://cgit.kde.org/kconfigwidgets.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"kconfigwidgets\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kconfigwidgets-{{ version }}.tar.xz\n  sha256: 5778523c49a5294e9376ce8ee6db1a51ffaa506418a19e8632f73287a596276f\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kconfigwidgets', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - kauth >={{ version }}\n    - ki18n >={{ version }}\n    - kcodecs >={{ version }}\n    - kconfig >={{ version }}\n    - kguiaddons >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kwidgetsaddons >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5ConfigWidgets.so\n\nabout:\n  home: https://api.kde.org/frameworks/kconfigwidgets/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: Widgets for configuration dialogs\n  description: |\n    KConfigWidgets provides easy-to-use classes to create configuration dialogs,\n    as well as a set of widgets which uses KConfig to store their settings.\n  dev_url: https://cgit.kde.org/kconfigwidgets.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -299,20 +303,20 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "kauth >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kguiaddons >=5.70.0",
-    "ki18n >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kauth >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kguiaddons >=5.71.0",
+    "ki18n >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "qt",
     "xorg-libxext",
     "xorg-libxfixes"
@@ -328,5 +332,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/kconfigwidgets-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }
