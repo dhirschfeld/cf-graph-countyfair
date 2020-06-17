@@ -42,7 +42,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -53,7 +53,7 @@
   },
   "package":{
    "name":"pipdeptree",
-   "version":"0.13.2"
+   "version":"1.0.0"
   },
   "requirements":{
    "host":[
@@ -74,8 +74,8 @@
    ]
   },
   "source":{
-   "sha256":"f54a2388cfe3cbaa08f4702ee8957f0f3f0d6ff65899833ea57f12f2fc4ae0c1",
-   "url":"https://pypi.io/packages/source/p/pipdeptree/pipdeptree-0.13.2.tar.gz"
+   "sha256":"5fe866a38113d28d527033ececc57b8e86df86b7c29edbacb33f41ee50f75b31",
+   "url":"https://pypi.io/packages/source/p/pipdeptree/pipdeptree-1.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -97,7 +97,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"pipdeptree\" %}\n{% set version = \"0.13.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f54a2388cfe3cbaa08f4702ee8957f0f3f0d6ff65899833ea57f12f2fc4ae0c1\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - pipdeptree = pipdeptree:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pip\n\ntest:\n  imports:\n    - pipdeptree\n  commands:\n    - pipdeptree\n\nabout:\n  home: http://github.com/naiquevin/pipdeptree\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Displays installed python packages in form of a dependency tree.'\n  description: |\n    pipdeptree is a command line utility for displaying the\n    installed python packages in form of a dependency tree. It works for packages\n    installed globally on a machine as well as in a virtualenv. Since pip freeze\n    shows all dependencies as a flat list, finding out which are the top level\n    packages and which packages do they depend on requires some effort. It can also\n    be tedious to resolve conflicting dependencies because pip doesn't yet have\n    true dependency resolution (more on this later). This utility tries to solve\n    this problem.\n  doc_url: https://github.com/naiquevin/pipdeptree\n  dev_url: http://github.com/naiquevin/pipdeptree\n\nextra:\n  recipe-maintainers:\n    - cdiener\n",
+ "raw_meta_yaml":"{% set name = \"pipdeptree\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5fe866a38113d28d527033ececc57b8e86df86b7c29edbacb33f41ee50f75b31\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - pipdeptree = pipdeptree:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pip\n\ntest:\n  imports:\n    - pipdeptree\n  commands:\n    - pipdeptree\n\nabout:\n  home: http://github.com/naiquevin/pipdeptree\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Displays installed python packages in form of a dependency tree.\n  description: |\n    pipdeptree is a command line utility for displaying the\n    installed python packages in form of a dependency tree. It works for packages\n    installed globally on a machine as well as in a virtualenv. Since pip freeze\n    shows all dependencies as a flat list, finding out which are the top level\n    packages and which packages do they depend on requires some effort. It can also\n    be tedious to resolve conflicting dependencies because pip doesn't yet have\n    true dependency resolution (more on this later). This utility tries to solve\n    this problem.\n  doc_url: https://github.com/naiquevin/pipdeptree\n  dev_url: http://github.com/naiquevin/pipdeptree\n\nextra:\n  recipe-maintainers:\n    - cdiener\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -156,5 +156,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pipdeptree/pipdeptree-0.13.2.tar.gz",
- "version":"0.13.2"
+ "version":"1.0.0"
 }

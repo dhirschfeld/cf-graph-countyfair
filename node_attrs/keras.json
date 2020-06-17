@@ -151,6 +151,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436135082.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.4.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -272,8 +289,12 @@
   }
  },
  "name":"keras",
- "new_version":"2.3.1",
- "pinning_version":"2020.01.10",
+ "new_version":"2.4.0",
+ "new_version_attempts":{
+  "2.4.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set version = \"2.3.1\" %}\n\npackage:\n  name: keras\n  version: {{ version }}\n\nsource:\n  url: https://github.com/keras-team/keras/archive/{{ version }}.tar.gz\n  sha256: 7e8df9c5291f21a01bccffd8cbdd44abd7d2679ab2f7a892a503e88291627183\n\nbuild:\n  skip: True  # [win and vc<14]\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - h5py\n    - numpy >=1.9.1\n    - scipy >=0.14\n    - tensorflow     # [not (win and py27)]\n    - pyyaml\n    - six >=1.9.0\n    - theano\n    - keras-applications >=1.0.8\n    - keras-preprocessing >=1.1.0\n\ntest:\n  imports:\n    - keras\n    - keras.backend\n    - keras.datasets\n    - keras.engine\n    - keras.layers\n    - keras.preprocessing\n    - keras.utils\n    - keras.wrappers\n\nabout:\n  home: https://github.com/keras-team/keras\n  license: MIT\n  license_file: LICENSE\n  summary: Deep Learning for Python\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n    - croth1\n    - ocefpaf\n    - jjhelmus\n",
  "req":{
   "__set__":true,
@@ -323,7 +344,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
