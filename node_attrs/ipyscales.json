@@ -60,35 +60,44 @@
  "meta_yaml":{
   "about":{
    "home":"http://github.com/vidartf/ipyscales",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.txt",
    "summary":"A widget library for scales"
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "vidartf",
+    "jasongrout",
     "vidartf",
-    "vidartf"
+    "jasongrout",
+    "vidartf",
+    "jasongrout"
    ]
   },
   "package":{
    "name":"ipyscales",
-   "version":"0.4.0"
+   "version":"0.5.0"
   },
   "requirements":{
    "host":[
     "python",
     "pip",
+    "jupyter-packaging",
+    "nodejs",
     "python",
     "pip",
+    "jupyter-packaging",
+    "nodejs",
     "python",
-    "pip"
+    "pip",
+    "jupyter-packaging",
+    "nodejs"
    ],
    "run":[
     "python",
@@ -100,8 +109,8 @@
    ]
   },
   "source":{
-   "sha256":"98fefa6fc60accab558c98759a4354f2c0cbd3d9baf1044c23d08fbd3698b465",
-   "url":"https://pypi.io/packages/source/i/ipyscales/ipyscales-0.4.0.tar.gz"
+   "sha256":"cc92bbabc066039a71cada5e7e109c5f058a7433f187eea6aec5154d8c17204d",
+   "url":"https://pypi.io/packages/source/i/ipyscales/ipyscales-0.5.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -118,11 +127,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.11.48.40",
- "raw_meta_yaml":"{% set name = \"ipyscales\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"98fefa6fc60accab558c98759a4354f2c0cbd3d9baf1044c23d08fbd3698b465\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - ipywidgets >=7,<8\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://github.com/vidartf/{{ name }}\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A widget library for scales'\n\nextra:\n  recipe-maintainers:\n    - vidartf\n",
+ "raw_meta_yaml":"{% set name = \"ipyscales\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"cc92bbabc066039a71cada5e7e109c5f058a7433f187eea6aec5154d8c17204d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - jupyter-packaging\n    - nodejs\n  run:\n    - python\n    - ipywidgets >=7,<8\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://github.com/vidartf/{{ name }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A widget library for scales\n\nextra:\n  recipe-maintainers:\n    - vidartf\n    - jasongrout\n",
  "req":{
   "__set__":true,
   "elements":[
    "ipywidgets",
+   "jupyter-packaging",
+   "nodejs",
    "pip",
    "python"
   ]
@@ -135,6 +146,8 @@
   "host":{
    "__set__":true,
    "elements":[
+    "jupyter-packaging",
+    "nodejs",
     "pip",
     "python"
    ]
@@ -161,6 +174,8 @@
   "host":{
    "__set__":true,
    "elements":[
+    "jupyter-packaging",
+    "nodejs",
     "pip",
     "python"
    ]
@@ -178,5 +193,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/i/ipyscales/ipyscales-0.4.0.tar.gz",
- "version":"0.4.0"
+ "version":"0.5.0"
 }
