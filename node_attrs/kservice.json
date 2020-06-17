@@ -122,7 +122,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"kservice",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -153,7 +157,7 @@
   },
   "package":{
    "name":"kservice",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -161,17 +165,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -183,41 +187,41 @@
     "qt",
     "flex",
     "bison >=2.4.1",
-    "ki18n >=5.70.0",
-    "kcrash >=5.70.0",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kdbusaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "ki18n >=5.71.0",
+    "kcrash >=5.71.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kdbusaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "xcb-util-keysyms",
     "xorg-libxext",
     "qt",
     "flex",
     "bison >=2.4.1",
-    "ki18n >=5.70.0",
-    "kcrash >=5.70.0",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kdbusaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "ki18n >=5.71.0",
+    "kcrash >=5.71.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kdbusaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "xcb-util-keysyms",
     "xorg-libxfixes",
     "xorg-libxext",
     "qt",
     "flex",
     "bison >=2.4.1",
-    "ki18n >=5.70.0",
-    "kcrash >=5.70.0",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kdbusaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "ki18n >=5.71.0",
+    "kcrash >=5.71.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kdbusaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "xcb-util-keysyms"
    ]
   },
   "source":{
-   "sha256":"7c46ac934eff78794233f2a49338385d862aeb5483c49d0da1edb83046b9893c",
-   "url":"https://download.kde.org/stable/frameworks/5.70/kservice-5.70.0.tar.xz"
+   "sha256":"6b7f4784cb514ec966f3cb01d26aa2dbdfd2425919efa57a4efa6117fcafc9ce",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kservice-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -237,7 +241,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.13.02.15.08",
- "raw_meta_yaml":"{% set name = \"kservice\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kservice-{{ version }}.tar.xz\n  sha256: 7c46ac934eff78794233f2a49338385d862aeb5483c49d0da1edb83046b9893c\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kservice', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - flex\n    - bison >=2.4.1\n    - ki18n >={{ version }}\n    - kcrash >={{ version }}\n    - kconfig >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kdbusaddons >={{ version }}\n    - kwindowsystem >={{ version }}\n    - xcb-util-keysyms\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Service.so\n\nabout:\n  home: https://api.kde.org/frameworks/kservice/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: Plugin framework for desktop services\n  description: |\n    KService provides a plugin framework for handling desktop services.\n    Services can be applications or libraries. They can be bound to MIME\n    types or handled by application specific code.\n  dev_url: https://cgit.kde.org/kservice.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"kservice\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kservice-{{ version }}.tar.xz\n  sha256: 6b7f4784cb514ec966f3cb01d26aa2dbdfd2425919efa57a4efa6117fcafc9ce\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kservice', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - flex\n    - bison >=2.4.1\n    - ki18n >={{ version }}\n    - kcrash >={{ version }}\n    - kconfig >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kdbusaddons >={{ version }}\n    - kwindowsystem >={{ version }}\n    - xcb-util-keysyms\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Service.so\n\nabout:\n  home: https://api.kde.org/frameworks/kservice/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: Plugin framework for desktop services\n  description: |\n    KService provides a plugin framework for handling desktop services.\n    Services can be applications or libraries. They can be bound to MIME\n    types or handled by application specific code.\n  dev_url: https://cgit.kde.org/kservice.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -309,7 +313,7 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
@@ -318,12 +322,12 @@
    "elements":[
     "bison >=2.4.1",
     "flex",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kcrash >=5.70.0",
-    "kdbusaddons >=5.70.0",
-    "ki18n >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kcrash >=5.71.0",
+    "kdbusaddons >=5.71.0",
+    "ki18n >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "qt",
     "xcb-util-keysyms",
     "xorg-libxext",
@@ -340,5 +344,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/kservice-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }
