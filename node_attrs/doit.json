@@ -79,10 +79,11 @@
  "hash_type":"sha256",
  "meta_yaml":{
   "about":{
-   "description":" `doit` is a task management & automation tool.\n`doit` comes from the idea of bringing the power of build-tools to execute any kind of **task**\n`doit` is a modern open-source build-tool written in python designed to be simple to use and flexible to deal with complex work-flows.\nIt is specially suitable for building and managing custom work-flows where there is no out-of-the-box solution available.\n`doit` has been successfully used on: systems test/integration automation, scientific computational pipelines, content generation, configuration management, etc.",
+   "description":"`doit` is a task management & automation tool.\n\n`doit` comes from the idea of bringing the power of build-tools to execute\nany kind of **task**\n\n`doit` is a modern open-source build-tool written in python designed to be\nsimple to use and flexible to deal with complex work-flows.\n\nIt is specially suitable for building and managing custom work-flows where\nthere is no out-of-the-box solution available.\n\n`doit` has been successfully used on: systems test/integration automation,\nscientific computational pipelines, content generation, configuration\nmanagement, etc.\"\n",
    "dev_url":"https://github.com/pydoit/doit",
-   "doc_url":"http://pydoit.org/contents.html",
-   "home":"http://pydoit.org",
+   "doc_source_url":"https://github.com/pydoit/doit/tree/0.32.0/doc",
+   "doc_url":"https://pydoit.org/contents.html",
+   "home":"https://pydoit.org",
    "license":"MIT",
    "license_family":"MIT",
    "license_file":"LICENSE",
@@ -94,78 +95,102 @@
     "doit = doit.__main__:main",
     "doit = doit.__main__:main"
    ],
-   "number":"1000",
-   "script":"python setup.py install  --single-version-externally-managed --record=record.txt"
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "pbronez",
+    "bollwyvl",
     "pbronez",
-    "pbronez"
+    "bollwyvl",
+    "pbronez",
+    "bollwyvl"
    ]
   },
   "package":{
    "name":"doit",
-   "version":"0.31.1"
+   "version":"0.32.0"
   },
   "requirements":{
    "build":[
+    "pip",
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools",
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ],
    "run":[
-    "python",
     "cloudpickle",
     "python",
     "cloudpickle",
+    "python",
     "macfsevents",
-    "python",
     "cloudpickle",
+    "python",
     "pyinotify"
    ]
   },
   "source":{
-   "fn":"doit-0.31.1.tar.gz",
-   "sha256":"bad01949effd537cade3aea286cc2cde074bdb7a4f442015557b1228dd46f5ea",
-   "url":"https://pypi.io/packages/source/d/doit/doit-0.31.1.tar.gz"
+   "sha256":"323d0411e50a0babb945e2a639aa6e633fbb84a9f98086df0c880e739237750c",
+   "url":"https://pypi.io/packages/source/d/doit/doit-0.32.0.tar.gz"
   },
   "test":{
    "commands":[
+    "python -m pip check",
+    "doit --version",
     "doit --help",
+    "pytest -vv -k \"not (test_execute or test_sqlite_import or test_not_picklable_raises_InvalidTask or testLoop or (TestCmdDumpDB and testDefault) or test_run_wait or test_invalid_args or test_dump or test_remove_from_non_empty_file or test_unicode_string)\"",
+    "python -m pip check",
+    "doit --version",
     "doit --help",
-    "doit --help"
+    "pytest -vv -k \"not (test_execute or test_sqlite_import or test_not_picklable_raises_InvalidTask or testLoop or (TestCmdDumpDB and testDefault) or test_run_wait or test_invalid_args or test_dump or test_remove_from_non_empty_file or test_unicode_string)\"",
+    "python -m pip check",
+    "doit --version",
+    "doit --help",
+    "pytest -vv -k \"not (test_execute or test_sqlite_import or test_not_picklable_raises_InvalidTask or testLoop or (TestCmdDumpDB and testDefault) or test_run_wait or test_invalid_args or test_dump or test_remove_from_non_empty_file or test_unicode_string)\""
    ],
    "imports":[
     "doit",
     "doit",
     "doit"
+   ],
+   "requires":[
+    "pip",
+    "pytest >=4.0",
+    "pip",
+    "pytest >=4.0",
+    "pip",
+    "pytest >=4.0"
+   ],
+   "source_files":[
+    "tests",
+    "tests",
+    "tests"
    ]
   }
  },
  "name":"doit",
  "new_version":"0.32.0",
  "pinning_version":"2019.12.02",
- "raw_meta_yaml":"{% set name = \"doit\" %}\n{% set version = \"0.31.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"bad01949effd537cade3aea286cc2cde074bdb7a4f442015557b1228dd46f5ea\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 1000\n  skip: True  # [py2k]\n  entry_points:\n    - doit = doit.__main__:main\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - cloudpickle\n    - macfsevents  # [osx]\n    - pyinotify  # [linux]\n\ntest:\n  imports:\n    - doit\n  commands:\n    - doit --help\n\nabout:\n  home: http://pydoit.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: doit - Automation Tool\n  description: \"\n    `doit` is a task management & automation tool.\n\n    `doit` comes from the idea of bringing the power of build-tools to execute\n    any kind of **task**\n\n    `doit` is a modern open-source build-tool written in python designed to be\n    simple to use and flexible to deal with complex work-flows.\n\n    It is specially suitable for building and managing custom work-flows where\n    there is no out-of-the-box solution available. \n    \n    `doit` has been successfully used on: systems test/integration automation,\n    scientific computational pipelines, content generation, configuration\n    management, etc.\"\n  doc_url: 'http://pydoit.org/contents.html'\n  dev_url: 'https://github.com/pydoit/doit'\n\nextra:\n  recipe-maintainers:\n    - pbronez\n",
+ "raw_meta_yaml":"{% set name = \"doit\" %}\n{% set version = \"0.32.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 323d0411e50a0babb945e2a639aa6e633fbb84a9f98086df0c880e739237750c\n\nbuild:\n  number: 0\n  skip: true  # [py<34]\n  entry_points:\n    - doit = doit.__main__:main\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - pip\n    - python\n  run:\n    - cloudpickle\n    - python\n    - macfsevents  # [osx]\n    - pyinotify  # [linux]\n\n# we don't ship all of the fixtures\n{% set skips = [\"test_execute\", \"test_sqlite_import\"] %}\n\n# py38 seems to pass\n{% set skips = skips + [\"test_not_picklable_raises_InvalidTask\"] %}  # [py>=38]\n\n# hangs on osx CI\n{% set skips = skips + [\"testLoop\", \"(TestCmdDumpDB and testDefault)\", \"test_run_wait\"] %}  # [osx]\n{% set skips = skips + [\"test_invalid_args\"] %}  # [osx and py==38]\n\n# fails on win CI with perms errors, etc.\n{% set skips = skips + [\"test_dump\", \"test_remove_from_non_empty_file\", \"test_unicode_string\"] %}  # [win]\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pip\n    - pytest >=4.0\n  imports:\n    - doit\n  commands:\n    - python -m pip check\n    - doit --version\n    - doit --help\n    - pytest -vv -k \"not ({{ skips | join(' or ') }})\"\n\nabout:\n  home: https://pydoit.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: doit - Automation Tool\n  description: |\n    `doit` is a task management & automation tool.\n\n    `doit` comes from the idea of bringing the power of build-tools to execute\n    any kind of **task**\n\n    `doit` is a modern open-source build-tool written in python designed to be\n    simple to use and flexible to deal with complex work-flows.\n\n    It is specially suitable for building and managing custom work-flows where\n    there is no out-of-the-box solution available.\n\n    `doit` has been successfully used on: systems test/integration automation,\n    scientific computational pipelines, content generation, configuration\n    management, etc.\"\n  doc_url: https://pydoit.org/contents.html\n  dev_url: https://github.com/pydoit/doit\n  doc_source_url: https://github.com/pydoit/doit/tree/{{ version }}/doc\n\nextra:\n  recipe-maintainers:\n    - pbronez\n    - bollwyvl\n",
  "req":{
   "__set__":true,
   "elements":[
    "cloudpickle",
    "macfsevents",
+   "pip",
    "pyinotify",
-   "python",
-   "setuptools"
+   "python"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "host":{
@@ -183,7 +208,10 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "pytest"
+   ]
   }
  },
  "smithy_version":"3.6.3",
@@ -192,8 +220,8 @@
   "build":{
    "__set__":true,
    "elements":[
-    "python",
-    "setuptools"
+    "pip",
+    "python"
    ]
   },
   "host":{
@@ -211,9 +239,12 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "pytest >=4.0"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/d/doit/doit-0.31.1.tar.gz",
- "version":"0.31.1"
+ "version":"0.32.0"
 }
