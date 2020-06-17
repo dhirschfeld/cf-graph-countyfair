@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436086171.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -91,7 +110,12 @@
   }
  },
  "name":"stglib",
- "new_version":"0.2.0",
+ "new_version":"0.2.1",
+ "new_version_attempts":{
+  "0.2.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set version = \"0.2.0\" %}\n\npackage:\n  name: stglib\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dnowacki-usgs/stglib/archive/v{{ version }}.tar.gz\n  sha256: 0c2860cde4bfda74e48cffb55ff582a684b895192e6c961b47976af467fe37f6\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - matplotlib-base\n    - netcdf4\n    - numpy\n    - pandas\n    - pyyaml\n    - scipy\n    - sqlite\n    - xarray\n    - xmltodict\n\ntest:\n  imports:\n    - stglib\n  commands:\n    -  runaqdhdr2cdf.py --help\n\nabout:\n  home: http://github.com/dnowacki-usgs/stglib\n  license: CC0\n  license_file: LICENSE.md\n  license_family: CC\n  summary: 'Process data from a variety of oceanographic instrumentation'\n  description: |\n    This package contains code to process data from a variety of oceanographic\n    instrumentation, consistent with the procedures of the Sediment Transport\n    Group at the USGS Woods Hole Coastal and Marine Science Center.\n  doc_url: http://stglib.readthedocs.io/\n  dev_url: https://github.com/dnowacki-usgs/stglib\n\nextra:\n  recipe-maintainers:\n    - dnowacki-usgs\n",
  "req":{
   "__set__":true,
@@ -141,6 +165,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
