@@ -139,7 +139,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"kcompletion",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -170,7 +174,7 @@
   },
   "package":{
    "name":"kcompletion",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -178,17 +182,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -198,22 +202,22 @@
    "host":[
     "xorg-libxext",
     "qt",
-    "kconfig >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kconfig >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "xorg-libxext",
     "qt",
-    "kconfig >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kconfig >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "xorg-libxfixes",
     "xorg-libxext",
     "qt",
-    "kconfig >=5.70.0",
-    "kwidgetsaddons >=5.70.0"
+    "kconfig >=5.71.0",
+    "kwidgetsaddons >=5.71.0"
    ]
   },
   "source":{
-   "sha256":"fefea3d162709d06ad7a3148c1e7faef20525cd929360687e91289c891f24fde",
-   "url":"https://download.kde.org/stable/frameworks/5.70/kcompletion-5.70.0.tar.xz"
+   "sha256":"bf0b6ce1ee133900f169662dbd35da6f766d3e4e02c0c102a9402e20450a22a4",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kcompletion-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -233,7 +237,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"kcompletion\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kcompletion-{{ version }}.tar.xz\n  sha256: fefea3d162709d06ad7a3148c1e7faef20525cd929360687e91289c891f24fde\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kcompletion', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - kconfig >={{ version }}\n    - kwidgetsaddons >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Completion.so\n\nabout:\n  home: https://api.kde.org/frameworks/kcompletion/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Powerful completion framework, including completion-enabled lineedit and combobox.\n  description: |\n    When typing filenames, email addresses and other text where the user often wants to\n    select from existing data (including what they previously typed) rather than enter\n    anything wholly original, users often find it helpful if they only need to type the\n    first few characters, and then have the application offer them a set of choices or\n    attempt to finish off what they were typing. Email clients, shells and \"open file\"\n    dialogs often provide this functionality.\n\n    This framework helps implement this in Qt-based applications. You can use one of\n    the completion-ready widgets provided by this framework, or integrate it into your\n    application's other widgets directly.\n  dev_url: https://cgit.kde.org/kcompletion.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"kcompletion\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kcompletion-{{ version }}.tar.xz\n  sha256: bf0b6ce1ee133900f169662dbd35da6f766d3e4e02c0c102a9402e20450a22a4\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kcompletion', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - kconfig >={{ version }}\n    - kwidgetsaddons >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Completion.so\n\nabout:\n  home: https://api.kde.org/frameworks/kcompletion/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Powerful completion framework, including completion-enabled lineedit and combobox.\n  description: |\n    When typing filenames, email addresses and other text where the user often wants to\n    select from existing data (including what they previously typed) rather than enter\n    anything wholly original, users often find it helpful if they only need to type the\n    first few characters, and then have the application offer them a set of choices or\n    attempt to finish off what they were typing. Email clients, shells and \"open file\"\n    dialogs often provide this functionality.\n\n    This framework helps implement this in Qt-based applications. You can use one of\n    the completion-ready widgets provided by this framework, or integrate it into your\n    application's other widgets directly.\n  dev_url: https://cgit.kde.org/kcompletion.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -291,15 +295,15 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "kconfig >=5.70.0",
-    "kwidgetsaddons >=5.70.0",
+    "kconfig >=5.71.0",
+    "kwidgetsaddons >=5.71.0",
     "qt",
     "xorg-libxext",
     "xorg-libxfixes"
@@ -315,5 +319,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/kcompletion-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }
