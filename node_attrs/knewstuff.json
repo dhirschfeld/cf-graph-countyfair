@@ -118,6 +118,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436402599.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.71.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -248,10 +265,10 @@
   "5.68.0":1,
   "5.69.0":1,
   "5.70.0":1,
-  "5.71.0":1
+  "5.71.0":2
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"knewstuff\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/knewstuff-{{ version }}.tar.xz\n  sha256: d8a5e07b3ec3d472de4ca493ea5cecd79559cba2573e6228e2a740ae2c91fdc2\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('knewstuff', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ major_minor }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - attica >={{ major_minor }}\n    - kio >={{ major_minor }}\n    - ki18n >={{ major_minor }}\n    - kconfig >={{ major_minor }}\n    - kxmlgui >={{ major_minor }}\n    - kconfig >={{ major_minor }}\n    - karchive >={{ major_minor }}\n    - kservice >={{ major_minor }}\n    - kcoreaddons >={{ major_minor }}\n    - kcompletion >={{ major_minor }}\n    - kiconthemes >={{ major_minor }}\n    - kitemviews >={{ major_minor }}\n    - ktextwidgets >={{ major_minor }}\n    - kwidgetsaddons >={{ major_minor }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5NewStuff.so\n\nabout:\n  home: https://api.kde.org/frameworks/knewstuff/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Framework for downloading and sharing additional application data\n  description: |\n    The KNewStuff library implements collaborative data sharing for applications.\n    It uses libattica to support the Open Collaboration Services specification.\n  dev_url: https://cgit.kde.org/knewstuff.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
