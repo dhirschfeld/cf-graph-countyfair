@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436200815.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.7.9"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -65,7 +84,12 @@
   }
  },
  "name":"setupmeta",
- "new_version":"2.7.8",
+ "new_version":"2.7.9",
+ "new_version_attempts":{
+  "2.7.9":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"setupmeta\" %}\n{% set version = \"2.7.8\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 48b8dbbdd8b85a8cc76b9bfe557d538384cfe1de1ef5112e54400f3bed49456c\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - setupmeta\n\nabout:\n  home: \"https://github.com/zsimic/setupmeta\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Simplify your setup.py\"\n  description: |\n    Writing a setup.py typically involves lots of boilerplate and copy-pasting from project to project.\n    This package aims to simplify that and bring some DRY principle to python packaging. For more\n    information and examples, please refer to: https://github.com/zsimic/setupmeta.\n    This package is only required to enable the building of Conda Python packages that\n    make use of setupmeta (which is otherwise ordinarily installed dynamically\n    as part of the setup.py workflows).\n  doc_url: \"https://github.com/zsimic/setupmeta\"\n  dev_url: \"https://github.com/zsimic/setupmeta\"\n\nextra:\n  recipe-maintainers:\n    - zsimic\n    - matthewwardrop\n",
  "req":{
   "__set__":true,
@@ -99,6 +123,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
