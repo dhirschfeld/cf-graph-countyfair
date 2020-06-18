@@ -154,6 +154,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436447643.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.71.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -317,10 +334,10 @@
   "5.69.0":1,
   "5.70.0":1,
   "5.70.1":1,
-  "5.71.0":1
+  "5.71.0":2
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"kio\" %}\n{% set version = \"5.70.1\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kio-{{ version }}.tar.xz\n  sha256: b440f1a9408cd90ecc8a6bbeecbc4bde12365547bd8ca55c69619a2e659363b8\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kio', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ major_minor }}\n    - {{ cdt('libudev') }}  # [linux]\n    - {{ cdt('libudev-devel') }}  # [linux]\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - krb5\n    - kauth >={{ major_minor }}\n    - ki18n >={{ major_minor }}\n    - karchive >={{ major_minor }}\n    - kconfig >={{ major_minor }}\n    - kcodecs >={{ major_minor }}\n    - kxmlgui >={{ major_minor }}\n    - kservice >={{ major_minor }}\n    - kitemviews >={{ major_minor }}\n    - kcompletion >={{ major_minor }}\n    - kcoreaddons >={{ major_minor }}\n    - kiconthemes >={{ major_minor }}\n    - kcrash >={{ major_minor }}\n    - solid >={{ major_minor }}\n    - kwallet >={{ major_minor }}\n    - kbookmarks >={{ major_minor }}\n    - kdbusaddons >={{ major_minor }}\n    - kjobwidgets >={{ major_minor }}\n    - kcompletion >={{ major_minor }}\n    - ktextwidgets >={{ major_minor }}\n    - kwindowsystem >={{ major_minor }}\n    - kwidgetsaddons >={{ major_minor }}\n    - kconfigwidgets >={{ major_minor }}\n    - knotifications >={{ major_minor }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5KIOCore.so\n\nabout:\n  home: https://api.kde.org/frameworks/kio/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Network transparent access to files and data\n  description: |\n    This framework implements almost all the file management functions you will ever need.\n    In fact, the KDE file manager (Dolphin) and the KDE file dialog also uses this to\n    provide its network-enabled file management.\n\n    It supports accessing files locally as well as via HTTP and FTP out of the box and\n    can be extended by plugins to support other protocols as well. There is a variety\n    of plugins available, e.g. to support access via SSH.\n\n    The framework can also be used to bridge a native protocol to a\n    file-based interface. This makes the data accessible in all applications\n    using the KDE file dialog or any other KIO enabled infrastructure.\n  dev_url: https://cgit.kde.org/kio.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
