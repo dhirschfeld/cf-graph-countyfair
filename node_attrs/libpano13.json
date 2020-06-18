@@ -1,0 +1,173 @@
+{
+ "archived":false,
+ "bad":"Upstream: Error getting upstream version",
+ "conda-forge.yml":{},
+ "feedstock_name":"libpano13",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"This is the pano13 library, part of the Panorama Tools by Helmut\nDersch of the University of Applied Sciences Furtwangen.\n\nAlso included with the library are\nPToptimizer  a command-line tool for optimizing control points.\nPTmender     a command-line tool for reprojecting images.\n",
+   "home":"http://panotools.sourceforge.net/",
+   "license":"GPL-2.0-only",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Panorama Tools"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libpano13",
+    "libpano13",
+    "libpano13"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk",
+    "hmaarrfk",
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"libpano13",
+   "version":"2.9.20rc2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "perl",
+    "libpng",
+    "jpeg",
+    "libtiff",
+    "zlib",
+    "openjdk",
+    "perl",
+    "libpng",
+    "jpeg",
+    "libtiff",
+    "zlib",
+    "openjdk",
+    "perl",
+    "libpng",
+    "jpeg",
+    "libtiff",
+    "zlib",
+    "openjdk"
+   ]
+  },
+  "source":{
+   "sha256":"6c7184a8af080934252d55e63a0f83457e2b8d59b3b8bb9ad62a21dea82f16cd",
+   "url":"https://phoenixnap.dl.sourceforge.net/project/panotools/libpano13/libpano13-2.9.20/libpano13-2.9.20_rc2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\\\pano13\\\\version.h exit 1",
+    "if not exist %LIBRARY_BIN%\\\\pano13.dll exit 1",
+    "PTinfo -h",
+    "if not exist %LIBRARY_BIN%\\\\panoinfo.exe exit 1",
+    "test -f ${PREFIX}/include/pano13/version.h",
+    "test -f ${PREFIX}/lib/libpano13${SHLIB_EXT}",
+    "PTinfo -h",
+    "panoinfo -help",
+    "test -f ${PREFIX}/include/pano13/version.h",
+    "test -f ${PREFIX}/lib/libpano13${SHLIB_EXT}",
+    "PTinfo -h",
+    "panoinfo -help"
+   ]
+  }
+ },
+ "name":"libpano13",
+ "raw_meta_yaml":"{% set version = \"2.9.20\" %}\n{% set rc_version = \"rc2\" %}\n\npackage:\n  name: libpano13\n  version: {{ version }}{{ rc_version }}\n\nsource:\n  url: https://phoenixnap.dl.sourceforge.net/project/panotools/libpano13/libpano13-{{ version }}/libpano13-{{ version }}_{{ rc_version }}.tar.gz\n  sha256: 6c7184a8af080934252d55e63a0f83457e2b8d59b3b8bb9ad62a21dea82f16cd\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('libpano13', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake  # [win]\n    - ninja  # [win]\n    - make   # [not win]\n  host:\n    - perl\n    - libpng\n    - jpeg\n    - libtiff\n    - zlib\n    - openjdk\n    # hmaarrfk 2020/05/24:\n    # GTK3 is an optional dependency, for now lets not build with it.\n    # - gtk3\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/pano13/version.h   # [unix]\n    - test -f ${PREFIX}/lib/libpano13${SHLIB_EXT}  # [unix]\n    - if not exist %LIBRARY_INC%\\\\pano13\\\\version.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\pano13.dll exit 1         # [win]\n    - PTinfo -h\n    # Opens a GUI on Windows and waits for user to close it, exits with -1\n    # anyway :-|\n    - panoinfo -help  # [not win]\n    - if not exist %LIBRARY_BIN%\\\\panoinfo.exe exit 1  # [win]\n\nabout:\n  home: http://panotools.sourceforge.net/\n\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: Panorama Tools\n\n  description: |\n    This is the pano13 library, part of the Panorama Tools by Helmut\n    Dersch of the University of Applied Sciences Furtwangen.\n\n    Also included with the library are\n    PToptimizer  a command-line tool for optimizing control points.\n    PTmender     a command-line tool for reprojecting images.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "c_compiler_stub",
+   "cmake",
+   "cxx_compiler_stub",
+   "jpeg",
+   "libpng",
+   "libtiff",
+   "make",
+   "ninja",
+   "openjdk",
+   "perl",
+   "zlib"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jpeg",
+    "libpng",
+    "libtiff",
+    "openjdk",
+    "perl",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jpeg",
+    "libpng",
+    "libtiff",
+    "openjdk",
+    "perl",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://phoenixnap.dl.sourceforge.net/project/panotools/libpano13/libpano13-2.9.20/libpano13-2.9.20_rc2.tar.gz",
+ "version":"2.9.20rc2"
+}
