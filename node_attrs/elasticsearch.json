@@ -234,6 +234,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436549887.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"7.8.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -320,13 +337,14 @@
   }
  },
  "name":"elasticsearch",
- "new_version":"7.7.1",
+ "new_version":"7.8.0",
  "new_version_attempts":{
   "7.7.0":1,
-  "7.7.1":1
+  "7.7.1":1,
+  "7.8.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.25.23.01.15",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"elasticsearch\" %}\n{% set version = \"7.7.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_val = \"9bfcb2bd137d6d7ca123e252b9d7261cfe4f7723f7b749a99c52b47766cf387c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - urllib3 >=1.21.1\n    - requests >=2.4.0,<3.0.0\n    - certifi\n\ntest:\n  imports:\n    - elasticsearch\n    - elasticsearch.client\n    - elasticsearch.connection\n    - elasticsearch.helpers\n\nabout:\n  home: https://github.com/elastic/elasticsearch-py\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Python client for Elasticsearch\n  doc_url: https://elasticsearch-py.readthedocs.io\n  dev_url: https://github.com/elastic/elasticsearch-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ahlaw\n    - sethmlarson\n",
  "req":{
   "__set__":true,
