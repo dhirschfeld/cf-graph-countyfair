@@ -71,6 +71,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436510271.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -164,8 +181,12 @@
   }
  },
  "name":"python-ldap",
- "new_version":"3.2.0",
- "pinning_version":"2020.03.16",
+ "new_version":"3.3.0",
+ "new_version_attempts":{
+  "3.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"python-ldap\" %}\n{% set version = \"3.2.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n    - python\n    - pyasn1\n    - pyasn1-modules\n    - openldap\n  run:\n    - python\n    - pyasn1\n    - pyasn1-modules\n    - openldap\n\ntest:\n  imports:\n    - ldap\n    - ldap.controls\n    - ldap.extop\n    - ldap.schema\n    # - slapdtest\n\nabout:\n  home: https://www.python-ldap.org/\n  license: Python Software Foundation\n  license_family: OTHER\n  license_file: LICENCE\n  summary: Python modules for implementing LDAP clients\n  doc_url: https://www.python-ldap.org/en/latest/\n  dev_url: https://github.com/python-ldap/python-ldap\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
@@ -209,7 +230,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
