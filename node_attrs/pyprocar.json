@@ -16,11 +16,34 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436343135.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"pyprocar",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -35,8 +58,7 @@
    "summary":"A Python library for electronic structure pre/post-processing."
   },
   "build":{
-   "noarch":"python",
-   "number":"1",
+   "number":"0",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -51,58 +73,71 @@
   },
   "package":{
    "name":"pyprocar",
-   "version":"5.3.3"
+   "version":"5.4.0"
   },
   "requirements":{
+   "build":[
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub"
+   ],
    "host":[
     "pip",
     "python",
     "pip",
     "python",
     "pip",
-    "python"
+    "python",
+    "xorg-libxfixes"
    ],
    "run":[
     "ase",
+    "importlib-metadata",
     "matplotlib-base",
     "mayavi",
     "python",
+    "pychemia",
+    "pyvista",
     "scikit-image",
     "scipy",
     "seekpath",
+    "trimesh",
     "ase",
+    "importlib-metadata",
     "matplotlib-base",
     "mayavi",
     "python",
+    "pychemia",
+    "pyvista",
     "scikit-image",
     "scipy",
     "seekpath",
+    "trimesh",
     "ase",
+    "importlib-metadata",
     "matplotlib-base",
     "mayavi",
     "python",
+    "pychemia",
+    "pyvista",
     "scikit-image",
     "scipy",
-    "seekpath"
+    "seekpath",
+    "trimesh"
    ]
   },
   "source":{
-   "sha256":"b2f2c1b2670a4c4ea6baaf2dbf793ffe5b40b13152906968e85bbf186da48146",
-   "url":"https://pypi.io/packages/source/p/pyprocar/pyprocar-5.3.3.tar.gz"
+   "sha256":"43f7ffcac98e5e349f4beaa932e18059d3865deaba26c1debb7dfad943cfafb7",
+   "url":"https://pypi.io/packages/source/p/pyprocar/pyprocar-5.4.0.tar.gz"
   },
   "test":{
    "commands":[
-    "pip check",
-    "pip check",
-    "pip check"
-   ],
-   "imports":[
-    "pyprocar",
-    "pyprocar.abinitparser",
-    "pyprocar",
-    "pyprocar.abinitparser",
-    "pyprocar",
-    "pyprocar.abinitparser"
+    "/run_test.bat",
+    "bash /run_test.sh",
+    "bash /run_test.sh"
    ],
    "requires":[
     "pip",
@@ -118,42 +153,55 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"pyprocar\" %}\n{% set version = \"5.3.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b2f2c1b2670a4c4ea6baaf2dbf793ffe5b40b13152906968e85bbf186da48146\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - ase\n    - matplotlib-base\n    - mayavi\n    - python\n    - scikit-image\n    - scipy\n    - seekpath\n\ntest:\n  imports:\n    - pyprocar\n    - pyprocar.abinitparser\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/romerogroup/pyprocar\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: A Python library for electronic structure pre/post-processing.\n\n  description: |\n    PyProcar is a robust, open-source Python library used for pre- and \n    post-processing of the electronic structure data coming from DFT \n    calculations. PyProcar provides a set of functions that manage data \n    obtained from the PROCAR format. Basically, the PROCAR format is a \n    projection of the Kohn-Sham states over atomic orbitals. That \n    projection is performed to every k-point in the considered mesh, \n    every energy band and every atom. PyProcar is capable of performing \n    a multitude of tasks including plotting plain and spin/atom/orbital \n    projected band structures and Fermi surfaces- both in 2D and 3D, Fermi \n    velocity plots, unfolding bands of a super cell, comparing band \n    structures from multiple DFT calculations, plotting partial density \n    of states and generating a k-path for a given crystal structure.\n  doc_url: https://romerogroup.github.io/pyprocar/\n  dev_url: https://github.com/romerogroup/pyprocar\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - uthpalaherath\n",
+ "raw_meta_yaml":"{% set name = \"pyprocar\" %}\n{% set version = \"5.4.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 43f7ffcac98e5e349f4beaa932e18059d3865deaba26c1debb7dfad943cfafb7\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxext') }}     # [linux]\n  host:\n    - pip\n    - python\n    - xorg-libxfixes  # [linux]\n  run:\n    - ase\n    - importlib-metadata\n    - matplotlib-base\n    - mayavi\n    - python\n    - pychemia\n    - pyvista\n    - scikit-image\n    - scipy\n    - seekpath\n    - trimesh\n\ntest:\n  commands:\n    - {{ RECIPE_DIR }}/run_test.bat  # [win]\n    - bash {{ RECIPE_DIR }}/run_test.sh  # [not win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/romerogroup/pyprocar\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: A Python library for electronic structure pre/post-processing.\n\n  description: |\n    PyProcar is a robust, open-source Python library used for pre- and \n    post-processing of the electronic structure data coming from DFT \n    calculations. PyProcar provides a set of functions that manage data \n    obtained from the PROCAR format. Basically, the PROCAR format is a \n    projection of the Kohn-Sham states over atomic orbitals. That \n    projection is performed to every k-point in the considered mesh, \n    every energy band and every atom. PyProcar is capable of performing \n    a multitude of tasks including plotting plain and spin/atom/orbital \n    projected band structures and Fermi surfaces- both in 2D and 3D, Fermi \n    velocity plots, unfolding bands of a super cell, comparing band \n    structures from multiple DFT calculations, plotting partial density \n    of states and generating a k-path for a given crystal structure.\n  doc_url: https://romerogroup.github.io/pyprocar/\n  dev_url: https://github.com/romerogroup/pyprocar\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - uthpalaherath\n",
  "req":{
   "__set__":true,
   "elements":[
    "ase",
+   "cdt_stub",
+   "importlib-metadata",
    "matplotlib-base",
    "mayavi",
    "pip",
+   "pychemia",
    "python",
+   "pyvista",
    "scikit-image",
    "scipy",
-   "seekpath"
+   "seekpath",
+   "trimesh",
+   "xorg-libxfixes"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cdt_stub"
+   ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "xorg-libxfixes"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "ase",
+    "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "pychemia",
     "python",
+    "pyvista",
     "scikit-image",
     "scipy",
-    "seekpath"
+    "seekpath",
+    "trimesh"
    ]
   },
   "test":{
@@ -168,25 +216,32 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cdt_stub"
+   ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "xorg-libxfixes"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "ase",
+    "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "pychemia",
     "python",
+    "pyvista",
     "scikit-image",
     "scipy",
-    "seekpath"
+    "seekpath",
+    "trimesh"
    ]
   },
   "test":{
@@ -197,5 +252,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyprocar/pyprocar-5.3.3.tar.gz",
- "version":"5.3.3"
+ "version":"5.4.0"
 }

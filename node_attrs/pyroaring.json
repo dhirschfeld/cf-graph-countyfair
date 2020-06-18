@@ -1,4 +1,44 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436336469.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436342598.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -111,6 +151,7 @@
  },
  "name":"pyroaring",
  "new_version":"0.2.9",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"pyroaring\" %}\n{% set version = \"0.2.9\" %}\n\n# pyroaring compiles against a specific release of the CRoaring source\n{% set CROARING_VERSION = \"0.2.65\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/Ezibenroc/PyRoaringBitMap/archive/{{ version }}.tar.gz\n    sha256: cf22672356e5c9433f26db133392609216acd39ab6b724a895f36bf58c9f4151\n    patches:\n      # pyroaring/setup.py normally sets some version constants from git.\n      # This patch just hard-codes the versions since we're building from a tarball.\n      # If you bump the pyroaring version, you'll need to update this patch, too.\n      - patches/hardcode-versions-{{ version }}.patch\n\n  # The git repo includes CRoaring as a submodule, but we're using a tarball,\n  # so we download CRoaring as a second source.\n  - url: https://github.com/RoaringBitmap/CRoaring/archive/v{{ CROARING_VERSION }}.tar.gz\n    sha256: e977cf54ee85f6d5f123dbdad87e78056e2f34c46cd39d7527724799a81571bd\n    folder: CRoaring\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n\ntest:\n  imports:\n    - pyroaring\n\nabout:\n  home: https://github.com/Ezibenroc/PyRoaringBitMap\n  dev_url: https://github.com/Ezibenroc/PyRoaringBitMap\n  doc_url: https://pyroaringbitmap.readthedocs.io/en/stable/?badge=stable\n\n  license: MIT\n  license_family: MIT\n  license_file:\n    - LICENSE\n    - LICENSE_CRoaring\n\n  summary: 'An efficient and light-weight ordered set of 32-bit integers'\n  description: |\n    An efficient and light-weight ordered set of 32-bit integers\n    This is a Python wrapper for the C library [CRoaring][1].\n\n    [1]: https://github.com/RoaringBitmap/CRoaring\n\nextra:\n  recipe-maintainers:\n    - stuarteberg\n",
  "req":{
   "__set__":true,
@@ -149,6 +190,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
