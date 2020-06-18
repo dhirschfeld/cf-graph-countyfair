@@ -208,7 +208,8 @@
  "bad":false,
  "conda-forge.yml":{
   "provider":{
-   "win":"azure"
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
   }
  },
  "feedstock_name":"msgpack-c",
@@ -223,7 +224,7 @@
    "summary":"MessagePack implementation for C and C++."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -250,10 +251,12 @@
     "cxx_compiler_stub",
     "cmake",
     "ninja",
+    "make",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
-    "ninja"
+    "ninja",
+    "make"
    ],
    "host":[
     "boost-cpp",
@@ -308,7 +311,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.13.55.38",
- "raw_meta_yaml":"{% set name = \"msgpack-c\" %}\n{% set version = \"3.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/msgpack/{{ name }}/archive/cpp-{{ version }}.tar.gz\n  sha256: 754c3ace499a63e45b77ef4bcab4ee602c2c414f58403bce826b76ffc2f77d0b\n  patches:\n    # This is needed for a bug in gcc version used where isnan is ambiguous. (::isnan and std::isnan)\n    - ambiguous_nan_inf.patch   # [linux]\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n    - boost-cpp\n    - gtest\n    - zlib\n  run:\n    - boost-cpp\n    - zlib\n\ntest:\n  commands:\n    - test -f $PREFIX/include/msgpack.h                         # [unix]\n    - test -f $PREFIX/include/msgpack.hpp                       # [unix]\n    - test -f $PREFIX/lib/libmsgpackc.a                         # [unix]\n    - test -f $PREFIX/lib/libmsgpackc.so                        # [linux]\n    - test -f $PREFIX/lib/libmsgpackc.dylib                     # [osx]\n    - if not exist %LIBRARY_INC%\\\\msgpack.h exit 1              # [win]\n    - if not exist %LIBRARY_INC%\\\\msgpack.hpp exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\msgpackc.lib exit 1           # [win]\n    - if not exist %LIBRARY_LIB%\\\\msgpackc_static.lib exit 1    # [win]\n    - if not exist %LIBRARY_BIN%\\\\msgpackc.dll exit 1           # [win]\n\nabout:\n  home: https://github.com/msgpack/msgpack-c\n  license: Boost-1.0\n  license_file: LICENSE_1_0.txt\n  summary: MessagePack implementation for C and C++.\n  doc_url: https://github.com/msgpack/msgpack-c/blob/master/README.md\n  dev_url: https://github.com/msgpack/msgpack-c\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n    - mcs07\n",
+ "raw_meta_yaml":"{% set name = \"msgpack-c\" %}\n{% set version = \"3.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/msgpack/{{ name }}/archive/cpp-{{ version }}.tar.gz\n  sha256: 754c3ace499a63e45b77ef4bcab4ee602c2c414f58403bce826b76ffc2f77d0b\n  patches:\n    # This is needed for a bug in gcc version used where isnan is ambiguous. (::isnan and std::isnan)\n    - ambiguous_nan_inf.patch   # [linux]\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n    - make  # [unix]\n  host:\n    - boost-cpp\n    - gtest\n    - zlib\n  run:\n    - boost-cpp\n    - zlib\n\ntest:\n  commands:\n    - test -f $PREFIX/include/msgpack.h                         # [unix]\n    - test -f $PREFIX/include/msgpack.hpp                       # [unix]\n    - test -f $PREFIX/lib/libmsgpackc.a                         # [unix]\n    - test -f $PREFIX/lib/libmsgpackc.so                        # [linux]\n    - test -f $PREFIX/lib/libmsgpackc.dylib                     # [osx]\n    - if not exist %LIBRARY_INC%\\\\msgpack.h exit 1              # [win]\n    - if not exist %LIBRARY_INC%\\\\msgpack.hpp exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\msgpackc.lib exit 1           # [win]\n    - if not exist %LIBRARY_LIB%\\\\msgpackc_static.lib exit 1    # [win]\n    - if not exist %LIBRARY_BIN%\\\\msgpackc.dll exit 1           # [win]\n\nabout:\n  home: https://github.com/msgpack/msgpack-c\n  license: Boost-1.0\n  license_file: LICENSE_1_0.txt\n  summary: MessagePack implementation for C and C++.\n  doc_url: https://github.com/msgpack/msgpack-c/blob/master/README.md\n  dev_url: https://github.com/msgpack/msgpack-c\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n    - mcs07\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -317,6 +320,7 @@
    "cmake",
    "cxx_compiler_stub",
    "gtest",
+   "make",
    "ninja",
    "zlib"
   ]
@@ -328,6 +332,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
+    "make",
     "ninja"
    ]
   },
@@ -360,6 +365,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
+    "make",
     "ninja"
    ]
   },

@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"enblend",
  "hash_type":"sha256",
@@ -110,6 +110,7 @@
   }
  },
  "name":"enblend",
+ "new_version":"4.3",
  "raw_meta_yaml":"# No new release in 4 years\n# Really old 4.2 version basically doesn't compile.\n# Hugin released their own 4.3 version\n{% set version = \"4.3\" %}\n\npackage:\n  name: enblend\n  version: {{ version }}\n\nsource:\n  # hmaarrfk's private mirror, making it possible to download the source\n  # without mercurial\n  # I really tried hard to use patches.... i just dn't have the skills\n  url: https://github.com/ramonaoptics/enblend-code/archive/{{ version }}.tar.gz\n  sha256: b9510a419cb23f2964d6095bc295f9b19097362c05723425e78b0497741dcc17\n  patches:\n    # Remove once we move to gcc 9+\n    - experimental_filesystem.patch  # [linux]\n    # Use of std::filesystem requires macOS 10.15+\n    - 0001-Revert-Update-filenameparse.cc-module-to-reflect-the.patch  # [osx]\n    - 0002-Make-CMAKE_INSTALL_PREFIX-override-conditional.patch\n    - 0003-Avoid-usage-of-.value-which-requires-macOS-10.14.patch\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make   # [unix]\n    - ninja  # [win]\n  host:\n    - libpng\n    - jpeg\n    - libtiff\n    - lcms2\n    - openexr\n    - gsl\n    - vigra\n    - libblas\n    - libcblas\n    - perl\n  run:\n    - vigra\n    - gsl\n\ntest:\n  commands:\n    - enblend --help\n    - enfuse --help\n\nabout:\n  home: http://enblend.sourceforge.net/\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: Enblend combines images that overlap like this into a single large image with no seams.\n\n  description: |\n    Enblend blends away the seams in a panoramic image mosaic using a\n    multi-resolution spline. Enfuse merges different exposures of the same\n    scene to produce an image that looks much like a tone-mapped image.\n  doc_url: https://sourceforge.net/p/enblend/_list/hg\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
