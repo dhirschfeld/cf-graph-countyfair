@@ -1,5 +1,5 @@
-{% set name = "translationstring" %}
-{% set version = 1.3 %}
+{% set name = "mapclassify" %}
+{% set version = 2.3.0 %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ee44cfa58c52ade8910ea0ebc3d2d84bdcad9fa0422405b1801ec9b9a65b72d
+  sha256: bfe1ec96afe7f866560d25f9f00e5c4dae97d5b69dfe758dbe02c4993261365b
 
 build:
   number: 0
@@ -20,24 +20,31 @@ requirements:
     - pip
     - python
   run:
+    - networkx
+    - numpy >=1.3
+    - pandas >=1.0
     - python
+    - scikit-learn
+    - scipy >=1.0
 
 test:
   imports:
-    - translationstring
-    - translationstring.tests
+    - mapclassify
+    - mapclassify.datasets
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: http://pylonsproject.org
-  summary: Utility library for i18n relied on by various Repoze and Pyramid packages
+  home: https://github.com/pysal/mapclassify
+  summary: Classification Schemes for Choropleth Maps.
   license: BSD-3-Clause
   license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
-    - lincrosenbach
-    - kfasolin
+    - sjsrey
+    - ljwolf
+    - jorisvandenbossche
+    - ocefpaf

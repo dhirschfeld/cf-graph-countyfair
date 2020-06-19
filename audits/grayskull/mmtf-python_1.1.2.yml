@@ -1,5 +1,5 @@
-{% set name = "venusian" %}
-{% set version = 3.0.0 %}
+{% set name = "mmtf-python" %}
+{% set version = 1.1.2 %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6842b7242b1039c0c28f6feef29016e7e7dd3caaeb476a193acf737db31ee38
+  sha256: a5caa7fcd2c1eaa16638b5b1da2d3276cbd3ed3513f0c2322957912003b6a8df
 
 build:
   number: 0
@@ -18,26 +18,28 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
   run:
-    - python >=3.5
+    - msgpack >=0.5.6
+    - python
 
 test:
   imports:
-    - venusian
+    - mmtf
+    - mmtf.api
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://pylonsproject.org/
-  summary: A library for deferring decorator actions
-  license: BSD-3-Clause
+  home: https://github.com/rcsb/mmtf-python.git
+  summary: A decoding libary for the PDB mmtf format
+  license: Apache-2.0
   license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
-    - lincrosenbach
-    - kfasolin
-    - ChrisBarker-NOAA
+    - kain88-de
+    - orbeckst
+    - richardjgowers

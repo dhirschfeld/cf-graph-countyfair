@@ -1,5 +1,5 @@
-{% set name = "translationstring" %}
-{% set version = 1.3 %}
+{% set name = "nbstripout" %}
+{% set version = 0.3.8 %}
 
 
 package:
@@ -8,36 +8,40 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ee44cfa58c52ade8910ea0ebc3d2d84bdcad9fa0422405b1801ec9b9a65b72d
+  sha256: e56d26dab9bc8cabf68098115630e2e943d0deed5267c29f3ff32fe4ae09ec65
 
 build:
   number: 0
   noarch: python
+  entry_points:
+    - nbstripout = nbstripout._nbstripout:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
+    - pytest-runner
     - python
+    - setuptools >=30
   run:
+    - nbformat
     - python
 
 test:
   imports:
-    - translationstring
-    - translationstring.tests
+    - nbstripout
   commands:
     - pip check
+    - nbstripout --help
   requires:
     - pip
 
 about:
-  home: http://pylonsproject.org
-  summary: Utility library for i18n relied on by various Repoze and Pyramid packages
-  license: BSD-3-Clause
+  home: https://github.com/kynan/nbstripout
+  summary: Strips outputs from Jupyter and IPython notebooks
+  license: MIT
   license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
-    - lincrosenbach
-    - kfasolin
+    - kynan

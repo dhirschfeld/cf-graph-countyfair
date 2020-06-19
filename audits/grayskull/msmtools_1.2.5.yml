@@ -1,5 +1,5 @@
-{% set name = "venusian" %}
-{% set version = 3.0.0 %}
+{% set name = "msmtools" %}
+{% set version = 1.2.5 %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6842b7242b1039c0c28f6feef29016e7e7dd3caaeb476a193acf737db31ee38
+  sha256: e07b73ad9e4e8ef8aca82e6b5bb55f57f8400a65fb2fd656b521f72237a7310a
 
 build:
   number: 0
@@ -17,27 +17,32 @@ build:
 
 requirements:
   host:
+    - cython
+    - numpy
     - pip
-    - python >=3.5
+    - python
   run:
-    - python >=3.5
+    - decorator
+    - numpy >=1.6.0
+    - python
+    - scipy >=0.11
 
 test:
   imports:
-    - venusian
+    - msmtools
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://pylonsproject.org/
-  summary: A library for deferring decorator actions
-  license: BSD-3-Clause
+  home: http://github.com/markovmodel/msmtools
+  summary: MSMTools
+  doc_url: https://pythonhosted.org/msmtools/
+  license: LGPL-3.0
   license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
-    - lincrosenbach
-    - kfasolin
-    - ChrisBarker-NOAA
+    - marscher
+    - clonker

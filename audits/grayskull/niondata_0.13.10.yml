@@ -1,5 +1,5 @@
-{% set name = "venusian" %}
-{% set version = 3.0.0 %}
+{% set name = "niondata" %}
+{% set version = 0.13.10 %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f6842b7242b1039c0c28f6feef29016e7e7dd3caaeb476a193acf737db31ee38
+  sha256: 800f55761d84b3bad1079f203224b5fc9cc1c1bae92a9bcdda31594e85062549
 
 build:
   number: 0
@@ -18,26 +18,29 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
   run:
-    - python >=3.5
+    - nionutils
+    - numpy >=1.16
+    - python
+    - scipy
 
 test:
   imports:
-    - venusian
+    - nion.data
+    - nion.data.test
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://pylonsproject.org/
-  summary: A library for deferring decorator actions
-  license: BSD-3-Clause
+  home: https://github.com/nion-software/niondata
+  summary: A data processing library for Nion Swift.
+  license: Apache-2.0
   license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
-    - lincrosenbach
-    - kfasolin
-    - ChrisBarker-NOAA
+    - cmeyer
+    - ericpre
