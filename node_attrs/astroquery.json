@@ -96,6 +96,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436954730.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -208,8 +225,12 @@
   }
  },
  "name":"astroquery",
- "new_version":"0.4",
- "pinning_version":"2020.01.24",
+ "new_version":"0.4.1",
+ "new_version_attempts":{
+  "0.4.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"astroquery\" %}\n{% set version = \"0.4\" %}\n{% set sha256 = \"30187a295f42562ff86d800080859d49fde2cae697b04296cbb3efbb93b4bcb5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # Note: pip-based install fails due to wanting to download astropy-helpers\n  script: python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt\n  noarch: python\n\nrequirements:\n  host:\n    - astropy\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n    - setuptools\n\n  run:\n    - astropy\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n\ntest:\n  imports:\n    - astroquery\n\nabout:\n  home: http://www.astropy.org/astroquery/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: 'Functions and classes to access online astronomical data resources.'\n  dev_url: https://github.com/astropy/astroquery\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - bsipocz\n    - Cadair\n    - guillochon\n    - mwcraig\n    - pllim\n    - pkgw\n",
  "req":{
   "__set__":true,
@@ -256,7 +277,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.6",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
