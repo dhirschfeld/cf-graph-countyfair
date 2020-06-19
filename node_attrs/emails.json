@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437062552.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -100,7 +119,12 @@
   }
  },
  "name":"emails",
- "new_version":"0.5.15",
+ "new_version":"0.6",
+ "new_version_attempts":{
+  "0.6":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"emails\" %}\n{% set version = \"0.5.15\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fcc02567a528eae6b66d2a5c20ce7a0326e4f6b201bc8ae302f89413164db06a\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=2.6\n    - pip\n  run:\n    - python >=2.6\n    - chardet\n    - cssutils\n    - lxml\n    - premailer\n    - python-dateutil\n    - requests\n\ntest:\n  imports:\n    - emails\n    - emails.compat\n    - emails.loader\n    - emails.store\n    - emails.template\n    - emails.message\n    - emails.signers\n    - emails.transformer\n    - emails.utils\n\nabout:\n  home: https://github.com/lavr/python-emails/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Modern python library for emails '\n\n  description: |\n    Modern python library for emails \n  dev_url: https://github.com/lavr/python-emails\n\nextra:\n  recipe-maintainers:\n    - timkpaine\n",
  "req":{
   "__set__":true,
@@ -144,6 +168,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
