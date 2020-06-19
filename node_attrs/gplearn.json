@@ -65,7 +65,7 @@
   }
  },
  "name":"gplearn",
- "new_version":false,
+ "new_version":"0.4.1",
  "raw_meta_yaml":"{% set name = \"gplearn\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/trevorstephens/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: b4ef6139bb8407dd982310a2d227ef11af7a298d1ede82aeb2f0dd55ac3a7bf8\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - scikit-learn >=0.22.1\n    - joblib >=0.13.0\n\ntest:\n  imports:\n    - gplearn\n\nabout:\n  home: https://github.com/trevorstephens/gplearn/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'gplearn implements Genetic Programming in Python, with a scikit-learn inspired and compatible API'\n\n  description: |\n    gplearn is purposefully constrained to solving symbolic regression\n    problems. gplearn retains the familiar scikit-learn fit/predict API\n    and works with the existing scikit-learn pipeline and grid search modules.\n    gplearn is built for Python 3.5+ and requires scikit-learn\n  doc_url: https://gplearn.readthedocs.io/\n  dev_url: https://github.com/trevorstephens/gplearn/\n\nextra:\n  recipe-maintainers:\n    - owenlamont\n",
  "req":{
   "__set__":true,

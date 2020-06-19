@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436883679.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -74,7 +93,12 @@
   }
  },
  "name":"coxeter",
- "new_version":"0.2.0.post2",
+ "new_version":"0.3.0",
+ "new_version_attempts":{
+  "0.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"coxeter\" %}\n{% set version = \"0.2.0.post2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 39065a3c4230e3cb5b0ed3e133d75d924fdeeda8f8e3b52fedd624e37477e1b3\n\nbuild:\n  noarch: python\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.10\n    - scipy\n    - rowan\n\ntest:\n  imports:\n    - coxeter\n    - coxeter.shape_classes\n\nabout:\n  home: https://github.com/glotzerlab/coxeter\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Tools for creating and manipulating shapes.'\n\n  description: |\n    coxeter is used for working with polytopes and other shapes.\n    The package is focused on providing robust methods for computing\n    standard geometric quantities, particularly for polytopes where\n    implementing such calculations for generic shapes requires care\n    to properly handle convexity, proper vertex ordering, and other\n    related issues.\n  doc_url: http://coxeter.readthedocs.io/\n  dev_url: https://github.com/glotzerlab/coxeter\n\nextra:\n  recipe-maintainers:\n    - vyasr\n    - Tobias-Dwyer\n",
  "req":{
   "__set__":true,
@@ -112,6 +136,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
