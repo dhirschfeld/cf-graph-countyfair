@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437238301.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MatplotlibBase",
+    "migrator_version":0,
+    "name":"matplotlib-to-matplotlib-base"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -32,8 +49,8 @@
   },
   "build":{
    "noarch":"python",
-   "number":"2",
-   "script":" -m pip install . -vv"
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -59,7 +76,7 @@
   },
   "package":{
    "name":"pims",
-   "version":"0.4.1"
+   "version":"0.5"
   },
   "requirements":{
    "host":[
@@ -77,7 +94,7 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "scipy",
+    "matplotlib",
     "tifffile",
     "python",
     "slicerator >=0.9.7",
@@ -85,7 +102,7 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "scipy",
+    "matplotlib",
     "tifffile",
     "python",
     "slicerator >=0.9.7",
@@ -93,14 +110,14 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "scipy",
+    "matplotlib",
     "tifffile"
    ]
   },
   "source":{
-   "fn":"PIMS-0.4.1.tar.gz",
-   "sha256":"6a53a155e900b44e71127a1e1fccbfbaed7eec3c2b52497c40c23a05f334c9dd",
-   "url":"https://pypi.io/packages/source/P/PIMS/PIMS-0.4.1.tar.gz"
+   "fn":"PIMS-0.5.tar.gz",
+   "sha256":"a02cdcbb153e2792042fb0bae7df4f30878bbba1f2d176114a87ee0dc18715a0",
+   "url":"https://pypi.io/packages/source/P/PIMS/PIMS-0.5.tar.gz"
   },
   "test":{
    "imports":[
@@ -174,16 +191,16 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6a53a155e900b44e71127a1e1fccbfbaed7eec3c2b52497c40c23a05f334c9dd\n\nbuild:\n  number: 2\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - scipy  # one of { scikit-image | matplotlib | scipy }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD-3-Clause\n  license_file: license.txt\n  summary: >\n      Python Image Sequence. Load video and sequential images in many formats\n      with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - tacaswell\n    - caspervdw\n    - nkeim\n",
+ "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a02cdcbb153e2792042fb0bae7df4f30878bbba1f2d176114a87ee0dc18715a0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - matplotlib  # one of { scikit-image | matplotlib }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD-3-Clause\n  license_file: license.txt\n  summary: >\n    Python Image Sequence. Load video and sequential images in many formats with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - tacaswell\n    - caspervdw\n    - nkeim\n",
  "req":{
   "__set__":true,
   "elements":[
    "jinja2",
+   "matplotlib",
    "numpy",
    "pillow",
    "pip",
    "python",
-   "scipy",
    "six",
    "slicerator",
    "tifffile"
@@ -205,10 +222,10 @@
    "__set__":true,
    "elements":[
     "jinja2",
+    "matplotlib",
     "numpy",
     "pillow",
     "python",
-    "scipy",
     "six",
     "slicerator",
     "tifffile"
@@ -237,10 +254,10 @@
    "__set__":true,
    "elements":[
     "jinja2",
+    "matplotlib",
     "numpy >=1.7",
     "pillow",
     "python",
-    "scipy",
     "six >=1.8",
     "slicerator >=0.9.7",
     "tifffile"
@@ -252,5 +269,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/P/PIMS/PIMS-0.4.1.tar.gz",
- "version":"0.4.1"
+ "version":"0.5"
 }
