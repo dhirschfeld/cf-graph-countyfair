@@ -49,7 +49,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -94,7 +94,7 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "matplotlib",
+    "matplotlib-base",
     "tifffile",
     "python",
     "slicerator >=0.9.7",
@@ -102,7 +102,7 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "matplotlib",
+    "matplotlib-base",
     "tifffile",
     "python",
     "slicerator >=0.9.7",
@@ -110,7 +110,7 @@
     "numpy >=1.7",
     "jinja2",
     "pillow",
-    "matplotlib",
+    "matplotlib-base",
     "tifffile"
    ]
   },
@@ -191,12 +191,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a02cdcbb153e2792042fb0bae7df4f30878bbba1f2d176114a87ee0dc18715a0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - matplotlib  # one of { scikit-image | matplotlib }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD-3-Clause\n  license_file: license.txt\n  summary: >\n    Python Image Sequence. Load video and sequential images in many formats with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - tacaswell\n    - caspervdw\n    - nkeim\n",
+ "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a02cdcbb153e2792042fb0bae7df4f30878bbba1f2d176114a87ee0dc18715a0\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - matplotlib-base  # one of { scikit-image | matplotlib-base }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD-3-Clause\n  license_file: license.txt\n  summary: >\n    Python Image Sequence. Load video and sequential images in many formats with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - tacaswell\n    - caspervdw\n    - nkeim\n",
  "req":{
   "__set__":true,
   "elements":[
    "jinja2",
-   "matplotlib",
+   "matplotlib-base",
    "numpy",
    "pillow",
    "pip",
@@ -222,7 +222,7 @@
    "__set__":true,
    "elements":[
     "jinja2",
-    "matplotlib",
+    "matplotlib-base",
     "numpy",
     "pillow",
     "python",
@@ -254,7 +254,7 @@
    "__set__":true,
    "elements":[
     "jinja2",
-    "matplotlib",
+    "matplotlib-base",
     "numpy >=1.7",
     "pillow",
     "python",
