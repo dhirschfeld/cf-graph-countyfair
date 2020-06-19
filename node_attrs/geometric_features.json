@@ -204,8 +204,7 @@
     "tag_features = geometric_features.__main__:tag_features"
    ],
    "noarch":"python",
-   "number":"100",
-   "string":"no_data_py_h_100"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -216,7 +215,7 @@
   },
   "package":{
    "name":"geometric_features",
-   "version":"0.1.8"
+   "version":"0.1.9"
   },
   "requirements":{
    "host":[
@@ -252,8 +251,8 @@
    ]
   },
   "source":{
-   "sha256":"c8cad4fa58e5d93c7716c956283268a9517bba697f335fb5e5314e560c72bd5f",
-   "url":"https://github.com/MPAS-Dev/geometric_features/archive/0.1.8.tar.gz"
+   "sha256":"6cd7cd85c692b2759b57e8833b63323eff861793dfd11ac8e96849cfaba7f976",
+   "url":"https://github.com/MPAS-Dev/geometric_features/archive/0.1.9.tar.gz"
   },
   "test":{
    "commands":[
@@ -311,7 +310,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.25.23.01.15",
- "raw_meta_yaml":"{% set name = \"geometric_features\" %}\n{% set version = \"0.1.8\" %}\n{% set build = 0 %}\n\n{% if with_data != \"True\" %}\n# prioritize no data via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MPAS-Dev/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: c8cad4fa58e5d93c7716c956283268a9517bba697f335fb5e5314e560c72bd5f\n\nbuild:\n  number: {{ build }}\n  noarch: python\n\n  {% if with_data == \"True\" %}\n  {% set data_prefix = \"with_data\" %}\n  {% else %}\n  {% set data_prefix = \"no_data\" %}\n  {% endif %}\n  # add build string so packages can depend on\n  # with_data or no_data variants\n  # dependencies:\n  # `PKG_NAME * no_data*` for no geometric data included\n  # `PKG_NAME * with_data*` for all geometric data included\n  string: {{ data_prefix }}_py_h{{ PKG_HASH }}_{{ build }}\n\n  entry_points:\n    - combine_features = geometric_features.__main__:combine_features\n    - difference_features = geometric_features.__main__:difference_features\n    - fix_features_at_antimeridian = geometric_features.__main__:fix_features_at_antimeridian\n    - merge_features = geometric_features.__main__:merge_features\n    - plot_features = geometric_features.__main__:plot_features\n    - set_group_name = geometric_features.__main__:set_group_name\n    - simplify_features = geometric_features.__main__:simplify_features\n    - split_features = geometric_features.__main__:split_features\n    - tag_features = geometric_features.__main__:tag_features\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n    - cartopy\n    - shapely\n    - requests\n    - progressbar2\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - geometric_features\n    - pytest\n  commands:\n    - pytest --pyargs geometric_features\n    - combine_features -v\n    - difference_features -v\n    - fix_features_at_antimeridian -v\n    - merge_features -v\n    - plot_features -v\n    - set_group_name -v\n    - simplify_features -v\n    - split_features -v\n    - tag_features -v\n\nabout:\n  home: https://github.com/MPAS-Dev/geometric_features\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Tools for manipulating collections of geojson geometric features\n  description: |\n    Tools for manipulating regions, transects, and points in geojson format\n    for use in initializing climate models and analyzing their output.\n  doc_url: https://github.com/MPAS-Dev/geometric_features/README.md\n  dev_url: https://github.com/MPAS-Dev/geometric_features\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
+ "raw_meta_yaml":"{% set name = \"geometric_features\" %}\n{% set version = \"0.1.9\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/MPAS-Dev/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 6cd7cd85c692b2759b57e8833b63323eff861793dfd11ac8e96849cfaba7f976\n\nbuild:\n  number: {{ build }}\n  noarch: python\n  entry_points:\n    - combine_features = geometric_features.__main__:combine_features\n    - difference_features = geometric_features.__main__:difference_features\n    - fix_features_at_antimeridian = geometric_features.__main__:fix_features_at_antimeridian\n    - merge_features = geometric_features.__main__:merge_features\n    - plot_features = geometric_features.__main__:plot_features\n    - set_group_name = geometric_features.__main__:set_group_name\n    - simplify_features = geometric_features.__main__:simplify_features\n    - split_features = geometric_features.__main__:split_features\n    - tag_features = geometric_features.__main__:tag_features\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n    - cartopy\n    - shapely\n    - requests\n    - progressbar2\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - geometric_features\n    - pytest\n  commands:\n    - pytest --pyargs geometric_features\n    - combine_features -v\n    - difference_features -v\n    - fix_features_at_antimeridian -v\n    - merge_features -v\n    - plot_features -v\n    - set_group_name -v\n    - simplify_features -v\n    - split_features -v\n    - tag_features -v\n\nabout:\n  home: https://github.com/MPAS-Dev/geometric_features\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Tools for manipulating collections of geojson geometric features\n  description: |\n    Tools for manipulating regions, transects, and points in geojson format\n    for use in initializing climate models and analyzing their output.\n  doc_url: https://github.com/MPAS-Dev/geometric_features/README.md\n  dev_url: https://github.com/MPAS-Dev/geometric_features\n\nextra:\n  recipe-maintainers:\n    - xylar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -390,5 +389,5 @@
   }
  },
  "url":"https://github.com/MPAS-Dev/geometric_features/archive/0.1.3.tar.gz",
- "version":"0.1.8"
+ "version":"0.1.9"
 }

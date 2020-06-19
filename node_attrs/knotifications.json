@@ -139,7 +139,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"knotifications",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -170,7 +174,7 @@
   },
   "package":{
    "name":"knotifications",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -178,17 +182,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -199,30 +203,30 @@
     "xorg-libxext",
     "qt",
     "phonon",
-    "kconfig >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "kconfig >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "xorg-libxext",
     "qt",
     "phonon",
-    "kconfig >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "kconfig >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "xorg-libxfixes",
     "xorg-libxext",
     "qt",
     "phonon",
-    "kconfig >=5.70.0",
-    "kcodecs >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwindowsystem >=5.70.0"
+    "kconfig >=5.71.0",
+    "kcodecs >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwindowsystem >=5.71.0"
    ]
   },
   "source":{
-   "sha256":"ccaf1fa79f3fa777a733ee4f5e97311a696c251b95a6446d82a358c1fb107605",
-   "url":"https://download.kde.org/stable/frameworks/5.70/knotifications-5.70.0.tar.xz"
+   "sha256":"b900146340621d54f6113600e85d287b28225d82515affb8690704433e5d0440",
+   "url":"https://download.kde.org/stable/frameworks/5.71/knotifications-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -242,7 +246,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"knotifications\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/knotifications-{{ version }}.tar.xz\n  sha256: ccaf1fa79f3fa777a733ee4f5e97311a696c251b95a6446d82a358c1fb107605\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('knotifications', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - phonon\n    - kconfig >={{ version }}\n    - kcodecs >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kwindowsystem >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Notifications.so\n\nabout:\n  home: https://api.kde.org/frameworks/knotifications/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Desktop notifications\n  description: |\n    KNotification is used to notify the user of an event. It covers feedback and persistent events.\n  dev_url: https://cgit.kde.org/knotifications.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"knotifications\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/knotifications-{{ version }}.tar.xz\n  sha256: b900146340621d54f6113600e85d287b28225d82515affb8690704433e5d0440\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('knotifications', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n    - phonon\n    - kconfig >={{ version }}\n    - kcodecs >={{ version }}\n    - kcoreaddons >={{ version }}\n    - kwindowsystem >={{ version }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Notifications.so\n\nabout:\n  home: https://api.kde.org/frameworks/knotifications/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Desktop notifications\n  description: |\n    KNotification is used to notify the user of an event. It covers feedback and persistent events.\n  dev_url: https://cgit.kde.org/knotifications.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -306,17 +310,17 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "kcodecs >=5.70.0",
-    "kconfig >=5.70.0",
-    "kcoreaddons >=5.70.0",
-    "kwindowsystem >=5.70.0",
+    "kcodecs >=5.71.0",
+    "kconfig >=5.71.0",
+    "kcoreaddons >=5.71.0",
+    "kwindowsystem >=5.71.0",
     "phonon",
     "qt",
     "xorg-libxext",
@@ -333,5 +337,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/knotifications-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }

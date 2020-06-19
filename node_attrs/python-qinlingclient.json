@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436830658.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -102,7 +121,12 @@
   }
  },
  "name":"python-qinlingclient",
- "new_version":"5.0.1",
+ "new_version":"5.1.0",
+ "new_version_attempts":{
+  "5.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"python-qinlingclient\" %}\n{% set version = \"5.0.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: fe81307993027241665193d8183b6e0de9aa9086e4a760243ff2ce87b3d9611f\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pbr !=2.1.0,>=2.0.0\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - pbr !=2.1.0,>=2.0.0\n    - prettytable >=0.7.2\n    - python-keystoneclient >=3.8.0\n    - python-openstackclient >=3.12.0\n    - iso8601 >=0.1.11\n    - six >=1.10.0\n    - babel >=2.3.4,!=2.4.0\n    - requests >=2.14.2\n    - pyyaml >=3.12\n    - osc-lib >=1.8.0\n    - oslo.utils >=3.33.0\n    - oslo.log >=3.36.0\n    - oslo.i18n >=3.15.3\n    - oslo.serialization >=2.18.0,!=2.19.1\n\ntest:\n  imports:\n    - qinlingclient\n\nabout:\n  home: https://docs.openstack.org/python-qinlingclient/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Python client for Qinling REST API.\n  dev_url: http://docs.openstack.org/infra/manual/developers.html\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
@@ -163,6 +187,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

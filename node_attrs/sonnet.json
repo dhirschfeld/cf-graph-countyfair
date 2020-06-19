@@ -139,7 +139,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "check_solvable":true
+  }
+ },
  "feedstock_name":"sonnet",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -170,7 +174,7 @@
   },
   "package":{
    "name":"sonnet",
-   "version":"5.70.0"
+   "version":"5.71.0"
   },
   "requirements":{
    "build":[
@@ -178,17 +182,17 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
     "make",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "cdt_stub",
     "cdt_stub",
     "cdt_stub",
@@ -206,8 +210,8 @@
    ]
   },
   "source":{
-   "sha256":"1c0cbb3afe7d0e62c6524652626605d04bb9a49074e00d5ef61fd9c05d81082d",
-   "url":"https://download.kde.org/stable/frameworks/5.70/sonnet-5.70.0.tar.xz"
+   "sha256":"cd663b3e1b23aef58d85f72dfdc92aaae33f358b22ad1fc36fde6c66eb7f0e72",
+   "url":"https://download.kde.org/stable/frameworks/5.71/sonnet-5.71.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -227,7 +231,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"sonnet\" %}\n{% set version = \"5.70.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/sonnet-{{ version }}.tar.xz\n  sha256: 1c0cbb3afe7d0e62c6524652626605d04bb9a49074e00d5ef61fd9c05d81082d\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('sonnet', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5SonnetCore.so\n\nabout:\n  home: https://api.kde.org/frameworks/sonnet/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Multi-language spell checker\n  description: |\n    Sonnet is a plugin-based spell checking library for Qt-based applications.\n    It supports several different plugins, including HSpell, Enchant, ASpell and HUNSPELL.\n  dev_url: https://cgit.kde.org/sonnet.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"sonnet\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/sonnet-{{ version }}.tar.xz\n  sha256: cd663b3e1b23aef58d85f72dfdc92aaae33f358b22ad1fc36fde6c66eb7f0e72\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('sonnet', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n  host:\n    - xorg-libxfixes  # [linux]\n    - xorg-libxext\n    - qt\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5SonnetCore.so\n\nabout:\n  home: https://api.kde.org/frameworks/sonnet/html/index.html\n  license: LGPL-v2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  summary: Multi-language spell checker\n  description: |\n    Sonnet is a plugin-based spell checking library for Qt-based applications.\n    It supports several different plugins, including HSpell, Enchant, ASpell and HUNSPELL.\n  dev_url: https://cgit.kde.org/sonnet.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -281,7 +285,7 @@
     "cdt_stub",
     "cmake",
     "cxx_compiler_stub",
-    "extra-cmake-modules >=5.70.0",
+    "extra-cmake-modules >=5.71.0",
     "make"
    ]
   },
@@ -303,5 +307,5 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/sonnet-5.64.0.tar.xz",
- "version":"5.70.0"
+ "version":"5.71.0"
 }

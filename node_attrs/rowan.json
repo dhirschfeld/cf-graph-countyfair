@@ -98,6 +98,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/436829709.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.0.post1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -188,8 +205,12 @@
   }
  },
  "name":"rowan",
- "new_version":"1.2.2",
- "pinning_version":"2019.09.08",
+ "new_version":"1.3.0.post1",
+ "new_version_attempts":{
+  "1.3.0.post1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"rowan\" %}\n{% set version = \"1.2.2\" %}\n{% set sha256 = \"eec83a8bc86ab010ebda8985917fb8c93973c263d2031bd4e22b70c3d61157dc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 2\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - numpy >=1.10\n\ntest:\n  imports:\n    - rowan\n    - rowan.mapping\n    - rowan.geometry\n    - rowan.calculus\n    - rowan.interpolate\n    - rowan.random\n\nabout:\n  home: https://github.com/glotzerlab/rowan\n  license: BSD-3\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Perform quaternion operations using numpy arrays'\n\n  description: |\n    rowan performs quaternion operations directly on numpy arrays.\n    The package does not require conversion of arrays into a special\n    quaternion object, ensuring easy integration into existing code,\n    but broadcasting is fully supported natively for all operations to\n    ensure that code is performant.\n  doc_url: http://rowan.readthedocs.io/\n  dev_url: https://github.com/glotzerlab/rowan\n\nextra:\n  recipe-maintainers:\n    - vyasr\n    - joaander\n    - bdice\n",
  "req":{
   "__set__":true,
@@ -225,7 +246,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

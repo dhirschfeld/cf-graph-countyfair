@@ -7,35 +7,35 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/soft-matter/pims",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"license.txt",
    "summary":"Python Image Sequence. Load video and sequential images in many formats with a simple, consistent interface.\n"
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python setup.py install --single-version-externally-managed --record=record.txt"
+   "number":"2",
+   "script":" -m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "danielballan",
     "ericdill",
     "jakirkham",
-    "licode",
     "tacaswell",
     "caspervdw",
+    "nkeim",
     "danielballan",
     "ericdill",
     "jakirkham",
-    "licode",
     "tacaswell",
     "caspervdw",
+    "nkeim",
     "danielballan",
     "ericdill",
     "jakirkham",
-    "licode",
     "tacaswell",
-    "caspervdw"
+    "caspervdw",
+    "nkeim"
    ]
   },
   "package":{
@@ -43,13 +43,13 @@
    "version":"0.4.1"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -149,17 +149,17 @@
   }
  },
  "name":"pims",
- "new_version":"0.4.1",
- "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6a53a155e900b44e71127a1e1fccbfbaed7eec3c2b52497c40c23a05f334c9dd\n\nbuild:\n  number: 1\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - scipy  # one of { scikit-image | matplotlib | scipy }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: >\n      Python Image Sequence. Load video and sequential images in many formats \n      with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - licode\n    - tacaswell\n    - caspervdw\n",
+ "new_version":"0.5",
+ "raw_meta_yaml":"{% set name = \"PIMS\" %}\n{% set version = \"0.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6a53a155e900b44e71127a1e1fccbfbaed7eec3c2b52497c40c23a05f334c9dd\n\nbuild:\n  number: 2\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - slicerator >=0.9.7\n    - six >=1.8\n    - numpy >=1.7\n# The following dependencies are only required for rich IPython display\n    - jinja2\n    - pillow\n# The following dependencies are optional (for specific readers)\n    - scipy  # one of { scikit-image | matplotlib | scipy }\n    - tifffile\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_reader\n    - pims.image_sequence\n    - pims.imageio_reader\n    - pims.moviepy_reader\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD-3-Clause\n  license_file: license.txt\n  summary: >\n      Python Image Sequence. Load video and sequential images in many formats\n      with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - jakirkham\n    - tacaswell\n    - caspervdw\n    - nkeim\n",
  "req":{
   "__set__":true,
   "elements":[
    "jinja2",
    "numpy",
    "pillow",
+   "pip",
    "python",
    "scipy",
-   "setuptools",
    "six",
    "slicerator",
    "tifffile"
@@ -168,14 +168,14 @@
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -199,14 +199,14 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,

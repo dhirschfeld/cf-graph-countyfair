@@ -246,9 +246,9 @@
   },
   "build":{
    "merge_build_host":true,
-   "number":"106",
+   "number":"100",
    "skip":true,
-   "string":"nompi_h_106"
+   "string":"nompi_h_100"
   },
   "extra":{
    "recipe-maintainers":[
@@ -268,35 +268,34 @@
   },
   "package":{
    "name":"netcdf-fortran",
-   "version":"4.5.2"
+   "version":"4.5.3"
   },
   "requirements":{
-   "build":[
+   "build":null,
+   "host":[
     "cmake",
     "fortran_compiler_stub",
     "c_compiler_stub",
+    "libnetcdf",
+    "libnetcdf * nompi_*",
+    "hdf5",
+    "hdf5 * nompi_*",
+    "nompi",
     "cmake",
     "pkg-config",
     "fortran_compiler_stub",
     "c_compiler_stub",
     "make",
+    "libnetcdf",
+    "libnetcdf * nompi_*",
+    "hdf5",
+    "hdf5 * nompi_*",
+    "nompi",
     "cmake",
     "pkg-config",
     "fortran_compiler_stub",
     "c_compiler_stub",
-    "make"
-   ],
-   "host":[
-    "libnetcdf",
-    "libnetcdf * nompi_*",
-    "hdf5",
-    "hdf5 * nompi_*",
-    "nompi",
-    "libnetcdf",
-    "libnetcdf * nompi_*",
-    "hdf5",
-    "hdf5 * nompi_*",
-    "nompi",
+    "make",
     "libnetcdf",
     "libnetcdf * nompi_*",
     "hdf5",
@@ -321,8 +320,8 @@
     "no_clang.patch",
     "no_clang.patch"
    ],
-   "sha256":"0b05c629c70d6d224a3be28699c066bfdfeae477aea211fbf034d973a8309b49",
-   "url":"https://github.com/Unidata/netcdf-fortran/archive/v4.5.2.tar.gz"
+   "sha256":"c6da30c2fe7e4e614c1dff4124e857afbd45355c6798353eccfa60c0702b495a",
+   "url":"https://github.com/Unidata/netcdf-fortran/archive/v4.5.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -349,7 +348,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.02.12.20.38",
- "raw_meta_yaml":"{% set version = \"4.5.2\" %}\n{% set build = 6 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n{% if mpi == \"nompi\" %}\n# prioritize nompi via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: netcdf-fortran\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Unidata/netcdf-fortran/archive/v{{ version }}.tar.gz\n  sha256: 0b05c629c70d6d224a3be28699c066bfdfeae477aea211fbf034d973a8309b49\n  patches:\n    - no_clang.patch\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n  merge_build_host: True\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `netcdf-fortran * mpi_mpich_*` for mpich\n  # `netcdf-fortran * mpi_*` for any mpi\n  # `netcdf-fortran * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: \"{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config  # [not win]\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - make  # [not win]\n  host:\n    # need to list hdf5 and libnetcdf twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - libnetcdf\n    - libnetcdf * {{ mpi_prefix }}_*\n    - hdf5\n    - hdf5 * {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n  run:\n    - libnetcdf * {{ mpi_prefix }}_*\n    - hdf5 * {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n\ntest:\n  requires:\n    - {{ compiler('fortran') }}\n  commands:\n    - nf-config --help\n    - test -f $(nc-config --fc)\n    - test -f $PREFIX/lib/libnetcdf.a  # [not win]\n\nabout:\n  home: https://github.com/Unidata/netcdf-fortran\n  license: http://www.unidata.ucar.edu/software/netcdf/copyright.html\n  license_file: COPYRIGHT\n  summary: 'Unidata NetCDF Fortran Library'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bekozi\n    - beckermr\n    - xylar\n",
+ "raw_meta_yaml":"{% set version = \"4.5.3\" %}\n{% set build = 0 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n{% if mpi == \"nompi\" %}\n# prioritize nompi via build number\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: netcdf-fortran\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Unidata/netcdf-fortran/archive/v{{ version }}.tar.gz\n  sha256: c6da30c2fe7e4e614c1dff4124e857afbd45355c6798353eccfa60c0702b495a\n  patches:\n    - no_clang.patch\n\nbuild:\n  number: {{ build }}\n  skip: true  # [win]\n  merge_build_host: true\n\n  # add build string so packages can depend on\n  # mpi or nompi variants explicitly:\n  # `netcdf-fortran * mpi_mpich_*` for mpich\n  # `netcdf-fortran * mpi_*` for any mpi\n  # `netcdf-fortran * nompi_*` for no mpi\n\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}\n\nrequirements:\n  build:\n  host:\n    - cmake\n    - pkg-config  # [not win]\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - make  # [not win]\n    # need to list hdf5 and libnetcdf twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - libnetcdf\n    - libnetcdf * {{ mpi_prefix }}_*\n    - hdf5\n    - hdf5 * {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n  run:\n    - libnetcdf * {{ mpi_prefix }}_*\n    - hdf5 * {{ mpi_prefix }}_*\n    - {{ mpi }}  # [mpi != 'nompi']\n\ntest:\n  requires:\n    - {{ compiler('fortran') }}\n  commands:\n    - nf-config --help\n    - test -f $(nc-config --fc)\n    - test -f $PREFIX/lib/libnetcdf.a  # [not win]\n\nabout:\n  home: https://github.com/Unidata/netcdf-fortran\n  license: http://www.unidata.ucar.edu/software/netcdf/copyright.html\n  license_file: COPYRIGHT\n  summary: Unidata NetCDF Fortran Library\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bekozi\n    - beckermr\n    - xylar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -366,20 +365,19 @@
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "c_compiler_stub",
-    "cmake",
-    "fortran_compiler_stub",
-    "make",
-    "pkg-config"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
    "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
     "hdf5",
     "libnetcdf",
-    "nompi"
+    "make",
+    "nompi",
+    "pkg-config"
    ]
   },
   "run":{
@@ -402,22 +400,21 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "c_compiler_stub",
-    "cmake",
-    "fortran_compiler_stub",
-    "make",
-    "pkg-config"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
    "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
     "hdf5",
     "hdf5 * nompi_*",
     "libnetcdf",
     "libnetcdf * nompi_*",
-    "nompi"
+    "make",
+    "nompi",
+    "pkg-config"
    ]
   },
   "run":{
@@ -436,5 +433,5 @@
   }
  },
  "url":"https://github.com/Unidata/netcdf-fortran/archive/v4.5.1.tar.gz",
- "version":"4.5.2"
+ "version":"4.5.3"
 }

@@ -80,7 +80,7 @@
   }
  },
  "name":"h2o-py",
- "new_version":"3.30.0.4",
+ "new_version":"3.30.0.5",
  "raw_meta_yaml":"{% set name = \"h2o\" %}\n{% set version = \"3.30.0.4\" %}\n\n\npackage:\n  name: {{ name|lower }}-py\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5452f4d39538a0883b7cb84f60544211b394a9dd1da92c518a2172bf63aba5cd\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - colorama >=0.3.8\n    - future\n    - python\n    - requests\n    - tabulate\n\ntest:\n  imports:\n    - h2o\n    - h2o.automl\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/h2oai/h2o-3\n  summary: H2O, Fast Scalable Machine Learning, for python\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
   "__set__":true,
