@@ -290,11 +290,11 @@
   },
   "package":{
    "name":"ca-certificates",
-   "version":"2020.4.5.2"
+   "version":"2020.6.20"
   },
   "source":{
-   "sha256":"5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1",
-   "url":"https://pypi.io/packages/source/c/certifi/certifi-2020.4.5.2.tar.gz"
+   "sha256":"5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3",
+   "url":"https://pypi.io/packages/source/c/certifi/certifi-2020.6.20.tar.gz"
   },
   "test":{
    "commands":[
@@ -325,7 +325,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set version = \"2020.4.5.2\" %}\n\npackage:\n  name: ca-certificates\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/certifi/certifi-{{ version }}.tar.gz\n  sha256: 5ad7e9a056d25ffa5082862e36f119f7f7cec6457fa07ee2f8c339814b80c9b1\n\nbuild:\n  number: 0\n\ntest:\n  requires:\n    - curl\n\n  commands:\n    # Verify the certificates are there.\n    - test -f \"${PREFIX}/ssl/cacert.pem\"                                      # [unix]\n    - test -f \"${PREFIX}/ssl/cert.pem\"                                        # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem exit 1                   # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cert.pem exit 1                     # [win]\n\n    # Use the certificates to download something.\n    - curl --cacert \"${PREFIX}/ssl/cacert.pem\" https://www.google.com         # [unix]\n    - curl --cacert %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem https://www.google.com  # [win]\n\nabout:\n  home: https://github.com/conda-forge/ca-certificates-feedstock\n  license: ISC\n  license_file: LICENSE\n  summary: Certificates for use with other packages.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - mwcraig\n    - ocefpaf\n    - patricksnape\n    - pelson\n    - scopatz\n",
+ "raw_meta_yaml":"{% set version = \"2020.6.20\" %}\n\npackage:\n  name: ca-certificates\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/certifi/certifi-{{ version }}.tar.gz\n  sha256: 5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3\n\nbuild:\n  number: 0\n\ntest:\n  requires:\n    - curl\n\n  commands:\n    # Verify the certificates are there.\n    - test -f \"${PREFIX}/ssl/cacert.pem\"                                      # [unix]\n    - test -f \"${PREFIX}/ssl/cert.pem\"                                        # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem exit 1                   # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cert.pem exit 1                     # [win]\n\n    # Use the certificates to download something.\n    - curl --cacert \"${PREFIX}/ssl/cacert.pem\" https://www.google.com         # [unix]\n    - curl --cacert %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem https://www.google.com  # [win]\n\nabout:\n  home: https://github.com/conda-forge/ca-certificates-feedstock\n  license: ISC\n  license_file: LICENSE\n  summary: Certificates for use with other packages.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - mwcraig\n    - ocefpaf\n    - patricksnape\n    - pelson\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[]
@@ -373,5 +373,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/certifi/certifi-2019.6.16.tar.gz",
- "version":"2020.4.5.2"
+ "version":"2020.6.20"
 }
