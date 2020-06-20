@@ -14,6 +14,23 @@
     "migrator_name",
     "migrator_version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437334469.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -98,8 +115,12 @@
   }
  },
  "name":"pytest-base-url",
- "new_version":"1.4.1",
- "pinning_version":"2018.07.01",
+ "new_version":"1.4.2",
+ "new_version_attempts":{
+  "1.4.2":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"pytest-base-url\" %}\n{% set version = \"1.4.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"7425e8163345494ac7f544e99c6f3e5a08f4228bee5e26013b98c462a4d31f6e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - setuptools_scm\n    - pytest >=2.7.3\n    - requests >=2.9\n\n  run:\n    - python\n    - setuptools\n    - pytest >=2.7.3\n    - requests >=2.9\n\ntest:\n  imports:\n    - pytest_base_url\n\nabout:\n  home: https://github.com/pytest-dev/pytest-base-url\n  license: MPL 2.0\n  license_family: OTHER\n  license_file: LICENSE\n  summary: 'pytest plugin for URL based testing'\n\nextra:\n  recipe-maintainers:\n    - birdsarah\n    - davehunt\n",
  "req":{
   "__set__":true,
@@ -142,7 +163,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.1.6",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
