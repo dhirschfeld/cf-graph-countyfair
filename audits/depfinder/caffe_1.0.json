@@ -1,0 +1,28 @@
+{
+ "exception":"'NoneType' object has no attribute 'split'",
+ "traceback":[
+  "Traceback (most recent call last):",
+  "  File \"/root/repo/cf-scripts/conda_forge_tick/audit.py\", line 117, in main",
+  "    deps = v[\"run\"](fctx, ctx)",
+  "  File \"/root/repo/cf-scripts/conda_forge_tick/audit.py\", line 32, in depfinder_audit_feedstock",
+  "    cb_work_dir = _get_source_code(recipe_dir)",
+  "  File \"/root/repo/cf-scripts/conda_forge_tick/migrators/core.py\", line 62, in _get_source_code",
+  "    recipe_dir, config=Config(**CB_CONFIG), finalize=False, bypass_env_check=True,",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/api.py\", line 45, in render",
+  "    permit_unsatisfiable_variants=permit_unsatisfiable_variants)",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/render.py\", line 830, in render_recipe",
+  "    allow_no_other_outputs=True, bypass_env_check=bypass_env_check)",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/render.py\", line 745, in distribute_variants",
+  "    (mv, need_source_download, None)",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/metadata.py\", line 1323, in dist",
+  "    return '%s-%s-%s' % (self.name(), self.version(), self.build_id())",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/metadata.py\", line 1306, in build_id",
+  "    out = build_string_from_metadata(self)",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/metadata.py\", line 577, in build_string_from_metadata",
+  "    variant_version = (get_package_version_pin(build_deps, _n) or",
+  "  File \"/opt/conda/envs/run_env/lib/python3.7/site-packages/conda_build/metadata.py\", line 543, in get_package_version_pin",
+  "    if spec.split()[0] == name and len(spec.split()) > 1:",
+  "AttributeError: 'NoneType' object has no attribute 'split'",
+  ""
+ ]
+}
