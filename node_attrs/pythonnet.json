@@ -74,7 +74,8 @@
    "summary":".Net and Mono integration for Python"
   },
   "build":{
-   "number":"1"
+   "number":"0",
+   "skip":true
   },
   "extra":{
    "recipe-maintainers":[
@@ -88,51 +89,36 @@
   },
   "package":{
    "name":"pythonnet",
-   "version":"2.4.0"
+   "version":"2.5.1"
   },
   "requirements":{
-   "build":[
-    "c_compiler_stub",
-    "clangdev",
-    "pkg-config"
-   ],
    "host":[
     "pip",
     "pycparser",
     "python",
-    "glib",
-    "mono",
     "pip",
     "pycparser",
     "python",
-    "glib",
-    "mono",
     "pip",
     "pycparser",
     "python"
    ],
    "run":[
     "python",
-    "gettext",
-    "libiconv",
-    "mono",
     "python",
-    "gettext",
-    "libiconv",
-    "mono",
     "python"
    ]
   },
   "source":{
-   "sha256":"a3a38e67fdfcda94df51c805343150016097f284771156f76839a9c3a24c90a9",
-   "url":"https://pypi.io/packages/source/p/pythonnet/pythonnet-2.4.0.tar.gz"
+   "sha256":"b4e876e0ddb52c7ce187c1abf529ef1e419743af283fde9d5769c798cf4b078f",
+   "url":"https://pypi.io/packages/source/p/pythonnet/pythonnet-2.5.1.tar.gz"
   },
   "test":{
-   "commands":[
-    "export LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/",
-    "$PYTHON -c 'import clr'"
-   ],
-   "imports":null
+   "imports":[
+    "clr",
+    "clr",
+    "clr"
+   ]
   }
  },
  "name":"pythonnet",
@@ -143,18 +129,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"pythonnet\" %}\n{% set version = \"2.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a3a38e67fdfcda94df51c805343150016097f284771156f76839a9c3a24c90a9\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}   # [not win]\n    - clangdev              # [linux]\n    - pkg-config            # [not win]\n  host:\n    - glib  # [not win]\n    - mono  # [not win]\n    - pip\n    - pycparser\n    - python\n  run:\n    - gettext              # [not win]\n    - libiconv             # [not win]\n    - mono                 # [not win]\n    - python\n\ntest:\n  imports:\n    - clr  # [not linux]\n  commands:\n    - export LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib/  # [linux]\n    - $PYTHON -c 'import clr'  # [linux]\n\nabout:\n  home: http://pythonnet.github.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: '.Net and Mono integration for Python'\n  description: |\n    Python for .NET is a package that gives Python programmers nearly seamless integration with the\n     .NET Common Language Runtime (CLR) and provides a powerful application scripting tool for .NET\n      developers.\n  dev_url: https://github.com/pythonnet/pythonnet\n\nextra:\n  recipe-maintainers:\n    - m-rossi\n    - bgruening\n",
+ "raw_meta_yaml":"{% set name = \"pythonnet\" %}\n{% set version = \"2.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b4e876e0ddb52c7ce187c1abf529ef1e419743af283fde9d5769c798cf4b078f\n\nbuild:\n  number: 0\n  skip: True  # [not win]\n\nrequirements:\n  host:\n    - pip\n    - pycparser\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - clr\n\nabout:\n  home: http://pythonnet.github.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: .Net and Mono integration for Python\n  description: |\n    Python for .NET is a package that gives Python programmers nearly seamless integration with the\n     .NET Common Language Runtime (CLR) and provides a powerful application scripting tool for .NET\n      developers.\n  dev_url: https://github.com/pythonnet/pythonnet\n\nextra:\n  recipe-maintainers:\n    - m-rossi\n    - bgruening\n",
  "req":{
   "__set__":true,
   "elements":[
-   "c_compiler_stub",
-   "clangdev",
-   "gettext",
-   "glib",
-   "libiconv",
-   "mono",
    "pip",
-   "pkg-config",
    "pycparser",
    "python"
   ]
@@ -162,17 +141,11 @@
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "c_compiler_stub",
-    "clangdev",
-    "pkg-config"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "glib",
-    "mono",
     "pip",
     "pycparser",
     "python"
@@ -181,9 +154,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "gettext",
-    "libiconv",
-    "mono",
     "python"
    ]
   },
@@ -197,17 +167,11 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "c_compiler_stub",
-    "clangdev",
-    "pkg-config"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "glib",
-    "mono",
     "pip",
     "pycparser",
     "python"
@@ -216,9 +180,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "gettext",
-    "libiconv",
-    "mono",
     "python"
    ]
   },
@@ -228,5 +189,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pythonnet/pythonnet-2.4.0.tar.gz",
- "version":"2.4.0"
+ "version":"2.5.1"
 }
