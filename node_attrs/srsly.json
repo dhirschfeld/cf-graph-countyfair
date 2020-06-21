@@ -190,6 +190,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437566072.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -299,8 +316,12 @@
   }
  },
  "name":"srsly",
- "new_version":"2.0.1",
- "pinning_version":"2020.04.03",
+ "new_version":"2.1.0",
+ "new_version_attempts":{
+  "2.1.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"srsly\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256sum = \"59258b81d567df207f8a0a33c4b5fa232afccf1d927c8ce3ba5395bfd64c0ed8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: True  # [py2k or py35]\n  \n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - wheel\n    - cython\n  run:\n    - python\n\ntest:\n  imports:\n    - srsly\n    - srsly.tests\n  requires:\n    - pytest >=4.0.0,<5.0.0\n    - pytz\n    - mock\n    - numpy >=1.15.0\n  commands:\n    - python -m pytest --tb=native --pyargs {{ name }}\n\nabout:\n  home: http://github.com/explosion/srsly\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Modern high-performance serialization utilities for Python'\n\n  doc_url: https://github.com/explosion/srsly\n  dev_url: https://github.com/explosion/srsly\n\nextra:\n  recipe-maintainers:\n    - ines\n    - honnibal\n    - adrianeboyd\n",
  "req":{
   "__set__":true,
@@ -348,7 +369,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
