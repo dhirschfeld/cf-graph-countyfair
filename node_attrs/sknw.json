@@ -14,6 +14,23 @@
     "migrator_name",
     "migrator_version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437476850.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.14"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -89,8 +106,12 @@
   }
  },
  "name":"sknw",
- "new_version":"0.13",
- "pinning_version":"2018.07.01",
+ "new_version":"0.14",
+ "new_version_attempts":{
+  "0.14":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"sknw\" %}\n{% set version = \"0.13\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"c0d3a3ecec7d1d359aa5bc42751309a6472a62c409d9ae38132990d300f049ae\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash_value }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy >=1.11\n    - networkx >=1.11\n    - numba >=0.29\n\ntest:\n  imports:\n    - sknw\n\nabout:\n  home: https://github.com/yxdragon/sknw\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: 'LICENSE'\n  summary: Analysis of object skeletons\n  description: 'sknw: skeleton analysis in Python.'\n  doc_url: 'https://github.com/yxdragon/sknw'\n  dev_url: 'https://github.com/yxdragon/sknw'\n\nextra:\n  recipe-maintainers: \n    - yxdragon\n",
  "req":{
   "__set__":true,
@@ -130,7 +151,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.1.6",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
