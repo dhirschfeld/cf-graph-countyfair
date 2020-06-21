@@ -157,6 +157,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437579167.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"8.3.0.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -284,7 +301,11 @@
  },
  "name":"smesh",
  "new_version":"8.3.0.4",
- "pinning_version":"2020.02.20",
+ "new_version_attempts":{
+  "8.3.0.4":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"smesh\" %}\n{% set version = \"8.3.0.3\" %}\n{% set sha256 = \"bd5bddd509e5120bdd56178c37471984062e8abd36465389d64fb6e1b811a1d4\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}_{{ version }}.tar.gz\n    url: https://github.com/LaughlinResearch/SMESH/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    patches:\n        - osx-vtk.patch  # [osx]\n        - linker.patch  # [win]\n\nbuild:\n    number: 10\n    skip: True  # [py < 36]\n\nrequirements:\n    build:\n        - {{ compiler('cxx') }}\n        - {{ compiler('c') }}\n        - {{ cdt('mesa-libgl-devel') }}  # [linux]\n        - {{ cdt('libxi-devel') }}       # [linux]\n        - {{ cdt('libxext-devel') }}     # [linux]\n        - ninja\n        - cmake\n    host:\n        - vtk\n        - boost-cpp\n        - occt\n        - netgen\n        - python\n        - tbb-devel\n        - zlib\n        - pthreads-win32  # [win]\n        # - libmed\n    run:\n        - vtk\n        - boost-cpp\n        - occt\n        - {{ pin_compatible('netgen', max_pin='x.x.x') }}\n        - python\n        - zlib\n        - pthreads-win32  # [win]\n        # - libmed\n\ntest:\n    requires:\n        - cmake\n        - ninja\n    files:\n        - CMakeLists.txt\n    commands:\n        - cmake -G \"Ninja\" .\n\nabout:\n    home: https://github.com/LaughlinResearch/SMESH\n    license: LGPL-2.1\n    license_family: LGPL\n    license_file:  LICENSE.txt\n    summary: A complete MESH framework based on the OCCT library.\n    description: Standalone version of the meshing library from the Salome Platform.\n\nextra:\n    recipe-maintainers:\n        - looooo\n",
  "req":{
   "__set__":true,
@@ -348,7 +369,7 @@
    ]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
