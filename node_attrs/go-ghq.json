@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437502243.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.1.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -70,12 +87,13 @@
   }
  },
  "name":"go-ghq",
- "new_version":"1.1.1",
+ "new_version":"1.1.2",
  "new_version_attempts":{
-  "1.1.1":1
+  "1.1.1":1,
+  "1.1.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.02.12.20.38",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"ghq\" %}\n{% set version = \"1.1.1\" %}\n\npackage:\n  name: go-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/x-motemen/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 3a186003fc57e2bfb99c535db0a1d4cff79936dbc3c926a91f5d18d67d0bfc37\n\nbuild:\n  number: 0\n  script:\n    - go install -ldflags \"-X main.revision={{ version }}\" .\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  commands:\n    - ghq --help\n\nabout:\n  home: https://github.com/x-motemen/ghq\n  license: MIT\n  license_file: LICENSE\n  summary: ghq provides a way to organize remote repository clones, like go get does.\n\n  dev_url: https://github.com/x-motemen/ghq\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
   "__set__":true,
