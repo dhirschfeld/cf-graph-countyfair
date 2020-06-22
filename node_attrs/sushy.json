@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437934235.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -162,8 +179,12 @@
   }
  },
  "name":"sushy",
- "new_version":"3.2.0",
- "pinning_version":"2020.03.30",
+ "new_version":"3.3.0",
+ "new_version_attempts":{
+  "3.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"sushy\" %}\n{% set version = \"3.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8abf4f0852b53df805e0f72a55820c9a867a2b844d02f064c333100d8b8aa009\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pbr !=2.1.0,>=2.0.0\n    - pbr\n    - python\n  run:\n    - pbr !=2.1.0,>=2.0.0\n    - python\n    - python-dateutil >=2.7.0\n    - requests >=2.14.2\n    - six >=1.10.0\n    - stevedore >=1.29.0\n\ntest:\n  imports:\n    - sushy\n    - sushy.auth\n    - sushy.connector\n    - sushy.exceptions\n    - sushy.main\n    - sushy.utils\n\nabout:\n  home: https://github.com/openstack/sushy\n  license: Apache Software\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Sushy is a Python library to communicate with Redfish based systems. The goal of the library is to be extremely simple, small, have as few dependencies\n    as possible and be very conservative when dealing with BMCs by issuing just enough requests to it (BMCs are very flaky).\n\nextra:\n  recipe-maintainers:\n    - pg-hbk\n    - sy-hbk\n",
  "req":{
   "__set__":true,
@@ -204,7 +225,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

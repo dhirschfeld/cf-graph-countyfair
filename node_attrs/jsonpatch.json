@@ -44,6 +44,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/437934674.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.26"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -112,8 +129,12 @@
   }
  },
  "name":"jsonpatch",
- "new_version":"1.25",
- "pinning_version":"2020.01.27",
+ "new_version":"1.26",
+ "new_version_attempts":{
+  "1.26":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"jsonpatch\" %}\n{% set version = \"1.24\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"cbb72f8bf35260628aea6b508a107245f757d1ec839a19c34349985e2c05645a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - jsonpointer >=1.9\n\ntest:\n  imports:\n    - jsonpatch\n\nabout:\n  home: https://github.com/stefankoegl/python-json-patch\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'Apply JSON-Patches (RFC 6902)'\n  dev_url: https://github.com/stefankoegl/python-json-patch\n  doc_url: https://python-json-patch.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "req":{
   "__set__":true,
@@ -147,7 +168,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.6",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
