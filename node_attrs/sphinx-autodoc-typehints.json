@@ -238,7 +238,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"sphinx-autodoc-typehints",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -252,7 +256,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -263,41 +267,51 @@
   },
   "package":{
    "name":"sphinx-autodoc-typehints",
-   "version":"1.10.3"
+   "version":"1.11.0"
   },
   "requirements":{
    "host":[
-    "python >=3",
+    "python >=3.5",
     "pip",
-    "sphinx >=1.4",
-    "setuptools_scm",
-    "python >=3",
+    "setuptools >=36.2.7",
+    "setuptools_scm >=1.7.0",
+    "python >=3.5",
     "pip",
-    "sphinx >=1.4",
-    "setuptools_scm",
-    "python >=3",
+    "setuptools >=36.2.7",
+    "setuptools_scm >=1.7.0",
+    "python >=3.5",
     "pip",
-    "sphinx >=1.4",
-    "setuptools_scm"
+    "setuptools >=36.2.7",
+    "setuptools_scm >=1.7.0"
    ],
    "run":[
-    "python >=3",
-    "sphinx >=1.4",
-    "python >=3",
-    "sphinx >=1.4",
-    "python >=3",
-    "sphinx >=1.4"
+    "python >=3.5",
+    "sphinx >=3.0",
+    "python >=3.5",
+    "sphinx >=3.0",
+    "python >=3.5",
+    "sphinx >=3.0"
    ]
   },
   "source":{
-   "sha256":"a6b3180167479aca2c4d1ed3b5cb044a70a76cccd6b38662d39288ebd9f0dff0",
-   "url":"https://pypi.io/packages/source/s/sphinx-autodoc-typehints/sphinx-autodoc-typehints-1.10.3.tar.gz"
+   "sha256":"bbf0b203f1019b0f9843ee8eef0cff856dc04b341f6dbe1113e37f2ebf243e11",
+   "url":"https://pypi.io/packages/source/s/sphinx-autodoc-typehints/sphinx-autodoc-typehints-1.11.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "sphinx_autodoc_typehints",
     "sphinx_autodoc_typehints",
     "sphinx_autodoc_typehints"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -308,12 +322,13 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set version = \"1.10.3\" %}\n\npackage:\n  name: sphinx-autodoc-typehints\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sphinx-autodoc-typehints/sphinx-autodoc-typehints-{{ version }}.tar.gz\n  sha256: a6b3180167479aca2c4d1ed3b5cb044a70a76cccd6b38662d39288ebd9f0dff0\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - sphinx >=1.4\n    - setuptools_scm\n  run:\n    - python >=3\n    - sphinx >=1.4\n\ntest:\n  imports:\n    - sphinx_autodoc_typehints\n\nabout:\n  home: https://github.com/agronholm/sphinx-autodoc-typehints\n  license: MIT\n  license_file: LICENSE\n  summary: 'Type hints (PEP 484) support for the Sphinx autodoc extension'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
+ "raw_meta_yaml":"{% set version = \"1.11.0\" %}\n\npackage:\n  name: sphinx-autodoc-typehints\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sphinx-autodoc-typehints/sphinx-autodoc-typehints-{{ version }}.tar.gz\n  sha256: bbf0b203f1019b0f9843ee8eef0cff856dc04b341f6dbe1113e37f2ebf243e11\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - setuptools >=36.2.7\n    - setuptools_scm >=1.7.0\n  run:\n    - python >=3.5\n    - sphinx >=3.0\n\ntest:\n  imports:\n    - sphinx_autodoc_typehints\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/agronholm/sphinx-autodoc-typehints\n  license: MIT\n  license_file: LICENSE\n  summary: Type hints (PEP 484) support for the Sphinx autodoc extension\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
    "python",
+   "setuptools",
    "setuptools_scm",
    "sphinx"
   ]
@@ -328,8 +343,8 @@
    "elements":[
     "pip",
     "python",
-    "setuptools_scm",
-    "sphinx"
+    "setuptools",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -341,7 +356,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -355,23 +372,25 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python >=3",
-    "setuptools_scm",
-    "sphinx >=1.4"
+    "python >=3.5",
+    "setuptools >=36.2.7",
+    "setuptools_scm >=1.7.0"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "python >=3",
-    "sphinx >=1.4"
+    "python >=3.5",
+    "sphinx >=3.0"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/s/sphinx-autodoc-typehints/sphinx-autodoc-typehints-1.6.0.tar.gz",
- "version":"1.10.3"
+ "version":"1.11.0"
 }
