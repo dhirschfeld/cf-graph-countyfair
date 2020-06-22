@@ -58,7 +58,7 @@
    "summary":"A Python library for electronic structure pre/post-processing."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -98,6 +98,7 @@
     "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "mscorefonts",
     "python",
     "pychemia",
     "pyvista",
@@ -109,6 +110,7 @@
     "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "mscorefonts",
     "python",
     "pychemia",
     "pyvista",
@@ -120,6 +122,7 @@
     "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "mscorefonts",
     "python",
     "pychemia",
     "pyvista",
@@ -153,7 +156,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"pyprocar\" %}\n{% set version = \"5.4.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 43f7ffcac98e5e349f4beaa932e18059d3865deaba26c1debb7dfad943cfafb7\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxext') }}     # [linux]\n  host:\n    - pip\n    - python\n    - xorg-libxfixes  # [linux]\n  run:\n    - ase\n    - importlib-metadata\n    - matplotlib-base\n    - mayavi\n    - python\n    - pychemia\n    - pyvista\n    - scikit-image\n    - scipy\n    - seekpath\n    - trimesh\n\ntest:\n  commands:\n    - {{ RECIPE_DIR }}/run_test.bat  # [win]\n    - bash {{ RECIPE_DIR }}/run_test.sh  # [not win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/romerogroup/pyprocar\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: A Python library for electronic structure pre/post-processing.\n\n  description: |\n    PyProcar is a robust, open-source Python library used for pre- and \n    post-processing of the electronic structure data coming from DFT \n    calculations. PyProcar provides a set of functions that manage data \n    obtained from the PROCAR format. Basically, the PROCAR format is a \n    projection of the Kohn-Sham states over atomic orbitals. That \n    projection is performed to every k-point in the considered mesh, \n    every energy band and every atom. PyProcar is capable of performing \n    a multitude of tasks including plotting plain and spin/atom/orbital \n    projected band structures and Fermi surfaces- both in 2D and 3D, Fermi \n    velocity plots, unfolding bands of a super cell, comparing band \n    structures from multiple DFT calculations, plotting partial density \n    of states and generating a k-path for a given crystal structure.\n  doc_url: https://romerogroup.github.io/pyprocar/\n  dev_url: https://github.com/romerogroup/pyprocar\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - uthpalaherath\n",
+ "raw_meta_yaml":"{% set name = \"pyprocar\" %}\n{% set version = \"5.4.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 43f7ffcac98e5e349f4beaa932e18059d3865deaba26c1debb7dfad943cfafb7\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxext') }}     # [linux]\n  host:\n    - pip\n    - python\n    - xorg-libxfixes  # [linux]\n  run:\n    - ase\n    - importlib-metadata\n    - matplotlib-base\n    - mayavi\n    - mscorefonts\n    - python\n    - pychemia\n    - pyvista\n    - scikit-image\n    - scipy\n    - seekpath\n    - trimesh\n\ntest:\n  commands:\n    - {{ RECIPE_DIR }}/run_test.bat  # [win]\n    - bash {{ RECIPE_DIR }}/run_test.sh  # [not win]\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/romerogroup/pyprocar\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: A Python library for electronic structure pre/post-processing.\n\n  description: |\n    PyProcar is a robust, open-source Python library used for pre- and \n    post-processing of the electronic structure data coming from DFT \n    calculations. PyProcar provides a set of functions that manage data \n    obtained from the PROCAR format. Basically, the PROCAR format is a \n    projection of the Kohn-Sham states over atomic orbitals. That \n    projection is performed to every k-point in the considered mesh, \n    every energy band and every atom. PyProcar is capable of performing \n    a multitude of tasks including plotting plain and spin/atom/orbital \n    projected band structures and Fermi surfaces- both in 2D and 3D, Fermi \n    velocity plots, unfolding bands of a super cell, comparing band \n    structures from multiple DFT calculations, plotting partial density \n    of states and generating a k-path for a given crystal structure.\n  doc_url: https://romerogroup.github.io/pyprocar/\n  dev_url: https://github.com/romerogroup/pyprocar\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - uthpalaherath\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -162,6 +165,7 @@
    "importlib-metadata",
    "matplotlib-base",
    "mayavi",
+   "mscorefonts",
    "pip",
    "pychemia",
    "python",
@@ -195,6 +199,7 @@
     "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "mscorefonts",
     "pychemia",
     "python",
     "pyvista",
@@ -235,6 +240,7 @@
     "importlib-metadata",
     "matplotlib-base",
     "mayavi",
+    "mscorefonts",
     "pychemia",
     "python",
     "pyvista",
