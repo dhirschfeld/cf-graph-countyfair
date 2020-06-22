@@ -319,6 +319,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438162588.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.12.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -388,13 +405,14 @@
   }
  },
  "name":"heliopy",
- "new_version":"0.11.1",
+ "new_version":"0.12.0",
  "new_version_attempts":{
   "0.11.0":1,
-  "0.11.1":1
+  "0.11.1":1,
+  "0.12.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.19.19.39.08",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"HelioPy\" %}\n{% set version = \"0.11.1\" %}\n{% set sha256 = \"9a37f8e492f7d1f27d7cebb22b35b977bddb32d76fbb26f84f1d1840331c8c0f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy\n    - astropy\ntest:\n  imports:\n    - heliopy\n\nabout:\n  home: http://heliopy.org/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Python for space physics\n  description: |\n    HelioPy is a package for heliospheric and planetary phsyics.\n  doc_url: http://docs.heliopy.org/en/stable/\n  dev_url: https://github.com/heliopython/heliopy\n\nextra:\n  recipe-maintainers:\n    - dstansby\n",
  "req":{
   "__set__":true,

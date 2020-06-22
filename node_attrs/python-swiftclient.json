@@ -83,7 +83,7 @@
    "dev_url":"https://opendev.org/openstack/python-swiftclient",
    "doc_url":"https://docs.openstack.org/python-swiftclient/latest/",
    "home":"https://docs.openstack.org/python-swiftclient/latest/",
-   "license":"Apache Software",
+   "license":"Apache-2.0",
    "license_family":"APACHE",
    "license_file":"LICENSE",
    "summary":"OpenStack Object Storage API Client Library"
@@ -94,8 +94,9 @@
     "swift = swiftclient.shell:main",
     "swift = swiftclient.shell:main"
    ],
-   "number":"1",
-   "script":" -m pip install . -vv"
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -106,41 +107,41 @@
   },
   "package":{
    "name":"python-swiftclient",
-   "version":"3.9.0"
+   "version":"3.10.0"
   },
   "requirements":{
    "host":[
     "pbr",
     "pip",
-    "python",
+    "python >=3.6",
     "setuptools",
     "pbr",
     "pip",
-    "python",
+    "python >=3.6",
     "setuptools",
     "pbr",
     "pip",
-    "python",
+    "python >=3.6",
     "setuptools"
    ],
    "run":[
-    "python",
+    "python >=3.6",
     "requests",
     "setuptools",
     "six",
-    "python",
+    "python >=3.6",
     "requests",
     "setuptools",
     "six",
-    "python",
+    "python >=3.6",
     "requests",
     "setuptools",
     "six"
    ]
   },
   "source":{
-   "sha256":"4f2097492e4c76e948882fc859bfa033ade09bed72f8e6b328e34a3467d9a377",
-   "url":"https://pypi.io/packages/source/p/python-swiftclient/python-swiftclient-3.9.0.tar.gz"
+   "sha256":"66227eaf29a691c70675fb9982022980b92797c273dd5e6dc7e680425e9a3634",
+   "url":"https://pypi.io/packages/source/p/python-swiftclient/python-swiftclient-3.10.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -157,7 +158,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"python-swiftclient\" %}\n{% set version = \"3.9.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 4f2097492e4c76e948882fc859bfa033ade09bed72f8e6b328e34a3467d9a377\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - swift = swiftclient.shell:main\n\nrequirements:\n  host:\n    - pbr\n    - pip\n    - python\n    - setuptools\n  run:\n    - futures >=3.0.0  # [py==27]\n    - python\n    - requests\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - swiftclient\n\nabout:\n  home: https://docs.openstack.org/python-swiftclient/latest/\n  license: Apache Software\n  license_family: APACHE\n  license_file: LICENSE\n  summary: \"OpenStack Object Storage API Client Library\"\n  doc_url: https://docs.openstack.org/python-swiftclient/latest/\n  dev_url: https://opendev.org/openstack/python-swiftclient\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
+ "raw_meta_yaml":"{% set name = \"python-swiftclient\" %}\n{% set version = \"3.10.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 66227eaf29a691c70675fb9982022980b92797c273dd5e6dc7e680425e9a3634\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - swift = swiftclient.shell:main\n  noarch: python\n\nrequirements:\n  host:\n    - pbr\n    - pip\n    - python >=3.6\n    - setuptools\n  run:\n    - python >=3.6\n    - requests\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - swiftclient\n\nabout:\n  home: https://docs.openstack.org/python-swiftclient/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: OpenStack Object Storage API Client Library\n  doc_url: https://docs.openstack.org/python-swiftclient/latest/\n  dev_url: https://opendev.org/openstack/python-swiftclient\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -209,14 +210,14 @@
    "elements":[
     "pbr",
     "pip",
-    "python",
+    "python >=3.6",
     "setuptools"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "python",
+    "python >=3.6",
     "requests",
     "setuptools",
     "six"
@@ -228,5 +229,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-swiftclient/python-swiftclient-3.8.1.tar.gz",
- "version":"3.9.0"
+ "version":"3.10.0"
 }
