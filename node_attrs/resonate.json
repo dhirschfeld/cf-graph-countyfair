@@ -139,7 +139,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -150,7 +150,7 @@
   },
   "package":{
    "name":"resonate",
-   "version":"1.0.7"
+   "version":"1.0.8"
   },
   "requirements":{
    "build":[
@@ -219,8 +219,8 @@
    ]
   },
   "source":{
-   "sha256":"3bb4be98aa24b95e70b09a06746507329716d7e09655673aba019f442c519b3b",
-   "url":"https://pypi.io/packages/source/r/resonATe/resonATe-1.0.7.tar.gz"
+   "sha256":"6fabb0919908abf69b4fcb5054413588db5ede8f53ad3bfbd909aa931587d382",
+   "url":"https://pypi.io/packages/source/r/resonATe/resonATe-1.0.8.tar.gz"
   },
   "test":{
    "imports":[
@@ -242,7 +242,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set version = \"1.0.7\" %}\n\npackage:\n  name: resonate\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/resonATe/resonATe-{{ version }}.tar.gz\n  sha256: 3bb4be98aa24b95e70b09a06746507329716d7e09655673aba019f442c519b3b\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pandas\n    - numpy\n    - sphinx\n    - geopy\n    - simplejson\n    - colorama\n    - plotly\n    - nbconvert\n  run:\n    - python\n    - pandas\n    - numpy\n    - sphinx\n    - geopy\n    - simplejson\n    - pytest\n    - colorama\n    - plotly\n    - nbconvert\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - resonate\n\nabout:\n  home: https://gitlab.oceantrack.org/otndc/resonate\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Acoustic telemetry analysis and processing toolkit in Python'\n  description: |\n    resonATe is the Ocean Tracking Network's acoustic telemetry\n    analysis toolkit. It can be used to filter, compress, visualize\n    and analyze acoustic detection extracts from OTN and other marine\n    telemetry data.\n  doc_url: http://resonate.readthedocs.io/\n  dev_url: https://gitlab.oceantrack.org/otndc/resonate\n\nextra:\n  recipe-maintainers:\n    - alexetnunes\n",
+ "raw_meta_yaml":"{% set version = \"1.0.8\" %}\n\npackage:\n  name: resonate\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/resonATe/resonATe-{{ version }}.tar.gz\n  sha256: 6fabb0919908abf69b4fcb5054413588db5ede8f53ad3bfbd909aa931587d382\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pandas\n    - numpy\n    - sphinx\n    - geopy\n    - simplejson\n    - colorama\n    - plotly\n    - nbconvert\n  run:\n    - python\n    - pandas\n    - numpy\n    - sphinx\n    - geopy\n    - simplejson\n    - pytest\n    - colorama\n    - plotly\n    - nbconvert\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - resonate\n\nabout:\n  home: https://gitlab.oceantrack.org/otndc/resonate\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Acoustic telemetry analysis and processing toolkit in Python\n  description: |\n    resonATe is the Ocean Tracking Network's acoustic telemetry\n    analysis toolkit. It can be used to filter, compress, visualize\n    and analyze acoustic detection extracts from OTN and other marine\n    telemetry data.\n  doc_url: http://resonate.readthedocs.io/\n  dev_url: https://gitlab.oceantrack.org/otndc/resonate\n\nextra:\n  recipe-maintainers:\n    - alexetnunes\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -346,5 +346,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/resonATe/resonATe-1.0.7.tar.gz",
- "version":"1.0.7"
+ "version":"1.0.8"
 }
