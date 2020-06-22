@@ -54,6 +54,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438144271.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -134,8 +151,12 @@
   }
  },
  "name":"python-swiftclient",
- "new_version":"3.9.0",
- "pinning_version":"2020.03.16",
+ "new_version":"3.10.0",
+ "new_version_attempts":{
+  "3.10.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"python-swiftclient\" %}\n{% set version = \"3.9.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 4f2097492e4c76e948882fc859bfa033ade09bed72f8e6b328e34a3467d9a377\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - swift = swiftclient.shell:main\n\nrequirements:\n  host:\n    - pbr\n    - pip\n    - python\n    - setuptools\n  run:\n    - futures >=3.0.0  # [py==27]\n    - python\n    - requests\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - swiftclient\n\nabout:\n  home: https://docs.openstack.org/python-swiftclient/latest/\n  license: Apache Software\n  license_family: APACHE\n  license_file: LICENSE\n  summary: \"OpenStack Object Storage API Client Library\"\n  doc_url: https://docs.openstack.org/python-swiftclient/latest/\n  dev_url: https://opendev.org/openstack/python-swiftclient\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
@@ -176,7 +197,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
