@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"match-series",
  "hash_type":"sha256",
@@ -15,7 +15,7 @@
    "summary":"Joint non-rigid registration and reconstruction of image series"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
@@ -78,14 +78,15 @@
   },
   "test":{
    "commands":[
-    "${PREFIX}/bin/projects/electronMicroscopy/matchSeries --help",
-    "${PREFIX}/bin/projects/electronMicroscopy/matchSeries --help",
-    "${PREFIX}/bin/projects/electronMicroscopy/matchSeries --help"
+    "matchSeries --help",
+    "matchSeries --help",
+    "matchSeries --help"
    ]
   }
  },
  "name":"match-series",
- "raw_meta_yaml":"{% set name = \"match-series\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 9e74ca6bc58571065f30f99307f8912009fa6b62be10f24d3f5ddc5b2361ce48\n\nbuild:\n  number: 1\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - libblas\n    - fftw\n    - libpng\n    - zlib\n    - bzip2\n    - libtiff\n    - suitesparse\n  run:\n\ntest:\n  commands:\n    - ${PREFIX}/bin/projects/electronMicroscopy/matchSeries --help\n\nabout:\n  home: https://github.com/berkels/match-series\n  license: CDDL-1.0\n  license_file: LICENSE.txt\n  summary: 'Joint non-rigid registration and reconstruction of image series'\n\n  description: |\n    Joint non-rigid registration and reconstruction of image series\n  doc_url: https://github.com/berkels/match-series\n  dev_url: https://github.com/berkels/match-series\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - din14970\n    - berkels\n",
+ "new_version":"1.0.0",
+ "raw_meta_yaml":"{% set name = \"match-series\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 9e74ca6bc58571065f30f99307f8912009fa6b62be10f24d3f5ddc5b2361ce48\n\nbuild:\n  number: 2\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n  host:\n    - libblas\n    - fftw\n    - libpng\n    - zlib\n    - bzip2\n    - libtiff\n    - suitesparse\n  run:\n\ntest:\n  commands:\n    - matchSeries --help\n\nabout:\n  home: https://github.com/berkels/match-series\n  license: CDDL-1.0\n  license_file: LICENSE.txt\n  summary: 'Joint non-rigid registration and reconstruction of image series'\n\n  description: |\n    Joint non-rigid registration and reconstruction of image series\n  doc_url: https://github.com/berkels/match-series\n  dev_url: https://github.com/berkels/match-series\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - din14970\n    - berkels\n",
  "req":{
   "__set__":true,
   "elements":[
