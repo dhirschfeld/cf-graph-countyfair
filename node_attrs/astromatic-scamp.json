@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438090176.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.9.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -107,8 +124,12 @@
   }
  },
  "name":"astromatic-scamp",
- "new_version":"2.7.8",
- "pinning_version":"2020.01.10",
+ "new_version":"2.9.2",
+ "new_version_attempts":{
+  "2.9.2":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"scamp\" %}\n{% set version = \"2.7.8\" %}\n\npackage:\n  name: astromatic-{{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/astromatic/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 60cc44a0a8d991e88fca205e278b3c16efa462ab154fe5e5e9840eb3e40f3341\n  patches:\n    - 0001-Search-lapacke-library.patch\n    - 0002-Fix_sprintf_buffer_overflow.patch\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n  host:\n    - fftw\n    - curl\n    - liblapacke\n  run:\n    - fftw\n    - libcurl\n\ntest:\n  commands:\n    - scamp -d\n\nabout:\n  home: http://www.astromatic.net/software/scamp\n  license: GPL-3.0\n  license_file: LICENSE\n  summary: A utility that computes astrometric solutions from SExtractor catalogs\n  description: |\n    SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\n    program that computes astrometric projection parameters from source\n    catalogues derived from FITS images. The computed solution is expressed\n    according to the WCS standard.\n  doc_url: https://scamp.readthedocs.io/\n  dev_url: https://github.com/astromatic/scamp\n\nextra:\n  recipe-maintainers:\n    - teake\n",
  "req":{
   "__set__":true,
@@ -155,7 +176,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
