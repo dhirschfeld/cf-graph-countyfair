@@ -72,8 +72,7 @@
    "summary":"Polycapillary X-ray raytracing"
   },
   "build":{
-   "number":"1",
-   "skip":true
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -91,9 +90,14 @@
   },
   "requirements":{
    "build":[
-    "pkg-config",
+    "m2-curl",
+    "m2-patch",
+    "m2-tar",
+    "m2-bzip2",
+    "ninja",
     "c_compiler_stub",
-    "llvm-openmp",
+    "m2w64-pkg-config",
+    "c_compiler_stub",
     "pkg-config",
     "c_compiler_stub",
     "libgomp",
@@ -104,20 +108,21 @@
     "cython",
     "hdf5",
     "gsl",
-    "numpy >=1.14",
+    "numpy",
     "xraylib >=4.0.0",
+    "meson",
     "python",
     "cython",
     "hdf5",
     "gsl",
-    "numpy >=1.14",
+    "numpy",
     "xraylib >=4.0.0",
     "llvm-openmp",
     "python",
     "cython",
     "hdf5",
     "gsl",
-    "numpy >=1.14",
+    "numpy",
     "xraylib >=4.0.0",
     "libgomp"
    ],
@@ -152,6 +157,7 @@
    "url":"https://github.com/PieterTack/polycap/releases/download/v1.0/polycap-1.0.tar.gz"
   },
   "test":{
+   "commands":null,
    "imports":[
     "polycap",
     "polycap",
@@ -162,7 +168,7 @@
  "name":"polycap",
  "new_version":"1.0",
  "pinning_version":"2020.06.10.22.19.47",
- "raw_meta_yaml":"{% set version = \"1.0\" %}\n\npackage:\n  name: polycap\n  version: {{ version }}\n\nsource:\n  url: https://github.com/PieterTack/polycap/releases/download/v{{ version }}/polycap-{{ version }}.tar.gz\n  sha256: e181378eb3eb3479e87cdedc8bfb326e524999abf06b99e3a1a9528ba4f0608b\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [unix]\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - pkg-config\n  host:\n    - python\n    - cython\n    - hdf5\n    - gsl\n    - numpy >=1.14\n    - xraylib >=4.0.0\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - gsl\n    - libopenblas\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - xraylib >=4.0.0\n    - zlib\n\ntest:\n  imports:\n    - polycap\n\nabout:\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  home: https://github.com/PieterTack/polycap\n  summary: Polycapillary X-ray raytracing\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - PieterTack\n",
+ "raw_meta_yaml":"{% set version = \"1.0\" %}\n\npackage:\n  name: polycap\n  version: {{ version }}\n\nsource:\n  url: https://github.com/PieterTack/polycap/releases/download/v{{ version }}/polycap-{{ version }}.tar.gz\n  sha256: e181378eb3eb3479e87cdedc8bfb326e524999abf06b99e3a1a9528ba4f0608b\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - m2-curl  # [win]\n    - m2-patch  # [win]\n    - m2-tar  # [win]\n    - m2-bzip2  # [win]\n    - ninja  # [win]\n    - {{ compiler('c') }}\n    - libgomp  # [linux]\n    - pkg-config  # [unix]\n    - m2w64-pkg-config  # [win]\n  host:\n    - python\n    - cython\n    - hdf5\n    - gsl\n    - numpy\n    - xraylib >=4.0.0\n    - meson  # [win]\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - gsl\n    - libopenblas\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux]\n    - xraylib >=4.0.0\n    - zlib\n\ntest:\n  imports:\n    - polycap\n  commands:\n    - if not exist %LIBRARY_LIB%\\\\pkgconfig\\\\libpolycap.pc exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\polycap.lib exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\polycap\\\\polycap.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\polycap-0.dll exit 1  # [win]\n\nabout:\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  home: https://github.com/PieterTack/polycap\n  summary: Polycapillary X-ray raytracing\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - PieterTack\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -173,6 +179,13 @@
    "libgomp",
    "libopenblas",
    "llvm-openmp",
+   "m2-bzip2",
+   "m2-curl",
+   "m2-patch",
+   "m2-tar",
+   "m2w64-pkg-config",
+   "meson",
+   "ninja",
    "numpy",
    "pkg-config",
    "python",
@@ -186,7 +199,12 @@
    "elements":[
     "c_compiler_stub",
     "libgomp",
-    "llvm-openmp",
+    "m2-bzip2",
+    "m2-curl",
+    "m2-patch",
+    "m2-tar",
+    "m2w64-pkg-config",
+    "ninja",
     "pkg-config"
    ]
   },
@@ -198,6 +216,7 @@
     "hdf5",
     "libgomp",
     "llvm-openmp",
+    "meson",
     "numpy",
     "python",
     "xraylib"
@@ -230,7 +249,12 @@
    "elements":[
     "c_compiler_stub",
     "libgomp",
-    "llvm-openmp",
+    "m2-bzip2",
+    "m2-curl",
+    "m2-patch",
+    "m2-tar",
+    "m2w64-pkg-config",
+    "ninja",
     "pkg-config"
    ]
   },
@@ -242,7 +266,8 @@
     "hdf5",
     "libgomp",
     "llvm-openmp",
-    "numpy >=1.14",
+    "meson",
+    "numpy",
     "python",
     "xraylib >=4.0.0"
    ]
