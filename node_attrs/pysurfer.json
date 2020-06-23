@@ -50,6 +50,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438723529.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.11.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -134,8 +151,12 @@
   }
  },
  "name":"pysurfer",
- "new_version":"0.10.0",
- "pinning_version":"2020.02.20",
+ "new_version":"0.11.0",
+ "new_version_attempts":{
+  "0.11.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set version = \"0.10.0\" %}\n{% set sha256 = \"042febbfe9c6fc41c9140b912f633d6cc813c714a36a8864421ccee0826470f1\" %}\n\npackage:\n  name: pysurfer\n  version: {{ version }}\n\nsource:\n  fn: pysurfer-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pysurfer/pysurfer-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - imageio\n    - matplotlib-base\n    - mayavi\n    - nibabel\n    - numpy\n    - scipy\n\ntest:\n  commands:\n#    - DISPLAY=localhost:1.0 xvfb-run -a python -c \"import surfer\"  # [linux]\n    - python -c \"import surfer\"  # [not linux]\n\nabout:\n  home: http://pysurfer.github.com\n  license: BSD-3-clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Cortical surface visualization using Python'\n\n  description: |\n    PySurfer is a Python library for visualizing cortical surface\n    representations of neuroimaging data. The package is primarily intended for\n    use with Freesurfer, but it can plot data that are drawn from a variety of\n    sources. PySurfer extends Mayavi\u2019s powerful rendering engine with a\n    high-level interface for working with MRI and MEG data.\n  doc_url: http://pysurfer.github.io\n  dev_url: https://github.com/nipy/PySurfer/\n\nextra:\n  recipe-maintainers:\n    - christianbrodbeck\n    - larsoner\n",
  "req":{
   "__set__":true,
@@ -179,7 +200,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

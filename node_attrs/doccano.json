@@ -1,0 +1,136 @@
+{
+ "archived":false,
+ "bad":"Upstream: Error getting upstream version",
+ "conda-forge.yml":{},
+ "feedstock_name":"doccano",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/doccano/doccano",
+   "doc_url":"https://github.com/doccano/doccano",
+   "home":"https://github.com/doccano/doccano",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Open source text annotation tool for machine learning practitioner."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*/libc.musl-x86_64.so.1",
+    "*/libc.musl-x86_64.so.1",
+    "*/libc.musl-x86_64.so.1"
+   ],
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rluria14",
+    "oblute",
+    "rluria14",
+    "oblute",
+    "rluria14",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"doccano",
+   "version":"1.0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "nodejs 13.6.0",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "nodejs 13.6.0",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "nodejs 13.6.0"
+   ],
+   "run":[
+    "nodejs 13.6.0",
+    "nodejs 13.6.0",
+    "nodejs 13.6.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "rmv_drf_yasg.patch",
+    "rmv_drf_yasg.patch",
+    "rmv_drf_yasg.patch"
+   ],
+   "sha256":"e74680d4bb677bf03bd27b4f3ead9fa84624bb85f7ab1063b11b90e923f65105",
+   "url":"https://github.com/doccano/doccano/archive/v1.0.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "npm list -g doccano",
+    "npm list -g doccano",
+    "npm list -g doccano"
+   ]
+  }
+ },
+ "name":"doccano",
+ "raw_meta_yaml":"{% set name = \"doccano\" %}\n{% set version = \"1.0.4\" %}\n{% set node_version = os.environ.get('NODEJS_VERSION') or '13.6.0' %}\n\npackage:\n  name: doccano\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: e74680d4bb677bf03bd27b4f3ead9fa84624bb85f7ab1063b11b90e923f65105\n  patches:\n    - rmv_drf_yasg.patch  # remove unneccesary dep drf_yasg in app/app/settings.py and app/app/urls.py\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  missing_dso_whitelist:\n    - '*/libc.musl-x86_64.so.1'\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - nodejs {{ node_version }}\n  run:\n    - nodejs {{ node_version }}\n\ntest:\n  commands:\n    - npm list -g {{ name }}\n\nabout:\n  home: https://github.com/doccano/doccano\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Open source text annotation tool for machine learning practitioner.\n  doc_url: https://github.com/doccano/doccano\n  dev_url: https://github.com/doccano/doccano\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "c_compiler_stub",
+   "cxx_compiler_stub",
+   "nodejs"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "nodejs"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nodejs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "nodejs 13.6.0"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nodejs 13.6.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/doccano/doccano/archive/v1.0.4.tar.gz",
+ "version":"1.0.4"
+}
