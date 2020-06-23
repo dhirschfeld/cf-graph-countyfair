@@ -200,6 +200,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438565934.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"grpc_cpp130"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -307,7 +326,7 @@
   "1.14.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.15.22.23.24",
+ "pinning_version":"2020.06.23.06.07.46",
  "raw_meta_yaml":"{% set name = \"google-cloud-cpp\" %}\n{% set version = \"1.14.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/googleapis/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 839b2d4dcb36a671734dac6b30ea8c298bbeaafcf7a45ee4a7d7aa5986b16569\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"google-cloud-cpp\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n    - c-ares\n    - libcrc32c\n    - google-cloud-cpp-common\n    - googleapis-cpp\n    - grpc-cpp\n    - libcurl\n    - libprotobuf\n    - openssl\n  run:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libstorage_client${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/cmake/storage_client/storage-targets.cmake  # [unix]\n    - test -f $PREFIX/include/google/cloud/storage/version.h  # [unix]\n    - test -f $PREFIX/lib/libbigtable_client${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/cmake/bigtable_client/bigtable-targets.cmake  # [unix]\n    - test -f $PREFIX/include/google/cloud/bigtable/version.h  # [unix]\n    - test -f $PREFIX/lib/libfirestore_client${SHLIB_EXT}  # [unix]\n    - test -f $PREFIX/lib/cmake/firestore_client/firestore-targets.cmake  # [unix]\n    - test -f $PREFIX/include/google/cloud/firestore/field_path.h  # [unix]\n\nabout:\n  home: https://github.com/googleapis/google-cloud-cpp\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Google Cloud Client Library for C++\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
   "__set__":true,

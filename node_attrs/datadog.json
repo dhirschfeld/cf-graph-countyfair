@@ -353,6 +353,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438559722.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.37.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -446,13 +463,14 @@
   }
  },
  "name":"datadog",
- "new_version":"0.37.0",
+ "new_version":"0.37.1",
  "new_version_attempts":{
   "0.36.0":1,
-  "0.37.0":1
+  "0.37.0":1,
+  "0.37.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.16.21.09.39",
+ "pinning_version":"2020.06.23.06.07.46",
  "raw_meta_yaml":"{% set name = \"datadog\" %}\n{% set version = \"0.36.0\" %}\n{% set sha256 = \"3fe197587db49d808ba88e40f431fb2d256be3c428419ac2984609d67fd66bce\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - dog = datadog.dogshell:main\n    - dogwrap = datadog.dogshell.wrap:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - decorator >=3.3.2\n    - requests >=2.6.0\n    - simplejson >=2.0.9\n\ntest:\n  imports:\n    - datadog\n    - datadog.dogshell\n  commands:\n    - dog --help\n    - dogwrap --help\n\nabout:\n  home: https://github.com/DataDog/datadogpy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: The Datadog Python library\n\n  description: |\n    The Python integration enables you to monitor any custom metric by instrumenting a few lines of code.\n  doc_url: https://docs.datadoghq.com/integrations/python/\n\nextra:\n  recipe-maintainers:\n    - TheOriginalAlex\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
