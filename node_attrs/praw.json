@@ -183,6 +183,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438298173.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"7.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -268,12 +285,13 @@
   }
  },
  "name":"praw",
- "new_version":"7.0.0",
+ "new_version":"7.1.0",
  "new_version_attempts":{
-  "7.0.0":1
+  "7.0.0":1,
+  "7.1.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.24.22.56.04",
+ "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"praw\" %}\n{% set version = \"7.0.0\" %}\n{% set sha256 = \"65129169d560800261908415ed955f3cbc63648549820b3ccce0a823ffa2fd78\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n    - pytest-runner\n  run:\n    - python >=3.5\n    - prawcore >=1.3.0,<2.0\n    - update_checker >=0.16\n    - websocket-client >=0.54.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - praw\n\nabout:\n  home: http://praw.readthedocs.io/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python Reddit API Wrapper allows for simple access to Reddit's API\n  description: |\n    PRAW, an acronym for \"Python Reddit API Wrapper\", is a python package that\n    allows for simple access to Reddit's API. PRAW aims to be easy to use and\n    internally follows all of Reddit's API rules. With PRAW there's no need to\n    introduce sleep calls in your code. Give your client an appropriate user\n    agent and you're set.\n  doc_url: http://praw.readthedocs.io/\n  dev_url: https://github.com/praw-dev/praw\n\nextra:\n  recipe-maintainers:\n    - djsutherland\n",
  "req":{
   "__set__":true,
@@ -315,7 +333,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.17",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
