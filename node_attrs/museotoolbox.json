@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438750367.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.13.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -125,12 +142,13 @@
   }
  },
  "name":"museotoolbox",
- "new_version":"0.13.2",
+ "new_version":"0.13.3",
  "new_version_attempts":{
-  "0.13.1":1
+  "0.13.1":1,
+  "0.13.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.10.22.19.47",
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set name = \"museotoolbox\" %}\n{% set version = \"0.13.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 3b1b0338af445e152d1e51e77f85c69c9b1d325a8cadcc378992e1b80fc0cb46\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - gdal >=2\n    - joblib\n    - psutil\n    - matplotlib-base\n    - numpy >=1.7\n    - python\n    - scikit-learn\n    - scipy\n\ntest:\n  imports:\n    - metadata\n    - museotoolbox\n    - museotoolbox.ai\n    - museotoolbox.charts\n    - museotoolbox.cross_validation\n    - museotoolbox.datasets\n    - museotoolbox.internal_tools\n    - museotoolbox.processing\n    - museotoolbox.stats\n    - test\n\nabout:\n  home: \"https://github.com/nkarasiak/MuseoToolBox\"\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: license.txt\n  summary: \"Raster and vector tools for Remote Sensing and Classification\"\n  doc_url: https://museotoolbox.readthedocs.io\n  dev_url: https://github.com/nkarasiak/MuseoToolBox/\n\nextra:\n  recipe-maintainers:\n    - nkarasiak\n",
  "req":{
   "__set__":true,
