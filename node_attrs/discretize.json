@@ -145,6 +145,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438699965.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.13"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -237,12 +254,12 @@
  "new_version_attempts":{
   "0.4.11":1,
   "0.4.12":1,
-  "0.4.13":3
+  "0.4.13":4
  },
  "new_version_errors":{
   "0.4.13":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.4.13' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/d/discretize/discretize-{{ version }}.tar.gz'\n"
  },
- "pinning_version":"2020.06.06.15.39.47",
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set version = \"0.4.12\" %}\n\npackage:\n  name: discretize\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/discretize/discretize-{{ version }}.tar.gz\n  sha256: b90ba8ab32c4009c4b6af1962f27a15bc69d47b4d752eaf71c033be0551d2387\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython >=0.2\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=0.13\n    - properties\n    - vectormath\n\ntest:\n  imports:\n    - discretize\n\nabout:\n  home: http://github.com/simpeg/discretize\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Discretization tools for finite volume and inverse problems\"\n\nextra:\n  recipe-maintainers:\n    - lheagy\n    - jcapriot\n",
  "req":{
   "__set__":true,
