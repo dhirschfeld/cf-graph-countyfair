@@ -337,7 +337,7 @@
    "summary":"Python driver for communicating with MySQL servers"
   },
   "build":{
-   "number":"4",
+   "number":"0",
    "script":"python setup.py install --with-protobuf-include-dir=$PREFIX/include --with-protobuf-lib-dir=$PREFIX/lib --with-protoc=$PREFIX/bin/protoc --with-mysql-capi=$PREFIX"
   },
   "extra":{
@@ -352,7 +352,7 @@
   },
   "package":{
    "name":"mysql-connector-python",
-   "version":"8.0.18"
+   "version":"8.0.19"
   },
   "requirements":{
    "build":[
@@ -366,44 +366,50 @@
    "host":[
     "python",
     "setuptools",
-    "mysql-connector-c",
+    "mysql-devel 8.0.19",
     "libprotobuf",
     "protobuf >=3.0.0",
     "python",
     "setuptools",
-    "mysql-connector-c",
+    "mysql-devel 8.0.19",
     "libprotobuf",
     "protobuf >=3.0.0",
     "python",
     "setuptools",
-    "mysql-connector-c",
+    "mysql-devel 8.0.19",
     "libprotobuf",
     "protobuf >=3.0.0"
    ],
    "run":[
     "python",
     "protobuf >=3.0.0",
+    "dnspython >=1.16.0",
     "python",
     "protobuf >=3.0.0",
+    "dnspython >=1.16.0",
     "python",
-    "protobuf >=3.0.0"
+    "protobuf >=3.0.0",
+    "dnspython >=1.16.0"
    ]
   },
   "source":{
-   "fn":"mysql-connector-python-8.0.18.tar.gz",
+   "fn":"mysql-connector-python-8.0.19.tar.gz",
    "patches":[
     "0001-Typecast-password-to-const-char-explicitly-py3.patch",
     "0002-Cast-uint-to-enum-mysql_enum_shutdown_level-explicit.patch",
     "0003-Don-t-error-out-if-get_git_info-fails.patch",
+    "0004-Fix-location-for-searching-mysql-headers-and-libs-on.patch",
     "0001-Typecast-password-to-const-char-explicitly-py3.patch",
     "0002-Cast-uint-to-enum-mysql_enum_shutdown_level-explicit.patch",
     "0003-Don-t-error-out-if-get_git_info-fails.patch",
+    "0004-Fix-location-for-searching-mysql-headers-and-libs-on.patch",
     "0001-Typecast-password-to-const-char-explicitly-py3.patch",
     "0002-Cast-uint-to-enum-mysql_enum_shutdown_level-explicit.patch",
-    "0003-Don-t-error-out-if-get_git_info-fails.patch"
+    "0003-Don-t-error-out-if-get_git_info-fails.patch",
+    "0004-Fix-location-for-searching-mysql-headers-and-libs-on.patch"
    ],
-   "sha256":"f1206645f2c373f229b69c0847463363345e67b5e1e0c6d873c6f7a135552341",
-   "url":"https://github.com/mysql/mysql-connector-python/archive/8.0.18.tar.gz"
+   "sha256":"5a9fba7e26f8d54d008f2dacfd31464f479b004e9e367e1ed0dd18d7cfef4e7c",
+   "url":"https://github.com/mysql/mysql-connector-python/archive/8.0.19.tar.gz"
   },
   "test":{
    "imports":[
@@ -429,14 +435,15 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"mysql-connector-python\" %}\n{% set version = \"8.0.18\" %}\n{% set sha256 = \"f1206645f2c373f229b69c0847463363345e67b5e1e0c6d873c6f7a135552341\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/mysql/mysql-connector-python/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-Typecast-password-to-const-char-explicitly-py3.patch\n    - 0002-Cast-uint-to-enum-mysql_enum_shutdown_level-explicit.patch\n    - 0003-Don-t-error-out-if-get_git_info-fails.patch\n\nbuild:\n  number: 4\n  # VS 2008 is not supported for libprotobuf\n  skip: True  # [win and py2k]\n  script: python setup.py install --with-protobuf-include-dir=$PREFIX/include --with-protobuf-lib-dir=$PREFIX/lib --with-protoc=$PREFIX/bin/protoc --with-mysql-capi=$PREFIX  # [unix]\n  script: python setup.py install --with-protobuf-include-dir=%LIBRARY_INC% --with-protobuf-lib-dir=%LIBRARY_LIB% --with-protoc=%LIBRARY_BIN%/protoc.exe --with-mysql-capi=%LIBRARY_PREFIX% --extra-compile-args=/DPROTOBUF_USE_DLLS  # [win]\n\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - setuptools\n    - mysql-connector-c\n    - libprotobuf\n    - protobuf >=3.0.0\n\n  run:\n    - python\n    - protobuf >=3.0.0\n\ntest:\n  imports:\n    - mysql\n    - mysql.connector\n    - mysqlx\n    - mysqlx.protobuf\n\n\nabout:\n  home: https://dev.mysql.com/doc/connector-python/en/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'Python driver for communicating with MySQL servers'\n\n  description: |\n    MySQL Connector/Python is a standardized database driver for Python\n    platforms and development.\n  doc_url: http://dev.mysql.com/doc/connector-python/en/index.html\n  dev_url: https://github.com/mysql/mysql-connector-python\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - nehaljwani\n",
+ "raw_meta_yaml":"{% set name = \"mysql-connector-python\" %}\n{% set version = \"8.0.19\" %}\n{% set sha256 = \"5a9fba7e26f8d54d008f2dacfd31464f479b004e9e367e1ed0dd18d7cfef4e7c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/mysql/mysql-connector-python/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-Typecast-password-to-const-char-explicitly-py3.patch\n    - 0002-Cast-uint-to-enum-mysql_enum_shutdown_level-explicit.patch\n    - 0003-Don-t-error-out-if-get_git_info-fails.patch\n    - 0004-Fix-location-for-searching-mysql-headers-and-libs-on.patch\n\nbuild:\n  number: 0\n  # VS 2008 is not supported for libprotobuf\n  skip: True  # [win and py2k]\n  script: python setup.py install --with-protobuf-include-dir=$PREFIX/include --with-protobuf-lib-dir=$PREFIX/lib --with-protoc=$PREFIX/bin/protoc --with-mysql-capi=$PREFIX  # [unix]\n  script: python setup.py install --with-protobuf-include-dir=%LIBRARY_INC% --with-protobuf-lib-dir=%LIBRARY_LIB% --with-protoc=%LIBRARY_BIN%/protoc.exe --with-mysql-capi=%LIBRARY_PREFIX% --extra-compile-args=/DPROTOBUF_USE_DLLS  # [win]\n\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - setuptools\n    - mysql-devel {{ version }}\n    - libprotobuf\n    - protobuf >=3.0.0\n\n  run:\n    - python\n    - protobuf >=3.0.0\n    - dnspython >=1.16.0\n\ntest:\n  imports:\n    - mysql\n    - mysql.connector\n    - mysqlx\n    - mysqlx.protobuf\n\n\nabout:\n  home: https://dev.mysql.com/doc/connector-python/en/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'Python driver for communicating with MySQL servers'\n\n  description: |\n    MySQL Connector/Python is a standardized database driver for Python\n    platforms and development.\n  doc_url: http://dev.mysql.com/doc/connector-python/en/index.html\n  dev_url: https://github.com/mysql/mysql-connector-python\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - nehaljwani\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cxx_compiler_stub",
+   "dnspython",
    "libprotobuf",
-   "mysql-connector-c",
+   "mysql-devel",
    "protobuf",
    "python",
    "setuptools"
@@ -454,7 +461,7 @@
    "__set__":true,
    "elements":[
     "libprotobuf",
-    "mysql-connector-c",
+    "mysql-devel",
     "protobuf",
     "python",
     "setuptools"
@@ -463,6 +470,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "dnspython",
     "protobuf",
     "python"
    ]
@@ -486,7 +494,7 @@
    "__set__":true,
    "elements":[
     "libprotobuf",
-    "mysql-connector-c",
+    "mysql-devel 8.0.19",
     "protobuf >=3.0.0",
     "python",
     "setuptools"
@@ -495,6 +503,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "dnspython >=1.16.0",
     "protobuf >=3.0.0",
     "python"
    ]
@@ -505,5 +514,5 @@
   }
  },
  "url":"https://github.com/mysql/mysql-connector-python/archive/8.0.17.tar.gz",
- "version":"8.0.18"
+ "version":"8.0.19"
 }
