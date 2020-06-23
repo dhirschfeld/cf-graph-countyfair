@@ -76,7 +76,7 @@
    "dev_url":"https://github.com/mwcraig/reducer",
    "doc_url":"http://reducer.readthedocs.org",
    "home":"http://reducer.readthedocs.org",
-   "license":"BSD 3-clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.rst",
    "summary":"Jupyter widget-based package for reducing FITS images"
@@ -88,8 +88,8 @@
     "reducer = reducer:main"
    ],
    "noarch":"python",
-   "number":"2",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -100,22 +100,19 @@
   },
   "package":{
    "name":"reducer",
-   "version":"0.4.1"
+   "version":"0.4.3"
   },
   "requirements":{
    "host":[
     "pip",
-    "python",
-    "setuptools",
+    "python >=3",
     "pip",
-    "python",
-    "setuptools",
+    "python >=3",
     "pip",
-    "python",
-    "setuptools"
+    "python >=3"
    ],
    "run":[
-    "python",
+    "python >=3",
     "astropy >=2.0",
     "numpy",
     "scipy",
@@ -125,7 +122,7 @@
     "ccdproc >=1.2",
     "matplotlib-base",
     "dask",
-    "python",
+    "python >=3",
     "astropy >=2.0",
     "numpy",
     "scipy",
@@ -135,7 +132,7 @@
     "ccdproc >=1.2",
     "matplotlib-base",
     "dask",
-    "python",
+    "python >=3",
     "astropy >=2.0",
     "numpy",
     "scipy",
@@ -148,9 +145,9 @@
    ]
   },
   "source":{
-   "fn":"reducer-0.4.1.tar.gz",
-   "sha256":"77a8cc5e48adc360e044e0eaf4ad39e2aced049d1d015f0cad6046ee7ef6dfde",
-   "url":"https://pypi.io/packages/source/r/reducer/reducer-0.4.1.tar.gz"
+   "fn":"reducer-0.4.3.tar.gz",
+   "sha256":"6d9e27276ab9c29230a187192ad0849bb6fa72e1d6e4d395c3b4fd18f2edb148",
+   "url":"https://pypi.io/packages/source/r/reducer/reducer-0.4.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -168,7 +165,7 @@
  "name":"reducer",
  "new_version":"0.4.3",
  "pinning_version":"2020.03.03",
- "raw_meta_yaml":"{% set name = \"reducer\" %}\n{% set version = \"0.4.1\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"77a8cc5e48adc360e044e0eaf4ad39e2aced049d1d015f0cad6046ee7ef6dfde\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  number: 2\n  entry_points:\n    - reducer = reducer:main\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - astropy >=2.0\n    - numpy\n    - scipy\n    - scikit-image\n    - ipywidgets >=7\n    - msumastro >=0.9\n    - ccdproc >=1.2\n    - matplotlib-base\n    - dask\n\ntest:\n  imports:\n    - reducer\n  commands:\n    - reducer --help\n\nabout:\n  home: http://reducer.readthedocs.org\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Jupyter widget-based package for reducing FITS images\n  description: |\n    reducer provides a a widget interface in a Jupyter notebook to the ccdproc package\n    for calibrating astronomical images.\n  doc_url: http://reducer.readthedocs.org\n  dev_url: https://github.com/mwcraig/reducer\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
+ "raw_meta_yaml":"{% set name = \"reducer\" %}\n{% set version = \"0.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6d9e27276ab9c29230a187192ad0849bb6fa72e1d6e4d395c3b4fd18f2edb148\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - reducer = reducer:main\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n  run:\n    - python >=3\n    - astropy >=2.0\n    - numpy\n    - scipy\n    - scikit-image\n    - ipywidgets >=7\n    - msumastro >=0.9\n    - ccdproc >=1.2\n    - matplotlib-base\n    - dask\n\ntest:\n  imports:\n    - reducer\n  commands:\n    - reducer --help\n\nabout:\n  home: http://reducer.readthedocs.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Jupyter widget-based package for reducing FITS images\n  description: |\n    reducer provides a a widget interface in a Jupyter notebook to the ccdproc package\n    for calibrating astronomical images.\n  doc_url: http://reducer.readthedocs.org\n  dev_url: https://github.com/mwcraig/reducer\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -182,8 +179,7 @@
    "pip",
    "python",
    "scikit-image",
-   "scipy",
-   "setuptools"
+   "scipy"
   ]
  },
  "requirements":{
@@ -195,8 +191,7 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run":{
@@ -230,8 +225,7 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python",
-    "setuptools"
+    "python >=3"
    ]
   },
   "run":{
@@ -244,7 +238,7 @@
     "matplotlib-base",
     "msumastro >=0.9",
     "numpy",
-    "python",
+    "python >=3",
     "scikit-image",
     "scipy"
    ]
@@ -255,5 +249,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/reducer/reducer-0.4.1.tar.gz",
- "version":"0.4.1"
+ "version":"0.4.3"
 }
