@@ -56,6 +56,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438365350.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -161,12 +178,16 @@
   }
  },
  "name":"pytorch_cluster",
- "new_version":"1.5.4",
+ "new_version":"1.5.5",
+ "new_version_attempts":{
+  "1.5.5":1
+ },
+ "new_version_errors":{},
  "outputs_names":[
   "pytorch_cluster",
   "pytorch_cluster_proc"
  ],
- "pinning_version":"2020.05.31.21.10.28",
+ "pinning_version":"2020.06.23.06.07.46",
  "raw_meta_yaml":"{% set name = \"torch_cluster\" %}\n{% set version = \"1.5.4\" %}\n\npackage:\n  name: py{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c\n\nbuild:\n  number: 2\n  skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']\n  script:\n    - export FORCE_CUDA=\"1\"    # [linux64 and cuda_compiler_version != 'None']\n    - export CC=\"$GCC\"   # [linux64 and cuda_compiler_version != 'None']\n    - export NVCC_FLAGS=\"--compiler-bindir=${CC}\"    # [linux64 and cuda_compiler_version != 'None']\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != \"None\"]\n  host:\n    - python\n    - pytorch\n    - scipy\n    - setuptools\n    - pytest-runner\n    - pip\n  run:\n    - python\n    - pytorch\n    - scipy\n    - pytest\n    - pytest-cov\n    \ntest:\n  imports:\n    - torch_cluster\n\nabout:\n  home: https://github.com/rusty1s/pytorch_cluster\n  summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms\n  license: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/rusty1s/pytorch_cluster\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - oblute\n    - ndmaxar\n",
  "req":{
   "__set__":true,
