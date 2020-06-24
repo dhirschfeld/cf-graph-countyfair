@@ -122,6 +122,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439275213.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"9.2.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -203,12 +220,13 @@
   }
  },
  "name":"byexample",
- "new_version":"9.1.1",
+ "new_version":"9.2.0",
  "new_version_attempts":{
-  "9.1.1":1
+  "9.1.1":1,
+  "9.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.15.11.48.40",
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set name = \"byexample\" %}\n{% set version = \"9.1.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 288645e03e3457469f5e87e329397a6b706ec3f3ba7e160ebd3e449c38641652\n\nbuild:\n  # https://github.com/byexamples/byexample/issues/90; once this is fixed, this should be made noarch: python\n  skip: true  # [win]\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - byexample = byexample.byexample:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    # requirements from setup.py\n    - pexpect 4.*\n    - appdirs >=1.4.3,<2\n    - pyte 0.8.0\n    # optional requirements from setup.py\n    - tqdm 4.*\n    - pygments 2.*\n\ntest:\n  commands:\n    - byexample --version\n\nabout:\n  home: http://github.com/byexamples/byexample\n  license: GPL-3.0-only\n  license_file: LICENSE\n  summary: Mix ordinary text and snippets of code in the same file and execute them as regression tests\n  description: |\n    byexample is a literate programming engine where you mix ordinary text and\n    snippets of code in the same file and then you execute them as regression\n    tests.\n    It lets you to execute the examples written in Python, Ruby or whatever in\n    your documentation and validate them.\n    You can always be sure that the examples are correct and your documentation\n    is up to date!\n  doc_url: https://byexamples.github.io/byexample/\n  dev_url: https://github.com/byexamples/byexample\n\nextra:\n  recipe-maintainers:\n    - saraedum\n",
  "req":{
   "__set__":true,
