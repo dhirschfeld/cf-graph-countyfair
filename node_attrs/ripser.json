@@ -75,8 +75,8 @@
    "summary":"A Lean Persistent Homology Library for Python"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv"
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -93,7 +93,7 @@
   },
   "package":{
    "name":"ripser",
-   "version":"0.4.1"
+   "version":"0.5.2"
   },
   "requirements":{
    "build":[
@@ -134,8 +134,8 @@
    ]
   },
   "source":{
-   "sha256":"a4015b413c24e3074f82f31771b1eb805e054b8cf444db51ce8ca5afa42cf130",
-   "url":"https://pypi.io/packages/source/r/ripser/ripser-0.4.1.tar.gz"
+   "sha256":"f59163dacdeddd4b552d09f6a76f04d4d4a290444a50e414b9dc16090401594f",
+   "url":"https://pypi.io/packages/source/r/ripser/ripser-0.5.2.tar.gz"
   },
   "test":{
    "imports":[
@@ -157,7 +157,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set name = \"ripser\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"a4015b413c24e3074f82f31771b1eb805e054b8cf444db51ce8ca5afa42cf130\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [py27]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - pip\n    - cython\n    - numpy =1.14\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - scikit-learn\n    - persim\n\ntest:\n  imports:\n    - ripser\n  requires:\n    - pytest\n\nabout:\n  home: http://github.com/scikit-tda/ripser.py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'A Lean Persistent Homology Library for Python'\n\n  description: |\n    Ripser.py is a lean persistent homology package for Python. Building on the blazing\n    fast C++ Ripser package as the core computational engine, Ripser.py provides an\n    intuitive interface for computing persistence cohomology of sparse and dense data sets,\n    visualizing persistence diagrams, computing lowerstar filtrations on images, and computing\n    representative cochains.\n  doc_url: http://ripser.scikit-tda.org/\n  dev_url: https://github.com/scikit-tda/ripser.py\n\nextra:\n  recipe-maintainers:\n    - sauln\n    - ctralie\n    - bdice\n",
+ "raw_meta_yaml":"{% set name = \"ripser\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"f59163dacdeddd4b552d09f6a76f04d4d4a290444a50e414b9dc16090401594f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py27]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - pip\n    - cython\n    - numpy =1.14\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - scikit-learn\n    - persim\n\ntest:\n  imports:\n    - ripser\n  requires:\n    - pytest\n\nabout:\n  home: http://github.com/scikit-tda/ripser.py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A Lean Persistent Homology Library for Python\n\n  description: |\n    Ripser.py is a lean persistent homology package for Python. Building on the blazing\n    fast C++ Ripser package as the core computational engine, Ripser.py provides an\n    intuitive interface for computing persistence cohomology of sparse and dense data sets,\n    visualizing persistence diagrams, computing lowerstar filtrations on images, and computing\n    representative cochains.\n  doc_url: http://ripser.scikit-tda.org/\n  dev_url: https://github.com/scikit-tda/ripser.py\n\nextra:\n  recipe-maintainers:\n    - sauln\n    - ctralie\n    - bdice\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -240,5 +240,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/ripser/ripser-0.4.1.tar.gz",
- "version":"0.4.1"
+ "version":"0.5.2"
 }
