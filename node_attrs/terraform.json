@@ -453,6 +453,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439494035.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.12.27"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -530,13 +547,14 @@
   }
  },
  "name":"terraform",
- "new_version":"0.12.26",
+ "new_version":"0.12.27",
  "new_version_attempts":{
   "0.12.25":1,
-  "0.12.26":1
+  "0.12.26":1,
+  "0.12.27":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"terraform\" %}\n{% set version = \"0.12.26\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 4db5deb8c6a81956bf603196a1300aacbe80dd5716244ae20c2f9b3df571df4e\n\nbuild:\n  number: 0\n  script:\n    - go install -v .\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n\ntest:\n  commands:\n    - terraform -v\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.\n  description: |\n    Terraform is a tool for building, changing, and versioning infrastructure safely and \n    efficiently. Terraform can manage existing and popular service providers as well as custom in-house \n    solutions.\n  doc_url: https://www.terraform.io/docs/index.html\n  dev_url: https://github.com/hashicorp/terraform.git\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - mariusvniekerk\n    - dhirschfeld\n    - oblute\n    - rluria14\n    - ndmaxar\n",
  "req":{
   "__set__":true,
