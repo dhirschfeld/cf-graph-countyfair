@@ -468,6 +468,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439412297.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.9"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -587,7 +604,7 @@
   }
  },
  "name":"mamba",
- "new_version":"0.3.8",
+ "new_version":"0.3.9",
  "new_version_attempts":{
   "0.2.0":1,
   "0.2.10":1,
@@ -604,10 +621,11 @@
   "0.3.4":1,
   "0.3.5":1,
   "0.3.6":1,
-  "0.3.8":1
+  "0.3.8":1,
+  "0.3.9":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.23.15.05.51",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"mamba\" %}\n{% set version = \"0.3.8\" %}\n{% set sha256 = \"2c1029d350be219c682ea803004cadd4dc40c9a5029784769684530c9a17c0ef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/QuantStack/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  entry_points:\n    - mamba = mamba.mamba:main\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - pybind11\n    - conda >=4.8\n    - libsolv >=0.7.14\n    - libcurl\n    - openssl\n    - libarchive\n    - nlohmann_json\n  run:\n    - python\n    - conda >=4.8\n\ntest:\n  imports:\n    - mamba\n    - mamba.mamba_api\n  commands:\n    - mamba --help\n    # these tests work when run on win, but for some reason not during conda build\n    - mamba create -n test_py2 python=2.7 --dry-run  # [linux]\n    - mamba install xtensor xsimd -c conda-forge --dry-run  # [linux and x86_64]\n\nabout:\n  home: https://github.com/QuantStack/mamba\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  description: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  dev_url: https://github.com/QuantStack/mamba\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n",
  "req":{
   "__set__":true,
