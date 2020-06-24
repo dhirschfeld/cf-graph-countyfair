@@ -92,7 +92,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -103,19 +103,22 @@
   },
   "package":{
    "name":"cpplint",
-   "version":"1.4.4"
+   "version":"1.5.2"
   },
   "requirements":{
    "host":[
     "python",
     "pip",
     "setuptools",
+    "pytest-runner",
     "python",
     "pip",
     "setuptools",
+    "pytest-runner",
     "python",
     "pip",
-    "setuptools"
+    "setuptools",
+    "pytest-runner"
    ],
    "run":[
     "python",
@@ -124,8 +127,8 @@
    ]
   },
   "source":{
-   "sha256":"05f879aab5a04307e916e32afb547567d8a44149ddc2f91bf846ce2650ce6d7d",
-   "url":"https://github.com/cpplint/cpplint/archive/1.4.4.tar.gz"
+   "sha256":"5ace9cb77ddfa61bb0135b21d8a3fe62970266588ba41b8a644cd271d3c0676e",
+   "url":"https://github.com/cpplint/cpplint/archive/1.5.2.tar.gz"
   },
   "test":{
    "imports":[
@@ -144,11 +147,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set name = \"cpplint\" %}\n{% set version = \"1.4.4\" %}\n{% set sha256 = \"05f879aab5a04307e916e32afb547567d8a44149ddc2f91bf846ce2650ce6d7d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cpplint/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - cpplint = cpplint:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cpplint\n\nabout:\n  description: |\n    Cpplint is a command-line tool to check C/C++ files for style issues\n    following Google's C++ style guide. Cpplint is developed and maintained by\n    Google Inc. at google/styleguide, also see see the wikipedia entry.\n\n    While Google maintains cpplint, Google is not (very) responsive to issues\n    and pull requests, this fork aims to be (somewhat) more open to add fixes to\n    cpplint to enable fixes, when those fixes make cpplint usable in wider\n    contexts.\n  home: 'https://github.com/cpplint/cpplint'\n  dev_url: 'https://github.com/cpplint/cpplint'\n  license: 'BSD-3-Clause'\n  license_family: 'BSD'\n  license_file: LICENSE\n  summary:\n    A publicly maintained version of Google's static analysis tool for C/C++ code.\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n",
+ "raw_meta_yaml":"{% set name = \"cpplint\" %}\n{% set version = \"1.5.2\" %}\n{% set sha256 = \"5ace9cb77ddfa61bb0135b21d8a3fe62970266588ba41b8a644cd271d3c0676e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/cpplint/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - cpplint = cpplint:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  imports:\n    - cpplint\n\nabout:\n  description: |\n    Cpplint is a command-line tool to check C/C++ files for style issues\n    following Google's C++ style guide. Cpplint is developed and maintained by\n    Google Inc. at google/styleguide, also see see the wikipedia entry.\n\n    While Google maintains cpplint, Google is not (very) responsive to issues\n    and pull requests, this fork aims to be (somewhat) more open to add fixes to\n    cpplint to enable fixes, when those fixes make cpplint usable in wider\n    contexts.\n  home: https://github.com/cpplint/cpplint\n  dev_url: https://github.com/cpplint/cpplint\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A publicly maintained version of Google's static analysis tool for C/C++ code.\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
+   "pytest-runner",
    "python",
    "setuptools"
   ]
@@ -162,6 +166,7 @@
    "__set__":true,
    "elements":[
     "pip",
+    "pytest-runner",
     "python",
     "setuptools"
    ]
@@ -188,6 +193,7 @@
    "__set__":true,
    "elements":[
     "pip",
+    "pytest-runner",
     "python",
     "setuptools"
    ]
@@ -204,5 +210,5 @@
   }
  },
  "url":"https://github.com/cpplint/cpplint/archive/1.4.4.tar.gz",
- "version":"1.4.4"
+ "version":"1.5.2"
 }
