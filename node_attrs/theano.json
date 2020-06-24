@@ -98,6 +98,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/438951786.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -271,7 +290,7 @@
  },
  "name":"theano",
  "new_version":"1.0.4",
- "pinning_version":"2020.01.08",
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set version = \"1.0.4\" %}\n\npackage:\n  name: theano\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/T/Theano/Theano-{{ version }}.tar.gz\n  sha256: 35c9bbef56b61ffa299265a42a4e8f8cb5a07b2997dabaef0f8830b397086913\n  patches:\n    - 0001-Counteract-hypot-redefinition-for-old-Python-versions.patch\n\nbuild:\n  number: 1001\n  script: \"{{ PYTHON }} -m pip install --no-deps --ignore-installed .\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - python\n    - setuptools\n    - six >=1.9.0\n    - numpy >=1.9.1\n    - scipy >=0.14\n    - pygpu >=0.7.0,<0.8\n\ntest:\n  requires:\n    - nose >=1.3.0\n    - nose-parameterized >=0.5.0\n  imports:\n    - theano\n    - theano.compile\n    - theano.compile.sandbox\n    - theano.compile.tests\n    - theano.gof\n    - theano.gof.tests\n    - theano.gpuarray\n    - theano.gpuarray.dnn\n    - theano.gpuarray.linalg\n    - theano.misc\n    - theano.sandbox\n    - theano.scalar\n    - theano.scalar.tests\n    - theano.sparse\n    - theano.sparse.tests\n    - theano.tensor\n    - theano.tensor.nnet\n    - theano.tensor.nnet.tests\n    - theano.tensor.signal\n    - theano.tensor.signal.tests\n    - theano.tensor.tests\n    - theano.tests\n\nabout:\n  home: http://deeplearning.net/software/theano/\n  license: BSD-3-Clause\n  summary: 'Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs.'\n  license_file: LICENSE.txt\n  dev_url: https://github.com/Theano/Theano/\n  doc_url: http://deeplearning.net/software/theano/\n\nextra:\n  recipe-maintainers:\n    - abergeron\n    - jakirkham\n    - ocefpaf\n    - ericmjl\n",
  "req":{
   "__set__":true,
@@ -320,7 +339,7 @@
    ]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

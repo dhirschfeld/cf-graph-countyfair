@@ -51,13 +51,13 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/pypr/cyarray",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.txt",
    "summary":"A typed, re-sizable Cython array"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "script":" -m pip install . -vv"
   },
   "extra":{
@@ -133,7 +133,7 @@
  "name":"cyarray",
  "new_version":"1.1",
  "pinning_version":"2020.03.24",
- "raw_meta_yaml":"{% set name = \"cyarray\" %}\n{% set version = \"1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 00e1271e66e5f82ff846e054a61f78e22e04589253b7705813ea8a624642a402\n  \nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - cython >=0.20\n    - numpy\n    - python\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cyarray\n    - cyarray.tests\n  requires:\n    - pytest\n  source_files:\n    - cyarray/tests/*\n  commands:\n    - pytest --pyargs cyarray\n\nabout:\n  home: https://github.com/pypr/cyarray\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A typed, re-sizable Cython array'\n\nextra:\n  recipe-maintainers:\n    - rishi9699\n",
+ "raw_meta_yaml":"{% set name = \"cyarray\" %}\n{% set version = \"1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 00e1271e66e5f82ff846e054a61f78e22e04589253b7705813ea8a624642a402\n  \nbuild:\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - cython >=0.20\n    - numpy\n    - python\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cyarray\n    - cyarray.tests\n  requires:\n    - pytest\n  source_files:\n    - cyarray/tests/*\n  commands:\n    - pytest --pyargs cyarray\n\nabout:\n  home: https://github.com/pypr/cyarray\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A typed, re-sizable Cython array'\n\nextra:\n  recipe-maintainers:\n    - rishi9699\n",
  "req":{
   "__set__":true,
   "elements":[
