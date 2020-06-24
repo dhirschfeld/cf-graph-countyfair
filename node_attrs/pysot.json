@@ -145,7 +145,7 @@
    "dev_url":"https://github.com/dme65/pySOT",
    "doc_url":"http://http://pysot.readthedocs.io/",
    "home":"https://github.com/dme65/pySOT",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE.rst",
    "summary":"Surrogate Optimization Toolbox"
@@ -155,14 +155,8 @@
    "number":"0",
    "script":[
     "-m pip install . --no-deps -vv",
-    "move \"%SP_DIR%\\examples\" \"%SP_DIR%\\pySOT\"",
-    "move \"%SP_DIR%\\tests\" \"%SP_DIR%\\pySOT\"",
     "-m pip install . --no-deps -vv",
-    "mv \"$SP_DIR/examples\" \"$SP_DIR/pySOT\"",
-    "mv \"$SP_DIR/tests\" \"$SP_DIR/pySOT\"",
-    "-m pip install . --no-deps -vv",
-    "mv \"$SP_DIR/examples\" \"$SP_DIR/pySOT\"",
-    "mv \"$SP_DIR/tests\" \"$SP_DIR/pySOT\""
+    "-m pip install . --no-deps -vv"
    ]
   },
   "extra":{
@@ -177,7 +171,7 @@
   },
   "package":{
    "name":"pysot",
-   "version":"0.3.2"
+   "version":"0.3.3"
   },
   "requirements":{
    "host":[
@@ -199,7 +193,6 @@
     "py_dempster_shafer",
     "six",
     "dill",
-    "pytest",
     "python",
     "scipy",
     "pydoe2",
@@ -207,58 +200,43 @@
     "py_dempster_shafer",
     "six",
     "dill",
-    "pytest",
     "python",
     "scipy",
     "pydoe2",
     "poap >=0.1.25",
     "py_dempster_shafer",
     "six",
-    "dill",
-    "pytest"
+    "dill"
    ]
   },
   "source":{
-   "fn":"pySOT-0.3.2.tar.gz",
-   "sha256":"9df2dc1ff9f1517530b81cae39a6af0626355423ed3b1b56df2d68b4a2720745",
-   "url":"https://pypi.io/packages/source/p/pySOT/pySOT-0.3.2.tar.gz"
+   "fn":"pySOT-0.3.3.tar.gz",
+   "sha256":"9214b7f47237dedf8b7004488c6fc1d8248ae304a4af596379e8f87d89a71f3d",
+   "url":"https://github.com/dme65/pySOT/archive/v0.3.3.tar.gz"
   },
   "test":{
    "commands":[
-    "cd \"%SP_DIR%\\pySOT\\tests\"",
-    "python test_auxiliary_problems.py",
-    "python test_experimental_designs.py",
-    "python test_optimization_problems.py",
-    "python test_strategies.py",
-    "python test_surrogates.py",
-    "python test_utils.py",
-    "cd \"$SP_DIR/pySOT/tests\"",
-    "python test_auxiliary_problems.py",
-    "python test_experimental_designs.py",
-    "python test_optimization_problems.py",
-    "python test_strategies.py",
-    "python test_surrogates.py",
-    "python test_utils.py",
-    "cd \"$SP_DIR/pySOT/tests\"",
-    "python test_auxiliary_problems.py",
-    "python test_experimental_designs.py",
-    "python test_optimization_problems.py",
-    "python test_strategies.py",
-    "python test_surrogates.py",
-    "python test_utils.py"
+    "pytest tests -k \"not test_checkpoint_serial\"",
+    "pytest tests -k \"not test_checkpoint_serial\"",
+    "pytest tests -k \"not test_checkpoint_serial\""
    ],
    "imports":[
     "pySOT",
-    "pySOT.tests",
     "pySOT",
-    "pySOT.tests",
-    "pySOT",
-    "pySOT.tests"
+    "pySOT"
    ],
    "requires":[
+    "pytest",
     "scikit-learn",
+    "pytest",
     "scikit-learn",
+    "pytest",
     "scikit-learn"
+   ],
+   "source_files":[
+    "tests",
+    "tests",
+    "tests"
    ]
   }
  },
@@ -272,7 +250,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"pySOT\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"9df2dc1ff9f1517530b81cae39a6af0626355423ed3b1b56df2d68b4a2720745\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n    # pySOT is wrongly installing `examples` and `tests` at site-packages level\n    - move \"%SP_DIR%\\examples\" \"%SP_DIR%\\pySOT\"  # [win]\n    - mv \"$SP_DIR/examples\" \"$SP_DIR/pySOT\"  # [not win]\n    - move \"%SP_DIR%\\tests\" \"%SP_DIR%\\pySOT\"  # [win]\n    - mv \"$SP_DIR/tests\" \"$SP_DIR/pySOT\"  # [not win]\n\nrequirements:\n  host:\n    - pip\n    - python\n    # `numpy` is required to avoid the following error during `pip install`:\n    # RuntimeError: Setuptools downloading is disabled in conda build. Be sure to add all dependencies in the meta.yaml\n    - numpy\n  run:\n    - python\n    - scipy\n    - pydoe2\n    - poap >=0.1.25\n    - py_dempster_shafer\n    - six\n    - dill\n    - pytest\n\ntest:\n  imports:\n    - pySOT\n    - pySOT.tests\n\n  commands:\n    - cd \"%SP_DIR%\\pySOT\\tests\"  # [win]\n    - cd \"$SP_DIR/pySOT/tests\"  # [not win]\n    - python test_auxiliary_problems.py\n    # test_controller.py was removed because it was failing with the message:\n    #     Cannot create a file when that file already exists: 'temp_checkpoint.pysot' -> 'checkpoint.pysot'\n    - python test_experimental_designs.py\n    - python test_optimization_problems.py\n    - python test_strategies.py\n    - python test_surrogates.py\n    - python test_utils.py\n\n  requires:\n    - scikit-learn\n\nabout:\n  home: https://github.com/dme65/pySOT\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Surrogate Optimization Toolbox\n  description: |\n    pySOT is an asynchronous parallel optimization toolbox for global deterministic optimization problems. The main purpose of\n    the toolbox is for optimization of computationally expensive black-box objective functions with continuous and/or integer\n    variables where the number of evaluations is limited. If there are several processors available it may make sense to evaluate\n    the objective function using either asynchronous or synchronous parallel. pySOT uses the event-driven framework for\n    asynchronous optimization strategies POAP (https://github.com/dbindel/POAP) to provide this functionality.\n  doc_url: http://http://pysot.readthedocs.io/\n  dev_url: https://github.com/dme65/pySOT\n\nextra:\n  recipe-maintainers:\n    - tadeu\n    - jaimeambrus\n",
+ "raw_meta_yaml":"{% set name = \"pySOT\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"9214b7f47237dedf8b7004488c6fc1d8248ae304a4af596379e8f87d89a71f3d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  # getting source from GitHub release instead of PyPI because it includes tests (and examples)\n  url: https://github.com/dme65/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    # `numpy` is required to avoid the following error during `pip install`:\n    # RuntimeError: Setuptools downloading is disabled in conda build. Be sure to add all dependencies in the meta.yaml\n    - numpy\n  run:\n    - python\n    - scipy\n    - pydoe2\n    - poap >=0.1.25\n    - py_dempster_shafer\n    - six\n    - dill\n\ntest:\n  imports:\n    - pySOT\n  source_files:\n    - tests\n  requires:\n    - pytest  # even though it is declared as a dependency in setup.py, it is used only by tests\n    - scikit-learn\n  commands:\n    # test_controller.py was removed because it was failing with the message:\n    #     Cannot create a file when that file already exists: 'temp_checkpoint.pysot' -> 'checkpoint.pysot'\n    - pytest tests -k \"not test_checkpoint_serial\"\n\nabout:\n  home: https://github.com/dme65/pySOT\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Surrogate Optimization Toolbox\n  description: |\n    pySOT is an asynchronous parallel optimization toolbox for global deterministic optimization problems. The main purpose of\n    the toolbox is for optimization of computationally expensive black-box objective functions with continuous and/or integer\n    variables where the number of evaluations is limited. If there are several processors available it may make sense to evaluate\n    the objective function using either asynchronous or synchronous parallel. pySOT uses the event-driven framework for\n    asynchronous optimization strategies POAP (https://github.com/dbindel/POAP) to provide this functionality.\n  doc_url: http://http://pysot.readthedocs.io/\n  dev_url: https://github.com/dme65/pySOT\n\nextra:\n  recipe-maintainers:\n    - tadeu\n    - jaimeambrus\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -282,7 +260,6 @@
    "poap",
    "py_dempster_shafer",
    "pydoe2",
-   "pytest",
    "python",
    "scipy",
    "six"
@@ -308,7 +285,6 @@
     "poap",
     "py_dempster_shafer",
     "pydoe2",
-    "pytest",
     "python",
     "scipy",
     "six"
@@ -317,6 +293,7 @@
   "test":{
    "__set__":true,
    "elements":[
+    "pytest",
     "scikit-learn"
    ]
   }
@@ -343,7 +320,6 @@
     "poap >=0.1.25",
     "py_dempster_shafer",
     "pydoe2",
-    "pytest",
     "python",
     "scipy",
     "six"
@@ -352,10 +328,11 @@
   "test":{
    "__set__":true,
    "elements":[
+    "pytest",
     "scikit-learn"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/p/pySOT/pySOT-0.2.3.tar.gz",
- "version":"0.3.2"
+ "version":"0.3.3"
 }
