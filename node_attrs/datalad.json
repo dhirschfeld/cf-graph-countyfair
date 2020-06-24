@@ -419,7 +419,7 @@
   },
   "package":{
    "name":"datalad",
-   "version":"0.12.7"
+   "version":"0.13.0"
   },
   "requirements":{
    "build":[
@@ -438,6 +438,7 @@
    ],
    "run":[
     "appdirs",
+    "annexremote",
     "boto",
     "chardet >=3.0.4",
     "colorama",
@@ -469,6 +470,7 @@
     "whoosh",
     "wrapt",
     "appdirs",
+    "annexremote",
     "boto",
     "chardet >=3.0.4",
     "exifread",
@@ -500,6 +502,7 @@
     "whoosh",
     "wrapt",
     "appdirs",
+    "annexremote",
     "boto",
     "chardet >=3.0.4",
     "exifread",
@@ -535,9 +538,20 @@
    ]
   },
   "source":{
-   "fn":"datalad-0.12.7.tar.gz",
-   "sha256":"00089c869bedd6e5246e7334e6a5dd0f555cd2de24b02321b72b6279665e8775",
-   "url":"https://pypi.io/packages/source/d/datalad/datalad-0.12.7.tar.gz"
+   "fn":"datalad-0.13.0.tar.gz",
+   "patches":[
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch",
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch",
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch"
+   ],
+   "sha256":"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea",
+   "url":"https://pypi.io/packages/source/d/datalad/datalad-0.13.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -576,10 +590,11 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set name = \"datalad\" %}\n{% set version = \"0.12.7\" %}\n{% set sha256 = \"00089c869bedd6e5246e7334e6a5dd0f555cd2de24b02321b72b6279665e8775\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - datalad=datalad.cmdline.main:main\n    - git-annex-remote-datalad-archives=datalad.customremotes.archives:main\n    - git-annex-remote-datalad=datalad.customremotes.datalad:main\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  # Do not even attempt until we get git-annex in there\n  # py 3.5 is the minimal supported version as of 0.12.0\n  skip: true  # [py<35]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n    - pypandoc\n\n  run:\n    - appdirs\n    - boto\n    - chardet >=3.0.4\n    - colorama  # [win]\n    - exifread\n    - fasteners\n    - git-annex  # [linux]\n    - gitpython >=2.1.12\n    - humanize\n    - iso8601\n    - jsmin\n    - keyring >=8.0\n    - keyrings.alt\n    - mock >=1.0.1\n    - mutagen >=1.36\n    - msgpack-python\n    - p7zip  # [not win]\n    - patool >=1.7\n    - pygithub\n    - pyld <0.8|>=0.8.2\n    - pyperclip\n    - pyyaml\n    - pillow\n    - python\n    - python-dateutil\n    # TODO\n    # - python-xmp-toolkit\n    - psutil\n    - requests >=1.2\n    - requests-ftp\n    - secretstorage  # [linux and py>32]\n    - simplejson\n    - six >=1.8.0\n    - tqdm\n    - whoosh\n    - wrapt\n\ntest:\n  imports:\n    - datalad\n\n  requires:\n    - BeautifulSoup4\n    - httpretty >=0.8.14\n    - mock\n    - nibabel\n    - nose >=1.3.4\n    - vcrpy\n\nabout:\n  home: http://datalad.org\n  license: MIT\n  license_file: COPYING\n  summary: data distribution geared toward scientific datasets\n  description: |\n    DataLad aims to make data management and data distribution more accessible.\n    To do that it stands on the shoulders of Git and Git-annex to deliver a\n    decentralized system for data exchange. This includes automated ingestion of\n    data from online portals, and exposing it in readily usable form as Git(-annex)\n    repositories, so-called datasets. The actual data storage and permission\n    management, however, remains with the original data providers.\n  doc_url: http://datalad.readthedocs.io/\n  dev_url: https://github.com/datalad/datalad\n\nextra:\n  recipe-maintainers:\n    - yarikoptic\n    - notestaff\n",
+ "raw_meta_yaml":"{% set name = \"datalad\" %}\n{% set version = \"0.13.0\" %}\n{% set sha256 = \"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n  - 0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch\n  - 0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch\n  - 0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch\n\nbuild:\n  number: 0\n  entry_points:\n    - datalad=datalad.cmdline.main:main\n    - git-annex-remote-datalad-archives=datalad.customremotes.archives:main\n    - git-annex-remote-datalad=datalad.customremotes.datalad:main\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  # Do not even attempt until we get git-annex in there\n  # py 3.5 is the minimal supported version as of 0.12.0\n  skip: true  # [py<35]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n    - pypandoc\n\n  run:\n    - appdirs\n    - annexremote\n    - boto\n    - chardet >=3.0.4\n    - colorama  # [win]\n    - exifread\n    - fasteners\n    - git-annex  # [linux]\n    - gitpython >=2.1.12\n    - humanize\n    - iso8601\n    - jsmin\n    - keyring >=8.0\n    - keyrings.alt\n    - mock >=1.0.1\n    - mutagen >=1.36\n    - msgpack-python\n    - p7zip  # [not win]\n    - patool >=1.7\n    - pygithub\n    - pyld <0.8|>=0.8.2\n    - pyperclip\n    - pyyaml\n    - pillow\n    - python\n    - python-dateutil\n    # TODO\n    # - python-xmp-toolkit\n    - psutil\n    - requests >=1.2\n    - requests-ftp\n    - secretstorage  # [linux and py>32]\n    - simplejson\n    - six >=1.8.0\n    - tqdm\n    - whoosh\n    - wrapt\n\ntest:\n  imports:\n    - datalad\n\n  requires:\n    - BeautifulSoup4\n    - httpretty >=0.8.14\n    - mock\n    - nibabel\n    - nose >=1.3.4\n    - vcrpy\n\nabout:\n  home: http://datalad.org\n  license: MIT\n  license_file: COPYING\n  summary: data distribution geared toward scientific datasets\n  description: |\n    DataLad aims to make data management and data distribution more accessible.\n    To do that it stands on the shoulders of Git and Git-annex to deliver a\n    decentralized system for data exchange. This includes automated ingestion of\n    data from online portals, and exposing it in readily usable form as Git(-annex)\n    repositories, so-called datasets. The actual data storage and permission\n    management, however, remains with the original data providers.\n  doc_url: http://datalad.readthedocs.io/\n  dev_url: https://github.com/datalad/datalad\n\nextra:\n  recipe-maintainers:\n    - yarikoptic\n    - notestaff\n",
  "req":{
   "__set__":true,
   "elements":[
+   "annexremote",
    "appdirs",
    "boto",
    "chardet",
@@ -636,6 +651,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "annexremote",
     "appdirs",
     "boto",
     "chardet",
@@ -703,6 +719,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "annexremote",
     "appdirs",
     "boto",
     "chardet >=3.0.4",
@@ -752,5 +769,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/datalad/datalad-0.11.7.tar.gz",
- "version":"0.12.7"
+ "version":"0.13.0"
 }
