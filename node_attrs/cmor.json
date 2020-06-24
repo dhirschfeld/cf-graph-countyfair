@@ -260,7 +260,7 @@
    "summary":"\u201cClimate Model Output Rewriter\u201d is a C library, with  Fortran 90 and Python bindings. CMOR is used to produce CF-compliant[3] netCDF[4] files. The structure of the files created by CMOR and the metadata they contain fulfill the requirements of many of the climate community\u2019s standard model experiments (which are referred to here as \u201cMIPs\u201d[5] and include, for example, AMIP, PMIP, APE, and IPCC [DN1] scenario runs)."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -290,7 +290,7 @@
     "udunits2",
     "numpy",
     "hdf5",
-    "libnetcdf",
+    "libnetcdf * nompi_*",
     "netcdf4",
     "six",
     "json-c",
@@ -301,7 +301,7 @@
     "udunits2",
     "numpy",
     "hdf5",
-    "libnetcdf",
+    "libnetcdf * nompi_*",
     "netcdf4",
     "six",
     "json-c",
@@ -312,7 +312,7 @@
     "udunits2",
     "numpy",
     "hdf5",
-    "libnetcdf",
+    "libnetcdf * nompi_*",
     "netcdf4",
     "six",
     "json-c",
@@ -370,7 +370,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.19.19.39.08",
- "raw_meta_yaml":"{% set version = \"3.6.0\" %}\n\npackage:\n    name: cmor\n    version: {{ version }}\n\nsource:\n    url: https://github.com/PCMDI/cmor/archive/{{ version }}.tar.gz\n    sha256: 1608904a35106e83d365f27522209c325bd4bfc19d022b1a8abfb12cdf85fe20\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n  host:\n    - python\n    - setuptools\n    - libuuid\n    - udunits2\n    - numpy\n    - hdf5\n    - libnetcdf\n    - netcdf4\n    - six\n    - json-c\n    - openblas\n  run:\n    - python\n    - libuuid\n    - udunits2\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - libnetcdf\n    - netcdf4\n    - six\n    - json-c\n    - openblas\n\ntest:\n  commands:\n      - export UVCDAT_ANONYMOUS_LOG=false && python -c \"import cmor\"  \n\nabout:\n    home:  https://cmor.llnl.gov/\n    license: 'BSD-2-Clause'\n    license_file: 'LICENSE'\n    summary: \u201cClimate Model Output Rewriter\u201d is a C library, with  Fortran 90 and Python bindings. CMOR is used to produce CF-compliant[3] netCDF[4] files. The structure of the files created by CMOR and the metadata they contain fulfill the requirements of many of the climate community\u2019s standard model experiments (which are referred to here as \u201cMIPs\u201d[5] and include, for example, AMIP, PMIP, APE, and IPCC [DN1] scenario runs).\n    description: |\n        CMOR was not designed to serve as an all-purpose writer of CF-compliant netCDF files,\n        but simply to reduce the effort required to prepare and manage MIP model output.\n        Although MIPs encourage systematic analysis of results across models, this is only easy\n        to do if the model output is written in a common format with files structured similarly\n        and with sufficient metadata uniformly stored according to a common standard.\n        Individual modeling groups store their data in different ways, but if a group can read\n        its own data, then it should easily be able to transform the data, using CMOR, into the\n        common format required by the MIPs. The adoption of CMOR as a standard code for exchanging\n        climate data will facilitate participation in MIPs because after learning how to satisfy\n        the output requirements of one MIP, it will be easy to prepare output for other MIPs.\n\nextra:\n  recipe-maintainers:\n    - mauzey1\n",
+ "raw_meta_yaml":"{% set version = \"3.6.0\" %}\n\npackage:\n    name: cmor\n    version: {{ version }}\n\nsource:\n    url: https://github.com/PCMDI/cmor/archive/{{ version }}.tar.gz\n    sha256: 1608904a35106e83d365f27522209c325bd4bfc19d022b1a8abfb12cdf85fe20\n\nbuild:\n  number: 1\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n  host:\n    - python\n    - setuptools\n    - libuuid\n    - udunits2\n    - numpy\n    - hdf5\n    - libnetcdf * nompi_*\n    - netcdf4\n    - six\n    - json-c\n    - openblas\n  run:\n    - python\n    - libuuid\n    - udunits2\n    - {{ pin_compatible('numpy') }}\n    - hdf5\n    - libnetcdf\n    - netcdf4\n    - six\n    - json-c\n    - openblas\n\ntest:\n  commands:\n      - export UVCDAT_ANONYMOUS_LOG=false && python -c \"import cmor\"  \n\nabout:\n    home:  https://cmor.llnl.gov/\n    license: 'BSD-2-Clause'\n    license_file: 'LICENSE'\n    summary: \u201cClimate Model Output Rewriter\u201d is a C library, with  Fortran 90 and Python bindings. CMOR is used to produce CF-compliant[3] netCDF[4] files. The structure of the files created by CMOR and the metadata they contain fulfill the requirements of many of the climate community\u2019s standard model experiments (which are referred to here as \u201cMIPs\u201d[5] and include, for example, AMIP, PMIP, APE, and IPCC [DN1] scenario runs).\n    description: |\n        CMOR was not designed to serve as an all-purpose writer of CF-compliant netCDF files,\n        but simply to reduce the effort required to prepare and manage MIP model output.\n        Although MIPs encourage systematic analysis of results across models, this is only easy\n        to do if the model output is written in a common format with files structured similarly\n        and with sufficient metadata uniformly stored according to a common standard.\n        Individual modeling groups store their data in different ways, but if a group can read\n        its own data, then it should easily be able to transform the data, using CMOR, into the\n        common format required by the MIPs. The adoption of CMOR as a standard code for exchanging\n        climate data will facilitate participation in MIPs because after learning how to satisfy\n        the output requirements of one MIP, it will be easy to prepare output for other MIPs.\n\nextra:\n  recipe-maintainers:\n    - mauzey1\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -449,7 +449,7 @@
    "elements":[
     "hdf5",
     "json-c",
-    "libnetcdf",
+    "libnetcdf * nompi_*",
     "libuuid",
     "netcdf4",
     "numpy",
