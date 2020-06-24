@@ -355,6 +355,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439029612.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.6.11"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -447,13 +464,14 @@
   }
  },
  "name":"kombu",
- "new_version":"4.6.10",
+ "new_version":"4.6.11",
  "new_version_attempts":{
   "4.6.10":1,
+  "4.6.11":1,
   "4.6.9":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.03.12.27.21",
+ "pinning_version":"2020.06.23.15.05.51",
  "raw_meta_yaml":"{% set version = \"4.6.10\" %}\n\npackage:\n  name: kombu\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/k/kombu/kombu-{{ version }}.tar.gz\n  sha256: 437b9cdea193cc2ed0b8044c85fd0f126bb3615ca2f4d4a35b39de7cacfa3c1a\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - importlib_metadata >=0.18  # [py<=37]\n    - amqp >=2.6.0,<2.7\n\ntest:\n  imports:\n    - kombu\n    - kombu.asynchronous\n    - kombu.asynchronous.aws\n    - kombu.asynchronous.http\n    - kombu.transport\n    - kombu.transport.virtual\n    - kombu.utils\n\nabout:\n  home: https://kombu.readthedocs.org\n  license_file: LICENSE\n  license: BSD-3-Clause\n  summary: Messaging library for Python\n  dev_url: https://github.com/celery/kombu\n  doc_url: https://kombu.readthedocs.org\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - kwilcox\n    - pmlandwehr\n    - igortg\n",
  "req":{
   "__set__":true,
