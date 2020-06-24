@@ -53,8 +53,8 @@
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -74,7 +74,7 @@
   },
   "package":{
    "name":"pyorbital",
-   "version":"1.5.0"
+   "version":"1.6.0"
   },
   "requirements":{
    "host":[
@@ -101,8 +101,8 @@
    ]
   },
   "source":{
-   "sha256":"8e963c117b661f6ab31d01bf6ed65ddb0da16d367bf277edb773a78dfadf56e1",
-   "url":"https://pypi.io/packages/source/p/pyorbital/pyorbital-1.5.0.tar.gz"
+   "sha256":"686916f30ec49ad32e1bd97c698b3f9f3b1371681432907f9ec86ccc90817b70",
+   "url":"https://pypi.io/packages/source/p/pyorbital/pyorbital-1.6.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -119,7 +119,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set name = \"pyorbital\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8e963c117b661f6ab31d01bf6ed65ddb0da16d367bf277edb773a78dfadf56e1\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy >=1.6.0,!=1.14.0\n  run:\n    - python\n    - numpy >=1.6.0,!=1.14.0\n\ntest:\n  imports:\n    - pyorbital\n\nabout:\n  home: https://github.com/pytroll/pyorbital\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Orbital parameters and astronomical computations in Python\n  description: Orbital and astronomy computations in python\n  doc_url: http://pyorbital.readthedocs.io\n  dev_url: https://github.com/pytroll/pyorbital\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
+ "raw_meta_yaml":"{% set name = \"pyorbital\" %}\n{% set version = \"1.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 686916f30ec49ad32e1bd97c698b3f9f3b1371681432907f9ec86ccc90817b70\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy >=1.6.0,!=1.14.0\n  run:\n    - python\n    - numpy >=1.6.0,!=1.14.0\n\ntest:\n  imports:\n    - pyorbital\n\nabout:\n  home: https://github.com/pytroll/pyorbital\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Orbital parameters and astronomical computations in Python\n  description: Orbital and astronomy computations in python\n  doc_url: http://pyorbital.readthedocs.io\n  dev_url: https://github.com/pytroll/pyorbital\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -184,5 +184,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyorbital/pyorbital-1.5.0.tar.gz",
- "version":"1.5.0"
+ "version":"1.6.0"
 }

@@ -137,9 +137,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -157,7 +154,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -174,7 +171,7 @@
   },
   "package":{
    "name":"pymc3",
-   "version":"3.9.1"
+   "version":"3.9.2"
   },
   "requirements":{
    "host":[
@@ -222,8 +219,8 @@
    ]
   },
   "source":{
-   "sha256":"2b59707679f9a05494a98544d52f507bc9ce2506ce01acd692075aa89e1023a9",
-   "url":"https://pypi.io/packages/source/p/pymc3/pymc3-3.9.1.tar.gz"
+   "sha256":"918b0a8050643e2a9dd4d276dd163befded33608db4969828f2c32305135d3e0",
+   "url":"https://pypi.io/packages/source/p/pymc3/pymc3-3.9.2.tar.gz"
   },
   "test":{
    "imports":[
@@ -279,7 +276,7 @@
   "3.9.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '3.9.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/p/pymc3/pymc3-{{ version }}.tar.gz'\n"
  },
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set version = \"3.9.1\" %}\n\npackage:\n  name: pymc3\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pymc3/pymc3-{{ version }}.tar.gz\n  sha256: 2b59707679f9a05494a98544d52f507bc9ce2506ce01acd692075aa89e1023a9\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - theano >=1.0.4\n    - numpy >=1.13.0\n    - scipy >=0.18.1\n    - arviz >=0.8.3\n    - fastprogress >=0.2.0\n    - pandas >=0.18.0\n    - patsy >=0.5.1\n    - tqdm >=4.8.4\n    - typing-extensions >=3.7.4\n    - h5py >=2.7.0\n\ntest:\n  imports:\n    - pymc3\n    - pymc3.backends\n    - pymc3.distributions\n    - pymc3.examples\n    - pymc3.glm\n    - pymc3.gp\n    - pymc3.step_methods\n    - pymc3.tests\n    - pymc3.tuning\n    - pymc3.variational\n    - pymc3.ode\n\n  requires:\n    - pytest\n\nabout:\n  home: http://github.com/pymc-devs/pymc3\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Probabilistic Programming in Python'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - springcoil\n    - twiecki\n",
+ "raw_meta_yaml":"{% set version = \"3.9.2\" %}\n\npackage:\n  name: pymc3\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pymc3/pymc3-{{ version }}.tar.gz\n  sha256: 918b0a8050643e2a9dd4d276dd163befded33608db4969828f2c32305135d3e0\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - theano >=1.0.4\n    - numpy >=1.13.0\n    - scipy >=0.18.1\n    - arviz >=0.8.3\n    - fastprogress >=0.2.0\n    - pandas >=0.18.0\n    - patsy >=0.5.1\n    - tqdm >=4.8.4\n    - typing-extensions >=3.7.4\n    - h5py >=2.7.0\n\ntest:\n  imports:\n    - pymc3\n    - pymc3.backends\n    - pymc3.distributions\n    - pymc3.examples\n    - pymc3.glm\n    - pymc3.gp\n    - pymc3.step_methods\n    - pymc3.tests\n    - pymc3.tuning\n    - pymc3.variational\n    - pymc3.ode\n\n  requires:\n    - pytest\n\nabout:\n  home: http://github.com/pymc-devs/pymc3\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Probabilistic Programming in Python\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - springcoil\n    - twiecki\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -370,5 +367,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pymc3/pymc3-3.7.tar.gz",
- "version":"3.9.1"
+ "version":"3.9.2"
 }

@@ -56,11 +56,16 @@
    "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "rpaths":[
-    "lib/",
-    "lib64/"
-   ]
+    "lib/"
+   ],
+   "run_exports":[
+    "zfp",
+    "zfp",
+    "zfp"
+   ],
+   "script":"source ${RECIPE_DIR}/build_zfp.sh"
   },
   "extra":{
    "recipe-maintainers":[
@@ -68,18 +73,122 @@
     "ToreAad",
     "lindstro",
     "GarrettDMorrison",
+    "hmaarrfk",
     "kmpaul",
     "ToreAad",
     "lindstro",
     "GarrettDMorrison",
+    "hmaarrfk",
     "kmpaul",
     "ToreAad",
     "lindstro",
-    "GarrettDMorrison"
+    "GarrettDMorrison",
+    "hmaarrfk"
    ]
   },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"\\bld_zfpy.bat"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   },
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   },
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
   "package":{
-   "name":"zfpy",
+   "name":"zfp",
    "version":"0.5.5"
   },
   "requirements":{
@@ -87,6 +196,7 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
+    "ninja",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
@@ -94,44 +204,46 @@
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
-    "make"
+    "make",
+    "libgomp"
    ],
    "host":[
-    "python",
-    "numpy",
-    "cython",
-    "python",
-    "numpy",
-    "cython",
-    "python",
-    "numpy",
-    "cython"
-   ],
-   "run":[
-    "python",
-    "numpy",
-    "python",
-    "numpy",
-    "python",
-    "numpy"
+    "libgomp"
    ]
   },
   "source":{
+   "patches":[
+    "100-update-cmake.patch",
+    "100-update-cmake.patch",
+    "100-update-cmake.patch"
+   ],
    "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
    "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
   },
   "test":{
-   "imports":[
-    "zfpy",
-    "zfpy",
-    "zfpy"
+   "commands":[
+    "if not exist %LIBRARY_INC%\\zfp.h exit 1",
+    "if not exist %LIBRARY_BIN%\\zfp.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\zfp.lib exit 1",
+    "where zfp",
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp",
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp"
    ]
   }
  },
- "name":"zfpy",
+ "name":"zfp",
  "new_version":"0.5.5",
+ "outputs_names":[
+  "zfp",
+  "zfpy"
+ ],
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set version = \"0.5.5\" %}\n\npackage:\n  name: zfpy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LLNL/zfp/archive/{{ version }}.tar.gz\n  sha256: 6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4\n\nbuild:\n  number: 0\n  rpaths:\n    - lib/  # [unix]\n    - lib64/  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - python\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - zfpy\n\nabout:\n  home: https://computation.llnl.gov/projects/floating-point-compression\n  license: BSD 3-Clause Modified\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Library for compressed numerical arrays that support high throughput read and write random access'\n  description: |\n    zfp is an open source C/C++ library for compressed numerical arrays\n    that support high throughput read and write random access. zfp also\n    supports streaming compression of integer and floating-point data,\n    e.g., for applications that read and write large data sets to and\n    from disk. zfp is primarily written in C and C++ but also includes\n    Python and Fortran bindings.\n  doc_url: http://zfp.readthedocs.io/en/release0.5.5/\n  dev_url: https://github.com/LLNL/zfp\n\nextra:\n  recipe-maintainers:\n    - kmpaul\n    - ToreAad\n    - lindstro\n    - GarrettDMorrison\n",
+ "raw_meta_yaml":"{% set version = \"0.5.5\" %}\n\n# This package builds 2 outputs\n#    zfp     --- C headers\n#    zfpy    --- Python package\n#\n# The build procedure actually rebuilds zfp when zfpy is being built\n# during the install phase, conda will simply ignore all the files\n# that are being copied related to zfp since they already exist in the prefix\n\npackage:\n  name: zfp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/LLNL/zfp/archive/{{ version }}.tar.gz\n  sha256: 6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4\n  patches:\n    - 100-update-cmake.patch\n\nbuild:\n  number: 1\n  script: source ${RECIPE_DIR}/build_zfp.sh  # [unix]\n  script: {{ RECIPE_DIR }}\\bld_zfp.bat       # [win]\n  run_exports:\n    # No real information, for now, let keep the defaults\n    - {{ pin_subpackage('zfp') }}\n  rpaths:\n    - lib/  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make     # [unix]\n    - ninja    # [win]\n    - libgomp  # [linux]\n  host:\n    - libgomp  # [linux]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/zfp.h                # [unix]\n    - if not exist %LIBRARY_INC%\\zfp.h exit 1      # [win]\n    - test -f $PREFIX/lib/libzfp.so.{{ version }}  # [linux]\n    - test -f $PREFIX/lib/libzfp${SHLIB_EXT}       # [unix]\n    - if not exist %LIBRARY_BIN%\\zfp.dll exit 1    # [win]\n    - if not exist %LIBRARY_LIB%\\zfp.lib exit 1    # [win]\n    # Command always returns 1\n    - which zfp  # [unix]\n    - where zfp  # [win]\n\noutputs:\n  - name: zfp\n  - name: zfpy\n    build:\n      script: source ${RECIPE_DIR}/build_zfpy.sh  # [unix]\n      script: {{ RECIPE_DIR }}\\bld_zfpy.bat       # [win]\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - cmake\n        - make     # [unix]\n        - ninja    # [win]\n      host:\n        - python\n        - numpy\n        - cython\n        - {{ pin_subpackage('zfp', exact=True) }}\n      run:\n        - python\n        - {{ pin_compatible('numpy') }}\n        # I don't think run exports work with pin exact subpackage\n        - {{ pin_subpackage('zfp', exact=True) }}\n    test:\n      imports:\n        - zfpy\n\nabout:\n  home: https://computation.llnl.gov/projects/floating-point-compression\n  license: BSD 3-Clause Modified\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Library for compressed numerical arrays that support high throughput read and write random access'\n  description: |\n    zfp is an open source C/C++ library for compressed numerical arrays\n    that support high throughput read and write random access. zfp also\n    supports streaming compression of integer and floating-point data,\n    e.g., for applications that read and write large data sets to and\n    from disk. zfp is primarily written in C and C++ but also includes\n    Python and Fortran bindings.\n  doc_url: http://zfp.readthedocs.io/en/release0.5.5/\n  dev_url: https://github.com/LLNL/zfp\n\nextra:\n  recipe-maintainers:\n    - kmpaul\n    - ToreAad\n    - lindstro\n    - GarrettDMorrison\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -139,9 +251,12 @@
    "cmake",
    "cxx_compiler_stub",
    "cython",
+   "libgomp",
    "make",
+   "ninja",
    "numpy",
-   "python"
+   "python",
+   "zfp"
   ]
  },
  "requirements":{
@@ -151,22 +266,27 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "libgomp",
+    "make",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "cython",
+    "libgomp",
     "numpy",
-    "python"
+    "python",
+    "zfp"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "numpy",
-    "python"
+    "python",
+    "zfp"
    ]
   },
   "test":{
@@ -183,22 +303,27 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "libgomp",
+    "make",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "cython",
+    "libgomp",
     "numpy",
-    "python"
+    "python",
+    "zfp"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "numpy",
-    "python"
+    "python",
+    "zfp"
    ]
   },
   "test":{
