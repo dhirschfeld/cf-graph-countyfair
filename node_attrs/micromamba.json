@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"micromamba",
  "hash_type":"sha256",
@@ -120,6 +120,7 @@
   }
  },
  "name":"micromamba",
+ "new_version":"0.3.8",
  "raw_meta_yaml":"{% set version = \"0.3.8\" %}\n\npackage:\n  name: micromamba\n  version: {{ version }}\n\nsource:\n  url: https://github.com/TheSnakePit/mamba/archive/{{ version }}.tar.gz\n  sha256: 2c1029d350be219c682ea803004cadd4dc40c9a5029784769684530c9a17c0ef\n\nbuild:\n  number: 0\n  skip: true  # [win or osx]\n  ignore_run_exports:\n    - libcurl\n    - libarchive\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - cli11\n    - nlohmann_json\n    # static libs\n    - libcurl\n    - libarchive\n    - krb5-static\n    - libsolv-static\n    - libopenssl-static\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/micromamba  # [unix]\n    - micromamba --help\n\nabout:\n  home: https://github.com/TheSnakePit/mamba\n  license_file:\n    - LICENSE\n    - CURL_LICENSE.txt\n    - LIBARCHIVE_LICENSE.txt\n    - KRB5_LICENSE.txt\n    - LIBSOLV_LICENSE.txt\n    - LIBOPENSSL_LICENSE.txt\n    - CLI11_LICENSE.txt\n    - NLOHMANN_JSON_LICENSE.txt\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: Micromamba is a tiny version of mamba, the fast conda package installer.\n  dev_url: https://github.com/TheSnakePit/mamba\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
   "__set__":true,
