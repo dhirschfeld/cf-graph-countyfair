@@ -88,7 +88,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"scikit-hep-testdata",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -104,7 +108,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"SETUPTOOLS_SCM_PRETEND_VERSION=0.3.2  -m pip install . --no-deps --ignore-installed -vv "
+   "script":"SETUPTOOLS_SCM_PRETEND_VERSION=0.3.3  -m pip install . --no-deps --ignore-installed -vv "
   },
   "extra":{
    "recipe-maintainers":[
@@ -115,7 +119,7 @@
   },
   "package":{
    "name":"scikit-hep-testdata",
-   "version":"0.3.2"
+   "version":"0.3.3"
   },
   "requirements":{
    "host":[
@@ -148,8 +152,8 @@
    ]
   },
   "source":{
-   "sha256":"f6fdf3a8850905b6e4176fcb913daf0e1590a7d80a4db740785df7f91b605ba3",
-   "url":"https://github.com/scikit-hep/scikit-hep-testdata/archive/v0.3.2.tar.gz"
+   "sha256":"18ad3b7baadd6f61ed1b81005a527ff5c3c0441aaa0b4fc903bc8895f8653aa4",
+   "url":"https://github.com/scikit-hep/scikit-hep-testdata/archive/v0.3.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -184,7 +188,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"scikit-hep-testdata\" %}\n{% set version = \"0.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/scikit-hep/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f6fdf3a8850905b6e4176fcb913daf0e1590a7d80a4db740785df7f91b605ba3\n\nbuild:\n  number: 0\n  noarch: python\n  script: 'SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - pytest-runner\n    - setuptools_scm\n    - toml  # Workaround for https://github.com/conda-forge/setuptools_scm-feedstock/pull/39\n  run:\n    - python\n    - pyyaml\n    - importlib_resources\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  imports:\n    - skhep_testdata\n  commands:\n    - pytest -vv tests/\n\nabout:\n  home: https://github.com/scikit-hep/scikit-hep-testdata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Example HEP files for testing and demonstrating\n  doc_url: https://github.com/scikit-hep/scikit-hep-testdata#installing-and-usage\n  dev_url: https://github.com/scikit-hep/scikit-hep-testdata/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
+ "raw_meta_yaml":"{% set name = \"scikit-hep-testdata\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/scikit-hep/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 18ad3b7baadd6f61ed1b81005a527ff5c3c0441aaa0b4fc903bc8895f8653aa4\n\nbuild:\n  number: 0\n  noarch: python\n  script: 'SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - pytest-runner\n    - setuptools_scm\n    - toml  # Workaround for https://github.com/conda-forge/setuptools_scm-feedstock/pull/39\n  run:\n    - python\n    - pyyaml\n    - importlib_resources\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  imports:\n    - skhep_testdata\n  commands:\n    - pytest -vv tests/\n\nabout:\n  home: https://github.com/scikit-hep/scikit-hep-testdata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Example HEP files for testing and demonstrating\n  doc_url: https://github.com/scikit-hep/scikit-hep-testdata#installing-and-usage\n  dev_url: https://github.com/scikit-hep/scikit-hep-testdata/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -260,5 +264,5 @@
   }
  },
  "url":"https://github.com/scikit-hep/scikit-hep-testdata/archive/v0.1.3.tar.gz",
- "version":"0.3.2"
+ "version":"0.3.3"
 }

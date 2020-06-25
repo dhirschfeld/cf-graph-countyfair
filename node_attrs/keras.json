@@ -223,8 +223,8 @@
    "summary":"Deep Learning for Python"
   },
   "build":{
-   "number":"0",
-   "skip":true
+   "noarch":"python",
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -247,53 +247,41 @@
   },
   "package":{
    "name":"keras",
-   "version":"2.3.1"
+   "version":"2.4.3"
   },
   "requirements":{
    "host":[
-    "python",
+    "python >=3.6",
     "pip",
-    "python",
+    "python >=3.6",
     "pip",
-    "python",
+    "python >=3.6",
     "pip"
    ],
    "run":[
-    "python",
-    "h5py",
+    "python >=3.6",
     "numpy >=1.9.1",
     "scipy >=0.14",
-    "tensorflow",
     "pyyaml",
-    "six >=1.9.0",
-    "theano",
-    "keras-applications >=1.0.8",
-    "keras-preprocessing >=1.1.0",
-    "python",
     "h5py",
+    "tensorflow >=2.2",
+    "python >=3.6",
     "numpy >=1.9.1",
     "scipy >=0.14",
-    "tensorflow",
     "pyyaml",
-    "six >=1.9.0",
-    "theano",
-    "keras-applications >=1.0.8",
-    "keras-preprocessing >=1.1.0",
-    "python",
     "h5py",
+    "tensorflow >=2.2",
+    "python >=3.6",
     "numpy >=1.9.1",
     "scipy >=0.14",
-    "tensorflow",
     "pyyaml",
-    "six >=1.9.0",
-    "theano",
-    "keras-applications >=1.0.8",
-    "keras-preprocessing >=1.1.0"
+    "h5py",
+    "tensorflow >=2.2"
    ]
   },
   "source":{
-   "sha256":"7e8df9c5291f21a01bccffd8cbdd44abd7d2679ab2f7a892a503e88291627183",
-   "url":"https://github.com/keras-team/keras/archive/2.3.1.tar.gz"
+   "sha256":"fedd729b52572fb108a98e3d97e1bac10a81d3917d2103cc20ab2a5f03beb973",
+   "url":"https://pypi.io/packages/source/K/Keras/Keras-2.4.3.tar.gz"
   },
   "test":{
    "imports":[
@@ -331,21 +319,17 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"2.3.1\" %}\n\npackage:\n  name: keras\n  version: {{ version }}\n\nsource:\n  url: https://github.com/keras-team/keras/archive/{{ version }}.tar.gz\n  sha256: 7e8df9c5291f21a01bccffd8cbdd44abd7d2679ab2f7a892a503e88291627183\n\nbuild:\n  skip: True  # [win and vc<14]\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - h5py\n    - numpy >=1.9.1\n    - scipy >=0.14\n    - tensorflow     # [not (win and py27)]\n    - pyyaml\n    - six >=1.9.0\n    - theano\n    - keras-applications >=1.0.8\n    - keras-preprocessing >=1.1.0\n\ntest:\n  imports:\n    - keras\n    - keras.backend\n    - keras.datasets\n    - keras.engine\n    - keras.layers\n    - keras.preprocessing\n    - keras.utils\n    - keras.wrappers\n\nabout:\n  home: https://github.com/keras-team/keras\n  license: MIT\n  license_file: LICENSE\n  summary: Deep Learning for Python\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n    - croth1\n    - ocefpaf\n    - jjhelmus\n",
+ "raw_meta_yaml":"{% set version = \"2.4.3\" %}\n\npackage:\n  name: keras\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/K/Keras/Keras-{{ version }}.tar.gz\n  sha256: fedd729b52572fb108a98e3d97e1bac10a81d3917d2103cc20ab2a5f03beb973\n\nbuild:\n  noarch: python\n  number: 0\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.9.1\n    - scipy >=0.14\n    - pyyaml\n    - h5py\n    - tensorflow >=2.2\n\ntest:\n  imports:\n    - keras\n    - keras.backend\n    - keras.datasets\n    - keras.engine\n    - keras.layers\n    - keras.preprocessing\n    - keras.utils\n    - keras.wrappers\n\nabout:\n  home: https://github.com/keras-team/keras\n  license: MIT\n  license_file: LICENSE\n  summary: Deep Learning for Python\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n    - croth1\n    - ocefpaf\n    - jjhelmus\n",
  "req":{
   "__set__":true,
   "elements":[
    "h5py",
-   "keras-applications",
-   "keras-preprocessing",
    "numpy",
    "pip",
    "python",
    "pyyaml",
    "scipy",
-   "six",
-   "tensorflow",
-   "theano"
+   "tensorflow"
   ]
  },
  "requirements":{
@@ -364,15 +348,11 @@
    "__set__":true,
    "elements":[
     "h5py",
-    "keras-applications",
-    "keras-preprocessing",
     "numpy",
     "python",
     "pyyaml",
     "scipy",
-    "six",
-    "tensorflow",
-    "theano"
+    "tensorflow"
    ]
   },
   "test":{
@@ -391,22 +371,18 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python >=3.6"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "h5py",
-    "keras-applications >=1.0.8",
-    "keras-preprocessing >=1.1.0",
     "numpy >=1.9.1",
-    "python",
+    "python >=3.6",
     "pyyaml",
     "scipy >=0.14",
-    "six >=1.9.0",
-    "tensorflow",
-    "theano"
+    "tensorflow >=2.2"
    ]
   },
   "test":{
@@ -415,5 +391,5 @@
   }
  },
  "url":"https://github.com/keras-team/keras/archive/2.2.5.tar.gz",
- "version":"2.3.1"
+ "version":"2.4.3"
 }
