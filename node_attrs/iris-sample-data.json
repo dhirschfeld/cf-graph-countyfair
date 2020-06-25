@@ -20,7 +20,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"iris-sample-data",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -32,7 +36,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -49,7 +53,7 @@
   },
   "package":{
    "name":"iris-sample-data",
-   "version":"2.2.0"
+   "version":"2.3.0"
   },
   "requirements":{
    "build":[
@@ -67,8 +71,8 @@
    ]
   },
   "source":{
-   "sha256":"cf5ffd55a713f3c3a1f39b9ebcd60cd971f9ac56331d4af5b05c72e3eefb73af",
-   "url":"https://github.com/SciTools/iris-sample-data/archive/v2.2.0.tar.gz"
+   "sha256":"a690cdba45584c949935f0d477365da1b9d04e99e42e58ca1fba99cf4698fa73",
+   "url":"https://github.com/SciTools/iris-sample-data/archive/v2.3.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -85,7 +89,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"2.2.0\" %}\n\npackage:\n    name: iris-sample-data\n    version: {{ version }}\n\nsource:\n    url: https://github.com/SciTools/iris-sample-data/archive/v{{ version }}.tar.gz\n    sha256: cf5ffd55a713f3c3a1f39b9ebcd60cd971f9ac56331d4af5b05c72e3eefb73af\n\nbuild:\n    noarch: python\n    number: 0\n    script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n\ntest:\n    imports:\n        - iris_sample_data\n\nabout:\n    home: https://github.com/SciTools/iris-sample-data\n    license: Open Government\n    summary: 'Iris sample data.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - bjlittle\n        - DPeterK\n",
+ "raw_meta_yaml":"{% set version = \"2.3.0\" %}\n\npackage:\n  name: iris-sample-data\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/iris-sample-data/archive/v{{ version }}.tar.gz\n  sha256: a690cdba45584c949935f0d477365da1b9d04e99e42e58ca1fba99cf4698fa73\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - iris_sample_data\n\nabout:\n  home: https://github.com/SciTools/iris-sample-data\n  license: Open Government\n  summary: Iris sample data.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bjlittle\n    - DPeterK\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -142,5 +146,5 @@
   }
  },
  "url":"https://github.com/SciTools/iris-sample-data/archive/v2.1.0.tar.gz",
- "version":"2.2.0"
+ "version":"2.3.0"
 }
