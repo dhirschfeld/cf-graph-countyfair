@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440181492.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -158,14 +175,15 @@
   }
  },
  "name":"scikit-hep-testdata",
- "new_version":"0.3.2",
+ "new_version":"0.3.3",
  "new_version_attempts":{
   "0.3.0":1,
   "0.3.1":1,
-  "0.3.2":1
+  "0.3.2":1,
+  "0.3.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.16.21.09.39",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"scikit-hep-testdata\" %}\n{% set version = \"0.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/scikit-hep/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f6fdf3a8850905b6e4176fcb913daf0e1590a7d80a4db740785df7f91b605ba3\n\nbuild:\n  number: 0\n  noarch: python\n  script: 'SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - pytest-runner\n    - setuptools_scm\n    - toml  # Workaround for https://github.com/conda-forge/setuptools_scm-feedstock/pull/39\n  run:\n    - python\n    - pyyaml\n    - importlib_resources\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  imports:\n    - skhep_testdata\n  commands:\n    - pytest -vv tests/\n\nabout:\n  home: https://github.com/scikit-hep/scikit-hep-testdata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Example HEP files for testing and demonstrating\n  doc_url: https://github.com/scikit-hep/scikit-hep-testdata#installing-and-usage\n  dev_url: https://github.com/scikit-hep/scikit-hep-testdata/\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req":{
   "__set__":true,
