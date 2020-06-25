@@ -293,7 +293,7 @@
    "dev_url":"https://github.com/mlflow/mlflow",
    "doc_url":"https://mlflow.org",
    "home":"https://mlflow.org/",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"APACHE",
    "license_file":"LICENSE",
    "summary":"MLflow is an open source platform for the machine learning lifecycle."
@@ -355,7 +355,7 @@
      "Lib\\site-packages\\mlflow-*"
     ],
     "name":"mlflow",
-    "version":"1.8.0"
+    "version":"1.9.1"
    },
    {
     "name":"mlflow-ui-dbg",
@@ -366,7 +366,7 @@
      ]
     },
     "script":"install_maps.bat",
-    "version":"1.8.0"
+    "version":"1.9.1"
    },
    {
     "files":[
@@ -375,7 +375,7 @@
      "lib/python/site-packages/mlflow-*"
     ],
     "name":"mlflow",
-    "version":"1.8.0"
+    "version":"1.9.1"
    },
    {
     "name":"mlflow-ui-dbg",
@@ -386,7 +386,7 @@
      ]
     },
     "script":"install_maps.sh",
-    "version":"1.8.0"
+    "version":"1.9.1"
    },
    {
     "files":[
@@ -395,7 +395,7 @@
      "lib/python/site-packages/mlflow-*"
     ],
     "name":"mlflow",
-    "version":"1.8.0"
+    "version":"1.9.1"
    },
    {
     "name":"mlflow-ui-dbg",
@@ -406,55 +406,52 @@
      ]
     },
     "script":"install_maps.sh",
-    "version":"1.8.0"
+    "version":"1.9.1"
    }
   ],
   "package":{
    "name":"mlflow",
-   "version":"1.8.0"
+   "version":"1.9.1"
   },
   "requirements":{
    "host":[
-    "python",
-    "setuptools",
     "pip",
     "python",
-    "setuptools",
     "pip",
     "python",
-    "setuptools",
-    "pip"
+    "pip",
+    "python"
    ],
    "run":[
-    "python",
     "alembic",
+    "azure-storage-blob >=12.0",
     "click >=7.0",
     "cloudpickle",
     "databricks-cli >=0.8.7",
-    "docker-py >=4",
+    "docker-py >=4.0.0",
     "entrypoints",
     "flask",
     "gitpython >=2.1.0",
     "gorilla",
+    "numpy",
+    "pandas",
+    "prometheus_flask_exporter",
+    "protobuf >=3.6.0",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "querystring_parser",
+    "requests >=2.17.3",
+    "six >=1.10.0",
+    "sqlalchemy <=1.3.13",
+    "sqlparse",
     "waitress",
-    "numpy",
-    "pandas",
-    "prometheus_flask_exporter",
-    "protobuf >=3.6.0",
-    "python-dateutil",
-    "pyyaml",
-    "querystring_parser",
-    "requests >=2.17.3",
-    "simplejson",
-    "six >=1.10.0",
-    "sqlalchemy <=1.3.13",
-    "sqlparse",
-    "python",
     "alembic",
+    "azure-storage-blob >=12.0",
     "click >=7.0",
     "cloudpickle",
     "databricks-cli >=0.8.7",
-    "docker-py >=4",
+    "docker-py >=4.0.0",
     "entrypoints",
     "flask",
     "gitpython >=2.1.0",
@@ -464,20 +461,20 @@
     "pandas",
     "prometheus_flask_exporter",
     "protobuf >=3.6.0",
+    "python",
     "python-dateutil",
     "pyyaml",
     "querystring_parser",
     "requests >=2.17.3",
-    "simplejson",
     "six >=1.10.0",
     "sqlalchemy <=1.3.13",
     "sqlparse",
-    "python",
     "alembic",
+    "azure-storage-blob >=12.0",
     "click >=7.0",
     "cloudpickle",
     "databricks-cli >=0.8.7",
-    "docker-py >=4",
+    "docker-py >=4.0.0",
     "entrypoints",
     "flask",
     "gitpython >=2.1.0",
@@ -487,19 +484,19 @@
     "pandas",
     "prometheus_flask_exporter",
     "protobuf >=3.6.0",
+    "python",
     "python-dateutil",
     "pyyaml",
     "querystring_parser",
     "requests >=2.17.3",
-    "simplejson",
     "six >=1.10.0",
     "sqlalchemy <=1.3.13",
     "sqlparse"
    ]
   },
   "source":{
-   "sha256":"bab1b95da17ffb1856fec35fc1a0bc9d16e1811e41610a97c2c955884eb6ac53",
-   "url":"https://pypi.io/packages/source/m/mlflow/mlflow-1.8.0.tar.gz"
+   "sha256":"4f71086f2a07916369905548649db2f4573a73c569bde9f6c61a46749c93a54a",
+   "url":"https://pypi.io/packages/source/m/mlflow/mlflow-1.9.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -573,11 +570,12 @@
   "mlflow-ui-dbg"
  ],
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"mlflow\" %}\n{% set version = \"1.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bab1b95da17ffb1856fec35fc1a0bc9d16e1811e41610a97c2c955884eb6ac53\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  # Not possible anymore because of the waitress/gunicorn split\n  # noarch: python\n  # entry_points:\n  #   - mlflow=mlflow.cli:cli\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - alembic\n    - click >=7.0\n    - cloudpickle\n    - databricks-cli >=0.8.7\n    - docker-py >=4\n    - entrypoints\n    - flask\n    - gitpython >=2.1.0\n    - gorilla\n    - gunicorn  # [not win]\n    - waitress  # [win]\n    - numpy\n    - pandas\n    - prometheus_flask_exporter\n    - protobuf >=3.6.0\n    - python-dateutil\n    - pyyaml\n    - querystring_parser\n    - requests >=2.17.3\n    - simplejson\n    - six >=1.10.0\n    - sqlalchemy <=1.3.13\n    - sqlparse\n\ntest:\n  requires:\n    - pip\n  imports:\n    - mlflow\n    - mlflow.azureml\n    - mlflow.entities\n    - mlflow.models\n    - mlflow.projects\n    - mlflow.protos\n    - mlflow.pyfunc\n    - mlflow.pytorch\n    - mlflow.rfunc\n    - mlflow.sagemaker\n    - mlflow.server\n    - mlflow.server.prometheus_exporter\n    - mlflow.store\n    - mlflow.tracking\n    - mlflow.utils\n  commands:\n    - mlflow --help  # [not win]\n    - pip check  # [not win]\n\noutputs:\n  - name: mlflow\n    version: {{ version }}\n    files:\n      - bin/mlflow*    # [unix]\n      - lib/python{{ PY_VER }}/site-packages/mlflow    # [unix]\n      - lib/python{{ PY_VER }}/site-packages/mlflow-*    # [unix]\n      - Scripts\\mlflow*     # [win]\n      - Lib\\site-packages\\mlflow      # [win]\n      - Lib\\site-packages\\mlflow-*      # [win]\n  - name: mlflow-ui-dbg\n    version: {{ version }}\n    requirements:\n      run:\n        - python\n        - {{ pin_subpackage('mlflow', exact=True) }}\n    script: install_maps.bat  # [win]\n    script: install_maps.sh  # [unix]\n\n\nabout:\n  home: https://mlflow.org/\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: MLflow is an open source platform for the machine learning lifecycle.\n  doc_url: https://mlflow.org\n  dev_url: https://github.com/mlflow/mlflow\n\nextra:\n  recipe-maintainers:\n    - aarondav\n    - ahirreddy\n    - andrewmchen\n    - aveshcsingh\n    - dbczumar\n    - jaroslawk\n    - mateiz\n    - mparkhe\n    - pogil\n    - smurching\n    - sueann\n    - tomasatdatabricks\n    - xhochy\n    - zangr\n",
+ "raw_meta_yaml":"{% set name = \"mlflow\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4f71086f2a07916369905548649db2f4573a73c569bde9f6c61a46749c93a54a\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - alembic\n    - azure-storage-blob >=12.0\n    - click >=7.0\n    - cloudpickle\n    - databricks-cli >=0.8.7\n    - docker-py >=4.0.0\n    - entrypoints\n    - flask\n    - gitpython >=2.1.0\n    - gorilla\n    - gunicorn  # [not win]\n    - numpy\n    - pandas\n    - prometheus_flask_exporter\n    - protobuf >=3.6.0\n    - python\n    - python-dateutil\n    - pyyaml\n    - querystring_parser\n    - requests >=2.17.3\n    - six >=1.10.0\n    - sqlalchemy <=1.3.13\n    - sqlparse\n    - waitress  # [win]\n\ntest:\n  imports:\n    - mlflow\n    - mlflow.azureml\n    - mlflow.entities\n    - mlflow.models\n    - mlflow.projects\n    - mlflow.protos\n    - mlflow.pyfunc\n    - mlflow.pytorch\n    - mlflow.rfunc\n    - mlflow.sagemaker\n    - mlflow.server\n    - mlflow.server.prometheus_exporter\n    - mlflow.store\n    - mlflow.tracking\n    - mlflow.utils\n  commands:\n    - mlflow --help  # [not win]\n    - pip check  # [not win]\n  requires:\n    - pip\n\noutputs:\n  - name: mlflow\n    version: {{ version }}\n    files:\n      - bin/mlflow*    # [unix]\n      - lib/python{{ PY_VER }}/site-packages/mlflow    # [unix]\n      - lib/python{{ PY_VER }}/site-packages/mlflow-*    # [unix]\n      - Scripts\\mlflow*     # [win]\n      - Lib\\site-packages\\mlflow      # [win]\n      - Lib\\site-packages\\mlflow-*      # [win]\n  - name: mlflow-ui-dbg\n    version: {{ version }}\n    requirements:\n      run:\n        - python\n        - {{ pin_subpackage('mlflow', exact=True) }}\n    script: install_maps.bat  # [win]\n    script: install_maps.sh  # [unix]\n\n\nabout:\n  home: https://mlflow.org/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: MLflow is an open source platform for the machine learning lifecycle.\n  doc_url: https://mlflow.org\n  dev_url: https://github.com/mlflow/mlflow\n\nextra:\n  recipe-maintainers:\n    - aarondav\n    - ahirreddy\n    - andrewmchen\n    - aveshcsingh\n    - dbczumar\n    - jaroslawk\n    - mateiz\n    - mparkhe\n    - pogil\n    - smurching\n    - sueann\n    - tomasatdatabricks\n    - xhochy\n    - zangr\n",
  "req":{
   "__set__":true,
   "elements":[
    "alembic",
+   "azure-storage-blob",
    "click",
    "cloudpickle",
    "databricks-cli",
@@ -598,8 +596,6 @@
    "pyyaml",
    "querystring_parser",
    "requests",
-   "setuptools",
-   "simplejson",
    "six",
    "sqlalchemy",
    "sqlparse",
@@ -615,14 +611,14 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "alembic",
+    "azure-storage-blob",
     "click",
     "cloudpickle",
     "databricks-cli",
@@ -642,7 +638,6 @@
     "pyyaml",
     "querystring_parser",
     "requests",
-    "simplejson",
     "six",
     "sqlalchemy",
     "sqlparse",
@@ -667,18 +662,18 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python",
-    "setuptools"
+    "python"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "alembic",
+    "azure-storage-blob >=12.0",
     "click >=7.0",
     "cloudpickle",
     "databricks-cli >=0.8.7",
-    "docker-py >=4",
+    "docker-py >=4.0.0",
     "entrypoints",
     "flask",
     "gitpython >=2.1.0",
@@ -694,7 +689,6 @@
     "pyyaml",
     "querystring_parser",
     "requests >=2.17.3",
-    "simplejson",
     "six >=1.10.0",
     "sqlalchemy <=1.3.13",
     "sqlparse",
@@ -709,5 +703,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/mlflow/mlflow-1.2.0.tar.gz",
- "version":"1.8.0"
+ "version":"1.9.1"
 }

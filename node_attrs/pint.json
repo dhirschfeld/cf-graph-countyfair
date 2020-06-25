@@ -169,15 +169,15 @@
    "dev_url":"https://github.com/hgrecco/pint",
    "doc_url":"http://pint.readthedocs.org/",
    "home":"https://github.com/hgrecco/pint",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_family":"BSD",
    "license_file":"LICENSE",
    "summary":"Operate and manipulate physical quantities in Python"
   },
   "build":{
    "noarch":"python",
-   "number":"1",
-   "script":"SETUPTOOLS_SCM_PRETEND_VERSION=0.11  -m pip install . -v"
+   "number":"0",
+   "script":"SETUPTOOLS_SCM_PRETEND_VERSION=0.13  -m pip install . -v"
   },
   "extra":{
    "recipe-maintainers":[
@@ -188,7 +188,7 @@
   },
   "package":{
    "name":"pint",
-   "version":"0.11"
+   "version":"0.13"
   },
   "requirements":{
    "host":[
@@ -211,16 +211,22 @@
    "run":[
     "python >=3.6",
     "setuptools",
+    "packaging",
+    "importlib_metadata",
     "python >=3.6",
     "setuptools",
+    "packaging",
+    "importlib_metadata",
     "python >=3.6",
-    "setuptools"
+    "setuptools",
+    "packaging",
+    "importlib_metadata"
    ]
   },
   "source":{
-   "fn":"Pint-0.11.tar.gz",
-   "sha256":"308f1070500e102f83b6adfca6db53debfce2ffc5d3cbe3f6c367da359b5cf4d",
-   "url":"https://pypi.io/packages/source/P/Pint/Pint-0.11.tar.gz"
+   "fn":"Pint-0.13.tar.gz",
+   "sha256":"13fa35ffa3ddf53161b4304917085687950e0de461bcdd4d65cdee11a43d7fb2",
+   "url":"https://pypi.io/packages/source/P/Pint/Pint-0.13.tar.gz"
   },
   "test":{
    "commands":[
@@ -243,10 +249,12 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.16.21.09.39",
- "raw_meta_yaml":"{% set name = \"Pint\" %}\n{% set version = \"0.11\" %}\n{% set sha256 = \"308f1070500e102f83b6adfca6db53debfce2ffc5d3cbe3f6c367da359b5cf4d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{name}}-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/{{name[0]}}/{{name}}/{{name}}-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n    noarch: python\n    script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -v\n    number: 1\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools >=45\n    - setuptools_scm >=3.4\n    - toml\n\n  run:\n    - python >=3.6\n    - setuptools\n\ntest:\n  imports:\n    - pint\n  commands:\n    - python -c \"import pint; ver = pint.__version__; assert ver != '0.0.0'\"\n\nabout:\n  home: https://github.com/hgrecco/pint\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Operate and manipulate physical quantities in Python'\n  description: |\n    Pint is a Python package to define, operate and manipulate physical\n    quantities: the product of a numerical value and a unit of measurement.\n    It allows arithmetic operations between them and conversions from and to\n    different units. It is distributed with a comprehensive list of physical\n    units, prefixes and constants. Due to its modular design, you can extend\n    (or even rewrite!) the complete list without changing the source code.\n    It supports a lot of numpy mathematical operations without monkey\n    patching or wrapping numpy.\n  doc_url: http://pint.readthedocs.org/\n  dev_url: https://github.com/hgrecco/pint\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "raw_meta_yaml":"{% set name = \"Pint\" %}\n{% set version = \"0.13\" %}\n{% set sha256 = \"13fa35ffa3ddf53161b4304917085687950e0de461bcdd4d65cdee11a43d7fb2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -v\n  number: 0\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools >=45\n    - setuptools_scm >=3.4\n    - toml\n\n  run:\n    - python >=3.6\n    - setuptools\n    - packaging\n    - importlib_metadata\n\ntest:\n  imports:\n    - pint\n  commands:\n    - python -c \"import pint; ver = pint.__version__; assert ver != '0.0.0'\"\n\nabout:\n  home: https://github.com/hgrecco/pint\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Operate and manipulate physical quantities in Python\n  description: |\n    Pint is a Python package to define, operate and manipulate physical\n    quantities: the product of a numerical value and a unit of measurement.\n    It allows arithmetic operations between them and conversions from and to\n    different units. It is distributed with a comprehensive list of physical\n    units, prefixes and constants. Due to its modular design, you can extend\n    (or even rewrite!) the complete list without changing the source code.\n    It supports a lot of numpy mathematical operations without monkey\n    patching or wrapping numpy.\n  doc_url: http://pint.readthedocs.org/\n  dev_url: https://github.com/hgrecco/pint\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "req":{
   "__set__":true,
   "elements":[
+   "importlib_metadata",
+   "packaging",
    "pip",
    "python",
    "setuptools",
@@ -272,6 +280,8 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
+    "packaging",
     "python",
     "setuptools"
    ]
@@ -301,6 +311,8 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
+    "packaging",
     "python >=3.6",
     "setuptools"
    ]
@@ -311,5 +323,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/P/Pint/Pint-0.9.tar.gz",
- "version":"0.11"
+ "version":"0.13"
 }
