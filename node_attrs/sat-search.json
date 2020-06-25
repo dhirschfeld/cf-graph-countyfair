@@ -37,7 +37,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"sat-search",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -56,7 +60,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -67,7 +71,7 @@
   },
   "package":{
    "name":"sat-search",
-   "version":"0.2.2"
+   "version":"0.2.3"
   },
   "requirements":{
    "host":[
@@ -99,27 +103,27 @@
     "req.patch",
     "req.patch"
    ],
-   "sha256":"63d8bdbf2017698a8f3aefa0541117b528cedb8284077abccdcb018cf5902db2",
-   "url":"https://pypi.io/packages/source/s/sat-search/sat-search-0.2.2.tar.gz"
+   "sha256":"6e60e18c0a887572d57b94e711cba36f34f934dc521b9c5ac01f6dcd2db9932b",
+   "url":"https://pypi.io/packages/source/s/sat-search/sat-search-0.2.3.tar.gz"
   },
   "test":{
    "commands":[
+    "pip check",
     "sat-search --help",
+    "pip check",
     "sat-search --help",
+    "pip check",
     "sat-search --help"
    ],
    "imports":[
     "satsearch",
-    "test",
     "satsearch",
-    "test",
-    "satsearch",
-    "test"
+    "satsearch"
    ],
    "requires":[
-    "pytest",
-    "pytest",
-    "pytest"
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -130,7 +134,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"0.2.2\" %}\n\npackage:\n  name: sat-search\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sat-search/sat-search-{{ version }}.tar.gz\n  sha256: 63d8bdbf2017698a8f3aefa0541117b528cedb8284077abccdcb018cf5902db2\n  patches:\n    - req.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - sat-search=satsearch.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n    - sat-stac >=0.3.0,<0.4\n    - pytest-runner\n  run:\n    - python\n    - sat-stac >=0.3.0,<0.4\n\ntest:\n  imports:\n    - satsearch\n    - test\n  commands:\n    - sat-search --help\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/sat-utils/sat-search\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"A python client for sat-api\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"0.2.3\" %}\n\npackage:\n  name: sat-search\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sat-search/sat-search-{{ version }}.tar.gz\n  sha256: 6e60e18c0a887572d57b94e711cba36f34f934dc521b9c5ac01f6dcd2db9932b\n  patches:\n    - req.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - sat-search=satsearch.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n    - sat-stac >=0.3.0,<0.4\n    - pytest-runner\n  run:\n    - python\n    - sat-stac >=0.3.0,<0.4\n\ntest:\n  imports:\n    - satsearch\n  commands:\n    - pip check\n    - sat-search --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/sat-utils/sat-search\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A python client for sat-api\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -164,7 +168,7 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "pip"
    ]
   }
  },
@@ -194,10 +198,10 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "pip"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/s/sat-search/sat-search-0.2.1.tar.gz",
- "version":"0.2.2"
+ "version":"0.2.3"
 }
