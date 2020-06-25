@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440300693.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -55,7 +74,12 @@
   }
  },
  "name":"rustpython",
- "new_version":"0.1.0",
+ "new_version":"0.1.2",
+ "new_version_attempts":{
+  "0.1.2":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"rustpython\" %}\n{% set version = \"0.1.0\" %}\n{% set build = 1 %}\n{% set sha256 = \"35bad7847544a9ce1b78330790fa62c2388c7779b7f64b3156c8fca59066f36d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/RustPython/RustPython/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n  missing_dso_whitelist:  # [osx]\n    - /usr/lib/libresolv.9.dylib  # [osx]\n    - /usr/lib/libz.1.dylib  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - rust\n\ntest:\n  commands:\n    - rustpython -c \"print('hello')\"\n\nabout:\n  home: https://github.com/RustPython/RustPython\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python-3 (CPython >= 3.5.0) Interpreter written in Rust\n  dev_url: https://github.com/RustPython/RustPython\n\nextra:\n  recipe-maintainers:\n    - davidbrochart\n",
  "req":{
   "__set__":true,
@@ -85,6 +109,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
