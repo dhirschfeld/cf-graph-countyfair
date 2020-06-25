@@ -160,11 +160,7 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35"
- },
+ "conda-forge.yml":{},
  "feedstock_name":"lalpulsar",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -186,7 +182,7 @@
     "fftw",
     "fftw"
    ],
-   "number":"2",
+   "number":"0",
    "skip":true
   },
   "extra":{
@@ -235,20 +231,20 @@
      "host":[
       "astropy",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0"
+      "python-lal >=7.0.0"
      ],
      "run":[
       "astropy",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0",
+      "python-lal >=7.0.0",
       "six"
      ]
     },
@@ -306,20 +302,20 @@
      "host":[
       "astropy",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0"
+      "python-lal >=7.0.0"
      ],
      "run":[
       "astropy",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0",
+      "python-lal >=7.0.0",
       "six"
      ]
     },
@@ -377,22 +373,22 @@
      "host":[
       "astropy",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0"
+      "python-lal >=7.0.0"
      ],
      "run":[
       "astropy",
       "cfitsio",
       "fftw",
       "gsl",
-      "lal >=6.21.0",
+      "lal >=7.0.0",
       "lalpulsar",
       "numpy",
       "python",
-      "python-lal >=6.21.0",
+      "python-lal >=7.0.0",
       "six"
      ]
     },
@@ -418,7 +414,7 @@
   ],
   "package":{
    "name":"lalpulsar",
-   "version":"1.18.2"
+   "version":"2.0.0"
   },
   "requirements":{
    "build":[
@@ -441,45 +437,37 @@
     "cfitsio",
     "fftw * nompi*",
     "gsl",
-    "lal >=6.21.0 fftw*",
+    "lal >=7.0.0 fftw*",
     "cfitsio",
     "fftw * nompi*",
     "gsl",
-    "lal >=6.21.0 fftw*",
+    "lal >=7.0.0 fftw*",
     "llvm-openmp",
     "cfitsio",
     "fftw * nompi*",
     "gsl",
-    "lal >=6.21.0 fftw*",
+    "lal >=7.0.0 fftw*",
     "libgomp"
    ],
    "run":[
     "cfitsio",
     "fftw",
     "gsl",
-    "lal >=6.21.0",
+    "lal >=7.0.0",
     "cfitsio",
     "fftw",
     "gsl",
-    "lal >=6.21.0",
+    "lal >=7.0.0",
     "llvm-openmp",
     "cfitsio",
     "fftw",
     "gsl",
-    "lal >=6.21.0"
+    "lal >=7.0.0"
    ]
   },
   "source":{
-   "patches":[
-    "linerobuststatstest.patch",
-    "pytest-tests.patch",
-    "linerobuststatstest.patch",
-    "pytest-tests.patch",
-    "linerobuststatstest.patch",
-    "pytest-tests.patch"
-   ],
-   "sha256":"d2730ec165065ad8414fc65945789447eaa05aa7b2092b3183a105130d3a2480",
-   "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalpulsar-1.18.2.tar.xz"
+   "sha256":"fb9e1217eca7302baa5631c8510223bb6fcd7b0f755d5bed2a965130a4ff1a46",
+   "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalpulsar-2.0.0.tar.xz"
   },
   "test":{
    "commands":[
@@ -507,7 +495,7 @@
   "python-lalpulsar"
  ],
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"lalpulsar\" %}\n{% set version = \"1.18.2\" %}\n{% set sha256 = \"d2730ec165065ad8414fc65945789447eaa05aa7b2092b3183a105130d3a2480\" %}\n\n{% set lal_version = \"6.21.0\" %}\n{% set swig_version = \"3.0.9\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"http://software.ligo.org/lscsoft/source/lalsuite/{{ name }}-{{ version }}.tar.xz\"\n  sha256: \"{{ sha256 }}\"\n  patches:\n    - linerobuststatstest.patch\n    - pytest-tests.patch\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  ignore_run_exports:\n    # run_exports parsing for fftw is broken, so we ignore it\n    # manually, for now\n    - fftw\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - make\n    - pkg-config >=0.18.0\n    - swig >={{ swig_version }}\n  host:\n    - cfitsio\n    - fftw * nompi*\n    - gsl\n    - lal >={{ lal_version }} fftw*\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n  run:\n    - cfitsio\n    - fftw\n    - gsl\n    - lal >={{ lal_version }}\n    - llvm-openmp  # [osx]\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - test ${LALPULSAR_DATADIR} == \"${PREFIX}/share/lalpulsar\"  # [unix]\n    - lalpulsar_version --verbose\n    - test \"$(pkg-config --modversion ${PKG_NAME})\" == \"${PKG_VERSION}\"  # [unix]\n\noutputs:\n  - name: lalpulsar\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"lalpulsar\", max_pin=\"x.x\") }}\n\n  - name: python-lalpulsar\n    script: install-python.sh\n    build:\n      ignore_run_exports:\n        - python\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - make\n        - pkg-config >=0.18.0\n        - swig >={{ swig_version }}\n      host:\n        - astropy\n        - gsl\n        - lal >={{ lal_version }}\n        - {{ pin_subpackage('lalpulsar', exact=True) }}\n        - numpy\n        - python\n        - python-lal >={{ lal_version }}\n      run:\n        - astropy\n        - cfitsio  # [linux]\n        - fftw  # [linux]\n        - gsl\n        - lal >={{ lal_version }}\n        - {{ pin_subpackage('lalpulsar', exact=True) }}\n        - {{ pin_compatible('numpy') }}\n        - python\n        - python-lal >={{ lal_version }}\n        - six\n    test:\n      imports:\n        - lalpulsar\n        - lalpulsar.NstarTools\n        - lalpulsar.PulsarParametersWrapper\n        - lalpulsar.simulateCW\n      requires:\n        - mock  # [py<33]\n        - pathlib  # [py<34]\n        - pytest >=4.0.0a0\n      source_files:\n        - test/python\n      commands:\n        - pushd test/python; LAL_TEST_PKGDATADIR=\"${LALPULSAR_DATADIR}\" python -m pytest -v; popd\n    about:\n      home: \"https://wiki.ligo.org/Computing/LALSuite\"\n      doc_url: \"https://lscsoft.docs.ligo.org/lalsuite/lalpulsar/\"\n      dev_url: \"https://git.ligo.org/lscsoft/lalsuite/\"\n      license: \"GPL-2.0-or-later\"\n      license_family: \"GPL\"\n      license_file: \"COPYING\"\n      summary: \"LSC Algorithm Pulsar Library\"\n      description: |\n        The LSC Algorithm Pulsar Library for gravitational wave data analysis.\n        This package contains the python bindings.\n\nabout:\n  home: \"https://wiki.ligo.org/Computing/LALSuite\"\n  doc_url: \"https://lscsoft.docs.ligo.org/lalsuite/lalpulsar/\"\n  dev_url: \"https://git.ligo.org/lscsoft/lalsuite/\"\n  license: \"GPL-2.0-or-later\"\n  license_family: \"GPL\"\n  license_file: \"COPYING\"\n  summary: \"LSC Algorithm Pulsar Library\"\n  description: |\n    The LSC Algorithm Pulsar Library for gravitational wave data analysis.\n    This package contains the shared-object libraries needed to run\n    applications that use the LAL Pulsar library.  If you want to install\n    the Python bindings, please install the associated python-lalpulsar\n    package.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - skymoo\n",
+ "raw_meta_yaml":"{% set name = \"lalpulsar\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"fb9e1217eca7302baa5631c8510223bb6fcd7b0f755d5bed2a965130a4ff1a46\" %}\n\n{% set lal_version = \"7.0.0\" %}\n{% set swig_version = \"3.0.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://software.ligo.org/lscsoft/source/lalsuite/{{ name }}-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  ignore_run_exports:\n    # run_exports parsing for fftw is broken, so we ignore it\n    # manually, for now\n    - fftw\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n    - make\n    - pkg-config >=0.18.0\n    - swig >={{ swig_version }}\n  host:\n    - cfitsio\n    - fftw * nompi*\n    - gsl\n    - lal >={{ lal_version }} fftw*\n    - libgomp  # [linux]\n    - llvm-openmp  # [osx]\n  run:\n    - cfitsio\n    - fftw\n    - gsl\n    - lal >={{ lal_version }}\n    - llvm-openmp  # [osx]\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - test ${LALPULSAR_DATADIR} == \"${PREFIX}/share/lalpulsar\"  # [unix]\n    - lalpulsar_version --verbose\n    - test \"$(pkg-config --modversion ${PKG_NAME})\" == \"${PKG_VERSION}\"  # [unix]\n\noutputs:\n  - name: lalpulsar\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"lalpulsar\", max_pin=\"x.x\") }}\n\n  - name: python-lalpulsar\n    script: install-python.sh\n    build:\n      ignore_run_exports:\n        - python\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - make\n        - pkg-config >=0.18.0\n        - swig >={{ swig_version }}\n      host:\n        - astropy\n        - gsl\n        - lal >={{ lal_version }}\n        - {{ pin_subpackage('lalpulsar', exact=True) }}\n        - numpy\n        - python\n        - python-lal >={{ lal_version }}\n      run:\n        - astropy\n        - cfitsio  # [linux]\n        - fftw  # [linux]\n        - gsl\n        - lal >={{ lal_version }}\n        - {{ pin_subpackage('lalpulsar', exact=True) }}\n        - {{ pin_compatible('numpy') }}\n        - python\n        - python-lal >={{ lal_version }}\n        - six\n    test:\n      imports:\n        - lalpulsar\n        - lalpulsar.NstarTools\n        - lalpulsar.PulsarParametersWrapper\n        - lalpulsar.simulateCW\n      requires:\n        - pytest >=4.0.0a0\n      source_files:\n        - test/python\n      commands:\n        - pushd test/python; LAL_TEST_PKGDATADIR=\"${LALPULSAR_DATADIR}\" python -m pytest -v; popd\n    about:\n      home: https://wiki.ligo.org/Computing/LALSuite\n      doc_url: https://lscsoft.docs.ligo.org/lalsuite/lalpulsar/\n      dev_url: https://git.ligo.org/lscsoft/lalsuite/\n      license: GPL-2.0-or-later\n      license_family: GPL\n      license_file: COPYING\n      summary: LSC Algorithm Pulsar Library\n      description: |\n        The LSC Algorithm Pulsar Library for gravitational wave data analysis.\n        This package contains the python bindings.\n\nabout:\n  home: https://wiki.ligo.org/Computing/LALSuite\n  doc_url: https://lscsoft.docs.ligo.org/lalsuite/lalpulsar/\n  dev_url: https://git.ligo.org/lscsoft/lalsuite/\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: LSC Algorithm Pulsar Library\n  description: |\n    The LSC Algorithm Pulsar Library for gravitational wave data analysis.\n    This package contains the shared-object libraries needed to run\n    applications that use the LAL Pulsar library.  If you want to install\n    the Python bindings, please install the associated python-lalpulsar\n    package.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - skymoo\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -602,14 +590,14 @@
     "cfitsio",
     "fftw * nompi*",
     "gsl",
-    "lal >=6.21.0",
-    "lal >=6.21.0 fftw*",
+    "lal >=7.0.0",
+    "lal >=7.0.0 fftw*",
     "lalpulsar",
     "libgomp",
     "llvm-openmp",
     "numpy",
     "python",
-    "python-lal >=6.21.0"
+    "python-lal >=7.0.0"
    ]
   },
   "run":{
@@ -619,12 +607,12 @@
     "cfitsio",
     "fftw",
     "gsl",
-    "lal >=6.21.0",
+    "lal >=7.0.0",
     "lalpulsar",
     "llvm-openmp",
     "numpy",
     "python",
-    "python-lal >=6.21.0",
+    "python-lal >=7.0.0",
     "six"
    ]
   },
@@ -637,5 +625,5 @@
   }
  },
  "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalpulsar-1.18.1.tar.xz",
- "version":"1.18.2"
+ "version":"2.0.0"
 }
