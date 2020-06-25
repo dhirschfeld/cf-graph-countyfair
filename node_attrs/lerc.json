@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"lerc",
  "hash_type":"sha256",
@@ -65,6 +65,13 @@
   }
  },
  "name":"lerc",
+ "new_version":"100.9.0.2824",
+ "new_version_attempts":{
+  "100.9.0.2824":1
+ },
+ "new_version_errors":{
+  "100.9.0.2824":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '100.9.0.2824' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/Esri/lerc/archive/v{{ version }}.tar.gz'\n"
+ },
  "raw_meta_yaml":"{% set name = \"lerc\" %}\n{% set version = \"2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Esri/lerc/archive/v{{ version }}.tar.gz\n  sha256: 7c48de40cd5f09319de4b39c417ff4eec4ad4b6aa5d6144f6ffa9b10d18ec94e\n  # CMakeLists.txt taken from master, and adapted for better compatibility\n  # PR made: https://github.com/Esri/lerc/pull/128\n\nbuild:\n  number: 0\n  run_exports:\n    # No real information, keep conda-forge defaults\n    - {{ pin_subpackage('lerc', max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n    - ninja  # [win]\n  #host:\n    # TODO: add support for\n    # gdal\n    # geotiff\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\Lerc_types.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\Lerc.dll exit 1      # [win]\n    - if not exist %LIBRARY_LIB%\\Lerc.lib exit 1      # [win]\n    - test -f ${PREFIX}/lib/libLerc${SHLIB_EXT}       # [unix]\n    - test -f ${PREFIX}/include/Lerc_types.h          # [unix]\n\nabout:\n  home: https://github.com/Esri/lerc\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: LERC - Limited Error Raster Compression\n\n  description: |\n    LERC is an open-source image or raster format which\n    supports rapid encoding and decoding for any pixel type\n    (not just RGB or Byte). Users set the maximum compression\n    error per pixel while encoding, so the precision of the\n    original input image is preserved (within user defined\n    error bounds).\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
