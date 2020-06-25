@@ -115,6 +115,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439971424.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.9.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -195,12 +212,13 @@
   }
  },
  "name":"py",
- "new_version":"1.8.2",
+ "new_version":"1.9.0",
  "new_version_attempts":{
-  "1.8.2":1
+  "1.8.2":1,
+  "1.9.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.15.11.48.40",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"py\" %}\n{% set version = \"1.8.2\" %}\n{% set hash = \"f3b3a4c36512a4c4f024041ab51866f11761cc169670204b235f6b20523d4e6b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/py/py-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools_scm\n  run:\n    - python\n\ntest:\n  imports:\n    - py\n    - py.code\n    - py.io\n    - py.log\n    - py.path\n    - py.process\n\nabout:\n  home: https://github.com/pytest-dev/py\n  license: MIT\n  license_file: LICENSE\n  summary: library with cross-python path, ini-parsing, io, code, log facilities\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n    - jakirkham\n",
  "req":{
   "__set__":true,

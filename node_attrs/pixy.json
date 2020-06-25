@@ -256,6 +256,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439971148.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.95.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -339,7 +356,7 @@
   }
  },
  "name":"pixy",
- "new_version":"0.94.11",
+ "new_version":"0.95.0",
  "new_version_attempts":{
   "0.93.41":1,
   "0.93.42":1,
@@ -349,10 +366,11 @@
   "0.94.03":1,
   "0.94.04":1,
   "0.94.05":1,
-  "0.94.11":1
+  "0.94.11":1,
+  "0.95.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.04.18.00.00.57",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"pixy\" %}\n{% set version = \"0.94.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ksamuk/pixy/archive/{{ version }}.tar.gz\n  sha256: 53a4b528c7874920c239d3cd0635a7c4d445948100d2be44fa4a120ba824ea3f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<36]\n  entry_points:\n    - pixy = pixy.__main__:main\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - pip\n  run:\n    - scikit-allel\n    - pandas\n    - numpy\n    - zarr\n    - python\n\ntest:\n  commands:\n    - pixy --help\n\nabout:\n  home: https://github.com/ksamuk/pixy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Unbiased estimation of nucleotide diversity within and between populations\n  description: |\n    pixy is a command-line tool for painlessly and correctly estimating \n    average nucleotide diversity within (\u03c0) and between (dxy) populations from a VCF. \n    In particular, pixy facilitates the use of VCFs containing invariant (AKA monomorphic) \n    sites AND tracks missing data, which are both essential for the correct computation of \u03c0 and dxy.\n  dev_url: https://github.com/ksamuk/pixy\n  doc_url: https://pixy.readthedocs.io/en/latest/\n  doc_source_url: https://github.com/ksamuk/pixy/blob/master/README.md\n\nextra:\n  recipe-maintainers:\n    - ksamuk\n",
  "req":{
   "__set__":true,
@@ -394,7 +412,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
