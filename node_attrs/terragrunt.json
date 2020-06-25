@@ -917,6 +917,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440066450.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.23.29"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -989,7 +1006,7 @@
   }
  },
  "name":"terragrunt",
- "new_version":"0.23.28",
+ "new_version":"0.23.29",
  "new_version_attempts":{
   "0.23.10":1,
   "0.23.11":1,
@@ -1010,11 +1027,12 @@
   "0.23.26":1,
   "0.23.27":1,
   "0.23.28":1,
+  "0.23.29":1,
   "0.23.6":1,
   "0.23.7":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.23.06.07.46",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set goname = \"github.com/gruntwork-io/terragrunt\" %}\n{% set version = \"0.23.28\" %}\n\n{% set name = goname.split('/')[-1] %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: 531638e9505b5188c83651176607af82d259dc284b680e8ca662bc6665fe56d7\n\nbuild:\n  number: 0\n  script:\n    - go install -v -ldflags \"-X main.VERSION={{ version }}\" .\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    - {{ name|lower }} --version\n    - {{ name|lower }} --help\n\nabout:\n  home: https://www.gruntwork.io/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Terragrunt is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules.\n  dev_url: https://github.com/gruntwork-io/terragrunt.git\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
