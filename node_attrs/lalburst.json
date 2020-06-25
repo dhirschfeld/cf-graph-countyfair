@@ -122,6 +122,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/439660272.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -498,12 +515,16 @@
   }
  },
  "name":"lalburst",
- "new_version":false,
+ "new_version":"1.5.5",
+ "new_version_attempts":{
+  "1.5.5":1
+ },
+ "new_version_errors":{},
  "outputs_names":[
   "lalburst",
   "python-lalburst"
  ],
- "pinning_version":"2020.01.28",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"lalburst\" %}\n{% set version = \"1.5.4\" %}\n{% set sha256 = \"dd2d3e7d8a35014f556d3cb1f15467f1598b20d46699dc7ba214936796859a59\" %}\n\n# dependencies\n{% set lal_version = \"6.21.0\" %}\n{% set lalmetaio_version = \"1.6.0\" %}\n{% set lalsimulation_version = \"1.10.0\" %}\n{% set swig_version = \"3.0.9\" %}\n\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"http://software.ligo.org/lscsoft/source/lalsuite/{{ name }}-{{ version }}.tar.xz\"\n  sha256: \"{{ sha256 }}\"\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - pkg-config >=0.18.0\n    - swig >={{ swig_version }}\n  host:\n    - gsl\n    - lal >={{ lal_version }}\n    - lalmetaio >={{ lalmetaio_version }}\n    - lalsimulation >={{ lalsimulation_version }}\n    - metaio\n  run:\n    - gsl\n    - lal >={{ lal_version }}\n    - lalmetaio >={{ lalmetaio_version }}\n    - lalsimulation >={{ lalsimulation_version }}\n    - metaio\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - lalburst_version --verbose\n    - test \"$(pkg-config --modversion ${PKG_NAME})\" == \"${PKG_VERSION}\"  # [unix]\n\noutputs:\n  - name: lalburst\n    build:\n      run_exports:\n        - {{ pin_subpackage(\"lalburst\", max_pin=\"x.x\") }}\n\n  - name: python-lalburst\n    script: install-python.sh\n    build:\n      error_overdepending: true\n      error_overlinking: true\n      ignore_run_exports:\n        - python\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - make\n        - pkg-config >=0.18.0\n        - swig >={{ swig_version }}\n      host:\n        - {{ pin_subpackage('lalburst', exact=True) }}\n        - numpy\n        - python\n      run:\n        - gsl\n        - lal >={{ lal_version }}\n        - lalmetaio  # [linux]\n        - lalsimulation  # [linux]\n        - {{ pin_subpackage('lalburst', exact=True) }}\n        - ligo-segments\n        - lscsoft-glue\n        - matplotlib-base\n        - metaio  # [linux]\n        - {{ pin_compatible('numpy') }}\n        - python\n        - python-lal >={{ lal_version }}\n        - python-lalmetaio >={{ lalmetaio_version }}\n        - python-lalsimulation >={{ lalsimulation_version }}\n        - python-ligo-lw\n        - scipy\n    test:\n      imports:\n        - lalburst\n        - lalburst.SimBurstUtils\n        - lalburst.SnglBurstUtils\n        - lalburst.binjfind\n        - lalburst.bucluster\n        - lalburst.burca\n        - lalburst.burca_tailor\n        - lalburst.cafe\n        - lalburst.calc_likelihood\n        - lalburst.cs_gamma\n        - lalburst.date\n        - lalburst.offsetvector\n        - lalburst.packing\n        - lalburst.snglcluster\n        - lalburst.snglcoinc\n        - lalburst.stringutils\n        - lalburst.timeslides\n      requires:\n        - mock  # [py<33]\n        - pathlib  # [py<34]\n        - pytest >=4.0.0a0\n      source_files:\n        - test/python\n      commands:\n        - pushd test/python; python -m pytest -v; popd\n    about:\n      home: \"https://wiki.ligo.org/Computing/LALSuite\"\n      doc_url: \"https://lscsoft.docs.ligo.org/lalsuite/lalburst/\"\n      dev_url: \"https://git.ligo.org/lscsoft/lalsuite/\"\n      license: \"GPL-2.0-or-later\"\n      license_family: \"GPL\"\n      license_file: \"COPYING\"\n      summary: \"LSC Algorithm Burst Library\"\n      description: |\n        The LSC Algorithm Burst Library for gravitational wave data analysis.\n        This package contains the python bindings.\n\nabout:\n  home: \"https://wiki.ligo.org/Computing/LALSuite\"\n  doc_url: \"https://lscsoft.docs.ligo.org/lalsuite/lalburst/\"\n  dev_url: \"https://git.ligo.org/lscsoft/lalsuite/\"\n  license: \"GPL-2.0-or-later\"\n  license_family: \"GPL\"\n  license_file: \"COPYING\"\n  summary: \"LSC Algorithm Burst Library\"\n  description: |\n    The LSC Algorithm Burst Library for gravitational wave data analysis.\n    This package contains the shared-object libraries needed to run\n    applications that use the LAL Burst library.  If you want to install\n    the Python bindings, please install the associated python-lalburst\n    package.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - skymoo\n",
  "req":{
   "__set__":true,
@@ -582,7 +603,7 @@
    ]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
