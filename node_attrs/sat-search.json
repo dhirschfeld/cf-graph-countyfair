@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440109580.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -107,8 +124,12 @@
   }
  },
  "name":"sat-search",
- "new_version":"0.2.2",
- "pinning_version":"2019.09.24",
+ "new_version":"0.2.3",
+ "new_version_attempts":{
+  "0.2.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"0.2.2\" %}\n\npackage:\n  name: sat-search\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sat-search/sat-search-{{ version }}.tar.gz\n  sha256: 63d8bdbf2017698a8f3aefa0541117b528cedb8284077abccdcb018cf5902db2\n  patches:\n    - req.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - sat-search=satsearch.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n    - sat-stac >=0.3.0,<0.4\n    - pytest-runner\n  run:\n    - python\n    - sat-stac >=0.3.0,<0.4\n\ntest:\n  imports:\n    - satsearch\n    - test\n  commands:\n    - sat-search --help\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/sat-utils/sat-search\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"A python client for sat-api\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -147,7 +168,7 @@
    ]
   }
  },
- "smithy_version":"3.4.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
