@@ -1,6 +1,6 @@
 {
  "archived":false,
- "bad":"Upstream: Error getting upstream version",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"swmm",
  "hash_type":"sha256",
@@ -15,7 +15,7 @@
    "summary":"Stormwater Management Model (aka SWMM)."
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -64,7 +64,8 @@
   }
  },
  "name":"swmm",
- "raw_meta_yaml":"{% set name = \"swmm\" %}\n{% set version = \"5.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model/archive/v{{ version }}.tar.gz\n  sha256: abfc4f1084276b5f183e6389e2fa10243651c7869b440322ce51666e8a708d74\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [not win]\n    - openmp\n  host:\n    - openmp\n  run:\n    - openmp\n    - llvm-openmp  # [osx]\n    - _openmp_mutex  # [linux]\n\nabout:\n  home: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model\n  license_family: MIT\n  license: MIT\n  license_file: LICENSE\n  summary: Stormwater Management Model (aka SWMM).\n  description: |\n    SWMM is a dynamic hydrology-hydraulic water quality simulation model.\n    It is used for single event or long-term (continuous) simulation of\n    runoff quantity and quality from primarily urban areas. SWMM source\n    code is written in the C Programming Language and released in the\n    Public Domain.\n  dev_url: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model\n\nextra:\n  recipe-maintainers:\n    - lrntct\n",
+ "new_version":"5.2.1",
+ "raw_meta_yaml":"{% set name = \"swmm\" %}\n{% set version = \"5.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model/archive/v{{ version }}.tar.gz\n  sha256: abfc4f1084276b5f183e6389e2fa10243651c7869b440322ce51666e8a708d74\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake\n    - make  # [not win]\n    - openmp\n  host:\n    - openmp\n  run:\n    - openmp\n    - llvm-openmp  # [osx]\n    - _openmp_mutex  # [linux]\n\nabout:\n  home: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model\n  license_family: MIT\n  license: MIT\n  license_file: LICENSE\n  summary: Stormwater Management Model (aka SWMM).\n  description: |\n    SWMM is a dynamic hydrology-hydraulic water quality simulation model.\n    It is used for single event or long-term (continuous) simulation of\n    runoff quantity and quality from primarily urban areas. SWMM source\n    code is written in the C Programming Language and released in the\n    Public Domain.\n  dev_url: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model\n\nextra:\n  recipe-maintainers:\n    - lrntct\n",
  "req":{
   "__set__":true,
   "elements":[
