@@ -137,6 +137,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440681487.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -220,8 +237,12 @@
   }
  },
  "name":"flopy",
- "new_version":"3.3.0",
- "pinning_version":"2020.02.12",
+ "new_version":"3.3.1",
+ "new_version_attempts":{
+  "3.3.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"3.3.0\" %}\n\npackage:\n  name: flopy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/modflowpy/flopy/archive/{{ version }}.tar.gz\n  sha256: a354695630b8104421aa94c48ee87b744ca6f4a58697f1972b904090f1ce770f\n\nbuild:\n  number: 1\n  skip: true  # [py<35]\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - numpy\n    - matplotlib-base\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n\ntest:\n  imports:\n    - flopy\n\nabout:\n  home: https://github.com/modflowpy/flopy\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'FloPy is a Python package for developing, running, and post-processing MODFLOW-based models'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n    - jdhughes-usgs\n",
  "req":{
   "__set__":true,
@@ -259,7 +280,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

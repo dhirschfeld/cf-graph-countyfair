@@ -127,7 +127,7 @@
   },
   "package":{
    "name":"r-littler",
-   "version":"0.3.10"
+   "version":"0.3.11"
   },
   "requirements":{
    "build":[
@@ -171,14 +171,14 @@
    ]
   },
   "source":{
-   "sha256":"a53677955e115deff65b44a861ca60ca878cc8a1045b478dca98cd1ed52c6b2d",
+   "sha256":"67364c6e3edea834d6436438f92e47c7c478e89abaebf9c00740250d93be78d8",
    "url":[
-    "https://cran.r-project.org/src/contrib/littler_0.3.10.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.10.tar.gz",
-    "https://cran.r-project.org/src/contrib/littler_0.3.10.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.10.tar.gz",
-    "https://cran.r-project.org/src/contrib/littler_0.3.10.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.10.tar.gz"
+    "https://cran.r-project.org/src/contrib/littler_0.3.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/littler_0.3.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/littler_0.3.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.11.tar.gz"
    ]
   },
   "test":{
@@ -197,7 +197,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"0.3.10\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-littler\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/littler_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/littler/littler_{{ version }}.tar.gz\n  sha256: a53677955e115deff65b44a861ca60ca878cc8a1045b478dca98cd1ed52c6b2d\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  # Unix-only package\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}sed               # [win]\n    - {{ posix }}grep              # [win]\n    - {{ posix }}autoconf\n    - {{ posix }}automake          # [not win]\n    - {{ posix }}automake-wrapper  # [win]\n    - {{ posix }}pkg-config\n    - {{ posix }}make\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - pcre2\n  run:\n    - r-base\n    - pcre2\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('littler')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('littler')\\\"\"  # [win]\n\nabout:\n  home: http://dirk.eddelbuettel.com/code/littler.html\n  license: GPL-2.0-or-later\n  summary: A scripting and command-line front-end is provided by 'r' (aka 'littler') as a lightweight binary wrapper around the GNU R language and environment for statistical computing and graphics. While R can be used in batch mode, the r binary adds full support for both 'shebang'-style scripting (i.e. using a  hash-mark-exclamation-path\n    expression as the first line in scripts) as well as command-line use in standard Unix pipelines. In other words, r provides the R language without the environment.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: littler\n# Type: Package\n# Title: R at the Command-Line via 'r'\n# Version: 0.3.8\n# Date: 2019-06-09\n# Author: Dirk Eddelbuettel and Jeff Horner\n# Maintainer: Dirk Eddelbuettel <edd@debian.org>\n# Description: A scripting and command-line front-end is provided by 'r' (aka 'littler') as a lightweight binary wrapper around the GNU R language and environment for statistical computing and graphics. While R can be used in batch mode, the r binary adds full support for both 'shebang'-style scripting (i.e. using a  hash-mark-exclamation-path expression as the first line in scripts) as well as command-line use in standard Unix pipelines. In other words, r provides the R language without the environment.\n# URL: http://dirk.eddelbuettel.com/code/littler.html\n# BugReports: https://github.com/eddelbuettel/littler/issues\n# License: GPL (>= 2)\n# OS_type: unix\n# SystemRequirements: libR\n# Suggests: knitr, docopt, rcmdcheck\n# VignetteBuilder: knitr\n# RoxygenNote: 5.0.1\n# NeedsCompilation: yes\n# Packaged: 2019-06-09 16:19:34.73023 UTC; edd\n# Repository: CRAN\n# Date/Publication: 2019-06-09 16:30:03 UTC\n",
+ "raw_meta_yaml":"{% set version = \"0.3.11\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-littler\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/littler_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/littler/littler_{{ version }}.tar.gz\n  sha256: 67364c6e3edea834d6436438f92e47c7c478e89abaebf9c00740250d93be78d8\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n  # Unix-only package\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}sed               # [win]\n    - {{ posix }}grep              # [win]\n    - {{ posix }}autoconf\n    - {{ posix }}automake          # [not win]\n    - {{ posix }}automake-wrapper  # [win]\n    - {{ posix }}pkg-config\n    - {{ posix }}make\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - pcre2\n  run:\n    - r-base\n    - pcre2\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('littler')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('littler')\\\"\"  # [win]\n\nabout:\n  home: http://dirk.eddelbuettel.com/code/littler.html\n  license: GPL-2.0-or-later\n  summary: A scripting and command-line front-end is provided by 'r' (aka 'littler') as a lightweight binary wrapper around the GNU R language and environment for statistical computing and graphics. While R can be used in batch mode, the r binary adds full support for both 'shebang'-style scripting (i.e. using a  hash-mark-exclamation-path\n    expression as the first line in scripts) as well as command-line use in standard Unix pipelines. In other words, r provides the R language without the environment.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: littler\n# Type: Package\n# Title: R at the Command-Line via 'r'\n# Version: 0.3.8\n# Date: 2019-06-09\n# Author: Dirk Eddelbuettel and Jeff Horner\n# Maintainer: Dirk Eddelbuettel <edd@debian.org>\n# Description: A scripting and command-line front-end is provided by 'r' (aka 'littler') as a lightweight binary wrapper around the GNU R language and environment for statistical computing and graphics. While R can be used in batch mode, the r binary adds full support for both 'shebang'-style scripting (i.e. using a  hash-mark-exclamation-path expression as the first line in scripts) as well as command-line use in standard Unix pipelines. In other words, r provides the R language without the environment.\n# URL: http://dirk.eddelbuettel.com/code/littler.html\n# BugReports: https://github.com/eddelbuettel/littler/issues\n# License: GPL (>= 2)\n# OS_type: unix\n# SystemRequirements: libR\n# Suggests: knitr, docopt, rcmdcheck\n# VignetteBuilder: knitr\n# RoxygenNote: 5.0.1\n# NeedsCompilation: yes\n# Packaged: 2019-06-09 16:19:34.73023 UTC; edd\n# Repository: CRAN\n# Date/Publication: 2019-06-09 16:30:03 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -304,5 +304,5 @@
   "https://cran.r-project.org/src/contrib/littler_0.3.8.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/littler/littler_0.3.8.tar.gz"
  ],
- "version":"0.3.10"
+ "version":"0.3.11"
 }
