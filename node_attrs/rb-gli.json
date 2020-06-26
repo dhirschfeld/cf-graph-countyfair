@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440570012.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.19.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -85,12 +102,13 @@
   }
  },
  "name":"rb-gli",
- "new_version":"2.19.1",
+ "new_version":"2.19.2",
  "new_version_attempts":{
-  "2.19.1":1
+  "2.19.1":1,
+  "2.19.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"gli\" %}\n{% set version = \"2.19.0\" %}\n\npackage:\n  name: rb-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem\n  sha256: 31dd578a13461cf53e47c8811e7e69b10fed8d4e50d3a38fd230a137223a70cb\n\nbuild:\n  noarch: generic\n  number: 0\n  script:\n    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem\n    - gem unpack {{ name }}-{{ version }}.gem\n  skip: {{ win }}\n\nrequirements:\n  host:\n    - ruby\n  run:\n    - ruby\n\ntest:\n  commands:\n    - ruby -r {{ name }} -e 'exit 0'\n\nabout:\n  home: https://rubygems.org/gems/{{ name }}\n  license: Apache-2.0\n  license_family: Apache\n  license_file: {{ name }}-{{ version }}/LICENSE.txt\n  summary: |\n    Build command-suite CLI apps that are awesome.\n    Bootstrap your app, add commands, options and documentation while\n    maintaining a well-tested idiomatic command-line app\n\n  doc_url: https://www.rubydoc.info/gems/{{ name }}\n  dev_url: https://github.com/davetron5000/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/ruby\n    - pierrsc\n",
  "req":{
   "__set__":true,

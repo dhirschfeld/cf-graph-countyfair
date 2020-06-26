@@ -81,7 +81,7 @@
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "number":"1003"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -95,7 +95,7 @@
   },
   "package":{
    "name":"lua",
-   "version":"5.3.4"
+   "version":"5.3.5"
   },
   "requirements":{
    "build":[
@@ -103,7 +103,9 @@
     "ninja",
     "cmake",
     "c_compiler_stub",
-    "c_compiler_stub"
+    "sed",
+    "c_compiler_stub",
+    "sed"
    ],
    "host":[
     "readline",
@@ -116,37 +118,34 @@
   },
   "source":[
    {
-    "fn":"lua-5.3.4.tar.gz",
     "patches":[
      "luaconf.patch",
      "Makefile.patch"
     ],
-    "sha256":"f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c",
-    "url":"http://www.lua.org/ftp/lua-5.3.4.tar.gz"
+    "sha256":"0c2eed3f960446e1a3e4b9a1ca2f3ff893b6ce41942cf54d5dd59ab4b3b058ac",
+    "url":"http://www.lua.org/ftp/lua-5.3.5.tar.gz"
    },
    {
     "path":"CMakeLists.txt"
    },
    {
-    "fn":"lua-5.3.4.tar.gz",
     "patches":[
      "luaconf.patch",
      "Makefile.patch"
     ],
-    "sha256":"f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c",
-    "url":"http://www.lua.org/ftp/lua-5.3.4.tar.gz"
+    "sha256":"0c2eed3f960446e1a3e4b9a1ca2f3ff893b6ce41942cf54d5dd59ab4b3b058ac",
+    "url":"http://www.lua.org/ftp/lua-5.3.5.tar.gz"
    },
    {
     "path":"CMakeLists.txt"
    },
    {
-    "fn":"lua-5.3.4.tar.gz",
     "patches":[
      "luaconf.patch",
      "Makefile.patch"
     ],
-    "sha256":"f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c",
-    "url":"http://www.lua.org/ftp/lua-5.3.4.tar.gz"
+    "sha256":"0c2eed3f960446e1a3e4b9a1ca2f3ff893b6ce41942cf54d5dd59ab4b3b058ac",
+    "url":"http://www.lua.org/ftp/lua-5.3.5.tar.gz"
    },
    {
     "path":"CMakeLists.txt"
@@ -170,7 +169,7 @@
  "name":"lua",
  "new_version":"5.3.5",
  "pinning_version":"2019.07.01",
- "raw_meta_yaml":"{% set version = \"5.3.4\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  - fn: lua-{{ version }}.tar.gz\n    url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n    sha256: f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c\n    patches:\n      # Enables Lua to look for packages on a relative path\n      - luaconf.patch\n      # Enables readline on linux\n      - Makefile.patch\n  - path: CMakeLists.txt\n\nbuild:\n  number: 1003\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - ninja  # [win]\n    - cmake  # [win]\n\n  host:\n    - readline  # [not win]\n    - ncurses  # [not win]\n  run:\n    - readline  # [not win]\n    - ncurses  # [not win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\lua.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.dll exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n  license_file: doc/readme.html\n\nextra:\n  recipe-maintainers:\n    - alexbw\n    - seanyen\n",
+ "raw_meta_yaml":"{% set version = \"5.3.5\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  - url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n    sha256: 0c2eed3f960446e1a3e4b9a1ca2f3ff893b6ce41942cf54d5dd59ab4b3b058ac\n    patches:\n      # Enables Lua to look for packages on a relative path\n      - luaconf.patch\n      # Enables readline on linux\n      - Makefile.patch\n  - path: CMakeLists.txt\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - ninja  # [win]\n    - cmake  # [win]\n    - sed  # [unix]\n  host:\n    - readline  # [not win]\n    - ncurses  # [not win]\n  run:\n    - readline  # [not win]\n    - ncurses  # [not win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\lua.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.dll exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n  license_file: doc/readme.html\n\nextra:\n  recipe-maintainers:\n    - alexbw\n    - seanyen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -179,6 +178,7 @@
    "ncurses",
    "ninja",
    "readline",
+   "sed",
    "vs2017_win-64"
   ]
  },
@@ -189,6 +189,7 @@
     "c_compiler_stub",
     "cmake",
     "ninja",
+    "sed",
     "vs2017_win-64"
    ]
   },
@@ -220,6 +221,7 @@
     "c_compiler_stub",
     "cmake",
     "ninja",
+    "sed",
     "vs2017_win-64"
    ]
   },
@@ -243,5 +245,5 @@
   }
  },
  "url":"http://www.lua.org/ftp/lua-5.3.4.tar.gz",
- "version":"5.3.4"
+ "version":"5.3.5"
 }
