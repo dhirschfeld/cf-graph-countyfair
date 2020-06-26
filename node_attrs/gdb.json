@@ -170,40 +170,46 @@
    "dev_url":"git://sourceware.org/git/binutils-gdb.git",
    "doc_url":"https://sourceware.org/gdb/current/onlinedocs/gdb/",
    "home":"https://www.gnu.org/software/gdb/",
-   "license":"GPL-2.0",
+   "license":"GPL-2.0-only",
    "license_family":"GPL",
    "license_file":"COPYING",
    "summary":"GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed."
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "skip":true
   },
   "extra":{
    "recipe-maintainers":[
     "gqmelo",
     "marcelotrevisani",
+    "phil-blain",
     "gqmelo",
     "marcelotrevisani",
+    "phil-blain",
     "gqmelo",
-    "marcelotrevisani"
+    "marcelotrevisani",
+    "phil-blain"
    ]
   },
   "package":{
    "name":"gdb",
-   "version":"8.3.1"
+   "version":"9.2"
   },
   "requirements":{
    "build":[
     "fortran_compiler_stub",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "make >=3.82",
     "fortran_compiler_stub",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "make >=3.82",
     "fortran_compiler_stub",
     "c_compiler_stub",
-    "cxx_compiler_stub"
+    "cxx_compiler_stub",
+    "make >=3.82"
    ],
    "host":[
     "python",
@@ -211,35 +217,41 @@
     "texinfo",
     "xz",
     "zlib",
+    "readline",
     "python",
     "ncurses",
     "texinfo",
     "xz",
     "zlib",
+    "readline",
     "python",
     "ncurses",
     "texinfo",
     "xz",
-    "zlib"
+    "zlib",
+    "readline"
    ],
    "run":[
     "python",
     "ncurses",
     "xz",
     "zlib",
+    "six",
     "python",
     "ncurses",
     "xz",
     "zlib",
+    "six",
     "python",
     "ncurses",
     "xz",
-    "zlib"
+    "zlib",
+    "six"
    ]
   },
   "source":{
-   "sha256":"1e55b4d7cdca7b34be12f4ceae651623aa73b2fd640152313f9f66a7149757c4",
-   "url":"http://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz"
+   "sha256":"360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555",
+   "url":"http://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
   },
   "test":{
    "commands":[
@@ -252,15 +264,18 @@
  "name":"gdb",
  "new_version":false,
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"gdb\" %}\n{% set version = \"8.3.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnu.org/gnu/gdb/gdb-{{ version }}.tar.xz\n  sha256: 1e55b4d7cdca7b34be12f4ceae651623aa73b2fd640152313f9f66a7149757c4\n\nbuild:\n  number: 1\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - ncurses\n    - texinfo\n    - xz\n    - zlib\n  run:\n    - python\n    - ncurses\n    - xz\n    - zlib\n\ntest:\n  commands:\n    - gdb --version\n\nabout:\n  home: https://www.gnu.org/software/gdb/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed.\n  description: |\n    GDB, the GNU Project debugger, allows you to see what is going on `inside'\n    another program while it executes -- or what another program was doing at\n    the moment it crashed.\n    The program being debugged can be written in Ada, C, C++, Objective-C,\n    Pascal (and many other languages). Those programs might be executing on the\n    same machine as GDB (native) or on another machine (remote).\n    GDB can run on most popular UNIX and Microsoft Windows variants.\n  doc_url: https://sourceware.org/gdb/current/onlinedocs/gdb/\n  dev_url: git://sourceware.org/git/binutils-gdb.git\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"gdb\" %}\n{% set version = \"9.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnu.org/gnu/gdb/gdb-{{ version }}.tar.xz\n  sha256: 360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make >=3.82\n  host:\n    - python\n    - ncurses\n    - texinfo\n    - xz\n    - zlib\n    - readline\n  run:\n    - python\n    - ncurses\n    - xz\n    - zlib\n    - six\n\ntest:\n  commands:\n    - gdb --version\n\nabout:\n  home: https://www.gnu.org/software/gdb/\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed.\n  description: |\n    GDB, the GNU Project debugger, allows you to see what is going on `inside'\n    another program while it executes -- or what another program was doing at\n    the moment it crashed.\n    The program being debugged can be written in Ada, C, C++, Objective-C,\n    Pascal (and many other languages). Those programs might be executing on the\n    same machine as GDB (native) or on another machine (remote).\n    GDB can run on most popular UNIX and Microsoft Windows variants.\n  doc_url: https://sourceware.org/gdb/current/onlinedocs/gdb/\n  dev_url: git://sourceware.org/git/binutils-gdb.git\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - marcelotrevisani\n    - phil-blain\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cxx_compiler_stub",
    "fortran_compiler_stub",
+   "make",
    "ncurses",
    "python",
+   "readline",
+   "six",
    "texinfo",
    "xz",
    "zlib"
@@ -272,7 +287,8 @@
    "elements":[
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "fortran_compiler_stub"
+    "fortran_compiler_stub",
+    "make"
    ]
   },
   "host":{
@@ -280,6 +296,7 @@
    "elements":[
     "ncurses",
     "python",
+    "readline",
     "texinfo",
     "xz",
     "zlib"
@@ -290,6 +307,7 @@
    "elements":[
     "ncurses",
     "python",
+    "six",
     "xz",
     "zlib"
    ]
@@ -307,7 +325,8 @@
    "elements":[
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "fortran_compiler_stub"
+    "fortran_compiler_stub",
+    "make >=3.82"
    ]
   },
   "host":{
@@ -315,6 +334,7 @@
    "elements":[
     "ncurses",
     "python",
+    "readline",
     "texinfo",
     "xz",
     "zlib"
@@ -325,6 +345,7 @@
    "elements":[
     "ncurses",
     "python",
+    "six",
     "xz",
     "zlib"
    ]
@@ -335,5 +356,5 @@
   }
  },
  "url":"http://ftp.gnu.org/gnu/gdb/gdb-8.3.tar.xz",
- "version":"8.3.1"
+ "version":"9.2"
 }
