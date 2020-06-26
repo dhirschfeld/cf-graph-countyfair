@@ -252,6 +252,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440356503.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.6.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -378,10 +395,11 @@
  "new_version":"1.6.3",
  "new_version_attempts":{
   "1.6.1":1,
-  "1.6.2":1
+  "1.6.2":1,
+  "1.6.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.04.13.55.38",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"bluesky\" %}\n{% set version = \"1.6.2\" %}\n{% set sha256 = \"af4a5bafe4004afebe0e4c44f1bab7353a5fc927f0eb81cf6fd2b3b7e2d2ad68\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n\n  run:\n    - python >=3.6\n    - cycler\n    - databroker\n    - doct\n    - event-model >=1.10.0\n    - historydict\n    - ipython\n    - lmfit\n    - matplotlib\n    - msgpack-python\n    - msgpack-numpy\n    - numpy\n    - ophyd\n    - pyzmq\n    - super_state_machine\n    - toolz\n    - tqdm\n    - zict\n\ntest:\n  imports:\n    - bluesky\n    - bluesky.plans\n    - bluesky.callbacks\n\nabout:\n  home: https://blueskyproject.io\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A Python data collection interface for experimental science\n\n  description: A Python data collection interface for experimental science\n  doc_url: https://blueskyproject.io/bluesky\n  dev_url: https://github.com/bluesky/bluesky\n\nextra:\n  recipe-maintainers:\n    - conda-forge/event-model\n",
  "req":{
   "__set__":true,
