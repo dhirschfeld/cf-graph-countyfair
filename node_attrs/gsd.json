@@ -322,7 +322,12 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
+  }
+ },
  "feedstock_name":"gsd",
  "hash_type":"sha256",
  "meta_yaml":{
@@ -352,7 +357,7 @@
   },
   "package":{
    "name":"gsd",
-   "version":"2.1.1"
+   "version":"2.1.2"
   },
   "requirements":{
    "build":[
@@ -387,15 +392,15 @@
    ]
   },
   "source":{
-   "fn":"gsd-2.1.1.tar.gz",
-   "sha256":"c189dfab9dd8a44ad4512a1ba7c1be8ba3506f227eb795cf2bb8afb3ddb2e4e7",
-   "url":"https://github.com/glotzerlab/gsd/releases/download/v2.1.1/gsd-v2.1.1.tar.gz"
+   "fn":"gsd-2.1.2.tar.gz",
+   "sha256":"093e1493d10cc8820bbcfa9dce35f1669c1f2c09a6bb7dc7d85b7587013a0375",
+   "url":"https://github.com/glotzerlab/gsd/releases/download/v2.1.2/gsd-v2.1.2.tar.gz"
   },
   "test":{
    "commands":[
-    "pytest",
-    "pytest",
-    "pytest"
+    "pytest --ignore-glob=\"*_largefile.py\"",
+    "pytest --ignore-glob=\"*_largefile.py\"",
+    "pytest --ignore-glob=\"*_largefile.py\""
    ],
    "imports":[
     "gsd",
@@ -429,7 +434,7 @@
  "name":"gsd",
  "new_version":false,
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set name = \"gsd\" %}\n{% set version = \"2.1.1\" %}\n{% set sha256 = \"c189dfab9dd8a44ad4512a1ba7c1be8ba3506f227eb795cf2bb8afb3ddb2e4e7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/glotzerlab/{{ name }}/releases/download/v{{ version }}/{{ name }}-v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # the upstream package does not support python2.7\n  skip: true  # [py27]\n  script: \"{{ PYTHON }} -m pip install . -vv --no-deps\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\n  host:\n    - setuptools\n    - cython\n    - python\n    - numpy\n    - pip\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - gsd\n    - gsd.fl\n    - gsd.pygsd\n    - gsd.hoomd\n  source_files:\n    - tests/\n    - setup.cfg\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/glotzerlab/{{ name }}\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'General simulation data'\n\n  description: |\n   GSD (General Simulation Data) is a file format specification\n   and a library to read and write it. The package also contains a python module\n   that reads and writes hoomd schema gsd files with an easy to use syntax.\n\n  doc_url: https://gsd.readthedocs.io\n  dev_url: https://github.com/glotzerlab/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - bdice\n    - joaander\n",
+ "raw_meta_yaml":"{% set name = \"gsd\" %}\n{% set version = \"2.1.2\" %}\n{% set sha256 = \"093e1493d10cc8820bbcfa9dce35f1669c1f2c09a6bb7dc7d85b7587013a0375\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/glotzerlab/{{ name }}/releases/download/v{{ version }}/{{ name }}-v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # the upstream package does not support python2.7\n  skip: true  # [py27]\n  script: \"{{ PYTHON }} -m pip install . -vv --no-deps\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\n  host:\n    - setuptools\n    - cython\n    - python\n    - numpy\n    - pip\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - gsd\n    - gsd.fl\n    - gsd.pygsd\n    - gsd.hoomd\n  source_files:\n    - tests/\n    - setup.cfg\n  commands:\n    - pytest --ignore-glob=\"*_largefile.py\"\n\nabout:\n  home: https://github.com/glotzerlab/{{ name }}\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'General simulation data'\n\n  description: |\n   GSD (General Simulation Data) is a file format specification\n   and a library to read and write it. The package also contains a python module\n   that reads and writes hoomd schema gsd files with an easy to use syntax.\n\n  doc_url: https://gsd.readthedocs.io\n  dev_url: https://github.com/glotzerlab/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - bdice\n    - joaander\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -506,5 +511,5 @@
   }
  },
  "url":"https://glotzerlab.engin.umich.edu/Downloads/gsd/gsd-v1.8.1.tar.gz",
- "version":"2.1.1"
+ "version":"2.1.2"
 }
