@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440471160.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -88,7 +107,12 @@
   }
  },
  "name":"diffprivlib",
- "new_version":"0.2.1",
+ "new_version":"0.3.0",
+ "new_version_attempts":{
+  "0.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"diffprivlib\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8dba0a65ecd52c79b71d8f3837228386a154df7039fa149eb06bc48b707b9bfa\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - joblib >=0.13.2\n    - numpy >=1.15.0\n    - python\n    - scikit-learn >=0.20.3\n    - scipy >=1.2.1\n\ntest:\n  imports:\n    - diffprivlib\n    - diffprivlib.mechanisms\n    - diffprivlib.mechanisms.transforms\n    - diffprivlib.models\n    - diffprivlib.tools\n\nabout:\n  home: https://github.com/IBM/differential-privacy-library\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"IBM Differential Privacy Library\"\n  doc_url: https://pypi.org/project/diffprivlib/\n  dev_url: https://github.com/IBM/differential-privacy-library\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n",
  "req":{
   "__set__":true,
@@ -128,6 +152,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
