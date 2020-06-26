@@ -71,6 +71,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440718909.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -147,13 +164,14 @@
   }
  },
  "name":"pwlf",
- "new_version":"2.0.2",
+ "new_version":"2.0.3",
  "new_version_attempts":{
   "2.0.1":1,
-  "2.0.2":1
+  "2.0.2":1,
+  "2.0.3":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"2.0.2\" %}\n\npackage:\n  # noarch can be enabled as soon as importlib_metada is not necessary anymore\n  # noarch: python\n  name: pwlf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pwlf/pwlf-{{ version }}.tar.gz\n  sha256: 4a08a9cb147e4a908fdcfcedeb1e9c20cb9daacff532ee6c8e2d7b42c3241aff\n\nbuild:\n\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - pydoe >=0.3.8\n    - numpy >=1.14.0\n    - scipy >=1.2.0\n    - importlib-metadata  # [py<38]\n\ntest:\n  imports:\n    - pwlf\n\nabout:\n  home: https://github.com/cjekel/piecewise_linear_fit_py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'fit piecewise linear data for a specified number of line segments '\n\n  description: |\n    A library for fitting continuous piecewise linear functions to data.\n    Just specify the number of line segments you desire and provide the data.\n  doc_url: https://jekel.me/piecewise_linear_fit_py/\n  dev_url: https://github.com/cjekel/piecewise_linear_fit_py\n\nextra:\n  recipe-maintainers:\n    - h-vetinari\n",
  "req":{
   "__set__":true,
