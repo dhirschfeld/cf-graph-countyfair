@@ -62,13 +62,13 @@
   "about":{
    "description":"Libassuan is a small library implementing the so-called Assuan protocol.\nThis protocol is used for IPC between most newer GnuPG components.\n",
    "home":"https://www.gnupg.org/software/libassuan/index.html",
-   "license":"LGPL-3",
+   "license":"LGPL-2.1-or-later",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":"COPYING.LIB",
    "summary":"Libassuan is a small library implementing the so-called Assuan protocol."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libassuan",
     "libassuan",
@@ -127,7 +127,7 @@
  "name":"libassuan",
  "new_version":false,
  "pinning_version":"2019.01.29",
- "raw_meta_yaml":"{% set name = \"libassuan\" %}\n{% set version = \"2.5.3\" %}\n{% set sha256 = \"91bcb0403866b4e7c4bc1cc52ed4c364a9b5414b3994f718c70303f7f765e702\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - ./configure --prefix=$PREFIX\n    - make\n    - make install\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('libassuan', max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://www.gnupg.org/software/libassuan/index.html\n  summary: Libassuan is a small library implementing the so-called Assuan protocol.\n  license: LGPL-3\n  license_family: GPL\n  license_file: COPYING\n  description: |\n    Libassuan is a small library implementing the so-called Assuan protocol.\n    This protocol is used for IPC between most newer GnuPG components.\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "raw_meta_yaml":"{% set name = \"libassuan\" %}\n{% set version = \"2.5.3\" %}\n{% set sha256 = \"91bcb0403866b4e7c4bc1cc52ed4c364a9b5414b3994f718c70303f7f765e702\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script:\n    - ./configure --prefix=$PREFIX\n    - make\n    - make install\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('libassuan', max_pin='x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://www.gnupg.org/software/libassuan/index.html\n  summary: Libassuan is a small library implementing the so-called Assuan protocol.\n  license: LGPL-2.1-or-later\n  license_family: GPL\n  license_file: COPYING.LIB\n  description: |\n    Libassuan is a small library implementing the so-called Assuan protocol.\n    This protocol is used for IPC between most newer GnuPG components.\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
   "elements":[
