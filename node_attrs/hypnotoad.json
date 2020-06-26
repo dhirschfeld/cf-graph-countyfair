@@ -46,7 +46,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -60,7 +60,7 @@
   },
   "package":{
    "name":"hypnotoad",
-   "version":"0.1.4"
+   "version":"0.2.0"
   },
   "requirements":{
    "host":[
@@ -113,8 +113,8 @@
    ]
   },
   "source":{
-   "sha256":"d9e512633c82e0656f97f7312f9373fa843e1c15e2bcde157918a891f1ef644a",
-   "url":"https://pypi.io/packages/source/h/hypnotoad/hypnotoad-0.1.4.tar.gz"
+   "sha256":"b053e8f8ba5efe541df75e55b38a73966e042d25b526f7a87a56806ee922fbc5",
+   "url":"https://pypi.io/packages/source/h/hypnotoad/hypnotoad-0.2.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -148,7 +148,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"hypnotoad\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d9e512633c82e0656f97f7312f9373fa843e1c15e2bcde157918a891f1ef644a\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - hypnotoad_geqdsk = hypnotoad.scripts.hypnotoad_geqdsk:main\n    - hypnotoad_torpex = hypnotoad.scripts.hypnotoad_torpex:main\n    - hypnotoad-gui = hypnotoad.gui:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - boututils >=0.1.4\n    - matplotlib-base >=3.2\n    - netcdf4 >=1.5\n    - numpy >=1.18\n    - optionsfactory >=1.0.3\n    - pyparsing >=2.4\n    - pyyaml >=5.1\n    - scipy >=1.4\n    - qt.py >=1.2\n  run_constrained:\n    - pyside2 >=5.13\n    - pyqt >=5.12\n\ntest:\n  requires:\n    - pytest\n    - pyside2\n  commands:\n    - pytest --pyargs hypnotoad\n    - hypnotoad_geqdsk -h\n    - hypnotoad_torpex -h\n    - hypnotoad-gui -h\n\nabout:\n  home: https://github.com/boutproject/hypnotoad\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENCE\n  summary: Python grid generator for BOUT++\n  dev_url: https://github.com/boutproject/hypnotoad\n\nextra:\n  recipe-maintainers:\n    - johnomotani\n    - ZedThree\n",
+ "raw_meta_yaml":"{% set name = \"hypnotoad\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b053e8f8ba5efe541df75e55b38a73966e042d25b526f7a87a56806ee922fbc5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - hypnotoad_geqdsk = hypnotoad.scripts.hypnotoad_geqdsk:main\n    - hypnotoad_torpex = hypnotoad.scripts.hypnotoad_torpex:main\n    - hypnotoad-gui = hypnotoad.gui:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - boututils >=0.1.4\n    - matplotlib-base >=3.2\n    - netcdf4 >=1.5\n    - numpy >=1.18\n    - optionsfactory >=1.0.3\n    - pyparsing >=2.4\n    - pyyaml >=5.1\n    - scipy >=1.4\n    - qt.py >=1.2\n  run_constrained:\n    - pyside2 >=5.13\n    - pyqt >=5.12\n\ntest:\n  requires:\n    - pytest\n    - pyside2\n  commands:\n    - pytest --pyargs hypnotoad\n    - hypnotoad_geqdsk -h\n    - hypnotoad_torpex -h\n    - hypnotoad-gui -h\n\nabout:\n  home: https://github.com/boutproject/hypnotoad\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENCE\n  summary: Python grid generator for BOUT++\n  dev_url: https://github.com/boutproject/hypnotoad\n\nextra:\n  recipe-maintainers:\n    - johnomotani\n    - ZedThree\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -238,5 +238,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/h/hypnotoad/hypnotoad-0.1.4.tar.gz",
- "version":"0.1.4"
+ "version":"0.2.0"
 }
