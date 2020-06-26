@@ -152,14 +152,6 @@
    "summary":"Core python package for implementing yaq deamons, and associated utilities."
   },
   "build":{
-   "entry_points":[
-    "yaqd-hardware=yaqd_core._hardware._base:Hardware.main",
-    "yaqd-continuous-hardware=yaqd_core._hardware._continuous:ContinuousHardware.main",
-    "yaqd-hardware=yaqd_core._hardware._base:Hardware.main",
-    "yaqd-continuous-hardware=yaqd_core._hardware._continuous:ContinuousHardware.main",
-    "yaqd-hardware=yaqd_core._hardware._base:Hardware.main",
-    "yaqd-continuous-hardware=yaqd_core._hardware._continuous:ContinuousHardware.main"
-   ],
    "noarch":"python",
    "number":"0",
    "script":"-m pip install . -vv"
@@ -176,7 +168,7 @@
   },
   "package":{
    "name":"yaqd-core",
-   "version":"2020.6.1"
+   "version":"2020.6.2"
   },
   "requirements":{
    "host":[
@@ -191,30 +183,25 @@
     "python >=3.7",
     "appdirs",
     "toml",
-    "msgpack-python >=1.0.0",
+    "setuptools",
+    "fastavro",
     "python >=3.7",
     "appdirs",
     "toml",
-    "msgpack-python >=1.0.0",
+    "setuptools",
+    "fastavro",
     "python >=3.7",
     "appdirs",
     "toml",
-    "msgpack-python >=1.0.0"
+    "setuptools",
+    "fastavro"
    ]
   },
   "source":{
-   "sha256":"af9f4b4524e3ef565aa0db49c61bc21d5f95b33c672322fc166e4b9aa15c449b",
-   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.1.tar.gz"
+   "sha256":"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761",
+   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.2.tar.gz"
   },
   "test":{
-   "commands":[
-    "yaqd-hardware -h",
-    "yaqd-continuous-hardware -h",
-    "yaqd-hardware -h",
-    "yaqd-continuous-hardware -h",
-    "yaqd-hardware -h",
-    "yaqd-continuous-hardware -h"
-   ],
    "imports":[
     "yaqd_core",
     "yaqd_core",
@@ -236,14 +223,15 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.6.1\" %}\n{% set sha256 = \"af9f4b4524e3ef565aa0db49c61bc21d5f95b33c672322fc166e4b9aa15c449b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - yaqd-hardware=yaqd_core._hardware._base:Hardware.main\n    - yaqd-continuous-hardware=yaqd_core._hardware._continuous:ContinuousHardware.main\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - msgpack-python >=1.0.0\n\ntest:\n  imports:\n    - yaqd_core\n  commands:\n    - yaqd-hardware -h\n    - yaqd-continuous-hardware -h\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-core-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
+ "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.6.2\" %}\n{% set sha256 = \"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - setuptools \n    - fastavro\n\ntest:\n  imports:\n    - yaqd_core\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-core-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
   "elements":[
    "appdirs",
-   "msgpack-python",
+   "fastavro",
    "pip",
    "python",
+   "setuptools",
    "toml"
   ]
  },
@@ -263,8 +251,9 @@
    "__set__":true,
    "elements":[
     "appdirs",
-    "msgpack-python",
+    "fastavro",
     "python",
+    "setuptools",
     "toml"
    ]
   },
@@ -291,8 +280,9 @@
    "__set__":true,
    "elements":[
     "appdirs",
-    "msgpack-python >=1.0.0",
+    "fastavro",
     "python >=3.7",
+    "setuptools",
     "toml"
    ]
   },
@@ -302,5 +292,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-0.5.0.tar.gz",
- "version":"2020.6.1"
+ "version":"2020.6.2"
 }
