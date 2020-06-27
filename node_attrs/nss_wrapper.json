@@ -53,6 +53,7 @@
   }
  },
  "name":"nss_wrapper",
+ "new_version":false,
  "raw_meta_yaml":"{% set version = \"1.1.11\" %}\n\npackage:\n  name: nss_wrapper\n  version: {{ version }}\n\nsource:\n  url: https://ftp.samba.org/pub/cwrap/nss_wrapper-{{ version }}.tar.gz\n  sha256: fb45332e7fb4d85d3ea829ed18172366196c17cbd32ef690a7e1309f0c37b4e0\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n    - make\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libnss_wrapper.so\n\nabout:\n  home: https://cwrap.org/nss_wrapper.html\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: A wrapper for the user, group and hosts NSS API\n  description: |\n    There are projects that need to be able to create, modify, and delete Unix\n    users. Others just switch user IDs to interact with the system on behalf\n    of another user (e.g. a user space file server). To be able to test\n    applications like these, you need to grant privileges to modify the passwd\n    and group files. With nss_wrapper it is possible to define your own passwd\n    and group files to be used the software while it is under test. The\n    nss_wrapper also allows you to create a hosts file to set up name\n    resolution for the addresses you use with socket_wrapper.\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req":{
   "__set__":true,

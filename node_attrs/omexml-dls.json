@@ -62,6 +62,7 @@
   }
  },
  "name":"omexml-dls",
+ "new_version":false,
  "raw_meta_yaml":"{% set name = \"omexml-dls\" %}\n{% set version = \"1.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DiamondLightSource/python-{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: fbe31ad17782d4a672720034083dd8138eadb6302c2e59f99e64cf8ebf602450\n\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n\n  host:\n    - python >=2.7\n    - pip\n  run:\n    - python >=2.7\n    - future\n\ntest:\n  imports:\n    - oxdls\n\nabout:\n  home: https://github.com/DiamondLightSource/python-{{ name }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Package to help simply and consistently create and parse OME metadata for B24 of Diamond Light Source Ltd.'\n\n  description: |\n    This is a modified copy of python_bioformats' omexml.py with a section \n    from the Allen Institute for Cell Science's aicsimageio version of \n    omexml.py (indicated within the file). This package extends \n    capabilities, predominantly in terms of ROIs, while offering a \n    light-weight distribution of the omexml file.\n  doc_url: https://github.com/DiamondLightSource/python-{{ name }}/blob/master/README.md\n  dev_url: https://github.com/DiamondLightSource/python-{{ name }}\n\nextra:\n  recipe-maintainers:\n    - thomasmfish\n",
  "req":{
   "__set__":true,

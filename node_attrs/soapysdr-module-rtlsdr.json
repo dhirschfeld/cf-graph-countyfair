@@ -71,6 +71,7 @@
   }
  },
  "name":"soapysdr-module-rtlsdr",
+ "new_version":false,
  "raw_meta_yaml":"{% set name = \"soapysdr-module-rtlsdr\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pothosware/SoapyRTLSDR/archive/soapy-rtlsdr-{{ version }}.tar.gz\n  sha256: 9c31c67c2646628b448bbef1307f3880b7e78be8caf7a02cd3cfa4d08dc4075b\n\nbuild:\n  number: 0\n  run_exports:\n    - {{ pin_subpackage('soapysdr-module-rtlsdr', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - rtl-sdr\n    - soapysdr\n\ntest:\n  commands:\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/SoapySDR/modules0.7/librtlsdrSupport.so  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\SoapySDR\\\\modules0.7\\\\rtlsdrSupport.dll exit 1  # [win]\n\n    # show info to see if module is detected\n    - SoapySDRUtil --info\n\nabout:\n  home: https://github.com/pothosware/SoapyRTLSDR/wiki\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'SoapySDR RTL-SDR Support Module'\n  description: |\n    The Soapy RTL-SDR project provides a plugin module to use the RTL-SDR dongle within\n    the SoapySDR API and software that supports SoapySDR.\n  doc_url: https://github.com/pothosware/SoapyRTLSDR/wiki\n  dev_url: https://github.com/pothosware/SoapyRTLSDR\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
   "__set__":true,
