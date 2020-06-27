@@ -138,7 +138,7 @@
    "summary":"HDF5 Plugins for windows,MacOS and linux"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -206,7 +206,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"hdf5plugin\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 890516eb1281ae0f4dbc55c4cee8a6eda017493da7abe7640d47e7b90b73fceb\n\nbuild:\n  number: 0\n  skip: true  # [win and py<30]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - setuptools\n    - hdf5\n  run:\n    - h5py\n    - python\n\ntest:\n  imports:\n    - hdf5plugin\n\nabout:\n  home: https://github.com/silx-kit/hdf5plugin\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: HDF5 Plugins for windows,MacOS and linux\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - t20100\n",
+ "raw_meta_yaml":"{% set name = \"hdf5plugin\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 890516eb1281ae0f4dbc55c4cee8a6eda017493da7abe7640d47e7b90b73fceb\n\nbuild:\n  number: 1\n  skip: true  # [win and py<30]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - setuptools\n    - hdf5\n  run:\n    - h5py\n    - python\n\ntest:\n  imports:\n    - hdf5plugin\n\nabout:\n  home: https://github.com/silx-kit/hdf5plugin\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: HDF5 Plugins for windows,MacOS and linux\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - t20100\n",
  "req":{
   "__set__":true,
   "elements":[
