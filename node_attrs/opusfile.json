@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440924770.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.12"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -83,6 +102,11 @@
  },
  "name":"opusfile",
  "new_version":"0.12",
+ "new_version_attempts":{
+  "0.12":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"opusfile\" %}\n{% set version = \"0.11\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://ftp.osuosl.org/pub/xiph/releases/opus/{{ name }}-{{ version }}.tar.gz\n  sha256: 74ce9b6cf4da103133e7b5c95df810ceb7195471e1162ed57af415fabf5603bf\n  patches:\n    # https://github.com/conda/conda-build/issues/3165\n    - 0001-Disable-GNU_SOURCE.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - pkgconfig\n  host:\n    - libopus\n    - libogg\n    - openssl\n  run:\n    - libopus\n    - libogg\n    - openssl\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/opus/opusfile.h\n    - test -f ${PREFIX}/lib/libopusfile${SHLIB_EXT}\n\nabout:\n  home: https://github.com/xiph/opusfile\n  license: BSD-3-Clause\n  license_file: COPYING\n  summary: 'Stand-alone decoder library for .opus streams'\n\nextra:\n  recipe-maintainers:\n    - asafkahlon\n",
  "req":{
   "__set__":true,
@@ -125,6 +149,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
