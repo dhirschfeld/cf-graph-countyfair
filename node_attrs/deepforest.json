@@ -35,6 +35,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440968881.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -180,12 +197,13 @@
   }
  },
  "name":"deepforest",
- "new_version":"0.3.0",
+ "new_version":"0.3.2",
  "new_version_attempts":{
-  "0.3.0":1
+  "0.3.0":1,
+  "0.3.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.16.21.09.39",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"deepforest\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"b5244a5f74c8f1f2b67f7edd7936c09ce1d26642a3c4d4cbd6296b835fa5f8c1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win or py<36]\n  number: 0\n  script:\n    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}    # [unix]\n    - '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip >=20.1\n    - numpy >=1.14.0\n    - cython >=0.28\n\n  run:\n    - python\n    - matplotlib-base\n    - sphinx\n    - recommonmark\n    - pyyaml\n    - pytest\n    - numpydoc\n    - cython >=0.28\n    - h5py\n    - xmltodict\n    - tqdm\n    - {{ pin_compatible('numpy') }}\n    - pillow\n    - sphinx_rtd_theme\n    - pandas\n    - twine\n    - rasterstats\n    - psutil\n\ntest:\n  imports:\n\n  source_files:\n    - tests/*\n    - requirements.txt\n\n  commands:\n    - {{ PYTHON }} -m pip install -r requirements.txt && pytest -v --ignore=keras-retinanet/    # [unix]\n    - {{ PYTHON }} -c 'import deepforest; print(deepforest.__version__)'    # [win]\n\nabout:\n  home: https://github.com/weecology/DeepForest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Package for Tree Crown Detection in Airborne RGB imagery\n  description: |\n    DeepForest is a python package for training and predicting individual\n    tree crowns from airborne RGB imagery. DeepForest comes with a prebuilt\n    model trained on data from the National Ecological Observation Network.\n    Users can extend this model by annotating and training custom models\n    starting from the prebuilt model.\n\n    DeepForest es un paquete de python para la predicci\u00f3n\n    de coronas de \u00e1rboles individuales basada en modelos entrenados\n    con im\u00e1genes remotas RVA ( RGB, por sus siglas en ingl\u00e9s).\n    DeepForest viene con un modelo entrenado con datos prove\u00eddos por la\n    Red Nacional de Observatorios Ecol\u00f3gicos (NEON, por sus siglas en ingl\u00e9s).\n    Los usuarios pueden ampliar este modelo pre-construido por anotaci\u00f3n\n    de etiquetas y entrenamiento con datos locales. La documentaci\u00f3n de\n    DeepForest est\u00e1 escrita en ingl\u00e9s, sin embargo, agradecer\u00edamos\n    contribuciones con fin de hacerla accesible en otros idiomas.\n  doc_url: https://deepforest.readthedocs.io/en/latest/\n  dev_url: https://github.com/weecology/DeepForest\n\nextra:\n  recipe-maintainers:\n    - bw4sz\n    - henrykironde\n",
  "req":{
   "__set__":true,
