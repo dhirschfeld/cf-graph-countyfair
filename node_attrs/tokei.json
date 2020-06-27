@@ -254,7 +254,7 @@
   },
   "package":{
    "name":"tokei",
-   "version":"78687"
+   "version":"12.0.4"
   },
   "requirements":{
    "build":[
@@ -267,8 +267,8 @@
    ]
   },
   "source":{
-   "sha256":"96e7c2ab5479727d1c940ea6d3dffddcb5db5b76899329f3c68234f80e41b0e1",
-   "url":"https://github.com/Aaronepower/tokei/archive/v78687.tar.gz"
+   "sha256":"031dabbe1253af53fea8258e11eeb352371b6cf0c790db573ca7be33f761c733",
+   "url":"https://github.com/Aaronepower/tokei/archive/v12.0.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -280,8 +280,14 @@
  },
  "name":"tokei",
  "new_version":"4012.0.4",
+ "new_version_attempts":{
+  "4012.0.4":1
+ },
+ "new_version_errors":{
+  "4012.0.4":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '4012.0.4' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/Aaronepower/tokei/archive/v{{ version }}.tar.gz'\n"
+ },
  "pinning_version":"2020.02.12",
- "raw_meta_yaml":"{% set version = \"78687\" %}\n\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: tokei\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Aaronepower/tokei/archive/v{{ version }}.tar.gz\n  sha256: 96e7c2ab5479727d1c940ea6d3dffddcb5db5b76899329f3c68234f80e41b0e1\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - rust\n    - {{ compiler('c') }}   # [unix]\n    - {{native}}binutils    # [win]\n\ntest:\n  commands:\n    - tokei && tokei --help\n\nabout:\n  home: https://tokei.rs\n  license: MIT\n  summary: |\n    Tokei is a program that displays statistics about your code. Tokei will show\n    number of files, total lines within those files and code, comments, and blanks\n    grouped by language.\n  dev_url: https://github.com/Aaronepower/tokei\n  doc_url: https://github.com/Aaronepower/tokei#how-to-use-tokei\n  license_file: 'LICENCE-MIT'\n\nextra:\n  recipe-maintainers:\n    - dbast\n",
+ "raw_meta_yaml":"{% set version = \"12.0.4\" %}\n\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: tokei\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Aaronepower/tokei/archive/v{{ version }}.tar.gz\n  sha256: 031dabbe1253af53fea8258e11eeb352371b6cf0c790db573ca7be33f761c733\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - rust\n    - {{ compiler('c') }}   # [unix]\n    - {{ native }}binutils    # [win]\n\ntest:\n  commands:\n    - tokei && tokei --help\n\nabout:\n  home: https://tokei.rs\n  license: MIT\n  summary: |\n    Tokei is a program that displays statistics about your code. Tokei will show\n    number of files, total lines within those files and code, comments, and blanks\n    grouped by language.\n  dev_url: https://github.com/Aaronepower/tokei\n  doc_url: https://github.com/Aaronepower/tokei#how-to-use-tokei\n  license_file: 'LICENCE-MIT'\n\nextra:\n  recipe-maintainers:\n    - dbast\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -337,5 +343,5 @@
   }
  },
  "url":"https://github.com/Aaronepower/tokei/archive/v10.0.1.tar.gz",
- "version":"78687"
+ "version":"12.0.4"
 }
