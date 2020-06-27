@@ -204,7 +204,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -218,7 +218,7 @@
   },
   "package":{
    "name":"geopy",
-   "version":"1.22.0"
+   "version":"2.0.0"
   },
   "requirements":{
    "build":[
@@ -239,8 +239,8 @@
    ]
   },
   "source":{
-   "sha256":"ab5d13de571055ee70c76b602a886bad8276aa3cee5037bb1a65e01202e84fd4",
-   "url":"https://github.com/geopy/geopy/archive/1.22.0.tar.gz"
+   "sha256":"eae8713341b8bb875ae2a5b9be145888e2ea93b0bf34b3de7d7cef9f283fc764",
+   "url":"https://github.com/geopy/geopy/archive/2.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -274,7 +274,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"1.22.0\" %}\n\npackage:\n  name: geopy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/geopy/geopy/archive/{{ version }}.tar.gz\n  sha256: ab5d13de571055ee70c76b602a886bad8276aa3cee5037bb1a65e01202e84fd4\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - geographiclib <2,>=1.49\n\ntest:\n  imports:\n    - geopy\n    - geopy.geocoders\n    - geopy.extra\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/geopy/geopy\n  license: MIT\n  license_file: LICENSE\n  summary: Python Geocoding Toolbox.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pmlandwehr\n",
+ "raw_meta_yaml":"{% set version = \"2.0.0\" %}\n\npackage:\n  name: geopy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/geopy/geopy/archive/{{ version }}.tar.gz\n  sha256: eae8713341b8bb875ae2a5b9be145888e2ea93b0bf34b3de7d7cef9f283fc764\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - geographiclib <2,>=1.49\n\ntest:\n  imports:\n    - geopy\n    - geopy.geocoders\n    - geopy.extra\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/geopy/geopy\n  license: MIT\n  license_file: LICENSE\n  summary: Python Geocoding Toolbox.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pmlandwehr\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -338,5 +338,5 @@
   }
  },
  "url":"https://github.com/geopy/geopy/archive/1.20.0.tar.gz",
- "version":"1.22.0"
+ "version":"2.0.0"
 }

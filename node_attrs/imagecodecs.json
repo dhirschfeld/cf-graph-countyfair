@@ -88,7 +88,7 @@
    "summary":"Image transformation, compression, and decompression codecs"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -143,6 +143,8 @@
     "charls",
     "snappy",
     "libtiff",
+    "lerc",
+    "zfp",
     "python",
     "pip",
     "numpy 1.15",
@@ -166,6 +168,9 @@
     "charls",
     "snappy",
     "libtiff",
+    "lerc",
+    "zfp",
+    "brunsli",
     "python",
     "pip",
     "numpy 1.15",
@@ -188,7 +193,10 @@
     "libzopfli",
     "charls",
     "snappy",
-    "libtiff"
+    "libtiff",
+    "lerc",
+    "zfp",
+    "brunsli"
    ],
    "run":[
     "python",
@@ -235,12 +243,13 @@
  "name":"imagecodecs",
  "new_version":"2020.5.30",
  "pinning_version":"2020.06.06.18.33.32",
- "raw_meta_yaml":"{% set name = \"imagecodecs\" %}\n{% set version = \"2020.5.30\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c8c776922d3a60824d8d3d31ba674a250d1b4d429e81349b5c88c34d4353ddb5\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pkg-config\n  host:\n    - python\n    - pip\n    # Needs at least numpy 1.15 conda-forge default is 1.14\n    # aarch64 and ppc64le have pinnings set to 1.16 for conda-forge\n    - numpy 1.15  # [not (aarch64 or ppc64le or py==38 or (python_impl=='pypy'))]\n    - numpy 1.16  # [py==38]\n    - numpy       # [aarch64 or ppc64le or (python_impl=='pypy') ]\n    - cython\n    - zlib\n    - bzip2\n    - xz\n    - zstd\n    - lz4-c\n    - libpng\n    - libwebp\n    - jxrlib\n    - jpeg\n    - giflib\n    - openjpeg\n    - blosc\n    - lcms2\n    - libaec\n    - brotli\n    - libzopfli\n    - charls\n    - snappy\n    - libtiff\n    # While jpeg-turbo is the preferred version upstream, the migration\n    # to libjpeg-turbo has been contentious on conda-forge\n    # - libjpeg-turbo\n    # Things that are not packaged yet\n    # - brunsli\n    # - zfp\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  # TODO: add these tests when we start to include builds with turbo\n  # files:\n  #     - 687px-Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg\n  #     - ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py\n  # requires:\n  #   - pillow\n  #   - opencv\n  imports:\n    - imagecodecs\n    - imagecodecs._imagecodecs\n  commands:\n    - cd tests\n    - python test_imagecodecs.py\n  #   - python ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py 0\n  #   - python ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py 1\n\nabout:\n  home: https://www.lfd.uci.edu/~gohlke/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE\n    - liblzf-3.6/LICENSE\n    - bitshuffle-0.3.5/LICENSE\n  summary: 'Image transformation, compression, and decompression codecs'\n  description: |\n    The imagecodecs package provides various block-oriented, in-memory buffer\n    transformation, compression, and decompression functions for use in the\n    tifffile, czifile, and other Python imaging modules.\n\n    Decode and/or encode functions are currently implemented for Zlib DEFLATE,\n    ZStandard, Blosc, LZMA, BZ2, LZ4, LZW, LZF, PNG, WebP, JPEG 8-bit,\n    JPEG 12-bit, JPEG SOF=0xC3, JPEG 2000, JPEG XR, PackBits, Packed Integers,\n    Delta, XOR Delta, Floating Point Predictor, and Bitorder reversal.\n\n  doc_url: https://www.lfd.uci.edu/~gohlke/\n  dev_url: https://github.com/cgohlke/imagecodecs\n\nextra:\n  recipe-maintainers:\n    - csachs\n    - hmaarrfk\n    - sdvillal\n",
+ "raw_meta_yaml":"{% set name = \"imagecodecs\" %}\n{% set version = \"2020.5.30\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c8c776922d3a60824d8d3d31ba674a250d1b4d429e81349b5c88c34d4353ddb5\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pkg-config\n  host:\n    - python\n    - pip\n    # Needs at least numpy 1.15 conda-forge default is 1.14\n    # aarch64 and ppc64le have pinnings set to 1.16 for conda-forge\n    - numpy 1.15  # [not (aarch64 or ppc64le or py==38 or (python_impl=='pypy'))]\n    - numpy 1.16  # [py==38]\n    - numpy       # [aarch64 or ppc64le or (python_impl=='pypy') ]\n    - cython\n    - zlib\n    - bzip2\n    - xz\n    - zstd\n    - lz4-c\n    - libpng\n    - libwebp\n    - jxrlib\n    - jpeg\n    - giflib\n    - openjpeg\n    - blosc\n    - lcms2\n    - libaec\n    - brotli\n    - libzopfli\n    - charls\n    - snappy\n    - libtiff\n    - lerc\n    - zfp\n    - brunsli   # [not win]\n    # While jpeg-turbo is the preferred version upstream, the migration\n    # to libjpeg-turbo has been contentious on conda-forge\n    # - libjpeg-turbo\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  # TODO: add these tests when we start to include builds with turbo\n  # files:\n  #     - 687px-Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg\n  #     - ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py\n  # requires:\n  #   - pillow\n  #   - opencv\n  imports:\n    - imagecodecs\n    - imagecodecs._imagecodecs\n  commands:\n    - cd tests\n    - python test_imagecodecs.py\n  #   - python ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py 0\n  #   - python ensure_jpegturbo_imagecodecs_plays_nicely_with_jpeg9.py 1\n\nabout:\n  home: https://www.lfd.uci.edu/~gohlke/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file:\n    - LICENSE\n    - liblzf-3.6/LICENSE\n    - bitshuffle-0.3.5/LICENSE\n  summary: 'Image transformation, compression, and decompression codecs'\n  description: |\n    The imagecodecs package provides various block-oriented, in-memory buffer\n    transformation, compression, and decompression functions for use in the\n    tifffile, czifile, and other Python imaging modules.\n\n    Decode and/or encode functions are currently implemented for Zlib DEFLATE,\n    ZStandard, Blosc, LZMA, BZ2, LZ4, LZW, LZF, PNG, WebP, JPEG 8-bit,\n    JPEG 12-bit, JPEG SOF=0xC3, JPEG 2000, JPEG XR, PackBits, Packed Integers,\n    Delta, XOR Delta, Floating Point Predictor, and Bitorder reversal.\n\n  doc_url: https://www.lfd.uci.edu/~gohlke/\n  dev_url: https://github.com/cgohlke/imagecodecs\n\nextra:\n  recipe-maintainers:\n    - csachs\n    - hmaarrfk\n    - sdvillal\n",
  "req":{
   "__set__":true,
   "elements":[
    "blosc",
    "brotli",
+   "brunsli",
    "bzip2",
    "c_compiler_stub",
    "charls",
@@ -250,6 +259,7 @@
    "jpeg",
    "jxrlib",
    "lcms2",
+   "lerc",
    "libaec",
    "libpng",
    "libtiff",
@@ -263,6 +273,7 @@
    "python",
    "snappy",
    "xz",
+   "zfp",
    "zlib",
    "zstd"
   ]
@@ -281,6 +292,7 @@
    "elements":[
     "blosc",
     "brotli",
+    "brunsli",
     "bzip2",
     "charls",
     "cython",
@@ -288,6 +300,7 @@
     "jpeg",
     "jxrlib",
     "lcms2",
+    "lerc",
     "libaec",
     "libpng",
     "libtiff",
@@ -300,6 +313,7 @@
     "python",
     "snappy",
     "xz",
+    "zfp",
     "zlib",
     "zstd"
    ]
@@ -334,6 +348,7 @@
    "elements":[
     "blosc",
     "brotli",
+    "brunsli",
     "bzip2",
     "charls",
     "cython",
@@ -341,6 +356,7 @@
     "jpeg",
     "jxrlib",
     "lcms2",
+    "lerc",
     "libaec",
     "libpng",
     "libtiff",
@@ -353,6 +369,7 @@
     "python",
     "snappy",
     "xz",
+    "zfp",
     "zlib",
     "zstd"
    ]
