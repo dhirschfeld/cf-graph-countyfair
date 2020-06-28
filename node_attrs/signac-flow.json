@@ -140,6 +140,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440979023.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -235,8 +252,12 @@
   }
  },
  "name":"signac-flow",
- "new_version":"0.9.0",
- "pinning_version":"2020.01.08",
+ "new_version":"0.10.0",
+ "new_version_attempts":{
+  "0.10.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"0.9.0\" %}\n\npackage:\n  name: signac-flow\n  version: {{ version }}\n\nsource:\n  url: https://github.com/glotzerlab/signac-flow/archive/v{{ version }}.tar.gz\n  sha256: 32aa14689cd4907edf9be0b79b50cc66c639082ea2916a6a81357635baca15e4\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install --no-deps --ignore-installed .\"\n  entry_points:\n    - flow = flow.__main__:main\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - cloudpickle\n    - deprecation >=2\n    - jinja2 >=2.8\n    - python >=3.5\n    - signac >=1.0.0\n\ntest:\n  imports:\n    - flow\n\nabout:\n  home: https://signac.io\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Workflow management for signac projects.'\n  description: |\n    The signac-flow tool provides the basic components to setup simple to\n    complex workflows for signac projects. That includes the definition of\n    data pipelines, execution of data space operations and the submission\n    of operations to high-performance super computers.\n  doc_url: https://docs.signac.io\n  dev_url: https://github.com/glotzerlab/signac-flow\n\nextra:\n  recipe-maintainers:\n    - bdice\n    - csadorf\n    - mikemhenry\n    - vyasr\n",
  "req":{
   "__set__":true,
@@ -276,7 +297,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
