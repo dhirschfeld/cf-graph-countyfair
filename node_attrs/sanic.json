@@ -258,6 +258,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/441071062.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"20.6.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -391,12 +408,13 @@
   }
  },
  "name":"sanic",
- "new_version":"20.3.0",
+ "new_version":"20.6.1",
  "new_version_attempts":{
-  "20.3.0":1
+  "20.3.0":1,
+  "20.6.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.14.17.14.20",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"20.3.0\" %}\n\npackage:\n  name: sanic\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/sanic/sanic-{{ version }}.tar.gz\n  sha256: b4078fe0654d0304f2e86e4f35f3d2d0d5aff56cc0e6d8978838282dff645aff\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n  skip: true  # [py<36]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - httptools >=0.0.10\n    - ujson >=1.35  # [not win]\n    - uvloop >=0.5.3  # [not win]    \n    - aiofiles >=0.3.0\n    - websockets >=7.0,<9.0\n    - multidict >=4.0,<5.0\n    - httpx ==0.11.1\n\ntest:\n  imports:\n    - sanic\n    - sanic.app\n    - sanic.blueprints\n    - sanic.config\n    - sanic.constants\n    - sanic.cookies\n    - sanic.exceptions\n    - sanic.handlers\n    - sanic.log\n    - sanic.request\n    - sanic.response\n    - sanic.router\n    - sanic.server\n    - sanic.static\n    - sanic.testing\n    - sanic.views\n    - sanic.websocket\n\nabout:\n  home: https://github.com/channelcat/sanic\n  summary: Async Python 3.5+ web server that's written to go fast\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - nicoddemus\n",
  "req":{
   "__set__":true,
@@ -442,7 +460,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.1\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
