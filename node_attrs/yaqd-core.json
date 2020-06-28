@@ -210,7 +210,7 @@
   }
  },
  "name":"yaqd-core",
- "new_version":"2020.6.2",
+ "new_version":"2020.6.3",
  "new_version_attempts":{
   "0.6.0":1,
   "0.7.0":1,
@@ -219,9 +219,12 @@
   "2020.5.2":1,
   "2020.6.0":1,
   "2020.6.1":1,
-  "2020.6.2":1
+  "2020.6.2":1,
+  "2020.6.3":1
  },
- "new_version_errors":{},
+ "new_version_errors":{
+  "2020.6.3":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2020.6.3' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.6.2\" %}\n{% set sha256 = \"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - setuptools \n    - fastavro\n\ntest:\n  imports:\n    - yaqd_core\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-core-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
