@@ -1,4 +1,25 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/440996952.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -117,6 +138,7 @@
  },
  "name":"createrepo_c",
  "new_version":"0.15.11",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"createrepo_c\" %}\n{% set version = \"0.15.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rpm-software-management/createrepo_c/archive/{{ version }}/createrepo_c-{{ version }}.tar.gz\n  sha256: 41a6181885e38357f7ca843bf9dd27d398a02f79e3def8230e24fd643af11ce3\n\nbuild:\n  number: 0\n  skip: true  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - cmake\n    - pkg-config\n  host:\n    - python\n    - zchunk\n    - libcurl\n    - openssl\n    - xz\n    - libmagic\n    - sqlite\n    - libxml2\n    - glib\n    - bzip2\n    - rpm-tools\n    - drpm\n    - zlib\n    - libmodulemd\n    # Used for running tests\n    - nose\n  run:\n    - python\n    # https://abi-laboratory.pro/index.php?view=timeline&l=rpm\n    - {{ pin_compatible('rpm-tools', max_pin=\"x.x\") }}\n    - {{ pin_compatible('libmodulemd', max_pin=\"x\") }}\n\ntest:\n  commands:\n    - createrepo_c --help\n\nabout:\n  home: http://rpm-software-management.github.io/createrepo_c/\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: 'C implementation of createrepo'\n  description: |\n    Createrepo_c is a C implementation of the classical [Createrepo](http://createrepo.baseurl.org/)\n    tool and simultaneously a C library for manipulation with a repodata.\n    Createrepo_c provides Python bindings too, so could be easily used instead\n    of [yum library](http://yum.baseurl.org/) for certain kinds of\n    manipulations with repodata.\n  doc_url: https://github.com/rpm-software-management/createrepo_c/wiki\n  dev_url: https://github.com/rpm-software-management/createrepo_c\n\nextra:\n  recipe-maintainers:\n    - chrisburr\n",
  "req":{
   "__set__":true,
@@ -185,6 +207,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
