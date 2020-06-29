@@ -116,6 +116,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/441136162.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.9"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -203,12 +220,13 @@
   }
  },
  "name":"nbstripout",
- "new_version":"0.3.8",
+ "new_version":"0.3.9",
  "new_version_attempts":{
-  "0.3.8":1
+  "0.3.8":1,
+  "0.3.9":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.06.18.33.32",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"nbstripout\" %}\n{% set version = \"0.3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e56d26dab9bc8cabf68098115630e2e943d0deed5267c29f3ff32fe4ae09ec65\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - nbstripout = nbstripout:main\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - nbformat\n\ntest:\n  requires:\n    - nbformat\n  imports:\n    - nbstripout\n  commands:\n    - nbstripout --help\n\nabout:\n  home: https://github.com/kynan/nbstripout\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: strip output from Jupyter and IPython notebooks\n  description: |\n    Opens a notebook, strips its output, and writes the outputless version to the\n    original file.\n\n    Useful mainly as a git filter or pre-commit hook for users who don't want to\n    track output in VCS.\n\n    This does mostly the same thing as the `Clear All Output` command in the\n    notebook UI.\n  doc_url: https://pypi.org/project/nbstripout/\n  dev_url: https://github.com/kynan/nbstripout\n\nextra:\n  recipe-maintainers:\n    - kynan\n",
  "req":{
   "__set__":true,
