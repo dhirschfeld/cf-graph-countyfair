@@ -223,7 +223,7 @@
    "summary":"Core libraries for the Common Astronomical Software Applications (CASA)"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "casacore",
     "casacore",
@@ -330,6 +330,7 @@
     "ncursesw.patch",
     "default-root.patch",
     "ignore-build-env-prefix.patch",
+    "clang-link.patch",
     "ncursesw.patch",
     "default-root.patch",
     "ignore-build-env-prefix.patch"
@@ -351,6 +352,7 @@
     "measuresdata",
     "taql --help",
     "tomf --help",
+    "bash -c \"! otool -L $PREFIX/lib/libcasa_python*.5.dylib |grep /libpython\"",
     "casahdf5support",
     "findmeastable --help",
     "lsmf",
@@ -363,7 +365,7 @@
  "name":"casacore",
  "new_version":"3.3.0",
  "pinning_version":"2020.05.04.05.46.47",
- "raw_meta_yaml":"{% set name = \"casacore\" %}\n{% set version = \"3.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/casacore/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 3a714644b908ef6e81489b792cc9b80f6d8267a275e15d38a42a6a5137d39d3d\n  patches:\n    - ncursesw.patch\n    - default-root.patch\n    - ignore-build-env-prefix.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('casacore', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - bison\n    - cmake\n    - flex\n    - m4\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - boost {{ boost }}\n    - cfitsio {{ cfitsio }}\n    - fftw {{ fftw }}\n    - hdf5 {{ hdf5 }}\n    - ncurses {{ ncurses }}\n    - numpy\n    - python\n    - readline {{ readline }}\n    - wcslib 7.2\n  run:\n    - boost {{ boost }}\n    - ncurses {{ ncurses }}\n    - {{ pin_compatible('numpy') }}\n    - python\n    - wcslib 7.2\n\ntest:\n  commands:\n    - casahdf5support\n    - findmeastable --help\n    - lsmf\n    - measuresdata\n    - taql --help\n    - tomf --help\n\nabout:\n  home: https://casacore.github.io/casacore/\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: 'Core libraries for the Common Astronomical Software Applications (CASA)'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "raw_meta_yaml":"{% set name = \"casacore\" %}\n{% set version = \"3.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/casacore/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 3a714644b908ef6e81489b792cc9b80f6d8267a275e15d38a42a6a5137d39d3d\n  patches:\n    - ncursesw.patch\n    - default-root.patch\n    - ignore-build-env-prefix.patch\n    - clang-link.patch  # [osx]\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('casacore', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - bison\n    - cmake\n    - flex\n    - m4\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libblas\n    - libcblas\n    - liblapack\n    - boost {{ boost }}\n    - cfitsio {{ cfitsio }}\n    - fftw {{ fftw }}\n    - hdf5 {{ hdf5 }}\n    - ncurses {{ ncurses }}\n    - numpy\n    - python\n    - readline {{ readline }}\n    - wcslib 7.2\n  run:\n    - boost {{ boost }}\n    - ncurses {{ ncurses }}\n    - {{ pin_compatible('numpy') }}\n    - python\n    - wcslib 7.2\n\ntest:\n  commands:\n    - casahdf5support\n    - findmeastable --help\n    - lsmf\n    - measuresdata\n    - taql --help\n    - tomf --help\n\n    # Make sure that libcasa_python doesn't link to libpython on macOS, since\n    # then the python-casacore modules will crash -- if binary modules on macOS\n    # link to libpython, symbols are duplicated.\n    - bash -c \"! otool -L $PREFIX/lib/libcasa_python*.5.dylib |grep /libpython\"  # [osx]\n\nabout:\n  home: https://casacore.github.io/casacore/\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: 'Core libraries for the Common Astronomical Software Applications (CASA)'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "req":{
   "__set__":true,
   "elements":[
