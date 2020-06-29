@@ -258,8 +258,8 @@
     "scipy",
     "astropy",
     "healpy",
-    "pyephem",
     "h5py",
+    "ephem",
     "llvm-openmp >=4.0.1",
     "python",
     "fftw",
@@ -271,8 +271,8 @@
     "scipy",
     "astropy",
     "healpy",
-    "pyephem",
     "h5py",
+    "ephem",
     "python",
     "fftw",
     "libblas",
@@ -283,8 +283,8 @@
     "scipy",
     "astropy",
     "healpy",
-    "pyephem",
-    "h5py"
+    "h5py",
+    "ephem"
    ]
   },
   "source":{
@@ -312,7 +312,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"\n{% set version = \"2.3.8\" %}\n{% set sha256 = \"aad27c1169d722058c7526005b7da8788a74b3f2be03503e4c7a83b0ccfefe85\" %}\n\n{% set build = 0 %}\n\npackage:\n  name: toast\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hpc4cmb/toast/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py<36]\n  skip: True  # [win]\n  number: {{ build }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - llvm-openmp >=4.0.1  # [osx]\n  host:\n    - llvm-openmp >=4.0.1  # [osx]\n    - python\n    - fftw\n    - libblas\n    - liblapack\n    - suitesparse\n    - libaatm\n  run:\n    - llvm-openmp >=4.0.1  # [osx]\n    - python\n    - fftw\n    - libblas\n    - liblapack\n    - suitesparse\n    - libaatm\n    - numpy\n    - scipy\n    - astropy\n    - healpy\n    - pyephem\n    - h5py\n\ntest:\n  files:\n    - run_test.sh\n  commands:\n    - ./run_test.sh\n\nabout:\n  home: https://github.com/hpc4cmb/toast\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Time Ordered Astrophysics Scalable Tools'\n  description: |\n    TOAST is a software framework for simulating and processing timestream data\n    collected by microwave telescopes.\n  dev_url: https://github.com/hpc4cmb/toast\n\nextra:\n  recipe-maintainers:\n    - tskisner\n",
+ "raw_meta_yaml":"\n{% set version = \"2.3.8\" %}\n{% set sha256 = \"aad27c1169d722058c7526005b7da8788a74b3f2be03503e4c7a83b0ccfefe85\" %}\n\n{% set build = 0 %}\n\npackage:\n  name: toast\n  version: {{ version }}\n\nsource:\n  url: https://github.com/hpc4cmb/toast/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py<36]\n  skip: True  # [win]\n  number: {{ build }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - llvm-openmp >=4.0.1  # [osx]\n  host:\n    - llvm-openmp >=4.0.1  # [osx]\n    - python\n    - fftw\n    - libblas\n    - liblapack\n    - suitesparse\n    - libaatm\n  run:\n    - llvm-openmp >=4.0.1  # [osx]\n    - python\n    - {{ pin_compatible(\"fftw\") }}\n    - {{ pin_compatible(\"libblas\") }}\n    - {{ pin_compatible(\"liblapack\") }}\n    - {{ pin_compatible(\"suitesparse\") }}\n    - {{ pin_compatible(\"libaatm\") }}\n    - numpy\n    - scipy\n    - astropy\n    - healpy\n    - h5py\n    - ephem\n\ntest:\n  files:\n    - run_test.sh\n  commands:\n    - ./run_test.sh\n\nabout:\n  home: https://github.com/hpc4cmb/toast\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Time Ordered Astrophysics Scalable Tools'\n  description: |\n    TOAST is a software framework for simulating and processing timestream data\n    collected by microwave telescopes.\n  dev_url: https://github.com/hpc4cmb/toast\n\nextra:\n  recipe-maintainers:\n    - tskisner\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -320,6 +320,7 @@
    "c_compiler_stub",
    "cmake",
    "cxx_compiler_stub",
+   "ephem",
    "fftw",
    "h5py",
    "healpy",
@@ -328,7 +329,6 @@
    "liblapack",
    "llvm-openmp",
    "numpy",
-   "pyephem",
    "python",
    "scipy",
    "suitesparse"
@@ -360,6 +360,7 @@
    "__set__":true,
    "elements":[
     "astropy",
+    "ephem",
     "fftw",
     "h5py",
     "healpy",
@@ -368,7 +369,6 @@
     "liblapack",
     "llvm-openmp",
     "numpy",
-    "pyephem",
     "python",
     "scipy",
     "suitesparse"
@@ -407,6 +407,7 @@
    "__set__":true,
    "elements":[
     "astropy",
+    "ephem",
     "fftw",
     "h5py",
     "healpy",
@@ -415,7 +416,6 @@
     "liblapack",
     "llvm-openmp >=4.0.1",
     "numpy",
-    "pyephem",
     "python",
     "scipy",
     "suitesparse"
