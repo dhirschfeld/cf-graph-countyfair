@@ -56,6 +56,7 @@
   }
  },
  "name":"untangle",
+ "new_version":"1.1.1",
  "raw_meta_yaml":"{% set version = \"1.1.1\" %}\n{% set name = \"untangle\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e7cfa1ad57707e6b74cfea8b9fc50f7cbe9bbaf18401cc9d72192002bcd80bcb\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - untangle\n\nabout:\n  home: https://github.com/stchris/untangle\n  license: MIT\n  license_file: 'LICENSE'\n  summary: 'Convert XML documents into Python objects.'\n  doc_url: https://untangle.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - htenkanen\n",
  "req":{
   "__set__":true,
