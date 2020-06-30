@@ -281,26 +281,29 @@
     "lsm2bin = tifffile.lsm2bin:main"
    ],
    "noarch":"python",
-   "number":"1",
+   "number":"2",
    "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
     "blink1073",
-    "ocefpaf",
-    "jakirkham",
-    "stuarteberg",
     "ericpre",
-    "blink1073",
-    "ocefpaf",
     "jakirkham",
+    "mrakitin",
+    "ocefpaf",
     "stuarteberg",
+    "blink1073",
     "ericpre",
-    "blink1073",
-    "ocefpaf",
     "jakirkham",
+    "mrakitin",
+    "ocefpaf",
     "stuarteberg",
-    "ericpre"
+    "blink1073",
+    "ericpre",
+    "jakirkham",
+    "mrakitin",
+    "ocefpaf",
+    "stuarteberg"
    ]
   },
   "package":{
@@ -352,7 +355,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.04.02.43.14",
- "raw_meta_yaml":"{% set version = \"2020.6.3\" %}\n\npackage:\n  name: tifffile\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/tifffile/tifffile-{{ version }}.tar.gz\n  sha256: e79403a8b98b0df7ade8d43469151b959fd56239001471fac62beabca6f56377\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - tifffile = tifffile:main\n    - lsm2bin = tifffile.lsm2bin:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.15.1\n    - imagecodecs\n\ntest:\n  imports:\n    - tifffile\n\nabout:\n  home: https://github.com/blink1073/tifffile\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Read and write image data from and to TIFF files.\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ocefpaf\n    - jakirkham\n    - stuarteberg\n    - ericpre\n",
+ "raw_meta_yaml":"{% set name = \"tifffile\" %}\n{% set version = \"2020.6.3\" %}\n{% set sha256 = \"e79403a8b98b0df7ade8d43469151b959fd56239001471fac62beabca6f56377\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - tifffile = tifffile:main\n    - lsm2bin = tifffile.lsm2bin:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.15.1\n    - imagecodecs\n\ntest:\n  imports:\n    - tifffile\n\nabout:\n  home: https://github.com/blink1073/tifffile\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Read and write image data from and to TIFF files.\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ericpre\n    - jakirkham\n    - mrakitin\n    - ocefpaf\n    - stuarteberg\n",
  "req":{
   "__set__":true,
   "elements":[

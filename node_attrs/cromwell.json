@@ -237,7 +237,7 @@
    "summary":"A Workflow Management System geared towards scientific workflows described in WDL"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -324,7 +324,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set version = \"51\" %}\n\npackage:\n  name: cromwell\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/broadinstitute/cromwell/releases/download/{{ version }}/cromwell-{{ version }}.jar\n    sha256: c7c1440fe410d393073cc9da22121bff1f04ee9c5a3b28f03b52384d7ff058e8\n    folder: cromwell\n  - url: https://github.com/broadinstitute/cromwell/releases/download/{{ version }}/womtool-{{ version }}.jar\n    sha256: e05051d5a6cdc5898d2a4b52352c4782fbbee5f003556fbe1b3f5db8809c967d\n    folder: womtool\n\nbuild:\n  # Cannot build on Windows because findutils is not available\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  run:\n    - openjdk >=8,<9\n    - python\n    - findutils\n\ntest:\n  commands:\n    - cromwell --version 2>&1 | grep \"cromwell\"\n    - womtool --help 2>&1 | grep \"Usage\"\n\nabout:\n  home: https://github.com/broadinstitute/cromwell\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: A Workflow Management System geared towards scientific workflows described in WDL\n  doc_url: https://cromwell.readthedocs.io/en/stable/\n  dev_url: https://github.com/broadinstitute/cromwell\n\nextra:\n  recipe-maintainers:\n    - notestaff\n    - chapmanb\n    - micknudsen\n    - rhpvorderman\n",
+ "raw_meta_yaml":"{% set version = \"51\" %}\n\npackage:\n  name: cromwell\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/broadinstitute/cromwell/releases/download/{{ version }}/cromwell-{{ version }}.jar\n    sha256: c7c1440fe410d393073cc9da22121bff1f04ee9c5a3b28f03b52384d7ff058e8\n    folder: cromwell\n  - url: https://github.com/broadinstitute/cromwell/releases/download/{{ version }}/womtool-{{ version }}.jar\n    sha256: e05051d5a6cdc5898d2a4b52352c4782fbbee5f003556fbe1b3f5db8809c967d\n    folder: womtool\n\nbuild:\n  # Cannot build on Windows because findutils is not available\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  run:\n    - openjdk >=8,<9\n    - python\n    - findutils\n\ntest:\n  commands:\n    - cromwell --version 2>&1 | grep \"cromwell\"\n    - womtool --help 2>&1 | grep \"Usage\"\n\nabout:\n  home: https://github.com/broadinstitute/cromwell\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: A Workflow Management System geared towards scientific workflows described in WDL\n  doc_url: https://cromwell.readthedocs.io/en/stable/\n  dev_url: https://github.com/broadinstitute/cromwell\n\nextra:\n  recipe-maintainers:\n    - notestaff\n    - chapmanb\n    - micknudsen\n    - rhpvorderman\n",
  "req":{
   "__set__":true,
   "elements":[
