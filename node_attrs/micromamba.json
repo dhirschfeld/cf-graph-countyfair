@@ -33,6 +33,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442324521.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"krb51171"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -88,8 +107,7 @@
     "libcurl",
     "libarchive"
    ],
-   "number":"0",
-   "skip":true
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -106,13 +124,14 @@
   },
   "package":{
    "name":"micromamba",
-   "version":"0.3.10"
+   "version":"0.4.0"
   },
   "requirements":{
    "build":[
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
+    "ninja",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "cmake",
@@ -127,9 +146,9 @@
     "nlohmann_json",
     "libcurl",
     "libarchive",
-    "krb5-static",
-    "libsolv-static",
-    "libopenssl-static",
+    "krb5",
+    "libsolv",
+    "openssl",
     "cli11",
     "nlohmann_json",
     "libcurl",
@@ -147,8 +166,13 @@
    ]
   },
   "source":{
-   "sha256":"4e23a935d9f90f8963ede454d7df619ee6bd4acb2e599fd4a5bfb3f2475b9b06",
-   "url":"https://github.com/TheSnakePit/mamba/archive/0.3.10.tar.gz"
+   "patches":[
+    "placeholder.patch",
+    "placeholder.patch",
+    "placeholder.patch"
+   ],
+   "sha256":"2acf5046964184056f6e87b5dc5b57166f3d2da8be8c6a50bc9be56bced92398",
+   "url":"https://github.com/TheSnakePit/mamba/archive/0.4.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -168,7 +192,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"0.3.10\" %}\n\npackage:\n  name: micromamba\n  version: {{ version }}\n\nsource:\n  url: https://github.com/TheSnakePit/mamba/archive/{{ version }}.tar.gz\n  sha256: 4e23a935d9f90f8963ede454d7df619ee6bd4acb2e599fd4a5bfb3f2475b9b06\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  ignore_run_exports:\n    - libcurl\n    - libarchive\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - cli11\n    - nlohmann_json\n    # static libs\n    - libcurl\n    - libarchive\n    - krb5-static\n    - libsolv-static\n    - libopenssl-static\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/micromamba  # [unix]\n    - micromamba --help\n\nabout:\n  home: https://github.com/TheSnakePit/mamba\n  license_file:\n    - LICENSE\n    - CURL_LICENSE.txt\n    - LIBARCHIVE_LICENSE.txt\n    - KRB5_LICENSE.txt\n    - LIBSOLV_LICENSE.txt\n    - LIBOPENSSL_LICENSE.txt\n    - CLI11_LICENSE.txt\n    - NLOHMANN_JSON_LICENSE.txt\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: Micromamba is a tiny version of mamba, the fast conda package installer.\n  dev_url: https://github.com/TheSnakePit/mamba\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - SylvainCorlay\n    - JohanMabille\n",
+ "raw_meta_yaml":"{% set version = \"0.4.0\" %}\n{% set sha256 = \"2acf5046964184056f6e87b5dc5b57166f3d2da8be8c6a50bc9be56bced92398\" %}\n\npackage:\n  name: micromamba\n  version: {{ version }}\n\nsource:\n  url: https://github.com/TheSnakePit/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - placeholder.patch\n\nbuild:\n  number: 0\n  ignore_run_exports:\n    - libcurl\n    - libarchive\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n    - ninja  # [win]\n  host:\n    - cli11\n    - nlohmann_json\n    # static libs\n    - libcurl\n    - libarchive\n    - krb5-static  # [unix]\n    - libsolv-static  # [unix]\n    - libopenssl-static  # [unix]\n    - krb5  # [win]\n    - libsolv  # [win]\n    - openssl  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/micromamba  # [unix]\n    - micromamba --help\n\nabout:\n  home: https://github.com/TheSnakePit/mamba\n  license_file:\n    - LICENSE\n    - CURL_LICENSE.txt\n    - LIBARCHIVE_LICENSE.txt\n    - KRB5_LICENSE.txt\n    - LIBSOLV_LICENSE.txt\n    - LIBOPENSSL_LICENSE.txt\n    - CLI11_LICENSE.txt\n    - NLOHMANN_JSON_LICENSE.txt\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: Micromamba is a tiny version of mamba, the fast conda package installer.\n  dev_url: https://github.com/TheSnakePit/mamba\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -176,13 +200,17 @@
    "cli11",
    "cmake",
    "cxx_compiler_stub",
+   "krb5",
    "krb5-static",
    "libarchive",
    "libcurl",
    "libopenssl-static",
+   "libsolv",
    "libsolv-static",
    "make",
-   "nlohmann_json"
+   "ninja",
+   "nlohmann_json",
+   "openssl"
   ]
  },
  "requirements":{
@@ -192,19 +220,23 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "make",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "cli11",
+    "krb5",
     "krb5-static",
     "libarchive",
     "libcurl",
     "libopenssl-static",
+    "libsolv",
     "libsolv-static",
-    "nlohmann_json"
+    "nlohmann_json",
+    "openssl"
    ]
   },
   "run":{
@@ -225,19 +257,23 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "make",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "cli11",
+    "krb5",
     "krb5-static",
     "libarchive",
     "libcurl",
     "libopenssl-static",
+    "libsolv",
     "libsolv-static",
-    "nlohmann_json"
+    "nlohmann_json",
+    "openssl"
    ]
   },
   "run":{
@@ -250,5 +286,5 @@
   }
  },
  "url":"https://github.com/TheSnakePit/mamba/archive/0.3.8.tar.gz",
- "version":"0.3.10"
+ "version":"0.4.0"
 }
