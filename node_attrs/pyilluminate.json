@@ -65,6 +65,7 @@
   }
  },
  "name":"pyilluminate",
+ "new_version":"0.5.4",
  "raw_meta_yaml":"{% set name = \"pyilluminate\" %}\n{% set version = \"0.5.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyserial\n    - dataclasses\n    - xarray\n\ntest:\n  imports:\n    - pyilluminate\n\nabout:\n  home: https://github.com/ramonaoptics/pyilluminate\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python interface for controlling the Illuminate boards.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
