@@ -115,8 +115,7 @@
     "greyskull = grayskull.__main__:main"
    ],
    "noarch":"python",
-   "number":"0",
-   "script":"-m pip install . -vv"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -125,87 +124,198 @@
     "marcelotrevisani"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"grayskull",
+    "requirements":{
+     "host":[
+      "pip",
+      "python >=3.7",
+      "setuptools >=30.3.0",
+      "setuptools_scm"
+     ],
+     "run":[
+      "colorama",
+      "rapidfuzz >=0.7.6",
+      "pip",
+      "progressbar2",
+      "python >=3.7",
+      "requests",
+      "ruamel.yaml >=0.15.3",
+      "ruamel.yaml.jinja2",
+      "setuptools >=30.3.0",
+      "stdlib-list",
+      "git"
+     ]
+    },
+    "script":"build_base.sh",
+    "test":{
+     "commands":[
+      "pip check",
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ],
+     "requires":[
+      "pip"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"greyskull",
+    "requirements":{
+     "run":[
+      "grayskull"
+     ]
+    },
+    "test":{
+     "commands":[
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"grayskull",
+    "requirements":{
+     "host":[
+      "pip",
+      "python >=3.7",
+      "setuptools >=30.3.0",
+      "setuptools_scm"
+     ],
+     "run":[
+      "colorama",
+      "rapidfuzz >=0.7.6",
+      "pip",
+      "progressbar2",
+      "python >=3.7",
+      "requests",
+      "ruamel.yaml >=0.15.3",
+      "ruamel.yaml.jinja2",
+      "setuptools >=30.3.0",
+      "stdlib-list",
+      "git"
+     ]
+    },
+    "script":"build_base.sh",
+    "test":{
+     "commands":[
+      "pip check",
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ],
+     "requires":[
+      "pip"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"greyskull",
+    "requirements":{
+     "run":[
+      "grayskull"
+     ]
+    },
+    "test":{
+     "commands":[
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"grayskull",
+    "requirements":{
+     "host":[
+      "pip",
+      "python >=3.7",
+      "setuptools >=30.3.0",
+      "setuptools_scm"
+     ],
+     "run":[
+      "colorama",
+      "rapidfuzz >=0.7.6",
+      "pip",
+      "progressbar2",
+      "python >=3.7",
+      "requests",
+      "ruamel.yaml >=0.15.3",
+      "ruamel.yaml.jinja2",
+      "setuptools >=30.3.0",
+      "stdlib-list",
+      "git"
+     ]
+    },
+    "script":"build_base.sh",
+    "test":{
+     "commands":[
+      "pip check",
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ],
+     "requires":[
+      "pip"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"greyskull",
+    "requirements":{
+     "run":[
+      "grayskull"
+     ]
+    },
+    "test":{
+     "commands":[
+      "grayskull --help",
+      "greyskull --help"
+     ],
+     "imports":[
+      "grayskull"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"grayskull",
    "version":"0.7.3"
   },
-  "requirements":{
-   "host":[
-    "pip",
-    "python >=3.7",
-    "setuptools >=30.3.0",
-    "setuptools_scm",
-    "pip",
-    "python >=3.7",
-    "setuptools >=30.3.0",
-    "setuptools_scm",
-    "pip",
-    "python >=3.7",
-    "setuptools >=30.3.0",
-    "setuptools_scm"
-   ],
-   "run":[
-    "colorama",
-    "rapidfuzz >=0.7.6",
-    "pip",
-    "progressbar2",
-    "python >=3.7",
-    "requests",
-    "ruamel.yaml >=0.15.3",
-    "ruamel.yaml.jinja2",
-    "setuptools >=30.3.0",
-    "stdlib-list",
-    "git",
-    "colorama",
-    "rapidfuzz >=0.7.6",
-    "pip",
-    "progressbar2",
-    "python >=3.7",
-    "requests",
-    "ruamel.yaml >=0.15.3",
-    "ruamel.yaml.jinja2",
-    "setuptools >=30.3.0",
-    "stdlib-list",
-    "git",
-    "colorama",
-    "rapidfuzz >=0.7.6",
-    "pip",
-    "progressbar2",
-    "python >=3.7",
-    "requests",
-    "ruamel.yaml >=0.15.3",
-    "ruamel.yaml.jinja2",
-    "setuptools >=30.3.0",
-    "stdlib-list",
-    "git"
-   ]
-  },
   "source":{
    "sha256":"bbbefd3cbc240c74f22322fabf7862bd36108ac9b4c42a5121b4e68636eab0af",
    "url":"https://pypi.io/packages/source/g/grayskull/grayskull-0.7.3.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "pip check",
-    "grayskull --help",
-    "greyskull --help",
-    "pip check",
-    "grayskull --help",
-    "greyskull --help",
-    "pip check",
-    "grayskull --help",
-    "greyskull --help"
-   ],
-   "imports":[
-    "grayskull",
-    "grayskull",
-    "grayskull"
-   ],
-   "requires":[
-    "pip",
-    "pip",
-    "pip"
-   ]
   }
  },
  "name":"grayskull",
@@ -218,13 +328,18 @@
   "0.7.0":1
  },
  "new_version_errors":{},
+ "outputs_names":[
+  "grayskull",
+  "greyskull"
+ ],
  "pinning_version":"2020.04.14.12.02.49",
- "raw_meta_yaml":"{% set name = \"grayskull\" %}\n{% set version = \"0.7.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bbbefd3cbc240c74f22322fabf7862bd36108ac9b4c42a5121b4e68636eab0af\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - grayskull = grayskull.__main__:main\n    - greyskull = grayskull.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.7\n    - setuptools >=30.3.0\n    - setuptools_scm\n  run:\n    - colorama\n    - rapidfuzz >=0.7.6\n    - pip\n    - progressbar2\n    - python >=3.7\n    - requests\n    - ruamel.yaml >=0.15.3\n    - ruamel.yaml.jinja2\n    - setuptools >=30.3.0\n    - stdlib-list\n    - git\n\ntest:\n  imports:\n    - grayskull\n  commands:\n    - pip check\n    - grayskull --help\n    - greyskull --help\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/grayskull/\n  summary: Project to generate recipes for conda.\n  dev_url: https://github.com/marcelotrevisani/grayskull\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"grayskull\" %}\n{% set version = \"0.7.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bbbefd3cbc240c74f22322fabf7862bd36108ac9b4c42a5121b4e68636eab0af\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - grayskull = grayskull.__main__:main\n    - greyskull = grayskull.__main__:main\n\noutputs:\n  - name: grayskull\n    script: build_base.sh\n    build:\n      noarch: python\n    requirements:\n      host:\n        - pip\n        - python >=3.7\n        - setuptools >=30.3.0\n        - setuptools_scm\n      run:\n        - colorama\n        - rapidfuzz >=0.7.6\n        - pip\n        - progressbar2\n        - python >=3.7\n        - requests\n        - ruamel.yaml >=0.15.3\n        - ruamel.yaml.jinja2\n        - setuptools >=30.3.0\n        - stdlib-list\n        - git\n    test:\n      imports:\n        - grayskull\n      commands:\n        - pip check\n        - grayskull --help\n        - greyskull --help\n      requires:\n        - pip\n\n  - name: greyskull\n    build:\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage('grayskull', max_pin=\"x.x.x\") }}\n    test:\n      imports:\n        - grayskull\n      commands:\n        - grayskull --help\n        - greyskull --help\n\nabout:\n  home: https://pypi.org/project/grayskull/\n  summary: Project to generate recipes for conda.\n  dev_url: https://github.com/marcelotrevisani/grayskull\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
    "colorama",
    "git",
+   "grayskull",
    "pip",
    "progressbar2",
    "python",
@@ -256,6 +371,7 @@
    "elements":[
     "colorama",
     "git",
+    "grayskull",
     "pip",
     "progressbar2",
     "python",
@@ -295,6 +411,7 @@
    "elements":[
     "colorama",
     "git",
+    "grayskull",
     "pip",
     "progressbar2",
     "python >=3.7",

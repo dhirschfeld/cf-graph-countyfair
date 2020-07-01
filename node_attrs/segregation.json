@@ -67,6 +67,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442480485.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -166,7 +183,11 @@
  },
  "name":"segregation",
  "new_version":"1.3.0",
- "pinning_version":"2020.02.12",
+ "new_version_attempts":{
+  "1.3.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"1.2.0\" %}\n\npackage:\n  name: segregation\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pysal/segregation/archive/v{{ version }}.tar.gz\n  sha256: 2df6d529dbf960edb4930511f20c94209167970a88074800fadcb2d6f9023553\n \nbuild:\n  number: 1\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - pandas\n    - geopandas\n    - matplotlib-base\n    - scikit-learn\n    - seaborn\n    - numpy\n    - scipy\n    - libpysal\n    - tqdm\n    # FIXME: workaround until we rebuild gdal\n    - zstd\n\ntest:\n  imports:\n    - segregation\n\nabout:\n  home: https://pysal.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Segregation Measures Framework in PySAL'\n\n  description: |\n    The PySAL segregation module allow users to estimate several segregation measures and perform \n    inference for single measures and comparative inference in a concise way.\n  doc_url: http://segregation.readthedocs.io/\n  dev_url: https://github.com/pysal/segregation\n\nextra:\n  recipe-maintainers:\n    - renanxcortes\n    - sjsrey\n    - knaaptime\n",
  "req":{
   "__set__":true,
@@ -218,7 +239,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442479500.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -99,7 +116,11 @@
  },
  "name":"rb-json",
  "new_version":"2.3.1",
- "pinning_version":"2019.12.02",
+ "new_version_attempts":{
+  "2.3.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"json\" %}\n{% set version = \"2.3.0\" %}\n\npackage:\n  name: rb-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem\n  sha256: b61691fd2087ac37141b75ff4287ce2c3f17251c713e97ef73b43b4bb2e0355b\n\nbuild:\n  number: 0\n  script:\n    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem --\n        --use-system-libraries  # [osx and rb25]\n    {% for dir in [ '', 'ext/generator', 'ext/parser' ] %}\n    - make -C {{ PREFIX }}/lib/ruby/gems/{{ ruby }}.0/gems/{{ name }}-{{ version }}/ext/{{ name }}/{{ dir }} clean\n    {% endfor%}\n  skip: {{ win }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - ruby\n  run:\n    - ruby\n\ntest:\n  commands:\n    - ruby -r {{ name }} -e 'exit 0'\n\nabout:\n  home: https://rubygems.org/gems/{{ name }}\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: This is a JSON implementation as a Ruby extension in C.\n  doc_url: https://www.rubydoc.info/gems/{{ name }}\n  dev_url: http://flori.github.io/json/\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - benhuff\n    - sodre\n",
  "req":{
   "__set__":true,
@@ -132,7 +153,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.3",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
