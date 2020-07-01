@@ -73,6 +73,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442425910.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.19.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -166,10 +183,11 @@
  "name":"randomgen",
  "new_version":"1.19.1",
  "new_version_attempts":{
-  "1.19.0":1
+  "1.19.0":1,
+  "1.19.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.23.06.07.46",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"randomgen\" %}\n{% set version = \"1.18.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 8e7811be98ffedea36789188612e3f70ffca7cdeab854bfdfea167e272fa5ff2\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - cython >=0.26\n    - numpy\n    - pip\n    - python\n    - setuptools\n  run:\n    - {{ pin_compatible('numpy') }}\n    - python\n\ntest:\n  imports:\n    - randomgen\n    - randomgen.legacy\n  requires:\n    - pytest\n    - nose\n  commands:\n    - python -m pytest -rs --pyargs randomgen.tests\n\nabout:\n  home: \"https://github.com/bashtage/randomgen\"\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: \"Random generator supporting multiple PRNGs\"\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{
   "__set__":true,

@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442426893.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -69,6 +88,11 @@
  },
  "name":"grafeas",
  "new_version":"0.4.1",
+ "new_version_attempts":{
+  "0.4.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"grafeas\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"6afdea438c28e4140dc065ed8d147f336fcf681902695975301b143b611582f0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip >=18.1\n  run:\n    - python\n    - google-api-core-grpc >=1.14.0,<2.0.0dev\n    - enum34\n\ntest:\n  imports:\n    - grpc\n    - grafeas.grafeas_v1\n\nabout:\n  home: https://github.com/googleapis/python-grafeas\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Grafeas API client library'\n  description: An implementation of the Grafeas API, which stores, and enables querying\n    and retrieval of critical metadata about all of your software artifacts.\n\n  doc_url: https://googleapis.dev/python/grafeas/latest/index.html\n  dev_url: https://github.com/googleapis/python-grafeas\n\nextra:\n  recipe-maintainers:\n    - parthea\n",
  "req":{
   "__set__":true,
@@ -104,6 +128,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
