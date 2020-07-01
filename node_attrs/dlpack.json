@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442828405.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
@@ -63,7 +82,12 @@
   }
  },
  "name":"dlpack",
- "new_version":"0.2",
+ "new_version":"0.3",
+ "new_version_attempts":{
+  "0.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"dlpack\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/dmlc/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 419f76ef723d21b72b704b2c4bf718dcd9d2ecd44cd28c8a71798389b7932ae5\n\nbuild:\n  number: 1\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/dlpack  # [unix]\n    - test -f ${PREFIX}/include/dlpack/dlpack.h  # [unix]\n    - test -f ${PREFIX}/bin/mock  # [unix]\n\nabout:\n  home: https://github.com/dmlc/dlpack\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'DLPack - Open In Memory Tensor Structure'\n  description: |\n    DLPack is an open in-memory tensor structure to for sharing tensor among frameworks\n  dev_url: https://github.com/dmlc/dlpack\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
@@ -97,6 +121,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
