@@ -86,6 +86,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442646518.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.5.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -198,8 +215,12 @@
   }
  },
  "name":"orange3-network",
- "new_version":"1.5.0",
- "pinning_version":"2020.01.10",
+ "new_version":"1.5.1",
+ "new_version_attempts":{
+  "1.5.1":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"Orange3-Network\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a0fb7f5fb31af7ff2cb39ded1cc01bdd04ad75e599dba19c6eb8efa53ae0dff1\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy\n    - numpy >=1.8.0\n\n  run:\n    - python\n    - setuptools\n    - {{ pin_compatible('numpy') }}\n    - orange3 >=3.20\n    - networkx >=1.10\n    - pyqtgraph >=0.9.10\n\ntest:\n  imports:\n    - orangecontrib.network\n\nabout:\n  home: https://github.com/biolab/orange3-network\n  license: GPL-3.0\n  license_file: \n    - LICENSE \n    - COPYING \n\n  summary: 'Networks add-on for Orange 3 data mining software package.'\n  license_family: GPL\n  doc_url: http://orange3-network.rtfd.io/\n  dev_url: https://github.com/biolab/orange3-network\n\nextra:\n  recipe-maintainers:\n    - astaric\n    - kernc\n    - primozgodec\n    - janezd\n",
  "req":{
   "__set__":true,
@@ -248,7 +269,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

@@ -54,6 +54,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442645539.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"8.6.14"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -112,12 +129,13 @@
   }
  },
  "name":"uge-drmaa2",
- "new_version":"8.6.13",
+ "new_version":"8.6.14",
  "new_version_attempts":{
-  "8.6.13":1
+  "8.6.13":1,
+  "8.6.14":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"uge-drmaa2\" %}\n{% set version = \"8.6.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e68831e4f5e538f785940d270a92552dbc74d90fbd5f8c1c24d156d6900a2a4d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  imports:\n    - drmaa2\n\nabout:\n  home: https://github.com/gridengine/drmaa2-python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: license.txt\n  summary: Python wrapper around the Univar Grid Engine DRMAA2 library.\n\nextra:\n  recipe-maintainers:\n    - Acribbs\n",
  "req":{
   "__set__":true,

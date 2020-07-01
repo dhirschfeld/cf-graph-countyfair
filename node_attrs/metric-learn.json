@@ -31,13 +31,12 @@
    "home":"http://github.com/scikit-learn-contrib/metric-learn",
    "license":"MIT",
    "license_family":"MIT",
-   "license_file":"LICENSE.txt",
    "summary":"Python implementations of metric learning algorithms"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -57,38 +56,35 @@
   },
   "package":{
    "name":"metric-learn",
-   "version":"0.5.0"
+   "version":"0.6.0"
   },
   "requirements":{
    "host":[
     "pip",
-    "python",
+    "python >=3.6",
     "pip",
-    "python",
+    "python >=3.6",
     "pip",
-    "python"
+    "python >=3.6"
    ],
    "run":[
     "numpy",
-    "python",
+    "python >=3.6",
     "scikit-learn >=0.20.3",
     "scipy",
-    "six",
     "numpy",
-    "python",
+    "python >=3.6",
     "scikit-learn >=0.20.3",
     "scipy",
-    "six",
     "numpy",
-    "python",
+    "python >=3.6",
     "scikit-learn >=0.20.3",
-    "scipy",
-    "six"
+    "scipy"
    ]
   },
   "source":{
-   "sha256":"fd43bf76aa2f14dfaa40cdbacb3b2fbab25481dafa85491c5cf49ecabf94dab9",
-   "url":"https://pypi.io/packages/source/m/metric-learn/metric-learn-0.5.0.tar.gz"
+   "sha256":"1f9efc791862cf2fe547121b29b1c89445a53848658f299406126f8df8d2ed7a",
+   "url":"https://pypi.io/packages/source/m/metric-learn/metric-learn-0.6.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -105,7 +101,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"metric-learn\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: fd43bf76aa2f14dfaa40cdbacb3b2fbab25481dafa85491c5cf49ecabf94dab9\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - numpy\n    - python\n    - scikit-learn >=0.20.3\n    - scipy\n    - six\n\ntest:\n  imports:\n    - metric_learn\n\nabout:\n  home: \"http://github.com/scikit-learn-contrib/metric-learn\"\n  license: MIT\n  license_family: MIT\n  # TODO: check if the next line can be removed from future recipes as the\n  # license file should be included in future releases of metric-learn, see\n  # https://github.com/scikit-learn-contrib/metric-learn/pull/283\n  license_file: LICENSE.txt\n  summary: \"Python implementations of metric learning algorithms\"\n\n  description: \"metric-learn contains efficient Python implementations of\n    several popular supervised and weakly-supervised metric learning\n    algorithms. As part of scikit-learn-contrib, the API of metric-learn is\n    compatible with scikit-learn, the leading library for machine learning in\n    Python. This allows to use all the scikit-learn routines (for pipelining,\n    model selection, etc) with metric learning algorithms through a unified\n    interface.\"\n  doc_url: \"http://contrib.scikit-learn.org/metric-learn/\"\n  dev_url: \"http://github.com/scikit-learn-contrib/metric-learn\"\n\nextra:\n  recipe-maintainers:\n    - bellet\n    - perimosocordiae\n    - terrytangyuan\n    - wdevazelhes\n",
+ "raw_meta_yaml":"{% set name = \"metric-learn\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1f9efc791862cf2fe547121b29b1c89445a53848658f299406126f8df8d2ed7a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - numpy\n    - python >=3.6\n    - scikit-learn >=0.20.3\n    - scipy\n\ntest:\n  imports:\n    - metric_learn\n\nabout:\n  home: http://github.com/scikit-learn-contrib/metric-learn\n  license: MIT\n  license_family: MIT\n  summary: Python implementations of metric learning algorithms\n\n  description: metric-learn contains efficient Python implementations of several popular supervised and weakly-supervised metric learning algorithms. As part of scikit-learn-contrib, the API of metric-learn is compatible with scikit-learn, the leading library for machine learning in Python. This allows to use all the scikit-learn\n    routines (for pipelining, model selection, etc) with metric learning algorithms through a unified interface.\n  doc_url: http://contrib.scikit-learn.org/metric-learn/\n  dev_url: http://github.com/scikit-learn-contrib/metric-learn\n\nextra:\n  recipe-maintainers:\n    - bellet\n    - perimosocordiae\n    - terrytangyuan\n    - wdevazelhes\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -113,8 +109,7 @@
    "pip",
    "python",
    "scikit-learn",
-   "scipy",
-   "six"
+   "scipy"
   ]
  },
  "requirements":{
@@ -135,8 +130,7 @@
     "numpy",
     "python",
     "scikit-learn",
-    "scipy",
-    "six"
+    "scipy"
    ]
   },
   "test":{
@@ -155,17 +149,16 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python >=3.6"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
     "numpy",
-    "python",
+    "python >=3.6",
     "scikit-learn >=0.20.3",
-    "scipy",
-    "six"
+    "scipy"
    ]
   },
   "test":{
@@ -174,5 +167,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/metric-learn/metric-learn-0.5.0.tar.gz",
- "version":"0.5.0"
+ "version":"0.6.0"
 }
