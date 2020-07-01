@@ -438,6 +438,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442373519.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.13.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -539,10 +556,11 @@
   "0.12.4":1,
   "0.12.5":1,
   "0.12.6":1,
-  "0.13.0":1
+  "0.13.0":1,
+  "0.13.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"0.13.0\" %}\n{% set js_version = \"0.13.0\" %}\n{% set sha256 = \"cea4c3c729ab74e810ae460352574eae7027f080ba307109374cab6f682f48ea\" %}\n\npackage:\n  name: ipyleaflet\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n    - jupyter\n  run:\n    - python\n    - ipywidgets >=7.5.0,<8.0.0\n    - traittypes >=0.2.1,<0.3.0\n    - branca >=0.3.1,<0.4.0\n\ntest:\n  imports:\n    - ipyleaflet\n  commands:\n    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                     # [unix]\n    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                         # [unix]\n    - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\extension.js (exit 0) else (exit 1)         # [win]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\index.js (exit 0) else (exit 1)             # [win]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\lab\\\\extensions\\\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/jupyter-widgets/ipyleaflet\n  license: MIT\n  license_file: LICENSE\n  summary: A Jupyter widget for dynamic Leaflet maps\n  doc_url: http://ipyleaflet.readthedocs.io\n  dev_url: https://github.com/jupyter-widgets/ipyleaflet\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - ellisonbg\n    - jasongrout\n    - martinRenou\n",
  "req":{
   "__set__":true,
