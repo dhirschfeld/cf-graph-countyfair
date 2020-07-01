@@ -79,6 +79,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442416112.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.10.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -166,7 +183,11 @@
  },
  "name":"avro",
  "new_version":"1.10.0",
- "pinning_version":"2020.02.12",
+ "new_version_attempts":{
+  "1.10.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"1.8.2\" %}\n{% set hash = \"5d7cc534873d7fce31fb97b9abb7ccd15d6de728\" %}\n\npackage:\n    name: avro\n    version: {{ version }}\n\nsource:\n    fn: avro-c-{{ version }}.tar.gz\n    url: https://archive.apache.org/dist/avro/avro-{{ version }}/c/avro-c-{{ version }}.tar.gz\n    sha1: {{ hash }}\n\nbuild:\n    number: 1000\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - cmake\n        - pkg-config  # [osx]\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n    host:\n        - snappy\n        - jansson\n        - xz\n        - zlib\n    run:\n        - xz\n        - snappy\n        - jansson\n        - zlib\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libavro.a  # [unix]\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
@@ -214,7 +235,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

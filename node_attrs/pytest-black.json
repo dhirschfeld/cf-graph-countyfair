@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442415486.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.10"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -98,10 +115,11 @@
  "name":"pytest-black",
  "new_version":"0.3.10",
  "new_version_attempts":{
+  "0.3.10":1,
   "0.3.9":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.05.20.21.21.18",
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"pytest-black\" %}\n{% set version = \"0.3.8\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 01a9a7acc69e618ebf3f834932a4d7a81909f6911051d0871b0ed4de3cbe9712\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools_scm\n  run:\n    - black >=19.3b0\n    - pytest >=3.5.0\n    - python >=3.6\n    - toml\ntest:\n  imports:\n    - pytest_black\n  commands:\n    - pip check\n  requires:\n    - pip\nabout:\n  home: \"https://github.com/shopkeep/pytest-black\"\n  license: MIT\n  license_file: LICENSE\n  summary: \"A pytest plugin to enable format checking with black\"\n\nextra:\n  recipe-maintainers:\n    - philip-khor\n",
  "req":{
   "__set__":true,
