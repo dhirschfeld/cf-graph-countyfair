@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/442614753.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -80,7 +99,12 @@
   }
  },
  "name":"metric-learn",
- "new_version":"0.5.0",
+ "new_version":"0.6.0",
+ "new_version_attempts":{
+  "0.6.0":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"metric-learn\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: fd43bf76aa2f14dfaa40cdbacb3b2fbab25481dafa85491c5cf49ecabf94dab9\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - numpy\n    - python\n    - scikit-learn >=0.20.3\n    - scipy\n    - six\n\ntest:\n  imports:\n    - metric_learn\n\nabout:\n  home: \"http://github.com/scikit-learn-contrib/metric-learn\"\n  license: MIT\n  license_family: MIT\n  # TODO: check if the next line can be removed from future recipes as the\n  # license file should be included in future releases of metric-learn, see\n  # https://github.com/scikit-learn-contrib/metric-learn/pull/283\n  license_file: LICENSE.txt\n  summary: \"Python implementations of metric learning algorithms\"\n\n  description: \"metric-learn contains efficient Python implementations of\n    several popular supervised and weakly-supervised metric learning\n    algorithms. As part of scikit-learn-contrib, the API of metric-learn is\n    compatible with scikit-learn, the leading library for machine learning in\n    Python. This allows to use all the scikit-learn routines (for pipelining,\n    model selection, etc) with metric learning algorithms through a unified\n    interface.\"\n  doc_url: \"http://contrib.scikit-learn.org/metric-learn/\"\n  dev_url: \"http://github.com/scikit-learn-contrib/metric-learn\"\n\nextra:\n  recipe-maintainers:\n    - bellet\n    - perimosocordiae\n    - terrytangyuan\n    - wdevazelhes\n",
  "req":{
   "__set__":true,
@@ -120,6 +144,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
