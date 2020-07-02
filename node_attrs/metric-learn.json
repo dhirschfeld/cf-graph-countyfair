@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443490297.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -96,12 +113,13 @@
   }
  },
  "name":"metric-learn",
- "new_version":"0.6.0",
+ "new_version":"0.6.1",
  "new_version_attempts":{
-  "0.6.0":1
+  "0.6.0":1,
+  "0.6.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.24.16.31.11",
+ "pinning_version":"2020.07.01.21.17.12",
  "raw_meta_yaml":"{% set name = \"metric-learn\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1f9efc791862cf2fe547121b29b1c89445a53848658f299406126f8df8d2ed7a\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - numpy\n    - python >=3.6\n    - scikit-learn >=0.20.3\n    - scipy\n\ntest:\n  imports:\n    - metric_learn\n\nabout:\n  home: http://github.com/scikit-learn-contrib/metric-learn\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Python implementations of metric learning algorithms\n\n  description: metric-learn contains efficient Python implementations of several popular supervised and weakly-supervised metric learning algorithms. As part of scikit-learn-contrib, the API of metric-learn is compatible with scikit-learn, the leading library for machine learning in Python. This allows to use all the scikit-learn\n    routines (for pipelining, model selection, etc) with metric learning algorithms through a unified interface.\n  doc_url: http://contrib.scikit-learn.org/metric-learn/\n  dev_url: http://github.com/scikit-learn-contrib/metric-learn\n\nextra:\n  recipe-maintainers:\n    - bellet\n    - perimosocordiae\n    - terrytangyuan\n    - wdevazelhes\n",
  "req":{
   "__set__":true,
