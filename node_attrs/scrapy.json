@@ -273,7 +273,7 @@
    "dev_url":"https://github.com/scrapy/scrapy",
    "doc_url":"https://docs.scrapy.org",
    "home":"https://scrapy.org/",
-   "license":"BSD 3-Clauses",
+   "license":"BSD-3-Clause-Clear",
    "license_file":"LICENSE",
    "summary":"A high-level Python Screen Scraping framework"
   },
@@ -283,7 +283,7 @@
     "scrapy = scrapy.cmdline:execute",
     "scrapy = scrapy.cmdline:execute"
    ],
-   "number":"1",
+   "number":"0",
    "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
@@ -307,7 +307,7 @@
   },
   "package":{
    "name":"scrapy",
-   "version":"2.1.0"
+   "version":"2.2.0"
   },
   "requirements":{
    "host":[
@@ -324,47 +324,56 @@
    "run":[
     "python",
     "setuptools",
-    "twisted >=17.9.0",
-    "w3lib >=1.17.0",
-    "queuelib",
-    "lxml",
-    "cryptography >=2",
-    "cssselect >=0.9",
-    "parsel >=1.5.0",
-    "pydispatcher >=2.0.5",
-    "service_identity",
     "pywin32",
-    "protego",
+    "twisted >=17.9.0",
+    "cryptography >=2.0",
+    "cssselect >=0.9.1",
+    "lxml >=3.5.0",
+    "parsel >=1.5.0",
+    "pydispatcher >=2.0.5",
+    "pyOpenSSL >=16.2.0",
+    "queuelib >=1.4.2",
+    "service_identity >=16.0.0",
+    "w3lib >=1.17.0",
+    "zope.interface >=4.1.3",
+    "protego >=0.1.15",
+    "itemadapter >=0.1.0",
     "python",
     "setuptools",
     "twisted >=17.9.0",
-    "w3lib >=1.17.0",
-    "queuelib",
-    "lxml",
-    "cryptography >=2",
-    "cssselect >=0.9",
+    "cryptography >=2.0",
+    "cssselect >=0.9.1",
+    "lxml >=3.5.0",
     "parsel >=1.5.0",
     "pydispatcher >=2.0.5",
-    "service_identity",
-    "protego",
+    "pyOpenSSL >=16.2.0",
+    "queuelib >=1.4.2",
+    "service_identity >=16.0.0",
+    "w3lib >=1.17.0",
+    "zope.interface >=4.1.3",
+    "protego >=0.1.15",
+    "itemadapter >=0.1.0",
     "python",
     "setuptools",
     "twisted >=17.9.0",
-    "w3lib >=1.17.0",
-    "queuelib",
-    "lxml",
-    "cryptography >=2",
-    "cssselect >=0.9",
+    "cryptography >=2.0",
+    "cssselect >=0.9.1",
+    "lxml >=3.5.0",
     "parsel >=1.5.0",
     "pydispatcher >=2.0.5",
-    "service_identity",
-    "protego"
+    "pyOpenSSL >=16.2.0",
+    "queuelib >=1.4.2",
+    "service_identity >=16.0.0",
+    "w3lib >=1.17.0",
+    "zope.interface >=4.1.3",
+    "protego >=0.1.15",
+    "itemadapter >=0.1.0"
    ]
   },
   "source":{
-   "fn":"Scrapy-2.1.0.tar.gz",
-   "sha256":"640aea0f9be9b055f5cfec5ab78ee88bb37a5be3809b138329bd2af51392ec7f",
-   "url":"https://pypi.io/packages/source/S/Scrapy/Scrapy-2.1.0.tar.gz"
+   "fn":"Scrapy-2.2.0.tar.gz",
+   "sha256":"8ce036a113ef9bc575a65b463994244e4298145f70bcdcf40b8847a2f528a1fb",
+   "url":"https://pypi.io/packages/source/S/Scrapy/Scrapy-2.2.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -387,8 +396,10 @@
     "pytest _scrapy tests"
    ],
    "requires":[
+    "attrs",
     "botocore",
     "brotlipy",
+    "dataclasses",
     "ipython",
     "google-cloud-storage",
     "pip",
@@ -397,9 +408,11 @@
     "pytest < 5.4",
     "testfixtures",
     "zstandard <0.13.0, >=0.11.0",
+    "attrs",
     "botocore",
     "brotlipy",
     "bpython",
+    "dataclasses",
     "ipython",
     "google-cloud-storage",
     "pip",
@@ -408,9 +421,11 @@
     "pytest < 5.4",
     "testfixtures",
     "zstandard <0.13.0, >=0.11.0",
+    "attrs",
     "botocore",
     "brotlipy",
     "bpython",
+    "dataclasses",
     "ipython",
     "google-cloud-storage",
     "pip",
@@ -441,24 +456,27 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"#\n# See the guidelines for updating this recipe for new releases:\n# https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages\n#\n{% set name = \"Scrapy\" %}\n{% set version = \"2.1.0\" %}\n{% set hash_val = \"640aea0f9be9b055f5cfec5ab78ee88bb37a5be3809b138329bd2af51392ec7f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash_val }}\n\nbuild:\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 1\n  skip: true  # [py2k]\n  entry_points:\n    - scrapy = scrapy.cmdline:execute\n\n# The requirements below shall match the requirements from the target package\n# version (check setup.py for changes).\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - twisted >=17.9.0\n    - w3lib >=1.17.0\n    - queuelib\n    - lxml\n    - cryptography >=2\n    - cssselect >=0.9\n    - parsel >=1.5.0\n    - pydispatcher >=2.0.5\n    - service_identity\n    - pywin32  # [win]\n    - protego\n\ntest:\n  requires:\n    - botocore\n    - brotlipy\n    - bpython  # [not win]\n    - ipython\n    - google-cloud-storage\n    - pip\n    - jmespath\n    - pillow\n    - pytest < 5.4\n    - testfixtures\n    # indirect dependencies, to avoid compilation\n    - zstandard <0.13.0, >=0.11.0\n  source_files:\n    - conftest.py\n    - scrapy\n    - tests\n  commands:\n    - scrapy version -v\n    - pip install setuptools-scm  # required by indirect dependency pytest-forked\n    # required from tests/requirements-py3.txt unavailable on conda:\n    - pip install mitmproxy pytest-twisted sybil  # [not win or not py==38]\n    - pip install pytest-twisted sybil  # [win and py==38]\n    - mv scrapy _scrapy\n    - rm tests/test_proxy_connect.py  # [win or py==38]\n    # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517\n    - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]\n    - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]\n    # Tests need to be fixed in upstream.\n    - pytest _scrapy tests  # [not win]\n\nabout:\n  home: https://scrapy.org/\n  license: BSD 3-Clauses\n  license_file: LICENSE\n  summary: A high-level Python Screen Scraping framework\n  description: |\n    Scrapy is an open source and collaborative framework for extracting the\n    data you need from websites in a fast, simple, yet extensible way.\n  doc_url: https://docs.scrapy.org\n  dev_url: https://github.com/scrapy/scrapy\n\nextra:\n  recipe-maintainers:\n    - rmax\n    - kmike\n    - Gallaecio\n    - wRAR\n    - dangra\n",
+ "raw_meta_yaml":"#\n# See the guidelines for updating this recipe for new releases:\n# https://github.com/scrapy/scrapy/wiki/Scrapy-release-procedure#conda-packages\n#\n{% set name = \"Scrapy\" %}\n{% set version = \"2.2.0\" %}\n{% set hash_val = \"8ce036a113ef9bc575a65b463994244e4298145f70bcdcf40b8847a2f528a1fb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash_val }}\n\nbuild:\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 0\n  skip: true  # [py2k]\n  entry_points:\n    - scrapy = scrapy.cmdline:execute\n\n# The requirements below shall match the requirements from the target package\n# version (check setup.py for changes).\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pywin32  # [win]\n\n    # Same order as setup.py:\n    - twisted >=17.9.0\n    - cryptography >=2.0\n    - cssselect >=0.9.1\n    - lxml >=3.5.0\n    - parsel >=1.5.0\n    - pydispatcher >=2.0.5\n    - pyOpenSSL >=16.2.0\n    - queuelib >=1.4.2\n    - service_identity >=16.0.0\n    - w3lib >=1.17.0\n    - zope.interface >=4.1.3\n    - protego >=0.1.15\n    - itemadapter >=0.1.0\n\ntest:\n  requires:\n    - attrs\n    - botocore\n    - brotlipy\n    - bpython  # [not win]\n    - dataclasses  # [py!=35]\n    - ipython\n    - google-cloud-storage\n    - pip\n    - jmespath\n    - pillow\n    - pytest < 5.4\n    - testfixtures\n    # indirect dependencies, to avoid compilation\n    - zstandard <0.13.0, >=0.11.0\n  source_files:\n    - conftest.py\n    - scrapy\n    - tests\n  commands:\n    - scrapy version -v\n    - pip install setuptools-scm  # required by indirect dependency pytest-forked\n    # required from tests/requirements-py3.txt unavailable on conda:\n    - pip install mitmproxy pytest-twisted sybil  # [not win or not py==38]\n    - pip install pytest-twisted sybil  # [win and py==38]\n    - mv scrapy _scrapy\n    - rm tests/test_proxy_connect.py  # [win or py==38]\n    # https://github.com/scrapy/scrapy/issues/2653#issuecomment-598610517\n    - rm tests/test_utils_asyncio.py  # [win or py==38]                                                                                                                                                            # [win]\n    - rm tests/test_command_parse.py tests/test_commands.py tests/test_crawler.py tests/test_downloader_handlers.py  # [osx]\n    # Tests need to be fixed in upstream.\n    - pytest _scrapy tests  # [not win]\n\nabout:\n  home: https://scrapy.org/\n  license: BSD-3-Clause-Clear\n  license_file: LICENSE\n  summary: A high-level Python Screen Scraping framework\n  description: |\n    Scrapy is an open source and collaborative framework for extracting the\n    data you need from websites in a fast, simple, yet extensible way.\n  doc_url: https://docs.scrapy.org\n  dev_url: https://github.com/scrapy/scrapy\n\nextra:\n  recipe-maintainers:\n    - rmax\n    - kmike\n    - Gallaecio\n    - wRAR\n    - dangra\n",
  "req":{
   "__set__":true,
   "elements":[
    "cryptography",
    "cssselect",
+   "itemadapter",
    "lxml",
    "parsel",
    "pip",
    "protego",
    "pydispatcher",
+   "pyopenssl",
    "python",
    "pywin32",
    "queuelib",
    "service_identity",
    "setuptools",
    "twisted",
-   "w3lib"
+   "w3lib",
+   "zope.interface"
   ]
  },
  "requirements":{
@@ -479,25 +497,30 @@
    "elements":[
     "cryptography",
     "cssselect",
+    "itemadapter",
     "lxml",
     "parsel",
     "protego",
     "pydispatcher",
+    "pyopenssl",
     "python",
     "pywin32",
     "queuelib",
     "service_identity",
     "setuptools",
     "twisted",
-    "w3lib"
+    "w3lib",
+    "zope.interface"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
+    "attrs",
     "botocore",
     "bpython",
     "brotlipy",
+    "dataclasses",
     "google-cloud-storage",
     "ipython",
     "jmespath",
@@ -527,27 +550,32 @@
   "run":{
    "__set__":true,
    "elements":[
-    "cryptography >=2",
-    "cssselect >=0.9",
-    "lxml",
+    "cryptography >=2.0",
+    "cssselect >=0.9.1",
+    "itemadapter >=0.1.0",
+    "lxml >=3.5.0",
     "parsel >=1.5.0",
-    "protego",
+    "protego >=0.1.15",
+    "pyOpenSSL >=16.2.0",
     "pydispatcher >=2.0.5",
     "python",
     "pywin32",
-    "queuelib",
-    "service_identity",
+    "queuelib >=1.4.2",
+    "service_identity >=16.0.0",
     "setuptools",
     "twisted >=17.9.0",
-    "w3lib >=1.17.0"
+    "w3lib >=1.17.0",
+    "zope.interface >=4.1.3"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
+    "attrs",
     "botocore",
     "bpython",
     "brotlipy",
+    "dataclasses",
     "google-cloud-storage",
     "ipython",
     "jmespath",
@@ -560,5 +588,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/S/Scrapy/Scrapy-1.7.3.tar.gz",
- "version":"2.1.0"
+ "version":"2.2.0"
 }
