@@ -110,7 +110,7 @@
   },
   "package":{
    "name":"xtb",
-   "version":"6.3.1"
+   "version":"6.3.2"
   },
   "requirements":{
    "build":[
@@ -147,16 +147,8 @@
    ]
   },
   "source":{
-   "patches":[
-    "test-args.patch",
-    "gcc7-omp.patch",
-    "test-args.patch",
-    "gcc7-omp.patch",
-    "test-args.patch",
-    "gcc7-omp.patch"
-   ],
-   "sha256":"fbf0d72f26ac0ce7c896dd931f73b85f362dd53245022fc4494b29958c45bc57",
-   "url":"https://github.com/grimme-lab/xtb/archive/v6.3.1.tar.gz"
+   "sha256":"578a560bf012ffb85bc76ba1b3867294033b3bc211f0eaf94741bfccf62a6778",
+   "url":"https://github.com/grimme-lab/xtb/archive/v6.3.2.tar.gz"
   },
   "test":{
    "commands":[
@@ -176,7 +168,7 @@
   "6.3.2":"We found a problem parsing the recipe: \n\nwhile constructing a mapping\n  in \"<unicode string>\", line 9, column 3:\n      url: https://github.com/grimme-l ... \n      ^ (line: 9)\nfound duplicate key \"url\" with value \"https://github.com/grimme-lab/<{ name }}/archive/v<{ version }}.tar.gz\" (original value: \"https://github.com/grimme-lab/<{ name }}/archive/7127b05a041be4b3cce8d74540e63928f8ee2ed4.tar.gz\")\n  in \"<unicode string>\", line 10, column 3:\n      url: https://github.com/grimme-l ... \n      ^ (line: 10)\n\nTo suppress this check see:\n    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys\n\nDuplicate keys will become an error in future releases, and are errors\nby default when using the new API.\n"
  },
  "pinning_version":"2020.06.07.16.42.19",
- "raw_meta_yaml":"{% set name = \"xtb\" %}\n{% set version = \"6.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/grimme-lab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: fbf0d72f26ac0ce7c896dd931f73b85f362dd53245022fc4494b29958c45bc57\n  patches:\n     - test-args.patch\n     - gcc7-omp.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n    - meson >=0.51  # [not osx]\n    - meson 0.51.*  # [osx]\n    - ninja\n  host:\n    - libblas\n    - liblapack\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux and not aarch64]\n  run:\n    - libblas\n    - liblapack\n\n\ntest:\n  commands:\n    - xtb --version\n\nabout:\n  home: https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/{{ name }}\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - \"COPYING\"\n    - \"COPYING.LESSER\"\n  summary: 'Semiempirical Extended Tight-Binding Program Package'\n  doc_url: https://{{ name }}-docs.readthedocs.io/\n  dev_url: https://github.com/grimme-lab/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - awvwgk\n",
+ "raw_meta_yaml":"{% set name = \"xtb\" %}\n{% set version = \"6.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/grimme-lab/{{ name }}/archive/7127b05a041be4b3cce8d74540e63928f8ee2ed4.tar.gz\n  url: https://github.com/grimme-lab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 578a560bf012ffb85bc76ba1b3867294033b3bc211f0eaf94741bfccf62a6778\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('fortran') }}\n    - meson >=0.51  # [not osx]\n    - meson 0.51.*  # [osx]\n    - ninja\n  host:\n    - libblas\n    - liblapack\n    - llvm-openmp  # [osx]\n    - libgomp  # [linux and not aarch64]\n  run:\n    - libblas\n    - liblapack\n\n\ntest:\n  commands:\n    - xtb --version\n\nabout:\n  home: https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/{{ name }}\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - \"COPYING\"\n    - \"COPYING.LESSER\"\n  summary: 'Semiempirical Extended Tight-Binding Program Package'\n  doc_url: https://{{ name }}-docs.readthedocs.io/\n  dev_url: https://github.com/grimme-lab/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - awvwgk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -256,5 +248,5 @@
   }
  },
  "url":"https://github.com/grimme-lab/xtb/archive/v6.2.3.tar.gz",
- "version":"6.3.1"
+ "version":"6.3.2"
 }

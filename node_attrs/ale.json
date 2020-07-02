@@ -296,8 +296,7 @@
    "summary":"Abstraction Library for Ephemerides (ALE) for extracting and processing planetary sensor ephemeris data."
   },
   "build":{
-   "number":"0",
-   "skip":true
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -367,21 +366,25 @@
    ]
   },
   "source":{
-   "patches":null,
+   "patches":[
+    "patches/cmakelist_fix.patch",
+    "patches/setup_version.patch",
+    "patches/cmakelist_fix.patch",
+    "patches/setup_version.patch",
+    "patches/cmakelist_fix.patch",
+    "patches/setup_version.patch"
+   ],
    "sha256":"0466d779f6d2d5221043b02252cc1a4ab6026eec6665b9216b276a5767aecdae",
    "url":"https://github.com/USGS-Astrogeology/ale/archive/0.8.1.tar.gz"
   },
   "test":{
    "commands":[
+    "if not exist %LIBRARY_BIN%\\ale.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\ale.lib exit 1",
     "conda inspect linkages -p $PREFIX $PKG_NAME",
     "test -e $PREFIX/lib/libale${SHLIB_EXT}",
-    "test -e $PREFIX/include/ale/Load.h",
     "conda inspect linkages -p $PREFIX $PKG_NAME",
-    "test -e $PREFIX/lib/libale${SHLIB_EXT}",
-    "test -e $PREFIX/include/ale/Load.h",
-    "conda inspect linkages -p $PREFIX $PKG_NAME",
-    "test -e $PREFIX/lib/libale${SHLIB_EXT}",
-    "test -e $PREFIX/include/ale/Load.h"
+    "test -e $PREFIX/lib/libale${SHLIB_EXT}"
    ],
    "imports":[
     "ale",
@@ -398,7 +401,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.15.11.48.40",
- "raw_meta_yaml":"{% set name = \"ale\" %}\n{% set version = \"0.8.1\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/USGS-Astrogeology/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 0466d779f6d2d5221043b02252cc1a4ab6026eec6665b9216b276a5767aecdae\n  patches:\n    - patches/python_36.patch  # [py==36]\n\nbuild:\n  number: 0\n  skip: true  # [win or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake >=3.10\n    - eigen\n  host:\n    - python\n    - nlohmann_json\n    - pip\n  run:\n    - networkx\n    - nlohmann_json\n    - numpy\n    - pvl\n    - python\n    - python-dateutil\n    - scipy >=1.2.0\n    - spiceypy >=2.3.0\n    - pyyaml\n\ntest:\n  imports:\n    - ale\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME\n    - test -e $PREFIX/lib/libale${SHLIB_EXT}\n    - test -e $PREFIX/include/ale/Load.h\n\nabout:\n  home: https://github.com/USGS-Astrogeology/ale\n  license: The Unlicense\n  license_file: LICENSE\n  summary: Abstraction Library for Ephemerides (ALE) for extracting and processing planetary sensor ephemeris data.\n\nextra:\n  recipe-maintainers:\n    - jlaura\n    - jessemapel\n",
+ "raw_meta_yaml":"{% set name = \"ale\" %}\n{% set version = \"0.8.1\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/USGS-Astrogeology/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 0466d779f6d2d5221043b02252cc1a4ab6026eec6665b9216b276a5767aecdae\n  patches:\n    - patches/cmakelist_fix.patch\n    - patches/setup_version.patch\n\nbuild:\n  number: 1\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake >=3.10\n    - eigen\n  host:\n    - python\n    - nlohmann_json\n    - pip\n  run:\n    - networkx\n    - nlohmann_json\n    - numpy\n    - pvl\n    - python\n    - python-dateutil\n    - scipy >=1.2.0\n    - spiceypy >=2.3.0\n    - pyyaml\n\ntest:\n  imports:\n    - ale\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - test -e $PREFIX/lib/libale${SHLIB_EXT}  # [unix]\n    - if not exist %LIBRARY_BIN%\\ale.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\ale.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/USGS-Astrogeology/ale\n  license: The Unlicense\n  license_file: LICENSE\n  summary: Abstraction Library for Ephemerides (ALE) for extracting and processing planetary sensor ephemeris data.\n\nextra:\n  recipe-maintainers:\n    - jlaura\n    - jessemapel\n",
  "req":{
   "__set__":true,
   "elements":[

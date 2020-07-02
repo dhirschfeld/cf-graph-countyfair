@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443692924.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.2.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -100,12 +117,13 @@
   }
  },
  "name":"jupyter_to_medium",
- "new_version":"0.1.1",
+ "new_version":"0.2.0",
  "new_version_attempts":{
-  "0.1.1":1
+  "0.1.1":1,
+  "0.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.24.16.31.11",
+ "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set name = \"jupyter_to_medium\" %}\n{% set version = \"0.1.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0ef38848b9d4d9bca66b10fe54892cd0af6465409eea958d9717ce26a905e31f\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - jupyter_to_medium=jupyter_to_medium._command_line:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - nbconvert\n    - python >=3.6\n    - requests\n\ntest:\n  imports:\n    - jupyter_to_medium\n  commands:\n    - pip check\n    - jupyter_to_medium --help\n  requires:\n    - pip\n\nabout:\n  home: https://dexplo.org/jupyter_to_medium\n  summary: Publish a Jupyter Notebook as a Medium blogpost\n  license: MIT\n  license_file: LICENSE\n  doc_url: https://dexplo.org/jupyter_to_medium\n  dev_url: https://github.com/dexplo/jupyter_to_medium\n\nextra:\n  recipe-maintainers:\n    - tdpetrou\n",
  "req":{
   "__set__":true,
