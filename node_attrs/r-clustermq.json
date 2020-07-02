@@ -188,7 +188,7 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/mschubert/clustermq",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"APACHE",
    "license_file":[
     "LICENSE",
@@ -199,8 +199,7 @@
   },
   "build":{
    "merge_build_host":true,
-   "noarch":"generic",
-   "number":"1",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -222,60 +221,81 @@
   },
   "package":{
    "name":"r-clustermq",
-   "version":"0.8.9"
+   "version":"0.8.95"
   },
   "requirements":{
-   "build":null,
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
    "host":[
+    "zeromq",
     "r-base",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
     "r-purrr",
-    "r-rzmq >=0.9.4",
+    "zeromq",
     "r-base",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
     "r-purrr",
-    "r-rzmq >=0.9.4",
+    "zeromq",
     "r-base",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
-    "r-purrr",
-    "r-rzmq >=0.9.4"
+    "r-purrr"
    ],
    "run":[
+    "zeromq",
     "r-base",
+    "gcc-libs",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
     "r-purrr",
-    "r-rzmq >=0.9.4",
+    "zeromq",
     "r-base",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
     "r-purrr",
-    "r-rzmq >=0.9.4",
+    "zeromq",
     "r-base",
     "r-r6",
+    "r-rcpp",
     "r-narray",
     "r-progress",
-    "r-purrr",
-    "r-rzmq >=0.9.4"
+    "r-purrr"
    ]
   },
   "source":{
-   "sha256":"8b580fd2d15c1b8558ee8fe3d254eb77a95aea4d7daeb58e1c51f59d60380b89",
+   "sha256":"396d25d2025a0d9bde514d3090243ce8893e81af802752ef2e63e4ff87600de5",
    "url":[
-    "https://cran.r-project.org/src/contrib/clustermq_0.8.9.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.9.tar.gz",
-    "https://cran.r-project.org/src/contrib/clustermq_0.8.9.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.9.tar.gz",
-    "https://cran.r-project.org/src/contrib/clustermq_0.8.9.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.9.tar.gz"
+    "https://cran.r-project.org/src/contrib/clustermq_0.8.95.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.95.tar.gz",
+    "https://cran.r-project.org/src/contrib/clustermq_0.8.95.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.95.tar.gz",
+    "https://cran.r-project.org/src/contrib/clustermq_0.8.95.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.95.tar.gz"
    ]
   },
   "test":{
@@ -293,22 +313,43 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"0.8.9\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-clustermq\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/clustermq_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/clustermq/clustermq_{{ version }}.tar.gz\n  sha256: 8b580fd2d15c1b8558ee8fe3d254eb77a95aea4d7daeb58e1c51f59d60380b89\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 1\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-r6\n    - r-narray\n    - r-progress\n    - r-purrr\n    - r-rzmq >=0.9.4\n  run:\n    - r-base\n    - r-r6\n    - r-narray\n    - r-progress\n    - r-purrr\n    - r-rzmq >=0.9.4\n\ntest:\n  commands:\n    - $R -e \"library('clustermq')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('clustermq')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/mschubert/clustermq\n  license: Apache 2.0\n  summary: Evaluate arbitrary function calls using workers on HPC schedulers in single line of code. All processing is done on the network without accessing the file\n    system. Remote schedulers are supported via SSH.\n  license_family: APACHE\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - nick-youngblut\n\n# Package: clustermq\n# Title: Evaluate Function Calls on HPC Schedulers (LSF, SGE, SLURM, PBS/Torque)\n# Version: 0.8.8.1\n# Authors@R: c( person('Michael', 'Schubert', email='mschu.dev@gmail.com', role = c('aut', 'cre', 'cph'), comment = c(ORCID='0000-0002-6862-5221') ), person('EMBL', role = c('cph', 'fnd')) )\n# Maintainer: Michael Schubert <mschu.dev@gmail.com>\n# Description: Evaluate arbitrary function calls using workers on HPC schedulers in single line of code. All processing is done on the network without accessing the file system. Remote schedulers are supported via SSH.\n# URL: https://github.com/mschubert/clustermq\n# BugReports: https://github.com/mschubert/clustermq/issues\n# Depends: R (>= 3.0.2)\n# Imports: narray, progress, purrr, R6, rzmq (>= 0.9.4), utils\n# License: Apache License (== 2.0) | file LICENSE\n# LazyData: true\n# Encoding: UTF-8\n# Suggests: devtools, dplyr, foreach, iterators, knitr, parallel, roxygen2 (>= 5.0.0), testthat, tools\n# VignetteBuilder: knitr\n# RoxygenNote: 6.1.1\n# NeedsCompilation: no\n# Packaged: 2019-12-18 08:29:04 UTC; mschu\n# Author: Michael Schubert [aut, cre, cph] (<https://orcid.org/0000-0002-6862-5221>), EMBL [cph, fnd]\n# Repository: CRAN\n# Date/Publication: 2019-12-18 10:10:02 UTC\n",
+ "raw_meta_yaml":"{% set version = \"0.8.95\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-clustermq\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/clustermq_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/clustermq/clustermq_{{ version }}.tar.gz\n  sha256: 396d25d2025a0d9bde514d3090243ce8893e81af802752ef2e63e4ff87600de5\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('cxx') }}            # [not win]\n    - {{ compiler('m2w64_cxx') }}      # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - zeromq\n    - r-base\n    - r-r6\n    - r-rcpp\n    - r-narray\n    - r-progress\n    - r-purrr\n  run:\n    - zeromq\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-r6\n    - r-rcpp\n    - r-narray\n    - r-progress\n    - r-purrr\n\ntest:\n  commands:\n    - $R -e \"library('clustermq')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('clustermq')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/mschubert/clustermq\n  license: Apache-2.0\n  summary: Evaluate arbitrary function calls using workers on HPC schedulers in single line of code. All processing is done on the network without accessing the file system. Remote schedulers are supported via SSH.\n  license_family: APACHE\n  license_file:\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - nick-youngblut\n\n# Package: clustermq\n# Title: Evaluate Function Calls on HPC Schedulers (LSF, SGE, SLURM, PBS/Torque)\n# Version: 0.8.8.1\n# Authors@R: c( person('Michael', 'Schubert', email='mschu.dev@gmail.com', role = c('aut', 'cre', 'cph'), comment = c(ORCID='0000-0002-6862-5221') ), person('EMBL', role = c('cph', 'fnd')) )\n# Maintainer: Michael Schubert <mschu.dev@gmail.com>\n# Description: Evaluate arbitrary function calls using workers on HPC schedulers in single line of code. All processing is done on the network without accessing the file system. Remote schedulers are supported via SSH.\n# URL: https://github.com/mschubert/clustermq\n# BugReports: https://github.com/mschubert/clustermq/issues\n# Depends: R (>= 3.0.2)\n# Imports: narray, progress, purrr, R6, rzmq (>= 0.9.4), utils\n# License: Apache License (== 2.0) | file LICENSE\n# LazyData: true\n# Encoding: UTF-8\n# Suggests: devtools, dplyr, foreach, iterators, knitr, parallel, roxygen2 (>= 5.0.0), testthat, tools\n# VignetteBuilder: knitr\n# RoxygenNote: 6.1.1\n# NeedsCompilation: no\n# Packaged: 2019-12-18 08:29:04 UTC; mschu\n# Author: Michael Schubert [aut, cre, cph] (<https://orcid.org/0000-0002-6862-5221>), EMBL [cph, fnd]\n# Repository: CRAN\n# Date/Publication: 2019-12-18 10:10:02 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
+   "c_compiler_stub",
+   "coreutils",
+   "cxx_compiler_stub",
+   "filesystem",
+   "gcc-libs",
+   "m2w64_c_compiler_stub",
+   "m2w64_cxx_compiler_stub",
+   "make",
    "r-base",
    "r-narray",
    "r-progress",
    "r-purrr",
    "r-r6",
-   "r-rzmq"
+   "r-rcpp",
+   "sed",
+   "zeromq",
+   "zip"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub",
+    "coreutils",
+    "cxx_compiler_stub",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
   },
   "host":{
    "__set__":true,
@@ -318,18 +359,21 @@
     "r-progress",
     "r-purrr",
     "r-r6",
-    "r-rzmq"
+    "r-rcpp",
+    "zeromq"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "gcc-libs",
     "r-base",
     "r-narray",
     "r-progress",
     "r-purrr",
     "r-r6",
-    "r-rzmq"
+    "r-rcpp",
+    "zeromq"
    ]
   },
   "test":{
@@ -342,7 +386,17 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub",
+    "coreutils",
+    "cxx_compiler_stub",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
   },
   "host":{
    "__set__":true,
@@ -352,18 +406,21 @@
     "r-progress",
     "r-purrr",
     "r-r6",
-    "r-rzmq >=0.9.4"
+    "r-rcpp",
+    "zeromq"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "gcc-libs",
     "r-base",
     "r-narray",
     "r-progress",
     "r-purrr",
     "r-r6",
-    "r-rzmq >=0.9.4"
+    "r-rcpp",
+    "zeromq"
    ]
   },
   "test":{
@@ -379,5 +436,5 @@
   "https://cran.r-project.org/src/contrib/clustermq_0.8.8.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/clustermq/clustermq_0.8.8.tar.gz"
  ],
- "version":"0.8.9"
+ "version":"0.8.95"
 }
