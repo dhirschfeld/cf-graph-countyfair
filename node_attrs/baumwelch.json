@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443593858.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.3.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -86,8 +103,12 @@
   }
  },
  "name":"baumwelch",
- "new_version":false,
- "pinning_version":"2020.02.20",
+ "new_version":"0.3.3",
+ "new_version_attempts":{
+  "0.3.3":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.07.01.21.17.12",
  "raw_meta_yaml":"{% set name = \"baumwelch\" %}\n{% set version = \"0.3.2\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/{{ name }}-{{ version }}.tar.gz\n  sha256: bb82a764834dfe2f6fbd76fea0cbfef12b6be091a8295212108014ca3a14ff11\n  \nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - openfst ==1.7.7\n  run:\n    - openfst ==1.7.7\n\ntest:\n  commands:\n    - baumwelchdecode --helpshort || [[ $? == 1 ]]\n    - baumwelchrandomize --helpshort || [[ $? == 1 ]]\n    - baumwelchtrain --helpshort || [[ $? == 1 ]]\n\nabout:\n  home: http://bauwmelch.opengrm.org\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Baum-Welch/expectation-maximization training and decoding\n  description: |\n    A library for estimating the parameters of a discrete HMM\n  doc_url: http://www.opengrm.org/twiki/bin/view/GRM/BaumWelchDocs\n\nextra:\n  recipe-maintainers:\n    - kylebgorman\n",
  "req":{
   "__set__":true,
@@ -122,7 +143,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
