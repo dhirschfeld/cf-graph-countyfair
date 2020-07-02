@@ -36,7 +36,7 @@
    "summary":"Singular value thresholding for denoising time-resolved microscopy"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":" -m pip install . -vv",
    "skip":true
   },
@@ -63,7 +63,7 @@
    "host":[
     "armadillo",
     "cython",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -71,7 +71,7 @@
     "python",
     "armadillo",
     "cython",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -79,7 +79,7 @@
     "python",
     "armadillo",
     "cython",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -88,19 +88,19 @@
    ],
    "run":[
     "armadillo",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
     "python",
     "armadillo",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
     "python",
     "armadillo",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -110,8 +110,11 @@
   "source":{
    "patches":[
     "0001-Remove-setup_requires.patch",
+    "march.patch",
     "0001-Remove-setup_requires.patch",
-    "0001-Remove-setup_requires.patch"
+    "march.patch",
+    "0001-Remove-setup_requires.patch",
+    "march.patch"
    ],
    "sha256":"33da930fb15f1b7e7ede00f4f04eed0159612fe089d7ef7acca09457427d7a8a",
    "url":"https://github.com/tjof2/pgure-svt/archive/v0.6.0.tar.gz"
@@ -135,14 +138,14 @@
  "name":"pgure-svt",
  "new_version":"0.6.0",
  "pinning_version":"2020.07.01.21.17.12",
- "raw_meta_yaml":"{% set name = \"pgure-svt\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tjof2/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 33da930fb15f1b7e7ede00f4f04eed0159612fe089d7ef7acca09457427d7a8a\n  patches:\n    - 0001-Remove-setup_requires.patch\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - armadillo\n    - cython\n    - lapack\n    - nlopt\n    - numpy\n    - openblas\n    - pip\n    - python\n  run:\n    - armadillo\n    - lapack\n    - nlopt\n    - {{ pin_compatible('numpy') }}\n    - openblas\n    - python\n\ntest:\n  requires:\n    - hyperspy-base\n  imports:\n    - pguresvt.pguresvt\n    - pguresvt.hspysvt\n\nabout:\n  home: https://github.com/tjof2/pgure-svt\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'Singular value thresholding for denoising time-resolved microscopy'\n  description: |\n    PGURE-SVT (Poisson-Gaussian Unbiased Risk Estimator - Singular Value Thresholding) is an algorithm designed to denoise image sequences acquired in microscopy. It exploits the correlations between consecutive frames to form low-rank matrices, which are then recovered using a technique known as nuclear norm minimization. An unbiased risk estimator for mixed Poisson-Gaussian noise is used to automate the selection of the regularization parameter, while robust noise and motion estimation maintain broad applicability to many different types of microscopy.\n  doc_url: https://github.com/tjof2/pgure-svt\n  dev_url: https://github.com/tjof2/pgure-svt\n\nextra:\n  recipe-maintainers:\n    - ericpre\n    - tjof2\n",
+ "raw_meta_yaml":"{% set name = \"pgure-svt\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tjof2/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 33da930fb15f1b7e7ede00f4f04eed0159612fe089d7ef7acca09457427d7a8a\n  patches:\n    - 0001-Remove-setup_requires.patch\n    - march.patch\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - armadillo\n    - cython\n    - liblapack\n    - nlopt\n    - numpy\n    - openblas\n    - pip\n    - python\n  run:\n    - armadillo\n    - liblapack\n    - nlopt\n    - {{ pin_compatible('numpy') }}\n    - openblas\n    - python\n\ntest:\n  requires:\n    - hyperspy-base\n  imports:\n    - pguresvt.pguresvt\n    - pguresvt.hspysvt\n\nabout:\n  home: https://github.com/tjof2/pgure-svt\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'Singular value thresholding for denoising time-resolved microscopy'\n  description: |\n    PGURE-SVT (Poisson-Gaussian Unbiased Risk Estimator - Singular Value Thresholding) is an algorithm designed to denoise image sequences acquired in microscopy. It exploits the correlations between consecutive frames to form low-rank matrices, which are then recovered using a technique known as nuclear norm minimization. An unbiased risk estimator for mixed Poisson-Gaussian noise is used to automate the selection of the regularization parameter, while robust noise and motion estimation maintain broad applicability to many different types of microscopy.\n  doc_url: https://github.com/tjof2/pgure-svt\n  dev_url: https://github.com/tjof2/pgure-svt\n\nextra:\n  recipe-maintainers:\n    - ericpre\n    - tjof2\n",
  "req":{
   "__set__":true,
   "elements":[
    "armadillo",
    "cxx_compiler_stub",
    "cython",
-   "lapack",
+   "liblapack",
    "nlopt",
    "numpy",
    "openblas",
@@ -162,7 +165,7 @@
    "elements":[
     "armadillo",
     "cython",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -174,7 +177,7 @@
    "__set__":true,
    "elements":[
     "armadillo",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -202,7 +205,7 @@
    "elements":[
     "armadillo",
     "cython",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
@@ -214,7 +217,7 @@
    "__set__":true,
    "elements":[
     "armadillo",
-    "lapack",
+    "liblapack",
     "nlopt",
     "numpy",
     "openblas",
