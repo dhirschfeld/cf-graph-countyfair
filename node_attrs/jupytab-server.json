@@ -1,6 +1,143 @@
 {
  "archived":false,
- "bad":"make_graph: 404",
+ "bad":false,
+ "conda-forge.yml":{},
  "feedstock_name":"jupytab-server",
- "new_version":false
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "description":"Jupytab Server allows you to explore in Tableau data which is generated\ndynamically by a Jupyter Notebook. You can thus create Tableau data\nsources in a very flexible way using all the power of Python.\nThis is achieved by having Tableau access data through a web\nserver created by Jupytab.\n",
+   "dev_url":"https://github.com/CFMTech/jupytab",
+   "doc_url":"https://github.com/CFMTech/jupytab",
+   "home":"https://github.com/CFMTech/jupytab",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Connect Tableau to your Jupyter Notebook"
+  },
+  "build":{
+   "entry_points":[
+    "jupytab=jupytab_server.jupytab:main",
+    "jupytab=jupytab_server.jupytab:main",
+    "jupytab=jupytab_server.jupytab:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install --no-deps . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "js-dieu",
+    "js-dieu",
+    "js-dieu"
+   ]
+  },
+  "package":{
+   "name":"jupytab-server",
+   "version":"0.9.9"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "python",
+    "pip",
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "jupyter_kernel_gateway",
+    "python",
+    "jupyter_kernel_gateway",
+    "python",
+    "jupyter_kernel_gateway"
+   ]
+  },
+  "source":{
+   "sha256":"4ba7bb5b37374653febc0f279db970b80e964bda865cd1659977eecbc31cc7da",
+   "url":"https://pypi.io/packages/source/j/jupytab-server/jupytab-server-0.9.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jupytab --help",
+    "pip check",
+    "jupytab --help",
+    "pip check",
+    "jupytab --help",
+    "pip check"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
+   ]
+  }
+ },
+ "name":"jupytab-server",
+ "new_version":"0.9.9",
+ "raw_meta_yaml":"{% set name = \"jupytab-server\" %}\n{% set version = \"0.9.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4ba7bb5b37374653febc0f279db970b80e964bda865cd1659977eecbc31cc7da\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install --no-deps . -vv\"\n  noarch: python\n  entry_points:\n    - jupytab=jupytab_server.jupytab:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - jupyter_kernel_gateway\n\ntest:\n  commands:\n    - jupytab --help\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/CFMTech/jupytab\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Connect Tableau to your Jupyter Notebook'\n\n  description: |\n    Jupytab Server allows you to explore in Tableau data which is generated\n    dynamically by a Jupyter Notebook. You can thus create Tableau data\n    sources in a very flexible way using all the power of Python.\n    This is achieved by having Tableau access data through a web\n    server created by Jupytab.\n  doc_url: https://github.com/CFMTech/jupytab\n  dev_url: https://github.com/CFMTech/jupytab\n\nextra:\n  recipe-maintainers:\n    - js-dieu\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "jupyter_kernel_gateway",
+   "pip",
+   "python"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jupyter_kernel_gateway",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jupyter_kernel_gateway",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
+ "url":"https://pypi.io/packages/source/j/jupytab-server/jupytab-server-0.9.9.tar.gz",
+ "version":"0.9.9"
 }
