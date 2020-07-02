@@ -33,6 +33,44 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443080030.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443083017.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -43,15 +81,14 @@
  "meta_yaml":{
   "about":{
    "home":"https://github.com/crusaderky/pshell",
-   "license":"Apache 2.0",
+   "license":"Apache-2.0",
    "license_family":"APACHE",
    "license_file":"LICENSE",
    "summary":"Python API to completely replace bash scripting"
   },
   "build":{
-   "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -62,29 +99,38 @@
   },
   "package":{
    "name":"pshell",
-   "version":"1.1.0"
+   "version":"1.2.0"
   },
   "requirements":{
    "build":[
-    "python >=3.5",
+    "python",
+    "setuptools",
+    "setuptools-scm",
     "pip",
-    "python >=3.5",
+    "python",
+    "setuptools",
+    "setuptools-scm",
     "pip",
-    "python >=3.5",
+    "python",
+    "setuptools",
+    "setuptools-scm",
     "pip"
    ],
    "run":[
-    "python >=3.5",
-    "psutil >=3.2",
-    "python >=3.5",
-    "psutil >=3.2",
-    "python >=3.5",
-    "psutil >=3.2"
+    "python",
+    "setuptools",
+    "psutil >=5.3",
+    "python",
+    "setuptools",
+    "psutil >=5.3",
+    "python",
+    "setuptools",
+    "psutil >=5.3"
    ]
   },
   "source":{
-   "sha256":"01475c6e3220c1d66eabb25a03c315d79281cb410162dfb3e5d225897180f3bf",
-   "url":"https://pypi.io/packages/source/p/pshell/pshell-1.1.0.tar.gz"
+   "sha256":"9b2db73b32c72ccdb08c33da27d7f121ba88d4ce67c8606ce238923e59b32f8b",
+   "url":"https://pypi.io/packages/source/p/pshell/pshell-1.2.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -93,9 +139,9 @@
     "pshell"
    ],
    "requires":[
-    "pytest >=3.1",
-    "pytest >=3.1",
-    "pytest >=3.1"
+    "pytest >=4",
+    "pytest >=4",
+    "pytest >=4"
    ]
   }
  },
@@ -105,14 +151,16 @@
   "1.2.0":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"1.1.0\" %}\n\npackage:\n  name: pshell\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pshell/pshell-{{ version }}.tar.gz\n  sha256: 01475c6e3220c1d66eabb25a03c315d79281cb410162dfb3e5d225897180f3bf\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - psutil >=3.2\n\ntest:\n  imports:\n    - pshell\n  requires:\n    - pytest >=3.1\n\nabout:\n  home: https://github.com/crusaderky/pshell\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'Python API to completely replace bash scripting'\n\nextra:\n  recipe-maintainers:\n    - crusaderky\n",
+ "pinning_version":"2020.07.01.21.17.12",
+ "raw_meta_yaml":"{% set version = \"1.2.0\" %}\n\npackage:\n  name: pshell\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pshell/pshell-{{ version }}.tar.gz\n  sha256: 9b2db73b32c72ccdb08c33da27d7f121ba88d4ce67c8606ce238923e59b32f8b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools-scm\n    - pip\n  run:\n    - python\n    - setuptools\n    - psutil >=5.3\n    - contextvars >=2.0  # [py36]\n\ntest:\n  imports:\n    - pshell\n  requires:\n    - pytest >=4\n\nabout:\n  home: https://github.com/crusaderky/pshell\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Python API to completely replace bash scripting\n\nextra:\n  recipe-maintainers:\n    - crusaderky\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
    "psutil",
-   "python"
+   "python",
+   "setuptools",
+   "setuptools-scm"
   ]
  },
  "requirements":{
@@ -120,7 +168,9 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -131,7 +181,8 @@
    "__set__":true,
    "elements":[
     "psutil",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "test":{
@@ -148,7 +199,9 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python >=3.5"
+    "python",
+    "setuptools",
+    "setuptools-scm"
    ]
   },
   "host":{
@@ -158,17 +211,18 @@
   "run":{
    "__set__":true,
    "elements":[
-    "psutil >=3.2",
-    "python >=3.5"
+    "psutil >=5.3",
+    "python",
+    "setuptools"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "pytest >=3.1"
+    "pytest >=4"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/p/pshell/pshell-1.1.0.tar.gz",
- "version":"1.1.0"
+ "version":"1.2.0"
 }
