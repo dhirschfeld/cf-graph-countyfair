@@ -310,25 +310,34 @@
    "summary":"A lightweight LLVM python binding for writing JIT compilers."
   },
   "build":{
-   "number":"0"
+   "number":"0",
+   "script_env":[
+    "PY_VCRUNTIME_REDIST",
+    "PY_VCRUNTIME_REDIST",
+    "PY_VCRUNTIME_REDIST"
+   ]
   },
   "extra":{
    "recipe-maintainers":[
     "jakirkham",
     "souravsingh",
+    "marcelotrevisani",
     "jakirkham",
     "souravsingh",
+    "marcelotrevisani",
     "jakirkham",
-    "souravsingh"
+    "souravsingh",
+    "marcelotrevisani"
    ]
   },
   "package":{
    "name":"llvmlite",
-   "version":"0.32.1"
+   "version":"0.33.0"
   },
   "requirements":{
    "build":[
-    "vs2017_",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
     "cmake",
     "c_compiler_stub",
     "cxx_compiler_stub",
@@ -339,27 +348,32 @@
    ],
    "host":[
     "python",
-    "llvmdev 8.0.*",
-    "llvm 8.0.*",
+    "llvmdev 9.0.*",
+    "zlib",
+    "vs2015_runtime",
     "python",
-    "llvmdev 8.0.*",
-    "llvm 8.0.*",
+    "llvmdev 9.0.*",
     "zlib",
     "python",
-    "llvmdev 8.0.*",
-    "llvm 8.0.*",
+    "llvmdev 9.0.*",
     "zlib"
    ],
    "run":[
     "python",
+    "llvmdev 9.0.*",
+    "zlib",
+    "vs2015_runtime",
     "python",
-    "python"
+    "llvmdev 9.0.*",
+    "zlib",
+    "python",
+    "llvmdev 9.0.*",
+    "zlib"
    ]
   },
   "source":{
-   "fn":"llvmlite-0.32.1.tar.gz",
-   "sha256":"41262a47b8cbba5a09203b15b65fbdf11192f92aa226c81e99115acdee8f3b8d",
-   "url":"https://pypi.io/packages/source/l/llvmlite/llvmlite-0.32.1.tar.gz"
+   "sha256":"9c8aae96f7fba10d9ac864b443d1e8c7ee4765c31569a2b201b3d0b67d8fc596",
+   "url":"https://pypi.io/packages/source/l/llvmlite/llvmlite-0.33.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -386,18 +400,17 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.06.10.22.19.47",
- "raw_meta_yaml":"{% set name = \"llvmlite\" %}\n{% set version = \"0.32.1\" %}\n{% set sha256 = \"41262a47b8cbba5a09203b15b65fbdf11192f92aa226c81e99115acdee8f3b8d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  # don't use github generated tar-ball as the sha256 value may not be stable\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}            # [unix]\n    - {{ compiler('cxx') }}          # [unix]\n    - vs2017_{{ target_platform }}   # [win]\n    # The DLL build uses cmake on Windows\n    - cmake                  # [win]\n    - make                   # [unix]\n  host:\n    - python\n    - llvmdev 8.0.*\n    - llvm 8.0.*\n    # llvmdev is built with libz compression support\n    - zlib            # [unix]\n  run:\n    - python\n\ntest:\n  imports:\n    - llvmlite\n    - llvmlite.binding\n  commands:\n    - python -m llvmlite.tests\n\nabout:\n  home: http://llvmlite.pydata.org\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: A lightweight LLVM python binding for writing JIT compilers.\n  doc_url: http://llvmlite.pydata.org/\n  dev_url: https://github.com/numba/llvmlite\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - souravsingh\n",
+ "raw_meta_yaml":"{% set name = \"llvmlite\" %}\n{% set version = \"0.33.0\" %}\n{% set sha256 = \"9c8aae96f7fba10d9ac864b443d1e8c7ee4765c31569a2b201b3d0b67d8fc596\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  # don't use github generated tar-ball as the sha256 value may not be stable\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches: utils_add_dll.patch  # [win and py>=38]\n\nbuild:\n  number: 0\n  script_env:\n    - PY_VCRUNTIME_REDIST\n  # testing just windows for now, after integration we should remove it\n  skip: true  # [win and py==38]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    # The DLL build uses cmake on Windows\n    - cmake                  # [win]\n    - make                   # [unix]\n  host:\n    - python\n    - llvmdev 9.0.*\n    - zlib\n    - vs2015_runtime  # [win]\n  run:\n    - python\n    - llvmdev 9.0.*\n    - zlib\n    - vs2015_runtime  # [win]\n\ntest:\n  imports:\n    - llvmlite\n    - llvmlite.binding\n  commands:\n    - python -m llvmlite.tests\n\nabout:\n  home: http://llvmlite.pydata.org\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: A lightweight LLVM python binding for writing JIT compilers.\n  doc_url: http://llvmlite.pydata.org/\n  dev_url: https://github.com/numba/llvmlite\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - souravsingh\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cmake",
    "cxx_compiler_stub",
-   "llvm",
    "llvmdev",
    "make",
    "python",
-   "vs2017_",
+   "vs2015_runtime",
    "zlib"
   ]
  },
@@ -408,23 +421,25 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make",
-    "vs2017_"
+    "make"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "llvm",
     "llvmdev",
     "python",
+    "vs2015_runtime",
     "zlib"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "python"
+    "llvmdev",
+    "python",
+    "vs2015_runtime",
+    "zlib"
    ]
   },
   "test":{
@@ -441,23 +456,25 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make",
-    "vs2017_"
+    "make"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
-    "llvm 8.0.*",
-    "llvmdev 8.0.*",
+    "llvmdev 9.0.*",
     "python",
+    "vs2015_runtime",
     "zlib"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "python"
+    "llvmdev 9.0.*",
+    "python",
+    "vs2015_runtime",
+    "zlib"
    ]
   },
   "test":{
@@ -466,5 +483,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/l/llvmlite/llvmlite-0.29.0.tar.gz",
- "version":"0.32.1"
+ "version":"0.33.0"
 }
