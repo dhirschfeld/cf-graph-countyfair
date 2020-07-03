@@ -16,7 +16,7 @@
    "summary":"Open Deep Learning Compiler Stack"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
@@ -47,25 +47,25 @@
    ],
    "host":[
     "dlpack >0.2",
-    "rang",
+    "rang >=3.1.0",
     "dmlc >=0.4",
     "dlpack >0.2",
-    "rang",
+    "rang >=3.1.0",
     "dmlc >=0.4",
     "dlpack >0.2",
-    "rang",
+    "rang >=3.1.0",
     "dmlc >=0.4"
    ],
    "run":[
     "dlpack >0.2",
     "dmlc >=0.4",
-    "rang",
+    "rang >=3.1.0",
     "dlpack >0.2",
     "dmlc >=0.4",
-    "rang",
+    "rang >=3.1.0",
     "dlpack >0.2",
     "dmlc >=0.4",
-    "rang"
+    "rang >=3.1.0"
    ]
   },
   "source":{
@@ -94,7 +94,7 @@
  },
  "name":"libtvm",
  "new_version":"0.6.0",
- "raw_meta_yaml":"{% set name = \"libtvm\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz\n  sha256: e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake >=3.5\n    - ninja\n  host:\n    - dlpack >0.2\n    - rang\n    - dmlc >=0.4\n  run:\n    - dlpack >0.2\n    - dmlc >=0.4\n    - rang\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/tvm\n    - test -f ${PREFIX}/lib/libtvm${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libnnvm_compiler${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libtvm_topi${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libtvm_runtime${SHLIB_EXT}\n\nabout:\n  home: https://tvm.apache.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Open Deep Learning Compiler Stack'\n  description: |\n    Apache TVM (incubating) is a compiler stack for deep learning systems. \n    It is designed to close the gap between the productivity-focused deep \n    learning frameworks, and the performance- and efficiency-focused hardware \n    backends. TVM works with deep learning frameworks to provide end to end \n    compilation to different backends.\n  doc_url: https://tvm.apache.org/docs/\n  dev_url: https://github.com/apache/incubator-tvm\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"libtvm\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz\n  sha256: e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e\n\nbuild:\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n    - cmake >=3.5\n    - ninja\n  host:\n    - dlpack >0.2\n    - rang >=3.1.0\n    - dmlc >=0.4\n  run:\n    - dlpack >0.2\n    - dmlc >=0.4\n    - rang >=3.1.0\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/tvm\n    - test -f ${PREFIX}/lib/libtvm${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libnnvm_compiler${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libtvm_topi${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libtvm_runtime${SHLIB_EXT}\n\nabout:\n  home: https://tvm.apache.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Open Deep Learning Compiler Stack'\n  description: |\n    Apache TVM (incubating) is a compiler stack for deep learning systems. \n    It is designed to close the gap between the productivity-focused deep \n    learning frameworks, and the performance- and efficiency-focused hardware \n    backends. TVM works with deep learning frameworks to provide end to end \n    compilation to different backends.\n  doc_url: https://tvm.apache.org/docs/\n  dev_url: https://github.com/apache/incubator-tvm\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -154,7 +154,7 @@
    "elements":[
     "dlpack >0.2",
     "dmlc >=0.4",
-    "rang"
+    "rang >=3.1.0"
    ]
   },
   "run":{
@@ -162,7 +162,7 @@
    "elements":[
     "dlpack >0.2",
     "dmlc >=0.4",
-    "rang"
+    "rang >=3.1.0"
    ]
   },
   "test":{
