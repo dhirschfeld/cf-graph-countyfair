@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444096449.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.0.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -98,7 +117,12 @@
   }
  },
  "name":"foolbox",
- "new_version":"3.0.2",
+ "new_version":"3.0.4",
+ "new_version_attempts":{
+  "3.0.4":1
+ },
+ "new_version_errors":{},
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set name = \"foolbox\" %}\n{% set version = \"3.0.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 24ad770345ae700bf876ead8279c427e40bb426c9aaaa46ad8ff50e32ea43b7b\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - git\n    - eagerpy >=0.27\n    - gitpython >=3.0.7\n    - numpy\n    - python\n    - scipy\n    - setuptools\n    - requests\n    - typing-extensions >=3.7.4.1\n\ntest:\n  imports:\n    - foolbox\n    - foolbox.attacks\n    - foolbox.models\n    - foolbox.zoo\n\nabout:\n  home: https://foolbox.jonasrauber.de/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE # PR here: https://github.com/bethgelab/foolbox/pull/551\n  summary: \"Foolbox Native is an adversarial attacks library that works natively with PyTorch, TensorFlow and JAX\"\n  description: \n    Foolbox is a Python library that let's you easily run adversarial attacks against machine learning models like\n    deep neural networks. It is built on top of EagerPy and works natively with models in PyTorch, TensorFlow, JAX, and NumPy.\n  doc_url: https://foolbox.readthedocs.io/en/stable/\n  dev_url: https://github.com/bethgelab/foolbox/\n\nextra:\n  recipe-maintainers:\n    - ndmaxar\n    - oblute\n    - rluria14\n",
  "req":{
   "__set__":true,
@@ -146,6 +170,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
