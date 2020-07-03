@@ -294,7 +294,7 @@
   },
   "package":{
    "name":"wradlib",
-   "version":"1.7.1"
+   "version":"1.7.2"
   },
   "requirements":{
    "host":[
@@ -351,8 +351,8 @@
    ]
   },
   "source":{
-   "sha256":"b47a9a09051de0647bb23d4c2c552d2f0f704fee425e53f97c9f5fc692dfaf00",
-   "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.7.1.tar.gz"
+   "sha256":"2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058",
+   "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.7.2.tar.gz"
   },
   "test":{
    "commands":null,
@@ -370,7 +370,7 @@
  },
  "new_version_errors":{},
  "pinning_version":"2020.07.02.17.22.00",
- "raw_meta_yaml":"{% set version = \"1.7.1\" %}\n\npackage:\n  name: wradlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n  sha256: b47a9a09051de0647bb23d4c2c552d2f0f704fee425e53f97c9f5fc692dfaf00\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - semver\n  run:\n    - python >=3\n    - deprecation\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - h5netcdf\n    - netcdf4\n    - gdal\n    - xarray\n    - cartopy\n    - semver\n    - xmltodict\n\ntest:\n  imports:\n    - wradlib  # [not osx]\n  commands:\n    # hack to get macosx matplotlib running\n    # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n    - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n  home: http://wradlib.org/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Open Source Library for Weather Radar Data Processing\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - kmuehlbauer\n",
+ "raw_meta_yaml":"{% set version = \"1.7.2\" %}\n\npackage:\n  name: wradlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n  sha256: 2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - semver\n  run:\n    - python >=3\n    - deprecation\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - h5netcdf\n    - netcdf4\n    - gdal\n    - xarray\n    - cartopy\n    - semver\n    - xmltodict\n\ntest:\n  imports:\n    - wradlib  # [not osx]\n  commands:\n    # hack to get macosx matplotlib running\n    # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n    - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n  home: http://wradlib.org/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Open Source Library for Weather Radar Data Processing\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - kmuehlbauer\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -465,5 +465,5 @@
   }
  },
  "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.5.0.tar.gz",
- "version":"1.7.1"
+ "version":"1.7.2"
 }
