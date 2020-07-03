@@ -65,6 +65,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443854857.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -122,12 +139,13 @@
   }
  },
  "name":"fdupes",
- "new_version":"2.1.0",
+ "new_version":"2.1.1",
  "new_version_attempts":{
-  "2.1.0":1
+  "2.1.0":1,
+  "2.1.1":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.24.16.31.11",
+ "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"\n{% set name = \"fdupes\" %}\n{% set version = \"1.6.1\" %}\n{% set sha256 = \"9d6b6fdb0b8419815b4df3bdfd0aebc135b8276c90bbbe78ebe6af0b88ba49ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/adrianlopezroche/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\ntest:\n  commands:\n    - fdupes --version\n\nabout:\n  home: https://github.com/adrianlopezroche/fdupes\n  license: MIT\n  license_family: MIT\n  license_file: README\n  summary: Identify or delete duplicate files\n  description : |\n    FDUPES is a program for identifying or deleting duplicate files residing\n    within specified directories.\n  dev_url: https://github.com/adrianlopezroche/fdupes\n\nextra:\n  recipe-maintainers:\n    - keuv-grvl\n",
  "req":{
   "__set__":true,
