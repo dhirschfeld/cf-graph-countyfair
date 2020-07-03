@@ -135,6 +135,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443870705.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -218,14 +235,15 @@
   }
  },
  "name":"scmdata",
- "new_version":"0.5.1",
+ "new_version":"0.5.2",
  "new_version_attempts":{
   "0.4.2":1,
   "0.5.0":1,
-  "0.5.1":1
+  "0.5.1":1,
+  "0.5.2":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.10.22.19.47",
+ "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set name = \"scmdata\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b9859466c0328a9b33f1539c1ea2c90a2830d14acce44c16251fd25df3d46ae3\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - cftime\n    - numpy\n    - openscm-units\n    - pandas\n    - python-dateutil\n    - xarray\n\ntest:\n  imports:\n    - scmdata\n\n  commands: python -c \"import scmdata; assert scmdata.__version__ == '{{ version }}'\"\n\nabout:\n  home: https://github.com/openscm/scmdata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Handling of simple climate model data (part of the OpenSCM project)\n  doc_url: https://scmdata.readthedocs.io/en/latest/scmdata\n  dev_url: https://github.com/openscm/scmdata\n\nextra:\n  recipe-maintainers:\n    - znicholls\n    - lewisjared\n",
  "req":{
   "__set__":true,
