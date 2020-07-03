@@ -16,6 +16,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444151059.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"ArchRebuild",
+    "migrator_version":1,
+    "name":"aarch64 and ppc64le addition"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -85,7 +102,7 @@
  },
  "name":"su-exec",
  "new_version":"0.2",
- "pinning_version":"2019.01.29",
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set version = \"0.2\" %}\n{% set sha256 = \"ec4acbd8cde6ceeb2be67eda1f46c709758af6db35cacbcde41baac349855e25\" %}\n\npackage:\n  name: su-exec\n  version: {{ version }}\n\nsource:\n  fn: su-exec-{{ version }}.tar.gz\n  url: https://github.com/ncopa/su-exec/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1002\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - make\n\ntest:\n  commands:\n    - which su-exec\n    - su-exec --help\n\nabout:\n  home: https://github.com/ncopa/su-exec\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Switch user and group id and exec\n\n  description: |\n    This is a simple tool that will simply execute a program with different\n    privileges. The program will not run as a child, like su and sudo, so we\n    work around TTY and signal issues.\n\n  dev_url: https://github.com/ncopa/su-exec\n  doc_url: https://github.com/ncopa/su-exec\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{
   "__set__":true,
@@ -115,7 +132,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.2.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
