@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443787242.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.6.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -113,12 +130,13 @@
   }
  },
  "name":"pytmc",
- "new_version":"2.6.6",
+ "new_version":"2.6.7",
  "new_version_attempts":{
-  "2.6.6":1
+  "2.6.6":1,
+  "2.6.7":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.06.24.16.31.11",
+ "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set name = \"pytmc\" %}\n{% set version = \"2.6.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/pytmc/archive/v{{ version }}.tar.gz\n  sha256: fab425fc072b10a9ff141b1a1fd54abdccc0d7af2f4ca63e63a05a2228da9fff\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - pytmc = pytmc.bin.pytmc:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - jinja2\n    - lxml\n    - epics-pypdb >=0.1.5\n\ntest:\n  imports:\n    - pytmc\n  requires:\n    - pytest\n    - pytest-qt\n    - qtpy\n    - pyqt >=5\n\nabout:\n  home: https://github.com/slaclab/pytmc\n  doc_url: https://slaclab.github.io/pytmc/\n  license: SLAC Open\n  license_family: Other\n  license_file: LICENSE\n  summary: 'Generate EPICS IOCs and records from Beckhoff TwinCAT projects'\n\nextra:\n  recipe-maintainers:\n    - klauer\n    - hhslepicka \n    - zllentz\n    - n-wbrown\n",
  "req":{
   "__set__":true,

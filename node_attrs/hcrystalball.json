@@ -16,6 +16,40 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443786853.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/443791081.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MatplotlibBase",
+    "migrator_version":0,
+    "name":"matplotlib-to-matplotlib-base"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -33,7 +67,7 @@
   },
   "build":{
    "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -66,18 +100,21 @@
     "scipy >=1.4",
     "scikit-learn >=0.23",
     "workalendar >=10.1",
+    "matplotlib",
     "python >=3.7",
     "numpy",
     "pandas >=1.0",
     "scipy >=1.4",
     "scikit-learn >=0.23",
     "workalendar >=10.1",
+    "matplotlib",
     "python >=3.7",
     "numpy",
     "pandas >=1.0",
     "scipy >=1.4",
     "scikit-learn >=0.23",
-    "workalendar >=10.1"
+    "workalendar >=10.1",
+    "matplotlib"
    ]
   },
   "source":{
@@ -103,16 +140,18 @@
   }
  },
  "name":"hcrystalball",
- "new_version":"0.1.4",
+ "new_version":"0.1.5",
  "new_version_attempts":{
-  "0.1.4":1
+  "0.1.4":1,
+  "0.1.5":1
  },
  "new_version_errors":{},
- "pinning_version":"2020.07.01.21.17.12",
- "raw_meta_yaml":"{% set name = \"hcrystalball\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: dab4527bba16529c5b0d2ac6128b8ef26324be6d124d4f2746922ac5c0a2db36\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - pyscaffold >=3.1a0,<3.2a0\n  run:\n    - python >=3.7\n    - numpy\n    - pandas >=1.0\n    - scipy >=1.4\n    - scikit-learn >=0.23\n    - workalendar >=10.1\n\ntest:\n  imports:\n    - hcrystalball\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/heidelbergcement/hcrystalball\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A time series library that unifies the API for most commonly used libraries and modelling techniques for time-series forecasting in the Python ecosystem.\n\nextra:\n  recipe-maintainers:\n    - michalchromcak\n",
+ "pinning_version":"2020.07.02.17.22.00",
+ "raw_meta_yaml":"{% set name = \"hcrystalball\" %}\n{% set version = \"0.1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: dab4527bba16529c5b0d2ac6128b8ef26324be6d124d4f2746922ac5c0a2db36\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n    - pyscaffold >=3.1a0,<3.2a0\n  run:\n    - python >=3.7\n    - numpy\n    - pandas >=1.0\n    - scipy >=1.4\n    - scikit-learn >=0.23\n    - workalendar >=10.1\n    - matplotlib\n\ntest:\n  imports:\n    - hcrystalball\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/heidelbergcement/hcrystalball\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A time series library that unifies the API for most commonly used libraries and modelling techniques for time-series forecasting in the Python ecosystem.\n\nextra:\n  recipe-maintainers:\n    - michalchromcak\n",
  "req":{
   "__set__":true,
   "elements":[
+   "matplotlib",
    "numpy",
    "pandas",
    "pip",
@@ -139,6 +178,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "matplotlib",
     "numpy",
     "pandas",
     "python",
@@ -172,6 +212,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "matplotlib",
     "numpy",
     "pandas >=1.0",
     "python >=3.7",
