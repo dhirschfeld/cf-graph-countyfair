@@ -1,0 +1,205 @@
+{
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444180122.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  }
+ ],
+ "archived":false,
+ "bad":false,
+ "conda-forge.yml":{},
+ "feedstock_name":"nnvm",
+ "hash_type":"sha256",
+ "meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/apache/incubator-tvm",
+   "doc_url":"https://tvm.apache.org/docs/",
+   "home":"https://tvm.apache.org/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"NNVM Compiler Module of TVM Stack"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "cd nnvm/python",
+    "-m pip install . --no-deps -vv",
+    "cd nnvm/python",
+    "-m pip install . --no-deps -vv",
+    "cd nnvm/python",
+    "-m pip install . --no-deps -vv"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani",
+    "marcelotrevisani",
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"nnvm",
+   "version":"0.6.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libtvm 0.6.0",
+    "python",
+    "cython",
+    "setuptools",
+    "numpy",
+    "pip",
+    "libtvm 0.6.0",
+    "python",
+    "cython",
+    "setuptools",
+    "numpy",
+    "pip",
+    "libtvm 0.6.0",
+    "python",
+    "cython",
+    "setuptools",
+    "numpy",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "tvm-py 0.6.0",
+    "numpy",
+    "libtvm 0.6.0",
+    "python",
+    "tvm-py 0.6.0",
+    "numpy",
+    "libtvm 0.6.0",
+    "python",
+    "tvm-py 0.6.0",
+    "numpy",
+    "libtvm 0.6.0"
+   ]
+  },
+  "source":{
+   "sha256":"e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e",
+   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "nnvm",
+    "nnvm",
+    "nnvm"
+   ]
+  }
+ },
+ "name":"nnvm",
+ "new_version":"0.6.0",
+ "pinning_version":"2020.07.03.10.54.45",
+ "raw_meta_yaml":"{% set name = \"nnvm\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz\n  sha256: e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e\n\nbuild:\n  number: 0\n  script:\n    - cd nnvm/python\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n  host:\n    - libtvm {{ version }}\n    - python\n    - cython\n    - setuptools\n    - numpy\n    - pip\n  run:\n    - python\n    - tvm-py {{ version }}\n    - {{ pin_compatible('numpy') }}\n    - libtvm {{ version }}\n\ntest:\n  imports:\n    - nnvm\n\nabout:\n  home: https://tvm.apache.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'NNVM Compiler Module of TVM Stack'\n  doc_url: https://tvm.apache.org/docs/\n  dev_url: https://github.com/apache/incubator-tvm\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "req":{
+  "__set__":true,
+  "elements":[
+   "c_compiler_stub",
+   "cxx_compiler_stub",
+   "cython",
+   "libtvm",
+   "numpy",
+   "pip",
+   "python",
+   "setuptools",
+   "tvm-py"
+  ]
+ },
+ "requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libtvm",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libtvm",
+    "numpy",
+    "python",
+    "tvm-py"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
+ "strong_exports":false,
+ "total_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libtvm 0.6.0",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libtvm 0.6.0",
+    "numpy",
+    "python",
+    "tvm-py 0.6.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz",
+ "version":"0.6.0"
+}
