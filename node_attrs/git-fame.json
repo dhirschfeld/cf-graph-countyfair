@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444325373.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.12.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -150,7 +169,11 @@
   }
  },
  "name":"git-fame",
- "new_version":"1.12.0",
+ "new_version":"1.12.1",
+ "new_version_attempts":{
+  "1.12.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://github.com/casperdcl/git-fame",
@@ -226,6 +249,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set name = \"git-fame\" %}\n{% set version = \"1.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - git-fame = gitfame:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - argopt >=0.3.5\n    - tabulate\n\ntest:\n  imports:\n    - gitfame\n  commands:\n    - git-fame -v\n    - git-fame -h\n\nabout:\n  home: https://github.com/casperdcl/git-fame\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENCE\n  summary: 'Pretty-print git repository collaborators sorted by contributions'\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n",
  "req":{
   "__set__":true,
@@ -261,6 +285,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
