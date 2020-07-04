@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444336993.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -149,7 +168,11 @@
   }
  },
  "name":"rb-logging",
- "new_version":false,
+ "new_version":"2.3.0",
+ "new_version_attempts":{
+  "2.3.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/TwP/logging",
@@ -224,6 +247,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set name = \"logging\" %}\n{% set version = \"2.2.2\" %}\n\npackage:\n  name: rb-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem\n  sha256: 963359dbdab725a3320eab179017d20d5b9731d7148e1efa8432c184a48a461a\n\nbuild:\n  noarch: generic\n  number: 0\n  script:\n    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem\n    - gem unpack {{ name }}-{{ version }}.gem\n  skip: {{ win }}\n\nrequirements:\n  host:\n    - ruby\n  run:\n    - ruby\n    - rb-little-plugger >=1.1.4,<2\n    - rb-multi_json >=1.13.1,<1.14\n\ntest:\n  commands:\n    - ruby -r {{ name }} -e 'exit 0'\n\nabout:\n  home: https://rubygems.org/gems/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: {{ name }}-{{ version }}/LICENSE\n  summary: |\n    A a flexible logging library for use in Ruby programs based on the design of\n    Java's log4j library. It features a hierarchical logging system, custom level\n    names, multiple output destinations per log event, custom formatting, and more.\n  doc_url: https://www.rubydoc.info/gems/{{ name }}\n  dev_url: https://github.com/TwP/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - benhuff\n    - oblute\n    - sodre\n",
  "req":{
   "__set__":true,
@@ -257,6 +281,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
