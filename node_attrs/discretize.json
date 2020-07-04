@@ -162,6 +162,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444315863.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.14"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -331,11 +348,12 @@
   }
  },
  "name":"discretize",
- "new_version":"0.4.13",
+ "new_version":"0.4.14",
  "new_version_attempts":{
   "0.4.11":1,
   "0.4.12":1,
-  "0.4.13":4
+  "0.4.13":4,
+  "0.4.14":1
  },
  "new_version_errors":{
   "0.4.13":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.4.13' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/d/discretize/discretize-{{ version }}.tar.gz'\n"
@@ -421,7 +439,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.23.15.05.51",
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set version = \"0.4.13\" %}\n\npackage:\n  name: discretize\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/discretize/discretize-{{ version }}.tar.gz\n  sha256: 734e1ed460d532601f03af446a5229664606b2269e1b1f7cba646eb19cf4dd0f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - cython >=0.2\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=0.13\n    - properties\n    - vectormath\n\ntest:\n  imports:\n    - discretize\n\nabout:\n  home: http://github.com/simpeg/discretize\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Discretization tools for finite volume and inverse problems\n\nextra:\n  recipe-maintainers:\n    - lheagy\n    - jcapriot\n",
  "req":{
   "__set__":true,
@@ -467,7 +485,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
