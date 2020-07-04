@@ -20,7 +20,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"git-fame",
  "hash_type":"sha256",
  "linux_64_meta_yaml":{
@@ -37,7 +41,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -46,22 +50,24 @@
   },
   "package":{
    "name":"git-fame",
-   "version":"1.12.0"
+   "version":"1.12.1"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools_scm"
    ],
    "run":[
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate"
    ]
   },
   "source":{
-   "sha256":"d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e",
-   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.0.tar.gz"
+   "sha256":"cb316ca06e02c7665652b3eef00920d39ab5d2bb484c6cc26f2fd547f10374cf",
+   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -82,7 +88,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -90,6 +97,7 @@
    "elements":[
     "argopt",
     "python",
+    "setuptools_scm",
     "tabulate"
    ]
   },
@@ -114,7 +122,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -125,32 +133,38 @@
   },
   "package":{
    "name":"git-fame",
-   "version":"1.12.0"
+   "version":"1.12.1"
   },
   "requirements":{
    "host":[
     "python",
     "pip",
+    "setuptools_scm",
     "python",
     "pip",
+    "setuptools_scm",
     "python",
-    "pip"
+    "pip",
+    "setuptools_scm"
    ],
    "run":[
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate",
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate",
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate"
    ]
   },
   "source":{
-   "sha256":"d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e",
-   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.0.tar.gz"
+   "sha256":"cb316ca06e02c7665652b3eef00920d39ab5d2bb484c6cc26f2fd547f10374cf",
+   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -188,7 +202,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -197,22 +211,24 @@
   },
   "package":{
    "name":"git-fame",
-   "version":"1.12.0"
+   "version":"1.12.1"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools_scm"
    ],
    "run":[
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate"
    ]
   },
   "source":{
-   "sha256":"d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e",
-   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.0.tar.gz"
+   "sha256":"cb316ca06e02c7665652b3eef00920d39ab5d2bb484c6cc26f2fd547f10374cf",
+   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -233,7 +249,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -241,6 +258,7 @@
    "elements":[
     "argopt",
     "python",
+    "setuptools_scm",
     "tabulate"
    ]
   },
@@ -250,13 +268,14 @@
   }
  },
  "pinning_version":"2020.07.03.10.54.45",
- "raw_meta_yaml":"{% set name = \"git-fame\" %}\n{% set version = \"1.12.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - git-fame = gitfame:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - argopt >=0.3.5\n    - tabulate\n\ntest:\n  imports:\n    - gitfame\n  commands:\n    - git-fame -v\n    - git-fame -h\n\nabout:\n  home: https://github.com/casperdcl/git-fame\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENCE\n  summary: 'Pretty-print git repository collaborators sorted by contributions'\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n",
+ "raw_meta_yaml":"{% set name = \"git-fame\" %}\n{% set version = \"1.12.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cb316ca06e02c7665652b3eef00920d39ab5d2bb484c6cc26f2fd547f10374cf\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - git-fame = gitfame:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - setuptools_scm\n    - argopt >=0.3.5\n    - tabulate\n\ntest:\n  imports:\n    - gitfame\n  commands:\n    - git-fame -v\n    - git-fame -h\n\nabout:\n  home: https://github.com/casperdcl/git-fame\n  license: MPL-2.0\n  license_family: MOZILLA\n  license_file: LICENCE\n  summary: Pretty-print git repository collaborators sorted by contributions\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n",
  "req":{
   "__set__":true,
   "elements":[
    "argopt",
    "pip",
    "python",
+   "setuptools_scm",
    "tabulate"
   ]
  },
@@ -269,7 +288,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -277,6 +297,7 @@
    "elements":[
     "argopt",
     "python",
+    "setuptools_scm",
     "tabulate"
    ]
   },
@@ -296,7 +317,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -304,6 +326,7 @@
    "elements":[
     "argopt >=0.3.5",
     "python",
+    "setuptools_scm",
     "tabulate"
    ]
   },
@@ -313,7 +336,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.0.tar.gz",
- "version":"1.12.0",
+ "version":"1.12.1",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/casperdcl/git-fame",
@@ -328,7 +351,7 @@
    ],
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -337,22 +360,24 @@
   },
   "package":{
    "name":"git-fame",
-   "version":"1.12.0"
+   "version":"1.12.1"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools_scm"
    ],
    "run":[
     "python",
+    "setuptools_scm",
     "argopt >=0.3.5",
     "tabulate"
    ]
   },
   "source":{
-   "sha256":"d06f7538c9e1bb91a0f51624d4f9fc32400ee2b563946d7fe5738f681cd1a73e",
-   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.0.tar.gz"
+   "sha256":"cb316ca06e02c7665652b3eef00920d39ab5d2bb484c6cc26f2fd547f10374cf",
+   "url":"https://pypi.io/packages/source/g/git-fame/git-fame-1.12.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -373,7 +398,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools_scm"
    ]
   },
   "run":{
@@ -381,6 +407,7 @@
    "elements":[
     "argopt",
     "python",
+    "setuptools_scm",
     "tabulate"
    ]
   },
