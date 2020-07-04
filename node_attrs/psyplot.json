@@ -129,6 +129,92 @@
  },
  "feedstock_name":"psyplot",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"psyplot is an cross-platform open source python project that mainly\ncombines the plotting utilities of matplotlib and the data management of\nthe xarray package and integrates them into a software that can be used via\ncommand-line and via a GUI.\n",
+   "dev_url":"https://github.com/Chilipp/psyplot",
+   "doc_url":"http://psyplot.readthedocs.io/en/latest/",
+   "home":"https://github.com/Chilipp/psyplot",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Python package for interactive data visualization"
+  },
+  "build":{
+   "entry_points":[
+    "psyplot = psyplot.__main__:main",
+    "psyplot-plugin = psyplot.plugin_template:main"
+   ],
+   "number":"1",
+   "script":"python -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Chilipp"
+   ]
+  },
+  "package":{
+   "name":"psyplot",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "matplotlib-base",
+    "funcargparse",
+    "xarray",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"psyplot-1.2.1.tar.gz",
+   "sha256":"9c4031ad928bc75c41342a7bace23d04dff823a2e2d0710567972df66a61e2e7",
+   "url":"https://pypi.io/packages/source/p/psyplot/psyplot-1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "psyplot --help",
+    "psyplot-plugin --help"
+   ],
+   "imports":[
+    "psyplot",
+    "psyplot.compat",
+    "psyplot.config",
+    "psyplot.sphinxext"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "funcargparse",
+    "matplotlib-base",
+    "python",
+    "pyyaml",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"psyplot is an cross-platform open source python project that mainly\ncombines the plotting utilities of matplotlib and the data management of\nthe xarray package and integrates them into a software that can be used via\ncommand-line and via a GUI.\n",
@@ -222,6 +308,92 @@
  },
  "name":"psyplot",
  "new_version":"1.2.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"psyplot is an cross-platform open source python project that mainly\ncombines the plotting utilities of matplotlib and the data management of\nthe xarray package and integrates them into a software that can be used via\ncommand-line and via a GUI.\n",
+   "dev_url":"https://github.com/Chilipp/psyplot",
+   "doc_url":"http://psyplot.readthedocs.io/en/latest/",
+   "home":"https://github.com/Chilipp/psyplot",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Python package for interactive data visualization"
+  },
+  "build":{
+   "entry_points":[
+    "psyplot = psyplot.__main__:main",
+    "psyplot-plugin = psyplot.plugin_template:main"
+   ],
+   "number":"1",
+   "script":"python -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Chilipp"
+   ]
+  },
+  "package":{
+   "name":"psyplot",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "matplotlib-base",
+    "funcargparse",
+    "xarray",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"psyplot-1.2.1.tar.gz",
+   "sha256":"9c4031ad928bc75c41342a7bace23d04dff823a2e2d0710567972df66a61e2e7",
+   "url":"https://pypi.io/packages/source/p/psyplot/psyplot-1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "psyplot --help",
+    "psyplot-plugin --help"
+   ],
+   "imports":[
+    "psyplot",
+    "psyplot.compat",
+    "psyplot.config",
+    "psyplot.sphinxext"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "funcargparse",
+    "matplotlib-base",
+    "python",
+    "pyyaml",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"psyplot\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"9c4031ad928bc75c41342a7bace23d04dff823a2e2d0710567972df66a61e2e7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python -m pip install . --no-deps --ignore-installed -vvv\n  entry_points:\n  - psyplot = psyplot.__main__:main\n  - psyplot-plugin = psyplot.plugin_template:main\n\nrequirements:\n  build:\n  - python\n  - pip\n  run:\n  - python\n  - matplotlib-base\n  - funcargparse\n  - xarray\n  - pyyaml\n\ntest:\n  commands:\n    - psyplot --help\n    - psyplot-plugin --help\n  imports:\n    - psyplot\n    - psyplot.compat\n    - psyplot.config\n    - psyplot.sphinxext\n\nabout:\n  home: https://github.com/Chilipp/psyplot\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Python package for interactive data visualization\n\n  description: |\n    psyplot is an cross-platform open source python project that mainly\n    combines the plotting utilities of matplotlib and the data management of\n    the xarray package and integrates them into a software that can be used via\n    command-line and via a GUI.\n  doc_url: http://psyplot.readthedocs.io/en/latest/\n  dev_url: https://github.com/Chilipp/psyplot\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "req":{
@@ -292,5 +464,91 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/psyplot/psyplot-1.2.1.tar.gz",
- "version":"1.2.1"
+ "version":"1.2.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"psyplot is an cross-platform open source python project that mainly\ncombines the plotting utilities of matplotlib and the data management of\nthe xarray package and integrates them into a software that can be used via\ncommand-line and via a GUI.\n",
+   "dev_url":"https://github.com/Chilipp/psyplot",
+   "doc_url":"http://psyplot.readthedocs.io/en/latest/",
+   "home":"https://github.com/Chilipp/psyplot",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Python package for interactive data visualization"
+  },
+  "build":{
+   "entry_points":[
+    "psyplot = psyplot.__main__:main",
+    "psyplot-plugin = psyplot.plugin_template:main"
+   ],
+   "number":"1",
+   "script":"python -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Chilipp"
+   ]
+  },
+  "package":{
+   "name":"psyplot",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "matplotlib-base",
+    "funcargparse",
+    "xarray",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"psyplot-1.2.1.tar.gz",
+   "sha256":"9c4031ad928bc75c41342a7bace23d04dff823a2e2d0710567972df66a61e2e7",
+   "url":"https://pypi.io/packages/source/p/psyplot/psyplot-1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "psyplot --help",
+    "psyplot-plugin --help"
+   ],
+   "imports":[
+    "psyplot",
+    "psyplot.compat",
+    "psyplot.config",
+    "psyplot.sphinxext"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "funcargparse",
+    "matplotlib-base",
+    "python",
+    "pyyaml",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

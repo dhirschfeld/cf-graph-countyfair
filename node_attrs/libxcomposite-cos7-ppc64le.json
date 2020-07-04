@@ -4,6 +4,108 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxcomposite-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"X Composite Extension library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcomposite-0.4.4/COPYING",
+   "summary":"(CDT) X Composite Extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcomposite-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcomposite-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcomposite-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcomposite-cos7-ppc64le",
+   "version":"0.4.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"aade53ea2d9b66196421b4b02843b6ad410ccbda74a5282e1af9806a525e277a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-0.4.4-4.1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"fe9ee6ffd9ba2ac96ea8fdff031e46a9a7ec47a9db886d18aea839ac4a424f37",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-devel-0.4.4-4.1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcomposite-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"X Composite Extension library",
@@ -178,6 +280,108 @@
  },
  "name":"libxcomposite-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"X Composite Extension library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcomposite-0.4.4/COPYING",
+   "summary":"(CDT) X Composite Extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcomposite-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcomposite-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcomposite-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcomposite-cos7-ppc64le",
+   "version":"0.4.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"aade53ea2d9b66196421b4b02843b6ad410ccbda74a5282e1af9806a525e277a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-0.4.4-4.1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"fe9ee6ffd9ba2ac96ea8fdff031e46a9a7ec47a9db886d18aea839ac4a424f37",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-devel-0.4.4-4.1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcomposite-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxcomposite-cos7-ppc64le",
   "libxcomposite-devel-cos7-ppc64le"
@@ -235,5 +439,107 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-0.4.4-4.1.el7.ppc64le.rpm",
- "version":"0.4.4"
+ "version":"0.4.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"X Composite Extension library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcomposite-0.4.4/COPYING",
+   "summary":"(CDT) X Composite Extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcomposite-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcomposite-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcomposite-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcomposite-cos7-ppc64le",
+   "version":"0.4.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"aade53ea2d9b66196421b4b02843b6ad410ccbda74a5282e1af9806a525e277a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-0.4.4-4.1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"fe9ee6ffd9ba2ac96ea8fdff031e46a9a7ec47a9db886d18aea839ac4a424f37",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcomposite-devel-0.4.4-4.1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcomposite.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcomposite-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

@@ -787,6 +787,90 @@
  "conda-forge.yml":{},
  "feedstock_name":"radical.pilot",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"RADICAL-Pilot is a flexible Pilot System that provides a simple and scalable\napproach for executing many concurrent simulations and their data requirements\non clusters, grids, and clouds. RADICAL-Pilot is written in Python, and as such\nis easily deployable into user space. It allows user-level control of Pilots\nand supports a wide range of application types.\n",
+   "dev_url":"https://github.com/radical-cybertools/radical.pilot",
+   "home":"http://radical-cybertools.github.io/radical-pilot/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"RADICAL-Pilot (RP) is a Pilot Job system written in Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "andre-merzky",
+    "iparask"
+   ]
+  },
+  "package":{
+   "name":"radical.pilot",
+   "version":"1.4.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "radical.saga >=1.0.0",
+    "pymongo",
+    "radical.utils >=1.1.0",
+    "msgpack-python",
+    "pyzmq",
+    "python-hostlist",
+    "ntplib",
+    "netifaces",
+    "setproctitle"
+   ]
+  },
+  "source":{
+   "sha256":"cad10f5998d8389fe446372ce02b03765c4940f389c3ebc7e68421d5219ff12d",
+   "url":"https://pypi.io/packages/source/r/radical.pilot/radical.pilot-1.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "radical.pilot"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "netifaces",
+    "ntplib",
+    "pymongo",
+    "python",
+    "python-hostlist",
+    "pyzmq",
+    "radical.saga",
+    "radical.utils",
+    "setproctitle"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"RADICAL-Pilot is a flexible Pilot System that provides a simple and scalable\napproach for executing many concurrent simulations and their data requirements\non clusters, grids, and clouds. RADICAL-Pilot is written in Python, and as such\nis easily deployable into user space. It allows user-level control of Pilots\nand supports a wide range of application types.\n",
@@ -878,6 +962,90 @@
   "1.4.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"RADICAL-Pilot is a flexible Pilot System that provides a simple and scalable\napproach for executing many concurrent simulations and their data requirements\non clusters, grids, and clouds. RADICAL-Pilot is written in Python, and as such\nis easily deployable into user space. It allows user-level control of Pilots\nand supports a wide range of application types.\n",
+   "dev_url":"https://github.com/radical-cybertools/radical.pilot",
+   "home":"http://radical-cybertools.github.io/radical-pilot/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"RADICAL-Pilot (RP) is a Pilot Job system written in Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "andre-merzky",
+    "iparask"
+   ]
+  },
+  "package":{
+   "name":"radical.pilot",
+   "version":"1.4.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "radical.saga >=1.0.0",
+    "pymongo",
+    "radical.utils >=1.1.0",
+    "msgpack-python",
+    "pyzmq",
+    "python-hostlist",
+    "ntplib",
+    "netifaces",
+    "setproctitle"
+   ]
+  },
+  "source":{
+   "sha256":"cad10f5998d8389fe446372ce02b03765c4940f389c3ebc7e68421d5219ff12d",
+   "url":"https://pypi.io/packages/source/r/radical.pilot/radical.pilot-1.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "radical.pilot"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "netifaces",
+    "ntplib",
+    "pymongo",
+    "python",
+    "python-hostlist",
+    "pyzmq",
+    "radical.saga",
+    "radical.utils",
+    "setproctitle"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"radical.pilot\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"cad10f5998d8389fe446372ce02b03765c4940f389c3ebc7e68421d5219ff12d\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  skip: true  # [py2k or win]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - radical.saga >=1.0.0\n    - pymongo\n    - radical.utils >=1.1.0\n    - msgpack-python\n    - pyzmq\n    - python-hostlist\n    - ntplib\n    - netifaces\n    - setproctitle\n\ntest:\n  imports:\n    - radical.pilot\n\nabout:\n  home: http://radical-cybertools.github.io/radical-pilot/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: RADICAL-Pilot (RP) is a Pilot Job system written in Python\n  description: |\n    RADICAL-Pilot is a flexible Pilot System that provides a simple and scalable \n    approach for executing many concurrent simulations and their data requirements \n    on clusters, grids, and clouds. RADICAL-Pilot is written in Python, and as such \n    is easily deployable into user space. It allows user-level control of Pilots \n    and supports a wide range of application types.\n  dev_url: https://github.com/radical-cybertools/radical.pilot\n\nextra:\n  recipe-maintainers:\n    - andre-merzky\n    - iparask\n",
  "req":{
@@ -963,5 +1131,90 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/radical.pilot/radical.pilot-0.70.3.tar.gz",
- "version":"1.4.1"
+ "version":"1.4.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"RADICAL-Pilot is a flexible Pilot System that provides a simple and scalable\napproach for executing many concurrent simulations and their data requirements\non clusters, grids, and clouds. RADICAL-Pilot is written in Python, and as such\nis easily deployable into user space. It allows user-level control of Pilots\nand supports a wide range of application types.\n",
+   "dev_url":"https://github.com/radical-cybertools/radical.pilot",
+   "home":"http://radical-cybertools.github.io/radical-pilot/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"RADICAL-Pilot (RP) is a Pilot Job system written in Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "andre-merzky",
+    "iparask"
+   ]
+  },
+  "package":{
+   "name":"radical.pilot",
+   "version":"1.4.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "radical.saga >=1.0.0",
+    "pymongo",
+    "radical.utils >=1.1.0",
+    "msgpack-python",
+    "pyzmq",
+    "python-hostlist",
+    "ntplib",
+    "netifaces",
+    "setproctitle"
+   ]
+  },
+  "source":{
+   "sha256":"cad10f5998d8389fe446372ce02b03765c4940f389c3ebc7e68421d5219ff12d",
+   "url":"https://pypi.io/packages/source/r/radical.pilot/radical.pilot-1.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "radical.pilot"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "netifaces",
+    "ntplib",
+    "pymongo",
+    "python",
+    "python-hostlist",
+    "pyzmq",
+    "radical.saga",
+    "radical.utils",
+    "setproctitle"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

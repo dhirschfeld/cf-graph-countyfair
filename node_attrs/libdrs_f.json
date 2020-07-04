@@ -166,6 +166,92 @@
  "conda-forge.yml":{},
  "feedstock_name":"libdrs_f",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"libdrs is suitable for the data generated and used in climate model research.\nIt is oriented toward use with models generating very large datasets on\nsupercomputers, as well as with graphics workstations used for analysis and\ndisplay of smaller subsets of data.\n",
+   "dev_url":"http://github.com/CDAT/libdrs",
+   "home":"http://cdat.llnl.gov",
+   "license":"BSD-3-Clause",
+   "license_file":"bsd-3-clause.txt",
+   "summary":"Data Retrieval and Storage DRS software Fortran library"
+  },
+  "build":{
+   "number":"110"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dnadeau4",
+    "doutriaux1",
+    "downiec",
+    "jasonb5",
+    "muryanto1",
+    "xylar"
+   ]
+  },
+  "package":{
+   "name":"libdrs_f",
+   "version":"3.1.2"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf",
+    "libnetcdf * nompi_*"
+   ],
+   "run":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf"
+   ]
+  },
+  "source":{
+   "sha256":"90e10191116a78228739276078a0ddcf0d6458516f192e9e79fecb2beeceb3fa",
+   "url":"https://github.com/CDAT/libdrs/archive/v3.1.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libdrsfortran.a"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"libdrs is suitable for the data generated and used in climate model research.\nIt is oriented toward use with models generating very large datasets on\nsupercomputers, as well as with graphics workstations used for analysis and\ndisplay of smaller subsets of data.\n",
@@ -260,6 +346,92 @@
  },
  "name":"libdrs_f",
  "new_version":"3.1.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"libdrs is suitable for the data generated and used in climate model research.\nIt is oriented toward use with models generating very large datasets on\nsupercomputers, as well as with graphics workstations used for analysis and\ndisplay of smaller subsets of data.\n",
+   "dev_url":"http://github.com/CDAT/libdrs",
+   "home":"http://cdat.llnl.gov",
+   "license":"BSD-3-Clause",
+   "license_file":"bsd-3-clause.txt",
+   "summary":"Data Retrieval and Storage DRS software Fortran library"
+  },
+  "build":{
+   "number":"110"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dnadeau4",
+    "doutriaux1",
+    "downiec",
+    "jasonb5",
+    "muryanto1",
+    "xylar"
+   ]
+  },
+  "package":{
+   "name":"libdrs_f",
+   "version":"3.1.2"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf",
+    "libnetcdf * nompi_*"
+   ],
+   "run":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf"
+   ]
+  },
+  "source":{
+   "sha256":"90e10191116a78228739276078a0ddcf0d6458516f192e9e79fecb2beeceb3fa",
+   "url":"https://github.com/CDAT/libdrs/archive/v3.1.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libdrsfortran.a"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.30",
  "raw_meta_yaml":"{% set name = \"libdrs_f\" %}\n{% set version = \"3.1.2\" %}\n{% set build = 110 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/CDAT/libdrs/archive/v{{ version }}.tar.gz\n  sha256: 90e10191116a78228739276078a0ddcf0d6458516f192e9e79fecb2beeceb3fa\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n\nrequirements:\n\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - g2clib\n    - libcdms\n    - libpng\n    - libnetcdf\n    - libnetcdf * nompi_*\n  run:\n    - g2clib\n    - libcdms\n    - libpng\n    - libnetcdf\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libdrsfortran.a\n\nabout:\n  home:  http://cdat.llnl.gov\n  license: BSD-3-Clause\n  license_file: bsd-3-clause.txt\n  summary: 'Data Retrieval and Storage DRS software Fortran library'\n  description: |\n    libdrs is suitable for the data generated and used in climate model research.\n    It is oriented toward use with models generating very large datasets on\n    supercomputers, as well as with graphics workstations used for analysis and\n    display of smaller subsets of data.\n  dev_url: http://github.com/CDAT/libdrs\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n    - downiec\n    - jasonb5\n    - muryanto1\n    - xylar\n",
  "req":{
@@ -339,5 +511,92 @@
   }
  },
  "url":"https://github.com/CDAT/libdrs/archive/v3.1.2.tar.gz",
- "version":"3.1.2"
+ "version":"3.1.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"libdrs is suitable for the data generated and used in climate model research.\nIt is oriented toward use with models generating very large datasets on\nsupercomputers, as well as with graphics workstations used for analysis and\ndisplay of smaller subsets of data.\n",
+   "dev_url":"http://github.com/CDAT/libdrs",
+   "home":"http://cdat.llnl.gov",
+   "license":"BSD-3-Clause",
+   "license_file":"bsd-3-clause.txt",
+   "summary":"Data Retrieval and Storage DRS software Fortran library"
+  },
+  "build":{
+   "number":"110",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dnadeau4",
+    "doutriaux1",
+    "downiec",
+    "jasonb5",
+    "muryanto1",
+    "xylar"
+   ]
+  },
+  "package":{
+   "name":"libdrs_f",
+   "version":"3.1.2"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf",
+    "libnetcdf * nompi_*"
+   ],
+   "run":[
+    "g2clib",
+    "libcdms",
+    "libpng",
+    "libnetcdf"
+   ]
+  },
+  "source":{
+   "sha256":"90e10191116a78228739276078a0ddcf0d6458516f192e9e79fecb2beeceb3fa",
+   "url":"https://github.com/CDAT/libdrs/archive/v3.1.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libdrsfortran.a"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "g2clib",
+    "libcdms",
+    "libnetcdf",
+    "libpng"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

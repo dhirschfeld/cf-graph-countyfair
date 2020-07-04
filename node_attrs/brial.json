@@ -220,6 +220,384 @@
  },
  "feedstock_name":"brial",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
+   "dev_url":"https://github.com/BRiAl/BRiAl",
+   "home":"https://github.com/BRiAl/BRiAl",
+   "license":"GPLv2+",
+   "license_file":"/LICENSE",
+   "summary":"Brial - successor to PolyBoRi"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   }
+  ],
+  "package":{
+   "name":"brial-split",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"f9ff2b1bb21417a65b4adc5a957d3f152bd450e9207ede1ad3f72ecdd5eeaa2b",
+   "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.7/brial-1.2.7.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.so",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
+   "dev_url":"https://github.com/BRiAl/BRiAl",
+   "home":"https://github.com/BRiAl/BRiAl",
+   "license":"GPLv2+",
+   "license_file":"/LICENSE",
+   "summary":"Brial - successor to PolyBoRi"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   }
+  ],
+  "package":{
+   "name":"brial-split",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"f9ff2b1bb21417a65b4adc5a957d3f152bd450e9207ede1ad3f72ecdd5eeaa2b",
+   "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.7/brial-1.2.7.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.so",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
+   "dev_url":"https://github.com/BRiAl/BRiAl",
+   "home":"https://github.com/BRiAl/BRiAl",
+   "license":"GPLv2+",
+   "license_file":"/LICENSE",
+   "summary":"Brial - successor to PolyBoRi"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   }
+  ],
+  "package":{
+   "name":"brial-split",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"f9ff2b1bb21417a65b4adc5a957d3f152bd450e9207ede1ad3f72ecdd5eeaa2b",
+   "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.7/brial-1.2.7.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.so",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
@@ -240,10 +618,98 @@
     "isuruf",
     "saraedum",
     "isuruf",
+    "saraedum",
+    "isuruf",
+    "saraedum",
+    "isuruf",
     "saraedum"
    ]
   },
   "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   },
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   },
    {
     "name":"libbrial",
     "requirements":{
@@ -391,6 +857,16 @@
     "cxx_compiler_stub",
     "libtool",
     "pkg-config",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
     "make"
    ]
   },
@@ -410,12 +886,146 @@
     "test -f ${PREFIX}/include/polybori.h",
     "test -f ${PREFIX}/lib/libbrial-split.a",
     "test -f ${PREFIX}/lib/libbrial-split.so",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py",
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.so",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py",
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.so",
     "test -f $SP_DIR/brial/PyPolyBoRi.py"
    ]
   }
  },
  "name":"brial-split",
  "new_version":"1.2.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
+   "dev_url":"https://github.com/BRiAl/BRiAl",
+   "home":"https://github.com/BRiAl/BRiAl",
+   "license":"GPLv2+",
+   "license_file":"/LICENSE",
+   "summary":"Brial - successor to PolyBoRi"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   }
+  ],
+  "package":{
+   "name":"brial-split",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"f9ff2b1bb21417a65b4adc5a957d3f152bd450e9207ede1ad3f72ecdd5eeaa2b",
+   "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.7/brial-1.2.7.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f ${PREFIX}/lib/libbrial-split.dylib",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "brial",
   "libbrial"
@@ -518,5 +1128,131 @@
   }
  },
  "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.5/brial-1.2.5.tar.bz2",
- "version":"1.2.7"
+ "version":"1.2.7",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The core of PolyBoRi is a C++ library, which provides high-level data\ntypes for Boolean polynomials and monomials, exponent vectors, as well\nas for the underlying polynomial rings and subsets of the powerset of\nthe Boolean variables. As a unique approach, binary decision diagrams\nare used as internal storage type for polynomial structures. On top of\nthis C++-library we provide a Python interface. This allows parsing of\ncomplex polynomial systems, as well as sophisticated and extendable\nstrategies for Gr\u00f6bner base computation. PolyBoRi features a powerful\nreference implementation for Gr\u00f6bner basis computation.\n",
+   "dev_url":"https://github.com/BRiAl/BRiAl",
+   "home":"https://github.com/BRiAl/BRiAl",
+   "license":"GPLv2+",
+   "license_file":"/LICENSE",
+   "summary":"Brial - successor to PolyBoRi"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "saraedum"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libbrial",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "libtool",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "boost-cpp",
+      "m4ri",
+      "zlib"
+     ],
+     "run":[
+      "libpng",
+      "m4ri",
+      "zlib"
+     ]
+    },
+    "script":"build_libbrial.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"brial",
+    "requirements":{
+     "host":[
+      "python",
+      "pip",
+      "libbrial 1.2.7"
+     ],
+     "run":[
+      "python",
+      "libbrial 1.2.7"
+     ]
+    },
+    "script":"build_brial.sh"
+   }
+  ],
+  "package":{
+   "name":"brial-split",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"f9ff2b1bb21417a65b4adc5a957d3f152bd450e9207ede1ad3f72ecdd5eeaa2b",
+   "url":"https://github.com/BRiAl/BRiAl/releases/download/1.2.7/brial-1.2.7.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/polybori.h",
+    "test -f ${PREFIX}/lib/libbrial-split.a",
+    "test -f $SP_DIR/brial/PyPolyBoRi.py"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libbrial",
+    "libpng",
+    "m4ri",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

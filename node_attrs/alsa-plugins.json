@@ -29,6 +29,110 @@
  },
  "feedstock_name":"alsa-plugins",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\nstream conversions.\n",
+   "dev_url":"https://github.com/alsa-project/alsa-plugins",
+   "home":"http://www.alsa-project.org/main/index.php/Main_Page",
+   "license":"LGPL-2.1-or-later AND GPL-3.0-or-later",
+   "license_family":"LGPL",
+   "license_file":[
+    "COPYING",
+    "COPYING.GPL"
+   ],
+   "summary":"The Advanced Linux Sound Architecture (ALSA) - plugins"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"alsa-plugins",
+   "version":"1.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack >=0.98",
+    "pulseaudio >=0.9.11"
+   ],
+   "run":[
+    "jack"
+   ]
+  },
+  "source":{
+   "sha256":"1c0f06450c928d711719686c9dbece2d480184f36fab11b8f0534cb7b41e337d",
+   "url":"ftp://ftp.alsa-project.org/pub/plugins/alsa-plugins-1.2.2.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_conf_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_arcam_av$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_a52$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_jack$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_upmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_usb_stream$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_vdownmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_fast$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_faster$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_high$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_higher$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_best$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_medium$SHLIB_EXT"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack",
+    "pulseaudio"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jack"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\nstream conversions.\n",
@@ -170,6 +274,111 @@
  },
  "name":"alsa-plugins",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\nstream conversions.\n",
+   "dev_url":"https://github.com/alsa-project/alsa-plugins",
+   "home":"http://www.alsa-project.org/main/index.php/Main_Page",
+   "license":"LGPL-2.1-or-later AND GPL-3.0-or-later",
+   "license_family":"LGPL",
+   "license_file":[
+    "COPYING",
+    "COPYING.GPL"
+   ],
+   "summary":"The Advanced Linux Sound Architecture (ALSA) - plugins"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"alsa-plugins",
+   "version":"1.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack >=0.98",
+    "pulseaudio >=0.9.11"
+   ],
+   "run":[
+    "jack"
+   ]
+  },
+  "source":{
+   "sha256":"1c0f06450c928d711719686c9dbece2d480184f36fab11b8f0534cb7b41e337d",
+   "url":"ftp://ftp.alsa-project.org/pub/plugins/alsa-plugins-1.2.2.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_conf_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_arcam_av$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_a52$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_jack$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_upmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_usb_stream$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_vdownmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_fast$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_faster$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_high$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_higher$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_best$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_medium$SHLIB_EXT"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack",
+    "pulseaudio"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jack"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"alsa-plugins\" %}\n{% set version = \"1.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.alsa-project.org/pub/plugins/{{ name }}-{{ version }}.tar.bz2\n  sha256: 1c0f06450c928d711719686c9dbece2d480184f36fab11b8f0534cb7b41e337d\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n    - pkg-config\n  host:\n    - alsa-lib\n    - ffmpeg\n    - jack >=0.98\n    - pulseaudio >=0.9.11\n  run:\n    - {{ pin_compatible('jack', max_pin='x.x.x') }}\n\ntest:\n  commands:\n    {% set mods = [\n        \"conf_pulse\",\n        \"ctl_arcam_av\",\n        \"ctl_oss\",\n        \"ctl_pulse\",\n        \"pcm_a52\",\n        \"pcm_jack\",\n        \"pcm_oss\",\n        \"pcm_pulse\",\n        \"pcm_upmix\",\n        \"pcm_usb_stream\",\n        \"pcm_vdownmix\",\n        \"rate_lavrate\",\n        \"rate_lavrate_fast\",\n        \"rate_lavrate_faster\",\n        \"rate_lavrate_high\",\n        \"rate_lavrate_higher\",\n        \"rate_speexrate\",\n        \"rate_speexrate_best\",\n        \"rate_speexrate_medium\",\n    ] %}\n    {% for mod in mods %}\n    - test -f $PREFIX/lib/alsa-lib/libasound_module_{{ mod }}$SHLIB_EXT\n    {% endfor %}\n\nabout:\n  home: http://www.alsa-project.org/main/index.php/Main_Page\n  license: LGPL-2.1-or-later AND GPL-3.0-or-later\n  license_family: LGPL\n  license_file:\n    - COPYING\n    - COPYING.GPL\n  summary: 'The Advanced Linux Sound Architecture (ALSA) - plugins'\n  description: |\n    Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\n    stream conversions.\n  dev_url: https://github.com/alsa-project/alsa-plugins\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
@@ -254,5 +463,110 @@
   }
  },
  "url":"ftp://ftp.alsa-project.org/pub/plugins/alsa-plugins-1.1.5.tar.bz2",
- "version":"1.2.2"
+ "version":"1.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Plugins for the ALSA library, including play or capture via JACK or Pulse Audio and\nstream conversions.\n",
+   "dev_url":"https://github.com/alsa-project/alsa-plugins",
+   "home":"http://www.alsa-project.org/main/index.php/Main_Page",
+   "license":"LGPL-2.1-or-later AND GPL-3.0-or-later",
+   "license_family":"LGPL",
+   "license_file":[
+    "COPYING",
+    "COPYING.GPL"
+   ],
+   "summary":"The Advanced Linux Sound Architecture (ALSA) - plugins"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"alsa-plugins",
+   "version":"1.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack >=0.98",
+    "pulseaudio >=0.9.11"
+   ],
+   "run":[
+    "jack"
+   ]
+  },
+  "source":{
+   "sha256":"1c0f06450c928d711719686c9dbece2d480184f36fab11b8f0534cb7b41e337d",
+   "url":"ftp://ftp.alsa-project.org/pub/plugins/alsa-plugins-1.2.2.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_conf_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_arcam_av$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_ctl_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_a52$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_jack$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_oss$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_pulse$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_upmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_usb_stream$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_pcm_vdownmix$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_fast$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_faster$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_high$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_lavrate_higher$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_best$SHLIB_EXT",
+    "test -f $PREFIX/lib/alsa-lib/libasound_module_rate_speexrate_medium$SHLIB_EXT"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "alsa-lib",
+    "ffmpeg",
+    "jack",
+    "pulseaudio"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jack"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -204,6 +204,489 @@
  },
  "feedstock_name":"jupyterhub",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jupyterhub/jupyterhub",
+   "license":"BSD 3-Clause",
+   "license_file":"COPYING.md",
+   "summary":"Multi-user server for Jupyter notebooks"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "minrk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"jupyterhub-feedstock",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jupyterhub-1.1.0.tar.gz",
+   "sha256":"852a70225a03abd631b36a207f3ffdf69326a0db4cef539825fde39ec1b713d7",
+   "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.1.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alembic",
+    "async_generator",
+    "certipy",
+    "configurable-http-proxy",
+    "entrypoints",
+    "jinja2",
+    "jupyter_telemetry",
+    "jupyterhub-base",
+    "notebook",
+    "oauthlib",
+    "pamela",
+    "prometheus_client",
+    "pycurl",
+    "python",
+    "python-dateutil",
+    "requests",
+    "sqlalchemy",
+    "tornado",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jupyterhub/jupyterhub",
+   "license":"BSD 3-Clause",
+   "license_file":"COPYING.md",
+   "summary":"Multi-user server for Jupyter notebooks"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "minrk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"jupyterhub-feedstock",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jupyterhub-1.1.0.tar.gz",
+   "sha256":"852a70225a03abd631b36a207f3ffdf69326a0db4cef539825fde39ec1b713d7",
+   "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.1.0.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alembic",
+    "async_generator",
+    "certipy",
+    "configurable-http-proxy",
+    "entrypoints",
+    "jinja2",
+    "jupyter_telemetry",
+    "jupyterhub-base",
+    "notebook",
+    "oauthlib",
+    "pamela",
+    "prometheus_client",
+    "pycurl",
+    "python",
+    "python-dateutil",
+    "requests",
+    "sqlalchemy",
+    "tornado",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jupyterhub/jupyterhub",
+   "license":"BSD 3-Clause",
+   "license_file":"COPYING.md",
+   "summary":"Multi-user server for Jupyter notebooks"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "minrk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"jupyterhub-feedstock",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jupyterhub-1.1.0.tar.gz",
+   "sha256":"852a70225a03abd631b36a207f3ffdf69326a0db4cef539825fde39ec1b713d7",
+   "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.1.0.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alembic",
+    "async_generator",
+    "certipy",
+    "configurable-http-proxy",
+    "entrypoints",
+    "jinja2",
+    "jupyter_telemetry",
+    "jupyterhub-base",
+    "notebook",
+    "oauthlib",
+    "pamela",
+    "prometheus_client",
+    "pycurl",
+    "python",
+    "python-dateutil",
+    "requests",
+    "sqlalchemy",
+    "tornado",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/jupyterhub/jupyterhub",
@@ -216,6 +699,8 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "minrk",
+    "minrk",
     "minrk",
     "minrk",
     "minrk"
@@ -476,6 +961,176 @@
       "jupyterhub"
      ]
     }
+   },
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
    }
   ],
   "package":{
@@ -486,9 +1141,13 @@
    "host":[
     "python",
     "python",
+    "python",
+    "python",
     "python"
    ],
    "run":[
+    "python",
+    "python",
     "python",
     "python",
     "python"
@@ -502,6 +1161,167 @@
  },
  "name":"jupyterhub-feedstock",
  "new_version":"1.1.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jupyterhub/jupyterhub",
+   "license":"BSD 3-Clause",
+   "license_file":"COPYING.md",
+   "summary":"Multi-user server for Jupyter notebooks"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "minrk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "pamela",
+      "prometheus_client >=0.0.21",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"jupyterhub-feedstock",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jupyterhub-1.1.0.tar.gz",
+   "sha256":"852a70225a03abd631b36a207f3ffdf69326a0db4cef539825fde39ec1b713d7",
+   "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.1.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alembic",
+    "async_generator",
+    "certipy",
+    "configurable-http-proxy",
+    "entrypoints",
+    "jinja2",
+    "jupyter_telemetry",
+    "jupyterhub-base",
+    "notebook",
+    "oauthlib",
+    "pamela",
+    "prometheus_client",
+    "pycurl",
+    "python",
+    "python-dateutil",
+    "requests",
+    "sqlalchemy",
+    "tornado",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "jupyterhub",
   "jupyterhub-base",
@@ -622,5 +1442,166 @@
   }
  },
  "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.0.0.tar.gz",
- "version":"1.1.0"
+ "version":"1.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jupyterhub/jupyterhub",
+   "license":"BSD 3-Clause",
+   "license_file":"COPYING.md",
+   "summary":"Multi-user server for Jupyter notebooks"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "minrk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python -m pip install . --no-deps -vv"
+    },
+    "name":"jupyterhub-base",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "alembic",
+      "async_generator >=1.8",
+      "certipy >=0.1.2",
+      "entrypoints",
+      "jinja2",
+      "jupyter_telemetry",
+      "oauthlib >=3.0",
+      "prometheus_client >=0.0.21",
+      "psutil",
+      "pycurl",
+      "python-dateutil",
+      "requests",
+      "sqlalchemy >=1.1",
+      "tornado >=5.0",
+      "traitlets >=4.3.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all"
+     ],
+     "imports":[
+      "jupyterhub",
+      "jupyterhub.apihandlers",
+      "jupyterhub.handlers",
+      "jupyterhub.tests",
+      "jupyterhub.app"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub-singleuser",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "notebook >=4"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub.singleuser --help-all"
+     ],
+     "imports":[
+      "jupyterhub.singleuser"
+     ]
+    }
+   },
+   {
+    "name":"jupyterhub",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "jupyterhub-base",
+      "configurable-http-proxy"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m jupyterhub --help-all",
+      "configurable-http-proxy --help"
+     ],
+     "imports":[
+      "jupyterhub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"jupyterhub-feedstock",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jupyterhub-1.1.0.tar.gz",
+   "sha256":"852a70225a03abd631b36a207f3ffdf69326a0db4cef539825fde39ec1b713d7",
+   "url":"https://pypi.io/packages/source/j/jupyterhub/jupyterhub-1.1.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alembic",
+    "async_generator",
+    "certipy",
+    "configurable-http-proxy",
+    "entrypoints",
+    "jinja2",
+    "jupyter_telemetry",
+    "jupyterhub-base",
+    "notebook",
+    "oauthlib",
+    "prometheus_client",
+    "psutil",
+    "pycurl",
+    "python",
+    "python-dateutil",
+    "requests",
+    "sqlalchemy",
+    "tornado",
+    "traitlets"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

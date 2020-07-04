@@ -42,6 +42,86 @@
  "conda-forge.yml":{},
  "feedstock_name":"dmlc",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"DMLC-Core is the backbone library to support all DMLC projects, offers the bricks to\nbuild efficient and scalable distributed machine learning libraries.\n",
+   "dev_url":"https://github.com/dmlc/dmlc-core",
+   "doc_url":"https://dmlc-core.readthedocs.io/en/latest/",
+   "home":"https://github.com/dmlc/dmlc-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Distributed Machine Learning Common Codebase"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"dmlc",
+   "version":"0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "openmp",
+    "curl",
+    "openssl",
+    "backtrace"
+   ],
+   "run":[
+    "curl",
+    "backtrace"
+   ]
+  },
+  "source":{
+   "sha256":"922ee3ce021b35204f1e424666afa06647f4fc5ce9a920c12e7f850ca2cc2acb",
+   "url":"https://github.com/dmlc/dmlc-core/archive/v0.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/dmlc"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl",
+    "openmp",
+    "openssl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"DMLC-Core is the backbone library to support all DMLC projects, offers the bricks to\nbuild efficient and scalable distributed machine learning libraries.\n",
@@ -119,6 +199,86 @@
   "0.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"DMLC-Core is the backbone library to support all DMLC projects, offers the bricks to\nbuild efficient and scalable distributed machine learning libraries.\n",
+   "dev_url":"https://github.com/dmlc/dmlc-core",
+   "doc_url":"https://dmlc-core.readthedocs.io/en/latest/",
+   "home":"https://github.com/dmlc/dmlc-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Distributed Machine Learning Common Codebase"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"dmlc",
+   "version":"0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "openmp",
+    "curl",
+    "openssl",
+    "backtrace"
+   ],
+   "run":[
+    "curl",
+    "backtrace"
+   ]
+  },
+  "source":{
+   "sha256":"922ee3ce021b35204f1e424666afa06647f4fc5ce9a920c12e7f850ca2cc2acb",
+   "url":"https://github.com/dmlc/dmlc-core/archive/v0.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/dmlc"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl",
+    "openmp",
+    "openssl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"dmlc\" %}\n{% set version = \"0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ name }}/{{ name }}-core/archive/v{{ version }}.tar.gz\n  sha256: 922ee3ce021b35204f1e424666afa06647f4fc5ce9a920c12e7f850ca2cc2acb\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - openmp\n    - curl\n    - openssl\n    - backtrace\n  run:\n    - curl\n    - backtrace\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/dmlc   # [unix]\n\nabout:\n  home: https://github.com/dmlc/dmlc-core\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Distributed Machine Learning Common Codebase\n  description: |\n    DMLC-Core is the backbone library to support all DMLC projects, offers the bricks to \n    build efficient and scalable distributed machine learning libraries.\n  doc_url: https://dmlc-core.readthedocs.io/en/latest/\n  dev_url: https://github.com/dmlc/dmlc-core\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
@@ -196,5 +356,84 @@
   }
  },
  "url":"https://github.com/dmlc/dmlc-core/archive/v0.3.tar.gz",
- "version":"0.4"
+ "version":"0.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"DMLC-Core is the backbone library to support all DMLC projects, offers the bricks to\nbuild efficient and scalable distributed machine learning libraries.\n",
+   "dev_url":"https://github.com/dmlc/dmlc-core",
+   "doc_url":"https://dmlc-core.readthedocs.io/en/latest/",
+   "home":"https://github.com/dmlc/dmlc-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Distributed Machine Learning Common Codebase"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"dmlc",
+   "version":"0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "openmp",
+    "curl",
+    "openssl",
+    "backtrace"
+   ],
+   "run":[
+    "curl",
+    "backtrace"
+   ]
+  },
+  "source":{
+   "sha256":"922ee3ce021b35204f1e424666afa06647f4fc5ce9a920c12e7f850ca2cc2acb",
+   "url":"https://github.com/dmlc/dmlc-core/archive/v0.4.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl",
+    "openmp",
+    "openssl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "backtrace",
+    "curl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

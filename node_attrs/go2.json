@@ -42,6 +42,93 @@
  "conda-forge.yml":{},
  "feedstock_name":"go2",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://bitbucket.org/DavidVilla/go2/",
+   "home":"http://savannah.nongnu.org/projects/go2/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"go2 directory finder"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"go2",
+   "version":"2.20170703"
+  },
+  "requirements":{
+   "build":[
+    "sed"
+   ],
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "source":{
+   "patches":[
+    "setup.py.patch"
+   ],
+   "sha256":"20e443fc51ea66ed03d0b9c47cc22c6e7f8a55f52cde8dc0e60928fd4f2e9e6c",
+   "url":"https://pypi.io/packages/source/g/go2/go2-2.20170703.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"from gi.repository import GObject, GLib\"",
+    "test -f ${PREFIX}/bin/go2",
+    "test -f ${PREFIX}/lib/go2/go2.sh",
+    "test -f ${PREFIX}/lib/go2/go2.py",
+    "test -f ${PREFIX}/lib/go2/osfs.py",
+    "test -f ${PREFIX}/share/man/man1/go2.1",
+    "cat ${PREFIX}/bin/go2",
+    "grep -r \"/lib/\" ${PREFIX}/lib/go2",
+    "grep -r \"/lib/\" ${PREFIX}/share/man/man1/",
+    "go2 || true",
+    "source ${PREFIX}/lib/go2/go2.sh",
+    "go2 -h",
+    "go2 --version"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://bitbucket.org/DavidVilla/go2/",
@@ -151,6 +238,93 @@
   "2.20181225.7":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://bitbucket.org/DavidVilla/go2/",
+   "home":"http://savannah.nongnu.org/projects/go2/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"go2 directory finder"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"go2",
+   "version":"2.20170703"
+  },
+  "requirements":{
+   "build":[
+    "sed"
+   ],
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "source":{
+   "patches":[
+    "setup.py.patch"
+   ],
+   "sha256":"20e443fc51ea66ed03d0b9c47cc22c6e7f8a55f52cde8dc0e60928fd4f2e9e6c",
+   "url":"https://pypi.io/packages/source/g/go2/go2-2.20170703.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"from gi.repository import GObject, GLib\"",
+    "test -f ${PREFIX}/bin/go2",
+    "test -f ${PREFIX}/lib/go2/go2.sh",
+    "test -f ${PREFIX}/lib/go2/go2.py",
+    "test -f ${PREFIX}/lib/go2/osfs.py",
+    "test -f ${PREFIX}/share/man/man1/go2.1",
+    "cat ${PREFIX}/bin/go2",
+    "grep -r \"/lib/\" ${PREFIX}/lib/go2",
+    "grep -r \"/lib/\" ${PREFIX}/share/man/man1/",
+    "go2 || true",
+    "source ${PREFIX}/lib/go2/go2.sh",
+    "go2 -h",
+    "go2 --version"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.09.00.08.03",
  "raw_meta_yaml":"{% set name = \"go2\" %}\n{% set version = \"2.20170703\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 20e443fc51ea66ed03d0b9c47cc22c6e7f8a55f52cde8dc0e60928fd4f2e9e6c\n  patches:\n    - setup.py.patch\n\nbuild:\n  number: 0\n  # go2 does not run on Windows\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - sed\n  host:\n    - pip\n    - python\n  run:\n    - pygobject\n    - python\n    - tree\n\ntest:\n  commands:\n    - python -c \"from gi.repository import GObject, GLib\"\n    - test -f ${PREFIX}/bin/go2\n    - test -f ${PREFIX}/lib/go2/go2.sh\n    - test -f ${PREFIX}/lib/go2/go2.py\n    - test -f ${PREFIX}/lib/go2/osfs.py\n    - test -f ${PREFIX}/share/man/man1/go2.1\n    - cat ${PREFIX}/bin/go2\n    - grep -r \"/lib/\" ${PREFIX}/lib/go2\n    - grep -r \"/lib/\" ${PREFIX}/share/man/man1/\n    # go2 --setup returns a 1 if already run and conda-forge runs multiple\n    # builds per CI instance, so return true always.\n    - go2 || true\n    - source ${PREFIX}/lib/go2/go2.sh\n    - go2 -h\n    - go2 --version\n\nabout:\n  home: http://savannah.nongnu.org/projects/go2/\n  license:  GPL-2.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'go2 directory finder'\n  dev_url: https://bitbucket.org/DavidVilla/go2/\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "req":{
@@ -220,5 +394,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/go2/go2-2.20170703.tar.gz",
- "version":"2.20170703"
+ "version":"2.20170703",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://bitbucket.org/DavidVilla/go2/",
+   "home":"http://savannah.nongnu.org/projects/go2/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"go2 directory finder"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"go2",
+   "version":"2.20170703"
+  },
+  "requirements":{
+   "build":[
+    "sed"
+   ],
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "source":{
+   "patches":[
+    "setup.py.patch"
+   ],
+   "sha256":"20e443fc51ea66ed03d0b9c47cc22c6e7f8a55f52cde8dc0e60928fd4f2e9e6c",
+   "url":"https://pypi.io/packages/source/g/go2/go2-2.20170703.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"from gi.repository import GObject, GLib\"",
+    "test -f ${PREFIX}/bin/go2",
+    "test -f ${PREFIX}/lib/go2/go2.sh",
+    "test -f ${PREFIX}/lib/go2/go2.py",
+    "test -f ${PREFIX}/lib/go2/osfs.py",
+    "test -f ${PREFIX}/share/man/man1/go2.1",
+    "cat ${PREFIX}/bin/go2",
+    "grep -r \"/lib/\" ${PREFIX}/lib/go2",
+    "grep -r \"/lib/\" ${PREFIX}/share/man/man1/",
+    "go2 || true",
+    "source ${PREFIX}/lib/go2/go2.sh",
+    "go2 -h",
+    "go2 --version"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pygobject",
+    "python",
+    "tree"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

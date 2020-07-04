@@ -72,6 +72,76 @@
  "conda-forge.yml":{},
  "feedstock_name":"hmat-oss",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jeromerobert/hmat-oss",
+   "license":"GPLv2",
+   "license_file":"LICENSE.md",
+   "summary":"A hierarchical matrix C/C++ library"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "hmat-oss"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"hmat-oss",
+   "version":"1.6.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "liblapack",
+    "libcblas"
+   ]
+  },
+  "source":{
+   "fn":"hmat-oss-1.6.1.tar.gz",
+   "sha256":"1517be8bde1c06bd8bc42d95926c72d787af95fc3d37439c911a7cea3243d2ca",
+   "url":"https://github.com/jeromerobert/hmat-oss/archive/1.6.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/hmat/hmat/hmat.h",
+    "test -f ${PREFIX}/lib/libhmat-oss${SHLIB_EXT}"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libcblas",
+    "liblapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/jeromerobert/hmat-oss",
@@ -134,6 +204,76 @@
  },
  "name":"hmat-oss",
  "new_version":"1.6.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jeromerobert/hmat-oss",
+   "license":"GPLv2",
+   "license_file":"LICENSE.md",
+   "summary":"A hierarchical matrix C/C++ library"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "hmat-oss"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"hmat-oss",
+   "version":"1.6.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "liblapack",
+    "libcblas"
+   ]
+  },
+  "source":{
+   "fn":"hmat-oss-1.6.1.tar.gz",
+   "sha256":"1517be8bde1c06bd8bc42d95926c72d787af95fc3d37439c911a7cea3243d2ca",
+   "url":"https://github.com/jeromerobert/hmat-oss/archive/1.6.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/hmat/hmat/hmat.h",
+    "test -f ${PREFIX}/lib/libhmat-oss${SHLIB_EXT}"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libcblas",
+    "liblapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.01.27",
  "raw_meta_yaml":"{% set version = \"1.6.1\" %}\n\npackage:\n  name: hmat-oss\n  version: {{ version }}\n\nsource:\n  fn: hmat-oss-{{ version }}.tar.gz\n  url: https://github.com/jeromerobert/hmat-oss/archive/{{ version }}.tar.gz\n  sha256: 1517be8bde1c06bd8bc42d95926c72d787af95fc3d37439c911a7cea3243d2ca\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('hmat-oss', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - liblapack\n    - libcblas\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/hmat/hmat/hmat.h  # [unix]\n    - test -f ${PREFIX}/lib/libhmat-oss${SHLIB_EXT}  # [unix]\n\nabout:\n  home: https://github.com/jeromerobert/hmat-oss\n  license: GPLv2\n  license_file: LICENSE.md\n  summary: A hierarchical matrix C/C++ library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
@@ -199,5 +339,73 @@
   }
  },
  "url":"https://github.com/jeromerobert/hmat-oss/archive/1.5.0.tar.gz",
- "version":"1.6.1"
+ "version":"1.6.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/jeromerobert/hmat-oss",
+   "license":"GPLv2",
+   "license_file":"LICENSE.md",
+   "summary":"A hierarchical matrix C/C++ library"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "hmat-oss"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"hmat-oss",
+   "version":"1.6.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "liblapack",
+    "libcblas"
+   ]
+  },
+  "source":{
+   "fn":"hmat-oss-1.6.1.tar.gz",
+   "sha256":"1517be8bde1c06bd8bc42d95926c72d787af95fc3d37439c911a7cea3243d2ca",
+   "url":"https://github.com/jeromerobert/hmat-oss/archive/1.6.1.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libcblas",
+    "liblapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

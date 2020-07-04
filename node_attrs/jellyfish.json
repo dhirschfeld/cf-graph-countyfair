@@ -128,6 +128,78 @@
  "conda-forge.yml":{},
  "feedstock_name":"jellyfish",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/jamesturk/jellyfish",
+   "doc_url":"https://jellyfish.readthedocs.io/en/latest/",
+   "home":"http://github.com/jamesturk/jellyfish",
+   "license":"BSD 2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"a library for doing approximate and phonetic matching of strings."
+  },
+  "build":{
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "blabalme"
+   ]
+  },
+  "package":{
+   "name":"jellyfish",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jellyfish-0.7.2.tar.gz",
+   "sha256":"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286",
+   "url":"https://pypi.org/packages/source/j/jellyfish/jellyfish-0.7.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jellyfish"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"http://github.com/jamesturk/jellyfish",
@@ -197,6 +269,78 @@
  "new_version_errors":{
   "0.8.2":"We found a problem parsing the recipe: \n\nwhile constructing a mapping\n  in \"<unicode string>\", line 21, column 3:\n      build:\n      ^ (line: 21)\nfound duplicate key \"host\" with value \"['python', 'pip']\" (original value: \"[\"<{ compiler('c') }}\"]\")\n  in \"<unicode string>\", line 25, column 3:\n      host:\n      ^ (line: 25)\n\nTo suppress this check see:\n    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys\n\nDuplicate keys will become an error in future releases, and are errors\nby default when using the new API.\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/jamesturk/jellyfish",
+   "doc_url":"https://jellyfish.readthedocs.io/en/latest/",
+   "home":"http://github.com/jamesturk/jellyfish",
+   "license":"BSD 2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"a library for doing approximate and phonetic matching of strings."
+  },
+  "build":{
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "blabalme"
+   ]
+  },
+  "package":{
+   "name":"jellyfish",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jellyfish-0.7.2.tar.gz",
+   "sha256":"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286",
+   "url":"https://pypi.org/packages/source/j/jellyfish/jellyfish-0.7.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jellyfish"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"jellyfish\" %}\n{% set version = \"0.7.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash = \"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - jellyfish\n\nabout:\n  home: http://github.com/jamesturk/jellyfish\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'a library for doing approximate and phonetic matching of strings.'\n  dev_url: http://github.com/jamesturk/jellyfish\n  doc_url: https://jellyfish.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - blabalme\n",
  "req":{
@@ -260,5 +404,77 @@
   }
  },
  "url":"https://pypi.org/packages/source/j/jellyfish/jellyfish-0.6.1.tar.gz",
- "version":"0.7.2"
+ "version":"0.7.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/jamesturk/jellyfish",
+   "doc_url":"https://jellyfish.readthedocs.io/en/latest/",
+   "home":"http://github.com/jamesturk/jellyfish",
+   "license":"BSD 2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"a library for doing approximate and phonetic matching of strings."
+  },
+  "build":{
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "blabalme"
+   ]
+  },
+  "package":{
+   "name":"jellyfish",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"jellyfish-0.7.2.tar.gz",
+   "sha256":"cb09c50d7e2bb7b926fc7654762bc81f9c629e0c92ae7137bf22b34f39515286",
+   "url":"https://pypi.org/packages/source/j/jellyfish/jellyfish-0.7.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jellyfish"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

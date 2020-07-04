@@ -95,6 +95,95 @@
  },
  "feedstock_name":"segregation",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The PySAL segregation module allow users to estimate several segregation measures and perform\ninference for single measures and comparative inference in a concise way.\n",
+   "dev_url":"https://github.com/pysal/segregation",
+   "doc_url":"http://segregation.readthedocs.io/",
+   "home":"https://pysal.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Segregation Measures Framework in PySAL"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "renanxcortes",
+    "sjsrey",
+    "knaaptime"
+   ]
+  },
+  "package":{
+   "name":"segregation",
+   "version":"1.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "pandas",
+    "geopandas",
+    "matplotlib-base",
+    "scikit-learn",
+    "seaborn",
+    "numpy",
+    "scipy",
+    "libpysal",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "source":{
+   "sha256":"5a2e67c95183ef6324454bfe69a18737288df451a8ce8cccc1cec092064767e4",
+   "url":"https://github.com/pysal/segregation/archive/v1.3.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "segregation"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "libpysal",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The PySAL segregation module allow users to estimate several segregation measures and perform\ninference for single measures and comparative inference in a concise way.\n",
@@ -191,6 +280,95 @@
   "1.3.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The PySAL segregation module allow users to estimate several segregation measures and perform\ninference for single measures and comparative inference in a concise way.\n",
+   "dev_url":"https://github.com/pysal/segregation",
+   "doc_url":"http://segregation.readthedocs.io/",
+   "home":"https://pysal.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Segregation Measures Framework in PySAL"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "renanxcortes",
+    "sjsrey",
+    "knaaptime"
+   ]
+  },
+  "package":{
+   "name":"segregation",
+   "version":"1.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "pandas",
+    "geopandas",
+    "matplotlib-base",
+    "scikit-learn",
+    "seaborn",
+    "numpy",
+    "scipy",
+    "libpysal",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "source":{
+   "sha256":"5a2e67c95183ef6324454bfe69a18737288df451a8ce8cccc1cec092064767e4",
+   "url":"https://github.com/pysal/segregation/archive/v1.3.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "segregation"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "libpysal",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"1.3.0\" %}\n\npackage:\n  name: segregation\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pysal/segregation/archive/v{{ version }}.tar.gz\n  sha256: 5a2e67c95183ef6324454bfe69a18737288df451a8ce8cccc1cec092064767e4\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - pandas\n    - geopandas\n    - matplotlib-base\n    - scikit-learn\n    - seaborn\n    - numpy\n    - scipy\n    - libpysal\n    - tqdm\n    # FIXME: workaround until we rebuild gdal\n    - zstd\n\ntest:\n  imports:\n    - segregation\n\nabout:\n  home: https://pysal.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Segregation Measures Framework in PySAL\n\n  description: |\n    The PySAL segregation module allow users to estimate several segregation measures and perform \n    inference for single measures and comparative inference in a concise way.\n  doc_url: http://segregation.readthedocs.io/\n  dev_url: https://github.com/pysal/segregation\n\nextra:\n  recipe-maintainers:\n    - renanxcortes\n    - sjsrey\n    - knaaptime\n",
  "req":{
@@ -279,5 +457,94 @@
   }
  },
  "url":"https://github.com/pysal/segregation/archive/1.1.1.tar.gz",
- "version":"1.3.0"
+ "version":"1.3.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The PySAL segregation module allow users to estimate several segregation measures and perform\ninference for single measures and comparative inference in a concise way.\n",
+   "dev_url":"https://github.com/pysal/segregation",
+   "doc_url":"http://segregation.readthedocs.io/",
+   "home":"https://pysal.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Segregation Measures Framework in PySAL"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "renanxcortes",
+    "sjsrey",
+    "knaaptime"
+   ]
+  },
+  "package":{
+   "name":"segregation",
+   "version":"1.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "pandas",
+    "geopandas",
+    "matplotlib-base",
+    "scikit-learn",
+    "seaborn",
+    "numpy",
+    "scipy",
+    "libpysal",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "source":{
+   "sha256":"5a2e67c95183ef6324454bfe69a18737288df451a8ce8cccc1cec092064767e4",
+   "url":"https://github.com/pysal/segregation/archive/v1.3.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "segregation"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "libpysal",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tqdm",
+    "zstd"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

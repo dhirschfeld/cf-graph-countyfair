@@ -57,6 +57,95 @@
  "conda-forge.yml":{},
  "feedstock_name":"jupyterlab-nvdashboard",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A JupyterLab extension for displaying dashboards of GPU usage.\n",
+   "dev_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "doc_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "home":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A JupyterLab extension for displaying dashboards of GPU usage"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "-m pip install . -vv",
+    "jupyter labextension install jupyterlab-nvdashboard@0.3.1",
+    "jupyter lab build"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jacobtomlinson",
+    "rjzamora",
+    "owenlamont"
+   ]
+  },
+  "package":{
+   "name":"jupyterlab-nvdashboard",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "jupyterlab >=2.0",
+    "nodejs"
+   ],
+   "run":[
+    "python >=3.5",
+    "jupyterlab >=2.0",
+    "jupyter-server-proxy",
+    "bokeh <2",
+    "pynvml",
+    "psutil",
+    "nodejs"
+   ]
+  },
+  "source":{
+   "sha256":"3c73ec36d56c5f4882fcb58c159b23bbe74e55a2e1e70c6a1378b2f392850f44",
+   "url":"https://github.com/rapidsai/jupyterlab-nvdashboard/archive/v0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jupyterlab_nvdashboard"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jupyterlab",
+    "nodejs",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bokeh",
+    "jupyter-server-proxy",
+    "jupyterlab",
+    "nodejs",
+    "psutil",
+    "pynvml",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A JupyterLab extension for displaying dashboards of GPU usage.\n",
@@ -157,6 +246,95 @@
   "0.3.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A JupyterLab extension for displaying dashboards of GPU usage.\n",
+   "dev_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "doc_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "home":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A JupyterLab extension for displaying dashboards of GPU usage"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "-m pip install . -vv",
+    "jupyter labextension install jupyterlab-nvdashboard@0.3.1",
+    "jupyter lab build"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jacobtomlinson",
+    "rjzamora",
+    "owenlamont"
+   ]
+  },
+  "package":{
+   "name":"jupyterlab-nvdashboard",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "jupyterlab >=2.0",
+    "nodejs"
+   ],
+   "run":[
+    "python >=3.5",
+    "jupyterlab >=2.0",
+    "jupyter-server-proxy",
+    "bokeh <2",
+    "pynvml",
+    "psutil",
+    "nodejs"
+   ]
+  },
+  "source":{
+   "sha256":"3c73ec36d56c5f4882fcb58c159b23bbe74e55a2e1e70c6a1378b2f392850f44",
+   "url":"https://github.com/rapidsai/jupyterlab-nvdashboard/archive/v0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jupyterlab_nvdashboard"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jupyterlab",
+    "nodejs",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bokeh",
+    "jupyter-server-proxy",
+    "jupyterlab",
+    "nodejs",
+    "psutil",
+    "pynvml",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"jupyterlab-nvdashboard\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rapidsai/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 3c73ec36d56c5f4882fcb58c159b23bbe74e55a2e1e70c6a1378b2f392850f44\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . -vv\n    - jupyter labextension install jupyterlab-nvdashboard@{{ version }}\n    - jupyter lab build\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - jupyterlab >=2.0\n    - nodejs\n  run:\n    - python >=3.5\n    - jupyterlab >=2.0\n    - jupyter-server-proxy\n    - bokeh <2\n    - pynvml\n    - psutil\n    - nodejs\n\ntest:\n  imports:\n    - jupyterlab_nvdashboard\n\nabout:\n  home: https://github.com/rapidsai/jupyterlab-nvdashboard\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A JupyterLab extension for displaying dashboards of GPU usage\n  description: |\n    A JupyterLab extension for displaying dashboards of GPU usage.\n  doc_url: https://github.com/rapidsai/jupyterlab-nvdashboard\n  dev_url: https://github.com/rapidsai/jupyterlab-nvdashboard\n\nextra:\n  recipe-maintainers:\n    - jacobtomlinson\n    - rjzamora\n    - owenlamont\n",
  "req":{
@@ -237,5 +415,94 @@
   }
  },
  "url":"https://github.com/rapidsai/jupyterlab-nvdashboard/archive/0.1.11.tar.gz",
- "version":"0.3.1"
+ "version":"0.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A JupyterLab extension for displaying dashboards of GPU usage.\n",
+   "dev_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "doc_url":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "home":"https://github.com/rapidsai/jupyterlab-nvdashboard",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A JupyterLab extension for displaying dashboards of GPU usage"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "-m pip install . -vv",
+    "jupyter labextension install jupyterlab-nvdashboard@0.3.1",
+    "jupyter lab build"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jacobtomlinson",
+    "rjzamora",
+    "owenlamont"
+   ]
+  },
+  "package":{
+   "name":"jupyterlab-nvdashboard",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "jupyterlab >=2.0",
+    "nodejs"
+   ],
+   "run":[
+    "python >=3.5",
+    "jupyterlab >=2.0",
+    "jupyter-server-proxy",
+    "bokeh <2",
+    "pynvml",
+    "psutil",
+    "nodejs"
+   ]
+  },
+  "source":{
+   "sha256":"3c73ec36d56c5f4882fcb58c159b23bbe74e55a2e1e70c6a1378b2f392850f44",
+   "url":"https://github.com/rapidsai/jupyterlab-nvdashboard/archive/v0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "jupyterlab_nvdashboard"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jupyterlab",
+    "nodejs",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bokeh",
+    "jupyter-server-proxy",
+    "jupyterlab",
+    "nodejs",
+    "psutil",
+    "pynvml",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

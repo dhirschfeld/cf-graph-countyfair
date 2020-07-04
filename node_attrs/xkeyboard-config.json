@@ -74,6 +74,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"xkeyboard-config",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The goal is to provide the consistent, well-structured, frequently\nreleased open source of X keyboard configuration data for X Window\nSystem implementations (free, open source and commercial).\nThe project is targeted to XKB-based systems.\n",
+   "dev_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/",
+   "doc_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "home":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The non-arch keyboard configuration database for X Windows"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"xkeyboard-config",
+   "version":"2.30"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config",
+    "intltool",
+    "perl-xml-parser",
+    "libxslt",
+    "python >=3"
+   ],
+   "host":[
+    "xorg-xproto",
+    "xorg-libx11"
+   ]
+  },
+  "source":{
+   "sha256":"095a524f7b633ed257617202d06c9c71fe020c8897b106cf0dcdd0c6e8b797d4",
+   "url":"http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.30.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/share/X11/xkb/geometry/hp\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "c_compiler_stub",
+    "intltool",
+    "libxslt",
+    "make",
+    "perl-xml-parser",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-libx11",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The goal is to provide the consistent, well-structured, frequently\nreleased open source of X keyboard configuration data for X Window\nSystem implementations (free, open source and commercial).\nThe project is targeted to XKB-based systems.\n",
@@ -154,6 +233,86 @@
   "2.30":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The goal is to provide the consistent, well-structured, frequently\nreleased open source of X keyboard configuration data for X Window\nSystem implementations (free, open source and commercial).\nThe project is targeted to XKB-based systems.\n",
+   "dev_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/",
+   "doc_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "home":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The non-arch keyboard configuration database for X Windows"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"xkeyboard-config",
+   "version":"2.30"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config",
+    "intltool",
+    "perl-xml-parser",
+    "libxslt",
+    "python >=3"
+   ],
+   "host":[
+    "xorg-xproto",
+    "xorg-libx11"
+   ]
+  },
+  "source":{
+   "sha256":"095a524f7b633ed257617202d06c9c71fe020c8897b106cf0dcdd0c6e8b797d4",
+   "url":"http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.30.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/share/X11/xkb/geometry/hp\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "c_compiler_stub",
+    "intltool",
+    "libxslt",
+    "make",
+    "perl-xml-parser",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-libx11",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set name = \"xkeyboard-config\" %}\n{% set version = \"2.30\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.x.org/releases/individual/data/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: 095a524f7b633ed257617202d06c9c71fe020c8897b106cf0dcdd0c6e8b797d4\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - autoconf\n    - pkg-config\n    # the following are expected in the build environment for some reason\n    - intltool\n    - perl-xml-parser\n    - libxslt\n    - python >=3\n  host:\n    - xorg-xproto\n    - xorg-libx11\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/share/X11/xkb/geometry/hp\"\n\nabout:\n  home: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: The non-arch keyboard configuration database for X Windows\n  description: |\n    The goal is to provide the consistent, well-structured, frequently\n    released open source of X keyboard configuration data for X Window\n    System implementations (free, open source and commercial).\n    The project is targeted to XKB-based systems.\n  doc_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/\n  dev_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
@@ -234,5 +393,85 @@
   }
  },
  "url":"http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.27.tar.bz2",
- "version":"2.30"
+ "version":"2.30",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The goal is to provide the consistent, well-structured, frequently\nreleased open source of X keyboard configuration data for X Window\nSystem implementations (free, open source and commercial).\nThe project is targeted to XKB-based systems.\n",
+   "dev_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/",
+   "doc_url":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "home":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The non-arch keyboard configuration database for X Windows"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"xkeyboard-config",
+   "version":"2.30"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "autoconf",
+    "pkg-config",
+    "intltool",
+    "perl-xml-parser",
+    "libxslt",
+    "python >=3"
+   ],
+   "host":[
+    "xorg-xproto",
+    "xorg-libx11"
+   ]
+  },
+  "source":{
+   "sha256":"095a524f7b633ed257617202d06c9c71fe020c8897b106cf0dcdd0c6e8b797d4",
+   "url":"http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.30.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/share/X11/xkb/geometry/hp\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "c_compiler_stub",
+    "intltool",
+    "libxslt",
+    "make",
+    "perl-xml-parser",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-libx11",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

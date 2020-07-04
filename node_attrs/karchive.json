@@ -129,6 +129,95 @@
  },
  "feedstock_name":"karchive",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"KArchive provides classes for easy reading, creation and manipulation of \"archive\"\nformats like ZIP and TAR. It also provides transparent compression and decompression of data,\nlike the GZip format, via a subclass of QIODevice.\n",
+   "dev_url":"https://cgit.kde.org/karchive.git/tree",
+   "doc_url":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "home":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Reading, creating, and manipulating file archives"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "karchive"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"karchive",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71.0"
+   ],
+   "host":[
+    "qt",
+    "xz",
+    "zlib",
+    "bzip2"
+   ],
+   "run":[
+    "xz",
+    "zlib",
+    "bzip2"
+   ]
+  },
+  "source":{
+   "sha256":"cc81e856365dec2bcf3ec78aa01d42347ca390a2311ea12050f309dfbdb09624",
+   "url":"https://download.kde.org/stable/frameworks/5.71/karchive-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Archive.so"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "qt",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"KArchive provides classes for easy reading, creation and manipulation of \"archive\"\nformats like ZIP and TAR. It also provides transparent compression and decompression of data,\nlike the GZip format, via a subclass of QIODevice.\n",
@@ -225,6 +314,96 @@
   "5.71.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"KArchive provides classes for easy reading, creation and manipulation of \"archive\"\nformats like ZIP and TAR. It also provides transparent compression and decompression of data,\nlike the GZip format, via a subclass of QIODevice.\n",
+   "dev_url":"https://cgit.kde.org/karchive.git/tree",
+   "doc_url":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "home":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Reading, creating, and manipulating file archives"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "karchive"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"karchive",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71.0"
+   ],
+   "host":[
+    "qt",
+    "xz",
+    "zlib",
+    "bzip2"
+   ],
+   "run":[
+    "xz",
+    "zlib",
+    "bzip2"
+   ]
+  },
+  "source":{
+   "sha256":"cc81e856365dec2bcf3ec78aa01d42347ca390a2311ea12050f309dfbdb09624",
+   "url":"https://download.kde.org/stable/frameworks/5.71/karchive-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Archive.so"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "qt",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"karchive\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/karchive-{{ version }}.tar.xz\n  sha256: cc81e856365dec2bcf3ec78aa01d42347ca390a2311ea12050f309dfbdb09624\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('karchive', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ version }}\n  host:\n    - qt\n    - xz\n    - zlib\n    - bzip2\n  run:\n    - xz\n    - zlib\n    - bzip2\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Archive.so\n\nabout:\n  home: https://api.kde.org/frameworks/karchive/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: Reading, creating, and manipulating file archives\n  description: |\n    KArchive provides classes for easy reading, creation and manipulation of \"archive\"\n    formats like ZIP and TAR. It also provides transparent compression and decompression of data,\n    like the GZip format, via a subclass of QIODevice.\n  doc_url: https://api.kde.org/frameworks/karchive/html/index.html\n  dev_url: https://cgit.kde.org/karchive.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
@@ -310,5 +489,95 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/karchive-5.64.0.tar.xz",
- "version":"5.71.0"
+ "version":"5.71.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"KArchive provides classes for easy reading, creation and manipulation of \"archive\"\nformats like ZIP and TAR. It also provides transparent compression and decompression of data,\nlike the GZip format, via a subclass of QIODevice.\n",
+   "dev_url":"https://cgit.kde.org/karchive.git/tree",
+   "doc_url":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "home":"https://api.kde.org/frameworks/karchive/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Reading, creating, and manipulating file archives"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "karchive"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"karchive",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71.0"
+   ],
+   "host":[
+    "qt",
+    "xz",
+    "zlib",
+    "bzip2"
+   ],
+   "run":[
+    "xz",
+    "zlib",
+    "bzip2"
+   ]
+  },
+  "source":{
+   "sha256":"cc81e856365dec2bcf3ec78aa01d42347ca390a2311ea12050f309dfbdb09624",
+   "url":"https://download.kde.org/stable/frameworks/5.71/karchive-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Archive.so"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "qt",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bzip2",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

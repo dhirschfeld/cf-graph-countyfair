@@ -302,6 +302,498 @@
  },
  "feedstock_name":"tbb",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/01org/tbb",
+   "doc_url":"https://software.intel.com/en-us/node/506039",
+   "home":"http://www.threadingbuildingblocks.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"High level abstract threading library"
+  },
+  "build":{
+   "number":"0",
+   "script_env":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"tbb",
+   "version":"2020.1"
+  },
+  "requirements":{
+   "build":[
+    "python *",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"tbbv2020.1_oss_src.tgz",
+   "sha256":"48d51c63b16787af54e1ee4aaf30042087f20564b4eecf9a032d5568bc2f0bf8",
+   "url":"https://github.com/intel/tbb/archive/v2020.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\""
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb-devel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "tbb"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/01org/tbb",
+   "doc_url":"https://software.intel.com/en-us/node/506039",
+   "home":"http://www.threadingbuildingblocks.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"High level abstract threading library"
+  },
+  "build":{
+   "number":"0",
+   "script_env":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"tbb",
+   "version":"2020.1"
+  },
+  "requirements":{
+   "build":[
+    "python *",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"tbbv2020.1_oss_src.tgz",
+   "sha256":"48d51c63b16787af54e1ee4aaf30042087f20564b4eecf9a032d5568bc2f0bf8",
+   "url":"https://github.com/intel/tbb/archive/v2020.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\""
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb-devel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "tbb"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/01org/tbb",
+   "doc_url":"https://software.intel.com/en-us/node/506039",
+   "home":"http://www.threadingbuildingblocks.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"High level abstract threading library"
+  },
+  "build":{
+   "number":"0",
+   "script_env":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"tbb",
+   "version":"2020.1"
+  },
+  "requirements":{
+   "build":[
+    "python *",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"tbbv2020.1_oss_src.tgz",
+   "sha256":"48d51c63b16787af54e1ee4aaf30042087f20564b4eecf9a032d5568bc2f0bf8",
+   "url":"https://github.com/intel/tbb/archive/v2020.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\""
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb-devel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "tbb"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/01org/tbb",
@@ -317,6 +809,10 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller",
+    "anton-malakhov",
+    "jschueller",
     "anton-malakhov",
     "jschueller",
     "anton-malakhov",
@@ -570,6 +1066,170 @@
       "tbb"
      ]
     }
+   },
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   },
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
    }
   ],
   "package":{
@@ -581,6 +1241,12 @@
     "python *",
     "cxx_compiler_stub",
     "m2w64-make",
+    "python *",
+    "cxx_compiler_stub",
+    "make",
+    "python *",
+    "cxx_compiler_stub",
+    "make",
     "python *",
     "cxx_compiler_stub",
     "make",
@@ -598,9 +1264,13 @@
    "commands":[
     "python -c \"import ctypes, os; os.add_dll_directory(os.environ['LIBRARY_BIN']); assert 11101 == ctypes.cdll[r'tbb.dll'] ['TBB_runtime_interface_version']()\"",
     "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb${SHLIB_EXT}']['TBB_runtime_interface_version']()\"",
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\"",
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\"",
     "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\""
    ],
    "requires":[
+    "python *",
+    "python *",
     "python *",
     "python *",
     "python *"
@@ -614,6 +1284,169 @@
  },
  "new_version_errors":{
   "2020.2":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2020.2' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/intel/tbb/archive/{{ vtag }}.tar.gz'\n - missing jinja2 variable 'vtag' for selector 'None'\n"
+ },
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/01org/tbb",
+   "doc_url":"https://software.intel.com/en-us/node/506039",
+   "home":"http://www.threadingbuildingblocks.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"High level abstract threading library"
+  },
+  "build":{
+   "number":"0",
+   "script_env":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "make",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"tbb",
+   "version":"2020.1"
+  },
+  "requirements":{
+   "build":[
+    "python *",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"tbbv2020.1_oss_src.tgz",
+   "sha256":"48d51c63b16787af54e1ee4aaf30042087f20564b4eecf9a032d5568bc2f0bf8",
+   "url":"https://github.com/intel/tbb/archive/v2020.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import ctypes; assert 11101 == ctypes.cdll[r'libtbb${SHLIB_EXT}']['TBB_runtime_interface_version']()\""
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb-devel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python",
+    "tbb"
+   ]
+  }
  },
  "outputs_names":[
   "tbb",
@@ -714,5 +1547,170 @@
   }
  },
  "url":"https://github.com/intel/tbb/archive/2019_U8.tar.gz",
- "version":"2020.1"
+ "version":"2020.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/01org/tbb",
+   "doc_url":"https://software.intel.com/en-us/node/506039",
+   "home":"http://www.threadingbuildingblocks.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"High level abstract threading library"
+  },
+  "build":{
+   "number":"0",
+   "script_env":[
+    "OS"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --install-libs"
+    },
+    "name":"tbb"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "tbb"
+     ],
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-devel --install-docs"
+    },
+    "name":"tbb-devel",
+    "requirements":{
+     "build":[
+      "python *",
+      "cxx_compiler_stub",
+      "m2w64-make",
+      "cmake"
+     ],
+     "run":[
+      "tbb"
+     ]
+    },
+    "test":{
+     "commands":[
+      "set \"CMAKE_GENERATOR=NMake Makefiles\"",
+      "cmake -S examples/test_all/fibonacci -B test-bld",
+      "cmake --build test-bld --config release",
+      "cmake -E env test-bld/fibonacci"
+     ],
+     "requires":[
+      "cxx_compiler_stub",
+      "cmake >=3.13"
+     ],
+     "source_files":[
+      "examples/test_all/fibonacci"
+     ]
+    }
+   },
+   {
+    "about":{
+     "dev_url":"https://github.com/01org/tbb",
+     "license":"Apache 2.0",
+     "summary":"TBB module for Python"
+    },
+    "build":{
+     "script":"python build/build.py --build-args=\"stdver=c++11 runtime=conda\" --no-rebuild --install-python"
+    },
+    "name":"tbb4py",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "m2w64-make",
+      "swig"
+     ],
+     "host":[
+      "python",
+      "tbb-devel"
+     ],
+     "run":[
+      "tbb >=2020.1",
+      "python"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -m TBB -h",
+      "python -m tbb -h",
+      "python -m tbb test"
+     ],
+     "imports":[
+      "tbb",
+      "TBB"
+     ],
+     "requires":[
+      "python",
+      "tbb"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"tbb",
+   "version":"2020.1"
+  },
+  "requirements":{
+   "build":[
+    "python *",
+    "cxx_compiler_stub",
+    "m2w64-make"
+   ]
+  },
+  "source":{
+   "fn":"tbbv2020.1_oss_src.tgz",
+   "sha256":"48d51c63b16787af54e1ee4aaf30042087f20564b4eecf9a032d5568bc2f0bf8",
+   "url":"https://github.com/intel/tbb/archive/v2020.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import ctypes, os; os.add_dll_directory(os.environ['LIBRARY_BIN']); assert 11101 == ctypes.cdll[r'tbb.dll'] ['TBB_runtime_interface_version']()\""
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "m2w64-make",
+    "python",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb-devel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "tbb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "python",
+    "tbb"
+   ]
+  }
+ }
 }

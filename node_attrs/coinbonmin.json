@@ -23,6 +23,89 @@
  "conda-forge.yml":{},
  "feedstock_name":"coinbonmin",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.coin-or.org/",
+   "license":"Eclipse v1.0",
+   "license_file":"LICENSE",
+   "summary":"COIN-OR Basic Open-source Nonlinear Mixed INteger programming"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "coinbonmin"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"coinbonmin",
+   "version":"1.8.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "pkg-config",
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack"
+   ],
+   "run":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "source":{
+   "fn":"Bonmin-1.8.8.tgz",
+   "sha256":"1a47cf5a4c115974f09d765408ab2116efd4dc1ec13faccd078f2870404316d2",
+   "url":"https://www.coin-or.org/download/source/Bonmin/Bonmin-1.8.8.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/include/coin/BonTypes.hpp\"",
+    "test -f \"${PREFIX}/lib/libbonmin${SHLIB_EXT}\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "pkg-config"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.coin-or.org/",
@@ -101,6 +184,89 @@
  },
  "name":"coinbonmin",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.coin-or.org/",
+   "license":"Eclipse v1.0",
+   "license_file":"LICENSE",
+   "summary":"COIN-OR Basic Open-source Nonlinear Mixed INteger programming"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "coinbonmin"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"coinbonmin",
+   "version":"1.8.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "pkg-config",
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack"
+   ],
+   "run":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "source":{
+   "fn":"Bonmin-1.8.8.tgz",
+   "sha256":"1a47cf5a4c115974f09d765408ab2116efd4dc1ec13faccd078f2870404316d2",
+   "url":"https://www.coin-or.org/download/source/Bonmin/Bonmin-1.8.8.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/include/coin/BonTypes.hpp\"",
+    "test -f \"${PREFIX}/lib/libbonmin${SHLIB_EXT}\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "pkg-config"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.01.27",
  "raw_meta_yaml":"{% set version = \"1.8.8\" %}\n\npackage:\n  name: coinbonmin\n  version: {{ version }}\n\nsource:\n  fn: Bonmin-{{ version }}.tgz\n  url: https://www.coin-or.org/download/source/Bonmin/Bonmin-{{ version }}.tgz\n  sha256: 1a47cf5a4c115974f09d765408ab2116efd4dc1ec13faccd078f2870404316d2\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('coinbonmin', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - pkg-config  # [unix]\n    - coincbc\n    - ipopt\n    - libblas\n    - libcblas\n    - liblapack\n  run:\n    - coincbc\n    - ipopt\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/include/coin/BonTypes.hpp\"  # [unix]\n    - test -f \"${PREFIX}/lib/libbonmin${SHLIB_EXT}\"  # [unix]\n\nabout:\n  home: http://www.coin-or.org/\n  license: Eclipse v1.0\n  license_file: LICENSE\n  summary: \"COIN-OR Basic Open-source Nonlinear Mixed INteger programming\"\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
@@ -181,5 +347,84 @@
   }
  },
  "url":"https://www.coin-or.org/download/source/Bonmin/Bonmin-1.8.7.tgz",
- "version":"1.8.8"
+ "version":"1.8.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.coin-or.org/",
+   "license":"Eclipse v1.0",
+   "license_file":"LICENSE",
+   "summary":"COIN-OR Basic Open-source Nonlinear Mixed INteger programming"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "coinbonmin"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"coinbonmin",
+   "version":"1.8.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack"
+   ],
+   "run":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "source":{
+   "fn":"Bonmin-1.8.8.tgz",
+   "sha256":"1a47cf5a4c115974f09d765408ab2116efd4dc1ec13faccd078f2870404316d2",
+   "url":"https://www.coin-or.org/download/source/Bonmin/Bonmin-1.8.8.tgz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt",
+    "libblas",
+    "libcblas",
+    "liblapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "ipopt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

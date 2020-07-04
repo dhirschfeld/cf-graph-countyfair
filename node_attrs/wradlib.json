@@ -270,6 +270,97 @@
  "conda-forge.yml":{},
  "feedstock_name":"wradlib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://wradlib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Open Source Library for Weather Radar Data Processing"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jjhelmus",
+    "kmuehlbauer"
+   ]
+  },
+  "package":{
+   "name":"wradlib",
+   "version":"1.7.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "semver"
+   ],
+   "run":[
+    "python >=3",
+    "deprecation",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "h5py",
+    "h5netcdf",
+    "netcdf4",
+    "gdal",
+    "xarray",
+    "cartopy",
+    "semver",
+    "xmltodict"
+   ]
+  },
+  "source":{
+   "sha256":"2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058",
+   "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.7.2.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "wradlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "semver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cartopy",
+    "deprecation",
+    "gdal",
+    "h5netcdf",
+    "h5py",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python",
+    "scipy",
+    "semver",
+    "xarray",
+    "xmltodict"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://wradlib.org/",
@@ -369,6 +460,97 @@
   "1.7.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://wradlib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Open Source Library for Weather Radar Data Processing"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jjhelmus",
+    "kmuehlbauer"
+   ]
+  },
+  "package":{
+   "name":"wradlib",
+   "version":"1.7.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "semver"
+   ],
+   "run":[
+    "python >=3",
+    "deprecation",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "h5py",
+    "h5netcdf",
+    "netcdf4",
+    "gdal",
+    "xarray",
+    "cartopy",
+    "semver",
+    "xmltodict"
+   ]
+  },
+  "source":{
+   "sha256":"2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058",
+   "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.7.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\""
+   ],
+   "imports":null
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "semver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cartopy",
+    "deprecation",
+    "gdal",
+    "h5netcdf",
+    "h5py",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python",
+    "scipy",
+    "semver",
+    "xarray",
+    "xmltodict"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set version = \"1.7.2\" %}\n\npackage:\n  name: wradlib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n  sha256: 2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - semver\n  run:\n    - python >=3\n    - deprecation\n    - numpy\n    - scipy\n    - matplotlib-base\n    - h5py\n    - h5netcdf\n    - netcdf4\n    - gdal\n    - xarray\n    - cartopy\n    - semver\n    - xmltodict\n\ntest:\n  imports:\n    - wradlib  # [not osx]\n  commands:\n    # hack to get macosx matplotlib running\n    # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n    - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n  home: http://wradlib.org/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Open Source Library for Weather Radar Data Processing\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - kmuehlbauer\n",
  "req":{
@@ -465,5 +647,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.5.0.tar.gz",
- "version":"1.7.2"
+ "version":"1.7.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://wradlib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Open Source Library for Weather Radar Data Processing"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jjhelmus",
+    "kmuehlbauer"
+   ]
+  },
+  "package":{
+   "name":"wradlib",
+   "version":"1.7.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "semver"
+   ],
+   "run":[
+    "python >=3",
+    "deprecation",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "h5py",
+    "h5netcdf",
+    "netcdf4",
+    "gdal",
+    "xarray",
+    "cartopy",
+    "semver",
+    "xmltodict"
+   ]
+  },
+  "source":{
+   "sha256":"2402c20dc9accfb1df77e3a9cee9f23f72b6f17de5f9c6cd149b95690c818058",
+   "url":"https://pypi.io/packages/source/w/wradlib/wradlib-1.7.2.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "wradlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "semver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cartopy",
+    "deprecation",
+    "gdal",
+    "h5netcdf",
+    "h5py",
+    "matplotlib-base",
+    "netcdf4",
+    "numpy",
+    "python",
+    "scipy",
+    "semver",
+    "xarray",
+    "xmltodict"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

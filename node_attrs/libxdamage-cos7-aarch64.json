@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxdamage-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXdamage-1.1.4/COPYING",
+   "summary":"(CDT) X Damage extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxdamage-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxdamage-devel-cos7-aarch64",
+    "requirements":[
+     "libxdamage-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxdamage-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"92f25a6874106bb3637e8d4d763cce4df09f1eecd959101774337c3170c7108c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-1.1.4-4.1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"c70eeac31841ba08349db03ee50c92a61ddc48f7f927a603d11e118fc16f7327",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-devel-1.1.4-4.1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxdamage-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.x.org",
@@ -177,6 +278,107 @@
  },
  "name":"libxdamage-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXdamage-1.1.4/COPYING",
+   "summary":"(CDT) X Damage extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxdamage-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxdamage-devel-cos7-aarch64",
+    "requirements":[
+     "libxdamage-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxdamage-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"92f25a6874106bb3637e8d4d763cce4df09f1eecd959101774337c3170c7108c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-1.1.4-4.1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"c70eeac31841ba08349db03ee50c92a61ddc48f7f927a603d11e118fc16f7327",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-devel-1.1.4-4.1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxdamage-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxdamage-cos7-aarch64",
   "libxdamage-devel-cos7-aarch64"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-1.1.4-4.1.el7.aarch64.rpm",
- "version":"1.1.4"
+ "version":"1.1.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXdamage-1.1.4/COPYING",
+   "summary":"(CDT) X Damage extension library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxdamage-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxdamage-devel-cos7-aarch64",
+    "requirements":[
+     "libxdamage-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxdamage-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"92f25a6874106bb3637e8d4d763cce4df09f1eecd959101774337c3170c7108c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-1.1.4-4.1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"c70eeac31841ba08349db03ee50c92a61ddc48f7f927a603d11e118fc16f7327",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXdamage-devel-1.1.4-4.1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXdamage.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxdamage-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

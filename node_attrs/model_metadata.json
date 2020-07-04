@@ -74,6 +74,92 @@
  "conda-forge.yml":{},
  "feedstock_name":"model_metadata",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The CSDMS model_metadata Python package provides tools for working\nwith CSDMS Model Metadata. Contained within this package are tools for\n(1) parsing model metadata, (2) staging model simulations, (3)\nvalidating model input parameters, and (4) running model simulations.\n",
+   "dev_url":"http://github.com/csdms/model_metadata",
+   "home":"http://github.com/csdms/model_metadata",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Tools for working with CSDMS Model Metadata"
+  },
+  "build":{
+   "entry_points":[
+    "mmd = model_metadata.cli.main:mmd"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mcflugen"
+   ]
+  },
+  "package":{
+   "name":"model_metadata",
+   "version":"0.6.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "packaging",
+    "pyyaml",
+    "six",
+    "jinja2",
+    "scripting",
+    "binaryornot",
+    "click"
+   ]
+  },
+  "source":{
+   "sha256":"bd9d5fbbd2965cf476fc5474003ac7bd9d925c75e4e71183e6cbdd13f211192f",
+   "url":"https://github.com/csdms/model_metadata/archive/v0.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mmd --help",
+    "mmd find --help",
+    "mmd query --help",
+    "mmd stage --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "click",
+    "jinja2",
+    "packaging",
+    "python",
+    "pyyaml",
+    "scripting",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The CSDMS model_metadata Python package provides tools for working\nwith CSDMS Model Metadata. Contained within this package are tools for\n(1) parsing model metadata, (2) staging model simulations, (3)\nvalidating model input parameters, and (4) running model simulations.\n",
@@ -164,6 +250,92 @@
  },
  "name":"model_metadata",
  "new_version":"0.6.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The CSDMS model_metadata Python package provides tools for working\nwith CSDMS Model Metadata. Contained within this package are tools for\n(1) parsing model metadata, (2) staging model simulations, (3)\nvalidating model input parameters, and (4) running model simulations.\n",
+   "dev_url":"http://github.com/csdms/model_metadata",
+   "home":"http://github.com/csdms/model_metadata",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Tools for working with CSDMS Model Metadata"
+  },
+  "build":{
+   "entry_points":[
+    "mmd = model_metadata.cli.main:mmd"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mcflugen"
+   ]
+  },
+  "package":{
+   "name":"model_metadata",
+   "version":"0.6.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "packaging",
+    "pyyaml",
+    "six",
+    "jinja2",
+    "scripting",
+    "binaryornot",
+    "click"
+   ]
+  },
+  "source":{
+   "sha256":"bd9d5fbbd2965cf476fc5474003ac7bd9d925c75e4e71183e6cbdd13f211192f",
+   "url":"https://github.com/csdms/model_metadata/archive/v0.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mmd --help",
+    "mmd find --help",
+    "mmd query --help",
+    "mmd stage --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "click",
+    "jinja2",
+    "packaging",
+    "python",
+    "pyyaml",
+    "scripting",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.05.11",
  "raw_meta_yaml":"{% set version = \"0.6.0\" %}\n\npackage:\n  name: model_metadata\n  version: {{ version }}\n\nsource:\n  url: https://github.com/csdms/model_metadata/archive/v{{ version }}.tar.gz\n  sha256: bd9d5fbbd2965cf476fc5474003ac7bd9d925c75e4e71183e6cbdd13f211192f\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  entry_points:\n    - mmd = model_metadata.cli.main:mmd\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - packaging\n    - pyyaml\n    - six\n    - jinja2\n    - scripting\n    - binaryornot\n    - click\n\ntest:\n  commands:\n    - mmd --help\n    - mmd find --help\n    - mmd query --help\n    - mmd stage --help\n\nabout:\n  home: http://github.com/csdms/model_metadata\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Tools for working with CSDMS Model Metadata\n  description: |\n    The CSDMS model_metadata Python package provides tools for working\n    with CSDMS Model Metadata. Contained within this package are tools for\n    (1) parsing model metadata, (2) staging model simulations, (3)\n    validating model input parameters, and (4) running model simulations.\n  dev_url: http://github.com/csdms/model_metadata\n\nextra:\n  recipe-maintainers:\n    - mcflugen\n",
  "req":{
@@ -243,5 +415,91 @@
   }
  },
  "url":"https://github.com/csdms/model_metadata/archive/v0.5.0.tar.gz",
- "version":"0.6.0"
+ "version":"0.6.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The CSDMS model_metadata Python package provides tools for working\nwith CSDMS Model Metadata. Contained within this package are tools for\n(1) parsing model metadata, (2) staging model simulations, (3)\nvalidating model input parameters, and (4) running model simulations.\n",
+   "dev_url":"http://github.com/csdms/model_metadata",
+   "home":"http://github.com/csdms/model_metadata",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Tools for working with CSDMS Model Metadata"
+  },
+  "build":{
+   "entry_points":[
+    "mmd = model_metadata.cli.main:mmd"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mcflugen"
+   ]
+  },
+  "package":{
+   "name":"model_metadata",
+   "version":"0.6.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "packaging",
+    "pyyaml",
+    "six",
+    "jinja2",
+    "scripting",
+    "binaryornot",
+    "click"
+   ]
+  },
+  "source":{
+   "sha256":"bd9d5fbbd2965cf476fc5474003ac7bd9d925c75e4e71183e6cbdd13f211192f",
+   "url":"https://github.com/csdms/model_metadata/archive/v0.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mmd --help",
+    "mmd find --help",
+    "mmd query --help",
+    "mmd stage --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "click",
+    "jinja2",
+    "packaging",
+    "python",
+    "pyyaml",
+    "scripting",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

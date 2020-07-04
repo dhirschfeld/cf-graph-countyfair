@@ -40,6 +40,76 @@
  "conda-forge.yml":{},
  "feedstock_name":"baumwelch",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A library for estimating the parameters of a discrete HMM\n",
+   "doc_url":"http://www.opengrm.org/twiki/bin/view/GRM/BaumWelchDocs",
+   "home":"http://bauwmelch.opengrm.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Baum-Welch/expectation-maximization training and decoding"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kylebgorman"
+   ]
+  },
+  "package":{
+   "name":"baumwelch",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "openfst ==1.7.8"
+   ],
+   "run":[
+    "openfst ==1.7.8"
+   ]
+  },
+  "source":{
+   "sha256":"ecac044bb3e627cce2d942332e0747a1bac496da2094763a0d61c89c1419b652",
+   "url":"http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/baumwelch-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "baumwelchdecode --helpshort || [[ $? == 1 ]]",
+    "baumwelchrandomize --helpshort || [[ $? == 1 ]]",
+    "baumwelchtrain --helpshort || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A library for estimating the parameters of a discrete HMM\n",
@@ -108,6 +178,76 @@
   "0.3.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A library for estimating the parameters of a discrete HMM\n",
+   "doc_url":"http://www.opengrm.org/twiki/bin/view/GRM/BaumWelchDocs",
+   "home":"http://bauwmelch.opengrm.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Baum-Welch/expectation-maximization training and decoding"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kylebgorman"
+   ]
+  },
+  "package":{
+   "name":"baumwelch",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "openfst ==1.7.8"
+   ],
+   "run":[
+    "openfst ==1.7.8"
+   ]
+  },
+  "source":{
+   "sha256":"ecac044bb3e627cce2d942332e0747a1bac496da2094763a0d61c89c1419b652",
+   "url":"http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/baumwelch-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "baumwelchdecode --helpshort || [[ $? == 1 ]]",
+    "baumwelchrandomize --helpshort || [[ $? == 1 ]]",
+    "baumwelchtrain --helpshort || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.07.01.21.17.12",
  "raw_meta_yaml":"{% set name = \"baumwelch\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/{{ name }}-{{ version }}.tar.gz\n  sha256: ecac044bb3e627cce2d942332e0747a1bac496da2094763a0d61c89c1419b652\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - openfst ==1.7.8\n  run:\n    - openfst ==1.7.8\n\ntest:\n  commands:\n    - baumwelchdecode --helpshort || [[ $? == 1 ]]\n    - baumwelchrandomize --helpshort || [[ $? == 1 ]]\n    - baumwelchtrain --helpshort || [[ $? == 1 ]]\n\nabout:\n  home: http://bauwmelch.opengrm.org\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Baum-Welch/expectation-maximization training and decoding\n  description: |\n    A library for estimating the parameters of a discrete HMM\n  doc_url: http://www.opengrm.org/twiki/bin/view/GRM/BaumWelchDocs\n\nextra:\n  recipe-maintainers:\n    - kylebgorman\n",
  "req":{
@@ -171,5 +311,76 @@
   }
  },
  "url":"http://www.openfst.org/twiki/pub/Contrib/FstContrib/baumwelch-0.3.0.tar.gz",
- "version":"0.3.3"
+ "version":"0.3.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A library for estimating the parameters of a discrete HMM\n",
+   "doc_url":"http://www.opengrm.org/twiki/bin/view/GRM/BaumWelchDocs",
+   "home":"http://bauwmelch.opengrm.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Baum-Welch/expectation-maximization training and decoding"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kylebgorman"
+   ]
+  },
+  "package":{
+   "name":"baumwelch",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "openfst ==1.7.8"
+   ],
+   "run":[
+    "openfst ==1.7.8"
+   ]
+  },
+  "source":{
+   "sha256":"ecac044bb3e627cce2d942332e0747a1bac496da2094763a0d61c89c1419b652",
+   "url":"http://www.opengrm.org/twiki/pub/GRM/BaumWelchDownload/baumwelch-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "baumwelchdecode --helpshort || [[ $? == 1 ]]",
+    "baumwelchrandomize --helpshort || [[ $? == 1 ]]",
+    "baumwelchtrain --helpshort || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openfst"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

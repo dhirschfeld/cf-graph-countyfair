@@ -4,6 +4,113 @@
  "conda-forge.yml":{},
  "feedstock_name":"ngspice",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"ngspice is the open source spice simulator for electric and electronic circuits.\n\nSuch a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\nlike R, L, or C, diodes, transmission lines and other devices, all interconnected\nin a netlist. Digital circuits are simulated as well, event driven and fast, from\nsingle gates to complex circuits. And you may enter the combination of both analog\nand digital as a mixed-signal circuit.\n\nngspice offers a wealth of device models for active, passive, analog, and digital\nelements. Model parameters are provided by the semiconductor manufacturers.\nThe user add her circuits as a netlist, and the output is one or more graphs of\ncurrents, voltages and other electrical quantities or is saved in a data file.\n\nNote:\n  This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n  See the [build script](https://git.io/JfVZX) for more specifics.\n",
+   "dev_url":"http://ngspice.sourceforge.net/devel.html",
+   "doc_url":"http://ngspice.sourceforge.net/docs.html",
+   "home":"http://ngspice.sourceforge.net",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"The open source spice simulator for electric and electronic circuits"
+  },
+  "build":{
+   "number":"6"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuarteberg"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ngspice-lib",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_lib.bat",
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
+     ]
+    }
+   },
+   {
+    "name":"ngspice-exe",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_exe.bat",
+    "test":{
+     "commands":[
+      "call %PREFIX%\\bin\\ngspice_con.exe --version",
+      "call %PREFIX%\\bin\\ngspice_con.exe -b -r raw.out test-files\\test.cir"
+     ],
+     "files":"test-files"
+    }
+   },
+   {
+    "name":"ngspice",
+    "requirements":{
+     "run":[
+      "ngspice-lib",
+      "ngspice-exe"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ngspice",
+   "version":"32"
+  },
+  "source":{
+   "patches":null,
+   "sha256":"3cd90c4e94516d87c5b4d02a3a6405b1136b25d05c871d4fee1fd7c4c0d03ef2",
+   "url":"https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/32/ngspice-32.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "winflexbison"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ngspice-exe",
+    "ngspice-lib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"ngspice is the open source spice simulator for electric and electronic circuits.\n\nSuch a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\nlike R, L, or C, diodes, transmission lines and other devices, all interconnected\nin a netlist. Digital circuits are simulated as well, event driven and fast, from\nsingle gates to complex circuits. And you may enter the combination of both analog\nand digital as a mixed-signal circuit.\n\nngspice offers a wealth of device models for active, passive, analog, and digital\nelements. Model parameters are provided by the semiconductor manufacturers.\nThe user add her circuits as a netlist, and the output is one or more graphs of\ncurrents, voltages and other electrical quantities or is saved in a data file.\n\nNote:\n  This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n  See the [build script](https://git.io/JfVZX) for more specifics.\n",
@@ -193,6 +300,115 @@
  },
  "name":"ngspice",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"ngspice is the open source spice simulator for electric and electronic circuits.\n\nSuch a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\nlike R, L, or C, diodes, transmission lines and other devices, all interconnected\nin a netlist. Digital circuits are simulated as well, event driven and fast, from\nsingle gates to complex circuits. And you may enter the combination of both analog\nand digital as a mixed-signal circuit.\n\nngspice offers a wealth of device models for active, passive, analog, and digital\nelements. Model parameters are provided by the semiconductor manufacturers.\nThe user add her circuits as a netlist, and the output is one or more graphs of\ncurrents, voltages and other electrical quantities or is saved in a data file.\n\nNote:\n  This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n  See the [build script](https://git.io/JfVZX) for more specifics.\n",
+   "dev_url":"http://ngspice.sourceforge.net/devel.html",
+   "doc_url":"http://ngspice.sourceforge.net/docs.html",
+   "home":"http://ngspice.sourceforge.net",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"The open source spice simulator for electric and electronic circuits"
+  },
+  "build":{
+   "number":"6"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuarteberg"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ngspice-lib",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_lib.bat",
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
+     ]
+    }
+   },
+   {
+    "name":"ngspice-exe",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_exe.bat",
+    "test":{
+     "commands":[
+      "call %PREFIX%\\bin\\ngspice_con.exe --version",
+      "call %PREFIX%\\bin\\ngspice_con.exe -b -r raw.out test-files\\test.cir"
+     ],
+     "files":"test-files"
+    }
+   },
+   {
+    "name":"ngspice",
+    "requirements":{
+     "run":[
+      "ngspice-lib",
+      "ngspice-exe"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ngspice",
+   "version":"32"
+  },
+  "source":{
+   "patches":[
+    "patches/libtoolize-name.patch"
+   ],
+   "sha256":"3cd90c4e94516d87c5b4d02a3a6405b1136b25d05c871d4fee1fd7c4c0d03ef2",
+   "url":"https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/32/ngspice-32.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "winflexbison"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ngspice-exe",
+    "ngspice-lib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "ngspice",
   "ngspice-exe",
@@ -260,5 +476,115 @@
   }
  },
  "url":"https://ayera.dl.sourceforge.net/project/ngspice/ng-spice-rework/32/ngspice-32.tar.gz",
- "version":"32"
+ "version":"32",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"ngspice is the open source spice simulator for electric and electronic circuits.\n\nSuch a circuit may comprise of JFETs, bipolar and MOS transistors, passive elements\nlike R, L, or C, diodes, transmission lines and other devices, all interconnected\nin a netlist. Digital circuits are simulated as well, event driven and fast, from\nsingle gates to complex circuits. And you may enter the combination of both analog\nand digital as a mixed-signal circuit.\n\nngspice offers a wealth of device models for active, passive, analog, and digital\nelements. Model parameters are provided by the semiconductor manufacturers.\nThe user add her circuits as a netlist, and the output is one or more graphs of\ncurrents, voltages and other electrical quantities or is saved in a data file.\n\nNote:\n  This build was configured with `--enable-xspice --enable-cider --enable=openmp`\n  See the [build script](https://git.io/JfVZX) for more specifics.\n",
+   "dev_url":"http://ngspice.sourceforge.net/devel.html",
+   "doc_url":"http://ngspice.sourceforge.net/docs.html",
+   "home":"http://ngspice.sourceforge.net",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"The open source spice simulator for electric and electronic circuits"
+  },
+  "build":{
+   "number":"6",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuarteberg"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ngspice-lib",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_lib.bat",
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1"
+     ]
+    }
+   },
+   {
+    "name":"ngspice-exe",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "winflexbison"
+     ]
+    },
+    "script":"build_exe.bat",
+    "test":{
+     "commands":[
+      "call %PREFIX%\\bin\\ngspice_con.exe --version",
+      "call %PREFIX%\\bin\\ngspice_con.exe -b -r raw.out test-files\\test.cir"
+     ],
+     "files":"test-files"
+    }
+   },
+   {
+    "name":"ngspice",
+    "requirements":{
+     "run":[
+      "ngspice-lib",
+      "ngspice-exe"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\bin\\\\ngspice.dll exit 1",
+      "%PREFIX%\\bin\\ngspice_con.exe --version"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ngspice",
+   "version":"32"
+  },
+  "source":{
+   "patches":[
+    "patches/vngspice-install-location.patch"
+   ],
+   "sha256":"3cd90c4e94516d87c5b4d02a3a6405b1136b25d05c871d4fee1fd7c4c0d03ef2",
+   "url":"https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/32/ngspice-32.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "winflexbison"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ngspice-exe",
+    "ngspice-lib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

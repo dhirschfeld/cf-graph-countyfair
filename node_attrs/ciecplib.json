@@ -93,6 +93,114 @@
  "conda-forge.yml":{},
  "feedstock_name":"ciecplib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This python package provides a native Python client to access\nSAML/ECP-authenticated content over HTTP with CILogon.\n",
+   "dev_url":"https://github.com/duncanmmacleod/ciecplib/",
+   "doc_url":"https://ciecplib.readthedocs.io",
+   "home":"https://ciecplib.readthedocs.io",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A python client for SAML ECP authentication"
+  },
+  "build":{
+   "entry_points":[
+    "ecp-cert-info = ciecplib.tool.ecp_cert_info:main",
+    "ecp-curl = ciecplib.tool.ecp_curl:main",
+    "ecp-get-cert = ciecplib.tool.ecp_get_cert:main",
+    "ecp-get-cookie = ciecplib.tool.ecp_get_cookie:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "package":{
+   "name":"ciecplib",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools",
+    "argparse-manpage",
+    "m2crypto",
+    "pyopenssl",
+    "requests",
+    "requests-ecp"
+   ],
+   "run":[
+    "m2crypto",
+    "pyopenssl",
+    "python >=3.5",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "source":{
+   "sha256":"7bda748255002f32f235ca45884bc802b7f9b340e3b9d55136a12e434301d610",
+   "url":"https://pypi.io/packages/source/c/ciecplib/ciecplib-0.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "ecp-cert-info --help",
+    "ecp-curl --help",
+    "ecp-get-cert --help",
+    "ecp-get-cookie --help",
+    "python -m pytest --pyargs ciecplib",
+    "man -M ${PREFIX}/share/man -w ecp-get-cert"
+   ],
+   "imports":[
+    "ciecplib"
+   ],
+   "requires":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "argparse-manpage",
+    "m2crypto",
+    "pip",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2crypto",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This python package provides a native Python client to access\nSAML/ECP-authenticated content over HTTP with CILogon.\n",
@@ -225,6 +333,114 @@
   "0.3.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This python package provides a native Python client to access\nSAML/ECP-authenticated content over HTTP with CILogon.\n",
+   "dev_url":"https://github.com/duncanmmacleod/ciecplib/",
+   "doc_url":"https://ciecplib.readthedocs.io",
+   "home":"https://ciecplib.readthedocs.io",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A python client for SAML ECP authentication"
+  },
+  "build":{
+   "entry_points":[
+    "ecp-cert-info = ciecplib.tool.ecp_cert_info:main",
+    "ecp-curl = ciecplib.tool.ecp_curl:main",
+    "ecp-get-cert = ciecplib.tool.ecp_get_cert:main",
+    "ecp-get-cookie = ciecplib.tool.ecp_get_cookie:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "package":{
+   "name":"ciecplib",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools",
+    "argparse-manpage",
+    "m2crypto",
+    "pyopenssl",
+    "requests",
+    "requests-ecp"
+   ],
+   "run":[
+    "m2crypto",
+    "pyopenssl",
+    "python >=3.5",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "source":{
+   "sha256":"7bda748255002f32f235ca45884bc802b7f9b340e3b9d55136a12e434301d610",
+   "url":"https://pypi.io/packages/source/c/ciecplib/ciecplib-0.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "ecp-cert-info --help",
+    "ecp-curl --help",
+    "ecp-get-cert --help",
+    "ecp-get-cookie --help",
+    "python -m pytest --pyargs ciecplib",
+    "man -M ${PREFIX}/share/man -w ecp-get-cert"
+   ],
+   "imports":[
+    "ciecplib"
+   ],
+   "requires":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "argparse-manpage",
+    "m2crypto",
+    "pip",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2crypto",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ },
  "pinning_version":"2020.04.10.23.07.47",
  "raw_meta_yaml":"{% set name = \"ciecplib\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7bda748255002f32f235ca45884bc802b7f9b340e3b9d55136a12e434301d610\n\nbuild:\n  entry_points:\n    - ecp-cert-info = ciecplib.tool.ecp_cert_info:main\n    - ecp-curl = ciecplib.tool.ecp_curl:main\n    - ecp-get-cert = ciecplib.tool.ecp_get_cert:main\n    - ecp-get-cookie = ciecplib.tool.ecp_get_cookie:main\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools\n    - argparse-manpage\n    - m2crypto\n    - pyopenssl\n    - requests\n    - requests-ecp\n  run:\n    - m2crypto\n    - pyopenssl\n    - python >=3.5\n    - requests\n    - requests-ecp\n\ntest:\n  imports:\n    - ciecplib\n  requires:\n    - pytest\n    - requests-mock\n  commands:\n    # validate entry points\n    - ecp-cert-info --help\n    - ecp-curl --help\n    - ecp-get-cert --help\n    - ecp-get-cookie --help\n    # run automated tests\n    - python -m pytest --pyargs ciecplib\n    # sanity check manuals\n    - man -M ${PREFIX}/share/man -w ecp-get-cert\n\nabout:\n  home: https://ciecplib.readthedocs.io\n  doc_url: https://ciecplib.readthedocs.io\n  dev_url: https://github.com/duncanmmacleod/ciecplib/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: A python client for SAML ECP authentication\n  description: |\n    This python package provides a native Python client to access\n    SAML/ECP-authenticated content over HTTP with CILogon.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{
@@ -315,5 +531,113 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/ciecplib/ciecplib-0.1.0.tar.gz",
- "version":"0.3.1"
+ "version":"0.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This python package provides a native Python client to access\nSAML/ECP-authenticated content over HTTP with CILogon.\n",
+   "dev_url":"https://github.com/duncanmmacleod/ciecplib/",
+   "doc_url":"https://ciecplib.readthedocs.io",
+   "home":"https://ciecplib.readthedocs.io",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A python client for SAML ECP authentication"
+  },
+  "build":{
+   "entry_points":[
+    "ecp-cert-info = ciecplib.tool.ecp_cert_info:main",
+    "ecp-curl = ciecplib.tool.ecp_curl:main",
+    "ecp-get-cert = ciecplib.tool.ecp_get_cert:main",
+    "ecp-get-cookie = ciecplib.tool.ecp_get_cookie:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "package":{
+   "name":"ciecplib",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools",
+    "argparse-manpage",
+    "m2crypto",
+    "pyopenssl",
+    "requests",
+    "requests-ecp"
+   ],
+   "run":[
+    "m2crypto",
+    "pyopenssl",
+    "python >=3.5",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "source":{
+   "sha256":"7bda748255002f32f235ca45884bc802b7f9b340e3b9d55136a12e434301d610",
+   "url":"https://pypi.io/packages/source/c/ciecplib/ciecplib-0.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "ecp-cert-info --help",
+    "ecp-curl --help",
+    "ecp-get-cert --help",
+    "ecp-get-cookie --help",
+    "python -m pytest --pyargs ciecplib",
+    "man -M ${PREFIX}/share/man -w ecp-get-cert"
+   ],
+   "imports":[
+    "ciecplib"
+   ],
+   "requires":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "argparse-manpage",
+    "m2crypto",
+    "pip",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2crypto",
+    "pyopenssl",
+    "python",
+    "requests",
+    "requests-ecp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "requests-mock"
+   ]
+  }
+ }
 }

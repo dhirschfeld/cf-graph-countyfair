@@ -83,6 +83,96 @@
  },
  "feedstock_name":"r-hoardr",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ropensci/hoardr",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Suite of tools for managing cached files, targeting use in other R packages. Uses 'rappdirs' for cross-platform paths. Provides utilities to manage cache directories, including targeting files by path or by key; cached directories can be compressed and uncompressed easily to save disk space."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-hoardr",
+   "version":"0.5.2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ],
+   "run":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ]
+  },
+  "source":{
+   "fn":"hoardr_0.5.2.tar.gz",
+   "sha256":"819113f0e25da105f120a676b5173872a4144f2f6f354cad14b35f898e76dc54",
+   "url":[
+    "https://cran.r-project.org/src/contrib/hoardr_0.5.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/hoardr/hoardr_0.5.2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('hoardr')\"",
+    "conda inspect linkages -p $PREFIX r-hoardr"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/ropensci/hoardr",
@@ -192,6 +282,97 @@
  },
  "name":"r-hoardr",
  "new_version":"0.5.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ropensci/hoardr",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Suite of tools for managing cached files, targeting use in other R packages. Uses 'rappdirs' for cross-platform paths. Provides utilities to manage cache directories, including targeting files by path or by key; cached directories can be compressed and uncompressed easily to save disk space."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-hoardr",
+   "version":"0.5.2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ],
+   "run":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ]
+  },
+  "source":{
+   "fn":"hoardr_0.5.2.tar.gz",
+   "sha256":"819113f0e25da105f120a676b5173872a4144f2f6f354cad14b35f898e76dc54",
+   "url":[
+    "https://cran.r-project.org/src/contrib/hoardr_0.5.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/hoardr/hoardr_0.5.2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('hoardr')\"",
+    "conda inspect linkages -p $PREFIX r-hoardr",
+    "conda inspect objects -p $PREFIX r-hoardr"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = \"0.5.2\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-hoardr\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: hoardr_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/hoardr_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/hoardr/hoardr_{{ version }}.tar.gz\n  sha256: 819113f0e25da105f120a676b5173872a4144f2f6f354cad14b35f898e76dc54\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 2\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-digest\n    - r-rappdirs >=0.3.1\n  run:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-digest\n    - r-rappdirs >=0.3.1\n\ntest:\n  commands:\n    - $R -e \"library('hoardr')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('hoardr')\\\"\"  # [win]\n    - conda inspect linkages -p $PREFIX r-hoardr  # [not win]\n    - conda inspect objects -p $PREFIX r-hoardr  # [osx]\n\nabout:\n  home: https://github.com/ropensci/hoardr\n  license: MIT\n  license_file: LICENSE\n  summary: Suite of tools for managing cached files, targeting use in other R packages. Uses\n    'rappdirs' for cross-platform paths. Provides utilities to manage cache directories,\n    including targeting files by path or by key; cached directories can be compressed\n    and uncompressed easily to save disk space.\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - ocefpaf\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
@@ -269,5 +450,99 @@
   "https://cran.r-project.org/src/contrib/hoardr_0.5.2.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/hoardr/hoardr_0.5.2.tar.gz"
  ],
- "version":"0.5.2"
+ "version":"0.5.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ropensci/hoardr",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Suite of tools for managing cached files, targeting use in other R packages. Uses 'rappdirs' for cross-platform paths. Provides utilities to manage cache directories, including targeting files by path or by key; cached directories can be compressed and uncompressed easily to save disk space."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-hoardr",
+   "version":"0.5.2"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ],
+   "run":[
+    "r-base",
+    "r-r6 >=2.2.0",
+    "r-digest",
+    "r-rappdirs >=0.3.1"
+   ]
+  },
+  "source":{
+   "fn":"hoardr_0.5.2.tar.gz",
+   "sha256":"819113f0e25da105f120a676b5173872a4144f2f6f354cad14b35f898e76dc54",
+   "url":[
+    "https://cran.r-project.org/src/contrib/hoardr_0.5.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/hoardr/hoardr_0.5.2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('hoardr')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-digest",
+    "r-r6",
+    "r-rappdirs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

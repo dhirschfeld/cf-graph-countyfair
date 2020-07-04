@@ -44,6 +44,98 @@
  },
  "feedstock_name":"spacy-model-es",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://spacy.io/models/es",
+   "home":"https://spacy.io",
+   "license":"CC BY-SA 3.0",
+   "summary":"Spanish multi-task CNN trained on the AnCora and WikiNER corpus"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"spacy-model-es_core_news_",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "script":"build.sh",
+    "test":{
+     "commands":[
+      "python -c \"import es_core_news_ as m; m.load()\"",
+      "python -c \"import spacy; spacy.load('es_core_news_')\""
+     ],
+     "imports":[
+      "es_core_news_"
+     ],
+     "requires":[
+      "spacy 2.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-es",
+   "version":"2.0.0"
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"3aa0aceb7fb2ea303c8145a5b5463c45054977a9073bda33abd84fc12ba321ad",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-2.0.0/es_core_news_sm-2.0.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"7706040eec9b0978c33d97edb68bb5181d760daffe294b7020261b833e36050c",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_md-2.0.0/es_core_news_md-2.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"https://spacy.io/models/es",
@@ -195,6 +287,98 @@
  "new_version_errors":{
   "2.3.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2.3.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/explosion/spacy-models/releases/download/{{ name }}_md-{{ version }}/{{ name }}_md-{{ version }}.tar.gz'\n - could not hash URL template 'https://github.com/explosion/spacy-models/releases/download/{{ name }}_sm-{{ version }}/{{ name }}_sm-{{ version }}.tar.gz'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://spacy.io/models/es",
+   "home":"https://spacy.io",
+   "license":"CC BY-SA 3.0",
+   "summary":"Spanish multi-task CNN trained on the AnCora and WikiNER corpus"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"spacy-model-es_core_news_",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "script":"build.sh",
+    "test":{
+     "commands":[
+      "python -c \"import es_core_news_ as m; m.load()\"",
+      "python -c \"import spacy; spacy.load('es_core_news_')\""
+     ],
+     "imports":[
+      "es_core_news_"
+     ],
+     "requires":[
+      "spacy 2.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-es",
+   "version":"2.0.0"
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"3aa0aceb7fb2ea303c8145a5b5463c45054977a9073bda33abd84fc12ba321ad",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-2.0.0/es_core_news_sm-2.0.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"7706040eec9b0978c33d97edb68bb5181d760daffe294b7020261b833e36050c",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_md-2.0.0/es_core_news_md-2.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ },
  "outputs_names":[
   "spacy-model-es_core_news_"
  ],
@@ -263,5 +447,97 @@
   }
  },
  "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-2.0.0/es_core_news_sm-2.0.0.tar.gz",
- "version":"2.0.0"
+ "version":"2.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://spacy.io/models/es",
+   "home":"https://spacy.io",
+   "license":"CC BY-SA 3.0",
+   "summary":"Spanish multi-task CNN trained on the AnCora and WikiNER corpus"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"spacy-model-es_core_news_",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "script":"build.bat",
+    "test":{
+     "commands":[
+      "python -c \"import es_core_news_ as m; m.load()\"",
+      "python -c \"import spacy; spacy.load('es_core_news_')\""
+     ],
+     "imports":[
+      "es_core_news_"
+     ],
+     "requires":[
+      "spacy 2.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-es",
+   "version":"2.0.0"
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"3aa0aceb7fb2ea303c8145a5b5463c45054977a9073bda33abd84fc12ba321ad",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-2.0.0/es_core_news_sm-2.0.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"7706040eec9b0978c33d97edb68bb5181d760daffe294b7020261b833e36050c",
+    "url":"https://github.com/explosion/spacy-models/releases/download/es_core_news_md-2.0.0/es_core_news_md-2.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ }
 }

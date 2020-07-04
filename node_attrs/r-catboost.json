@@ -791,6 +791,73 @@
  },
  "feedstock_name":"r-catboost",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/",
+   "home":"https://github.com/catboost/catboost",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"CatBoost is a machine learning algorithm that uses gradient boosting on decision trees. It is available as an open source library."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "curious-odd-man"
+   ]
+  },
+  "package":{
+   "name":"r-catboost",
+   "version":"0.23.2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-jsonlite"
+   ],
+   "run":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "source":{
+   "sha256":"92a1a92146c126955f80b33f24e971b0b12b24401fc75dfe1658b63c70061281",
+   "url":"https://github.com/catboost/catboost/releases/download/v0.23.2/catboost-R-Linux-0.23.2.tgz"
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('catboost')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/",
@@ -856,6 +923,73 @@
   "0.23.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/",
+   "home":"https://github.com/catboost/catboost",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"CatBoost is a machine learning algorithm that uses gradient boosting on decision trees. It is available as an open source library."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "curious-odd-man"
+   ]
+  },
+  "package":{
+   "name":"r-catboost",
+   "version":"0.23.2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-jsonlite"
+   ],
+   "run":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "source":{
+   "sha256":"ee33f5c4315f711cb23ec333c90266c54dc7df6a5dff8eb30dd48304da7b0b7a",
+   "url":"https://github.com/catboost/catboost/releases/download/v0.23.2/catboost-R-Darwin-0.23.2.tgz"
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('catboost')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"r-catboost\" %}\n{% set version = \"0.23.2\" %}\n{% set posix = 'm2-' if win else '' %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/catboost/catboost/releases/download/v{{ version }}/catboost-R-Linux-{{ version }}.tgz  # [linux]\n  sha256: 92a1a92146c126955f80b33f24e971b0b12b24401fc75dfe1658b63c70061281  # [linux]\n\n  url: https://github.com/catboost/catboost/releases/download/v{{ version }}/catboost-R-Windows-{{ version }}.tgz  # [win]\n  sha256: 4f6e5375eccb5f63c93e88d4a9977a629a3610b8115f31f4a08953a18f1b97f2  # [win]\n\n  url: https://github.com/catboost/catboost/releases/download/v{{ version }}/catboost-R-Darwin-{{ version }}.tgz  # [osx]\n  sha256: ee33f5c4315f711cb23ec333c90266c54dc7df6a5dff8eb30dd48304da7b0b7a  # [osx]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-jsonlite\n  run:\n    - r-base\n    - r-jsonlite\n\ntest:\n  commands:\n    - $R -e \"library('catboost')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('catboost')\\\"\"  # [win].\n\nabout:\n  home: https://github.com/catboost/catboost\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: CatBoost is a machine learning algorithm that uses gradient boosting on decision trees. It is available as an open source library.\n  doc_url: https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - curious-odd-man\n",
  "req":{
@@ -916,5 +1050,76 @@
   }
  },
  "url":"https://github.com/catboost/catboost/releases/download/v0.16.5/catboost-R-Linux-0.16.5.tgz",
- "version":"0.23.2"
+ "version":"0.23.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/",
+   "home":"https://github.com/catboost/catboost",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"CatBoost is a machine learning algorithm that uses gradient boosting on decision trees. It is available as an open source library."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "curious-odd-man"
+   ]
+  },
+  "package":{
+   "name":"r-catboost",
+   "version":"0.23.2"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-jsonlite"
+   ],
+   "run":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "source":{
+   "sha256":"4f6e5375eccb5f63c93e88d4a9977a629a3610b8115f31f4a08953a18f1b97f2",
+   "url":"https://github.com/catboost/catboost/releases/download/v0.23.2/catboost-R-Windows-0.23.2.tgz"
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('catboost')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-jsonlite"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

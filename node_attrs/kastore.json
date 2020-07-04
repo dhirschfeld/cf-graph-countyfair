@@ -155,6 +155,93 @@
  },
  "feedstock_name":"kastore",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Simple key-value store for arrays of numerical data.",
+   "dev_url":"https://github.com/tskit-dev/kastore",
+   "doc_url":"http://kastore.readthedocs.io/en/stable",
+   "home":"http://github.com/kastore/kastore",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Write-once-read-many key-array store"
+  },
+  "build":{
+   "entry_points":[
+    "kastore=kastore.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jeromekelleher"
+   ]
+  },
+  "package":{
+   "name":"kastore",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "six",
+    "humanize"
+   ]
+  },
+  "source":{
+   "sha256":"48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee",
+   "url":"https://pypi.io/packages/source/k/kastore/kastore-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "kastore --help"
+   ],
+   "imports":[
+    "kastore"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "humanize",
+    "numpy",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Simple key-value store for arrays of numerical data.",
@@ -244,6 +331,93 @@
   "0.3.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Simple key-value store for arrays of numerical data.",
+   "dev_url":"https://github.com/tskit-dev/kastore",
+   "doc_url":"http://kastore.readthedocs.io/en/stable",
+   "home":"http://github.com/kastore/kastore",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Write-once-read-many key-array store"
+  },
+  "build":{
+   "entry_points":[
+    "kastore=kastore.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jeromekelleher"
+   ]
+  },
+  "package":{
+   "name":"kastore",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "six",
+    "humanize"
+   ]
+  },
+  "source":{
+   "sha256":"48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee",
+   "url":"https://pypi.io/packages/source/k/kastore/kastore-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "kastore --help"
+   ],
+   "imports":[
+    "kastore"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "humanize",
+    "numpy",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"kastore\" %}\n{% set version = \"0.2.2\" %}\n{% set sha256 = \"48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - kastore=kastore.__main__:main\n  # We need C99 and the Windows compilers before py35 won't work.\n  skip: True  # [win and py<35]\n\n# Following the guidance here for building against numpy:\n# https://conda-forge.org/docs/meta.html#building-against-numpy\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - six\n    - humanize\n\ntest:\n  imports:\n    - kastore\n\n  commands:\n    - kastore --help\n\nabout:\n  home: http://github.com/kastore/kastore\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Write-once-read-many key-array store\n  description: Simple key-value store for arrays of numerical data.\n  doc_url: 'http://kastore.readthedocs.io/en/stable'\n  dev_url: 'https://github.com/tskit-dev/kastore'\n\nextra:\n  recipe-maintainers:\n    - jeromekelleher\n",
  "req":{
@@ -321,5 +495,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/k/kastore/kastore-0.2.2.tar.gz",
- "version":"0.2.2"
+ "version":"0.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Simple key-value store for arrays of numerical data.",
+   "dev_url":"https://github.com/tskit-dev/kastore",
+   "doc_url":"http://kastore.readthedocs.io/en/stable",
+   "home":"http://github.com/kastore/kastore",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Write-once-read-many key-array store"
+  },
+  "build":{
+   "entry_points":[
+    "kastore=kastore.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jeromekelleher"
+   ]
+  },
+  "package":{
+   "name":"kastore",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "six",
+    "humanize"
+   ]
+  },
+  "source":{
+   "sha256":"48d19734eba2dd07490b147d73fce392bbe4415448dffac01a2a0dbf7c6754ee",
+   "url":"https://pypi.io/packages/source/k/kastore/kastore-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "kastore --help"
+   ],
+   "imports":[
+    "kastore"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "humanize",
+    "numpy",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

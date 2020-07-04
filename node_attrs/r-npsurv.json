@@ -83,6 +83,79 @@
  },
  "feedstock_name":"r-npsurv",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.stat.auckland.ac.nz/~yongwang",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Contains functions for non-parametric survival analysis of exact and interval-censored observations. "
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-npsurv",
+   "version":"0.4_0.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-lsei"
+   ],
+   "run":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "source":{
+   "fn":"npsurv_0.4-0.1.tar.gz",
+   "sha256":"085dee4e6ed6d4340ced8fee841d807e4f77e657f681ce30dae9ae91ee8add26",
+   "url":[
+    "https://cran.r-project.org/src/contrib/npsurv_0.4-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/npsurv/npsurv_0.4-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('npsurv')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.stat.auckland.ac.nz/~yongwang",
@@ -158,6 +231,79 @@
   "0.4_0.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.stat.auckland.ac.nz/~yongwang",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Contains functions for non-parametric survival analysis of exact and interval-censored observations. "
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-npsurv",
+   "version":"0.4_0.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-lsei"
+   ],
+   "run":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "source":{
+   "fn":"npsurv_0.4-0.1.tar.gz",
+   "sha256":"085dee4e6ed6d4340ced8fee841d807e4f77e657f681ce30dae9ae91ee8add26",
+   "url":[
+    "https://cran.r-project.org/src/contrib/npsurv_0.4-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/npsurv/npsurv_0.4-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('npsurv')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"{% set version = \"0.4-0.1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-npsurv\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: npsurv_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/npsurv_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/npsurv/npsurv_{{ version }}.tar.gz\n  sha256: 085dee4e6ed6d4340ced8fee841d807e4f77e657f681ce30dae9ae91ee8add26\n\nbuild:\n  noarch: generic\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  host:\n    - r-base\n    - r-lsei\n  run:\n    - r-base\n    - r-lsei\n\ntest:\n  commands:\n    - $R -e \"library('npsurv')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('npsurv')\\\"\"  # [win]\n\nabout:\n  home: https://www.stat.auckland.ac.nz/~yongwang\n  license: GPL (>= 2)\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n  summary: 'Contains functions for non-parametric survival analysis of exact and interval-censored observations. '\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -225,5 +371,78 @@
   "https://cran.r-project.org/src/contrib/npsurv_0.4-0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/npsurv/npsurv_0.4-0.tar.gz"
  ],
- "version":"0.4_0.1"
+ "version":"0.4_0.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.stat.auckland.ac.nz/~yongwang",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Contains functions for non-parametric survival analysis of exact and interval-censored observations. "
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-npsurv",
+   "version":"0.4_0.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-lsei"
+   ],
+   "run":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "source":{
+   "fn":"npsurv_0.4-0.1.tar.gz",
+   "sha256":"085dee4e6ed6d4340ced8fee841d807e4f77e657f681ce30dae9ae91ee8add26",
+   "url":[
+    "https://cran.r-project.org/src/contrib/npsurv_0.4-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/npsurv/npsurv_0.4-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('npsurv')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-lsei"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -61,6 +61,87 @@
  "conda-forge.yml":{},
  "feedstock_name":"pymodsecurity",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/actions-security/pymodsecurity",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to libmodsecurity"
+  },
+  "build":{
+   "number":"2",
+   "script":[
+    "CFLAGS=\"-I$PREFIX/include -L$PREFIX/lib\"",
+    " -m pip install . --no-deps -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "GustavoKatel"
+   ]
+  },
+  "package":{
+   "name":"pymodsecurity",
+   "version":"0.0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "modsecurity",
+    "pybind11 >=2.2"
+   ],
+   "run":[
+    "modsecurity",
+    "python",
+    "icu 58"
+   ]
+  },
+  "source":{
+   "sha256":"63a74c1f2fcadf140f03b088cfd3c41233c72dbdc5de4ef3a77ae0ab5c1fb72b",
+   "url":"https://pypi.io/packages/source/p/pymodsecurity/pymodsecurity-0.0.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ModSecurity"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "modsecurity",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "icu",
+    "modsecurity",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/actions-security/pymodsecurity",
@@ -145,6 +226,88 @@
   "0.0.5":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/actions-security/pymodsecurity",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to libmodsecurity"
+  },
+  "build":{
+   "number":"2",
+   "script":[
+    "CFLAGS=\"-I$PREFIX/include -L$PREFIX/lib\"",
+    " -m pip install . --no-deps -vv"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "GustavoKatel"
+   ]
+  },
+  "package":{
+   "name":"pymodsecurity",
+   "version":"0.0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "modsecurity",
+    "pybind11 >=2.2"
+   ],
+   "run":[
+    "modsecurity",
+    "python",
+    "icu 58"
+   ]
+  },
+  "source":{
+   "sha256":"63a74c1f2fcadf140f03b088cfd3c41233c72dbdc5de4ef3a77ae0ab5c1fb72b",
+   "url":"https://pypi.io/packages/source/p/pymodsecurity/pymodsecurity-0.0.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ModSecurity"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "modsecurity",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "icu",
+    "modsecurity",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.24.22.56.04",
  "raw_meta_yaml":"{% set version = \"0.0.4\" %}\n\npackage:\n  name: pymodsecurity\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pymodsecurity/pymodsecurity-{{ version }}.tar.gz\n  sha256: 63a74c1f2fcadf140f03b088cfd3c41233c72dbdc5de4ef3a77ae0ab5c1fb72b\n\nbuild:\n  number: 2\n  skip: true  # [not linux or py<35]\n  script:\n    - CFLAGS=\"-I$PREFIX/include -L$PREFIX/lib\"\n    - \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - modsecurity\n    - pybind11 >=2.2\n  run:\n    - modsecurity\n    - python\n    # remove this pin once the dependencies are rebuilt\n    - icu 58\n\ntest:\n  imports:\n    - ModSecurity\n\nabout:\n  home: https://github.com/actions-security/pymodsecurity\n  summary: Python bindings to libmodsecurity\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - GustavoKatel\n",
  "req":{
@@ -222,5 +385,87 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pymodsecurity/pymodsecurity-0.0.4.tar.gz",
- "version":"0.0.4"
+ "version":"0.0.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/actions-security/pymodsecurity",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to libmodsecurity"
+  },
+  "build":{
+   "number":"2",
+   "script":[
+    "CFLAGS=\"-I$PREFIX/include -L$PREFIX/lib\"",
+    " -m pip install . --no-deps -vv"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "GustavoKatel"
+   ]
+  },
+  "package":{
+   "name":"pymodsecurity",
+   "version":"0.0.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "modsecurity",
+    "pybind11 >=2.2"
+   ],
+   "run":[
+    "modsecurity",
+    "python",
+    "icu 58"
+   ]
+  },
+  "source":{
+   "sha256":"63a74c1f2fcadf140f03b088cfd3c41233c72dbdc5de4ef3a77ae0ab5c1fb72b",
+   "url":"https://pypi.io/packages/source/p/pymodsecurity/pymodsecurity-0.0.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ModSecurity"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "modsecurity",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "icu",
+    "modsecurity",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

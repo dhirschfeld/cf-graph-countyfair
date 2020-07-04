@@ -63,6 +63,91 @@
  },
  "feedstock_name":"piff",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://rmjarvis.github.io/Piff/html",
+   "home":"https://github.com/rmjarvis/Piff",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"PSFs In the Full FOV"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "rmjarvis"
+   ]
+  },
+  "package":{
+   "name":"piff",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "treecorr >=4.0",
+    "fitsio >=0.9.12",
+    "scikit-learn >=0.18",
+    "matplotlib-base >=1.5.0",
+    "lsstdesc.coord >=1.0.5",
+    "galsim >=2.0",
+    "lmfit"
+   ]
+  },
+  "source":{
+   "sha256":"7d2822e08e67fca5cd75f9e1c661a5b29778db13ffa68e927a0555a75718e0a7",
+   "url":"https://github.com/rmjarvis/Piff/archive/v0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "piff"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fitsio",
+    "galsim",
+    "lmfit",
+    "lsstdesc.coord",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "scikit-learn",
+    "scipy",
+    "treecorr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"http://rmjarvis.github.io/Piff/html",
@@ -154,6 +239,91 @@
   "0.4.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://rmjarvis.github.io/Piff/html",
+   "home":"https://github.com/rmjarvis/Piff",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"PSFs In the Full FOV"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "rmjarvis"
+   ]
+  },
+  "package":{
+   "name":"piff",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "treecorr >=4.0",
+    "fitsio >=0.9.12",
+    "scikit-learn >=0.18",
+    "matplotlib-base >=1.5.0",
+    "lsstdesc.coord >=1.0.5",
+    "galsim >=2.0",
+    "lmfit"
+   ]
+  },
+  "source":{
+   "sha256":"7d2822e08e67fca5cd75f9e1c661a5b29778db13ffa68e927a0555a75718e0a7",
+   "url":"https://github.com/rmjarvis/Piff/archive/v0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "piff"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fitsio",
+    "galsim",
+    "lmfit",
+    "lsstdesc.coord",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "scikit-learn",
+    "scipy",
+    "treecorr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.14.12.02.49",
  "raw_meta_yaml":"{% set name = \"piff\" %}\n{% set version = \"0.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/rmjarvis/Piff/archive/v{{ version }}.tar.gz\n  sha256: 7d2822e08e67fca5cd75f9e1c661a5b29778db13ffa68e927a0555a75718e0a7\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  # uses scripts so cannot be noarch\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - scipy\n    - pyyaml\n    - treecorr >=4.0\n    - fitsio >=0.9.12\n    - scikit-learn >=0.18\n    - matplotlib-base >=1.5.0\n    - lsstdesc.coord >=1.0.5\n    - galsim >=2.0\n    - lmfit\n\ntest:\n  imports:\n    - piff\n\nabout:\n  home: https://github.com/rmjarvis/Piff\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: PSFs In the Full FOV\n  doc_url: http://rmjarvis.github.io/Piff/html\n\nextra:\n  recipe-maintainers:\n    - beckermr\n    - rmjarvis\n",
  "req":{
@@ -242,5 +412,91 @@
   }
  },
  "url":"https://github.com/rmjarvis/Piff/archive/v0.3.1.tar.gz",
- "version":"0.4.0"
+ "version":"0.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://rmjarvis.github.io/Piff/html",
+   "home":"https://github.com/rmjarvis/Piff",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"PSFs In the Full FOV"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "rmjarvis"
+   ]
+  },
+  "package":{
+   "name":"piff",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "treecorr >=4.0",
+    "fitsio >=0.9.12",
+    "scikit-learn >=0.18",
+    "matplotlib-base >=1.5.0",
+    "lsstdesc.coord >=1.0.5",
+    "galsim >=2.0",
+    "lmfit"
+   ]
+  },
+  "source":{
+   "sha256":"7d2822e08e67fca5cd75f9e1c661a5b29778db13ffa68e927a0555a75718e0a7",
+   "url":"https://github.com/rmjarvis/Piff/archive/v0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "piff"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fitsio",
+    "galsim",
+    "lmfit",
+    "lsstdesc.coord",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "scikit-learn",
+    "scipy",
+    "treecorr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

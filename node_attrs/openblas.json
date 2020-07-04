@@ -247,11 +247,384 @@
  },
  "feedstock_name":"openblas",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.openblas.net/",
+   "license":"BSD-3-Clause",
+   "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE"
+   ],
+   "summary":"An optimized BLAS library based on GotoBLAS2 1.13 BSD version"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.so.*"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openblas",
+   "version":"0.3.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "llvm-openmp",
+    "_openmp_mutex * *_llvm"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":null,
+   "sha256":"0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693",
+   "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "llvm-openmp",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libopenblas"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://www.openblas.net/",
+   "license":"BSD-3-Clause",
+   "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE"
+   ],
+   "summary":"An optimized BLAS library based on GotoBLAS2 1.13 BSD version"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.so.*"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openblas",
+   "version":"0.3.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "llvm-openmp",
+    "_openmp_mutex * *_llvm"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":null,
+   "sha256":"0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693",
+   "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "llvm-openmp",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libopenblas"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://www.openblas.net/",
+   "license":"BSD-3-Clause",
+   "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE"
+   ],
+   "summary":"An optimized BLAS library based on GotoBLAS2 1.13 BSD version"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.so.*"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openblas",
+   "version":"0.3.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "llvm-openmp",
+    "_openmp_mutex * *_llvm"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":null,
+   "sha256":"0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693",
+   "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "llvm-openmp",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libopenblas"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.openblas.net/",
    "license":"BSD-3-Clause",
    "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE",
+    "LICENSE",
+    "lapack-netlib/LICENSE",
     "LICENSE",
     "lapack-netlib/LICENSE",
     "LICENSE",
@@ -267,6 +640,16 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr",
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr",
     "gillins",
     "groutr",
     "jakirkham",
@@ -432,6 +815,106 @@
       "test -f ${PREFIX}/lib/libopenblas"
      ]
     }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.so.*"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.so.*"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
    }
   ],
   "package":{
@@ -457,6 +940,18 @@
     "perl",
     "make",
     "llvm-openmp",
+    "_openmp_mutex * *_llvm",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "llvm-openmp",
+    "_openmp_mutex * *_llvm",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "llvm-openmp",
     "_openmp_mutex * *_llvm"
    ],
    "host":null,
@@ -474,6 +969,129 @@
   "0.3.10":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.openblas.net/",
+   "license":"BSD-3-Clause",
+   "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE"
+   ],
+   "summary":"An optimized BLAS library based on GotoBLAS2 1.13 BSD version"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ]
+    },
+    "files":[
+     "lib/libopenblasp*",
+     "lib/libopenblas.*.dylib"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblasp-r0.3.10",
+      "python -c \"import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblasp-r0.3.10']\""
+     ]
+    }
+   },
+   {
+    "build":null,
+    "files":[
+     "include/*.h",
+     "lib/libopenblas*.a",
+     "lib/libopenblas",
+     "lib/pkgconfig/openblas.pc",
+     "lib/cmake/openblas/*"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libopenblas.a",
+      "test -f ${PREFIX}/lib/libopenblas"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openblas",
+   "version":"0.3.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "make",
+    "objconv",
+    "llvm-openmp"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":null,
+   "sha256":"0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693",
+   "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "llvm-openmp",
+    "make",
+    "objconv",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libopenblas"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "libopenblas",
   "openblas"
@@ -561,5 +1179,127 @@
   }
  },
  "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.7.tar.gz",
- "version":"0.3.10"
+ "version":"0.3.10",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.openblas.net/",
+   "license":"BSD-3-Clause",
+   "license_file":[
+    "LICENSE",
+    "lapack-netlib/LICENSE"
+   ],
+   "summary":"An optimized BLAS library based on GotoBLAS2 1.13 BSD version"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libopenblas"
+     ],
+     "skip":true
+    },
+    "files":[
+     "Library/bin/openblas.dll"
+    ],
+    "name":"libopenblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run_constrained":[
+      "openblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\openblas.dll exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "files":[
+     "Library/include/openblas",
+     "Library/lib/openblas.lib",
+     "Library/lib/pkgconfig/openblas.pc",
+     "Library/share/cmake/OpenBLAS"
+    ],
+    "name":"openblas",
+    "requirements":{
+     "run":[
+      "libopenblas"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\openblas.lib exit 1"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openblas",
+   "version":"0.3.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "cmake",
+    "curl",
+    "jom"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":null,
+   "sha256":"0484d275f87e9b8641ff2eecaa9df2830cbe276ac79ad80494822721de6e1693",
+   "url":"https://github.com/xianyi/OpenBLAS/archive/v0.3.10.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "curl",
+    "fortran_compiler_stub",
+    "jom",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libopenblas"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

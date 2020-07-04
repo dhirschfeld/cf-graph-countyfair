@@ -66,6 +66,123 @@
  },
  "feedstock_name":"fastscapelib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Fastscapelib is a C++ library that implements efficient algorithms\nfor processing topographic data and landscape evolution\nmodeling. It also has Python bindings.\n",
+   "doc_url":"https://fastscapelib.readthedocs.io",
+   "home":"https://github.com/fastscape-lem/fastscapelib",
+   "license":"GPLv3",
+   "license_file":"LICENSE",
+   "summary":"Library for topographic analysis and modeling"
+  },
+  "build":{
+   "number":"1000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benbovy"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "xtensor >=0.18.2,<0.19"
+     ],
+     "run":[
+      "xtensor >=0.18.2,<0.19"
+     ]
+    },
+    "script":"install_cpp_headers.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/include/fastscapelib/fastscapelib.hpp",
+      "test -f ${PREFIX}/lib/cmake/fastscapelib/fastscapelibConfig.cmake",
+      "test -f ${PREFIX}/lib/cmake/fastscapelib/fastscapelibConfigVersion.cmake"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib-python",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "numpy",
+      "xtensor >=0.18.2,<0.20",
+      "xtensor-python >=0.21,<0.23"
+     ],
+     "run":[
+      "python",
+      "numpy"
+     ]
+    },
+    "script":"install_python.sh",
+    "test":{
+     "imports":[
+      "fastscapelib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"fastscapelib",
+   "version":"0.1.3"
+  },
+  "source":{
+   "fn":"fastscapelib-0.1.3.tar.gz",
+   "sha256":"5872275778af0e02490b33f4bec9d9fe3edbc501d89845ce769ef85b3f463944",
+   "url":"https://github.com/fastscape-lem/fastscapelib/archive/v0.1.3.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "xtensor",
+    "xtensor-python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "xtensor"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Fastscapelib is a C++ library that implements efficient algorithms\nfor processing topographic data and landscape evolution\nmodeling. It also has Python bindings.\n",
@@ -268,6 +385,123 @@
  },
  "name":"fastscapelib",
  "new_version":"0.1.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Fastscapelib is a C++ library that implements efficient algorithms\nfor processing topographic data and landscape evolution\nmodeling. It also has Python bindings.\n",
+   "doc_url":"https://fastscapelib.readthedocs.io",
+   "home":"https://github.com/fastscape-lem/fastscapelib",
+   "license":"GPLv3",
+   "license_file":"LICENSE",
+   "summary":"Library for topographic analysis and modeling"
+  },
+  "build":{
+   "number":"1000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benbovy"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "xtensor >=0.18.2,<0.19"
+     ],
+     "run":[
+      "xtensor >=0.18.2,<0.19"
+     ]
+    },
+    "script":"install_cpp_headers.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/include/fastscapelib/fastscapelib.hpp",
+      "test -f ${PREFIX}/lib/cmake/fastscapelib/fastscapelibConfig.cmake",
+      "test -f ${PREFIX}/lib/cmake/fastscapelib/fastscapelibConfigVersion.cmake"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib-python",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "numpy",
+      "xtensor >=0.18.2,<0.20",
+      "xtensor-python >=0.21,<0.23"
+     ],
+     "run":[
+      "python",
+      "numpy"
+     ]
+    },
+    "script":"install_python.sh",
+    "test":{
+     "imports":[
+      "fastscapelib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"fastscapelib",
+   "version":"0.1.3"
+  },
+  "source":{
+   "fn":"fastscapelib-0.1.3.tar.gz",
+   "sha256":"5872275778af0e02490b33f4bec9d9fe3edbc501d89845ce769ef85b3f463944",
+   "url":"https://github.com/fastscape-lem/fastscapelib/archive/v0.1.3.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "xtensor",
+    "xtensor-python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "xtensor"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "fastscapelib",
   "fastscapelib-python"
@@ -355,5 +589,123 @@
   }
  },
  "url":"https://github.com/fastscape-lem/fastscapelib/archive/v0.1.3.tar.gz",
- "version":"0.1.3"
+ "version":"0.1.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Fastscapelib is a C++ library that implements efficient algorithms\nfor processing topographic data and landscape evolution\nmodeling. It also has Python bindings.\n",
+   "doc_url":"https://fastscapelib.readthedocs.io",
+   "home":"https://github.com/fastscape-lem/fastscapelib",
+   "license":"GPLv3",
+   "license_file":"LICENSE",
+   "summary":"Library for topographic analysis and modeling"
+  },
+  "build":{
+   "number":"1000",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benbovy"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "xtensor >=0.18.2,<0.19"
+     ],
+     "run":[
+      "xtensor >=0.18.2,<0.19"
+     ]
+    },
+    "script":"install_cpp_headers.bat",
+    "test":{
+     "commands":[
+      "if exist %LIBRARY_PREFIX%\\include\\fastscapelib\\fastscapelib.hpp (exit 0) else (exit 1)",
+      "if exist %LIBRARY_PREFIX%\\lib\\cmake\\fastscapelibConfig.cmake (exit 0) else (exit 1)",
+      "if exist %LIBRARY_PREFIX%\\lib\\cmake\\fastscapelibConfigVersion.cmake (exit 0) else (exit 1)"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"fastscapelib-python",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "numpy",
+      "xtensor >=0.18.2,<0.20",
+      "xtensor-python >=0.21,<0.23"
+     ],
+     "run":[
+      "python",
+      "numpy"
+     ]
+    },
+    "script":"install_python.bat",
+    "test":{
+     "imports":[
+      "fastscapelib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"fastscapelib",
+   "version":"0.1.3"
+  },
+  "source":{
+   "fn":"fastscapelib-0.1.3.tar.gz",
+   "sha256":"5872275778af0e02490b33f4bec9d9fe3edbc501d89845ce769ef85b3f463944",
+   "url":"https://github.com/fastscape-lem/fastscapelib/archive/v0.1.3.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "xtensor",
+    "xtensor-python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "xtensor"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

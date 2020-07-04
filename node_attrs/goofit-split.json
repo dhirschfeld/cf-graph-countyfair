@@ -62,6 +62,132 @@
  "conda-forge.yml":{},
  "feedstock_name":"goofit-split",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"GooFit is split into GPU and CPU versions on Linux. If you want to install for gpus, you can do:\n\n```bash\nconda install goofit goofit-proc=*=gpu\n```\n\nYou can add `cudatoolkit=10.0` or `9.2` if you want a specific toolkit version.\n\nThe OpenMP CPU version is default, but can be explicitly requested with:\n\n```bash\nconda install goofit goofit-proc=*=cpu\n```\n",
+   "home":"https://github.com/GooFit/GooFit",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A fitting package for GPU and CPU"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "danielsibemol",
+    "henryiii"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/goofit-feedstock",
+     "license":"BSD-3-Clause",
+     "license_family":"BSD",
+     "summary":"A meta-package to select CPU or GPU GooFit build."
+    },
+    "build":{
+     "number":"0",
+     "string":"cpu"
+    },
+    "name":"goofit-proc",
+    "test":{
+     "commands":[
+      "exit 0"
+     ]
+    },
+    "version":"1.0.0"
+   },
+   {
+    "build":{
+     "number":"1"
+    },
+    "name":"goofit",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cuda_compiler_stub",
+      "cmake ==3.15.*",
+      "make"
+     ],
+     "host":[
+      "python",
+      "scikit-build",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "numpy >=1.11.1",
+      "libgomp"
+     ],
+     "run_constrained":[
+      "goofit-proc * cpu"
+     ]
+    },
+    "script":"build-gpu.sh",
+    "test":{
+     "commands":[
+      "$PYTHON -m goofit"
+     ],
+     "imports":[
+      "goofit"
+     ],
+     "requires":[
+      "pytest"
+     ],
+     "source_files":[
+      "python/tests/test_exp.py"
+     ]
+    },
+    "version":"2.2.3"
+   }
+  ],
+  "package":{
+   "name":"goofit-split"
+  },
+  "source":{
+   "sha256":"7f80e9a8091bc029a92f562539e330587245885329456d8b7783127b6ae7aae8",
+   "url":"https://pypi.io/packages/source/g/goofit/goofit-2.2.3.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cuda_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libgomp",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"GooFit is split into GPU and CPU versions on Linux. If you want to install for gpus, you can do:\n\n```bash\nconda install goofit goofit-proc=*=gpu\n```\n\nYou can add `cudatoolkit=10.0` or `9.2` if you want a specific toolkit version.\n\nThe OpenMP CPU version is default, but can be explicitly requested with:\n\n```bash\nconda install goofit goofit-proc=*=cpu\n```\n",
@@ -291,6 +417,136 @@
  },
  "name":"goofit-split",
  "new_version":"2.2.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"GooFit is split into GPU and CPU versions on Linux. If you want to install for gpus, you can do:\n\n```bash\nconda install goofit goofit-proc=*=gpu\n```\n\nYou can add `cudatoolkit=10.0` or `9.2` if you want a specific toolkit version.\n\nThe OpenMP CPU version is default, but can be explicitly requested with:\n\n```bash\nconda install goofit goofit-proc=*=cpu\n```\n",
+   "home":"https://github.com/GooFit/GooFit",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A fitting package for GPU and CPU"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "danielsibemol",
+    "henryiii"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/goofit-feedstock",
+     "license":"BSD-3-Clause",
+     "license_family":"BSD",
+     "summary":"A meta-package to select CPU or GPU GooFit build."
+    },
+    "build":{
+     "number":"0",
+     "string":"cpu"
+    },
+    "name":"goofit-proc",
+    "test":{
+     "commands":[
+      "exit 0"
+     ]
+    },
+    "version":"1.0.0"
+   },
+   {
+    "build":{
+     "number":"1"
+    },
+    "name":"goofit",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake ==3.15.*",
+      "make",
+      "llvm-openmp"
+     ],
+     "host":[
+      "python",
+      "scikit-build",
+      "pip",
+      "llvm-openmp"
+     ],
+     "run":[
+      "python",
+      "numpy >=1.11.1",
+      "llvm-openmp"
+     ],
+     "run_constrained":[
+      "goofit-proc * cpu",
+      "__osx >=10.9"
+     ]
+    },
+    "script":"build-cpu.sh",
+    "test":{
+     "commands":[
+      "$PYTHON -m goofit",
+      "$PYTHON -m pytest python/tests/test_exp.py"
+     ],
+     "imports":[
+      "goofit"
+     ],
+     "requires":[
+      "pytest"
+     ],
+     "source_files":[
+      "python/tests/test_exp.py"
+     ]
+    },
+    "version":"2.2.3"
+   }
+  ],
+  "package":{
+   "name":"goofit-split"
+  },
+  "source":{
+   "sha256":"7f80e9a8091bc029a92f562539e330587245885329456d8b7783127b6ae7aae8",
+   "url":"https://pypi.io/packages/source/g/goofit/goofit-2.2.3.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "llvm-openmp",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "llvm-openmp",
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "llvm-openmp",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "outputs_names":[
   "goofit",
   "goofit-proc"
@@ -389,5 +645,129 @@
    ]
   }
  },
- "url":"https://pypi.io/packages/source/g/goofit/goofit-2.2.2.tar.gz"
+ "url":"https://pypi.io/packages/source/g/goofit/goofit-2.2.2.tar.gz",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"GooFit is split into GPU and CPU versions on Linux. If you want to install for gpus, you can do:\n\n```bash\nconda install goofit goofit-proc=*=gpu\n```\n\nYou can add `cudatoolkit=10.0` or `9.2` if you want a specific toolkit version.\n\nThe OpenMP CPU version is default, but can be explicitly requested with:\n\n```bash\nconda install goofit goofit-proc=*=cpu\n```\n",
+   "home":"https://github.com/GooFit/GooFit",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A fitting package for GPU and CPU"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "danielsibemol",
+    "henryiii"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/goofit-feedstock",
+     "license":"BSD-3-Clause",
+     "license_family":"BSD",
+     "summary":"A meta-package to select CPU or GPU GooFit build."
+    },
+    "build":{
+     "number":"0",
+     "string":"cpu"
+    },
+    "name":"goofit-proc",
+    "test":{
+     "commands":[
+      "exit 0"
+     ]
+    },
+    "version":"1.0.0"
+   },
+   {
+    "build":{
+     "number":"1"
+    },
+    "name":"goofit",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake ==3.15.*",
+      "make"
+     ],
+     "host":[
+      "python",
+      "scikit-build",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "numpy >=1.11.1"
+     ],
+     "run_constrained":[
+      "goofit-proc * cpu"
+     ]
+    },
+    "script":"build-cpu.sh",
+    "test":{
+     "commands":[
+      "$PYTHON -m goofit",
+      "$PYTHON -m pytest python/tests/test_exp.py"
+     ],
+     "imports":[
+      "goofit"
+     ],
+     "requires":[
+      "pytest"
+     ],
+     "source_files":[
+      "python/tests/test_exp.py"
+     ]
+    },
+    "version":"2.2.3"
+   }
+  ],
+  "package":{
+   "name":"goofit-split"
+  },
+  "source":{
+   "sha256":"7f80e9a8091bc029a92f562539e330587245885329456d8b7783127b6ae7aae8",
+   "url":"https://pypi.io/packages/source/g/goofit/goofit-2.2.3.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

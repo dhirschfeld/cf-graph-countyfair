@@ -526,6 +526,90 @@
  },
  "feedstock_name":"cfn-lint",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Validate CloudFormation yaml/json templates against the\nCloudFormation spec and additional checks. Includes checking\nvalid values for resource properties and best practices.\n",
+   "dev_url":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "doc_url":"https://github.com/aws-cloudformation/cfn-python-lint/tree/master/docs",
+   "home":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "license":"MIT No Attribution",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"CloudFormation Linter"
+  },
+  "build":{
+   "entry_points":[
+    "cfn-lint = cfnlint.__main__:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hajapy"
+   ]
+  },
+  "package":{
+   "name":"cfn-lint",
+   "version":"0.24.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml",
+    "six >=1.11,<2",
+    "aws-sam-translator >=1.13.0",
+    "jsonpatch",
+    "jsonschema >=3,<4",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"5aa1540ee9a7efc23ebe54a22f1a505766a4bb44f64a0f4fe79574a156a9b43e",
+   "url":"https://pypi.io/packages/source/c/cfn-lint/cfn-lint-0.24.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cfn-lint -h"
+   ],
+   "imports":[
+    "cfnlint"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aws-sam-translator",
+    "jsonpatch",
+    "jsonschema",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Validate CloudFormation yaml/json templates against the\nCloudFormation spec and additional checks. Includes checking\nvalid values for resource properties and best practices.\n",
@@ -615,6 +699,90 @@
   "0.33.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Validate CloudFormation yaml/json templates against the\nCloudFormation spec and additional checks. Includes checking\nvalid values for resource properties and best practices.\n",
+   "dev_url":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "doc_url":"https://github.com/aws-cloudformation/cfn-python-lint/tree/master/docs",
+   "home":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "license":"MIT No Attribution",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"CloudFormation Linter"
+  },
+  "build":{
+   "entry_points":[
+    "cfn-lint = cfnlint.__main__:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hajapy"
+   ]
+  },
+  "package":{
+   "name":"cfn-lint",
+   "version":"0.24.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml",
+    "six >=1.11,<2",
+    "aws-sam-translator >=1.13.0",
+    "jsonpatch",
+    "jsonschema >=3,<4",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"5aa1540ee9a7efc23ebe54a22f1a505766a4bb44f64a0f4fe79574a156a9b43e",
+   "url":"https://pypi.io/packages/source/c/cfn-lint/cfn-lint-0.24.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cfn-lint -h"
+   ],
+   "imports":[
+    "cfnlint"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aws-sam-translator",
+    "jsonpatch",
+    "jsonschema",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"cfn-lint\" %}\n{% set version = \"0.24.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5aa1540ee9a7efc23ebe54a22f1a505766a4bb44f64a0f4fe79574a156a9b43e\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - cfn-lint = cfnlint.__main__:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml\n    - six >=1.11,<2\n    - aws-sam-translator >=1.13.0\n    - jsonpatch\n    - jsonschema >=3,<4\n    - setuptools\n    - pathlib2 >=2.3.0  # [py2k]\n\ntest:\n  imports:\n    - cfnlint\n  commands:\n    - cfn-lint -h\n\nabout:\n  home: https://github.com/aws-cloudformation/cfn-python-lint\n  license: MIT No Attribution\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'CloudFormation Linter'\n  description: |\n    Validate CloudFormation yaml/json templates against the \n    CloudFormation spec and additional checks. Includes checking \n    valid values for resource properties and best practices.\n  doc_url: https://github.com/aws-cloudformation/cfn-python-lint/tree/master/docs\n  dev_url: https://github.com/aws-cloudformation/cfn-python-lint\n\nextra:\n  recipe-maintainers:\n    - hajapy\n",
  "req":{
@@ -691,5 +859,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cfn-lint/cfn-lint-0.24.1.tar.gz",
- "version":"0.24.8"
+ "version":"0.24.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Validate CloudFormation yaml/json templates against the\nCloudFormation spec and additional checks. Includes checking\nvalid values for resource properties and best practices.\n",
+   "dev_url":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "doc_url":"https://github.com/aws-cloudformation/cfn-python-lint/tree/master/docs",
+   "home":"https://github.com/aws-cloudformation/cfn-python-lint",
+   "license":"MIT No Attribution",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"CloudFormation Linter"
+  },
+  "build":{
+   "entry_points":[
+    "cfn-lint = cfnlint.__main__:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hajapy"
+   ]
+  },
+  "package":{
+   "name":"cfn-lint",
+   "version":"0.24.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml",
+    "six >=1.11,<2",
+    "aws-sam-translator >=1.13.0",
+    "jsonpatch",
+    "jsonschema >=3,<4",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"5aa1540ee9a7efc23ebe54a22f1a505766a4bb44f64a0f4fe79574a156a9b43e",
+   "url":"https://pypi.io/packages/source/c/cfn-lint/cfn-lint-0.24.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cfn-lint -h"
+   ],
+   "imports":[
+    "cfnlint"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aws-sam-translator",
+    "jsonpatch",
+    "jsonschema",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -66,6 +66,75 @@
  },
  "feedstock_name":"r-rcolorbrewer",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=RColorBrewer",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "summary":"Provides color schemes for maps (and other graphics) designed by Cynthia Brewer as described at http://colorbrewer2.org"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-rcolorbrewer",
+   "version":"1.1_2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"RColorBrewer_1.1-2.tar.gz",
+   "sha256":"f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/RColorBrewer/RColorBrewer_1.1-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('RColorBrewer')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=RColorBrewer",
@@ -132,6 +201,75 @@
  },
  "name":"r-rcolorbrewer",
  "new_version":"1.1_2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=RColorBrewer",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "summary":"Provides color schemes for maps (and other graphics) designed by Cynthia Brewer as described at http://colorbrewer2.org"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-rcolorbrewer",
+   "version":"1.1_2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"RColorBrewer_1.1-2.tar.gz",
+   "sha256":"f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/RColorBrewer/RColorBrewer_1.1-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('RColorBrewer')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.02.02.22.03",
  "raw_meta_yaml":"{% set version = \"1.1-2\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rcolorbrewer\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: RColorBrewer_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/RColorBrewer_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/RColorBrewer/RColorBrewer_{{ version }}.tar.gz\n  sha256: f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('RColorBrewer')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('RColorBrewer')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=RColorBrewer\n  license: Apache-2.0\n  summary: Provides color schemes for maps (and other graphics) designed by Cynthia Brewer as described at http://colorbrewer2.org\n  license_family: APACHE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -194,5 +332,79 @@
   "https://cran.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/RColorBrewer/RColorBrewer_1.1-2.tar.gz"
  ],
- "version":"1.1_2"
+ "version":"1.1_2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=RColorBrewer",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "summary":"Provides color schemes for maps (and other graphics) designed by Cynthia Brewer as described at http://colorbrewer2.org"
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-rcolorbrewer",
+   "version":"1.1_2"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"RColorBrewer_1.1-2.tar.gz",
+   "sha256":"f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/RColorBrewer_1.1-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/RColorBrewer/RColorBrewer_1.1-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('RColorBrewer')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

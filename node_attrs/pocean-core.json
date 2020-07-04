@@ -221,6 +221,104 @@
  "conda-forge.yml":{},
  "feedstock_name":"pocean-core",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/pocean-core",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"A python framework for working with met-ocean data."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "kwilcox",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pocean-core",
+   "version":"1.9.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "netcdf4",
+    "numpy >=1.14",
+    "pandas >=0.24",
+    "pygc >=1.2.0",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six",
+    "cftime"
+   ]
+  },
+  "source":{
+   "sha256":"31be70e352da4478f04c993cacf0434cfa97f217ca8574a14e9ec416f0f05224",
+   "url":"https://github.com/pyoceans/pocean-core/archive/1.9.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -s -rxs -v pocean"
+   ],
+   "imports":[
+    "pocean",
+    "pocean.dsg",
+    "pocean.grid"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "pocean"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cftime",
+    "netcdf4",
+    "numpy",
+    "pandas",
+    "pygc",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/axiom-data-science/pocean-core",
@@ -330,6 +428,104 @@
  },
  "name":"pocean-core",
  "new_version":"1.9.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/pocean-core",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"A python framework for working with met-ocean data."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "kwilcox",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pocean-core",
+   "version":"1.9.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "netcdf4",
+    "numpy >=1.14",
+    "pandas >=0.24",
+    "pygc >=1.2.0",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six",
+    "cftime"
+   ]
+  },
+  "source":{
+   "sha256":"31be70e352da4478f04c993cacf0434cfa97f217ca8574a14e9ec416f0f05224",
+   "url":"https://github.com/pyoceans/pocean-core/archive/1.9.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -s -rxs -v pocean"
+   ],
+   "imports":[
+    "pocean",
+    "pocean.dsg",
+    "pocean.grid"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "pocean"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cftime",
+    "netcdf4",
+    "numpy",
+    "pandas",
+    "pygc",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2019.12.18",
  "raw_meta_yaml":"{% set version = \"1.9.3\" %}\n\npackage:\n  name: pocean-core\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyoceans/pocean-core/archive/{{ version }}.tar.gz\n  sha256: 31be70e352da4478f04c993cacf0434cfa97f217ca8574a14e9ec416f0f05224\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - netcdf4\n    - numpy >=1.14\n    - pandas >=0.24\n    - pygc >=1.2.0\n    - python-dateutil\n    - pytz\n    - shapely\n    - simplejson\n    - six\n    - cftime\n\ntest:\n  source_files:\n    - pocean\n  requires:\n    - pytest\n  imports:\n    - pocean\n    - pocean.dsg\n    - pocean.grid\n  commands:\n    - pytest -s -rxs -v pocean\n\nabout:\n  home: https://github.com/axiom-data-science/pocean-core\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'A python framework for working with met-ocean data.'\n\nextra:\n  recipe-maintainers:\n    - daf\n    - kwilcox\n    - ocefpaf\n",
  "req":{
@@ -422,5 +618,103 @@
   }
  },
  "url":"https://github.com/pyoceans/pocean-core/archive/1.9.0.tar.gz",
- "version":"1.9.3"
+ "version":"1.9.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/pocean-core",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"A python framework for working with met-ocean data."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "kwilcox",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pocean-core",
+   "version":"1.9.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "netcdf4",
+    "numpy >=1.14",
+    "pandas >=0.24",
+    "pygc >=1.2.0",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six",
+    "cftime"
+   ]
+  },
+  "source":{
+   "sha256":"31be70e352da4478f04c993cacf0434cfa97f217ca8574a14e9ec416f0f05224",
+   "url":"https://github.com/pyoceans/pocean-core/archive/1.9.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -s -rxs -v pocean"
+   ],
+   "imports":[
+    "pocean",
+    "pocean.dsg",
+    "pocean.grid"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "pocean"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cftime",
+    "netcdf4",
+    "numpy",
+    "pandas",
+    "pygc",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "shapely",
+    "simplejson",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

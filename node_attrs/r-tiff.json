@@ -81,6 +81,86 @@
  },
  "feedstock_name":"r-tiff",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.rforge.net/tiff/",
+   "license":"GPL-2.0-only OR GPL-3.0-only",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"This package provides an easy and simple way to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors."
+  },
+  "build":{
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-tiff",
+   "version":"0.1_5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tiff_0.1-5.tar.gz",
+   "sha256":"9514e6a9926fcddc29ce1dd12b1072ad8265900373f738de687ef4a1f9124e2b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tiff_0.1-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tiff/tiff_0.1-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('tiff')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.rforge.net/tiff/",
@@ -171,6 +251,86 @@
  },
  "name":"r-tiff",
  "new_version":"0.1_5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.rforge.net/tiff/",
+   "license":"GPL-2.0-only OR GPL-3.0-only",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"This package provides an easy and simple way to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors."
+  },
+  "build":{
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-tiff",
+   "version":"0.1_5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tiff_0.1-5.tar.gz",
+   "sha256":"9514e6a9926fcddc29ce1dd12b1072ad8265900373f738de687ef4a1f9124e2b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tiff_0.1-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tiff/tiff_0.1-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('tiff')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = \"0.1-5\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-tiff\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: tiff_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/tiff_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/tiff/tiff_{{ version }}.tar.gz\n  sha256: 9514e6a9926fcddc29ce1dd12b1072ad8265900373f738de687ef4a1f9124e2b\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 1004\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('tiff')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('tiff')\\\"\"  # [win]\n\nabout:\n  home: http://www.rforge.net/tiff/\n  license: GPL-2.0-only OR GPL-3.0-only\n  summary: This package provides an easy and simple way to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors.\n  license_family: GPL3\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - dpryan79\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "req":{
@@ -244,5 +404,88 @@
   "https://cran.r-project.org/src/contrib/tiff_0.1-5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/tiff/tiff_0.1-5.tar.gz"
  ],
- "version":"0.1_5"
+ "version":"0.1_5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.rforge.net/tiff/",
+   "license":"GPL-2.0-only OR GPL-3.0-only",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"This package provides an easy and simple way to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-tiff",
+   "version":"0.1_5"
+  },
+  "requirements":{
+   "build":[
+    "posix",
+    "m2w64_c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tiff_0.1-5.tar.gz",
+   "sha256":"9514e6a9926fcddc29ce1dd12b1072ad8265900373f738de687ef4a1f9124e2b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tiff_0.1-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tiff/tiff_0.1-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('tiff')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

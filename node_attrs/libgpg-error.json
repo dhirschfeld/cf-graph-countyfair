@@ -160,6 +160,78 @@
  },
  "feedstock_name":"libgpg-error",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gnupg.org/software/libgpg-error/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"a small library that originally defined common error values for all GnuPG components"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libgpg-error"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgpg-error",
+   "version":"1.36"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "gettext"
+   ],
+   "run":[
+    "gettext"
+   ]
+  },
+  "source":{
+   "sha256":"babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c",
+   "url":"https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libgpg-error.so",
+    "conda inspect linkages libgpg-error"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.gnupg.org/software/libgpg-error/index.html",
@@ -231,6 +303,78 @@
   "1.38":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gnupg.org/software/libgpg-error/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"a small library that originally defined common error values for all GnuPG components"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libgpg-error"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgpg-error",
+   "version":"1.36"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "gettext"
+   ],
+   "run":[
+    "gettext"
+   ]
+  },
+  "source":{
+   "sha256":"babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c",
+   "url":"https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages libgpg-error",
+    "conda inspect objects libgpg-error"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"libgpg-error\" %}\n{% set version = \"1.36\" %}\n{% set sha256 = \"babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gnupg.org/ftp/gcrypt/libgpg-error/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  run_exports:\n   - {{ pin_subpackage('libgpg-error') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - gettext\n  run:\n    - gettext\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgpg-error.so  # [linux]\n    - conda inspect linkages {{ name }}\n    - conda inspect objects {{ name }}  # [osx]\n\nabout:\n  home: https://www.gnupg.org/software/libgpg-error/index.html\n  license: GPL-2.0\n  license_file: COPYING\n  license_family: GPL\n  summary: 'a small library that originally defined common error values for all GnuPG components'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mariusvniekerk\n",
  "req":{
@@ -294,5 +438,77 @@
   }
  },
  "url":"https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2",
- "version":"1.36"
+ "version":"1.36",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gnupg.org/software/libgpg-error/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"a small library that originally defined common error values for all GnuPG components"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libgpg-error"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgpg-error",
+   "version":"1.36"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "gettext"
+   ],
+   "run":[
+    "gettext"
+   ]
+  },
+  "source":{
+   "sha256":"babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c",
+   "url":"https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages libgpg-error"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gettext"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

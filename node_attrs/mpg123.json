@@ -87,6 +87,68 @@
  },
  "feedstock_name":"mpg123",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.mpg123.de/",
+   "license":"LGPL-2.1",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"mpg123 - fast console MPEG Audio Player and decoder library"
+  },
+  "build":{
+   "number":"1000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hbredin",
+    "thomasfillon"
+   ]
+  },
+  "package":{
+   "name":"mpg123",
+   "version":"1.25.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"mpg123-1.25.8.tar.bz2",
+   "sha256":"79da51efae011814491f07c95cb5e46de0476aca7a0bf240ba61cfc27af8499b",
+   "url":"https://sourceforge.net/projects/mpg123/files/mpg123/1.25.8/mpg123-1.25.8.tar.bz2/download"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libmpg123${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libout123${SHLIB_EXT}",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.mpg123.de/",
@@ -144,6 +206,68 @@
   "1.26.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.mpg123.de/",
+   "license":"LGPL-2.1",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"mpg123 - fast console MPEG Audio Player and decoder library"
+  },
+  "build":{
+   "number":"1000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hbredin",
+    "thomasfillon"
+   ]
+  },
+  "package":{
+   "name":"mpg123",
+   "version":"1.25.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"mpg123-1.25.8.tar.bz2",
+   "sha256":"79da51efae011814491f07c95cb5e46de0476aca7a0bf240ba61cfc27af8499b",
+   "url":"https://sourceforge.net/projects/mpg123/files/mpg123/1.25.8/mpg123-1.25.8.tar.bz2/download"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libmpg123${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libout123${SHLIB_EXT}",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"mpg123\" %}\n{% set version = \"1.25.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://sourceforge.net/projects/{{ name }}/files/{{ name }}/{{ version }}/{{ name }}-{{ version }}.tar.bz2/download\n  sha256: 79da51efae011814491f07c95cb5e46de0476aca7a0bf240ba61cfc27af8499b\n\nbuild:\n    number: 1000\n    skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libmpg123${SHLIB_EXT}  # [not win]\n    - test -f $PREFIX/lib/libout123${SHLIB_EXT}  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n\nabout:\n    home: https://www.mpg123.de/\n    license: LGPL-2.1\n    license_family: LGPL\n    license_file: COPYING\n    summary: \"mpg123 - fast console MPEG Audio Player and decoder library\"\n\nextra:\n    recipe-maintainers:\n        - hbredin\n        - thomasfillon\n",
  "req":{
@@ -198,5 +322,64 @@
   }
  },
  "url":"https://sourceforge.net/projects/mpg123/files/mpg123/1.25.8/mpg123-1.25.8.tar.bz2/download",
- "version":"1.25.8"
+ "version":"1.25.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.mpg123.de/",
+   "license":"LGPL-2.1",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"mpg123 - fast console MPEG Audio Player and decoder library"
+  },
+  "build":{
+   "number":"1000",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hbredin",
+    "thomasfillon"
+   ]
+  },
+  "package":{
+   "name":"mpg123",
+   "version":"1.25.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"mpg123-1.25.8.tar.bz2",
+   "sha256":"79da51efae011814491f07c95cb5e46de0476aca7a0bf240ba61cfc27af8499b",
+   "url":"https://sourceforge.net/projects/mpg123/files/mpg123/1.25.8/mpg123-1.25.8.tar.bz2/download"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -118,6 +118,342 @@
  },
  "feedstock_name":"gtest",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/google/googletest",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"googletest/LICENSE",
+   "summary":"Google's C++ test framework"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
+   }
+  ],
+  "package":{
+   "name":"gtest",
+   "version":"1.10.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja"
+   ],
+   "host":[]
+  },
+  "source":{
+   "fn":"release-1.10.0.tar.gz",
+   "sha256":"9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb",
+   "url":"https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/google/googletest",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"googletest/LICENSE",
+   "summary":"Google's C++ test framework"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
+   }
+  ],
+  "package":{
+   "name":"gtest",
+   "version":"1.10.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja"
+   ],
+   "host":[]
+  },
+  "source":{
+   "fn":"release-1.10.0.tar.gz",
+   "sha256":"9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb",
+   "url":"https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://github.com/google/googletest",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"googletest/LICENSE",
+   "summary":"Google's C++ test framework"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
+   }
+  ],
+  "package":{
+   "name":"gtest",
+   "version":"1.10.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja"
+   ],
+   "host":[]
+  },
+  "source":{
+   "fn":"release-1.10.0.tar.gz",
+   "sha256":"9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb",
+   "url":"https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/google/googletest",
@@ -132,6 +468,16 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy",
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy",
     "SylvainCorlay",
     "scopatz",
     "wesm",
@@ -315,6 +661,102 @@
      ]
     },
     "version":"1.10.0"
+   },
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
    }
   ],
   "package":{
@@ -323,6 +765,14 @@
   },
   "requirements":{
    "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja",
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja",
     "cxx_compiler_stub",
     "python 3.6",
     "cmake",
@@ -346,6 +796,118 @@
  },
  "name":"gtest",
  "new_version":"1.10.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/google/googletest",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"googletest/LICENSE",
+   "summary":"Google's C++ test framework"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgtest*",
+     "include/gtest",
+     "lib/pkgconfig/gtest*.pc"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtest.a",
+      "test -f ${PREFIX}/lib/libgtest_main.a",
+      "test -f ${PREFIX}/lib/libgtest${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gtest_main.pc",
+      "test -d ${PREFIX}/include/gtest"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "include/gmock",
+     "lib/libgmock*",
+     "lib/pkgconfig/gmock*.pc"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgmock.a",
+      "test -f ${PREFIX}/lib/libgmock_main.a",
+      "test -f ${PREFIX}/lib/libgmock${SHLIB_EXT}",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock.pc",
+      "test -f ${PREFIX}/lib/pkgconfig/gmock_main.pc",
+      "test -d ${PREFIX}/include/gmock"
+     ]
+    },
+    "version":"1.10.0"
+   }
+  ],
+  "package":{
+   "name":"gtest",
+   "version":"1.10.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja"
+   ],
+   "host":[]
+  },
+  "source":{
+   "fn":"release-1.10.0.tar.gz",
+   "sha256":"9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb",
+   "url":"https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "gmock",
   "gtest"
@@ -410,5 +972,140 @@
   }
  },
  "url":"https://github.com/google/googletest/archive/release-1.8.1.tar.gz",
- "version":"1.10.0"
+ "version":"1.10.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/google/googletest",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"googletest/LICENSE",
+   "summary":"Google's C++ test framework"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "scopatz",
+    "wesm",
+    "marcelotrevisani",
+    "xhochy"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "Library\\bin\\gtest*",
+     "Library\\lib\\gtest*",
+     "Library\\include\\gtest"
+    ],
+    "name":"gtest",
+    "requirements":{
+     "run_constrained":[
+      "gmock 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_LIB%\\gtest.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtestd.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_main.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_maind.lib exit 1",
+      "if not exist %LIBRARY_BIN%\\gtest_dll.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\gtest_dlld.dll exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_dll.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_dlld.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest-md.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest-mdd.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_main-md.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_main-mdd.lib exit 1",
+      "if not exist %LIBRARY_BIN%\\gtest_dll-md.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\gtest_dll-mdd.dll exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_dll-md.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gtest_dll-mdd.lib exit 1",
+      "if not exist %LIBRARY_INC%\\gtest exit 1"
+     ]
+    },
+    "version":"1.10.0"
+   },
+   {
+    "files":[
+     "Library\\bin\\gmock*",
+     "Library\\lib\\gmock*",
+     "Library\\include\\gmock"
+    ],
+    "name":"gmock",
+    "requirements":{
+     "run_constrained":[
+      "gtest 1.10.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_LIB%\\gmock.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmockd.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock_main.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock_maind.lib exit 1",
+      "if not exist %LIBRARY_BIN%\\gmock.dll exit 1",
+      "if not exist %LIBRARY_BIN%\\gmockd.dll exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmockd.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock-md.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock-mdd.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock_main-md.lib exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock_main-mdd.lib exit 1",
+      "if not exist %LIBRARY_BIN%\\gmock-md.dll exit 1",
+      "if not exist %LIBRARY_LIB%\\gmock-md.lib exit 1",
+      "if not exist %LIBRARY_BIN%\\gmockd-mdd.dll exit 1",
+      "if not exist %LIBRARY_LIB%\\gmockd-mdd.lib exit 1",
+      "if not exist %LIBRARY_INC%\\gmock exit 1"
+     ]
+    },
+    "version":"1.10.0"
+   }
+  ],
+  "package":{
+   "name":"gtest",
+   "version":"1.10.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "python 3.6",
+    "cmake",
+    "ninja"
+   ],
+   "host":[]
+  },
+  "source":{
+   "fn":"release-1.10.0.tar.gz",
+   "sha256":"9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb",
+   "url":"https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

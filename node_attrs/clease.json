@@ -165,6 +165,98 @@
  },
  "feedstock_name":"clease",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"CLuster Expansion in Atomic Simulation Environment\n",
+   "dev_url":"https://gitlab.com/computationalmaterials/clease",
+   "doc_url":"https://gitlab.com/computationalmaterials/clease",
+   "home":"https://gitlab.com/computationalmaterials/clease",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"CLuster Expansion in Atomic Simulation Environment"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"clease",
+   "version":"0.9.12"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "ase >=3.18",
+    "matplotlib-base",
+    "spglib",
+    "scikit-learn",
+    "numpy",
+    "typing_extensions"
+   ]
+  },
+  "source":{
+   "sha256":"bd7ed609634f05e153701c7e434310040780604dd7050557fb9a80b4d5308453",
+   "url":"https://pypi.io/packages/source/c/clease/clease-0.9.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "clease"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "matplotlib-base",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "spglib",
+    "typing_extensions"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"CLuster Expansion in Atomic Simulation Environment\n",
@@ -261,6 +353,98 @@
   "0.9.12":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"CLuster Expansion in Atomic Simulation Environment\n",
+   "dev_url":"https://gitlab.com/computationalmaterials/clease",
+   "doc_url":"https://gitlab.com/computationalmaterials/clease",
+   "home":"https://gitlab.com/computationalmaterials/clease",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"CLuster Expansion in Atomic Simulation Environment"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"clease",
+   "version":"0.9.12"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "ase >=3.18",
+    "matplotlib-base",
+    "spglib",
+    "scikit-learn",
+    "numpy",
+    "typing_extensions"
+   ]
+  },
+  "source":{
+   "sha256":"bd7ed609634f05e153701c7e434310040780604dd7050557fb9a80b4d5308453",
+   "url":"https://pypi.io/packages/source/c/clease/clease-0.9.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "clease"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "matplotlib-base",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "spglib",
+    "typing_extensions"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.15.11.48.40",
  "raw_meta_yaml":"{% set name = \"clease\" %}\n{% set version = \"0.9.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bd7ed609634f05e153701c7e434310040780604dd7050557fb9a80b4d5308453\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n  run:\n    - python\n    - pip\n    - ase >=3.18\n    - matplotlib-base\n    - spglib\n    - scikit-learn\n    - {{ pin_compatible('numpy') }}\n    - typing_extensions\n\ntest:\n  imports:\n    - clease\n  commands:\n    - pip check\n\nabout:\n  home: https://gitlab.com/computationalmaterials/clease\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE.md\n  summary: CLuster Expansion in Atomic Simulation Environment\n\n  description: |\n    CLuster Expansion in Atomic Simulation Environment\n  doc_url: https://gitlab.com/computationalmaterials/clease\n  dev_url: https://gitlab.com/computationalmaterials/clease\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
@@ -349,5 +533,97 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/clease/clease-0.9.5.tar.gz",
- "version":"0.9.12"
+ "version":"0.9.12",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"CLuster Expansion in Atomic Simulation Environment\n",
+   "dev_url":"https://gitlab.com/computationalmaterials/clease",
+   "doc_url":"https://gitlab.com/computationalmaterials/clease",
+   "home":"https://gitlab.com/computationalmaterials/clease",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"CLuster Expansion in Atomic Simulation Environment"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"clease",
+   "version":"0.9.12"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "ase >=3.18",
+    "matplotlib-base",
+    "spglib",
+    "scikit-learn",
+    "numpy",
+    "typing_extensions"
+   ]
+  },
+  "source":{
+   "sha256":"bd7ed609634f05e153701c7e434310040780604dd7050557fb9a80b4d5308453",
+   "url":"https://pypi.io/packages/source/c/clease/clease-0.9.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "clease"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "matplotlib-base",
+    "numpy",
+    "pip",
+    "python",
+    "scikit-learn",
+    "spglib",
+    "typing_extensions"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

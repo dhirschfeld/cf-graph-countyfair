@@ -27,10 +27,1451 @@
   }
  },
  "feedstock_name":"ctng-compilers",
+ "linux_64_meta_yaml":{
+  "build":{
+   "merge_build_host":false,
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex"
+     ]
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ctng-compilers",
+   "version":"None"
+  },
+  "requirements":{
+   "build":[
+    "crosstool-ng >=1.24.0,<1.25",
+    "autoconf",
+    "automake"
+   ],
+   "host":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ]
+  },
+  "source":{
+   "path":"."
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "crosstool-ng",
+    "gcc_impl_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "crosstool-ng",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "_libgcc_mutex",
+    "_openmp_mutex",
+    "binutils_impl_",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "sysroot_"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "build":{
+   "merge_build_host":false,
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":null
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ctng-compilers",
+   "version":"None"
+  },
+  "requirements":{
+   "build":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ],
+   "host":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ]
+  },
+  "source":{
+   "path":"."
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "crosstool-ng",
+    "gcc_impl_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "crosstool-ng",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "binutils_impl_",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "sysroot_"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "build":{
+   "merge_build_host":false,
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex"
+     ]
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ctng-compilers",
+   "version":"None"
+  },
+  "requirements":{
+   "build":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ],
+   "host":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ]
+  },
+  "source":{
+   "path":"."
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "crosstool-ng",
+    "gcc_impl_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "crosstool-ng",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "_libgcc_mutex",
+    "_openmp_mutex",
+    "binutils_impl_",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "sysroot_"
+   ]
+  }
+ },
  "meta_yaml":{
   "build":{
    "merge_build_host":false,
    "missing_dso_whitelist":[
+    "*",
+    "*",
     "*",
     "*",
     "*"
@@ -40,6 +1481,10 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "isuruf",
+    "beckermr",
+    "isuruf",
+    "beckermr",
     "isuruf",
     "beckermr",
     "isuruf",
@@ -1255,6 +2700,812 @@
       "test -f ${PREFIX}/lib/libgfortran.so"
      ]
     }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":[
+      "_libgcc_mutex"
+     ]
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "_libgcc_mutex",
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos7-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":null
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
    }
   ],
   "package":{
@@ -1268,9 +3519,13 @@
     "bash",
     "crosstool-ng >=1.24.0,<1.25",
     "autoconf",
-    "automake"
+    "automake",
+    "crosstool-ng >=1.24.0,<1.25",
+    "crosstool-ng >=1.24.0,<1.25"
    ],
    "host":[
+    "crosstool-ng >=1.24.0,<1.25",
+    "crosstool-ng >=1.24.0,<1.25",
     "crosstool-ng >=1.24.0,<1.25",
     "crosstool-ng >=1.24.0,<1.25",
     "crosstool-ng >=1.24.0,<1.25"
@@ -1282,6 +3537,484 @@
  },
  "name":"ctng-compilers",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "build":{
+   "merge_build_host":false,
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":null
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ctng-compilers",
+   "version":"None"
+  },
+  "requirements":{
+   "build":[
+    "crosstool-ng >=1.24.0,<1.25",
+    "bash"
+   ],
+   "host":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ]
+  },
+  "source":{
+   "path":"."
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bash",
+    "crosstool-ng",
+    "gcc_impl_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "crosstool-ng",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "binutils_impl_",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "sysroot_"
+   ]
+  }
+ },
  "outputs_names":[
   "_openmp_mutex",
   "binutils_impl_",
@@ -1409,5 +4142,481 @@
   }
  },
  "url":null,
- "version":"None"
+ "version":"None",
+ "win_64_meta_yaml":{
+  "build":{
+   "merge_build_host":false,
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so*",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*",
+      "libexec/**/collect2",
+      "libexec/**/gcc",
+      "libexec/**/lto*",
+      "libexec/**/plugin/gengtype"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "runpath_whitelist":[
+      "x86_64--linux-gnu/sysroot/lib/libpthread-2.12.2.so"
+     ]
+    },
+    "name":"gcc_impl_",
+    "requirements":{
+     "host":[
+      "sysroot_",
+      "libgomp",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgfortran-ng"
+     ],
+     "run":[
+      "binutils_impl_",
+      "libstdcxx-ng",
+      "libgcc-ng",
+      "libgomp",
+      "sysroot_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gcc.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so",
+      "test `readlink ${PREFIX}/--linux-gnu/sysroot/lib/libgomp.so` == \"../../../lib/libgomp.so\"",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gcc",
+      "CC=$(${PREFIX}/bin/*-gcc -dumpmachine)-gcc",
+      "${CC} -Wall tests/aligned_alloc.c -o c_aligned -v",
+      "./c_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU C++ Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/cc1*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gxx_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libstdcxx-ng"
+     ]
+    },
+    "script":"install-g++.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-g++",
+      "CXX=$(${PREFIX}/bin/*-gcc -dumpmachine)-g++",
+      "${CXX} -Wall tests/aligned_alloc.cpp -o cpp_aligned --std=c++17",
+      "./cpp_aligned"
+     ],
+     "files":[
+      "tests"
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"GNU Fortran Compiler"
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*",
+      "libexec/**/f951"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"gfortran_impl_",
+    "requirements":{
+     "build":[
+      "gcc_impl_"
+     ],
+     "host":[
+      "gcc_impl_"
+     ],
+     "run":[
+      "gcc_impl_ >=7.2.0",
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libgfortran-ng",
+      "libgcc-ng"
+     ]
+    },
+    "script":"install-gfortran.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-gfortran",
+      "find $PREFIX/lib -iname omp_lib.mod | grep '.'",
+      "find $PREFIX/lib -iname omp_lib.h | grep '.'",
+      "pushd tests/fortomp",
+      "sh test_fort.sh"
+     ],
+     "files":[
+      "tests/fortomp/*"
+     ],
+     "requires":[
+      "cmake >=3.11",
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://www.gnu.org/software/binutils/",
+     "license":"GPL-3.0-or-later",
+     "summary":"The GNU Binutils are a collection of binary tools."
+    },
+    "build":{
+     "binary_relocation":[
+      "bin/*",
+      "lib/*.so",
+      "libexec/**/*.so*"
+     ],
+     "detect_binary_files_with_prefix":false,
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"binutils_impl_",
+    "requirements":{
+     "run_constrained":[
+      "gcc_impl_ .*",
+      "gfortran_impl_ .*"
+     ]
+    },
+    "script":"install-binutils.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/*/bin/ar",
+      "test -f ${PREFIX}/*/bin/ld",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ar",
+      "test -f ${PREFIX}/bin/-conda_cos6-linux-gnu-ld"
+     ]
+    },
+    "version":""
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU C++ Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libstdcxx-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libstdc++.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libstdc++.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC low-level runtime library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgcc-ng",
+    "requirements":{
+     "host":[
+      "libgomp",
+      "_openmp_mutex",
+      "sysroot_"
+     ],
+     "run":[
+      "_openmp_mutex"
+     ],
+     "run_constrained":[
+      "libgomp"
+     ]
+    },
+    "script":"install-libgcc-no-gomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgcc_s.so",
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+     "license":"GPL",
+     "summary":"The GCC OpenMP implementation."
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null,
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     }
+    },
+    "name":"libgomp",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ],
+     "run":null
+    },
+    "script":"install-libgomp.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test ! -f ${PREFIX}/lib/libgomp.so",
+      "test ! -f ${PREFIX}/lib/libgomp.so."
+     ],
+     "requires":[
+      "sysroot_"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/conda-forge/ctng-compilers-feedstock",
+     "license":"BSD-3-Clause",
+     "license_file":"LICENSE",
+     "summary":"OpenMP Implementation Mutex"
+    },
+    "build":{
+     "run_exports":{
+      "strong":[
+       "_openmp_mutex"
+      ]
+     },
+     "string":"0_gnu"
+    },
+    "name":"_openmp_mutex",
+    "requirements":{
+     "host":[
+      "libgomp"
+     ],
+     "run":[
+      "libgomp"
+     ],
+     "run_constrained":[
+      "openmp_impl 9999"
+     ]
+    },
+    "script":"install-openmp_impl.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgomp.so.",
+      "test `readlink ${PREFIX}/lib/libgomp.so.[\"slice(0, 1, None)\"]` == \"libgomp.so.\""
+     ]
+    },
+    "version":null
+   },
+   {
+    "about":{
+     "home":"https://gcc.gnu.org/",
+     "license":"GPL-3.0-with-GCC-exception",
+     "summary":"The GNU Fortran Runtime Library"
+    },
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "ignore_run_exports":[
+      "__glibc"
+     ],
+     "missing_dso_whitelist":[
+      "*"
+     ],
+     "number":null
+    },
+    "name":"libgfortran-ng",
+    "requirements":{
+     "host":[
+      "sysroot_"
+     ]
+    },
+    "script":"install-libgfortran.sh",
+    "target":null,
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgfortran.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ctng-compilers",
+   "version":"None"
+  },
+  "requirements":{
+   "build":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ],
+   "host":[
+    "crosstool-ng >=1.24.0,<1.25"
+   ]
+  },
+  "source":{
+   "path":"."
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "crosstool-ng",
+    "gcc_impl_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "crosstool-ng",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "_openmp_mutex",
+    "binutils_impl_",
+    "gcc_impl_",
+    "libgcc-ng",
+    "libgfortran-ng",
+    "libgomp",
+    "libstdcxx-ng",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "sysroot_"
+   ]
+  }
+ }
 }

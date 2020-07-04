@@ -76,6 +76,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"cykdtree",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://langmm@bitbucket.org/langmm/cykdtree",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Cython based KD-Tree"
+  },
+  "build":{
+   "number":"1002",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cykdtree",
+   "version":"0.2.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "mpi4py",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "mpi4py",
+    "numpy"
+   ]
+  },
+  "source":{
+   "patches":[
+    "no_test_import.patch"
+   ],
+   "sha256":"e58104def3f030dc9bd73e4b9a1575cedafec78354d3d37fa455f3478a3200f2",
+   "url":"https://pypi.io/packages/source/c/cykdtree/cykdtree-0.2.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "cykdtree"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "mpi4py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mpi4py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://langmm@bitbucket.org/langmm/cykdtree",
@@ -159,6 +244,93 @@
  },
  "name":"cykdtree",
  "new_version":"0.2.4",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://langmm@bitbucket.org/langmm/cykdtree",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Cython based KD-Tree"
+  },
+  "build":{
+   "number":"1002",
+   "script":"-m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cykdtree",
+   "version":"0.2.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "mpi4py",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "mpi4py",
+    "numpy"
+   ]
+  },
+  "source":{
+   "patches":[
+    "no_test_import.patch"
+   ],
+   "sha256":"e58104def3f030dc9bd73e4b9a1575cedafec78354d3d37fa455f3478a3200f2",
+   "url":"https://pypi.io/packages/source/c/cykdtree/cykdtree-0.2.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "cykdtree"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "mpi4py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mpi4py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set version = \"0.2.4\" %}\n\npackage:\n  name: cykdtree\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cykdtree/cykdtree-{{ version }}.tar.gz\n  sha256: e58104def3f030dc9bd73e4b9a1575cedafec78354d3d37fa455f3478a3200f2\n  patches:\n    - no_test_import.patch\n\nbuild:\n  number: 1002\n  skip: True  # [osx or win]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - mpi4py\n    - numpy\n  run:\n    - python\n    - mpi4py\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cykdtree\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://langmm@bitbucket.org/langmm/cykdtree\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Cython based KD-Tree'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -238,5 +410,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cykdtree/cykdtree-0.2.4.tar.gz",
- "version":"0.2.4"
+ "version":"0.2.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://langmm@bitbucket.org/langmm/cykdtree",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Cython based KD-Tree"
+  },
+  "build":{
+   "number":"1002",
+   "script":"-m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cykdtree",
+   "version":"0.2.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "mpi4py",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "mpi4py",
+    "numpy"
+   ]
+  },
+  "source":{
+   "patches":[
+    "no_test_import.patch"
+   ],
+   "sha256":"e58104def3f030dc9bd73e4b9a1575cedafec78354d3d37fa455f3478a3200f2",
+   "url":"https://pypi.io/packages/source/c/cykdtree/cykdtree-0.2.4.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "cykdtree"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "mpi4py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mpi4py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -49,6 +49,110 @@
  "conda-forge.yml":{},
  "feedstock_name":"cairomm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://cairographics.org/",
+   "license":"LGPL-2.1-or-later and MPL-1.1",
+   "license_file":"COPYING",
+   "summary":"cairomm is a C++ wrapper for the cairo graphics library"
+  },
+  "build":{
+   "number":"2",
+   "run_exports":[
+    "cairomm-1.0 >=1.12.2"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vgauthier",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "cairomm-1.0 >=1.12.2"
+     ]
+    },
+    "name":"cairomm-1.0",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "zlib",
+      "freetype",
+      "cairo >=1.10.0",
+      "sigcpp-2.0  >=2.5.1"
+     ],
+     "run_constrained":[
+      "cairomm 1.12.2"
+     ]
+    },
+    "script":"build_cairomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcairomm-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"cairomm",
+    "requirements":{
+     "run":[
+      "cairomm-1.0  1.12.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/cairomm-1.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"cairomm",
+   "version":"1.12.2"
+  },
+  "source":{
+   "sha256":"45c47fd4d0aa77464a75cdca011143fea3ef795c4753f6e860057da5fb8bd599",
+   "url":"https://www.cairographics.org/releases/cairomm-1.12.2.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "freetype",
+    "libpng",
+    "sigcpp-2.0",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairomm-1.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://cairographics.org/",
@@ -220,6 +324,110 @@
  },
  "name":"cairomm",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://cairographics.org/",
+   "license":"LGPL-2.1-or-later and MPL-1.1",
+   "license_file":"COPYING",
+   "summary":"cairomm is a C++ wrapper for the cairo graphics library"
+  },
+  "build":{
+   "number":"2",
+   "run_exports":[
+    "cairomm-1.0 >=1.12.2"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vgauthier",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "cairomm-1.0 >=1.12.2"
+     ]
+    },
+    "name":"cairomm-1.0",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "zlib",
+      "freetype",
+      "cairo >=1.10.0",
+      "sigcpp-2.0  >=2.5.1"
+     ],
+     "run_constrained":[
+      "cairomm 1.12.2"
+     ]
+    },
+    "script":"build_cairomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcairomm-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"cairomm",
+    "requirements":{
+     "run":[
+      "cairomm-1.0  1.12.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/cairomm-1.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"cairomm",
+   "version":"1.12.2"
+  },
+  "source":{
+   "sha256":"45c47fd4d0aa77464a75cdca011143fea3ef795c4753f6e860057da5fb8bd599",
+   "url":"https://www.cairographics.org/releases/cairomm-1.12.2.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "freetype",
+    "libpng",
+    "sigcpp-2.0",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairomm-1.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "cairomm",
   "cairomm-1.0"
@@ -303,5 +511,110 @@
   }
  },
  "url":"https://www.cairographics.org/releases/cairomm-1.12.2.tar.gz",
- "version":"1.12.2"
+ "version":"1.12.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://cairographics.org/",
+   "license":"LGPL-2.1-or-later and MPL-1.1",
+   "license_file":"COPYING",
+   "summary":"cairomm is a C++ wrapper for the cairo graphics library"
+  },
+  "build":{
+   "number":"2",
+   "run_exports":[
+    "cairomm-1.0 >=1.12.2"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vgauthier",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "cairomm-1.0 >=1.12.2"
+     ]
+    },
+    "name":"cairomm-1.0",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "libpng",
+      "zlib",
+      "freetype",
+      "cairo >=1.10.0",
+      "sigcpp-2.0  >=2.5.1"
+     ],
+     "run_constrained":[
+      "cairomm 1.12.2"
+     ]
+    },
+    "script":"build_cairomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcairomm-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"cairomm",
+    "requirements":{
+     "run":[
+      "cairomm-1.0  1.12.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/cairomm-1.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"cairomm",
+   "version":"1.12.2"
+  },
+  "source":{
+   "sha256":"45c47fd4d0aa77464a75cdca011143fea3ef795c4753f6e860057da5fb8bd599",
+   "url":"https://www.cairographics.org/releases/cairomm-1.12.2.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "freetype",
+    "libpng",
+    "sigcpp-2.0",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairomm-1.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

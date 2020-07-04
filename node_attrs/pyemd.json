@@ -90,6 +90,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyemd",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"PyEMD is a Python wrapper for Ofir Pele and Michael Werman\u2019s implementation\nof the Earth Mover\u2019s Distance that allows it to be used with NumPy.\n",
+   "dev_url":"http://github.com/wmayner/pyemd",
+   "doc_url":"http://github.com/wmayner/pyemd",
+   "home":"http://github.com/wmayner/pyemd",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python wrapper for the Earth Mover's Distance."
+  },
+  "build":{
+   "number":"1001",
+   "script":" -m pip install . -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rmax"
+   ]
+  },
+  "package":{
+   "name":"pyemd",
+   "version":"0.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyemd-0.5.1.tar.gz",
+   "sha256":"fc81c2116f8573e559dfbb8d73e03d9f73c22d0770559f406516984302e07e70",
+   "url":"https://pypi.io/packages/source/p/pyemd/pyemd-0.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -v test/"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test/"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"PyEMD is a Python wrapper for Ofir Pele and Michael Werman\u2019s implementation\nof the Earth Mover\u2019s Distance that allows it to be used with NumPy.\n",
@@ -169,6 +254,91 @@
  },
  "name":"pyemd",
  "new_version":"0.5.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"PyEMD is a Python wrapper for Ofir Pele and Michael Werman\u2019s implementation\nof the Earth Mover\u2019s Distance that allows it to be used with NumPy.\n",
+   "dev_url":"http://github.com/wmayner/pyemd",
+   "doc_url":"http://github.com/wmayner/pyemd",
+   "home":"http://github.com/wmayner/pyemd",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python wrapper for the Earth Mover's Distance."
+  },
+  "build":{
+   "number":"1001",
+   "script":" -m pip install . -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rmax"
+   ]
+  },
+  "package":{
+   "name":"pyemd",
+   "version":"0.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyemd-0.5.1.tar.gz",
+   "sha256":"fc81c2116f8573e559dfbb8d73e03d9f73c22d0770559f406516984302e07e70",
+   "url":"https://pypi.io/packages/source/p/pyemd/pyemd-0.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -v test/"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test/"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"pyemd\" %}\n{% set version = \"0.5.1\" %}\n{% set sha256sum = \"fc81c2116f8573e559dfbb8d73e03d9f73c22d0770559f406516984302e07e70\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 1001\n  script: \"{{ PYTHON }} -m pip install . -vvv\"\n  skip: True  # [win32]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n\n  source_files:\n    - test/\n\n  commands:\n    - pytest -v test/\n\nabout:\n  home: http://github.com/wmayner/pyemd\n  license: MIT\n  license_file: LICENSE\n  summary: A Python wrapper for the Earth Mover's Distance.\n  description: |\n    PyEMD is a Python wrapper for Ofir Pele and Michael Werman\u2019s implementation\n    of the Earth Mover\u2019s Distance that allows it to be used with NumPy.\n  doc_url: http://github.com/wmayner/pyemd\n  dev_url: http://github.com/wmayner/pyemd\n\nextra:\n  recipe-maintainers:\n    - rmax\n",
  "req":{
@@ -244,5 +414,90 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyemd/pyemd-0.5.1.tar.gz",
- "version":"0.5.1"
+ "version":"0.5.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"PyEMD is a Python wrapper for Ofir Pele and Michael Werman\u2019s implementation\nof the Earth Mover\u2019s Distance that allows it to be used with NumPy.\n",
+   "dev_url":"http://github.com/wmayner/pyemd",
+   "doc_url":"http://github.com/wmayner/pyemd",
+   "home":"http://github.com/wmayner/pyemd",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python wrapper for the Earth Mover's Distance."
+  },
+  "build":{
+   "number":"1001",
+   "script":" -m pip install . -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rmax"
+   ]
+  },
+  "package":{
+   "name":"pyemd",
+   "version":"0.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyemd-0.5.1.tar.gz",
+   "sha256":"fc81c2116f8573e559dfbb8d73e03d9f73c22d0770559f406516984302e07e70",
+   "url":"https://pypi.io/packages/source/p/pyemd/pyemd-0.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -v test/"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test/"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

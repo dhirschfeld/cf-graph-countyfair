@@ -63,6 +63,85 @@
  },
  "feedstock_name":"kealib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://kealib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"The KEA format provides an implementation of the GDAL specification within the the HDF5 file format."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "kealib"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"kealib",
+   "version":"1.4.13"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "hdf5"
+   ],
+   "run":[
+    "hdf5"
+   ]
+  },
+  "source":{
+   "sha256":"4135d13080ace420df8a0e39347c7fff939a94425b4d61c4cd6c3dd90563f0c6",
+   "url":"https://github.com/ubarsc/kealib/releases/download/kealib-1.4.13/kealib-1.4.13.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "gdal_translate --formats"
+   ],
+   "requires":[
+    "libgdal"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "libgdal"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://kealib.org/",
@@ -137,6 +216,85 @@
  },
  "name":"kealib",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://kealib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"The KEA format provides an implementation of the GDAL specification within the the HDF5 file format."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "kealib"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"kealib",
+   "version":"1.4.13"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "hdf5"
+   ],
+   "run":[
+    "hdf5"
+   ]
+  },
+  "source":{
+   "sha256":"4135d13080ace420df8a0e39347c7fff939a94425b4d61c4cd6c3dd90563f0c6",
+   "url":"https://github.com/ubarsc/kealib/releases/download/kealib-1.4.13/kealib-1.4.13.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "gdal_translate --formats"
+   ],
+   "requires":[
+    "libgdal"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "libgdal"
+   ]
+  }
+ },
  "pinning_version":"2020.04.16.03.28.28",
  "raw_meta_yaml":"{% set version = \"1.4.13\" %}\n\npackage:\n  name: kealib\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ubarsc/kealib/releases/download/kealib-{{ version }}/kealib-{{ version }}.tar.gz\n  sha256: 4135d13080ace420df8a0e39347c7fff939a94425b4d61c4cd6c3dd90563f0c6\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('kealib', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n  host:\n    - hdf5\n  run:\n    - hdf5\n\ntest:\n  requires:\n    - libgdal\n  commands:\n    # check we haven't broken GDAL\n    - gdal_translate --formats\n\nabout:\n  home: http://kealib.org/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: The KEA format provides an implementation of the GDAL specification within the the HDF5 file format.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - danclewley\n",
  "req":{
@@ -210,5 +368,83 @@
   }
  },
  "url":"https://bitbucket.org/chchrsc/kealib/downloads/kealib-1.4.10.tar.gz",
- "version":"1.4.13"
+ "version":"1.4.13",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://kealib.org/",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"The KEA format provides an implementation of the GDAL specification within the the HDF5 file format."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "kealib"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"kealib",
+   "version":"1.4.13"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "hdf5"
+   ],
+   "run":[
+    "hdf5"
+   ]
+  },
+  "source":{
+   "sha256":"4135d13080ace420df8a0e39347c7fff939a94425b4d61c4cd6c3dd90563f0c6",
+   "url":"https://github.com/ubarsc/kealib/releases/download/kealib-1.4.13/kealib-1.4.13.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "gdal_translate --formats"
+   ],
+   "requires":[
+    "libgdal"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "libgdal"
+   ]
+  }
+ }
 }

@@ -64,6 +64,339 @@
  },
  "feedstock_name":"openssl",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/openssl/openssl",
+   "doc_url":"https://www.openssl.org/docs/man1.1.1/",
+   "home":"http://www.openssl.org/",
+   "license":"OpenSSL",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"OpenSSL is an open-source implementation of the SSL and TLS protocols"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "no_link":"lib/libcrypto.so.1.1",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openssl_split",
+   "version":"1.1.1g"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
+   ],
+   "sha256":"ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+   "url":"http://www.openssl.org/source/openssl-1.1.1g.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ca-certificates"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/openssl/openssl",
+   "doc_url":"https://www.openssl.org/docs/man1.1.1/",
+   "home":"http://www.openssl.org/",
+   "license":"OpenSSL",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"OpenSSL is an open-source implementation of the SSL and TLS protocols"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "no_link":"lib/libcrypto.so.1.1",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openssl_split",
+   "version":"1.1.1g"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
+   ],
+   "sha256":"ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+   "url":"http://www.openssl.org/source/openssl-1.1.1g.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ca-certificates"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/openssl/openssl",
+   "doc_url":"https://www.openssl.org/docs/man1.1.1/",
+   "home":"http://www.openssl.org/",
+   "license":"OpenSSL",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"OpenSSL is an open-source implementation of the SSL and TLS protocols"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "no_link":"lib/libcrypto.so.1.1",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openssl_split",
+   "version":"1.1.1g"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
+   ],
+   "sha256":"ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+   "url":"http://www.openssl.org/source/openssl-1.1.1g.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ca-certificates"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/openssl/openssl",
@@ -79,6 +412,18 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri",
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri",
     "jakirkham",
     "jjhelmus",
     "msarahan",
@@ -210,6 +555,90 @@
       "test -f ${PREFIX}/lib/libssl.a"
      ]
     }
+   },
+   {
+    "build":{
+     "no_link":"lib/libcrypto.so.1.1",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
+   },
+   {
+    "build":{
+     "no_link":"lib/libcrypto.so.1.1",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
    }
   ],
   "package":{
@@ -225,12 +654,20 @@
     "perl",
     "c_compiler_stub",
     "make",
+    "perl",
+    "c_compiler_stub",
+    "make",
+    "perl",
+    "c_compiler_stub",
+    "make",
     "perl"
    ],
    "host":null
   },
   "source":{
    "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch",
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch",
     "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch",
     "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch",
     "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
@@ -241,6 +678,117 @@
  },
  "name":"openssl_split",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/openssl/openssl",
+   "doc_url":"https://www.openssl.org/docs/man1.1.1/",
+   "home":"http://www.openssl.org/",
+   "license":"OpenSSL",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"OpenSSL is an open-source implementation of the SSL and TLS protocols"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "no_link":"lib/libcrypto.1.1.dylib",
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "perl"
+     ],
+     "host":null,
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.sh",
+    "test":{
+     "commands":[
+      "touch checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   },
+   {
+    "name":"libopenssl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ]
+    },
+    "script":"install_libopenssl-static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libcrypto.a",
+      "test -f ${PREFIX}/lib/libssl.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openssl_split",
+   "version":"1.1.1g"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
+   ],
+   "sha256":"ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+   "url":"http://www.openssl.org/source/openssl-1.1.1g.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ca-certificates"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "libopenssl-static",
   "openssl"
@@ -314,5 +862,104 @@
   }
  },
  "url":"http://www.openssl.org/source/openssl-1.1.1c.tar.gz",
- "version":"1.1.1g"
+ "version":"1.1.1g",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/openssl/openssl",
+   "doc_url":"https://www.openssl.org/docs/man1.1.1/",
+   "home":"http://www.openssl.org/",
+   "license":"OpenSSL",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"OpenSSL is an open-source implementation of the SSL and TLS protocols"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "ocefpaf",
+    "pelson",
+    "carlodri"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "openssl"
+     ]
+    },
+    "name":"openssl",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "perl"
+     ],
+     "run":[
+      "ca-certificates"
+     ]
+    },
+    "script":"install_openssl.bat",
+    "test":{
+     "commands":[
+      "copy NUL checksum.txt",
+      "openssl sha256 checksum.txt"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"openssl_split",
+   "version":"1.1.1g"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "nasm"
+   ],
+   "host":[
+    "perl"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Don-t-use-USE_BCRYPTGENRANDOM-for-VS-older-than-2015.patch"
+   ],
+   "sha256":"ddb04774f1e32f0c49751e21b67216ac87852ceb056b75209af2443400636d46",
+   "url":"http://www.openssl.org/source/openssl-1.1.1g.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "nasm"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "perl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ca-certificates"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

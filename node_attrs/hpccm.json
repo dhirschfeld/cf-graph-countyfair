@@ -320,6 +320,85 @@
  },
  "feedstock_name":"hpccm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/NVIDIA/hpc-container-maker",
+   "doc_url":"https://github.com/NVIDIA/hpc-container-maker/tree/master/docs",
+   "home":"https://github.com/NVIDIA/hpc-container-maker",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"HPC Container Maker"
+  },
+  "build":{
+   "entry_points":[
+    "hpccm=hpccm.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"hpccm",
+   "version":"20.6.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.4",
+    "six"
+   ],
+   "run":[
+    "python >=3.4",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"e5e6b1d6553165b2a1a5766abf1a405e4b207cc77aa012e092b106975b821e16",
+   "url":"https://pypi.io/packages/source/h/hpccm/hpccm-20.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hpccm --help"
+   ],
+   "imports":[
+    "hpccm",
+    "hpccm.building_blocks",
+    "hpccm.primitives",
+    "hpccm.templates"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/NVIDIA/hpc-container-maker",
@@ -406,6 +485,85 @@
   "20.6.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/NVIDIA/hpc-container-maker",
+   "doc_url":"https://github.com/NVIDIA/hpc-container-maker/tree/master/docs",
+   "home":"https://github.com/NVIDIA/hpc-container-maker",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"HPC Container Maker"
+  },
+  "build":{
+   "entry_points":[
+    "hpccm=hpccm.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"hpccm",
+   "version":"20.6.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.4",
+    "six"
+   ],
+   "run":[
+    "python >=3.4",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"e5e6b1d6553165b2a1a5766abf1a405e4b207cc77aa012e092b106975b821e16",
+   "url":"https://pypi.io/packages/source/h/hpccm/hpccm-20.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hpccm --help"
+   ],
+   "imports":[
+    "hpccm",
+    "hpccm.building_blocks",
+    "hpccm.primitives",
+    "hpccm.templates"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"hpccm\" %}\n{% set version = \"20.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e5e6b1d6553165b2a1a5766abf1a405e4b207cc77aa012e092b106975b821e16\n\nbuild:\n  number: 0\n  entry_points:\n    - hpccm=hpccm.cli:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.4\n    - six\n  run:\n    - python >=3.4\n    - six\n\ntest:\n  imports:\n    - hpccm\n    - hpccm.building_blocks\n    - hpccm.primitives\n    - hpccm.templates\n  commands:\n    - hpccm --help\n\nabout:\n  home: https://github.com/NVIDIA/hpc-container-maker\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: HPC Container Maker\n  doc_url: https://github.com/NVIDIA/hpc-container-maker/tree/master/docs\n  dev_url: https://github.com/NVIDIA/hpc-container-maker\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
@@ -469,5 +627,84 @@
   }
  },
  "url":"https://pypi.io/packages/source/h/hpccm/hpccm-19.8.0.tar.gz",
- "version":"20.6.0"
+ "version":"20.6.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/NVIDIA/hpc-container-maker",
+   "doc_url":"https://github.com/NVIDIA/hpc-container-maker/tree/master/docs",
+   "home":"https://github.com/NVIDIA/hpc-container-maker",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"HPC Container Maker"
+  },
+  "build":{
+   "entry_points":[
+    "hpccm=hpccm.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"hpccm",
+   "version":"20.6.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.4",
+    "six"
+   ],
+   "run":[
+    "python >=3.4",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"e5e6b1d6553165b2a1a5766abf1a405e4b207cc77aa012e092b106975b821e16",
+   "url":"https://pypi.io/packages/source/h/hpccm/hpccm-20.6.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hpccm --help"
+   ],
+   "imports":[
+    "hpccm",
+    "hpccm.building_blocks",
+    "hpccm.primitives",
+    "hpccm.templates"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

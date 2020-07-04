@@ -131,6 +131,94 @@
  },
  "feedstock_name":"ipyvolume",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/maartenbreddels/ipyvolume",
+   "doc_url":"https://ipyvolume.readthedocs.io/",
+   "home":"https://github.com/maartenbreddels/ipyvolume",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"IPython widget for rendering 3d volumes in the Jupter notebook"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "maartenbreddels"
+   ]
+  },
+  "package":{
+   "name":"ipyvolume",
+   "version":"0.6.0a6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "traittypes",
+    "traitlets",
+    "ipywidgets >=7.4",
+    "pillow >5.2",
+    "scipy",
+    "numpy",
+    "scikit-image >=0.13",
+    "requests",
+    "ipywebrtc >=0.4",
+    "pythreejs >=1.0",
+    "bqplot >=0.12"
+   ]
+  },
+  "source":{
+   "sha256":"1a71c681dd39b514db966c4812bbbd1347ce082ee7a7bcc53f494e0546bf37ff",
+   "url":"https://pypi.io/packages/source/i/ipyvolume/ipyvolume-0.6.0a6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ipyvolume"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bqplot",
+    "ipywebrtc",
+    "ipywidgets",
+    "numpy",
+    "pillow",
+    "python",
+    "pythreejs",
+    "requests",
+    "scikit-image",
+    "scipy",
+    "traitlets",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/maartenbreddels/ipyvolume",
@@ -219,6 +307,94 @@
  },
  "name":"ipyvolume",
  "new_version":"0.5.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/maartenbreddels/ipyvolume",
+   "doc_url":"https://ipyvolume.readthedocs.io/",
+   "home":"https://github.com/maartenbreddels/ipyvolume",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"IPython widget for rendering 3d volumes in the Jupter notebook"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "maartenbreddels"
+   ]
+  },
+  "package":{
+   "name":"ipyvolume",
+   "version":"0.6.0a6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "traittypes",
+    "traitlets",
+    "ipywidgets >=7.4",
+    "pillow >5.2",
+    "scipy",
+    "numpy",
+    "scikit-image >=0.13",
+    "requests",
+    "ipywebrtc >=0.4",
+    "pythreejs >=1.0",
+    "bqplot >=0.12"
+   ]
+  },
+  "source":{
+   "sha256":"1a71c681dd39b514db966c4812bbbd1347ce082ee7a7bcc53f494e0546bf37ff",
+   "url":"https://pypi.io/packages/source/i/ipyvolume/ipyvolume-0.6.0a6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ipyvolume"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bqplot",
+    "ipywebrtc",
+    "ipywidgets",
+    "numpy",
+    "pillow",
+    "python",
+    "pythreejs",
+    "requests",
+    "scikit-image",
+    "scipy",
+    "traitlets",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.11.01",
  "raw_meta_yaml":"{% set name = \"ipyvolume\" %}\n{% set version = \"0.6.0a6\" %}\n{% set sha256 = \"1a71c681dd39b514db966c4812bbbd1347ce082ee7a7bcc53f494e0546bf37ff\" %}\n\n\npackage:\n  name: ipyvolume\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ipyvolume/ipyvolume-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  noarch: python\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - traittypes\n    - traitlets\n    - ipywidgets >=7.4\n    # We need constraints pillow version on Windows, but due to noarch will require it for all os\n    # as it seems to trigger some DLL errors. See\n    # here for more informations:\n    #   - https://github.com/conda-forge/ipyvolume-feedstock/pull/28\n    #   - https://github.com/maartenbreddels/ipyvolume/issues/208#issuecomment-442877181\n    #   - https://github.com/conda-forge/pillow-feedstock/issues/45\n    - pillow >5.2\n    - scipy\n    - numpy\n    - scikit-image >=0.13\n    - requests\n    - ipywebrtc >=0.4\n    - pythreejs >=1.0\n    - bqplot >=0.12\n\ntest:\n  imports:\n    - ipyvolume\n\nabout:\n  home: https://github.com/maartenbreddels/ipyvolume\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'IPython widget for rendering 3d volumes in the Jupter notebook'\n  doc_url: https://ipyvolume.readthedocs.io/\n  dev_url: https://github.com/maartenbreddels/ipyvolume\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "req":{
@@ -310,5 +486,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/i/ipyvolume/ipyvolume-0.5.2.tar.gz",
- "version":"0.6.0a6"
+ "version":"0.6.0a6",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/maartenbreddels/ipyvolume",
+   "doc_url":"https://ipyvolume.readthedocs.io/",
+   "home":"https://github.com/maartenbreddels/ipyvolume",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"IPython widget for rendering 3d volumes in the Jupter notebook"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "maartenbreddels"
+   ]
+  },
+  "package":{
+   "name":"ipyvolume",
+   "version":"0.6.0a6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "traittypes",
+    "traitlets",
+    "ipywidgets >=7.4",
+    "pillow >5.2",
+    "scipy",
+    "numpy",
+    "scikit-image >=0.13",
+    "requests",
+    "ipywebrtc >=0.4",
+    "pythreejs >=1.0",
+    "bqplot >=0.12"
+   ]
+  },
+  "source":{
+   "sha256":"1a71c681dd39b514db966c4812bbbd1347ce082ee7a7bcc53f494e0546bf37ff",
+   "url":"https://pypi.io/packages/source/i/ipyvolume/ipyvolume-0.6.0a6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ipyvolume"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bqplot",
+    "ipywebrtc",
+    "ipywidgets",
+    "numpy",
+    "pillow",
+    "python",
+    "pythreejs",
+    "requests",
+    "scikit-image",
+    "scipy",
+    "traitlets",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

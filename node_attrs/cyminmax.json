@@ -80,6 +80,95 @@
  },
  "feedstock_name":"cyminmax",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jakirkham/cyminmax",
+   "doc_url":"https://cyminmax.readthedocs.io/",
+   "home":"https://github.com/jakirkham/cyminmax",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"A minmax implementation in Cython for use with NumPy"
+  },
+  "build":{
+   "number":"1001",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"cyminmax",
+   "version":"0.1.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=18.0",
+    "cython >=0.25.2",
+    "numpy >=1.11.3,<1.12"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"cyminmax-0.1.1.tar.gz",
+   "sha256":"cb448c88499a394a15fd24d9344115bd806dfc8d28a1981d5e1626094dbbc40b",
+   "url":"https://pypi.io/packages/source/c/cyminmax/cyminmax-0.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest"
+   ],
+   "imports":[
+    "cyminmax"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jakirkham/cyminmax",
@@ -166,6 +255,95 @@
  },
  "name":"cyminmax",
  "new_version":"0.1.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jakirkham/cyminmax",
+   "doc_url":"https://cyminmax.readthedocs.io/",
+   "home":"https://github.com/jakirkham/cyminmax",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"A minmax implementation in Cython for use with NumPy"
+  },
+  "build":{
+   "number":"1001",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"cyminmax",
+   "version":"0.1.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=18.0",
+    "cython >=0.25.2",
+    "numpy >=1.11.3,<1.12"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"cyminmax-0.1.1.tar.gz",
+   "sha256":"cb448c88499a394a15fd24d9344115bd806dfc8d28a1981d5e1626094dbbc40b",
+   "url":"https://pypi.io/packages/source/c/cyminmax/cyminmax-0.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest"
+   ],
+   "imports":[
+    "cyminmax"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set name = \"cyminmax\" %}\n{% set version = \"0.1.1\" %}\n{% set checksum = \"cb448c88499a394a15fd24d9344115bd806dfc8d28a1981d5e1626094dbbc40b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 1001\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools >=18.0\n    - cython >=0.25.2\n    - numpy >=1.11.3,<1.12\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - cyminmax\n\n  requires:\n    - pytest\n\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/jakirkham/cyminmax\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: A minmax implementation in Cython for use with NumPy\n  doc_url: https://cyminmax.readthedocs.io/\n  dev_url: https://github.com/jakirkham/cyminmax\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{
@@ -244,5 +422,94 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cyminmax/cyminmax-0.1.1.tar.gz",
- "version":"0.1.1"
+ "version":"0.1.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jakirkham/cyminmax",
+   "doc_url":"https://cyminmax.readthedocs.io/",
+   "home":"https://github.com/jakirkham/cyminmax",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"A minmax implementation in Cython for use with NumPy"
+  },
+  "build":{
+   "number":"1001",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"cyminmax",
+   "version":"0.1.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=18.0",
+    "cython >=0.25.2",
+    "numpy >=1.11.3,<1.12"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"cyminmax-0.1.1.tar.gz",
+   "sha256":"cb448c88499a394a15fd24d9344115bd806dfc8d28a1981d5e1626094dbbc40b",
+   "url":"https://pypi.io/packages/source/c/cyminmax/cyminmax-0.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest"
+   ],
+   "imports":[
+    "cyminmax"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

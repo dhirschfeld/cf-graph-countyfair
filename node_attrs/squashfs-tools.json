@@ -76,6 +76,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"squashfs-tools",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Squashfs is a highly compressed read-only filesystem for Linux.\nIt uses either gzip/xz/lzo/lz4 compression to compress both files, inodes\nand directories.  Inodes in the system are very small and all blocks are\npacked to minimise data overhead. Block sizes greater than 4K are supported\nup to a maximum of 1Mbytes (default block size 128K).\n",
+   "home":"https://sourceforge.net/projects/squashfs/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Tools for creating and unpacking squashfs filesystems"
+  },
+  "build":{
+   "number":"1004",
+   "script":[
+    "cd squashfs-tools",
+    "make -j${CPU_COUNT} install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "mingwandroid"
+   ]
+  },
+  "package":{
+   "name":"squashfs-tools",
+   "version":"4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-modern-compression.diff",
+    "pr3.patch"
+   ],
+   "sha256":"0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6",
+   "url":"https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mksquashfs ${RECIPE_DIR} recipe.fs",
+    "unsquashfs recipe.fs"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Squashfs is a highly compressed read-only filesystem for Linux.\nIt uses either gzip/xz/lzo/lz4 compression to compress both files, inodes\nand directories.  Inodes in the system are very small and all blocks are\npacked to minimise data overhead. Block sizes greater than 4K are supported\nup to a maximum of 1Mbytes (default block size 128K).\n",
@@ -160,6 +239,85 @@
  },
  "name":"squashfs-tools",
  "new_version":"4.4",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Squashfs is a highly compressed read-only filesystem for Linux.\nIt uses either gzip/xz/lzo/lz4 compression to compress both files, inodes\nand directories.  Inodes in the system are very small and all blocks are\npacked to minimise data overhead. Block sizes greater than 4K are supported\nup to a maximum of 1Mbytes (default block size 128K).\n",
+   "home":"https://sourceforge.net/projects/squashfs/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Tools for creating and unpacking squashfs filesystems"
+  },
+  "build":{
+   "number":"1004",
+   "script":[
+    "cd squashfs-tools",
+    "make -j${CPU_COUNT} install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "mingwandroid"
+   ]
+  },
+  "package":{
+   "name":"squashfs-tools",
+   "version":"4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-modern-compression.diff",
+    "pr3.patch"
+   ],
+   "sha256":"0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6",
+   "url":"https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mksquashfs ${RECIPE_DIR} recipe.fs",
+    "unsquashfs recipe.fs"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.09",
  "raw_meta_yaml":"{% set name = \"squashfs-tools\" %}\n{% set version = \"4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs{{ version }}/squashfs{{ version }}.tar.gz\n  sha256: 0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6\n  patches:\n    - 0001-modern-compression.diff\n    # Required for macOS support\n    # In 4.4 https://github.com/plougher/squashfs-tools/pull/69 is used by homebrew but might only support 10.13+\n    - pr3.patch\n\nbuild:\n  skip: True  # [not unix]\n  number: 1004\n  script:\n    - cd squashfs-tools\n    - make -j${CPU_COUNT} install\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n  host:\n    - lz4-c\n    - lzo\n    - xz\n    - zlib\n\ntest:\n  commands:\n    - mksquashfs ${RECIPE_DIR} recipe.fs\n    - unsquashfs recipe.fs\n\nabout:\n  home: https://sourceforge.net/projects/squashfs/\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Tools for creating and unpacking squashfs filesystems'\n\n  description: |\n    Squashfs is a highly compressed read-only filesystem for Linux.\n    It uses either gzip/xz/lzo/lz4 compression to compress both files, inodes\n    and directories.  Inodes in the system are very small and all blocks are\n    packed to minimise data overhead. Block sizes greater than 4K are supported\n    up to a maximum of 1Mbytes (default block size 128K).\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - mingwandroid\n",
  "req":{
@@ -228,5 +386,85 @@
   }
  },
  "url":"https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz",
- "version":"4.3"
+ "version":"4.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Squashfs is a highly compressed read-only filesystem for Linux.\nIt uses either gzip/xz/lzo/lz4 compression to compress both files, inodes\nand directories.  Inodes in the system are very small and all blocks are\npacked to minimise data overhead. Block sizes greater than 4K are supported\nup to a maximum of 1Mbytes (default block size 128K).\n",
+   "home":"https://sourceforge.net/projects/squashfs/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Tools for creating and unpacking squashfs filesystems"
+  },
+  "build":{
+   "number":"1004",
+   "script":[
+    "cd squashfs-tools",
+    "make -j${CPU_COUNT} install"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "mingwandroid"
+   ]
+  },
+  "package":{
+   "name":"squashfs-tools",
+   "version":"4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-modern-compression.diff",
+    "pr3.patch"
+   ],
+   "sha256":"0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6",
+   "url":"https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mksquashfs ${RECIPE_DIR} recipe.fs",
+    "unsquashfs recipe.fs"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "lz4-c",
+    "lzo",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

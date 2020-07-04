@@ -66,6 +66,79 @@
  },
  "feedstock_name":"r-ccremover",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ccRemover",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Implements a method for identifying and removing the cell-cycle effect from scRNA-Seq data. The description of the  method is in Barron M. and Li J. (2016) <doi"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-ccremover",
+   "version":"1.0.4"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"ccRemover_1.0.4.tar.gz",
+   "sha256":"26158d005a807567782e92c2104deeacec44e2410914d3f8c2e77928fa06edda",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ccRemover_1.0.4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ccRemover/ccRemover_1.0.4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ccRemover')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=ccRemover",
@@ -143,6 +216,79 @@
  },
  "name":"r-ccremover",
  "new_version":"1.0.4",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ccRemover",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Implements a method for identifying and removing the cell-cycle effect from scRNA-Seq data. The description of the  method is in Barron M. and Li J. (2016) <doi"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-ccremover",
+   "version":"1.0.4"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"ccRemover_1.0.4.tar.gz",
+   "sha256":"26158d005a807567782e92c2104deeacec44e2410914d3f8c2e77928fa06edda",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ccRemover_1.0.4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ccRemover/ccRemover_1.0.4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ccRemover')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"{% set version = '1.0.4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ccremover\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ccRemover_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ccRemover_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ccRemover/ccRemover_{{ version }}.tar.gz\n  sha256: 26158d005a807567782e92c2104deeacec44e2410914d3f8c2e77928fa06edda\n\nbuild:\n  noarch: generic\n  number: 1002\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('ccRemover')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ccRemover')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=ccRemover\n  license: GPL-3\n  summary: Implements a method for identifying and removing the cell-cycle effect from scRNA-Seq\n    data. The description of the  method is in Barron M. and Li J. (2016) <doi\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "req":{
@@ -205,5 +351,78 @@
   "https://cran.r-project.org/src/contrib/ccRemover_1.0.4.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/ccRemover/ccRemover_1.0.4.tar.gz"
  ],
- "version":"1.0.4"
+ "version":"1.0.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ccRemover",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Implements a method for identifying and removing the cell-cycle effect from scRNA-Seq data. The description of the  method is in Barron M. and Li J. (2016) <doi"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-ccremover",
+   "version":"1.0.4"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"ccRemover_1.0.4.tar.gz",
+   "sha256":"26158d005a807567782e92c2104deeacec44e2410914d3f8c2e77928fa06edda",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ccRemover_1.0.4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ccRemover/ccRemover_1.0.4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('ccRemover')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

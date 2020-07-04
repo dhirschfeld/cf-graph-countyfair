@@ -259,6 +259,86 @@
  "conda-forge.yml":{},
  "feedstock_name":"vertica-python",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/uber/vertica-python/",
+   "home":"https://github.com/uber/vertica-python/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A native Python client for the Vertica database."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"vertica-python",
+   "version":"0.10.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-dateutil >=1.5",
+    "pytz",
+    "future",
+    "six >=1.10.0",
+    "psycopg2 >=2.5.1"
+   ]
+  },
+  "source":{
+   "sha256":"92a5e72c4482c0c376e57495d040993617d8704d1c5d1095ffd984effbafd0a5",
+   "url":"https://pypi.org/packages/source/v/vertica-python/vertica-python-0.10.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "vertica_python",
+    "vertica_python.tests",
+    "vertica_python.vertica",
+    "vertica_python.vertica.messages",
+    "vertica_python.vertica.messages.backend_messages",
+    "vertica_python.vertica.messages.frontend_messages"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "psycopg2",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/uber/vertica-python/",
@@ -347,6 +427,86 @@
   "0.10.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/uber/vertica-python/",
+   "home":"https://github.com/uber/vertica-python/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A native Python client for the Vertica database."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"vertica-python",
+   "version":"0.10.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-dateutil >=1.5",
+    "pytz",
+    "future",
+    "six >=1.10.0",
+    "psycopg2 >=2.5.1"
+   ]
+  },
+  "source":{
+   "sha256":"92a5e72c4482c0c376e57495d040993617d8704d1c5d1095ffd984effbafd0a5",
+   "url":"https://pypi.org/packages/source/v/vertica-python/vertica-python-0.10.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "vertica_python",
+    "vertica_python.tests",
+    "vertica_python.vertica",
+    "vertica_python.vertica.messages",
+    "vertica_python.vertica.messages.backend_messages",
+    "vertica_python.vertica.messages.frontend_messages"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "psycopg2",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"vertica-python\" %}\n{% set version = \"0.10.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"92a5e72c4482c0c376e57495d040993617d8704d1c5d1095ffd984effbafd0a5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - python-dateutil >=1.5\n    - pytz\n    - future\n    - six >=1.10.0\n    - psycopg2 >=2.5.1\n\ntest:\n  imports:\n    - vertica_python\n    - vertica_python.tests\n    - vertica_python.vertica\n    - vertica_python.vertica.messages\n    - vertica_python.vertica.messages.backend_messages\n    - vertica_python.vertica.messages.frontend_messages\n\nabout:\n  home: https://github.com/uber/vertica-python/\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: A native Python client for the Vertica database.\n  dev_url: https://github.com/uber/vertica-python/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "req":{
@@ -420,5 +580,85 @@
   }
  },
  "url":"https://pypi.org/packages/source/v/vertica-python/vertica-python-0.9.4.tar.gz",
- "version":"0.10.1"
+ "version":"0.10.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/uber/vertica-python/",
+   "home":"https://github.com/uber/vertica-python/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A native Python client for the Vertica database."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"vertica-python",
+   "version":"0.10.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-dateutil >=1.5",
+    "pytz",
+    "future",
+    "six >=1.10.0",
+    "psycopg2 >=2.5.1"
+   ]
+  },
+  "source":{
+   "sha256":"92a5e72c4482c0c376e57495d040993617d8704d1c5d1095ffd984effbafd0a5",
+   "url":"https://pypi.org/packages/source/v/vertica-python/vertica-python-0.10.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "vertica_python",
+    "vertica_python.tests",
+    "vertica_python.vertica",
+    "vertica_python.vertica.messages",
+    "vertica_python.vertica.messages.backend_messages",
+    "vertica_python.vertica.messages.frontend_messages"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "psycopg2",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

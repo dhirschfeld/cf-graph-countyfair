@@ -603,6 +603,86 @@
  },
  "feedstock_name":"newrelic",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "home":"http://newrelic.com/docs/python/new-relic-for-python",
+   "license":"New Relic",
+   "license_file":"newrelic/LICENSE",
+   "summary":"New Relic Python Agent"
+  },
+  "build":{
+   "entry_points":[
+    "newrelic-admin = newrelic.admin:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"newrelic",
+   "version":"5.14.1.144"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"340ebcdb0dd08bfb597c71598d6d8f746a93f7e4921f10b3616c9142c608a14d",
+   "url":"https://pypi.io/packages/source/n/newrelic/newrelic-5.14.1.144.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "newrelic-admin help",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "newrelic"
+   ],
+   "requires":[
+    "python"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
@@ -681,6 +761,87 @@
   "5.14.1.144":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "home":"http://newrelic.com/docs/python/new-relic-for-python",
+   "license":"New Relic",
+   "license_file":"newrelic/LICENSE",
+   "summary":"New Relic Python Agent"
+  },
+  "build":{
+   "entry_points":[
+    "newrelic-admin = newrelic.admin:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"newrelic",
+   "version":"5.14.1.144"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"340ebcdb0dd08bfb597c71598d6d8f746a93f7e4921f10b3616c9142c608a14d",
+   "url":"https://pypi.io/packages/source/n/newrelic/newrelic-5.14.1.144.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "newrelic-admin help",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "newrelic"
+   ],
+   "requires":[
+    "python"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"newrelic\" %}\n{% set version = \"5.14.1.144\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 340ebcdb0dd08bfb597c71598d6d8f746a93f7e4921f10b3616c9142c608a14d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - newrelic-admin = newrelic.admin:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  requires:\n    - python\n  imports:\n    - newrelic\n  commands:\n    - newrelic-admin help  # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://newrelic.com/docs/python/new-relic-for-python\n  license: New Relic\n  license_file: newrelic/LICENSE\n  summary: New Relic Python Agent\n  description: |\n    The newrelic package instruments your application for performance\n    monitoring and advanced performance analytics with New Relic.\n\n    Pinpoint and solve Python application performance issues down to the line\n    of code. New Relic APM is the only tool you\u2019ll need to see everything in\n    your Python application, from the end user experience to server monitoring.\n    Trace problems down to slow database queries, slow 3rd party APIs and web\n    services, caching layers, and more. Monitor your app in a production\n    environment and make sure your app can stand a big spike in traffic by\n    running scalability reports.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
@@ -748,5 +909,82 @@
   }
  },
  "url":"https://pypi.io/packages/source/n/newrelic/newrelic-5.0.2.126.tar.gz",
- "version":"5.14.1.144"
+ "version":"5.14.1.144",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The newrelic package instruments your application for performance\nmonitoring and advanced performance analytics with New Relic.\n\nPinpoint and solve Python application performance issues down to the line\nof code. New Relic APM is the only tool you\u2019ll need to see everything in\nyour Python application, from the end user experience to server monitoring.\nTrace problems down to slow database queries, slow 3rd party APIs and web\nservices, caching layers, and more. Monitor your app in a production\nenvironment and make sure your app can stand a big spike in traffic by\nrunning scalability reports.\n",
+   "home":"http://newrelic.com/docs/python/new-relic-for-python",
+   "license":"New Relic",
+   "license_file":"newrelic/LICENSE",
+   "summary":"New Relic Python Agent"
+  },
+  "build":{
+   "entry_points":[
+    "newrelic-admin = newrelic.admin:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"newrelic",
+   "version":"5.14.1.144"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"340ebcdb0dd08bfb597c71598d6d8f746a93f7e4921f10b3616c9142c608a14d",
+   "url":"https://pypi.io/packages/source/n/newrelic/newrelic-5.14.1.144.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "newrelic"
+   ],
+   "requires":[
+    "python"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ }
 }

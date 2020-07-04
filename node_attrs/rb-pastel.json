@@ -23,6 +23,80 @@
  "conda-forge.yml":{},
  "feedstock_name":"rb-pastel",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/piotrmurach/pastel",
+   "doc_url":"https://www.rubydoc.info/gems/pastel",
+   "home":"https://rubygems.org/gems/pastel",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"pastel-0.7.3/LICENSE.txt",
+   "summary":"Terminal output styling with intuitive and clean API that does not monkey patch String class."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "script":[
+    "gem install --norc -l -V --ignore-dependencies pastel-0.7.3.gem && gem unpack pastel-0.7.3.gem"
+   ],
+   "skip":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "rluria14",
+    "adbeda",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"rb-pastel",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "ruby"
+   ],
+   "run":[
+    "ruby",
+    "rb-equatable >=0.6,<1",
+    "rb-tty-color >=0.5,<1"
+   ]
+  },
+  "source":{
+   "sha256":"f577708463313119d2f7303eefb24217879d188e94f2eea8a19373fdcee48354",
+   "url":"https://rubygems.org/downloads/pastel-0.7.3.gem"
+  },
+  "test":{
+   "commands":[
+    "ruby -r pastel -e 'exit 0'"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ruby"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "rb-equatable",
+    "rb-tty-color",
+    "ruby"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/piotrmurach/pastel",
@@ -99,6 +173,80 @@
   "0.7.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/piotrmurach/pastel",
+   "doc_url":"https://www.rubydoc.info/gems/pastel",
+   "home":"https://rubygems.org/gems/pastel",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"pastel-0.7.3/LICENSE.txt",
+   "summary":"Terminal output styling with intuitive and clean API that does not monkey patch String class."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "script":[
+    "gem install --norc -l -V --ignore-dependencies pastel-0.7.3.gem && gem unpack pastel-0.7.3.gem"
+   ],
+   "skip":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "rluria14",
+    "adbeda",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"rb-pastel",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "ruby"
+   ],
+   "run":[
+    "ruby",
+    "rb-equatable >=0.6,<1",
+    "rb-tty-color >=0.5,<1"
+   ]
+  },
+  "source":{
+   "sha256":"f577708463313119d2f7303eefb24217879d188e94f2eea8a19373fdcee48354",
+   "url":"https://rubygems.org/downloads/pastel-0.7.3.gem"
+  },
+  "test":{
+   "commands":[
+    "ruby -r pastel -e 'exit 0'"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ruby"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "rb-equatable",
+    "rb-tty-color",
+    "ruby"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"{% set name = \"pastel\" %}\n{% set version = \"0.7.3\" %}\n\npackage:\n  name: rb-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem\n  sha256: f577708463313119d2f7303eefb24217879d188e94f2eea8a19373fdcee48354\n\nbuild:\n  noarch: generic\n  number: 1\n  script:\n    - gem install --norc -l -V --ignore-dependencies {{ name }}-{{ version }}.gem\n      && gem unpack {{ name }}-{{ version }}.gem\n  skip: {{ win }}\n\nrequirements:\n  host:\n    - ruby\n  run:\n    - ruby\n    - rb-equatable >=0.6,<1\n    - rb-tty-color >=0.5,<1\n\ntest:\n  commands:\n    - ruby -r {{ name }} -e 'exit 0'\n\nabout:\n  home: https://rubygems.org/gems/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: {{ name }}-{{ version }}/LICENSE.txt\n  summary: 'Terminal output styling with intuitive and clean API that does not monkey patch String class.'\n  doc_url: https://www.rubydoc.info/gems/{{ name }}\n  dev_url: https://github.com/piotrmurach/pastel\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - rluria14\n    - adbeda\n    - oblute\n",
  "req":{
@@ -160,5 +308,79 @@
   }
  },
  "url":"https://rubygems.org/downloads/pastel-0.7.3.gem",
- "version":"0.7.3"
+ "version":"0.7.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/piotrmurach/pastel",
+   "doc_url":"https://www.rubydoc.info/gems/pastel",
+   "home":"https://rubygems.org/gems/pastel",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"pastel-0.7.3/LICENSE.txt",
+   "summary":"Terminal output styling with intuitive and clean API that does not monkey patch String class."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "script":[
+    "gem install --norc -l -V --ignore-dependencies pastel-0.7.3.gem && gem unpack pastel-0.7.3.gem"
+   ],
+   "skip":null
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "rluria14",
+    "adbeda",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"rb-pastel",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "ruby"
+   ],
+   "run":[
+    "ruby",
+    "rb-equatable >=0.6,<1",
+    "rb-tty-color >=0.5,<1"
+   ]
+  },
+  "source":{
+   "sha256":"f577708463313119d2f7303eefb24217879d188e94f2eea8a19373fdcee48354",
+   "url":"https://rubygems.org/downloads/pastel-0.7.3.gem"
+  },
+  "test":{
+   "commands":[
+    "ruby -r pastel -e 'exit 0'"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ruby"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "rb-equatable",
+    "rb-tty-color",
+    "ruby"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

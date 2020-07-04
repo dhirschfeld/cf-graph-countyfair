@@ -74,6 +74,90 @@
  "conda-forge.yml":{},
  "feedstock_name":"dtool_http",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jic-dtool/dtool-http",
+   "home":"http://github.com/jic-dtool/dtool-http",
+   "license":"MIT",
+   "license_file":"LICENSE.rst",
+   "summary":"HTTP support to dtool for read only access to datasets"
+  },
+  "build":{
+   "entry_points":[
+    "dtool_serve_directory = dtool_http.server:cli",
+    "dtool_publish_dataset = dtool_http.publish:cli"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "preserve_egg_dir":true,
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"dtool_http",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "setuptools",
+    "dtoolcore",
+    "requests"
+   ]
+  },
+  "source":{
+   "sha256":"1088000e4f0f6300badec8597027540973a7353df4fdb6bfeccb602dce251cea",
+   "url":"https://github.com/jic-dtool/dtool-http/archive/0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "dtool_serve_directory --help",
+    "dtool_publish_dataset --help"
+   ],
+   "imports":[
+    "dtool_http",
+    "dtool_http.server",
+    "dtool_http.publish",
+    "dtool_http.storagebroker"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "dtoolcore",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jic-dtool/dtool-http",
@@ -165,6 +249,90 @@
  },
  "name":"dtool_http",
  "new_version":"0.5.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jic-dtool/dtool-http",
+   "home":"http://github.com/jic-dtool/dtool-http",
+   "license":"MIT",
+   "license_file":"LICENSE.rst",
+   "summary":"HTTP support to dtool for read only access to datasets"
+  },
+  "build":{
+   "entry_points":[
+    "dtool_serve_directory = dtool_http.server:cli",
+    "dtool_publish_dataset = dtool_http.publish:cli"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "preserve_egg_dir":true,
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"dtool_http",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "setuptools",
+    "dtoolcore",
+    "requests"
+   ]
+  },
+  "source":{
+   "sha256":"1088000e4f0f6300badec8597027540973a7353df4fdb6bfeccb602dce251cea",
+   "url":"https://github.com/jic-dtool/dtool-http/archive/0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "dtool_serve_directory --help",
+    "dtool_publish_dataset --help"
+   ],
+   "imports":[
+    "dtool_http",
+    "dtool_http.server",
+    "dtool_http.publish",
+    "dtool_http.storagebroker"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "dtoolcore",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"dtool_http\" %}\n{% set reponame = \"dtool-http\" %}\n{% set author = \"jic-dtool\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"1088000e4f0f6300badec8597027540973a7353df4fdb6bfeccb602dce251cea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/{{ author }}/{{ reponame }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - dtool_serve_directory = dtool_http.server:cli\n    - dtool_publish_dataset = dtool_http.publish:cli\n  preserve_egg_dir: true\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - click\n    - setuptools\n    - dtoolcore\n    - requests\n\ntest:\n  imports:\n    - dtool_http\n    - dtool_http.server\n    - dtool_http.publish\n    - dtool_http.storagebroker\n  commands:\n    - dtool_serve_directory --help\n    - dtool_publish_dataset --help\n\nabout:\n  home: http://github.com/{{ author }}/{{ reponame }}\n  license: MIT\n  license_file: LICENSE.rst\n  summary: HTTP support to dtool for read only access to datasets\n\n  dev_url: https://github.com/{{ author }}/{{ reponame }}\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
  "req":{
@@ -235,5 +403,89 @@
   }
  },
  "url":"https://github.com/jic-dtool/dtool-http/archive/0.2.1.tar.gz",
- "version":"0.5.0"
+ "version":"0.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jic-dtool/dtool-http",
+   "home":"http://github.com/jic-dtool/dtool-http",
+   "license":"MIT",
+   "license_file":"LICENSE.rst",
+   "summary":"HTTP support to dtool for read only access to datasets"
+  },
+  "build":{
+   "entry_points":[
+    "dtool_serve_directory = dtool_http.server:cli",
+    "dtool_publish_dataset = dtool_http.publish:cli"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "preserve_egg_dir":true,
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"dtool_http",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "setuptools",
+    "dtoolcore",
+    "requests"
+   ]
+  },
+  "source":{
+   "sha256":"1088000e4f0f6300badec8597027540973a7353df4fdb6bfeccb602dce251cea",
+   "url":"https://github.com/jic-dtool/dtool-http/archive/0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "dtool_serve_directory --help",
+    "dtool_publish_dataset --help"
+   ],
+   "imports":[
+    "dtool_http",
+    "dtool_http.server",
+    "dtool_http.publish",
+    "dtool_http.storagebroker"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "dtoolcore",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

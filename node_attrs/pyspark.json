@@ -209,6 +209,104 @@
  },
  "feedstock_name":"pyspark",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Apache Spark is a fast and general engine for large-scale data processing.",
+   "home":"http://spark.apache.org/",
+   "license":"Apache-2.0",
+   "license_file":"/LICENSE.txt",
+   "summary":"Apache Spark"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "parente",
+    "ericdill",
+    "quasiben",
+    "dbast",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"pyspark",
+   "version":"3.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "numpy >=1.7",
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Disable-symlinks-on-Windows.patch"
+   ],
+   "sha256":"8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f",
+   "url":"https://pypi.io/packages/source/p/pyspark/pyspark-3.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "bash -c \"compgen -c spark && compgen -c pyspark\""
+   ],
+   "imports":[
+    "pyspark",
+    "pyspark.ml",
+    "pyspark.ml.linalg",
+    "pyspark.ml.param",
+    "pyspark.mllib",
+    "pyspark.mllib.linalg",
+    "pyspark.mllib.stat",
+    "pyspark.sql",
+    "pyspark.streaming"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "py4j",
+    "pyarrow",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Apache Spark is a fast and general engine for large-scale data processing.",
@@ -336,6 +434,104 @@
   "3.0.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Apache Spark is a fast and general engine for large-scale data processing.",
+   "home":"http://spark.apache.org/",
+   "license":"Apache-2.0",
+   "license_file":"/LICENSE.txt",
+   "summary":"Apache Spark"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "parente",
+    "ericdill",
+    "quasiben",
+    "dbast",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"pyspark",
+   "version":"3.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "numpy >=1.7",
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Disable-symlinks-on-Windows.patch"
+   ],
+   "sha256":"8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f",
+   "url":"https://pypi.io/packages/source/p/pyspark/pyspark-3.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "bash -c \"compgen -c spark && compgen -c pyspark\""
+   ],
+   "imports":[
+    "pyspark",
+    "pyspark.ml",
+    "pyspark.ml.linalg",
+    "pyspark.ml.param",
+    "pyspark.mllib",
+    "pyspark.mllib.linalg",
+    "pyspark.mllib.stat",
+    "pyspark.sql",
+    "pyspark.streaming"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "py4j",
+    "pyarrow",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"pyspark\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f\n  patches:\n    - 0001-Disable-symlinks-on-Windows.patch\n\nbuild:\n  noarch: python\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - numpy >=1.7\n    - pandas >=0.23.2\n    - py4j ==0.10.9\n    - pyarrow >=0.15.1\n    - python\n\ntest:\n  commands:\n    - pip check\n    - bash -c \"compgen -c spark && compgen -c pyspark\"  # [not win]\n    - where *spark*                                     # [win]\n  imports:\n    - pyspark\n    - pyspark.ml\n    - pyspark.ml.linalg\n    - pyspark.ml.param\n    - pyspark.mllib\n    - pyspark.mllib.linalg\n    - pyspark.mllib.stat\n    - pyspark.sql\n    - pyspark.streaming\n  requires:\n    - pip\n\nabout:\n  home: http://spark.apache.org/\n  license: Apache-2.0\n  # Not yet available in the pypi release\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt\n  summary: Apache Spark\n  description: Apache Spark is a fast and general engine for large-scale data processing.\n\nextra:\n  recipe-maintainers:\n    - parente\n    - ericdill\n    - quasiben\n    - dbast\n    - mariusvniekerk\n",
  "req":{
@@ -413,5 +609,103 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyspark/pyspark-2.4.4.tar.gz",
- "version":"3.0.0"
+ "version":"3.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Apache Spark is a fast and general engine for large-scale data processing.",
+   "home":"http://spark.apache.org/",
+   "license":"Apache-2.0",
+   "license_file":"/LICENSE.txt",
+   "summary":"Apache Spark"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "parente",
+    "ericdill",
+    "quasiben",
+    "dbast",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"pyspark",
+   "version":"3.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "numpy >=1.7",
+    "pandas >=0.23.2",
+    "py4j ==0.10.9",
+    "pyarrow >=0.15.1",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Disable-symlinks-on-Windows.patch"
+   ],
+   "sha256":"8c6e5cc51d91eb8d43e81d0b7093292b5e144ac81445491d5f887d2cf4fe121f",
+   "url":"https://pypi.io/packages/source/p/pyspark/pyspark-3.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "where *spark*"
+   ],
+   "imports":[
+    "pyspark",
+    "pyspark.ml",
+    "pyspark.ml.linalg",
+    "pyspark.ml.param",
+    "pyspark.mllib",
+    "pyspark.mllib.linalg",
+    "pyspark.mllib.stat",
+    "pyspark.sql",
+    "pyspark.streaming"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "py4j",
+    "pyarrow",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

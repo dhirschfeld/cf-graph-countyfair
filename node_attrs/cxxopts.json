@@ -95,6 +95,78 @@
  },
  "feedstock_name":"cxxopts",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This is a lightweight C++ option parser library, supporting the standard GNU style syntax for options.",
+   "dev_url":"https://github.com/jarro2783/cxxopts",
+   "doc_url":"https://github.com/jarro2783/cxxopts",
+   "home":"https://github.com/jarro2783/cxxopts",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A lightweight C++ option parser library"
+  },
+  "build":{
+   "ignore_run_exports":[
+    "libcxx",
+    "libgcc-ng",
+    "libstdcxx-ng",
+    "vc",
+    "vs2015_runtime"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "gouarin"
+   ]
+  },
+  "package":{
+   "name":"cxxopts",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "fn":"cxxopts-2.2.0.tar.gz",
+   "sha256":"447dbfc2361fce9742c5d1c9cfb25731c977b405f9085a738fbd608626da8a4d",
+   "url":"https://github.com/jarro2783/cxxopts/archive/v2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/cxxopts.hpp",
+    "test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config.cmake",
+    "test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config-version.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This is a lightweight C++ option parser library, supporting the standard GNU style syntax for options.",
@@ -175,6 +247,78 @@
  },
  "name":"cxxopts",
  "new_version":"2.2.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This is a lightweight C++ option parser library, supporting the standard GNU style syntax for options.",
+   "dev_url":"https://github.com/jarro2783/cxxopts",
+   "doc_url":"https://github.com/jarro2783/cxxopts",
+   "home":"https://github.com/jarro2783/cxxopts",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A lightweight C++ option parser library"
+  },
+  "build":{
+   "ignore_run_exports":[
+    "libcxx",
+    "libgcc-ng",
+    "libstdcxx-ng",
+    "vc",
+    "vs2015_runtime"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "gouarin"
+   ]
+  },
+  "package":{
+   "name":"cxxopts",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "fn":"cxxopts-2.2.0.tar.gz",
+   "sha256":"447dbfc2361fce9742c5d1c9cfb25731c977b405f9085a738fbd608626da8a4d",
+   "url":"https://github.com/jarro2783/cxxopts/archive/v2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/cxxopts.hpp",
+    "test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config.cmake",
+    "test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config-version.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.07.04",
  "raw_meta_yaml":"{% set name = \"cxxopts\" %}\n{% set version = \"2.2.0\" %}\n{% set sha256 = \"447dbfc2361fce9742c5d1c9cfb25731c977b405f9085a738fbd608626da8a4d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/jarro2783/cxxopts/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  # The cxxopts library is header only, so we do not need\n  # to export the compiler run-time libraries.\n  # They are just needed during the build to perform some checks.\n  ignore_run_exports:\n    - libcxx\n    - libgcc-ng\n    - libstdcxx-ng\n    - vc\n    - vs2015_runtime\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/cxxopts.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/cxxopts/cxxopts-config-version.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\cxxopts.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\cxxopts-config.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\cxxopts-config-version.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/jarro2783/cxxopts\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A lightweight C++ option parser library'\n  description: 'This is a lightweight C++ option parser library, supporting the standard GNU style syntax for options.'\n  doc_url: https://github.com/jarro2783/cxxopts\n  dev_url: https://github.com/jarro2783/cxxopts\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - gouarin\n",
  "req":{
@@ -229,5 +373,78 @@
   }
  },
  "url":"https://github.com/jarro2783/cxxopts/archive/v2.2.0.tar.gz",
- "version":"2.2.0"
+ "version":"2.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This is a lightweight C++ option parser library, supporting the standard GNU style syntax for options.",
+   "dev_url":"https://github.com/jarro2783/cxxopts",
+   "doc_url":"https://github.com/jarro2783/cxxopts",
+   "home":"https://github.com/jarro2783/cxxopts",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A lightweight C++ option parser library"
+  },
+  "build":{
+   "ignore_run_exports":[
+    "libcxx",
+    "libgcc-ng",
+    "libstdcxx-ng",
+    "vc",
+    "vs2015_runtime"
+   ],
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "gouarin"
+   ]
+  },
+  "package":{
+   "name":"cxxopts",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "fn":"cxxopts-2.2.0.tar.gz",
+   "sha256":"447dbfc2361fce9742c5d1c9cfb25731c977b405f9085a738fbd608626da8a4d",
+   "url":"https://github.com/jarro2783/cxxopts/archive/v2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\cxxopts.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\cxxopts-config.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\cxxopts-config-version.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

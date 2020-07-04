@@ -130,6 +130,89 @@
  },
  "feedstock_name":"otfftw",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://openturns.org/",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"FFTW module"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "otfftw"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"otfftw",
+   "version":"0.9"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "swig",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "fftw",
+    "openturns 1.15*"
+   ],
+   "run":[
+    "python",
+    "fftw",
+    "openturns 1.15*"
+   ]
+  },
+  "source":{
+   "fn":"otfftw-0.9.tar.gz",
+   "sha256":"967dd06868090d8a6c1139d27cac84cfdee3e4538c2f69fb60b71c1c662a13a9",
+   "url":"https://github.com/openturns/otfftw/archive/v0.9.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "otfftw"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "openturns",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "openturns",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://openturns.org/",
@@ -213,6 +296,89 @@
   "0.9":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://openturns.org/",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"FFTW module"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "otfftw"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"otfftw",
+   "version":"0.9"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "swig",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "fftw",
+    "openturns 1.15*"
+   ],
+   "run":[
+    "python",
+    "fftw",
+    "openturns 1.15*"
+   ]
+  },
+  "source":{
+   "fn":"otfftw-0.9.tar.gz",
+   "sha256":"967dd06868090d8a6c1139d27cac84cfdee3e4538c2f69fb60b71c1c662a13a9",
+   "url":"https://github.com/openturns/otfftw/archive/v0.9.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "otfftw"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "openturns",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "openturns",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set version = \"0.9\" %}\n\npackage:\n  name: otfftw\n  version: {{ version }}\n\nsource:\n  fn: otfftw-{{ version }}.tar.gz\n  url: https://github.com/openturns/otfftw/archive/v{{ version }}.tar.gz\n  sha256: 967dd06868090d8a6c1139d27cac84cfdee3e4538c2f69fb60b71c1c662a13a9\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('otfftw', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - swig\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - curl  # [win]\n  host:\n    - python\n    - fftw  # [not win]\n    - openturns 1.15*\n  run:\n    - python\n    - fftw  # [not win]\n    - openturns 1.15*\n\ntest:\n  imports:\n    - otfftw\n\nabout:\n  home: http://openturns.org/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: FFTW module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "req":{
@@ -295,5 +461,86 @@
   }
  },
  "url":"https://github.com/openturns/otfftw/archive/v0.7.tar.gz",
- "version":"0.9"
+ "version":"0.9",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://openturns.org/",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"FFTW module"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "otfftw"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jschueller"
+   ]
+  },
+  "package":{
+   "name":"otfftw",
+   "version":"0.9"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "swig",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "curl"
+   ],
+   "host":[
+    "python",
+    "openturns 1.15*"
+   ],
+   "run":[
+    "python",
+    "openturns 1.15*"
+   ]
+  },
+  "source":{
+   "fn":"otfftw-0.9.tar.gz",
+   "sha256":"967dd06868090d8a6c1139d27cac84cfdee3e4538c2f69fb60b71c1c662a13a9",
+   "url":"https://github.com/openturns/otfftw/archive/v0.9.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "otfftw"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "curl",
+    "cxx_compiler_stub",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openturns",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openturns",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

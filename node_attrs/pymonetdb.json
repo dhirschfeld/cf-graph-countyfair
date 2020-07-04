@@ -57,6 +57,86 @@
  "conda-forge.yml":{},
  "feedstock_name":"pymonetdb",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"pymonetdb is a native python client API for monetDB. This API is\ncross-platform, and doesn't depend on any monetdb libraries. It has\nsupport for python 2.7, Python 3 and PyPy. The driver is also Python\nDBAPI 2.0 compatible.\n",
+   "home":"http://www.monetdb.org",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE",
+   "summary":"The Python API for MonetDB"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "igortg",
+    "nicoddemus"
+   ]
+  },
+  "package":{
+   "name":"pymonetdb",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "future",
+    "python",
+    "six >=1.12",
+    "setuptools",
+    "typing"
+   ]
+  },
+  "source":{
+   "fn":"pymonetdb-1.3.1.tar.gz",
+   "sha256":"ee2b2e46fa691912469cfdb91aa2ad7addb43bd6b237bfc95d54838c680ecfca",
+   "url":"https://github.com/gijzelaerr/pymonetdb/archive/1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymonetdb",
+    "pymonetdb.sql"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "python",
+    "setuptools",
+    "six",
+    "typing"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"pymonetdb is a native python client API for monetDB. This API is\ncross-platform, and doesn't depend on any monetdb libraries. It has\nsupport for python 2.7, Python 3 and PyPy. The driver is also Python\nDBAPI 2.0 compatible.\n",
@@ -140,6 +220,86 @@
   "1.3.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"pymonetdb is a native python client API for monetDB. This API is\ncross-platform, and doesn't depend on any monetdb libraries. It has\nsupport for python 2.7, Python 3 and PyPy. The driver is also Python\nDBAPI 2.0 compatible.\n",
+   "home":"http://www.monetdb.org",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE",
+   "summary":"The Python API for MonetDB"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "igortg",
+    "nicoddemus"
+   ]
+  },
+  "package":{
+   "name":"pymonetdb",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "future",
+    "python",
+    "six >=1.12",
+    "setuptools",
+    "typing"
+   ]
+  },
+  "source":{
+   "fn":"pymonetdb-1.3.1.tar.gz",
+   "sha256":"ee2b2e46fa691912469cfdb91aa2ad7addb43bd6b237bfc95d54838c680ecfca",
+   "url":"https://github.com/gijzelaerr/pymonetdb/archive/1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymonetdb",
+    "pymonetdb.sql"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "python",
+    "setuptools",
+    "six",
+    "typing"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.28.13.02.26",
  "raw_meta_yaml":"{% set name = \"pymonetdb\" %}\n{% set version = \"1.3.1\" %}\n{% set sha256 = \"ee2b2e46fa691912469cfdb91aa2ad7addb43bd6b237bfc95d54838c680ecfca\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/gijzelaerr/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest-runner\n    - setuptools\n  run:\n    - future\n    - python\n    - six >=1.12\n    - setuptools\n    - typing\n\ntest:\n  imports:\n    - pymonetdb\n    - pymonetdb.sql\n\nabout:\n  home: http://www.monetdb.org\n  license: MPL-2.0\n  license_family: OTHER\n  license_file: LICENSE\n  summary: The Python API for MonetDB\n  description: |\n    pymonetdb is a native python client API for monetDB. This API is \n    cross-platform, and doesn't depend on any monetdb libraries. It has\n    support for python 2.7, Python 3 and PyPy. The driver is also Python\n    DBAPI 2.0 compatible.\n\nextra:\n  recipe-maintainers:\n    - igortg\n    - nicoddemus\n",
  "req":{
@@ -215,5 +375,85 @@
   }
  },
  "url":"https://github.com/gijzelaerr/pymonetdb/archive/1.1.1.tar.gz",
- "version":"1.3.1"
+ "version":"1.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"pymonetdb is a native python client API for monetDB. This API is\ncross-platform, and doesn't depend on any monetdb libraries. It has\nsupport for python 2.7, Python 3 and PyPy. The driver is also Python\nDBAPI 2.0 compatible.\n",
+   "home":"http://www.monetdb.org",
+   "license":"MPL-2.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE",
+   "summary":"The Python API for MonetDB"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "igortg",
+    "nicoddemus"
+   ]
+  },
+  "package":{
+   "name":"pymonetdb",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "future",
+    "python",
+    "six >=1.12",
+    "setuptools",
+    "typing"
+   ]
+  },
+  "source":{
+   "fn":"pymonetdb-1.3.1.tar.gz",
+   "sha256":"ee2b2e46fa691912469cfdb91aa2ad7addb43bd6b237bfc95d54838c680ecfca",
+   "url":"https://github.com/gijzelaerr/pymonetdb/archive/1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymonetdb",
+    "pymonetdb.sql"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "python",
+    "setuptools",
+    "six",
+    "typing"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

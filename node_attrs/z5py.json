@@ -318,6 +318,105 @@
  "conda-forge.yml":{},
  "feedstock_name":"z5py",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/constantinpape/z5",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Lightweight C++ and Python interface for datasets in zarr and N5 format."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "constantinpape",
+    "SylvainCorlay"
+   ]
+  },
+  "package":{
+   "name":"z5py",
+   "version":"2.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "boost-cpp >=1.63",
+    "numpy",
+    "xtensor >=0.19,<0.20",
+    "xtensor-python >=0.22,<0.23",
+    "xsimd >=7,<8",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib",
+    "nlohmann_json"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib"
+   ]
+  },
+  "source":{
+   "sha256":"594ce65aac1afef61b246776c6b3262210df59c92775aafd41831286c1275d98",
+   "url":"https://github.com/constantinpape/z5/archive/2.0.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "z5py"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "boost-cpp",
+    "bzip2",
+    "nlohmann_json",
+    "numpy",
+    "python",
+    "xsimd",
+    "xtensor",
+    "xtensor-python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "numpy",
+    "python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/constantinpape/z5",
@@ -427,6 +526,107 @@
  },
  "name":"z5py",
  "new_version":"2.0.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/constantinpape/z5",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Lightweight C++ and Python interface for datasets in zarr and N5 format."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "constantinpape",
+    "SylvainCorlay"
+   ]
+  },
+  "package":{
+   "name":"z5py",
+   "version":"2.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "boost-cpp >=1.63",
+    "numpy",
+    "xtensor >=0.19,<0.20",
+    "xtensor-python >=0.22,<0.23",
+    "xsimd >=7,<8",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib",
+    "nlohmann_json"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib",
+    "boost-cpp"
+   ]
+  },
+  "source":{
+   "sha256":"594ce65aac1afef61b246776c6b3262210df59c92775aafd41831286c1275d98",
+   "url":"https://github.com/constantinpape/z5/archive/2.0.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "z5py"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "boost-cpp",
+    "bzip2",
+    "nlohmann_json",
+    "numpy",
+    "python",
+    "xsimd",
+    "xtensor",
+    "xtensor-python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "boost-cpp",
+    "bzip2",
+    "numpy",
+    "python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set version = \"2.0.5\" %}\n{% set checksum = \"594ce65aac1afef61b246776c6b3262210df59c92775aafd41831286c1275d98\" %}\n\npackage:\n  name: z5py\n  version: {{ version }}\n\nsource:\n    url: https://github.com/constantinpape/z5/archive/{{ version }}.tar.gz\n    sha256: {{ checksum }}\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n  skip: True  # [py27]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - ninja  # [win]\n  host:\n    - python\n    - boost-cpp >=1.63\n    - numpy\n    - xtensor >=0.19,<0.20\n    - xtensor-python >=0.22,<0.23\n    - xsimd >=7,<8\n    - blosc\n    - bzip2\n    - xz\n    - zlib\n    - nlohmann_json\n    # lz4 builds on conda are broken\n    # - lz4-c\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - blosc\n    - bzip2\n    - xz\n    - zlib\n    # we build with boost filesystem on macos and so\n    # we need to pin the boost version, see also\n    # https://github.com/conda-forge/z5py-feedstock/issues/24\n    - {{ pin_compatible('boost-cpp') }}  # [osx]\n    # lz4 builds on conda are broken\n    # - lz4-c\n\ntest:\n  imports:\n    - z5py\n  #source_files:\n  #  - src/python/test/*.py\n  #commands:\n  #  - python -m unittest discover -s src/python/test -v\n\nabout:\n  home: https://github.com/constantinpape/z5\n  license: MIT\n  license_file: LICENSE\n  summary: Lightweight C++ and Python interface for datasets in zarr and N5 format.\n\nextra:\n  recipe-maintainers:\n    - constantinpape\n    - SylvainCorlay\n",
  "req":{
@@ -538,5 +738,107 @@
   }
  },
  "url":"https://github.com/constantinpape/z5/archive/1.5.1.tar.gz",
- "version":"2.0.5"
+ "version":"2.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/constantinpape/z5",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Lightweight C++ and Python interface for datasets in zarr and N5 format."
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "constantinpape",
+    "SylvainCorlay"
+   ]
+  },
+  "package":{
+   "name":"z5py",
+   "version":"2.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "ninja"
+   ],
+   "host":[
+    "python",
+    "boost-cpp >=1.63",
+    "numpy",
+    "xtensor >=0.19,<0.20",
+    "xtensor-python >=0.22,<0.23",
+    "xsimd >=7,<8",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib",
+    "nlohmann_json"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "blosc",
+    "bzip2",
+    "xz",
+    "zlib"
+   ]
+  },
+  "source":{
+   "sha256":"594ce65aac1afef61b246776c6b3262210df59c92775aafd41831286c1275d98",
+   "url":"https://github.com/constantinpape/z5/archive/2.0.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "z5py"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "boost-cpp",
+    "bzip2",
+    "nlohmann_json",
+    "numpy",
+    "python",
+    "xsimd",
+    "xtensor",
+    "xtensor-python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "numpy",
+    "python",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

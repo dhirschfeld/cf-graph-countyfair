@@ -23,6 +23,86 @@
  "conda-forge.yml":{},
  "feedstock_name":"conda-docker",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Conda Docker is an extension to the docker concept by having declarative\nenvironments that are associated with docker images. In addition this tool\ndoes not require docker to build images. Thus allowing for interesting\ncaching behavior and tricks that docker would not normally allow.\n",
+   "dev_url":"https://github.com/regro/conda-docker",
+   "home":"https://github.com/regro/conda-docker",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Create minimal docker images from conda environments"
+  },
+  "build":{
+   "entry_points":[
+    "conda-docker=conda_docker.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"conda-docker",
+   "version":"0.0.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "conda",
+    "mamba",
+    "conda-standalone",
+    "fakechroot"
+   ]
+  },
+  "source":{
+   "sha256":"800eabff3a75b9cdf4f860c6db47b7b442c882b874048acff8e502258332ae83",
+   "url":"https://github.com/regro/conda-docker/releases/download/0.0.2/conda-docker-0.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-docker --help"
+   ],
+   "imports":[
+    "conda_docker"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-standalone",
+    "fakechroot",
+    "mamba",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Conda Docker is an extension to the docker concept by having declarative\nenvironments that are associated with docker images. In addition this tool\ndoes not require docker to build images. Thus allowing for interesting\ncaching behavior and tricks that docker would not normally allow.\n",
@@ -104,6 +184,86 @@
   "0.0.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Conda Docker is an extension to the docker concept by having declarative\nenvironments that are associated with docker images. In addition this tool\ndoes not require docker to build images. Thus allowing for interesting\ncaching behavior and tricks that docker would not normally allow.\n",
+   "dev_url":"https://github.com/regro/conda-docker",
+   "home":"https://github.com/regro/conda-docker",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Create minimal docker images from conda environments"
+  },
+  "build":{
+   "entry_points":[
+    "conda-docker=conda_docker.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"conda-docker",
+   "version":"0.0.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "conda",
+    "mamba",
+    "conda-standalone",
+    "fakechroot"
+   ]
+  },
+  "source":{
+   "sha256":"800eabff3a75b9cdf4f860c6db47b7b442c882b874048acff8e502258332ae83",
+   "url":"https://github.com/regro/conda-docker/releases/download/0.0.2/conda-docker-0.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-docker --help"
+   ],
+   "imports":[
+    "conda_docker"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-standalone",
+    "fakechroot",
+    "mamba",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"conda-docker\" %}\n{% set version = \"0.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/regro/conda-docker/releases/download/{{ version }}/conda-docker-{{ version }}.tar.gz\n  sha256: 800eabff3a75b9cdf4f860c6db47b7b442c882b874048acff8e502258332ae83\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - conda-docker=conda_docker.cli:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - conda\n    - mamba\n    - conda-standalone\n    - fakechroot\n\ntest:\n  imports:\n    - conda_docker\n  commands:\n    - conda-docker --help\n\nabout:\n  home: https://github.com/regro/conda-docker\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Create minimal docker images from conda environments\n  description: |\n    Conda Docker is an extension to the docker concept by having declarative\n    environments that are associated with docker images. In addition this tool\n    does not require docker to build images. Thus allowing for interesting\n    caching behavior and tricks that docker would not normally allow.\n  dev_url: https://github.com/regro/conda-docker\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
@@ -174,5 +334,85 @@
   }
  },
  "url":"https://github.com/regro/conda-docker/releases/download/0.0.1/conda-docker-0.0.1.tar.gz",
- "version":"0.0.2"
+ "version":"0.0.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Conda Docker is an extension to the docker concept by having declarative\nenvironments that are associated with docker images. In addition this tool\ndoes not require docker to build images. Thus allowing for interesting\ncaching behavior and tricks that docker would not normally allow.\n",
+   "dev_url":"https://github.com/regro/conda-docker",
+   "home":"https://github.com/regro/conda-docker",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Create minimal docker images from conda environments"
+  },
+  "build":{
+   "entry_points":[
+    "conda-docker=conda_docker.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"conda-docker",
+   "version":"0.0.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "conda",
+    "mamba",
+    "conda-standalone",
+    "fakechroot"
+   ]
+  },
+  "source":{
+   "sha256":"800eabff3a75b9cdf4f860c6db47b7b442c882b874048acff8e502258332ae83",
+   "url":"https://github.com/regro/conda-docker/releases/download/0.0.2/conda-docker-0.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-docker --help"
+   ],
+   "imports":[
+    "conda_docker"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-standalone",
+    "fakechroot",
+    "mamba",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -165,6 +165,86 @@
  },
  "feedstock_name":"pyepics",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/pyepics/pyepics",
+   "doc_url":"http://pyepics.github.io/pyepics",
+   "home":"http://pyepics.github.io/pyepics/",
+   "license":"Epics Open",
+   "license_file":"LICENSE",
+   "summary":"Python interface to Epics Channel Access"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka",
+    "mrakitin",
+    "stuartcampbell",
+    "tacaswell"
+   ]
+  },
+  "package":{
+   "name":"pyepics",
+   "version":"3.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "epics-base",
+    "numpy",
+    "pyparsing"
+   ]
+  },
+  "source":{
+   "sha256":"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068",
+   "url":"https://pypi.io/packages/source/p/pyepics/pyepics-3.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import epics; epics.ca.find_libca()\""
+   ],
+   "imports":[
+    "epics",
+    "epics.autosave",
+    "epics.compat",
+    "epics.devices"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "epics-base",
+    "numpy",
+    "pyparsing",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/pyepics/pyepics",
@@ -256,6 +336,86 @@
   "3.4.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/pyepics/pyepics",
+   "doc_url":"http://pyepics.github.io/pyepics",
+   "home":"http://pyepics.github.io/pyepics/",
+   "license":"Epics Open",
+   "license_file":"LICENSE",
+   "summary":"Python interface to Epics Channel Access"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka",
+    "mrakitin",
+    "stuartcampbell",
+    "tacaswell"
+   ]
+  },
+  "package":{
+   "name":"pyepics",
+   "version":"3.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "epics-base",
+    "numpy",
+    "pyparsing"
+   ]
+  },
+  "source":{
+   "sha256":"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068",
+   "url":"https://pypi.io/packages/source/p/pyepics/pyepics-3.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import epics; epics.ca.find_libca()\""
+   ],
+   "imports":[
+    "epics",
+    "epics.autosave",
+    "epics.compat",
+    "epics.devices"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "epics-base",
+    "numpy",
+    "pyparsing",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"pyepics\" %}\n{% set version = \"3.4.2\" %}\n{% set sha256 = \"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n      # pkg_resources used in epics/ca.py\n    - setuptools\n    - epics-base\n    - numpy\n    - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n  commands:\n    - python -c \"import epics; epics.ca.find_libca()\"\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  license_file: LICENSE\n  summary: Python interface to Epics Channel Access\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n    - mrakitin\n    - stuartcampbell\n    - tacaswell\n",
  "req":{
@@ -326,5 +486,85 @@
   }
  },
  "url":"https://github.com/pyepics/pyepics/archive/3.4.0.tar.gz",
- "version":"3.4.2"
+ "version":"3.4.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/pyepics/pyepics",
+   "doc_url":"http://pyepics.github.io/pyepics",
+   "home":"http://pyepics.github.io/pyepics/",
+   "license":"Epics Open",
+   "license_file":"LICENSE",
+   "summary":"Python interface to Epics Channel Access"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka",
+    "mrakitin",
+    "stuartcampbell",
+    "tacaswell"
+   ]
+  },
+  "package":{
+   "name":"pyepics",
+   "version":"3.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "epics-base",
+    "numpy",
+    "pyparsing"
+   ]
+  },
+  "source":{
+   "sha256":"673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068",
+   "url":"https://pypi.io/packages/source/p/pyepics/pyepics-3.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import epics; epics.ca.find_libca()\""
+   ],
+   "imports":[
+    "epics",
+    "epics.autosave",
+    "epics.compat",
+    "epics.devices"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "epics-base",
+    "numpy",
+    "pyparsing",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

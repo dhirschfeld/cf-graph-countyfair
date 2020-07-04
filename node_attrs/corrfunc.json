@@ -101,6 +101,89 @@
  },
  "feedstock_name":"corrfunc",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://corrfunc.readthedocs.io/",
+   "home":"https://github.com/manodeep/Corrfunc",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Blazing fast correlation functions on the CPU"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . -vv --install-option=\"CC=${CC}\""
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr"
+   ]
+  },
+  "package":{
+   "name":"corrfunc",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make >=3.80"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy",
+    "libcblas",
+    "gsl"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "wurlitzer",
+    "future"
+   ]
+  },
+  "source":{
+   "sha256":"158d0082412a2b13736805e761d3083f752640ba52cf71f06dd81be8b57e11bc",
+   "url":"https://pypi.io/packages/source/C/Corrfunc/Corrfunc-2.3.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "Corrfunc"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "libcblas",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "numpy",
+    "python",
+    "wurlitzer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"http://corrfunc.readthedocs.io/",
@@ -183,6 +266,93 @@
  },
  "name":"corrfunc",
  "new_version":"2.3.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://corrfunc.readthedocs.io/",
+   "home":"https://github.com/manodeep/Corrfunc",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Blazing fast correlation functions on the CPU"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . -vv --install-option=\"CC=${CC}\""
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr"
+   ]
+  },
+  "package":{
+   "name":"corrfunc",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make >=3.80"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy",
+    "libcblas",
+    "gsl",
+    "llvm-openmp"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "llvm-openmp",
+    "wurlitzer",
+    "future"
+   ]
+  },
+  "source":{
+   "sha256":"158d0082412a2b13736805e761d3083f752640ba52cf71f06dd81be8b57e11bc",
+   "url":"https://pypi.io/packages/source/C/Corrfunc/Corrfunc-2.3.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "Corrfunc"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "libcblas",
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "llvm-openmp",
+    "numpy",
+    "python",
+    "wurlitzer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set name = \"Corrfunc\" %}\n{% set version = \"2.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 158d0082412a2b13736805e761d3083f752640ba52cf71f06dd81be8b57e11bc\n\nbuild:\n  number: 1\n  script: '{{ PYTHON }} -m pip install . -vv --install-option=\"CC=${CC}\"'\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make >=3.80\n  host:\n    - python\n    - pip\n    - numpy\n    - libcblas\n    - gsl\n    - llvm-openmp  # [osx]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - llvm-openmp  # [osx]\n    - wurlitzer\n    - future\n\ntest:\n  imports:\n    - Corrfunc\n\nabout:\n  home: https://github.com/manodeep/Corrfunc\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Blazing fast correlation functions on the CPU'\n  doc_url: http://corrfunc.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - beckermr\n",
  "req":{
@@ -271,5 +441,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/C/Corrfunc/Corrfunc-2.3.1.tar.gz",
- "version":"2.3.3"
+ "version":"2.3.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://corrfunc.readthedocs.io/",
+   "home":"https://github.com/manodeep/Corrfunc",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Blazing fast correlation functions on the CPU"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . -vv --install-option=\"CC=${CC}\"",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr"
+   ]
+  },
+  "package":{
+   "name":"corrfunc",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make >=3.80"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy",
+    "libcblas",
+    "gsl"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "wurlitzer",
+    "future"
+   ]
+  },
+  "source":{
+   "sha256":"158d0082412a2b13736805e761d3083f752640ba52cf71f06dd81be8b57e11bc",
+   "url":"https://pypi.io/packages/source/C/Corrfunc/Corrfunc-2.3.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "Corrfunc"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "libcblas",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "numpy",
+    "python",
+    "wurlitzer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -44,6 +44,83 @@
  "conda-forge.yml":{},
  "feedstock_name":"esptool",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/espressif/esptool",
+   "doc_url":"https://github.com/espressif/esptool/wiki",
+   "home":"https://github.com/espressif/esptool",
+   "license":"GPLv2",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips."
+  },
+  "build":{
+   "entry_points":null,
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "m-rossi"
+   ]
+  },
+  "package":{
+   "name":"esptool",
+   "version":"2.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "ecdsa",
+    "pyaes",
+    "python",
+    "pyserial >=3.0"
+   ]
+  },
+  "source":{
+   "sha256":"1e4288d9f00e55ba36809cc79c493643c623bfa036d7b019a0ebe396284bc317",
+   "url":"https://pypi.io/packages/source/e/esptool/esptool-2.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "esptool.py -h",
+    "espsecure.py -h",
+    "espefuse.py -h"
+   ],
+   "imports":[
+    "esptool"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ecdsa",
+    "pyaes",
+    "pyserial",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/espressif/esptool",
@@ -119,6 +196,83 @@
  },
  "name":"esptool",
  "new_version":"2.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/espressif/esptool",
+   "doc_url":"https://github.com/espressif/esptool/wiki",
+   "home":"https://github.com/espressif/esptool",
+   "license":"GPLv2",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips."
+  },
+  "build":{
+   "entry_points":null,
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "m-rossi"
+   ]
+  },
+  "package":{
+   "name":"esptool",
+   "version":"2.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "ecdsa",
+    "pyaes",
+    "python",
+    "pyserial >=3.0"
+   ]
+  },
+  "source":{
+   "sha256":"1e4288d9f00e55ba36809cc79c493643c623bfa036d7b019a0ebe396284bc317",
+   "url":"https://pypi.io/packages/source/e/esptool/esptool-2.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "esptool.py -h",
+    "espsecure.py -h",
+    "espefuse.py -h"
+   ],
+   "imports":[
+    "esptool"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ecdsa",
+    "pyaes",
+    "pyserial",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"esptool\" %}\n{% set version = \"2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1e4288d9f00e55ba36809cc79c493643c623bfa036d7b019a0ebe396284bc317\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - esptool.py = esptool:_main      # [win]\n    - espsecure.py = espsecure:_main  # [win]\n    - espefuse.py = espefuse:_main    # [win]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - ecdsa\n    - pyaes\n    - python\n    - pyserial >=3.0\n\ntest:\n  imports:\n    - esptool\n  commands:\n    - esptool.py -h\n    - espsecure.py -h\n    - espefuse.py -h\n\nabout:\n  home: https://github.com/espressif/esptool\n  license: GPLv2\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips.'\n  doc_url: https://github.com/espressif/esptool/wiki\n  dev_url: https://github.com/espressif/esptool\n\nextra:\n  recipe-maintainers:\n    - m-rossi\n",
  "req":{
@@ -186,5 +340,86 @@
   }
  },
  "url":"https://pypi.io/packages/source/e/esptool/esptool-2.8.tar.gz",
- "version":"2.8"
+ "version":"2.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/espressif/esptool",
+   "doc_url":"https://github.com/espressif/esptool/wiki",
+   "home":"https://github.com/espressif/esptool",
+   "license":"GPLv2",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A serial utility to communicate & flash code to Espressif ESP8266 & ESP32 chips."
+  },
+  "build":{
+   "entry_points":[
+    "esptool.py = esptool:_main",
+    "espsecure.py = espsecure:_main",
+    "espefuse.py = espefuse:_main"
+   ],
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "m-rossi"
+   ]
+  },
+  "package":{
+   "name":"esptool",
+   "version":"2.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "ecdsa",
+    "pyaes",
+    "python",
+    "pyserial >=3.0"
+   ]
+  },
+  "source":{
+   "sha256":"1e4288d9f00e55ba36809cc79c493643c623bfa036d7b019a0ebe396284bc317",
+   "url":"https://pypi.io/packages/source/e/esptool/esptool-2.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "esptool.py -h",
+    "espsecure.py -h",
+    "espefuse.py -h"
+   ],
+   "imports":[
+    "esptool"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ecdsa",
+    "pyaes",
+    "pyserial",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

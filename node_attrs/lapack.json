@@ -59,6 +59,690 @@
  },
  "feedstock_name":"lapack",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.netlib.org/lapack",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Linear Algebra PACKage"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.so",
+     "lib/libblas.so.3",
+     "lib/libblas.so.3.8.0"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.so",
+     "lib/libcblas.so.3",
+     "lib/libcblas.so.3.8.0"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.so",
+     "lib/liblapack.so.3",
+     "lib/liblapack.so.3.8.0"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.so",
+     "lib/liblapacke.so.3",
+     "lib/liblapacke.so.3.8.0"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.so",
+      "test -f $PREFIX/lib/libblas.so.3",
+      "test -f $PREFIX/lib/libblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.so",
+      "test -f $PREFIX/lib/libcblas.so.3",
+      "test -f $PREFIX/lib/libcblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.so",
+      "test -f $PREFIX/lib/liblapack.so.3",
+      "test -f $PREFIX/lib/liblapack.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.so",
+      "test -f $PREFIX/lib/liblapacke.so.3",
+      "test -f $PREFIX/lib/liblapacke.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
+   }
+  ],
+  "package":{
+   "name":"blas-split",
+   "version":"3.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "cmake"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6",
+   "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blas",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "liblapacke"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://www.netlib.org/lapack",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Linear Algebra PACKage"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.so",
+     "lib/libblas.so.3",
+     "lib/libblas.so.3.8.0"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.so",
+     "lib/libcblas.so.3",
+     "lib/libcblas.so.3.8.0"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.so",
+     "lib/liblapack.so.3",
+     "lib/liblapack.so.3.8.0"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.so",
+     "lib/liblapacke.so.3",
+     "lib/liblapacke.so.3.8.0"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.so",
+      "test -f $PREFIX/lib/libblas.so.3",
+      "test -f $PREFIX/lib/libblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.so",
+      "test -f $PREFIX/lib/libcblas.so.3",
+      "test -f $PREFIX/lib/libcblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.so",
+      "test -f $PREFIX/lib/liblapack.so.3",
+      "test -f $PREFIX/lib/liblapack.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.so",
+      "test -f $PREFIX/lib/liblapacke.so.3",
+      "test -f $PREFIX/lib/liblapacke.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
+   }
+  ],
+  "package":{
+   "name":"blas-split",
+   "version":"3.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "cmake"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6",
+   "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blas",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "liblapacke"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://www.netlib.org/lapack",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Linear Algebra PACKage"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.so",
+     "lib/libblas.so.3",
+     "lib/libblas.so.3.8.0"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.so",
+     "lib/libcblas.so.3",
+     "lib/libcblas.so.3.8.0"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.so",
+     "lib/liblapack.so.3",
+     "lib/liblapack.so.3.8.0"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.so",
+     "lib/liblapacke.so.3",
+     "lib/liblapacke.so.3.8.0"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.so",
+      "test -f $PREFIX/lib/libblas.so.3",
+      "test -f $PREFIX/lib/libblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.so",
+      "test -f $PREFIX/lib/libcblas.so.3",
+      "test -f $PREFIX/lib/libcblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.so",
+      "test -f $PREFIX/lib/liblapack.so.3",
+      "test -f $PREFIX/lib/liblapack.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.so",
+      "test -f $PREFIX/lib/liblapacke.so.3",
+      "test -f $PREFIX/lib/liblapacke.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
+   }
+  ],
+  "package":{
+   "name":"blas-split",
+   "version":"3.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "cmake"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6",
+   "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blas",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "liblapacke"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.netlib.org/lapack",
@@ -71,6 +755,14 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr",
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr",
     "jakirkham",
     "hadim",
     "isuruf",
@@ -564,6 +1256,328 @@
      ]
     },
     "version":"2.8"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.so",
+     "lib/libblas.so.3",
+     "lib/libblas.so.3.8.0"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.so",
+     "lib/libcblas.so.3",
+     "lib/libcblas.so.3.8.0"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.so",
+     "lib/liblapack.so.3",
+     "lib/liblapack.so.3.8.0"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.so",
+     "lib/liblapacke.so.3",
+     "lib/liblapacke.so.3.8.0"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.so",
+      "test -f $PREFIX/lib/libblas.so.3",
+      "test -f $PREFIX/lib/libblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.so",
+      "test -f $PREFIX/lib/libcblas.so.3",
+      "test -f $PREFIX/lib/libcblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.so",
+      "test -f $PREFIX/lib/liblapack.so.3",
+      "test -f $PREFIX/lib/liblapack.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.so",
+      "test -f $PREFIX/lib/liblapacke.so.3",
+      "test -f $PREFIX/lib/liblapacke.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.so",
+     "lib/libblas.so.3",
+     "lib/libblas.so.3.8.0"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.so",
+     "lib/libcblas.so.3",
+     "lib/libcblas.so.3.8.0"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.so",
+     "lib/liblapack.so.3",
+     "lib/liblapack.so.3.8.0"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.so",
+     "lib/liblapacke.so.3",
+     "lib/liblapacke.so.3.8.0"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.so",
+      "test -f $PREFIX/lib/libblas.so.3",
+      "test -f $PREFIX/lib/libblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.so",
+      "test -f $PREFIX/lib/libcblas.so.3",
+      "test -f $PREFIX/lib/libcblas.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.so",
+      "test -f $PREFIX/lib/liblapack.so.3",
+      "test -f $PREFIX/lib/liblapack.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.so",
+      "test -f $PREFIX/lib/liblapacke.so.3",
+      "test -f $PREFIX/lib/liblapacke.so.3.8.0",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
    }
   ],
   "package":{
@@ -585,6 +1599,14 @@
     "c_compiler_stub",
     "fortran_compiler_stub",
     "make",
+    "cmake",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "cmake",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
     "cmake"
    ]
   },
@@ -596,6 +1618,236 @@
  },
  "name":"blas-split",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.netlib.org/lapack",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Linear Algebra PACKage"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "lib/libblas.dylib",
+     "lib/libblas.3.dylib",
+     "lib/libblas.3.8.0.dylib"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "lib/libcblas.dylib",
+     "lib/libcblas.3.dylib",
+     "lib/libcblas.3.8.0.dylib"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "lib/liblapack.dylib",
+     "lib/liblapack.3.dylib",
+     "lib/liblapack.3.8.0.dylib"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "lib/liblapacke.dylib",
+     "lib/liblapacke.3.dylib",
+     "lib/liblapacke.3.8.0.dylib"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libblas.dylib",
+      "test -f $PREFIX/lib/libblas.3.dylib",
+      "test -f $PREFIX/lib/libblas.3.8.0.dylib",
+      "test -f $PREFIX/lib/pkgconfig/blas.pc",
+      "test -f $PREFIX/lib/libcblas.dylib",
+      "test -f $PREFIX/lib/libcblas.3.dylib",
+      "test -f $PREFIX/lib/libcblas.3.8.0.dylib",
+      "test -f $PREFIX/lib/pkgconfig/cblas.pc",
+      "test -f $PREFIX/lib/liblapack.dylib",
+      "test -f $PREFIX/lib/liblapack.3.dylib",
+      "test -f $PREFIX/lib/liblapack.3.8.0.dylib",
+      "test -f $PREFIX/lib/pkgconfig/lapack.pc",
+      "test -f $PREFIX/lib/liblapacke.dylib",
+      "test -f $PREFIX/lib/liblapacke.3.dylib",
+      "test -f $PREFIX/lib/liblapacke.3.8.0.dylib",
+      "test -f $PREFIX/lib/pkgconfig/lapacke.pc"
+     ]
+    },
+    "version":"2.8"
+   }
+  ],
+  "package":{
+   "name":"blas-split",
+   "version":"3.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "cmake"
+   ]
+  },
+  "source":{
+   "patches":[
+    "no_soversion_osx.diff"
+   ],
+   "sha256":"deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6",
+   "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blas",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "liblapacke"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "blas",
   "blas-devel",
@@ -697,5 +1949,233 @@
   }
  },
  "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz",
- "version":"3.8.0"
+ "version":"3.8.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.netlib.org/lapack",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Linear Algebra PACKage"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "hadim",
+    "isuruf",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/blas.pc",
+     "Library/lib/cmake/blas-3.8.0/*.cmake",
+     "Library/bin/libblas.dll",
+     "Library/lib/blas.lib",
+     "Library/lib/libblas.dll.a"
+    ],
+    "name":"libblas",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub",
+      "m2w64_fortran_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libcblas"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/cblas*.h",
+     "Library/lib/pkgconfig/cblas.pc",
+     "Library/lib/cmake/cblas-3.8.0/*.cmake",
+     "Library/bin/libcblas.dll",
+     "Library/lib/cblas.lib",
+     "Library/lib/libcblas.dll.a"
+    ],
+    "name":"libcblas",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub",
+      "m2w64_fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapack"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/lib/pkgconfig/lapack.pc",
+     "Library/lib/cmake/lapack-3.8.0/*.cmake",
+     "Library/bin/liblapack.dll",
+     "Library/lib/lapack.lib",
+     "Library/lib/liblapack.dll.a"
+    ],
+    "name":"liblapack",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub",
+      "m2w64_fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas 3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "liblapacke"
+     ],
+     "string":"8_h_netlib",
+     "track_features":[
+      "blas_netlib"
+     ]
+    },
+    "files":[
+     "Library/include/lapacke*.h",
+     "Library/lib/pkgconfig/lapacke.pc",
+     "Library/lib/cmake/lapacke-3.8.0/*.cmake",
+     "Library/bin/liblapacke.dll",
+     "Library/lib/lapacke.lib",
+     "Library/lib/liblapacke.dll.a"
+    ],
+    "name":"liblapacke",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub",
+      "m2w64_fortran_compiler_stub"
+     ],
+     "run":[
+      "libblas    3.8.0",
+      "libcblas   3.8.0",
+      "liblapack  3.8.0"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas-devel",
+    "requirements":{
+     "run":[
+      "libblas",
+      "libcblas",
+      "liblapack",
+      "liblapacke",
+      "blas"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"netlib"
+    },
+    "name":"blas",
+    "requirements":[
+     "liblapack",
+     "liblapacke",
+     "libcblas",
+     "libblas"
+    ],
+    "test":{
+     "commands":[
+      "if not exist \"%LIBRARY_LIB%\\\\pkgconfig\\\\blas.pc\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\blas.lib\" exit 1",
+      "if not exist \"%LIBRARY_BIN%\\\\libblas.dll\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\pkgconfig\\\\cblas.pc\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\cblas.lib\" exit 1",
+      "if not exist \"%LIBRARY_BIN%\\\\libcblas.dll\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\pkgconfig\\\\lapack.pc\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\lapack.lib\" exit 1",
+      "if not exist \"%LIBRARY_BIN%\\\\liblapack.dll\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\pkgconfig\\\\lapacke.pc\" exit 1",
+      "if not exist \"%LIBRARY_LIB%\\\\lapacke.lib\" exit 1",
+      "if not exist \"%LIBRARY_BIN%\\\\liblapacke.dll\" exit 1"
+     ]
+    },
+    "version":"2.8"
+   }
+  ],
+  "package":{
+   "name":"blas-split",
+   "version":"3.8.0"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "vs2017_win-64",
+    "m2w64-make",
+    "make",
+    "cmake"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6",
+   "url":"http://www.netlib.org/lapack/lapack-3.8.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "m2w64-make",
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "make",
+    "vs2017_win-64"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blas",
+    "libblas",
+    "libcblas",
+    "liblapack",
+    "liblapacke"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -74,6 +74,101 @@
  "conda-forge.yml":{},
  "feedstock_name":"python-glanceclient",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.openstack.org/cgit/openstack/python-glanceclient",
+   "doc_url":"https://docs.openstack.org/python-glanceclient/latest/",
+   "home":"https://docs.openstack.org/python-glanceclient/latest/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"OpenStack Image API Client Library"
+  },
+  "build":{
+   "entry_points":[
+    "glance = glanceclient.shell:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"python-glanceclient",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "host":[
+    "pbr",
+    "pip",
+    "python >3",
+    "setuptools"
+   ],
+   "run":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "python >3",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt",
+    "pyopenssl"
+   ]
+  },
+  "source":{
+   "sha256":"0181ee9384e5fee3bdd733c3d5d88e242dff5f285dda25176d1b71dbc1b8fb2c",
+   "url":"https://pypi.io/packages/source/p/python-glanceclient/python-glanceclient-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "glanceclient"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "pyopenssl",
+    "python",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://git.openstack.org/cgit/openstack/python-glanceclient",
@@ -179,6 +274,101 @@
   "3.2.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.openstack.org/cgit/openstack/python-glanceclient",
+   "doc_url":"https://docs.openstack.org/python-glanceclient/latest/",
+   "home":"https://docs.openstack.org/python-glanceclient/latest/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"OpenStack Image API Client Library"
+  },
+  "build":{
+   "entry_points":[
+    "glance = glanceclient.shell:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"python-glanceclient",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "host":[
+    "pbr",
+    "pip",
+    "python >3",
+    "setuptools"
+   ],
+   "run":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "python >3",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt",
+    "pyopenssl"
+   ]
+  },
+  "source":{
+   "sha256":"0181ee9384e5fee3bdd733c3d5d88e242dff5f285dda25176d1b71dbc1b8fb2c",
+   "url":"https://pypi.io/packages/source/p/python-glanceclient/python-glanceclient-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "glanceclient"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "pyopenssl",
+    "python",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"python-glanceclient\" %}\n{% set version = \"3.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0181ee9384e5fee3bdd733c3d5d88e242dff5f285dda25176d1b71dbc1b8fb2c\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - glance = glanceclient.shell:main\n\nrequirements:\n  host:\n    - pbr\n    - pip\n    - python >3\n    - setuptools\n  run:\n    - keystoneauth1\n    - oslo.i18n\n    - oslo.utils\n    - pbr\n    - prettytable\n    - python >3\n    - requests\n    - setuptools\n    - six\n    - warlock\n    - wrapt\n    - pyopenssl\n\ntest:\n  imports:\n    - glanceclient\n\nabout:\n  home: https://docs.openstack.org/python-glanceclient/latest/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: OpenStack Image API Client Library\n  doc_url: https://docs.openstack.org/python-glanceclient/latest/\n  dev_url: https://git.openstack.org/cgit/openstack/python-glanceclient\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
@@ -274,5 +464,100 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-glanceclient/python-glanceclient-2.17.0.tar.gz",
- "version":"3.2.0"
+ "version":"3.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.openstack.org/cgit/openstack/python-glanceclient",
+   "doc_url":"https://docs.openstack.org/python-glanceclient/latest/",
+   "home":"https://docs.openstack.org/python-glanceclient/latest/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"OpenStack Image API Client Library"
+  },
+  "build":{
+   "entry_points":[
+    "glance = glanceclient.shell:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"python-glanceclient",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "host":[
+    "pbr",
+    "pip",
+    "python >3",
+    "setuptools"
+   ],
+   "run":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "python >3",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt",
+    "pyopenssl"
+   ]
+  },
+  "source":{
+   "sha256":"0181ee9384e5fee3bdd733c3d5d88e242dff5f285dda25176d1b71dbc1b8fb2c",
+   "url":"https://pypi.io/packages/source/p/python-glanceclient/python-glanceclient-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "glanceclient"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "keystoneauth1",
+    "oslo.i18n",
+    "oslo.utils",
+    "pbr",
+    "prettytable",
+    "pyopenssl",
+    "python",
+    "requests",
+    "setuptools",
+    "six",
+    "warlock",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

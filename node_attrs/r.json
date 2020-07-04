@@ -62,6 +62,71 @@
   }
  },
  "feedstock_name":"r",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.r-project.org/",
+   "license":"GPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"R is a free software environment for statistical computing and graphics."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1004"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "dpryan79"
+   ]
+  },
+  "package":{
+   "name":"r",
+   "version":"None"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('MASS')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.r-project.org/",
@@ -128,6 +193,71 @@
  },
  "name":"r",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.r-project.org/",
+   "license":"GPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"R is a free software environment for statistical computing and graphics."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1004"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "dpryan79"
+   ]
+  },
+  "package":{
+   "name":"r",
+   "version":"None"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('MASS')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"package:\n  name: r\n  version: {{ r_base }}\n\nbuild:\n  number: 1004\n  noarch: generic\n\nrequirements:\n  host:\n    - r-base\n  run:\n    - r-base\n    - r-recommended\n\n# test to force the test env creation\n# if any dependency is missing the test env creation will fail\ntest:\n  commands:\n    - $R -e \"library('MASS')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('MASS')\\\"\"  # [win]\n\nabout:\n  home: http://www.r-project.org/\n  license: GPL-3.0\n  summary: 'R is a free software environment for statistical computing and graphics.'\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n    - dpryan79\n",
  "req":{
@@ -186,5 +316,70 @@
    "elements":[]
   }
  },
- "version":"None"
+ "version":"None",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.r-project.org/",
+   "license":"GPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"R is a free software environment for statistical computing and graphics."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1004"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "dpryan79"
+   ]
+  },
+  "package":{
+   "name":"r",
+   "version":"None"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('MASS')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-recommended"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

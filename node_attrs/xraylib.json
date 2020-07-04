@@ -117,6 +117,94 @@
  },
  "feedstock_name":"xraylib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tschoonj/xraylib/wiki",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"license_all.txt",
+   "summary":"A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill",
+    "tacaswell",
+    "licode",
+    "tschoonj",
+    "CJ-Wright",
+    "mrakitin"
+   ]
+  },
+  "package":{
+   "name":"xraylib",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "cython",
+    "numpy",
+    "swig"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d",
+   "url":"http://lvserver.ugent.be/xraylib/xraylib-4.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "xraylib",
+    "xraylib_np"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/tschoonj/xraylib/wiki",
@@ -221,6 +309,95 @@
  },
  "name":"xraylib",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tschoonj/xraylib/wiki",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"license_all.txt",
+   "summary":"A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill",
+    "tacaswell",
+    "licode",
+    "tschoonj",
+    "CJ-Wright",
+    "mrakitin"
+   ]
+  },
+  "package":{
+   "name":"xraylib",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "cython",
+    "numpy",
+    "swig"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d",
+   "url":"http://lvserver.ugent.be/xraylib/xraylib-4.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "xraylib",
+    "xraylib_np"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"4.0.0\" %}\n\npackage:\n  name: xraylib\n  version: {{ version }}\n\nsource:\n  url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz\n  sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - autotools_clang_conda  # [win]\n    - m2-curl  # [win]\n    - m2-patch  # [win]\n    - m2-tar  # [win]\n    - m2-bzip2  # [win]\n    - {{ compiler('fortran') }}  # [unix]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - cython\n    - numpy\n    - swig  # [not win]\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - if not exist %LIBRARY_LIB%\\\\pkgconfig\\\\libxrl.pc exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\xrl.lib exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\xraylib\\\\xraylib.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\xrl-11.dll exit 1  # [win]\n  imports:\n    - xraylib\n    - xraylib_np\n\nabout:\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: license_all.txt\n  home: https://github.com/tschoonj/xraylib/wiki\n  summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - tschoonj\n    - CJ-Wright\n    - mrakitin\n",
  "req":{
@@ -316,5 +493,102 @@
   }
  },
  "url":"http://lvserver.ugent.be/xraylib/xraylib-3.3.0.tar.gz",
- "version":"4.0.0"
+ "version":"4.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tschoonj/xraylib/wiki",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"license_all.txt",
+   "summary":"A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill",
+    "tacaswell",
+    "licode",
+    "tschoonj",
+    "CJ-Wright",
+    "mrakitin"
+   ]
+  },
+  "package":{
+   "name":"xraylib",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "autotools_clang_conda",
+    "m2-curl",
+    "m2-patch",
+    "m2-tar",
+    "m2-bzip2",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d",
+   "url":"http://lvserver.ugent.be/xraylib/xraylib-4.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_LIB%\\\\pkgconfig\\\\libxrl.pc exit 1",
+    "if not exist %LIBRARY_LIB%\\\\xrl.lib exit 1",
+    "if not exist %LIBRARY_INC%\\\\xraylib\\\\xraylib.h exit 1",
+    "if not exist %LIBRARY_BIN%\\\\xrl-11.dll exit 1"
+   ],
+   "imports":[
+    "xraylib",
+    "xraylib_np"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autotools_clang_conda",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "m2-bzip2",
+    "m2-curl",
+    "m2-patch",
+    "m2-tar"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

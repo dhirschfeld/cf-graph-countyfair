@@ -27,6 +27,74 @@
  },
  "feedstock_name":"urdfdom_headers",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros/urdfdom_headers",
+   "home":"http://github.com/ros/urdfdom_headers",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Headers for URDF parsers"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jcarpent",
+    "wolfv",
+    "lesteve"
+   ]
+  },
+  "package":{
+   "name":"urdfdom_headers",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac",
+   "url":"https://github.com/ros/urdfdom_headers/archive/1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pkg-config --modversion urdfdom_headers",
+    "test -f $PREFIX/include/urdf_model/model.h"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ros/urdfdom_headers",
@@ -92,6 +160,74 @@
   "1.0.5":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros/urdfdom_headers",
+   "home":"http://github.com/ros/urdfdom_headers",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Headers for URDF parsers"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jcarpent",
+    "wolfv",
+    "lesteve"
+   ]
+  },
+  "package":{
+   "name":"urdfdom_headers",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac",
+   "url":"https://github.com/ros/urdfdom_headers/archive/1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pkg-config --modversion urdfdom_headers",
+    "test -f $PREFIX/include/urdf_model/model.h"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "pinning_version":"2020.05.08.11.44.00",
  "raw_meta_yaml":"{% set name = \"urdfdom_headers\" %}\n{% set version = \"1.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: 76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [unix]\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n  commands:\n    - pkg-config --modversion {{ name }}  # [unix]\n    - test -f $PREFIX/include/urdf_model/model.h  # [unix]\n\n    - if exist %PREFIX%\\\\Library\\\\CMake\\\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://github.com/ros/{{ name }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Headers for URDF parsers\n  dev_url: https://github.com/ros/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - jcarpent\n    - wolfv\n    - lesteve\n",
  "req":{
@@ -153,5 +289,67 @@
   }
  },
  "url":"https://github.com/ros/urdfdom_headers/archive/1.0.4.tar.gz",
- "version":"1.0.5"
+ "version":"1.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros/urdfdom_headers",
+   "home":"http://github.com/ros/urdfdom_headers",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Headers for URDF parsers"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jcarpent",
+    "wolfv",
+    "lesteve"
+   ]
+  },
+  "package":{
+   "name":"urdfdom_headers",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "sha256":"76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac",
+   "url":"https://github.com/ros/urdfdom_headers/archive/1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %PREFIX%\\\\Library\\\\CMake\\\\urdfdom_headers-config.cmake (exit 0) else (exit 1)"
+   ],
+   "requires":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

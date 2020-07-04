@@ -133,6 +133,86 @@
  },
  "feedstock_name":"pyxdameraulevenshtein",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\nalgorithm for Python in Cython for high performance.\n",
+   "dev_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "doc_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "home":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"High performance Damerau-Levenshtein (DL) edit distance algorithm for Python."
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install --no-deps --ignore-installed . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"pyxdameraulevenshtein",
+   "version":"1.5.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyxDamerauLevenshtein-1.5.3.tar.gz",
+   "sha256":"89b1399e248faf62fc930cb4c8562bf53ed99fc85c08395f57cd4e0bdbac6297",
+   "url":"https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v1.5.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyxdameraulevenshtein"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\nalgorithm for Python in Cython for high performance.\n",
@@ -212,6 +292,86 @@
  "new_version_errors":{
   "1.6":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '1.6' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v{{ version }}.tar.gz'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\nalgorithm for Python in Cython for high performance.\n",
+   "dev_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "doc_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "home":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"High performance Damerau-Levenshtein (DL) edit distance algorithm for Python."
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install --no-deps --ignore-installed . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"pyxdameraulevenshtein",
+   "version":"1.5.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyxDamerauLevenshtein-1.5.3.tar.gz",
+   "sha256":"89b1399e248faf62fc930cb4c8562bf53ed99fc85c08395f57cd4e0bdbac6297",
+   "url":"https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v1.5.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyxdameraulevenshtein"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set name = \"pyxDamerauLevenshtein\" %}\n{% set version = \"1.5.3\" %}\n{% set sha256 = \"89b1399e248faf62fc930cb4c8562bf53ed99fc85c08395f57cd4e0bdbac6297\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install --no-deps --ignore-installed . -vv\"\n  # Skip Python 3.7+ as the C sources need to be rebuilt from cython for 3.7\n  # compatability but are not part of the package.\n  skip: true  # [py>36]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - cython\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pyxdameraulevenshtein\nabout:\n  home: https://github.com/gfairchild/pyxDamerauLevenshtein\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: 'High performance Damerau-Levenshtein (DL) edit distance\n    algorithm for Python.'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\n    algorithm for Python in Cython for high performance.\n  doc_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n  dev_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "req":{
@@ -286,5 +446,85 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyxDamerauLevenshtein/pyxDamerauLevenshtein-1.5.3.tar.gz",
- "version":"1.5.3"
+ "version":"1.5.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\nalgorithm for Python in Cython for high performance.\n",
+   "dev_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "doc_url":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "home":"https://github.com/gfairchild/pyxDamerauLevenshtein",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"High performance Damerau-Levenshtein (DL) edit distance algorithm for Python."
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install --no-deps --ignore-installed . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"pyxdameraulevenshtein",
+   "version":"1.5.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyxDamerauLevenshtein-1.5.3.tar.gz",
+   "sha256":"89b1399e248faf62fc930cb4c8562bf53ed99fc85c08395f57cd4e0bdbac6297",
+   "url":"https://github.com/gfairchild/pyxDamerauLevenshtein/archive/v1.5.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyxdameraulevenshtein"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

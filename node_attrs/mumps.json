@@ -164,6 +164,660 @@
  },
  "feedstock_name":"mumps",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url":"http://mumps.enseeiht.fr/index.php?page=doc",
+   "home":"http://mumps.enseeiht.fr/",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"MUMPS: a parallel sparse direct solver"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mumps",
+   "version":"5.2.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "mpi *"
+   ]
+  },
+  "source":{
+   "fn":"MUMPS_5.2.1.tar.gz",
+   "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch"
+   ],
+   "sha256":"d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a",
+   "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "mpi"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "metis",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "metis",
+    "mumps-include",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url":"http://mumps.enseeiht.fr/index.php?page=doc",
+   "home":"http://mumps.enseeiht.fr/",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"MUMPS: a parallel sparse direct solver"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mumps",
+   "version":"5.2.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "mpi *"
+   ]
+  },
+  "source":{
+   "fn":"MUMPS_5.2.1.tar.gz",
+   "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch"
+   ],
+   "sha256":"d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a",
+   "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "mpi"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "metis",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "metis",
+    "mumps-include",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url":"http://mumps.enseeiht.fr/index.php?page=doc",
+   "home":"http://mumps.enseeiht.fr/",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"MUMPS: a parallel sparse direct solver"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mumps",
+   "version":"5.2.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "mpi *"
+   ]
+  },
+  "source":{
+   "fn":"MUMPS_5.2.1.tar.gz",
+   "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch"
+   ],
+   "sha256":"d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a",
+   "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "mpi"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "metis",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "metis",
+    "mumps-include",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
@@ -179,6 +833,18 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay",
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay",
     "basnijholt",
     "dalcinl",
     "minrk",
@@ -587,6 +1253,270 @@
       "test ! -d \"${PREFIX}/include/mumps_seq\""
      ]
     }
+   },
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
    }
   ],
   "package":{
@@ -604,12 +1534,28 @@
     "mpi *",
     "fortran_compiler_stub",
     "c_compiler_stub",
+    "mpi *",
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "mpi *",
+    "fortran_compiler_stub",
+    "c_compiler_stub",
     "mpi *"
    ]
   },
   "source":{
    "fn":"MUMPS_5.2.1.tar.gz",
    "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch",
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch",
     "shared-pord.patch",
     "shared-mumps.patch",
     "shared-libseq.patch",
@@ -639,6 +1585,224 @@
  "new_version_errors":{
   "5.3.0":"We found a problem parsing the recipe: \n\nwhile parsing a block mapping\n  in \"<unicode string>\", line 70, column 7:\n          commands:\n          ^ (line: 70)\nexpected <block end>, but found ','\n  in \"<unicode string>\", line 74, column 19:\n              'smumps',\n                      ^ (line: 74)",
   "5.3.1":"We found a problem parsing the recipe: \n\nwhile parsing a block mapping\n  in \"<unicode string>\", line 70, column 7:\n          commands:\n          ^ (line: 70)\nexpected <block end>, but found ','\n  in \"<unicode string>\", line 74, column 19:\n              'smumps',\n                      ^ (line: 74)"
+ },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url":"http://mumps.enseeiht.fr/index.php?page=doc",
+   "home":"http://mumps.enseeiht.fr/",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"MUMPS: a parallel sparse direct solver"
+  },
+  "build":{
+   "number":"8"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh"
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "mumps-seq"
+     ],
+     "script":"${RECIPE_DIR}/build-seq.sh",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      "metis",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      "metis",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":[
+      "mumps-mpi"
+     ],
+     "script":"${RECIPE_DIR}/build-mpi.sh"
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mumps",
+   "version":"5.2.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "mpi *"
+   ]
+  },
+  "source":{
+   "fn":"MUMPS_5.2.1.tar.gz",
+   "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch"
+   ],
+   "sha256":"d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a",
+   "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "mpi"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "metis",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "metis",
+    "mumps-include",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
  },
  "outputs_names":[
   "mumps-include",
@@ -749,5 +1913,218 @@
   }
  },
  "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz",
- "version":"5.2.1"
+ "version":"5.2.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"MUMPS (MUltifrontal Massively Parallel Solver) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url":"http://mumps.enseeiht.fr/index.php?page=doc",
+   "home":"http://mumps.enseeiht.fr/",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"MUMPS: a parallel sparse direct solver"
+  },
+  "build":{
+   "number":"8",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "basnijholt",
+    "dalcinl",
+    "minrk",
+    "jbweston",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"${RECIPE_DIR}/build-headers.sh",
+     "skip":true
+    },
+    "name":"mumps-include",
+    "requirements":{
+     "build":[],
+     "host":[]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/include/mumps_compat.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":null,
+     "script":"%RECIPE_DIR%\\bld-seq.bat",
+     "skip":true
+    },
+    "name":"mumps-seq",
+    "requirements":{
+     "build":[
+      "cmake",
+      "m2-patch",
+      "fortran_compiler_stub",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "libblas",
+      "liblapack"
+     ],
+     "run":null
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq-5.2.1${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq_seq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmpiseq${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpi.h\"",
+      "test -f \"${PREFIX}/include/mumps_seq/mpif.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "features":null,
+     "run_exports":null,
+     "script":"${RECIPE_DIR}/build-mpi.sh",
+     "skip":true
+    },
+    "name":"mumps-mpi",
+    "requirements":{
+     "build":[
+      "fortran_compiler_stub",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "libblas",
+      "liblapack",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ],
+     "run":[
+      "mumps-include",
+      null,
+      "metis",
+      "parmetis",
+      "ptscotch",
+      "scalapack",
+      "scotch"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libsmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libsmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libdmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libcmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libzmumps${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libmumps_common${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord-5.2.1${SHLIB_EXT}\"",
+      "test -h \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test -f \"${PREFIX}/lib/libpord${SHLIB_EXT}\"",
+      "test ! -f \"${PREFIX}/lib/libmpiseq*\"",
+      "test ! -d \"${PREFIX}/include/mumps_seq\""
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mumps",
+   "version":"5.2.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "m2-patch",
+    "mpi *"
+   ]
+  },
+  "source":{
+   "fn":"MUMPS_5.2.1.tar.gz",
+   "patches":[
+    "shared-pord.patch",
+    "shared-mumps.patch",
+    "shared-libseq.patch",
+    "examples-mpilibs.patch",
+    "flang-support.patch"
+   ],
+   "sha256":"d988fc34dfc8f5eee0533e361052a972aa69cc39ab193e7f987178d24981744a",
+   "url":"http://mumps.enseeiht.fr/MUMPS_5.2.1.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "fortran_compiler_stub",
+    "m2-patch",
+    "mpi"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "metis",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "metis",
+    "mumps-include",
+    "parmetis",
+    "ptscotch",
+    "scalapack",
+    "scotch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -326,6 +326,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"libcxxwrap-julia",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Lightweight library that exposes C++ types in Julia and vice versa",
+   "dev_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "doc_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "home":"https://github.com/JuliaInterop/CxxWrap.jl",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Seamless operability between C++11 and Julia"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libcxxwrap-julia"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "barche"
+   ]
+  },
+  "package":{
+   "name":"libcxxwrap-julia",
+   "version":"0.6.6"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "julia >=1.0,<1.1"
+   ],
+   "run":[
+    "julia >=1.0,<1.1"
+   ]
+  },
+  "source":{
+   "fn":"libcxxwrap-julia-0.6.6.tar.gz",
+   "sha256":"55d589348bfd803ab0b898141a1b09fc1692ef30eb5b4ede58eff3661ece4f1b",
+   "url":"https://github.com/JuliaInterop/libcxxwrap-julia/archive/v0.6.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/jlcxx",
+    "test -f ${PREFIX}/include/jlcxx/jlcxx.hpp",
+    "test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Lightweight library that exposes C++ types in Julia and vice versa",
@@ -412,6 +491,85 @@
   "0.8.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Lightweight library that exposes C++ types in Julia and vice versa",
+   "dev_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "doc_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "home":"https://github.com/JuliaInterop/CxxWrap.jl",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Seamless operability between C++11 and Julia"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libcxxwrap-julia"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "barche"
+   ]
+  },
+  "package":{
+   "name":"libcxxwrap-julia",
+   "version":"0.6.6"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "julia >=1.0,<1.1"
+   ],
+   "run":[
+    "julia >=1.0,<1.1"
+   ]
+  },
+  "source":{
+   "fn":"libcxxwrap-julia-0.6.6.tar.gz",
+   "sha256":"55d589348bfd803ab0b898141a1b09fc1692ef30eb5b4ede58eff3661ece4f1b",
+   "url":"https://github.com/JuliaInterop/libcxxwrap-julia/archive/v0.6.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/jlcxx",
+    "test -f ${PREFIX}/include/jlcxx/jlcxx.hpp",
+    "test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"libcxxwrap-julia\" %}\n{% set version = \"0.6.6\" %}\n{% set sha256 = \"55d589348bfd803ab0b898141a1b09fc1692ef30eb5b4ede58eff3661ece4f1b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/JuliaInterop/libcxxwrap-julia/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # Julia has not been packaged for conda on Windows\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n  host:\n    - julia >=1.0,<1.1\n  run:\n    - julia >=1.0,<1.1\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/jlcxx  # [unix]\n    - test -f ${PREFIX}/include/jlcxx/jlcxx.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/JlCxx/JlCxxConfigVersion.cmake  # [unix]\n\n    - if exist %LIBRARY_PREFIX%\\include\\JlCxx\\jlcxx.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\JlCxx\\JlCxxConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\JlCxx\\JlCxxConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/JuliaInterop/CxxWrap.jl\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Seamless operability between C++11 and Julia'\n  description: 'Lightweight library that exposes C++ types in Julia and vice versa'\n  doc_url: https://github.com/JuliaInterop/libcxxwrap-julia\n  dev_url: https://github.com/JuliaInterop/libcxxwrap-julia\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - barche\n",
  "req":{
@@ -475,5 +633,84 @@
   }
  },
  "url":"https://github.com/JuliaInterop/libcxxwrap-julia/archive/v0.5.3.tar.gz",
- "version":"0.6.6"
+ "version":"0.6.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Lightweight library that exposes C++ types in Julia and vice versa",
+   "dev_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "doc_url":"https://github.com/JuliaInterop/libcxxwrap-julia",
+   "home":"https://github.com/JuliaInterop/CxxWrap.jl",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Seamless operability between C++11 and Julia"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libcxxwrap-julia"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "barche"
+   ]
+  },
+  "package":{
+   "name":"libcxxwrap-julia",
+   "version":"0.6.6"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "julia >=1.0,<1.1"
+   ],
+   "run":[
+    "julia >=1.0,<1.1"
+   ]
+  },
+  "source":{
+   "fn":"libcxxwrap-julia-0.6.6.tar.gz",
+   "sha256":"55d589348bfd803ab0b898141a1b09fc1692ef30eb5b4ede58eff3661ece4f1b",
+   "url":"https://github.com/JuliaInterop/libcxxwrap-julia/archive/v0.6.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\JlCxx\\jlcxx.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\JlCxx\\JlCxxConfig.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\JlCxx\\JlCxxConfigVersion.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "julia"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

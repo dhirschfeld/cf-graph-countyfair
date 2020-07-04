@@ -4,6 +4,118 @@
  "conda-forge.yml":{},
  "feedstock_name":"pangomm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/pangomm",
+   "home":"https://developer.gnome.org/pangomm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for pango"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "pangomm-1.4 >=2.42.1"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "pangomm-1.4 >=2.42.1"
+     ]
+    },
+    "name":"pangomm-1.4",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "cairomm >=1.2.2",
+      "pango >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib",
+      "cairo"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "pangomm 2.42.1"
+     ]
+    },
+    "script":"build_pangomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libpangomm-1.4${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"pangomm",
+    "requirements":{
+     "run":[
+      "pangomm-1.4  2.42.1"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/pangomm-1.4.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pangomm",
+   "version":"2.42.1"
+  },
+  "source":{
+   "sha256":"14bf04939930870d5cfa96860ed953ad2ce07c3fd8713add4a1bfe585589f40f",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/pangomm/2.42/pangomm-2.42.1.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "cairomm",
+    "glib",
+    "glibmm",
+    "libsigcpp",
+    "pango"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "pango",
+    "pangomm-1.4"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.gnome.org/GNOME/pangomm",
@@ -188,6 +300,118 @@
  },
  "name":"pangomm",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/pangomm",
+   "home":"https://developer.gnome.org/pangomm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for pango"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "pangomm-1.4 >=2.42.1"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "pangomm-1.4 >=2.42.1"
+     ]
+    },
+    "name":"pangomm-1.4",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "cairomm >=1.2.2",
+      "pango >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib",
+      "cairo"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "pangomm 2.42.1"
+     ]
+    },
+    "script":"build_pangomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libpangomm-1.4${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"pangomm",
+    "requirements":{
+     "run":[
+      "pangomm-1.4  2.42.1"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/pangomm-1.4.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pangomm",
+   "version":"2.42.1"
+  },
+  "source":{
+   "sha256":"14bf04939930870d5cfa96860ed953ad2ce07c3fd8713add4a1bfe585589f40f",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/pangomm/2.42/pangomm-2.42.1.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "cairomm",
+    "glib",
+    "glibmm",
+    "libsigcpp",
+    "pango"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "pango",
+    "pangomm-1.4"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "pangomm",
   "pangomm-1.4"
@@ -276,5 +500,118 @@
   }
  },
  "url":"https://ftp.gnome.org/pub/GNOME/sources/pangomm/2.42/pangomm-2.42.1.tar.xz",
- "version":"2.42.1"
+ "version":"2.42.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/pangomm",
+   "home":"https://developer.gnome.org/pangomm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for pango"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "pangomm-1.4 >=2.42.1"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "pangomm-1.4 >=2.42.1"
+     ]
+    },
+    "name":"pangomm-1.4",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "cairomm >=1.2.2",
+      "pango >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib",
+      "cairo"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "pangomm 2.42.1"
+     ]
+    },
+    "script":"build_pangomm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libpangomm-1.4${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"pangomm",
+    "requirements":{
+     "run":[
+      "pangomm-1.4  2.42.1"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/pangomm-1.4.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pangomm",
+   "version":"2.42.1"
+  },
+  "source":{
+   "sha256":"14bf04939930870d5cfa96860ed953ad2ce07c3fd8713add4a1bfe585589f40f",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/pangomm/2.42/pangomm-2.42.1.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "cairomm",
+    "glib",
+    "glibmm",
+    "libsigcpp",
+    "pango"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "pango",
+    "pangomm-1.4"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -134,6 +134,83 @@
  },
  "feedstock_name":"r-docopt",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/docopt/docopt.R",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":[
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary":"Define a command-line interface by just giving it a description in the specific format."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "jdblischak",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-docopt",
+   "version":"0.7.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"docopt_0.7.1.tar.gz",
+   "sha256":"9f473887e4607e9b21fd4ab02e802858d0ac2ca6dad9e357a9d884a47fe4b0ff",
+   "url":[
+    "https://cran.r-project.org/src/contrib/docopt_0.7.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/docopt/docopt_0.7.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('docopt')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/docopt/docopt.R",
@@ -226,6 +303,83 @@
   "0.7.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/docopt/docopt.R",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":[
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary":"Define a command-line interface by just giving it a description in the specific format."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "jdblischak",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-docopt",
+   "version":"0.7.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"docopt_0.7.1.tar.gz",
+   "sha256":"9f473887e4607e9b21fd4ab02e802858d0ac2ca6dad9e357a9d884a47fe4b0ff",
+   "url":[
+    "https://cran.r-project.org/src/contrib/docopt_0.7.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/docopt/docopt_0.7.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('docopt')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"0.7.1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-docopt\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: docopt_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/docopt_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/docopt/docopt_{{ version }}.tar.gz\n  sha256: 9f473887e4607e9b21fd4ab02e802858d0ac2ca6dad9e357a9d884a47fe4b0ff\n\nbuild:\n  noarch: generic\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\n# Suggests: testthat\nrequirements:\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('docopt')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('docopt')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/docopt/docopt.R\n  license: MIT\n  summary: Define a command-line interface by just giving it a description in the specific format.\n  license_family: MIT\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - dpryan79\n    - jdblischak\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "req":{
@@ -288,5 +442,82 @@
   "https://cran.r-project.org/src/contrib/docopt_0.6.1.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/docopt/docopt_0.6.1.tar.gz"
  ],
- "version":"0.7.1"
+ "version":"0.7.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/docopt/docopt.R",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":[
+    "/lib/R/share/licenses/MIT",
+    "LICENSE"
+   ],
+   "summary":"Define a command-line interface by just giving it a description in the specific format."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "jdblischak",
+    "johanneskoester",
+    "bgruening",
+    "daler"
+   ]
+  },
+  "package":{
+   "name":"r-docopt",
+   "version":"0.7.1"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"docopt_0.7.1.tar.gz",
+   "sha256":"9f473887e4607e9b21fd4ab02e802858d0ac2ca6dad9e357a9d884a47fe4b0ff",
+   "url":[
+    "https://cran.r-project.org/src/contrib/docopt_0.7.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/docopt/docopt_0.7.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('docopt')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

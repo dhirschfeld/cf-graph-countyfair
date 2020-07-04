@@ -173,6 +173,111 @@
  "conda-forge.yml":{},
  "feedstock_name":"monkeytype",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"MonkeyType collects runtime types of function arguments and return values,\nand can automatically generate stub files or even add draft type\nannotations directly to your Python code based on the types collected at\nruntime.\n",
+   "doc_source_url":"https://github.com/Instagram/MonkeyType/tree/master/doc",
+   "doc_url":"https://monkeytype.readthedocs.io",
+   "home":"https://github.com/Instagram/MonkeyType",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"src/LICENSE",
+   "summary":"Generating type annotations from sampled production types"
+  },
+  "build":{
+   "entry_points":[
+    "monkeytype=monkeytype.cli:entry_point_main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"cd dist && python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl",
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"monkeytype",
+   "version":"20.5.0"
+  },
+  "requirements":{
+   "build":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libcst >=0.3.5",
+    "mypy_extensions",
+    "python >=3.6"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "monkeytype --help",
+    "cd src && cd tests",
+    "python -m pytest -k \"not test_includes_otherwise\""
+   ],
+   "imports":[
+    "monkeytype"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libcst",
+    "mypy_extensions",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"MonkeyType collects runtime types of function arguments and return values,\nand can automatically generate stub files or even add draft type\nannotations directly to your Python code based on the types collected at\nruntime.\n",
@@ -311,6 +416,111 @@
   "20.5.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"MonkeyType collects runtime types of function arguments and return values,\nand can automatically generate stub files or even add draft type\nannotations directly to your Python code based on the types collected at\nruntime.\n",
+   "doc_source_url":"https://github.com/Instagram/MonkeyType/tree/master/doc",
+   "doc_url":"https://monkeytype.readthedocs.io",
+   "home":"https://github.com/Instagram/MonkeyType",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"src/LICENSE",
+   "summary":"Generating type annotations from sampled production types"
+  },
+  "build":{
+   "entry_points":[
+    "monkeytype=monkeytype.cli:entry_point_main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"cd dist && python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl",
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"monkeytype",
+   "version":"20.5.0"
+  },
+  "requirements":{
+   "build":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libcst >=0.3.5",
+    "mypy_extensions",
+    "python >=3.6"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "monkeytype --help",
+    "cd src && cd tests",
+    "python -m pytest -k \"not test_includes_otherwise\""
+   ],
+   "imports":[
+    "monkeytype"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libcst",
+    "mypy_extensions",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.05.18.14.31.44",
  "raw_meta_yaml":"{% set name = \"MonkeyType\" %}\n{% set version = \"20.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: dist\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd\n  - folder: src\n    url: https://github.com/Instagram/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - monkeytype=monkeytype.cli:entry_point_main\n  script: cd dist && python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python >=3.6\n  run:\n    - libcst >=0.3.5\n    - mypy_extensions\n    - python >=3.6\n\ntest:\n  source_files:\n    - src/tests\n  requires:\n    - {{ compiler('c') }}\n    - cython\n    - django\n    - pip\n    - pytest\n  imports:\n    - monkeytype\n  commands:\n    - python -m pip check\n    - monkeytype --help\n    - cd src && cd tests\n    - python -m pytest -k \"not test_includes_otherwise\"\n\n\nabout:\n  home: https://github.com/Instagram/MonkeyType\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: src/LICENSE\n  summary: Generating type annotations from sampled production types\n  doc_url: https://monkeytype.readthedocs.io\n  doc_source_url: https://github.com/Instagram/MonkeyType/tree/master/doc\n  description: |\n    MonkeyType collects runtime types of function arguments and return values,\n    and can automatically generate stub files or even add draft type\n    annotations directly to your Python code based on the types collected at\n    runtime.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - nehaljwani\n",
  "req":{
@@ -387,5 +597,110 @@
   }
  },
  "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-19.5.0.tar.gz",
- "version":"20.5.0"
+ "version":"20.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"MonkeyType collects runtime types of function arguments and return values,\nand can automatically generate stub files or even add draft type\nannotations directly to your Python code based on the types collected at\nruntime.\n",
+   "doc_source_url":"https://github.com/Instagram/MonkeyType/tree/master/doc",
+   "doc_url":"https://monkeytype.readthedocs.io",
+   "home":"https://github.com/Instagram/MonkeyType",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"src/LICENSE",
+   "summary":"Generating type annotations from sampled production types"
+  },
+  "build":{
+   "entry_points":[
+    "monkeytype=monkeytype.cli:entry_point_main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"cd dist && python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl",
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"monkeytype",
+   "version":"20.5.0"
+  },
+  "requirements":{
+   "build":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libcst >=0.3.5",
+    "mypy_extensions",
+    "python >=3.6"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"fe596bebc5e1b6a64eae71a40b880688de433e4f70507a31ada48510195251dd",
+    "url":"https://pypi.io/packages/source/M/MonkeyType/MonkeyType-20.5.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"bd94b1bc377e5ba2d2ed9de3e6c85d939a5fcbcd8ab8161c388cdf5b91252bda",
+    "url":"https://github.com/Instagram/MonkeyType/archive/v20.5.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "monkeytype --help",
+    "cd src && cd tests",
+    "python -m pytest -k \"not test_includes_otherwise\""
+   ],
+   "imports":[
+    "monkeytype"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libcst",
+    "mypy_extensions",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cython",
+    "django",
+    "pip",
+    "pytest"
+   ]
+  }
+ }
 }

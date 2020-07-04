@@ -97,6 +97,88 @@
  },
  "feedstock_name":"clsparse",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/clMathLibraries/clSPARSE",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"A software library containing Sparse functions written in OpenCL"
+  },
+  "build":{
+   "features":null,
+   "number":"3",
+   "script_env":[
+    "OSX_VARIANT"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"clsparse",
+   "version":"0.10.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "boost-cpp",
+    "clhpp",
+    "gtest",
+    "ocl-icd"
+   ],
+   "run":[
+    "ocl-icd"
+   ]
+  },
+  "source":{
+   "fn":"clSPARSE-0.10.2.0.tar.gz",
+   "sha256":"952b26670625646c5386299a4d360aaa9cd2139555376b48aaed163a6ea60325",
+   "url":"https://github.com/clMathLibraries/clSPARSE/archive/v0.10.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/include/clSPARSE.h\"",
+    "test -f \"${PREFIX}/lib/libclSPARSE.so\""
+   ],
+   "requires":null
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "clhpp",
+    "gtest",
+    "ocl-icd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ocl-icd"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/clMathLibraries/clSPARSE",
@@ -176,6 +258,82 @@
  },
  "name":"clsparse",
  "new_version":"0.10.2.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/clMathLibraries/clSPARSE",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"A software library containing Sparse functions written in OpenCL"
+  },
+  "build":{
+   "features":null,
+   "number":"3",
+   "script_env":[
+    "OSX_VARIANT"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"clsparse",
+   "version":"0.10.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "boost-cpp",
+    "clhpp",
+    "gtest"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"clSPARSE-0.10.2.0.tar.gz",
+   "sha256":"952b26670625646c5386299a4d360aaa9cd2139555376b48aaed163a6ea60325",
+   "url":"https://github.com/clMathLibraries/clSPARSE/archive/v0.10.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f \"${PREFIX}/include/clSPARSE.h\"",
+    "test -f \"${PREFIX}/lib/libclSPARSE.dylib\""
+   ],
+   "requires":null
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "clhpp",
+    "gtest"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set name = \"clSPARSE\" %}\n{% set version = \"0.10.2.0\" %}\n{% set sha256 = \"952b26670625646c5386299a4d360aaa9cd2139555376b48aaed163a6ea60325\" %}\n\n{% set OSX_VARIANT = os.environ.get(\"OSX_VARIANT\", \"native\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/clMathLibraries/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 3\n  script_env:\n    - OSX_VARIANT\n\n{% if OSX_VARIANT != \"native\" %}\n  skip: True  # [not osx]\n{% else %}\n  skip: True  # [win and py<36]\n{% endif %}\n\n  features:\n{% if OSX_VARIANT == \"pocl\" %}\n    - osx_pocl_opencl            # [osx]\n{% endif %}\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - boost-cpp\n    - clhpp\n    - gtest\n    - ocl-icd                    # [linux]\n    - khronos-opencl-icd-loader  # [win]\n{% if OSX_VARIANT == \"pocl\" %}\n    - osx-pocl-opencl            # [osx]\n    - pocl >=0.14                # [unix]\n{% endif %}\n\n  run:\n    - khronos-opencl-icd-loader  # [win]\n    - ocl-icd                    # [linux]\n{% if OSX_VARIANT == \"pocl\" %}\n    - osx-pocl-opencl            # [osx]\n    - pocl >=0.14                # [unix]\n{% endif %}\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}              # [win]\n\n  commands:\n    # Check files\n    - test -f \"${PREFIX}/include/clSPARSE.h\"           # [unix]\n    - test -f \"${PREFIX}/lib/libclSPARSE.so\"           # [linux]\n    - test -f \"${PREFIX}/lib/libclSPARSE.dylib\"        # [osx]\n    - if not exist %LIBRARY_INC%\\\\clSPARSE.h exit 1    # [win]\n    - if not exist %LIBRARY_BIN%\\\\clSPARSE.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\clSPARSE.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/clMathLibraries/{{ name }}\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: A software library containing Sparse functions written in OpenCL\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - jakirkham\n",
  "req":{
@@ -254,5 +412,92 @@
   }
  },
  "url":"https://github.com/clMathLibraries/clSPARSE/archive/v0.10.2.0.tar.gz",
- "version":"0.10.2.0"
+ "version":"0.10.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/clMathLibraries/clSPARSE",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"A software library containing Sparse functions written in OpenCL"
+  },
+  "build":{
+   "features":null,
+   "number":"3",
+   "script_env":[
+    "OSX_VARIANT"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"clsparse",
+   "version":"0.10.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "boost-cpp",
+    "clhpp",
+    "gtest",
+    "khronos-opencl-icd-loader"
+   ],
+   "run":[
+    "khronos-opencl-icd-loader"
+   ]
+  },
+  "source":{
+   "fn":"clSPARSE-0.10.2.0.tar.gz",
+   "sha256":"952b26670625646c5386299a4d360aaa9cd2139555376b48aaed163a6ea60325",
+   "url":"https://github.com/clMathLibraries/clSPARSE/archive/v0.10.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\\\clSPARSE.h exit 1",
+    "if not exist %LIBRARY_BIN%\\\\clSPARSE.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\\\clSPARSE.lib exit 1"
+   ],
+   "requires":[
+    "python *"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "clhpp",
+    "gtest",
+    "khronos-opencl-icd-loader"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "khronos-opencl-icd-loader"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ }
 }

@@ -54,6 +54,83 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyjwt",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jpadilla/pyjwt",
+   "doc_url":"https://pyjwt.readthedocs.io/en/latest/",
+   "home":"https://github.com/jpadilla/pyjwt",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"JSON Web Token implementation in Python"
+  },
+  "build":{
+   "entry_points":[
+    "pyjwt = jwt.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"pyjwt",
+   "version":"1.7.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "cryptography >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"PyJWT-1.7.1.tar.gz",
+   "sha256":"8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96",
+   "url":"https://pypi.org/packages/source/P/PyJWT/PyJWT-1.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pyjwt --help"
+   ],
+   "imports":[
+    "jwt",
+    "jwt.contrib",
+    "jwt.contrib.algorithms"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cryptography",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jpadilla/pyjwt",
@@ -129,6 +206,83 @@
  },
  "name":"pyjwt",
  "new_version":"1.7.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jpadilla/pyjwt",
+   "doc_url":"https://pyjwt.readthedocs.io/en/latest/",
+   "home":"https://github.com/jpadilla/pyjwt",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"JSON Web Token implementation in Python"
+  },
+  "build":{
+   "entry_points":[
+    "pyjwt = jwt.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"pyjwt",
+   "version":"1.7.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "cryptography >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"PyJWT-1.7.1.tar.gz",
+   "sha256":"8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96",
+   "url":"https://pypi.org/packages/source/P/PyJWT/PyJWT-1.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pyjwt --help"
+   ],
+   "imports":[
+    "jwt",
+    "jwt.contrib",
+    "jwt.contrib.algorithms"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cryptography",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.11.27",
  "raw_meta_yaml":"{% set name = \"PyJWT\" %}\n{% set version = \"1.7.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  entry_points:\n    - pyjwt = jwt.__main__:main\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - cryptography >=1.4\n\ntest:\n  imports:\n    - jwt\n    - jwt.contrib\n    - jwt.contrib.algorithms\n\n  commands:\n    - pyjwt --help\n\nabout:\n  home: https://github.com/jpadilla/pyjwt\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON Web Token implementation in Python'\n  dev_url: https://github.com/jpadilla/pyjwt\n  doc_url: https://pyjwt.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "req":{
@@ -190,5 +344,82 @@
   }
  },
  "url":"https://pypi.org/packages/source/P/PyJWT/PyJWT-1.7.1.tar.gz",
- "version":"1.7.1"
+ "version":"1.7.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jpadilla/pyjwt",
+   "doc_url":"https://pyjwt.readthedocs.io/en/latest/",
+   "home":"https://github.com/jpadilla/pyjwt",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"JSON Web Token implementation in Python"
+  },
+  "build":{
+   "entry_points":[
+    "pyjwt = jwt.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr"
+   ]
+  },
+  "package":{
+   "name":"pyjwt",
+   "version":"1.7.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "cryptography >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"PyJWT-1.7.1.tar.gz",
+   "sha256":"8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96",
+   "url":"https://pypi.org/packages/source/P/PyJWT/PyJWT-1.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pyjwt --help"
+   ],
+   "imports":[
+    "jwt",
+    "jwt.contrib",
+    "jwt.contrib.algorithms"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cryptography",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

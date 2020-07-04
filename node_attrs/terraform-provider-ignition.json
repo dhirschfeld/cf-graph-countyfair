@@ -127,6 +127,73 @@
  },
  "feedstock_name":"terraform-provider-ignition",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/terraform-providers/terraform-provider-ignition",
+   "doc_url":"https://www.terraform.io/docs/providers/ignition/index.html",
+   "home":"https://www.terraform.io",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"The Terraform Ignition provider"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "go build -v -o terraform-provider-ignition_v1.2.1_x4"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/terraform"
+   ]
+  },
+  "package":{
+   "name":"terraform-provider-ignition",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub 1.13"
+   ],
+   "run":[
+    "terraform 0.12"
+   ]
+  },
+  "source":{
+   "sha256":"2c59c994806c0ca4ca093609fd1df63f9fc3dad2d07e0c2d4f6d6064d6844d6d",
+   "url":"https://github.com/terraform-providers/terraform-provider-ignition/archive/v1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "echo 'provider \"ignition\" { version=\"1.2.1\" }' > init.tf",
+    "terraform init",
+    "test -f .terraform/plugins/_/lock.json",
+    "test ! -f .terraform/plugins/_/terraform-provider-ignition_v1.2.1_x4"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "terraform"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/terraform-providers/terraform-provider-ignition",
@@ -194,6 +261,73 @@
   "1.2.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/terraform-providers/terraform-provider-ignition",
+   "doc_url":"https://www.terraform.io/docs/providers/ignition/index.html",
+   "home":"https://www.terraform.io",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"The Terraform Ignition provider"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "go build -v -o terraform-provider-ignition_v1.2.1_x4"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/terraform"
+   ]
+  },
+  "package":{
+   "name":"terraform-provider-ignition",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub 1.13"
+   ],
+   "run":[
+    "terraform 0.12"
+   ]
+  },
+  "source":{
+   "sha256":"2c59c994806c0ca4ca093609fd1df63f9fc3dad2d07e0c2d4f6d6064d6844d6d",
+   "url":"https://github.com/terraform-providers/terraform-provider-ignition/archive/v1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "echo 'provider \"ignition\" { version=\"1.2.1\" }' > init.tf",
+    "terraform init",
+    "test -f .terraform/plugins/_/lock.json",
+    "test ! -f .terraform/plugins/_/terraform-provider-ignition_v1.2.1_x4"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "terraform"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.12.13.56.44",
  "raw_meta_yaml":"{% set provider = \"Ignition\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"1.2.1\" %}\n\n{% set name = goname.split('/')[-1] %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n  sha256: 2c59c994806c0ca4ca093609fd1df63f9fc3dad2d07e0c2d4f6d6064d6844d6d\n\nbuild:\n  number: 0\n  script:\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_file: LICENSE\n  summary: The Terraform {{ provider }} provider\n  doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n",
  "req":{
@@ -250,5 +384,72 @@
   }
  },
  "url":"https://github.com/terraform-providers/terraform-provider-ignition/archive/v1.1.0.tar.gz",
- "version":"1.2.1"
+ "version":"1.2.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/terraform-providers/terraform-provider-ignition",
+   "doc_url":"https://www.terraform.io/docs/providers/ignition/index.html",
+   "home":"https://www.terraform.io",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"The Terraform Ignition provider"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "go build -v -o terraform-provider-ignition_v1.2.1_x4"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/terraform"
+   ]
+  },
+  "package":{
+   "name":"terraform-provider-ignition",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub 1.13"
+   ],
+   "run":[
+    "terraform 0.12"
+   ]
+  },
+  "source":{
+   "sha256":"2c59c994806c0ca4ca093609fd1df63f9fc3dad2d07e0c2d4f6d6064d6844d6d",
+   "url":"https://github.com/terraform-providers/terraform-provider-ignition/archive/v1.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "echo provider \"ignition\" { version=\"1.2.1\" } > init.tf",
+    "terraform init",
+    "if not exist .terraform\\plugins\\_\\lock.json exit 1",
+    "if exist .terraform\\plugins\\_\\terraform-provider-ignition_v1.2.1_x4 exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "terraform"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

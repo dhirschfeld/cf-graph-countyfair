@@ -4,6 +4,108 @@
  "conda-forge.yml":{},
  "feedstock_name":"libsm-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The X.Org X11 SM (Session Management) runtime library.",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libSM-1.2.2/COPYING",
+   "summary":"(CDT) X.Org X11 SM runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libsm-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libsm-devel-cos7-ppc64le",
+    "requirements":[
+     "libsm-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsm-cos7-ppc64le",
+   "version":"1.2.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"055ac077f6605a51578a525898f0a284a9a23b02667d0bf5ef5f99ac842c2ea0",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-1.2.2-2.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"0967d96cd46a7c47788fd2986dcb234e9fe1dfa21dc81bb44069c33c3cdbce60",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-devel-1.2.2-2.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsm-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The X.Org X11 SM (Session Management) runtime library.",
@@ -178,6 +280,108 @@
  },
  "name":"libsm-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The X.Org X11 SM (Session Management) runtime library.",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libSM-1.2.2/COPYING",
+   "summary":"(CDT) X.Org X11 SM runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libsm-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libsm-devel-cos7-ppc64le",
+    "requirements":[
+     "libsm-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsm-cos7-ppc64le",
+   "version":"1.2.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"055ac077f6605a51578a525898f0a284a9a23b02667d0bf5ef5f99ac842c2ea0",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-1.2.2-2.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"0967d96cd46a7c47788fd2986dcb234e9fe1dfa21dc81bb44069c33c3cdbce60",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-devel-1.2.2-2.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsm-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libsm-cos7-ppc64le",
   "libsm-devel-cos7-ppc64le"
@@ -236,5 +440,107 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-1.2.2-2.el7.ppc64le.rpm",
- "version":"1.2.2"
+ "version":"1.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The X.Org X11 SM (Session Management) runtime library.",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libSM-1.2.2/COPYING",
+   "summary":"(CDT) X.Org X11 SM runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libsm-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libsm-devel-cos7-ppc64le",
+    "requirements":[
+     "libsm-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsm-cos7-ppc64le",
+   "version":"1.2.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"055ac077f6605a51578a525898f0a284a9a23b02667d0bf5ef5f99ac842c2ea0",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-1.2.2-2.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"0967d96cd46a7c47788fd2986dcb234e9fe1dfa21dc81bb44069c33c3cdbce60",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libSM-devel-1.2.2-2.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libSM.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsm-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

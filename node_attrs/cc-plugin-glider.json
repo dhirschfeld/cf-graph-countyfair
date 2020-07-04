@@ -103,6 +103,87 @@
  "conda-forge.yml":{},
  "feedstock_name":"cc-plugin-glider",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ioos/cc-plugin-glider",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Compliance Checker Glider DAC plugin"
+  },
+  "build":{
+   "entry_points":[
+    "gliderdac = cc_plugin_glider.glider_dac:GliderCheck"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benjwadams",
+    "daf",
+    "kwilcox",
+    "lukecampbell",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cc-plugin-glider",
+   "version":"2.0.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "compliance-checker >=4.3.2"
+   ]
+  },
+  "source":{
+   "sha256":"fd1bf951fb4edc23e24d9eb5e15fc23f9cde5879d62c270bc1947c0edf43380e",
+   "url":"https://github.com/ioos/cc-plugin-glider/archive/2.0.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "compliance-checker --list-tests | grep -q gliderdac",
+    "pip check"
+   ],
+   "imports":[
+    "cc_plugin_glider"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "compliance-checker",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/ioos/cc-plugin-glider",
@@ -191,6 +272,87 @@
   "2.0.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ioos/cc-plugin-glider",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Compliance Checker Glider DAC plugin"
+  },
+  "build":{
+   "entry_points":[
+    "gliderdac = cc_plugin_glider.glider_dac:GliderCheck"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benjwadams",
+    "daf",
+    "kwilcox",
+    "lukecampbell",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cc-plugin-glider",
+   "version":"2.0.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "compliance-checker >=4.3.2"
+   ]
+  },
+  "source":{
+   "sha256":"fd1bf951fb4edc23e24d9eb5e15fc23f9cde5879d62c270bc1947c0edf43380e",
+   "url":"https://github.com/ioos/cc-plugin-glider/archive/2.0.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "compliance-checker --list-tests | grep -q gliderdac",
+    "pip check"
+   ],
+   "imports":[
+    "cc_plugin_glider"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "compliance-checker",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.05.20.09.40.28",
  "raw_meta_yaml":"{% set version = \"2.0.3\" %}\n\npackage:\n  name: cc-plugin-glider\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ioos/cc-plugin-glider/archive/{{ version }}.tar.gz\n  sha256: fd1bf951fb4edc23e24d9eb5e15fc23f9cde5879d62c270bc1947c0edf43380e\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - gliderdac = cc_plugin_glider.glider_dac:GliderCheck\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - compliance-checker >=4.3.2\n\ntest:\n  imports:\n    - cc_plugin_glider\n  commands:\n    - compliance-checker --list-tests | grep -q gliderdac  # [not win]\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/ioos/cc-plugin-glider\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: Compliance Checker Glider DAC plugin\n\nextra:\n  recipe-maintainers:\n    - benjwadams\n    - daf\n    - kwilcox\n    - lukecampbell\n    - ocefpaf\n",
  "req":{
@@ -256,5 +418,85 @@
   }
  },
  "url":"https://github.com/ioos/cc-plugin-glider/archive/2.0.0.tar.gz",
- "version":"2.0.3"
+ "version":"2.0.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/ioos/cc-plugin-glider",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Compliance Checker Glider DAC plugin"
+  },
+  "build":{
+   "entry_points":[
+    "gliderdac = cc_plugin_glider.glider_dac:GliderCheck"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benjwadams",
+    "daf",
+    "kwilcox",
+    "lukecampbell",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"cc-plugin-glider",
+   "version":"2.0.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "compliance-checker >=4.3.2"
+   ]
+  },
+  "source":{
+   "sha256":"fd1bf951fb4edc23e24d9eb5e15fc23f9cde5879d62c270bc1947c0edf43380e",
+   "url":"https://github.com/ioos/cc-plugin-glider/archive/2.0.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "cc_plugin_glider"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "compliance-checker",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

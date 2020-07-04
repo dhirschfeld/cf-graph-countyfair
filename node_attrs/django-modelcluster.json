@@ -122,6 +122,81 @@
  "conda-forge.yml":{},
  "feedstock_name":"django-modelcluster",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"django-modelcluster extends Django foreign key relations. It\nintroduces a new type of relation, ParentalKey, where the\nrelated models are stored locally to the parent model until\nthe parent is explicitly saved.\n",
+   "dev_url":"https://github.com/wagtail/django-modelcluster",
+   "doc_url":"https://github.com/wagtail/django-modelcluster",
+   "home":"https://github.com/wagtail/django-modelcluster",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Django extension to allow working with clusters of models as a single unit, independently of the database"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley",
+    "sannykr"
+   ]
+  },
+  "package":{
+   "name":"django-modelcluster",
+   "version":"5.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django",
+    "pytz >=2015.2",
+    "django-taggit >=0.20"
+   ]
+  },
+  "source":{
+   "fn":"django-modelcluster-5.0.tar.gz",
+   "sha256":"a293a1875cb97c1b6e131f53857f0c47e297330c1b5df47737afa54bc10a967d",
+   "url":"https://pypi.io/packages/source/d/django-modelcluster/django-modelcluster-5.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "modelcluster"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-taggit",
+    "python",
+    "pytz"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"django-modelcluster extends Django foreign key relations. It\nintroduces a new type of relation, ParentalKey, where the\nrelated models are stored locally to the parent model until\nthe parent is explicitly saved.\n",
@@ -195,6 +270,81 @@
   "5.0.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"django-modelcluster extends Django foreign key relations. It\nintroduces a new type of relation, ParentalKey, where the\nrelated models are stored locally to the parent model until\nthe parent is explicitly saved.\n",
+   "dev_url":"https://github.com/wagtail/django-modelcluster",
+   "doc_url":"https://github.com/wagtail/django-modelcluster",
+   "home":"https://github.com/wagtail/django-modelcluster",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Django extension to allow working with clusters of models as a single unit, independently of the database"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley",
+    "sannykr"
+   ]
+  },
+  "package":{
+   "name":"django-modelcluster",
+   "version":"5.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django",
+    "pytz >=2015.2",
+    "django-taggit >=0.20"
+   ]
+  },
+  "source":{
+   "fn":"django-modelcluster-5.0.tar.gz",
+   "sha256":"a293a1875cb97c1b6e131f53857f0c47e297330c1b5df47737afa54bc10a967d",
+   "url":"https://pypi.io/packages/source/d/django-modelcluster/django-modelcluster-5.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "modelcluster"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-taggit",
+    "python",
+    "pytz"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"django-modelcluster\" %}\n{% set version = \"5.0\" %}\n{% set sha256 = \"a293a1875cb97c1b6e131f53857f0c47e297330c1b5df47737afa54bc10a967d\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n    - pytz >=2015.2\n    - django-taggit >=0.20\n\ntest:\n  imports:\n    - modelcluster\n\nabout:\n  home: https://github.com/wagtail/django-modelcluster\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Django extension to allow working with clusters of models \n  as a single unit, independently of the database'\n  description: |\n    django-modelcluster extends Django foreign key relations. It \n    introduces a new type of relation, ParentalKey, where the \n    related models are stored locally to the parent model until \n    the parent is explicitly saved.  \n  doc_url: https://github.com/wagtail/django-modelcluster\n  dev_url: https://github.com/wagtail/django-modelcluster\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "req":{
@@ -262,5 +412,80 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/django-modelcluster/django-modelcluster-5.0.tar.gz",
- "version":"5.0"
+ "version":"5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"django-modelcluster extends Django foreign key relations. It\nintroduces a new type of relation, ParentalKey, where the\nrelated models are stored locally to the parent model until\nthe parent is explicitly saved.\n",
+   "dev_url":"https://github.com/wagtail/django-modelcluster",
+   "doc_url":"https://github.com/wagtail/django-modelcluster",
+   "home":"https://github.com/wagtail/django-modelcluster",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Django extension to allow working with clusters of models as a single unit, independently of the database"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley",
+    "sannykr"
+   ]
+  },
+  "package":{
+   "name":"django-modelcluster",
+   "version":"5.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django",
+    "pytz >=2015.2",
+    "django-taggit >=0.20"
+   ]
+  },
+  "source":{
+   "fn":"django-modelcluster-5.0.tar.gz",
+   "sha256":"a293a1875cb97c1b6e131f53857f0c47e297330c1b5df47737afa54bc10a967d",
+   "url":"https://pypi.io/packages/source/d/django-modelcluster/django-modelcluster-5.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "modelcluster"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-taggit",
+    "python",
+    "pytz"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -86,6 +86,79 @@
  "conda-forge.yml":{},
  "feedstock_name":"crochet",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Crochet is an MIT-licensed library that makes it easier to use Twisted from\nregular blocking code. Some use cases include:\n\n  * Easily use Twisted from a blocking framework like Django or Flask.\n\n  * Write a library that provides a blocking API, but uses Twisted for its\n    implementation.\n\n  * Port blocking code to Twisted more easily, by keeping a backwards\n    compatibility layer.\n\n  * Allow normal Twisted programs that use threads to interact with Twisted\n    more cleanly from their threaded parts. For example, this can be useful\n    when using Twisted as a WSGI container.\n",
+   "dev_url":"https://github.com/itamarst/crochet/",
+   "doc_url":"https://crochet.readthedocs.org/",
+   "home":"https://github.com/itamarst/crochet",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Use Twisted anywhere!"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuertz",
+    "itamarst"
+   ]
+  },
+  "package":{
+   "name":"crochet",
+   "version":"1.12.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "twisted >=15.0",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"crochet-1.12.0.tar.gz",
+   "sha256":"8fcbc64768813f50ee76b17a1e8d32a9f39206f8ab6766d50c885e07e7fb6fb1",
+   "url":"https://pypi.io/packages/source/c/crochet/crochet-1.12.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "crochet"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "twisted",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Crochet is an MIT-licensed library that makes it easier to use Twisted from\nregular blocking code. Some use cases include:\n\n  * Easily use Twisted from a blocking framework like Django or Flask.\n\n  * Write a library that provides a blocking API, but uses Twisted for its\n    implementation.\n\n  * Port blocking code to Twisted more easily, by keeping a backwards\n    compatibility layer.\n\n  * Allow normal Twisted programs that use threads to interact with Twisted\n    more cleanly from their threaded parts. For example, this can be useful\n    when using Twisted as a WSGI container.\n",
@@ -152,6 +225,79 @@
  },
  "name":"crochet",
  "new_version":"1.12.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Crochet is an MIT-licensed library that makes it easier to use Twisted from\nregular blocking code. Some use cases include:\n\n  * Easily use Twisted from a blocking framework like Django or Flask.\n\n  * Write a library that provides a blocking API, but uses Twisted for its\n    implementation.\n\n  * Port blocking code to Twisted more easily, by keeping a backwards\n    compatibility layer.\n\n  * Allow normal Twisted programs that use threads to interact with Twisted\n    more cleanly from their threaded parts. For example, this can be useful\n    when using Twisted as a WSGI container.\n",
+   "dev_url":"https://github.com/itamarst/crochet/",
+   "doc_url":"https://crochet.readthedocs.org/",
+   "home":"https://github.com/itamarst/crochet",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Use Twisted anywhere!"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuertz",
+    "itamarst"
+   ]
+  },
+  "package":{
+   "name":"crochet",
+   "version":"1.12.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "twisted >=15.0",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"crochet-1.12.0.tar.gz",
+   "sha256":"8fcbc64768813f50ee76b17a1e8d32a9f39206f8ab6766d50c885e07e7fb6fb1",
+   "url":"https://pypi.io/packages/source/c/crochet/crochet-1.12.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "crochet"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "twisted",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.01.24",
  "raw_meta_yaml":"{% set name = \"crochet\" %}\n{% set version = \"1.12.0\" %}\n{% set sha256 = \"8fcbc64768813f50ee76b17a1e8d32a9f39206f8ab6766d50c885e07e7fb6fb1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n\n  run:\n    - python\n    - twisted >=15.0\n    - wrapt\n    \ntest:\n  imports:\n    - crochet\n\nabout:\n  home: https://github.com/itamarst/crochet\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Use Twisted anywhere!'\n  description: |\n    Crochet is an MIT-licensed library that makes it easier to use Twisted from\n    regular blocking code. Some use cases include:\n\n      * Easily use Twisted from a blocking framework like Django or Flask.\n\n      * Write a library that provides a blocking API, but uses Twisted for its\n        implementation.\n\n      * Port blocking code to Twisted more easily, by keeping a backwards\n        compatibility layer.\n\n      * Allow normal Twisted programs that use threads to interact with Twisted\n        more cleanly from their threaded parts. For example, this can be useful\n        when using Twisted as a WSGI container.\n  doc_url: https://crochet.readthedocs.org/\n  dev_url: https://github.com/itamarst/crochet/\n\nextra:\n  recipe-maintainers:\n    - stuertz\n    - itamarst\n",
  "req":{
@@ -216,5 +362,78 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/crochet/crochet-1.10.0.tar.gz",
- "version":"1.12.0"
+ "version":"1.12.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Crochet is an MIT-licensed library that makes it easier to use Twisted from\nregular blocking code. Some use cases include:\n\n  * Easily use Twisted from a blocking framework like Django or Flask.\n\n  * Write a library that provides a blocking API, but uses Twisted for its\n    implementation.\n\n  * Port blocking code to Twisted more easily, by keeping a backwards\n    compatibility layer.\n\n  * Allow normal Twisted programs that use threads to interact with Twisted\n    more cleanly from their threaded parts. For example, this can be useful\n    when using Twisted as a WSGI container.\n",
+   "dev_url":"https://github.com/itamarst/crochet/",
+   "doc_url":"https://crochet.readthedocs.org/",
+   "home":"https://github.com/itamarst/crochet",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Use Twisted anywhere!"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "stuertz",
+    "itamarst"
+   ]
+  },
+  "package":{
+   "name":"crochet",
+   "version":"1.12.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "twisted >=15.0",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"crochet-1.12.0.tar.gz",
+   "sha256":"8fcbc64768813f50ee76b17a1e8d32a9f39206f8ab6766d50c885e07e7fb6fb1",
+   "url":"https://pypi.io/packages/source/c/crochet/crochet-1.12.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "crochet"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "twisted",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

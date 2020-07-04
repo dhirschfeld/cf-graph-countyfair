@@ -114,6 +114,93 @@
  },
  "feedstock_name":"falcon",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Falcon is a high-performance Python framework for building cloud APIs. It\nencourages the REST architectural style, and tries to do as little as\npossible while remaining highly effective.\n",
+   "dev_url":"https://github.com/falconry/falcon/",
+   "doc_url":"http://falcon.readthedocs.io/en/stable/",
+   "home":"http://falconframework.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"An unladen web framework for building APIs and app backends."
+  },
+  "build":{
+   "entry_points":[
+    "falcon-bench = falcon.cmd.bench:main",
+    "falcon-print-routes = falcon.cmd.print_routes:main"
+   ],
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "synapticarbors",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"falcon",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"eea593cf466b9c126ce667f6d30503624ef24459f118c75594a69353b6c3d5fc",
+   "url":"https://pypi.io/packages/source/f/falcon/falcon-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "falcon-bench -h",
+    "falcon-print-routes -h"
+   ],
+   "imports":[
+    "falcon",
+    "falcon.cmd",
+    "falcon.media",
+    "falcon.routing",
+    "falcon.testing",
+    "falcon.util"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Falcon is a high-performance Python framework for building cloud APIs. It\nencourages the REST architectural style, and tries to do as little as\npossible while remaining highly effective.\n",
@@ -213,6 +300,93 @@
  },
  "name":"falcon",
  "new_version":"2.0.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Falcon is a high-performance Python framework for building cloud APIs. It\nencourages the REST architectural style, and tries to do as little as\npossible while remaining highly effective.\n",
+   "dev_url":"https://github.com/falconry/falcon/",
+   "doc_url":"http://falcon.readthedocs.io/en/stable/",
+   "home":"http://falconframework.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"An unladen web framework for building APIs and app backends."
+  },
+  "build":{
+   "entry_points":[
+    "falcon-bench = falcon.cmd.bench:main",
+    "falcon-print-routes = falcon.cmd.print_routes:main"
+   ],
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "synapticarbors",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"falcon",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"eea593cf466b9c126ce667f6d30503624ef24459f118c75594a69353b6c3d5fc",
+   "url":"https://pypi.io/packages/source/f/falcon/falcon-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "falcon-bench -h",
+    "falcon-print-routes -h"
+   ],
+   "imports":[
+    "falcon",
+    "falcon.cmd",
+    "falcon.media",
+    "falcon.routing",
+    "falcon.testing",
+    "falcon.util"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.14",
  "raw_meta_yaml":"{% set name = \"falcon\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: eea593cf466b9c126ce667f6d30503624ef24459f118c75594a69353b6c3d5fc\n\nbuild:\n    number: 2\n    script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n    entry_points:\n      - falcon-bench = falcon.cmd.bench:main\n      - falcon-print-routes = falcon.cmd.print_routes:main\n\nrequirements:\n    build:\n        - {{ compiler('c') }}\n    host:\n        - python\n        - pip\n        - cython\n    run:\n        - python\n\ntest:\n    imports:\n        - falcon\n        - falcon.cmd\n        - falcon.media\n        - falcon.routing\n        - falcon.testing\n        - falcon.util\n    commands:\n        - falcon-bench -h\n        - falcon-print-routes -h\n\nabout:\n    home: http://falconframework.org\n    license: Apache-2.0\n    license_file: LICENSE\n    summary: 'An unladen web framework for building APIs and app backends.'\n    description: |\n        Falcon is a high-performance Python framework for building cloud APIs. It\n        encourages the REST architectural style, and tries to do as little as\n        possible while remaining highly effective.\n    doc_url: http://falcon.readthedocs.io/en/stable/\n    dev_url: https://github.com/falconry/falcon/\n\nextra:\n    recipe-maintainers:\n        - daf\n        - synapticarbors\n        - carlodri\n",
  "req":{
@@ -279,5 +453,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/falcon/falcon-2.0.0.tar.gz",
- "version":"2.0.0"
+ "version":"2.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Falcon is a high-performance Python framework for building cloud APIs. It\nencourages the REST architectural style, and tries to do as little as\npossible while remaining highly effective.\n",
+   "dev_url":"https://github.com/falconry/falcon/",
+   "doc_url":"http://falcon.readthedocs.io/en/stable/",
+   "home":"http://falconframework.org",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"An unladen web framework for building APIs and app backends."
+  },
+  "build":{
+   "entry_points":[
+    "falcon-bench = falcon.cmd.bench:main",
+    "falcon-print-routes = falcon.cmd.print_routes:main"
+   ],
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "daf",
+    "synapticarbors",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"falcon",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"eea593cf466b9c126ce667f6d30503624ef24459f118c75594a69353b6c3d5fc",
+   "url":"https://pypi.io/packages/source/f/falcon/falcon-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "falcon-bench -h",
+    "falcon-print-routes -h"
+   ],
+   "imports":[
+    "falcon",
+    "falcon.cmd",
+    "falcon.media",
+    "falcon.routing",
+    "falcon.testing",
+    "falcon.util"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -95,6 +95,106 @@
  },
  "feedstock_name":"tablib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jazzband/tablib",
+   "home":"https://pypi.org/project/tablib/",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"tablib",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python >=3.5",
+    "setuptools",
+    "markuppy",
+    "odfpy",
+    "openpyxl >=2.4.0",
+    "pandas",
+    "pyyaml",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "source":{
+   "sha256":"8cc2fa10bc37219ac5e76850eb7fbd50de313c7a1a7895c44af2a8dd206b7be7",
+   "url":"https://pypi.io/packages/source/t/tablib/tablib-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python tests/test_tablib.py",
+    "pip check"
+   ],
+   "imports":[
+    "tablib",
+    "tablib.formats",
+    "tablib.packages"
+   ],
+   "requires":[
+    "pip",
+    "pandas"
+   ],
+   "source_files":[
+    "tests/test_tablib.py"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "markuppy",
+    "odfpy",
+    "openpyxl",
+    "pandas",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pandas",
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jazzband/tablib",
@@ -209,6 +309,106 @@
   "2.0.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jazzband/tablib",
+   "home":"https://pypi.org/project/tablib/",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"tablib",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python >=3.5",
+    "setuptools",
+    "markuppy",
+    "odfpy",
+    "openpyxl >=2.4.0",
+    "pandas",
+    "pyyaml",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "source":{
+   "sha256":"8cc2fa10bc37219ac5e76850eb7fbd50de313c7a1a7895c44af2a8dd206b7be7",
+   "url":"https://pypi.io/packages/source/t/tablib/tablib-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python tests/test_tablib.py",
+    "pip check"
+   ],
+   "imports":[
+    "tablib",
+    "tablib.formats",
+    "tablib.packages"
+   ],
+   "requires":[
+    "pip",
+    "pandas"
+   ],
+   "source_files":[
+    "tests/test_tablib.py"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "markuppy",
+    "odfpy",
+    "openpyxl",
+    "pandas",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pandas",
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.05.14.17.14.20",
  "raw_meta_yaml":"{% set version = \"2.0.0\" %}\n\npackage:\n  name: tablib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/tablib/tablib-{{ version }}.tar.gz\n  sha256: 8cc2fa10bc37219ac5e76850eb7fbd50de313c7a1a7895c44af2a8dd206b7be7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - setuptools_scm\n  run:\n    - python >=3.5\n    - setuptools\n    - markuppy\n    - odfpy\n    - openpyxl >=2.4.0\n    - pandas\n    - pyyaml\n    - tabulate\n    - xlrd\n    - xlwt\n\ntest:\n  requires:\n    - pip\n    - pandas\n  imports:\n    - tablib\n    - tablib.formats\n    - tablib.packages\n  source_files:\n    - tests/test_tablib.py\n  commands:\n    - python tests/test_tablib.py\n    - pip check\n\nabout:\n  home: https://pypi.org/project/tablib/\n  summary: Format agnostic tabular data library (XLS, JSON, YAML, CSV)\n  dev_url: https://github.com/jazzband/tablib\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -303,5 +503,105 @@
   }
  },
  "url":"https://pypi.io/packages/source/t/tablib/tablib-0.13.0.tar.gz",
- "version":"2.0.0"
+ "version":"2.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jazzband/tablib",
+   "home":"https://pypi.org/project/tablib/",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Format agnostic tabular data library (XLS, JSON, YAML, CSV)"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"tablib",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python >=3.5",
+    "setuptools",
+    "markuppy",
+    "odfpy",
+    "openpyxl >=2.4.0",
+    "pandas",
+    "pyyaml",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "source":{
+   "sha256":"8cc2fa10bc37219ac5e76850eb7fbd50de313c7a1a7895c44af2a8dd206b7be7",
+   "url":"https://pypi.io/packages/source/t/tablib/tablib-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python tests/test_tablib.py",
+    "pip check"
+   ],
+   "imports":[
+    "tablib",
+    "tablib.formats",
+    "tablib.packages"
+   ],
+   "requires":[
+    "pip",
+    "pandas"
+   ],
+   "source_files":[
+    "tests/test_tablib.py"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "markuppy",
+    "odfpy",
+    "openpyxl",
+    "pandas",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate",
+    "xlrd",
+    "xlwt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pandas",
+    "pip"
+   ]
+  }
+ }
 }

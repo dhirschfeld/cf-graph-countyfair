@@ -115,6 +115,90 @@
  },
  "feedstock_name":"xtensor-r",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-r",
+   "doc_url":"http://xtensor-r.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"R bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "wolfv"
+   ]
+  },
+  "package":{
+   "name":"xtensor-r",
+   "version":"0.12.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.4,<0.22",
+    "r-rcpp >=1.0.0,<1.1.0"
+   ],
+   "run":[
+    "xtl",
+    "xtensor",
+    "r-rcpp"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-r-0.12.1.tar.gz",
+   "sha256":"06cf5c6587d72a82dff98e63f1340c18302669a0337758495f176b80ffdf2acc",
+   "url":"https://github.com/QuantStack/xtensor-r/archive/0.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/xtensor-r",
+    "test -f ${PREFIX}/include/xtensor-r/rarray.hpp",
+    "test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Multi dimensional arrays with broadcasting and lazy computing",
@@ -202,6 +286,90 @@
  },
  "name":"xtensor-r",
  "new_version":"0.12.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-r",
+   "doc_url":"http://xtensor-r.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"R bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "wolfv"
+   ]
+  },
+  "package":{
+   "name":"xtensor-r",
+   "version":"0.12.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.4,<0.22",
+    "r-rcpp >=1.0.0,<1.1.0"
+   ],
+   "run":[
+    "xtl",
+    "xtensor",
+    "r-rcpp"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-r-0.12.1.tar.gz",
+   "sha256":"06cf5c6587d72a82dff98e63f1340c18302669a0337758495f176b80ffdf2acc",
+   "url":"https://github.com/QuantStack/xtensor-r/archive/0.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/xtensor-r",
+    "test -f ${PREFIX}/include/xtensor-r/rarray.hpp",
+    "test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.06",
  "raw_meta_yaml":"{% set name = \"xtensor-r\" %}\n{% set version = \"0.12.1\" %}\n{% set sha256 = \"06cf5c6587d72a82dff98e63f1340c18302669a0337758495f176b80ffdf2acc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xtensor-r/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - xtl >=0.6.9,<0.7\n    - xtensor >=0.21.4,<0.22\n    - r-rcpp >=1.0.0,<1.1.0\n  run:\n    - {{ pin_compatible('xtl', max_pin='x.x') }}\n    - {{ pin_compatible('xtensor', max_pin='x.x') }}\n    - {{ pin_compatible('r-rcpp', max_pin='x.x') }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor-r  # [unix]\n    - test -f ${PREFIX}/include/xtensor-r/rarray.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtensor-r/xtensor-rConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xtensor-r\\rarray.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-rConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-rConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'R bindings for xtensor, the C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor-r.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor-r\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n",
  "req":{
@@ -275,5 +443,89 @@
   }
  },
  "url":"https://github.com/QuantStack/xtensor-r/archive/0.11.1.tar.gz",
- "version":"0.12.1"
+ "version":"0.12.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-r",
+   "doc_url":"http://xtensor-r.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"R bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille",
+    "wolfv"
+   ]
+  },
+  "package":{
+   "name":"xtensor-r",
+   "version":"0.12.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.4,<0.22",
+    "r-rcpp >=1.0.0,<1.1.0"
+   ],
+   "run":[
+    "xtl",
+    "xtensor",
+    "r-rcpp"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-r-0.12.1.tar.gz",
+   "sha256":"06cf5c6587d72a82dff98e63f1340c18302669a0337758495f176b80ffdf2acc",
+   "url":"https://github.com/QuantStack/xtensor-r/archive/0.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\xtensor-r\\rarray.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-rConfig.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-rConfigVersion.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-rcpp",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

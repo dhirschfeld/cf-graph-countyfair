@@ -163,6 +163,84 @@
  },
  "feedstock_name":"shtab",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"- What: Automatically generate shell tab completion scripts for python CLI apps\n- Why: Speed & correctness. Alternatives like `argcomplete` & `pyzshcomplete` are slow and have side-effects\n- How: `shtab` processes an `argparse.ArgumentParser` object to generate a tab completion script for your shell\n",
+   "home":"https://github.com/iterative/shtab",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENCE",
+   "summary":"Automatically generate shell tab completion scripts for python CLI apps"
+  },
+  "build":{
+   "entry_points":[
+    "shtab = shtab.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "casperdcl",
+    "efiop",
+    "shcheklein"
+   ]
+  },
+  "package":{
+   "name":"shtab",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "source":{
+   "sha256":"6b7fb166d541683be0790d757d051fc85da5ae9eeaeb2e22b74f5faa3bf3b388",
+   "url":"https://pypi.io/packages/source/s/shtab/shtab-1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "shtab -h",
+    "shtab -u shtab.main.get_main_parser"
+   ],
+   "imports":[
+    "shtab"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"- What: Automatically generate shell tab completion scripts for python CLI apps\n- Why: Speed & correctness. Alternatives like `argcomplete` & `pyzshcomplete` are slow and have side-effects\n- How: `shtab` processes an `argparse.ArgumentParser` object to generate a tab completion script for your shell\n",
@@ -254,6 +332,84 @@
   "1.1.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"- What: Automatically generate shell tab completion scripts for python CLI apps\n- Why: Speed & correctness. Alternatives like `argcomplete` & `pyzshcomplete` are slow and have side-effects\n- How: `shtab` processes an `argparse.ArgumentParser` object to generate a tab completion script for your shell\n",
+   "home":"https://github.com/iterative/shtab",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENCE",
+   "summary":"Automatically generate shell tab completion scripts for python CLI apps"
+  },
+  "build":{
+   "entry_points":[
+    "shtab = shtab.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "casperdcl",
+    "efiop",
+    "shcheklein"
+   ]
+  },
+  "package":{
+   "name":"shtab",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "source":{
+   "sha256":"6b7fb166d541683be0790d757d051fc85da5ae9eeaeb2e22b74f5faa3bf3b388",
+   "url":"https://pypi.io/packages/source/s/shtab/shtab-1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "shtab -h",
+    "shtab -u shtab.main.get_main_parser"
+   ],
+   "imports":[
+    "shtab"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"shtab\" %}\n{% set version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6b7fb166d541683be0790d757d051fc85da5ae9eeaeb2e22b74f5faa3bf3b388\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - shtab = shtab.main:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - setuptools_scm\n\ntest:\n  imports:\n    - shtab\n  commands:\n    - shtab -h\n    - shtab -u shtab.main.get_main_parser\n\nabout:\n  home: https://github.com/iterative/shtab\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENCE\n  summary: Automatically generate shell tab completion scripts for python CLI apps\n\n  description: |\n    - What: Automatically generate shell tab completion scripts for python CLI apps\n    - Why: Speed & correctness. Alternatives like `argcomplete` & `pyzshcomplete` are slow and have side-effects\n    - How: `shtab` processes an `argparse.ArgumentParser` object to generate a tab completion script for your shell\n\nextra:\n  recipe-maintainers:\n    - casperdcl\n    - efiop\n    - shcheklein\n",
  "req":{
@@ -317,5 +473,83 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/shtab/shtab-0.0.2.tar.gz",
- "version":"1.1.0"
+ "version":"1.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"- What: Automatically generate shell tab completion scripts for python CLI apps\n- Why: Speed & correctness. Alternatives like `argcomplete` & `pyzshcomplete` are slow and have side-effects\n- How: `shtab` processes an `argparse.ArgumentParser` object to generate a tab completion script for your shell\n",
+   "home":"https://github.com/iterative/shtab",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENCE",
+   "summary":"Automatically generate shell tab completion scripts for python CLI apps"
+  },
+  "build":{
+   "entry_points":[
+    "shtab = shtab.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "casperdcl",
+    "efiop",
+    "shcheklein"
+   ]
+  },
+  "package":{
+   "name":"shtab",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "source":{
+   "sha256":"6b7fb166d541683be0790d757d051fc85da5ae9eeaeb2e22b74f5faa3bf3b388",
+   "url":"https://pypi.io/packages/source/s/shtab/shtab-1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "shtab -h",
+    "shtab -u shtab.main.get_main_parser"
+   ],
+   "imports":[
+    "shtab"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

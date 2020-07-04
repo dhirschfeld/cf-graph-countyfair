@@ -94,6 +94,80 @@
  },
  "feedstock_name":"pykdtree",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.python.org/pypi/pykdtree",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast kd-tree implementation with OpenMP-enabled queries"
+  },
+  "build":{
+   "number":"1003",
+   "script":[
+    "export USE_OMP=1",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pykdtree",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0d49d3bbfa0366dbe29176754ec86df75114a25525b530dcbbb75d3ac4c263e9",
+   "url":"https://pypi.io/packages/source/p/pykdtree/pykdtree-1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pykdtree"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://pypi.python.org/pypi/pykdtree",
@@ -163,6 +237,80 @@
  },
  "name":"pykdtree",
  "new_version":"1.3.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.python.org/pypi/pykdtree",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast kd-tree implementation with OpenMP-enabled queries"
+  },
+  "build":{
+   "number":"1003",
+   "script":[
+    "export USE_OMP=0",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pykdtree",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0d49d3bbfa0366dbe29176754ec86df75114a25525b530dcbbb75d3ac4c263e9",
+   "url":"https://pypi.io/packages/source/p/pykdtree/pykdtree-1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pykdtree"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"1.3.1\" %}\n\npackage:\n  name: pykdtree\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pykdtree/pykdtree-{{ version }}.tar.gz\n  sha256: 0d49d3bbfa0366dbe29176754ec86df75114a25525b530dcbbb75d3ac4c263e9\n\nbuild:\n  number: 1003\n  script:\n    - export USE_OMP=1  # [linux]\n    - export USE_OMP=0  # [osx]\n    - set USE_OMP=0  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - msinttypes  # [win and py<35]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pykdtree\n\nabout:\n  home: https://pypi.python.org/pypi/pykdtree\n  license: LGPL-3.0\n  license_file: LICENSE.txt\n  summary: 'Fast kd-tree implementation with OpenMP-enabled queries'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -231,5 +379,79 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pykdtree/pykdtree-1.3.1.tar.gz",
- "version":"1.3.1"
+ "version":"1.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.python.org/pypi/pykdtree",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast kd-tree implementation with OpenMP-enabled queries"
+  },
+  "build":{
+   "number":"1003",
+   "script":[
+    "set USE_OMP=0",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"pykdtree",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0d49d3bbfa0366dbe29176754ec86df75114a25525b530dcbbb75d3ac4c263e9",
+   "url":"https://pypi.io/packages/source/p/pykdtree/pykdtree-1.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pykdtree"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

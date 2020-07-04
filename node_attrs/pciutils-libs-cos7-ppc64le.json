@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"pciutils-libs-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"CUPS printing system provides a portable printing layer for UNIX\u00ae operating\nsystems. It has been developed by Apple Inc. to promote a standard printing\nsolution for all UNIX vendors and users. CUPS provides the System V and\nBerkeley command-line interfaces.\n",
+   "home":"http://www.cups.org/",
+   "license":"GPLv2",
+   "license_family":"GPL2",
+   "summary":"(CDT) CUPS printing system"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"pciutils-libs-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"pciutils-devel-cos7-ppc64le",
+    "requirements":[
+     "pciutils-libs-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pciutils-libs-cos7-ppc64le",
+   "version":"3.5.1"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"647e0559e0cfb35ee9068102b28f973df03870bf4a6c51fa936815d563533a0d",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-libs-3.5.1-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d7c897308bb33c77dc8d760790e656bdc4781ea2a10d82d213eeb8ef12200e72",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-devel-3.5.1-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pciutils-libs-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"CUPS printing system provides a portable printing layer for UNIX\u00ae operating\nsystems. It has been developed by Apple Inc. to promote a standard printing\nsolution for all UNIX vendors and users. CUPS provides the System V and\nBerkeley command-line interfaces.\n",
@@ -177,6 +278,107 @@
  },
  "name":"pciutils-libs-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"CUPS printing system provides a portable printing layer for UNIX\u00ae operating\nsystems. It has been developed by Apple Inc. to promote a standard printing\nsolution for all UNIX vendors and users. CUPS provides the System V and\nBerkeley command-line interfaces.\n",
+   "home":"http://www.cups.org/",
+   "license":"GPLv2",
+   "license_family":"GPL2",
+   "summary":"(CDT) CUPS printing system"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"pciutils-libs-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"pciutils-devel-cos7-ppc64le",
+    "requirements":[
+     "pciutils-libs-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pciutils-libs-cos7-ppc64le",
+   "version":"3.5.1"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"647e0559e0cfb35ee9068102b28f973df03870bf4a6c51fa936815d563533a0d",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-libs-3.5.1-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d7c897308bb33c77dc8d760790e656bdc4781ea2a10d82d213eeb8ef12200e72",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-devel-3.5.1-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pciutils-libs-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "pciutils-devel-cos7-ppc64le",
   "pciutils-libs-cos7-ppc64le"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-libs-3.5.1-3.el7.ppc64le.rpm",
- "version":"3.5.1"
+ "version":"3.5.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"CUPS printing system provides a portable printing layer for UNIX\u00ae operating\nsystems. It has been developed by Apple Inc. to promote a standard printing\nsolution for all UNIX vendors and users. CUPS provides the System V and\nBerkeley command-line interfaces.\n",
+   "home":"http://www.cups.org/",
+   "license":"GPLv2",
+   "license_family":"GPL2",
+   "summary":"(CDT) CUPS printing system"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"pciutils-libs-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"pciutils-devel-cos7-ppc64le",
+    "requirements":[
+     "pciutils-libs-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pciutils-libs-cos7-ppc64le",
+   "version":"3.5.1"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"647e0559e0cfb35ee9068102b28f973df03870bf4a6c51fa936815d563533a0d",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-libs-3.5.1-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d7c897308bb33c77dc8d760790e656bdc4781ea2a10d82d213eeb8ef12200e72",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/pciutils-devel-3.5.1-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libpci.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pciutils-libs-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

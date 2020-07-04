@@ -55,6 +55,105 @@
  "conda-forge.yml":{},
  "feedstock_name":"libsigcpp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://libsigc.sourceforge.net/",
+   "license":"LGPL-3.0-or-later",
+   "license_file":"COPYING",
+   "summary":"libsigc++ implements a typesafe callback system for standard C++."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sigcpp-3.0 >=3.0.3"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "sigcpp-3.0 >=3.0.3"
+     ]
+    },
+    "name":"sigcpp-3.0",
+    "requirements":{
+     "build":[
+      "autoconf",
+      "automake",
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "m4"
+     ],
+     "run_constrained":[
+      "libsigcpp 3.0.3"
+     ]
+    },
+    "script":"build_libsigcpp.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libsigc-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"libsigcpp",
+    "requirements":{
+     "run":[
+      "sigcpp-3.0  3.0.3"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/sigc++-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsigcpp",
+   "version":"3.0.3"
+  },
+  "source":{
+   "fn":"libsigc++-3.0.3.tar.xz",
+   "sha256":"e4f4866a894bdbe053e4fb22ccc6bc4b6851fd31a4746fdd20b2cf6e87c6edb6",
+   "url":"http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.0/libsigc++-3.0.3.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "m4"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "sigcpp-3.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://libsigc.sourceforge.net/",
@@ -221,6 +320,105 @@
  "new_version_attempts":{
   "3.0.3":1
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://libsigc.sourceforge.net/",
+   "license":"LGPL-3.0-or-later",
+   "license_file":"COPYING",
+   "summary":"libsigc++ implements a typesafe callback system for standard C++."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sigcpp-3.0 >=3.0.3"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "sigcpp-3.0 >=3.0.3"
+     ]
+    },
+    "name":"sigcpp-3.0",
+    "requirements":{
+     "build":[
+      "autoconf",
+      "automake",
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "m4"
+     ],
+     "run_constrained":[
+      "libsigcpp 3.0.3"
+     ]
+    },
+    "script":"build_libsigcpp.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libsigc-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"libsigcpp",
+    "requirements":{
+     "run":[
+      "sigcpp-3.0  3.0.3"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/sigc++-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsigcpp",
+   "version":"3.0.3"
+  },
+  "source":{
+   "fn":"libsigc++-3.0.3.tar.xz",
+   "sha256":"e4f4866a894bdbe053e4fb22ccc6bc4b6851fd31a4746fdd20b2cf6e87c6edb6",
+   "url":"http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.0/libsigc++-3.0.3.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "m4"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "sigcpp-3.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "libsigcpp",
   "sigcpp-3.0"
@@ -295,5 +493,105 @@
   }
  },
  "url":"http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/2.10/libsigc++-2.10.0.tar.xz",
- "version":"3.0.3"
+ "version":"3.0.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://libsigc.sourceforge.net/",
+   "license":"LGPL-3.0-or-later",
+   "license_file":"COPYING",
+   "summary":"libsigc++ implements a typesafe callback system for standard C++."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sigcpp-3.0 >=3.0.3"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "sigcpp-3.0 >=3.0.3"
+     ]
+    },
+    "name":"sigcpp-3.0",
+    "requirements":{
+     "build":[
+      "autoconf",
+      "automake",
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "m4"
+     ],
+     "run_constrained":[
+      "libsigcpp 3.0.3"
+     ]
+    },
+    "script":"build_libsigcpp.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libsigc-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"libsigcpp",
+    "requirements":{
+     "run":[
+      "sigcpp-3.0  3.0.3"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/sigc++-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libsigcpp",
+   "version":"3.0.3"
+  },
+  "source":{
+   "fn":"libsigc++-3.0.3.tar.xz",
+   "sha256":"e4f4866a894bdbe053e4fb22ccc6bc4b6851fd31a4746fdd20b2cf6e87c6edb6",
+   "url":"http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/3.0/libsigc++-3.0.3.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "m4"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "sigcpp-3.0"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

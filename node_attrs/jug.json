@@ -99,6 +99,86 @@
  "conda-forge.yml":{},
  "feedstock_name":"jug",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Jug allows you to write code that is broken up into\ntasks and run different tasks on different processors.\n",
+   "dev_url":"https://github.com/luispedro/jug",
+   "doc_url":"https://jugreadthedocs.io/",
+   "home":"http://github.com/luispedro/jug",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING.MIT",
+   "summary":"Task based Python workflow system"
+  },
+  "build":{
+   "entry_points":[
+    "jug = jug.jug:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"jug",
+   "version":"2.0.2"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "six",
+    "bottle",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"Jug-2.0.2.tar.gz",
+   "sha256":"859a4b4cb26a0010299b189c92cfba626852c97a38e22f3d1b56e4e1d8ad8620",
+   "url":"https://pypi.io/packages/source/J/Jug/Jug-2.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jug -h"
+   ],
+   "imports":[
+    "jug"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Jug allows you to write code that is broken up into\ntasks and run different tasks on different processors.\n",
@@ -180,6 +260,86 @@
   "2.0.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Jug allows you to write code that is broken up into\ntasks and run different tasks on different processors.\n",
+   "dev_url":"https://github.com/luispedro/jug",
+   "doc_url":"https://jugreadthedocs.io/",
+   "home":"http://github.com/luispedro/jug",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING.MIT",
+   "summary":"Task based Python workflow system"
+  },
+  "build":{
+   "entry_points":[
+    "jug = jug.jug:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"jug",
+   "version":"2.0.2"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "six",
+    "bottle",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"Jug-2.0.2.tar.gz",
+   "sha256":"859a4b4cb26a0010299b189c92cfba626852c97a38e22f3d1b56e4e1d8ad8620",
+   "url":"https://pypi.io/packages/source/J/Jug/Jug-2.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jug -h"
+   ],
+   "imports":[
+    "jug"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"Jug\" %}\n{% set version = \"2.0.2\" %}\n{% set sha256 = \"859a4b4cb26a0010299b189c92cfba626852c97a38e22f3d1b56e4e1d8ad8620\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jug = jug.jug:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - bottle\n    - pyyaml\n\ntest:\n  imports:\n    - jug\n  commands:\n    - jug -h\n\nabout:\n  home: http://github.com/luispedro/jug\n  license: MIT\n  license_family: MIT\n  license_file: COPYING.MIT\n  summary: Task based Python workflow system\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    Jug allows you to write code that is broken up into\n    tasks and run different tasks on different processors.\n  doc_url: https://jugreadthedocs.io/\n  dev_url: https://github.com/luispedro/jug\n\nextra:\n  recipe-maintainers:\n    - luispedro\n",
  "req":{
@@ -247,5 +407,85 @@
   }
  },
  "url":"https://pypi.io/packages/source/J/Jug/Jug-1.6.9.tar.gz",
- "version":"2.0.2"
+ "version":"2.0.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Jug allows you to write code that is broken up into\ntasks and run different tasks on different processors.\n",
+   "dev_url":"https://github.com/luispedro/jug",
+   "doc_url":"https://jugreadthedocs.io/",
+   "home":"http://github.com/luispedro/jug",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING.MIT",
+   "summary":"Task based Python workflow system"
+  },
+  "build":{
+   "entry_points":[
+    "jug = jug.jug:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"jug",
+   "version":"2.0.2"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "six",
+    "bottle",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "fn":"Jug-2.0.2.tar.gz",
+   "sha256":"859a4b4cb26a0010299b189c92cfba626852c97a38e22f3d1b56e4e1d8ad8620",
+   "url":"https://pypi.io/packages/source/J/Jug/Jug-2.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jug -h"
+   ],
+   "imports":[
+    "jug"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

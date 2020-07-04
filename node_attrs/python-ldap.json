@@ -112,6 +112,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"python-ldap",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-ldap/python-ldap",
+   "doc_url":"https://www.python-ldap.org/en/latest/",
+   "home":"https://www.python-ldap.org/",
+   "license":"Python Software Foundation",
+   "license_family":"OTHER",
+   "license_file":"LICENCE",
+   "summary":"Python modules for implementing LDAP clients"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"python-ldap",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ],
+   "run":[
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ]
+  },
+  "source":{
+   "sha256":"7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e",
+   "url":"https://pypi.io/packages/source/p/python-ldap/python-ldap-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ldap",
+    "ldap.controls",
+    "ldap.extop",
+    "ldap.schema"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pip",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/python-ldap/python-ldap",
@@ -204,6 +289,91 @@
   "3.3.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-ldap/python-ldap",
+   "doc_url":"https://www.python-ldap.org/en/latest/",
+   "home":"https://www.python-ldap.org/",
+   "license":"Python Software Foundation",
+   "license_family":"OTHER",
+   "license_file":"LICENCE",
+   "summary":"Python modules for implementing LDAP clients"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"python-ldap",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ],
+   "run":[
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ]
+  },
+  "source":{
+   "sha256":"7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e",
+   "url":"https://pypi.io/packages/source/p/python-ldap/python-ldap-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ldap",
+    "ldap.controls",
+    "ldap.extop",
+    "ldap.schema"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pip",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"python-ldap\" %}\n{% set version = \"3.2.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - pip\n    - python\n    - pyasn1\n    - pyasn1-modules\n    - openldap\n  run:\n    - python\n    - pyasn1\n    - pyasn1-modules\n    - openldap\n\ntest:\n  imports:\n    - ldap\n    - ldap.controls\n    - ldap.extop\n    - ldap.schema\n    # - slapdtest\n\nabout:\n  home: https://www.python-ldap.org/\n  license: Python Software Foundation\n  license_family: OTHER\n  license_file: LICENCE\n  summary: Python modules for implementing LDAP clients\n  doc_url: https://www.python-ldap.org/en/latest/\n  dev_url: https://github.com/python-ldap/python-ldap\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
@@ -282,5 +452,91 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/python-ldap/python-ldap-3.2.0.tar.gz",
- "version":"3.2.0"
+ "version":"3.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-ldap/python-ldap",
+   "doc_url":"https://www.python-ldap.org/en/latest/",
+   "home":"https://www.python-ldap.org/",
+   "license":"Python Software Foundation",
+   "license_family":"OTHER",
+   "license_file":"LICENCE",
+   "summary":"Python modules for implementing LDAP clients"
+  },
+  "build":{
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv ",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"python-ldap",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ],
+   "run":[
+    "python",
+    "pyasn1",
+    "pyasn1-modules",
+    "openldap"
+   ]
+  },
+  "source":{
+   "sha256":"7d1c4b15375a533564aad3d3deade789221e450052b21ebb9720fb822eccdb8e",
+   "url":"https://pypi.io/packages/source/p/python-ldap/python-ldap-3.2.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ldap",
+    "ldap.controls",
+    "ldap.extop",
+    "ldap.schema"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pip",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "openldap",
+    "pyasn1",
+    "pyasn1-modules",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

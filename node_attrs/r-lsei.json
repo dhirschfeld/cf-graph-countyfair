@@ -115,6 +115,84 @@
  },
  "feedstock_name":"r-lsei",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/lsei/index.html",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"It contains functions that solve least squares linear regression problems under linear equality/inequality constraints. Functions for solving quadratic programming problems are also available, which transform such problems into least squares ones first. It is developed based on the 'Fortran' program of Lawson and Hanson (1974, 1995), which is public domain and available at <http"
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr"
+   ]
+  },
+  "package":{
+   "name":"r-lsei",
+   "version":"1.2_0.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"lsei_1.2-0.1.tar.gz",
+   "sha256":"07d573fb3d785920084274288a83a31f77ea63d07776ee70a1d3a73ec66a7fe7",
+   "url":[
+    "https://cran.r-project.org/src/contrib/lsei_1.2-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lsei/lsei_1.2-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('lsei')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://cran.r-project.org/web/packages/lsei/index.html",
@@ -202,6 +280,84 @@
   "1.2_0.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/lsei/index.html",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"It contains functions that solve least squares linear regression problems under linear equality/inequality constraints. Functions for solving quadratic programming problems are also available, which transform such problems into least squares ones first. It is developed based on the 'Fortran' program of Lawson and Hanson (1974, 1995), which is public domain and available at <http"
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr"
+   ]
+  },
+  "package":{
+   "name":"r-lsei",
+   "version":"1.2_0.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"lsei_1.2-0.1.tar.gz",
+   "sha256":"07d573fb3d785920084274288a83a31f77ea63d07776ee70a1d3a73ec66a7fe7",
+   "url":[
+    "https://cran.r-project.org/src/contrib/lsei_1.2-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lsei/lsei_1.2-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('lsei')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"{% set version = \"1.2-0.1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-lsei\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: lsei_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/lsei_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/lsei/lsei_{{ version }}.tar.gz\n\n  sha256: 07d573fb3d785920084274288a83a31f77ea63d07776ee70a1d3a73ec66a7fe7\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('lsei')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('lsei')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/lsei/index.html\n  license: GPL (>= 2)\n  summary: It contains functions that solve least squares linear regression problems under linear equality/inequality constraints. Functions for solving quadratic programming problems are also available, which transform such problems into least squares ones first. It is developed based on the 'Fortran' program of Lawson\n    and Hanson (1974, 1995), which is public domain and available at <http\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n",
  "req":{
@@ -281,5 +437,86 @@
   "https://cran.r-project.org/src/contrib/lsei_1.2-0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/lsei/lsei_1.2-0.tar.gz"
  ],
- "version":"1.2_0.1"
+ "version":"1.2_0.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/lsei/index.html",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"It contains functions that solve least squares linear regression problems under linear equality/inequality constraints. Functions for solving quadratic programming problems are also available, which transform such problems into least squares ones first. It is developed based on the 'Fortran' program of Lawson and Hanson (1974, 1995), which is public domain and available at <http"
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr"
+   ]
+  },
+  "package":{
+   "name":"r-lsei",
+   "version":"1.2_0.1"
+  },
+  "requirements":{
+   "build":[
+    "posix",
+    "m2w64_fortran_compiler_stub",
+    "m2w64_c_compiler_stub"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"lsei_1.2-0.1.tar.gz",
+   "sha256":"07d573fb3d785920084274288a83a31f77ea63d07776ee70a1d3a73ec66a7fe7",
+   "url":[
+    "https://cran.r-project.org/src/contrib/lsei_1.2-0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lsei/lsei_1.2-0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('lsei')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

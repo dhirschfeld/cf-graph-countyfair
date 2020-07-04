@@ -167,6 +167,83 @@
  },
  "feedstock_name":"trio_asyncio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-trio/trio-asyncio",
+   "doc_url":"http://trio-asyncio.readthedocs.io/en/latest/",
+   "home":"https://github.com/python-trio/trio-asyncio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.MIT",
+   "summary":"A re-implementation of the asyncio mainloop on top of Trio"
+  },
+  "build":{
+   "number":"1",
+   "script":"setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "smurfix",
+    "dhirschfeld"
+   ]
+  },
+  "package":{
+   "name":"trio_asyncio",
+   "version":"0.11.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "trio >=0.12.0",
+    "async_generator >=1.6",
+    "outcome"
+   ]
+  },
+  "source":{
+   "fn":"trio_asyncio-0.11.0.tar.gz",
+   "sha256":"33113d6c9ba13c643de9d688f1f604b0a40e986754677373cb023ee2867e8c27",
+   "url":"https://pypi.io/packages/source/t/trio_asyncio/trio_asyncio-0.11.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "trio_asyncio"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async_generator",
+    "outcome",
+    "python",
+    "trio"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/python-trio/trio-asyncio",
@@ -240,6 +317,83 @@
  },
  "name":"trio_asyncio",
  "new_version":"0.11.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-trio/trio-asyncio",
+   "doc_url":"http://trio-asyncio.readthedocs.io/en/latest/",
+   "home":"https://github.com/python-trio/trio-asyncio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.MIT",
+   "summary":"A re-implementation of the asyncio mainloop on top of Trio"
+  },
+  "build":{
+   "number":"1",
+   "script":"setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "smurfix",
+    "dhirschfeld"
+   ]
+  },
+  "package":{
+   "name":"trio_asyncio",
+   "version":"0.11.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "trio >=0.12.0",
+    "async_generator >=1.6",
+    "outcome"
+   ]
+  },
+  "source":{
+   "fn":"trio_asyncio-0.11.0.tar.gz",
+   "sha256":"33113d6c9ba13c643de9d688f1f604b0a40e986754677373cb023ee2867e8c27",
+   "url":"https://pypi.io/packages/source/t/trio_asyncio/trio_asyncio-0.11.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "trio_asyncio"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async_generator",
+    "outcome",
+    "python",
+    "trio"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.28",
  "raw_meta_yaml":"{% set name = \"trio_asyncio\" %}\n{% set version = \"0.11.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33113d6c9ba13c643de9d688f1f604b0a40e986754677373cb023ee2867e8c27\n\nbuild:\n  number: 1\n  skip: true  # [py<36]\n  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n    - setuptools\n  run:\n    - python\n    - trio >=0.12.0\n    - async_generator >=1.6\n    - contextvars >=2.1  # [py<37]\n    - outcome\n\ntest:\n  imports:\n    - trio_asyncio\n\nabout:\n  home: https://github.com/python-trio/trio-asyncio\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.MIT\n  summary: A re-implementation of the asyncio mainloop on top of Trio\n  doc_url: http://trio-asyncio.readthedocs.io/en/latest/\n  dev_url: https://github.com/python-trio/trio-asyncio\n\nextra:\n  recipe-maintainers:\n    - smurfix\n    - dhirschfeld\n",
  "req":{
@@ -313,5 +467,82 @@
   }
  },
  "url":"https://pypi.io/packages/source/t/trio_asyncio/trio_asyncio-0.10.0.tar.gz",
- "version":"0.11.0"
+ "version":"0.11.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/python-trio/trio-asyncio",
+   "doc_url":"http://trio-asyncio.readthedocs.io/en/latest/",
+   "home":"https://github.com/python-trio/trio-asyncio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.MIT",
+   "summary":"A re-implementation of the asyncio mainloop on top of Trio"
+  },
+  "build":{
+   "number":"1",
+   "script":"setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "smurfix",
+    "dhirschfeld"
+   ]
+  },
+  "package":{
+   "name":"trio_asyncio",
+   "version":"0.11.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "trio >=0.12.0",
+    "async_generator >=1.6",
+    "outcome"
+   ]
+  },
+  "source":{
+   "fn":"trio_asyncio-0.11.0.tar.gz",
+   "sha256":"33113d6c9ba13c643de9d688f1f604b0a40e986754677373cb023ee2867e8c27",
+   "url":"https://pypi.io/packages/source/t/trio_asyncio/trio_asyncio-0.11.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "trio_asyncio"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async_generator",
+    "outcome",
+    "python",
+    "trio"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

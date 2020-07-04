@@ -23,6 +23,78 @@
  "conda-forge.yml":{},
  "feedstock_name":"libignition-tools",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/ignitionrobotics/ign-tools",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Ignition Tools"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libignition-tools1"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen",
+    "wolfv",
+    "traversaro",
+    "j-rivero"
+   ]
+  },
+  "package":{
+   "name":"libignition-tools1",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "c_compiler_stub",
+    "make",
+    "ruby",
+    "cmake",
+    "pkg-config"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"57f71b6d771c3f24471c7d38f4d56cbe9c36a03d3262e4980b07237fe52fa5ae",
+    "url":"https://bitbucket.org/ignitionrobotics/ign-tools/get/ignition-tools_1.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/cmake/ignition-tools/ignition-tools-config.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config",
+    "ruby"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://bitbucket.org/ignitionrobotics/ign-tools",
@@ -102,6 +174,78 @@
  },
  "name":"libignition-tools1",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/ignitionrobotics/ign-tools",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Ignition Tools"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libignition-tools1"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen",
+    "wolfv",
+    "traversaro",
+    "j-rivero"
+   ]
+  },
+  "package":{
+   "name":"libignition-tools1",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "c_compiler_stub",
+    "make",
+    "ruby",
+    "cmake",
+    "pkg-config"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"57f71b6d771c3f24471c7d38f4d56cbe9c36a03d3262e4980b07237fe52fa5ae",
+    "url":"https://bitbucket.org/ignitionrobotics/ign-tools/get/ignition-tools_1.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/cmake/ignition-tools/ignition-tools-config.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config",
+    "ruby"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.12.02",
  "raw_meta_yaml":"{% set base_name = \"libignition-tools\" %}\n{% set version = \"1.0.0\" %}\n{% set name = base_name + version.split('.')[0] %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://bitbucket.org/ignitionrobotics/ign-tools/get/ignition-tools_{{ version }}.tar.gz\n    sha256: 57f71b6d771c3f24471c7d38f4d56cbe9c36a03d3262e4980b07237fe52fa5ae\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}              # [not win]\n    - {{ compiler('c') }}                # [not win]\n    - vs2017_win-64                      # [win64]\n    - vs2017_win-32                      # [win32]\n    - make                               # [not win]\n    - ruby                               # [not win]\n    - cmake\n    - pkg-config\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/cmake/ignition-tools/ignition-tools-config.cmake  # [not win]\n    - if exist %PREFIX%\\\\Library\\\\lib\\\\cmake\\\\ignition-tools\\\\ignition-tools-config.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://bitbucket.org/ignitionrobotics/ign-tools\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Ignition Tools'\n\nextra:\n  recipe-maintainers:\n    - seanyen\n    - wolfv\n    - traversaro\n    - j-rivero\n",
  "req":{
@@ -171,5 +315,72 @@
   }
  },
  "url":"https://bitbucket.org/ignitionrobotics/ign-tools/get/ignition-tools_0.2.0.tar.gz",
- "version":"1.0.0"
+ "version":"1.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/ignitionrobotics/ign-tools",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Ignition Tools"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "libignition-tools1"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen",
+    "wolfv",
+    "traversaro",
+    "j-rivero"
+   ]
+  },
+  "package":{
+   "name":"libignition-tools1",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "vs2017_win-64",
+    "cmake",
+    "pkg-config"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"57f71b6d771c3f24471c7d38f4d56cbe9c36a03d3262e4980b07237fe52fa5ae",
+    "url":"https://bitbucket.org/ignitionrobotics/ign-tools/get/ignition-tools_1.0.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "if exist %PREFIX%\\\\Library\\\\lib\\\\cmake\\\\ignition-tools\\\\ignition-tools-config.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "pkg-config",
+    "vs2017_win-64"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

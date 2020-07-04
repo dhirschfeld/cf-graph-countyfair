@@ -4,6 +4,70 @@
  "conda-forge.yml":{},
  "feedstock_name":"sdl",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.libsdl.org/index.php",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"Simple DirectMedia Layer\n"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sdl"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"sdl",
+   "version":"1.2.15"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "c_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00",
+    "url":"https://www.libsdl.org/release/SDL-1.2.15.tar.gz"
+   },
+   {
+    "path":"CMakeLists.txt"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/SDL/SDL.h"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.libsdl.org/index.php",
@@ -75,6 +139,71 @@
  },
  "name":"sdl",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.libsdl.org/index.php",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"Simple DirectMedia Layer\n"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sdl"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"sdl",
+   "version":"1.2.15"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "c_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00",
+    "url":"https://www.libsdl.org/release/SDL-1.2.15.tar.gz"
+   },
+   {
+    "path":"CMakeLists.txt"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/SDL/SDL.h"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "raw_meta_yaml":"{% set name = \"sdl\" %}\n{% set version = \"1.2.15\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  - url: https://www.libsdl.org/release/SDL-{{ version }}.tar.gz\n    sha256: d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00\n  - path: CMakeLists.txt\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14 or osx]\n  run_exports:\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ compiler('c') }}    # [not win]\n    - vs2017_win-64          # [win64]\n    - cmake  # [win]\n    - ninja  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/SDL/SDL.h  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1  # [win]\n\nabout:\n  home: https://www.libsdl.org/index.php\n  license: LGPL-2.1-or-later\n  license_file: COPYING\n  summary: |\n    Simple DirectMedia Layer\n\nextra:\n  recipe-maintainers:\n    - seanyen\n",
  "req":{
   "__set__":true,
@@ -136,5 +265,72 @@
   }
  },
  "url":"https://www.libsdl.org/release/SDL-1.2.15.tar.gz",
- "version":"1.2.15"
+ "version":"1.2.15",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.libsdl.org/index.php",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"Simple DirectMedia Layer\n"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "sdl"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"sdl",
+   "version":"1.2.15"
+  },
+  "requirements":{
+   "build":[
+    "vs2017_win-64",
+    "cmake",
+    "ninja"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00",
+    "url":"https://www.libsdl.org/release/SDL-1.2.15.tar.gz"
+   },
+   {
+    "path":"CMakeLists.txt"
+   }
+  ],
+  "test":{
+   "commands":[
+    "if not exist %PREFIX%\\\\Library\\\\include\\\\SDL\\\\SDL.h exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "ninja",
+    "vs2017_win-64"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

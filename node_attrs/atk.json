@@ -78,6 +78,363 @@
  },
  "feedstock_name":"atk",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtk.org/",
+   "license":"LGPL-2.0-or-later",
+   "license_file":"COPYING",
+   "summary":"Accessibility Toolkit."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atk-1.0 >=2.36.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atk",
+   "version":"2.36.0"
+  },
+  "source":{
+   "sha256":"fb76247e369402be23f1f5c65d38a9639c1164d934e40f6a9cf3c9e96b652788",
+   "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.36/atk-2.36.0.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "meson",
+    "ninja",
+    "perl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk-1.0",
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtk.org/",
+   "license":"LGPL-2.0-or-later",
+   "license_file":"COPYING",
+   "summary":"Accessibility Toolkit."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atk-1.0 >=2.36.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atk",
+   "version":"2.36.0"
+  },
+  "source":{
+   "sha256":"fb76247e369402be23f1f5c65d38a9639c1164d934e40f6a9cf3c9e96b652788",
+   "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.36/atk-2.36.0.tar.xz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "meson",
+    "ninja",
+    "perl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk-1.0",
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://www.gtk.org/",
+   "license":"LGPL-2.0-or-later",
+   "license_file":"COPYING",
+   "summary":"Accessibility Toolkit."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atk-1.0 >=2.36.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atk",
+   "version":"2.36.0"
+  },
+  "source":{
+   "sha256":"fb76247e369402be23f1f5c65d38a9639c1164d934e40f6a9cf3c9e96b652788",
+   "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.36/atk-2.36.0.tar.xz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "meson",
+    "ninja",
+    "perl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk-1.0",
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.gtk.org/",
@@ -90,12 +447,20 @@
    "run_exports":[
     "atk-1.0 >=2.36.0",
     "atk-1.0 >=2.36.0",
+    "atk-1.0 >=2.36.0",
+    "atk-1.0 >=2.36.0",
     "atk-1.0 >=2.36.0"
    ],
    "skip":true
   },
   "extra":{
    "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf",
+    "pkgw",
+    "ocefpaf",
+    "isuruf",
     "pkgw",
     "ocefpaf",
     "isuruf",
@@ -264,6 +629,112 @@
       "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
      ]
     }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
    }
   ],
   "package":{
@@ -277,6 +748,125 @@
  },
  "name":"atk",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtk.org/",
+   "license":"LGPL-2.0-or-later",
+   "license_file":"COPYING",
+   "summary":"Accessibility Toolkit."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atk-1.0 >=2.36.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "make",
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "perl",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"build_atk.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}",
+      "test -f `pkg-config --variable=libdir --dont-define-prefix atk`/libatk-1.0${SHLIB_EXT}"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libatk-1.0${SHLIB_EXT}"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atk",
+   "version":"2.36.0"
+  },
+  "source":{
+   "sha256":"fb76247e369402be23f1f5c65d38a9639c1164d934e40f6a9cf3c9e96b652788",
+   "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.36/atk-2.36.0.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "meson",
+    "ninja",
+    "perl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk-1.0",
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "outputs_names":[
   "atk",
   "atk-1.0"
@@ -371,5 +961,121 @@
   }
  },
  "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.32/atk-2.32.0.tar.xz",
- "version":"2.36.0"
+ "version":"2.36.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtk.org/",
+   "license":"LGPL-2.0-or-later",
+   "license_file":"COPYING",
+   "summary":"Accessibility Toolkit."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atk-1.0 >=2.36.0"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atk-1.0 >=2.36.0"
+     ]
+    },
+    "name":"atk-1.0",
+    "requirements":{
+     "build":[
+      "meson=0.53.2",
+      "ninja",
+      "python >=3.6",
+      "pkg-config",
+      "c_compiler_stub"
+     ],
+     "host":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run":[
+      "glib",
+      "gobject-introspection 1.*"
+     ],
+     "run_constrained":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "script":"bld_atk.bat",
+    "test":{
+     "commands":[
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\atk-1.0-0.dll exit 1",
+      "for /f \"usebackq tokens=*\" %%a in (`pkg-config --variable=exec_prefix --dont-define-prefix atk`) do if not exist \"%%a/bin/atk-1.0-0.dll\" exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\atk-1.0.lib exit 1",
+      "for /f \"usebackq tokens=*\" %%a in (`pkg-config --variable=libdir --dont-define-prefix atk`) do if not exist \"%%a/atk-1.0.lib\" exit 1"
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "name":"atk",
+    "requirements":{
+     "run":[
+      "atk-1.0 2.36.0"
+     ]
+    },
+    "test":{
+     "commands":null
+    }
+   }
+  ],
+  "package":{
+   "name":"atk",
+   "version":"2.36.0"
+  },
+  "source":{
+   "sha256":"fb76247e369402be23f1f5c65d38a9639c1164d934e40f6a9cf3c9e96b652788",
+   "url":"http://ftp.gnome.org/pub/gnome/sources/atk/2.36/atk-2.36.0.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "meson",
+    "ninja",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk-1.0",
+    "glib",
+    "gobject-introspection"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ }
 }

@@ -59,6 +59,101 @@
  "conda-forge.yml":{},
  "feedstock_name":"nexus",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"NeXus is a common data format for neutron, x-ray, and muon science.\nIt is being developed as an international standard by scientists and\nprogrammers representing major scientific facilities in order to facilitate\ngreater cooperation in the analysis and visualization of neutron, x-ray, and muon data.\n",
+   "dev_url":"https://github.com/nexusformat/code",
+   "doc_url":"https://www.nexusformat.org",
+   "home":"https://github.com/nexusformat/code",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"NeXus is a common data format for neutron, x-ray, and muon science"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beenje"
+   ]
+  },
+  "package":{
+   "name":"nexus",
+   "version":"4.4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=2.8.8",
+    "make"
+   ],
+   "host":[
+    "hdf5",
+    "hdf4",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "hdf4",
+    "ncurses"
+   ]
+  },
+  "source":{
+   "patches":[
+    "include_libxml_sax.patch"
+   ],
+   "sha256":"e78a116feb2ebd04de31a8d8707c65e8e15a64aa8999a40fea305e3909bd6533",
+   "url":"https://github.com/nexusformat/code/archive/v4.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxdir --help",
+    "nxtraverse -h",
+    "nxsummary --help",
+    "nxtranslate --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "ncurses"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"NeXus is a common data format for neutron, x-ray, and muon science.\nIt is being developed as an international standard by scientists and\nprogrammers representing major scientific facilities in order to facilitate\ngreater cooperation in the analysis and visualization of neutron, x-ray, and muon data.\n",
@@ -162,6 +257,101 @@
  },
  "name":"nexus",
  "new_version":"4.4.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"NeXus is a common data format for neutron, x-ray, and muon science.\nIt is being developed as an international standard by scientists and\nprogrammers representing major scientific facilities in order to facilitate\ngreater cooperation in the analysis and visualization of neutron, x-ray, and muon data.\n",
+   "dev_url":"https://github.com/nexusformat/code",
+   "doc_url":"https://www.nexusformat.org",
+   "home":"https://github.com/nexusformat/code",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"NeXus is a common data format for neutron, x-ray, and muon science"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beenje"
+   ]
+  },
+  "package":{
+   "name":"nexus",
+   "version":"4.4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=2.8.8",
+    "make"
+   ],
+   "host":[
+    "hdf5",
+    "hdf4",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "hdf4",
+    "ncurses"
+   ]
+  },
+  "source":{
+   "patches":[
+    "include_libxml_sax.patch"
+   ],
+   "sha256":"e78a116feb2ebd04de31a8d8707c65e8e15a64aa8999a40fea305e3909bd6533",
+   "url":"https://github.com/nexusformat/code/archive/v4.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxdir --help",
+    "nxtraverse -h",
+    "nxsummary --help",
+    "nxtranslate --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "ncurses"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.16.07.55.54",
  "raw_meta_yaml":"{% set name = \"nexus\" %}\n{% set version = \"4.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/nexusformat/code/archive/v{{ version }}.tar.gz\n  sha256: e78a116feb2ebd04de31a8d8707c65e8e15a64aa8999a40fea305e3909bd6533\n  patches:\n    - include_libxml_sax.patch\n\nbuild:\n  number: 2\n  skip: true    # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=2.8.8\n    - make\n  host:\n    - hdf5\n    - hdf4\n    - jpeg\n    - libxml2\n    - ncurses\n    - readline\n    - zlib\n  run:\n    - hdf5\n    - hdf4\n    - ncurses\n\ntest:\n  commands:\n    - nxdir --help\n    - nxtraverse -h\n    - nxsummary --help\n    - nxtranslate --help\n\nabout:\n  home: https://github.com/nexusformat/code\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: NeXus is a common data format for neutron, x-ray, and muon science\n  description: |\n    NeXus is a common data format for neutron, x-ray, and muon science.\n    It is being developed as an international standard by scientists and\n    programmers representing major scientific facilities in order to facilitate\n    greater cooperation in the analysis and visualization of neutron, x-ray, and muon data.\n  doc_url: https://www.nexusformat.org\n  dev_url: https://github.com/nexusformat/code\n\nextra:\n  recipe-maintainers:\n    - beenje\n",
  "req":{
@@ -253,5 +443,101 @@
   }
  },
  "url":"https://github.com/nexusformat/code/archive/v4.4.3.tar.gz",
- "version":"4.4.3"
+ "version":"4.4.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"NeXus is a common data format for neutron, x-ray, and muon science.\nIt is being developed as an international standard by scientists and\nprogrammers representing major scientific facilities in order to facilitate\ngreater cooperation in the analysis and visualization of neutron, x-ray, and muon data.\n",
+   "dev_url":"https://github.com/nexusformat/code",
+   "doc_url":"https://www.nexusformat.org",
+   "home":"https://github.com/nexusformat/code",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"NeXus is a common data format for neutron, x-ray, and muon science"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beenje"
+   ]
+  },
+  "package":{
+   "name":"nexus",
+   "version":"4.4.3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=2.8.8",
+    "make"
+   ],
+   "host":[
+    "hdf5",
+    "hdf4",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "hdf4",
+    "ncurses"
+   ]
+  },
+  "source":{
+   "patches":[
+    "include_libxml_sax.patch"
+   ],
+   "sha256":"e78a116feb2ebd04de31a8d8707c65e8e15a64aa8999a40fea305e3909bd6533",
+   "url":"https://github.com/nexusformat/code/archive/v4.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxdir --help",
+    "nxtraverse -h",
+    "nxsummary --help",
+    "nxtranslate --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "jpeg",
+    "libxml2",
+    "ncurses",
+    "readline",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf4",
+    "hdf5",
+    "ncurses"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

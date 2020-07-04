@@ -135,6 +135,123 @@
  "conda-forge.yml":{},
  "feedstock_name":"stir",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"STIR is Open Source software for use in tomographic imaging.\nIts aim is to provide a Multi-Platform Object-Oriented framework for all data manipulations in tomographic imaging.\n",
+   "dev_url":"https://github.com/UCL/STIR",
+   "doc_url":"http://stir.sourceforge.net/documentation",
+   "home":"http://stir.sourceforge.net/",
+   "license":"GPL and LGPL",
+   "license_family":"GPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Software for Tomographic Image Reconstruction"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "olivierverdier",
+    "KrisThielemans",
+    "paskino",
+    "casperdcl"
+   ]
+  },
+  "package":{
+   "name":"stir",
+   "version":"4.0.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "python",
+    "boost-cpp",
+    "numpy",
+    "swig",
+    "libitk-devel"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "libitk"
+   ]
+  },
+  "source":{
+   "fn":"STIR-rel_4.0.2.tar.gz",
+   "patches":[
+    "0001-skip-KOSMAPOSL-test-for-conda.patch"
+   ],
+   "sha256":"e2e80415127fd4af24b012bfd38d4b81e6f9709b3efa367a12b5c14e640e1c98",
+   "url":"https://github.com/UCL/STIR/archive/rel_4.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX stir",
+    "cd recon_test_pack",
+    "./run_test_simulate_and_recon.sh",
+    "./run_test_listmode_recon.sh",
+    "./run_test_simulate_and_recon_with_motion.sh",
+    "./run_scatter_tests.sh",
+    "./run_tests.sh --nointbp",
+    "./run_test_zoom_image.sh",
+    "cd SPECT",
+    "./run_SPECT_tests.sh",
+    "cd ..",
+    "cd ..",
+    "pytest src/swig/test/python"
+   ],
+   "imports":[
+    "stir"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "recon_test_pack",
+    "src/swig/test/python"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libitk-devel",
+    "numpy",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libitk",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"STIR is Open Source software for use in tomographic imaging.\nIts aim is to provide a Multi-Platform Object-Oriented framework for all data manipulations in tomographic imaging.\n",
@@ -290,6 +407,129 @@
  "new_version_errors":{
   "4.0.2":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '4.0.2' to make sure they exist!\n\nWe also found the following errors:\n\n - recipe did not appear to change even though the bot said it should have\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"STIR is Open Source software for use in tomographic imaging.\nIts aim is to provide a Multi-Platform Object-Oriented framework for all data manipulations in tomographic imaging.\n",
+   "dev_url":"https://github.com/UCL/STIR",
+   "doc_url":"http://stir.sourceforge.net/documentation",
+   "home":"http://stir.sourceforge.net/",
+   "license":"GPL and LGPL",
+   "license_family":"GPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Software for Tomographic Image Reconstruction"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "olivierverdier",
+    "KrisThielemans",
+    "paskino",
+    "casperdcl"
+   ]
+  },
+  "package":{
+   "name":"stir",
+   "version":"4.0.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "python",
+    "boost-cpp",
+    "numpy",
+    "swig",
+    "libitk-devel",
+    "openmp"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "libitk",
+    "openmp"
+   ]
+  },
+  "source":{
+   "fn":"STIR-rel_4.0.2.tar.gz",
+   "patches":[
+    "0001-skip-KOSMAPOSL-test-for-conda.patch"
+   ],
+   "sha256":"e2e80415127fd4af24b012bfd38d4b81e6f9709b3efa367a12b5c14e640e1c98",
+   "url":"https://github.com/UCL/STIR/archive/rel_4.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX stir",
+    "conda inspect objects -p $PREFIX stir",
+    "cd recon_test_pack",
+    "./run_test_simulate_and_recon.sh",
+    "./run_test_listmode_recon.sh",
+    "./run_test_simulate_and_recon_with_motion.sh",
+    "./run_scatter_tests.sh",
+    "./run_tests.sh --nointbp",
+    "./run_test_zoom_image.sh",
+    "cd SPECT",
+    "./run_SPECT_tests.sh",
+    "cd ..",
+    "cd ..",
+    "pytest src/swig/test/python"
+   ],
+   "imports":[
+    "stir"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "recon_test_pack",
+    "src/swig/test/python"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libitk-devel",
+    "numpy",
+    "openmp",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libitk",
+    "numpy",
+    "openmp",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.04.17.11.45.02",
  "raw_meta_yaml":"\n{% set name = \"STIR\" %}\n{% set version = \"4.0.2\" %}\n{% set sha256 = \"e2e80415127fd4af24b012bfd38d4b81e6f9709b3efa367a12b5c14e640e1c98\" %}\n{% set treehash = \"rel_4.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ treehash }}.tar.gz\n  url: https://github.com/UCL/{{ name }}/archive/{{ treehash }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-skip-KOSMAPOSL-test-for-conda.patch\n\nbuild:\n  skip: true  # [py2k]\n  skip: true  # [win and py<36]\n  skip: true  # [win and vc<14]\n  skip: true  # [osx]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja\n  host:\n    - python\n    - boost-cpp\n    - numpy\n    - swig\n    - libitk-devel\n    - openmp  # [osx]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - libitk\n    - openmp  # [osx]\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - stir\n  source_files:\n    - recon_test_pack\n    - src/swig/test/python\n  commands:\n    - conda inspect linkages -p $PREFIX {{ name|lower }}  # [not win]\n    - conda inspect objects -p $PREFIX {{ name|lower }}   # [osx]\n    - cd recon_test_pack\n    - ./run_test_simulate_and_recon.sh  # [not win]\n    - ./run_test_listmode_recon.sh  # [not win]\n    - ./run_test_simulate_and_recon_with_motion.sh  # [not win]\n    - ./run_scatter_tests.sh  # [not win]\n    - ./run_tests.sh --nointbp  # [not win]\n    - ./run_test_zoom_image.sh  # [not win]\n    - run_tests  # [win]\n    - cd SPECT\n    - ./run_SPECT_tests.sh  # [not win]\n    - cd ..\n    - cd ..\n    - pytest src/swig/test/python\n\n\nabout:\n  home: http://stir.sourceforge.net/\n  license: GPL and LGPL\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'Software for Tomographic Image Reconstruction'\n  description: |\n    STIR is Open Source software for use in tomographic imaging.\n    Its aim is to provide a Multi-Platform Object-Oriented framework for all data manipulations in tomographic imaging.\n  doc_url: http://stir.sourceforge.net/documentation\n  dev_url: https://github.com/UCL/STIR\n\nextra:\n  recipe-maintainers:\n    - olivierverdier\n    - KrisThielemans\n    - paskino\n    - casperdcl\n",
  "req":{
@@ -385,5 +625,116 @@
   }
  },
  "url":"https://github.com/UCL/STIR/archive/course_MIC2018.zip",
- "version":"4.0.2"
+ "version":"4.0.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"STIR is Open Source software for use in tomographic imaging.\nIts aim is to provide a Multi-Platform Object-Oriented framework for all data manipulations in tomographic imaging.\n",
+   "dev_url":"https://github.com/UCL/STIR",
+   "doc_url":"http://stir.sourceforge.net/documentation",
+   "home":"http://stir.sourceforge.net/",
+   "license":"GPL and LGPL",
+   "license_family":"GPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Software for Tomographic Image Reconstruction"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "olivierverdier",
+    "KrisThielemans",
+    "paskino",
+    "casperdcl"
+   ]
+  },
+  "package":{
+   "name":"stir",
+   "version":"4.0.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "python",
+    "boost-cpp",
+    "numpy",
+    "swig",
+    "libitk-devel"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "libitk"
+   ]
+  },
+  "source":{
+   "fn":"STIR-rel_4.0.2.tar.gz",
+   "patches":[
+    "0001-skip-KOSMAPOSL-test-for-conda.patch"
+   ],
+   "sha256":"e2e80415127fd4af24b012bfd38d4b81e6f9709b3efa367a12b5c14e640e1c98",
+   "url":"https://github.com/UCL/STIR/archive/rel_4.0.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd recon_test_pack",
+    "run_tests",
+    "cd SPECT",
+    "cd ..",
+    "cd ..",
+    "pytest src/swig/test/python"
+   ],
+   "imports":[
+    "stir"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "recon_test_pack",
+    "src/swig/test/python"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "libitk-devel",
+    "numpy",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libitk",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

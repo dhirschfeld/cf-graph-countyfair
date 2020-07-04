@@ -91,6 +91,76 @@
  "conda-forge.yml":{},
  "feedstock_name":"intel-vaapi-driver",
  "hash_type":"sha1",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"VA-API is an open-source library and API specification, which provides\naccess to graphics hardware acceleration capabilities for video processing.\nIt consists of a main library and driver-specific acceleration backends for\neach supported hardware vendor.\n\nThe current video driver backend provides a bridge to the GEN GPUs through\nthe packaging of buffers and commands to be sent to the i915 driver for\nexercising both hardware and shader functionality for video decode, encode,\nand processing.\n",
+   "home":"https://github.com/intel/intel-vaapi-driver",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "intel-vaapi-driver"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX --enable-hybrid-codec",
+    "make -j$(nproc) install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"intel-vaapi-driver",
+   "version":"2.4.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "source":{
+   "sha1":"c998e06f13238c6419bb38ede9a13e453312737b",
+   "url":"https://github.com/intel/intel-vaapi-driver/releases/download/2.4.1/intel-vaapi-driver-2.4.1.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/dri/i965_drv_video.so"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"VA-API is an open-source library and API specification, which provides\naccess to graphics hardware acceleration capabilities for video processing.\nIt consists of a main library and driver-specific acceleration backends for\neach supported hardware vendor.\n\nThe current video driver backend provides a bridge to the GEN GPUs through\nthe packaging of buffers and commands to be sent to the i915 driver for\nexercising both hardware and shader functionality for video decode, encode,\nand processing.\n",
@@ -163,6 +233,77 @@
  "new_version_errors":{
   "2.4.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2.4.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/intel/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.bz2'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"VA-API is an open-source library and API specification, which provides\naccess to graphics hardware acceleration capabilities for video processing.\nIt consists of a main library and driver-specific acceleration backends for\neach supported hardware vendor.\n\nThe current video driver backend provides a bridge to the GEN GPUs through\nthe packaging of buffers and commands to be sent to the i915 driver for\nexercising both hardware and shader functionality for video decode, encode,\nand processing.\n",
+   "home":"https://github.com/intel/intel-vaapi-driver",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "intel-vaapi-driver"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX --enable-hybrid-codec",
+    "make -j$(nproc) install"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"intel-vaapi-driver",
+   "version":"2.4.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "source":{
+   "sha1":"c998e06f13238c6419bb38ede9a13e453312737b",
+   "url":"https://github.com/intel/intel-vaapi-driver/releases/download/2.4.1/intel-vaapi-driver-2.4.1.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/dri/i965_drv_video.so"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"intel-vaapi-driver\" %}\n{% set version = \"2.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/intel/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.bz2\n  sha1: c998e06f13238c6419bb38ede9a13e453312737b\n\nbuild:\n  skip: true  # [not linux]\n  number: 0\n  # https://github.com/intel/intel-vaapi-driver/blob/master/NEWS\n  run_exports:\n    - {{ pin_subpackage('intel-vaapi-driver', max_pin='x.x') }}\n  script:\n    - ./configure --prefix=$PREFIX --enable-hybrid-codec\n    - make -j$(nproc) install\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - pkg-config\n  host:\n    - intel-hybrid-driver\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/dri/i965_drv_video.so\n\nabout:\n  home: https://github.com/intel/intel-vaapi-driver\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    VA-API is an open-source library and API specification, which provides\n    access to graphics hardware acceleration capabilities for video processing.\n    It consists of a main library and driver-specific acceleration backends for\n    each supported hardware vendor.\n\n    The current video driver backend provides a bridge to the GEN GPUs through\n    the packaging of buffers and commands to be sent to the i915 driver for\n    exercising both hardware and shader functionality for video decode, encode,\n    and processing.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
@@ -222,5 +363,76 @@
   }
  },
  "url":"https://github.com/intel/intel-vaapi-driver/releases/download/2.3.0/intel-vaapi-driver-2.3.0.tar.bz2",
- "version":"2.4.1"
+ "version":"2.4.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"VA-API is an open-source library and API specification, which provides\naccess to graphics hardware acceleration capabilities for video processing.\nIt consists of a main library and driver-specific acceleration backends for\neach supported hardware vendor.\n\nThe current video driver backend provides a bridge to the GEN GPUs through\nthe packaging of buffers and commands to be sent to the i915 driver for\nexercising both hardware and shader functionality for video decode, encode,\nand processing.\n",
+   "home":"https://github.com/intel/intel-vaapi-driver",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "intel-vaapi-driver"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX --enable-hybrid-codec",
+    "make -j$(nproc) install"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"intel-vaapi-driver",
+   "version":"2.4.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "source":{
+   "sha1":"c998e06f13238c6419bb38ede9a13e453312737b",
+   "url":"https://github.com/intel/intel-vaapi-driver/releases/download/2.4.1/intel-vaapi-driver-2.4.1.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/dri/i965_drv_video.so"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-hybrid-driver"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

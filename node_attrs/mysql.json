@@ -148,6 +148,349 @@
  "conda-forge.yml":{},
  "feedstock_name":"mysql",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The MySQL(TM) software delivers a very fast, multi-threaded, multi-user,\nand robust SQL (Structured Query Language) database server. MySQL Server\nis intended for mission-critical, heavy-load production systems as well\nas for embedding into mass-deployed software.\n",
+   "home":"https://www.mysql.com/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Open source relational database management system."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "nehaljwani"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Database server and related tools"
+    },
+    "build":{
+     "ignore_run_exports":[
+      "openldap"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Server -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Server_Scripts -P ${SRC_DIR}/build/cmake_install.cmake",
+      "ln -s ${PREFIX}/mysql/support-files/mysql.server ${PREFIX}/bin/mysql.server"
+     ]
+    },
+    "name":"mysql-server",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "cyrus-sasl",
+      "icu",
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "openldap",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqld --version",
+      "test -f ${PREFIX}/lib/plugin/mysql_no_login.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL client applications and tools"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Client -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-client",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "libedit",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysql --version",
+      "mysqldump --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Development header files and libraries for MySQL database client applications"
+    },
+    "build":{
+     "run_exports":[
+      "mysql-libs"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Development -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-devel",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "mysql-libs"
+     ],
+     "run":[
+      "mysql-libs"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/mysql/mysql.h",
+      "test -f $PREFIX/include/mysql/mysqlx_version.h",
+      "test -f $PREFIX/lib/pkgconfig/mysqlclient.pc",
+      "mysql_config --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Shared libraries for MySQL database client applications"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=SharedLibraries -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-libs",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libmysqlclient${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Common files for server and client libraries"
+    },
+    "build":{
+     "script":[
+      "cmake -P ${SRC_DIR}/build/share/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-common",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/share/mysql/english/errmsg.sys",
+      "test -f $PREFIX/share/mysql/charsets/ascii.xml"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL Router binaries"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Router -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-router",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqlrouter --version",
+      "test -f $PREFIX/lib/mysqlrouter/http_auth_backend.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":[
+      "Meta package for backwards compat + bonus content"
+     ]
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Documentation -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Info -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=ManPages -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Readme -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=SupportFiles -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "run":[
+      "mysql-server",
+      "mysql-client",
+      "mysql-devel",
+      "mysql-libs",
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/share/man/man1/mysql.1",
+      "test -f $PREFIX/share/man/man8/mysqld.8",
+      "mysql_config --version",
+      "my_print_defaults --version",
+      "mysqld --help --verbose",
+      "command -v mysql.server"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mysql-suite",
+   "version":"8.0.20"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "cyrus-sasl",
+    "icu",
+    "libedit",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "openldap",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/0001-Make-installation-of-pdb-files-optional.patch",
+    "patches/0002-Fix-file-path-for-mysqlrouter.conf.sample-for-instal.patch",
+    "patches/0003-Allow-flags-other-than-macros-in-CPPFLAGS.patch",
+    "patches/0004-Rename-VERSION-file-to-not-conflict-with-LLVM-s-vers.patch",
+    "patches/0005-Use-macports-legacy-support-for-features-10.9.patch"
+   ],
+   "sha256":"b6ad1a09eb146fa913f1afc257bbed8ffab688e2d504fb8ddb652f69f551a9c1",
+   "url":"https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.20.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cyrus-sasl",
+    "icu",
+    "libedit",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "mysql-common",
+    "mysql-libs",
+    "openldap",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mysql-client",
+    "mysql-common",
+    "mysql-devel",
+    "mysql-libs",
+    "mysql-server"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The MySQL(TM) software delivers a very fast, multi-threaded, multi-user,\nand robust SQL (Structured Query Language) database server. MySQL Server\nis intended for mission-critical, heavy-load production systems as well\nas for embedding into mass-deployed software.\n",
@@ -982,6 +1325,353 @@
   "8.0.20":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The MySQL(TM) software delivers a very fast, multi-threaded, multi-user,\nand robust SQL (Structured Query Language) database server. MySQL Server\nis intended for mission-critical, heavy-load production systems as well\nas for embedding into mass-deployed software.\n",
+   "home":"https://www.mysql.com/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Open source relational database management system."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "nehaljwani"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Database server and related tools"
+    },
+    "build":{
+     "ignore_run_exports":[
+      "openldap"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Server -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Server_Scripts -P ${SRC_DIR}/build/cmake_install.cmake",
+      "ln -s ${PREFIX}/mysql/support-files/mysql.server ${PREFIX}/bin/mysql.server"
+     ]
+    },
+    "name":"mysql-server",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "cyrus-sasl",
+      "icu",
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "macports-legacy-support",
+      "openldap",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqld --version",
+      "test -f ${PREFIX}/lib/plugin/mysql_no_login.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL client applications and tools"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Client -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-client",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "libedit",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysql --version",
+      "mysqldump --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Development header files and libraries for MySQL database client applications"
+    },
+    "build":{
+     "run_exports":[
+      "mysql-libs"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Development -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-devel",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "mysql-libs"
+     ],
+     "run":[
+      "mysql-libs"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/mysql/mysql.h",
+      "test -f $PREFIX/include/mysql/mysqlx_version.h",
+      "test -f $PREFIX/lib/pkgconfig/mysqlclient.pc",
+      "mysql_config --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Shared libraries for MySQL database client applications"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=SharedLibraries -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-libs",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libmysqlclient${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Common files for server and client libraries"
+    },
+    "build":{
+     "script":[
+      "cmake -P ${SRC_DIR}/build/share/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-common",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/share/mysql/english/errmsg.sys",
+      "test -f $PREFIX/share/mysql/charsets/ascii.xml"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL Router binaries"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Router -P ${SRC_DIR}/build/cmake_install.cmake"
+     ],
+     "skip":true
+    },
+    "name":"mysql-router",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqlrouter --version",
+      "test -f $PREFIX/lib/mysqlrouter/http_auth_backend.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":[
+      "Meta package for backwards compat + bonus content"
+     ]
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Documentation -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Info -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=ManPages -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=Readme -P ${SRC_DIR}/build/cmake_install.cmake",
+      "cmake -DCOMPONENT=SupportFiles -P ${SRC_DIR}/build/cmake_install.cmake"
+     ]
+    },
+    "name":"mysql",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "run":[
+      "mysql-server",
+      "mysql-client",
+      "mysql-devel",
+      "mysql-libs",
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/share/man/man1/mysql.1",
+      "test -f $PREFIX/share/man/man8/mysqld.8",
+      "mysql_config --version",
+      "my_print_defaults --version",
+      "mysqld --help --verbose",
+      "command -v mysql.server"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mysql-suite",
+   "version":"8.0.20"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "cyrus-sasl",
+    "icu",
+    "libedit",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "macports-legacy-support",
+    "openldap",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/0001-Make-installation-of-pdb-files-optional.patch",
+    "patches/0002-Fix-file-path-for-mysqlrouter.conf.sample-for-instal.patch",
+    "patches/0003-Allow-flags-other-than-macros-in-CPPFLAGS.patch",
+    "patches/0004-Rename-VERSION-file-to-not-conflict-with-LLVM-s-vers.patch",
+    "patches/0005-Use-macports-legacy-support-for-features-10.9.patch"
+   ],
+   "sha256":"b6ad1a09eb146fa913f1afc257bbed8ffab688e2d504fb8ddb652f69f551a9c1",
+   "url":"https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.20.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cyrus-sasl",
+    "icu",
+    "libedit",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "macports-legacy-support",
+    "mysql-common",
+    "mysql-libs",
+    "openldap",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mysql-client",
+    "mysql-common",
+    "mysql-devel",
+    "mysql-libs",
+    "mysql-server"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "mysql",
   "mysql-client",
@@ -1104,5 +1794,334 @@
   }
  },
  "url":"https://downloads.mysql.com/archives/get/file/mysql-boost-5.7.20.tar.gz",
- "version":"8.0.20"
+ "version":"8.0.20",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The MySQL(TM) software delivers a very fast, multi-threaded, multi-user,\nand robust SQL (Structured Query Language) database server. MySQL Server\nis intended for mission-critical, heavy-load production systems as well\nas for embedding into mass-deployed software.\n",
+   "home":"https://www.mysql.com/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Open source relational database management system."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "nehaljwani"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Database server and related tools"
+    },
+    "build":{
+     "ignore_run_exports":[
+      "openldap"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Server -P %SRC_DIR%\\build\\cmake_install.cmake",
+      "cmake -DCOMPONENT=Server_Scripts -P %SRC_DIR%\\build\\cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-server",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "icu",
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqld --version",
+      "if not exist %LIBRARY_LIB%\\plugin\\mysql_no_login.dll exit 1"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL client applications and tools"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Client -P %SRC_DIR%\\build\\cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-client",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysql --version",
+      "mysqldump --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Development header files and libraries for MySQL database client applications"
+    },
+    "build":{
+     "run_exports":[
+      "mysql-libs"
+     ],
+     "script":[
+      "cmake -DCOMPONENT=Development -P %SRC_DIR%\\build\\cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-devel",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "mysql-libs"
+     ],
+     "run":[
+      "mysql-libs"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_INC%\\mysql\\mysql.h exit 1",
+      "if not exist %LIBRARY_INC%\\mysql\\mysqlx_version.h exit 1",
+      "if not exist %LIBRARY_LIB%\\mysqlclient.lib exit 1"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Shared libraries for MySQL database client applications"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=SharedLibraries -P %SRC_DIR%/build/cmake_install.cmake",
+      "move %LIBRARY_LIB%\\*.dll %LIBRARY_BIN%\\"
+     ]
+    },
+    "name":"mysql-libs",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "zstd",
+      "mysql-common"
+     ],
+     "run":[
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_BIN%\\libmysql.dll exit 1"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"Common files for server and client libraries"
+    },
+    "build":{
+     "script":[
+      "cmake -P %SRC_DIR%\\build\\share\\cmake_install.cmake"
+     ]
+    },
+    "name":"mysql-common",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ]
+    },
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_PREFIX%\\share\\mysql\\english\\errmsg.sys exit 1",
+      "if not exist %LIBRARY_PREFIX%\\share\\mysql\\charsets\\ascii.xml exit 1"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":"MySQL Router binaries"
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Router -P %SRC_DIR%\\build\\cmake_install.cmake",
+      "move %LIBRARY_LIB%\\*.dll %LIBRARY_BIN%\\"
+     ]
+    },
+    "name":"mysql-router",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "libevent",
+      "libprotobuf",
+      "lz4-c",
+      "openssl",
+      "zlib",
+      "zstd"
+     ]
+    },
+    "test":{
+     "commands":[
+      "mysqlrouter --version",
+      "test -f %LIBRARY_PREFIX%\\bin\\mysqlrouter_http.dll"
+     ]
+    }
+   },
+   {
+    "about":{
+     "license_file":"LICENSE",
+     "summary":[
+      "Meta package for backwards compat + bonus content"
+     ]
+    },
+    "build":{
+     "script":[
+      "cmake -DCOMPONENT=Documentation -P %SRC_DIR%\\build\\cmake_install.cmake",
+      "cmake -DCOMPONENT=Info -P %SRC_DIR%\\build\\cmake_install.cmake",
+      "cmake -DCOMPONENT=Readme -P %SRC_DIR%\\build\\cmake_install.cmake",
+      "cmake -DCOMPONENT=SupportFiles -P %SRC_DIR%\\build\\cmake_install.cmake"
+     ]
+    },
+    "name":"mysql",
+    "requirements":{
+     "build":[
+      "cmake",
+      "ninja"
+     ],
+     "run":[
+      "mysql-server",
+      "mysql-client",
+      "mysql-devel",
+      "mysql-libs",
+      "mysql-common"
+     ]
+    },
+    "test":{
+     "commands":[
+      "my_print_defaults --version",
+      "mysqld --help --verbose"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mysql-suite",
+   "version":"8.0.20"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "icu",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/0001-Make-installation-of-pdb-files-optional.patch",
+    "patches/0002-Fix-file-path-for-mysqlrouter.conf.sample-for-instal.patch",
+    "patches/0003-Allow-flags-other-than-macros-in-CPPFLAGS.patch",
+    "patches/0004-Rename-VERSION-file-to-not-conflict-with-LLVM-s-vers.patch",
+    "patches/0005-Use-macports-legacy-support-for-features-10.9.patch"
+   ],
+   "sha256":"b6ad1a09eb146fa913f1afc257bbed8ffab688e2d504fb8ddb652f69f551a9c1",
+   "url":"https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-8.0.20.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "icu",
+    "libevent",
+    "libprotobuf",
+    "lz4-c",
+    "mysql-common",
+    "mysql-libs",
+    "openssl",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mysql-client",
+    "mysql-common",
+    "mysql-devel",
+    "mysql-libs",
+    "mysql-server"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

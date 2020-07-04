@@ -140,6 +140,103 @@
  "conda-forge.yml":{},
  "feedstock_name":"pelican",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://getpelican.com/",
+   "license":"AGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"A tool to generate a static blog from reStructuredText or Markdown input files."
+  },
+  "build":{
+   "entry_points":[
+    "pelican = pelican:main",
+    "pelican-import = pelican.tools.pelican_import:main",
+    "pelican-quickstart = pelican.tools.pelican_quickstart:main",
+    "pelican-themes = pelican.tools.pelican_themes:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "rm -f pyproject.toml",
+    " -m pip install . --no-deps -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "mwcraig"
+   ]
+  },
+  "package":{
+   "name":"pelican",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "feedgenerator >=1.9",
+    "jinja2 >=2.7",
+    "pygments",
+    "docutils",
+    "pytz >=0a",
+    "blinker",
+    "unidecode",
+    "six >=1.4",
+    "python-dateutil"
+   ]
+  },
+  "source":{
+   "sha256":"be7ea9a09311374322b5579c88975ae003409e40c833e761780a0d0dbd84e756",
+   "url":"https://pypi.io/packages/source/p/pelican/pelican-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pelican --help",
+    "pelican-import --help",
+    "pelican-themes --help"
+   ],
+   "imports":[
+    "pelican",
+    "pelican.tools"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blinker",
+    "docutils",
+    "feedgenerator",
+    "jinja2",
+    "pygments",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six",
+    "unidecode"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://getpelican.com/",
@@ -257,6 +354,103 @@
  },
  "name":"pelican",
  "new_version":"4.2.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://getpelican.com/",
+   "license":"AGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"A tool to generate a static blog from reStructuredText or Markdown input files."
+  },
+  "build":{
+   "entry_points":[
+    "pelican = pelican:main",
+    "pelican-import = pelican.tools.pelican_import:main",
+    "pelican-quickstart = pelican.tools.pelican_quickstart:main",
+    "pelican-themes = pelican.tools.pelican_themes:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "rm -f pyproject.toml",
+    " -m pip install . --no-deps -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "mwcraig"
+   ]
+  },
+  "package":{
+   "name":"pelican",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "feedgenerator >=1.9",
+    "jinja2 >=2.7",
+    "pygments",
+    "docutils",
+    "pytz >=0a",
+    "blinker",
+    "unidecode",
+    "six >=1.4",
+    "python-dateutil"
+   ]
+  },
+  "source":{
+   "sha256":"be7ea9a09311374322b5579c88975ae003409e40c833e761780a0d0dbd84e756",
+   "url":"https://pypi.io/packages/source/p/pelican/pelican-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pelican --help",
+    "pelican-import --help",
+    "pelican-themes --help"
+   ],
+   "imports":[
+    "pelican",
+    "pelican.tools"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blinker",
+    "docutils",
+    "feedgenerator",
+    "jinja2",
+    "pygments",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six",
+    "unidecode"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.10.11",
  "raw_meta_yaml":"{% set version = \"4.2.0\" %}\n\npackage:\n  name: pelican\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pelican/pelican-{{ version }}.tar.gz\n  sha256: be7ea9a09311374322b5579c88975ae003409e40c833e761780a0d0dbd84e756\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - rm -f pyproject.toml\n    - \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - pelican = pelican:main\n    - pelican-import = pelican.tools.pelican_import:main\n    - pelican-quickstart = pelican.tools.pelican_quickstart:main\n    - pelican-themes = pelican.tools.pelican_themes:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - feedgenerator >=1.9\n    - jinja2 >=2.7\n    - pygments\n    - docutils\n    - pytz >=0a\n    - blinker\n    - unidecode\n    - six >=1.4\n    - python-dateutil\n\ntest:\n  imports:\n    - pelican\n    - pelican.tools\n  commands:\n    - pelican --help\n    - pelican-import --help\n    - pelican-themes --help\n\nabout:\n  home: http://getpelican.com/\n  license_file: LICENSE\n  license: AGPL-3.0\n  summary: 'A tool to generate a static blog from reStructuredText or Markdown input files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - mwcraig\n",
  "req":{
@@ -342,5 +536,102 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pelican/pelican-4.1.1.tar.gz",
- "version":"4.2.0"
+ "version":"4.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://getpelican.com/",
+   "license":"AGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"A tool to generate a static blog from reStructuredText or Markdown input files."
+  },
+  "build":{
+   "entry_points":[
+    "pelican = pelican:main",
+    "pelican-import = pelican.tools.pelican_import:main",
+    "pelican-quickstart = pelican.tools.pelican_quickstart:main",
+    "pelican-themes = pelican.tools.pelican_themes:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "rm -f pyproject.toml",
+    " -m pip install . --no-deps -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "mwcraig"
+   ]
+  },
+  "package":{
+   "name":"pelican",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "feedgenerator >=1.9",
+    "jinja2 >=2.7",
+    "pygments",
+    "docutils",
+    "pytz >=0a",
+    "blinker",
+    "unidecode",
+    "six >=1.4",
+    "python-dateutil"
+   ]
+  },
+  "source":{
+   "sha256":"be7ea9a09311374322b5579c88975ae003409e40c833e761780a0d0dbd84e756",
+   "url":"https://pypi.io/packages/source/p/pelican/pelican-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pelican --help",
+    "pelican-import --help",
+    "pelican-themes --help"
+   ],
+   "imports":[
+    "pelican",
+    "pelican.tools"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blinker",
+    "docutils",
+    "feedgenerator",
+    "jinja2",
+    "pygments",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "six",
+    "unidecode"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

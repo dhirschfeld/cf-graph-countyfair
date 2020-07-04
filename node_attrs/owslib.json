@@ -108,6 +108,96 @@
  "conda-forge.yml":{},
  "feedstock_name":"owslib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://geopython.github.io/OWSLib",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"OGC Web Service utility library"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalxas",
+    "tomkralidis",
+    "pelson",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"owslib",
+   "version":"0.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "pyproj >=2",
+    "python-dateutil >=1.5",
+    "pytz",
+    "pyyaml",
+    "requests >=1.0"
+   ]
+  },
+  "source":{
+   "sha256":"334988857b260c8cdf1f6698d07eab61839c51acb52ee10eed1275439200a40e",
+   "url":"https://pypi.io/packages/source/O/OWSLib/OWSLib-0.20.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "owslib",
+    "owslib.coverage",
+    "owslib.feature",
+    "owslib.swe",
+    "owslib.swe.observation",
+    "owslib.swe.sensor",
+    "owslib.waterml"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pyproj",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://geopython.github.io/OWSLib",
@@ -216,6 +306,96 @@
   "0.20.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://geopython.github.io/OWSLib",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"OGC Web Service utility library"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalxas",
+    "tomkralidis",
+    "pelson",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"owslib",
+   "version":"0.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "pyproj >=2",
+    "python-dateutil >=1.5",
+    "pytz",
+    "pyyaml",
+    "requests >=1.0"
+   ]
+  },
+  "source":{
+   "sha256":"334988857b260c8cdf1f6698d07eab61839c51acb52ee10eed1275439200a40e",
+   "url":"https://pypi.io/packages/source/O/OWSLib/OWSLib-0.20.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "owslib",
+    "owslib.coverage",
+    "owslib.feature",
+    "owslib.swe",
+    "owslib.swe.observation",
+    "owslib.swe.sensor",
+    "owslib.waterml"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pyproj",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.06.04.13.55.38",
  "raw_meta_yaml":"{% set version = \"0.20.0\" %}\n\npackage:\n  name: owslib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz\n  sha256: 334988857b260c8cdf1f6698d07eab61839c51acb52ee10eed1275439200a40e\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - pyproj >=2\n    - python-dateutil >=1.5\n    - pytz\n    - pyyaml\n    - requests >=1.0\n\ntest:\n  imports:\n    - owslib\n    - owslib.coverage\n    - owslib.feature\n    - owslib.swe\n    - owslib.swe.observation\n    - owslib.swe.sensor\n    - owslib.waterml\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://geopython.github.io/OWSLib\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: OGC Web Service utility library\n\nextra:\n  recipe-maintainers:\n    - kalxas\n    - tomkralidis\n    - pelson\n    - ocefpaf\n",
  "req":{
@@ -293,5 +473,95 @@
   }
  },
  "url":"https://pypi.io/packages/source/O/OWSLib/OWSLib-0.18.0.tar.gz",
- "version":"0.20.0"
+ "version":"0.20.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://geopython.github.io/OWSLib",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"OGC Web Service utility library"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalxas",
+    "tomkralidis",
+    "pelson",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"owslib",
+   "version":"0.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "pyproj >=2",
+    "python-dateutil >=1.5",
+    "pytz",
+    "pyyaml",
+    "requests >=1.0"
+   ]
+  },
+  "source":{
+   "sha256":"334988857b260c8cdf1f6698d07eab61839c51acb52ee10eed1275439200a40e",
+   "url":"https://pypi.io/packages/source/O/OWSLib/OWSLib-0.20.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "owslib",
+    "owslib.coverage",
+    "owslib.feature",
+    "owslib.swe",
+    "owslib.swe.observation",
+    "owslib.swe.sensor",
+    "owslib.waterml"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pyproj",
+    "python",
+    "python-dateutil",
+    "pytz",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

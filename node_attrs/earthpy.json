@@ -242,6 +242,95 @@
  "conda-forge.yml":{},
  "feedstock_name":"earthpy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A set of helper functions to make working with spatial data in open source\ntools easier. This package is maintained by Earth Lab and was originally\ndesigned to support the earth analytics education program.\n",
+   "dev_url":"https://github.com/earthlab/earthpy",
+   "doc_url":"http://earthpy.readthedocs.io/",
+   "home":"http://github.com/earthlab/earthpy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Utility functions for the working with spatial data"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "lwasser",
+    "mbjoseph"
+   ]
+  },
+  "package":{
+   "name":"earthpy",
+   "version":"0.9.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "geopandas",
+    "matplotlib >=2",
+    "numpy",
+    "pandas",
+    "rasterio",
+    "requests",
+    "Rtree >=0.8",
+    "scikit-image"
+   ]
+  },
+  "source":{
+   "sha256":"efe71076edcbfe2c179687e9a7fa315a6cf43b1a9690e23f75e72d92ca09d9ab",
+   "url":"https://pypi.io/packages/source/e/earthpy/earthpy-0.9.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "earthpy",
+    "earthpy.clip",
+    "earthpy.io",
+    "earthpy.mask",
+    "earthpy.plot",
+    "earthpy.spatial"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "python",
+    "rasterio",
+    "requests",
+    "rtree",
+    "scikit-image"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A set of helper functions to make working with spatial data in open source\ntools easier. This package is maintained by Earth Lab and was originally\ndesigned to support the earth analytics education program.\n",
@@ -344,6 +433,95 @@
   "0.9.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A set of helper functions to make working with spatial data in open source\ntools easier. This package is maintained by Earth Lab and was originally\ndesigned to support the earth analytics education program.\n",
+   "dev_url":"https://github.com/earthlab/earthpy",
+   "doc_url":"http://earthpy.readthedocs.io/",
+   "home":"http://github.com/earthlab/earthpy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Utility functions for the working with spatial data"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "lwasser",
+    "mbjoseph"
+   ]
+  },
+  "package":{
+   "name":"earthpy",
+   "version":"0.9.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "geopandas",
+    "matplotlib >=2",
+    "numpy",
+    "pandas",
+    "rasterio",
+    "requests",
+    "Rtree >=0.8",
+    "scikit-image"
+   ]
+  },
+  "source":{
+   "sha256":"efe71076edcbfe2c179687e9a7fa315a6cf43b1a9690e23f75e72d92ca09d9ab",
+   "url":"https://pypi.io/packages/source/e/earthpy/earthpy-0.9.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "earthpy",
+    "earthpy.clip",
+    "earthpy.io",
+    "earthpy.mask",
+    "earthpy.plot",
+    "earthpy.spatial"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "python",
+    "rasterio",
+    "requests",
+    "rtree",
+    "scikit-image"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"earthpy\" %}\n{% set version = \"0.9.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: efe71076edcbfe2c179687e9a7fa315a6cf43b1a9690e23f75e72d92ca09d9ab\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - geopandas\n    - matplotlib >=2\n    - numpy\n    - pandas\n    - rasterio\n    - requests\n    - Rtree >=0.8\n    - scikit-image\n\n\ntest:\n  imports:\n    - earthpy\n    - earthpy.clip\n    - earthpy.io\n    - earthpy.mask\n    - earthpy.plot\n    - earthpy.spatial\n\nabout:\n  home: http://github.com/earthlab/earthpy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Utility functions for the working with spatial data\n\n  description: |\n    A set of helper functions to make working with spatial data in open source\n    tools easier. This package is maintained by Earth Lab and was originally\n    designed to support the earth analytics education program.\n  doc_url: http://earthpy.readthedocs.io/\n  dev_url: https://github.com/earthlab/earthpy\n\nextra:\n  recipe-maintainers:\n    - lwasser\n    - mbjoseph\n",
  "req":{
@@ -426,5 +604,94 @@
   }
  },
  "url":"https://pypi.io/packages/source/e/earthpy/earthpy-0.7.4.tar.gz",
- "version":"0.9.2"
+ "version":"0.9.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A set of helper functions to make working with spatial data in open source\ntools easier. This package is maintained by Earth Lab and was originally\ndesigned to support the earth analytics education program.\n",
+   "dev_url":"https://github.com/earthlab/earthpy",
+   "doc_url":"http://earthpy.readthedocs.io/",
+   "home":"http://github.com/earthlab/earthpy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Utility functions for the working with spatial data"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "lwasser",
+    "mbjoseph"
+   ]
+  },
+  "package":{
+   "name":"earthpy",
+   "version":"0.9.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "geopandas",
+    "matplotlib >=2",
+    "numpy",
+    "pandas",
+    "rasterio",
+    "requests",
+    "Rtree >=0.8",
+    "scikit-image"
+   ]
+  },
+  "source":{
+   "sha256":"efe71076edcbfe2c179687e9a7fa315a6cf43b1a9690e23f75e72d92ca09d9ab",
+   "url":"https://pypi.io/packages/source/e/earthpy/earthpy-0.9.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "earthpy",
+    "earthpy.clip",
+    "earthpy.io",
+    "earthpy.mask",
+    "earthpy.plot",
+    "earthpy.spatial"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geopandas",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "python",
+    "rasterio",
+    "requests",
+    "rtree",
+    "scikit-image"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

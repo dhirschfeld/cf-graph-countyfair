@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxxf86vm-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXxf86vm-1.1.4/COPYING",
+   "summary":"(CDT) X.org libXxf86vm library."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxxf86vm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxxf86vm-devel-cos7-aarch64",
+    "requirements":[
+     "libxxf86vm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxxf86vm-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"66fafbf534a52b2c9b4446136505e06fc1bc38e786f7834255bdb03a5bb6a990",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-1.1.4-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"44be5b49b06848119cc67c198fed8d61f8e6d7ac833bf51225a157b2a6108e6e",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-devel-1.1.4-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxxf86vm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://x.org",
@@ -177,6 +278,107 @@
  },
  "name":"libxxf86vm-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXxf86vm-1.1.4/COPYING",
+   "summary":"(CDT) X.org libXxf86vm library."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxxf86vm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxxf86vm-devel-cos7-aarch64",
+    "requirements":[
+     "libxxf86vm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxxf86vm-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"66fafbf534a52b2c9b4446136505e06fc1bc38e786f7834255bdb03a5bb6a990",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-1.1.4-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"44be5b49b06848119cc67c198fed8d61f8e6d7ac833bf51225a157b2a6108e6e",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-devel-1.1.4-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxxf86vm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxxf86vm-cos7-aarch64",
   "libxxf86vm-devel-cos7-aarch64"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-1.1.4-1.el7.aarch64.rpm",
- "version":"1.1.4"
+ "version":"1.1.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXxf86vm-1.1.4/COPYING",
+   "summary":"(CDT) X.org libXxf86vm library."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxxf86vm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxxf86vm-devel-cos7-aarch64",
+    "requirements":[
+     "libxxf86vm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxxf86vm-cos7-aarch64",
+   "version":"1.1.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"66fafbf534a52b2c9b4446136505e06fc1bc38e786f7834255bdb03a5bb6a990",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-1.1.4-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"44be5b49b06848119cc67c198fed8d61f8e6d7ac833bf51225a157b2a6108e6e",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXxf86vm-devel-1.1.4-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXxf86vm.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxxf86vm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

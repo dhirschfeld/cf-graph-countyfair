@@ -212,6 +212,94 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyfmmlib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/inducer/pyfmmlib",
+   "home":"https://github.com/inducer/pyfmmlib",
+   "license":"MIT AND BSD-3-Clause",
+   "license_file":"README.rst",
+   "summary":"Python wrappers for FMMLIB2D and FMMLIB3D"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"pyfmmlib",
+   "version":"2019.1.5"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "mako"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyfmmlib-2019.1.5.tar.gz",
+   "sha256":"b47e61be41474425852dfa2ad00757fd1327b76869d518c10c9578a522ba46d8",
+   "url":"https://pypi.io/packages/source/p/pyfmmlib/pyfmmlib-2019.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "pyfmmlib"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/inducer/pyfmmlib",
@@ -299,6 +387,94 @@
  },
  "name":"pyfmmlib",
  "new_version":"2019.1.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/inducer/pyfmmlib",
+   "home":"https://github.com/inducer/pyfmmlib",
+   "license":"MIT AND BSD-3-Clause",
+   "license_file":"README.rst",
+   "summary":"Python wrappers for FMMLIB2D and FMMLIB3D"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"pyfmmlib",
+   "version":"2019.1.5"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "mako"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyfmmlib-2019.1.5.tar.gz",
+   "sha256":"b47e61be41474425852dfa2ad00757fd1327b76869d518c10c9578a522ba46d8",
+   "url":"https://pypi.io/packages/source/p/pyfmmlib/pyfmmlib-2019.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "pyfmmlib"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"pyfmmlib\" %}\n{% set version = \"2019.1.5\" %}\n{% set sha256 = \"b47e61be41474425852dfa2ad00757fd1327b76869d518c10c9578a522ba46d8\" %}\n{% set build_number = 1 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build_number }}\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}  # [not win]\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n  host:\n    - python\n    - setuptools\n    - numpy\n    - mako\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - {{ name }}\n  source_files:\n    - test\n  commands:\n    - cd test && python -m pytest\n\nabout:\n  home: https://github.com/inducer/pyfmmlib\n  license: MIT AND BSD-3-Clause\n  license_file: README.rst\n  summary: 'Python wrappers for FMMLIB2D and FMMLIB3D'\n  dev_url: https://github.com/inducer/pyfmmlib\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - isuruf\n",
  "req":{
@@ -383,5 +559,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyfmmlib/pyfmmlib-2019.1.5.tar.gz",
- "version":"2019.1.5"
+ "version":"2019.1.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/inducer/pyfmmlib",
+   "home":"https://github.com/inducer/pyfmmlib",
+   "license":"MIT AND BSD-3-Clause",
+   "license_file":"README.rst",
+   "summary":"Python wrappers for FMMLIB2D and FMMLIB3D"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"pyfmmlib",
+   "version":"2019.1.5"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "mako"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyfmmlib-2019.1.5.tar.gz",
+   "sha256":"b47e61be41474425852dfa2ad00757fd1327b76869d518c10c9578a522ba46d8",
+   "url":"https://pypi.io/packages/source/p/pyfmmlib/pyfmmlib-2019.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "pyfmmlib"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

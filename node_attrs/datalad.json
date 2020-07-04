@@ -401,6 +401,168 @@
  },
  "feedstock_name":"datalad",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"DataLad aims to make data management and data distribution more accessible.\nTo do that it stands on the shoulders of Git and Git-annex to deliver a\ndecentralized system for data exchange. This includes automated ingestion of\ndata from online portals, and exposing it in readily usable form as Git(-annex)\nrepositories, so-called datasets. The actual data storage and permission\nmanagement, however, remains with the original data providers.\n",
+   "dev_url":"https://github.com/datalad/datalad",
+   "doc_url":"http://datalad.readthedocs.io/",
+   "home":"http://datalad.org",
+   "license":"MIT",
+   "license_file":"COPYING",
+   "summary":"data distribution geared toward scientific datasets"
+  },
+  "build":{
+   "entry_points":[
+    "datalad=datalad.cmdline.main:main",
+    "git-annex-remote-datalad-archives=datalad.customremotes.archives:main",
+    "git-annex-remote-datalad=datalad.customremotes.datalad:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "yarikoptic",
+    "notestaff"
+   ]
+  },
+  "package":{
+   "name":"datalad",
+   "version":"0.13.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "setuptools",
+    "pypandoc"
+   ],
+   "run":[
+    "appdirs",
+    "annexremote",
+    "boto",
+    "chardet >=3.0.4",
+    "exifread",
+    "fasteners",
+    "git-annex",
+    "gitpython >=2.1.12",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring >=8.0",
+    "keyrings.alt",
+    "mock >=1.0.1",
+    "mutagen >=1.36",
+    "msgpack-python",
+    "p7zip",
+    "patool >=1.7",
+    "pygithub",
+    "pyld <0.8|>=0.8.2",
+    "pyperclip",
+    "pyyaml",
+    "pillow",
+    "python",
+    "python-dateutil",
+    "psutil",
+    "requests >=1.2",
+    "requests-ftp",
+    "secretstorage",
+    "simplejson",
+    "six >=1.8.0",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"datalad-0.13.0.tar.gz",
+   "patches":[
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch"
+   ],
+   "sha256":"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea",
+   "url":"https://pypi.io/packages/source/d/datalad/datalad-0.13.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "datalad"
+   ],
+   "requires":[
+    "BeautifulSoup4",
+    "httpretty >=0.8.14",
+    "mock",
+    "nibabel",
+    "nose >=1.3.4",
+    "vcrpy"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pypandoc",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "annexremote",
+    "appdirs",
+    "boto",
+    "chardet",
+    "exifread",
+    "fasteners",
+    "git-annex",
+    "gitpython",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring",
+    "keyrings.alt",
+    "mock",
+    "msgpack-python",
+    "mutagen",
+    "p7zip",
+    "patool",
+    "pillow",
+    "psutil",
+    "pygithub",
+    "pyld",
+    "pyperclip",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "requests-ftp",
+    "secretstorage",
+    "simplejson",
+    "six",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "beautifulsoup4",
+    "httpretty",
+    "mock",
+    "nibabel",
+    "nose",
+    "vcrpy"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"DataLad aims to make data management and data distribution more accessible.\nTo do that it stands on the shoulders of Git and Git-annex to deliver a\ndecentralized system for data exchange. This includes automated ingestion of\ndata from online portals, and exposing it in readily usable form as Git(-annex)\nrepositories, so-called datasets. The actual data storage and permission\nmanagement, however, remains with the original data providers.\n",
@@ -608,6 +770,164 @@
   "0.13.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"DataLad aims to make data management and data distribution more accessible.\nTo do that it stands on the shoulders of Git and Git-annex to deliver a\ndecentralized system for data exchange. This includes automated ingestion of\ndata from online portals, and exposing it in readily usable form as Git(-annex)\nrepositories, so-called datasets. The actual data storage and permission\nmanagement, however, remains with the original data providers.\n",
+   "dev_url":"https://github.com/datalad/datalad",
+   "doc_url":"http://datalad.readthedocs.io/",
+   "home":"http://datalad.org",
+   "license":"MIT",
+   "license_file":"COPYING",
+   "summary":"data distribution geared toward scientific datasets"
+  },
+  "build":{
+   "entry_points":[
+    "datalad=datalad.cmdline.main:main",
+    "git-annex-remote-datalad-archives=datalad.customremotes.archives:main",
+    "git-annex-remote-datalad=datalad.customremotes.datalad:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "yarikoptic",
+    "notestaff"
+   ]
+  },
+  "package":{
+   "name":"datalad",
+   "version":"0.13.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "setuptools",
+    "pypandoc"
+   ],
+   "run":[
+    "appdirs",
+    "annexremote",
+    "boto",
+    "chardet >=3.0.4",
+    "exifread",
+    "fasteners",
+    "gitpython >=2.1.12",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring >=8.0",
+    "keyrings.alt",
+    "mock >=1.0.1",
+    "mutagen >=1.36",
+    "msgpack-python",
+    "p7zip",
+    "patool >=1.7",
+    "pygithub",
+    "pyld <0.8|>=0.8.2",
+    "pyperclip",
+    "pyyaml",
+    "pillow",
+    "python",
+    "python-dateutil",
+    "psutil",
+    "requests >=1.2",
+    "requests-ftp",
+    "simplejson",
+    "six >=1.8.0",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"datalad-0.13.0.tar.gz",
+   "patches":[
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch"
+   ],
+   "sha256":"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea",
+   "url":"https://pypi.io/packages/source/d/datalad/datalad-0.13.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "datalad"
+   ],
+   "requires":[
+    "BeautifulSoup4",
+    "httpretty >=0.8.14",
+    "mock",
+    "nibabel",
+    "nose >=1.3.4",
+    "vcrpy"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pypandoc",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "annexremote",
+    "appdirs",
+    "boto",
+    "chardet",
+    "exifread",
+    "fasteners",
+    "gitpython",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring",
+    "keyrings.alt",
+    "mock",
+    "msgpack-python",
+    "mutagen",
+    "p7zip",
+    "patool",
+    "pillow",
+    "psutil",
+    "pygithub",
+    "pyld",
+    "pyperclip",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "requests-ftp",
+    "simplejson",
+    "six",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "beautifulsoup4",
+    "httpretty",
+    "mock",
+    "nibabel",
+    "nose",
+    "vcrpy"
+   ]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"datalad\" %}\n{% set version = \"0.13.0\" %}\n{% set sha256 = \"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n  - 0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch\n  - 0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch\n  - 0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch\n\nbuild:\n  number: 0\n  entry_points:\n    - datalad=datalad.cmdline.main:main\n    - git-annex-remote-datalad-archives=datalad.customremotes.archives:main\n    - git-annex-remote-datalad=datalad.customremotes.datalad:main\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  # Do not even attempt until we get git-annex in there\n  # py 3.5 is the minimal supported version as of 0.12.0\n  skip: true  # [py<35]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n    - pypandoc\n\n  run:\n    - appdirs\n    - annexremote\n    - boto\n    - chardet >=3.0.4\n    - colorama  # [win]\n    - exifread\n    - fasteners\n    - git-annex  # [linux]\n    - gitpython >=2.1.12\n    - humanize\n    - iso8601\n    - jsmin\n    - keyring >=8.0\n    - keyrings.alt\n    - mock >=1.0.1\n    - mutagen >=1.36\n    - msgpack-python\n    - p7zip  # [not win]\n    - patool >=1.7\n    - pygithub\n    - pyld <0.8|>=0.8.2\n    - pyperclip\n    - pyyaml\n    - pillow\n    - python\n    - python-dateutil\n    # TODO\n    # - python-xmp-toolkit\n    - psutil\n    - requests >=1.2\n    - requests-ftp\n    - secretstorage  # [linux and py>32]\n    - simplejson\n    - six >=1.8.0\n    - tqdm\n    - whoosh\n    - wrapt\n\ntest:\n  imports:\n    - datalad\n\n  requires:\n    - BeautifulSoup4\n    - httpretty >=0.8.14\n    - mock\n    - nibabel\n    - nose >=1.3.4\n    - vcrpy\n\nabout:\n  home: http://datalad.org\n  license: MIT\n  license_file: COPYING\n  summary: data distribution geared toward scientific datasets\n  description: |\n    DataLad aims to make data management and data distribution more accessible.\n    To do that it stands on the shoulders of Git and Git-annex to deliver a\n    decentralized system for data exchange. This includes automated ingestion of\n    data from online portals, and exposing it in readily usable form as Git(-annex)\n    repositories, so-called datasets. The actual data storage and permission\n    management, however, remains with the original data providers.\n  doc_url: http://datalad.readthedocs.io/\n  dev_url: https://github.com/datalad/datalad\n\nextra:\n  recipe-maintainers:\n    - yarikoptic\n    - notestaff\n",
  "req":{
@@ -788,5 +1108,163 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/datalad/datalad-0.11.7.tar.gz",
- "version":"0.13.0"
+ "version":"0.13.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"DataLad aims to make data management and data distribution more accessible.\nTo do that it stands on the shoulders of Git and Git-annex to deliver a\ndecentralized system for data exchange. This includes automated ingestion of\ndata from online portals, and exposing it in readily usable form as Git(-annex)\nrepositories, so-called datasets. The actual data storage and permission\nmanagement, however, remains with the original data providers.\n",
+   "dev_url":"https://github.com/datalad/datalad",
+   "doc_url":"http://datalad.readthedocs.io/",
+   "home":"http://datalad.org",
+   "license":"MIT",
+   "license_file":"COPYING",
+   "summary":"data distribution geared toward scientific datasets"
+  },
+  "build":{
+   "entry_points":[
+    "datalad=datalad.cmdline.main:main",
+    "git-annex-remote-datalad-archives=datalad.customremotes.archives:main",
+    "git-annex-remote-datalad=datalad.customremotes.datalad:main"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "yarikoptic",
+    "notestaff"
+   ]
+  },
+  "package":{
+   "name":"datalad",
+   "version":"0.13.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "setuptools",
+    "pypandoc"
+   ],
+   "run":[
+    "appdirs",
+    "annexremote",
+    "boto",
+    "chardet >=3.0.4",
+    "colorama",
+    "exifread",
+    "fasteners",
+    "gitpython >=2.1.12",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring >=8.0",
+    "keyrings.alt",
+    "mock >=1.0.1",
+    "mutagen >=1.36",
+    "msgpack-python",
+    "patool >=1.7",
+    "pygithub",
+    "pyld <0.8|>=0.8.2",
+    "pyperclip",
+    "pyyaml",
+    "pillow",
+    "python",
+    "python-dateutil",
+    "psutil",
+    "requests >=1.2",
+    "requests-ftp",
+    "simplejson",
+    "six >=1.8.0",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "source":{
+   "fn":"datalad-0.13.0.tar.gz",
+   "patches":[
+    "0001-BF-skip-running-testremote-with-recent-not-yet-fixed.patch",
+    "0001-BF-annotate-tests-in-test_utils_cached_dataset-with-.patch",
+    "0002-BF-TST-skip-one-case-of-test_ria_basics.test_binary_.patch"
+   ],
+   "sha256":"6dcacdcfe0817568da5561b9f14e5bc515170ab367aba188658a16bce1ffd4ea",
+   "url":"https://pypi.io/packages/source/d/datalad/datalad-0.13.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "datalad"
+   ],
+   "requires":[
+    "BeautifulSoup4",
+    "httpretty >=0.8.14",
+    "mock",
+    "nibabel",
+    "nose >=1.3.4",
+    "vcrpy"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pypandoc",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "annexremote",
+    "appdirs",
+    "boto",
+    "chardet",
+    "colorama",
+    "exifread",
+    "fasteners",
+    "gitpython",
+    "humanize",
+    "iso8601",
+    "jsmin",
+    "keyring",
+    "keyrings.alt",
+    "mock",
+    "msgpack-python",
+    "mutagen",
+    "patool",
+    "pillow",
+    "psutil",
+    "pygithub",
+    "pyld",
+    "pyperclip",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "requests-ftp",
+    "simplejson",
+    "six",
+    "tqdm",
+    "whoosh",
+    "wrapt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "beautifulsoup4",
+    "httpretty",
+    "mock",
+    "nibabel",
+    "nose",
+    "vcrpy"
+   ]
+  }
+ }
 }

@@ -29,6 +29,70 @@
   }
  },
  "feedstock_name":"go-gox",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/mitchellh/gox",
+   "home":"http://github.com/mitchellh/gox",
+   "license":"MPL-2.0",
+   "license_file":"src/github.com/mitchellh/gox/LICENSE",
+   "summary":"A dead simple, no frills Go cross compile tool"
+  },
+  "build":{
+   "number":"1000",
+   "script":[
+    "pushd src/github.com/mitchellh/gox",
+    "go get -d -v ./...",
+    "go install -v ."
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-gox",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/mitchellh/gox",
+    "git_rev":"v0.4.0",
+    "git_url":"https://github.com/mitchellh/gox"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x gox",
+    "gox -h || true"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/mitchellh/gox",
@@ -99,6 +163,70 @@
  },
  "name":"go-gox",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/mitchellh/gox",
+   "home":"http://github.com/mitchellh/gox",
+   "license":"MPL-2.0",
+   "license_file":"src/github.com/mitchellh/gox/LICENSE",
+   "summary":"A dead simple, no frills Go cross compile tool"
+  },
+  "build":{
+   "number":"1000",
+   "script":[
+    "pushd src/github.com/mitchellh/gox",
+    "go get -d -v ./...",
+    "go install -v ."
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-gox",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/mitchellh/gox",
+    "git_rev":"v0.4.0",
+    "git_url":"https://github.com/mitchellh/gox"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x gox",
+    "gox -h || true"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.01.05",
  "raw_meta_yaml":"{% set goname = \"github.com/mitchellh/gox\" %}\n{% set version = \"0.4.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('src/'+goname).replace(\"/\", \"\\\\\" if win else \"/\") %}\n\npackage:\n  name: go-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    git_url: https://{{ goname }}\n    git_tag: v{{ version }}\n    \nbuild:\n  number: 1000\n  script:\n    - pushd {{ pkg_src }}\n    # Download non-vendored dependencies/source code only\n    - go get -d -v ./...\n    - go install -v .\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  commands:\n    - test -x {{ target_gobin }}gox{{ target_goexe }}\n    - gox -h || true\n\nabout:\n  home: http://{{ goname }}\n  license: MPL-2.0\n  license_file: {{pkg_src}}/LICENSE\n  summary: 'A dead simple, no frills Go cross compile tool'\n  dev_url: https://{{ goname }}\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
@@ -151,5 +279,69 @@
   }
  },
  "url":null,
- "version":"0.4.0"
+ "version":"0.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/mitchellh/gox",
+   "home":"http://github.com/mitchellh/gox",
+   "license":"MPL-2.0",
+   "license_file":"src/github.com/mitchellh/gox/LICENSE",
+   "summary":"A dead simple, no frills Go cross compile tool"
+  },
+  "build":{
+   "number":"1000",
+   "script":[
+    "pushd src/github.com/mitchellh/gox",
+    "go get -d -v ./...",
+    "go install -v ."
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-gox",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/mitchellh/gox",
+    "git_rev":"v0.4.0",
+    "git_url":"https://github.com/mitchellh/gox"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x gox",
+    "gox -h || true"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

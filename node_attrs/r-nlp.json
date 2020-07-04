@@ -80,6 +80,75 @@
  },
  "feedstock_name":"r-nlp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NLP",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Basic classes and methods for Natural Language Processing."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nlp",
+   "version":"0.2_0"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"fc64c80124c4e53b20f92b60c68e2fd33ee189653d0ceea410c32dd66d9e7075",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NLP_0.2-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NLP/NLP_0.2-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('NLP')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=NLP",
@@ -146,6 +215,75 @@
  },
  "name":"r-nlp",
  "new_version":"0.2_0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NLP",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Basic classes and methods for Natural Language Processing."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nlp",
+   "version":"0.2_0"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"fc64c80124c4e53b20f92b60c68e2fd33ee189653d0ceea410c32dd66d9e7075",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NLP_0.2-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NLP/NLP_0.2-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('NLP')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.03.19.37.20",
  "raw_meta_yaml":"{% set version = '0.2-0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-nlp\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/NLP_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/NLP/NLP_{{ version }}.tar.gz\n  sha256: fc64c80124c4e53b20f92b60c68e2fd33ee189653d0ceea410c32dd66d9e7075\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 2\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('NLP')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('NLP')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=NLP\n  license: GPL-3\n  summary: Basic classes and methods for Natural Language Processing.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: NLP\n# Version: 0.2-0\n# Title: Natural Language Processing Infrastructure\n# Authors@R: person(\"Kurt\", \"Hornik\", role = c(\"aut\", \"cre\"), email = \"Kurt.Hornik@R-project.org\", comment = c(ORCID = \"0000-0003-4198-9911\"))\n# Description: Basic classes and methods for Natural Language Processing.\n# License: GPL-3\n# Imports: utils\n# Depends: R (>= 3.2.0)\n# Enhances: udpipe, spacyr, cleanNLP\n# NeedsCompilation: no\n# Packaged: 2018-10-18 15:27:32 UTC; hornik\n# Author: Kurt Hornik [aut, cre] (<https://orcid.org/0000-0003-4198-9911>)\n# Maintainer: Kurt Hornik <Kurt.Hornik@R-project.org>\n# Repository: CRAN\n# Date/Publication: 2018-10-18 15:58:05 UTC\n",
  "req":{
@@ -208,5 +346,79 @@
   "https://cran.r-project.org/src/contrib/NLP_0.2-0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/NLP/NLP_0.2-0.tar.gz"
  ],
- "version":"0.2_0"
+ "version":"0.2_0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NLP",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Basic classes and methods for Natural Language Processing."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nlp",
+   "version":"0.2_0"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"fc64c80124c4e53b20f92b60c68e2fd33ee189653d0ceea410c32dd66d9e7075",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NLP_0.2-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NLP/NLP_0.2-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('NLP')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

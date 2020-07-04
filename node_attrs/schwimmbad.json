@@ -94,6 +94,87 @@
  },
  "feedstock_name":"schwimmbad",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"schwimmbad enables easy switching between serial execution, multiprocessing,\nand MPI by providing a common interface.\n",
+   "dev_url":"https://github.com/adrn/schwimmbad",
+   "doc_url":"https://github.com/adrn/schwimmbad",
+   "home":"http://github.com/adrn/schwimmbad",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A common interface for parallel processing pools"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "guillochon",
+    "pkgw",
+    "adrn"
+   ]
+  },
+  "package":{
+   "name":"schwimmbad",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "six",
+    "mpi4py"
+   ]
+  },
+  "source":{
+   "fn":"schwimmbad-0.3.1.tar.gz",
+   "sha256":"329d1fa326f6c69d8fbe47a388ea75d9e303e34c5d8bc5cbef4636e94af1955b",
+   "url":"https://pypi.io/packages/source/s/schwimmbad/schwimmbad-0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "schwimmbad"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mpi4py",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"schwimmbad enables easy switching between serial execution, multiprocessing,\nand MPI by providing a common interface.\n",
@@ -177,6 +258,87 @@
   "0.3.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"schwimmbad enables easy switching between serial execution, multiprocessing,\nand MPI by providing a common interface.\n",
+   "dev_url":"https://github.com/adrn/schwimmbad",
+   "doc_url":"https://github.com/adrn/schwimmbad",
+   "home":"http://github.com/adrn/schwimmbad",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A common interface for parallel processing pools"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "guillochon",
+    "pkgw",
+    "adrn"
+   ]
+  },
+  "package":{
+   "name":"schwimmbad",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "six",
+    "mpi4py"
+   ]
+  },
+  "source":{
+   "fn":"schwimmbad-0.3.1.tar.gz",
+   "sha256":"329d1fa326f6c69d8fbe47a388ea75d9e303e34c5d8bc5cbef4636e94af1955b",
+   "url":"https://pypi.io/packages/source/s/schwimmbad/schwimmbad-0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "schwimmbad"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mpi4py",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.18.00.00.57",
  "raw_meta_yaml":"{% set name = \"schwimmbad\" %}\n{% set version = \"0.3.1\" %}\n{% set sha256 = \"329d1fa326f6c69d8fbe47a388ea75d9e303e34c5d8bc5cbef4636e94af1955b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - setuptools-scm\n    - six\n  run:\n    - python\n    - setuptools\n    - six\n    - mpi4py  # [not win]\n\ntest:\n  imports:\n    - schwimmbad\n\nabout:\n  home: http://github.com/adrn/schwimmbad\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A common interface for parallel processing pools\n\n  description: |\n    schwimmbad enables easy switching between serial execution, multiprocessing,\n    and MPI by providing a common interface.\n  doc_url: https://github.com/adrn/schwimmbad\n  dev_url: https://github.com/adrn/schwimmbad\n\nextra:\n  recipe-maintainers:\n    - guillochon\n    - pkgw\n    - adrn\n",
  "req":{
@@ -251,5 +413,84 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/schwimmbad/schwimmbad-0.3.0.tar.gz",
- "version":"0.3.1"
+ "version":"0.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"schwimmbad enables easy switching between serial execution, multiprocessing,\nand MPI by providing a common interface.\n",
+   "dev_url":"https://github.com/adrn/schwimmbad",
+   "doc_url":"https://github.com/adrn/schwimmbad",
+   "home":"http://github.com/adrn/schwimmbad",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A common interface for parallel processing pools"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "guillochon",
+    "pkgw",
+    "adrn"
+   ]
+  },
+  "package":{
+   "name":"schwimmbad",
+   "version":"0.3.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "source":{
+   "fn":"schwimmbad-0.3.1.tar.gz",
+   "sha256":"329d1fa326f6c69d8fbe47a388ea75d9e303e34c5d8bc5cbef4636e94af1955b",
+   "url":"https://pypi.io/packages/source/s/schwimmbad/schwimmbad-0.3.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "schwimmbad"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools-scm",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

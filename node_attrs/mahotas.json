@@ -182,6 +182,100 @@
  },
  "feedstock_name":"mahotas",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Mahotas is a library of fast computer vision algorithms\n(all implemented in C++) operating over numpy arrays.\n",
+   "dev_url":"https://github.com/luispedro/mahotas",
+   "doc_url":"https://mahotas.readthedocs.io/",
+   "home":"https://mahotas.readthedocs.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"Mahotas: Computer Vision Library"
+  },
+  "build":{
+   "entry_points":[
+    "mahotas-features = mahotas.features_cli:main"
+   ],
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"mahotas",
+   "version":"1.4.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"mahotas-1.4.10.tar.gz",
+   "sha256":"2e1bf5c058f439f2dab1b11d1bfe03d1d99b3761375a4a4159a9f379e0d9447e",
+   "url":"https://pypi.io/packages/source/m/mahotas/mahotas-1.4.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mahotas-features --help"
+   ],
+   "imports":[
+    "mahotas"
+   ],
+   "requires":[
+    "nose",
+    "scipy",
+    "pillow"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pillow",
+    "scipy"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Mahotas is a library of fast computer vision algorithms\n(all implemented in C++) operating over numpy arrays.\n",
@@ -280,6 +374,100 @@
   "1.4.10":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Mahotas is a library of fast computer vision algorithms\n(all implemented in C++) operating over numpy arrays.\n",
+   "dev_url":"https://github.com/luispedro/mahotas",
+   "doc_url":"https://mahotas.readthedocs.io/",
+   "home":"https://mahotas.readthedocs.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"Mahotas: Computer Vision Library"
+  },
+  "build":{
+   "entry_points":[
+    "mahotas-features = mahotas.features_cli:main"
+   ],
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"mahotas",
+   "version":"1.4.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"mahotas-1.4.10.tar.gz",
+   "sha256":"2e1bf5c058f439f2dab1b11d1bfe03d1d99b3761375a4a4159a9f379e0d9447e",
+   "url":"https://pypi.io/packages/source/m/mahotas/mahotas-1.4.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mahotas-features --help"
+   ],
+   "imports":[
+    "mahotas"
+   ],
+   "requires":[
+    "nose",
+    "scipy",
+    "pillow"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pillow",
+    "scipy"
+   ]
+  }
+ },
  "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"mahotas\" %}\n{% set version = \"1.4.10\" %}\n{% set sha256 = \"2e1bf5c058f439f2dab1b11d1bfe03d1d99b3761375a4a4159a9f379e0d9447e\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - mahotas-features = mahotas.features_cli:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - nose\n    - scipy\n    - pillow\n\n  imports:\n    - mahotas\n\n  commands:\n    - mahotas-features --help\n\nabout:\n  home: https://mahotas.readthedocs.io/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n\n  summary: 'Mahotas: Computer Vision Library'\n  description: |\n    Mahotas is a library of fast computer vision algorithms\n    (all implemented in C++) operating over numpy arrays.\n\n  doc_url: https://mahotas.readthedocs.io/\n  dev_url: https://github.com/luispedro/mahotas\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - luispedro\n",
  "req":{
@@ -359,5 +547,99 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/mahotas/mahotas-1.4.7.tar.gz",
- "version":"1.4.10"
+ "version":"1.4.10",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Mahotas is a library of fast computer vision algorithms\n(all implemented in C++) operating over numpy arrays.\n",
+   "dev_url":"https://github.com/luispedro/mahotas",
+   "doc_url":"https://mahotas.readthedocs.io/",
+   "home":"https://mahotas.readthedocs.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"Mahotas: Computer Vision Library"
+  },
+  "build":{
+   "entry_points":[
+    "mahotas-features = mahotas.features_cli:main"
+   ],
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "luispedro"
+   ]
+  },
+  "package":{
+   "name":"mahotas",
+   "version":"1.4.10"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"mahotas-1.4.10.tar.gz",
+   "sha256":"2e1bf5c058f439f2dab1b11d1bfe03d1d99b3761375a4a4159a9f379e0d9447e",
+   "url":"https://pypi.io/packages/source/m/mahotas/mahotas-1.4.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mahotas-features --help"
+   ],
+   "imports":[
+    "mahotas"
+   ],
+   "requires":[
+    "nose",
+    "scipy",
+    "pillow"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pillow",
+    "scipy"
+   ]
+  }
+ }
 }

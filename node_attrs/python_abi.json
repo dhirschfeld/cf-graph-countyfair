@@ -27,6 +27,147 @@
   }
  },
  "feedstock_name":"python_abi",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/python_abi-feedstock",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Metapackage to select python implementation"
+  },
+  "build":{
+   "number":"1",
+   "string":"1_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"python_abi",
+   "version":"None"
+  },
+  "requirements":{
+   "run":null,
+   "run_constrained":null
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/python_abi-feedstock",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Metapackage to select python implementation"
+  },
+  "build":{
+   "number":"1",
+   "string":"1_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"python_abi",
+   "version":"None"
+  },
+  "requirements":{
+   "run":null,
+   "run_constrained":null
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/python_abi-feedstock",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Metapackage to select python implementation"
+  },
+  "build":{
+   "number":"1",
+   "string":"1_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"python_abi",
+   "version":"None"
+  },
+  "requirements":{
+   "run":null,
+   "run_constrained":null
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/conda-forge/python_abi-feedstock",
@@ -41,6 +182,8 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "isuruf",
+    "isuruf",
     "isuruf",
     "isuruf",
     "isuruf"
@@ -60,6 +203,53 @@
  },
  "name":"python_abi",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/python_abi-feedstock",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Metapackage to select python implementation"
+  },
+  "build":{
+   "number":"1",
+   "string":"1_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"python_abi",
+   "version":"None"
+  },
+  "requirements":{
+   "run":null,
+   "run_constrained":null
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.06",
  "raw_meta_yaml":"{% set build_num = 1 %}\n{% if python_impl_version is not defined %}\n{% set python_impl_version = \"3.6\" %}\n{% endif %}\n\n\npackage:\n  name: python_abi\n  version: {{ python_version }}\n\nbuild:\n  number: {{ build_num }}\n  string: {{ build_num }}_{{ python_abi_tag }}\n\n\nrequirements:\n  run:\n    - python {{ python_impl_version }}.*                    # [python_impl == \"cpython\"]\n    - pypy{{ python_version }} {{ python_impl_version }}.*  # [python_impl == \"pypy\"]\n  run_constrained:\n    - pypy <0a0                                                                         # [python_impl == \"cpython\"]\n    - python {{ python_version }}.* *_{{ python_impl_version.replace('.', '') }}_pypy     # [python_impl == \"pypy\"]\n\ntest:\n  commands:\n    - python --version  # [python_impl == \"cpython\"]\n    - pypy3 --version   # [python_impl == \"pypy\"]\n\nabout:\n  home: https://github.com/conda-forge/python_abi-feedstock\n  summary: Metapackage to select python implementation\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "req":{
@@ -104,5 +294,52 @@
    "elements":[]
   }
  },
- "version":"None"
+ "version":"None",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/python_abi-feedstock",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Metapackage to select python implementation"
+  },
+  "build":{
+   "number":"1",
+   "string":"1_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"python_abi",
+   "version":"None"
+  },
+  "requirements":{
+   "run":null,
+   "run_constrained":null
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

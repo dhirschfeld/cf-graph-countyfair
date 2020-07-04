@@ -191,6 +191,84 @@
  "conda-forge.yml":{},
  "feedstock_name":"pykep",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://esa.github.io/pykep/",
+   "license":"GPL v3 and LGPL v3",
+   "license_file":"LICENSE.txt",
+   "summary":"pykep is a scientific library providing basic tools for interplanetary trajectory design."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "darioizzo"
+   ]
+  },
+  "package":{
+   "name":"pykep",
+   "version":"2.5.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ],
+   "run":[
+    "boost",
+    "boost-cpp",
+    "python",
+    "matplotlib-base",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source":{
+   "fn":"pykep-2.5.1.tar.gz",
+   "sha256":"dce5ffbd662f5851f45841c52e4d4e521150162ad3fa550d3e005ed6161bfd07",
+   "url":"https://github.com/esa/pykep/archive/v2.5.1.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://esa.github.io/pykep/",
@@ -269,6 +347,84 @@
   "2.5.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://esa.github.io/pykep/",
+   "license":"GPL v3 and LGPL v3",
+   "license_file":"LICENSE.txt",
+   "summary":"pykep is a scientific library providing basic tools for interplanetary trajectory design."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "darioizzo"
+   ]
+  },
+  "package":{
+   "name":"pykep",
+   "version":"2.5.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ],
+   "run":[
+    "boost",
+    "boost-cpp",
+    "python",
+    "matplotlib-base",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source":{
+   "fn":"pykep-2.5.1.tar.gz",
+   "sha256":"dce5ffbd662f5851f45841c52e4d4e521150162ad3fa550d3e005ed6161bfd07",
+   "url":"https://github.com/esa/pykep/archive/v2.5.1.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.10.23.07.47",
  "raw_meta_yaml":"{% set name = \"pykep\" %}\n{% set version = \"2.5.1\" %}\n{% set sha256 = \"dce5ffbd662f5851f45841c52e4d4e521150162ad3fa550d3e005ed6161bfd07\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/esa/pykep/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [(win and py<36) or win32]\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}   # [not win]\n    - {{ compiler('cxx') }}   # [not win]\n    - clang      # [win]\n    - ninja      # [win]\n  host:\n    - boost\n    - boost-cpp\n    - python\n  run:\n    - {{ pin_compatible(\"boost\", max_pin=\"x.x\") }}\n    - {{ pin_compatible(\"boost-cpp\", max_pin=\"x.x\") }}\n    - python\n    - matplotlib-base\n    - numpy\n    - scipy\n\nabout:\n  home: https://esa.github.io/pykep/\n  license: GPL v3 and LGPL v3\n  license_file: LICENSE.txt\n  summary: pykep is a scientific library providing basic tools for interplanetary trajectory design.\n\nextra:\n  recipe-maintainers:\n    - darioizzo\n",
  "req":{
@@ -360,5 +516,83 @@
   }
  },
  "url":"https://github.com/esa/pykep/archive/v2.3.tar.gz",
- "version":"2.5.1"
+ "version":"2.5.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://esa.github.io/pykep/",
+   "license":"GPL v3 and LGPL v3",
+   "license_file":"LICENSE.txt",
+   "summary":"pykep is a scientific library providing basic tools for interplanetary trajectory design."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "darioizzo"
+   ]
+  },
+  "package":{
+   "name":"pykep",
+   "version":"2.5.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "clang",
+    "ninja"
+   ],
+   "host":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ],
+   "run":[
+    "boost",
+    "boost-cpp",
+    "python",
+    "matplotlib-base",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source":{
+   "fn":"pykep-2.5.1.tar.gz",
+   "sha256":"dce5ffbd662f5851f45841c52e4d4e521150162ad3fa550d3e005ed6161bfd07",
+   "url":"https://github.com/esa/pykep/archive/v2.5.1.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "cmake",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "boost-cpp",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

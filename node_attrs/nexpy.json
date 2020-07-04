@@ -125,6 +125,108 @@
  "conda-forge.yml":{},
  "feedstock_name":"nexpy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexpy",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"http://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"NeXpy: A Python GUI to analyze NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nexpy = nexpy.nexpygui:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexpy",
+   "version":"0.12.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "ansi2html",
+    "h5py",
+    "qtconsole",
+    "ipython",
+    "matplotlib",
+    "nexusformat >=0.5.1",
+    "numpy",
+    "pillow",
+    "python",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"bfe7ead73cf2c243320ee0c510d84abb665e6f6def164b93ab4b01eedffe5211",
+   "url":"https://pypi.io/packages/source/n/nexpy/NeXpy-0.12.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nexpy --help"
+   ],
+   "imports":[
+    "nexpy",
+    "nexpy.api",
+    "nexpy.api.frills",
+    "nexpy.api.frills.functions",
+    "nexpy.definitions",
+    "nexpy.gui",
+    "nexpy.plugins",
+    "nexpy.readers"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ansi2html",
+    "h5py",
+    "ipython",
+    "matplotlib",
+    "nexusformat",
+    "numpy",
+    "pillow",
+    "python",
+    "qtconsole",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/nexpy/nexpy",
@@ -252,6 +354,108 @@
   "0.12.6":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexpy",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"http://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"NeXpy: A Python GUI to analyze NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nexpy = nexpy.nexpygui:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexpy",
+   "version":"0.12.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "ansi2html",
+    "h5py",
+    "qtconsole",
+    "ipython",
+    "matplotlib",
+    "nexusformat >=0.5.1",
+    "numpy",
+    "pillow",
+    "python",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"bfe7ead73cf2c243320ee0c510d84abb665e6f6def164b93ab4b01eedffe5211",
+   "url":"https://pypi.io/packages/source/n/nexpy/NeXpy-0.12.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nexpy --help"
+   ],
+   "imports":[
+    "nexpy",
+    "nexpy.api",
+    "nexpy.api.frills",
+    "nexpy.api.frills.functions",
+    "nexpy.definitions",
+    "nexpy.gui",
+    "nexpy.plugins",
+    "nexpy.readers"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ansi2html",
+    "h5py",
+    "ipython",
+    "matplotlib",
+    "nexusformat",
+    "numpy",
+    "pillow",
+    "python",
+    "qtconsole",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"nexpy\" %}\n{% set version = \"0.12.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/NeXpy-{{ version }}.tar.gz\n  sha256: bfe7ead73cf2c243320ee0c510d84abb665e6f6def164b93ab4b01eedffe5211\n\nbuild:\n  number: 0\n  entry_points:\n    - nexpy = nexpy.nexpygui:main\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - numpy\n  run:\n    - ansi2html\n    - h5py\n    - qtconsole\n    - ipython\n    - matplotlib\n    - nexusformat >=0.5.1\n    - numpy\n    - pillow\n    - python\n    - scipy\n\ntest:\n  imports:\n    - nexpy\n    - nexpy.api\n    - nexpy.api.frills\n    - nexpy.api.frills.functions\n    - nexpy.definitions\n    - nexpy.gui\n    - nexpy.plugins\n    - nexpy.readers\n  commands:\n    - nexpy --help\n\nabout:\n  home: http://nexpy.github.io/nexpy/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'NeXpy: A Python GUI to analyze NeXus data'\n  doc_url: https://nexpy.github.io/nexpy/\n  dev_url: https://github.com/nexpy/nexpy\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - rayosborn\n",
  "req":{
@@ -342,5 +546,107 @@
   }
  },
  "url":"https://pypi.io/packages/source/n/nexpy/NeXpy-0.11.0.tar.gz",
- "version":"0.12.6"
+ "version":"0.12.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexpy",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"http://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"NeXpy: A Python GUI to analyze NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nexpy = nexpy.nexpygui:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexpy",
+   "version":"0.12.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "ansi2html",
+    "h5py",
+    "qtconsole",
+    "ipython",
+    "matplotlib",
+    "nexusformat >=0.5.1",
+    "numpy",
+    "pillow",
+    "python",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"bfe7ead73cf2c243320ee0c510d84abb665e6f6def164b93ab4b01eedffe5211",
+   "url":"https://pypi.io/packages/source/n/nexpy/NeXpy-0.12.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nexpy --help"
+   ],
+   "imports":[
+    "nexpy",
+    "nexpy.api",
+    "nexpy.api.frills",
+    "nexpy.api.frills.functions",
+    "nexpy.definitions",
+    "nexpy.gui",
+    "nexpy.plugins",
+    "nexpy.readers"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ansi2html",
+    "h5py",
+    "ipython",
+    "matplotlib",
+    "nexusformat",
+    "numpy",
+    "pillow",
+    "python",
+    "qtconsole",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

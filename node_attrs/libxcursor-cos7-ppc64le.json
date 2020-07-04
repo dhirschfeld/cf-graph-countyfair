@@ -4,6 +4,108 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxcursor-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Cursor management library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcursor-1.1.15/COPYING",
+   "summary":"(CDT) Cursor management library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcursor-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcursor-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcursor-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcursor-cos7-ppc64le",
+   "version":"1.1.15"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"a24bb5952fdcf990dabba7bf8debd7b7120aaaae0be4188c9b50420ad232ca5f",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-1.1.15-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"a57f95a920c52d0144538ee75a45c0ea89cc3de6c4f3eb11b8ae4d959f9dfb88",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-devel-1.1.15-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcursor-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Cursor management library",
@@ -178,6 +280,108 @@
  },
  "name":"libxcursor-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Cursor management library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcursor-1.1.15/COPYING",
+   "summary":"(CDT) Cursor management library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcursor-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcursor-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcursor-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcursor-cos7-ppc64le",
+   "version":"1.1.15"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"a24bb5952fdcf990dabba7bf8debd7b7120aaaae0be4188c9b50420ad232ca5f",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-1.1.15-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"a57f95a920c52d0144538ee75a45c0ea89cc3de6c4f3eb11b8ae4d959f9dfb88",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-devel-1.1.15-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcursor-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxcursor-cos7-ppc64le",
   "libxcursor-devel-cos7-ppc64le"
@@ -235,5 +439,107 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-1.1.15-1.el7.ppc64le.rpm",
- "version":"1.1.15"
+ "version":"1.1.15",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Cursor management library",
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXcursor-1.1.15/COPYING",
+   "summary":"(CDT) Cursor management library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxcursor-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxcursor-devel-cos7-ppc64le",
+    "requirements":[
+     "libxcursor-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxcursor-cos7-ppc64le",
+   "version":"1.1.15"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"a24bb5952fdcf990dabba7bf8debd7b7120aaaae0be4188c9b50420ad232ca5f",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-1.1.15-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"a57f95a920c52d0144538ee75a45c0ea89cc3de6c4f3eb11b8ae4d959f9dfb88",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXcursor-devel-1.1.15-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXcursor.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxcursor-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

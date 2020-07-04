@@ -112,6 +112,84 @@
  },
  "feedstock_name":"r-mapproj",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=mapproj",
+   "license":"LPL-1.02",
+   "license_family":"OTHER",
+   "summary":"Converts latitude/longitude into projected coordinates."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-mapproj",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-maps >=2.3_0"
+   ],
+   "run":[
+    "r-base",
+    "r-maps >=2.3_0"
+   ]
+  },
+  "source":{
+   "fn":"mapproj_1.2.7.tar.gz",
+   "sha256":"f0081281b08bf3cc7052c4f1360d6d3c20d9063be57754448ad9b48ab0d34c5b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mapproj_1.2.7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mapproj/mapproj_1.2.7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('mapproj')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=mapproj",
@@ -195,6 +273,84 @@
  },
  "name":"r-mapproj",
  "new_version":"1.2.7",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=mapproj",
+   "license":"LPL-1.02",
+   "license_family":"OTHER",
+   "summary":"Converts latitude/longitude into projected coordinates."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-mapproj",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-maps >=2.3_0"
+   ],
+   "run":[
+    "r-base",
+    "r-maps >=2.3_0"
+   ]
+  },
+  "source":{
+   "fn":"mapproj_1.2.7.tar.gz",
+   "sha256":"f0081281b08bf3cc7052c4f1360d6d3c20d9063be57754448ad9b48ab0d34c5b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mapproj_1.2.7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mapproj/mapproj_1.2.7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('mapproj')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.03.19.37.20",
  "raw_meta_yaml":"{% set version = \"1.2.7\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-mapproj\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: mapproj_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/mapproj_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/mapproj/mapproj_{{ version }}.tar.gz\n  sha256: f0081281b08bf3cc7052c4f1360d6d3c20d9063be57754448ad9b48ab0d34c5b\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 1\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-maps >=2.3_0\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-maps >=2.3_0\n\ntest:\n  commands:\n    - $R -e \"library('mapproj')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('mapproj')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=mapproj\n  license: LPL-1.02\n  summary: Converts latitude/longitude into projected coordinates.\n  license_family: OTHER\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -288,5 +444,94 @@
   "https://cran.r-project.org/src/contrib/mapproj_1.2.6.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/mapproj/mapproj_1.2.6.tar.gz"
  ],
- "version":"1.2.7"
+ "version":"1.2.7",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=mapproj",
+   "license":"LPL-1.02",
+   "license_family":"OTHER",
+   "summary":"Converts latitude/longitude into projected coordinates."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-mapproj",
+   "version":"1.2.7"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-maps >=2.3_0"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs",
+    "r-maps >=2.3_0"
+   ]
+  },
+  "source":{
+   "fn":"mapproj_1.2.7.tar.gz",
+   "sha256":"f0081281b08bf3cc7052c4f1360d6d3c20d9063be57754448ad9b48ab0d34c5b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mapproj_1.2.7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mapproj/mapproj_1.2.7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('mapproj')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base",
+    "r-maps"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

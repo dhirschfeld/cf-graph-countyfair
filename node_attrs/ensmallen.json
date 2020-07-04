@@ -295,6 +295,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"ensmallen",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"ensmallen provides a simple set of abstractions for writing an objective\nfunction to optimize. It     also provides a large set of standard and\ncutting-edge optimizers that can be used for virtually any mathematical\noptimization task. These include full-batch gradient descent techniques,\nsmall-batch techniques, gradient-free optimizers, and constrained optimization.\n",
+   "dev_url":"https://github.com/mlpack/ensmallen",
+   "doc_url":"http://ensmallen.org/docs.html",
+   "home":"http://ensmallen.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYRIGHT.txt",
+   "summary":"ensmallen is a C++ header-only library for mathematical optimization."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"ensmallen",
+   "version":"2.12.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "armadillo >=8.400.0",
+    "libblas",
+    "openmp"
+   ],
+   "run":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "source":{
+   "sha256":"9d574de6a7096282502113bd80fe8d8ebdbbf0118b01c7fe7298b92f5f47e53b",
+   "url":"https://github.com/mlpack/ensmallen/archive/2.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/ensmallen.hpp",
+    "test -d $PREFIX/include/ensmallen_bits"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "libblas",
+    "openmp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"ensmallen provides a simple set of abstractions for writing an objective\nfunction to optimize. It     also provides a large set of standard and\ncutting-edge optimizers that can be used for virtually any mathematical\noptimization task. These include full-batch gradient descent techniques,\nsmall-batch techniques, gradient-free optimizers, and constrained optimization.\n",
@@ -374,6 +453,85 @@
   "2.12.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"ensmallen provides a simple set of abstractions for writing an objective\nfunction to optimize. It     also provides a large set of standard and\ncutting-edge optimizers that can be used for virtually any mathematical\noptimization task. These include full-batch gradient descent techniques,\nsmall-batch techniques, gradient-free optimizers, and constrained optimization.\n",
+   "dev_url":"https://github.com/mlpack/ensmallen",
+   "doc_url":"http://ensmallen.org/docs.html",
+   "home":"http://ensmallen.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYRIGHT.txt",
+   "summary":"ensmallen is a C++ header-only library for mathematical optimization."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"ensmallen",
+   "version":"2.12.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "armadillo >=8.400.0",
+    "libblas",
+    "openmp"
+   ],
+   "run":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "source":{
+   "sha256":"9d574de6a7096282502113bd80fe8d8ebdbbf0118b01c7fe7298b92f5f47e53b",
+   "url":"https://github.com/mlpack/ensmallen/archive/2.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/ensmallen.hpp",
+    "test -d $PREFIX/include/ensmallen_bits"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "libblas",
+    "openmp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.21.12.59.15",
  "raw_meta_yaml":"{% set name = \"ensmallen\" %}\n{% set version = \"2.12.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mlpack/ensmallen/archive/{{ version }}.tar.gz\n  sha256: 9d574de6a7096282502113bd80fe8d8ebdbbf0118b01c7fe7298b92f5f47e53b\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - ninja  # [win]\n  host:\n    - armadillo >=8.400.0\n    - libblas\n    - openmp\n  run:\n    - armadillo\n    - openmp\n\ntest:\n  commands:\n    - test -f $PREFIX/include/ensmallen.hpp                    # [unix]\n    - test -d $PREFIX/include/ensmallen_bits                   # [unix]\n    - if not exist %LIBRARY_INC%\\\\ensmallen.hpp exit 1         # [win]\n    - if not exist %LIBRARY_INC%\\\\ensmallen_bits exit 1        # [win]\nabout:\n  home: http://ensmallen.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYRIGHT.txt\n  summary: ensmallen is a C++ header-only library for mathematical optimization.\n  description: |\n    ensmallen provides a simple set of abstractions for writing an objective \n    function to optimize. It     also provides a large set of standard and \n    cutting-edge optimizers that can be used for virtually any mathematical \n    optimization task. These include full-batch gradient descent techniques, \n    small-batch techniques, gradient-free optimizers, and constrained optimization.\n  doc_url: http://ensmallen.org/docs.html\n  dev_url: https://github.com/mlpack/ensmallen\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
@@ -452,5 +610,86 @@
   }
  },
  "url":"https://github.com/mlpack/ensmallen/archive/ensmallen-1.16.2.tar.gz",
- "version":"2.12.1"
+ "version":"2.12.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"ensmallen provides a simple set of abstractions for writing an objective\nfunction to optimize. It     also provides a large set of standard and\ncutting-edge optimizers that can be used for virtually any mathematical\noptimization task. These include full-batch gradient descent techniques,\nsmall-batch techniques, gradient-free optimizers, and constrained optimization.\n",
+   "dev_url":"https://github.com/mlpack/ensmallen",
+   "doc_url":"http://ensmallen.org/docs.html",
+   "home":"http://ensmallen.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYRIGHT.txt",
+   "summary":"ensmallen is a C++ header-only library for mathematical optimization."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "marcelotrevisani"
+   ]
+  },
+  "package":{
+   "name":"ensmallen",
+   "version":"2.12.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "armadillo >=8.400.0",
+    "libblas",
+    "openmp"
+   ],
+   "run":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "source":{
+   "sha256":"9d574de6a7096282502113bd80fe8d8ebdbbf0118b01c7fe7298b92f5f47e53b",
+   "url":"https://github.com/mlpack/ensmallen/archive/2.12.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\\\ensmallen.hpp exit 1",
+    "if not exist %LIBRARY_INC%\\\\ensmallen_bits exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "libblas",
+    "openmp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "armadillo",
+    "openmp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

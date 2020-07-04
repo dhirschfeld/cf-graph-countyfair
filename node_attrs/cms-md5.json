@@ -3,6 +3,67 @@
  "bad":"Upstream: Error getting upstream version",
  "conda-forge.yml":{},
  "feedstock_name":"cms-md5",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cms-externals/md5.git",
+   "license":"zlib",
+   "license_file":"LICENSE.txt",
+   "summary":"Independent implementation of MD5 (RFC 1321)."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gartung",
+    "chrisburr"
+   ]
+  },
+  "package":{
+   "name":"cms-md5",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "folder":"source",
+   "git_rev":"d97a571864a119cd5408d2670d095b4410e926cc",
+   "git_url":"https://github.com/cms-externals/md5.git"
+  },
+  "test":{
+   "commands":[
+    "ldd ${CONDA_PREFIX}/lib/libcms-md5.so"
+   ],
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/cms-externals/md5.git",
@@ -53,6 +114,67 @@
  },
  "name":"cms-md5",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cms-externals/md5.git",
+   "license":"zlib",
+   "license_file":"LICENSE.txt",
+   "summary":"Independent implementation of MD5 (RFC 1321)."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gartung",
+    "chrisburr"
+   ]
+  },
+  "package":{
+   "name":"cms-md5",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "folder":"source",
+   "git_rev":"d97a571864a119cd5408d2670d095b4410e926cc",
+   "git_url":"https://github.com/cms-externals/md5.git"
+  },
+  "test":{
+   "commands":[
+    "otool -l ${CONDA_PREFIX}/lib/libcms-md5.dylib"
+   ],
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ },
  "raw_meta_yaml":"{% set name = \"cms-md5\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/cms-externals/md5.git\n  git_rev: d97a571864a119cd5408d2670d095b4410e926cc\n  folder: source\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\ntest:\n  requires:\n    - {{ compiler('c') }}\n  commands:\n    - ldd ${CONDA_PREFIX}/lib/libcms-md5.so  # [linux]\n    - otool -l ${CONDA_PREFIX}/lib/libcms-md5.dylib  # [osx]\n    \n\nabout:\n  home: https://github.com/cms-externals/md5.git\n  license: zlib\n  license_file: LICENSE.txt\n  summary: 'Independent implementation of MD5 (RFC 1321).'\n\nextra:\n  recipe-maintainers:\n    - gartung\n    - chrisburr\n",
  "req":{
   "__set__":true,
@@ -107,5 +229,65 @@
   }
  },
  "url":null,
- "version":"1.0.0"
+ "version":"1.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cms-externals/md5.git",
+   "license":"zlib",
+   "license_file":"LICENSE.txt",
+   "summary":"Independent implementation of MD5 (RFC 1321)."
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gartung",
+    "chrisburr"
+   ]
+  },
+  "package":{
+   "name":"cms-md5",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "folder":"source",
+   "git_rev":"d97a571864a119cd5408d2670d095b4410e926cc",
+   "git_url":"https://github.com/cms-externals/md5.git"
+  },
+  "test":{
+   "commands":null,
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ }
 }

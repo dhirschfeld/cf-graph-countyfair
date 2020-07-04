@@ -42,6 +42,111 @@
  "conda-forge.yml":{},
  "feedstock_name":"pytest-services",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/pytest-dev/pytest-services",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"src/LICENSE.txt",
+   "summary":"Collection of fixtures and utility functions to run service processes for your tests"
+  },
+  "build":{
+   "number":"0",
+   "script":"cd dist &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"pytest-services",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile >=2.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"0037101eaa17e050542808ecb2e799e9b2b148f1867f62b2296329fdd2034cf5",
+    "url":"https://pypi.io/packages/source/p/pytest-services/pytest-services-2.1.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"11e762a7494c110da7a2fad06f7796e7dd347e64405590a30ecde72cc7cfbb36",
+    "url":"https://github.com/pytest-dev/pytest-services/archive/2.1.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "cd src && pytest -vv -k \"not xvfb and not mysql and not memcached\""
+   ],
+   "imports":[
+    "pytest_services"
+   ],
+   "requires":[
+    "astroid",
+    "coverage",
+    "mock",
+    "mysqlclient",
+    "pip",
+    "pylibmc",
+    "pytest-pep8"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "astroid",
+    "coverage",
+    "mock",
+    "mysqlclient",
+    "pip",
+    "pylibmc",
+    "pytest-pep8"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/pytest-dev/pytest-services",
@@ -174,6 +279,111 @@
   "2.1.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/pytest-dev/pytest-services",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"src/LICENSE.txt",
+   "summary":"Collection of fixtures and utility functions to run service processes for your tests"
+  },
+  "build":{
+   "number":"0",
+   "script":"cd dist &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"pytest-services",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile >=2.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"0037101eaa17e050542808ecb2e799e9b2b148f1867f62b2296329fdd2034cf5",
+    "url":"https://pypi.io/packages/source/p/pytest-services/pytest-services-2.1.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"11e762a7494c110da7a2fad06f7796e7dd347e64405590a30ecde72cc7cfbb36",
+    "url":"https://github.com/pytest-dev/pytest-services/archive/2.1.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "cd src && pytest -vv -k \"not xvfb and not mysql and not memcached\""
+   ],
+   "imports":[
+    "pytest_services"
+   ],
+   "requires":[
+    "astroid",
+    "coverage",
+    "mock",
+    "mysqlclient",
+    "pip",
+    "pylibmc",
+    "pytest-pep8"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "astroid",
+    "coverage",
+    "mock",
+    "mysqlclient",
+    "pip",
+    "pylibmc",
+    "pytest-pep8"
+   ]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"pytest-services\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: dist\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: 0037101eaa17e050542808ecb2e799e9b2b148f1867f62b2296329fdd2034cf5\n  - folder: src\n    url: https://github.com/pytest-dev/pytest-services/archive/{{ version }}.tar.gz\n    sha256: 11e762a7494c110da7a2fad06f7796e7dd347e64405590a30ecde72cc7cfbb36\n\nbuild:\n  number: 0\n  script: cd dist && {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - psutil\n    - pytest\n    - python\n    - requests\n    - setuptools\n    - subprocess32  # [py2k]\n    - zc.lockfile >=2.0\n\ntest:\n  source_files:\n    - src/tests\n  requires:\n    - astroid\n    - coverage\n    - mock\n    - mysqlclient  # [unix]\n    - pip\n    - pylibmc  # [unix]\n    - pytest-pep8\n  imports:\n    - pytest_services\n  commands:\n    - python -m pip check\n    - cd src && pytest -vv -k \"not xvfb and not mysql and not memcached\"  # [unix]\n\nabout:\n  home: https://github.com/pytest-dev/pytest-services\n  license: MIT\n  license_family: MIT\n  license_file: src/LICENSE.txt\n  summary: Collection of fixtures and utility functions to run service processes for your tests\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
@@ -263,5 +473,105 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pytest-services/pytest-services-2.0.1.tar.gz",
- "version":"2.1.0"
+ "version":"2.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/pytest-dev/pytest-services",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"src/LICENSE.txt",
+   "summary":"Collection of fixtures and utility functions to run service processes for your tests"
+  },
+  "build":{
+   "number":"0",
+   "script":"cd dist &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"pytest-services",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile >=2.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":"dist",
+    "sha256":"0037101eaa17e050542808ecb2e799e9b2b148f1867f62b2296329fdd2034cf5",
+    "url":"https://pypi.io/packages/source/p/pytest-services/pytest-services-2.1.0.tar.gz"
+   },
+   {
+    "folder":"src",
+    "sha256":"11e762a7494c110da7a2fad06f7796e7dd347e64405590a30ecde72cc7cfbb36",
+    "url":"https://github.com/pytest-dev/pytest-services/archive/2.1.0.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "python -m pip check"
+   ],
+   "imports":[
+    "pytest_services"
+   ],
+   "requires":[
+    "astroid",
+    "coverage",
+    "mock",
+    "pip",
+    "pytest-pep8"
+   ],
+   "source_files":[
+    "src/tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "pytest",
+    "python",
+    "requests",
+    "setuptools",
+    "zc.lockfile"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "astroid",
+    "coverage",
+    "mock",
+    "pip",
+    "pytest-pep8"
+   ]
+  }
+ }
 }

@@ -120,6 +120,97 @@
  "conda-forge.yml":{},
  "feedstock_name":"astroquery",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/astropy/astroquery",
+   "home":"http://www.astropy.org/astroquery/",
+   "license":"BSD 3-clause",
+   "license_file":"LICENSE.rst",
+   "summary":"Functions and classes to access online astronomical data resources."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "astrofrog-conda-forge",
+    "bsipocz",
+    "Cadair",
+    "guillochon",
+    "mwcraig",
+    "pllim",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"astroquery",
+   "version":"0.4.1"
+  },
+  "requirements":{
+   "host":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ],
+   "run":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "source":{
+   "fn":"astroquery-0.4.1.tar.gz",
+   "sha256":"ea90566faf2f78ea715c4141d7eba8bae7f4d775baa341712de5e90313cdf876",
+   "url":"https://pypi.io/packages/source/a/astroquery/astroquery-0.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "astroquery"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/astropy/astroquery",
@@ -226,6 +317,97 @@
   "0.4.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/astropy/astroquery",
+   "home":"http://www.astropy.org/astroquery/",
+   "license":"BSD 3-clause",
+   "license_file":"LICENSE.rst",
+   "summary":"Functions and classes to access online astronomical data resources."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "astrofrog-conda-forge",
+    "bsipocz",
+    "Cadair",
+    "guillochon",
+    "mwcraig",
+    "pllim",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"astroquery",
+   "version":"0.4.1"
+  },
+  "requirements":{
+   "host":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ],
+   "run":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "source":{
+   "fn":"astroquery-0.4.1.tar.gz",
+   "sha256":"ea90566faf2f78ea715c4141d7eba8bae7f4d775baa341712de5e90313cdf876",
+   "url":"https://pypi.io/packages/source/a/astroquery/astroquery-0.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "astroquery"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"astroquery\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"ea90566faf2f78ea715c4141d7eba8bae7f4d775baa341712de5e90313cdf876\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # Note: pip-based install fails due to wanting to download astropy-helpers\n  script: python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt\n  noarch: python\n\nrequirements:\n  host:\n    - astropy >=3.1\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n    - setuptools\n\n  run:\n    - astropy >=3.1\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n\ntest:\n  imports:\n    - astroquery\n\nabout:\n  home: http://www.astropy.org/astroquery/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: Functions and classes to access online astronomical data resources.\n  dev_url: https://github.com/astropy/astroquery\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - bsipocz\n    - Cadair\n    - guillochon\n    - mwcraig\n    - pllim\n    - pkgw\n",
  "req":{
@@ -309,5 +491,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/astroquery/astroquery-0.3.9.tar.gz",
- "version":"0.4.1"
+ "version":"0.4.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/astropy/astroquery",
+   "home":"http://www.astropy.org/astroquery/",
+   "license":"BSD 3-clause",
+   "license_file":"LICENSE.rst",
+   "summary":"Functions and classes to access online astronomical data resources."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "astrofrog-conda-forge",
+    "bsipocz",
+    "Cadair",
+    "guillochon",
+    "mwcraig",
+    "pllim",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"astroquery",
+   "version":"0.4.1"
+  },
+  "requirements":{
+   "host":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ],
+   "run":[
+    "astropy >=3.1",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "source":{
+   "fn":"astroquery-0.4.1.tar.gz",
+   "sha256":"ea90566faf2f78ea715c4141d7eba8bae7f4d775baa341712de5e90313cdf876",
+   "url":"https://pypi.io/packages/source/a/astroquery/astroquery-0.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "astroquery"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "beautifulsoup4",
+    "html5lib",
+    "keyring",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

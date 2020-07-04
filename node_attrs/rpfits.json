@@ -59,6 +59,65 @@
  },
  "feedstock_name":"rpfits",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.atnf.csiro.au/computing/software/rpfits.html",
+   "license":"CSIRO Open Source Software Agreement (GPLv3+)",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Library for reading and writing a FITS-like data format"
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"rpfits",
+   "version":"2.25"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "sha256":"457c161e5f6a4f232240e501f9d4303c0bdbab8ae2271767d4f06ad1789ad79f",
+   "url":"ftp://ftp.atnf.csiro.au/pub/software/rpfits/rpfits-2.25.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rpfex </dev/null",
+    "test -f $PREFIX/lib/librpfits$SHLIB_EXT"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.atnf.csiro.au/computing/software/rpfits.html",
@@ -108,6 +167,64 @@
  },
  "name":"rpfits",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.atnf.csiro.au/computing/software/rpfits.html",
+   "license":"CSIRO Open Source Software Agreement (GPLv3+)",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Library for reading and writing a FITS-like data format"
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"rpfits",
+   "version":"2.25"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "sha256":"457c161e5f6a4f232240e501f9d4303c0bdbab8ae2271767d4f06ad1789ad79f",
+   "url":"ftp://ftp.atnf.csiro.au/pub/software/rpfits/rpfits-2.25.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rpfex </dev/null"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.08.12",
  "raw_meta_yaml":"{% set name = \"rpfits\" %}\n{% set version = \"2.25\" %}\n{% set sha256 = \"457c161e5f6a4f232240e501f9d4303c0bdbab8ae2271767d4f06ad1789ad79f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.atnf.csiro.au/pub/software/rpfits/rpfits-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n\ntest:\n  commands:\n    - rpfex </dev/null\n    - test -f $PREFIX/lib/librpfits$SHLIB_EXT  # [linux]\n\nabout:\n  home: http://www.atnf.csiro.au/computing/software/rpfits.html\n  license: CSIRO Open Source Software Agreement (GPLv3+)\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Library for reading and writing a FITS-like data format'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "req":{
@@ -162,5 +279,64 @@
   }
  },
  "url":"ftp://ftp.atnf.csiro.au/pub/software/rpfits/rpfits-2.25.tar.gz",
- "version":"2.25"
+ "version":"2.25",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.atnf.csiro.au/computing/software/rpfits.html",
+   "license":"CSIRO Open Source Software Agreement (GPLv3+)",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Library for reading and writing a FITS-like data format"
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"rpfits",
+   "version":"2.25"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ]
+  },
+  "source":{
+   "sha256":"457c161e5f6a4f232240e501f9d4303c0bdbab8ae2271767d4f06ad1789ad79f",
+   "url":"ftp://ftp.atnf.csiro.au/pub/software/rpfits/rpfits-2.25.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rpfex </dev/null"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

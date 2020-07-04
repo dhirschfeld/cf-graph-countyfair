@@ -155,6 +155,74 @@
  },
  "feedstock_name":"liknorm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/limix/liknorm",
+   "doc_url":"https://liknorm.readthedocs.io/",
+   "home":"https://github.com/limix/liknorm",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Moments of the product of an exponential-family likelihood with Normal distribution"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Horta"
+   ]
+  },
+  "package":{
+   "name":"liknorm",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "conda-build"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"liknorm-1.5.1.tar.gz",
+   "sha256":"907e56d7371935ad4458931c3ea07d2820e140eaf48bc6a946a11365bffec5af",
+   "url":"https://github.com/limix/liknorm/archive/1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/liknorm.h",
+    "test -e $PREFIX/lib/libliknorm.so",
+    "test -e $PREFIX/lib/libliknorm_static.a"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "conda-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/limix/liknorm",
@@ -218,6 +286,74 @@
  },
  "name":"liknorm",
  "new_version":"1.5.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/limix/liknorm",
+   "doc_url":"https://liknorm.readthedocs.io/",
+   "home":"https://github.com/limix/liknorm",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Moments of the product of an exponential-family likelihood with Normal distribution"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Horta"
+   ]
+  },
+  "package":{
+   "name":"liknorm",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "conda-build"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"liknorm-1.5.1.tar.gz",
+   "sha256":"907e56d7371935ad4458931c3ea07d2820e140eaf48bc6a946a11365bffec5af",
+   "url":"https://github.com/limix/liknorm/archive/1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/liknorm.h",
+    "test -e $PREFIX/lib/libliknorm.dylib",
+    "test -e $PREFIX/lib/libliknorm_static.a"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "conda-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.12.18",
  "raw_meta_yaml":"{% set name = \"liknorm\" %}\n{% set version = \"1.5.1\" %}\n{% set sha256 = \"907e56d7371935ad4458931c3ea07d2820e140eaf48bc6a946a11365bffec5af\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/limix/liknorm/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - cmake\n  host:\n    - conda-build\n  run:\n    - vs2015_runtime  # [win]\n\ntest:\n  commands:\n    - test -e $PREFIX/include/liknorm.h  # [unix]\n    - test -e $PREFIX/lib/libliknorm.so  # [linux]\n    - test -e $PREFIX/lib/libliknorm.dylib  # [osx]\n    - test -e $PREFIX/lib/libliknorm_static.a  # [unix]\n    - if NOT exist %LIBRARY_INC%/liknorm.h exit 1  # [win]\n    - if NOT exist %LIBRARY_LIB%/liknorm.lib exit 1  # [win]\n    - if NOT exist %LIBRARY_BIN%/liknorm.dll exit 1  # [win]\n    - if NOT exist %LIBRARY_LIB%/liknorm_static.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/limix/liknorm\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Moments of the product of an exponential-family likelihood with Normal distribution'\n  doc_url: https://liknorm.readthedocs.io/\n  dev_url: https://github.com/limix/liknorm\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "req":{
@@ -277,5 +413,79 @@
   }
  },
  "url":"https://github.com/limix/liknorm/archive/1.5.1.tar.gz",
- "version":"1.5.1"
+ "version":"1.5.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/limix/liknorm",
+   "doc_url":"https://liknorm.readthedocs.io/",
+   "home":"https://github.com/limix/liknorm",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.md",
+   "summary":"Moments of the product of an exponential-family likelihood with Normal distribution"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Horta"
+   ]
+  },
+  "package":{
+   "name":"liknorm",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "conda-build"
+   ],
+   "run":[
+    "vs2015_runtime"
+   ]
+  },
+  "source":{
+   "fn":"liknorm-1.5.1.tar.gz",
+   "sha256":"907e56d7371935ad4458931c3ea07d2820e140eaf48bc6a946a11365bffec5af",
+   "url":"https://github.com/limix/liknorm/archive/1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if NOT exist %LIBRARY_INC%/liknorm.h exit 1",
+    "if NOT exist %LIBRARY_LIB%/liknorm.lib exit 1",
+    "if NOT exist %LIBRARY_BIN%/liknorm.dll exit 1",
+    "if NOT exist %LIBRARY_LIB%/liknorm_static.lib exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "conda-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "vs2015_runtime"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

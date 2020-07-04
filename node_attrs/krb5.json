@@ -190,6 +190,402 @@
  },
  "feedstock_name":"krb5",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://web.mit.edu/kerberos/",
+   "license":"MIT",
+   "license_file":"doc/notice.rst",
+   "summary":"A network authentication protocol."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "krb5"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"krb5",
+   "version":"1.17.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
+    "openssl"
+   ],
+   "host":[
+    "libedit",
+    "openssl",
+    "tk"
+   ],
+   "run":[
+    "libedit"
+   ]
+  },
+  "source":{
+   "sha256":"8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b",
+   "url":"https://github.com/krb5/krb5/archive/krb5-1.17.1-final.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "openssl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libedit",
+    "openssl",
+    "tk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krb5",
+    "libedit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://web.mit.edu/kerberos/",
+   "license":"MIT",
+   "license_file":"doc/notice.rst",
+   "summary":"A network authentication protocol."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "krb5"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"krb5",
+   "version":"1.17.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
+    "openssl"
+   ],
+   "host":[
+    "libedit",
+    "openssl",
+    "tk"
+   ],
+   "run":[
+    "libedit"
+   ]
+  },
+  "source":{
+   "sha256":"8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b",
+   "url":"https://github.com/krb5/krb5/archive/krb5-1.17.1-final.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "openssl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libedit",
+    "openssl",
+    "tk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krb5",
+    "libedit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://web.mit.edu/kerberos/",
+   "license":"MIT",
+   "license_file":"doc/notice.rst",
+   "summary":"A network authentication protocol."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "krb5"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"krb5",
+   "version":"1.17.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
+    "openssl"
+   ],
+   "host":[
+    "libedit",
+    "openssl",
+    "tk"
+   ],
+   "run":[
+    "libedit"
+   ]
+  },
+  "source":{
+   "sha256":"8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b",
+   "url":"https://github.com/krb5/krb5/archive/krb5-1.17.1-final.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "openssl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libedit",
+    "openssl",
+    "tk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krb5",
+    "libedit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://web.mit.edu/kerberos/",
@@ -205,12 +601,24 @@
    "run_exports":[
     "krb5",
     "krb5",
+    "krb5",
+    "krb5",
     "krb5"
    ],
    "skip":true
   },
   "extra":{
    "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv",
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv",
     "pelson",
     "ocefpaf",
     "mingwandroid",
@@ -353,6 +761,92 @@
       "test -f ${PREFIX}/lib/libk5crypto.a"
      ]
     }
+   },
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
+   },
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
    }
   ],
   "package":{
@@ -382,9 +876,31 @@
     "pkg-config",
     "make",
     "python 3.7",
+    "openssl",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
+    "openssl",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
     "openssl"
    ],
    "host":[
+    "openssl",
+    "tk",
+    "libedit",
+    "openssl",
+    "tk",
+    "libedit",
     "openssl",
     "tk",
     "libedit",
@@ -405,6 +921,142 @@
  },
  "name":"krb5",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://web.mit.edu/kerberos/",
+   "license":"MIT",
+   "license_file":"doc/notice.rst",
+   "summary":"A network authentication protocol."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "/usr/lib/libresolv.9.dylib"
+   ],
+   "number":"1",
+   "run_exports":[
+    "krb5"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "conda inspect linkages -p $PREFIX krb5",
+      "conda inspect objects -p $PREFIX krb5",
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python 3.7.*"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "bison",
+      "autoconf",
+      "pkg-config",
+      "make",
+      "python 3.7",
+      "openssl"
+     ],
+     "host":[
+      "libedit",
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5",
+      "libedit"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libk5crypto.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"krb5",
+   "version":"1.17.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "bison",
+    "autoconf",
+    "pkg-config",
+    "make",
+    "python 3.7",
+    "openssl"
+   ],
+   "host":[
+    "libedit",
+    "openssl",
+    "tk"
+   ],
+   "run":[
+    "libedit"
+   ]
+  },
+  "source":{
+   "sha256":"8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b",
+   "url":"https://github.com/krb5/krb5/archive/krb5-1.17.1-final.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "openssl",
+    "pkg-config",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libedit",
+    "openssl",
+    "tk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krb5",
+    "libedit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ },
  "outputs_names":[
   "krb5",
   "krb5-static"
@@ -510,5 +1162,124 @@
   }
  },
  "url":"https://github.com/krb5/krb5/archive/krb5-1.16.3-final.tar.gz",
- "version":"1.17.1"
+ "version":"1.17.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://web.mit.edu/kerberos/",
+   "license":"MIT",
+   "license_file":"doc/notice.rst",
+   "summary":"A network authentication protocol."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "krb5"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pelson",
+    "ocefpaf",
+    "mingwandroid",
+    "mariusvniekerk",
+    "wolfv"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"krb5",
+    "test":{
+     "commands":[
+      "python krb5_test.py"
+     ],
+     "requires":[
+      "python"
+     ]
+    }
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "name":"krb5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "posix",
+      "perl",
+      "python",
+      "openssl"
+     ],
+     "host":[
+      "openssl",
+      "tk"
+     ],
+     "run":[
+      "krb5"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":null
+    }
+   }
+  ],
+  "package":{
+   "name":"krb5",
+   "version":"1.17.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "posix",
+    "perl",
+    "python",
+    "openssl"
+   ],
+   "host":[
+    "openssl",
+    "tk"
+   ],
+   "run":null
+  },
+  "source":{
+   "sha256":"8bdedbfb0bbb245217e23290437916d70b315514e6f7cc088b6e82d1310afe0b",
+   "url":"https://github.com/krb5/krb5/archive/krb5-1.17.1-final.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "openssl",
+    "perl",
+    "posix",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openssl",
+    "tk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "krb5"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  }
+ }
 }

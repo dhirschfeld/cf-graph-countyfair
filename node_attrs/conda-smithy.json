@@ -317,6 +317,112 @@
  "conda-forge.yml":{},
  "feedstock_name":"conda-smithy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/conda-smithy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The tool for managing conda-forge feedstocks"
+  },
+  "build":{
+   "entry_points":[
+    "feedstocks = conda_smithy.feedstocks:main",
+    "conda-smithy = conda_smithy.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    " -m pip install . --no-deps -vv",
+    "rm -f \"${PREFIX}/bin/conda\""
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/Core"
+   ]
+  },
+  "package":{
+   "name":"conda-smithy",
+   "version":"3.7.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "conda >=4.2",
+    "conda-build >=3.18.3",
+    "jinja2",
+    "requests",
+    "pycrypto",
+    "git",
+    "gitpython",
+    "pygithub <2",
+    "ruamel.yaml >=0.16",
+    "toolz",
+    "vsts-python-api",
+    "conda-forge-pinning",
+    "scrypt",
+    "license-expression",
+    "libarchive"
+   ]
+  },
+  "source":{
+   "sha256":"cd99e836009456bf3df7a0698cd7c4c6cbeba6d2d037a415d2e4e18d3f9f5f93",
+   "url":"https://github.com/conda-forge/conda-smithy/releases/download/v3.7.4/conda-smithy-3.7.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda smithy --help"
+   ],
+   "imports":[
+    "conda_smithy",
+    "conda_smithy.ci_register",
+    "conda_smithy.configure_feedstock"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-build",
+    "conda-forge-pinning",
+    "git",
+    "gitpython",
+    "jinja2",
+    "libarchive",
+    "license-expression",
+    "pycrypto",
+    "pygithub",
+    "python",
+    "requests",
+    "ruamel.yaml",
+    "scrypt",
+    "toolz",
+    "vsts-python-api"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/conda-forge/conda-smithy",
@@ -445,6 +551,112 @@
   "3.7.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/conda-smithy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The tool for managing conda-forge feedstocks"
+  },
+  "build":{
+   "entry_points":[
+    "feedstocks = conda_smithy.feedstocks:main",
+    "conda-smithy = conda_smithy.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    " -m pip install . --no-deps -vv",
+    "rm -f \"${PREFIX}/bin/conda\""
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/Core"
+   ]
+  },
+  "package":{
+   "name":"conda-smithy",
+   "version":"3.7.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "conda >=4.2",
+    "conda-build >=3.18.3",
+    "jinja2",
+    "requests",
+    "pycrypto",
+    "git",
+    "gitpython",
+    "pygithub <2",
+    "ruamel.yaml >=0.16",
+    "toolz",
+    "vsts-python-api",
+    "conda-forge-pinning",
+    "scrypt",
+    "license-expression",
+    "libarchive"
+   ]
+  },
+  "source":{
+   "sha256":"cd99e836009456bf3df7a0698cd7c4c6cbeba6d2d037a415d2e4e18d3f9f5f93",
+   "url":"https://github.com/conda-forge/conda-smithy/releases/download/v3.7.4/conda-smithy-3.7.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda smithy --help"
+   ],
+   "imports":[
+    "conda_smithy",
+    "conda_smithy.ci_register",
+    "conda_smithy.configure_feedstock"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-build",
+    "conda-forge-pinning",
+    "git",
+    "gitpython",
+    "jinja2",
+    "libarchive",
+    "license-expression",
+    "pycrypto",
+    "pygithub",
+    "python",
+    "requests",
+    "ruamel.yaml",
+    "scrypt",
+    "toolz",
+    "vsts-python-api"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set version = \"3.7.4\" %}\n\npackage:\n  name: conda-smithy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/conda-forge/conda-smithy/releases/download/v{{ version }}/conda-smithy-{{ version }}.tar.gz\n  sha256: cd99e836009456bf3df7a0698cd7c4c6cbeba6d2d037a415d2e4e18d3f9f5f93\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n    - rm -f \"${PREFIX}/bin/conda\"           # [not win]\n    - del /f /q \"%PREFIX%\\\\Scripts\\\\conda\"  # [win]\n  entry_points:\n    - feedstocks = conda_smithy.feedstocks:main\n    - conda-smithy = conda_smithy.cli:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - conda >=4.2\n    - conda-build >=3.18.3\n    - jinja2\n    - requests\n    - pycrypto\n    - git\n    - gitpython\n    - pygithub <2\n    - ruamel.yaml >=0.16\n    - toolz\n    - vsts-python-api\n    - conda-forge-pinning\n    - scrypt\n    - license-expression\n    - libarchive\n\ntest:\n  imports:\n    - conda_smithy\n    - conda_smithy.ci_register\n    - conda_smithy.configure_feedstock\n  commands:\n    - conda smithy --help\n\nabout:\n  home: https://github.com/conda-forge/conda-smithy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: The tool for managing conda-forge feedstocks\n\nextra:\n  recipe-maintainers:\n    - conda-forge/Core\n",
  "req":{
@@ -548,5 +760,111 @@
   }
  },
  "url":"https://github.com/conda-forge/conda-smithy/releases/download/v3.4.5/conda-smithy-3.4.5.tar.gz",
- "version":"3.7.4"
+ "version":"3.7.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/conda-smithy",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The tool for managing conda-forge feedstocks"
+  },
+  "build":{
+   "entry_points":[
+    "feedstocks = conda_smithy.feedstocks:main",
+    "conda-smithy = conda_smithy.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    " -m pip install . --no-deps -vv",
+    "del /f /q \"%PREFIX%\\\\Scripts\\\\conda\""
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/Core"
+   ]
+  },
+  "package":{
+   "name":"conda-smithy",
+   "version":"3.7.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "conda >=4.2",
+    "conda-build >=3.18.3",
+    "jinja2",
+    "requests",
+    "pycrypto",
+    "git",
+    "gitpython",
+    "pygithub <2",
+    "ruamel.yaml >=0.16",
+    "toolz",
+    "vsts-python-api",
+    "conda-forge-pinning",
+    "scrypt",
+    "license-expression",
+    "libarchive"
+   ]
+  },
+  "source":{
+   "sha256":"cd99e836009456bf3df7a0698cd7c4c6cbeba6d2d037a415d2e4e18d3f9f5f93",
+   "url":"https://github.com/conda-forge/conda-smithy/releases/download/v3.7.4/conda-smithy-3.7.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda smithy --help"
+   ],
+   "imports":[
+    "conda_smithy",
+    "conda_smithy.ci_register",
+    "conda_smithy.configure_feedstock"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "conda-build",
+    "conda-forge-pinning",
+    "git",
+    "gitpython",
+    "jinja2",
+    "libarchive",
+    "license-expression",
+    "pycrypto",
+    "pygithub",
+    "python",
+    "requests",
+    "ruamel.yaml",
+    "scrypt",
+    "toolz",
+    "vsts-python-api"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

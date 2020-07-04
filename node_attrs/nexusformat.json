@@ -74,6 +74,95 @@
  "conda-forge.yml":{},
  "feedstock_name":"nexusformat",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexusformat",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"https://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"nexusformat: Python API to access NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nxstack=nexusformat.scripts.nxstack:main",
+    "nxduplicate=nexusformat.scripts.nxduplicate:main",
+    "nexusformat=nexusformat.scripts.nexusformat:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexusformat",
+   "version":"0.5.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"603aa9938a35091f92ecb56e22dd42ea30603bfe013cdc5a8cad71ba2694f8fb",
+   "url":"https://pypi.io/packages/source/n/nexusformat/nexusformat-0.5.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxstack --help",
+    "nxduplicate --help",
+    "nexusformat --help"
+   ],
+   "imports":[
+    "nexusformat",
+    "nexusformat.nexus",
+    "nexusformat.scripts"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/nexpy/nexusformat",
@@ -180,6 +269,95 @@
   "0.5.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexusformat",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"https://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"nexusformat: Python API to access NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nxstack=nexusformat.scripts.nxstack:main",
+    "nxduplicate=nexusformat.scripts.nxduplicate:main",
+    "nexusformat=nexusformat.scripts.nexusformat:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexusformat",
+   "version":"0.5.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"603aa9938a35091f92ecb56e22dd42ea30603bfe013cdc5a8cad71ba2694f8fb",
+   "url":"https://pypi.io/packages/source/n/nexusformat/nexusformat-0.5.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxstack --help",
+    "nxduplicate --help",
+    "nexusformat --help"
+   ],
+   "imports":[
+    "nexusformat",
+    "nexusformat.nexus",
+    "nexusformat.scripts"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"nexusformat\" %}\n{% set version = \"0.5.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 603aa9938a35091f92ecb56e22dd42ea30603bfe013cdc5a8cad71ba2694f8fb\n\nbuild:\n  number: 0\n  entry_points:\n    - nxstack=nexusformat.scripts.nxstack:main\n    - nxduplicate=nexusformat.scripts.nxduplicate:main\n    - nexusformat=nexusformat.scripts.nexusformat:main\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n    - numpy\n  run:\n    - h5py\n    - ipython\n    - numpy\n    - python\n\ntest:\n  imports:\n    - nexusformat\n    - nexusformat.nexus\n    - nexusformat.scripts\n  commands:\n    - nxstack --help\n    - nxduplicate --help\n    - nexusformat --help\n\nabout:\n  home: https://nexpy.github.io/nexpy/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'nexusformat: Python API to access NeXus data'\n  doc_url: https://nexpy.github.io/nexpy/\n  dev_url: https://github.com/nexpy/nexusformat\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n    - rayosborn\n",
  "req":{
@@ -252,5 +430,94 @@
   }
  },
  "url":"https://pypi.io/packages/source/n/nexusformat/nexusformat-0.4.20.tar.gz",
- "version":"0.5.3"
+ "version":"0.5.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nexpy/nexusformat",
+   "doc_url":"https://nexpy.github.io/nexpy/",
+   "home":"https://nexpy.github.io/nexpy/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"nexusformat: Python API to access NeXus data"
+  },
+  "build":{
+   "entry_points":[
+    "nxstack=nexusformat.scripts.nxstack:main",
+    "nxduplicate=nexusformat.scripts.nxduplicate:main",
+    "nexusformat=nexusformat.scripts.nexusformat:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj",
+    "rayosborn"
+   ]
+  },
+  "package":{
+   "name":"nexusformat",
+   "version":"0.5.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"603aa9938a35091f92ecb56e22dd42ea30603bfe013cdc5a8cad71ba2694f8fb",
+   "url":"https://pypi.io/packages/source/n/nexusformat/nexusformat-0.5.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nxstack --help",
+    "nxduplicate --help",
+    "nexusformat --help"
+   ],
+   "imports":[
+    "nexusformat",
+    "nexusformat.nexus",
+    "nexusformat.scripts"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "ipython",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

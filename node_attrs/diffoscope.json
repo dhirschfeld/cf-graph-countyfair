@@ -915,6 +915,100 @@
  "conda-forge.yml":{},
  "feedstock_name":"diffoscope",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n",
+   "dev_url":"https://anonscm.debian.org/cgit/reproducible/diffoscope.git",
+   "home":"https://diffoscope.org",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"in-depth comparison of files, archives, and directories"
+  },
+  "build":{
+   "entry_points":[
+    "diffoscope = diffoscope.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"diffoscope",
+   "version":"150"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "source":{
+   "sha256":"0b9e4ae401fe4cbb8ce89b0bcabe608581d0ed53b91a28f18337179c7494af57",
+   "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-150.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "diffoscope --help",
+    "diffoscope --list-tools",
+    "diffoscope --version",
+    "pytest ./tests -k \"\\\n  not assert_non_existing \\\n  and not berkeley_db \\\n  and not test_icc \\\n  and not test_item1_elf \\\n  and not test_code_is_black_clean \\\n  and not ocaml \\\n  and not test_ignore_readelf_errors \\\n  and not test_libmix_differences \\\n  and not test_wasm\n\""
+   ],
+   "imports":[
+    "diffoscope"
+   ],
+   "requires":[
+    "file",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "file",
+    "pip",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n",
@@ -1031,6 +1125,100 @@
   "150":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n",
+   "dev_url":"https://anonscm.debian.org/cgit/reproducible/diffoscope.git",
+   "home":"https://diffoscope.org",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"in-depth comparison of files, archives, and directories"
+  },
+  "build":{
+   "entry_points":[
+    "diffoscope = diffoscope.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"diffoscope",
+   "version":"150"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "source":{
+   "sha256":"0b9e4ae401fe4cbb8ce89b0bcabe608581d0ed53b91a28f18337179c7494af57",
+   "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-150.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "diffoscope --help",
+    "diffoscope --list-tools",
+    "diffoscope --version",
+    "pytest ./tests -k \"\\\n  not assert_non_existing \\\n  and not berkeley_db \\\n  and not test_icc \\\n  and not test_item1_elf \\\n  and not test_code_is_black_clean \\\n  and not ocaml \\\n  and not test_ignore_readelf_errors \\\n  and not test_libmix_differences \\\n  and not test_wasm\n\""
+   ],
+   "imports":[
+    "diffoscope"
+   ],
+   "requires":[
+    "file",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "file",
+    "pip",
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set name = \"diffoscope\" %}\n{% set version = \"150\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0b9e4ae401fe4cbb8ce89b0bcabe608581d0ed53b91a28f18337179c7494af57\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - diffoscope = diffoscope.main:main\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - python-libarchive-c\n    - python-magic\n    - python-tlsh\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - file\n    - pip\n    - pytest\n  imports:\n    - diffoscope\n  commands:\n    - python -m pip check\n    - diffoscope --help\n    - diffoscope --list-tools\n    - diffoscope --version\n    - |-\n      pytest ./tests -k \"\\\n        not assert_non_existing \\\n        and not berkeley_db \\\n        and not test_icc \\\n        and not test_item1_elf \\\n        and not test_code_is_black_clean \\\n        and not ocaml \\\n        and not test_ignore_readelf_errors \\\n        and not test_libmix_differences \\\n        and not test_wasm\n      \"\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0-or-later\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  dev_url: https://anonscm.debian.org/cgit/reproducible/diffoscope.git\n  description: >\n    diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
@@ -1106,5 +1294,99 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-123.tar.gz",
- "version":"150"
+ "version":"150",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n",
+   "dev_url":"https://anonscm.debian.org/cgit/reproducible/diffoscope.git",
+   "home":"https://diffoscope.org",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"in-depth comparison of files, archives, and directories"
+  },
+  "build":{
+   "entry_points":[
+    "diffoscope = diffoscope.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bollwyvl"
+   ]
+  },
+  "package":{
+   "name":"diffoscope",
+   "version":"150"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "source":{
+   "sha256":"0b9e4ae401fe4cbb8ce89b0bcabe608581d0ed53b91a28f18337179c7494af57",
+   "url":"https://pypi.io/packages/source/d/diffoscope/diffoscope-150.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "diffoscope --help",
+    "diffoscope --list-tools",
+    "diffoscope --version",
+    "pytest ./tests -k \"\\\n  not assert_non_existing \\\n  and not berkeley_db \\\n  and not test_icc \\\n  and not test_item1_elf \\\n  and not test_code_is_black_clean \\\n  and not ocaml \\\n  and not test_ignore_readelf_errors \\\n  and not test_libmix_differences \\\n  and not test_wasm\n\""
+   ],
+   "imports":[
+    "diffoscope"
+   ],
+   "requires":[
+    "file",
+    "pip",
+    "pytest"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "python-libarchive-c",
+    "python-magic",
+    "python-tlsh"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "file",
+    "pip",
+    "pytest"
+   ]
+  }
+ }
 }

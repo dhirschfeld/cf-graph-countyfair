@@ -244,6 +244,74 @@
  "conda-forge.yml":{},
  "feedstock_name":"prometheus",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/prometheus/prometheus",
+   "doc_url":"https://prometheus.io/docs/introduction/overview/",
+   "home":"https://prometheus.io/",
+   "license":"Apache-2.0",
+   "license_file":"src/github.com/prometheus/prometheus/LICENSE",
+   "summary":"Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system."
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "pushd src/github.com/prometheus/prometheus/cmd/prometheus",
+    "GOBIN=$(go env GOBIN)",
+    "go build -v -o $GOBIN/prometheus ."
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rluria14",
+    "adbeda",
+    "mwilson8",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"prometheus",
+   "version":"2.19.2"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/prometheus/prometheus",
+    "sha256":"d4e84cae2fed6761bb8a80fcc69b6e0e9f274d19dffc0f38fb5845f11da1bbc3",
+    "url":"https://github.com/prometheus/prometheus/archive/v2.19.2.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "prometheus --version"
+   ],
+   "requires":null
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/prometheus/prometheus",
@@ -332,6 +400,74 @@
   "2.19.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/prometheus/prometheus",
+   "doc_url":"https://prometheus.io/docs/introduction/overview/",
+   "home":"https://prometheus.io/",
+   "license":"Apache-2.0",
+   "license_file":"src/github.com/prometheus/prometheus/LICENSE",
+   "summary":"Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system."
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "pushd src/github.com/prometheus/prometheus/cmd/prometheus",
+    "GOBIN=$(go env GOBIN)",
+    "go build -v -o $GOBIN/prometheus ."
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rluria14",
+    "adbeda",
+    "mwilson8",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"prometheus",
+   "version":"2.19.2"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/prometheus/prometheus",
+    "sha256":"d4e84cae2fed6761bb8a80fcc69b6e0e9f274d19dffc0f38fb5845f11da1bbc3",
+    "url":"https://github.com/prometheus/prometheus/archive/v2.19.2.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "prometheus --version"
+   ],
+   "requires":null
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set provider = \"prometheus\" %}\n{% set goname = \"github.com/prometheus/\"+provider.lower() %}\n{% set version = \"2.19.2\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('src/'+goname).replace(\"/\",os.sep) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n    sha256: d4e84cae2fed6761bb8a80fcc69b6e0e9f274d19dffc0f38fb5845f11da1bbc3\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script:\n    - pushd {{ pkg_src }}/cmd/{{ name }}\n    - GOBIN=$(go env GOBIN)  # [not win]\n    - go build -v -o $GOBIN/{{ name }} .       # [unix]\n    - go build -v -o %GOBIN%\\{{ name }}.exe .  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  requires:\n    - m2-bash       # [win]\n    - m2-coreutils  # [win]\n\n  commands:\n    - prometheus --version\n\nabout:\n  home: https://prometheus.io/\n  license: Apache-2.0\n  license_file: {{ pkg_src }}/LICENSE\n  summary: Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system.\n  doc_url: https://prometheus.io/docs/introduction/overview/\n  dev_url: https://github.com/prometheus/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - rluria14\n    - adbeda\n    - mwilson8\n    - oblute\n",
  "req":{
@@ -383,5 +519,79 @@
   }
  },
  "url":"https://github.com/prometheus/prometheus/archive/v2.12.0.tar.gz",
- "version":"2.19.2"
+ "version":"2.19.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/prometheus/prometheus",
+   "doc_url":"https://prometheus.io/docs/introduction/overview/",
+   "home":"https://prometheus.io/",
+   "license":"Apache-2.0",
+   "license_file":"src/github.com/prometheus/prometheus/LICENSE",
+   "summary":"Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system."
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "pushd src/github.com/prometheus/prometheus/cmd/prometheus",
+    "go build -v -o %GOBIN%\\prometheus.exe ."
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "rluria14",
+    "adbeda",
+    "mwilson8",
+    "oblute"
+   ]
+  },
+  "package":{
+   "name":"prometheus",
+   "version":"2.19.2"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/prometheus/prometheus",
+    "sha256":"d4e84cae2fed6761bb8a80fcc69b6e0e9f274d19dffc0f38fb5845f11da1bbc3",
+    "url":"https://github.com/prometheus/prometheus/archive/v2.19.2.tar.gz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "prometheus --version"
+   ],
+   "requires":[
+    "m2-bash",
+    "m2-coreutils"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "m2-bash",
+    "m2-coreutils"
+   ]
+  }
+ }
 }

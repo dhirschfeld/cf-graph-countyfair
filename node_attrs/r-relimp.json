@@ -66,6 +66,76 @@
  },
  "feedstock_name":"r-relimp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://warwick.ac.uk/relimp",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions to facilitate inference on the relative importance of predictors in a linear or generalized linear model, and a couple of useful Tcl/Tk widgets."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-relimp",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"relimp_1.0-5.tar.gz",
+   "sha256":"acac7cf72ea39916761b51c825db0ffcb2bb1640e0a04086831fb78e9e40b679",
+   "url":[
+    "https://cran.r-project.org/src/contrib/relimp_1.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/relimp/relimp_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('relimp')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://warwick.ac.uk/relimp",
@@ -133,6 +203,76 @@
  },
  "name":"r-relimp",
  "new_version":"1.0_5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://warwick.ac.uk/relimp",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions to facilitate inference on the relative importance of predictors in a linear or generalized linear model, and a couple of useful Tcl/Tk widgets."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-relimp",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"relimp_1.0-5.tar.gz",
+   "sha256":"acac7cf72ea39916761b51c825db0ffcb2bb1640e0a04086831fb78e9e40b679",
+   "url":[
+    "https://cran.r-project.org/src/contrib/relimp_1.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/relimp/relimp_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('relimp')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.03.19.37.20",
  "raw_meta_yaml":"{% set version = '1.0-5' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-relimp\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: relimp_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/relimp_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/relimp/relimp_{{ version }}.tar.gz\n  sha256: acac7cf72ea39916761b51c825db0ffcb2bb1640e0a04086831fb78e9e40b679\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('relimp')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('relimp')\\\"\"  # [win]\n\nabout:\n  home: http://warwick.ac.uk/relimp\n  license: GPL (>= 2)\n  summary: Functions to facilitate inference on the relative importance of predictors in a linear\n    or generalized linear model, and a couple of useful Tcl/Tk widgets.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -195,5 +335,80 @@
   "https://cran.r-project.org/src/contrib/relimp_1.0-5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/relimp/relimp_1.0-5.tar.gz"
  ],
- "version":"1.0_5"
+ "version":"1.0_5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://warwick.ac.uk/relimp",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions to facilitate inference on the relative importance of predictors in a linear or generalized linear model, and a couple of useful Tcl/Tk widgets."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-relimp",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"relimp_1.0-5.tar.gz",
+   "sha256":"acac7cf72ea39916761b51c825db0ffcb2bb1640e0a04086831fb78e9e40b679",
+   "url":[
+    "https://cran.r-project.org/src/contrib/relimp_1.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/relimp/relimp_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('relimp')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

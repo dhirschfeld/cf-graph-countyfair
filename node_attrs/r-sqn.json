@@ -66,6 +66,89 @@
  },
  "feedstock_name":"r-sqn",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=SQN",
+   "license":"LGPL (>= 2.0)",
+   "license_family":"LGPL",
+   "license_file":"/lib/R/share/licenses/LGPL-3",
+   "summary":"Normalization based a subset of negative control probes as described in 'Subset quantile normalization using negative control features'. Wu Z, Aryee MJ, J Comput Biol. 2010 Oct;17(10):1385-95 [PMID 20976876]."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-sqn",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ],
+   "run":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ]
+  },
+  "source":{
+   "fn":"SQN_1.0.5.tar.gz",
+   "sha256":"1293bef9ae2faaa502757fb5538eb70e3e7c87869b6f456ec35f20f28c9b684d",
+   "url":[
+    "https://cran.r-project.org/src/contrib/SQN_1.0.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/SQN/SQN_1.0.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('SQN')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=SQN",
@@ -160,6 +243,89 @@
  },
  "name":"r-sqn",
  "new_version":"1.0.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=SQN",
+   "license":"LGPL (>= 2.0)",
+   "license_family":"LGPL",
+   "license_file":"/lib/R/share/licenses/LGPL-3",
+   "summary":"Normalization based a subset of negative control probes as described in 'Subset quantile normalization using negative control features'. Wu Z, Aryee MJ, J Comput Biol. 2010 Oct;17(10):1385-95 [PMID 20976876]."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-sqn",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ],
+   "run":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ]
+  },
+  "source":{
+   "fn":"SQN_1.0.5.tar.gz",
+   "sha256":"1293bef9ae2faaa502757fb5538eb70e3e7c87869b6f456ec35f20f28c9b684d",
+   "url":[
+    "https://cran.r-project.org/src/contrib/SQN_1.0.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/SQN/SQN_1.0.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('SQN')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = '1.0.5' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sqn\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: SQN_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/SQN_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/SQN/SQN_{{ version }}.tar.gz\n  sha256: 1293bef9ae2faaa502757fb5538eb70e3e7c87869b6f456ec35f20f28c9b684d\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1002\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n  host:\n    - r-base\n    - r-mclust >=3.2\n    - r-nor1mix >=1.0_7\n  run:\n    - r-base\n    - r-mclust >=3.2\n    - r-nor1mix >=1.0_7\n\ntest:\n  commands:\n    - $R -e \"library('SQN')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('SQN')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=SQN\n  license: LGPL (>= 2.0)\n  summary: Normalization based a subset of negative control probes as described in 'Subset quantile\n    normalization using negative control features'. Wu Z, Aryee MJ, J Comput Biol. 2010\n    Oct;17(10):1385-95 [PMID 20976876].\n  license_family: LGPL\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/LGPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "req":{
@@ -232,5 +398,89 @@
   "https://cran.r-project.org/src/contrib/SQN_1.0.5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/SQN/SQN_1.0.5.tar.gz"
  ],
- "version":"1.0.5"
+ "version":"1.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=SQN",
+   "license":"LGPL (>= 2.0)",
+   "license_family":"LGPL",
+   "license_file":"/lib/R/share/licenses/LGPL-3",
+   "summary":"Normalization based a subset of negative control probes as described in 'Subset quantile normalization using negative control features'. Wu Z, Aryee MJ, J Comput Biol. 2010 Oct;17(10):1385-95 [PMID 20976876]."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-sqn",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ],
+   "run":[
+    "r-base",
+    "r-mclust >=3.2",
+    "r-nor1mix >=1.0_7"
+   ]
+  },
+  "source":{
+   "fn":"SQN_1.0.5.tar.gz",
+   "sha256":"1293bef9ae2faaa502757fb5538eb70e3e7c87869b6f456ec35f20f28c9b684d",
+   "url":[
+    "https://cran.r-project.org/src/contrib/SQN_1.0.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/SQN/SQN_1.0.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('SQN')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mclust",
+    "r-nor1mix"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

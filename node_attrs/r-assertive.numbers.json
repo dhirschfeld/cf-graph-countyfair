@@ -66,6 +66,87 @@
  },
  "feedstock_name":"r-assertive.numbers",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/richierocks/assertive.numbers",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A set of predicates and assertions for checking the properties of numbers.  This is mainly for use by other package developers who want to include run-time testing features in their own packages.  End-users will usually want to use assertive directly."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "jenzopr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-assertive.numbers",
+   "version":"0.0_2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ],
+   "run":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ]
+  },
+  "source":{
+   "fn":"assertive.numbers_0.0-2.tar.gz",
+   "sha256":"bae18c0b9e5b960a20636e127eb738ecd8a266e5fc29d8bc5ca712498cd68349",
+   "url":[
+    "https://cran.r-project.org/src/contrib/assertive.numbers_0.0-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/assertive.numbers/assertive.numbers_0.0-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('assertive.numbers')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://bitbucket.org/richierocks/assertive.numbers",
@@ -160,6 +241,87 @@
  },
  "name":"r-assertive.numbers",
  "new_version":"0.0_2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/richierocks/assertive.numbers",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A set of predicates and assertions for checking the properties of numbers.  This is mainly for use by other package developers who want to include run-time testing features in their own packages.  End-users will usually want to use assertive directly."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "jenzopr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-assertive.numbers",
+   "version":"0.0_2"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ],
+   "run":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ]
+  },
+  "source":{
+   "fn":"assertive.numbers_0.0-2.tar.gz",
+   "sha256":"bae18c0b9e5b960a20636e127eb738ecd8a266e5fc29d8bc5ca712498cd68349",
+   "url":[
+    "https://cran.r-project.org/src/contrib/assertive.numbers_0.0-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/assertive.numbers/assertive.numbers_0.0-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('assertive.numbers')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = '0.0-2' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-assertive.numbers\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: assertive.numbers_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/assertive.numbers_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/assertive.numbers/assertive.numbers_{{ version }}.tar.gz\n  sha256: bae18c0b9e5b960a20636e127eb738ecd8a266e5fc29d8bc5ca712498cd68349\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-assertive.base >=0.0_2\n  run:\n    - r-base\n    - r-assertive.base >=0.0_2\n\ntest:\n  commands:\n    - $R -e \"library('assertive.numbers')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('assertive.numbers')\\\"\"  # [win]\n\nabout:\n  home: https://bitbucket.org/richierocks/assertive.numbers\n  license: GPL (>= 3)\n  summary: A set of predicates and assertions for checking the properties of numbers.  This is\n    mainly for use by other package developers who want to include run-time testing\n    features in their own packages.  End-users will usually want to use assertive directly.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - jenzopr\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
@@ -227,5 +389,91 @@
   "https://cran.r-project.org/src/contrib/assertive.numbers_0.0-2.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/assertive.numbers/assertive.numbers_0.0-2.tar.gz"
  ],
- "version":"0.0_2"
+ "version":"0.0_2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://bitbucket.org/richierocks/assertive.numbers",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A set of predicates and assertions for checking the properties of numbers.  This is mainly for use by other package developers who want to include run-time testing features in their own packages.  End-users will usually want to use assertive directly."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "jenzopr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-assertive.numbers",
+   "version":"0.0_2"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ],
+   "run":[
+    "r-base",
+    "r-assertive.base >=0.0_2"
+   ]
+  },
+  "source":{
+   "fn":"assertive.numbers_0.0-2.tar.gz",
+   "sha256":"bae18c0b9e5b960a20636e127eb738ecd8a266e5fc29d8bc5ca712498cd68349",
+   "url":[
+    "https://cran.r-project.org/src/contrib/assertive.numbers_0.0-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/assertive.numbers/assertive.numbers_0.0-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('assertive.numbers')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-assertive.base",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

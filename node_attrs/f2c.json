@@ -42,6 +42,84 @@
  },
  "feedstock_name":"f2c",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The standalone f2c program was based on the core of the first complete Fortran 77 compiler to be implemented, the \"f77\" program by Feldman and Weinberger.",
+   "dev_url":"http://www.netlib.org/f2c/",
+   "doc_url":"http://www.netlib.org/f2c/README",
+   "home":"http://www.netlib.org/f2c/",
+   "license":"OTHER",
+   "license_family":"OTHER",
+   "license_file":"permission",
+   "summary":"f2c is a program to convert Fortran 77 to C code, developed at Bell Laboratories."
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"f2c",
+   "version":"20160103"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "unzip"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"f2c-20160103.tar",
+   "sha256":"a8b8daac7735cebbf16b7eab17d727e6be5c645f30d8ac1dd7e95662fd0eb376",
+   "url":"http://netlib.sandia.gov/cgi-bin/netlib/netlibfiles.tar?filename=netlib/f2c"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/f2c/f2c.h",
+    "conda inspect linkages -p $PREFIX f2c",
+    "f2c --version",
+    "f2c test_main.f && ${CC} test_main.c -L${PREFIX}/lib -lf2c -I${PREFIX}/include -o test_main && ./test_main"
+   ],
+   "files":[
+    "test_main.f"
+   ],
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "unzip"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The standalone f2c program was based on the core of the first complete Fortran 77 compiler to be implemented, the \"f77\" program by Feldman and Weinberger.",
@@ -117,6 +195,85 @@
  },
  "name":"f2c",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The standalone f2c program was based on the core of the first complete Fortran 77 compiler to be implemented, the \"f77\" program by Feldman and Weinberger.",
+   "dev_url":"http://www.netlib.org/f2c/",
+   "doc_url":"http://www.netlib.org/f2c/README",
+   "home":"http://www.netlib.org/f2c/",
+   "license":"OTHER",
+   "license_family":"OTHER",
+   "license_file":"permission",
+   "summary":"f2c is a program to convert Fortran 77 to C code, developed at Bell Laboratories."
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"f2c",
+   "version":"20160103"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "unzip"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"f2c-20160103.tar",
+   "sha256":"a8b8daac7735cebbf16b7eab17d727e6be5c645f30d8ac1dd7e95662fd0eb376",
+   "url":"http://netlib.sandia.gov/cgi-bin/netlib/netlibfiles.tar?filename=netlib/f2c"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/f2c/f2c.h",
+    "conda inspect linkages -p $PREFIX f2c",
+    "conda inspect objects -p $PREFIX f2c",
+    "f2c --version",
+    "f2c test_main.f && ${CC} test_main.c -L${PREFIX}/lib -lf2c -I${PREFIX}/include -o test_main && ./test_main"
+   ],
+   "files":[
+    "test_main.f"
+   ],
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "unzip"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ },
  "pinning_version":"2018.08.21",
  "raw_meta_yaml":"{% set name = \"f2c\" %}\n{% set version = \"20160103\" %}\n{% set sha256 = \"a8b8daac7735cebbf16b7eab17d727e6be5c645f30d8ac1dd7e95662fd0eb376\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar\n  url: http://netlib.sandia.gov/cgi-bin/netlib/netlibfiles.tar?filename=netlib/{{name}}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  skip: True  # [vc<14 and win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - unzip  # [not win]\n  run:\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/f2c/f2c.h  # [not win]\n    - conda inspect linkages -p $PREFIX f2c  # [not win]\n    - conda inspect objects -p $PREFIX f2c  # [osx]\n    - f2c --version\n    - f2c test_main.f && ${CC} test_main.c -L${PREFIX}/lib -lf2c -I${PREFIX}/include -o test_main && ./test_main  # [not win]\n  requires:\n    - {{ compiler('c') }}\n  files:\n    - test_main.f\n\nabout:\n  home: http://www.netlib.org/f2c/\n  license: OTHER\n  license_family: OTHER\n  license_file: permission\n  summary: 'f2c is a program to convert Fortran 77 to C code, developed at Bell Laboratories.'\n  description:  The standalone f2c program was based on the core of the first complete Fortran 77\n                compiler to be implemented, the \"f77\" program by Feldman and Weinberger.\n  doc_url: http://www.netlib.org/f2c/README\n  dev_url: http://www.netlib.org/f2c/\n\nextra:\n  recipe-maintainers:\n    - giacomov\n    - jasercion\n    - Areustle\n",
  "req":{
@@ -177,5 +334,77 @@
   }
  },
  "url":"http://netlib.sandia.gov/cgi-bin/netlib/netlibfiles.tar?filename=netlib/f2c",
- "version":"20160103"
+ "version":"20160103",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The standalone f2c program was based on the core of the first complete Fortran 77 compiler to be implemented, the \"f77\" program by Feldman and Weinberger.",
+   "dev_url":"http://www.netlib.org/f2c/",
+   "doc_url":"http://www.netlib.org/f2c/README",
+   "home":"http://www.netlib.org/f2c/",
+   "license":"OTHER",
+   "license_family":"OTHER",
+   "license_file":"permission",
+   "summary":"f2c is a program to convert Fortran 77 to C code, developed at Bell Laboratories."
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"f2c",
+   "version":"20160103"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "fn":"f2c-20160103.tar",
+   "sha256":"a8b8daac7735cebbf16b7eab17d727e6be5c645f30d8ac1dd7e95662fd0eb376",
+   "url":"http://netlib.sandia.gov/cgi-bin/netlib/netlibfiles.tar?filename=netlib/f2c"
+  },
+  "test":{
+   "commands":[
+    "f2c --version"
+   ],
+   "files":[
+    "test_main.f"
+   ],
+   "requires":[
+    "c_compiler_stub"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  }
+ }
 }

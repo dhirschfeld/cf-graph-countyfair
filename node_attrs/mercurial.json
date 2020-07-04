@@ -147,6 +147,75 @@
  },
  "feedstock_name":"mercurial",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://mercurial-scm.org",
+   "license":"GPL2",
+   "license_file":"COPYING",
+   "summary":"Source control management tool"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ngoldbaum",
+    "paugier"
+   ]
+  },
+  "package":{
+   "name":"mercurial",
+   "version":"5.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"mercurial-5.4.tar.gz",
+   "sha256":"1df8d1978aefcbb65dc51e3666a452583f47aeaf3c5682e4c00a3b23cd805d6a",
+   "url":"https://mercurial-scm.org/release/mercurial-5.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hg --version"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://mercurial-scm.org",
@@ -214,6 +283,75 @@
   "5.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://mercurial-scm.org",
+   "license":"GPL2",
+   "license_file":"COPYING",
+   "summary":"Source control management tool"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ngoldbaum",
+    "paugier"
+   ]
+  },
+  "package":{
+   "name":"mercurial",
+   "version":"5.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"mercurial-5.4.tar.gz",
+   "sha256":"1df8d1978aefcbb65dc51e3666a452583f47aeaf3c5682e4c00a3b23cd805d6a",
+   "url":"https://mercurial-scm.org/release/mercurial-5.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hg --version"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.01.13.16.44",
  "raw_meta_yaml":"{% set version = \"5.4\" %}\n{% set sha256 = \"1df8d1978aefcbb65dc51e3666a452583f47aeaf3c5682e4c00a3b23cd805d6a\" %}\n\npackage:\n  name: mercurial\n  version: {{ version }}\n\nsource:\n  fn: mercurial-{{ version }}.tar.gz\n  url: https://mercurial-scm.org/release/mercurial-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and py3k]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools  # [win]\n  run:\n    - python\n    - setuptools  # [win]\n\ntest:\n  commands:\n    - hg --version\n\nabout:\n  home: http://mercurial-scm.org\n  license: GPL2\n  license_file: COPYING\n  summary: Source control management tool\n\nextra:\n  recipe-maintainers:\n    - ngoldbaum\n    - paugier\n",
  "req":{
@@ -282,5 +420,79 @@
   }
  },
  "url":"https://mercurial-scm.org/release/mercurial-4.9.1.tar.gz",
- "version":"5.4"
+ "version":"5.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://mercurial-scm.org",
+   "license":"GPL2",
+   "license_file":"COPYING",
+   "summary":"Source control management tool"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ngoldbaum",
+    "paugier"
+   ]
+  },
+  "package":{
+   "name":"mercurial",
+   "version":"5.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"mercurial-5.4.tar.gz",
+   "sha256":"1df8d1978aefcbb65dc51e3666a452583f47aeaf3c5682e4c00a3b23cd805d6a",
+   "url":"https://mercurial-scm.org/release/mercurial-5.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "hg --version"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

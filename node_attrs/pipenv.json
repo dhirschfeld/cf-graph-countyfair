@@ -57,6 +57,89 @@
  "conda-forge.yml":{},
  "feedstock_name":"pipenv",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://pipenv-fork.readthedocs.io/en/latest/",
+   "home":"https://github.com/pypa/pipenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python Development Workflow for Humans."
+  },
+  "build":{
+   "entry_points":[
+    "pipenv=pipenv:cli",
+    "pewtwo=pipenv.patched.pew.pew:pew",
+    "pipenv-resolver=pipenv.resolver:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "roccqqck"
+   ]
+  },
+  "package":{
+   "name":"pipenv",
+   "version":"2020.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pip >=18.0",
+    "python"
+   ],
+   "run":[
+    "certifi",
+    "pip >=18.0",
+    "python",
+    "setuptools >=36.2.1",
+    "virtualenv",
+    "virtualenv-clone >=0.2.5"
+   ]
+  },
+  "source":{
+   "sha256":"7dd49a7345fa5da7843907bab42a996dece474e45dd309dbd7619739dc60478b",
+   "url":"https://pypi.io/packages/source/p/pipenv/pipenv-2020.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pipenv --help"
+   ],
+   "imports":[
+    "pipenv"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "pip",
+    "python",
+    "setuptools",
+    "virtualenv",
+    "virtualenv-clone"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"https://pipenv-fork.readthedocs.io/en/latest/",
@@ -147,6 +230,89 @@
   "2020.6.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://pipenv-fork.readthedocs.io/en/latest/",
+   "home":"https://github.com/pypa/pipenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python Development Workflow for Humans."
+  },
+  "build":{
+   "entry_points":[
+    "pipenv=pipenv:cli",
+    "pewtwo=pipenv.patched.pew.pew:pew",
+    "pipenv-resolver=pipenv.resolver:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "roccqqck"
+   ]
+  },
+  "package":{
+   "name":"pipenv",
+   "version":"2020.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pip >=18.0",
+    "python"
+   ],
+   "run":[
+    "certifi",
+    "pip >=18.0",
+    "python",
+    "setuptools >=36.2.1",
+    "virtualenv",
+    "virtualenv-clone >=0.2.5"
+   ]
+  },
+  "source":{
+   "sha256":"7dd49a7345fa5da7843907bab42a996dece474e45dd309dbd7619739dc60478b",
+   "url":"https://pypi.io/packages/source/p/pipenv/pipenv-2020.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pipenv --help"
+   ],
+   "imports":[
+    "pipenv"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "pip",
+    "python",
+    "setuptools",
+    "virtualenv",
+    "virtualenv-clone"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.01.18.18.56",
  "raw_meta_yaml":"{% set name = \"pipenv\" %}\n{% set version = \"2020.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7dd49a7345fa5da7843907bab42a996dece474e45dd309dbd7619739dc60478b\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - pipenv=pipenv:cli\n    - pewtwo=pipenv.patched.pew.pew:pew\n    - pipenv-resolver=pipenv.resolver:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip >=18.0\n    - python\n  run:\n    - certifi\n    - pip >=18.0\n    - python\n    - setuptools >=36.2.1\n    - virtualenv\n    - virtualenv-clone >=0.2.5\n\ntest:\n  imports:\n    - pipenv\n\n  commands:\n    - pipenv --help\n\nabout:\n  home: https://github.com/pypa/pipenv\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Development Workflow for Humans.\n  doc_url: https://pipenv-fork.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - roccqqck\n",
  "req":{
@@ -219,5 +385,88 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pipenv/pipenv-2018.5.18.tar.gz",
- "version":"2020.6.2"
+ "version":"2020.6.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://pipenv-fork.readthedocs.io/en/latest/",
+   "home":"https://github.com/pypa/pipenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python Development Workflow for Humans."
+  },
+  "build":{
+   "entry_points":[
+    "pipenv=pipenv:cli",
+    "pewtwo=pipenv.patched.pew.pew:pew",
+    "pipenv-resolver=pipenv.resolver:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "roccqqck"
+   ]
+  },
+  "package":{
+   "name":"pipenv",
+   "version":"2020.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pip >=18.0",
+    "python"
+   ],
+   "run":[
+    "certifi",
+    "pip >=18.0",
+    "python",
+    "setuptools >=36.2.1",
+    "virtualenv",
+    "virtualenv-clone >=0.2.5"
+   ]
+  },
+  "source":{
+   "sha256":"7dd49a7345fa5da7843907bab42a996dece474e45dd309dbd7619739dc60478b",
+   "url":"https://pypi.io/packages/source/p/pipenv/pipenv-2020.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pipenv --help"
+   ],
+   "imports":[
+    "pipenv"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "pip",
+    "python",
+    "setuptools",
+    "virtualenv",
+    "virtualenv-clone"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

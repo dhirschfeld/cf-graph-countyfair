@@ -98,6 +98,105 @@
  },
  "feedstock_name":"r-sem",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://socserv.socsci.mcmaster.ca/jfox/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions for fitting general linear structural equation models (with observed and latent variables) using the RAM approach, and for fitting structural equations in observed-variable models by two-stage least squares."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-sem",
+   "version":"3.1_11"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ],
+   "run":[
+    "r-base",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ]
+  },
+  "source":{
+   "fn":"sem_3.1-11.tar.gz",
+   "sha256":"33b1ad7695db13af8cdd214f5d388db494528b433c61c7ad89970cefcc8b430e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sem_3.1-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sem/sem_3.1-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sem')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://socserv.socsci.mcmaster.ca/jfox/",
@@ -225,6 +324,105 @@
   "3.1_11":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://socserv.socsci.mcmaster.ca/jfox/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions for fitting general linear structural equation models (with observed and latent variables) using the RAM approach, and for fitting structural equations in observed-variable models by two-stage least squares."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-sem",
+   "version":"3.1_11"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ],
+   "run":[
+    "r-base",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ]
+  },
+  "source":{
+   "fn":"sem_3.1-11.tar.gz",
+   "sha256":"33b1ad7695db13af8cdd214f5d388db494528b433c61c7ad89970cefcc8b430e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sem_3.1-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sem/sem_3.1-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sem')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.19.13.30.35",
  "raw_meta_yaml":"{% set version = \"3.1-11\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sem\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: sem_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/sem_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sem/sem_{{ version }}.tar.gz\n  sha256: 33b1ad7695db13af8cdd214f5d388db494528b433c61c7ad89970cefcc8b430e\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('cxx') }}      # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('m2w64_cxx') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-mass\n    - r-boot\n    - r-matrixcalc\n    - r-mi >=0.9_99\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-mass\n    - r-boot\n    - r-matrixcalc\n    - r-mi >=0.9_99\n\ntest:\n  commands:\n    - $R -e \"library('sem')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sem')\\\"\"  # [win]\n\nabout:\n  home: http://socserv.socsci.mcmaster.ca/jfox/\n  license: GPL (>= 2)\n  summary: Functions for fitting general linear structural equation models (with observed and latent variables) using the RAM approach, and for fitting structural equations in observed-variable models by two-stage least squares.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
@@ -339,5 +537,115 @@
   "https://cran.r-project.org/src/contrib/sem_3.1-9.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/sem/sem_3.1-9.tar.gz"
  ],
- "version":"3.1_11"
+ "version":"3.1_11",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://socserv.socsci.mcmaster.ca/jfox/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Functions for fitting general linear structural equation models (with observed and latent variables) using the RAM approach, and for fitting structural equations in observed-variable models by two-stage least squares."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-sem",
+   "version":"3.1_11"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs",
+    "r-mass",
+    "r-boot",
+    "r-matrixcalc",
+    "r-mi >=0.9_99"
+   ]
+  },
+  "source":{
+   "fn":"sem_3.1-11.tar.gz",
+   "sha256":"33b1ad7695db13af8cdd214f5d388db494528b433c61c7ad89970cefcc8b430e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sem_3.1-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sem/sem_3.1-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('sem')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base",
+    "r-boot",
+    "r-mass",
+    "r-matrixcalc",
+    "r-mi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -165,6 +165,567 @@
  },
  "feedstock_name":"hdf5",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.hdfgroup.org/HDF5/",
+   "license":"HDF5",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"HDF5 is a data model, library, and file format for storing and managing data"
+  },
+  "build":{
+   "number":"100",
+   "string":"nompi_h_100"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hdf5_split",
+   "version":"1.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "nompi",
+    "zlib"
+   ],
+   "run":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch"
+   ],
+   "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
+   "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "nompi",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://www.hdfgroup.org/HDF5/",
+   "license":"HDF5",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"HDF5 is a data model, library, and file format for storing and managing data"
+  },
+  "build":{
+   "number":"100",
+   "string":"nompi_h_100"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hdf5_split",
+   "version":"1.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "nompi",
+    "zlib"
+   ],
+   "run":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch"
+   ],
+   "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
+   "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz"
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "nompi",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://www.hdfgroup.org/HDF5/",
+   "license":"HDF5",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"HDF5 is a data model, library, and file format for storing and managing data"
+  },
+  "build":{
+   "number":"100",
+   "string":"nompi_h_100"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hdf5_split",
+   "version":"1.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "nompi",
+    "zlib"
+   ],
+   "run":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch"
+   ],
+   "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
+   "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz"
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "nompi",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.hdfgroup.org/HDF5/",
@@ -180,6 +741,28 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay",
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay",
     "jakirkham",
     "gillins",
     "groutr",
@@ -460,6 +1043,188 @@
       "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
      ]
     }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
    }
   ],
   "package":{
@@ -481,6 +1246,16 @@
     "cxx_compiler_stub",
     "fortran_compiler_stub",
     "libtool",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
     "make"
    ],
    "host":[
@@ -489,9 +1264,17 @@
     "nompi",
     "zlib",
     "nompi",
+    "zlib",
+    "nompi",
+    "zlib",
+    "nompi",
     "zlib"
    ],
    "run":[
+    "nompi",
+    "zlib",
+    "nompi",
+    "zlib",
     "nompi",
     "zlib",
     "nompi",
@@ -511,6 +1294,12 @@
     "patches/osx_configure.patch",
     "patches/test_Makefile.in.patch",
     "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch",
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch",
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
     "patches/testh5diff.sh.in.patch"
    ],
    "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
@@ -519,6 +1308,194 @@
  },
  "name":"hdf5_split",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.hdfgroup.org/HDF5/",
+   "license":"HDF5",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"HDF5 is a data model, library, and file format for storing and managing data"
+  },
+  "build":{
+   "number":"100",
+   "string":"nompi_h_100"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "libtool",
+      "make"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "command -v h5c++",
+      "command -v h5cc",
+      "command -v h5fc",
+      "command -v h5perf_serial",
+      "command -v h5redeploy",
+      "command -v gif2h5",
+      "command -v h52gif",
+      "command -v h5copy",
+      "command -v h5debug",
+      "command -v h5diff",
+      "command -v h5dump",
+      "command -v h5import",
+      "command -v h5jam",
+      "command -v h5ls",
+      "command -v h5mkgrp",
+      "command -v h5repack",
+      "command -v h5repart",
+      "command -v h5stat",
+      "command -v h5unjam",
+      "test -f $PREFIX/lib/libhdf5${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_cpp${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp${SHLIB_EXT}"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub"
+     ],
+     "run":[
+      "hdf5"
+     ]
+    },
+    "script":"install-static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libhdf5.a",
+      "test -f $PREFIX/lib/libhdf5_cpp.a",
+      "test -f $PREFIX/lib/libhdf5_hl.a",
+      "test -f $PREFIX/lib/libhdf5_hl_cpp.a"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hdf5_split",
+   "version":"1.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "nompi",
+    "zlib"
+   ],
+   "run":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch",
+    "patches/osx_configure.patch"
+   ],
+   "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
+   "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "nompi",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
+   ]
+  }
+ },
  "outputs_names":[
   "hdf5",
   "hdf5-static"
@@ -619,5 +1596,160 @@
   }
  },
  "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.5/src/hdf5-1.10.5.tar.gz",
- "version":"1.10.6"
+ "version":"1.10.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.hdfgroup.org/HDF5/",
+   "license":"HDF5",
+   "license_family":"BSD",
+   "license_file":"COPYING",
+   "summary":"HDF5 is a data model, library, and file format for storing and managing data"
+  },
+  "build":{
+   "number":"100",
+   "skip":true,
+   "string":"nompi_h_100"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "gillins",
+    "groutr",
+    "ocefpaf",
+    "astrofrog-conda-forge",
+    "marqh",
+    "marcelotrevisani",
+    "scopatz",
+    "beckermr",
+    "davidbrochart",
+    "SylvainCorlay"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "hdf5"
+     ],
+     "skip":true,
+     "string":"nompi_h_100"
+    },
+    "name":"hdf5",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake >=3.2.2",
+      "ninja"
+     ],
+     "host":[
+      "nompi",
+      "zlib"
+     ],
+     "run":[
+      "nompi",
+      "zlib"
+     ]
+    },
+    "script":"install.bat",
+    "test":{
+     "commands":[
+      "where gif2h5",
+      "where h52gif",
+      "where h5copy",
+      "where h5debug",
+      "where h5diff",
+      "where h5dump",
+      "where h5import",
+      "where h5jam",
+      "where h5ls",
+      "where h5mkgrp",
+      "where h5repack",
+      "where h5repart",
+      "where h5stat",
+      "where h5unjam",
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\hdf5.lib exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\hdf5.dll exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\hdf5_cpp.lib exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\hdf5_cpp.dll exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\hdf5_hl.lib exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\hdf5_hl.dll exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\lib\\\\hdf5_hl_cpp.lib exit 1",
+      "if not exist %PREFIX%\\\\Library\\\\bin\\\\hdf5_hl_cpp.dll exit 1"
+     ],
+     "files":[
+      "h5_cmprss.c",
+      "h5tutr_cmprss.cpp",
+      "h5_cmprss.f90",
+      "compound_fortran2003.f90"
+     ],
+     "requires":[
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hdf5_split",
+   "version":"1.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=3.2.2",
+    "ninja"
+   ],
+   "host":[
+    "nompi",
+    "zlib"
+   ],
+   "run":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/test_Makefile.in.patch",
+    "patches/testpar_Makefile.in.patch",
+    "patches/testh5diff.sh.in.patch"
+   ],
+   "sha256":"5f9a3ee85db4ea1d3b1fa9159352aebc2af72732fc2f58c96a3f0768dba0e9aa",
+   "url":"https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nompi",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  }
+ }
 }

@@ -40,6 +40,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"turtlefsi",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"TurtleFSI is a monolithic fluid structure intreaction solver, solving for\nNavier-Stokes in the fluid, and hyperelasticity in the solid. TurtleFSI\nbenefits from the HPC capabilities in FEniCS.\n",
+   "dev_url":"https://github.com/KVSLab/turtleFSI",
+   "doc_url":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "home":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A monolithic fluid structure interaction solver based on FEniCS."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "aslakbergersen",
+    "albansouche"
+   ]
+  },
+  "package":{
+   "name":"turtlefsi",
+   "version":"1.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "fenics",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"352e82881f10cfa3bdbb2f126f3cde8ca97b488e061bde480ee7882bbde1c47c",
+   "url":"https://github.com/KVSLab/turtleFSI/archive/v1.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest ./tests/"
+   ],
+   "imports":[
+    "turtleFSI"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/*"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fenics",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"TurtleFSI is a monolithic fluid structure intreaction solver, solving for\nNavier-Stokes in the fluid, and hyperelasticity in the solid. TurtleFSI\nbenefits from the HPC capabilities in FEniCS.\n",
@@ -127,6 +212,91 @@
   "1.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"TurtleFSI is a monolithic fluid structure intreaction solver, solving for\nNavier-Stokes in the fluid, and hyperelasticity in the solid. TurtleFSI\nbenefits from the HPC capabilities in FEniCS.\n",
+   "dev_url":"https://github.com/KVSLab/turtleFSI",
+   "doc_url":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "home":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A monolithic fluid structure interaction solver based on FEniCS."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "aslakbergersen",
+    "albansouche"
+   ]
+  },
+  "package":{
+   "name":"turtlefsi",
+   "version":"1.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "fenics",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"352e82881f10cfa3bdbb2f126f3cde8ca97b488e061bde480ee7882bbde1c47c",
+   "url":"https://github.com/KVSLab/turtleFSI/archive/v1.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest ./tests/"
+   ],
+   "imports":[
+    "turtleFSI"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/*"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fenics",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"turtleFSI\" %}\n{% set version = \"1.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/KVSLab/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 352e82881f10cfa3bdbb2f126f3cde8ca97b488e061bde480ee7882bbde1c47c\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3\n    - setuptools\n    - pip\n\n  run:\n    - python >=3\n    - fenics\n    - numpy\n\ntest:\n  imports:\n    - turtleFSI\n  source_files:\n    - tests/*\n  requires:\n    - pytest\n  commands:\n    - pytest ./tests/\n\nabout:\n  summary: A monolithic fluid structure interaction solver based on FEniCS.\n  description: |\n    TurtleFSI is a monolithic fluid structure intreaction solver, solving for\n    Navier-Stokes in the fluid, and hyperelasticity in the solid. TurtleFSI\n    benefits from the HPC capabilities in FEniCS.\n  home: https://turtlefsi2.readthedocs.io/en/latest/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  doc_url: https://turtlefsi2.readthedocs.io/en/latest/\n  dev_url: https://github.com/KVSLab/turtleFSI\n\nextra:\n  recipe-maintainers:\n    - aslakbergersen\n    - albansouche\n",
  "req":{
@@ -198,5 +368,90 @@
   }
  },
  "url":"https://github.com/KVSLab/turtleFSI/archive/v1.1.tar.gz",
- "version":"1.4"
+ "version":"1.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"TurtleFSI is a monolithic fluid structure intreaction solver, solving for\nNavier-Stokes in the fluid, and hyperelasticity in the solid. TurtleFSI\nbenefits from the HPC capabilities in FEniCS.\n",
+   "dev_url":"https://github.com/KVSLab/turtleFSI",
+   "doc_url":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "home":"https://turtlefsi2.readthedocs.io/en/latest/",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A monolithic fluid structure interaction solver based on FEniCS."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "aslakbergersen",
+    "albansouche"
+   ]
+  },
+  "package":{
+   "name":"turtlefsi",
+   "version":"1.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "fenics",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"352e82881f10cfa3bdbb2f126f3cde8ca97b488e061bde480ee7882bbde1c47c",
+   "url":"https://github.com/KVSLab/turtleFSI/archive/v1.4.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest ./tests/"
+   ],
+   "imports":[
+    "turtleFSI"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/*"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fenics",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

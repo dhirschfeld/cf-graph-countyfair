@@ -44,6 +44,80 @@
  "conda-forge.yml":{},
  "feedstock_name":"openalea.deploy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"OpenAlea.Deploy support the installation of OpenAlea packages for Python 2.7+ and\nPython 3.3+. It is an extension of setuptools.\nFeatures :\n\n    Discover and manage packages in EGG format\n    Install shared libraries, include and libs in eggs\n    Support 'develop' command\n    Call SCons or CMake scripts in setup.py\n    Create namespaces if necessary\n",
+   "dev_url":"https://github.com/openalea/deploy",
+   "home":"http://github.com/openalea/deploy",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"OpenAlea.Deploy support the installation of OpenAlea packages."
+  },
+  "build":{
+   "number":"2",
+   "preserve_egg_dir":true,
+   "script":" setup.py install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pradal",
+    "fredboudon"
+   ]
+  },
+  "package":{
+   "name":"openalea.deploy",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "six",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"0508b493a9dcac9577f8e7f0092b91bbc01394243dbcc562b3832d39d8686bb9",
+   "url":"https://github.com/openalea/deploy/archive/v2.1.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "openalea.deploy"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "path.py",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"OpenAlea.Deploy support the installation of OpenAlea packages for Python 2.7+ and\nPython 3.3+. It is an extension of setuptools.\nFeatures :\n\n    Discover and manage packages in EGG format\n    Install shared libraries, include and libs in eggs\n    Support 'develop' command\n    Call SCons or CMake scripts in setup.py\n    Create namespaces if necessary\n",
@@ -114,6 +188,80 @@
  },
  "name":"openalea.deploy",
  "new_version":"2.1.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"OpenAlea.Deploy support the installation of OpenAlea packages for Python 2.7+ and\nPython 3.3+. It is an extension of setuptools.\nFeatures :\n\n    Discover and manage packages in EGG format\n    Install shared libraries, include and libs in eggs\n    Support 'develop' command\n    Call SCons or CMake scripts in setup.py\n    Create namespaces if necessary\n",
+   "dev_url":"https://github.com/openalea/deploy",
+   "home":"http://github.com/openalea/deploy",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"OpenAlea.Deploy support the installation of OpenAlea packages."
+  },
+  "build":{
+   "number":"2",
+   "preserve_egg_dir":true,
+   "script":" setup.py install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pradal",
+    "fredboudon"
+   ]
+  },
+  "package":{
+   "name":"openalea.deploy",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "six",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"0508b493a9dcac9577f8e7f0092b91bbc01394243dbcc562b3832d39d8686bb9",
+   "url":"https://github.com/openalea/deploy/archive/v2.1.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "openalea.deploy"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "path.py",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.19",
  "raw_meta_yaml":"{% set name = \"openalea.deploy\" %}\n{% set version = \"2.1.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/openalea/deploy/archive/v{{ version }}.tar.gz\n  sha256: 0508b493a9dcac9577f8e7f0092b91bbc01394243dbcc562b3832d39d8686bb9\n\nbuild:\n  number: 2\n  script: \"{{ PYTHON }} setup.py install\"\n  preserve_egg_dir: True\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - six\n  run:\n    - python\n    - setuptools\n    - pywin32  # [win]\n    - six\n    - path.py\n\n\ntest:\n  imports:\n    - openalea.deploy\n\nabout:\n  home: http://github.com/openalea/deploy\n  license: CECILL-C\n  license_file: LICENSE\n  summary: OpenAlea.Deploy support the installation of OpenAlea packages.\n\n  # The remaining entries in this section are optional, but recommended.\n  description: |\n    OpenAlea.Deploy support the installation of OpenAlea packages for Python 2.7+ and\n    Python 3.3+. It is an extension of setuptools.\n    Features :\n\n        Discover and manage packages in EGG format\n        Install shared libraries, include and libs in eggs\n        Support 'develop' command\n        Call SCons or CMake scripts in setup.py\n        Create namespaces if necessary\n\n  dev_url: https://github.com/openalea/deploy\n\nextra:\n  recipe-maintainers:\n    - pradal\n    - fredboudon\n",
  "req":{
@@ -185,5 +333,81 @@
   }
  },
  "url":"https://github.com/openalea/deploy/archive/v2.1.7.tar.gz",
- "version":"2.1.8"
+ "version":"2.1.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"OpenAlea.Deploy support the installation of OpenAlea packages for Python 2.7+ and\nPython 3.3+. It is an extension of setuptools.\nFeatures :\n\n    Discover and manage packages in EGG format\n    Install shared libraries, include and libs in eggs\n    Support 'develop' command\n    Call SCons or CMake scripts in setup.py\n    Create namespaces if necessary\n",
+   "dev_url":"https://github.com/openalea/deploy",
+   "home":"http://github.com/openalea/deploy",
+   "license":"CECILL-C",
+   "license_file":"LICENSE",
+   "summary":"OpenAlea.Deploy support the installation of OpenAlea packages."
+  },
+  "build":{
+   "number":"2",
+   "preserve_egg_dir":true,
+   "script":" setup.py install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pradal",
+    "fredboudon"
+   ]
+  },
+  "package":{
+   "name":"openalea.deploy",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools",
+    "six"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "pywin32",
+    "six",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"0508b493a9dcac9577f8e7f0092b91bbc01394243dbcc562b3832d39d8686bb9",
+   "url":"https://github.com/openalea/deploy/archive/v2.1.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "openalea.deploy"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "path.py",
+    "python",
+    "pywin32",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

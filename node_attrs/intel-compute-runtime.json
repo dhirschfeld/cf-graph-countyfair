@@ -448,6 +448,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"intel-compute-runtime",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/intel/compute-runtime",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Intel(R) Graphics Compute Runtime for OpenCL(TM)"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"intel-compute-runtime",
+   "version":"20.11.16158"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ],
+   "run":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "source":{
+   "patches":[
+    "install_icd.diff"
+   ],
+   "sha256":"1b07b00c9a4181415125d9afeceed30fca95a3e35b6cee03d3b0342a0355fb55",
+   "url":"https://github.com/intel/compute-runtime/archive/20.11.16158.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/intel-opencl/libigdrcl${SHLIB_EXT}",
+    "test -f ${PREFIX}/etc/OpenCL/vendors/intel.icd"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/intel/compute-runtime",
@@ -526,6 +605,86 @@
   "20.15.16524":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/intel/compute-runtime",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Intel(R) Graphics Compute Runtime for OpenCL(TM)"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"intel-compute-runtime",
+   "version":"20.11.16158"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ],
+   "run":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "source":{
+   "patches":[
+    "install_icd.diff"
+   ],
+   "sha256":"1b07b00c9a4181415125d9afeceed30fca95a3e35b6cee03d3b0342a0355fb55",
+   "url":"https://github.com/intel/compute-runtime/archive/20.11.16158.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/intel-opencl/libigdrcl${SHLIB_EXT}",
+    "test -f ${PREFIX}/etc/OpenCL/vendors/intel.icd"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.17.09.06.29",
  "raw_meta_yaml":"{% set version = \"20.11.16158\" %}\n\npackage:\n  name: intel-compute-runtime\n  version: {{ version }}\n\nsource:\n  url: https://github.com/intel/compute-runtime/archive/{{ version }}.tar.gz\n  sha256: 1b07b00c9a4181415125d9afeceed30fca95a3e35b6cee03d3b0342a0355fb55\n  patches:\n    - install_icd.diff\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - pkg-config\n  host:\n    - intel-gmmlib\n    - intel-graphics-compiler\n  run:\n    - {{ pin_compatible(\"intel-gmmlib\", exact=True) }}\n    - {{ pin_compatible(\"intel-graphics-compiler\", exact=True) }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/intel-opencl/libigdrcl${SHLIB_EXT}  # [unix]\n    - test -f ${PREFIX}/etc/OpenCL/vendors/intel.icd  # [unix]\n\nabout:\n  home: https://github.com/intel/compute-runtime\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Intel(R) Graphics Compute Runtime for OpenCL(TM)\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "req":{
@@ -600,5 +759,82 @@
   }
  },
  "url":"https://github.com/intel/compute-runtime/archive/19.38.14237.tar.gz",
- "version":"20.11.16158"
+ "version":"20.11.16158",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/intel/compute-runtime",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Intel(R) Graphics Compute Runtime for OpenCL(TM)"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"intel-compute-runtime",
+   "version":"20.11.16158"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ],
+   "run":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "source":{
+   "patches":[
+    "install_icd.diff"
+   ],
+   "sha256":"1b07b00c9a4181415125d9afeceed30fca95a3e35b6cee03d3b0342a0355fb55",
+   "url":"https://github.com/intel/compute-runtime/archive/20.11.16158.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "intel-gmmlib",
+    "intel-graphics-compiler"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -97,6 +97,83 @@
  },
  "feedstock_name":"r-highr",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/yihui/highr",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"Provides syntax highlighting for R source code. Currently it supports LaTeX and HTML output. Source code of other languages is supported via Andre Simon's highlight package (<http://www.andre-simon.de>)."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-highr",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"highr_0.8.tar.gz",
+   "sha256":"4bd01fba995f68c947a99bdf9aca15327a5320151e10bd0326fad50a6d8bc657",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highr_0.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highr/highr_0.8.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('highr')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/yihui/highr",
@@ -183,6 +260,83 @@
  },
  "name":"r-highr",
  "new_version":"0.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/yihui/highr",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"Provides syntax highlighting for R source code. Currently it supports LaTeX and HTML output. Source code of other languages is supported via Andre Simon's highlight package (<http://www.andre-simon.de>)."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-highr",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"highr_0.8.tar.gz",
+   "sha256":"4bd01fba995f68c947a99bdf9aca15327a5320151e10bd0326fad50a6d8bc657",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highr_0.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highr/highr_0.8.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('highr')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.02.02.22.03",
  "raw_meta_yaml":"{% set version = \"0.8\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-highr\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: highr_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/highr_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/highr/highr_{{ version }}.tar.gz\n  sha256: 4bd01fba995f68c947a99bdf9aca15327a5320151e10bd0326fad50a6d8bc657\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 2\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('highr')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('highr')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/yihui/highr\n  license: GPL\n  summary: Provides syntax highlighting for R source code. Currently it supports LaTeX and HTML output. Source code of other languages is supported via Andre Simon's highlight package (<http://www.andre-simon.de>).\n  license_family: GPL\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "req":{
@@ -245,5 +399,87 @@
   "https://cran.r-project.org/src/contrib/highr_0.8.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/highr/highr_0.8.tar.gz"
  ],
- "version":"0.8"
+ "version":"0.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/yihui/highr",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"Provides syntax highlighting for R source code. Currently it supports LaTeX and HTML output. Source code of other languages is supported via Andre Simon's highlight package (<http://www.andre-simon.de>)."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "package":{
+   "name":"r-highr",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"highr_0.8.tar.gz",
+   "sha256":"4bd01fba995f68c947a99bdf9aca15327a5320151e10bd0326fad50a6d8bc657",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highr_0.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highr/highr_0.8.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('highr')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -135,6 +135,113 @@
  },
  "feedstock_name":"gpaw",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"GPAW is a density-functional theory (DFT) Python code based on the\nprojector-augmented wave (PAW) method and the atomic simulation environment\n(ASE). It uses plane-waves, atom-centered basis-functions or real-space\nuniform grids combined with multigrid methods.\n",
+   "dev_url":"https://gitlab.com/gpaw/gpaw",
+   "doc_url":"https://wiki.fysik.dtu.dk/gpaw/documentation/documentation.html",
+   "home":"https://wiki.fysik.dtu.dk/gpaw",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"GPAW: DFT and beyond within the projector-augmented wave method"
+  },
+  "build":{
+   "number":"1",
+   "string":"py__1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bjodah",
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"gpaw",
+   "version":"20.1.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "libblas",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "ase"
+   ],
+   "run":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "scipy",
+    "ase",
+    "gpaw-data"
+   ]
+  },
+  "source":{
+   "patches":[
+    "001_config-py.patch"
+   ],
+   "sha256":"c84307eb9943852d78d966c0c8856fcefdefa68621139906909908fb641b8421",
+   "url":"https://pypi.io/packages/source/g/gpaw/gpaw-20.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "test -x $PREFIX/bin/gpaw",
+    "mpiexec -np 1 python -m gpaw test --reverse --from generic/mixer.py"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "libblas",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "gpaw-data",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"GPAW is a density-functional theory (DFT) Python code based on the\nprojector-augmented wave (PAW) method and the atomic simulation environment\n(ASE). It uses plane-waves, atom-centered basis-functions or real-space\nuniform grids combined with multigrid methods.\n",
@@ -258,6 +365,114 @@
  },
  "name":"gpaw",
  "new_version":"20.1.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"GPAW is a density-functional theory (DFT) Python code based on the\nprojector-augmented wave (PAW) method and the atomic simulation environment\n(ASE). It uses plane-waves, atom-centered basis-functions or real-space\nuniform grids combined with multigrid methods.\n",
+   "dev_url":"https://gitlab.com/gpaw/gpaw",
+   "doc_url":"https://wiki.fysik.dtu.dk/gpaw/documentation/documentation.html",
+   "home":"https://wiki.fysik.dtu.dk/gpaw",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"GPAW: DFT and beyond within the projector-augmented wave method"
+  },
+  "build":{
+   "number":"1",
+   "skip":true,
+   "string":"py__1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bjodah",
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"gpaw",
+   "version":"20.1.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "libblas",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "ase"
+   ],
+   "run":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "scipy",
+    "ase",
+    "gpaw-data"
+   ]
+  },
+  "source":{
+   "patches":[
+    "001_config-py.patch"
+   ],
+   "sha256":"c84307eb9943852d78d966c0c8856fcefdefa68621139906909908fb641b8421",
+   "url":"https://pypi.io/packages/source/g/gpaw/gpaw-20.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "test -x $PREFIX/bin/gpaw",
+    "mpiexec -np 1 python -m gpaw test --reverse --from generic/mixer.py"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "libblas",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "gpaw-data",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set build = 1 %}\n{% set name = \"gpaw\" %}\n{% set version = \"20.1.0\" %}\n{% set sha256 = \"c84307eb9943852d78d966c0c8856fcefdefa68621139906909908fb641b8421\" %}\n{% set build_string = \"py{}_{}_{}\".format(environ.get('CONDA_PY', ''), mpi, build) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 001_config-py.patch\n    # patch 001 is needed because gpaw's config.py assumes that libpython is a dynamic library,\n    # whereas the python version used by conda-forge provides a static library. Hopefully gpaw-devs\n    # will accept this as a future change upstream.\n\nbuild:\n  number: {{ build }}\n  string: {{ build_string }}\n  skip: True  # [not linux]\n  skip: True  # [py<36]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - python\n    - pip\n    - libxc <5.0\n    - libblas\n    - scalapack\n    - fftw\n    - numpy\n    - ase\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - python\n    - pip\n    - libxc <5.0\n    - scalapack\n    - fftw\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - ase\n    - gpaw-data\n\ntest:\n  commands:\n    - python -m pip check\n    - gpaw test -j 1 --reverse --from generic/mixer.py                          # [mpi == 'nompi']\n    - test -x $PREFIX/bin/gpaw                                                  # [mpi != 'nompi']\n    - export OMPI_MCA_plm=isolated                                              # [mpi == 'openmpi']\n    - export OMPI_MCA_btl_vader_single_copy_mechanism=none                      # [mpi == 'openmpi']\n    - export OMPI_MCA_rmaps_base_oversubscribe=yes                              # [mpi == 'openmpi']\n    - mpiexec -np 1 python -m gpaw test --reverse --from generic/mixer.py       # [mpi != 'nompi']\n\nabout:\n  home: https://wiki.fysik.dtu.dk/gpaw\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'GPAW: DFT and beyond within the projector-augmented wave method'\n  description: |\n    GPAW is a density-functional theory (DFT) Python code based on the\n    projector-augmented wave (PAW) method and the atomic simulation environment\n    (ASE). It uses plane-waves, atom-centered basis-functions or real-space\n    uniform grids combined with multigrid methods.\n  doc_url: https://wiki.fysik.dtu.dk/gpaw/documentation/documentation.html\n  dev_url: https://gitlab.com/gpaw/gpaw\n\nextra:\n  recipe-maintainers:\n    - bjodah\n    - jan-janssen\n",
  "req":{
@@ -357,5 +572,113 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/gpaw/gpaw-19.8.1.tar.gz",
- "version":"20.1.0"
+ "version":"20.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"GPAW is a density-functional theory (DFT) Python code based on the\nprojector-augmented wave (PAW) method and the atomic simulation environment\n(ASE). It uses plane-waves, atom-centered basis-functions or real-space\nuniform grids combined with multigrid methods.\n",
+   "dev_url":"https://gitlab.com/gpaw/gpaw",
+   "doc_url":"https://wiki.fysik.dtu.dk/gpaw/documentation/documentation.html",
+   "home":"https://wiki.fysik.dtu.dk/gpaw",
+   "license":"GPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"GPAW: DFT and beyond within the projector-augmented wave method"
+  },
+  "build":{
+   "number":"1",
+   "skip":true,
+   "string":"py__1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bjodah",
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"gpaw",
+   "version":"20.1.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "libblas",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "ase"
+   ],
+   "run":[
+    null,
+    "python",
+    "pip",
+    "libxc <5.0",
+    "scalapack",
+    "fftw",
+    "numpy",
+    "scipy",
+    "ase",
+    "gpaw-data"
+   ]
+  },
+  "source":{
+   "patches":[
+    "001_config-py.patch"
+   ],
+   "sha256":"c84307eb9943852d78d966c0c8856fcefdefa68621139906909908fb641b8421",
+   "url":"https://pypi.io/packages/source/g/gpaw/gpaw-20.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "test -x $PREFIX/bin/gpaw",
+    "mpiexec -np 1 python -m gpaw test --reverse --from generic/mixer.py"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "libblas",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "fftw",
+    "gpaw-data",
+    "libxc",
+    "numpy",
+    "pip",
+    "python",
+    "scalapack",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

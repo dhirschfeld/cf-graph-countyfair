@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxfixes-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXfixes-5.0.3/COPYING",
+   "summary":"(CDT) X Fixes library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxfixes-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxfixes-devel-cos7-aarch64",
+    "requirements":[
+     "libxfixes-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxfixes-cos7-aarch64",
+   "version":"5.0.3"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"e20b03ef865873f1cc6903e1e78c898d593e114df4e3436caaf20b49f2c994c8",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-5.0.3-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b8eb45abf6e6f4cb9b149821aedb6fedbe0b307d609c46773063701baa62420a",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-devel-5.0.3-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxfixes-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.x.org",
@@ -177,6 +278,107 @@
  },
  "name":"libxfixes-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXfixes-5.0.3/COPYING",
+   "summary":"(CDT) X Fixes library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxfixes-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxfixes-devel-cos7-aarch64",
+    "requirements":[
+     "libxfixes-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxfixes-cos7-aarch64",
+   "version":"5.0.3"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"e20b03ef865873f1cc6903e1e78c898d593e114df4e3436caaf20b49f2c994c8",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-5.0.3-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b8eb45abf6e6f4cb9b149821aedb6fedbe0b307d609c46773063701baa62420a",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-devel-5.0.3-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxfixes-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxfixes-cos7-aarch64",
   "libxfixes-devel-cos7-aarch64"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-5.0.3-1.el7.aarch64.rpm",
- "version":"5.0.3"
+ "version":"5.0.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXfixes-5.0.3/COPYING",
+   "summary":"(CDT) X Fixes library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxfixes-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxfixes-devel-cos7-aarch64",
+    "requirements":[
+     "libxfixes-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxfixes-cos7-aarch64",
+   "version":"5.0.3"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"e20b03ef865873f1cc6903e1e78c898d593e114df4e3436caaf20b49f2c994c8",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-5.0.3-1.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b8eb45abf6e6f4cb9b149821aedb6fedbe0b307d609c46773063701baa62420a",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libXfixes-devel-5.0.3-1.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libXfixes.so.3\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxfixes-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

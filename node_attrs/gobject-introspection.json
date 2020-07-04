@@ -102,6 +102,315 @@
  },
  "feedstock_name":"gobject-introspection",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
+   "license":"LGPL-2.0-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"Middleware for binding GObject-based code to other languages."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"gobject-introspection",
+   "version":"1.64.1"
+  },
+  "requirements":{
+   "build":[
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
+    "python"
+   ],
+   "run":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "meson-rpaths.patch",
+    "gcc7-rpath-link.patch",
+    "test-fix.patch"
+   ],
+   "sha256":"80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7",
+   "url":"https://download.gnome.org/sources/gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "c_compiler_stub",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "glib",
+    "libffi",
+    "meson",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
+   "license":"LGPL-2.0-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"Middleware for binding GObject-based code to other languages."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"gobject-introspection",
+   "version":"1.64.1"
+  },
+  "requirements":{
+   "build":[
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
+    "python"
+   ],
+   "run":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "meson-rpaths.patch",
+    "gcc7-rpath-link.patch",
+    "test-fix.patch"
+   ],
+   "sha256":"80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7",
+   "url":"https://download.gnome.org/sources/gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "c_compiler_stub",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "glib",
+    "libffi",
+    "meson",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
+   "license":"LGPL-2.0-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"Middleware for binding GObject-based code to other languages."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"gobject-introspection",
+   "version":"1.64.1"
+  },
+  "requirements":{
+   "build":[
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
+    "python"
+   ],
+   "run":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "meson-rpaths.patch",
+    "gcc7-rpath-link.patch",
+    "test-fix.patch"
+   ],
+   "sha256":"80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7",
+   "url":"https://download.gnome.org/sources/gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "c_compiler_stub",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "glib",
+    "libffi",
+    "meson",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
@@ -115,6 +424,14 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj",
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj",
     "pkgw",
     "ocefpaf",
     "scopatz",
@@ -152,6 +469,18 @@
     "ninja",
     "patch",
     "pkg-config",
+    "c_compiler_stub",
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub",
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
     "c_compiler_stub"
    ],
    "host":[
@@ -170,9 +499,25 @@
     "cairo",
     "glib",
     "libffi",
+    "python",
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
+    "python",
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
     "python"
    ],
    "run":[
+    "glib",
+    "libffi",
+    "python",
+    "glib",
+    "libffi",
+    "python",
     "glib",
     "libffi",
     "python",
@@ -206,9 +551,19 @@
     "conda inspect linkages -p $PREFIX $PKG_NAME",
     "g-ir-scanner --help",
     "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
     "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`"
    ],
    "requires":[
+    "pkg-config",
+    "pkg-config",
     "pkg-config",
     "pkg-config",
     "pkg-config"
@@ -217,6 +572,108 @@
  },
  "name":"gobject-introspection",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
+   "license":"LGPL-2.0-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"Middleware for binding GObject-based code to other languages."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"gobject-introspection",
+   "version":"1.64.1"
+  },
+  "requirements":{
+   "build":[
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "meson",
+    "cairo",
+    "gettext",
+    "glib",
+    "libffi",
+    "python"
+   ],
+   "run":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7",
+   "url":"https://download.gnome.org/sources/gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME",
+    "g-ir-scanner --help",
+    "g-ir-compiler --help",
+    "test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "c_compiler_stub",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "gettext",
+    "glib",
+    "libffi",
+    "meson",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "pinning_version":"2020.03.12",
  "raw_meta_yaml":"{% set name = \"gobject-introspection\" %}\n{% set version = \"1.64.1\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.gnome.org/sources/{{ name }}/{{ '.'.join(version.split('.')[:2]) }}/{{ name }}-{{ version }}.tar.xz\n  sha256: 80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7\n  patches:\n    - meson-rpaths.patch  # [linux]\n    - gcc7-rpath-link.patch  # [linux]\n    - test-fix.patch  # [linux]\n\nbuild:\n  number: 1\n  skip: true  # [py<35]\n\nrequirements:\n  build:\n    - {{ posix }}bison\n    - {{ posix }}flex\n    - ninja\n    - {{ posix }}patch\n    - {{ native }}pkg-config\n    - {{ compiler('c') }}\n  host:\n    - meson\n    - cairo\n    - gettext  # [osx]\n    - glib\n    - libffi\n    - python\n  run:\n    - glib\n    - libffi\n    - python\n\ntest:\n  requires:\n    - pkg-config\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - g-ir-scanner --help  # [not win]\n    - python \"%PREFIX%\\\\Library\\\\bin\\\\g-ir-scanner\" --help  # [win]\n    - g-ir-compiler --help\n\n    # check that g-ir-scanner can be found through pkg-config (used by downstream builds)\n    - test -f `pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`  # [unix]\n    - for /f \"usebackq tokens=*\" %%a in (`pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`) do if not exist \"%%a\" exit 1  # [win]\n\nabout:\n  home: https://wiki.gnome.org/action/show/Projects/GObjectIntrospection\n  license: LGPL-2.0-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: 'Middleware for binding GObject-based code to other languages.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n    - ocefpaf\n    - scopatz\n    - tschoonj\n",
  "req":{
@@ -315,5 +772,103 @@
   }
  },
  "url":"http://ftp.gnome.org/pub/GNOME/sources/gobject-introspection/1.58/gobject-introspection-1.58.2.tar.xz",
- "version":"1.64.1"
+ "version":"1.64.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://wiki.gnome.org/action/show/Projects/GObjectIntrospection",
+   "license":"LGPL-2.0-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"Middleware for binding GObject-based code to other languages."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw",
+    "ocefpaf",
+    "scopatz",
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"gobject-introspection",
+   "version":"1.64.1"
+  },
+  "requirements":{
+   "build":[
+    "bison",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "meson",
+    "cairo",
+    "glib",
+    "libffi",
+    "python"
+   ],
+   "run":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"80beae6728c134521926affff9b2e97125749b38d38744dc901f4010ee3e7fa7",
+   "url":"https://download.gnome.org/sources/gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "python \"%PREFIX%\\\\Library\\\\bin\\\\g-ir-scanner\" --help",
+    "g-ir-compiler --help",
+    "for /f \"usebackq tokens=*\" %%a in (`pkg-config --variable=g_ir_scanner --dont-define-prefix gobject-introspection-1.0`) do if not exist \"%%a\" exit 1"
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "bison",
+    "c_compiler_stub",
+    "flex",
+    "ninja",
+    "patch",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "glib",
+    "libffi",
+    "meson",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libffi",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ }
 }

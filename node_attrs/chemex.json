@@ -195,6 +195,87 @@
  },
  "feedstock_name":"chemex",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"ChemEx is an analysis program for chemical exchange detected by NMR.\nIt is designed to take almost any kind of NMR data to aid the analysis,\nbut the principle techniques are CPMG relaxation dispersion and Chemical\nExchange Saturation Transfer.\n",
+   "dev_url":"https://github.com/gbouvignies/chemex",
+   "home":"http://github.com/gbouvignies/chemex",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ChemEx is an analysis program for chemical exchange detected by NMR."
+  },
+  "build":{
+   "entry_points":[
+    "chemex = chemex.chemex:main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gbouvignies"
+   ]
+  },
+  "package":{
+   "name":"chemex",
+   "version":"2018.10.3"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "setuptools_scm",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "lmfit",
+    "asteval"
+   ]
+  },
+  "source":{
+   "sha256":"018d7fddbbef1bbe4b12efcc24dcf92477d6108f439a0ffbd2d5956c386a0ae4",
+   "url":"https://pypi.io/packages/source/c/chemex/chemex-2018.10.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "chemex"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "asteval",
+    "lmfit",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"ChemEx is an analysis program for chemical exchange detected by NMR.\nIt is designed to take almost any kind of NMR data to aid the analysis,\nbut the principle techniques are CPMG relaxation dispersion and Chemical\nExchange Saturation Transfer.\n",
@@ -277,6 +358,87 @@
   "2018.10.3":2
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"ChemEx is an analysis program for chemical exchange detected by NMR.\nIt is designed to take almost any kind of NMR data to aid the analysis,\nbut the principle techniques are CPMG relaxation dispersion and Chemical\nExchange Saturation Transfer.\n",
+   "dev_url":"https://github.com/gbouvignies/chemex",
+   "home":"http://github.com/gbouvignies/chemex",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ChemEx is an analysis program for chemical exchange detected by NMR."
+  },
+  "build":{
+   "entry_points":[
+    "chemex = chemex.chemex:main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gbouvignies"
+   ]
+  },
+  "package":{
+   "name":"chemex",
+   "version":"2018.10.3"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "setuptools_scm",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "lmfit",
+    "asteval"
+   ]
+  },
+  "source":{
+   "sha256":"018d7fddbbef1bbe4b12efcc24dcf92477d6108f439a0ffbd2d5956c386a0ae4",
+   "url":"https://pypi.io/packages/source/c/chemex/chemex-2018.10.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "chemex"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "asteval",
+    "lmfit",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"chemex\" %}\n{% set version = \"2018.10.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 018d7fddbbef1bbe4b12efcc24dcf92477d6108f439a0ffbd2d5956c386a0ae4\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - chemex = chemex.chemex:main\n\nrequirements:\n  host:\n    - python >=3.5\n    - setuptools_scm\n    - pip\n  run:\n    - python >=3.5\n    - numpy\n    - scipy\n    - matplotlib-base\n    - lmfit\n    - asteval\n\ntest:\n  imports:\n    - chemex\n\nabout:\n  home: http://github.com/gbouvignies/chemex\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: ChemEx is an analysis program for chemical exchange detected by NMR.\n  description: |\n    ChemEx is an analysis program for chemical exchange detected by NMR.\n    It is designed to take almost any kind of NMR data to aid the analysis,\n    but the principle techniques are CPMG relaxation dispersion and Chemical\n    Exchange Saturation Transfer.\n  dev_url: https://github.com/gbouvignies/chemex\n\nextra:\n  recipe-maintainers:\n    - gbouvignies\n",
  "req":{
@@ -353,5 +515,86 @@
   }
  },
  "url":"https://github.com/gbouvignies/chemex/archive/2018.10.2.tar.gz",
- "version":"2018.10.3"
+ "version":"2018.10.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"ChemEx is an analysis program for chemical exchange detected by NMR.\nIt is designed to take almost any kind of NMR data to aid the analysis,\nbut the principle techniques are CPMG relaxation dispersion and Chemical\nExchange Saturation Transfer.\n",
+   "dev_url":"https://github.com/gbouvignies/chemex",
+   "home":"http://github.com/gbouvignies/chemex",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ChemEx is an analysis program for chemical exchange detected by NMR."
+  },
+  "build":{
+   "entry_points":[
+    "chemex = chemex.chemex:main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gbouvignies"
+   ]
+  },
+  "package":{
+   "name":"chemex",
+   "version":"2018.10.3"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "setuptools_scm",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "scipy",
+    "matplotlib-base",
+    "lmfit",
+    "asteval"
+   ]
+  },
+  "source":{
+   "sha256":"018d7fddbbef1bbe4b12efcc24dcf92477d6108f439a0ffbd2d5956c386a0ae4",
+   "url":"https://pypi.io/packages/source/c/chemex/chemex-2018.10.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "chemex"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "asteval",
+    "lmfit",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

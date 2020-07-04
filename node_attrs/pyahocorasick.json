@@ -176,6 +176,79 @@
  },
  "feedstock_name":"pyahocorasick",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string\nsearch meaning that you can find multiple key strings occurrences at once in some input text.\nThe library provides an ahocorasick Python module that you can use as a plain dict-like Trie or\nconvert a Trie to an automaton for efficient Aho-Corasick search.\n",
+   "dev_url":"https://github.com/WojciechMula/pyahocorasick",
+   "doc_url":"http://pyahocorasick.readthedocs.io/en/latest/",
+   "home":"https://github.com/WojciechMula/pyahocorasick",
+   "license":"BSD 3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python module (C extension and plain python) implementing Aho-Corasick algorithm."
+  },
+  "build":{
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hellothisisMatt",
+    "peterk87"
+   ]
+  },
+  "package":{
+   "name":"pyahocorasick",
+   "version":"1.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"pyahocorasick-1.4.0.tar.gz",
+   "sha256":"f9431a20e47e893cadd29f367825e882dbc6fc324a3c24c41e3ff9648e5d04b2",
+   "url":"https://pypi.io/packages/source/p/pyahocorasick/pyahocorasick-1.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ahocorasick"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string\nsearch meaning that you can find multiple key strings occurrences at once in some input text.\nThe library provides an ahocorasick Python module that you can use as a plain dict-like Trie or\nconvert a Trie to an automaton for efficient Aho-Corasick search.\n",
@@ -240,6 +313,79 @@
  },
  "name":"pyahocorasick",
  "new_version":"1.4.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string\nsearch meaning that you can find multiple key strings occurrences at once in some input text.\nThe library provides an ahocorasick Python module that you can use as a plain dict-like Trie or\nconvert a Trie to an automaton for efficient Aho-Corasick search.\n",
+   "dev_url":"https://github.com/WojciechMula/pyahocorasick",
+   "doc_url":"http://pyahocorasick.readthedocs.io/en/latest/",
+   "home":"https://github.com/WojciechMula/pyahocorasick",
+   "license":"BSD 3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python module (C extension and plain python) implementing Aho-Corasick algorithm."
+  },
+  "build":{
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hellothisisMatt",
+    "peterk87"
+   ]
+  },
+  "package":{
+   "name":"pyahocorasick",
+   "version":"1.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"pyahocorasick-1.4.0.tar.gz",
+   "sha256":"f9431a20e47e893cadd29f367825e882dbc6fc324a3c24c41e3ff9648e5d04b2",
+   "url":"https://pypi.io/packages/source/p/pyahocorasick/pyahocorasick-1.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ahocorasick"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.16",
  "raw_meta_yaml":"{% set name = \"pyahocorasick\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256sum = \"f9431a20e47e893cadd29f367825e882dbc6fc324a3c24c41e3ff9648e5d04b2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - ahocorasick\n\nabout:\n  home: https://github.com/WojciechMula/pyahocorasick\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python module (C extension and plain python) implementing Aho-Corasick algorithm.'\n  description: |\n      pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string\n      search meaning that you can find multiple key strings occurrences at once in some input text.\n      The library provides an ahocorasick Python module that you can use as a plain dict-like Trie or\n      convert a Trie to an automaton for efficient Aho-Corasick search.\n  dev_url: https://github.com/WojciechMula/pyahocorasick\n  doc_url: http://pyahocorasick.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - hellothisisMatt\n    - peterk87\n",
  "req":{
@@ -303,5 +449,78 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyahocorasick/pyahocorasick-1.4.0.tar.gz",
- "version":"1.4.0"
+ "version":"1.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"pyahocorasick is a fast and memory efficient library for exact or approximate multi-pattern string\nsearch meaning that you can find multiple key strings occurrences at once in some input text.\nThe library provides an ahocorasick Python module that you can use as a plain dict-like Trie or\nconvert a Trie to an automaton for efficient Aho-Corasick search.\n",
+   "dev_url":"https://github.com/WojciechMula/pyahocorasick",
+   "doc_url":"http://pyahocorasick.readthedocs.io/en/latest/",
+   "home":"https://github.com/WojciechMula/pyahocorasick",
+   "license":"BSD 3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python module (C extension and plain python) implementing Aho-Corasick algorithm."
+  },
+  "build":{
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hellothisisMatt",
+    "peterk87"
+   ]
+  },
+  "package":{
+   "name":"pyahocorasick",
+   "version":"1.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"pyahocorasick-1.4.0.tar.gz",
+   "sha256":"f9431a20e47e893cadd29f367825e882dbc6fc324a3c24c41e3ff9648e5d04b2",
+   "url":"https://pypi.io/packages/source/p/pyahocorasick/pyahocorasick-1.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "ahocorasick"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -20,6 +20,181 @@
  "conda-forge.yml":{},
  "feedstock_name":"gfortran_impl_osx-64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://gcc.gnu.org/",
+   "license":"GPL 3 (with GCC Runtime Library Exception 3.1)",
+   "license_family":"GPL",
+   "license_file":"COPYING3",
+   "summary":"Fortran compiler and libraries from the GNU Compiler Collection"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgfortran.dylib",
+     "lib/libgfortran.4.dylib",
+     "lib/libgomp.dylib",
+     "lib/libgomp.1.dylib",
+     "lib/libquadmath.dylib",
+     "lib/libquadmath.0.dylib",
+     "lib/libgcc_s.1.dylib",
+     "lib/libgcc_s_ppc64.1.dylib",
+     "lib/libgcc_s_x86_64.1.dylib"
+    ],
+    "name":"libgfortran",
+    "requirements":{
+     "host":[
+      "llvm-openmp >=8.0.0"
+     ],
+     "run":[
+      "llvm-openmp >=8.0.0"
+     ]
+    },
+    "run_exports":[
+     "libgfortran >=4.0.0,<5.0.0.a0"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libgfortran.dylib\"",
+      "test -f \"${PREFIX}/lib/libgfortran.4.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.0.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_ppc64.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_x86_64.1.dylib\""
+     ]
+    },
+    "version":"4.0.0"
+   },
+   {
+    "files":[
+     "bin/gfortran",
+     "bin/x86_64-apple-darwin13.4.0-gfortran",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/collect2",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/f951",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/lto-wrapper",
+     "lib/libgfortran.spec",
+     "lib/libgomp.spec",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/crtfastmath.o",
+     "lib/libgfortran.a",
+     "lib/libgomp.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc_eh.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/finclude/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include-fixed/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include/**",
+     "lib/libgcc_ext.10.4.dylib",
+     "lib/libgcc_ext.10.5.dylib"
+    ],
+    "name":"gfortran_impl_osx-64",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "libiconv",
+      "zlib",
+      "gmp",
+      "mpfr",
+      "isl",
+      "mpc"
+     ],
+     "run":[
+      "libgfortran >=4.0.0,<5.0.0.a0",
+      "isl",
+      "mpfr",
+      "mpc",
+      "gmp",
+      "zlib",
+      "libiconv"
+     ]
+    },
+    "test":{
+     "script":"run_test.sh"
+    },
+    "version":"7.3.0"
+   }
+  ],
+  "package":{
+   "name":"gfortran_impl_osx-64",
+   "version":"7.3.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libiconv",
+    "zlib",
+    "gmp",
+    "mpfr",
+    "isl",
+    "mpc",
+    "llvm-openmp >=8.0.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libgcc_macosx_min_version.patch"
+   ],
+   "sha256":"fa06e455ca198ddc11ea4ddf2a394cf7cfb66aa7e0ab98cc1184189f1d405870",
+   "url":"https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libgfortran",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://gcc.gnu.org/",
@@ -360,6 +535,180 @@
  },
  "name":"gfortran_impl_osx-64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://gcc.gnu.org/",
+   "license":"GPL 3 (with GCC Runtime Library Exception 3.1)",
+   "license_family":"GPL",
+   "license_file":"COPYING3",
+   "summary":"Fortran compiler and libraries from the GNU Compiler Collection"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgfortran.dylib",
+     "lib/libgfortran.4.dylib",
+     "lib/libgomp.dylib",
+     "lib/libgomp.1.dylib",
+     "lib/libquadmath.dylib",
+     "lib/libquadmath.0.dylib",
+     "lib/libgcc_s.1.dylib",
+     "lib/libgcc_s_ppc64.1.dylib",
+     "lib/libgcc_s_x86_64.1.dylib"
+    ],
+    "name":"libgfortran",
+    "requirements":{
+     "host":[
+      "llvm-openmp >=8.0.0"
+     ],
+     "run":[
+      "llvm-openmp >=8.0.0"
+     ]
+    },
+    "run_exports":[
+     "libgfortran >=4.0.0,<5.0.0.a0"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libgfortran.dylib\"",
+      "test -f \"${PREFIX}/lib/libgfortran.4.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.0.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_ppc64.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_x86_64.1.dylib\""
+     ]
+    },
+    "version":"4.0.0"
+   },
+   {
+    "files":[
+     "bin/gfortran",
+     "bin/x86_64-apple-darwin13.4.0-gfortran",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/collect2",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/f951",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/lto-wrapper",
+     "lib/libgfortran.spec",
+     "lib/libgomp.spec",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/crtfastmath.o",
+     "lib/libgfortran.a",
+     "lib/libgomp.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc_eh.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/finclude/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include-fixed/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include/**",
+     "lib/libgcc_ext.10.4.dylib",
+     "lib/libgcc_ext.10.5.dylib"
+    ],
+    "name":"gfortran_impl_osx-64",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "libiconv",
+      "zlib",
+      "gmp",
+      "mpfr",
+      "isl",
+      "mpc"
+     ],
+     "run":[
+      "libgfortran >=4.0.0,<5.0.0.a0",
+      "isl",
+      "mpfr",
+      "mpc",
+      "gmp",
+      "zlib",
+      "libiconv"
+     ]
+    },
+    "test":{
+     "script":"run_test.sh"
+    },
+    "version":"7.3.0"
+   }
+  ],
+  "package":{
+   "name":"gfortran_impl_osx-64",
+   "version":"7.3.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libiconv",
+    "zlib",
+    "gmp",
+    "mpfr",
+    "isl",
+    "mpc",
+    "llvm-openmp >=8.0.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libgcc_macosx_min_version.patch"
+   ],
+   "sha256":"fa06e455ca198ddc11ea4ddf2a394cf7cfb66aa7e0ab98cc1184189f1d405870",
+   "url":"https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libgfortran",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "gfortran_impl_osx-64",
   "libgfortran"
@@ -463,5 +812,180 @@
   }
  },
  "url":"https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz",
- "version":"7.3.0"
+ "version":"7.3.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://gcc.gnu.org/",
+   "license":"GPL 3 (with GCC Runtime Library Exception 3.1)",
+   "license_family":"GPL",
+   "license_file":"COPYING3",
+   "summary":"Fortran compiler and libraries from the GNU Compiler Collection"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "beckermr",
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "files":[
+     "lib/libgfortran.dylib",
+     "lib/libgfortran.4.dylib",
+     "lib/libgomp.dylib",
+     "lib/libgomp.1.dylib",
+     "lib/libquadmath.dylib",
+     "lib/libquadmath.0.dylib",
+     "lib/libgcc_s.1.dylib",
+     "lib/libgcc_s_ppc64.1.dylib",
+     "lib/libgcc_s_x86_64.1.dylib"
+    ],
+    "name":"libgfortran",
+    "requirements":{
+     "host":[
+      "llvm-openmp >=8.0.0"
+     ],
+     "run":[
+      "llvm-openmp >=8.0.0"
+     ]
+    },
+    "run_exports":[
+     "libgfortran >=4.0.0,<5.0.0.a0"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/lib/libgfortran.dylib\"",
+      "test -f \"${PREFIX}/lib/libgfortran.4.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.dylib\"",
+      "test -f \"${PREFIX}/lib/libgomp.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.dylib\"",
+      "test -f \"${PREFIX}/lib/libquadmath.0.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_ppc64.1.dylib\"",
+      "test -f \"${PREFIX}/lib/libgcc_s_x86_64.1.dylib\""
+     ]
+    },
+    "version":"4.0.0"
+   },
+   {
+    "files":[
+     "bin/gfortran",
+     "bin/x86_64-apple-darwin13.4.0-gfortran",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/collect2",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/f951",
+     "libexec/gcc/x86_64-apple-darwin13.4.0/7.3.0/lto-wrapper",
+     "lib/libgfortran.spec",
+     "lib/libgomp.spec",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/crtfastmath.o",
+     "lib/libgfortran.a",
+     "lib/libgomp.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/libgcc_eh.a",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/finclude/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include-fixed/**",
+     "lib/gcc/x86_64-apple-darwin13.4.0/7.3.0/include/**",
+     "lib/libgcc_ext.10.4.dylib",
+     "lib/libgcc_ext.10.5.dylib"
+    ],
+    "name":"gfortran_impl_osx-64",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub"
+     ],
+     "host":[
+      "libiconv",
+      "zlib",
+      "gmp",
+      "mpfr",
+      "isl",
+      "mpc"
+     ],
+     "run":[
+      "libgfortran >=4.0.0,<5.0.0.a0",
+      "isl",
+      "mpfr",
+      "mpc",
+      "gmp",
+      "zlib",
+      "libiconv"
+     ]
+    },
+    "test":{
+     "script":"run_test.sh"
+    },
+    "version":"7.3.0"
+   }
+  ],
+  "package":{
+   "name":"gfortran_impl_osx-64",
+   "version":"7.3.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libiconv",
+    "zlib",
+    "gmp",
+    "mpfr",
+    "isl",
+    "mpc",
+    "llvm-openmp >=8.0.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libgcc_macosx_min_version.patch"
+   ],
+   "sha256":"fa06e455ca198ddc11ea4ddf2a394cf7cfb66aa7e0ab98cc1184189f1d405870",
+   "url":"https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "isl",
+    "libgfortran",
+    "libiconv",
+    "llvm-openmp",
+    "mpc",
+    "mpfr",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

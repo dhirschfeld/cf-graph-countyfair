@@ -20,6 +20,79 @@
  "conda-forge.yml":{},
  "feedstock_name":"g2clib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/",
+   "license":"Public Domain",
+   "summary":"C decoder/encoder routines for GRIB edition 2."
+  },
+  "build":{
+   "number":"9"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package":{
+   "name":"g2clib",
+   "version":"1.6.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ]
+  },
+  "source":{
+   "sha256":"afec1ea29979b84369d0f46f305ed12f73f1450ec2db737664ec7f75c1163add",
+   "url":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-1.6.0.tar"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libgrib2c.a",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/",
@@ -86,6 +159,80 @@
  },
  "name":"g2clib",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/",
+   "license":"Public Domain",
+   "summary":"C decoder/encoder routines for GRIB edition 2."
+  },
+  "build":{
+   "number":"9"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package":{
+   "name":"g2clib",
+   "version":"1.6.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ]
+  },
+  "source":{
+   "sha256":"afec1ea29979b84369d0f46f305ed12f73f1450ec2db737664ec7f75c1163add",
+   "url":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-1.6.0.tar"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libgrib2c.a",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.01.29",
  "raw_meta_yaml":"{% set version = \"1.6.0\" %}\n\npackage:\n  name: g2clib\n  version: {{ version }}\n\nsource:\n  url: http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-{{ version }}.tar\n  sha256: afec1ea29979b84369d0f46f305ed12f73f1450ec2db737664ec7f75c1163add\n\nbuild:\n  number: 9\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - libpng\n    - zlib\n    - jasper\n  run:\n    - libpng\n    - zlib\n    - jasper\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libgrib2c.a  # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/\n  license: Public Domain\n  summary: 'C decoder/encoder routines for GRIB edition 2.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jhamman\n",
  "req":{
@@ -156,5 +303,76 @@
   }
  },
  "url":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-1.6.0.tar",
- "version":"1.6.0"
+ "version":"1.6.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/",
+   "license":"Public Domain",
+   "summary":"C decoder/encoder routines for GRIB edition 2."
+  },
+  "build":{
+   "number":"9",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package":{
+   "name":"g2clib",
+   "version":"1.6.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "jasper"
+   ]
+  },
+  "source":{
+   "sha256":"afec1ea29979b84369d0f46f305ed12f73f1450ec2db737664ec7f75c1163add",
+   "url":"http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-1.6.0.tar"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jasper",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

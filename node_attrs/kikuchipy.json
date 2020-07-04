@@ -57,6 +57,102 @@
  "conda-forge.yml":{},
  "feedstock_name":"kikuchipy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/kikuchipy/kikuchipy",
+   "doc_url":"https://kikuchipy.org",
+   "home":"https://kikuchipy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"kikuchipy is an open-source Python library for processing and analysis of\nelectron backscatter diffraction (EBSD) patterns\n"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hakonanes"
+   ]
+  },
+  "package":{
+   "name":"kikuchipy",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3"
+   ],
+   "run":[
+    "python >=3",
+    "dask",
+    "hyperspy >=1.5.2",
+    "h5py",
+    "matplotlib",
+    "numpy >=1.17",
+    "scikit-image >=0.16,<0.17",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"8fe9306b4d293e00f4bd56a6a2514b51f2b6ba247525980de742755f67012d34",
+   "url":"https://pypi.io/packages/source/k/kikuchipy/kikuchipy-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --pyargs kikuchipy"
+   ],
+   "imports":[
+    "kikuchipy",
+    "kikuchipy.filters",
+    "kikuchipy.generators",
+    "kikuchipy.io",
+    "kikuchipy.pattern",
+    "kikuchipy.pattern.chunk",
+    "kikuchipy.signals",
+    "kikuchipy.release"
+   ],
+   "requires":[
+    "pytest >=5.3.2"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dask",
+    "h5py",
+    "hyperspy",
+    "matplotlib",
+    "numpy",
+    "python",
+    "scikit-image",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/kikuchipy/kikuchipy",
@@ -171,6 +267,102 @@
   "0.2.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/kikuchipy/kikuchipy",
+   "doc_url":"https://kikuchipy.org",
+   "home":"https://kikuchipy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"kikuchipy is an open-source Python library for processing and analysis of\nelectron backscatter diffraction (EBSD) patterns\n"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hakonanes"
+   ]
+  },
+  "package":{
+   "name":"kikuchipy",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3"
+   ],
+   "run":[
+    "python >=3",
+    "dask",
+    "hyperspy >=1.5.2",
+    "h5py",
+    "matplotlib",
+    "numpy >=1.17",
+    "scikit-image >=0.16,<0.17",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"8fe9306b4d293e00f4bd56a6a2514b51f2b6ba247525980de742755f67012d34",
+   "url":"https://pypi.io/packages/source/k/kikuchipy/kikuchipy-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --pyargs kikuchipy"
+   ],
+   "imports":[
+    "kikuchipy",
+    "kikuchipy.filters",
+    "kikuchipy.generators",
+    "kikuchipy.io",
+    "kikuchipy.pattern",
+    "kikuchipy.pattern.chunk",
+    "kikuchipy.signals",
+    "kikuchipy.release"
+   ],
+   "requires":[
+    "pytest >=5.3.2"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dask",
+    "h5py",
+    "hyperspy",
+    "matplotlib",
+    "numpy",
+    "python",
+    "scikit-image",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"kikuchipy\" %}\n{% set version = \"0.2.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8fe9306b4d293e00f4bd56a6a2514b51f2b6ba247525980de742755f67012d34\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3\n  run:\n    - python >=3\n    - dask\n    - hyperspy >=1.5.2\n    - h5py\n    - matplotlib\n    - numpy >=1.17\n    - scikit-image >=0.16,<0.17\n    - scikit-learn\n    - scipy\n\ntest:\n  requires:\n    - pytest >=5.3.2\n  imports:\n    - kikuchipy\n    - kikuchipy.filters\n    - kikuchipy.generators\n    - kikuchipy.io\n    - kikuchipy.pattern\n    - kikuchipy.pattern.chunk\n    - kikuchipy.signals\n    - kikuchipy.release\n  commands:\n    - pytest --pyargs kikuchipy\n\nabout:\n  home: https://kikuchipy.org\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: |\n    kikuchipy is an open-source Python library for processing and analysis of\n    electron backscatter diffraction (EBSD) patterns\n  doc_url: https://kikuchipy.org\n  dev_url: https://github.com/kikuchipy/kikuchipy\n\nextra:\n  recipe-maintainers:\n    - hakonanes\n",
  "req":{
@@ -257,5 +449,101 @@
   }
  },
  "url":"https://pypi.io/packages/source/k/kikuchipy/kikuchipy-0.1.2.tar.gz",
- "version":"0.2.2"
+ "version":"0.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/kikuchipy/kikuchipy",
+   "doc_url":"https://kikuchipy.org",
+   "home":"https://kikuchipy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"kikuchipy is an open-source Python library for processing and analysis of\nelectron backscatter diffraction (EBSD) patterns\n"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hakonanes"
+   ]
+  },
+  "package":{
+   "name":"kikuchipy",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3"
+   ],
+   "run":[
+    "python >=3",
+    "dask",
+    "hyperspy >=1.5.2",
+    "h5py",
+    "matplotlib",
+    "numpy >=1.17",
+    "scikit-image >=0.16,<0.17",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"8fe9306b4d293e00f4bd56a6a2514b51f2b6ba247525980de742755f67012d34",
+   "url":"https://pypi.io/packages/source/k/kikuchipy/kikuchipy-0.2.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --pyargs kikuchipy"
+   ],
+   "imports":[
+    "kikuchipy",
+    "kikuchipy.filters",
+    "kikuchipy.generators",
+    "kikuchipy.io",
+    "kikuchipy.pattern",
+    "kikuchipy.pattern.chunk",
+    "kikuchipy.signals",
+    "kikuchipy.release"
+   ],
+   "requires":[
+    "pytest >=5.3.2"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dask",
+    "h5py",
+    "hyperspy",
+    "matplotlib",
+    "numpy",
+    "python",
+    "scikit-image",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

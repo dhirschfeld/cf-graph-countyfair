@@ -167,6 +167,101 @@
  "conda-forge.yml":{},
  "feedstock_name":"ecflow",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://confluence.ecmwf.int/display/ECFLOW",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"ECMWF ecFlow"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dtip",
+    "avi369",
+    "iainrussell",
+    "StephanSiemen"
+   ]
+  },
+  "package":{
+   "name":"ecflow",
+   "version":"5.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub"
+   ],
+   "host":[
+    "python",
+    "boost",
+    "qt",
+    "xorg-libxfixes"
+   ],
+   "run":[
+    "python",
+    "qt"
+   ]
+  },
+  "source":{
+   "fn":"ecFlow-5.5.0-Source.tar.gz",
+   "sha256":"5c0044711aa063367e62c979b3ed2ad22c9bd81b72355e571a8e4cb8b4ba4c2a",
+   "url":"https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.5.0-Source.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX ecflow",
+    "ecflow_client --help",
+    "ecflow_server --help",
+    "ecflow_standalone --help",
+    "ecflow_ui_log -h"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "python",
+    "qt",
+    "xorg-libxfixes"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "qt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://confluence.ecmwf.int/display/ECFLOW",
@@ -274,6 +369,90 @@
   "5.5.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://confluence.ecmwf.int/display/ECFLOW",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"ECMWF ecFlow"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dtip",
+    "avi369",
+    "iainrussell",
+    "StephanSiemen"
+   ]
+  },
+  "package":{
+   "name":"ecflow",
+   "version":"5.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "boost",
+    "qt"
+   ],
+   "run":[
+    "python",
+    "qt"
+   ]
+  },
+  "source":{
+   "fn":"ecFlow-5.5.0-Source.tar.gz",
+   "sha256":"5c0044711aa063367e62c979b3ed2ad22c9bd81b72355e571a8e4cb8b4ba4c2a",
+   "url":"https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.5.0-Source.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX ecflow",
+    "conda inspect objects -p $PREFIX ecflow",
+    "ecflow_client --help",
+    "ecflow_server --help",
+    "ecflow_standalone --help",
+    "ecflow_ui_log -h"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "python",
+    "qt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "qt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.07.02.17.22.00",
  "raw_meta_yaml":"{% set name = \"ecFlow\" %}\n{% set version = \"5.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}-Source.tar.gz\n  url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz\n  sha256: 5c0044711aa063367e62c979b3ed2ad22c9bd81b72355e571a8e4cb8b4ba4c2a\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n    - {{ cdt('mesa-dri-drivers') }}  # [linux]\n    - {{ cdt('libselinux') }}  # [linux]\n    - {{ cdt('libxdamage') }}  # [linux]\n    - {{ cdt('libxfixes') }}  # [linux]\n    - {{ cdt('libxxf86vm') }}  # [linux]\n    - {{ cdt('libxcb') }}  # [linux]\n    - {{ cdt('libxext') }}  # [linux]\n    - {{ cdt('libxau') }}  # [linux]\n  host:\n    - python\n    - boost\n    - qt\n    - xorg-libxfixes  # [linux]\n  run:\n    - python\n    - qt\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX ecflow\n    - conda inspect objects -p $PREFIX ecflow  # [osx]\n    - ecflow_client --help\n    - ecflow_server --help\n    - ecflow_standalone --help\n    - ecflow_ui_log -h\n\nabout:\n  home: https://confluence.ecmwf.int/display/ECFLOW\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: ECMWF ecFlow\n\nextra:\n  recipe-maintainers:\n    - dtip\n    - avi369\n    - iainrussell\n    - StephanSiemen\n",
  "req":{
@@ -354,5 +533,89 @@
   }
  },
  "url":"https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.1.0-Source.tar.gz",
- "version":"5.5.0"
+ "version":"5.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://confluence.ecmwf.int/display/ECFLOW",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"ECMWF ecFlow"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dtip",
+    "avi369",
+    "iainrussell",
+    "StephanSiemen"
+   ]
+  },
+  "package":{
+   "name":"ecflow",
+   "version":"5.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "boost",
+    "qt"
+   ],
+   "run":[
+    "python",
+    "qt"
+   ]
+  },
+  "source":{
+   "fn":"ecFlow-5.5.0-Source.tar.gz",
+   "sha256":"5c0044711aa063367e62c979b3ed2ad22c9bd81b72355e571a8e4cb8b4ba4c2a",
+   "url":"https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.5.0-Source.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX ecflow",
+    "ecflow_client --help",
+    "ecflow_server --help",
+    "ecflow_standalone --help",
+    "ecflow_ui_log -h"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "python",
+    "qt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "qt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -3,6 +3,134 @@
  "bad":"Upstream: Error getting upstream version",
  "conda-forge.yml":{},
  "feedstock_name":"clang-win-activation",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"To use this package in a normal conda environment, do the following\n\n   export CONDA_BUILD_WINSDK=/opt\n\nTo use this package in a conda-build environment, add the following\n\n   CONDA_BUILD_WINSDK:\n     - \"/opt\"\n\nin $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.\n\nBy setting this variable, you are agreeing to the terms and conditions\nof the Windows SDK and the MSVC headers. If the Windows SDK and MSVC\nheaders are not inside CONDA_BUILD_WINSDK, they would be automatically\ndownloaded.\n",
+   "home":"https://github.com/conda-forge/clang-win-activation-feedstock",
+   "license":"BSD-3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang (cross) compiler for windows with MSVC ABI compatbility"
+  },
+  "build":{
+   "number":"5"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_SDK.txt",
+     "summary":"Scripts to download Windows SDK headers"
+    },
+    "build":null,
+    "name":"winsdk",
+    "requirements":[
+     "p7zip",
+     "msitools",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_MSVC_HEADERS.txt",
+     "summary":"Scripts to download MSVC headers and libraries"
+    },
+    "build":null,
+    "name":"msvc-headers-libs",
+    "requirements":[
+     "unzip",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "build":{
+     "run_exports":{
+      "strong":[
+       "vc >=14.1",
+       "vs2015_runtime >="
+      ]
+     }
+    },
+    "name":"clang_win-64",
+    "requirements":{
+     "build":null,
+     "host":[
+      "clangxx     9.0.1",
+      "llvm-tools  9.0.1"
+     ],
+     "run":[
+      "msvc-headers-libs",
+      "winsdk",
+      "clangxx             9.0.1",
+      "llvm-tools          9.0.1",
+      "lld                 9.0.1",
+      "compiler-rt         9.0.1",
+      "compiler-rt_win-64  9.0.1"
+     ]
+    },
+    "script":"install-pkg.sh",
+    "test":{
+     "commands":[
+      "bash run_test_clang.sh"
+     ],
+     "files":[
+      "test.c",
+      "test.cpp",
+      "run_test_clang.sh"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-win-activation",
+   "version":"9.0.1"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "llvm-tools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_win-64",
+    "curl",
+    "lld",
+    "llvm-tools",
+    "msitools",
+    "msvc-headers-libs",
+    "p7zip",
+    "unzip",
+    "winsdk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"To use this package in a normal conda environment, do the following\n\n   export CONDA_BUILD_WINSDK=/opt\n\nTo use this package in a conda-build environment, add the following\n\n   CONDA_BUILD_WINSDK:\n     - \"/opt\"\n\nin $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.\n\nBy setting this variable, you are agreeing to the terms and conditions\nof the Windows SDK and the MSVC headers. If the Windows SDK and MSVC\nheaders are not inside CONDA_BUILD_WINSDK, they would be automatically\ndownloaded.\n",
@@ -250,6 +378,134 @@
  },
  "name":"clang-win-activation",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"To use this package in a normal conda environment, do the following\n\n   export CONDA_BUILD_WINSDK=/opt\n\nTo use this package in a conda-build environment, add the following\n\n   CONDA_BUILD_WINSDK:\n     - \"/opt\"\n\nin $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.\n\nBy setting this variable, you are agreeing to the terms and conditions\nof the Windows SDK and the MSVC headers. If the Windows SDK and MSVC\nheaders are not inside CONDA_BUILD_WINSDK, they would be automatically\ndownloaded.\n",
+   "home":"https://github.com/conda-forge/clang-win-activation-feedstock",
+   "license":"BSD-3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang (cross) compiler for windows with MSVC ABI compatbility"
+  },
+  "build":{
+   "number":"5"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_SDK.txt",
+     "summary":"Scripts to download Windows SDK headers"
+    },
+    "build":null,
+    "name":"winsdk",
+    "requirements":[
+     "p7zip",
+     "msitools",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_MSVC_HEADERS.txt",
+     "summary":"Scripts to download MSVC headers and libraries"
+    },
+    "build":null,
+    "name":"msvc-headers-libs",
+    "requirements":[
+     "unzip",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "build":{
+     "run_exports":{
+      "strong":[
+       "vc >=14.1",
+       "vs2015_runtime >="
+      ]
+     }
+    },
+    "name":"clang_win-64",
+    "requirements":{
+     "build":null,
+     "host":[
+      "clangxx     9.0.1",
+      "llvm-tools  9.0.1"
+     ],
+     "run":[
+      "msvc-headers-libs",
+      "winsdk",
+      "clangxx             9.0.1",
+      "llvm-tools          9.0.1",
+      "lld                 9.0.1",
+      "compiler-rt         9.0.1",
+      "compiler-rt_win-64  9.0.1"
+     ]
+    },
+    "script":"install-pkg.sh",
+    "test":{
+     "commands":[
+      "bash run_test_clang.sh"
+     ],
+     "files":[
+      "test.c",
+      "test.cpp",
+      "run_test_clang.sh"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-win-activation",
+   "version":"9.0.1"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "llvm-tools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_win-64",
+    "curl",
+    "lld",
+    "llvm-tools",
+    "msitools",
+    "msvc-headers-libs",
+    "p7zip",
+    "unzip",
+    "winsdk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "clang_win-64",
   "msvc-headers-libs",
@@ -350,5 +606,141 @@
    "elements":[]
   }
  },
- "version":"9.0.1"
+ "version":"9.0.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"To use this package in a normal conda environment, do the following\n\n   export CONDA_BUILD_WINSDK=/opt\n\nTo use this package in a conda-build environment, add the following\n\n   CONDA_BUILD_WINSDK:\n     - \"/opt\"\n\nin $HOME/conda_build_config.yaml and use `clang_win-64` as the compiler.\n\nBy setting this variable, you are agreeing to the terms and conditions\nof the Windows SDK and the MSVC headers. If the Windows SDK and MSVC\nheaders are not inside CONDA_BUILD_WINSDK, they would be automatically\ndownloaded.\n",
+   "home":"https://github.com/conda-forge/clang-win-activation-feedstock",
+   "license":"BSD-3-clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang (cross) compiler for windows with MSVC ABI compatbility"
+  },
+  "build":{
+   "number":"5"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_SDK.txt",
+     "summary":"Scripts to download Windows SDK headers"
+    },
+    "build":{
+     "skip":true
+    },
+    "name":"winsdk",
+    "requirements":[
+     "p7zip",
+     "msitools",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "about":{
+     "license":"Proprietary",
+     "license_family":"Proprietary",
+     "license_file":"LICENSE_MSVC_HEADERS.txt",
+     "summary":"Scripts to download MSVC headers and libraries"
+    },
+    "build":{
+     "skip":true
+    },
+    "name":"msvc-headers-libs",
+    "requirements":[
+     "unzip",
+     "curl"
+    ],
+    "script":"install-pkg.sh",
+    "version":null
+   },
+   {
+    "build":{
+     "run_exports":{
+      "strong":[
+       "vc >=14.1",
+       "vs2015_runtime >="
+      ]
+     }
+    },
+    "name":"clang_win-64",
+    "requirements":{
+     "build":[
+      "m2-sed"
+     ],
+     "host":[
+      "clangxx     9.0.1",
+      "llvm-tools  9.0.1"
+     ],
+     "run":[
+      "vs2017_win-64 19.16.27038",
+      "vswhere",
+      "clangxx             9.0.1",
+      "llvm-tools          9.0.1",
+      "lld                 9.0.1",
+      "compiler-rt         9.0.1",
+      "compiler-rt_win-64  9.0.1"
+     ]
+    },
+    "script":"install-pkg.bat",
+    "test":{
+     "commands":[
+      "run_test_clang.bat"
+     ],
+     "files":[
+      "test.c",
+      "test.cpp",
+      "run_test_clang.bat"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-win-activation",
+   "version":"9.0.1"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2-sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "llvm-tools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_win-64",
+    "curl",
+    "lld",
+    "llvm-tools",
+    "msitools",
+    "p7zip",
+    "unzip",
+    "vs2017_win-64",
+    "vswhere"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

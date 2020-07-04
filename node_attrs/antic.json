@@ -25,6 +25,78 @@
  "conda-forge.yml":{},
  "feedstock_name":"antic",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/wbhart/antic",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"LICENSE",
+   "summary":"Algebraic Number Theory In C"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "antic"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "saraedum"
+   ]
+  },
+  "package":{
+   "name":"antic",
+   "version":"0.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libflint",
+    "gmp",
+    "mpfr"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Fix-testing-on-macOS.patch"
+   ],
+   "sha256":"b44dfcaa93db9e9a9fb3e47ce861e9e74de6d53e53754dd821b80b3e02e27607",
+   "url":"https://github.com/wbhart/antic/archive/v0.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/antic/nf.h",
+    "test -f $PREFIX/lib/libantic.so"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "libflint",
+    "mpfr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/wbhart/antic",
@@ -91,6 +163,78 @@
  },
  "name":"antic",
  "new_version":"0.2.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/wbhart/antic",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"LICENSE",
+   "summary":"Algebraic Number Theory In C"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "antic"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "saraedum"
+   ]
+  },
+  "package":{
+   "name":"antic",
+   "version":"0.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libflint",
+    "gmp",
+    "mpfr"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Fix-testing-on-macOS.patch"
+   ],
+   "sha256":"b44dfcaa93db9e9a9fb3e47ce861e9e74de6d53e53754dd821b80b3e02e27607",
+   "url":"https://github.com/wbhart/antic/archive/v0.2.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/antic/nf.h",
+    "test -f $PREFIX/lib/libantic.dylib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "libflint",
+    "mpfr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set version = \"0.2.1\" %}\n\npackage:\n  name: antic\n  version: {{ version }}\n\nsource:\n  url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz\n  sha256: b44dfcaa93db9e9a9fb3e47ce861e9e74de6d53e53754dd821b80b3e02e27607\n  patches:\n    - 0001-Fix-testing-on-macOS.patch\n\nbuild:\n  number: 1\n  skip: true        # [win]\n  run_exports:\n    - {{ pin_subpackage('antic', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n  host:\n    - libflint\n    - gmp\n    - mpfr\n\ntest:\n  commands:\n    - test -f $PREFIX/include/antic/nf.h      # [unix]\n    - test -f $PREFIX/lib/libantic.so         # [linux]\n    - test -f $PREFIX/lib/libantic.dylib      # [osx]\n\nabout:\n  home: https://github.com/wbhart/antic\n  license: LGPL-2.1-or-later\n  license_file: LICENSE\n  summary: 'Algebraic Number Theory In C'\n\nextra:\n  recipe-maintainers:\n    - saraedum\n",
  "req":{
@@ -156,5 +300,75 @@
   }
  },
  "url":"https://github.com/wbhart/antic/archive/v0.2.1.tar.gz",
- "version":"0.2.1"
+ "version":"0.2.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/wbhart/antic",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"LICENSE",
+   "summary":"Algebraic Number Theory In C"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "antic"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "saraedum"
+   ]
+  },
+  "package":{
+   "name":"antic",
+   "version":"0.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libflint",
+    "gmp",
+    "mpfr"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Fix-testing-on-macOS.patch"
+   ],
+   "sha256":"b44dfcaa93db9e9a9fb3e47ce861e9e74de6d53e53754dd821b80b3e02e27607",
+   "url":"https://github.com/wbhart/antic/archive/v0.2.1.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "libflint",
+    "mpfr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -66,6 +66,85 @@
  },
  "feedstock_name":"r-tcltk2",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/tcltk2/index.html",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":[
+    "/lib/R/share/licenses/LGPL-3",
+    "LICENSE"
+   ],
+   "summary":"A series of additional Tcl commands and Tk widgets with style and various functions (under Windows"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-tcltk2",
+   "version":"1.2_11"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tcltk2_1.2-11.tar.gz",
+   "sha256":"ad183ae3b7190501504a0589e0b3be480f04267303e3384fef00987446a37dc5",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tcltk2_1.2-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tcltk2/tcltk2_1.2-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('tcltk2')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://cran.r-project.org/web/packages/tcltk2/index.html",
@@ -159,6 +238,85 @@
  },
  "name":"r-tcltk2",
  "new_version":"1.2_11",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/tcltk2/index.html",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":[
+    "/lib/R/share/licenses/LGPL-3",
+    "LICENSE"
+   ],
+   "summary":"A series of additional Tcl commands and Tk widgets with style and various functions (under Windows"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-tcltk2",
+   "version":"1.2_11"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tcltk2_1.2-11.tar.gz",
+   "sha256":"ad183ae3b7190501504a0589e0b3be480f04267303e3384fef00987446a37dc5",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tcltk2_1.2-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tcltk2/tcltk2_1.2-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('tcltk2')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = \"1.2-11\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-tcltk2\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: tcltk2_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/tcltk2_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/tcltk2/tcltk2_{{ version }}.tar.gz\n\n  sha256: ad183ae3b7190501504a0589e0b3be480f04267303e3384fef00987446a37dc5\n\nbuild:\n  noarch: generic\n  number: 1002\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('tcltk2')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('tcltk2')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/tcltk2/index.html\n  license: LGPL-3.0-only\n  summary: A series of additional Tcl commands and Tk widgets with style and various functions (under Windows\n  license_family: LGPL\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/LGPL-3\n    - LICENSE\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "req":{
@@ -221,5 +379,84 @@
   "https://cran.r-project.org/src/contrib/tcltk2_1.2-11.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/tcltk2/tcltk2_1.2-11.tar.gz"
  ],
- "version":"1.2_11"
+ "version":"1.2_11",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://cran.r-project.org/web/packages/tcltk2/index.html",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":[
+    "/lib/R/share/licenses/LGPL-3",
+    "LICENSE"
+   ],
+   "summary":"A series of additional Tcl commands and Tk widgets with style and various functions (under Windows"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-tcltk2",
+   "version":"1.2_11"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"tcltk2_1.2-11.tar.gz",
+   "sha256":"ad183ae3b7190501504a0589e0b3be480f04267303e3384fef00987446a37dc5",
+   "url":[
+    "https://cran.r-project.org/src/contrib/tcltk2_1.2-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/tcltk2/tcltk2_1.2-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('tcltk2')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

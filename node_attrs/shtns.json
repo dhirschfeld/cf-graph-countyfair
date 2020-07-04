@@ -44,6 +44,84 @@
  "conda-forge.yml":{},
  "feedstock_name":"shtns",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"SHTns is a high performance library for Spherical\nHarmonic Transform written in C, aimed at numerical\nsimulation (fluid flows, mhd, ...) in spherical\ngeometries.\n",
+   "dev_url":"https://github.com/simplejson/simplejson",
+   "doc_url":"https://nschaeff.bitbucket.io/shtns/",
+   "home":"https://nschaeff.bitbucket.io/shtns/",
+   "license":"CeCILL2.1",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast spherical harmonic transform library aimed at high performance numerical simulations in spherical geometries."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "peterspackman"
+   ]
+  },
+  "package":{
+   "name":"shtns",
+   "version":"3.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "fftw",
+    "numpy",
+    "python"
+   ],
+   "run":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src",
+    "sha256":"3fcca0ffcf28467fd80ef71e0032c15ac6deac5c592041dc6a9a7f4575fbe64c",
+    "url":"https://www.bitbucket.org/nschaeff/shtns/downloads/shtns-3.3.1-r694.tar.gz"
+   }
+  ],
+  "test":{
+   "imports":[
+    "shtns"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"SHTns is a high performance library for Spherical\nHarmonic Transform written in C, aimed at numerical\nsimulation (fluid flows, mhd, ...) in spherical\ngeometries.\n",
@@ -125,6 +203,84 @@
  },
  "name":"shtns",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"SHTns is a high performance library for Spherical\nHarmonic Transform written in C, aimed at numerical\nsimulation (fluid flows, mhd, ...) in spherical\ngeometries.\n",
+   "dev_url":"https://github.com/simplejson/simplejson",
+   "doc_url":"https://nschaeff.bitbucket.io/shtns/",
+   "home":"https://nschaeff.bitbucket.io/shtns/",
+   "license":"CeCILL2.1",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast spherical harmonic transform library aimed at high performance numerical simulations in spherical geometries."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "peterspackman"
+   ]
+  },
+  "package":{
+   "name":"shtns",
+   "version":"3.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "fftw",
+    "numpy",
+    "python"
+   ],
+   "run":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src",
+    "sha256":"3fcca0ffcf28467fd80ef71e0032c15ac6deac5c592041dc6a9a7f4575fbe64c",
+    "url":"https://www.bitbucket.org/nschaeff/shtns/downloads/shtns-3.3.1-r694.tar.gz"
+   }
+  ],
+  "test":{
+   "imports":[
+    "shtns"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"shtns\" %}\n{% set version = \"3.3.1\" %}\n{% set revision = \"r694\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://www.bitbucket.org/nschaeff/{{ name }}/downloads/{{ name }}-{{ version }}-{{ revision }}.tar.gz\n    sha256: 3fcca0ffcf28467fd80ef71e0032c15ac6deac5c592041dc6a9a7f4575fbe64c\n    folder: src\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n\n  build:\n    - {{ compiler('c') }}\n  host:\n    - fftw\n    - numpy\n    - python\n  run:\n    - fftw\n    - {{ pin_compatible('numpy') }}\n    - python\n\ntest:\n  imports:\n    - shtns\n\nabout:\n  home: https://nschaeff.bitbucket.io/shtns/\n  license: CeCILL2.1\n  license_file: LICENSE.txt\n  summary: 'Fast spherical harmonic transform library aimed at high performance numerical simulations in spherical geometries.'\n\n  description: |\n    SHTns is a high performance library for Spherical\n    Harmonic Transform written in C, aimed at numerical\n    simulation (fluid flows, mhd, ...) in spherical\n    geometries.\n\n  doc_url: https://nschaeff.bitbucket.io/shtns/\n  dev_url: https://github.com/simplejson/simplejson\n\nextra:\n  recipe-maintainers:\n    - peterspackman\n",
  "req":{
@@ -195,5 +351,84 @@
   }
  },
  "url":"https://www.bitbucket.org/nschaeff/shtns/downloads/shtns-3.3.1-r694.tar.gz",
- "version":"3.3.1"
+ "version":"3.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"SHTns is a high performance library for Spherical\nHarmonic Transform written in C, aimed at numerical\nsimulation (fluid flows, mhd, ...) in spherical\ngeometries.\n",
+   "dev_url":"https://github.com/simplejson/simplejson",
+   "doc_url":"https://nschaeff.bitbucket.io/shtns/",
+   "home":"https://nschaeff.bitbucket.io/shtns/",
+   "license":"CeCILL2.1",
+   "license_file":"LICENSE.txt",
+   "summary":"Fast spherical harmonic transform library aimed at high performance numerical simulations in spherical geometries."
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "peterspackman"
+   ]
+  },
+  "package":{
+   "name":"shtns",
+   "version":"3.3.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "fftw",
+    "numpy",
+    "python"
+   ],
+   "run":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src",
+    "sha256":"3fcca0ffcf28467fd80ef71e0032c15ac6deac5c592041dc6a9a7f4575fbe64c",
+    "url":"https://www.bitbucket.org/nschaeff/shtns/downloads/shtns-3.3.1-r694.tar.gz"
+   }
+  ],
+  "test":{
+   "imports":[
+    "shtns"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -160,6 +160,91 @@
  },
  "feedstock_name":"cairosvg",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/Kozea/CairoSVG",
+   "doc_url":"http://www.cairosvg.org/documentation",
+   "home":"http://www.cairosvg.org/",
+   "license":"LGPL-3.0",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A Simple SVG Converter based on Cairo"
+  },
+  "build":{
+   "entry_points":[
+    "cairosvg = cairosvg.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"cairosvg",
+   "version":"2.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "pytest-runner"
+   ],
+   "run":[
+    "python >=3.5",
+    "cairocffi",
+    "cssselect2",
+    "pillow",
+    "tinycss2",
+    "defusedxml"
+   ]
+  },
+  "source":{
+   "sha256":"4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad",
+   "url":"https://pypi.io/packages/source/C/CairoSVG/CairoSVG-2.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cairosvg --help"
+   ],
+   "imports":[
+    "cairosvg"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairocffi",
+    "cssselect2",
+    "defusedxml",
+    "pillow",
+    "python",
+    "tinycss2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/Kozea/CairoSVG",
@@ -246,6 +331,91 @@
  },
  "name":"cairosvg",
  "new_version":"2.4.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/Kozea/CairoSVG",
+   "doc_url":"http://www.cairosvg.org/documentation",
+   "home":"http://www.cairosvg.org/",
+   "license":"LGPL-3.0",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A Simple SVG Converter based on Cairo"
+  },
+  "build":{
+   "entry_points":[
+    "cairosvg = cairosvg.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"cairosvg",
+   "version":"2.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "pytest-runner"
+   ],
+   "run":[
+    "python >=3.5",
+    "cairocffi",
+    "cssselect2",
+    "pillow",
+    "tinycss2",
+    "defusedxml"
+   ]
+  },
+  "source":{
+   "sha256":"4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad",
+   "url":"https://pypi.io/packages/source/C/CairoSVG/CairoSVG-2.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cairosvg --help"
+   ],
+   "imports":[
+    "cairosvg"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairocffi",
+    "cssselect2",
+    "defusedxml",
+    "pillow",
+    "python",
+    "tinycss2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.09.08",
  "raw_meta_yaml":"{% set name = \"CairoSVG\" %}\n{% set version = \"2.4.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - cairosvg = cairosvg.__main__:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n    - pytest-runner\n  run:\n    - python >=3.5\n    - cairocffi\n    - cssselect2\n    - pillow\n    - tinycss2\n    - defusedxml\n\ntest:\n  imports:\n    - cairosvg\n  commands:\n    - cairosvg --help\n\nabout:\n  home: http://www.cairosvg.org/\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'A Simple SVG Converter based on Cairo'\n  doc_url: http://www.cairosvg.org/documentation\n  dev_url: https://github.com/Kozea/CairoSVG\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - carlodri\n",
  "req":{
@@ -322,5 +492,90 @@
   }
  },
  "url":"https://pypi.io/packages/source/C/CairoSVG/CairoSVG-2.4.0.tar.gz",
- "version":"2.4.2"
+ "version":"2.4.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/Kozea/CairoSVG",
+   "doc_url":"http://www.cairosvg.org/documentation",
+   "home":"http://www.cairosvg.org/",
+   "license":"LGPL-3.0",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"A Simple SVG Converter based on Cairo"
+  },
+  "build":{
+   "entry_points":[
+    "cairosvg = cairosvg.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester",
+    "carlodri"
+   ]
+  },
+  "package":{
+   "name":"cairosvg",
+   "version":"2.4.2"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.5",
+    "pip",
+    "pytest-runner"
+   ],
+   "run":[
+    "python >=3.5",
+    "cairocffi",
+    "cssselect2",
+    "pillow",
+    "tinycss2",
+    "defusedxml"
+   ]
+  },
+  "source":{
+   "sha256":"4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad",
+   "url":"https://pypi.io/packages/source/C/CairoSVG/CairoSVG-2.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cairosvg --help"
+   ],
+   "imports":[
+    "cairosvg"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairocffi",
+    "cssselect2",
+    "defusedxml",
+    "pillow",
+    "python",
+    "tinycss2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

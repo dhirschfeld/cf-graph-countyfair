@@ -82,6 +82,85 @@
  },
  "feedstock_name":"rosdep",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros-infrastructure/rosdep",
+   "home":"http://wiki.ros.org/rosdep",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ROS multi-package manager system dependency tool"
+  },
+  "build":{
+   "entry_points":[
+    "rosdep = rosdep2.main:rosdep_main",
+    "rosdep-source = rosdep2.install:install_main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wolfv",
+    "lesteve",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"rosdep",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "catkin_pkg >=0.4.0",
+    "rospkg >=1.1.10",
+    "rosdistro >=0.7.5",
+    "pyyaml >=3.1"
+   ]
+  },
+  "source":{
+   "fn":"rosdep-0.19.0.tar.gz",
+   "sha256":"4497f7d220eec5d322bea95484d7bb66daeabdaec762b9095c4cf28759f3d55c",
+   "url":"https://github.com/ros-infrastructure/rosdep/archive/0.19.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rosdep --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "catkin_pkg",
+    "python",
+    "pyyaml",
+    "rosdistro",
+    "rospkg"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ros-infrastructure/rosdep",
@@ -165,6 +244,85 @@
  "new_version_attempts":{
   "0.19.0":1
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros-infrastructure/rosdep",
+   "home":"http://wiki.ros.org/rosdep",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ROS multi-package manager system dependency tool"
+  },
+  "build":{
+   "entry_points":[
+    "rosdep = rosdep2.main:rosdep_main",
+    "rosdep-source = rosdep2.install:install_main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wolfv",
+    "lesteve",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"rosdep",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "catkin_pkg >=0.4.0",
+    "rospkg >=1.1.10",
+    "rosdistro >=0.7.5",
+    "pyyaml >=3.1"
+   ]
+  },
+  "source":{
+   "fn":"rosdep-0.19.0.tar.gz",
+   "sha256":"4497f7d220eec5d322bea95484d7bb66daeabdaec762b9095c4cf28759f3d55c",
+   "url":"https://github.com/ros-infrastructure/rosdep/archive/0.19.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rosdep --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "catkin_pkg",
+    "python",
+    "pyyaml",
+    "rosdistro",
+    "rospkg"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.30.22.51.59",
  "raw_meta_yaml":"{% set name = \"rosdep\" %}\n{% set version = \"0.19.0\" %}\n{% set sha256 = \"4497f7d220eec5d322bea95484d7bb66daeabdaec762b9095c4cf28759f3d55c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ros-infrastructure/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - rosdep = rosdep2.main:rosdep_main\n    - rosdep-source = rosdep2.install:install_main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - catkin_pkg >=0.4.0\n    - rospkg >=1.1.10\n    - rosdistro >=0.7.5\n    - pyyaml >=3.1\n\ntest:\n  commands:\n    - rosdep --help\n\nabout:\n  home: http://wiki.ros.org/rosdep\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: ROS multi-package manager system dependency tool\n  dev_url: https://github.com/ros-infrastructure/rosdep\n\nextra:\n  recipe-maintainers:\n    - wolfv\n    - lesteve\n    - seanyen\n",
  "req":{
@@ -236,5 +394,84 @@
   }
  },
  "url":"https://github.com/ros-infrastructure/rosdep/archive/0.17.1.tar.gz",
- "version":"0.19.0"
+ "version":"0.19.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ros-infrastructure/rosdep",
+   "home":"http://wiki.ros.org/rosdep",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ROS multi-package manager system dependency tool"
+  },
+  "build":{
+   "entry_points":[
+    "rosdep = rosdep2.main:rosdep_main",
+    "rosdep-source = rosdep2.install:install_main"
+   ],
+   "number":"1",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wolfv",
+    "lesteve",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"rosdep",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "catkin_pkg >=0.4.0",
+    "rospkg >=1.1.10",
+    "rosdistro >=0.7.5",
+    "pyyaml >=3.1"
+   ]
+  },
+  "source":{
+   "fn":"rosdep-0.19.0.tar.gz",
+   "sha256":"4497f7d220eec5d322bea95484d7bb66daeabdaec762b9095c4cf28759f3d55c",
+   "url":"https://github.com/ros-infrastructure/rosdep/archive/0.19.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rosdep --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "catkin_pkg",
+    "python",
+    "pyyaml",
+    "rosdistro",
+    "rospkg"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -4,6 +4,115 @@
  "conda-forge.yml":{},
  "feedstock_name":"mesa-libgl-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libGL runtime library.",
+   "home":"http://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libGL runtime libraries and DRI drivers<Paste>"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* .",
+      "rm usr/lib64/libGLX_system.so.0"
+     ]
+    },
+    "name":"mesa-libgl-cos7-aarch64",
+    "requirements":[
+     "mesa-libglapi-cos7-aarch64",
+     "libdrm-cos7-aarch64"
+    ]
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libgl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libgl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libglapi.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libgl-cos7-aarch64",
+   "version":"18.0.5"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"db4020062635fddff4e3f8ed19bde4d615d07172a36b8759110aca621c4cb6cd",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-18.0.5-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"62f2fbcf330222a5246d81f7d18cd4f722fce845daa9b24932c0a7bfc6338b59",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-devel-18.0.5-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libGLX_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64",
+    "mesa-libgl-cos7-aarch64",
+    "mesa-libglapi-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Mesa libGL runtime library.",
@@ -193,6 +302,115 @@
  },
  "name":"mesa-libgl-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libGL runtime library.",
+   "home":"http://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libGL runtime libraries and DRI drivers<Paste>"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* .",
+      "rm usr/lib64/libGLX_system.so.0"
+     ]
+    },
+    "name":"mesa-libgl-cos7-aarch64",
+    "requirements":[
+     "mesa-libglapi-cos7-aarch64",
+     "libdrm-cos7-aarch64"
+    ]
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libgl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libgl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libglapi.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libgl-cos7-aarch64",
+   "version":"18.0.5"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"db4020062635fddff4e3f8ed19bde4d615d07172a36b8759110aca621c4cb6cd",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-18.0.5-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"62f2fbcf330222a5246d81f7d18cd4f722fce845daa9b24932c0a7bfc6338b59",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-devel-18.0.5-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libGLX_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64",
+    "mesa-libgl-cos7-aarch64",
+    "mesa-libglapi-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "mesa-libgl-cos7-aarch64",
   "mesa-libgl-devel-cos7-aarch64"
@@ -256,5 +474,114 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-18.0.5-3.el7.aarch64.rpm",
- "version":"18.0.5"
+ "version":"18.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libGL runtime library.",
+   "home":"http://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libGL runtime libraries and DRI drivers<Paste>"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* .",
+      "rm usr/lib64/libGLX_system.so.0"
+     ]
+    },
+    "name":"mesa-libgl-cos7-aarch64",
+    "requirements":[
+     "mesa-libglapi-cos7-aarch64",
+     "libdrm-cos7-aarch64"
+    ]
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libgl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libgl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libglapi.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libgl-cos7-aarch64",
+   "version":"18.0.5"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"db4020062635fddff4e3f8ed19bde4d615d07172a36b8759110aca621c4cb6cd",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-18.0.5-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"62f2fbcf330222a5246d81f7d18cd4f722fce845daa9b24932c0a7bfc6338b59",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libGL-devel-18.0.5-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libGLX_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64",
+    "mesa-libgl-cos7-aarch64",
+    "mesa-libglapi-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

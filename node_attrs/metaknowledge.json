@@ -63,6 +63,89 @@
  },
  "feedstock_name":"metaknowledge",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"metaknowledge is a Python3 library that simplifies bibliometric research using data\nfrom various sources. It reads a directory of plain text files containing meta-data\non publications and citations, and writes to a variety of data structures that are\nsuitable for quantitative, network, and text analyses. It handles large datasets\n(e.g. several million records) efficiently.\n",
+   "dev_url":"https://github.com/networks-lab/metaknowledge",
+   "doc_url":"https://metaknowledge.readthedocs.io/",
+   "home":"https://github.com/networks-lab/metaknowledge",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A Python library for doing bibliometric and network analysis in science and health policy research"
+  },
+  "build":{
+   "entry_points":[
+    "metaknowledge = metaknowledge.bin:mkCLI",
+    "metaknowledge-mdToNb = metaknowledge.bin:mkMdToNb",
+    "metaknowledge-DocsGen = metaknowledge.bin:mkDocs"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vtraag"
+   ]
+  },
+  "package":{
+   "name":"metaknowledge",
+   "version":"3.3.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "networkx >=2.0",
+    "matplotlib-base",
+    "scipy",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0bdd5fa6e96aee866c9607622157c41a3933db00e5341ba319226dc96698f8fa",
+   "url":"https://pypi.io/packages/source/m/metaknowledge/metaknowledge-3.3.3.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "metaknowledge --help"
+   ],
+   "imports":[
+    "metaknowledge",
+    "metaknowledge.tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"metaknowledge is a Python3 library that simplifies bibliometric research using data\nfrom various sources. It reads a directory of plain text files containing meta-data\non publications and citations, and writes to a variety of data structures that are\nsuitable for quantitative, network, and text analyses. It handles large datasets\n(e.g. several million records) efficiently.\n",
@@ -154,6 +237,89 @@
   "3.3.3.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"metaknowledge is a Python3 library that simplifies bibliometric research using data\nfrom various sources. It reads a directory of plain text files containing meta-data\non publications and citations, and writes to a variety of data structures that are\nsuitable for quantitative, network, and text analyses. It handles large datasets\n(e.g. several million records) efficiently.\n",
+   "dev_url":"https://github.com/networks-lab/metaknowledge",
+   "doc_url":"https://metaknowledge.readthedocs.io/",
+   "home":"https://github.com/networks-lab/metaknowledge",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A Python library for doing bibliometric and network analysis in science and health policy research"
+  },
+  "build":{
+   "entry_points":[
+    "metaknowledge = metaknowledge.bin:mkCLI",
+    "metaknowledge-mdToNb = metaknowledge.bin:mkMdToNb",
+    "metaknowledge-DocsGen = metaknowledge.bin:mkDocs"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vtraag"
+   ]
+  },
+  "package":{
+   "name":"metaknowledge",
+   "version":"3.3.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "networkx >=2.0",
+    "matplotlib-base",
+    "scipy",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0bdd5fa6e96aee866c9607622157c41a3933db00e5341ba319226dc96698f8fa",
+   "url":"https://pypi.io/packages/source/m/metaknowledge/metaknowledge-3.3.3.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "metaknowledge --help"
+   ],
+   "imports":[
+    "metaknowledge",
+    "metaknowledge.tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"metaknowledge\" %}\n{% set version = \"3.3.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0bdd5fa6e96aee866c9607622157c41a3933db00e5341ba319226dc96698f8fa\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - metaknowledge = metaknowledge.bin:mkCLI\n    - metaknowledge-mdToNb = metaknowledge.bin:mkMdToNb\n    - metaknowledge-DocsGen = metaknowledge.bin:mkDocs\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - networkx >=2.0\n    - pyreadline  # [win]\n    - matplotlib-base\n    - scipy\n    - numpy\n\ntest:\n  imports:\n    - metaknowledge\n    - metaknowledge.tests\n  commands:\n    - metaknowledge --help\n\nabout:\n  home: https://github.com/networks-lab/metaknowledge\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: A Python library for doing bibliometric and network analysis in science and health policy research\n\n  description: |\n    metaknowledge is a Python3 library that simplifies bibliometric research using data\n    from various sources. It reads a directory of plain text files containing meta-data\n    on publications and citations, and writes to a variety of data structures that are\n    suitable for quantitative, network, and text analyses. It handles large datasets\n    (e.g. several million records) efficiently.\n  doc_url: https://metaknowledge.readthedocs.io/\n  dev_url: https://github.com/networks-lab/metaknowledge\n\nextra:\n  recipe-maintainers:\n    - vtraag\n",
  "req":{
@@ -227,5 +393,90 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/metaknowledge/metaknowledge-3.3.2.tar.gz",
- "version":"3.3.3.2"
+ "version":"3.3.3.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"metaknowledge is a Python3 library that simplifies bibliometric research using data\nfrom various sources. It reads a directory of plain text files containing meta-data\non publications and citations, and writes to a variety of data structures that are\nsuitable for quantitative, network, and text analyses. It handles large datasets\n(e.g. several million records) efficiently.\n",
+   "dev_url":"https://github.com/networks-lab/metaknowledge",
+   "doc_url":"https://metaknowledge.readthedocs.io/",
+   "home":"https://github.com/networks-lab/metaknowledge",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"A Python library for doing bibliometric and network analysis in science and health policy research"
+  },
+  "build":{
+   "entry_points":[
+    "metaknowledge = metaknowledge.bin:mkCLI",
+    "metaknowledge-mdToNb = metaknowledge.bin:mkMdToNb",
+    "metaknowledge-DocsGen = metaknowledge.bin:mkDocs"
+   ],
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "vtraag"
+   ]
+  },
+  "package":{
+   "name":"metaknowledge",
+   "version":"3.3.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "networkx >=2.0",
+    "pyreadline",
+    "matplotlib-base",
+    "scipy",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"0bdd5fa6e96aee866c9607622157c41a3933db00e5341ba319226dc96698f8fa",
+   "url":"https://pypi.io/packages/source/m/metaknowledge/metaknowledge-3.3.3.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "metaknowledge --help"
+   ],
+   "imports":[
+    "metaknowledge",
+    "metaknowledge.tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "networkx",
+    "numpy",
+    "pyreadline",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

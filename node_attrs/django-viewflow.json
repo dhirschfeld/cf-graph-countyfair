@@ -167,6 +167,78 @@
  "conda-forge.yml":{},
  "feedstock_name":"django-viewflow",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Viewflow takes the best parts from two worlds. It is based on BPMN -\nbusiness process modeling and notation standard - and plays well with the\ndjango web development toolchain. BPMN provides a standard notation,\nreadily understandable by all business stakeholders. Viewflow bridges\nthe gap between a picture and an executable, ready to use web application.\n",
+   "dev_url":"https://github.com/viewflow/viewflow/",
+   "doc_url":"http://docs.viewflow.io/",
+   "home":"http://viewflow.io/",
+   "license":"AGPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"LICENSE",
+   "summary":"Reusable workflow library for Django"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley"
+   ]
+  },
+  "package":{
+   "name":"django-viewflow",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django >=1.8",
+    "django-filter >=1.0"
+   ]
+  },
+  "source":{
+   "fn":"django-viewflow-1.5.1.tar.gz",
+   "sha256":"6cecba6fd21a7ae23f6b10c98db032e46987f6a520e183a5b556cb87ede9c180",
+   "url":"https://pypi.io/packages/source/d/django-viewflow/django-viewflow-1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['viewflow']); django.setup(); import viewflow; import viewflow.flow; import viewflow.flow.views; import viewflow.management; import viewflow.migrations; import viewflow.nodes; import viewflow.templatetags; import viewflow.frontend; import viewflow.frontend.templatetags\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-filter",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Viewflow takes the best parts from two worlds. It is based on BPMN -\nbusiness process modeling and notation standard - and plays well with the\ndjango web development toolchain. BPMN provides a standard notation,\nreadily understandable by all business stakeholders. Viewflow bridges\nthe gap between a picture and an executable, ready to use web application.\n",
@@ -234,6 +306,78 @@
   "1.6.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Viewflow takes the best parts from two worlds. It is based on BPMN -\nbusiness process modeling and notation standard - and plays well with the\ndjango web development toolchain. BPMN provides a standard notation,\nreadily understandable by all business stakeholders. Viewflow bridges\nthe gap between a picture and an executable, ready to use web application.\n",
+   "dev_url":"https://github.com/viewflow/viewflow/",
+   "doc_url":"http://docs.viewflow.io/",
+   "home":"http://viewflow.io/",
+   "license":"AGPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"LICENSE",
+   "summary":"Reusable workflow library for Django"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley"
+   ]
+  },
+  "package":{
+   "name":"django-viewflow",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django >=1.8",
+    "django-filter >=1.0"
+   ]
+  },
+  "source":{
+   "fn":"django-viewflow-1.5.1.tar.gz",
+   "sha256":"6cecba6fd21a7ae23f6b10c98db032e46987f6a520e183a5b556cb87ede9c180",
+   "url":"https://pypi.io/packages/source/d/django-viewflow/django-viewflow-1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['viewflow']); django.setup(); import viewflow; import viewflow.flow; import viewflow.flow.views; import viewflow.management; import viewflow.migrations; import viewflow.nodes; import viewflow.templatetags; import viewflow.frontend; import viewflow.frontend.templatetags\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-filter",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.12.18.03.58",
  "raw_meta_yaml":"{% set name = \"django-viewflow\" %}\n{% set version = \"1.5.1\" %}\n{% set sha256 = \"6cecba6fd21a7ae23f6b10c98db032e46987f6a520e183a5b556cb87ede9c180\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n    - django-filter >=1.0\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['viewflow']); django.setup(); import viewflow; import viewflow.flow; import viewflow.flow.views; import viewflow.management; import viewflow.migrations; import viewflow.nodes; import viewflow.templatetags; import viewflow.frontend; import viewflow.frontend.templatetags\"\n\nabout:\n  home: http://viewflow.io/\n  license: AGPL-3.0\n  license_family: GPL3\n  license_file: LICENSE\n  summary: 'Reusable workflow library for Django'\n  description: |\n    Viewflow takes the best parts from two worlds. It is based on BPMN - \n    business process modeling and notation standard - and plays well with the \n    django web development toolchain. BPMN provides a standard notation, \n    readily understandable by all business stakeholders. Viewflow bridges \n    the gap between a picture and an executable, ready to use web application.\n  doc_url: http://docs.viewflow.io/\n  dev_url: https://github.com/viewflow/viewflow/\n\nextra:\n  recipe-maintainers:\n    - cshaley\n",
  "req":{
@@ -298,5 +442,77 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/django-viewflow/django-viewflow-1.5.1.tar.gz",
- "version":"1.5.1"
+ "version":"1.5.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Viewflow takes the best parts from two worlds. It is based on BPMN -\nbusiness process modeling and notation standard - and plays well with the\ndjango web development toolchain. BPMN provides a standard notation,\nreadily understandable by all business stakeholders. Viewflow bridges\nthe gap between a picture and an executable, ready to use web application.\n",
+   "dev_url":"https://github.com/viewflow/viewflow/",
+   "doc_url":"http://docs.viewflow.io/",
+   "home":"http://viewflow.io/",
+   "license":"AGPL-3.0",
+   "license_family":"GPL3",
+   "license_file":"LICENSE",
+   "summary":"Reusable workflow library for Django"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cshaley"
+   ]
+  },
+  "package":{
+   "name":"django-viewflow",
+   "version":"1.5.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "django >=1.8",
+    "django-filter >=1.0"
+   ]
+  },
+  "source":{
+   "fn":"django-viewflow-1.5.1.tar.gz",
+   "sha256":"6cecba6fd21a7ae23f6b10c98db032e46987f6a520e183a5b556cb87ede9c180",
+   "url":"https://pypi.io/packages/source/d/django-viewflow/django-viewflow-1.5.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['viewflow']); django.setup(); import viewflow; import viewflow.flow; import viewflow.flow.views; import viewflow.management; import viewflow.migrations; import viewflow.nodes; import viewflow.templatetags; import viewflow.frontend; import viewflow.frontend.templatetags\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "django",
+    "django-filter",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

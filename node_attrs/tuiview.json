@@ -99,6 +99,96 @@
  },
  "feedstock_name":"tuiview",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://tuiview.org/",
+   "license":"GPL-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool."
+  },
+  "build":{
+   "entry_points":[
+    "tuiview = tuiview.viewerapplication:run",
+    "tuiviewwritetable = tuiview.writetableapplication:run"
+   ],
+   "number":"1",
+   "script":[
+    "export TUIVIEW_NOCMDLINE=1",
+    " setup.py install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"tuiview",
+   "version":"1.2.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ]
+  },
+  "source":{
+   "sha256":"61b136fa31c949d7a7a4dbf8562e6fc677d5b1845b152ec39e337f4eb2e91662",
+   "url":"https://github.com/ubarsc/tuiview/releases/download/tuiview-1.2.6/TuiView-1.2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "tuiviewwritetable -h",
+    "conda inspect linkages -p $PREFIX tuiview"
+   ],
+   "imports":[
+    "tuiview",
+    "tuiview.vectorrasterizer"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://tuiview.org/",
@@ -201,6 +291,97 @@
  },
  "name":"tuiview",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://tuiview.org/",
+   "license":"GPL-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool."
+  },
+  "build":{
+   "entry_points":[
+    "tuiview = tuiview.viewerapplication:run",
+    "tuiviewwritetable = tuiview.writetableapplication:run"
+   ],
+   "number":"1",
+   "script":[
+    "export TUIVIEW_NOCMDLINE=1",
+    " setup.py install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"tuiview",
+   "version":"1.2.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ]
+  },
+  "source":{
+   "sha256":"61b136fa31c949d7a7a4dbf8562e6fc677d5b1845b152ec39e337f4eb2e91662",
+   "url":"https://github.com/ubarsc/tuiview/releases/download/tuiview-1.2.6/TuiView-1.2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "tuiviewwritetable -h",
+    "conda inspect linkages -p $PREFIX tuiview",
+    "conda inspect objects -p $PREFIX tuiview"
+   ],
+   "imports":[
+    "tuiview",
+    "tuiview.vectorrasterizer"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.18.14.31.44",
  "raw_meta_yaml":"{% set version = \"1.2.6\" %}\n\npackage:\n  name: tuiview\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ubarsc/tuiview/releases/download/tuiview-{{ version }}/TuiView-{{ version }}.tar.gz\n  sha256: 61b136fa31c949d7a7a4dbf8562e6fc677d5b1845b152ec39e337f4eb2e91662\n\nbuild:\n  number: 1\n  skip: True  # [win and vc<14]\n  script:\n    - set TUIVIEW_NOCMDLINE=1  # [win]\n    - set GDAL_HOME=%LIBRARY_PREFIX%  # [win]\n    - export TUIVIEW_NOCMDLINE=1  # [not win]\n    - \"{{ PYTHON }} setup.py install\"\n  entry_points:\n    - tuiview = tuiview.viewerapplication:run\n    - tuiviewwritetable = tuiview.writetableapplication:run\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - numpy\n    - gdal\n    - pyqt\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - gdal\n    - pyqt\n\ntest:\n  imports:\n    - tuiview\n    # make sure we can import the C extension\n    - tuiview.vectorrasterizer\n  commands:\n    - tuiviewwritetable -h\n    - conda inspect linkages -p $PREFIX tuiview  # [not win]\n    - conda inspect objects -p $PREFIX tuiview  # [osx]\n\nabout:\n  home: http://tuiview.org/\n  license: GPL-2.0\n  license_file: LICENSE.txt\n  summary: Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - danclewley\n",
  "req":{
@@ -276,5 +457,96 @@
   }
  },
  "url":"https://bitbucket.org/chchrsc/tuiview/downloads/TuiView-1.2.4.tar.gz",
- "version":"1.2.6"
+ "version":"1.2.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://tuiview.org/",
+   "license":"GPL-2.0",
+   "license_file":"LICENSE.txt",
+   "summary":"Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool."
+  },
+  "build":{
+   "entry_points":[
+    "tuiview = tuiview.viewerapplication:run",
+    "tuiviewwritetable = tuiview.writetableapplication:run"
+   ],
+   "number":"1",
+   "script":[
+    "set TUIVIEW_NOCMDLINE=1",
+    "set GDAL_HOME=%LIBRARY_PREFIX%",
+    " setup.py install"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "gillins",
+    "danclewley"
+   ]
+  },
+  "package":{
+   "name":"tuiview",
+   "version":"1.2.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "gdal",
+    "pyqt"
+   ]
+  },
+  "source":{
+   "sha256":"61b136fa31c949d7a7a4dbf8562e6fc677d5b1845b152ec39e337f4eb2e91662",
+   "url":"https://github.com/ubarsc/tuiview/releases/download/tuiview-1.2.6/TuiView-1.2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "tuiviewwritetable -h"
+   ],
+   "imports":[
+    "tuiview",
+    "tuiview.vectorrasterizer"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "numpy",
+    "pyqt",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

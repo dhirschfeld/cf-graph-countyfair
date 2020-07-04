@@ -27,6 +27,84 @@
  },
  "feedstock_name":"ghc",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ghc/ghc",
+   "doc_url":"https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/",
+   "home":"https://haskell.org/ghc/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Glorious Glasgow Haskell Compilation System"
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "eggzilla"
+   ]
+  },
+  "package":{
+   "name":"ghc",
+   "version":"8.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "binutils_impl_linux-64",
+    "gmp",
+    "ncurses"
+   ],
+   "host":[
+    "xz",
+    "binutils_impl_linux-64",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "source":[
+   {
+    "sha256":"cd7afbca54edf9890da9f432c63366556246c85c1198e40c99df5af01c555834",
+    "url":"https://downloads.haskell.org/~ghc/8.2.2/ghc-8.2.2-x86_64-deb7-linux.tar.xz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "ghc --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "binutils_impl_linux-64",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "binutils_impl_linux-64",
+    "gmp",
+    "ncurses",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ghc/ghc",
@@ -97,6 +175,76 @@
  },
  "name":"ghc",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ghc/ghc",
+   "doc_url":"https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/",
+   "home":"https://haskell.org/ghc/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Glorious Glasgow Haskell Compilation System"
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "eggzilla"
+   ]
+  },
+  "package":{
+   "name":"ghc",
+   "version":"8.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gmp",
+    "ncurses"
+   ],
+   "host":[
+    "xz",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "source":{},
+  "test":{
+   "commands":[
+    "ghc --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "ncurses",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.12.18",
  "raw_meta_yaml":"{% set name = \"ghc\" %}\n{% set version = \"8.2.2\" %}\n{% set unixsha256 = \"cd7afbca54edf9890da9f432c63366556246c85c1198e40c99df5af01c555834\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://downloads.haskell.org/~{{name}}/{{ version }}/{{ name }}-{{ version }}-x86_64-deb7-linux.tar.xz  # [linux]\n    sha256: {{ unixsha256 }}  # [linux]\n\nbuild:\n  number: 1001\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - binutils_impl_linux-64  # [linux and c_compiler != 'toolchain_c' ]\n    - binutils  # [linux and c_compiler == 'toolchain_c' ]\n    - gmp\n    - ncurses\n  host:\n    - xz\n    - binutils_impl_linux-64  # [linux and c_compiler != 'toolchain_c' ]\n    - binutils  # [linux and c_compiler == 'toolchain_c' ]\n    - gmp\n    - ncurses\n\ntest:\n  commands:\n    - ghc --help\n\nabout:\n  home: https://haskell.org/ghc/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Glorious Glasgow Haskell Compilation System'\n\n  doc_url: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/\n  dev_url: https://github.com/ghc/ghc\n\nextra:\n  recipe-maintainers:\n    - eggzilla\n",
  "req":{
@@ -171,5 +319,75 @@
   }
  },
  "url":"https://downloads.haskell.org/~ghc/8.2.2/ghc-8.2.2-x86_64-deb7-linux.tar.xz",
- "version":"8.2.2"
+ "version":"8.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ghc/ghc",
+   "doc_url":"https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/",
+   "home":"https://haskell.org/ghc/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Glorious Glasgow Haskell Compilation System"
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "eggzilla"
+   ]
+  },
+  "package":{
+   "name":"ghc",
+   "version":"8.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gmp",
+    "ncurses"
+   ],
+   "host":[
+    "xz",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "source":{},
+  "test":{
+   "commands":[
+    "ghc --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "gmp",
+    "ncurses"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gmp",
+    "ncurses",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

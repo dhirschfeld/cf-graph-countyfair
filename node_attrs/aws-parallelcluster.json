@@ -184,6 +184,107 @@
  },
  "feedstock_name":"aws-parallelcluster",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aws/aws-parallelcluster",
+   "doc_url":"https://aws-parallelcluster.readthedocs.io/en/v2.7.0/",
+   "home":"https://github.com/aws/aws-parallelcluster",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"/LICENSE.txt",
+   "summary":"AWS ParallelCluster is an AWS supported Open Source cluster management tool to deploy and manage HPC clusters in the AWS cloud."
+  },
+  "build":{
+   "entry_points":[
+    "pcluster = pcluster.cli:main",
+    "awsbqueues = awsbatch.awsbqueues:main",
+    "awsbhosts = awsbatch.awsbhosts:main",
+    "awsbstat = awsbatch.awsbstat:main",
+    "awsbkill = awsbatch.awsbkill:main",
+    "awsbsub = awsbatch.awsbsub:main",
+    "awsbout = awsbatch.awsbout:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "notestaff",
+    "sean-smith",
+    "lukeseawalker",
+    "demartinofra",
+    "tilne",
+    "rexcsn",
+    "enrico-usai",
+    "ddeidda"
+   ]
+  },
+  "package":{
+   "name":"aws-parallelcluster",
+   "version":"2.7.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "boto3 >=1.10.15",
+    "tabulate >=0.8.6",
+    "future >=0.18.2",
+    "pyyaml >=5.2"
+   ]
+  },
+  "source":{
+   "sha256":"7c34995acfcc256a6996541d330575fc711e1fd5735bf3d734d4e96c1dc8df60",
+   "url":"https://pypi.io/packages/source/a/aws-parallelcluster/aws-parallelcluster-2.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pcluster --help",
+    "awsbqueues --help",
+    "awsbhosts --help",
+    "awsbstat --help",
+    "awsbkill --help",
+    "awsbsub --help",
+    "awsbout --help"
+   ],
+   "imports":[
+    "awsbatch",
+    "pcluster"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "future",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/aws/aws-parallelcluster",
@@ -328,6 +429,107 @@
   "2.7.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aws/aws-parallelcluster",
+   "doc_url":"https://aws-parallelcluster.readthedocs.io/en/v2.7.0/",
+   "home":"https://github.com/aws/aws-parallelcluster",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"/LICENSE.txt",
+   "summary":"AWS ParallelCluster is an AWS supported Open Source cluster management tool to deploy and manage HPC clusters in the AWS cloud."
+  },
+  "build":{
+   "entry_points":[
+    "pcluster = pcluster.cli:main",
+    "awsbqueues = awsbatch.awsbqueues:main",
+    "awsbhosts = awsbatch.awsbhosts:main",
+    "awsbstat = awsbatch.awsbstat:main",
+    "awsbkill = awsbatch.awsbkill:main",
+    "awsbsub = awsbatch.awsbsub:main",
+    "awsbout = awsbatch.awsbout:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "notestaff",
+    "sean-smith",
+    "lukeseawalker",
+    "demartinofra",
+    "tilne",
+    "rexcsn",
+    "enrico-usai",
+    "ddeidda"
+   ]
+  },
+  "package":{
+   "name":"aws-parallelcluster",
+   "version":"2.7.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "boto3 >=1.10.15",
+    "tabulate >=0.8.6",
+    "future >=0.18.2",
+    "pyyaml >=5.2"
+   ]
+  },
+  "source":{
+   "sha256":"7c34995acfcc256a6996541d330575fc711e1fd5735bf3d734d4e96c1dc8df60",
+   "url":"https://pypi.io/packages/source/a/aws-parallelcluster/aws-parallelcluster-2.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pcluster --help",
+    "awsbqueues --help",
+    "awsbhosts --help",
+    "awsbstat --help",
+    "awsbkill --help",
+    "awsbsub --help",
+    "awsbout --help"
+   ],
+   "imports":[
+    "awsbatch",
+    "pcluster"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "future",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.18.14.31.44",
  "raw_meta_yaml":"{% set name = \"aws-parallelcluster\" %}\n{% set version = \"2.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7c34995acfcc256a6996541d330575fc711e1fd5735bf3d734d4e96c1dc8df60\n\nbuild:\n  number: 0\n  entry_points:\n    - pcluster = pcluster.cli:main\n    - awsbqueues = awsbatch.awsbqueues:main\n    - awsbhosts = awsbatch.awsbhosts:main\n    - awsbstat = awsbatch.awsbstat:main\n    - awsbkill = awsbatch.awsbkill:main\n    - awsbsub = awsbatch.awsbsub:main\n    - awsbout = awsbatch.awsbout:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n    - setuptools\n    - boto3 >=1.10.15\n    - tabulate >=0.8.6\n    - future >=0.18.2\n    - pyyaml >=5.2\n    - configparser >=4.0.2  # [py2k]\n\ntest:\n  imports:\n    - awsbatch\n    - pcluster\n  commands:\n    - pcluster --help\n    - awsbqueues --help\n    - awsbhosts --help\n    - awsbstat --help\n    - awsbkill --help\n    - awsbsub --help\n    - awsbout --help\n\nabout:\n  home: https://github.com/aws/aws-parallelcluster\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: {{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt\n  summary: AWS ParallelCluster is an AWS supported Open Source cluster management tool to deploy and manage HPC clusters in the AWS cloud.\n  doc_url: https://aws-parallelcluster.readthedocs.io/en/v{{ version }}/\n  dev_url: https://github.com/aws/aws-parallelcluster\n\nextra:\n  recipe-maintainers:\n    - notestaff\n    - sean-smith\n    - lukeseawalker\n    - demartinofra\n    - tilne\n    - rexcsn\n    - enrico-usai\n    - ddeidda\n",
  "req":{
@@ -401,5 +603,106 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/aws-parallelcluster/aws-parallelcluster-2.4.1.tar.gz",
- "version":"2.7.0"
+ "version":"2.7.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aws/aws-parallelcluster",
+   "doc_url":"https://aws-parallelcluster.readthedocs.io/en/v2.7.0/",
+   "home":"https://github.com/aws/aws-parallelcluster",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"/LICENSE.txt",
+   "summary":"AWS ParallelCluster is an AWS supported Open Source cluster management tool to deploy and manage HPC clusters in the AWS cloud."
+  },
+  "build":{
+   "entry_points":[
+    "pcluster = pcluster.cli:main",
+    "awsbqueues = awsbatch.awsbqueues:main",
+    "awsbhosts = awsbatch.awsbhosts:main",
+    "awsbstat = awsbatch.awsbstat:main",
+    "awsbkill = awsbatch.awsbkill:main",
+    "awsbsub = awsbatch.awsbsub:main",
+    "awsbout = awsbatch.awsbout:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "notestaff",
+    "sean-smith",
+    "lukeseawalker",
+    "demartinofra",
+    "tilne",
+    "rexcsn",
+    "enrico-usai",
+    "ddeidda"
+   ]
+  },
+  "package":{
+   "name":"aws-parallelcluster",
+   "version":"2.7.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "boto3 >=1.10.15",
+    "tabulate >=0.8.6",
+    "future >=0.18.2",
+    "pyyaml >=5.2"
+   ]
+  },
+  "source":{
+   "sha256":"7c34995acfcc256a6996541d330575fc711e1fd5735bf3d734d4e96c1dc8df60",
+   "url":"https://pypi.io/packages/source/a/aws-parallelcluster/aws-parallelcluster-2.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pcluster --help",
+    "awsbqueues --help",
+    "awsbhosts --help",
+    "awsbstat --help",
+    "awsbkill --help",
+    "awsbsub --help",
+    "awsbout --help"
+   ],
+   "imports":[
+    "awsbatch",
+    "pcluster"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "future",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

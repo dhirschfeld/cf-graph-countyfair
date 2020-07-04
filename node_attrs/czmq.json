@@ -107,6 +107,94 @@
  },
  "feedstock_name":"czmq",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"czmq is a high-level C binding for the ZeroMQ <http://zeromq.org/>\ndistributed messaging library.\n",
+   "dev_url":"https://github.com/zeromq/czmq",
+   "doc_url":"http://czmq.zeromq.org/",
+   "home":"http://czmq.zeromq.org/",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"High-level C binding for 0MQ"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"czmq",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "autoconf",
+    "automake",
+    "libtool",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libuuid",
+    "pcre",
+    "zeromq"
+   ],
+   "run":[
+    "zeromq"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libzmq2zeromq.patch"
+   ],
+   "sha256":"31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8",
+   "url":"https://github.com/zeromq/czmq/archive/v4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libczmq.a",
+    "test -f $PREFIX/lib/libczmq$SHLIB_EXT",
+    "test -f $PREFIX/include/czmq.h"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libuuid",
+    "pcre",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"czmq is a high-level C binding for the ZeroMQ <http://zeromq.org/>\ndistributed messaging library.\n",
@@ -194,6 +282,94 @@
  },
  "name":"czmq",
  "new_version":"4.2.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"czmq is a high-level C binding for the ZeroMQ <http://zeromq.org/>\ndistributed messaging library.\n",
+   "dev_url":"https://github.com/zeromq/czmq",
+   "doc_url":"http://czmq.zeromq.org/",
+   "home":"http://czmq.zeromq.org/",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"High-level C binding for 0MQ"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"czmq",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "autoconf",
+    "automake",
+    "libtool",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libuuid",
+    "pcre",
+    "zeromq"
+   ],
+   "run":[
+    "zeromq"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libzmq2zeromq.patch"
+   ],
+   "sha256":"31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8",
+   "url":"https://github.com/zeromq/czmq/archive/v4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libczmq.a",
+    "test -f $PREFIX/lib/libczmq$SHLIB_EXT",
+    "test -f $PREFIX/include/czmq.h"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "libtool",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libuuid",
+    "pcre",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"czmq\" %}\n{% set version = \"4.2.0\" %}\n{% set sha256 = \"31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/zeromq/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - libzmq2zeromq.patch\n    - missing_stdint_zeromq.patch  # [win and vc<14]\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake\n    - ninja  # [win]\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - pkg-config  # [unix]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libuuid  # [unix]\n    - pcre\n    - zeromq\n  run:\n    - zeromq\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libczmq.a  # [unix]\n    - test -f $PREFIX/lib/libczmq$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/include/czmq.h  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\libczmq.lib exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\czmq.h exit 1  # [win]\n\nabout:\n  home: http://czmq.zeromq.org/\n  license: MPL-2.0\n  license_file: LICENSE\n  summary: 'High-level C binding for 0MQ'\n\n  description: |\n    czmq is a high-level C binding for the ZeroMQ <http://zeromq.org/>\n    distributed messaging library.\n  doc_url: http://czmq.zeromq.org/\n  dev_url: https://github.com/zeromq/czmq\n\nextra:\n  recipe-maintainers:\n    - langmm\n",
  "req":{
@@ -281,5 +457,86 @@
   }
  },
  "url":"https://github.com/zeromq/czmq/archive/v4.2.0.tar.gz",
- "version":"4.2.0"
+ "version":"4.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"czmq is a high-level C binding for the ZeroMQ <http://zeromq.org/>\ndistributed messaging library.\n",
+   "dev_url":"https://github.com/zeromq/czmq",
+   "doc_url":"http://czmq.zeromq.org/",
+   "home":"http://czmq.zeromq.org/",
+   "license":"MPL-2.0",
+   "license_file":"LICENSE",
+   "summary":"High-level C binding for 0MQ"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"czmq",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "pcre",
+    "zeromq"
+   ],
+   "run":[
+    "zeromq"
+   ]
+  },
+  "source":{
+   "patches":[
+    "libzmq2zeromq.patch",
+    "missing_stdint_zeromq.patch"
+   ],
+   "sha256":"31185090b500b64855003be2450ced00efa6b58544639acfc68aa13c9ec249f8",
+   "url":"https://github.com/zeromq/czmq/archive/v4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_LIB%\\\\libczmq.lib exit 1",
+    "if not exist %LIBRARY_INC%\\\\czmq.h exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pcre",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

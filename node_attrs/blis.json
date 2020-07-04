@@ -201,6 +201,75 @@
  },
  "feedstock_name":"blis",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/flame/blis",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"BLAS-like Library Instantiation Software Framework"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"blis",
+   "version":"0.7.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "sed",
+    "perl",
+    "python >=3.5"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":[
+    "patches/xerbla.patch"
+   ],
+   "sha256":"7e345d666799e15bba570bd125f97042f17bf752a61dcf314486a6cd096d5f68",
+   "url":"https://github.com/flame/blis/archive/0.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libblis.a",
+    "test -f $PREFIX/lib/libblis${SHLIB_EXT}",
+    "test -f $PREFIX/include/blis/blis.h",
+    "test -f $PREFIX/include/blis/cblas.h"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "perl",
+    "python",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://github.com/flame/blis",
@@ -280,6 +349,79 @@
   "0.7.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/flame/blis",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"BLAS-like Library Instantiation Software Framework"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"blis",
+   "version":"0.7.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "clangxx",
+    "llvm-tools",
+    "sed",
+    "perl",
+    "python >=3.5"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":[
+    "patches/xerbla.patch"
+   ],
+   "sha256":"7e345d666799e15bba570bd125f97042f17bf752a61dcf314486a6cd096d5f68",
+   "url":"https://github.com/flame/blis/archive/0.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libblis.a",
+    "test -f $PREFIX/lib/libblis${SHLIB_EXT}",
+    "test -f $PREFIX/include/blis/blis.h",
+    "test -f $PREFIX/include/blis/cblas.h"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "clangxx",
+    "llvm-tools",
+    "perl",
+    "python",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.08",
  "raw_meta_yaml":"{% set name = \"blis\" %}\n{% set version = \"0.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/flame/blis/archive/{{ version }}.tar.gz\n  sha256: 7e345d666799e15bba570bd125f97042f17bf752a61dcf314486a6cd096d5f68\n  patches:\n    # upstreamed already (commit 787adad73b); can be dropped on next release\n    - patches/xerbla.patch\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - clangxx                # [win or osx]\n    - llvm-tools             # [win or osx]\n    - autotools_clang_conda  # [win]\n    - m2-sed                 # [win]\n    - sed                    # [unix]\n    - perl\n    - python >=3.5\n  host:\n  run:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libblis.a                       # [unix]\n    - test -f $PREFIX/lib/libblis${SHLIB_EXT}             # [unix]\n    - test -f $PREFIX/include/blis/blis.h                 # [unix]\n    - test -f $PREFIX/include/blis/cblas.h                # [unix]\n    - if not exist %LIBRARY_INC%\\\\blis\\\\blis.h exit 1     # [win]\n    - if not exist %LIBRARY_INC%\\\\blis\\\\cblas.h exit 1    # [win]\n    - if not exist %LIBRARY_BIN%\\\\libblis.3.dll exit 1    # [win]\n    - if not exist %LIBRARY_LIB%\\\\blis.lib exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\\\libblis.lib exit 1      # [win]\n\nabout:\n  home: http://github.com/flame/blis\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: BLAS-like Library Instantiation Software Framework\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "req":{
@@ -352,5 +494,82 @@
   }
  },
  "url":"https://github.com/flame/blis/archive/0.6.0.tar.gz",
- "version":"0.7.0"
+ "version":"0.7.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/flame/blis",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"BLAS-like Library Instantiation Software Framework"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"blis",
+   "version":"0.7.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "clangxx",
+    "llvm-tools",
+    "autotools_clang_conda",
+    "m2-sed",
+    "perl",
+    "python >=3.5"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "patches":[
+    "patches/xerbla.patch"
+   ],
+   "sha256":"7e345d666799e15bba570bd125f97042f17bf752a61dcf314486a6cd096d5f68",
+   "url":"https://github.com/flame/blis/archive/0.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\\\blis\\\\blis.h exit 1",
+    "if not exist %LIBRARY_INC%\\\\blis\\\\cblas.h exit 1",
+    "if not exist %LIBRARY_BIN%\\\\libblis.3.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\\\blis.lib exit 1",
+    "if not exist %LIBRARY_LIB%\\\\libblis.lib exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autotools_clang_conda",
+    "c_compiler_stub",
+    "clangxx",
+    "llvm-tools",
+    "m2-sed",
+    "perl",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

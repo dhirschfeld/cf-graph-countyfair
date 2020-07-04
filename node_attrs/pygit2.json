@@ -353,6 +353,90 @@
  },
  "feedstock_name":"pygit2",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/libgit2/pygit2",
+   "doc_url":"http://www.pygit2.org/",
+   "home":"http://github.com/libgit2/pygit2",
+   "license":"GPL-2.0 WITH GCC-exception-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Python bindings for libgit2."
+  },
+  "build":{
+   "features":null,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kszucs",
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"pygit2",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cffi",
+    "libgit2 1.0.*"
+   ],
+   "run":[
+    "python",
+    "cached-property",
+    "cffi",
+    "six",
+    "libgit2 1.0.*"
+   ]
+  },
+  "source":{
+   "fn":"pygit2-1.2.1.tar.gz",
+   "sha256":"de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387",
+   "url":"https://pypi.io/packages/source/p/pygit2/pygit2-1.2.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pygit2"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "libgit2",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cached-property",
+    "cffi",
+    "libgit2",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/libgit2/pygit2",
@@ -438,6 +522,90 @@
   "1.2.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/libgit2/pygit2",
+   "doc_url":"http://www.pygit2.org/",
+   "home":"http://github.com/libgit2/pygit2",
+   "license":"GPL-2.0 WITH GCC-exception-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Python bindings for libgit2."
+  },
+  "build":{
+   "features":null,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kszucs",
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"pygit2",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cffi",
+    "libgit2 1.0.*"
+   ],
+   "run":[
+    "python",
+    "cached-property",
+    "cffi",
+    "six",
+    "libgit2 1.0.*"
+   ]
+  },
+  "source":{
+   "fn":"pygit2-1.2.1.tar.gz",
+   "sha256":"de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387",
+   "url":"https://pypi.io/packages/source/p/pygit2/pygit2-1.2.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pygit2"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "libgit2",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cached-property",
+    "cffi",
+    "libgit2",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.01.13.16.44",
  "raw_meta_yaml":"{% set name = \"pygit2\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387\" %}\n\n# must pin the appropiate libgit2 version documented here:\n# https://www.pygit2.org/install.html#version-numbers\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc10   # [win and py34]\n    - vc14   # [win and py35]\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\n  host:\n    - python\n    - pip\n    - cffi\n    - libgit2 1.0.*\n\n  run:\n    - python\n    - cached-property\n    - cffi\n    - six\n    - libgit2 1.0.*\n\ntest:\n  imports:\n    - pygit2\n\nabout:\n  home: http://github.com/libgit2/pygit2\n  summary: Python bindings for libgit2.\n  license: GPL-2.0 WITH GCC-exception-2.0\n  license_family: GPL\n  license_file: COPYING\n  doc_url: http://www.pygit2.org/\n  dev_url: https://github.com/libgit2/pygit2\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xhochy\n",
  "req":{
@@ -517,5 +685,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pygit2/pygit2-0.28.2.tar.gz",
- "version":"1.2.1"
+ "version":"1.2.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/libgit2/pygit2",
+   "doc_url":"http://www.pygit2.org/",
+   "home":"http://github.com/libgit2/pygit2",
+   "license":"GPL-2.0 WITH GCC-exception-2.0",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Python bindings for libgit2."
+  },
+  "build":{
+   "features":null,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kszucs",
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"pygit2",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cffi",
+    "libgit2 1.0.*"
+   ],
+   "run":[
+    "python",
+    "cached-property",
+    "cffi",
+    "six",
+    "libgit2 1.0.*"
+   ]
+  },
+  "source":{
+   "fn":"pygit2-1.2.1.tar.gz",
+   "sha256":"de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387",
+   "url":"https://pypi.io/packages/source/p/pygit2/pygit2-1.2.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pygit2"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "libgit2",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cached-property",
+    "cffi",
+    "libgit2",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

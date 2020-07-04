@@ -116,6 +116,85 @@
  },
  "feedstock_name":"epicscorelibs",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The EPICS (Experimental Physics and Industrial Control System) core\nlibraries for use by python modules. Either dynamically with ctypes\nor statically by compiled extension.\n",
+   "home":"https://github.com/mdavidsaver/epicscorelibs",
+   "license":"EPICS Open",
+   "license_file":"LICENSE",
+   "summary":"EPICS core libraries packaged as a \"python\" module"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-binary :all: -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"epicscorelibs",
+   "version":"7.0.3.99.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "setuptools_dso",
+    "readline"
+   ],
+   "run":[
+    "python",
+    "readline"
+   ]
+  },
+  "source":{
+   "sha256":"d668bfcae6f5fcf2ee06d268186e2115c7ca51ac20716e419ff7c09ab8b24808",
+   "url":"https://pypi.io/packages/source/e/epicscorelibs/epicscorelibs-7.0.3.99.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "epicscorelibs",
+    "epicscorelibs.config"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "readline",
+    "setuptools",
+    "setuptools_dso"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "readline"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The EPICS (Experimental Physics and Industrial Control System) core\nlibraries for use by python modules. Either dynamically with ctypes\nor statically by compiled extension.\n",
@@ -193,6 +272,85 @@
   "7.0.3.99.4.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The EPICS (Experimental Physics and Industrial Control System) core\nlibraries for use by python modules. Either dynamically with ctypes\nor statically by compiled extension.\n",
+   "home":"https://github.com/mdavidsaver/epicscorelibs",
+   "license":"EPICS Open",
+   "license_file":"LICENSE",
+   "summary":"EPICS core libraries packaged as a \"python\" module"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-binary :all: -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"epicscorelibs",
+   "version":"7.0.3.99.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "setuptools_dso",
+    "readline"
+   ],
+   "run":[
+    "python",
+    "readline"
+   ]
+  },
+  "source":{
+   "sha256":"d668bfcae6f5fcf2ee06d268186e2115c7ca51ac20716e419ff7c09ab8b24808",
+   "url":"https://pypi.io/packages/source/e/epicscorelibs/epicscorelibs-7.0.3.99.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "epicscorelibs",
+    "epicscorelibs.config"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "readline",
+    "setuptools",
+    "setuptools_dso"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "readline"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.18.14.31.44",
  "raw_meta_yaml":"{% set name = \"epicscorelibs\" %}\n{% set version = \"7.0.3.99.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d668bfcae6f5fcf2ee06d268186e2115c7ca51ac20716e419ff7c09ab8b24808\n\nbuild:\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-binary :all: -vv'\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - setuptools_dso\n    - readline  # [not win]\n  run:\n    - python\n    - readline  # [not win]\n\ntest:\n  imports:\n    - epicscorelibs\n    - epicscorelibs.config\n\nabout:\n  home: https://github.com/mdavidsaver/epicscorelibs\n  license: EPICS Open\n  license_file: LICENSE\n  summary: EPICS core libraries packaged as a \"python\" module\n  description: |\n    The EPICS (Experimental Physics and Industrial Control System) core\n    libraries for use by python modules. Either dynamically with ctypes\n    or statically by compiled extension.\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n",
  "req":{
@@ -270,5 +428,80 @@
   }
  },
  "url":"https://pypi.io/packages/source/e/epicscorelibs/epicscorelibs-7.0.3.99.0.0.tar.gz",
- "version":"7.0.3.99.4.0"
+ "version":"7.0.3.99.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The EPICS (Experimental Physics and Industrial Control System) core\nlibraries for use by python modules. Either dynamically with ctypes\nor statically by compiled extension.\n",
+   "home":"https://github.com/mdavidsaver/epicscorelibs",
+   "license":"EPICS Open",
+   "license_file":"LICENSE",
+   "summary":"EPICS core libraries packaged as a \"python\" module"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-binary :all: -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"epicscorelibs",
+   "version":"7.0.3.99.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "setuptools_dso"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"d668bfcae6f5fcf2ee06d268186e2115c7ca51ac20716e419ff7c09ab8b24808",
+   "url":"https://pypi.io/packages/source/e/epicscorelibs/epicscorelibs-7.0.3.99.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "epicscorelibs",
+    "epicscorelibs.config"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools",
+    "setuptools_dso"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

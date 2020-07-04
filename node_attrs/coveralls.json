@@ -86,6 +86,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"coveralls",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"coveralls.io is a service for publishing your coverage stats online. This\npackage provides seamless integration with coverage.py (and thus py.test,\nnosetests, etc...) in your Python projects.\n",
+   "dev_url":"https://github.com/coveralls-clients/coveralls-python",
+   "home":"https://github.com/coveralls-clients/coveralls-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Show coverage stats online via coveralls.io"
+  },
+  "build":{
+   "entry_points":[
+    "coveralls = coveralls.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "thekevjames"
+   ]
+  },
+  "package":{
+   "name":"coveralls",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools"
+   ],
+   "run":[
+    "coverage >=4.1, <6.0",
+    "docopt >=0.6.1",
+    "python >=3.5",
+    "pyyaml >=3.10",
+    "requests >=1.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"d213f5edd49053d03f0db316ccabfe17725f2758147afc9a37eaca9d8e8602b5",
+   "url":"https://pypi.io/packages/source/c/coveralls/coveralls-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "coveralls --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "docopt",
+    "python",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"coveralls.io is a service for publishing your coverage stats online. This\npackage provides seamless integration with coverage.py (and thus py.test,\nnosetests, etc...) in your Python projects.\n",
@@ -164,6 +243,85 @@
  "new_version_attempts":{
   "2.0.0":1
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"coveralls.io is a service for publishing your coverage stats online. This\npackage provides seamless integration with coverage.py (and thus py.test,\nnosetests, etc...) in your Python projects.\n",
+   "dev_url":"https://github.com/coveralls-clients/coveralls-python",
+   "home":"https://github.com/coveralls-clients/coveralls-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Show coverage stats online via coveralls.io"
+  },
+  "build":{
+   "entry_points":[
+    "coveralls = coveralls.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "thekevjames"
+   ]
+  },
+  "package":{
+   "name":"coveralls",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools"
+   ],
+   "run":[
+    "coverage >=4.1, <6.0",
+    "docopt >=0.6.1",
+    "python >=3.5",
+    "pyyaml >=3.10",
+    "requests >=1.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"d213f5edd49053d03f0db316ccabfe17725f2758147afc9a37eaca9d8e8602b5",
+   "url":"https://pypi.io/packages/source/c/coveralls/coveralls-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "coveralls --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "docopt",
+    "python",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.07",
  "raw_meta_yaml":"{% set name = \"coveralls\" %}\n{% set version = \"2.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d213f5edd49053d03f0db316ccabfe17725f2758147afc9a37eaca9d8e8602b5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - coveralls = coveralls.cli:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools\n  run:\n    - coverage >=4.1, <6.0\n    - docopt >=0.6.1\n    - python >=3.5\n    - pyyaml >=3.10\n    - requests >=1.0.0\n\ntest:\n  commands:\n    - coveralls --help\n\nabout:\n  home: https://github.com/coveralls-clients/coveralls-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Show coverage stats online via coveralls.io\n  description: |\n    coveralls.io is a service for publishing your coverage stats online. This\n    package provides seamless integration with coverage.py (and thus py.test,\n    nosetests, etc...) in your Python projects.\n  dev_url: https://github.com/coveralls-clients/coveralls-python\n\nextra:\n  recipe-maintainers:\n    - thekevjames\n",
  "req":{
@@ -237,5 +395,84 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/coveralls/coveralls-1.8.2.tar.gz",
- "version":"2.0.0"
+ "version":"2.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"coveralls.io is a service for publishing your coverage stats online. This\npackage provides seamless integration with coverage.py (and thus py.test,\nnosetests, etc...) in your Python projects.\n",
+   "dev_url":"https://github.com/coveralls-clients/coveralls-python",
+   "home":"https://github.com/coveralls-clients/coveralls-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Show coverage stats online via coveralls.io"
+  },
+  "build":{
+   "entry_points":[
+    "coveralls = coveralls.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "thekevjames"
+   ]
+  },
+  "package":{
+   "name":"coveralls",
+   "version":"2.0.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.5",
+    "setuptools"
+   ],
+   "run":[
+    "coverage >=4.1, <6.0",
+    "docopt >=0.6.1",
+    "python >=3.5",
+    "pyyaml >=3.10",
+    "requests >=1.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"d213f5edd49053d03f0db316ccabfe17725f2758147afc9a37eaca9d8e8602b5",
+   "url":"https://pypi.io/packages/source/c/coveralls/coveralls-2.0.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "coveralls --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "docopt",
+    "python",
+    "pyyaml",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

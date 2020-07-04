@@ -112,6 +112,102 @@
  },
  "feedstock_name":"jasper",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.ece.uvic.ca/~frodo/jasper/",
+   "license":"JasPer 2.0",
+   "license_file":"LICENSE",
+   "summary":"A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "jasper"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jhamman",
+    "ocefpaf",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"jasper",
+   "version":"2.0.14"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "jpeg",
+    "libglu",
+    "freeglut"
+   ],
+   "run":[
+    "jpeg",
+    "libglu",
+    "freeglut"
+   ]
+  },
+  "source":{
+   "patches":[
+    "CVE-2018-9055-330751ce.patch"
+   ],
+   "sha256":"2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b",
+   "url":"http://www.ece.uvic.ca/~frodo/jasper/software/jasper-2.0.14.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jasper --version"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "freeglut",
+    "jpeg",
+    "libglu"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freeglut",
+    "jpeg",
+    "libglu"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.ece.uvic.ca/~frodo/jasper/",
@@ -219,6 +315,97 @@
  },
  "name":"jasper",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.ece.uvic.ca/~frodo/jasper/",
+   "license":"JasPer 2.0",
+   "license_file":"LICENSE",
+   "summary":"A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT"
+   ],
+   "number":"1",
+   "run_exports":[
+    "jasper"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jhamman",
+    "ocefpaf",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"jasper",
+   "version":"2.0.14"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "jpeg"
+   ],
+   "run":[
+    "jpeg"
+   ]
+  },
+  "source":{
+   "patches":[
+    "CVE-2018-9055-330751ce.patch"
+   ],
+   "sha256":"2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b",
+   "url":"http://www.ece.uvic.ca/~frodo/jasper/software/jasper-2.0.14.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "jasper --version"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "jpeg"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jpeg"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.02.15",
  "raw_meta_yaml":"{% set version = \"2.0.14\" %}\n\npackage:\n  name: jasper\n  version: {{ version }}\n\nsource:\n  url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.tar.gz\n  sha256: 2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b\n  patches:\n    - CVE-2018-9055-330751ce.patch\n\nbuild:\n  number: 1\n  run_exports:\n    # no info.  Leaving at default behavior.\n    - {{ pin_subpackage('jasper') }}\n  missing_dso_whitelist:                                         # [osx]\n    - /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}               # [not win]\n    - {{ cdt('mesa-libgl-devel') }}     # [not win and not aarch64]\n    - {{ cdt('mesa-dri-drivers') }}     # [not win and not aarch64]\n    - {{ cdt('libxdamage') }}           # [not win and not aarch64]\n    - {{ cdt('libselinux') }}           # [not win and not aarch64]\n    - {{ cdt('libxext') }}              # [not win and not aarch64]\n    - {{ cdt('libxfixes') }}            # [not win and not aarch64]\n    - {{ cdt('libxcb') }}               # [not win and not aarch64]\n    - {{ cdt('libxau') }}               # [not win and not aarch64]\n    - {{ cdt('libxi') }}                # [not win and not aarch64]\n    - {{ cdt('libxxf86vm') }}           # [not win and not aarch64]\n    - vs2017_win-64                     # [win64]\n    - cmake\n    - make\n  host:\n    - jpeg\n    - libglu                            # [linux64]\n    - freeglut                          # [linux64 or win]\n  run:\n    - jpeg\n    - {{ pin_compatible('libglu') }}    # [linux64]\n    - {{ pin_compatible('freeglut') }}  # [linux64 or win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_BIN%\\\\jasper.dll exit 1  # [win]\n    - jasper --version\n\nabout:\n  home: http://www.ece.uvic.ca/~frodo/jasper/\n  license: JasPer 2.0\n  license_file: LICENSE\n  summary: 'A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jhamman\n    - ocefpaf\n    - seanyen\n",
  "req":{
@@ -301,5 +488,87 @@
   }
  },
  "url":"http://www.ece.uvic.ca/~frodo/jasper/software/jasper-2.0.14.tar.gz",
- "version":"2.0.14"
+ "version":"2.0.14",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.ece.uvic.ca/~frodo/jasper/",
+   "license":"JasPer 2.0",
+   "license_file":"LICENSE",
+   "summary":"A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "jasper"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "jhamman",
+    "ocefpaf",
+    "seanyen"
+   ]
+  },
+  "package":{
+   "name":"jasper",
+   "version":"2.0.14"
+  },
+  "requirements":{
+   "build":[
+    "vs2017_win-64",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "jpeg",
+    "freeglut"
+   ],
+   "run":[
+    "jpeg",
+    "freeglut"
+   ]
+  },
+  "source":{
+   "patches":[
+    "CVE-2018-9055-330751ce.patch"
+   ],
+   "sha256":"2a1f61e55afe8b4ce8115e1508c5d7cb314d56dfcc2dd323f90c072f88ccf57b",
+   "url":"http://www.ece.uvic.ca/~frodo/jasper/software/jasper-2.0.14.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_BIN%\\\\jasper.dll exit 1",
+    "jasper --version"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "make",
+    "vs2017_win-64"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "freeglut",
+    "jpeg"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freeglut",
+    "jpeg"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

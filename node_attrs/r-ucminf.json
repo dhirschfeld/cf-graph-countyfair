@@ -149,6 +149,89 @@
  },
  "feedstock_name":"r-ucminf",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ucminf",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"An algorithm for general-purpose unconstrained non-linear optimization. The algorithm is of quasi-Newton type with BFGS updating of the inverse Hessian and soft line search with a trust region type monitoring of the input to the line search algorithm. The interface of 'ucminf' is designed for easy interchange with 'optim'."
+  },
+  "build":{
+   "number":"1005",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-ucminf",
+   "version":"1.1_4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"ucminf_1.1-4.tar.gz",
+   "sha256":"a2eb382f9b24e949d982e311578518710f8242070b3aa3314a331c1e1e7f6f07",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ucminf_1.1-4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ucminf/ucminf_1.1-4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ucminf')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=ucminf",
@@ -248,6 +331,89 @@
  },
  "name":"r-ucminf",
  "new_version":"1.1_4",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ucminf",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"An algorithm for general-purpose unconstrained non-linear optimization. The algorithm is of quasi-Newton type with BFGS updating of the inverse Hessian and soft line search with a trust region type monitoring of the input to the line search algorithm. The interface of 'ucminf' is designed for easy interchange with 'optim'."
+  },
+  "build":{
+   "number":"1005",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-ucminf",
+   "version":"1.1_4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"ucminf_1.1-4.tar.gz",
+   "sha256":"a2eb382f9b24e949d982e311578518710f8242070b3aa3314a331c1e1e7f6f07",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ucminf_1.1-4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ucminf/ucminf_1.1-4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ucminf')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.01.18.18.56",
  "raw_meta_yaml":"{% set version = '1.1-4' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ucminf\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ucminf_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/ucminf_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/ucminf/ucminf_{{ version }}.tar.gz\n  sha256: a2eb382f9b24e949d982e311578518710f8242070b3aa3314a331c1e1e7f6f07\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1005\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('fortran') }}  # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('m2w64_fortran') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('ucminf')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ucminf')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=ucminf\n  license: GPL (>= 2)\n  summary: An algorithm for general-purpose unconstrained non-linear optimization. The algorithm\n    is of quasi-Newton type with BFGS updating of the inverse Hessian and soft line\n    search with a trust region type monitoring of the input to the line search algorithm.\n    The interface of 'ucminf' is designed for easy interchange with 'optim'.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
@@ -342,5 +508,99 @@
   "https://cran.r-project.org/src/contrib/ucminf_1.1-4.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/ucminf/ucminf_1.1-4.tar.gz"
  ],
- "version":"1.1_4"
+ "version":"1.1_4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ucminf",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"An algorithm for general-purpose unconstrained non-linear optimization. The algorithm is of quasi-Newton type with BFGS updating of the inverse Hessian and soft line search with a trust region type monitoring of the input to the line search algorithm. The interface of 'ucminf' is designed for easy interchange with 'optim'."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1005",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-ucminf",
+   "version":"1.1_4"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs"
+   ]
+  },
+  "source":{
+   "fn":"ucminf_1.1-4.tar.gz",
+   "sha256":"a2eb382f9b24e949d982e311578518710f8242070b3aa3314a331c1e1e7f6f07",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ucminf_1.1-4.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ucminf/ucminf_1.1-4.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('ucminf')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

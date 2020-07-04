@@ -193,6 +193,93 @@
  "conda-forge.yml":{},
  "feedstock_name":"transonic",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Transonic is a pure Python package (requiring Python >= 3.6) to easily\naccelerate modern Python-Numpy code with different accelerators (like\nCython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n(i.e. if/when they are available).\nThe accelerators are not hard dependencies of Transonic; Python codes\nusing Transonic run fine without any accelerators installed (of course\nwithout speedup)!\n",
+   "doc_url":"https://transonic.readthedocs.io",
+   "home":"https://bitbucket.org/fluiddyn/transonic",
+   "license":"CeCILL-B",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.txt",
+   "summary":"Make your Python code fly at transonic speeds!"
+  },
+  "build":{
+   "entry_points":[
+    "transonic = transonic.run:run"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CyrilleBonamy",
+    "paugier",
+    "ashwinvis"
+   ]
+  },
+  "package":{
+   "name":"transonic",
+   "version":"0.4.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "python >=3.6",
+    "astunparse",
+    "beniget",
+    "gast",
+    "numpy",
+    "autopep8"
+   ]
+  },
+  "source":{
+   "sha256":"da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4",
+   "url":"https://pypi.io/packages/source/t/transonic/transonic-0.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "transonic --help"
+   ],
+   "imports":[
+    "transonic",
+    "transonic.analyses",
+    "transonic.backends",
+    "transonic_cl"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astunparse",
+    "autopep8",
+    "beniget",
+    "gast",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Transonic is a pure Python package (requiring Python >= 3.6) to easily\naccelerate modern Python-Numpy code with different accelerators (like\nCython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n(i.e. if/when they are available).\nThe accelerators are not hard dependencies of Transonic; Python codes\nusing Transonic run fine without any accelerators installed (of course\nwithout speedup)!\n",
@@ -292,6 +379,93 @@
   "0.4.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Transonic is a pure Python package (requiring Python >= 3.6) to easily\naccelerate modern Python-Numpy code with different accelerators (like\nCython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n(i.e. if/when they are available).\nThe accelerators are not hard dependencies of Transonic; Python codes\nusing Transonic run fine without any accelerators installed (of course\nwithout speedup)!\n",
+   "doc_url":"https://transonic.readthedocs.io",
+   "home":"https://bitbucket.org/fluiddyn/transonic",
+   "license":"CeCILL-B",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.txt",
+   "summary":"Make your Python code fly at transonic speeds!"
+  },
+  "build":{
+   "entry_points":[
+    "transonic = transonic.run:run"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CyrilleBonamy",
+    "paugier",
+    "ashwinvis"
+   ]
+  },
+  "package":{
+   "name":"transonic",
+   "version":"0.4.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "python >=3.6",
+    "astunparse",
+    "beniget",
+    "gast",
+    "numpy",
+    "autopep8"
+   ]
+  },
+  "source":{
+   "sha256":"da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4",
+   "url":"https://pypi.io/packages/source/t/transonic/transonic-0.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "transonic --help"
+   ],
+   "imports":[
+    "transonic",
+    "transonic.analyses",
+    "transonic.backends",
+    "transonic_cl"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astunparse",
+    "autopep8",
+    "beniget",
+    "gast",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.13.02.15.08",
  "raw_meta_yaml":"{% set name = \"transonic\" %}\n{% set version = \"0.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4\n\nbuild:\n  number: 0\n  entry_points:\n    - transonic = transonic.run:run\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - astunparse\n    - beniget\n    - gast\n    - numpy\n    - autopep8\n\ntest:\n  imports:\n    - transonic\n    - transonic.analyses\n    - transonic.backends\n    - transonic_cl\n  commands:\n    - transonic --help\n\nabout:\n  home: https://bitbucket.org/fluiddyn/transonic\n  license: CeCILL-B\n  license_family: OTHER\n  license_file: LICENSE.txt\n  summary: Make your Python code fly at transonic speeds!\n  description: |\n    Transonic is a pure Python package (requiring Python >= 3.6) to easily\n    accelerate modern Python-Numpy code with different accelerators (like\n    Cython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n    (i.e. if/when they are available).\n    The accelerators are not hard dependencies of Transonic; Python codes\n    using Transonic run fine without any accelerators installed (of course\n    without speedup)!\n  doc_url: https://transonic.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - CyrilleBonamy\n    - paugier\n    - ashwinvis\n",
  "req":{
@@ -365,5 +539,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/t/transonic/transonic-0.3.3.tar.gz",
- "version":"0.4.3"
+ "version":"0.4.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Transonic is a pure Python package (requiring Python >= 3.6) to easily\naccelerate modern Python-Numpy code with different accelerators (like\nCython, Pythran, Numba, Cupy, PyTorch, Uarray, etc) opportunistically\n(i.e. if/when they are available).\nThe accelerators are not hard dependencies of Transonic; Python codes\nusing Transonic run fine without any accelerators installed (of course\nwithout speedup)!\n",
+   "doc_url":"https://transonic.readthedocs.io",
+   "home":"https://bitbucket.org/fluiddyn/transonic",
+   "license":"CeCILL-B",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.txt",
+   "summary":"Make your Python code fly at transonic speeds!"
+  },
+  "build":{
+   "entry_points":[
+    "transonic = transonic.run:run"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CyrilleBonamy",
+    "paugier",
+    "ashwinvis"
+   ]
+  },
+  "package":{
+   "name":"transonic",
+   "version":"0.4.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "python >=3.6",
+    "astunparse",
+    "beniget",
+    "gast",
+    "numpy",
+    "autopep8"
+   ]
+  },
+  "source":{
+   "sha256":"da1cdcba1f3ab95bc60afa69d02dbeb388106a491c527f54c78231dab42534a4",
+   "url":"https://pypi.io/packages/source/t/transonic/transonic-0.4.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "transonic --help"
+   ],
+   "imports":[
+    "transonic",
+    "transonic.analyses",
+    "transonic.backends",
+    "transonic_cl"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astunparse",
+    "autopep8",
+    "beniget",
+    "gast",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

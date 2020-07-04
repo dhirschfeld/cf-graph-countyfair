@@ -320,6 +320,98 @@
  },
  "feedstock_name":"biotite",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biotite-dev/biotite",
+   "doc_url":"https://www.biotite-python.org/",
+   "home":"https://www.biotite-python.org/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.rst",
+   "summary":"A comprehensive library for computational molecular biology"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "padix-key"
+   ]
+  },
+  "package":{
+   "name":"biotite",
+   "version":"0.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=30.0",
+    "wheel >=0.30",
+    "cython >=0.28",
+    "numpy =1.14"
+   ],
+   "run":[
+    "python",
+    "requests >=2.12",
+    "numpy",
+    "msgpack-python"
+   ]
+  },
+  "source":{
+   "sha256":"5aa2de319ee803d9427344ecaabce928d8082ba54500e9603e50574dc2f54de2",
+   "url":"https://github.com/biotite-dev/biotite/archive/v0.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --ignore=tests//application --ignore=tests//database --ignore=tests//test_doctest.py tests"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "numpy",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/biotite-dev/biotite",
@@ -415,6 +507,98 @@
   "0.22.0":2
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biotite-dev/biotite",
+   "doc_url":"https://www.biotite-python.org/",
+   "home":"https://www.biotite-python.org/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.rst",
+   "summary":"A comprehensive library for computational molecular biology"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "padix-key"
+   ]
+  },
+  "package":{
+   "name":"biotite",
+   "version":"0.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=30.0",
+    "wheel >=0.30",
+    "cython >=0.28",
+    "numpy =1.14"
+   ],
+   "run":[
+    "python",
+    "requests >=2.12",
+    "numpy",
+    "msgpack-python"
+   ]
+  },
+  "source":{
+   "sha256":"5aa2de319ee803d9427344ecaabce928d8082ba54500e9603e50574dc2f54de2",
+   "url":"https://github.com/biotite-dev/biotite/archive/v0.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --ignore=tests//application --ignore=tests//database --ignore=tests//test_doctest.py tests"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "numpy",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set version = \"0.22.0\" %}\n{% set number = \"0\" %}\n{% set sha256 = \"5aa2de319ee803d9427344ecaabce928d8082ba54500e9603e50574dc2f54de2\" %}\n\npackage:\n  name: biotite\n  version: {{ version }}\n\nsource:\n  url: https://github.com/biotite-dev/biotite/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ number }}\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n  skip: true  # [py < 36]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools >=30.0\n    - wheel >=0.30\n    - cython >=0.28\n    - numpy =1.13  # [py < 37]\n    - numpy =1.14  # [py >= 37]\n  run:\n    - python\n    - requests >=2.12\n    - {{ pin_compatible('numpy') }}\n    - msgpack-python\n\ntest:\n  source_files:\n    - tests/\n  requires:\n    - pytest\n  commands:\n    - pytest --ignore=tests//application --ignore=tests//database --ignore=tests//test_doctest.py tests\n\nabout:\n  home: https://www.biotite-python.org/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: A comprehensive library for computational molecular biology\n  doc_url: https://www.biotite-python.org/\n  dev_url: https://github.com/biotite-dev/biotite\n\nextra:\n  recipe-maintainers:\n    - padix-key\n",
  "req":{
@@ -502,5 +686,97 @@
   }
  },
  "url":"https://github.com/biotite-dev/biotite/archive/v0.16.0.tar.gz",
- "version":"0.22.0"
+ "version":"0.22.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biotite-dev/biotite",
+   "doc_url":"https://www.biotite-python.org/",
+   "home":"https://www.biotite-python.org/",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.rst",
+   "summary":"A comprehensive library for computational molecular biology"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "padix-key"
+   ]
+  },
+  "package":{
+   "name":"biotite",
+   "version":"0.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools >=30.0",
+    "wheel >=0.30",
+    "cython >=0.28",
+    "numpy =1.14"
+   ],
+   "run":[
+    "python",
+    "requests >=2.12",
+    "numpy",
+    "msgpack-python"
+   ]
+  },
+  "source":{
+   "sha256":"5aa2de319ee803d9427344ecaabce928d8082ba54500e9603e50574dc2f54de2",
+   "url":"https://github.com/biotite-dev/biotite/archive/v0.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest --ignore=tests//application --ignore=tests//database --ignore=tests//test_doctest.py tests"
+   ],
+   "requires":[
+    "pytest"
+   ],
+   "source_files":[
+    "tests/"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools",
+    "wheel"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "numpy",
+    "python",
+    "requests"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

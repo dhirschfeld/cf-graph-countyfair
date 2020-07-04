@@ -62,6 +62,75 @@
  },
  "feedstock_name":"xorg-makedepend",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 makedepend utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "epruesse",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-makedepend",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "xorg-xproto"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"makedepend-1.0.6.tar.bz2",
+   "sha256":"d558a52e8017d984ee59596a9582c8d699a1962391b632bec3bb6804bf4d501c",
+   "url":"https://www.x.org/releases/individual/util/makedepend-1.0.6.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "test \"`makedepend 2>&1`\" = \"makedepend: error:  [mM]akefile is not present\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.x.org/",
@@ -126,6 +195,76 @@
  },
  "name":"xorg-makedepend",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 makedepend utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "epruesse",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-makedepend",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "xorg-xproto"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"makedepend-1.0.6.tar.bz2",
+   "sha256":"d558a52e8017d984ee59596a9582c8d699a1962391b632bec3bb6804bf4d501c",
+   "url":"https://www.x.org/releases/individual/util/makedepend-1.0.6.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME",
+    "test \"`makedepend 2>&1`\" = \"makedepend: error:  [mM]akefile is not present\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.03.15",
  "raw_meta_yaml":"{% set xorg_name = \"makedepend\" %}\n{% set xorg_category = \"util\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.0.6\" %}\n{% set sha256 = \"d558a52e8017d984ee59596a9582c8d699a1962391b632bec3bb6804bf4d501c\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ xorg_name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - xorg-util-macros  # [win]\n    - xorg-xproto\n  run:\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - 'test \"`makedepend 2>&1`\" = \"makedepend: error:  [mM]akefile is not present\"'  # [not win]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org incarnation of the X11 makedepend utility.'\n\nextra:\n  recipe-maintainers:\n    - epruesse\n    - pkgw\n",
  "req":{
@@ -212,5 +351,81 @@
   }
  },
  "url":"https://www.x.org/releases/individual/util/makedepend-1.0.6.tar.bz2",
- "version":"1.0.6"
+ "version":"1.0.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 makedepend utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "epruesse",
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-makedepend",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "m2-autoconf",
+    "m2-automake1.15",
+    "m2-libtool",
+    "m2w64-pkg-config",
+    "posix",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub"
+   ],
+   "host":[
+    "xorg-util-macros",
+    "xorg-xproto"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"makedepend-1.0.6.tar.bz2",
+   "sha256":"d558a52e8017d984ee59596a9582c8d699a1962391b632bec3bb6804bf4d501c",
+   "url":"https://www.x.org/releases/individual/util/makedepend-1.0.6.tar.bz2"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2-autoconf",
+    "m2-automake1.15",
+    "m2-libtool",
+    "m2w64-pkg-config",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-util-macros",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

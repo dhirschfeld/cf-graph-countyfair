@@ -42,6 +42,92 @@
  },
  "feedstock_name":"sox",
  "hash_type":"md5",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://sox.sourceforge.net/",
+   "license":"LGPLv2",
+   "summary":"A cross-platform command line utility that can convert various formats of computer audio files in to other formats."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1013"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "alexbw",
+    "sdvillal"
+   ]
+  },
+  "package":{
+   "name":"sox",
+   "version":"14.4.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "xz",
+    "lame",
+    "mad"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "xz",
+    "lame",
+    "mad"
+   ]
+  },
+  "source":{
+   "md5":"d04fba2d9245e661f245de0577f48a33",
+   "url":"http://sourceforge.net/projects/sox/files/sox/14.4.2/sox-14.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/sox.h",
+    "test -e $PREFIX/lib/libsox.a",
+    "test -e $PREFIX/lib/libsox.so",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "sox --help |grep \"FILE FORMATS\" | grep mp3"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "lame",
+    "libpng",
+    "mad",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "lame",
+    "libpng",
+    "mad",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://sox.sourceforge.net/",
@@ -123,6 +209,94 @@
  },
  "name":"sox",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://sox.sourceforge.net/",
+   "license":"LGPLv2",
+   "summary":"A cross-platform command line utility that can convert various formats of computer audio files in to other formats."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1013"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "alexbw",
+    "sdvillal"
+   ]
+  },
+  "package":{
+   "name":"sox",
+   "version":"14.4.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "xz",
+    "lame",
+    "mad"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "xz",
+    "lame",
+    "mad"
+   ]
+  },
+  "source":{
+   "md5":"d04fba2d9245e661f245de0577f48a33",
+   "url":"http://sourceforge.net/projects/sox/files/sox/14.4.2/sox-14.4.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/sox.h",
+    "test -e $PREFIX/lib/libsox.a",
+    "test -e $PREFIX/lib/libsox.dylib",
+    "otool -L $PREFIX/lib/libsox.dylib",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME",
+    "sox --help |grep \"FILE FORMATS\" | grep mp3"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "lame",
+    "libpng",
+    "mad",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "lame",
+    "libpng",
+    "mad",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.09.11",
  "raw_meta_yaml":"{% set version = \"14.4.2\" %}\n\npackage:\n  name: sox\n  version: {{ version }}\n\nsource:\n  url: http://sourceforge.net/projects/sox/files/sox/{{ version }}/sox-{{ version }}.tar.gz\n  md5: d04fba2d9245e661f245de0577f48a33\n\nbuild:\n  number: 1013\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - libpng\n    - zlib\n    - xz\n    - lame  # [not win]\n    - mad  # [not win]    \n\n  run:\n    - libpng\n    - zlib\n    - xz\n    - lame  # [not win]\n    - mad  # [not win]\n\ntest:\n  commands:\n    - test -e $PREFIX/include/sox.h      # [unix]\n    - test -e $PREFIX/lib/libsox.a       # [unix]\n    - test -e $PREFIX/lib/libsox.so      # [linux]\n    - test -e $PREFIX/lib/libsox.dylib   # [osx]\n    - otool -L $PREFIX/lib/libsox.dylib  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - sox --help |grep \"FILE FORMATS\" | grep mp3  # [not win]\n\nabout:\n  home: http://sox.sourceforge.net/\n  license: LGPLv2\n  summary: A cross-platform command line utility that can convert various formats of computer audio files in to other formats.\n\nextra:\n  recipe-maintainers:\n    - 183amir\n    - alexbw\n    - sdvillal\n",
  "req":{
@@ -203,5 +377,78 @@
   }
  },
  "url":"http://sourceforge.net/projects/sox/files/sox/14.4.2/sox-14.4.2.tar.gz",
- "version":"14.4.2"
+ "version":"14.4.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://sox.sourceforge.net/",
+   "license":"LGPLv2",
+   "summary":"A cross-platform command line utility that can convert various formats of computer audio files in to other formats."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1013",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "alexbw",
+    "sdvillal"
+   ]
+  },
+  "package":{
+   "name":"sox",
+   "version":"14.4.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "libpng",
+    "zlib",
+    "xz"
+   ],
+   "run":[
+    "libpng",
+    "zlib",
+    "xz"
+   ]
+  },
+  "source":{
+   "md5":"d04fba2d9245e661f245de0577f48a33",
+   "url":"http://sourceforge.net/projects/sox/files/sox/14.4.2/sox-14.4.2.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libpng",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libpng",
+    "xz",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -133,6 +133,86 @@
  },
  "feedstock_name":"pymeasure",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"PyMeasure makes scientific measurements easy to set up and run. The package contains a\nrepository of instrument classes and a system for running experiment procedures,\nwhich provides graphical interfaces for graphing live data and managing queues of\nexperiments. Both parts of the package are independent, and when combined provide\nall the necessary requirements for advanced measurements with only limited coding.\n",
+   "dev_url":"https://github.com/ralph-group/pymeasure",
+   "doc_url":"http://pymeasure.readthedocs.io",
+   "home":"https://github.com/ralph-group/pymeasure",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Scientific measurement library for instruments, experiments, and live-plotting."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "melund",
+    "ddale",
+    "cjermain"
+   ]
+  },
+  "package":{
+   "name":"pymeasure",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.6.1",
+    "pandas >=0.14",
+    "pyvisa >=1.8",
+    "pyserial >=2.7",
+    "pyqtgraph >=0.9.10"
+   ]
+  },
+  "source":{
+   "fn":"v0.8.tar.gz",
+   "sha256":"38bd38dac8ba7fef95cce1ce6faff2d9d0b1947408c30f15695d6353d83d16a3",
+   "url":"https://github.com/ralph-group/pymeasure/archive/v0.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymeasure"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "pyqtgraph",
+    "pyserial",
+    "python",
+    "pyvisa"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"PyMeasure makes scientific measurements easy to set up and run. The package contains a\nrepository of instrument classes and a system for running experiment procedures,\nwhich provides graphical interfaces for graphing live data and managing queues of\nexperiments. Both parts of the package are independent, and when combined provide\nall the necessary requirements for advanced measurements with only limited coding.\n",
@@ -212,6 +292,86 @@
  },
  "name":"pymeasure",
  "new_version":"0.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"PyMeasure makes scientific measurements easy to set up and run. The package contains a\nrepository of instrument classes and a system for running experiment procedures,\nwhich provides graphical interfaces for graphing live data and managing queues of\nexperiments. Both parts of the package are independent, and when combined provide\nall the necessary requirements for advanced measurements with only limited coding.\n",
+   "dev_url":"https://github.com/ralph-group/pymeasure",
+   "doc_url":"http://pymeasure.readthedocs.io",
+   "home":"https://github.com/ralph-group/pymeasure",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Scientific measurement library for instruments, experiments, and live-plotting."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "melund",
+    "ddale",
+    "cjermain"
+   ]
+  },
+  "package":{
+   "name":"pymeasure",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.6.1",
+    "pandas >=0.14",
+    "pyvisa >=1.8",
+    "pyserial >=2.7",
+    "pyqtgraph >=0.9.10"
+   ]
+  },
+  "source":{
+   "fn":"v0.8.tar.gz",
+   "sha256":"38bd38dac8ba7fef95cce1ce6faff2d9d0b1947408c30f15695d6353d83d16a3",
+   "url":"https://github.com/ralph-group/pymeasure/archive/v0.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymeasure"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "pyqtgraph",
+    "pyserial",
+    "python",
+    "pyvisa"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"0.8\" %}\n{% set sha256 = \"38bd38dac8ba7fef95cce1ce6faff2d9d0b1947408c30f15695d6353d83d16a3\" %}\n\npackage:\n  name: pymeasure\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/ralph-group/pymeasure/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - numpy >=1.6.1\n    - pandas >=0.14\n    - pyvisa >=1.8\n    - pyserial >=2.7\n    - pyqtgraph >=0.9.10\n\ntest:\n  imports:\n    - pymeasure\n\nabout:\n  home: https://github.com/ralph-group/pymeasure\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Scientific measurement library for instruments, experiments, and live-plotting.\n  description: |\n    PyMeasure makes scientific measurements easy to set up and run. The package contains a \n    repository of instrument classes and a system for running experiment procedures, \n    which provides graphical interfaces for graphing live data and managing queues of \n    experiments. Both parts of the package are independent, and when combined provide \n    all the necessary requirements for advanced measurements with only limited coding.\n  doc_url: http://pymeasure.readthedocs.io\n  dev_url: https://github.com/ralph-group/pymeasure\n\nextra:\n  recipe-maintainers:\n    - melund\n    - ddale\n    - cjermain\n",
  "req":{
@@ -288,5 +448,85 @@
   }
  },
  "url":"https://github.com/ralph-group/pymeasure/archive/v0.7.tar.gz",
- "version":"0.8"
+ "version":"0.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"PyMeasure makes scientific measurements easy to set up and run. The package contains a\nrepository of instrument classes and a system for running experiment procedures,\nwhich provides graphical interfaces for graphing live data and managing queues of\nexperiments. Both parts of the package are independent, and when combined provide\nall the necessary requirements for advanced measurements with only limited coding.\n",
+   "dev_url":"https://github.com/ralph-group/pymeasure",
+   "doc_url":"http://pymeasure.readthedocs.io",
+   "home":"https://github.com/ralph-group/pymeasure",
+   "license":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"Scientific measurement library for instruments, experiments, and live-plotting."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "melund",
+    "ddale",
+    "cjermain"
+   ]
+  },
+  "package":{
+   "name":"pymeasure",
+   "version":"0.8"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.6.1",
+    "pandas >=0.14",
+    "pyvisa >=1.8",
+    "pyserial >=2.7",
+    "pyqtgraph >=0.9.10"
+   ]
+  },
+  "source":{
+   "fn":"v0.8.tar.gz",
+   "sha256":"38bd38dac8ba7fef95cce1ce6faff2d9d0b1947408c30f15695d6353d83d16a3",
+   "url":"https://github.com/ralph-group/pymeasure/archive/v0.8.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pymeasure"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pytest-runner",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "pyqtgraph",
+    "pyserial",
+    "python",
+    "pyvisa"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

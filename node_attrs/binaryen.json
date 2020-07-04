@@ -463,6 +463,81 @@
  "conda-forge.yml":{},
  "feedstock_name":"binaryen",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/WebAssembly/binaryen",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"Compiler infrastructure and toolchain library for WebAssembly, in C++"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"binaryen",
+   "version":"1.39.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "nodejs",
+    "python 2.7"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"binaryen-1.39.1.tar.gz",
+   "sha256":"4852a676c383efffa368e58f2abf3108fcf02f0e8b6cd3923b0cdc35bc0ee8c9",
+   "url":"https://github.com/WebAssembly/binaryen/archive/1.39.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "wasm-shell --help",
+    "wasm-opt --help",
+    "wasm-metadce --help",
+    "asm2wasm --help",
+    "wasm2js --help",
+    "wasm-emscripten-finalize --help",
+    "wasm-as --help",
+    "wasm-dis --help",
+    "wasm-ctor-eval --help",
+    "wasm-reduce --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "nodejs",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/WebAssembly/binaryen",
@@ -562,6 +637,81 @@
   "93":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '93' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/WebAssembly/binaryen/archive/{{ version }}.tar.gz'\n",
   "94":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '94' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/WebAssembly/binaryen/archive/{{ version }}.tar.gz'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/WebAssembly/binaryen",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"Compiler infrastructure and toolchain library for WebAssembly, in C++"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"binaryen",
+   "version":"1.39.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "nodejs",
+    "python 2.7"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"binaryen-1.39.1.tar.gz",
+   "sha256":"4852a676c383efffa368e58f2abf3108fcf02f0e8b6cd3923b0cdc35bc0ee8c9",
+   "url":"https://github.com/WebAssembly/binaryen/archive/1.39.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "wasm-shell --help",
+    "wasm-opt --help",
+    "wasm-metadce --help",
+    "asm2wasm --help",
+    "wasm2js --help",
+    "wasm-emscripten-finalize --help",
+    "wasm-as --help",
+    "wasm-dis --help",
+    "wasm-ctor-eval --help",
+    "wasm-reduce --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "nodejs",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set version = \"1.39.1\" %}\n\npackage:\n  name: binaryen\n  version: {{ version }}\n\nsource:\n  fn: binaryen-{{ version }}.tar.gz\n  url: https://github.com/WebAssembly/binaryen/archive/{{ version }}.tar.gz\n  sha256: 4852a676c383efffa368e58f2abf3108fcf02f0e8b6cd3923b0cdc35bc0ee8c9\n\nbuild:\n  number: 1\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - ninja\n    - nodejs\n    - python 2.7\n  host:\n\ntest:\n  commands:\n    - wasm-shell --help\n    - wasm-opt --help\n    - wasm-metadce --help\n    - asm2wasm --help\n    - wasm2js --help\n    - wasm-emscripten-finalize --help\n    - wasm-as --help\n    - wasm-dis --help\n    - wasm-ctor-eval --help\n    - wasm-reduce --help\n\nabout:\n  home: https://github.com/WebAssembly/binaryen\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: Compiler infrastructure and toolchain library for WebAssembly, in C++\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{
@@ -628,5 +778,81 @@
   }
  },
  "url":"https://github.com/WebAssembly/binaryen/archive/1.38.29.tar.gz",
- "version":"1.39.1"
+ "version":"1.39.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/WebAssembly/binaryen",
+   "license":"Apache 2.0",
+   "license_file":"LICENSE",
+   "summary":"Compiler infrastructure and toolchain library for WebAssembly, in C++"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham"
+   ]
+  },
+  "package":{
+   "name":"binaryen",
+   "version":"1.39.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja",
+    "nodejs",
+    "python 2.7"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"binaryen-1.39.1.tar.gz",
+   "sha256":"4852a676c383efffa368e58f2abf3108fcf02f0e8b6cd3923b0cdc35bc0ee8c9",
+   "url":"https://github.com/WebAssembly/binaryen/archive/1.39.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "wasm-shell --help",
+    "wasm-opt --help",
+    "wasm-metadce --help",
+    "asm2wasm --help",
+    "wasm2js --help",
+    "wasm-emscripten-finalize --help",
+    "wasm-as --help",
+    "wasm-dis --help",
+    "wasm-ctor-eval --help",
+    "wasm-reduce --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "nodejs",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

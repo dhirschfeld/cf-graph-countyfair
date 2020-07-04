@@ -187,6 +187,322 @@
  },
  "feedstock_name":"clangdev",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for Clang"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf",
+    "jakirkham",
+    "SylvainCorlay",
+    "timsnyder",
+    "chrisburr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangdev",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "llvmdev ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "llvmdev ==10.0.0"
+     ]
+    },
+    "script":"install_clangdev.sh",
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/include/clang/Config/config.h\"",
+      "test -f \"$PREFIX/lib/libclangAST.a\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"libclang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0",
+      "clang"
+     ],
+     "run":null
+    },
+    "script":"install_libclang.sh",
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/lib/libclang.so\"",
+      "test -f \"$PREFIX/lib/libclang.so.10\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":null,
+     "run_constrained":[
+      "clangdev 10.0.0",
+      "clangxx 10.0.0",
+      "clang-tools 10.0.0",
+      "llvm-tools 10.0.0"
+     ]
+    },
+    "script":"install_clang.sh",
+    "test":{
+     "commands":[
+      "clang --version",
+      "clang-cl --version",
+      "clang-cpp --version",
+      "clang-10 --version",
+      "test -f \"$PREFIX/lib/libclang-cpp.so\"",
+      "test -f \"$PREFIX/lib/libclang-cpp.so.10\"",
+      "test -f \"$PREFIX/lib/clang/10.0.0/include/stdatomic.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangxx",
+    "requirements":{
+     "host":[
+      "clang"
+     ],
+     "run":[
+      "clang"
+     ]
+    },
+    "script":"install_clangxx.sh",
+    "test":{
+     "commands":[
+      "clang++ --version",
+      "clang++ -v -c mytest.cxx"
+     ],
+     "files":[
+      "mytest.cxx"
+     ],
+     "requires":[
+      "cxx_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang-tools",
+    "requirements":{
+     "build":[
+      "python >3",
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "libclang",
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx"
+     ],
+     "run_constrained":[
+      "clangdev 10.0.0"
+     ]
+    },
+    "script":"install_clang_tools.sh",
+    "test":{
+     "commands":[
+      "clang-check --version",
+      "clang-tidy --version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"python-clang",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "libclang ==10.0.0"
+     ]
+    },
+    "script":"build_python_bindings.sh",
+    "test":{
+     "commands":[
+      "cd bindings/python",
+      "cp tests/cindex/util.py tests",
+      "nosetests -v"
+     ],
+     "imports":[
+      "clang",
+      "clang.cindex"
+     ],
+     "requires":[
+      "nose"
+     ],
+     "source_files":[
+      "bindings/python/tests",
+      "bindings/python/examples/cindex"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang_packages",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3",
+    "python >3",
+    "make"
+   ],
+   "host":[
+    "llvmdev ==10.0.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":".",
+    "patches":[
+     "patches/0001-Find-conda-gcc-installation.patch",
+     "patches/0002-Fix-sysroot-detection-for-linux.patch",
+     "patches/0002-clang-add-conda-specific-env-var-CONDA_BUILD_SYSROOT.patch",
+     "patches/0003-clang-Fix-normalizeProgramName-s-handling-of-dots-ou.patch",
+     "patches/0001-Set-VERSION-in-osx-as-well.patch"
+    ],
+    "sha256":"885b062b00e903df72631c5f98b9579ed1ed2790f74e5646b4234fa084eacb21",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-10.0.0.src.tar.xz"
+   },
+   {
+    "folder":"tools/extra",
+    "sha256":"acdf8cf6574b40e6b1dabc93e76debb84a9feb6f22970126b04d4ba18b92911c",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-tools-extra-10.0.0.src.tar.xz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "$PREFIX/bin/clang --version",
+    "$PREFIX/bin/clang++ --version",
+    "$PREFIX/bin/clang-check --version",
+    "$PREFIX/bin/clang -v -c mytest.c",
+    "test -f $PREFIX/include/clang/Lex/Lexer.h",
+    "test -f $PREFIX/lib/libclangBasic.a"
+   ],
+   "files":[
+    "mytest.c"
+   ],
+   "requires":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "llvm",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "nose"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://llvm.org/",
@@ -940,6 +1256,335 @@
  },
  "name":"clang_packages",
  "new_version":"10.0.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for Clang"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf",
+    "jakirkham",
+    "SylvainCorlay",
+    "timsnyder",
+    "chrisburr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangdev",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "libcxx",
+      "llvmdev ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "libcxx",
+      "llvmdev ==10.0.0"
+     ]
+    },
+    "script":"install_clangdev.sh",
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/include/clang/Config/config.h\"",
+      "test -f \"$PREFIX/lib/libclangAST.a\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"libclang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "libcxx",
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0",
+      "clang"
+     ],
+     "run":[
+      "libcxx"
+     ]
+    },
+    "script":"install_libclang.sh",
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/lib/libclang.dylib\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "libcxx",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "libcxx",
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":[
+      "libcxx"
+     ],
+     "run_constrained":[
+      "clangdev 10.0.0",
+      "clangxx 10.0.0",
+      "clang-tools 10.0.0",
+      "llvm-tools 10.0.0"
+     ]
+    },
+    "script":"install_clang.sh",
+    "test":{
+     "commands":[
+      "clang --version",
+      "clang-cl --version",
+      "clang-cpp --version",
+      "clang-10 --version",
+      "test -f \"$PREFIX/lib/libclang-cpp.dylib\"",
+      "test -f \"$PREFIX/lib/clang/10.0.0/include/stdatomic.h\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangxx",
+    "requirements":{
+     "host":[
+      "clang"
+     ],
+     "run":[
+      "clang"
+     ]
+    },
+    "script":"install_clangxx.sh",
+    "test":{
+     "commands":[
+      "clang++ --version",
+      "clang++ -v -c mytest.cxx"
+     ],
+     "files":[
+      "mytest.cxx"
+     ],
+     "requires":[
+      "cxx_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang-tools",
+    "requirements":{
+     "build":[
+      "python >3",
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "make"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "libclang",
+      "libcxx",
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx",
+      "libcxx"
+     ],
+     "run_constrained":[
+      "clangdev 10.0.0"
+     ]
+    },
+    "script":"install_clang_tools.sh",
+    "test":{
+     "commands":[
+      "clang-check --version",
+      "clang-tidy --version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"python-clang",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "libclang ==10.0.0"
+     ]
+    },
+    "script":"build_python_bindings.sh",
+    "test":{
+     "commands":[
+      "cd bindings/python",
+      "cp tests/cindex/util.py tests",
+      "nosetests -v"
+     ],
+     "imports":[
+      "clang",
+      "clang.cindex"
+     ],
+     "requires":[
+      "nose"
+     ],
+     "source_files":[
+      "bindings/python/tests",
+      "bindings/python/examples/cindex"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang_packages",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3",
+    "python >3",
+    "make"
+   ],
+   "host":[
+    "libcxx",
+    "llvmdev ==10.0.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":".",
+    "patches":[
+     "patches/0001-Find-conda-gcc-installation.patch",
+     "patches/0002-Fix-sysroot-detection-for-linux.patch",
+     "patches/0002-clang-add-conda-specific-env-var-CONDA_BUILD_SYSROOT.patch",
+     "patches/0003-clang-Fix-normalizeProgramName-s-handling-of-dots-ou.patch",
+     "patches/0001-Set-VERSION-in-osx-as-well.patch"
+    ],
+    "sha256":"885b062b00e903df72631c5f98b9579ed1ed2790f74e5646b4234fa084eacb21",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-10.0.0.src.tar.xz"
+   },
+   {
+    "folder":"tools/extra",
+    "sha256":"acdf8cf6574b40e6b1dabc93e76debb84a9feb6f22970126b04d4ba18b92911c",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-tools-extra-10.0.0.src.tar.xz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "$PREFIX/bin/clang --version",
+    "$PREFIX/bin/clang++ --version",
+    "$PREFIX/bin/clang-check --version",
+    "$PREFIX/bin/clang -v -c mytest.c",
+    "test -f $PREFIX/include/clang/Lex/Lexer.h",
+    "test -f $PREFIX/lib/libclangBasic.a"
+   ],
+   "files":[
+    "mytest.c"
+   ],
+   "requires":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "libcxx",
+    "make",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "libcxx",
+    "llvm",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "libcxx",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "nose"
+   ]
+  }
+ },
  "outputs_names":[
   "clang",
   "clang-tools",
@@ -1066,5 +1711,317 @@
   }
  },
  "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz",
- "version":"10.0.0"
+ "version":"10.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for Clang"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "isuruf",
+    "jakirkham",
+    "SylvainCorlay",
+    "timsnyder",
+    "chrisburr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangdev",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "ninja"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "llvmdev ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx",
+      "clang-tools",
+      "libclang",
+      "llvmdev ==10.0.0"
+     ]
+    },
+    "script":"install_clangdev.bat",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_INC%\\\\clang/Config/config.h exit 1",
+      "if not exist %LIBRARY_LIB%\\\\clangAST.lib exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"libclang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "ninja"
+     ],
+     "host":[
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0",
+      "clang"
+     ],
+     "run":null
+    },
+    "script":"install_libclang.bat",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_BIN%\\\\libclang.dll exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "ninja"
+     ],
+     "host":[
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":null,
+     "run_constrained":[
+      "clangdev 10.0.0",
+      "clangxx 10.0.0",
+      "clang-tools 10.0.0",
+      "llvm-tools 10.0.0"
+     ]
+    },
+    "script":"install_clang.bat",
+    "test":{
+     "commands":[
+      "clang --version",
+      "clang-cl --version",
+      "clang-cpp --version",
+      "if not exist %LIBRARY_LIB%\\\\clang\\\\10.0.0\\\\include\\\\stdatomic.h exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clangxx",
+    "requirements":{
+     "host":[
+      "clang"
+     ],
+     "run":[
+      "clang"
+     ]
+    },
+    "script":"install_clangxx.bat",
+    "test":{
+     "commands":[
+      "clang++ --version",
+      "clang++ -v -c mytest.cxx"
+     ],
+     "files":[
+      "mytest.cxx"
+     ],
+     "requires":[
+      "cxx_compiler_stub"
+     ]
+    }
+   },
+   {
+    "build":{
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"clang-tools",
+    "requirements":{
+     "build":[
+      "python >3",
+      "cxx_compiler_stub",
+      "cmake >=3.4.3",
+      "ninja"
+     ],
+     "host":[
+      "clang",
+      "clangxx",
+      "libclang",
+      "llvmdev ==10.0.0",
+      "llvm ==10.0.0"
+     ],
+     "run":[
+      "clang",
+      "clangxx"
+     ],
+     "run_constrained":[
+      "clangdev 10.0.0"
+     ]
+    },
+    "script":"install_clang_tools.bat",
+    "test":{
+     "commands":[
+      "clang-check --version",
+      "clang-tidy --version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "skip":true,
+     "string":"_h_2",
+     "track_features":null
+    },
+    "name":"python-clang",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "libclang ==10.0.0"
+     ]
+    },
+    "script":"build_python_bindings.sh",
+    "test":{
+     "commands":[
+      "cd bindings/python",
+      "cp tests/cindex/util.py tests",
+      "nosetests -v"
+     ],
+     "imports":[
+      "clang",
+      "clang.cindex"
+     ],
+     "requires":[
+      "nose"
+     ],
+     "source_files":[
+      "bindings/python/tests",
+      "bindings/python/examples/cindex"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang_packages",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3",
+    "m2w64-xz",
+    "python >3",
+    "ninja"
+   ],
+   "host":[
+    "llvmdev ==10.0.0"
+   ]
+  },
+  "source":[
+   {
+    "folder":".",
+    "patches":[
+     "patches/0001-Find-conda-gcc-installation.patch",
+     "patches/0002-Fix-sysroot-detection-for-linux.patch",
+     "patches/0002-clang-add-conda-specific-env-var-CONDA_BUILD_SYSROOT.patch",
+     "patches/0003-clang-Fix-normalizeProgramName-s-handling-of-dots-ou.patch",
+     "patches/0001-Set-VERSION-in-osx-as-well.patch"
+    ],
+    "sha256":"885b062b00e903df72631c5f98b9579ed1ed2790f74e5646b4234fa084eacb21",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-10.0.0.src.tar.xz"
+   },
+   {
+    "folder":"tools/extra",
+    "sha256":"acdf8cf6574b40e6b1dabc93e76debb84a9feb6f22970126b04d4ba18b92911c",
+    "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang-tools-extra-10.0.0.src.tar.xz"
+   }
+  ],
+  "test":{
+   "commands":[
+    "%LIBRARY_BIN%/clang -v -c mytest.c",
+    "if not exist %LIBRARY_INC%\\\\clang\\\\Lex\\\\Lexer.h exit 1"
+   ],
+   "files":[
+    "mytest.c"
+   ],
+   "requires":[
+    "cxx_compiler_stub",
+    "cmake >=3.4.3"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "m2w64-xz",
+    "ninja",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "llvm",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "clang",
+    "clang-tools",
+    "clangxx",
+    "libclang",
+    "llvmdev",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "nose"
+   ]
+  }
+ }
 }

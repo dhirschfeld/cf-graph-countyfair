@@ -42,6 +42,92 @@
  "conda-forge.yml":{},
  "feedstock_name":"pint-pulsar",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nanograv/PINT",
+   "doc_url":"https://nanograv-pint.readthedocs.io/en/latest/",
+   "home":"https://github.com/nanograv/PINT",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.md",
+   "summary":"A Pulsar Timing Package, written in Python from scratch"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "paulray"
+   ]
+  },
+  "package":{
+   "name":"pint-pulsar",
+   "version":"0.7"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.16",
+    "astropy >=3.2,<=4.0",
+    "scipy >=0.18.1",
+    "jplephem >=2.6",
+    "matplotlib-base >=1.5.3",
+    "emcee >=3.0",
+    "corner >=2.0.1",
+    "uncertainties"
+   ],
+   "run_constrained":[
+    "pint ==9999999999"
+   ]
+  },
+  "source":{
+   "sha256":"426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01",
+   "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pint"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "corner",
+    "emcee",
+    "jplephem",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy",
+    "uncertainties"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/nanograv/PINT",
@@ -133,6 +219,92 @@
   "0.7":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nanograv/PINT",
+   "doc_url":"https://nanograv-pint.readthedocs.io/en/latest/",
+   "home":"https://github.com/nanograv/PINT",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.md",
+   "summary":"A Pulsar Timing Package, written in Python from scratch"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "paulray"
+   ]
+  },
+  "package":{
+   "name":"pint-pulsar",
+   "version":"0.7"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.16",
+    "astropy >=3.2,<=4.0",
+    "scipy >=0.18.1",
+    "jplephem >=2.6",
+    "matplotlib-base >=1.5.3",
+    "emcee >=3.0",
+    "corner >=2.0.1",
+    "uncertainties"
+   ],
+   "run_constrained":[
+    "pint ==9999999999"
+   ]
+  },
+  "source":{
+   "sha256":"426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01",
+   "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pint"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "corner",
+    "emcee",
+    "jplephem",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy",
+    "uncertainties"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"pint-pulsar\" %}\n{% set version = \"0.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  skip: true  # [py27]\n  skip: true  # [win]\n# Add [skip appveyor] to commit messages to prevent windows from starting at all\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.16\n    - astropy >=3.2,<=4.0\n    - scipy >=0.18.1\n    - jplephem >=2.6\n    - matplotlib-base >=1.5.3\n    - emcee >=3.0\n    - corner >=2.0.1\n    - uncertainties\n\n# The PyPI package \"pint\" is a units package whose package name conflicts with ours so they must not both be installed\n# This should prevent that\n  run_constrained:\n    - pint ==9999999999\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/nanograv/PINT\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: A Pulsar Timing Package, written in Python from scratch\n  doc_url: https://nanograv-pint.readthedocs.io/en/latest/\n  dev_url: https://github.com/nanograv/PINT\n\nextra:\n  recipe-maintainers:\n    - paulray\n",
  "req":{
@@ -218,5 +390,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.6.3.tar.gz",
- "version":"0.7"
+ "version":"0.7",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/nanograv/PINT",
+   "doc_url":"https://nanograv-pint.readthedocs.io/en/latest/",
+   "home":"https://github.com/nanograv/PINT",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.md",
+   "summary":"A Pulsar Timing Package, written in Python from scratch"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "paulray"
+   ]
+  },
+  "package":{
+   "name":"pint-pulsar",
+   "version":"0.7"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.16",
+    "astropy >=3.2,<=4.0",
+    "scipy >=0.18.1",
+    "jplephem >=2.6",
+    "matplotlib-base >=1.5.3",
+    "emcee >=3.0",
+    "corner >=2.0.1",
+    "uncertainties"
+   ],
+   "run_constrained":[
+    "pint ==9999999999"
+   ]
+  },
+  "source":{
+   "sha256":"426be45d46129d97ae227395bf0fd3d79b7272bfb48ac7137ca295093bc62e01",
+   "url":"https://pypi.io/packages/source/p/pint-pulsar/pint-pulsar-0.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pint"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "astropy",
+    "corner",
+    "emcee",
+    "jplephem",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "scipy",
+    "uncertainties"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

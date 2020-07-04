@@ -83,6 +83,75 @@
  },
  "feedstock_name":"r-nor1mix",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=nor1mix",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Onedimensional Normal Mixture Models Classes, for, e.g., density estimation or clustering algorithms research and teaching; providing the widely used Marron-Wand densities.  Efficient random number generation and graphics; now fitting to data by ML (Maximum Likelihood) or EM estimation."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nor1mix",
+   "version":"1.3_0"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"nor1mix_1.3-0.tar.gz",
+   "sha256":"9ce4ee92f889a4a4041b5ea1ff09396780785a9f12ac46f40647f74a37e327a0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/nor1mix_1.3-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_1.3-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('nor1mix')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=nor1mix",
@@ -148,6 +217,75 @@
  },
  "name":"r-nor1mix",
  "new_version":"1.3_0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=nor1mix",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Onedimensional Normal Mixture Models Classes, for, e.g., density estimation or clustering algorithms research and teaching; providing the widely used Marron-Wand densities.  Efficient random number generation and graphics; now fitting to data by ML (Maximum Likelihood) or EM estimation."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nor1mix",
+   "version":"1.3_0"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"nor1mix_1.3-0.tar.gz",
+   "sha256":"9ce4ee92f889a4a4041b5ea1ff09396780785a9f12ac46f40647f74a37e327a0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/nor1mix_1.3-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_1.3-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('nor1mix')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = \"1.3-0\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-nor1mix\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: nor1mix_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/nor1mix_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_{{ version }}.tar.gz\n  sha256: 9ce4ee92f889a4a4041b5ea1ff09396780785a9f12ac46f40647f74a37e327a0\n\nbuild:\n  noarch: generic\n  number: 2\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('nor1mix')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('nor1mix')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=nor1mix\n  license: GPL (>= 2)\n  summary: Onedimensional Normal Mixture Models Classes, for, e.g., density estimation or clustering\n    algorithms research and teaching; providing the widely used Marron-Wand densities.  Efficient\n    random number generation and graphics; now fitting to data by ML (Maximum Likelihood)\n    or EM estimation.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -210,5 +348,74 @@
   "https://cran.r-project.org/src/contrib/nor1mix_1.3-0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_1.3-0.tar.gz"
  ],
- "version":"1.3_0"
+ "version":"1.3_0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=nor1mix",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Onedimensional Normal Mixture Models Classes, for, e.g., density estimation or clustering algorithms research and teaching; providing the widely used Marron-Wand densities.  Efficient random number generation and graphics; now fitting to data by ML (Maximum Likelihood) or EM estimation."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-nor1mix",
+   "version":"1.3_0"
+  },
+  "requirements":{
+   "build":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"nor1mix_1.3-0.tar.gz",
+   "sha256":"9ce4ee92f889a4a4041b5ea1ff09396780785a9f12ac46f40647f74a37e327a0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/nor1mix_1.3-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_1.3-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('nor1mix')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

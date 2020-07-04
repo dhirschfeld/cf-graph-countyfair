@@ -42,6 +42,87 @@
  },
  "feedstock_name":"glibmm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"This is glibmm, a C++ API for parts of glib that are useful for C++."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"glibmm",
+   "version":"2.58.1"
+  },
+  "requirements":{
+   "build":[
+    "make",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libsigcpp",
+    "glib",
+    "xz"
+   ],
+   "run":[
+    "libsigcpp",
+    "glib"
+   ]
+  },
+  "source":{
+   "fn":"glibmm-2.58.1.tar.xz",
+   "sha256":"6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.58/glibmm-2.58.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.gtkmm.org",
@@ -124,6 +205,87 @@
  },
  "name":"glibmm",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"This is glibmm, a C++ API for parts of glib that are useful for C++."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"glibmm",
+   "version":"2.58.1"
+  },
+  "requirements":{
+   "build":[
+    "make",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libsigcpp",
+    "glib",
+    "xz"
+   ],
+   "run":[
+    "libsigcpp",
+    "glib"
+   ]
+  },
+  "source":{
+   "fn":"glibmm-2.58.1.tar.xz",
+   "sha256":"6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.58/glibmm-2.58.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.10.03",
  "raw_meta_yaml":"{% set version = \"2.58.1\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n{% set sha256 = \"6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0\" %}\n\npackage:\n  name: glibmm\n  version: {{ version }}\n\nsource:\n  fn: glibmm-{{ version }}.tar.xz\n  url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/{{ major_minor }}/glibmm-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - make\n    - pkg-config\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libsigcpp\n    - glib\n    - xz\n  run:\n    - libsigcpp\n    - glib\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}\n\nabout:\n  home: http://www.gtkmm.org\n  license: LGPL-2.1-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: \"This is glibmm, a C++ API for parts of glib that are useful for C++.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - isuruf\n",
  "req":{
@@ -201,5 +363,87 @@
   }
  },
  "url":"http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.52/glibmm-2.52.1.tar.xz",
- "version":"2.58.1"
+ "version":"2.58.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"This is glibmm, a C++ API for parts of glib that are useful for C++."
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "package":{
+   "name":"glibmm",
+   "version":"2.58.1"
+  },
+  "requirements":{
+   "build":[
+    "make",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libsigcpp",
+    "glib",
+    "xz"
+   ],
+   "run":[
+    "libsigcpp",
+    "glib"
+   ]
+  },
+  "source":{
+   "fn":"glibmm-2.58.1.tar.xz",
+   "sha256":"6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.58/glibmm-2.58.1.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}",
+    "test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp",
+    "xz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "libsigcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

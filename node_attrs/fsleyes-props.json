@@ -108,6 +108,98 @@
  "conda-forge.yml":{},
  "feedstock_name":"fsleyes-props",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "home":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"[wx]Python event programming framework"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pauldmccarthy"
+   ]
+  },
+  "package":{
+   "name":"fsleyes-props",
+   "version":"1.7.0"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "matplotlib-base >=1.5",
+    "six",
+    "wxpython >=3.0.2.0",
+    "fsleyes-widgets >=0.6.*",
+    "fslpy >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"fsleyes-props-1.7.0.tar.gz",
+   "sha256":"e52e9f23cc5f54cc448095c67512e85702ecb24d4024bc6a90ccdd9726a195e0",
+   "url":"https://pypi.io/packages/source/f/fsleyes-props/fsleyes-props-1.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "xvfb-run -s \"-screen 0 640x480x24\" pytest -v --cov=fsleyes_props"
+   ],
+   "requires":[
+    "mock",
+    "coverage",
+    "pytest",
+    "pytest-cov"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fsleyes-widgets",
+    "fslpy",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "six",
+    "wxpython"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "mock",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
@@ -204,6 +296,98 @@
   "1.7.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "home":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"[wx]Python event programming framework"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pauldmccarthy"
+   ]
+  },
+  "package":{
+   "name":"fsleyes-props",
+   "version":"1.7.0"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "matplotlib-base >=1.5",
+    "six",
+    "wxpython >=3.0.2.0",
+    "fsleyes-widgets >=0.6.*",
+    "fslpy >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"fsleyes-props-1.7.0.tar.gz",
+   "sha256":"e52e9f23cc5f54cc448095c67512e85702ecb24d4024bc6a90ccdd9726a195e0",
+   "url":"https://pypi.io/packages/source/f/fsleyes-props/fsleyes-props-1.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "xvfb-run -s \"-screen 0 640x480x24\" pytest -v --cov=fsleyes_props"
+   ],
+   "requires":[
+    "mock",
+    "coverage",
+    "pytest",
+    "pytest-cov"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fsleyes-widgets",
+    "fslpy",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "six",
+    "wxpython"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "mock",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ },
  "pinning_version":"2020.05.25.23.01.15",
  "raw_meta_yaml":"{% set name = \"fsleyes-props\" %}\n{% set version = \"1.7.0\" %}\n{% set sha256 = \"e52e9f23cc5f54cc448095c67512e85702ecb24d4024bc6a90ccdd9726a195e0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - numpy\n    - matplotlib-base >=1.5\n    - six\n    - wxpython >=3.0.2.0\n    - fsleyes-widgets >=0.6.*\n    - fslpy >=1.4\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - mock\n    - coverage\n    - pytest\n    - pytest-cov\n  commands:\n    - xvfb-run -s \"-screen 0 640x480x24\" pytest -v --cov=fsleyes_props\n\n\nabout:\n  home: https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: '[wx]Python event programming framework'\n  dev_url: https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/\n\nextra:\n  recipe-maintainers:\n    - pauldmccarthy\n",
  "req":{
@@ -290,5 +474,97 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/fsleyes-props/fsleyes-props-1.6.5.tar.gz",
- "version":"1.7.0"
+ "version":"1.7.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "home":"https://git.fmrib.ox.ac.uk/fsl/fsleyes/props/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"[wx]Python event programming framework"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pauldmccarthy"
+   ]
+  },
+  "package":{
+   "name":"fsleyes-props",
+   "version":"1.7.0"
+  },
+  "requirements":{
+   "build":[
+    "python >=3.5",
+    "pip"
+   ],
+   "run":[
+    "python >=3.5",
+    "numpy",
+    "matplotlib-base >=1.5",
+    "six",
+    "wxpython >=3.0.2.0",
+    "fsleyes-widgets >=0.6.*",
+    "fslpy >=1.4"
+   ]
+  },
+  "source":{
+   "fn":"fsleyes-props-1.7.0.tar.gz",
+   "sha256":"e52e9f23cc5f54cc448095c67512e85702ecb24d4024bc6a90ccdd9726a195e0",
+   "url":"https://pypi.io/packages/source/f/fsleyes-props/fsleyes-props-1.7.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "xvfb-run -s \"-screen 0 640x480x24\" pytest -v --cov=fsleyes_props"
+   ],
+   "requires":[
+    "mock",
+    "coverage",
+    "pytest",
+    "pytest-cov"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fsleyes-widgets",
+    "fslpy",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "six",
+    "wxpython"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "coverage",
+    "mock",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ }
 }

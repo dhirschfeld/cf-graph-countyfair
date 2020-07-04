@@ -146,6 +146,93 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyobjcryst",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/diffpy/pyobjcryst",
+   "doc_url":"http://diffpy.github.io/pyobjcryst",
+   "home":"https://github.com/diffpy/pyobjcryst",
+   "license":"BNL",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to the ObjCryst++ crystallographic library."
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "pavoljuhas"
+   ]
+  },
+  "package":{
+   "name":"pyobjcryst",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "numpy",
+    "libobjcryst 2017.2.*",
+    "boost"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "numpy",
+    "boost"
+   ]
+  },
+  "source":{
+   "fn":"pyobjcryst-2.1.0.tar.gz",
+   "sha256":"930c51f221cbc8895d7bde152f134ad26269ceb666415fa8b701e5cd369a9dbb",
+   "url":"https://pypi.io/packages/source/p/pyobjcryst/pyobjcryst-2.1.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyobjcryst",
+    "pyobjcryst.tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "libobjcryst",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/diffpy/pyobjcryst",
@@ -234,6 +321,93 @@
  },
  "name":"pyobjcryst",
  "new_version":"2.1.0.post2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/diffpy/pyobjcryst",
+   "doc_url":"http://diffpy.github.io/pyobjcryst",
+   "home":"https://github.com/diffpy/pyobjcryst",
+   "license":"BNL",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to the ObjCryst++ crystallographic library."
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "pavoljuhas"
+   ]
+  },
+  "package":{
+   "name":"pyobjcryst",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "numpy",
+    "libobjcryst 2017.2.*",
+    "boost"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "numpy",
+    "boost"
+   ]
+  },
+  "source":{
+   "fn":"pyobjcryst-2.1.0.tar.gz",
+   "sha256":"930c51f221cbc8895d7bde152f134ad26269ceb666415fa8b701e5cd369a9dbb",
+   "url":"https://pypi.io/packages/source/p/pyobjcryst/pyobjcryst-2.1.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyobjcryst",
+    "pyobjcryst.tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "libobjcryst",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set name = \"pyobjcryst\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"930c51f221cbc8895d7bde152f134ad26269ceb666415fa8b701e5cd369a9dbb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy\n    - libobjcryst 2017.2.*\n    - boost\n  run:\n    # NOTE libobjcryst is implicitly added by libobjcryst run_exports\n    - python\n    - setuptools\n    - {{ pin_compatible('numpy') }}\n    - boost\n\ntest:\n  imports:\n    - pyobjcryst\n    - pyobjcryst.tests\n\nabout:\n  home: https://github.com/diffpy/pyobjcryst\n  license: BNL\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Python bindings to the ObjCryst++ crystallographic library.'\n  doc_url: http://diffpy.github.io/pyobjcryst\n  dev_url: https://github.com/diffpy/pyobjcryst\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - pavoljuhas\n",
  "req":{
@@ -315,5 +489,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyobjcryst/pyobjcryst-2.1.0.tar.gz",
- "version":"2.1.0"
+ "version":"2.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/diffpy/pyobjcryst",
+   "doc_url":"http://diffpy.github.io/pyobjcryst",
+   "home":"https://github.com/diffpy/pyobjcryst",
+   "license":"BNL",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings to the ObjCryst++ crystallographic library."
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . --no-deps -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "pavoljuhas"
+   ]
+  },
+  "package":{
+   "name":"pyobjcryst",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "numpy",
+    "libobjcryst 2017.2.*",
+    "boost"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "numpy",
+    "boost"
+   ]
+  },
+  "source":{
+   "fn":"pyobjcryst-2.1.0.tar.gz",
+   "sha256":"930c51f221cbc8895d7bde152f134ad26269ceb666415fa8b701e5cd369a9dbb",
+   "url":"https://pypi.io/packages/source/p/pyobjcryst/pyobjcryst-2.1.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyobjcryst",
+    "pyobjcryst.tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "libobjcryst",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

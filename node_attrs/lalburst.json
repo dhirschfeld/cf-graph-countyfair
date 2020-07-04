@@ -146,6 +146,212 @@
  "conda-forge.yml":{},
  "feedstock_name":"lalburst",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the shared-object libraries needed to run\napplications that use the LAL Burst library.  If you want to install\nthe Python bindings, please install the associated python-lalburst\npackage.\n",
+   "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+   "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+   "home":"https://wiki.ligo.org/Computing/LALSuite",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"LSC Algorithm Burst Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "skymoo"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "lalburst"
+     ]
+    },
+    "name":"lalburst"
+   },
+   {
+    "about":{
+     "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the python bindings.\n",
+     "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+     "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+     "home":"https://wiki.ligo.org/Computing/LALSuite",
+     "license":"GPL-2.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"LSC Algorithm Burst Library"
+    },
+    "build":{
+     "error_overdepending":true,
+     "error_overlinking":true,
+     "ignore_run_exports":[
+      "python"
+     ]
+    },
+    "name":"python-lalburst",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "pkg-config >=0.18.0",
+      "swig >=3.0.9"
+     ],
+     "host":[
+      "lalburst",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "gsl",
+      "lal >=7.0.0",
+      "lalmetaio",
+      "lalsimulation",
+      "lalburst",
+      "ligo-segments",
+      "lscsoft-glue",
+      "matplotlib-base",
+      "metaio",
+      "numpy",
+      "python",
+      "python-lal >=7.0.0",
+      "python-lalmetaio >=1.6.0",
+      "python-lalsimulation >=2.1.0",
+      "python-ligo-lw",
+      "scipy"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "pushd test/python; python -m pytest -v; popd"
+     ],
+     "imports":[
+      "lalburst",
+      "lalburst.SimBurstUtils",
+      "lalburst.SnglBurstUtils",
+      "lalburst.binjfind",
+      "lalburst.bucluster",
+      "lalburst.burca",
+      "lalburst.burca_tailor",
+      "lalburst.cafe",
+      "lalburst.calc_likelihood",
+      "lalburst.cs_gamma",
+      "lalburst.date",
+      "lalburst.offsetvector",
+      "lalburst.packing",
+      "lalburst.snglcluster",
+      "lalburst.snglcoinc",
+      "lalburst.stringutils",
+      "lalburst.timeslides"
+     ],
+     "requires":[
+      "pytest >=4.0.0a0"
+     ],
+     "source_files":[
+      "test/python"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"lalburst",
+   "version":"1.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config >=0.18.0",
+    "swig >=3.0.9"
+   ],
+   "host":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ],
+   "run":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ]
+  },
+  "source":{
+   "sha256":"8784e9aefd780ae130a1f99c7d2c7f678970ab72fc096eb8636e1c04089e813f",
+   "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalburst-1.5.5.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "lalburst_version --verbose",
+    "test \"$(pkg-config --modversion ${PKG_NAME})\" == \"${PKG_VERSION}\""
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "metaio",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "ligo-segments",
+    "lscsoft-glue",
+    "matplotlib-base",
+    "metaio",
+    "numpy",
+    "python",
+    "python-lal",
+    "python-lalmetaio",
+    "python-lalsimulation",
+    "python-ligo-lw",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the shared-object libraries needed to run\napplications that use the LAL Burst library.  If you want to install\nthe Python bindings, please install the associated python-lalburst\npackage.\n",
@@ -516,6 +722,209 @@
   "1.5.5":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the shared-object libraries needed to run\napplications that use the LAL Burst library.  If you want to install\nthe Python bindings, please install the associated python-lalburst\npackage.\n",
+   "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+   "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+   "home":"https://wiki.ligo.org/Computing/LALSuite",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"LSC Algorithm Burst Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "skymoo"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "lalburst"
+     ]
+    },
+    "name":"lalburst"
+   },
+   {
+    "about":{
+     "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the python bindings.\n",
+     "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+     "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+     "home":"https://wiki.ligo.org/Computing/LALSuite",
+     "license":"GPL-2.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"LSC Algorithm Burst Library"
+    },
+    "build":{
+     "error_overdepending":true,
+     "error_overlinking":true,
+     "ignore_run_exports":[
+      "python"
+     ]
+    },
+    "name":"python-lalburst",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "pkg-config >=0.18.0",
+      "swig >=3.0.9"
+     ],
+     "host":[
+      "lalburst",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "gsl",
+      "lal >=7.0.0",
+      "lalburst",
+      "ligo-segments",
+      "lscsoft-glue",
+      "matplotlib-base",
+      "numpy",
+      "python",
+      "python-lal >=7.0.0",
+      "python-lalmetaio >=1.6.0",
+      "python-lalsimulation >=2.1.0",
+      "python-ligo-lw",
+      "scipy"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "pushd test/python; python -m pytest -v; popd"
+     ],
+     "imports":[
+      "lalburst",
+      "lalburst.SimBurstUtils",
+      "lalburst.SnglBurstUtils",
+      "lalburst.binjfind",
+      "lalburst.bucluster",
+      "lalburst.burca",
+      "lalburst.burca_tailor",
+      "lalburst.cafe",
+      "lalburst.calc_likelihood",
+      "lalburst.cs_gamma",
+      "lalburst.date",
+      "lalburst.offsetvector",
+      "lalburst.packing",
+      "lalburst.snglcluster",
+      "lalburst.snglcoinc",
+      "lalburst.stringutils",
+      "lalburst.timeslides"
+     ],
+     "requires":[
+      "pytest >=4.0.0a0"
+     ],
+     "source_files":[
+      "test/python"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"lalburst",
+   "version":"1.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config >=0.18.0",
+    "swig >=3.0.9"
+   ],
+   "host":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ],
+   "run":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ]
+  },
+  "source":{
+   "sha256":"8784e9aefd780ae130a1f99c7d2c7f678970ab72fc096eb8636e1c04089e813f",
+   "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalburst-1.5.5.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "lalburst_version --verbose",
+    "test \"$(pkg-config --modversion ${PKG_NAME})\" == \"${PKG_VERSION}\""
+   ],
+   "requires":[
+    "pkg-config"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "metaio",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "ligo-segments",
+    "lscsoft-glue",
+    "matplotlib-base",
+    "metaio",
+    "numpy",
+    "python",
+    "python-lal",
+    "python-lalmetaio",
+    "python-lalsimulation",
+    "python-ligo-lw",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config",
+    "pytest"
+   ]
+  }
+ },
  "outputs_names":[
   "lalburst",
   "python-lalburst"
@@ -656,5 +1065,205 @@
   }
  },
  "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalburst-1.5.2.tar.xz",
- "version":"1.5.5"
+ "version":"1.5.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the shared-object libraries needed to run\napplications that use the LAL Burst library.  If you want to install\nthe Python bindings, please install the associated python-lalburst\npackage.\n",
+   "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+   "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+   "home":"https://wiki.ligo.org/Computing/LALSuite",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"LSC Algorithm Burst Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "skymoo"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "lalburst"
+     ]
+    },
+    "name":"lalburst"
+   },
+   {
+    "about":{
+     "description":"The LSC Algorithm Burst Library for gravitational wave data analysis.\nThis package contains the python bindings.\n",
+     "dev_url":"https://git.ligo.org/lscsoft/lalsuite/",
+     "doc_url":"https://lscsoft.docs.ligo.org/lalsuite/lalburst/",
+     "home":"https://wiki.ligo.org/Computing/LALSuite",
+     "license":"GPL-2.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"LSC Algorithm Burst Library"
+    },
+    "build":{
+     "error_overdepending":true,
+     "error_overlinking":true,
+     "ignore_run_exports":[
+      "python"
+     ]
+    },
+    "name":"python-lalburst",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "make",
+      "pkg-config >=0.18.0",
+      "swig >=3.0.9"
+     ],
+     "host":[
+      "lalburst",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "gsl",
+      "lal >=7.0.0",
+      "lalburst",
+      "ligo-segments",
+      "lscsoft-glue",
+      "matplotlib-base",
+      "numpy",
+      "python",
+      "python-lal >=7.0.0",
+      "python-lalmetaio >=1.6.0",
+      "python-lalsimulation >=2.1.0",
+      "python-ligo-lw",
+      "scipy"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "pushd test/python; python -m pytest -v; popd"
+     ],
+     "imports":[
+      "lalburst",
+      "lalburst.SimBurstUtils",
+      "lalburst.SnglBurstUtils",
+      "lalburst.binjfind",
+      "lalburst.bucluster",
+      "lalburst.burca",
+      "lalburst.burca_tailor",
+      "lalburst.cafe",
+      "lalburst.calc_likelihood",
+      "lalburst.cs_gamma",
+      "lalburst.date",
+      "lalburst.offsetvector",
+      "lalburst.packing",
+      "lalburst.snglcluster",
+      "lalburst.snglcoinc",
+      "lalburst.stringutils",
+      "lalburst.timeslides"
+     ],
+     "requires":[
+      "pytest >=4.0.0a0"
+     ],
+     "source_files":[
+      "test/python"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"lalburst",
+   "version":"1.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config >=0.18.0",
+    "swig >=3.0.9"
+   ],
+   "host":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ],
+   "run":[
+    "gsl",
+    "lal >=7.0.0",
+    "lalmetaio >=1.6.0",
+    "lalsimulation >=2.1.0",
+    "metaio"
+   ]
+  },
+  "source":{
+   "sha256":"8784e9aefd780ae130a1f99c7d2c7f678970ab72fc096eb8636e1c04089e813f",
+   "url":"http://software.ligo.org/lscsoft/source/lalsuite/lalburst-1.5.5.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "lalburst_version --verbose"
+   ],
+   "requires":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make",
+    "pkg-config",
+    "swig"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "metaio",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gsl",
+    "lal",
+    "lalburst",
+    "lalmetaio",
+    "lalsimulation",
+    "ligo-segments",
+    "lscsoft-glue",
+    "matplotlib-base",
+    "metaio",
+    "numpy",
+    "python",
+    "python-lal",
+    "python-lalmetaio",
+    "python-lalsimulation",
+    "python-ligo-lw",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest"
+   ]
+  }
+ }
 }

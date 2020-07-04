@@ -547,6 +547,199 @@
  },
  "feedstock_name":"google-api-core",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Core Library for Google Client Libraries\n-------------------------\n\nThis package does not include the grpc, grpcio-gcp or grpcgcp extra requirements.\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers used by all Google API clients. For more information, see the\n[documentation](https://googleapis.dev/python/google-api-core/latest/index.html).\n\nSupported Python Versions\n-------------------------\nPython >= 3.5\n\nDeprecated Python Versions\n--------------------------\nPython == 2.7\n- Python 2.7 support will be removed on January 1, 2020.\n- protobuf does not support Visual C++ 2008, windows py27 package not available\n",
+   "dev_url":"https://github.com/googleapis/python-api-core",
+   "doc_url":"https://googleapis.dev/python/google-api-core/latest/index.html",
+   "home":"https://github.com/googleapis/python-api-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Core Library for Google Client Libraries"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BrentDorsey",
+    "leahecole",
+    "parthea",
+    "tswast"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"-m pip install . -vv"
+    },
+    "name":"google-api-core",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "google-auth >=1.14.0,<2.0dev",
+      "googleapis-common-protos >=1.6.0,<2.0dev",
+      "protobuf >=3.4.0",
+      "pytz",
+      "requests >=2.18.0,<3.0.0dev",
+      "setuptools >=34.0.0",
+      "six >=1.10.0"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.auth",
+      "google.auth.credentials",
+      "google.auth.transport.requests",
+      "google.longrunning",
+      "google.longrunning.operations_pb2",
+      "google.protobuf",
+      "google.rpc",
+      "google.api_core",
+      "google.api_core.exceptions",
+      "google.api_core.future",
+      "google.api_core.future.base",
+      "google.api_core.future.polling",
+      "google.api_core.general_helpers",
+      "google.api_core.page_iterator",
+      "google.api_core.protobuf_helpers",
+      "google.api_core.retry",
+      "google.api_core.timeout"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpc"
+    },
+    "name":"google-api-core-grpc",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio >=1.8.2,<2.0dev"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio >=1.8.2"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache 2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcio-gcp",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio-gcp >=0.2.2"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcgcp",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "google-api-core-grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc",
+      "grpc_gcp"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"google-api-core-split",
+   "version":"1.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip >=18.1",
+    "setuptools >=34.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"eec2c302b50e6db0c713fb84b71b8d75cfad5dc6d4dffc78e9f69ba0008f5ede",
+   "url":"https://pypi.org/packages/source/g/google-api-core/google-api-core-1.20.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "grpcio",
+    "grpcio-gcp",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "google-api-core",
+    "google-api-core-grpcio-gcp",
+    "google-auth",
+    "googleapis-common-protos",
+    "grpcio",
+    "grpcio-gcp",
+    "protobuf",
+    "python",
+    "pytz",
+    "requests",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Core Library for Google Client Libraries\n-------------------------\n\nThis package does not include the grpc, grpcio-gcp or grpcgcp extra requirements.\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers used by all Google API clients. For more information, see the\n[documentation](https://googleapis.dev/python/google-api-core/latest/index.html).\n\nSupported Python Versions\n-------------------------\nPython >= 3.5\n\nDeprecated Python Versions\n--------------------------\nPython == 2.7\n- Python 2.7 support will be removed on January 1, 2020.\n- protobuf does not support Visual C++ 2008, windows py27 package not available\n",
@@ -961,6 +1154,199 @@
   "1.21.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Core Library for Google Client Libraries\n-------------------------\n\nThis package does not include the grpc, grpcio-gcp or grpcgcp extra requirements.\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers used by all Google API clients. For more information, see the\n[documentation](https://googleapis.dev/python/google-api-core/latest/index.html).\n\nSupported Python Versions\n-------------------------\nPython >= 3.5\n\nDeprecated Python Versions\n--------------------------\nPython == 2.7\n- Python 2.7 support will be removed on January 1, 2020.\n- protobuf does not support Visual C++ 2008, windows py27 package not available\n",
+   "dev_url":"https://github.com/googleapis/python-api-core",
+   "doc_url":"https://googleapis.dev/python/google-api-core/latest/index.html",
+   "home":"https://github.com/googleapis/python-api-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Core Library for Google Client Libraries"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BrentDorsey",
+    "leahecole",
+    "parthea",
+    "tswast"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"-m pip install . -vv"
+    },
+    "name":"google-api-core",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "google-auth >=1.14.0,<2.0dev",
+      "googleapis-common-protos >=1.6.0,<2.0dev",
+      "protobuf >=3.4.0",
+      "pytz",
+      "requests >=2.18.0,<3.0.0dev",
+      "setuptools >=34.0.0",
+      "six >=1.10.0"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.auth",
+      "google.auth.credentials",
+      "google.auth.transport.requests",
+      "google.longrunning",
+      "google.longrunning.operations_pb2",
+      "google.protobuf",
+      "google.rpc",
+      "google.api_core",
+      "google.api_core.exceptions",
+      "google.api_core.future",
+      "google.api_core.future.base",
+      "google.api_core.future.polling",
+      "google.api_core.general_helpers",
+      "google.api_core.page_iterator",
+      "google.api_core.protobuf_helpers",
+      "google.api_core.retry",
+      "google.api_core.timeout"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpc"
+    },
+    "name":"google-api-core-grpc",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio >=1.8.2,<2.0dev"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio >=1.8.2"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache 2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcio-gcp",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio-gcp >=0.2.2"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcgcp",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "google-api-core-grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc",
+      "grpc_gcp"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"google-api-core-split",
+   "version":"1.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip >=18.1",
+    "setuptools >=34.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"eec2c302b50e6db0c713fb84b71b8d75cfad5dc6d4dffc78e9f69ba0008f5ede",
+   "url":"https://pypi.org/packages/source/g/google-api-core/google-api-core-1.20.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "grpcio",
+    "grpcio-gcp",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "google-api-core",
+    "google-api-core-grpcio-gcp",
+    "google-auth",
+    "googleapis-common-protos",
+    "grpcio",
+    "grpcio-gcp",
+    "protobuf",
+    "python",
+    "pytz",
+    "requests",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "google-api-core",
   "google-api-core-grpc",
@@ -1065,5 +1451,198 @@
   }
  },
  "url":"https://pypi.org/packages/source/g/google-api-core/google-api-core-1.14.2.tar.gz",
- "version":"1.20.0"
+ "version":"1.20.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Core Library for Google Client Libraries\n-------------------------\n\nThis package does not include the grpc, grpcio-gcp or grpcgcp extra requirements.\n\nThis library is not meant to stand-alone. Instead it defines\ncommon helpers used by all Google API clients. For more information, see the\n[documentation](https://googleapis.dev/python/google-api-core/latest/index.html).\n\nSupported Python Versions\n-------------------------\nPython >= 3.5\n\nDeprecated Python Versions\n--------------------------\nPython == 2.7\n- Python 2.7 support will be removed on January 1, 2020.\n- protobuf does not support Visual C++ 2008, windows py27 package not available\n",
+   "dev_url":"https://github.com/googleapis/python-api-core",
+   "doc_url":"https://googleapis.dev/python/google-api-core/latest/index.html",
+   "home":"https://github.com/googleapis/python-api-core",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Core Library for Google Client Libraries"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BrentDorsey",
+    "leahecole",
+    "parthea",
+    "tswast"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":"-m pip install . -vv"
+    },
+    "name":"google-api-core",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "google-auth >=1.14.0,<2.0dev",
+      "googleapis-common-protos >=1.6.0,<2.0dev",
+      "protobuf >=3.4.0",
+      "pytz",
+      "requests >=2.18.0,<3.0.0dev",
+      "setuptools >=34.0.0",
+      "six >=1.10.0"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.auth",
+      "google.auth.credentials",
+      "google.auth.transport.requests",
+      "google.longrunning",
+      "google.longrunning.operations_pb2",
+      "google.protobuf",
+      "google.rpc",
+      "google.api_core",
+      "google.api_core.exceptions",
+      "google.api_core.future",
+      "google.api_core.future.base",
+      "google.api_core.future.polling",
+      "google.api_core.general_helpers",
+      "google.api_core.page_iterator",
+      "google.api_core.protobuf_helpers",
+      "google.api_core.retry",
+      "google.api_core.timeout"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpc"
+    },
+    "name":"google-api-core-grpc",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio >=1.8.2,<2.0dev"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio >=1.8.2"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache 2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcio-gcp",
+    "requirements":{
+     "host":[
+      "python",
+      "grpcio-gcp >=0.2.2"
+     ],
+     "run":[
+      "google-api-core",
+      "grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://github.com/googleapis/python-api-core",
+     "license":"Apache-2.0",
+     "license_family":"APACHE",
+     "summary":"Core Library for Google Client Libraries with grpcio-gcp"
+    },
+    "name":"google-api-core-grpcgcp",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "google-api-core-grpcio-gcp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "google.api_core",
+      "grpc",
+      "grpc_gcp"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"google-api-core-split",
+   "version":"1.20.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip >=18.1",
+    "setuptools >=34.0.0"
+   ]
+  },
+  "source":{
+   "sha256":"eec2c302b50e6db0c713fb84b71b8d75cfad5dc6d4dffc78e9f69ba0008f5ede",
+   "url":"https://pypi.org/packages/source/g/google-api-core/google-api-core-1.20.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "grpcio",
+    "grpcio-gcp",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "google-api-core",
+    "google-api-core-grpcio-gcp",
+    "google-auth",
+    "googleapis-common-protos",
+    "grpcio",
+    "grpcio-gcp",
+    "protobuf",
+    "python",
+    "pytz",
+    "requests",
+    "setuptools",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -166,6 +166,155 @@
  },
  "feedstock_name":"pyfai",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"pyFAI is an azimuthal integration library that tries to be fast (as fast\nas C and even more using OpenCL and GPU). It is based on histogramming of\nthe 2theta/Q positions of each (center of) pixel weighted by the intensity\nof each pixel, but parallel version uses a SparseMatrix-DenseVector\nmultiplication. Neighboring output bins get also a contribution of pixels\nnext to the border thanks to pixel splitting. Finally pyFAI provides also\ntools to calibrate the experimental setup using Debye-Scherrer rings of a\nreference compound.\n",
+   "dev_url":"https://github.com/silx-kit/pyFAI/",
+   "doc_url":"http://www.silx.org/doc/pyFAI/latest/",
+   "home":"https://github.com/silx-kit/pyFAI/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"copyright",
+   "summary":"Python implementation of fast azimuthal integration"
+  },
+  "build":{
+   "entry_points":[
+    "check_calib = pyFAI.app.check_calib:main",
+    "detector2nexus = pyFAI.app.detector2nexus:main",
+    "diff_map = pyFAI.app.diff_map:main",
+    "diff_tomo = pyFAI.app.diff_tomo:main",
+    "eiger-mask = pyFAI.app.eiger_mask:main",
+    "MX-calibrate = pyFAI.app.mx_calibrate:main",
+    "pyFAI-average = pyFAI.app.average:main",
+    "pyFAI-benchmark = pyFAI.app.benchmark:main",
+    "pyFAI-calib = pyFAI.app.calib:main",
+    "pyFAI-calib2 = pyFAI.app.calib2:main",
+    "pyFAI-drawmask = pyFAI.app.drawmask:main",
+    "pyFAI-integrate = pyFAI.app.integrate:main",
+    "pyFAI-recalib = pyFAI.app.recalib:main",
+    "pyFAI-saxs = pyFAI.app.saxs:main",
+    "pyFAI-waxs = pyFAI.app.waxs:main"
+   ],
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "tacaswell",
+    "chiahaoliu",
+    "tschoonj",
+    "kif",
+    "t20100"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"pyfai-base"
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"pyfai",
+    "requirements":{
+     "run":[
+      "pyfai-base",
+      "matplotlib",
+      "silx",
+      "hdf5plugin"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pyFAI",
+      "pyFAI.test",
+      "pyFAI.third_party",
+      "pyFAI.gui"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pyfai-base",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "cython",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "fabio",
+    "matplotlib-base",
+    "scipy",
+    "numexpr",
+    "h5py",
+    "silx-base",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"4dcbc92470997b5002d5626da4df428ab12efcfcec437d4cb001f41141665774",
+   "url":"https://pypi.io/packages/source/p/pyFAI/pyFAI-0.19.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyFAI",
+    "pyFAI.test",
+    "pyFAI.third_party"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fabio",
+    "h5py",
+    "hdf5plugin",
+    "matplotlib",
+    "matplotlib-base",
+    "numexpr",
+    "numpy",
+    "pyfai-base",
+    "python",
+    "scipy",
+    "setuptools",
+    "silx",
+    "silx-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"pyFAI is an azimuthal integration library that tries to be fast (as fast\nas C and even more using OpenCL and GPU). It is based on histogramming of\nthe 2theta/Q positions of each (center of) pixel weighted by the intensity\nof each pixel, but parallel version uses a SparseMatrix-DenseVector\nmultiplication. Neighboring output bins get also a contribution of pixels\nnext to the border thanks to pixel splitting. Finally pyFAI provides also\ntools to calibrate the experimental setup using Debye-Scherrer rings of a\nreference compound.\n",
@@ -406,6 +555,155 @@
  },
  "name":"pyfai-base",
  "new_version":"0.19.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"pyFAI is an azimuthal integration library that tries to be fast (as fast\nas C and even more using OpenCL and GPU). It is based on histogramming of\nthe 2theta/Q positions of each (center of) pixel weighted by the intensity\nof each pixel, but parallel version uses a SparseMatrix-DenseVector\nmultiplication. Neighboring output bins get also a contribution of pixels\nnext to the border thanks to pixel splitting. Finally pyFAI provides also\ntools to calibrate the experimental setup using Debye-Scherrer rings of a\nreference compound.\n",
+   "dev_url":"https://github.com/silx-kit/pyFAI/",
+   "doc_url":"http://www.silx.org/doc/pyFAI/latest/",
+   "home":"https://github.com/silx-kit/pyFAI/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"copyright",
+   "summary":"Python implementation of fast azimuthal integration"
+  },
+  "build":{
+   "entry_points":[
+    "check_calib = pyFAI.app.check_calib:main",
+    "detector2nexus = pyFAI.app.detector2nexus:main",
+    "diff_map = pyFAI.app.diff_map:main",
+    "diff_tomo = pyFAI.app.diff_tomo:main",
+    "eiger-mask = pyFAI.app.eiger_mask:main",
+    "MX-calibrate = pyFAI.app.mx_calibrate:main",
+    "pyFAI-average = pyFAI.app.average:main",
+    "pyFAI-benchmark = pyFAI.app.benchmark:main",
+    "pyFAI-calib = pyFAI.app.calib:main",
+    "pyFAI-calib2 = pyFAI.app.calib2:main",
+    "pyFAI-drawmask = pyFAI.app.drawmask:main",
+    "pyFAI-integrate = pyFAI.app.integrate:main",
+    "pyFAI-recalib = pyFAI.app.recalib:main",
+    "pyFAI-saxs = pyFAI.app.saxs:main",
+    "pyFAI-waxs = pyFAI.app.waxs:main"
+   ],
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "tacaswell",
+    "chiahaoliu",
+    "tschoonj",
+    "kif",
+    "t20100"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"pyfai-base"
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"pyfai",
+    "requirements":{
+     "run":[
+      "pyfai-base",
+      "matplotlib",
+      "silx",
+      "hdf5plugin"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pyFAI",
+      "pyFAI.test",
+      "pyFAI.third_party",
+      "pyFAI.gui"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pyfai-base",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "cython",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "fabio",
+    "matplotlib-base",
+    "scipy",
+    "numexpr",
+    "h5py",
+    "silx-base",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"4dcbc92470997b5002d5626da4df428ab12efcfcec437d4cb001f41141665774",
+   "url":"https://pypi.io/packages/source/p/pyFAI/pyFAI-0.19.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyFAI",
+    "pyFAI.test",
+    "pyFAI.third_party"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fabio",
+    "h5py",
+    "hdf5plugin",
+    "matplotlib",
+    "matplotlib-base",
+    "numexpr",
+    "numpy",
+    "pyfai-base",
+    "python",
+    "scipy",
+    "setuptools",
+    "silx",
+    "silx-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "pyfai",
   "pyfai-base"
@@ -519,5 +817,154 @@
   }
  },
  "url":"https://github.com/silx-kit/pyFAI/archive/v0.18.0.tar.gz",
- "version":"0.19.0"
+ "version":"0.19.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"pyFAI is an azimuthal integration library that tries to be fast (as fast\nas C and even more using OpenCL and GPU). It is based on histogramming of\nthe 2theta/Q positions of each (center of) pixel weighted by the intensity\nof each pixel, but parallel version uses a SparseMatrix-DenseVector\nmultiplication. Neighboring output bins get also a contribution of pixels\nnext to the border thanks to pixel splitting. Finally pyFAI provides also\ntools to calibrate the experimental setup using Debye-Scherrer rings of a\nreference compound.\n",
+   "dev_url":"https://github.com/silx-kit/pyFAI/",
+   "doc_url":"http://www.silx.org/doc/pyFAI/latest/",
+   "home":"https://github.com/silx-kit/pyFAI/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"copyright",
+   "summary":"Python implementation of fast azimuthal integration"
+  },
+  "build":{
+   "entry_points":[
+    "check_calib = pyFAI.app.check_calib:main",
+    "detector2nexus = pyFAI.app.detector2nexus:main",
+    "diff_map = pyFAI.app.diff_map:main",
+    "diff_tomo = pyFAI.app.diff_tomo:main",
+    "eiger-mask = pyFAI.app.eiger_mask:main",
+    "MX-calibrate = pyFAI.app.mx_calibrate:main",
+    "pyFAI-average = pyFAI.app.average:main",
+    "pyFAI-benchmark = pyFAI.app.benchmark:main",
+    "pyFAI-calib = pyFAI.app.calib:main",
+    "pyFAI-calib2 = pyFAI.app.calib2:main",
+    "pyFAI-drawmask = pyFAI.app.drawmask:main",
+    "pyFAI-integrate = pyFAI.app.integrate:main",
+    "pyFAI-recalib = pyFAI.app.recalib:main",
+    "pyFAI-saxs = pyFAI.app.saxs:main",
+    "pyFAI-waxs = pyFAI.app.waxs:main"
+   ],
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright",
+    "tacaswell",
+    "chiahaoliu",
+    "tschoonj",
+    "kif",
+    "t20100"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"pyfai-base"
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"pyfai",
+    "requirements":{
+     "run":[
+      "pyfai-base",
+      "matplotlib",
+      "silx",
+      "hdf5plugin"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pyFAI",
+      "pyFAI.test",
+      "pyFAI.third_party",
+      "pyFAI.gui"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pyfai-base",
+   "version":"0.19.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "cython",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "fabio",
+    "matplotlib-base",
+    "scipy",
+    "numexpr",
+    "h5py",
+    "silx-base",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"4dcbc92470997b5002d5626da4df428ab12efcfcec437d4cb001f41141665774",
+   "url":"https://pypi.io/packages/source/p/pyFAI/pyFAI-0.19.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "pyFAI",
+    "pyFAI.test",
+    "pyFAI.third_party"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fabio",
+    "h5py",
+    "hdf5plugin",
+    "matplotlib",
+    "matplotlib-base",
+    "numexpr",
+    "numpy",
+    "pyfai-base",
+    "python",
+    "scipy",
+    "setuptools",
+    "silx",
+    "silx-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

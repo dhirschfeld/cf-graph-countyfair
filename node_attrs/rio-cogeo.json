@@ -180,6 +180,94 @@
  },
  "feedstock_name":"rio-cogeo",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cogeotiff/rio-cogeo",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"CloudOptimized GeoTIFF (COGEO) creation plugin for rasterio"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"rio-cogeo",
+   "version":"1.1.10"
+  },
+  "requirements":{
+   "host":[
+    "python >3.3",
+    "pip"
+   ],
+   "run":[
+    "python >3.3",
+    "click",
+    "mercantile",
+    "numpy >=1.15,<2",
+    "rasterio >=1.0.28",
+    "supermercado"
+   ]
+  },
+  "source":{
+   "sha256":"f8fa5ff445b5fdb663c877dfc8b68ca9ae34df1938fa412344c189dad216fdd1",
+   "url":"https://pypi.io/packages/source/r/rio-cogeo/rio-cogeo-1.1.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "rio cogeo --help",
+    "rio cogeo create --help",
+    "rio cogeo validate --help"
+   ],
+   "imports":[
+    "rio_cogeo",
+    "rio_cogeo.scripts"
+   ],
+   "requires":[
+    "pip",
+    "boto3 >=1.2.4"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "mercantile",
+    "numpy",
+    "python",
+    "rasterio",
+    "supermercado"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/cogeotiff/rio-cogeo",
@@ -277,6 +365,94 @@
   "1.1.10":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cogeotiff/rio-cogeo",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"CloudOptimized GeoTIFF (COGEO) creation plugin for rasterio"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"rio-cogeo",
+   "version":"1.1.10"
+  },
+  "requirements":{
+   "host":[
+    "python >3.3",
+    "pip"
+   ],
+   "run":[
+    "python >3.3",
+    "click",
+    "mercantile",
+    "numpy >=1.15,<2",
+    "rasterio >=1.0.28",
+    "supermercado"
+   ]
+  },
+  "source":{
+   "sha256":"f8fa5ff445b5fdb663c877dfc8b68ca9ae34df1938fa412344c189dad216fdd1",
+   "url":"https://pypi.io/packages/source/r/rio-cogeo/rio-cogeo-1.1.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "rio cogeo --help",
+    "rio cogeo create --help",
+    "rio cogeo validate --help"
+   ],
+   "imports":[
+    "rio_cogeo",
+    "rio_cogeo.scripts"
+   ],
+   "requires":[
+    "pip",
+    "boto3 >=1.2.4"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "mercantile",
+    "numpy",
+    "python",
+    "rasterio",
+    "supermercado"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"1.1.10\" %}\n\npackage:\n  name: rio-cogeo\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/rio-cogeo/rio-cogeo-{{ version }}.tar.gz\n  sha256: f8fa5ff445b5fdb663c877dfc8b68ca9ae34df1938fa412344c189dad216fdd1\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >3.3\n    - pip\n  run:\n    - python >3.3\n    - click\n    - mercantile\n    - numpy >=1.15,<2\n    - rasterio >=1.0.28\n    - supermercado\n\ntest:\n  imports:\n    - rio_cogeo\n    - rio_cogeo.scripts\n  commands:\n    - pip check\n    - rio cogeo --help\n    - rio cogeo create --help\n    - rio cogeo validate --help\n  requires:\n    - pip\n    - boto3 >=1.2.4\n\nabout:\n  home: https://github.com/cogeotiff/rio-cogeo\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: CloudOptimized GeoTIFF (COGEO) creation plugin for rasterio\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -356,5 +532,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/rio-cogeo/rio-cogeo-1.1.0.tar.gz",
- "version":"1.1.10"
+ "version":"1.1.10",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cogeotiff/rio-cogeo",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"CloudOptimized GeoTIFF (COGEO) creation plugin for rasterio"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"rio-cogeo",
+   "version":"1.1.10"
+  },
+  "requirements":{
+   "host":[
+    "python >3.3",
+    "pip"
+   ],
+   "run":[
+    "python >3.3",
+    "click",
+    "mercantile",
+    "numpy >=1.15,<2",
+    "rasterio >=1.0.28",
+    "supermercado"
+   ]
+  },
+  "source":{
+   "sha256":"f8fa5ff445b5fdb663c877dfc8b68ca9ae34df1938fa412344c189dad216fdd1",
+   "url":"https://pypi.io/packages/source/r/rio-cogeo/rio-cogeo-1.1.10.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check",
+    "rio cogeo --help",
+    "rio cogeo create --help",
+    "rio cogeo validate --help"
+   ],
+   "imports":[
+    "rio_cogeo",
+    "rio_cogeo.scripts"
+   ],
+   "requires":[
+    "pip",
+    "boto3 >=1.2.4"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "mercantile",
+    "numpy",
+    "python",
+    "rasterio",
+    "supermercado"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "pip"
+   ]
+  }
+ }
 }

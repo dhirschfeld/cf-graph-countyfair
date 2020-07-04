@@ -42,6 +42,78 @@
  "conda-forge.yml":{},
  "feedstock_name":"binpickle",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\nScientific Python models, such as those learned by scikit-learn, to disk in with\ntheir large arrays either compressed (optionall with Blosc) or configured for\nmemory-mapped use to support shared memory multiprocessing.\n",
+   "dev_url":"https://github.com/lenskit/binpickle",
+   "home":"https://binpickle.lenskit.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Efficient binary storage of ML models"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install --no-deps ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mdekstrand"
+   ]
+  },
+  "package":{
+   "name":"binpickle",
+   "version":"0.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-blosc",
+    "msgpack-python >=1.0",
+    "pickle5"
+   ]
+  },
+  "source":{
+   "sha256":"fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1",
+   "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "binpickle",
+    "binpickle.codecs.blosc"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "pickle5",
+    "python",
+    "python-blosc"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\nScientific Python models, such as those learned by scikit-learn, to disk in with\ntheir large arrays either compressed (optionall with Blosc) or configured for\nmemory-mapped use to support shared memory multiprocessing.\n",
@@ -112,6 +184,78 @@
   "0.3.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\nScientific Python models, such as those learned by scikit-learn, to disk in with\ntheir large arrays either compressed (optionall with Blosc) or configured for\nmemory-mapped use to support shared memory multiprocessing.\n",
+   "dev_url":"https://github.com/lenskit/binpickle",
+   "home":"https://binpickle.lenskit.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Efficient binary storage of ML models"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install --no-deps ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mdekstrand"
+   ]
+  },
+  "package":{
+   "name":"binpickle",
+   "version":"0.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-blosc",
+    "msgpack-python >=1.0",
+    "pickle5"
+   ]
+  },
+  "source":{
+   "sha256":"fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1",
+   "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "binpickle",
+    "binpickle.codecs.blosc"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "pickle5",
+    "python",
+    "python-blosc"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"binpickle\" %}\n{% set version = \"0.3.2\" %}\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1\n\nbuild:\n  number: 0\n  # Binpickle is only tested on Python 3.6 and later.\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install --no-deps .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python-blosc\n    - msgpack-python >=1.0\n    - pickle5  # [py<38]\n\ntest:\n  imports:\n    - binpickle\n    - binpickle.codecs.blosc\n\nabout:\n  home: https://binpickle.lenskit.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Efficient binary storage of ML models\n  description: |\n    The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\n    Scientific Python models, such as those learned by scikit-learn, to disk in with\n    their large arrays either compressed (optionall with Blosc) or configured for\n    memory-mapped use to support shared memory multiprocessing.\n  dev_url: https://github.com/lenskit/binpickle\n\nextra:\n  recipe-maintainers:\n    - mdekstrand\n",
  "req":{
@@ -179,5 +323,77 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.1.tar.gz",
- "version":"0.3.2"
+ "version":"0.3.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The binpickle module uses Pickle Protocol 5 to enable efficient serialization of\nScientific Python models, such as those learned by scikit-learn, to disk in with\ntheir large arrays either compressed (optionall with Blosc) or configured for\nmemory-mapped use to support shared memory multiprocessing.\n",
+   "dev_url":"https://github.com/lenskit/binpickle",
+   "home":"https://binpickle.lenskit.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Efficient binary storage of ML models"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install --no-deps ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mdekstrand"
+   ]
+  },
+  "package":{
+   "name":"binpickle",
+   "version":"0.3.2"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python-blosc",
+    "msgpack-python >=1.0",
+    "pickle5"
+   ]
+  },
+  "source":{
+   "sha256":"fbd019e2160d279a41e3d5f9e9ea038e0c361fb6f5eecea8373666cf2865a4d1",
+   "url":"https://pypi.io/packages/source/b/binpickle/binpickle-0.3.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "binpickle",
+    "binpickle.codecs.blosc"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "msgpack-python",
+    "pickle5",
+    "python",
+    "python-blosc"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

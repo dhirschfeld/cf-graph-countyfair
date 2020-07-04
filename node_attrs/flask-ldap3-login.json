@@ -116,6 +116,80 @@
  },
  "feedstock_name":"flask-ldap3-login",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Flask LDAP3 Login allows you to easily integrate your flask app with an\nLDAP directory. It can be used as an extension to Flask-Login and can\neven be used with Flask-Principal for permission and privilege\nmanagement.\n",
+   "dev_url":"http://flask-ldap3-login.readthedocs.io/en/latest/",
+   "doc_url":"https://github.com/nickw444/flask-ldap3-login",
+   "home":"https://github.com/nickw444/flask-ldap3-login",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"LDAP3 Logins for Flask/Flask-Login"
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill"
+   ]
+  },
+  "package":{
+   "name":"flask-ldap3-login",
+   "version":"0.9.16"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "flask",
+    "flask-wtf",
+    "ldap3 >=2.0.7",
+    "wtforms"
+   ]
+  },
+  "source":{
+   "fn":"flask-ldap3-login-0.9.16.tar.gz",
+   "sha256":"2ab330d1702fb03cde432ad0c077ae154e595113b5e7e42866c57482da1ef788",
+   "url":"https://pypi.io/packages/source/f/flask-ldap3-login/flask-ldap3-login-0.9.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "flask_ldap3_login"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "flask",
+    "flask-wtf",
+    "ldap3",
+    "python",
+    "wtforms"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Flask LDAP3 Login allows you to easily integrate your flask app with an\nLDAP directory. It can be used as an extension to Flask-Login and can\neven be used with Flask-Principal for permission and privilege\nmanagement.\n",
@@ -183,6 +257,80 @@
  },
  "name":"flask-ldap3-login",
  "new_version":"0.9.16",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Flask LDAP3 Login allows you to easily integrate your flask app with an\nLDAP directory. It can be used as an extension to Flask-Login and can\neven be used with Flask-Principal for permission and privilege\nmanagement.\n",
+   "dev_url":"http://flask-ldap3-login.readthedocs.io/en/latest/",
+   "doc_url":"https://github.com/nickw444/flask-ldap3-login",
+   "home":"https://github.com/nickw444/flask-ldap3-login",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"LDAP3 Logins for Flask/Flask-Login"
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill"
+   ]
+  },
+  "package":{
+   "name":"flask-ldap3-login",
+   "version":"0.9.16"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "flask",
+    "flask-wtf",
+    "ldap3 >=2.0.7",
+    "wtforms"
+   ]
+  },
+  "source":{
+   "fn":"flask-ldap3-login-0.9.16.tar.gz",
+   "sha256":"2ab330d1702fb03cde432ad0c077ae154e595113b5e7e42866c57482da1ef788",
+   "url":"https://pypi.io/packages/source/f/flask-ldap3-login/flask-ldap3-login-0.9.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "flask_ldap3_login"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "flask",
+    "flask-wtf",
+    "ldap3",
+    "python",
+    "wtforms"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"flask-ldap3-login\" %}\n{% set version = \"0.9.16\" %}\n{% set hashtype = \"sha256\" %}\n{% set hash = \"2ab330d1702fb03cde432ad0c077ae154e595113b5e7e42866c57482da1ef788\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n  number: 1000\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - enum34  # [py2k]\n    - flask\n    - flask-wtf\n    - ldap3 >=2.0.7\n    - wtforms\n\ntest:\n  imports:\n    - {{ name.replace('-', '_') }}\n\nabout:\n  home: https://github.com/nickw444/flask-ldap3-login\n  license: MIT\n  license_file: LICENSE\n  dev_url: http://flask-ldap3-login.readthedocs.io/en/latest/\n  doc_url: https://github.com/nickw444/flask-ldap3-login\n  summary: LDAP3 Logins for Flask/Flask-Login\n  description: |\n    Flask LDAP3 Login allows you to easily integrate your flask app with an\n    LDAP directory. It can be used as an extension to Flask-Login and can\n    even be used with Flask-Principal for permission and privilege\n    management.\n\nextra:\n  recipe-maintainers:\n    - ericdill\n",
  "req":{
@@ -253,5 +401,79 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/flask-ldap3-login/flask-ldap3-login-0.9.16.tar.gz",
- "version":"0.9.16"
+ "version":"0.9.16",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Flask LDAP3 Login allows you to easily integrate your flask app with an\nLDAP directory. It can be used as an extension to Flask-Login and can\neven be used with Flask-Principal for permission and privilege\nmanagement.\n",
+   "dev_url":"http://flask-ldap3-login.readthedocs.io/en/latest/",
+   "doc_url":"https://github.com/nickw444/flask-ldap3-login",
+   "home":"https://github.com/nickw444/flask-ldap3-login",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"LDAP3 Logins for Flask/Flask-Login"
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericdill"
+   ]
+  },
+  "package":{
+   "name":"flask-ldap3-login",
+   "version":"0.9.16"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "flask",
+    "flask-wtf",
+    "ldap3 >=2.0.7",
+    "wtforms"
+   ]
+  },
+  "source":{
+   "fn":"flask-ldap3-login-0.9.16.tar.gz",
+   "sha256":"2ab330d1702fb03cde432ad0c077ae154e595113b5e7e42866c57482da1ef788",
+   "url":"https://pypi.io/packages/source/f/flask-ldap3-login/flask-ldap3-login-0.9.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "flask_ldap3_login"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "flask",
+    "flask-wtf",
+    "ldap3",
+    "python",
+    "wtforms"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

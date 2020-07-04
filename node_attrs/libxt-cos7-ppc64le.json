@@ -4,6 +4,111 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxt-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"X.org X11 libXt runtime library",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXt/COPYING",
+   "summary":"(CDT) X.org X11 libXt runtime library"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxt-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxt-devel-cos7-ppc64le",
+    "requirements":[
+     "libxt-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxt-cos7-ppc64le",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "run":[
+    "libx11-cos7-ppc64le >=1.6.5"
+   ]
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"6634b8720eb95a0b39779131bdeae73225c67a967c4f2a8f05977e9ba28c7bad",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-1.1.5-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"823b99d22ff9ce483f8f2ea9a4f8435547b52e06037b85aaf1a0e2902fde9a87",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-devel-1.1.5-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libx11-cos7-ppc64le",
+    "libxt-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"X.org X11 libXt runtime library",
@@ -180,6 +285,111 @@
  },
  "name":"libxt-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"X.org X11 libXt runtime library",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXt/COPYING",
+   "summary":"(CDT) X.org X11 libXt runtime library"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxt-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxt-devel-cos7-ppc64le",
+    "requirements":[
+     "libxt-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxt-cos7-ppc64le",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "run":[
+    "libx11-cos7-ppc64le >=1.6.5"
+   ]
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"6634b8720eb95a0b39779131bdeae73225c67a967c4f2a8f05977e9ba28c7bad",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-1.1.5-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"823b99d22ff9ce483f8f2ea9a4f8435547b52e06037b85aaf1a0e2902fde9a87",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-devel-1.1.5-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libx11-cos7-ppc64le",
+    "libxt-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxt-cos7-ppc64le",
   "libxt-devel-cos7-ppc64le"
@@ -241,5 +451,110 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-1.1.5-3.el7.ppc64le.rpm",
- "version":"1.1.5"
+ "version":"1.1.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"X.org X11 libXt runtime library",
+   "home":"http://www.x.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/libXt/COPYING",
+   "summary":"(CDT) X.org X11 libXt runtime library"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxt-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxt-devel-cos7-ppc64le",
+    "requirements":[
+     "libxt-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxt-cos7-ppc64le",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "run":[
+    "libx11-cos7-ppc64le >=1.6.5"
+   ]
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"6634b8720eb95a0b39779131bdeae73225c67a967c4f2a8f05977e9ba28c7bad",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-1.1.5-3.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"823b99d22ff9ce483f8f2ea9a4f8435547b52e06037b85aaf1a0e2902fde9a87",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libXt-devel-1.1.5-3.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libXt.so.6\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libx11-cos7-ppc64le",
+    "libxt-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

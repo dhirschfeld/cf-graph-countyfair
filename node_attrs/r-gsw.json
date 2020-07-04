@@ -77,6 +77,85 @@
  },
  "feedstock_name":"r-gsw",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://teos-10.github.io/GSW-R/index.html",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"Provides an interface to the Gibbs SeaWater (TEOS-10) C library, which derives from Matlab and other code written by WG127 (Working Group 127) of SCOR/IAPSO (Scientific Committee on Oceanic Research / International Association for the Physical Sciences of the Oceans)."
+  },
+  "build":{
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-gsw",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-testthat"
+   ],
+   "run":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "source":{
+   "fn":"gsw_1.0-5.tar.gz",
+   "sha256":"eb468918ee91e429b47fbcac43269eca627b7f64b61520de5bbe8fa223e96453",
+   "url":[
+    "http://cran.r-project.org/src/contrib/gsw_1.0-5.tar.gz",
+    "http://cran.r-project.org/src/contrib/Archive/gsw/gsw_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \"library('gsw')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://teos-10.github.io/GSW-R/index.html",
@@ -161,6 +240,85 @@
  },
  "name":"r-gsw",
  "new_version":"1.0_5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://teos-10.github.io/GSW-R/index.html",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"Provides an interface to the Gibbs SeaWater (TEOS-10) C library, which derives from Matlab and other code written by WG127 (Working Group 127) of SCOR/IAPSO (Scientific Committee on Oceanic Research / International Association for the Physical Sciences of the Oceans)."
+  },
+  "build":{
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-gsw",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-testthat"
+   ],
+   "run":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "source":{
+   "fn":"gsw_1.0-5.tar.gz",
+   "sha256":"eb468918ee91e429b47fbcac43269eca627b7f64b61520de5bbe8fa223e96453",
+   "url":[
+    "http://cran.r-project.org/src/contrib/gsw_1.0-5.tar.gz",
+    "http://cran.r-project.org/src/contrib/Archive/gsw/gsw_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \"library('gsw')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"1.0-5\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gsw\n  version: {{ version.replace(\"-\", \"_\") }}\n\nsource:\n  fn: gsw_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/gsw_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/gsw/gsw_{{ version }}.tar.gz\n  sha256: eb468918ee91e429b47fbcac43269eca627b7f64b61520de5bbe8fa223e96453\n\nbuild:\n  number: 1002\n  merge_build_host: True  # [win]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-testthat\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-testthat\n\ntest:\n  commands:\n    - R -e \"library('gsw')\"  # [not win]\n    - R -e \\\"library('gsw')\\\"  # [win]\n\nabout:\n  home: http://teos-10.github.io/GSW-R/index.html\n  license: GPL-3.0\n  license_file: LICENSE\n  summary: 'Provides an interface to the Gibbs SeaWater (TEOS-10) C library, which\n    derives from Matlab and other code written by WG127 (Working Group 127) of\n    SCOR/IAPSO (Scientific Committee on Oceanic Research / International Association\n    for the Physical Sciences of the Oceans).'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -254,5 +412,95 @@
   "http://cran.r-project.org/src/contrib/gsw_1.0-5.tar.gz",
   "http://cran.r-project.org/src/contrib/Archive/gsw/gsw_1.0-5.tar.gz"
  ],
- "version":"1.0_5"
+ "version":"1.0_5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://teos-10.github.io/GSW-R/index.html",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"Provides an interface to the Gibbs SeaWater (TEOS-10) C library, which derives from Matlab and other code written by WG127 (Working Group 127) of SCOR/IAPSO (Scientific Committee on Oceanic Research / International Association for the Physical Sciences of the Oceans)."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-gsw",
+   "version":"1.0_5"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-testthat"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs",
+    "r-testthat"
+   ]
+  },
+  "source":{
+   "fn":"gsw_1.0-5.tar.gz",
+   "sha256":"eb468918ee91e429b47fbcac43269eca627b7f64b61520de5bbe8fa223e96453",
+   "url":[
+    "http://cran.r-project.org/src/contrib/gsw_1.0-5.tar.gz",
+    "http://cran.r-project.org/src/contrib/Archive/gsw/gsw_1.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \\\"library('gsw')\\\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base",
+    "r-testthat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

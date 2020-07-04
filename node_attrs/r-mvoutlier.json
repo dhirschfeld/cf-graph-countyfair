@@ -66,6 +66,93 @@
  },
  "feedstock_name":"r-mvoutlier",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://cstat.tuwien.ac.at/filz",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Various Methods for Multivariate Outlier Detection."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "cbrueffer",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-mvoutlier",
+   "version":"2.0.9"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ],
+   "run":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "source":{
+   "fn":"mvoutlier_2.0.9.tar.gz",
+   "sha256":"f1f94578228b7816f4855da10b66e773a79f212e29ba23a03009b3d80714a6b4",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mvoutlier_2.0.9.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mvoutlier/mvoutlier_2.0.9.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('mvoutlier')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://cstat.tuwien.ac.at/filz",
@@ -167,6 +254,93 @@
  },
  "name":"r-mvoutlier",
  "new_version":"2.0.9",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://cstat.tuwien.ac.at/filz",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Various Methods for Multivariate Outlier Detection."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "cbrueffer",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-mvoutlier",
+   "version":"2.0.9"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ],
+   "run":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "source":{
+   "fn":"mvoutlier_2.0.9.tar.gz",
+   "sha256":"f1f94578228b7816f4855da10b66e773a79f212e29ba23a03009b3d80714a6b4",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mvoutlier_2.0.9.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mvoutlier/mvoutlier_2.0.9.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('mvoutlier')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.06.22.15.02",
  "raw_meta_yaml":"{% set version = '2.0.9' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-mvoutlier\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: mvoutlier_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/mvoutlier_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/mvoutlier/mvoutlier_{{ version }}.tar.gz\n  sha256: f1f94578228b7816f4855da10b66e773a79f212e29ba23a03009b3d80714a6b4\n\nbuild:\n  noarch: generic\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-robcompositions\n    - r-robustbase\n    - r-sgeostat\n  run:\n    - r-base\n    - r-robcompositions\n    - r-robustbase\n    - r-sgeostat\n\ntest:\n  commands:\n    - $R -e \"library('mvoutlier')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('mvoutlier')\\\"\"  # [win]\n\nabout:\n  home: http://cstat.tuwien.ac.at/filz\n  license: GPL (>= 3)\n  summary: Various Methods for Multivariate Outlier Detection.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - dpryan79\n    - cbrueffer\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "req":{
@@ -244,5 +418,92 @@
   "https://cran.r-project.org/src/contrib/mvoutlier_2.0.9.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/mvoutlier/mvoutlier_2.0.9.tar.gz"
  ],
- "version":"2.0.9"
+ "version":"2.0.9",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://cstat.tuwien.ac.at/filz",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Various Methods for Multivariate Outlier Detection."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "cbrueffer",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-mvoutlier",
+   "version":"2.0.9"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ],
+   "run":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "source":{
+   "fn":"mvoutlier_2.0.9.tar.gz",
+   "sha256":"f1f94578228b7816f4855da10b66e773a79f212e29ba23a03009b3d80714a6b4",
+   "url":[
+    "https://cran.r-project.org/src/contrib/mvoutlier_2.0.9.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/mvoutlier/mvoutlier_2.0.9.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('mvoutlier')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-robcompositions",
+    "r-robustbase",
+    "r-sgeostat"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

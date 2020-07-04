@@ -231,6 +231,89 @@
  },
  "feedstock_name":"python-pdal",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Python package for the PDAL library.\n",
+   "dev_url":"https://github.com/PDAL/python",
+   "doc_url":"https://pdal.io",
+   "home":"https://pdal.io",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Point Data Abstraction Library (PDAL) Python Package"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chambbj",
+    "hobu"
+   ]
+  },
+  "package":{
+   "name":"python-pdal",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pdal",
+    "numpy",
+    "scikit-build",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pdal"
+   ]
+  },
+  "source":{
+   "fn":"python-pdal-2.3.3.tar.gz",
+   "sha256":"a78787b97da3cff4266f3428acdbb4a55293d05b9f0a55bf144475e819189e0d",
+   "url":"https://github.com/PDAL/python/archive/2.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import this\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pdal",
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pdal",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Python package for the PDAL library.\n",
@@ -317,6 +400,89 @@
   "2.3.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Python package for the PDAL library.\n",
+   "dev_url":"https://github.com/PDAL/python",
+   "doc_url":"https://pdal.io",
+   "home":"https://pdal.io",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Point Data Abstraction Library (PDAL) Python Package"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chambbj",
+    "hobu"
+   ]
+  },
+  "package":{
+   "name":"python-pdal",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pdal",
+    "numpy",
+    "scikit-build",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pdal"
+   ]
+  },
+  "source":{
+   "fn":"python-pdal-2.3.3.tar.gz",
+   "sha256":"a78787b97da3cff4266f3428acdbb4a55293d05b9f0a55bf144475e819189e0d",
+   "url":"https://github.com/PDAL/python/archive/2.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import this\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pdal",
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pdal",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.16.16.23.46",
  "raw_meta_yaml":"{% set name = \"python-pdal\" %}\n{% set version = \"2.3.3\" %}\n{% set sha256 = \"a78787b97da3cff4266f3428acdbb4a55293d05b9f0a55bf144475e819189e0d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/PDAL/python/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [(win and vc<14) or py<36]\n\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pdal\n    - {{ pin_compatible('numpy') }}\n    - scikit-build\n    - pip\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pdal\n\ntest:\n  commands:\n    - python -c \"import this\"\n\nabout:\n  home: https://pdal.io\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: Point Data Abstraction Library (PDAL) Python Package\n  description: |\n    Python package for the PDAL library.\n  doc_url: https://pdal.io\n  dev_url: https://github.com/PDAL/python\n\nextra:\n  recipe-maintainers:\n    - chambbj\n    - hobu\n",
  "req":{
@@ -396,5 +562,89 @@
   }
  },
  "url":"https://github.com/PDAL/python/archive/2.2.0.tar.gz",
- "version":"2.3.3"
+ "version":"2.3.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Python package for the PDAL library.\n",
+   "dev_url":"https://github.com/PDAL/python",
+   "doc_url":"https://pdal.io",
+   "home":"https://pdal.io",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Point Data Abstraction Library (PDAL) Python Package"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chambbj",
+    "hobu"
+   ]
+  },
+  "package":{
+   "name":"python-pdal",
+   "version":"2.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pdal",
+    "numpy",
+    "scikit-build",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pdal"
+   ]
+  },
+  "source":{
+   "fn":"python-pdal-2.3.3.tar.gz",
+   "sha256":"a78787b97da3cff4266f3428acdbb4a55293d05b9f0a55bf144475e819189e0d",
+   "url":"https://github.com/PDAL/python/archive/2.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import this\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pdal",
+    "pip",
+    "python",
+    "scikit-build"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pdal",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

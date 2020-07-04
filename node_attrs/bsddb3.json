@@ -78,6 +78,79 @@
  "conda-forge.yml":{},
  "feedstock_name":"bsddb3",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This module provides a nearly complete wrapping of the Oracle/Sleepycat C API for the Database Environment,\nDatabase, Cursor, Log Cursor, Sequence and Transaction objects,\nand each of these is exposed as a Python type in the bsddb3.db module.\nThe database objects can use various access methods: btree, hash, recno, and queue.\nComplete support of Berkeley DB distributed transactions.\nComplete support for Berkeley DB Replication Manager.\nComplete support for Berkeley DB Base Replication. Support for RPC.\n",
+   "doc_url":"https://www.jcea.es/programacion/pybsddb_doc/",
+   "home":"https://www.jcea.es/programacion/pybsddb.htm",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings for Oracle Berkeley DB"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "shadowwalkersb"
+   ]
+  },
+  "package":{
+   "name":"bsddb3",
+   "version":"6.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libdb"
+   ],
+   "run":[
+    "python",
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"b0f7fa63eb240cd5815809c9d1d7df9f7cc8d6fa9619d0edbe9c794afc02dc9f",
+   "url":"https://pypi.io/packages/source/b/bsddb3/bsddb3-6.2.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bsddb3"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This module provides a nearly complete wrapping of the Oracle/Sleepycat C API for the Database Environment,\nDatabase, Cursor, Log Cursor, Sequence and Transaction objects,\nand each of these is exposed as a Python type in the bsddb3.db module.\nThe database objects can use various access methods: btree, hash, recno, and queue.\nComplete support of Berkeley DB distributed transactions.\nComplete support for Berkeley DB Replication Manager.\nComplete support for Berkeley DB Base Replication. Support for RPC.\n",
@@ -143,6 +216,79 @@
  },
  "name":"bsddb3",
  "new_version":"6.2.7",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This module provides a nearly complete wrapping of the Oracle/Sleepycat C API for the Database Environment,\nDatabase, Cursor, Log Cursor, Sequence and Transaction objects,\nand each of these is exposed as a Python type in the bsddb3.db module.\nThe database objects can use various access methods: btree, hash, recno, and queue.\nComplete support of Berkeley DB distributed transactions.\nComplete support for Berkeley DB Replication Manager.\nComplete support for Berkeley DB Base Replication. Support for RPC.\n",
+   "doc_url":"https://www.jcea.es/programacion/pybsddb_doc/",
+   "home":"https://www.jcea.es/programacion/pybsddb.htm",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings for Oracle Berkeley DB"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "shadowwalkersb"
+   ]
+  },
+  "package":{
+   "name":"bsddb3",
+   "version":"6.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libdb"
+   ],
+   "run":[
+    "python",
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"b0f7fa63eb240cd5815809c9d1d7df9f7cc8d6fa9619d0edbe9c794afc02dc9f",
+   "url":"https://pypi.io/packages/source/b/bsddb3/bsddb3-6.2.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bsddb3"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"bsddb3\" %}\n{% set version = \"6.2.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b0f7fa63eb240cd5815809c9d1d7df9f7cc8d6fa9619d0edbe9c794afc02dc9f\n\nbuild:\n  number: 1\n  skip: True     # [win or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - libdb\n  run:\n    - python\n    - libdb\n\ntest:\n  imports:\n    - bsddb3\n\nabout:\n  home: https://www.jcea.es/programacion/pybsddb.htm\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Python bindings for Oracle Berkeley DB'\n\n  description: |\n    This module provides a nearly complete wrapping of the Oracle/Sleepycat C API for the Database Environment, \n    Database, Cursor, Log Cursor, Sequence and Transaction objects, \n    and each of these is exposed as a Python type in the bsddb3.db module. \n    The database objects can use various access methods: btree, hash, recno, and queue. \n    Complete support of Berkeley DB distributed transactions. \n    Complete support for Berkeley DB Replication Manager. \n    Complete support for Berkeley DB Base Replication. Support for RPC.\n  doc_url: https://www.jcea.es/programacion/pybsddb_doc/\n\nextra:\n  recipe-maintainers:\n    - shadowwalkersb\n",
  "req":{
@@ -211,5 +357,79 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/bsddb3/bsddb3-6.2.6.tar.gz",
- "version":"6.2.7"
+ "version":"6.2.7",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This module provides a nearly complete wrapping of the Oracle/Sleepycat C API for the Database Environment,\nDatabase, Cursor, Log Cursor, Sequence and Transaction objects,\nand each of these is exposed as a Python type in the bsddb3.db module.\nThe database objects can use various access methods: btree, hash, recno, and queue.\nComplete support of Berkeley DB distributed transactions.\nComplete support for Berkeley DB Replication Manager.\nComplete support for Berkeley DB Base Replication. Support for RPC.\n",
+   "doc_url":"https://www.jcea.es/programacion/pybsddb_doc/",
+   "home":"https://www.jcea.es/programacion/pybsddb.htm",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Python bindings for Oracle Berkeley DB"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "shadowwalkersb"
+   ]
+  },
+  "package":{
+   "name":"bsddb3",
+   "version":"6.2.7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libdb"
+   ],
+   "run":[
+    "python",
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"b0f7fa63eb240cd5815809c9d1d7df9f7cc8d6fa9619d0edbe9c794afc02dc9f",
+   "url":"https://pypi.io/packages/source/b/bsddb3/bsddb3-6.2.7.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bsddb3"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

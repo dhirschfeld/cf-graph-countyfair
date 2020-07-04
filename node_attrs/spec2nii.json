@@ -40,6 +40,88 @@
  "conda-forge.yml":{},
  "feedstock_name":"spec2nii",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A program for multi-format in vivo MR spectroscopy conversion to NIFTI.\n",
+   "dev_url":"https://github.com/wexeee/spec2nii",
+   "doc_url":"https://github.com/wexeee/spec2nii",
+   "home":"https://github.com/wexeee/spec2nii",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Multi-format in vivo MR spectroscopy conversion to NIfTI"
+  },
+  "build":{
+   "entry_points":[
+    "spec2nii = spec2nii.spec2nii:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wexeee"
+   ]
+  },
+  "package":{
+   "name":"spec2nii",
+   "version":"0.2.9"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "python >=3.7",
+    "numpy",
+    "nibabel",
+    "pydicom",
+    "pymapvbvd",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"9b4f86c4c1092a37584f96cfdb72ece803a8f95a5c1c281febd27c6ac4951914",
+   "url":"https://pypi.io/packages/source/s/spec2nii/spec2nii-0.2.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "spec2nii --help"
+   ],
+   "imports":[
+    "spec2nii"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nibabel",
+    "numpy",
+    "pydicom",
+    "pymapvbvd",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A program for multi-format in vivo MR spectroscopy conversion to NIFTI.\n",
@@ -125,6 +207,88 @@
   "0.2.9":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A program for multi-format in vivo MR spectroscopy conversion to NIFTI.\n",
+   "dev_url":"https://github.com/wexeee/spec2nii",
+   "doc_url":"https://github.com/wexeee/spec2nii",
+   "home":"https://github.com/wexeee/spec2nii",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Multi-format in vivo MR spectroscopy conversion to NIfTI"
+  },
+  "build":{
+   "entry_points":[
+    "spec2nii = spec2nii.spec2nii:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wexeee"
+   ]
+  },
+  "package":{
+   "name":"spec2nii",
+   "version":"0.2.9"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "python >=3.7",
+    "numpy",
+    "nibabel",
+    "pydicom",
+    "pymapvbvd",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"9b4f86c4c1092a37584f96cfdb72ece803a8f95a5c1c281febd27c6ac4951914",
+   "url":"https://pypi.io/packages/source/s/spec2nii/spec2nii-0.2.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "spec2nii --help"
+   ],
+   "imports":[
+    "spec2nii"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nibabel",
+    "numpy",
+    "pydicom",
+    "pymapvbvd",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"spec2nii\" %}\n{% set version = \"0.2.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9b4f86c4c1092a37584f96cfdb72ece803a8f95a5c1c281febd27c6ac4951914\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - spec2nii = spec2nii.spec2nii:main\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - numpy\n    - nibabel\n    - pydicom\n    - pymapvbvd\n    - scipy\n\ntest:\n  imports:\n    - spec2nii\n  commands:\n    - spec2nii --help\n\nabout:\n  home: https://github.com/wexeee/spec2nii\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Multi-format in vivo MR spectroscopy conversion to NIfTI\n  description: |\n    A program for multi-format in vivo MR spectroscopy conversion to NIFTI.\n  doc_url: https://github.com/wexeee/spec2nii\n  dev_url: https://github.com/wexeee/spec2nii\n\nextra:\n  recipe-maintainers:\n    - wexeee\n",
  "req":{
@@ -198,5 +362,87 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/spec2nii/spec2nii-0.2.7.tar.gz",
- "version":"0.2.9"
+ "version":"0.2.9",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A program for multi-format in vivo MR spectroscopy conversion to NIFTI.\n",
+   "dev_url":"https://github.com/wexeee/spec2nii",
+   "doc_url":"https://github.com/wexeee/spec2nii",
+   "home":"https://github.com/wexeee/spec2nii",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE",
+   "summary":"Multi-format in vivo MR spectroscopy conversion to NIfTI"
+  },
+  "build":{
+   "entry_points":[
+    "spec2nii = spec2nii.spec2nii:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "wexeee"
+   ]
+  },
+  "package":{
+   "name":"spec2nii",
+   "version":"0.2.9"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "python >=3.7",
+    "numpy",
+    "nibabel",
+    "pydicom",
+    "pymapvbvd",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"9b4f86c4c1092a37584f96cfdb72ece803a8f95a5c1c281febd27c6ac4951914",
+   "url":"https://pypi.io/packages/source/s/spec2nii/spec2nii-0.2.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "spec2nii --help"
+   ],
+   "imports":[
+    "spec2nii"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "nibabel",
+    "numpy",
+    "pydicom",
+    "pymapvbvd",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

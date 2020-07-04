@@ -66,6 +66,82 @@
  },
  "feedstock_name":"r-threeway",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ThreeWay",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Component analysis for three-way data arrays by means of Candecomp/Parafac, Tucker3, Tucker2 and Tucker1 models."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "PertuyF",
+    "tbillet17"
+   ]
+  },
+  "package":{
+   "name":"r-threeway",
+   "version":"1.1.3"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"e6d7ac36ed14dcc38968427261904dd5b682baa45a1307d8f0912701f047d49f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ThreeWay_1.1.3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ThreeWay/ThreeWay_1.1.3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ThreeWay')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=ThreeWay",
@@ -155,6 +231,82 @@
  },
  "name":"r-threeway",
  "new_version":"1.1.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ThreeWay",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Component analysis for three-way data arrays by means of Candecomp/Parafac, Tucker3, Tucker2 and Tucker1 models."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "PertuyF",
+    "tbillet17"
+   ]
+  },
+  "package":{
+   "name":"r-threeway",
+   "version":"1.1.3"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"e6d7ac36ed14dcc38968427261904dd5b682baa45a1307d8f0912701f047d49f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ThreeWay_1.1.3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ThreeWay/ThreeWay_1.1.3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ThreeWay')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = '1.1.3' %}\n\npackage:\n  name: r-threeway\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/ThreeWay_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/ThreeWay/ThreeWay_{{ version }}.tar.gz\n  sha256: e6d7ac36ed14dcc38968427261904dd5b682baa45a1307d8f0912701f047d49f\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  noarch: generic\n  number: 1002\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('ThreeWay')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ThreeWay')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=ThreeWay\n  license: GPL (>= 2)\n  summary: Component analysis for three-way data arrays by means of Candecomp/Parafac, Tucker3,\n    Tucker2 and Tucker1 models.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n    - PertuyF\n    - tbillet17\n",
  "req":{
@@ -217,5 +369,82 @@
   "https://cran.r-project.org/src/contrib/ThreeWay_1.1.3.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/ThreeWay/ThreeWay_1.1.3.tar.gz"
  ],
- "version":"1.1.3"
+ "version":"1.1.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ThreeWay",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Component analysis for three-way data arrays by means of Candecomp/Parafac, Tucker3, Tucker2 and Tucker1 models."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "PertuyF",
+    "tbillet17"
+   ]
+  },
+  "package":{
+   "name":"r-threeway",
+   "version":"1.1.3"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"e6d7ac36ed14dcc38968427261904dd5b682baa45a1307d8f0912701f047d49f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ThreeWay_1.1.3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ThreeWay/ThreeWay_1.1.3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('ThreeWay')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

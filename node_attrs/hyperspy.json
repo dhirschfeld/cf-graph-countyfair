@@ -168,6 +168,249 @@
  },
  "feedstock_name":"hyperspy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/hyperspy/hyperspy/",
+   "doc_url":"http://hyperspy.org/hyperspy-doc/current/user_guide/index.html",
+   "home":"https://hyperspy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"COPYING.txt",
+   "summary":"Multi-dimensional data analysis"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericpre",
+    "francisco-dlp"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"hyperspy-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "cython",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "dill",
+      "h5py",
+      "ipython",
+      "matplotlib-base >2.2.2",
+      "numpy >1.13",
+      "scikit-image >=0.13,<0.17",
+      "scikit-learn",
+      "scipy >=0.15,<1.4",
+      "statsmodels",
+      "ipyparallel",
+      "sympy <1.5",
+      "natsort",
+      "dask >=0.18",
+      "traits >=4.5",
+      "requests",
+      "tqdm >=0.4.9",
+      "python-dateutil >=2.5",
+      "pint >0.8,<0.10",
+      "numba",
+      "numexpr",
+      "sparse",
+      "imageio",
+      "mrcz",
+      "ptable",
+      "pyyaml"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "export MPLBACKEND=agg",
+      "pytest --pyargs hyperspy --mpl"
+     ],
+     "imports":[
+      "hyperspy",
+      "hyperspy.Release",
+      "hyperspy._lazy_signals",
+      "hyperspy.api",
+      "hyperspy.api_nogui",
+      "hyperspy.axes",
+      "hyperspy.component",
+      "hyperspy.components1d",
+      "hyperspy.components2d",
+      "hyperspy.decorators",
+      "hyperspy.defaults_parser",
+      "hyperspy.events",
+      "hyperspy.exceptions",
+      "hyperspy.interactive",
+      "hyperspy.io",
+      "hyperspy.logger",
+      "hyperspy.model",
+      "hyperspy.roi",
+      "hyperspy.samfire",
+      "hyperspy.signal",
+      "hyperspy.signal_tools",
+      "hyperspy.signals",
+      "hyperspy.ui_registry",
+      "hyperspy._components",
+      "hyperspy._signals",
+      "hyperspy.datasets",
+      "hyperspy.docstrings",
+      "hyperspy.drawing",
+      "hyperspy.drawing._markers",
+      "hyperspy.drawing._widgets",
+      "hyperspy.external",
+      "hyperspy.external.astroML",
+      "hyperspy.external.mpfit",
+      "hyperspy.io_plugins",
+      "hyperspy.learn",
+      "hyperspy.misc",
+      "hyperspy.misc.eds",
+      "hyperspy.misc.eels",
+      "hyperspy.misc.holography",
+      "hyperspy.misc.io",
+      "hyperspy.misc.machine_learning",
+      "hyperspy.models",
+      "hyperspy.samfire_utils",
+      "hyperspy.samfire_utils.goodness_of_fit_tests",
+      "hyperspy.samfire_utils.segmenters",
+      "hyperspy.samfire_utils.weights",
+      "hyperspy.utils"
+     ],
+     "requires":[
+      "pytest <4.1",
+      "matplotlib-base >=3.1,<3.2",
+      "freetype >=2.9,<2.10",
+      "pytest-mpl"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "pyqt",
+      "hyperspy-base",
+      "hyperspy-gui-ipywidgets >=1.2",
+      "hyperspy-gui-traitsui >=1.2",
+      "matplotlib"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy-dev",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "cython",
+      "pytest",
+      "pytest-mpl",
+      "freetype >=2.9,<2.10",
+      "matplotlib-base >=3.1,<3.2",
+      "numpydoc",
+      "sphinx",
+      "sphinx_rtd_theme"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hyperspy-meta",
+   "version":"1.5.2"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"hyperspy-1.5.2.tar.gz",
+   "sha256":"5271fd3fa3e437ea9aaa201cd1724f5cd60e53dcc0741a74e86d55ea1b101ff6",
+   "url":"https://pypi.io/packages/source/h/hyperspy/hyperspy-1.5.2.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "dask",
+    "dill",
+    "freetype",
+    "h5py",
+    "hyperspy-base",
+    "hyperspy-gui-ipywidgets",
+    "hyperspy-gui-traitsui",
+    "imageio",
+    "ipyparallel",
+    "ipython",
+    "matplotlib",
+    "matplotlib-base",
+    "mrcz",
+    "natsort",
+    "numba",
+    "numexpr",
+    "numpy",
+    "numpydoc",
+    "pint",
+    "ptable",
+    "pyqt",
+    "pytest",
+    "pytest-mpl",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "sparse",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "statsmodels",
+    "sympy",
+    "tqdm",
+    "traits"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "matplotlib-base",
+    "pytest",
+    "pytest-mpl"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/hyperspy/hyperspy/",
@@ -629,6 +872,249 @@
  },
  "name":"hyperspy-meta",
  "new_version":"1.5.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/hyperspy/hyperspy/",
+   "doc_url":"http://hyperspy.org/hyperspy-doc/current/user_guide/index.html",
+   "home":"https://hyperspy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"COPYING.txt",
+   "summary":"Multi-dimensional data analysis"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericpre",
+    "francisco-dlp"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"hyperspy-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "cython",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "dill",
+      "h5py",
+      "ipython",
+      "matplotlib-base >2.2.2",
+      "numpy >1.13",
+      "scikit-image >=0.13,<0.17",
+      "scikit-learn",
+      "scipy >=0.15,<1.4",
+      "statsmodels",
+      "ipyparallel",
+      "sympy <1.5",
+      "natsort",
+      "dask >=0.18",
+      "traits >=4.5",
+      "requests",
+      "tqdm >=0.4.9",
+      "python-dateutil >=2.5",
+      "pint >0.8,<0.10",
+      "numba",
+      "numexpr",
+      "sparse",
+      "imageio",
+      "mrcz",
+      "ptable",
+      "pyyaml"
+     ]
+    },
+    "script":"install.sh",
+    "test":{
+     "commands":[
+      "export MPLBACKEND=agg",
+      "pytest --pyargs hyperspy --mpl"
+     ],
+     "imports":[
+      "hyperspy",
+      "hyperspy.Release",
+      "hyperspy._lazy_signals",
+      "hyperspy.api",
+      "hyperspy.api_nogui",
+      "hyperspy.axes",
+      "hyperspy.component",
+      "hyperspy.components1d",
+      "hyperspy.components2d",
+      "hyperspy.decorators",
+      "hyperspy.defaults_parser",
+      "hyperspy.events",
+      "hyperspy.exceptions",
+      "hyperspy.interactive",
+      "hyperspy.io",
+      "hyperspy.logger",
+      "hyperspy.model",
+      "hyperspy.roi",
+      "hyperspy.samfire",
+      "hyperspy.signal",
+      "hyperspy.signal_tools",
+      "hyperspy.signals",
+      "hyperspy.ui_registry",
+      "hyperspy._components",
+      "hyperspy._signals",
+      "hyperspy.datasets",
+      "hyperspy.docstrings",
+      "hyperspy.drawing",
+      "hyperspy.drawing._markers",
+      "hyperspy.drawing._widgets",
+      "hyperspy.external",
+      "hyperspy.external.astroML",
+      "hyperspy.external.mpfit",
+      "hyperspy.io_plugins",
+      "hyperspy.learn",
+      "hyperspy.misc",
+      "hyperspy.misc.eds",
+      "hyperspy.misc.eels",
+      "hyperspy.misc.holography",
+      "hyperspy.misc.io",
+      "hyperspy.misc.machine_learning",
+      "hyperspy.models",
+      "hyperspy.samfire_utils",
+      "hyperspy.samfire_utils.goodness_of_fit_tests",
+      "hyperspy.samfire_utils.segmenters",
+      "hyperspy.samfire_utils.weights",
+      "hyperspy.utils"
+     ],
+     "requires":[
+      "pytest <4.1",
+      "matplotlib-base >=3.1,<3.2",
+      "freetype >=2.9,<2.10",
+      "pytest-mpl"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "pyqt",
+      "hyperspy-base",
+      "hyperspy-gui-ipywidgets >=1.2",
+      "hyperspy-gui-traitsui >=1.2",
+      "matplotlib"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy-dev",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "cython",
+      "pytest",
+      "pytest-mpl",
+      "freetype >=2.9,<2.10",
+      "matplotlib-base >=3.1,<3.2",
+      "numpydoc",
+      "sphinx",
+      "sphinx_rtd_theme"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hyperspy-meta",
+   "version":"1.5.2"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"hyperspy-1.5.2.tar.gz",
+   "sha256":"5271fd3fa3e437ea9aaa201cd1724f5cd60e53dcc0741a74e86d55ea1b101ff6",
+   "url":"https://pypi.io/packages/source/h/hyperspy/hyperspy-1.5.2.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "dask",
+    "dill",
+    "freetype",
+    "h5py",
+    "hyperspy-base",
+    "hyperspy-gui-ipywidgets",
+    "hyperspy-gui-traitsui",
+    "imageio",
+    "ipyparallel",
+    "ipython",
+    "matplotlib",
+    "matplotlib-base",
+    "mrcz",
+    "natsort",
+    "numba",
+    "numexpr",
+    "numpy",
+    "numpydoc",
+    "pint",
+    "ptable",
+    "pyqt",
+    "pytest",
+    "pytest-mpl",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "sparse",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "statsmodels",
+    "sympy",
+    "tqdm",
+    "traits"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "matplotlib-base",
+    "pytest",
+    "pytest-mpl"
+   ]
+  }
+ },
  "outputs_names":[
   "hyperspy",
   "hyperspy-base",
@@ -827,5 +1313,250 @@
   }
  },
  "url":"https://pypi.io/packages/source/h/hyperspy/hyperspy-1.5.2.tar.gz",
- "version":"1.5.2"
+ "version":"1.5.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/hyperspy/hyperspy/",
+   "doc_url":"http://hyperspy.org/hyperspy-doc/current/user_guide/index.html",
+   "home":"https://hyperspy.org",
+   "license":"GPL-3.0-or-later",
+   "license_file":"COPYING.txt",
+   "summary":"Multi-dimensional data analysis"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ericpre",
+    "francisco-dlp"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"hyperspy-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "python",
+      "setuptools",
+      "cython",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "dill",
+      "h5py",
+      "ipython",
+      "matplotlib-base >2.2.2",
+      "numpy >1.13",
+      "scikit-image >=0.13,<0.17",
+      "scikit-learn",
+      "scipy >=0.15,<1.4",
+      "statsmodels",
+      "ipyparallel",
+      "sympy <1.5",
+      "natsort",
+      "dask >=0.18",
+      "traits >=4.5",
+      "requests",
+      "tqdm >=0.4.9",
+      "python-dateutil >=2.5",
+      "pint >0.8,<0.10",
+      "numba",
+      "numexpr",
+      "sparse",
+      "pillow >5.2",
+      "imageio",
+      "mrcz",
+      "ptable",
+      "pyyaml"
+     ]
+    },
+    "script":"install.bat",
+    "test":{
+     "commands":[
+      "set MPLBACKEND=agg",
+      "pytest --pyargs hyperspy --mpl"
+     ],
+     "imports":[
+      "hyperspy",
+      "hyperspy.Release",
+      "hyperspy._lazy_signals",
+      "hyperspy.api",
+      "hyperspy.api_nogui",
+      "hyperspy.axes",
+      "hyperspy.component",
+      "hyperspy.components1d",
+      "hyperspy.components2d",
+      "hyperspy.decorators",
+      "hyperspy.defaults_parser",
+      "hyperspy.events",
+      "hyperspy.exceptions",
+      "hyperspy.interactive",
+      "hyperspy.io",
+      "hyperspy.logger",
+      "hyperspy.model",
+      "hyperspy.roi",
+      "hyperspy.samfire",
+      "hyperspy.signal",
+      "hyperspy.signal_tools",
+      "hyperspy.signals",
+      "hyperspy.ui_registry",
+      "hyperspy._components",
+      "hyperspy._signals",
+      "hyperspy.datasets",
+      "hyperspy.docstrings",
+      "hyperspy.drawing",
+      "hyperspy.drawing._markers",
+      "hyperspy.drawing._widgets",
+      "hyperspy.external",
+      "hyperspy.external.astroML",
+      "hyperspy.external.mpfit",
+      "hyperspy.io_plugins",
+      "hyperspy.learn",
+      "hyperspy.misc",
+      "hyperspy.misc.eds",
+      "hyperspy.misc.eels",
+      "hyperspy.misc.holography",
+      "hyperspy.misc.io",
+      "hyperspy.misc.machine_learning",
+      "hyperspy.models",
+      "hyperspy.samfire_utils",
+      "hyperspy.samfire_utils.goodness_of_fit_tests",
+      "hyperspy.samfire_utils.segmenters",
+      "hyperspy.samfire_utils.weights",
+      "hyperspy.utils"
+     ],
+     "requires":[
+      "pytest <4.1",
+      "matplotlib-base >=3.1,<3.2",
+      "freetype >=2.9,<2.10",
+      "pytest-mpl"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "pyqt",
+      "hyperspy-base",
+      "hyperspy-gui-ipywidgets >=1.2",
+      "hyperspy-gui-traitsui >=1.2",
+      "matplotlib"
+     ]
+    }
+   },
+   {
+    "name":"hyperspy-dev",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "cython",
+      "pytest",
+      "pytest-mpl",
+      "freetype >=2.9,<2.10",
+      "matplotlib-base >=3.1,<3.2",
+      "numpydoc",
+      "sphinx",
+      "sphinx_rtd_theme"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"hyperspy-meta",
+   "version":"1.5.2"
+  },
+  "requirements":{
+   "host":[
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"hyperspy-1.5.2.tar.gz",
+   "sha256":"5271fd3fa3e437ea9aaa201cd1724f5cd60e53dcc0741a74e86d55ea1b101ff6",
+   "url":"https://pypi.io/packages/source/h/hyperspy/hyperspy-1.5.2.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "dask",
+    "dill",
+    "freetype",
+    "h5py",
+    "hyperspy-base",
+    "hyperspy-gui-ipywidgets",
+    "hyperspy-gui-traitsui",
+    "imageio",
+    "ipyparallel",
+    "ipython",
+    "matplotlib",
+    "matplotlib-base",
+    "mrcz",
+    "natsort",
+    "numba",
+    "numexpr",
+    "numpy",
+    "numpydoc",
+    "pillow",
+    "pint",
+    "ptable",
+    "pyqt",
+    "pytest",
+    "pytest-mpl",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "requests",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "sparse",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "statsmodels",
+    "sympy",
+    "tqdm",
+    "traits"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "matplotlib-base",
+    "pytest",
+    "pytest-mpl"
+   ]
+  }
+ }
 }

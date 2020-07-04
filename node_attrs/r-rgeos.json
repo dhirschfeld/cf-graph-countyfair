@@ -252,6 +252,89 @@
  },
  "feedstock_name":"r-rgeos",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://r-forge.r-project.org/projects/rgeos/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Interface to Geometry Engine - Open Source ('GEOS') using the C 'API' for topology operations on geometries. The 'GEOS' library is external to the package, and, when installing the package from source, must be correctly installed first. Windows and Mac Intel OS X binaries are provided on 'CRAN'."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-rgeos",
+   "version":"0.5_3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-sp >=1.1_0",
+    "geos"
+   ],
+   "run":[
+    "r-base",
+    "geos",
+    "r-sp >=1.1_0"
+   ]
+  },
+  "source":{
+   "sha256":"357454e110ae19a665d5af5ffd7d670d2d7471566dd638dc614365c29b68600b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/rgeos_0.5-3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.5-3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \"library('rgeos')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://r-forge.r-project.org/projects/rgeos/",
@@ -344,6 +427,89 @@
   "0.5_3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://r-forge.r-project.org/projects/rgeos/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Interface to Geometry Engine - Open Source ('GEOS') using the C 'API' for topology operations on geometries. The 'GEOS' library is external to the package, and, when installing the package from source, must be correctly installed first. Windows and Mac Intel OS X binaries are provided on 'CRAN'."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-rgeos",
+   "version":"0.5_3"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-sp >=1.1_0",
+    "geos"
+   ],
+   "run":[
+    "r-base",
+    "geos",
+    "r-sp >=1.1_0"
+   ]
+  },
+  "source":{
+   "sha256":"357454e110ae19a665d5af5ffd7d670d2d7471566dd638dc614365c29b68600b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/rgeos_0.5-3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.5-3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \"library('rgeos')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.08.11.44.00",
  "raw_meta_yaml":"{% set version = \"0.5-3\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rgeos\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - https://cran.r-project.org/src/contrib/rgeos_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_{{ version }}.tar.gz\n  sha256: 357454e110ae19a665d5af5ffd7d670d2d7471566dd638dc614365c29b68600b\n\nbuild:\n  number: 0\n  merge_build_host: true  # [win]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix  # [win]\n    - {{ compiler('c') }}  # [not win]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}  # [not win]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - r-base\n    - r-sp >=1.1_0\n    - geos\n\n  run:\n    - r-base\n    - geos\n    - r-sp >=1.1_0\n\ntest:\n  commands:\n    - R -e \"library('rgeos')\"  # [not win]\n    - R -e \\\"library('rgeos')\\\"  # [win]\n\nabout:\n  home: https://r-forge.r-project.org/projects/rgeos/\n  license: GPL (>= 2)\n  summary: Interface to Geometry Engine - Open Source ('GEOS') using the C 'API' for topology operations on geometries. The 'GEOS' library is external to the package, and, when installing the package from source, must be correctly installed first. Windows and Mac Intel OS X binaries are provided on 'CRAN'.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - ocefpaf\n",
  "req":{
@@ -433,5 +599,91 @@
   "https://cran.r-project.org/src/contrib/rgeos_0.5-1.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.5-1.tar.gz"
  ],
- "version":"0.5_3"
+ "version":"0.5_3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://r-forge.r-project.org/projects/rgeos/",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Interface to Geometry Engine - Open Source ('GEOS') using the C 'API' for topology operations on geometries. The 'GEOS' library is external to the package, and, when installing the package from source, must be correctly installed first. Windows and Mac Intel OS X binaries are provided on 'CRAN'."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-rgeos",
+   "version":"0.5_3"
+  },
+  "requirements":{
+   "build":[
+    "posix",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-sp >=1.1_0",
+    "geos"
+   ],
+   "run":[
+    "r-base",
+    "geos",
+    "r-sp >=1.1_0"
+   ]
+  },
+  "source":{
+   "sha256":"357454e110ae19a665d5af5ffd7d670d2d7471566dd638dc614365c29b68600b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/rgeos_0.5-3.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/rgeos/rgeos_0.5-3.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "R -e \\\"library('rgeos')\\\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "geos",
+    "r-base",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

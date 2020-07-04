@@ -421,6 +421,634 @@
  "conda-forge.yml":{},
  "feedstock_name":"root",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available. In most cases users should use the `root` package directly, since it adds both of these, along with compilers, Jupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
+   "dev_url":"https://github.com/root-project/root/",
+   "doc_url":"https://root.cern/documentation",
+   "home":"https://root.cern/",
+   "license":"LGPL-2.1-only",
+   "license_family":"LGPL",
+   "license_file":"root-source/LICENSE",
+   "summary":"ROOT is a modular scientific software toolkit. It provides all the functionalities needed to deal with big data\nprocessing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other\nlanguages such as Python and R.\n"
+  },
+  "build":{
+   "number":"1",
+   "string":"pyh_1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "henryiii",
+    "eguiraud",
+    "egpbos"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "number":"1",
+     "script":"echo \"Minimal build script is required for conda to set RECIPE_DIR\"",
+     "string":"pyh_1"
+    },
+    "name":"root-dependencies",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libglu",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xorg-libx11",
+      "xorg-libxau",
+      "xorg-libxcursor",
+      "xorg-libxext",
+      "xorg-libxfixes",
+      "xorg-libxft",
+      "xorg-libxpm",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "numpy",
+      "cfitsio",
+      "fftw",
+      "gdk-pixbuf",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "libglu",
+      "librsvg",
+      "pythia8",
+      "python",
+      "tbb-devel",
+      "xorg-libx11",
+      "xorg-libxau",
+      "xorg-libxcursor",
+      "xorg-libxext",
+      "xorg-libxft",
+      "xorg-libxpm",
+      "libcxx",
+      "xxhash"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "echo \"Testing is performed in the root_base and root outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "ignore_prefix_files":[
+      "lib/*.pcm"
+     ],
+     "ignore_run_exports":[
+      "ftgl",
+      "gl2ps",
+      "giflib",
+      "gsl",
+      "krb5",
+      "sqlite"
+     ],
+     "number":"1",
+     "run_exports":[
+      "root_base"
+     ],
+     "script":[
+      "set -euxo pipefail",
+      "find ${PREFIX}/bin -type f -maxdepth 1 > ${SRC_DIR}/initial-filelist.txt",
+      "cp -rp ${PREFIX}/bin ${SRC_DIR}/initial-bin-dir",
+      "${RECIPE_DIR}/build_root-base.sh",
+      "mkdir ${SRC_DIR}/root-binaries/",
+      "find ${PREFIX}/bin -type f -maxdepth 1 -exec \\\n  bash -c 'fn={}; if grep --quiet \"^$fn\\$\" \"${SRC_DIR}/initial-filelist.txt\"; then echo \"Skipping $fn\"; else echo \"Found new file $fn\"; mv \"$fn\" \"${SRC_DIR}/root-binaries/\"; fi' \\;\n"
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root_base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libglu",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xorg-libx11",
+      "xorg-libxau",
+      "xorg-libxcursor",
+      "xorg-libxext",
+      "xorg-libxfixes",
+      "xorg-libxft",
+      "xorg-libxpm",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "libcxx",
+      "python",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":[
+      "cling 9999",
+      "root5 9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Tested in other outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "mkdir -p ${PREFIX}/bin",
+      "ls ${PREFIX}/bin/",
+      "cp -rp ${SRC_DIR}/root-binaries/* ${PREFIX}/bin/",
+      "ls ${PREFIX}/bin/"
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root-binaries",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libglu",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xorg-libx11",
+      "xorg-libxau",
+      "xorg-libxcursor",
+      "xorg-libxext",
+      "xorg-libxfixes",
+      "xorg-libxft",
+      "xorg-libxpm",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "root_base",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "root_base",
+      "python",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "requires":[
+      "root-dependencies 6.22.0 *_1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "pwd",
+      "ls",
+      "echo \"Minimal build script is required for conda to set RECIPE_DIR\""
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub"
+     ],
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "compilers",
+      "metakernel",
+      "notebook",
+      "root_base",
+      "root-binaries",
+      "root-dependencies"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py",
+      "ipython -c 'import JsMVA'",
+      "root -l -b -q -x test.cpp++"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "imports":[
+      "ROOT",
+      "JupyROOT"
+     ],
+     "requires":[
+      "ipython"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"root",
+   "version":"6.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "cmake",
+    "git",
+    "pkg-config",
+    "sed",
+    "make",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub"
+   ],
+   "host":[
+    "libblas",
+    "libcblas",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "numpy",
+    "afterimage",
+    "cfitsio",
+    "clangdev =5.0.0",
+    "clang_variant * root_20200518",
+    "davix",
+    "fftw",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "glew",
+    "gl2ps",
+    "graphviz",
+    "gsl",
+    "libglu",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev ==5",
+    "lz4-c",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xorg-libx11",
+    "xorg-libxau",
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxft",
+    "xorg-libxpm",
+    "xrootd",
+    "xz",
+    "libcxx",
+    "xxhash",
+    "zlib",
+    "zstd"
+   ],
+   "run":[
+    "python",
+    "numba",
+    "cffi"
+   ],
+   "run_constrained":null
+  },
+  "source":{
+   "folder":"root-source",
+   "patches":[
+    "patches/root-x.xx.xx_cling-runtime-sysroot.patch",
+    "patches/0001-Patch-clad-build-for-use-with-external-clang.patch",
+    "patches/0002-Fix-DynamicLibraryManagerSymbol-for-external-LLVM.patch"
+   ],
+   "sha256":"658b7ae68cc0de3c6027e7342c206cdcd02ef1f1660cf96ae2a84f5b6bbb95db",
+   "url":"https://github.com/root-project/root/archive/v6-22-00.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "git",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "afterimage",
+    "c_compiler_stub",
+    "cfitsio",
+    "clang_variant",
+    "clangdev",
+    "cxx_compiler_stub",
+    "davix",
+    "fftw",
+    "fortran_compiler_stub",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "gsl",
+    "libblas",
+    "libcblas",
+    "libcxx",
+    "libglu",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev",
+    "lz4-c",
+    "numpy",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "root_base",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xorg-libx11",
+    "xorg-libxau",
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxfixes",
+    "xorg-libxft",
+    "xorg-libxpm",
+    "xrootd",
+    "xxhash",
+    "xz",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cffi",
+    "cfitsio",
+    "compilers",
+    "cxx_compiler_stub",
+    "fftw",
+    "fortran_compiler_stub",
+    "gdk-pixbuf",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "libcxx",
+    "libglu",
+    "librsvg",
+    "metakernel",
+    "notebook",
+    "numba",
+    "numpy",
+    "pythia8",
+    "python",
+    "root-binaries",
+    "root-dependencies",
+    "root_base",
+    "tbb-devel",
+    "xorg-libx11",
+    "xorg-libxau",
+    "xorg-libxcursor",
+    "xorg-libxext",
+    "xorg-libxft",
+    "xorg-libxpm",
+    "xxhash"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "ipython",
+    "root-dependencies"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available. In most cases users should use the `root` package directly, since it adds both of these, along with compilers, Jupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
@@ -1754,6 +2382,552 @@
  "new_version_errors":{
   "6-23-01":"We found a problem parsing the recipe: \n\nexpected a single document in the stream\n  in \"<unicode string>\", line 10, column 9:\n            - root -l -b -q -x\n            ^ (line: 10)\nbut found another document\n  in \"<unicode string>\", line 32, column 1:\n    package:\n    ^ (line: 32)"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available. In most cases users should use the `root` package directly, since it adds both of these, along with compilers, Jupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
+   "dev_url":"https://github.com/root-project/root/",
+   "doc_url":"https://root.cern/documentation",
+   "home":"https://root.cern/",
+   "license":"LGPL-2.1-only",
+   "license_family":"LGPL",
+   "license_file":"root-source/LICENSE",
+   "summary":"ROOT is a modular scientific software toolkit. It provides all the functionalities needed to deal with big data\nprocessing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other\nlanguages such as Python and R.\n"
+  },
+  "build":{
+   "number":"1",
+   "string":"pyh_1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "henryiii",
+    "eguiraud",
+    "egpbos"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "number":"1",
+     "script":"echo \"Minimal build script is required for conda to set RECIPE_DIR\"",
+     "string":"pyh_1"
+    },
+    "name":"root-dependencies",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "numpy",
+      "cfitsio",
+      "fftw",
+      "gdk-pixbuf",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "librsvg",
+      "pythia8",
+      "python",
+      "tbb-devel",
+      "libcxx",
+      "xxhash"
+     ],
+     "run_constrained":[
+      "__osx >=10.9"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Testing is performed in the root_base and root outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "ignore_prefix_files":[
+      "lib/*.pcm"
+     ],
+     "ignore_run_exports":[
+      "ftgl",
+      "gl2ps",
+      "giflib",
+      "gsl",
+      "krb5",
+      "sqlite"
+     ],
+     "number":"1",
+     "run_exports":[
+      "root_base"
+     ],
+     "script":[
+      "set -euxo pipefail",
+      "find ${PREFIX}/bin -type f -maxdepth 1 > ${SRC_DIR}/initial-filelist.txt",
+      "cp -rp ${PREFIX}/bin ${SRC_DIR}/initial-bin-dir",
+      "${RECIPE_DIR}/build_root-base.sh",
+      "mkdir ${SRC_DIR}/root-binaries/",
+      "find ${PREFIX}/bin -type f -maxdepth 1 -exec \\\n  bash -c 'fn={}; if grep --quiet \"^$fn\\$\" \"${SRC_DIR}/initial-filelist.txt\"; then echo \"Skipping $fn\"; else echo \"Found new file $fn\"; mv \"$fn\" \"${SRC_DIR}/root-binaries/\"; fi' \\;\n"
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root_base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "libcxx",
+      "python",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":[
+      "cling 9999",
+      "root5 9999",
+      "__osx >=10.9"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Tested in other outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "mkdir -p ${PREFIX}/bin",
+      "ls ${PREFIX}/bin/",
+      "cp -rp ${SRC_DIR}/root-binaries/* ${PREFIX}/bin/",
+      "ls ${PREFIX}/bin/"
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root-binaries",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "root_base",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "root_base",
+      "python",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":[
+      "__osx >=10.9"
+     ]
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "echo ${CONDA_BUILD_SYSROOT}",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "requires":[
+      "root-dependencies 6.22.0 *_1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "pwd",
+      "ls",
+      "echo \"Minimal build script is required for conda to set RECIPE_DIR\""
+     ],
+     "string":"pyh_1"
+    },
+    "name":"root",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "compilers",
+      "metakernel",
+      "notebook",
+      "root_base",
+      "root-binaries",
+      "root-dependencies"
+     ],
+     "run_constrained":[
+      "__osx >=10.9"
+     ]
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "echo ${CONDA_BUILD_SYSROOT}",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py",
+      "ipython -c 'import JsMVA'",
+      "root -l -b -q -x test.cpp++"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "imports":[
+      "ROOT",
+      "JupyROOT"
+     ],
+     "requires":[
+      "ipython"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"root",
+   "version":"6.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "cmake",
+    "git",
+    "pkg-config",
+    "sed",
+    "make"
+   ],
+   "host":[
+    "libblas",
+    "libcblas",
+    "numpy",
+    "afterimage",
+    "cfitsio",
+    "clangdev =5.0.0",
+    "clang_variant * root_20200518",
+    "davix",
+    "fftw",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "glew",
+    "gl2ps",
+    "graphviz",
+    "gsl",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev ==5",
+    "lz4-c",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xrootd",
+    "xz",
+    "libcxx",
+    "xxhash",
+    "zlib",
+    "zstd"
+   ],
+   "run":[
+    "python",
+    "numba",
+    "cffi"
+   ],
+   "run_constrained":[
+    "__osx >=10.9"
+   ]
+  },
+  "source":{
+   "folder":"root-source",
+   "patches":[
+    "patches/root-x.xx.xx_cling-runtime-sysroot.patch",
+    "patches/root-x.xx.xx-copy-abspath-headers.patch",
+    "patches/root-x.xx.xx-osx-remove-hardcoded-sysroot.patch",
+    "patches/0001-Patch-clad-build-for-use-with-external-clang.patch",
+    "patches/0002-Fix-DynamicLibraryManagerSymbol-for-external-LLVM.patch"
+   ],
+   "sha256":"658b7ae68cc0de3c6027e7342c206cdcd02ef1f1660cf96ae2a84f5b6bbb95db",
+   "url":"https://github.com/root-project/root/archive/v6-22-00.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "git",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "afterimage",
+    "cfitsio",
+    "clang_variant",
+    "clangdev",
+    "davix",
+    "fftw",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "gsl",
+    "libblas",
+    "libcblas",
+    "libcxx",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev",
+    "lz4-c",
+    "numpy",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "root_base",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xrootd",
+    "xxhash",
+    "xz",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cffi",
+    "cfitsio",
+    "compilers",
+    "cxx_compiler_stub",
+    "fftw",
+    "fortran_compiler_stub",
+    "gdk-pixbuf",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "libcxx",
+    "librsvg",
+    "metakernel",
+    "notebook",
+    "numba",
+    "numpy",
+    "pythia8",
+    "python",
+    "root-binaries",
+    "root-dependencies",
+    "root_base",
+    "tbb-devel",
+    "xxhash"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "ipython",
+    "root-dependencies"
+   ]
+  }
+ },
  "outputs_names":[
   "root",
   "root-binaries",
@@ -2058,5 +3232,543 @@
   }
  },
  "url":"https://github.com/root-project/root/archive/v6-18-00.tar.gz",
- "version":"6.22.0"
+ "version":"6.22.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available. In most cases users should use the `root` package directly, since it adds both of these, along with compilers, Jupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
+   "dev_url":"https://github.com/root-project/root/",
+   "doc_url":"https://root.cern/documentation",
+   "home":"https://root.cern/",
+   "license":"LGPL-2.1-only",
+   "license_family":"LGPL",
+   "license_file":"root-source/LICENSE",
+   "summary":"ROOT is a modular scientific software toolkit. It provides all the functionalities needed to deal with big data\nprocessing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other\nlanguages such as Python and R.\n"
+  },
+  "build":{
+   "number":"1",
+   "skip":true,
+   "string":"pyh_1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "henryiii",
+    "eguiraud",
+    "egpbos"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "number":"1",
+     "script":"echo \"Minimal build script is required for conda to set RECIPE_DIR\"",
+     "skip":true,
+     "string":"pyh_1"
+    },
+    "name":"root-dependencies",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "numpy",
+      "cfitsio",
+      "fftw",
+      "gdk-pixbuf",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "librsvg",
+      "pythia8",
+      "python",
+      "tbb-devel",
+      "libcxx",
+      "xxhash"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "echo \"Testing is performed in the root_base and root outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "ignore_prefix_files":[
+      "lib/*.pcm"
+     ],
+     "ignore_run_exports":[
+      "ftgl",
+      "gl2ps",
+      "giflib",
+      "gsl",
+      "krb5",
+      "sqlite"
+     ],
+     "number":"1",
+     "run_exports":[
+      "root_base"
+     ],
+     "script":[
+      "set -euxo pipefail",
+      "find ${PREFIX}/bin -type f -maxdepth 1 > ${SRC_DIR}/initial-filelist.txt",
+      "cp -rp ${PREFIX}/bin ${SRC_DIR}/initial-bin-dir",
+      "${RECIPE_DIR}/build_root-base.sh",
+      "mkdir ${SRC_DIR}/root-binaries/",
+      "find ${PREFIX}/bin -type f -maxdepth 1 -exec \\\n  bash -c 'fn={}; if grep --quiet \"^$fn\\$\" \"${SRC_DIR}/initial-filelist.txt\"; then echo \"Skipping $fn\"; else echo \"Found new file $fn\"; mv \"$fn\" \"${SRC_DIR}/root-binaries/\"; fi' \\;\n"
+     ],
+     "skip":true,
+     "string":"pyh_1"
+    },
+    "name":"root_base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "clangdev =5.0.0",
+      "clang_variant * root_20200518",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "llvmdev ==5",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "libcxx",
+      "python",
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":[
+      "cling 9999",
+      "root5 9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Tested in other outputs\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "mkdir -p ${PREFIX}/bin",
+      "ls ${PREFIX}/bin/",
+      "cp -rp ${SRC_DIR}/root-binaries/* ${PREFIX}/bin/",
+      "ls ${PREFIX}/bin/"
+     ],
+     "skip":true,
+     "string":"pyh_1"
+    },
+    "name":"root-binaries",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "libblas",
+      "libcblas",
+      "numpy",
+      "afterimage",
+      "cfitsio",
+      "davix",
+      "fftw",
+      "freetype",
+      "ftgl",
+      "gdk-pixbuf",
+      "giflib",
+      "glew",
+      "gl2ps",
+      "graphviz",
+      "gsl",
+      "libpng",
+      "librsvg",
+      "libtiff",
+      "libxml2",
+      "lz4-c",
+      "openssl",
+      "pcre",
+      "pythia8",
+      "python",
+      "sqlite",
+      "tbb",
+      "tbb-devel",
+      "vdt",
+      "xrootd",
+      "xz",
+      "libcxx",
+      "root_base",
+      "xxhash",
+      "zlib",
+      "zstd"
+     ],
+     "run":[
+      "root_base",
+      "python",
+      "xxhash",
+      "numpy",
+      "numba",
+      "cffi"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "requires":[
+      "root-dependencies 6.22.0 *_1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "number":"1",
+     "script":[
+      "set -euxo pipefail",
+      "pwd",
+      "ls",
+      "echo \"Minimal build script is required for conda to set RECIPE_DIR\""
+     ],
+     "skip":true,
+     "string":"pyh_1"
+    },
+    "name":"root",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "fortran_compiler_stub",
+      "cmake",
+      "git",
+      "pkg-config",
+      "sed",
+      "make"
+     ],
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "compilers",
+      "metakernel",
+      "notebook",
+      "root_base",
+      "root-binaries",
+      "root-dependencies"
+     ],
+     "run_constrained":null
+    },
+    "test":{
+     "commands":[
+      "root -l -b -q -x",
+      "root -l -b -q -x test.cpp",
+      "root -b -l -q -x -e '2+3; 0'",
+      "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+      "thisroot.sh",
+      "thisroot.csh",
+      "thisroot.fish",
+      "root -b -l -q -x -e 'gStyle->SetCanvasPreferGL(kTRUE); c = new TCanvas(); if (!c->UseGL()) { throw std::runtime_error(\"OpenGL does not appear to be working\"); }'",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/eve/geom_lhcb.C\" || true",
+      "root -b -l -q -x \"${ROOTSYS}/tutorials/tree/run_h1analysis.C\"",
+      "python -c \"import ROOT; ROOT.ROOT.EnableImplicitMT(); rdf = ROOT.RDataFrame('DecayTree', 'root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root'); print(rdf.Cache('H1_PX').AsNumpy())\"",
+      "python test_pyroot.py",
+      "ipython -c 'import JsMVA'",
+      "root -l -b -q -x test.cpp++"
+     ],
+     "files":[
+      "test.cpp",
+      "test_pyroot.py"
+     ],
+     "imports":[
+      "ROOT",
+      "JupyROOT"
+     ],
+     "requires":[
+      "ipython"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"root",
+   "version":"6.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "cmake",
+    "git",
+    "pkg-config",
+    "sed",
+    "make"
+   ],
+   "host":[
+    "libblas",
+    "libcblas",
+    "numpy",
+    "afterimage",
+    "cfitsio",
+    "clangdev =5.0.0",
+    "clang_variant * root_20200518",
+    "davix",
+    "fftw",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "glew",
+    "gl2ps",
+    "graphviz",
+    "gsl",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev ==5",
+    "lz4-c",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xrootd",
+    "xz",
+    "libcxx",
+    "xxhash",
+    "zlib",
+    "zstd"
+   ],
+   "run":[
+    "python",
+    "numba",
+    "cffi"
+   ],
+   "run_constrained":null
+  },
+  "source":{
+   "folder":"root-source",
+   "patches":[
+    "patches/root-x.xx.xx_cling-runtime-sysroot.patch",
+    "patches/0001-Patch-clad-build-for-use-with-external-clang.patch",
+    "patches/0002-Fix-DynamicLibraryManagerSymbol-for-external-LLVM.patch"
+   ],
+   "sha256":"658b7ae68cc0de3c6027e7342c206cdcd02ef1f1660cf96ae2a84f5b6bbb95db",
+   "url":"https://github.com/root-project/root/archive/v6-22-00.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "git",
+    "make",
+    "pkg-config",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "afterimage",
+    "cfitsio",
+    "clang_variant",
+    "clangdev",
+    "davix",
+    "fftw",
+    "freetype",
+    "ftgl",
+    "gdk-pixbuf",
+    "giflib",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "gsl",
+    "libblas",
+    "libcblas",
+    "libcxx",
+    "libpng",
+    "librsvg",
+    "libtiff",
+    "libxml2",
+    "llvmdev",
+    "lz4-c",
+    "numpy",
+    "openssl",
+    "pcre",
+    "pythia8",
+    "python",
+    "root_base",
+    "sqlite",
+    "tbb",
+    "tbb-devel",
+    "vdt",
+    "xrootd",
+    "xxhash",
+    "xz",
+    "zlib",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cffi",
+    "cfitsio",
+    "compilers",
+    "cxx_compiler_stub",
+    "fftw",
+    "fortran_compiler_stub",
+    "gdk-pixbuf",
+    "gl2ps",
+    "glew",
+    "graphviz",
+    "libcxx",
+    "librsvg",
+    "metakernel",
+    "notebook",
+    "numba",
+    "numpy",
+    "pythia8",
+    "python",
+    "root-binaries",
+    "root-dependencies",
+    "root_base",
+    "tbb-devel",
+    "xxhash"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "ipython",
+    "root-dependencies"
+   ]
+  }
+ }
 }

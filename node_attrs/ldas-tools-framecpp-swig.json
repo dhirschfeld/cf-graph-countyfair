@@ -92,6 +92,146 @@
  "conda-forge.yml":{},
  "feedstock_name":"ldas-tools-framecpp-swig",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+   "home":"https://wiki.ligo.org/Computing/LDASTools",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"SWIG bindings for the LDAS Tools frameCPP library"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "emaros"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ldas-tools-framecpp-swig"
+   },
+   {
+    "about":{
+     "description":"Python bindings for the LDAS Tools frameCPP library",
+     "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+     "home":"https://wiki.ligo.org/Computing/LDASTools",
+     "license":"GPL-3.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"Python bindings for the LDAS Tools frameCPP library"
+    },
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"python-ldas-tools-framecpp",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake >=3.6",
+      "pkg-config"
+     ],
+     "host":[
+      "ldas-tools-cmake >=1.0.8",
+      "ldas-tools-al 2.6.3",
+      "ldas-tools-framecpp 2.7.0",
+      "ldas-tools-framecpp-swig",
+      "numpy",
+      "python",
+      "swig >=3.0.7,<4.0.0a0"
+     ],
+     "run":[
+      "ldas-tools-al >=2.6.3",
+      "ldas-tools-framecpp >=2.7.0",
+      "numpy",
+      "python",
+      "python-ldas-tools-al >=2.6.7"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "framecpp_sample",
+      "python -c \"from LDAStools import frameCPP; stream = frameCPP.IFrameFStream('Z-ilwd_test_frame-600000000-1.gwf'); toc = stream.GetTOC(); print(toc.GetADC())\""
+     ],
+     "imports":[
+      "LDAStools.frameCPP"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ldas-tools-framecpp-swig",
+   "version":"2.6.9"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=3.6",
+    "pkg-config"
+   ],
+   "host":[
+    "ldas-tools-cmake >=1.0.8",
+    "ldas-tools-framecpp >=2.7.0",
+    "swig >=3.0.7,<4.0.0a0"
+   ],
+   "run":[
+    "ldas-tools-framecpp >=2.7.0"
+   ]
+  },
+  "source":{
+   "sha256":"4982b91dfc519a999e5262bd918d03357afa2d59fd9fdcdc180cb1c22038b019",
+   "url":"http://software.ligo.org/lscsoft/source/ldas-tools-framecpp-swig-2.6.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/framecpp/frameCPP.i",
+    "test -f ${PREFIX}/include/framecpp/python/frameCPPMacros.i"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-cmake",
+    "ldas-tools-framecpp",
+    "ldas-tools-framecpp-swig",
+    "numpy",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-framecpp",
+    "numpy",
+    "python",
+    "python-ldas-tools-al"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
@@ -320,6 +460,146 @@
  },
  "name":"ldas-tools-framecpp-swig",
  "new_version":"2.6.9",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+   "home":"https://wiki.ligo.org/Computing/LDASTools",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"SWIG bindings for the LDAS Tools frameCPP library"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "emaros"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ldas-tools-framecpp-swig"
+   },
+   {
+    "about":{
+     "description":"Python bindings for the LDAS Tools frameCPP library",
+     "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+     "home":"https://wiki.ligo.org/Computing/LDASTools",
+     "license":"GPL-3.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"Python bindings for the LDAS Tools frameCPP library"
+    },
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"python-ldas-tools-framecpp",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake >=3.6",
+      "pkg-config"
+     ],
+     "host":[
+      "ldas-tools-cmake >=1.0.8",
+      "ldas-tools-al 2.6.3",
+      "ldas-tools-framecpp 2.7.0",
+      "ldas-tools-framecpp-swig",
+      "numpy",
+      "python",
+      "swig >=3.0.7,<4.0.0a0"
+     ],
+     "run":[
+      "ldas-tools-al >=2.6.3",
+      "ldas-tools-framecpp >=2.7.0",
+      "numpy",
+      "python",
+      "python-ldas-tools-al >=2.6.7"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "framecpp_sample",
+      "python -c \"from LDAStools import frameCPP; stream = frameCPP.IFrameFStream('Z-ilwd_test_frame-600000000-1.gwf'); toc = stream.GetTOC(); print(toc.GetADC())\""
+     ],
+     "imports":[
+      "LDAStools.frameCPP"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ldas-tools-framecpp-swig",
+   "version":"2.6.9"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=3.6",
+    "pkg-config"
+   ],
+   "host":[
+    "ldas-tools-cmake >=1.0.8",
+    "ldas-tools-framecpp >=2.7.0",
+    "swig >=3.0.7,<4.0.0a0"
+   ],
+   "run":[
+    "ldas-tools-framecpp >=2.7.0"
+   ]
+  },
+  "source":{
+   "sha256":"4982b91dfc519a999e5262bd918d03357afa2d59fd9fdcdc180cb1c22038b019",
+   "url":"http://software.ligo.org/lscsoft/source/ldas-tools-framecpp-swig-2.6.9.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/framecpp/frameCPP.i",
+    "test -f ${PREFIX}/include/framecpp/python/frameCPPMacros.i"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-cmake",
+    "ldas-tools-framecpp",
+    "ldas-tools-framecpp-swig",
+    "numpy",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-framecpp",
+    "numpy",
+    "python",
+    "python-ldas-tools-al"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "ldas-tools-framecpp-swig",
   "python-ldas-tools-framecpp"
@@ -421,5 +701,140 @@
   }
  },
  "url":"http://software.ligo.org/lscsoft/source/ldas-tools-framecpp-swig-2.6.8.tar.gz",
- "version":"2.6.9"
+ "version":"2.6.9",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+   "home":"https://wiki.ligo.org/Computing/LDASTools",
+   "license":"GPL-3.0-or-later",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"SWIG bindings for the LDAS Tools frameCPP library"
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "duncanmmacleod",
+    "emaros"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"ldas-tools-framecpp-swig"
+   },
+   {
+    "about":{
+     "description":"Python bindings for the LDAS Tools frameCPP library",
+     "dev_url":"https://git.ligo.org/ldastools/LDAS_Tools",
+     "home":"https://wiki.ligo.org/Computing/LDASTools",
+     "license":"GPL-3.0-or-later",
+     "license_family":"GPL",
+     "license_file":"COPYING",
+     "summary":"Python bindings for the LDAS Tools frameCPP library"
+    },
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"python-ldas-tools-framecpp",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake >=3.6"
+     ],
+     "host":[
+      "ldas-tools-cmake >=1.0.8",
+      "ldas-tools-al 2.6.3",
+      "ldas-tools-framecpp 2.7.0",
+      "ldas-tools-framecpp-swig",
+      "numpy",
+      "python",
+      "swig >=3.0.7,<4.0.0a0"
+     ],
+     "run":[
+      "ldas-tools-al >=2.6.3",
+      "ldas-tools-framecpp >=2.7.0",
+      "numpy",
+      "python",
+      "python-ldas-tools-al >=2.6.7"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "framecpp_sample",
+      "python -c \"from LDAStools import frameCPP; stream = frameCPP.IFrameFStream('Z-ilwd_test_frame-600000000-1.gwf'); toc = stream.GetTOC(); print(toc.GetADC())\""
+     ],
+     "imports":[
+      "LDAStools.frameCPP"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"ldas-tools-framecpp-swig",
+   "version":"2.6.9"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake >=3.6"
+   ],
+   "host":[
+    "ldas-tools-cmake >=1.0.8",
+    "ldas-tools-framecpp >=2.7.0",
+    "swig >=3.0.7,<4.0.0a0"
+   ],
+   "run":[
+    "ldas-tools-framecpp >=2.7.0"
+   ]
+  },
+  "source":{
+   "sha256":"4982b91dfc519a999e5262bd918d03357afa2d59fd9fdcdc180cb1c22038b019",
+   "url":"http://software.ligo.org/lscsoft/source/ldas-tools-framecpp-swig-2.6.9.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-cmake",
+    "ldas-tools-framecpp",
+    "ldas-tools-framecpp-swig",
+    "numpy",
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ldas-tools-al",
+    "ldas-tools-framecpp",
+    "numpy",
+    "python",
+    "python-ldas-tools-al"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

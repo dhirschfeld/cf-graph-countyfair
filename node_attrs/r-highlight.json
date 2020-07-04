@@ -117,6 +117,83 @@
  },
  "feedstock_name":"r-highlight",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/romainfrancois/highlight",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Syntax highlighter for R code based  on the results of the R parser. Rendering in HTML and latex  markup. Custom Sweave driver performing syntax highlighting  of R code chunks."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-highlight",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"highlight_0.5.0.tar.gz",
+   "sha256":"0e8e5580e1c9301d3fa66af62b761d74f207bbb0b94116c1ebd1f3033cc90aea",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highlight_0.5.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highlight/highlight_0.5.0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('highlight')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/romainfrancois/highlight",
@@ -198,6 +275,83 @@
  },
  "name":"r-highlight",
  "new_version":"0.5.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/romainfrancois/highlight",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Syntax highlighter for R code based  on the results of the R parser. Rendering in HTML and latex  markup. Custom Sweave driver performing syntax highlighting  of R code chunks."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-highlight",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"highlight_0.5.0.tar.gz",
+   "sha256":"0e8e5580e1c9301d3fa66af62b761d74f207bbb0b94116c1ebd1f3033cc90aea",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highlight_0.5.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highlight/highlight_0.5.0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('highlight')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = \"0.5.0\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-highlight\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: highlight_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/highlight_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/highlight/highlight_{{ version }}.tar.gz\n  sha256: 0e8e5580e1c9301d3fa66af62b761d74f207bbb0b94116c1ebd1f3033cc90aea\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('cxx') }}      # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('m2w64_cxx') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('highlight')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('highlight')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/romainfrancois/highlight\n  license: GPL (>= 3)\n  summary: Syntax highlighter for R code based  on the results of the R parser. Rendering in\n    HTML and latex  markup. Custom Sweave driver performing syntax highlighting  of\n    R code chunks.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -292,5 +446,93 @@
   "https://cran.r-project.org/src/contrib/highlight_0.4.7.2.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/highlight/highlight_0.4.7.2.tar.gz"
  ],
- "version":"0.5.0"
+ "version":"0.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/romainfrancois/highlight",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Syntax highlighter for R code based  on the results of the R parser. Rendering in HTML and latex  markup. Custom Sweave driver performing syntax highlighting  of R code chunks."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-highlight",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs"
+   ]
+  },
+  "source":{
+   "fn":"highlight_0.5.0.tar.gz",
+   "sha256":"0e8e5580e1c9301d3fa66af62b761d74f207bbb0b94116c1ebd1f3033cc90aea",
+   "url":[
+    "https://cran.r-project.org/src/contrib/highlight_0.5.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/highlight/highlight_0.5.0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('highlight')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -244,6 +244,101 @@
  "conda-forge.yml":{},
  "feedstock_name":"meshio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/nschloe/meshio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"I/O for various mesh formats"
+  },
+  "build":{
+   "entry_points":[
+    "meshio-convert = meshio._cli:convert",
+    "meshio-info = meshio._cli:info"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nschloe",
+    "MuellerSeb",
+    "banesullivan"
+   ]
+  },
+  "package":{
+   "name":"meshio",
+   "version":"4.0.16"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "numpy",
+    "netCDF4",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"318345c09fb264bab95e94902000a69ae1921060eee5649ecdad54cbe97203f4",
+   "url":"https://pypi.io/packages/source/m/meshio/meshio-4.0.16.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "meshio-convert --help",
+    "meshio-info --help",
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "meshio"
+   ],
+   "requires":[
+    "pytest",
+    "netCDF4",
+    "h5py"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/nschloe/meshio",
@@ -358,6 +453,101 @@
   "4.0.16":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/nschloe/meshio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"I/O for various mesh formats"
+  },
+  "build":{
+   "entry_points":[
+    "meshio-convert = meshio._cli:convert",
+    "meshio-info = meshio._cli:info"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nschloe",
+    "MuellerSeb",
+    "banesullivan"
+   ]
+  },
+  "package":{
+   "name":"meshio",
+   "version":"4.0.16"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "numpy",
+    "netCDF4",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"318345c09fb264bab95e94902000a69ae1921060eee5649ecdad54cbe97203f4",
+   "url":"https://pypi.io/packages/source/m/meshio/meshio-4.0.16.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "meshio-convert --help",
+    "meshio-info --help",
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "meshio"
+   ],
+   "requires":[
+    "pytest",
+    "netCDF4",
+    "h5py"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"meshio\" %}\n{% set version = \"4.0.16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 318345c09fb264bab95e94902000a69ae1921060eee5649ecdad54cbe97203f4\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - meshio-convert = meshio._cli:convert\n    - meshio-info = meshio._cli:info\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools\n  run:\n    - python >=3\n    - numpy\n    - netCDF4\n    - h5py\n\ntest:\n  requires:\n    - pytest\n    - netCDF4\n    - h5py\n  source_files:\n    - test\n  imports:\n    - meshio\n  commands:\n    - meshio-convert --help\n    - meshio-info --help\n    - cd test && python -m pytest\n\nabout:\n  home: https://github.com/nschloe/meshio\n  license: MIT\n  license_file: LICENSE.txt\n  license_family: MIT\n  summary: I/O for various mesh formats\n\nextra:\n  recipe-maintainers:\n    - nschloe\n    - MuellerSeb\n    - banesullivan\n",
  "req":{
@@ -436,5 +626,100 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/meshio/meshio-3.2.12.tar.gz",
- "version":"4.0.16"
+ "version":"4.0.16",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/nschloe/meshio",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"I/O for various mesh formats"
+  },
+  "build":{
+   "entry_points":[
+    "meshio-convert = meshio._cli:convert",
+    "meshio-info = meshio._cli:info"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nschloe",
+    "MuellerSeb",
+    "banesullivan"
+   ]
+  },
+  "package":{
+   "name":"meshio",
+   "version":"4.0.16"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "numpy",
+    "netCDF4",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"318345c09fb264bab95e94902000a69ae1921060eee5649ecdad54cbe97203f4",
+   "url":"https://pypi.io/packages/source/m/meshio/meshio-4.0.16.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "meshio-convert --help",
+    "meshio-info --help",
+    "cd test && python -m pytest"
+   ],
+   "imports":[
+    "meshio"
+   ],
+   "requires":[
+    "pytest",
+    "netCDF4",
+    "h5py"
+   ],
+   "source_files":[
+    "test"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "netcdf4",
+    "pytest"
+   ]
+  }
+ }
 }

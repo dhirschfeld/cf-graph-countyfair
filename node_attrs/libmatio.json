@@ -141,6 +141,81 @@
  "conda-forge.yml":{},
  "feedstock_name":"libmatio",
  "hash_type":"md5",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://sourceforge.net/projects/matio",
+   "license":"BSD-2-Clause",
+   "license_file":"COPYING",
+   "summary":"A C library for reading and writing MATLAB MAT files."
+  },
+  "build":{
+   "number":"1004"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "tbeu"
+   ]
+  },
+  "package":{
+   "name":"libmatio",
+   "version":"1.5.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "hdf5",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "source":{
+   "fn":"matio-1.5.12.tar.gz",
+   "md5":"2968b5a95f05fab8b79ec87f9a6c0cac",
+   "patches":[
+    "0001-hotfix-backport-from-92.patch"
+   ],
+   "url":"https://github.com/tbeu/matio/releases/download/v1.5.12/matio-1.5.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/matio.h",
+    "test -e $PREFIX/lib/libmatio.a",
+    "test -e $PREFIX/lib/libmatio.so"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://sourceforge.net/projects/matio",
@@ -213,6 +288,79 @@
  },
  "name":"libmatio",
  "new_version":"1.5.17",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://sourceforge.net/projects/matio",
+   "license":"BSD-2-Clause",
+   "license_file":"COPYING",
+   "summary":"A C library for reading and writing MATLAB MAT files."
+  },
+  "build":{
+   "number":"1004"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "tbeu"
+   ]
+  },
+  "package":{
+   "name":"libmatio",
+   "version":"1.5.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "hdf5",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "source":{
+   "fn":"matio-1.5.12.tar.gz",
+   "md5":"2968b5a95f05fab8b79ec87f9a6c0cac",
+   "patches":null,
+   "url":"https://github.com/tbeu/matio/releases/download/v1.5.12/matio-1.5.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -e $PREFIX/include/matio.h",
+    "test -e $PREFIX/lib/libmatio.a",
+    "test -e $PREFIX/lib/libmatio.dylib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.16.03.28.28",
  "raw_meta_yaml":"{% set version = \"1.5.12\" %}\npackage:\n  name: libmatio\n  version: {{ version }}\n\nsource:\n  fn: matio-{{ version }}.tar.gz\n  url: https://github.com/tbeu/matio/releases/download/v{{ version }}/matio-{{ version }}.tar.gz\n  md5: 2968b5a95f05fab8b79ec87f9a6c0cac\n  patches:\n    - 0001-hotfix-backport-from-92.patch  # [linux]\n\nbuild:\n  number: 1004\n  skip: true  # [win and (vc<14 or win32)]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - hdf5\n    - zlib\n  run:\n    - hdf5\n    - zlib\n\ntest:\n  commands:\n    - test -e $PREFIX/include/matio.h      # [unix]\n    - test -e $PREFIX/lib/libmatio.a       # [unix]\n    - test -e $PREFIX/lib/libmatio.so      # [linux]\n    - test -e $PREFIX/lib/libmatio.dylib   # [osx]\n    - if not exist %PREFIX%\\Library\\bin\\libmatio.dll exit 1  # [win]\n    - if not exist %PREFIX%\\Library\\lib\\libmatio.lib exit 1  # [win]\n    - if not exist %PREFIX%\\Library\\include\\matio.h exit 1  # [win]\n\nabout:\n  home: https://sourceforge.net/projects/matio\n  license: BSD-2-Clause\n  license_file: COPYING\n  summary: A C library for reading and writing MATLAB MAT files.\n\nextra:\n  recipe-maintainers:\n    - 183amir\n    - tbeu\n",
  "req":{
@@ -278,5 +426,79 @@
   }
  },
  "url":"https://github.com/tbeu/matio/releases/download/v1.5.12/matio-1.5.12.tar.gz",
- "version":"1.5.12"
+ "version":"1.5.12",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://sourceforge.net/projects/matio",
+   "license":"BSD-2-Clause",
+   "license_file":"COPYING",
+   "summary":"A C library for reading and writing MATLAB MAT files."
+  },
+  "build":{
+   "number":"1004",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "tbeu"
+   ]
+  },
+  "package":{
+   "name":"libmatio",
+   "version":"1.5.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "hdf5",
+    "zlib"
+   ],
+   "run":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "source":{
+   "fn":"matio-1.5.12.tar.gz",
+   "md5":"2968b5a95f05fab8b79ec87f9a6c0cac",
+   "patches":null,
+   "url":"https://github.com/tbeu/matio/releases/download/v1.5.12/matio-1.5.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %PREFIX%\\Library\\bin\\libmatio.dll exit 1",
+    "if not exist %PREFIX%\\Library\\lib\\libmatio.lib exit 1",
+    "if not exist %PREFIX%\\Library\\include\\matio.h exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

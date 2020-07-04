@@ -112,6 +112,95 @@
  "conda-forge.yml":{},
  "feedstock_name":"autorift",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/leiyangleon/autoRIFT",
+   "doc_url":"https://github.com/leiyangleon/autoRIFT",
+   "home":"https://github.com/leiyangleon/autoRIFT",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Fast pixel displacement estimation from remote sensing imagery"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "leiyangleon",
+    "piyushrpt",
+    "alex-s-gardner"
+   ]
+  },
+  "package":{
+   "name":"autorift",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libopencv 3.4",
+    "opencv 3.4"
+   ],
+   "run":[
+    "python",
+    "opencv 3.4",
+    "libopencv 3.4",
+    "scipy",
+    "scikit-image",
+    "gdal"
+   ]
+  },
+  "source":{
+   "sha256":"0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f",
+   "url":"https://github.com/leiyangleon/autoRIFT/archive/v1.0.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "autoRIFT",
+    "autoRIFT.autoRIFT",
+    "autoRIFT.autoriftcore",
+    "geogrid.GeogridOptical"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libopencv",
+    "opencv",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "libopencv",
+    "opencv",
+    "python",
+    "scikit-image",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/leiyangleon/autoRIFT",
@@ -213,6 +302,95 @@
   "1.0.6":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/leiyangleon/autoRIFT",
+   "doc_url":"https://github.com/leiyangleon/autoRIFT",
+   "home":"https://github.com/leiyangleon/autoRIFT",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Fast pixel displacement estimation from remote sensing imagery"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "leiyangleon",
+    "piyushrpt",
+    "alex-s-gardner"
+   ]
+  },
+  "package":{
+   "name":"autorift",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libopencv 3.4",
+    "opencv 3.4"
+   ],
+   "run":[
+    "python",
+    "opencv 3.4",
+    "libopencv 3.4",
+    "scipy",
+    "scikit-image",
+    "gdal"
+   ]
+  },
+  "source":{
+   "sha256":"0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f",
+   "url":"https://github.com/leiyangleon/autoRIFT/archive/v1.0.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "autoRIFT",
+    "autoRIFT.autoRIFT",
+    "autoRIFT.autoriftcore",
+    "geogrid.GeogridOptical"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libopencv",
+    "opencv",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "libopencv",
+    "opencv",
+    "python",
+    "scikit-image",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.17.11.45.02",
  "raw_meta_yaml":"{% set name = \"autoRIFT\" %}\n{% set version = \"1.0.6\" %}\n\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/leiyangleon/autoRIFT/archive/v{{ version }}.tar.gz\n  sha256: 0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f\n\n\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - libopencv 3.4\n    - opencv 3.4\n  run:\n    - python\n    - opencv 3.4\n    - libopencv 3.4\n    - scipy\n    - scikit-image\n    - gdal\n\ntest:\n  imports:\n    - autoRIFT\n    - autoRIFT.autoRIFT\n    - autoRIFT.autoriftcore\n    - geogrid.GeogridOptical\n\nabout:\n  home: https://github.com/leiyangleon/autoRIFT\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Fast pixel displacement estimation from remote sensing imagery\n  doc_url: https://github.com/leiyangleon/autoRIFT\n  dev_url: https://github.com/leiyangleon/autoRIFT\n\nextra:\n  recipe-maintainers:\n    - leiyangleon\n    - piyushrpt\n    - alex-s-gardner\n",
  "req":{
@@ -295,5 +473,95 @@
   }
  },
  "url":"https://github.com/leiyangleon/autoRIFT/archive/v1.0.tar.gz",
- "version":"1.0.6"
+ "version":"1.0.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/leiyangleon/autoRIFT",
+   "doc_url":"https://github.com/leiyangleon/autoRIFT",
+   "home":"https://github.com/leiyangleon/autoRIFT",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Fast pixel displacement estimation from remote sensing imagery"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "leiyangleon",
+    "piyushrpt",
+    "alex-s-gardner"
+   ]
+  },
+  "package":{
+   "name":"autorift",
+   "version":"1.0.6"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "libopencv 3.4",
+    "opencv 3.4"
+   ],
+   "run":[
+    "python",
+    "opencv 3.4",
+    "libopencv 3.4",
+    "scipy",
+    "scikit-image",
+    "gdal"
+   ]
+  },
+  "source":{
+   "sha256":"0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f",
+   "url":"https://github.com/leiyangleon/autoRIFT/archive/v1.0.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "autoRIFT",
+    "autoRIFT.autoRIFT",
+    "autoRIFT.autoriftcore",
+    "geogrid.GeogridOptical"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libopencv",
+    "opencv",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gdal",
+    "libopencv",
+    "opencv",
+    "python",
+    "scikit-image",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

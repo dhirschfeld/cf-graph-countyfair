@@ -26,6 +26,70 @@
   }
  },
  "feedstock_name":"go-bindata",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/go-bindata/go-bindata",
+   "home":"http://github.com/go-bindata/go-bindata",
+   "license":"CC-1.0",
+   "license_file":"src/github.com/go-bindata/go-bindata/LICENSE",
+   "summary":"This package converts any file into managable Go source code"
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "pushd src/github.com/go-bindata/go-bindata",
+    "go get -d -v ./...",
+    "go install -v ./go-bindata"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-bindata",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/go-bindata/go-bindata",
+    "git_rev":"v1.0.0",
+    "git_url":"https://github.com/go-bindata/go-bindata"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x go-bindata",
+    "go-bindata -h || true"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/go-bindata/go-bindata",
@@ -96,6 +160,70 @@
  },
  "name":"go-bindata",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/go-bindata/go-bindata",
+   "home":"http://github.com/go-bindata/go-bindata",
+   "license":"CC-1.0",
+   "license_file":"src/github.com/go-bindata/go-bindata/LICENSE",
+   "summary":"This package converts any file into managable Go source code"
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "pushd src/github.com/go-bindata/go-bindata",
+    "go get -d -v ./...",
+    "go install -v ./go-bindata"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-bindata",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/go-bindata/go-bindata",
+    "git_rev":"v1.0.0",
+    "git_url":"https://github.com/go-bindata/go-bindata"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x go-bindata",
+    "go-bindata -h || true"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.01.21",
  "raw_meta_yaml":"{% set goname = \"github.com/go-bindata/go-bindata\" %}\n{% set version = \"1.0.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('src/'+goname).replace(\"/\", \"\\\\\" if win else \"/\") %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    git_url: https://{{ goname }}\n    git_tag: v{{ version }}\n    \nbuild:\n  number: 1\n  script:\n    - pushd {{ pkg_src }}\n    # Download non-vendored dependencies/source code only\n    - go get -d -v ./...\n    - go install -v ./go-bindata\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  commands:\n    - test -x {{ target_gobin }}go-bindata{{ target_goexe }}\n    - go-bindata -h || true\n\nabout:\n  home: http://{{ goname }}\n  license: CC-1.0\n  license_file: {{pkg_src}}/LICENSE\n  summary: 'This package converts any file into managable Go source code'\n  dev_url: https://{{ goname }}\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
@@ -148,5 +276,69 @@
   }
  },
  "url":null,
- "version":"1.0.0"
+ "version":"1.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/go-bindata/go-bindata",
+   "home":"http://github.com/go-bindata/go-bindata",
+   "license":"CC-1.0",
+   "license_file":"src/github.com/go-bindata/go-bindata/LICENSE",
+   "summary":"This package converts any file into managable Go source code"
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "pushd src/github.com/go-bindata/go-bindata",
+    "go get -d -v ./...",
+    "go install -v ./go-bindata"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"go-bindata",
+   "version":"1.0.0"
+  },
+  "requirements":{
+   "build":[
+    "go_compiler_stub"
+   ]
+  },
+  "source":[
+   {
+    "folder":"src/github.com/go-bindata/go-bindata",
+    "git_rev":"v1.0.0",
+    "git_url":"https://github.com/go-bindata/go-bindata"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -x go-bindata",
+    "go-bindata -h || true"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "go_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

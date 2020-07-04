@@ -23,6 +23,145 @@
  "conda-forge.yml":{},
  "feedstock_name":"clang-compiler-activation",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/AnacondaRecipes/aggregate",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang compilers for conda-build 3"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "mingwandroid",
+    "katietz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"clang_",
+    "requirements":[
+     "clang 9.0.1",
+     "llvm-tools 9.0.1",
+     "cctools",
+     "ld64",
+     "compiler-rt 9.0.1",
+     "compiler-rt_ 9.0.1"
+    ],
+    "script":"install-clang.sh",
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "name":"clangxx_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "clang_"
+     ],
+     "run":[
+      "clangxx 9.0.1",
+      "libcxx >=9.0.1",
+      "clang_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libcxx >=9.0.1"
+     ]
+    },
+    "script":"install-clangxx.sh",
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "about":{
+     "home":"https://llvm.org",
+     "license":"Apache-2.0",
+     "license_family":"Apache",
+     "license_file":"LLVM_LICENSE.txt",
+     "summary":"clang compiler components in one package for bootstrapping clang"
+    },
+    "build":{
+     "always_include_files":[
+      "bin/",
+      "etc/",
+      "include/",
+      "lib/",
+      "libexec/",
+      "share/"
+     ],
+     "skip":true
+    },
+    "name":"clang_bootstrap_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "libcxx 9.0.1",
+      "clang_",
+      "clangxx_"
+     ]
+    },
+    "test":{
+     "commands":null
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-compiler-activation",
+   "version":"9.0.1"
+  },
+  "requirements":{
+   "build":[
+    "libcxx 9.0.1"
+   ]
+  },
+  "source":{
+   "sha256":"5778512b2e065c204010f88777d44b95250671103e434f9dc7363ab2e3804253",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang-9.0.1.src.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "libcxx"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clang_",
+    "clangxx",
+    "clangxx_",
+    "libcxx"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cctools",
+    "clang",
+    "clang_",
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_",
+    "ld64",
+    "libcxx",
+    "llvm-tools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://github.com/AnacondaRecipes/aggregate",
@@ -287,6 +426,156 @@
  },
  "name":"clang-compiler-activation",
  "new_version":"10.0.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/AnacondaRecipes/aggregate",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang compilers for conda-build 3"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "mingwandroid",
+    "katietz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"clang_",
+    "requirements":[
+     "clang 9.0.1",
+     "llvm-tools 9.0.1",
+     "cctools",
+     "ld64",
+     "compiler-rt 9.0.1",
+     "compiler-rt_ 9.0.1"
+    ],
+    "script":"install-clang.sh",
+    "test":{
+     "commands":[
+      "-clang --version"
+     ]
+    }
+   },
+   {
+    "name":"clangxx_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "libcxx 9.0.1",
+      "clang_"
+     ],
+     "run":[
+      "clangxx 9.0.1",
+      "libcxx >=9.0.1",
+      "clang_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libcxx >=9.0.1"
+     ]
+    },
+    "script":"install-clangxx.sh",
+    "test":{
+     "commands":[
+      "-clang++ --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "home":"https://llvm.org",
+     "license":"Apache-2.0",
+     "license_family":"Apache",
+     "license_file":"LLVM_LICENSE.txt",
+     "summary":"clang compiler components in one package for bootstrapping clang"
+    },
+    "build":{
+     "always_include_files":[
+      "bin/",
+      "etc/",
+      "include/",
+      "lib/",
+      "libexec/",
+      "share/"
+     ]
+    },
+    "name":"clang_bootstrap_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "libcxx 9.0.1",
+      "cctools",
+      "ld64",
+      "clang_",
+      "clangxx_"
+     ]
+    },
+    "test":{
+     "commands":[
+      "-clang --version",
+      "-clang++ --version"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-compiler-activation",
+   "version":"9.0.1"
+  },
+  "requirements":{
+   "build":[
+    "libcxx 9.0.1"
+   ]
+  },
+  "source":{
+   "sha256":"5778512b2e065c204010f88777d44b95250671103e434f9dc7363ab2e3804253",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang-9.0.1.src.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "libcxx"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cctools",
+    "clang_",
+    "clangxx",
+    "clangxx_",
+    "ld64",
+    "libcxx"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cctools",
+    "clang",
+    "clang_",
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_",
+    "ld64",
+    "libcxx",
+    "llvm-tools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "clang_",
   "clang_bootstrap_",
@@ -387,5 +676,145 @@
   }
  },
  "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang-9.0.1.src.tar.xz",
- "version":"9.0.1"
+ "version":"9.0.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://github.com/AnacondaRecipes/aggregate",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"clang compilers for conda-build 3"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "mingwandroid",
+    "katietz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"clang_",
+    "requirements":[
+     "clang 9.0.1",
+     "llvm-tools 9.0.1",
+     "cctools",
+     "ld64",
+     "compiler-rt 9.0.1",
+     "compiler-rt_ 9.0.1"
+    ],
+    "script":"install-clang.sh",
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "name":"clangxx_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "clang_"
+     ],
+     "run":[
+      "clangxx 9.0.1",
+      "libcxx >=9.0.1",
+      "clang_"
+     ]
+    },
+    "run_exports":{
+     "strong":[
+      "libcxx >=9.0.1"
+     ]
+    },
+    "script":"install-clangxx.sh",
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "about":{
+     "home":"https://llvm.org",
+     "license":"Apache-2.0",
+     "license_family":"Apache",
+     "license_file":"LLVM_LICENSE.txt",
+     "summary":"clang compiler components in one package for bootstrapping clang"
+    },
+    "build":{
+     "always_include_files":[
+      "bin/",
+      "etc/",
+      "include/",
+      "lib/",
+      "libexec/",
+      "share/"
+     ],
+     "skip":true
+    },
+    "name":"clang_bootstrap_",
+    "requirements":{
+     "host":[
+      "clangxx 9.0.1",
+      "libcxx 9.0.1",
+      "clang_",
+      "clangxx_"
+     ]
+    },
+    "test":{
+     "commands":null
+    }
+   }
+  ],
+  "package":{
+   "name":"clang-compiler-activation",
+   "version":"9.0.1"
+  },
+  "requirements":{
+   "build":[
+    "libcxx 9.0.1"
+   ]
+  },
+  "source":{
+   "sha256":"5778512b2e065c204010f88777d44b95250671103e434f9dc7363ab2e3804253",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-9.0.1/clang-9.0.1.src.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "libcxx"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "clang_",
+    "clangxx",
+    "clangxx_",
+    "libcxx"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cctools",
+    "clang",
+    "clang_",
+    "clangxx",
+    "compiler-rt",
+    "compiler-rt_",
+    "ld64",
+    "libcxx",
+    "llvm-tools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

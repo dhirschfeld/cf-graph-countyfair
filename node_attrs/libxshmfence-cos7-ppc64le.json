@@ -4,6 +4,108 @@
  "conda-forge.yml":{},
  "feedstock_name":"libxshmfence-cos7-ppc64le",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This library offers a CPU-based synchronization primitive compatible with the X SyncFence objects that can be shared between processes using file descriptor passing.",
+   "home":"https://github.com/freedesktop/libxshmfence",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"(CDT) Shared memory 'SyncFence' synchronization primitive"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxshmfence-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxshmfence-devel-cos7-ppc64le",
+    "requirements":[
+     "libxshmfence-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxshmfence-cos7-ppc64le",
+   "version":"1.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"afa3dd3d84014ac2e61c64b0bfcbcf87786557a8ee6fafb906ecc845cc6e1010",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-1.2-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b2a606c1d82db4a3b369a29b0ecd0bf7c55b9a15b6dda7df65fad8bc5f158c09",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-devel-1.2-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxshmfence-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This library offers a CPU-based synchronization primitive compatible with the X SyncFence objects that can be shared between processes using file descriptor passing.",
@@ -178,6 +280,108 @@
  },
  "name":"libxshmfence-cos7-ppc64le",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This library offers a CPU-based synchronization primitive compatible with the X SyncFence objects that can be shared between processes using file descriptor passing.",
+   "home":"https://github.com/freedesktop/libxshmfence",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"(CDT) Shared memory 'SyncFence' synchronization primitive"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxshmfence-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxshmfence-devel-cos7-ppc64le",
+    "requirements":[
+     "libxshmfence-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxshmfence-cos7-ppc64le",
+   "version":"1.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"afa3dd3d84014ac2e61c64b0bfcbcf87786557a8ee6fafb906ecc845cc6e1010",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-1.2-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b2a606c1d82db4a3b369a29b0ecd0bf7c55b9a15b6dda7df65fad8bc5f158c09",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-devel-1.2-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxshmfence-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libxshmfence-cos7-ppc64le",
   "libxshmfence-devel-cos7-ppc64le"
@@ -235,5 +439,107 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-1.2-1.el7.ppc64le.rpm",
- "version":"1.2"
+ "version":"1.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This library offers a CPU-based synchronization primitive compatible with the X SyncFence objects that can be shared between processes using file descriptor passing.",
+   "home":"https://github.com/freedesktop/libxshmfence",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"(CDT) Shared memory 'SyncFence' synchronization primitive"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libxshmfence-cos7-ppc64le"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /powerpc64le-conda_cos7-linux-gnu/sysroot",
+      "pushd /powerpc64le-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libxshmfence-devel-cos7-ppc64le",
+    "requirements":[
+     "libxshmfence-cos7-ppc64le"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libxshmfence-cos7-ppc64le",
+   "version":"1.2"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"afa3dd3d84014ac2e61c64b0bfcbcf87786557a8ee6fafb906ecc845cc6e1010",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-1.2-1.el7.ppc64le.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"b2a606c1d82db4a3b369a29b0ecd0bf7c55b9a15b6dda7df65fad8bc5f158c09",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/libxshmfence-devel-1.2-1.el7.ppc64le.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/powerpc64le-conda_cos7-linux-gnu/sysroot/usr/lib64/libxshmfence.so.1\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libxshmfence-cos7-ppc64le"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

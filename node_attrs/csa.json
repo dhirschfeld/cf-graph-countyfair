@@ -41,6 +41,61 @@
  },
  "feedstock_name":"csa",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/sakov/csa-c",
+   "license":"BSD 2-Clause",
+   "summary":"Cubic Spline Approximation"
+  },
+  "build":{
+   "number":"2002"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"csa",
+   "version":"1.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "sha256":"b6d6ebeea146e09fc7aef827a3a3b22b7af674c2f0c67169c2275237e54c0c02",
+   "url":"https://github.com/sakov/csa-c/archive/v1.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "csabathy -V",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/sakov/csa-c",
@@ -87,6 +142,62 @@
  },
  "name":"csa",
  "new_version":"1.22.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/sakov/csa-c",
+   "license":"BSD 2-Clause",
+   "summary":"Cubic Spline Approximation"
+  },
+  "build":{
+   "number":"2002"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"csa",
+   "version":"1.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "sha256":"b6d6ebeea146e09fc7aef827a3a3b22b7af674c2f0c67169c2275237e54c0c02",
+   "url":"https://github.com/sakov/csa-c/archive/v1.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "csabathy -V",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.08.14",
  "raw_meta_yaml":"{% set version = \"1.22.0\" %}\n\npackage:\n  name: csa\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sakov/csa-c/archive/v{{ version }}.tar.gz\n  sha256: b6d6ebeea146e09fc7aef827a3a3b22b7af674c2f0c67169c2275237e54c0c02\n\nbuild:\n  number: 2002\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n\ntest:\n  commands:\n    - csabathy -V\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/sakov/csa-c\n  license: BSD 2-Clause\n  summary: 'Cubic Spline Approximation'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -138,5 +249,60 @@
   }
  },
  "url":"https://github.com/sakov/csa-c/archive/v1.22.0.tar.gz",
- "version":"1.22.0"
+ "version":"1.22.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/sakov/csa-c",
+   "license":"BSD 2-Clause",
+   "summary":"Cubic Spline Approximation"
+  },
+  "build":{
+   "number":"2002",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"csa",
+   "version":"1.22.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "sha256":"b6d6ebeea146e09fc7aef827a3a3b22b7af674c2f0c67169c2275237e54c0c02",
+   "url":"https://github.com/sakov/csa-c/archive/v1.22.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "csabathy -V"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

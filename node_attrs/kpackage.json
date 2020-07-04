@@ -146,6 +146,85 @@
  },
  "feedstock_name":"kpackage",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The KPackage framework lets the user install and load packages of\nnon binary content such as scripted extensions or graphic assets,\nas if they were traditional plugins.\n",
+   "dev_url":"https://cgit.kde.org/kpackage.git/tree",
+   "home":"https://api.kde.org/frameworks/kpackage/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Installation and loading of additional content (ex: scripts, images...) as packages"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "kpackage"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"kpackage",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71"
+   ],
+   "host":[
+    "qt",
+    "ki18n >=5.71",
+    "karchive >=5.71",
+    "kcoreaddons >=5.71"
+   ]
+  },
+  "source":{
+   "sha256":"c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kpackage-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Package.so"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "karchive",
+    "kcoreaddons",
+    "ki18n",
+    "qt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The KPackage framework lets the user install and load packages of\nnon binary content such as scripted extensions or graphic assets,\nas if they were traditional plugins.\n",
@@ -230,6 +309,86 @@
   "5.71.0":2
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The KPackage framework lets the user install and load packages of\nnon binary content such as scripted extensions or graphic assets,\nas if they were traditional plugins.\n",
+   "dev_url":"https://cgit.kde.org/kpackage.git/tree",
+   "home":"https://api.kde.org/frameworks/kpackage/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Installation and loading of additional content (ex: scripts, images...) as packages"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "kpackage"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"kpackage",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71"
+   ],
+   "host":[
+    "qt",
+    "ki18n >=5.71",
+    "karchive >=5.71",
+    "kcoreaddons >=5.71"
+   ]
+  },
+  "source":{
+   "sha256":"c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kpackage-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Package.so"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "karchive",
+    "kcoreaddons",
+    "ki18n",
+    "qt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"kpackage\" %}\n{% set version = \"5.71.0\" %}\n{% set major_minor = \".\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.kde.org/stable/frameworks/{{ major_minor }}/kpackage-{{ version }}.tar.xz\n  sha256: c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('kpackage', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - extra-cmake-modules >={{ major_minor }}\n  host:\n    - qt\n    - ki18n >={{ major_minor }}\n    - karchive >={{ major_minor }}\n    - kcoreaddons >={{ major_minor }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libKF5Package.so\n\nabout:\n  home: https://api.kde.org/frameworks/kpackage/html/index.html\n  license: GPL-v2\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Installation and loading of additional content (ex: scripts, images...) as packages'\n  description: |\n    The KPackage framework lets the user install and load packages of\n    non binary content such as scripted extensions or graphic assets,\n    as if they were traditional plugins.\n  dev_url: https://cgit.kde.org/kpackage.git/tree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
@@ -307,5 +466,85 @@
   }
  },
  "url":"https://download.kde.org/stable/frameworks/5.64/kpackage-5.64.0.tar.xz",
- "version":"5.71.0"
+ "version":"5.71.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The KPackage framework lets the user install and load packages of\nnon binary content such as scripted extensions or graphic assets,\nas if they were traditional plugins.\n",
+   "dev_url":"https://cgit.kde.org/kpackage.git/tree",
+   "home":"https://api.kde.org/frameworks/kpackage/html/index.html",
+   "license":"GPL-v2",
+   "license_family":"GPL",
+   "license_file":"COPYING",
+   "summary":"Installation and loading of additional content (ex: scripts, images...) as packages"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "kpackage"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"kpackage",
+   "version":"5.71.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "extra-cmake-modules >=5.71"
+   ],
+   "host":[
+    "qt",
+    "ki18n >=5.71",
+    "karchive >=5.71",
+    "kcoreaddons >=5.71"
+   ]
+  },
+  "source":{
+   "sha256":"c4b924e7c506cb75bdaaf68bd881e79a73999bd6436f29157f56c76f32b48cba",
+   "url":"https://download.kde.org/stable/frameworks/5.71/kpackage-5.71.0.tar.xz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libKF5Package.so"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "extra-cmake-modules",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "karchive",
+    "kcoreaddons",
+    "ki18n",
+    "qt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

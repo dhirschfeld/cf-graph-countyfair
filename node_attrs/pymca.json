@@ -199,6 +199,93 @@
  },
  "feedstock_name":"pymca",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://www.silx.org/doc/PyMca/latest/tutorials.html",
+   "home":"http://pymca.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Mapping and X-Ray Fluorescence Analysis"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"pymca",
+   "version":"5.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cdt_stub"
+   ],
+   "host":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "pip",
+    "python",
+    "cython",
+    "libglu"
+   ],
+   "run":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b",
+   "url":"https://pypi.io/packages/source/P/PyMca5/PyMca5-5.5.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "PyMca5"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "fisx",
+    "h5py",
+    "libglu",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fisx",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"http://www.silx.org/doc/PyMca/latest/tutorials.html",
@@ -284,6 +371,89 @@
   "5.5.5":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://www.silx.org/doc/PyMca/latest/tutorials.html",
+   "home":"http://pymca.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Mapping and X-Ray Fluorescence Analysis"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"pymca",
+   "version":"5.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "pip",
+    "python",
+    "cython"
+   ],
+   "run":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b",
+   "url":"https://pypi.io/packages/source/P/PyMca5/PyMca5-5.5.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "PyMca5"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "fisx",
+    "h5py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fisx",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.12.13.56.44",
  "raw_meta_yaml":"{% set name = \"PyMca5\" %}\n{% set version = \"5.5.5\" %}\n\npackage:\n  name: pymca\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b\n\nbuild:\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n  host:\n    - fisx >=1.1.6\n    - h5py\n    - numpy\n    - pip\n    - python\n    - cython\n    - libglu  # [linux]\n  run:\n    - fisx >=1.1.6\n    - h5py\n    - numpy\n    - python\n\ntest:\n  imports:\n    - PyMca5\n\nabout:\n  home: http://pymca.sourceforge.net\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Mapping and X-Ray Fluorescence Analysis\n  doc_url: http://www.silx.org/doc/PyMca/latest/tutorials.html\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
@@ -371,5 +541,88 @@
   }
  },
  "url":"https://pypi.io/packages/source/P/PyMca5/PyMca5-5.5.1.tar.gz",
- "version":"5.5.5"
+ "version":"5.5.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"http://www.silx.org/doc/PyMca/latest/tutorials.html",
+   "home":"http://pymca.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Mapping and X-Ray Fluorescence Analysis"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tschoonj"
+   ]
+  },
+  "package":{
+   "name":"pymca",
+   "version":"5.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "pip",
+    "python",
+    "cython"
+   ],
+   "run":[
+    "fisx >=1.1.6",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b",
+   "url":"https://pypi.io/packages/source/P/PyMca5/PyMca5-5.5.5.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "PyMca5"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "fisx",
+    "h5py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fisx",
+    "h5py",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

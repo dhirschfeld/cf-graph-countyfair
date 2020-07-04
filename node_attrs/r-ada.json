@@ -66,6 +66,79 @@
  },
  "feedstock_name":"r-ada",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ada",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Performs discrete, real, and gentle boost under both exponential and  logistic loss on a given data set.  The package ada provides a straightforward,  well-documented, and broad boosting routine for classification, ideally suited  for small to moderate-sized data sets."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-ada",
+   "version":"2.0_5"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-rpart"
+   ],
+   "run":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "source":{
+   "fn":"ada_2.0-5.tar.gz",
+   "sha256":"d900172059eebeef30c27944fc29737a231fc4f92e3c2661868383fbd9016ac0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ada_2.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ada/ada_2.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ada')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=ada",
@@ -137,6 +210,79 @@
  },
  "name":"r-ada",
  "new_version":"2.0_5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ada",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Performs discrete, real, and gentle boost under both exponential and  logistic loss on a given data set.  The package ada provides a straightforward,  well-documented, and broad boosting routine for classification, ideally suited  for small to moderate-sized data sets."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-ada",
+   "version":"2.0_5"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-rpart"
+   ],
+   "run":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "source":{
+   "fn":"ada_2.0-5.tar.gz",
+   "sha256":"d900172059eebeef30c27944fc29737a231fc4f92e3c2661868383fbd9016ac0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ada_2.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ada/ada_2.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ada')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = '2.0-5' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ada\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ada_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ada_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ada/ada_{{ version }}.tar.gz\n  sha256: d900172059eebeef30c27944fc29737a231fc4f92e3c2661868383fbd9016ac0\n\nbuild:\n  noarch: generic\n  number: 1002\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n    - r-rpart\n\n  run:\n    - r-base\n    - r-rpart\n\ntest:\n  commands:\n    - $R -e \"library('ada')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ada')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=ada\n  license: GPL\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n  summary: Performs discrete, real, and gentle boost under both exponential and  logistic loss\n    on a given data set.  The package ada provides a straightforward,  well-documented,\n    and broad boosting routine for classification, ideally suited  for small to moderate-sized\n    data sets.\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
@@ -204,5 +350,78 @@
   "https://cran.r-project.org/src/contrib/ada_2.0-5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/ada/ada_2.0-5.tar.gz"
  ],
- "version":"2.0_5"
+ "version":"2.0_5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=ada",
+   "license":"GPL",
+   "license_family":"GPL",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Performs discrete, real, and gentle boost under both exponential and  logistic loss on a given data set.  The package ada provides a straightforward,  well-documented, and broad boosting routine for classification, ideally suited  for small to moderate-sized data sets."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-ada",
+   "version":"2.0_5"
+  },
+  "requirements":{
+   "build":[
+    "r-base",
+    "r-rpart"
+   ],
+   "run":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "source":{
+   "fn":"ada_2.0-5.tar.gz",
+   "sha256":"d900172059eebeef30c27944fc29737a231fc4f92e3c2661868383fbd9016ac0",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ada_2.0-5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ada/ada_2.0-5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('ada')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rpart"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

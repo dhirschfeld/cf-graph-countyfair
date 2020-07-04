@@ -73,6 +73,83 @@
  "conda-forge.yml":{},
  "feedstock_name":"asap",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within\nthe Atomic Simulation Environment. The focus of ASAP is on solid-state\nphysics (as opposed to molecular chemistry), and in particular metallic\nsystems.\n",
+   "dev_url":"https://gitlab.com/asap/asap",
+   "doc_url":"https://wiki.fysik.dtu.dk/asap/asap",
+   "home":"https://gitlab.com/asap/asap",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within the Atomic Simulation Environment."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"asap",
+   "version":"3.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "ase"
+   ]
+  },
+  "source":{
+   "fn":"asap-ASAP_VERSION_3_10_6-afc2473cfb8cf89b5e88189e0fdffa0f40d3efc7.tar.gz",
+   "sha256":"9018d26030fa34e84a0404dd3292973a6067a7a90528531a33b8584b5fdc52b1",
+   "url":"https://gitlab.com/asap/asap/repository/archive.tar.gz?ref=ASAP_VERSION_3_10_6"
+  },
+  "test":{
+   "imports":[
+    "asap3"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within\nthe Atomic Simulation Environment. The focus of ASAP is on solid-state\nphysics (as opposed to molecular chemistry), and in particular metallic\nsystems.\n",
@@ -143,6 +220,83 @@
  },
  "name":"asap",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within\nthe Atomic Simulation Environment. The focus of ASAP is on solid-state\nphysics (as opposed to molecular chemistry), and in particular metallic\nsystems.\n",
+   "dev_url":"https://gitlab.com/asap/asap",
+   "doc_url":"https://wiki.fysik.dtu.dk/asap/asap",
+   "home":"https://gitlab.com/asap/asap",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within the Atomic Simulation Environment."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"asap",
+   "version":"3.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "ase"
+   ]
+  },
+  "source":{
+   "fn":"asap-ASAP_VERSION_3_10_6-afc2473cfb8cf89b5e88189e0fdffa0f40d3efc7.tar.gz",
+   "sha256":"9018d26030fa34e84a0404dd3292973a6067a7a90528531a33b8584b5fdc52b1",
+   "url":"https://gitlab.com/asap/asap/repository/archive.tar.gz?ref=ASAP_VERSION_3_10_6"
+  },
+  "test":{
+   "imports":[
+    "asap3"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.24",
  "raw_meta_yaml":"{% set name = \"asap\" %}\n{% set version = \"3.10.6\" %}\n{% set sha256 = \"9018d26030fa34e84a0404dd3292973a6067a7a90528531a33b8584b5fdc52b1\" %}\n{% set asap_version = \"3_10_6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-ASAP_VERSION_{{ asap_version}}-afc2473cfb8cf89b5e88189e0fdffa0f40d3efc7.tar.gz\n  url: https://gitlab.com/{{ name }}/{{ name }}/repository/archive.tar.gz?ref=ASAP_VERSION_{{ asap_version }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - ase\n\ntest:\n  imports:\n    - asap3\n\nabout:\n  home: https://gitlab.com/asap/asap\n  license: GPL-3.0\n  license_file: LICENSE\n  summary: 'ASAP is a calculator for doing large-scale molecular dynamics (MD)\n  within the Atomic Simulation Environment.'\n\n  description: |\n    ASAP is a calculator for doing large-scale molecular dynamics (MD) within\n    the Atomic Simulation Environment. The focus of ASAP is on solid-state\n    physics (as opposed to molecular chemistry), and in particular metallic\n    systems.\n\n  doc_url: https://wiki.fysik.dtu.dk/asap/asap\n  dev_url: https://gitlab.com/asap/asap\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "req":{
@@ -214,5 +368,83 @@
   }
  },
  "url":"https://gitlab.com/asap/asap/repository/archive.tar.gz?ref=ASAP_VERSION_3_10_6",
- "version":"3.10.6"
+ "version":"3.10.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within\nthe Atomic Simulation Environment. The focus of ASAP is on solid-state\nphysics (as opposed to molecular chemistry), and in particular metallic\nsystems.\n",
+   "dev_url":"https://gitlab.com/asap/asap",
+   "doc_url":"https://wiki.fysik.dtu.dk/asap/asap",
+   "home":"https://gitlab.com/asap/asap",
+   "license":"GPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"ASAP is a calculator for doing large-scale molecular dynamics (MD) within the Atomic Simulation Environment."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"asap",
+   "version":"3.10.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "ase"
+   ]
+  },
+  "source":{
+   "fn":"asap-ASAP_VERSION_3_10_6-afc2473cfb8cf89b5e88189e0fdffa0f40d3efc7.tar.gz",
+   "sha256":"9018d26030fa34e84a0404dd3292973a6067a7a90528531a33b8584b5fdc52b1",
+   "url":"https://gitlab.com/asap/asap/repository/archive.tar.gz?ref=ASAP_VERSION_3_10_6"
+  },
+  "test":{
+   "imports":[
+    "asap3"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "ase",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

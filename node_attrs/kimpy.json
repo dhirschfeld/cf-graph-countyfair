@@ -48,6 +48,96 @@
  },
  "feedstock_name":"kimpy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"kimpy is a Python interface to the KIM API.\n",
+   "dev_url":"https://github.com/openkim/kimpy",
+   "doc_url":"https://github.com/openkim/kimpy",
+   "home":"https://github.com/openkim/kimpy",
+   "license":"CDDL-1.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.CDDL",
+   "summary":"Python interface to the KIM API"
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"kimpy",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "pybind11",
+    "kim-api"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "pybind11",
+    "pytest",
+    "numpy",
+    "kim-api"
+   ]
+  },
+  "source":{
+   "sha256":"4d94a34fd8712ec2c9147dc95d68589f57d7173ffc6a6dec448a9a14c554c54a",
+   "url":"https://pypi.io/packages/source/k/kimpy/kimpy-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "kimpy"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "numpy",
+    "pip",
+    "pybind11",
+    "pytest",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"kimpy is a Python interface to the KIM API.\n",
@@ -138,6 +228,96 @@
  },
  "name":"kimpy",
  "new_version":"0.3.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"kimpy is a Python interface to the KIM API.\n",
+   "dev_url":"https://github.com/openkim/kimpy",
+   "doc_url":"https://github.com/openkim/kimpy",
+   "home":"https://github.com/openkim/kimpy",
+   "license":"CDDL-1.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.CDDL",
+   "summary":"Python interface to the KIM API"
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"kimpy",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "pybind11",
+    "kim-api"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "pybind11",
+    "pytest",
+    "numpy",
+    "kim-api"
+   ]
+  },
+  "source":{
+   "sha256":"4d94a34fd8712ec2c9147dc95d68589f57d7173ffc6a6dec448a9a14c554c54a",
+   "url":"https://pypi.io/packages/source/k/kimpy/kimpy-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "kimpy"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "numpy",
+    "pip",
+    "pybind11",
+    "pytest",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"kimpy\" %}\n{% set version = \"0.3.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4d94a34fd8712ec2c9147dc95d68589f57d7173ffc6a6dec448a9a14c554c54a\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - pkg-config\n  host:\n    - python\n    - pip\n    - pybind11\n    - kim-api\n  run:\n    - python\n    - pip\n    - pybind11\n    - pytest\n    - numpy\n    - kim-api\n\ntest:\n  imports:\n    - kimpy\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/openkim/kimpy\n  license: CDDL-1.0\n  license_family: OTHER\n  license_file: LICENSE.CDDL\n  summary: 'Python interface to the KIM API'\n\n  description: |\n    kimpy is a Python interface to the KIM API.\n  doc_url: https://github.com/openkim/kimpy\n  dev_url: https://github.com/openkim/kimpy\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
@@ -222,5 +402,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/k/kimpy/kimpy-0.3.3.tar.gz",
- "version":"0.3.3"
+ "version":"0.3.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"kimpy is a Python interface to the KIM API.\n",
+   "dev_url":"https://github.com/openkim/kimpy",
+   "doc_url":"https://github.com/openkim/kimpy",
+   "home":"https://github.com/openkim/kimpy",
+   "license":"CDDL-1.0",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.CDDL",
+   "summary":"Python interface to the KIM API"
+  },
+  "build":{
+   "number":"2",
+   "script":" -m pip install . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen"
+   ]
+  },
+  "package":{
+   "name":"kimpy",
+   "version":"0.3.3"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "pybind11",
+    "kim-api"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "pybind11",
+    "pytest",
+    "numpy",
+    "kim-api"
+   ]
+  },
+  "source":{
+   "sha256":"4d94a34fd8712ec2c9147dc95d68589f57d7173ffc6a6dec448a9a14c554c54a",
+   "url":"https://pypi.io/packages/source/k/kimpy/kimpy-0.3.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "kimpy"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "pip",
+    "pybind11",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kim-api",
+    "numpy",
+    "pip",
+    "pybind11",
+    "pytest",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

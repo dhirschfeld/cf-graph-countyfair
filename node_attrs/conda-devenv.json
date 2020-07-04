@@ -91,6 +91,111 @@
  "conda-forge.yml":{},
  "feedstock_name":"conda-devenv",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/conda-devenv",
+   "doc_url":"http://conda-devenv.readthedocs.io/",
+   "home":"https://github.com/ESSS/conda-devenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A tool to work with multiple projects in develop-mode using conda-env."
+  },
+  "build":{
+   "entry_points":[
+    "conda-devenv = conda_devenv.devenv:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "export SETUPTOOLS_SCM_PRETEND_VERSION=2.1.0",
+    "-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "edisongustavo",
+    "nicoddemus",
+    "gqmelo",
+    "tadeu",
+    "prusse-martin",
+    "oliveira-mauricio",
+    "gcardozo123"
+   ]
+  },
+  "package":{
+   "name":"conda-devenv",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "conda  >=4.3",
+    "python >=3.6",
+    "jinja2",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"f3f39a6a27e3d7962e30f92b5301f7c2a87d5333df5cdf8886c987b88b3f74e4",
+   "url":"https://github.com/ESSS/conda-devenv/archive/2.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-devenv --version",
+    "conda-devenv --help",
+    "pytest tests"
+   ],
+   "imports":[
+    "conda_devenv"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-datadir >=1.0",
+    "pytest-mock"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "jinja2",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "pytest-datadir",
+    "pytest-mock"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ESSS/conda-devenv",
@@ -223,6 +328,111 @@
   "2.1.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/conda-devenv",
+   "doc_url":"http://conda-devenv.readthedocs.io/",
+   "home":"https://github.com/ESSS/conda-devenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A tool to work with multiple projects in develop-mode using conda-env."
+  },
+  "build":{
+   "entry_points":[
+    "conda-devenv = conda_devenv.devenv:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "export SETUPTOOLS_SCM_PRETEND_VERSION=2.1.0",
+    "-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "edisongustavo",
+    "nicoddemus",
+    "gqmelo",
+    "tadeu",
+    "prusse-martin",
+    "oliveira-mauricio",
+    "gcardozo123"
+   ]
+  },
+  "package":{
+   "name":"conda-devenv",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "conda  >=4.3",
+    "python >=3.6",
+    "jinja2",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"f3f39a6a27e3d7962e30f92b5301f7c2a87d5333df5cdf8886c987b88b3f74e4",
+   "url":"https://github.com/ESSS/conda-devenv/archive/2.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-devenv --version",
+    "conda-devenv --help",
+    "pytest tests"
+   ],
+   "imports":[
+    "conda_devenv"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-datadir >=1.0",
+    "pytest-mock"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "jinja2",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "pytest-datadir",
+    "pytest-mock"
+   ]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"conda-devenv\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ESSS/conda-devenv/archive/{{ version }}.tar.gz\n  sha256: f3f39a6a27e3d7962e30f92b5301f7c2a87d5333df5cdf8886c987b88b3f74e4\n\nbuild:\n  number: 0\n  script:\n    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - conda-devenv = conda_devenv.devenv:main\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools_scm\n  run:\n    - conda  >=4.3\n    - python >=3.6\n    - jinja2\n    - pyyaml\n    - six\n\ntest:\n  requires:\n    - pytest >=3\n    - pytest-datadir >=1.0\n    - pytest-mock\n  imports:\n    - conda_devenv\n  commands:\n    - conda-devenv --version\n    - conda-devenv --help\n    - pytest tests\n  source_files:\n    - tests\n\nabout:\n  home: https://github.com/ESSS/conda-devenv\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A tool to work with multiple projects in develop-mode using conda-env.\n  doc_url: http://conda-devenv.readthedocs.io/\n  dev_url: https://github.com/ESSS/conda-devenv\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n    - nicoddemus\n    - gqmelo\n    - tadeu\n    - prusse-martin\n    - oliveira-mauricio\n    - gcardozo123\n",
  "req":{
@@ -304,5 +514,110 @@
   }
  },
  "url":"https://github.com/ESSS/conda-devenv/archive/1.1.2.tar.gz",
- "version":"2.1.0"
+ "version":"2.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/conda-devenv",
+   "doc_url":"http://conda-devenv.readthedocs.io/",
+   "home":"https://github.com/ESSS/conda-devenv",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A tool to work with multiple projects in develop-mode using conda-env."
+  },
+  "build":{
+   "entry_points":[
+    "conda-devenv = conda_devenv.devenv:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "export SETUPTOOLS_SCM_PRETEND_VERSION=2.1.0",
+    "-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "edisongustavo",
+    "nicoddemus",
+    "gqmelo",
+    "tadeu",
+    "prusse-martin",
+    "oliveira-mauricio",
+    "gcardozo123"
+   ]
+  },
+  "package":{
+   "name":"conda-devenv",
+   "version":"2.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "conda  >=4.3",
+    "python >=3.6",
+    "jinja2",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"f3f39a6a27e3d7962e30f92b5301f7c2a87d5333df5cdf8886c987b88b3f74e4",
+   "url":"https://github.com/ESSS/conda-devenv/archive/2.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda-devenv --version",
+    "conda-devenv --help",
+    "pytest tests"
+   ],
+   "imports":[
+    "conda_devenv"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-datadir >=1.0",
+    "pytest-mock"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "conda",
+    "jinja2",
+    "python",
+    "pyyaml",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "pytest-datadir",
+    "pytest-mock"
+   ]
+  }
+ }
 }

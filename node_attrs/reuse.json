@@ -108,6 +108,98 @@
  "conda-forge.yml":{},
  "feedstock_name":"reuse",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/fsfe/reuse-tool",
+   "doc_url":"https://reuse.readthedocs.io/",
+   "home":"https://reuse.software/",
+   "license":"GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0",
+   "license_file":[
+    "LICENSES/GPL-3.0-or-later.txt",
+    "LICENSES/Apache-2.0.txt",
+    "LICENSES/CC0-1.0.txt",
+    "LICENSES/CC-BY-SA-4.0.txt"
+   ],
+   "summary":"reuse is a tool for compliance with the REUSE recommendations."
+  },
+  "build":{
+   "entry_points":[
+    "reuse = reuse._main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mbargull"
+   ]
+  },
+  "package":{
+   "name":"reuse",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python >=3.6",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"ccc8ec1030aa3aa90d4e9d2f2f47405c978bc2335e2048f4a50587145d35cf61",
+   "url":"https://pypi.io/packages/source/r/reuse/reuse-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "reuse --help"
+   ],
+   "imports":[
+    "reuse"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/fsfe/reuse-tool",
@@ -216,6 +308,98 @@
   "0.9.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/fsfe/reuse-tool",
+   "doc_url":"https://reuse.readthedocs.io/",
+   "home":"https://reuse.software/",
+   "license":"GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0",
+   "license_file":[
+    "LICENSES/GPL-3.0-or-later.txt",
+    "LICENSES/Apache-2.0.txt",
+    "LICENSES/CC0-1.0.txt",
+    "LICENSES/CC-BY-SA-4.0.txt"
+   ],
+   "summary":"reuse is a tool for compliance with the REUSE recommendations."
+  },
+  "build":{
+   "entry_points":[
+    "reuse = reuse._main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mbargull"
+   ]
+  },
+  "package":{
+   "name":"reuse",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python >=3.6",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"ccc8ec1030aa3aa90d4e9d2f2f47405c978bc2335e2048f4a50587145d35cf61",
+   "url":"https://pypi.io/packages/source/r/reuse/reuse-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "reuse --help"
+   ],
+   "imports":[
+    "reuse"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set version = \"0.8.1\" %}\n{% set sha256 = \"ccc8ec1030aa3aa90d4e9d2f2f47405c978bc2335e2048f4a50587145d35cf61\" %}\n\npackage:\n  name: reuse\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/reuse/reuse-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - reuse = reuse._main:main\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools_scm\n  run:\n    - binaryornot\n    - boolean.py\n    - jinja2\n    - license-expression\n    - python >=3.6\n    - python-debian\n    - requests\n    - setuptools\n\ntest:\n  imports:\n    - reuse\n  commands:\n    - reuse --help\n\nabout:\n  home: https://reuse.software/\n  license: GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0\n  license_file:\n    - LICENSES/GPL-3.0-or-later.txt\n    - LICENSES/Apache-2.0.txt\n    - LICENSES/CC0-1.0.txt\n    - LICENSES/CC-BY-SA-4.0.txt\n  summary: reuse is a tool for compliance with the REUSE recommendations.\n  doc_url: https://reuse.readthedocs.io/\n  dev_url: https://github.com/fsfe/reuse-tool\n\nextra:\n  recipe-maintainers:\n    - mbargull\n",
  "req":{
@@ -298,5 +482,97 @@
   }
  },
  "url":"https://pypi.io/packages/source/r/reuse/reuse-0.7.0.tar.gz",
- "version":"0.8.1"
+ "version":"0.8.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/fsfe/reuse-tool",
+   "doc_url":"https://reuse.readthedocs.io/",
+   "home":"https://reuse.software/",
+   "license":"GPL-3.0-or-later AND Apache-2.0 AND CC0-1.0 AND CC-BY-SA-4.0",
+   "license_file":[
+    "LICENSES/GPL-3.0-or-later.txt",
+    "LICENSES/Apache-2.0.txt",
+    "LICENSES/CC0-1.0.txt",
+    "LICENSES/CC-BY-SA-4.0.txt"
+   ],
+   "summary":"reuse is a tool for compliance with the REUSE recommendations."
+  },
+  "build":{
+   "entry_points":[
+    "reuse = reuse._main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mbargull"
+   ]
+  },
+  "package":{
+   "name":"reuse",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm"
+   ],
+   "run":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python >=3.6",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"ccc8ec1030aa3aa90d4e9d2f2f47405c978bc2335e2048f4a50587145d35cf61",
+   "url":"https://pypi.io/packages/source/r/reuse/reuse-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "reuse --help"
+   ],
+   "imports":[
+    "reuse"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "binaryornot",
+    "boolean.py",
+    "jinja2",
+    "license-expression",
+    "python",
+    "python-debian",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

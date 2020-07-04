@@ -40,6 +40,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"astromatic-scamp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\nprogram that computes astrometric projection parameters from source\ncatalogues derived from FITS images. The computed solution is expressed\naccording to the WCS standard.\n",
+   "dev_url":"https://github.com/astromatic/scamp",
+   "doc_url":"https://scamp.readthedocs.io/",
+   "home":"http://www.astromatic.net/software/scamp",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"A utility that computes astrometric solutions from SExtractor catalogs"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "teake"
+   ]
+  },
+  "package":{
+   "name":"astromatic-scamp",
+   "version":"2.9.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "fftw",
+    "curl",
+    "liblapacke"
+   ],
+   "run":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Search-lapacke-library.patch",
+    "0002-Fix_sprintf_buffer_overflow.patch"
+   ],
+   "sha256":"f62e6e2524f62cd8822b9d0ec2b6a51cba71080090a36aac9b0dbc78c5cdc1cc",
+   "url":"https://github.com/astromatic/scamp/archive/v2.9.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "scamp -d"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "curl",
+    "fftw",
+    "liblapacke"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\nprogram that computes astrometric projection parameters from source\ncatalogues derived from FITS images. The computed solution is expressed\naccording to the WCS standard.\n",
@@ -129,6 +214,91 @@
   "2.9.2":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\nprogram that computes astrometric projection parameters from source\ncatalogues derived from FITS images. The computed solution is expressed\naccording to the WCS standard.\n",
+   "dev_url":"https://github.com/astromatic/scamp",
+   "doc_url":"https://scamp.readthedocs.io/",
+   "home":"http://www.astromatic.net/software/scamp",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"A utility that computes astrometric solutions from SExtractor catalogs"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "teake"
+   ]
+  },
+  "package":{
+   "name":"astromatic-scamp",
+   "version":"2.9.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "fftw",
+    "curl",
+    "liblapacke"
+   ],
+   "run":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Search-lapacke-library.patch",
+    "0002-Fix_sprintf_buffer_overflow.patch"
+   ],
+   "sha256":"f62e6e2524f62cd8822b9d0ec2b6a51cba71080090a36aac9b0dbc78c5cdc1cc",
+   "url":"https://github.com/astromatic/scamp/archive/v2.9.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "scamp -d"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "curl",
+    "fftw",
+    "liblapacke"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"scamp\" %}\n{% set version = \"2.9.2\" %}\n\npackage:\n  name: astromatic-{{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/astromatic/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: f62e6e2524f62cd8822b9d0ec2b6a51cba71080090a36aac9b0dbc78c5cdc1cc\n  patches:\n    - 0001-Search-lapacke-library.patch\n    - 0002-Fix_sprintf_buffer_overflow.patch\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf\n    - automake\n    - libtool\n    - make\n  host:\n    - fftw\n    - curl\n    - liblapacke\n  run:\n    - fftw\n    - libcurl\n\ntest:\n  commands:\n    - scamp -d\n\nabout:\n  home: http://www.astromatic.net/software/scamp\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: A utility that computes astrometric solutions from SExtractor catalogs\n  description: |\n    SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\n    program that computes astrometric projection parameters from source\n    catalogues derived from FITS images. The computed solution is expressed\n    according to the WCS standard.\n  doc_url: https://scamp.readthedocs.io/\n  dev_url: https://github.com/astromatic/scamp\n\nextra:\n  recipe-maintainers:\n    - teake\n",
  "req":{
@@ -210,5 +380,91 @@
   }
  },
  "url":"https://github.com/astromatic/scamp/archive/v2.6.7.tar.gz",
- "version":"2.9.2"
+ "version":"2.9.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"SCAMP (Software for Calibrating AstroMetry and Photometry) is a computer\nprogram that computes astrometric projection parameters from source\ncatalogues derived from FITS images. The computed solution is expressed\naccording to the WCS standard.\n",
+   "dev_url":"https://github.com/astromatic/scamp",
+   "doc_url":"https://scamp.readthedocs.io/",
+   "home":"http://www.astromatic.net/software/scamp",
+   "license":"GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"A utility that computes astrometric solutions from SExtractor catalogs"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "teake"
+   ]
+  },
+  "package":{
+   "name":"astromatic-scamp",
+   "version":"2.9.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "autoconf",
+    "automake",
+    "libtool",
+    "make"
+   ],
+   "host":[
+    "fftw",
+    "curl",
+    "liblapacke"
+   ],
+   "run":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Search-lapacke-library.patch",
+    "0002-Fix_sprintf_buffer_overflow.patch"
+   ],
+   "sha256":"f62e6e2524f62cd8822b9d0ec2b6a51cba71080090a36aac9b0dbc78c5cdc1cc",
+   "url":"https://github.com/astromatic/scamp/archive/v2.9.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "scamp -d"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "c_compiler_stub",
+    "libtool",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "curl",
+    "fftw",
+    "liblapacke"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "fftw",
+    "libcurl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

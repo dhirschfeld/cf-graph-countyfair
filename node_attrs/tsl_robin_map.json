@@ -47,6 +47,71 @@
  },
  "feedstock_name":"tsl_robin_map",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"C++ fast hash map and hash set using robin hood hashing",
+   "dev_url":"https://github.com/Tessil/robin-map",
+   "doc_url":"https://tessil.github.io/robin-map/",
+   "home":"https://github.com/Tessil/robin-map",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ fast hash map and hash set using robin hood hashing"
+  },
+  "build":{
+   "number":"2000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"tsl_robin_map",
+   "version":"v0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"tsl_robin_map-v0.5.0.tar.gz",
+   "sha256":"220be06fa44005af67dc4b49fdfd96a66588b769eb53b0c899c6d8bf77033d84",
+   "url":"https://github.com/Tessil/robin-map/archive/v0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/tsl",
+    "test -f ${PREFIX}/include/tsl/robin_map.h",
+    "test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"C++ fast hash map and hash set using robin hood hashing",
@@ -109,6 +174,71 @@
  },
  "name":"tsl_robin_map",
  "new_version":"v0.6.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"C++ fast hash map and hash set using robin hood hashing",
+   "dev_url":"https://github.com/Tessil/robin-map",
+   "doc_url":"https://tessil.github.io/robin-map/",
+   "home":"https://github.com/Tessil/robin-map",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ fast hash map and hash set using robin hood hashing"
+  },
+  "build":{
+   "number":"2000"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"tsl_robin_map",
+   "version":"v0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"tsl_robin_map-v0.5.0.tar.gz",
+   "sha256":"220be06fa44005af67dc4b49fdfd96a66588b769eb53b0c899c6d8bf77033d84",
+   "url":"https://github.com/Tessil/robin-map/archive/v0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/tsl",
+    "test -f ${PREFIX}/include/tsl/robin_map.h",
+    "test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"tsl_robin_map\" %}\n{% set version = \"v0.5.0\" %}\n{% set sha256 = \" 220be06fa44005af67dc4b49fdfd96a66588b769eb53b0c899c6d8bf77033d84\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/Tessil/robin-map/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2000\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/tsl  # [unix]\n    - test -f ${PREFIX}/include/tsl/robin_map.h  # [unix]\n    - test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/tsl_robin_map/tsl_robin_mapConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\tsl\\robin_map.h (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\tsl_robin_mapConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\tsl_robin_mapConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/Tessil/robin-map\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ fast hash map and hash set using robin hood hashing'\n  description: 'C++ fast hash map and hash set using robin hood hashing'\n  doc_url: https://tessil.github.io/robin-map/\n  dev_url: https://github.com/Tessil/robin-map\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
@@ -163,5 +293,70 @@
   }
  },
  "url":"https://github.com/Tessil/robin-map/archive/v0.5.0.tar.gz",
- "version":"v0.5.0"
+ "version":"v0.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"C++ fast hash map and hash set using robin hood hashing",
+   "dev_url":"https://github.com/Tessil/robin-map",
+   "doc_url":"https://tessil.github.io/robin-map/",
+   "home":"https://github.com/Tessil/robin-map",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ fast hash map and hash set using robin hood hashing"
+  },
+  "build":{
+   "number":"2000",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"tsl_robin_map",
+   "version":"v0.5.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"tsl_robin_map-v0.5.0.tar.gz",
+   "sha256":"220be06fa44005af67dc4b49fdfd96a66588b769eb53b0c899c6d8bf77033d84",
+   "url":"https://github.com/Tessil/robin-map/archive/v0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\tsl\\robin_map.h (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\tsl_robin_mapConfig.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\tsl_robin_mapConfigVersion.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

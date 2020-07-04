@@ -108,6 +108,93 @@
  "conda-forge.yml":{},
  "feedstock_name":"pdoc3",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://pdoc3.github.io/pdoc/",
+   "license":"GNU Affero General Public v3 or later (AGPLv3+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Auto-generate API documentation for Python projects."
+  },
+  "build":{
+   "entry_points":[
+    "pdoc = pdoc.cli:main",
+    "pdoc3 = pdoc.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"pdoc3",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "mako",
+    "markdown >=3.0",
+    "pip",
+    "python >=3.5",
+    "setuptools_scm",
+    "setuptools-git"
+   ],
+   "run":[
+    "mako",
+    "markdown >=3.0",
+    "python >=3.5"
+   ]
+  },
+  "source":{
+   "sha256":"d7b56e67b5e049d53dcde94245a28040b640b2e06c344fc58ab2bdf2d91dc00f",
+   "url":"https://pypi.io/packages/source/p/pdoc3/pdoc3-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pdoc --help",
+    "pdoc3 --help",
+    "python -m pdoc.test.__init__"
+   ],
+   "imports":[
+    "pdoc",
+    "pdoc.cli",
+    "pdoc.html_helpers"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "pip",
+    "python",
+    "setuptools-git",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://pdoc3.github.io/pdoc/",
@@ -211,6 +298,93 @@
   "0.8.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://pdoc3.github.io/pdoc/",
+   "license":"GNU Affero General Public v3 or later (AGPLv3+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Auto-generate API documentation for Python projects."
+  },
+  "build":{
+   "entry_points":[
+    "pdoc = pdoc.cli:main",
+    "pdoc3 = pdoc.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"pdoc3",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "mako",
+    "markdown >=3.0",
+    "pip",
+    "python >=3.5",
+    "setuptools_scm",
+    "setuptools-git"
+   ],
+   "run":[
+    "mako",
+    "markdown >=3.0",
+    "python >=3.5"
+   ]
+  },
+  "source":{
+   "sha256":"d7b56e67b5e049d53dcde94245a28040b640b2e06c344fc58ab2bdf2d91dc00f",
+   "url":"https://pypi.io/packages/source/p/pdoc3/pdoc3-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pdoc --help",
+    "pdoc3 --help",
+    "python -m pdoc.test.__init__"
+   ],
+   "imports":[
+    "pdoc",
+    "pdoc.cli",
+    "pdoc.html_helpers"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "pip",
+    "python",
+    "setuptools-git",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"pdoc3\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d7b56e67b5e049d53dcde94245a28040b640b2e06c344fc58ab2bdf2d91dc00f\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - pdoc = pdoc.cli:main\n    - pdoc3 = pdoc.cli:main\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - mako\n    - markdown >=3.0\n    - pip\n    - python >=3.5\n    - setuptools_scm\n    - setuptools-git\n  run:\n    - mako\n    - markdown >=3.0\n    - python >=3.5\n\ntest:\n  imports:\n    - pdoc\n    - pdoc.cli\n    - pdoc.html_helpers\n\n  commands:\n    - pdoc --help\n    - pdoc3 --help\n    - python -m pdoc.test.__init__\n\nabout:\n  home: https://pdoc3.github.io/pdoc/\n  license: GNU Affero General Public v3 or later (AGPLv3+)\n  license_family: AGPL\n  license_file: LICENSE.txt\n  summary: Auto-generate API documentation for Python projects.\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
  "req":{
@@ -285,5 +459,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pdoc3/pdoc3-0.7.2.tar.gz",
- "version":"0.8.1"
+ "version":"0.8.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://pdoc3.github.io/pdoc/",
+   "license":"GNU Affero General Public v3 or later (AGPLv3+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE.txt",
+   "summary":"Auto-generate API documentation for Python projects."
+  },
+  "build":{
+   "entry_points":[
+    "pdoc = pdoc.cli:main",
+    "pdoc3 = pdoc.cli:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"pdoc3",
+   "version":"0.8.1"
+  },
+  "requirements":{
+   "host":[
+    "mako",
+    "markdown >=3.0",
+    "pip",
+    "python >=3.5",
+    "setuptools_scm",
+    "setuptools-git"
+   ],
+   "run":[
+    "mako",
+    "markdown >=3.0",
+    "python >=3.5"
+   ]
+  },
+  "source":{
+   "sha256":"d7b56e67b5e049d53dcde94245a28040b640b2e06c344fc58ab2bdf2d91dc00f",
+   "url":"https://pypi.io/packages/source/p/pdoc3/pdoc3-0.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pdoc --help",
+    "pdoc3 --help",
+    "python -m pdoc.test.__init__"
+   ],
+   "imports":[
+    "pdoc",
+    "pdoc.cli",
+    "pdoc.html_helpers"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "pip",
+    "python",
+    "setuptools-git",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mako",
+    "markdown",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

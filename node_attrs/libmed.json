@@ -146,6 +146,94 @@
  "conda-forge.yml":{},
  "feedstock_name":"libmed",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.\n",
+   "dev_url":"http://www.salome-platform.org/",
+   "doc_url":"http://www.salome-platform.org/",
+   "home":"https://www.salome-platform.org/user-section/about/med",
+   "license":"LGPLv3.0",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"MED : interoperable format for data interchange between mesh based solvers."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo",
+    "ldallolio-irt"
+   ]
+  },
+  "package":{
+   "name":"libmed",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "ninja",
+    "cmake",
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python",
+    "swig"
+   ],
+   "run":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"libmed 4.0.0.tar.gz",
+   "sha256":"a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004",
+   "url":"https://files.salome-platform.org/Salome/other/med-4.0.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "med"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "swig",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.\n",
@@ -234,6 +322,95 @@
  },
  "name":"libmed",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.\n",
+   "dev_url":"http://www.salome-platform.org/",
+   "doc_url":"http://www.salome-platform.org/",
+   "home":"https://www.salome-platform.org/user-section/about/med",
+   "license":"LGPLv3.0",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"MED : interoperable format for data interchange between mesh based solvers."
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo",
+    "ldallolio-irt"
+   ]
+  },
+  "package":{
+   "name":"libmed",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "ninja",
+    "cmake",
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python",
+    "swig"
+   ],
+   "run":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"libmed 4.0.0.tar.gz",
+   "sha256":"a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004",
+   "url":"https://files.salome-platform.org/Salome/other/med-4.0.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "med"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "swig",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.16.07.55.54",
  "raw_meta_yaml":"{% set name = \"libmed\" %}\n{% set version = \"4.0.0\" %}\n{% set sha256 = \"a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004\" %}\n\n\npackage:\n    name: libmed\n    version: 4.0.0\n\nsource:\n    fn: {{ name }} {{ version }}.tar.gz\n    url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz\n    sha256: {{ sha256  }}\n    #git_url: https://salsa.debian.org/science-team/med-fichier\n    #git_rev: 8a0b0d21d4bac79772797b0a800cf4d5bf77bc32    \n\nbuild:\n    number: 1\n    skip: True  # [py2k or osx or win]\n\nrequirements:\n    build:\n        - ninja\n        - cmake\n        - {{ compiler('fortran') }}\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n    host:\n        - hdf5 1.10.3|1.10.4\n        - zlib\n        - python\n        - swig\n    run:\n        - hdf5 1.10.3|1.10.4\n        - zlib\n        - python\n\n\ntest:\n    imports:\n        - med\n\nabout:\n    home: https://www.salome-platform.org/user-section/about/med\n    license: LGPLv3.0\n    license_family: LGPL\n    license_file: COPYING\n    summary: 'MED : interoperable format for data interchange between mesh based solvers.'\n    description: |\n        The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.\n    doc_url: http://www.salome-platform.org/\n    dev_url: http://www.salome-platform.org/\n\nextra:\n    recipe-maintainers:\n        - looooo\n        - ldallolio-irt\n",
  "req":{
@@ -319,5 +496,94 @@
   }
  },
  "url":"http://files.salome-platform.org/Salome/other/med-3.3.1.tar.gz",
- "version":"4.0.0"
+ "version":"4.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.\n",
+   "dev_url":"http://www.salome-platform.org/",
+   "doc_url":"http://www.salome-platform.org/",
+   "home":"https://www.salome-platform.org/user-section/about/med",
+   "license":"LGPLv3.0",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"MED : interoperable format for data interchange between mesh based solvers."
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo",
+    "ldallolio-irt"
+   ]
+  },
+  "package":{
+   "name":"libmed",
+   "version":"4.0.0"
+  },
+  "requirements":{
+   "build":[
+    "ninja",
+    "cmake",
+    "fortran_compiler_stub",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python",
+    "swig"
+   ],
+   "run":[
+    "hdf5 1.10.3|1.10.4",
+    "zlib",
+    "python"
+   ]
+  },
+  "source":{
+   "fn":"libmed 4.0.0.tar.gz",
+   "sha256":"a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004",
+   "url":"https://files.salome-platform.org/Salome/other/med-4.0.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "med"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "swig",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "hdf5",
+    "python",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

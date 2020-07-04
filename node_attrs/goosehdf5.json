@@ -210,6 +210,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"goosehdf5",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Simple tools to inspect HDF5 files (wraps around h5py).",
+   "dev_url":"https://github.com/tdegeus/GooseHDF5",
+   "doc_url":"https://github.com/tdegeus/GooseHDF5",
+   "home":"https://github.com/tdegeus/GooseHDF5",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Simple tools to inspect HDF5 files (wraps around h5py)."
+  },
+  "build":{
+   "entry_points":[
+    "G5check = GooseHDF5.cli.G5check:main",
+    "G5compare = GooseHDF5.cli.G5compare:main",
+    "G5list = GooseHDF5.cli.G5list:main",
+    "G5repair = GooseHDF5.cli.G5repair:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tdegeus"
+   ]
+  },
+  "package":{
+   "name":"goosehdf5",
+   "version":"0.8.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "docopt",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"92c3e8ef8c8a9f790b397dcb87e8b0f8537860e47cb19aa4ac1eeed446c890de",
+   "url":"https://github.com/tdegeus/GooseHDF5/archive/v0.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "G5check --help",
+    "G5compare --help",
+    "G5list --help",
+    "G5repair --help"
+   ],
+   "imports":[
+    "GooseHDF5"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "docopt",
+    "h5py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Simple tools to inspect HDF5 files (wraps around h5py).",
@@ -311,6 +396,91 @@
   "0.8.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Simple tools to inspect HDF5 files (wraps around h5py).",
+   "dev_url":"https://github.com/tdegeus/GooseHDF5",
+   "doc_url":"https://github.com/tdegeus/GooseHDF5",
+   "home":"https://github.com/tdegeus/GooseHDF5",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Simple tools to inspect HDF5 files (wraps around h5py)."
+  },
+  "build":{
+   "entry_points":[
+    "G5check = GooseHDF5.cli.G5check:main",
+    "G5compare = GooseHDF5.cli.G5compare:main",
+    "G5list = GooseHDF5.cli.G5list:main",
+    "G5repair = GooseHDF5.cli.G5repair:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tdegeus"
+   ]
+  },
+  "package":{
+   "name":"goosehdf5",
+   "version":"0.8.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "docopt",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"92c3e8ef8c8a9f790b397dcb87e8b0f8537860e47cb19aa4ac1eeed446c890de",
+   "url":"https://github.com/tdegeus/GooseHDF5/archive/v0.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "G5check --help",
+    "G5compare --help",
+    "G5list --help",
+    "G5repair --help"
+   ],
+   "imports":[
+    "GooseHDF5"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "docopt",
+    "h5py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"goosehdf5\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"92c3e8ef8c8a9f790b397dcb87e8b0f8537860e47cb19aa4ac1eeed446c890de\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tdegeus/GooseHDF5/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  entry_points:\n    - G5check = GooseHDF5.cli.G5check:main\n    - G5compare = GooseHDF5.cli.G5compare:main\n    - G5list = GooseHDF5.cli.G5list:main\n    - G5repair = GooseHDF5.cli.G5repair:main\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - setuptools\n  run:\n    - python >=3\n    - docopt\n    - h5py\n\ntest:\n  imports:\n    - GooseHDF5\n  commands:\n    - G5check --help\n    - G5compare --help\n    - G5list --help\n    - G5repair --help\n\nabout:\n  home: https://github.com/tdegeus/GooseHDF5\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Simple tools to inspect HDF5 files (wraps around h5py).\n  description: Simple tools to inspect HDF5 files (wraps around h5py).\n  doc_url: https://github.com/tdegeus/GooseHDF5\n  dev_url: https://github.com/tdegeus/GooseHDF5\n\nextra:\n  recipe-maintainers:\n    - tdegeus\n",
  "req":{
@@ -378,5 +548,90 @@
   }
  },
  "url":"https://github.com/tdegeus/GooseHDF5/archive/v0.1.2.tar.gz",
- "version":"0.8.0"
+ "version":"0.8.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Simple tools to inspect HDF5 files (wraps around h5py).",
+   "dev_url":"https://github.com/tdegeus/GooseHDF5",
+   "doc_url":"https://github.com/tdegeus/GooseHDF5",
+   "home":"https://github.com/tdegeus/GooseHDF5",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Simple tools to inspect HDF5 files (wraps around h5py)."
+  },
+  "build":{
+   "entry_points":[
+    "G5check = GooseHDF5.cli.G5check:main",
+    "G5compare = GooseHDF5.cli.G5compare:main",
+    "G5list = GooseHDF5.cli.G5list:main",
+    "G5repair = GooseHDF5.cli.G5repair:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tdegeus"
+   ]
+  },
+  "package":{
+   "name":"goosehdf5",
+   "version":"0.8.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python >=3",
+    "docopt",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"92c3e8ef8c8a9f790b397dcb87e8b0f8537860e47cb19aa4ac1eeed446c890de",
+   "url":"https://github.com/tdegeus/GooseHDF5/archive/v0.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "G5check --help",
+    "G5compare --help",
+    "G5list --help",
+    "G5repair --help"
+   ],
+   "imports":[
+    "GooseHDF5"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "docopt",
+    "h5py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

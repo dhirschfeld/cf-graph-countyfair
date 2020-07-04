@@ -83,6 +83,106 @@
  },
  "feedstock_name":"biom-format",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biocore/biom-format",
+   "home":"http://biom-format.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING.txt",
+   "summary":"Biological Observation Matrix (BIOM) format"
+  },
+  "build":{
+   "entry_points":[
+    "biom = biom.cli:cli"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors",
+    "wasade",
+    "nsoranzo",
+    "thermokarst"
+   ]
+  },
+  "package":{
+   "name":"biom-format",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "h5py"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "click",
+    "future >=0.16.0",
+    "pandas >=0.20.0",
+    "scipy >=1.3.1",
+    "six >=1.10.0",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"3711de5807e5b29d944cd2713a16f26b6148eefd5b831ccad6a10c06cbd42649",
+   "url":"https://pypi.io/packages/source/b/biom-format/biom-format-2.1.8-1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "biom --help"
+   ],
+   "imports":[
+    "biom",
+    "biom._filter",
+    "biom._transform",
+    "biom._subsample"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "h5py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "h5py",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/biocore/biom-format",
@@ -198,6 +298,106 @@
  },
  "name":"biom-format",
  "new_version":"2.1.8",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biocore/biom-format",
+   "home":"http://biom-format.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING.txt",
+   "summary":"Biological Observation Matrix (BIOM) format"
+  },
+  "build":{
+   "entry_points":[
+    "biom = biom.cli:cli"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors",
+    "wasade",
+    "nsoranzo",
+    "thermokarst"
+   ]
+  },
+  "package":{
+   "name":"biom-format",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "h5py"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "click",
+    "future >=0.16.0",
+    "pandas >=0.20.0",
+    "scipy >=1.3.1",
+    "six >=1.10.0",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"3711de5807e5b29d944cd2713a16f26b6148eefd5b831ccad6a10c06cbd42649",
+   "url":"https://pypi.io/packages/source/b/biom-format/biom-format-2.1.8-1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "biom --help"
+   ],
+   "imports":[
+    "biom",
+    "biom._filter",
+    "biom._transform",
+    "biom._subsample"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "h5py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "h5py",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.01.10",
  "raw_meta_yaml":"{% set name = \"biom-format\" %}\n{% set version = \"2.1.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}-1.tar.gz\n  sha256: 3711de5807e5b29d944cd2713a16f26b6148eefd5b831ccad6a10c06cbd42649\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  entry_points:\n    - biom = biom.cli:cli\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n    - h5py\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - click\n    - future >=0.16.0\n    - pandas >=0.20.0\n    - scipy >=1.3.1\n    - six >=1.10.0\n    - h5py\n\ntest:\n  imports:\n    - biom\n    - biom._filter\n    - biom._transform\n    - biom._subsample\n  commands:\n    - biom --help\n\nabout:\n  home: http://biom-format.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING.txt\n  summary: 'Biological Observation Matrix (BIOM) format'\n  dev_url: https://github.com/biocore/biom-format\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - wasade\n    - nsoranzo\n    - thermokarst\n",
  "req":{
@@ -289,5 +489,105 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/biom-format/biom-format-2.1.7.tar.gz",
- "version":"2.1.8"
+ "version":"2.1.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/biocore/biom-format",
+   "home":"http://biom-format.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"COPYING.txt",
+   "summary":"Biological Observation Matrix (BIOM) format"
+  },
+  "build":{
+   "entry_points":[
+    "biom = biom.cli:cli"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors",
+    "wasade",
+    "nsoranzo",
+    "thermokarst"
+   ]
+  },
+  "package":{
+   "name":"biom-format",
+   "version":"2.1.8"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "h5py"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "click",
+    "future >=0.16.0",
+    "pandas >=0.20.0",
+    "scipy >=1.3.1",
+    "six >=1.10.0",
+    "h5py"
+   ]
+  },
+  "source":{
+   "sha256":"3711de5807e5b29d944cd2713a16f26b6148eefd5b831ccad6a10c06cbd42649",
+   "url":"https://pypi.io/packages/source/b/biom-format/biom-format-2.1.8-1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "biom --help"
+   ],
+   "imports":[
+    "biom",
+    "biom._filter",
+    "biom._transform",
+    "biom._subsample"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "h5py",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "h5py",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -199,6 +199,226 @@
  },
  "feedstock_name":"llvmdev",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/llvm-mirror/llvm",
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for LLVM"
+  },
+  "build":{
+   "merge_build_host":false,
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham",
+    "mingwandroid",
+    "SylvainCorlay",
+    "isuruf",
+    "timsnyder"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"llvmdev",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "llvm-tools",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10",
+      "llvm-tools"
+     ]
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "$PREFIX/bin/llvm-config --libs",
+      "test -f $PREFIX/include/llvm/Pass.h",
+      "test -f $PREFIX/lib/libLLVMCore.a",
+      "$PREFIX/libexec/llvm/not false"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "libllvm10"
+     ]
+    },
+    "name":"libllvm10",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "zlib"
+     ],
+     "run":null
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libLLVM-10${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libllvm10"
+     ]
+    },
+    "name":"llvm",
+    "requirements":{
+     "build":null,
+     "host":[
+      "libllvm10",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10"
+     ],
+     "run_constrained":[
+      "llvmdev   10.0.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Hello World!\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"llvm-tools",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10"
+     ],
+     "run_constrained":[
+      "llvmdev   10.0.0"
+     ]
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "$PREFIX/bin/llc -version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "entry_points":[
+      "lit = lit:main"
+     ],
+     "noarch":"python",
+     "script":"python -m pip install utils/lit --no-deps -vv"
+    },
+    "name":"lit",
+    "requirements":{
+     "host":[
+      "python >=3",
+      "pip"
+     ],
+     "run":[
+      "python"
+     ]
+    },
+    "test":{
+     "imports":[
+      "lit"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"llvm-package",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "python    >=3",
+    "make"
+   ],
+   "host":[
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/intel-D47188-svml-VF.patch",
+    "patches/expect-fastmath-entrypoints-in-add-TLI-mappings.ll.patch",
+    "patches/numba-0001-Revert-Limit-size-of-non-GlobalValue-name.patch"
+   ],
+   "sha256":"df83a44b3a9a71029049ec101fb0077ecbbdf5fe41e395215025779099a98fdf",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libllvm10",
+    "llvm-tools",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libllvm10",
+    "llvm-tools",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/llvm-mirror/llvm",
@@ -687,6 +907,236 @@
  },
  "name":"llvm-package",
  "new_version":"10.0.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/llvm-mirror/llvm",
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for LLVM"
+  },
+  "build":{
+   "merge_build_host":false,
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham",
+    "mingwandroid",
+    "SylvainCorlay",
+    "isuruf",
+    "timsnyder"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"llvmdev",
+    "requirements":{
+     "build":[
+      "clang_bootstrap_osx-64",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "llvm-tools",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10",
+      "llvm-tools",
+      "libcxx >="
+     ]
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "$PREFIX/bin/llvm-config --libs",
+      "test -f $PREFIX/include/llvm/Pass.h",
+      "test -f $PREFIX/lib/libLLVMCore.a",
+      "$PREFIX/libexec/llvm/not false"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "libllvm10"
+     ]
+    },
+    "name":"libllvm10",
+    "requirements":{
+     "build":[
+      "clang_bootstrap_osx-64",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "libcxx >=",
+      "zlib"
+     ],
+     "run":[
+      "libcxx >="
+     ]
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libLLVM-10${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libllvm10"
+     ]
+    },
+    "name":"llvm",
+    "requirements":{
+     "build":null,
+     "host":[
+      "libllvm10",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10"
+     ],
+     "run_constrained":[
+      "llvmdev   10.0.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Hello World!\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true
+    },
+    "name":"llvm-tools",
+    "requirements":{
+     "build":[
+      "clang_bootstrap_osx-64",
+      "cmake",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10"
+     ],
+     "run_constrained":[
+      "llvmdev   10.0.0"
+     ]
+    },
+    "script":"install_llvm.sh",
+    "test":{
+     "commands":[
+      "$PREFIX/bin/llc -version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "entry_points":[
+      "lit = lit:main"
+     ],
+     "noarch":"python",
+     "script":"python -m pip install utils/lit --no-deps -vv",
+     "skip":true
+    },
+    "name":"lit",
+    "requirements":{
+     "host":[
+      "python >=3",
+      "pip"
+     ],
+     "run":[
+      "python"
+     ]
+    },
+    "test":{
+     "imports":[
+      "lit"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"llvm-package",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "clang_bootstrap_osx-64",
+    "cmake",
+    "python    >=3",
+    "make",
+    "libcxx"
+   ],
+   "host":[
+    "libcxx",
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/intel-D47188-svml-VF.patch",
+    "patches/expect-fastmath-entrypoints-in-add-TLI-mappings.ll.patch",
+    "patches/numba-0001-Revert-Limit-size-of-non-GlobalValue-name.patch"
+   ],
+   "sha256":"df83a44b3a9a71029049ec101fb0077ecbbdf5fe41e395215025779099a98fdf",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "clang_bootstrap_osx-64",
+    "cmake",
+    "libcxx",
+    "make",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libcxx",
+    "libllvm10",
+    "llvm-tools",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libcxx",
+    "libllvm10",
+    "llvm-tools",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "libllvm10",
   "lit",
@@ -795,5 +1245,216 @@
   }
  },
  "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz",
- "version":"10.0.0"
+ "version":"10.0.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/llvm-mirror/llvm",
+   "home":"http://llvm.org/",
+   "license":"Apache-2.0 WITH LLVM-exception",
+   "license_family":"Apache",
+   "license_file":"LICENSE.TXT",
+   "summary":"Development headers and libraries for LLVM"
+  },
+  "build":{
+   "merge_build_host":false,
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "inducer",
+    "jakirkham",
+    "mingwandroid",
+    "SylvainCorlay",
+    "isuruf",
+    "timsnyder"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "activate_in_script":true,
+     "skip":true
+    },
+    "name":"llvmdev",
+    "requirements":{
+     "build":[
+      "vs2017_",
+      "cmake",
+      "ninja",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "llvm-tools",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10",
+      "llvm-tools"
+     ]
+    },
+    "script":"install_llvm.bat",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_INC%\\\\llvm\\\\Pass.h exit 1",
+      "if not exist \"%LIBRARY_PREFIX%\"\\\\libexec\\llvm\\not.exe exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "skip":true
+    },
+    "name":"libllvm10",
+    "requirements":{
+     "build":[
+      "vs2017_"
+     ],
+     "host":[
+      "zlib"
+     ],
+     "run":null
+    },
+    "test":{
+     "commands":null
+    }
+   },
+   {
+    "build":{
+     "skip":true
+    },
+    "name":"llvm",
+    "requirements":{
+     "build":null,
+     "host":[
+      "zlib"
+     ]
+    },
+    "test":{
+     "commands":[
+      "echo \"Hello World!\""
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "skip":true
+    },
+    "name":"llvm-tools",
+    "requirements":{
+     "build":[
+      "vs2017_",
+      "cmake",
+      "ninja",
+      "python    >=3"
+     ],
+     "host":[
+      "libllvm10",
+      "zlib"
+     ],
+     "run":[
+      "libllvm10"
+     ],
+     "run_constrained":[
+      "llvmdev   10.0.0"
+     ]
+    },
+    "script":"install_llvm.bat",
+    "test":{
+     "commands":[
+      "if not exist \"%LIBRARY_BIN%\"\\\\llc.exe exit 1",
+      "llc -version"
+     ]
+    }
+   },
+   {
+    "build":{
+     "activate_in_script":true,
+     "entry_points":[
+      "lit = lit:main"
+     ],
+     "noarch":"python",
+     "script":"python -m pip install utils/lit --no-deps -vv",
+     "skip":true
+    },
+    "name":"lit",
+    "requirements":{
+     "host":[
+      "python >=3",
+      "pip"
+     ],
+     "run":[
+      "python"
+     ]
+    },
+    "test":{
+     "imports":[
+      "lit"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"llvm-package",
+   "version":"10.0.0"
+  },
+  "requirements":{
+   "build":[
+    "vs2017_",
+    "cmake",
+    "ninja",
+    "python    >=3",
+    "make"
+   ],
+   "host":[
+    "zlib"
+   ]
+  },
+  "source":{
+   "patches":[
+    "patches/intel-D47188-svml-VF.patch",
+    "patches/expect-fastmath-entrypoints-in-add-TLI-mappings.ll.patch",
+    "patches/numba-0001-Revert-Limit-size-of-non-GlobalValue-name.patch"
+   ],
+   "sha256":"df83a44b3a9a71029049ec101fb0077ecbbdf5fe41e395215025779099a98fdf",
+   "url":"https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/llvm-10.0.0.src.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "make",
+    "ninja",
+    "python",
+    "vs2017_"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libllvm10",
+    "llvm-tools",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libllvm10",
+    "llvm-tools",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

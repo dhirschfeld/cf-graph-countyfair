@@ -27,6 +27,93 @@
  },
  "feedstock_name":"gcs-oauth2-boto-plugin",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.org/project/gcs-oauth2-boto-plugin/",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Auth plugin allowing use the use of OAuth 2.0 credentials for Google Cloud Storage in the Boto library."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"gcs-oauth2-boto-plugin",
+   "version":"2.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "boto >=2.29.1",
+    "google-reauth >=0.1.0",
+    "httplib2 >=0.8",
+    "oauth2client >=2.2.0",
+    "pyopenssl >=0.13",
+    "python",
+    "retry_decorator >=1.0.0",
+    "six >=1.12.0",
+    "socksipy-branch =1.01"
+   ]
+  },
+  "source":{
+   "sha256":"79f539a8d3aa9445515dc275b123e6607c2f64531cb58bc19f2a2451c7944144",
+   "url":"https://pypi.io/packages/source/g/gcs-oauth2-boto-plugin/gcs-oauth2-boto-plugin-2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "gcs_oauth2_boto_plugin"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto",
+    "google-reauth",
+    "httplib2",
+    "oauth2client",
+    "pyopenssl",
+    "python",
+    "retry_decorator",
+    "six",
+    "socksipy-branch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://pypi.org/project/gcs-oauth2-boto-plugin/",
@@ -117,6 +204,93 @@
   "2.6":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.org/project/gcs-oauth2-boto-plugin/",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Auth plugin allowing use the use of OAuth 2.0 credentials for Google Cloud Storage in the Boto library."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"gcs-oauth2-boto-plugin",
+   "version":"2.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "boto >=2.29.1",
+    "google-reauth >=0.1.0",
+    "httplib2 >=0.8",
+    "oauth2client >=2.2.0",
+    "pyopenssl >=0.13",
+    "python",
+    "retry_decorator >=1.0.0",
+    "six >=1.12.0",
+    "socksipy-branch =1.01"
+   ]
+  },
+  "source":{
+   "sha256":"79f539a8d3aa9445515dc275b123e6607c2f64531cb58bc19f2a2451c7944144",
+   "url":"https://pypi.io/packages/source/g/gcs-oauth2-boto-plugin/gcs-oauth2-boto-plugin-2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "gcs_oauth2_boto_plugin"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto",
+    "google-reauth",
+    "httplib2",
+    "oauth2client",
+    "pyopenssl",
+    "python",
+    "retry_decorator",
+    "six",
+    "socksipy-branch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"gcs-oauth2-boto-plugin\" %}\n{% set version = \"2.6\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 79f539a8d3aa9445515dc275b123e6607c2f64531cb58bc19f2a2451c7944144\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - boto >=2.29.1\n    - google-reauth >=0.1.0\n    - httplib2 >=0.8\n    - oauth2client >=2.2.0\n    - pyopenssl >=0.13\n    - python\n    - retry_decorator >=1.0.0\n    - six >=1.12.0\n    - socksipy-branch =1.01\n\ntest:\n  imports:\n    - gcs_oauth2_boto_plugin\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/gcs-oauth2-boto-plugin/\n  summary: Auth plugin allowing use the use of OAuth 2.0 credentials for Google Cloud Storage in the Boto library.\n  license: Apache-2.0\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - xhochy\n",
  "req":{
@@ -203,5 +377,92 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/gcs-oauth2-boto-plugin/gcs-oauth2-boto-plugin-2.5.tar.gz",
- "version":"2.6"
+ "version":"2.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://pypi.org/project/gcs-oauth2-boto-plugin/",
+   "license":"Apache-2.0",
+   "license_file":"LICENSE",
+   "summary":"Auth plugin allowing use the use of OAuth 2.0 credentials for Google Cloud Storage in the Boto library."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "xhochy"
+   ]
+  },
+  "package":{
+   "name":"gcs-oauth2-boto-plugin",
+   "version":"2.6"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "boto >=2.29.1",
+    "google-reauth >=0.1.0",
+    "httplib2 >=0.8",
+    "oauth2client >=2.2.0",
+    "pyopenssl >=0.13",
+    "python",
+    "retry_decorator >=1.0.0",
+    "six >=1.12.0",
+    "socksipy-branch =1.01"
+   ]
+  },
+  "source":{
+   "sha256":"79f539a8d3aa9445515dc275b123e6607c2f64531cb58bc19f2a2451c7944144",
+   "url":"https://pypi.io/packages/source/g/gcs-oauth2-boto-plugin/gcs-oauth2-boto-plugin-2.6.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "gcs_oauth2_boto_plugin"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boto",
+    "google-reauth",
+    "httplib2",
+    "oauth2client",
+    "pyopenssl",
+    "python",
+    "retry_decorator",
+    "six",
+    "socksipy-branch"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

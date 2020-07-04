@@ -466,6 +466,88 @@
  },
  "feedstock_name":"ipyleaflet",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jupyter-widgets/ipyleaflet",
+   "doc_url":"http://ipyleaflet.readthedocs.io",
+   "home":"https://github.com/jupyter-widgets/ipyleaflet",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Jupyter widget for dynamic Leaflet maps"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "ellisonbg",
+    "jasongrout",
+    "martinRenou",
+    "davidbrochart"
+   ]
+  },
+  "package":{
+   "name":"ipyleaflet",
+   "version":"0.13.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "jupyter"
+   ],
+   "run":[
+    "python",
+    "ipywidgets >=7.5.0,<8.0.0",
+    "traittypes >=0.2.1,<0.3.0",
+    "branca >=0.3.1,<0.4.0"
+   ]
+  },
+  "source":{
+   "sha256":"7982a6be0baa2991b05cbc815c68bdba9904ddb178d26bc1fe5a5cf80090eb6d",
+   "url":"https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-0.13.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js",
+    "test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js",
+    "test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-0.13.1.tgz"
+   ],
+   "imports":[
+    "ipyleaflet"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "jupyter",
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "branca",
+    "ipywidgets",
+    "python",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jupyter-widgets/ipyleaflet",
@@ -563,6 +645,88 @@
   "0.13.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jupyter-widgets/ipyleaflet",
+   "doc_url":"http://ipyleaflet.readthedocs.io",
+   "home":"https://github.com/jupyter-widgets/ipyleaflet",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Jupyter widget for dynamic Leaflet maps"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "ellisonbg",
+    "jasongrout",
+    "martinRenou",
+    "davidbrochart"
+   ]
+  },
+  "package":{
+   "name":"ipyleaflet",
+   "version":"0.13.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "jupyter"
+   ],
+   "run":[
+    "python",
+    "ipywidgets >=7.5.0,<8.0.0",
+    "traittypes >=0.2.1,<0.3.0",
+    "branca >=0.3.1,<0.4.0"
+   ]
+  },
+  "source":{
+   "sha256":"7982a6be0baa2991b05cbc815c68bdba9904ddb178d26bc1fe5a5cf80090eb6d",
+   "url":"https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-0.13.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js",
+    "test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js",
+    "test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-0.13.1.tgz"
+   ],
+   "imports":[
+    "ipyleaflet"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "jupyter",
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "branca",
+    "ipywidgets",
+    "python",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"0.13.1\" %}\n{% set js_version = \"0.13.1\" %}\n{% set sha256 = \"7982a6be0baa2991b05cbc815c68bdba9904ddb178d26bc1fe5a5cf80090eb6d\" %}\n\npackage:\n  name: ipyleaflet\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n    - jupyter\n  run:\n    - python\n    - ipywidgets >=7.5.0,<8.0.0\n    - traittypes >=0.2.1,<0.3.0\n    - branca >=0.3.1,<0.4.0\n\ntest:\n  imports:\n    - ipyleaflet\n  commands:\n    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/extension.js                                     # [unix]\n    - test -f ${PREFIX}/share/jupyter/nbextensions/jupyter-leaflet/index.js                                         # [unix]\n    - test -f ${PREFIX}/share/jupyter/lab/extensions/jupyter-leaflet-{{ js_version }}.tgz                              # [unix]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\extension.js (exit 0) else (exit 1)         # [win]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\index.js (exit 0) else (exit 1)             # [win]\n    - if exist %PREFIX%\\\\share\\\\jupyter\\\\lab\\\\extensions\\\\jupyter-leaflet-{{ js_version }}.tgz (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/jupyter-widgets/ipyleaflet\n  license: MIT\n  license_file: LICENSE\n  summary: A Jupyter widget for dynamic Leaflet maps\n  doc_url: http://ipyleaflet.readthedocs.io\n  dev_url: https://github.com/jupyter-widgets/ipyleaflet\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - ellisonbg\n    - jasongrout\n    - martinRenou\n    - davidbrochart\n",
  "req":{
@@ -633,5 +797,87 @@
   }
  },
  "url":"https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-0.11.1.tar.gz",
- "version":"0.13.1"
+ "version":"0.13.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jupyter-widgets/ipyleaflet",
+   "doc_url":"http://ipyleaflet.readthedocs.io",
+   "home":"https://github.com/jupyter-widgets/ipyleaflet",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Jupyter widget for dynamic Leaflet maps"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "ellisonbg",
+    "jasongrout",
+    "martinRenou",
+    "davidbrochart"
+   ]
+  },
+  "package":{
+   "name":"ipyleaflet",
+   "version":"0.13.1"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip",
+    "jupyter"
+   ],
+   "run":[
+    "python",
+    "ipywidgets >=7.5.0,<8.0.0",
+    "traittypes >=0.2.1,<0.3.0",
+    "branca >=0.3.1,<0.4.0"
+   ]
+  },
+  "source":{
+   "sha256":"7982a6be0baa2991b05cbc815c68bdba9904ddb178d26bc1fe5a5cf80090eb6d",
+   "url":"https://pypi.io/packages/source/i/ipyleaflet/ipyleaflet-0.13.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\extension.js (exit 0) else (exit 1)",
+    "if exist %PREFIX%\\\\share\\\\jupyter\\\\nbextensions\\\\jupyter-leaflet\\\\index.js (exit 0) else (exit 1)",
+    "if exist %PREFIX%\\\\share\\\\jupyter\\\\lab\\\\extensions\\\\jupyter-leaflet-0.13.1.tgz (exit 0) else (exit 1)"
+   ],
+   "imports":[
+    "ipyleaflet"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "jupyter",
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "branca",
+    "ipywidgets",
+    "python",
+    "traittypes"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

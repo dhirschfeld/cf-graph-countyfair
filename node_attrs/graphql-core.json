@@ -190,6 +190,100 @@
  "conda-forge.yml":{},
  "feedstock_name":"graphql-core",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://graphql-core-3.readthedocs.io",
+   "home":"https://github.com/graphql-python/graphql-core",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python 3.6+ port of the GraphQL.js reference implementation of GraphQL."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -c '__import__(\"os\").unlink(\"pyproject.toml\")'",
+    "-m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "carlodri",
+    "bollwyvl",
+    "KingDarBoja"
+   ]
+  },
+  "package":{
+   "name":"graphql-core",
+   "version":"3.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"1fdc57d08f4492f06b21f3d487311e88fa8c33e0ac1e2d74ec79fb411ceba64a",
+   "url":"https://pypi.io/packages/source/g/graphql-core/graphql-core-3.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "python -c '__import__(\"os\").unlink(\"tests/test_docs.py\")'",
+    "pytest --cov graphql"
+   ],
+   "imports":[
+    "graphql"
+   ],
+   "requires":[
+    "pytest >=5.4.0,<6",
+    "pytest-asyncio >=0.10,<1",
+    "pytest-benchmark >=3.2,<4",
+    "pytest-cov >=2.8,<3",
+    "pytest-describe >=0.12,<1",
+    "pip"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-benchmark",
+    "pytest-cov",
+    "pytest-describe"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"https://graphql-core-3.readthedocs.io",
@@ -300,6 +394,100 @@
   "3.1.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://graphql-core-3.readthedocs.io",
+   "home":"https://github.com/graphql-python/graphql-core",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python 3.6+ port of the GraphQL.js reference implementation of GraphQL."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -c '__import__(\"os\").unlink(\"pyproject.toml\")'",
+    "-m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "carlodri",
+    "bollwyvl",
+    "KingDarBoja"
+   ]
+  },
+  "package":{
+   "name":"graphql-core",
+   "version":"3.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"1fdc57d08f4492f06b21f3d487311e88fa8c33e0ac1e2d74ec79fb411ceba64a",
+   "url":"https://pypi.io/packages/source/g/graphql-core/graphql-core-3.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "python -c '__import__(\"os\").unlink(\"tests/test_docs.py\")'",
+    "pytest --cov graphql"
+   ],
+   "imports":[
+    "graphql"
+   ],
+   "requires":[
+    "pytest >=5.4.0,<6",
+    "pytest-asyncio >=0.10,<1",
+    "pytest-benchmark >=3.2,<4",
+    "pytest-cov >=2.8,<3",
+    "pytest-describe >=0.12,<1",
+    "pip"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-benchmark",
+    "pytest-cov",
+    "pytest-describe"
+   ]
+  }
+ },
  "pinning_version":"2020.05.18.14.31.44",
  "raw_meta_yaml":"{% set name = \"graphql-core\" %}\n{% set version = \"3.1.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1fdc57d08f4492f06b21f3d487311e88fa8c33e0ac1e2d74ec79fb411ceba64a\n\nbuild:\n  noarch: python\n  number: 0\n  script:\n    - python -c '__import__(\"os\").unlink(\"pyproject.toml\")'\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n\ntest:\n  imports:\n    - graphql\n  source_files:\n    - tests\n  requires:\n    - pytest >=5.4.0,<6\n    - pytest-asyncio >=0.10,<1\n    - pytest-benchmark >=3.2,<4\n    - pytest-cov >=2.8,<3\n    - pytest-describe >=0.12,<1\n    - pip\n  commands:\n    - python -m pip check\n    - python -c '__import__(\"os\").unlink(\"tests/test_docs.py\")'\n    - pytest --cov graphql\n\nabout:\n  home: https://github.com/graphql-python/graphql-core\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python 3.6+ port of the GraphQL.js reference implementation of GraphQL.\n  doc_url: https://graphql-core-3.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - carlodri\n    - bollwyvl\n    - KingDarBoja\n",
  "req":{
@@ -372,5 +560,99 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/graphql-core/graphql-core-2.2.tar.gz",
- "version":"3.1.1"
+ "version":"3.1.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://graphql-core-3.readthedocs.io",
+   "home":"https://github.com/graphql-python/graphql-core",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python 3.6+ port of the GraphQL.js reference implementation of GraphQL."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -c '__import__(\"os\").unlink(\"pyproject.toml\")'",
+    "-m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "carlodri",
+    "bollwyvl",
+    "KingDarBoja"
+   ]
+  },
+  "package":{
+   "name":"graphql-core",
+   "version":"3.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"1fdc57d08f4492f06b21f3d487311e88fa8c33e0ac1e2d74ec79fb411ceba64a",
+   "url":"https://pypi.io/packages/source/g/graphql-core/graphql-core-3.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pip check",
+    "python -c '__import__(\"os\").unlink(\"tests/test_docs.py\")'",
+    "pytest --cov graphql"
+   ],
+   "imports":[
+    "graphql"
+   ],
+   "requires":[
+    "pytest >=5.4.0,<6",
+    "pytest-asyncio >=0.10,<1",
+    "pytest-benchmark >=3.2,<4",
+    "pytest-cov >=2.8,<3",
+    "pytest-describe >=0.12,<1",
+    "pip"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-benchmark",
+    "pytest-cov",
+    "pytest-describe"
+   ]
+  }
+ }
 }

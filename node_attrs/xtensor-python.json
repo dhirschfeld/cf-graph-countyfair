@@ -170,6 +170,97 @@
  },
  "feedstock_name":"xtensor-python",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-python",
+   "doc_url":"http://xtensor.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xtensor-python",
+   "version":"0.24.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "python",
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.2,<0.22",
+    "pybind11 >=2.4.3,<2.5",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "xtl",
+    "xtensor",
+    "pybind11",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-python-0.24.1.tar.gz",
+   "sha256":"e2e251721b9afd6f5229fec58be519179205b8d54bf0e2cd79aa97cacf0c9915",
+   "url":"https://github.com/QuantStack/xtensor-python/archive/0.24.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/xtensor-python",
+    "test -f ${PREFIX}/include/xtensor-python/pyarray.hpp",
+    "test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Multi dimensional arrays with broadcasting and lazy computing",
@@ -266,6 +357,97 @@
  },
  "name":"xtensor-python",
  "new_version":"0.24.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-python",
+   "doc_url":"http://xtensor.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xtensor-python",
+   "version":"0.24.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "python",
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.2,<0.22",
+    "pybind11 >=2.4.3,<2.5",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "xtl",
+    "xtensor",
+    "pybind11",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-python-0.24.1.tar.gz",
+   "sha256":"e2e251721b9afd6f5229fec58be519179205b8d54bf0e2cd79aa97cacf0c9915",
+   "url":"https://github.com/QuantStack/xtensor-python/archive/0.24.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/xtensor-python",
+    "test -f ${PREFIX}/include/xtensor-python/pyarray.hpp",
+    "test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"xtensor-python\" %}\n{% set version = \"0.24.1\" %}\n{% set sha256 = \"e2e251721b9afd6f5229fec58be519179205b8d54bf0e2cd79aa97cacf0c9915\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor-python/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - xtl >=0.6.9,<0.7\n    - xtensor >=0.21.2,<0.22\n    - pybind11 >=2.4.3,<2.5\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('xtl', max_pin='x.x') }}\n    - {{ pin_compatible('xtensor', max_pin='x.x') }}\n    - {{ pin_compatible('pybind11', max_pin='x.x') }}\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor-python  # [unix]\n    - test -f ${PREFIX}/include/xtensor-python/pyarray.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtensor-python/xtensor-pythonConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xtensor-python\\pyarray.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-pythonConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-pythonConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python bindings for xtensor, the C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor-python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
@@ -349,5 +531,96 @@
   }
  },
  "url":"https://github.com/QuantStack/xtensor-python/archive/0.23.1.tar.gz",
- "version":"0.24.1"
+ "version":"0.24.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url":"https://github.com/QuantStack/xtensor-python",
+   "doc_url":"http://xtensor.readthedocs.io",
+   "home":"http://quantstack.net/xtensor",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xtensor-python",
+   "version":"0.24.1"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake"
+   ],
+   "host":[
+    "python",
+    "xtl >=0.6.9,<0.7",
+    "xtensor >=0.21.2,<0.22",
+    "pybind11 >=2.4.3,<2.5",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "xtl",
+    "xtensor",
+    "pybind11",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"xtensor-python-0.24.1.tar.gz",
+   "sha256":"e2e251721b9afd6f5229fec58be519179205b8d54bf0e2cd79aa97cacf0c9915",
+   "url":"https://github.com/QuantStack/xtensor-python/archive/0.24.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\xtensor-python\\pyarray.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-pythonConfig.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtensor-pythonConfigVersion.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pybind11",
+    "python",
+    "xtensor",
+    "xtl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

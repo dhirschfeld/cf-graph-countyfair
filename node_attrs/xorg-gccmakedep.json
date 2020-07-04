@@ -42,6 +42,71 @@
  },
  "feedstock_name":"xorg-gccmakedep",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 gccmakedep utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-gccmakedep",
+   "version":"1.0.3"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "xorg-util-macros"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"gccmakedep-1.0.3.tar.bz2",
+   "sha256":"b275dcf1f7323ed89e8b36f8fbd5da665d8700005f1779fa5b90a1688bbf2ee4",
+   "url":"https://www.x.org/releases/individual/util/gccmakedep-1.0.3.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-util-macros"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.x.org/",
@@ -98,6 +163,72 @@
  },
  "name":"xorg-gccmakedep",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 gccmakedep utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-gccmakedep",
+   "version":"1.0.3"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "xorg-util-macros"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"gccmakedep-1.0.3.tar.bz2",
+   "sha256":"b275dcf1f7323ed89e8b36f8fbd5da665d8700005f1779fa5b90a1688bbf2ee4",
+   "url":"https://www.x.org/releases/individual/util/gccmakedep-1.0.3.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-util-macros"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.09.11",
  "raw_meta_yaml":"{% set xorg_name = \"gccmakedep\" %}\n{% set xorg_category = \"util\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.0.3\" %}\n{% set sha256 = \"b275dcf1f7323ed89e8b36f8fbd5da665d8700005f1779fa5b90a1688bbf2ee4\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ xorg_name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - xorg-util-macros\n  run:\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org incarnation of the X11 gccmakedep utility.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "req":{
@@ -175,5 +306,76 @@
   }
  },
  "url":"https://www.x.org/releases/individual/util/gccmakedep-1.0.3.tar.bz2",
- "version":"1.0.3"
+ "version":"1.0.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.x.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"The X.org incarnation of the X11 gccmakedep utility."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"xorg-gccmakedep",
+   "version":"1.0.3"
+  },
+  "requirements":{
+   "build":[
+    "m2-autoconf",
+    "m2-automake1.15",
+    "m2-libtool",
+    "m2w64-pkg-config",
+    "posix",
+    "m2w64_c_compiler_stub"
+   ],
+   "host":[
+    "xorg-util-macros"
+   ],
+   "run":null
+  },
+  "source":{
+   "fn":"gccmakedep-1.0.3.tar.bz2",
+   "sha256":"b275dcf1f7323ed89e8b36f8fbd5da665d8700005f1779fa5b90a1688bbf2ee4",
+   "url":"https://www.x.org/releases/individual/util/gccmakedep-1.0.3.tar.bz2"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2-autoconf",
+    "m2-automake1.15",
+    "m2-libtool",
+    "m2w64-pkg-config",
+    "m2w64_c_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "xorg-util-macros"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

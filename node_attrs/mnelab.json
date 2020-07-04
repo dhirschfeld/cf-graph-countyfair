@@ -216,6 +216,96 @@
  },
  "feedstock_name":"mnelab",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cbrnr/mnelab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis."
+  },
+  "build":{
+   "entry_points":[
+    "mnelab = mnelab.__main__:main"
+   ],
+   "number":"0",
+   "osx_is_app":true,
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hoechenberger"
+   ]
+  },
+  "package":{
+   "name":"mnelab",
+   "version":"0.5.6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "matplotlib-base >=2.1",
+    "mne >=0.20",
+    "numpy >=1.14.0",
+    "pebble >=4.5.0",
+    "pybv",
+    "pyedflib",
+    "python-picard",
+    "pyxdf",
+    "scikit-learn",
+    "scipy >=1.0.0",
+    "qtpy >=1.9.0"
+   ]
+  },
+  "source":{
+   "sha256":"8d6024b1114cf20d696704661ffc7e300f1958ee58cec359e5f0c8609c209a8b",
+   "url":"https://pypi.io/packages/source/m/mnelab/mnelab-0.5.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mnelab",
+    "mnelab.utils"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "mne",
+    "numpy",
+    "pebble",
+    "pybv",
+    "pyedflib",
+    "python",
+    "python-picard",
+    "pyxdf",
+    "qtpy",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/cbrnr/mnelab",
@@ -317,6 +407,100 @@
   "0.5.6":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cbrnr/mnelab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis."
+  },
+  "build":{
+   "entry_points":[
+    "mnelab = mnelab.__main__:main"
+   ],
+   "number":"0",
+   "osx_is_app":true,
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hoechenberger"
+   ]
+  },
+  "package":{
+   "name":"mnelab",
+   "version":"0.5.6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "python.app",
+    "pyobjc-framework-cocoa >=5.2.0",
+    "matplotlib-base >=2.1",
+    "mne >=0.20",
+    "numpy >=1.14.0",
+    "pebble >=4.5.0",
+    "pybv",
+    "pyedflib",
+    "python-picard",
+    "pyxdf",
+    "scikit-learn",
+    "scipy >=1.0.0",
+    "qtpy >=1.9.0"
+   ]
+  },
+  "source":{
+   "sha256":"8d6024b1114cf20d696704661ffc7e300f1958ee58cec359e5f0c8609c209a8b",
+   "url":"https://pypi.io/packages/source/m/mnelab/mnelab-0.5.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mnelab",
+    "mnelab.utils"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "mne",
+    "numpy",
+    "pebble",
+    "pybv",
+    "pyedflib",
+    "pyobjc-framework-cocoa",
+    "python",
+    "python-picard",
+    "python.app",
+    "pyxdf",
+    "qtpy",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.12.09.54.30",
  "raw_meta_yaml":"{% set name = \"mnelab\" %}\n{% set version = \"0.5.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8d6024b1114cf20d696704661ffc7e300f1958ee58cec359e5f0c8609c209a8b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - mnelab = mnelab.__main__:main\n  osx_is_app: true\n  skip: true  # [py<36]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python.app                      # [osx]\n    - pyobjc-framework-cocoa >=5.2.0  # [osx]\n    - matplotlib-base >=2.1\n    - mne >=0.20\n    - numpy >=1.14.0\n    - pebble >=4.5.0\n    - pybv\n    - pyedflib\n    - python-picard\n    - pyxdf\n    - scikit-learn\n    - scipy >=1.0.0\n    - qtpy >=1.9.0\n\ntest:\n  imports:\n    - mnelab\n    - mnelab.utils\n\nabout:\n  home: https://github.com/cbrnr/mnelab\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis.\n\nextra:\n  recipe-maintainers:\n    - hoechenberger\n",
  "req":{
@@ -414,5 +598,95 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/mnelab/mnelab-0.4.0.tar.gz",
- "version":"0.5.6"
+ "version":"0.5.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/cbrnr/mnelab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis."
+  },
+  "build":{
+   "entry_points":[
+    "mnelab = mnelab.__main__:main"
+   ],
+   "number":"0",
+   "osx_is_app":true,
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hoechenberger"
+   ]
+  },
+  "package":{
+   "name":"mnelab",
+   "version":"0.5.6"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "matplotlib-base >=2.1",
+    "mne >=0.20",
+    "numpy >=1.14.0",
+    "pebble >=4.5.0",
+    "pybv",
+    "pyedflib",
+    "python-picard",
+    "pyxdf",
+    "scikit-learn",
+    "scipy >=1.0.0",
+    "qtpy >=1.9.0"
+   ]
+  },
+  "source":{
+   "sha256":"8d6024b1114cf20d696704661ffc7e300f1958ee58cec359e5f0c8609c209a8b",
+   "url":"https://pypi.io/packages/source/m/mnelab/mnelab-0.5.6.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mnelab",
+    "mnelab.utils"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "mne",
+    "numpy",
+    "pebble",
+    "pybv",
+    "pyedflib",
+    "python",
+    "python-picard",
+    "pyxdf",
+    "qtpy",
+    "scikit-learn",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

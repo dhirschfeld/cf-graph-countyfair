@@ -127,6 +127,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyedflib",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/holgern/pyedflib",
+   "doc_url":"http://pyedflib.readthedocs.io/",
+   "home":"https://github.com/holgern/pyedflib",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library to read/write EDF+/BDF+ files based on EDFlib."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pyedflib",
+   "version":"0.1.18"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "numpy",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyEDFlib-0.1.18.tar.gz",
+   "sha256":"63a14d025ccf2296891ffe8e64d74021bd9d4443392395e7961be549df467a57",
+   "url":"https://pypi.io/packages/source/p/pyEDFlib/pyEDFlib-0.1.18.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX pyedflib"
+   ],
+   "imports":[
+    "pyedflib"
+   ],
+   "requires":[
+    "nose"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/holgern/pyedflib",
@@ -208,6 +293,92 @@
   "0.1.18":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/holgern/pyedflib",
+   "doc_url":"http://pyedflib.readthedocs.io/",
+   "home":"https://github.com/holgern/pyedflib",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library to read/write EDF+/BDF+ files based on EDFlib."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pyedflib",
+   "version":"0.1.18"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "numpy",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyEDFlib-0.1.18.tar.gz",
+   "sha256":"63a14d025ccf2296891ffe8e64d74021bd9d4443392395e7961be549df467a57",
+   "url":"https://pypi.io/packages/source/p/pyEDFlib/pyEDFlib-0.1.18.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX pyedflib",
+    "conda inspect objects -p $PREFIX pyedflib"
+   ],
+   "imports":[
+    "pyedflib"
+   ],
+   "requires":[
+    "nose"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose"
+   ]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"pyEDFlib\" %}\n{% set version = \"0.1.18\" %}\n{% set sha256 = \"63a14d025ccf2296891ffe8e64d74021bd9d4443392395e7961be549df467a57\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - cython\n    - numpy\n    - setuptools\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - nose\n  imports:\n    - pyedflib\n  commands:\n    - conda inspect linkages -p $PREFIX pyedflib  # [not win]\n    - conda inspect objects -p $PREFIX pyedflib   # [osx]\n\nabout:\n  home: https://github.com/holgern/pyedflib\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  dev_url: https://github.com/holgern/pyedflib\n  doc_url: http://pyedflib.readthedocs.io/\n  summary: Library to read/write EDF+/BDF+ files based on EDFlib.\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "req":{
@@ -283,5 +454,88 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyEDFlib/pyEDFlib-0.1.14.tar.gz",
- "version":"0.1.18"
+ "version":"0.1.18",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/holgern/pyedflib",
+   "doc_url":"http://pyedflib.readthedocs.io/",
+   "home":"https://github.com/holgern/pyedflib",
+   "license":"BSD-2-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library to read/write EDF+/BDF+ files based on EDFlib."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pyedflib",
+   "version":"0.1.18"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "numpy",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pyEDFlib-0.1.18.tar.gz",
+   "sha256":"63a14d025ccf2296891ffe8e64d74021bd9d4443392395e7961be549df467a57",
+   "url":"https://pypi.io/packages/source/p/pyEDFlib/pyEDFlib-0.1.18.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "pyedflib"
+   ],
+   "requires":[
+    "nose"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose"
+   ]
+  }
+ }
 }

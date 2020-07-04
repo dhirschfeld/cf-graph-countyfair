@@ -128,6 +128,89 @@
  },
  "feedstock_name":"r-data.tree",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tidyverse/data.tree",
+   "license":"GPL-2.0-or-later",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Create tree structures from hierarchical data, and traverse the tree in various orders. Aggregate, cumulate, print, plot, convert to and from data.frame and more. Useful for decision trees, machine learning, finance, conversion from and to JSON, and many other applications."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-data.tree",
+   "version":"0.7.11"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ],
+   "run":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "source":{
+   "fn":"data.tree_0.7.11.tar.gz",
+   "sha256":"b8b57f9376c2d447f4a55001a780bd8f7d65d3d0b8809e313f876331c73da2d6",
+   "url":[
+    "https://cran.r-project.org/src/contrib/data.tree_0.7.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/data.tree/data.tree_0.7.11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('data.tree')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/tidyverse/data.tree",
@@ -215,6 +298,89 @@
  },
  "name":"r-data.tree",
  "new_version":"0.7.11",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tidyverse/data.tree",
+   "license":"GPL-2.0-or-later",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Create tree structures from hierarchical data, and traverse the tree in various orders. Aggregate, cumulate, print, plot, convert to and from data.frame and more. Useful for decision trees, machine learning, finance, conversion from and to JSON, and many other applications."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-data.tree",
+   "version":"0.7.11"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ],
+   "run":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "source":{
+   "fn":"data.tree_0.7.11.tar.gz",
+   "sha256":"b8b57f9376c2d447f4a55001a780bd8f7d65d3d0b8809e313f876331c73da2d6",
+   "url":[
+    "https://cran.r-project.org/src/contrib/data.tree_0.7.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/data.tree/data.tree_0.7.11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('data.tree')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.19.59.17",
  "raw_meta_yaml":"{% set version = \"0.7.11\" %}\n\npackage:\n  name: r-data.tree\n  version: {{ version }}\n\nsource:\n  fn: data.tree_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/data.tree_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/data.tree/data.tree_{{ version }}.tar.gz\n  sha256: b8b57f9376c2d447f4a55001a780bd8f7d65d3d0b8809e313f876331c73da2d6\n\nbuild:\n  noarch: generic\n  number: 1\n  # slipping Windows b/c we are missing: r-diagrammer -> r-igraph\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  host:\n    - r-base\n    - r-diagrammer >=1.0.0\n    - r-r6\n    - r-stringr\n  run:\n    - r-base\n    - r-diagrammer >=1.0.0\n    - r-r6\n    - r-stringr\n\ntest:\n  commands:\n    - $R -e \"library('data.tree')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('data.tree')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/tidyverse/data.tree\n  license: GPL-2.0-or-later\n  summary: Create tree structures from hierarchical data, and traverse the tree in various orders. Aggregate, cumulate, print, plot, convert to and from data.frame and more. Useful for decision trees, machine learning, finance, conversion from and to JSON, and many other applications.\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
@@ -292,5 +458,88 @@
   "https://cran.r-project.org/src/contrib/data.tree_0.7.8.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/data.tree/data.tree_0.7.8.tar.gz"
  ],
- "version":"0.7.11"
+ "version":"0.7.11",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/tidyverse/data.tree",
+   "license":"GPL-2.0-or-later",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Create tree structures from hierarchical data, and traverse the tree in various orders. Aggregate, cumulate, print, plot, convert to and from data.frame and more. Useful for decision trees, machine learning, finance, conversion from and to JSON, and many other applications."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script":"R CMD INSTALL --build ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"r-data.tree",
+   "version":"0.7.11"
+  },
+  "requirements":{
+   "host":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ],
+   "run":[
+    "r-base",
+    "r-diagrammer >=1.0.0",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "source":{
+   "fn":"data.tree_0.7.11.tar.gz",
+   "sha256":"b8b57f9376c2d447f4a55001a780bd8f7d65d3d0b8809e313f876331c73da2d6",
+   "url":[
+    "https://cran.r-project.org/src/contrib/data.tree_0.7.11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/data.tree/data.tree_0.7.11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('data.tree')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-diagrammer",
+    "r-r6",
+    "r-stringr"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

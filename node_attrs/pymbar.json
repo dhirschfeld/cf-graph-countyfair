@@ -95,6 +95,100 @@
  },
  "feedstock_name":"pymbar",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/choderalab/pymbar",
+   "doc_url":"http://pymbar.readthedocs.io/",
+   "home":"http://github.com/choderalab/pymbar",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Lnaden",
+    "jchodera",
+    "mrshirts"
+   ]
+  },
+  "package":{
+   "name":"pymbar",
+   "version":"3.0.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "six"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy >=1.0.0",
+    "six",
+    "numexpr"
+   ]
+  },
+  "source":{
+   "fn":"pymbar-3.0.5.tar.gz",
+   "sha256":"a9bdfa37083757fe6ad83211a87aa18d51c04f8d87609752b86165a6e9730b98",
+   "url":"https://github.com/choderalab/pymbar/archive/3.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nosetests pymbar --with-doctest --doctest-tests -v -I covariance"
+   ],
+   "imports":[
+    "pymbar"
+   ],
+   "requires":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numexpr",
+    "numpy",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"http://github.com/choderalab/pymbar",
@@ -191,6 +285,100 @@
  },
  "name":"pymbar",
  "new_version":"3.0.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/choderalab/pymbar",
+   "doc_url":"http://pymbar.readthedocs.io/",
+   "home":"http://github.com/choderalab/pymbar",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Lnaden",
+    "jchodera",
+    "mrshirts"
+   ]
+  },
+  "package":{
+   "name":"pymbar",
+   "version":"3.0.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "six"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy >=1.0.0",
+    "six",
+    "numexpr"
+   ]
+  },
+  "source":{
+   "fn":"pymbar-3.0.5.tar.gz",
+   "sha256":"a9bdfa37083757fe6ad83211a87aa18d51c04f8d87609752b86165a6e9730b98",
+   "url":"https://github.com/choderalab/pymbar/archive/3.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nosetests pymbar --with-doctest --doctest-tests -v -I covariance"
+   ],
+   "imports":[
+    "pymbar"
+   ],
+   "requires":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numexpr",
+    "numpy",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ },
  "pinning_version":"2019.11.26",
  "raw_meta_yaml":"{% set name = \"pymbar\" %}\n{% set version = \"3.0.5\" %}\n{% set sha256 = \"a9bdfa37083757fe6ad83211a87aa18d51c04f8d87609752b86165a6e9730b98\" %}\n\npackage:\n  name: {{ name  }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name}}-{{ version }}.tar.gz\n  url: https://github.com/choderalab/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n    - six\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy >=1.0.0\n    - six\n    - numexpr\n\ntest:\n  requires:\n    - nose\n    - statsmodels\n  imports:\n    - pymbar\n  commands:\n    - nosetests pymbar --with-doctest --doctest-tests -v -I covariance\n\nabout:\n  home: http://github.com/choderalab/pymbar\n  dev_url: http://github.com/choderalab/pymbar\n  doc_url: http://pymbar.readthedocs.io/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Python implementation of the multistate Bennett acceptance ratio (MBAR) method.'\n\nextra:\n  recipe-maintainers:\n    - Lnaden\n    - jchodera\n    - mrshirts\n",
  "req":{
@@ -276,5 +464,99 @@
   }
  },
  "url":"https://github.com/choderalab/pymbar/archive/3.0.3.tar.gz",
- "version":"3.0.5"
+ "version":"3.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"http://github.com/choderalab/pymbar",
+   "doc_url":"http://pymbar.readthedocs.io/",
+   "home":"http://github.com/choderalab/pymbar",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Python implementation of the multistate Bennett acceptance ratio (MBAR) method."
+  },
+  "build":{
+   "number":"0",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "Lnaden",
+    "jchodera",
+    "mrshirts"
+   ]
+  },
+  "package":{
+   "name":"pymbar",
+   "version":"3.0.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "numpy",
+    "six"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy >=1.0.0",
+    "six",
+    "numexpr"
+   ]
+  },
+  "source":{
+   "fn":"pymbar-3.0.5.tar.gz",
+   "sha256":"a9bdfa37083757fe6ad83211a87aa18d51c04f8d87609752b86165a6e9730b98",
+   "url":"https://github.com/choderalab/pymbar/archive/3.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "nosetests pymbar --with-doctest --doctest-tests -v -I covariance"
+   ],
+   "imports":[
+    "pymbar"
+   ],
+   "requires":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "setuptools",
+    "six"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numexpr",
+    "numpy",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "statsmodels"
+   ]
+  }
+ }
 }

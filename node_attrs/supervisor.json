@@ -211,6 +211,93 @@
  "conda-forge.yml":{},
  "feedstock_name":"supervisor",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Supervisor is a client/server system that allows its users to monitor and\ncontrol a number of processes on UNIX-like operating systems.\n",
+   "dev_url":"https://github.com/Supervisor/supervisor",
+   "doc_source_url":"https://github.com/Supervisor/supervisor",
+   "doc_url":"http://supervisord.org/",
+   "home":"http://supervisord.org/",
+   "license":"BSD-derived",
+   "license_family":"BSD",
+   "license_file":"LICENSES.txt",
+   "summary":"A Process Control System"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalefranz",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"supervisor",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "gettext",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"64082ebedf6d36ff409ab2878f1aad5c9035f916c5f15a9a1ec7dffc6dfbbed8",
+   "url":"https://pypi.io/packages/source/s/supervisor/supervisor-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "py.test supervisor/tests/",
+    "supervisord -h",
+    "supervisorctl -h",
+    "echo_supervisord_conf -h"
+   ],
+   "imports":[
+    "supervisor"
+   ],
+   "requires":[
+    "pytest >=2.5.2",
+    "mock >=0.5.0"
+   ],
+   "source_files":[
+    "supervisor/tests/"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Supervisor is a client/server system that allows its users to monitor and\ncontrol a number of processes on UNIX-like operating systems.\n",
@@ -307,6 +394,93 @@
   "4.2.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Supervisor is a client/server system that allows its users to monitor and\ncontrol a number of processes on UNIX-like operating systems.\n",
+   "dev_url":"https://github.com/Supervisor/supervisor",
+   "doc_source_url":"https://github.com/Supervisor/supervisor",
+   "doc_url":"http://supervisord.org/",
+   "home":"http://supervisord.org/",
+   "license":"BSD-derived",
+   "license_family":"BSD",
+   "license_file":"LICENSES.txt",
+   "summary":"A Process Control System"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalefranz",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"supervisor",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "gettext",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"64082ebedf6d36ff409ab2878f1aad5c9035f916c5f15a9a1ec7dffc6dfbbed8",
+   "url":"https://pypi.io/packages/source/s/supervisor/supervisor-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "py.test supervisor/tests/",
+    "supervisord -h",
+    "supervisorctl -h",
+    "echo_supervisord_conf -h"
+   ],
+   "imports":[
+    "supervisor"
+   ],
+   "requires":[
+    "pytest >=2.5.2",
+    "mock >=0.5.0"
+   ],
+   "source_files":[
+    "supervisor/tests/"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "pytest"
+   ]
+  }
+ },
  "pinning_version":"2020.04.30.15.41.11",
  "raw_meta_yaml":"{% set name = \"supervisor\" %}\n{% set version = \"4.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 64082ebedf6d36ff409ab2878f1aad5c9035f916c5f15a9a1ec7dffc6dfbbed8\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  host:\n    - gettext\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  requires:\n    - pytest >=2.5.2\n    - mock >=0.5.0\n  source_files:\n    - supervisor/tests/\n  commands:\n    - py.test supervisor/tests/\n    - supervisord -h\n    - supervisorctl -h\n    - echo_supervisord_conf -h\n  imports:\n    - supervisor\n\nabout:\n  home: http://supervisord.org/\n  license: BSD-derived\n  license_file: LICENSES.txt\n  license_family: BSD\n  summary: A Process Control System\n  description: |\n    Supervisor is a client/server system that allows its users to monitor and\n    control a number of processes on UNIX-like operating systems.\n  doc_url: http://supervisord.org/\n  doc_source_url: https://github.com/Supervisor/supervisor\n  dev_url: https://github.com/Supervisor/supervisor\n\nextra:\n  recipe-maintainers:\n    - kalefranz\n    - sodre\n",
  "req":{
@@ -376,5 +550,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/supervisor/supervisor-4.0.4.tar.gz",
- "version":"4.2.0"
+ "version":"4.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Supervisor is a client/server system that allows its users to monitor and\ncontrol a number of processes on UNIX-like operating systems.\n",
+   "dev_url":"https://github.com/Supervisor/supervisor",
+   "doc_source_url":"https://github.com/Supervisor/supervisor",
+   "doc_url":"http://supervisord.org/",
+   "home":"http://supervisord.org/",
+   "license":"BSD-derived",
+   "license_family":"BSD",
+   "license_file":"LICENSES.txt",
+   "summary":"A Process Control System"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalefranz",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"supervisor",
+   "version":"4.2.0"
+  },
+  "requirements":{
+   "host":[
+    "gettext",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "sha256":"64082ebedf6d36ff409ab2878f1aad5c9035f916c5f15a9a1ec7dffc6dfbbed8",
+   "url":"https://pypi.io/packages/source/s/supervisor/supervisor-4.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "py.test supervisor/tests/",
+    "supervisord -h",
+    "supervisorctl -h",
+    "echo_supervisord_conf -h"
+   ],
+   "imports":[
+    "supervisor"
+   ],
+   "requires":[
+    "pytest >=2.5.2",
+    "mock >=0.5.0"
+   ],
+   "source_files":[
+    "supervisor/tests/"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "pytest"
+   ]
+  }
+ }
 }

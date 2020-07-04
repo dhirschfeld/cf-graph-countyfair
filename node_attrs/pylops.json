@@ -134,6 +134,99 @@
  },
  "feedstock_name":"pylops",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Python library implementing linear operators to allow solving large-scale optimization\nproblems without requiring to explicitly create a dense (or sparse) matrix.\n",
+   "dev_url":"https://github.com/equinor/pylops",
+   "doc_url":"https://pylops.readthedocs.io",
+   "home":"https://github.com/equinor/pylops",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"PyLops \u2013 A Linear-Operator Library for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen",
+    "mrava87"
+   ]
+  },
+  "package":{
+   "name":"pylops",
+   "version":"1.9.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "llvmlite",
+    "numba",
+    "pyfftw",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"121d3456047015c0d193328048099c13423802aa665593e1002c80813f04a379",
+   "url":"https://pypi.io/packages/source/p/pylops/pylops-1.9.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "pylops"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "llvmlite",
+    "numba",
+    "pip",
+    "pyfftw",
+    "python",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Python library implementing linear operators to allow solving large-scale optimization\nproblems without requiring to explicitly create a dense (or sparse) matrix.\n",
@@ -234,6 +327,99 @@
   "1.9.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Python library implementing linear operators to allow solving large-scale optimization\nproblems without requiring to explicitly create a dense (or sparse) matrix.\n",
+   "dev_url":"https://github.com/equinor/pylops",
+   "doc_url":"https://pylops.readthedocs.io",
+   "home":"https://github.com/equinor/pylops",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"PyLops \u2013 A Linear-Operator Library for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen",
+    "mrava87"
+   ]
+  },
+  "package":{
+   "name":"pylops",
+   "version":"1.9.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "llvmlite",
+    "numba",
+    "pyfftw",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"121d3456047015c0d193328048099c13423802aa665593e1002c80813f04a379",
+   "url":"https://pypi.io/packages/source/p/pylops/pylops-1.9.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "pylops"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "llvmlite",
+    "numba",
+    "pip",
+    "pyfftw",
+    "python",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"pylops\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 121d3456047015c0d193328048099c13423802aa665593e1002c80813f04a379\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools_scm\n    - pytest-runner\n  run:\n    - python\n    - pip\n    - llvmlite\n    - numba\n    - pyfftw\n    - pywavelets\n    - scikit-fmm\n    - scipy\n\ntest:\n  imports:\n    - pylops\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/equinor/pylops\n  license: LGPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: PyLops \u2013 A Linear-Operator Library for Python\n  description: |\n    Python library implementing linear operators to allow solving large-scale optimization\n    problems without requiring to explicitly create a dense (or sparse) matrix.\n  doc_url: https://pylops.readthedocs.io\n  dev_url: https://github.com/equinor/pylops\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - mrava87\n",
  "req":{
@@ -323,5 +509,98 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pylops/pylops-1.6.0.tar.gz",
- "version":"1.9.1"
+ "version":"1.9.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Python library implementing linear operators to allow solving large-scale optimization\nproblems without requiring to explicitly create a dense (or sparse) matrix.\n",
+   "dev_url":"https://github.com/equinor/pylops",
+   "doc_url":"https://pylops.readthedocs.io",
+   "home":"https://github.com/equinor/pylops",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"PyLops \u2013 A Linear-Operator Library for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jan-janssen",
+    "mrava87"
+   ]
+  },
+  "package":{
+   "name":"pylops",
+   "version":"1.9.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools_scm",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "pip",
+    "llvmlite",
+    "numba",
+    "pyfftw",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "source":{
+   "sha256":"121d3456047015c0d193328048099c13423802aa665593e1002c80813f04a379",
+   "url":"https://pypi.io/packages/source/p/pylops/pylops-1.9.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "pylops"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "llvmlite",
+    "numba",
+    "pip",
+    "pyfftw",
+    "python",
+    "pywavelets",
+    "scikit-fmm",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

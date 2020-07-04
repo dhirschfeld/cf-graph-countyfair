@@ -111,6 +111,88 @@
  },
  "feedstock_name":"deepgraph",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"DeepGraph is a scalable, general-purpose data analysis package. It\nimplements a network representation based on pandas DataFrames and\nprovides methods to construct, partition and plot graphs, to interface\nwith popular network packages and more.\n",
+   "doc_url":"https://deepgraph.readthedocs.io/",
+   "home":"https://github.com/deepgraph/deepgraph",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Analyze Data with Pandas-based Networks."
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "cythonize deepgraph/*.pyx",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dominiktraxl"
+   ]
+  },
+  "package":{
+   "name":"deepgraph",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "cython",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pandas"
+   ]
+  },
+  "source":{
+   "fn":"DeepGraph-0.2.2.tar.gz",
+   "sha256":"7047e429dd5cc6e73b8d8f45d2ac615b35b04cd0c9ebd21bee198bea10a3fd46",
+   "url":"https://pypi.io/packages/source/D/DeepGraph/DeepGraph-0.2.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "deepgraph"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"DeepGraph is a scalable, general-purpose data analysis package. It\nimplements a network representation based on pandas DataFrames and\nprovides methods to construct, partition and plot graphs, to interface\nwith popular network packages and more.\n",
@@ -190,6 +272,88 @@
  },
  "name":"deepgraph",
  "new_version":"0.2.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"DeepGraph is a scalable, general-purpose data analysis package. It\nimplements a network representation based on pandas DataFrames and\nprovides methods to construct, partition and plot graphs, to interface\nwith popular network packages and more.\n",
+   "doc_url":"https://deepgraph.readthedocs.io/",
+   "home":"https://github.com/deepgraph/deepgraph",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Analyze Data with Pandas-based Networks."
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "cythonize deepgraph/*.pyx",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dominiktraxl"
+   ]
+  },
+  "package":{
+   "name":"deepgraph",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "cython",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pandas"
+   ]
+  },
+  "source":{
+   "fn":"DeepGraph-0.2.2.tar.gz",
+   "sha256":"7047e429dd5cc6e73b8d8f45d2ac615b35b04cd0c9ebd21bee198bea10a3fd46",
+   "url":"https://pypi.io/packages/source/D/DeepGraph/DeepGraph-0.2.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "deepgraph"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.17.01.00.32",
  "raw_meta_yaml":"{% set name = \"DeepGraph\" %}\n{% set version = \"0.2.2\" %}\n{% set sha256 = \"7047e429dd5cc6e73b8d8f45d2ac615b35b04cd0c9ebd21bee198bea10a3fd46\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script:\n    - cythonize deepgraph/*.pyx  # [py>36]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - cython\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n\ntest:\n  imports:\n    - deepgraph\n\nabout:\n  home: https://github.com/deepgraph/deepgraph\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Analyze Data with Pandas-based Networks.'\n  description: |\n    DeepGraph is a scalable, general-purpose data analysis package. It\n    implements a network representation based on pandas DataFrames and\n    provides methods to construct, partition and plot graphs, to interface\n    with popular network packages and more.\n  doc_url: https://deepgraph.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - dominiktraxl\n",
  "req":{
@@ -264,5 +428,87 @@
   }
  },
  "url":"https://pypi.io/packages/source/D/DeepGraph/DeepGraph-0.2.2.tar.gz",
- "version":"0.2.2"
+ "version":"0.2.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"DeepGraph is a scalable, general-purpose data analysis package. It\nimplements a network representation based on pandas DataFrames and\nprovides methods to construct, partition and plot graphs, to interface\nwith popular network packages and more.\n",
+   "doc_url":"https://deepgraph.readthedocs.io/",
+   "home":"https://github.com/deepgraph/deepgraph",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"Analyze Data with Pandas-based Networks."
+  },
+  "build":{
+   "number":"1",
+   "script":[
+    "cythonize deepgraph/*.pyx",
+    " -m pip install . --no-deps --ignore-installed --no-cache-dir"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "dominiktraxl"
+   ]
+  },
+  "package":{
+   "name":"deepgraph",
+   "version":"0.2.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "cython",
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "pandas"
+   ]
+  },
+  "source":{
+   "fn":"DeepGraph-0.2.2.tar.gz",
+   "sha256":"7047e429dd5cc6e73b8d8f45d2ac615b35b04cd0c9ebd21bee198bea10a3fd46",
+   "url":"https://pypi.io/packages/source/D/DeepGraph/DeepGraph-0.2.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "deepgraph"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pandas",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

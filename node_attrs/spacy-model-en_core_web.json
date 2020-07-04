@@ -61,6 +61,197 @@
  },
  "feedstock_name":"spacy-model-en_core_web",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/explosion/spacy-models",
+   "doc_url":"https://spacy.io/models/en",
+   "home":"https://spacy.io",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "bollwyvl",
+    "setu4993"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd sm &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "sm",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_sm",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_sm').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_sm')\""
+     ],
+     "imports":[
+      "en_core_web_sm"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd md &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "md",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_md",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_md').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_md')\""
+     ],
+     "imports":[
+      "en_core_web_md"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd lg &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "lg",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_lg",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_lg').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_lg')\""
+     ],
+     "imports":[
+      "en_core_web_lg"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-en_core_web",
+   "version":"2.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "setuptools",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"ea8c87848b4a97ced174919e08c00c7888a30495ace38d281d455ee270da2c12",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"70a957e8cf71f3d98b387d3ddb91a19b1ec016c26b2e580daee1aa0827d648fb",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.3.0/en_core_web_md-2.3.0.tar.gz"
+   },
+   {
+    "folder":"lg",
+    "sha256":"c2c532aad85495bd5708ec077ceb3700794cd64b88480f654942f9303e2fca55",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.0/en_core_web_lg-2.3.0.tar.gz"
+   },
+   {
+    "sha256":"2946c76df2417fe4e29c693e4d877f8516630740f0ede219edf1b0d06c61d536",
+    "url":"https://raw.githubusercontent.com/explosion/spaCy/master/LICENSE"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/explosion/spacy-models",
@@ -493,6 +684,197 @@
  "new_version_errors":{
   "2.3.1":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2.3.1' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://github.com/explosion/spacy-models/releases/download/{{ name }}lg-{{ version }}/{{ name }}lg-{{ version }}.tar.gz'\n - could not hash URL template 'https://github.com/explosion/spacy-models/releases/download/{{ name }}md-{{ version }}/{{ name }}md-{{ version }}.tar.gz'\n - could not hash URL template 'https://github.com/explosion/spacy-models/releases/download/{{ name }}sm-{{ version }}/{{ name }}sm-{{ version }}.tar.gz'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/explosion/spacy-models",
+   "doc_url":"https://spacy.io/models/en",
+   "home":"https://spacy.io",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "bollwyvl",
+    "setu4993"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd sm &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "sm",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_sm",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_sm').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_sm')\""
+     ],
+     "imports":[
+      "en_core_web_sm"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd md &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "md",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_md",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_md').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_md')\""
+     ],
+     "imports":[
+      "en_core_web_md"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd lg &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "lg",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_lg",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_lg').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_lg')\""
+     ],
+     "imports":[
+      "en_core_web_lg"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-en_core_web",
+   "version":"2.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "setuptools",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"ea8c87848b4a97ced174919e08c00c7888a30495ace38d281d455ee270da2c12",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"70a957e8cf71f3d98b387d3ddb91a19b1ec016c26b2e580daee1aa0827d648fb",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.3.0/en_core_web_md-2.3.0.tar.gz"
+   },
+   {
+    "folder":"lg",
+    "sha256":"c2c532aad85495bd5708ec077ceb3700794cd64b88480f654942f9303e2fca55",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.0/en_core_web_lg-2.3.0.tar.gz"
+   },
+   {
+    "sha256":"2946c76df2417fe4e29c693e4d877f8516630740f0ede219edf1b0d06c61d536",
+    "url":"https://raw.githubusercontent.com/explosion/spaCy/master/LICENSE"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ },
  "outputs_names":[
   "spacy-model-en_core_web_lg",
   "spacy-model-en_core_web_md",
@@ -563,5 +945,196 @@
   }
  },
  "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz",
- "version":"2.3.0"
+ "version":"2.3.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/explosion/spacy-models",
+   "doc_url":"https://spacy.io/models/en",
+   "home":"https://spacy.io",
+   "license":"MIT",
+   "license_file":"LICENSE",
+   "summary":"English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre",
+    "bollwyvl",
+    "setu4993"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd sm &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "sm",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_sm",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_sm').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_sm')\""
+     ],
+     "imports":[
+      "en_core_web_sm"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd md &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "md",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_md",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_md').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_md')\""
+     ],
+     "imports":[
+      "en_core_web_md"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"0",
+     "script":"cd lg &&  -m pip install . --no-deps -vv"
+    },
+    "files":[
+     "lg",
+     "LICENSE"
+    ],
+    "name":"spacy-model-en_core_web_lg",
+    "requirements":{
+     "host":[
+      "python",
+      "pip"
+     ],
+     "run":[
+      "python",
+      "setuptools"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python -c \"__import__('en_core_web_lg').load()\"",
+      "python -c \"__import__('spacy').load('en_core_web_lg')\""
+     ],
+     "imports":[
+      "en_core_web_lg"
+     ],
+     "requires":[
+      "spacy 2.3.*"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"spacy-model-en_core_web",
+   "version":"2.3.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "setuptools",
+    "python"
+   ]
+  },
+  "source":[
+   {
+    "folder":"sm",
+    "sha256":"ea8c87848b4a97ced174919e08c00c7888a30495ace38d281d455ee270da2c12",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz"
+   },
+   {
+    "folder":"md",
+    "sha256":"70a957e8cf71f3d98b387d3ddb91a19b1ec016c26b2e580daee1aa0827d648fb",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_md-2.3.0/en_core_web_md-2.3.0.tar.gz"
+   },
+   {
+    "folder":"lg",
+    "sha256":"c2c532aad85495bd5708ec077ceb3700794cd64b88480f654942f9303e2fca55",
+    "url":"https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.0/en_core_web_lg-2.3.0.tar.gz"
+   },
+   {
+    "sha256":"2946c76df2417fe4e29c693e4d877f8516630740f0ede219edf1b0d06c61d536",
+    "url":"https://raw.githubusercontent.com/explosion/spaCy/master/LICENSE"
+   }
+  ],
+  "test":{
+   "commands":[
+    "echo \"make lint happy\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "spacy"
+   ]
+  }
+ }
 }

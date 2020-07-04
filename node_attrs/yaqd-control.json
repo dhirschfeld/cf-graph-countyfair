@@ -23,6 +23,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"yaqd-control",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.com/yaq/yaqd-control",
+   "doc_url":"https://yaq.fyi",
+   "home":"https://yaq.fyi",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"Command line tools for inspecting and controlling yaq daemons."
+  },
+  "build":{
+   "entry_points":[
+    "yaqd=yaqd_control.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "untzag",
+    "ksunden"
+   ]
+  },
+  "package":{
+   "name":"yaqd-control",
+   "version":"2020.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python >=1.0.0",
+    "prettytable",
+    "python >=3.7",
+    "toml"
+   ]
+  },
+  "source":{
+   "sha256":"7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b",
+   "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-2020.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yaqd --help"
+   ],
+   "imports":[
+    "yaqd_control"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python",
+    "prettytable",
+    "python",
+    "toml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.com/yaq/yaqd-control",
@@ -116,6 +201,91 @@
  "new_version_errors":{
   "2020.6.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2020.6.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.com/yaq/yaqd-control",
+   "doc_url":"https://yaq.fyi",
+   "home":"https://yaq.fyi",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"Command line tools for inspecting and controlling yaq daemons."
+  },
+  "build":{
+   "entry_points":[
+    "yaqd=yaqd_control.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "untzag",
+    "ksunden"
+   ]
+  },
+  "package":{
+   "name":"yaqd-control",
+   "version":"2020.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python >=1.0.0",
+    "prettytable",
+    "python >=3.7",
+    "toml"
+   ]
+  },
+  "source":{
+   "sha256":"7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b",
+   "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-2020.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yaqd --help"
+   ],
+   "imports":[
+    "yaqd_control"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python",
+    "prettytable",
+    "python",
+    "toml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.27.14.19.32",
  "raw_meta_yaml":"{% set name = \"yaqd-control\" %}\n{% set version = \"2020.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - yaqd=yaqd_control.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - appdirs\n    - click\n    - colorama\n    - msgpack-python >=1.0.0\n    - prettytable\n    - python >=3.7\n    - toml\n\ntest:\n  imports:\n    - yaqd_control\n  commands:\n    - yaqd --help\n\nabout:\n  home: https://yaq.fyi\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Command line tools for inspecting and controlling yaq daemons.\n  doc_url: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-control\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
@@ -192,5 +362,90 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-0.2.0.tar.gz",
- "version":"2020.5.0"
+ "version":"2020.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.com/yaq/yaqd-control",
+   "doc_url":"https://yaq.fyi",
+   "home":"https://yaq.fyi",
+   "license":"LGPL-3.0-only",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"Command line tools for inspecting and controlling yaq daemons."
+  },
+  "build":{
+   "entry_points":[
+    "yaqd=yaqd_control.__main__:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "untzag",
+    "ksunden"
+   ]
+  },
+  "package":{
+   "name":"yaqd-control",
+   "version":"2020.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.7",
+    "pip"
+   ],
+   "run":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python >=1.0.0",
+    "prettytable",
+    "python >=3.7",
+    "toml"
+   ]
+  },
+  "source":{
+   "sha256":"7158190c829ed957cd4cd4156d843cf36971f02518bb8712c00867ed0a0ba12b",
+   "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-2020.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yaqd --help"
+   ],
+   "imports":[
+    "yaqd_control"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "appdirs",
+    "click",
+    "colorama",
+    "msgpack-python",
+    "prettytable",
+    "python",
+    "toml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

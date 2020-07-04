@@ -163,6 +163,76 @@
  },
  "feedstock_name":"geos",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology\nSuite (JTS). As such, it aims to contain the complete functionality of\nJTS in C++.\n",
+   "dev_url":"https://github.com/libgeos/libgeos",
+   "doc_url":"http://trac.osgeo.org/geos/",
+   "home":"http://trac.osgeo.org/geos/",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"Geometry Engine - Open Source"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "geos"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "pelson",
+    "gillins",
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"geos",
+   "version":"3.8.1"
+  },
+  "requirements":{
+   "build":[
+    "automake",
+    "libtool",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"605df3f99056b7bb9c48f20d67e90e539f5a9ca5b2c7896d58ba06e3217dc106",
+   "url":"https://github.com/libgeos/libgeos/archive/3.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "geos-config --version"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "automake",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology\nSuite (JTS). As such, it aims to contain the complete functionality of\nJTS in C++.\n",
@@ -231,6 +301,76 @@
  },
  "name":"geos",
  "new_version":"3.8.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology\nSuite (JTS). As such, it aims to contain the complete functionality of\nJTS in C++.\n",
+   "dev_url":"https://github.com/libgeos/libgeos",
+   "doc_url":"http://trac.osgeo.org/geos/",
+   "home":"http://trac.osgeo.org/geos/",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"Geometry Engine - Open Source"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "geos"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "pelson",
+    "gillins",
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"geos",
+   "version":"3.8.1"
+  },
+  "requirements":{
+   "build":[
+    "automake",
+    "libtool",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"605df3f99056b7bb9c48f20d67e90e539f5a9ca5b2c7896d58ba06e3217dc106",
+   "url":"https://github.com/libgeos/libgeos/archive/3.8.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "geos-config --version"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "automake",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "libtool"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = \"3.8.1\" %}\n\npackage:\n  name: geos\n  version: {{ version }}\n\nsource:\n  url: https://github.com/libgeos/libgeos/archive/{{ version }}.tar.gz\n  sha256: 605df3f99056b7bb9c48f20d67e90e539f5a9ca5b2c7896d58ba06e3217dc106\n  patches:\n    - xmltester.cpp.patch  # [win]\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    # pretty poor backcompat.  SO name changes each release.\n    # https://abi-laboratory.pro/tracker/timeline/geos/\n    - {{ pin_subpackage('geos', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - msinttypes  # [win]\n    - cmake  # [win]\n    - automake  # [not win]\n    - libtool  # [not win]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - geos-config --version  # [not win]\n\nabout:\n  home: http://trac.osgeo.org/geos/\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: Geometry Engine - Open Source\n  description: |\n    GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology\n    Suite (JTS). As such, it aims to contain the complete functionality of\n    JTS in C++.\n  doc_url: http://trac.osgeo.org/geos/\n  dev_url: https://github.com/libgeos/libgeos\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n    - gillins\n    - msarahan\n",
  "req":{
@@ -297,5 +437,76 @@
   }
  },
  "url":"https://github.com/libgeos/libgeos/archive/3.7.2.tar.gz",
- "version":"3.8.1"
+ "version":"3.8.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology\nSuite (JTS). As such, it aims to contain the complete functionality of\nJTS in C++.\n",
+   "dev_url":"https://github.com/libgeos/libgeos",
+   "doc_url":"http://trac.osgeo.org/geos/",
+   "home":"http://trac.osgeo.org/geos/",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"Geometry Engine - Open Source"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "geos"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "pelson",
+    "gillins",
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"geos",
+   "version":"3.8.1"
+  },
+  "requirements":{
+   "build":[
+    "msinttypes",
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "patches":[
+    "xmltester.cpp.patch"
+   ],
+   "sha256":"605df3f99056b7bb9c48f20d67e90e539f5a9ca5b2c7896d58ba06e3217dc106",
+   "url":"https://github.com/libgeos/libgeos/archive/3.8.1.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "msinttypes"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

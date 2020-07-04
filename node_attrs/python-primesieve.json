@@ -172,6 +172,88 @@
  "conda-forge.yml":{},
  "feedstock_name":"python-primesieve",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Python bindings for the primesieve C++ library.  Generates primes orders of magnitude faster than any pure Python code!\nPrimesieve library license: BSD 2-Clause\nPrimesieve library website: https://github.com/kimwalisch/primesieve\n",
+   "home":"https://github.com/kimwalisch/primesieve-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Fast prime number generator. Python bindings for primesieve C/C++ library."
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "kimwalisch",
+    "brl0"
+   ]
+  },
+  "package":{
+   "name":"python-primesieve",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"51f20f0b9aa0fe3c7718b230cf429dc62ed2858dde27fd116d23fe59a5e44afd",
+   "url":"https://pypi.io/packages/source/p/primesieve/primesieve-2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import primesieve; assert primesieve.nth_prime(1) == 2\"",
+    "python -c \"import primesieve.numpy; assert primesieve.numpy.n_primes(1)[0] == 2\""
+   ],
+   "imports":[
+    "primesieve",
+    "primesieve.numpy"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Python bindings for the primesieve C++ library.  Generates primes orders of magnitude faster than any pure Python code!\nPrimesieve library license: BSD 2-Clause\nPrimesieve library website: https://github.com/kimwalisch/primesieve\n",
@@ -256,6 +338,88 @@
  },
  "name":"python-primesieve",
  "new_version":"2.2.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Python bindings for the primesieve C++ library.  Generates primes orders of magnitude faster than any pure Python code!\nPrimesieve library license: BSD 2-Clause\nPrimesieve library website: https://github.com/kimwalisch/primesieve\n",
+   "home":"https://github.com/kimwalisch/primesieve-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Fast prime number generator. Python bindings for primesieve C/C++ library."
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "kimwalisch",
+    "brl0"
+   ]
+  },
+  "package":{
+   "name":"python-primesieve",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"51f20f0b9aa0fe3c7718b230cf429dc62ed2858dde27fd116d23fe59a5e44afd",
+   "url":"https://pypi.io/packages/source/p/primesieve/primesieve-2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import primesieve; assert primesieve.nth_prime(1) == 2\"",
+    "python -c \"import primesieve.numpy; assert primesieve.numpy.n_primes(1)[0] == 2\""
+   ],
+   "imports":[
+    "primesieve",
+    "primesieve.numpy"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set name = \"python-primesieve\" %}\n{% set pypiname = \"primesieve\" %}\n{% set version = \"2.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz\n  sha256: 51f20f0b9aa0fe3c7718b230cf429dc62ed2858dde27fd116d23fe59a5e44afd\n\nbuild:\n  skip: true  # [py<35]\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - primesieve\n    - primesieve.numpy\n  commands:\n    - python -c \"import primesieve; assert primesieve.nth_prime(1) == 2\"\n    - python -c \"import primesieve.numpy; assert primesieve.numpy.n_primes(1)[0] == 2\"\n\nabout:\n  home: https://github.com/kimwalisch/primesieve-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Fast prime number generator. Python bindings for primesieve C/C++ library.\n  description: |\n    Python bindings for the primesieve C++ library.  Generates primes orders of magnitude faster than any pure Python code!\n    Primesieve library license: BSD 2-Clause\n    Primesieve library website: https://github.com/kimwalisch/primesieve\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - kimwalisch\n    - brl0\n",
  "req":{
@@ -328,5 +492,87 @@
   }
  },
  "url":"https://pypi.python.org/packages/source/p/primesieve/primesieve-1.0.0.zip",
- "version":"2.2.0"
+ "version":"2.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Python bindings for the primesieve C++ library.  Generates primes orders of magnitude faster than any pure Python code!\nPrimesieve library license: BSD 2-Clause\nPrimesieve library website: https://github.com/kimwalisch/primesieve\n",
+   "home":"https://github.com/kimwalisch/primesieve-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Fast prime number generator. Python bindings for primesieve C/C++ library."
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "kimwalisch",
+    "brl0"
+   ]
+  },
+  "package":{
+   "name":"python-primesieve",
+   "version":"2.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "sha256":"51f20f0b9aa0fe3c7718b230cf429dc62ed2858dde27fd116d23fe59a5e44afd",
+   "url":"https://pypi.io/packages/source/p/primesieve/primesieve-2.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -c \"import primesieve; assert primesieve.nth_prime(1) == 2\"",
+    "python -c \"import primesieve.numpy; assert primesieve.numpy.n_primes(1)[0] == 2\""
+   ],
+   "imports":[
+    "primesieve",
+    "primesieve.numpy"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -503,6 +503,70 @@
  },
  "feedstock_name":"xsimd",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"High-level APIs for SIMD operations",
+   "dev_url":"https://github.com/QuantStack/xsimd",
+   "doc_url":"http://xsimd.readthedocs.io",
+   "home":"http://quantstack.net/xsimd",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ Wrappers for SIMD Intrinsices"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xsimd",
+   "version":"7.4.8"
+  },
+  "requirements":{
+   "host":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"xsimd-7.4.8.tar.gz",
+   "sha256":"318676faae48d2082440df9f161a95303a3f29c3f0b03ff32ca24063b12f5699",
+   "url":"https://github.com/QuantStack/xsimd/archive/7.4.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/xsimd/xsimd.hpp",
+    "test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfigVersion.cmake"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"High-level APIs for SIMD operations",
@@ -566,6 +630,70 @@
  "new_version_attempts":{
   "7.4.7":1
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"High-level APIs for SIMD operations",
+   "dev_url":"https://github.com/QuantStack/xsimd",
+   "doc_url":"http://xsimd.readthedocs.io",
+   "home":"http://quantstack.net/xsimd",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ Wrappers for SIMD Intrinsices"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xsimd",
+   "version":"7.4.8"
+  },
+  "requirements":{
+   "host":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"xsimd-7.4.8.tar.gz",
+   "sha256":"318676faae48d2082440df9f161a95303a3f29c3f0b03ff32ca24063b12f5699",
+   "url":"https://github.com/QuantStack/xsimd/archive/7.4.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/xsimd/xsimd.hpp",
+    "test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfig.cmake",
+    "test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfigVersion.cmake"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.06",
  "raw_meta_yaml":"{% set name = \"xsimd\" %}\n{% set version = \"7.4.8\" %}\n{% set sha256 = \"318676faae48d2082440df9f161a95303a3f29c3f0b03ff32ca24063b12f5699\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xsimd/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  host:\n    - {{ compiler('cxx') }}\n    - cmake\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/xsimd/xsimd.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xsimd\\xsimd.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xsimd\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: C++ Wrappers for SIMD Intrinsices\n  description: High-level APIs for SIMD operations\n  doc_url: http://xsimd.readthedocs.io\n  dev_url: https://github.com/QuantStack/xsimd\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "req":{
@@ -620,5 +748,70 @@
   }
  },
  "url":"https://github.com/QuantStack/xsimd/archive/7.3.0.tar.gz",
- "version":"7.4.8"
+ "version":"7.4.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"High-level APIs for SIMD operations",
+   "dev_url":"https://github.com/QuantStack/xsimd",
+   "doc_url":"http://xsimd.readthedocs.io",
+   "home":"http://quantstack.net/xsimd",
+   "license":"BSD 3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"C++ Wrappers for SIMD Intrinsices"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package":{
+   "name":"xsimd",
+   "version":"7.4.8"
+  },
+  "requirements":{
+   "host":[
+    "cxx_compiler_stub",
+    "cmake"
+   ]
+  },
+  "source":{
+   "fn":"xsimd-7.4.8.tar.gz",
+   "sha256":"318676faae48d2082440df9f161a95303a3f29c3f0b03ff32ca24063b12f5699",
+   "url":"https://github.com/QuantStack/xsimd/archive/7.4.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if exist %LIBRARY_PREFIX%\\include\\xsimd\\xsimd.hpp (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfig.cmake (exit 0) else (exit 1)",
+    "if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfigVersion.cmake (exit 0) else (exit 1)"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

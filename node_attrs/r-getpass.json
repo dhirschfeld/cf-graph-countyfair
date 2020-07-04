@@ -81,6 +81,87 @@
  },
  "feedstock_name":"r-getpass",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https",
+   "license":"BSD 2-clause",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"A micro-package for reading \"passwords\", i.e.  reading user input with masking, so that the input is not displayed as it  is typed.  Currently we have support for 'RStudio', the command line (every OS), and any platform where 'tcltk' is present."
+  },
+  "build":{
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-getpass",
+   "version":"0.2_2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ],
+   "run":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ]
+  },
+  "source":{
+   "fn":"getPass_0.2-2.tar.gz",
+   "sha256":"8cfdc7e8cabeae5dd325015d735b139d9828bd54ea8e7c2dcb636a00a153cd0f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/getPass_0.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/getPass/getPass_0.2-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('getPass')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https",
@@ -170,6 +251,87 @@
  },
  "name":"r-getpass",
  "new_version":"0.2_2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https",
+   "license":"BSD 2-clause",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"A micro-package for reading \"passwords\", i.e.  reading user input with masking, so that the input is not displayed as it  is typed.  Currently we have support for 'RStudio', the command line (every OS), and any platform where 'tcltk' is present."
+  },
+  "build":{
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-getpass",
+   "version":"0.2_2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ],
+   "run":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ]
+  },
+  "source":{
+   "fn":"getPass_0.2-2.tar.gz",
+   "sha256":"8cfdc7e8cabeae5dd325015d735b139d9828bd54ea8e7c2dcb636a00a153cd0f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/getPass_0.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/getPass/getPass_0.2-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('getPass')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = '0.2-2' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-getpass\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: getPass_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/getPass_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/getPass/getPass_{{ version }}.tar.gz\n  sha256: 8cfdc7e8cabeae5dd325015d735b139d9828bd54ea8e7c2dcb636a00a153cd0f\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1004\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - r-base\n    - r-rstudioapi >=0.5\n\n  run:\n    - r-base\n    - r-rstudioapi >=0.5\n\ntest:\n  commands:\n    - $R -e \"library('getPass')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('getPass')\\\"\"  # [win]\n\nabout:\n  home: https\n  license: BSD 2-clause\n  summary: A micro-package for reading \"passwords\", i.e.  reading user input with masking, so\n    that the input is not displayed as it  is typed.  Currently we have support for\n    'RStudio', the command line (every OS), and any platform where 'tcltk' is present.\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "req":{
@@ -248,5 +410,89 @@
   "https://cran.r-project.org/src/contrib/getPass_0.2-2.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/getPass/getPass_0.2-2.tar.gz"
  ],
- "version":"0.2_2"
+ "version":"0.2_2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https",
+   "license":"BSD 2-clause",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"A micro-package for reading \"passwords\", i.e.  reading user input with masking, so that the input is not displayed as it  is typed.  Currently we have support for 'RStudio', the command line (every OS), and any platform where 'tcltk' is present."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1004",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-getpass",
+   "version":"0.2_2"
+  },
+  "requirements":{
+   "build":[
+    "posix",
+    "m2w64_c_compiler_stub"
+   ],
+   "host":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ],
+   "run":[
+    "r-base",
+    "r-rstudioapi >=0.5"
+   ]
+  },
+  "source":{
+   "fn":"getPass_0.2-2.tar.gz",
+   "sha256":"8cfdc7e8cabeae5dd325015d735b139d9828bd54ea8e7c2dcb636a00a153cd0f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/getPass_0.2-2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/getPass/getPass_0.2-2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('getPass')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "posix"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rstudioapi"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

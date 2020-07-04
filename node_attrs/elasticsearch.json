@@ -258,6 +258,84 @@
  "conda-forge.yml":{},
  "feedstock_name":"elasticsearch",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/elastic/elasticsearch-py",
+   "doc_url":"https://elasticsearch-py.readthedocs.io",
+   "home":"https://github.com/elastic/elasticsearch-py",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Python client for Elasticsearch"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "ahlaw",
+    "sethmlarson"
+   ]
+  },
+  "package":{
+   "name":"elasticsearch",
+   "version":"7.8.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "urllib3 >=1.21.1",
+    "requests >=2.4.0,<3.0.0",
+    "certifi"
+   ]
+  },
+  "source":{
+   "fn":"elasticsearch-7.8.0.tar.gz",
+   "sha256":"e637d8cf4e27e279b5ff8ca8edc0c086f4b5df4bf2b48e2f950b7833aca3a792",
+   "url":"https://pypi.org/packages/source/e/elasticsearch/elasticsearch-7.8.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "elasticsearch",
+    "elasticsearch.client",
+    "elasticsearch.connection",
+    "elasticsearch.helpers"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "python",
+    "requests",
+    "urllib3"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/elastic/elasticsearch-py",
@@ -344,6 +422,84 @@
   "7.8.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/elastic/elasticsearch-py",
+   "doc_url":"https://elasticsearch-py.readthedocs.io",
+   "home":"https://github.com/elastic/elasticsearch-py",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Python client for Elasticsearch"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "ahlaw",
+    "sethmlarson"
+   ]
+  },
+  "package":{
+   "name":"elasticsearch",
+   "version":"7.8.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "urllib3 >=1.21.1",
+    "requests >=2.4.0,<3.0.0",
+    "certifi"
+   ]
+  },
+  "source":{
+   "fn":"elasticsearch-7.8.0.tar.gz",
+   "sha256":"e637d8cf4e27e279b5ff8ca8edc0c086f4b5df4bf2b48e2f950b7833aca3a792",
+   "url":"https://pypi.org/packages/source/e/elasticsearch/elasticsearch-7.8.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "elasticsearch",
+    "elasticsearch.client",
+    "elasticsearch.connection",
+    "elasticsearch.helpers"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "python",
+    "requests",
+    "urllib3"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"elasticsearch\" %}\n{% set version = \"7.8.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_val = \"e637d8cf4e27e279b5ff8ca8edc0c086f4b5df4bf2b48e2f950b7833aca3a792\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - urllib3 >=1.21.1\n    - requests >=2.4.0,<3.0.0\n    - certifi\n\ntest:\n  imports:\n    - elasticsearch\n    - elasticsearch.client\n    - elasticsearch.connection\n    - elasticsearch.helpers\n\nabout:\n  home: https://github.com/elastic/elasticsearch-py\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: Python client for Elasticsearch\n  doc_url: https://elasticsearch-py.readthedocs.io\n  dev_url: https://github.com/elastic/elasticsearch-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ahlaw\n    - sethmlarson\n",
  "req":{
@@ -411,5 +567,83 @@
   }
  },
  "url":"https://pypi.org/packages/source/e/elasticsearch/elasticsearch-7.0.0.tar.gz",
- "version":"7.8.0"
+ "version":"7.8.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/elastic/elasticsearch-py",
+   "doc_url":"https://elasticsearch-py.readthedocs.io",
+   "home":"https://github.com/elastic/elasticsearch-py",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"Python client for Elasticsearch"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pmlandwehr",
+    "ahlaw",
+    "sethmlarson"
+   ]
+  },
+  "package":{
+   "name":"elasticsearch",
+   "version":"7.8.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "urllib3 >=1.21.1",
+    "requests >=2.4.0,<3.0.0",
+    "certifi"
+   ]
+  },
+  "source":{
+   "fn":"elasticsearch-7.8.0.tar.gz",
+   "sha256":"e637d8cf4e27e279b5ff8ca8edc0c086f4b5df4bf2b48e2f950b7833aca3a792",
+   "url":"https://pypi.org/packages/source/e/elasticsearch/elasticsearch-7.8.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "elasticsearch",
+    "elasticsearch.client",
+    "elasticsearch.connection",
+    "elasticsearch.helpers"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "certifi",
+    "python",
+    "requests",
+    "urllib3"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

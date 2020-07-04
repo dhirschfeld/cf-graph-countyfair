@@ -284,6 +284,90 @@
  },
  "feedstock_name":"aiohttp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aio-libs/aiohttp",
+   "doc_source_url":"https://github.com/aio-libs/aiohttp/tree/master/docs",
+   "doc_url":"http://aiohttp.readthedocs.io/",
+   "home":"https://github.com/aio-libs/aiohttp",
+   "license":"Apache 2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"Async http client/server framework (asyncio)"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"aiohttp",
+   "version":"3.6.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "attrs >=17.3.0",
+    "chardet >=2.0,<4.0",
+    "multidict >=4.5,<5.0",
+    "async-timeout >=3.0,<4.0",
+    "yarl >=1.0,<2.0"
+   ]
+  },
+  "source":{
+   "fn":"aiohttp-3.6.2.tar.gz",
+   "sha256":"259ab809ff0727d0e834ac5e8a283dc5e3e0ecc30c4d80b3cd17a4139ce1f326",
+   "url":"https://pypi.io/packages/source/a/aiohttp/aiohttp-3.6.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aiohttp"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async-timeout",
+    "attrs",
+    "chardet",
+    "multidict",
+    "python",
+    "yarl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/aio-libs/aiohttp",
@@ -363,6 +447,90 @@
  },
  "name":"aiohttp",
  "new_version":"3.6.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aio-libs/aiohttp",
+   "doc_source_url":"https://github.com/aio-libs/aiohttp/tree/master/docs",
+   "doc_url":"http://aiohttp.readthedocs.io/",
+   "home":"https://github.com/aio-libs/aiohttp",
+   "license":"Apache 2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"Async http client/server framework (asyncio)"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"aiohttp",
+   "version":"3.6.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "attrs >=17.3.0",
+    "chardet >=2.0,<4.0",
+    "multidict >=4.5,<5.0",
+    "async-timeout >=3.0,<4.0",
+    "yarl >=1.0,<2.0"
+   ]
+  },
+  "source":{
+   "fn":"aiohttp-3.6.2.tar.gz",
+   "sha256":"259ab809ff0727d0e834ac5e8a283dc5e3e0ecc30c4d80b3cd17a4139ce1f326",
+   "url":"https://pypi.io/packages/source/a/aiohttp/aiohttp-3.6.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aiohttp"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async-timeout",
+    "attrs",
+    "chardet",
+    "multidict",
+    "python",
+    "yarl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.11.26",
  "raw_meta_yaml":"{% set name = \"aiohttp\" %}\n{% set version = \"3.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 259ab809ff0727d0e834ac5e8a283dc5e3e0ecc30c4d80b3cd17a4139ce1f326\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n    - attrs >=17.3.0\n    - chardet >=2.0,<4.0\n    - multidict >=4.5,<5.0\n    - async-timeout >=3.0,<4.0\n    - yarl >=1.0,<2.0\n    - idna_ssl >=1,<2  # [py<37]\n    - typing_extensions >=3.6.5  # [py<37]\n\ntest:\n  imports:\n    - aiohttp\n\nabout:\n  home: https://github.com/aio-libs/aiohttp\n  license: Apache 2.0\n  license_file: LICENSE.txt\n  license_family: Apache\n  summary: 'Async http client/server framework (asyncio)'\n\n  doc_url: http://aiohttp.readthedocs.io/\n  dev_url: https://github.com/aio-libs/aiohttp\n  doc_source_url: https://github.com/aio-libs/aiohttp/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "req":{
@@ -444,5 +612,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/aiohttp/aiohttp-3.6.0.tar.gz",
- "version":"3.6.2"
+ "version":"3.6.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/aio-libs/aiohttp",
+   "doc_source_url":"https://github.com/aio-libs/aiohttp/tree/master/docs",
+   "doc_url":"http://aiohttp.readthedocs.io/",
+   "home":"https://github.com/aio-libs/aiohttp",
+   "license":"Apache 2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE.txt",
+   "summary":"Async http client/server framework (asyncio)"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"aiohttp",
+   "version":"3.6.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython"
+   ],
+   "run":[
+    "python",
+    "attrs >=17.3.0",
+    "chardet >=2.0,<4.0",
+    "multidict >=4.5,<5.0",
+    "async-timeout >=3.0,<4.0",
+    "yarl >=1.0,<2.0"
+   ]
+  },
+  "source":{
+   "fn":"aiohttp-3.6.2.tar.gz",
+   "sha256":"259ab809ff0727d0e834ac5e8a283dc5e3e0ecc30c4d80b3cd17a4139ce1f326",
+   "url":"https://pypi.io/packages/source/a/aiohttp/aiohttp-3.6.2.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aiohttp"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "async-timeout",
+    "attrs",
+    "chardet",
+    "multidict",
+    "python",
+    "yarl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

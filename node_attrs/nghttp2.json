@@ -76,6 +76,127 @@
  "conda-forge.yml":{},
  "feedstock_name":"nghttp2",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This is an implementation of the Hypertext Transfer Protocol version 2 in C.\n\nThe framing layer of HTTP/2 is implemented as a reusable C library. On top\nof that, we have implemented an HTTP/2 client, server and proxy. We have\nalso developed load test and benchmarking tools for HTTP/2.\n",
+   "dev_url":"https://github.com/nghttp2/nghttp2",
+   "doc_url":"https://nghttp2.org/documentation/",
+   "home":"http://github.com/nghttp2/nghttp2",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"This is an implementation of Hypertext Transfer Protocol version 2."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cpaulik"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libnghttp2"
+     ]
+    },
+    "files":[
+     "include/nghttp2/nghttp2*",
+     "lib/libnghttp2*",
+     "lib/nghttp2*",
+     "lib/pkgconfig/libnghttp2*",
+     "bin/nghttp*"
+    ],
+    "name":"libnghttp2",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "zlib >=1.2.3",
+      "openssl >=1.0.1",
+      "libev >=4.11",
+      "c-ares >=1.7.5"
+     ],
+     "run":[
+      "zlib >=1.2.3",
+      "openssl >=1.0.1",
+      "libev >=4.11",
+      "c-ares >=1.7.5",
+      "libstdcxx-ng"
+     ]
+    },
+    "test":{
+     "commands":"nghttp -nv https://nghttp2.org"
+    }
+   }
+  ],
+  "package":{
+   "name":"nghttp2",
+   "version":"1.41.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "zlib >=1.2.3",
+    "openssl >=1.0.1",
+    "libev >=4.11",
+    "c-ares >=1.7.5"
+   ],
+   "run":[
+    "zlib >=1.2.3",
+    "openssl >=1.0.1",
+    "libev >=4.11",
+    "c-ares >=1.7.5",
+    "libstdcxx-ng"
+   ]
+  },
+  "source":{
+   "sha256":"eacc6f0f8543583ecd659faf0a3f906ed03826f1d4157b536b4b385fe47c5bb8",
+   "url":"https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "libstdcxx-ng",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This is an implementation of the Hypertext Transfer Protocol version 2 in C.\n\nThe framing layer of HTTP/2 is implemented as a reusable C library. On top\nof that, we have implemented an HTTP/2 client, server and proxy. We have\nalso developed load test and benchmarking tools for HTTP/2.\n",
@@ -255,6 +376,124 @@
   "1.41.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This is an implementation of the Hypertext Transfer Protocol version 2 in C.\n\nThe framing layer of HTTP/2 is implemented as a reusable C library. On top\nof that, we have implemented an HTTP/2 client, server and proxy. We have\nalso developed load test and benchmarking tools for HTTP/2.\n",
+   "dev_url":"https://github.com/nghttp2/nghttp2",
+   "doc_url":"https://nghttp2.org/documentation/",
+   "home":"http://github.com/nghttp2/nghttp2",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"This is an implementation of Hypertext Transfer Protocol version 2."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cpaulik"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libnghttp2"
+     ]
+    },
+    "files":[
+     "include/nghttp2/nghttp2*",
+     "lib/libnghttp2*",
+     "lib/nghttp2*",
+     "lib/pkgconfig/libnghttp2*",
+     "bin/nghttp*"
+    ],
+    "name":"libnghttp2",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "zlib >=1.2.3",
+      "openssl >=1.0.1",
+      "libev >=4.11",
+      "c-ares >=1.7.5"
+     ],
+     "run":[
+      "zlib >=1.2.3",
+      "openssl >=1.0.1",
+      "libev >=4.11",
+      "c-ares >=1.7.5"
+     ]
+    },
+    "test":{
+     "commands":"nghttp -nv https://nghttp2.org"
+    }
+   }
+  ],
+  "package":{
+   "name":"nghttp2",
+   "version":"1.41.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ],
+   "host":[
+    "zlib >=1.2.3",
+    "openssl >=1.0.1",
+    "libev >=4.11",
+    "c-ares >=1.7.5"
+   ],
+   "run":[
+    "zlib >=1.2.3",
+    "openssl >=1.0.1",
+    "libev >=4.11",
+    "c-ares >=1.7.5"
+   ]
+  },
+  "source":{
+   "sha256":"eacc6f0f8543583ecd659faf0a3f906ed03826f1d4157b536b4b385fe47c5bb8",
+   "url":"https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "openssl",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "libnghttp2"
  ],
@@ -345,5 +584,110 @@
   }
  },
  "url":"https://github.com/nghttp2/nghttp2/releases/download/v1.39.1/nghttp2-1.39.1.tar.gz",
- "version":"1.41.0"
+ "version":"1.41.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This is an implementation of the Hypertext Transfer Protocol version 2 in C.\n\nThe framing layer of HTTP/2 is implemented as a reusable C library. On top\nof that, we have implemented an HTTP/2 client, server and proxy. We have\nalso developed load test and benchmarking tools for HTTP/2.\n",
+   "dev_url":"https://github.com/nghttp2/nghttp2",
+   "doc_url":"https://nghttp2.org/documentation/",
+   "home":"http://github.com/nghttp2/nghttp2",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"COPYING",
+   "summary":"This is an implementation of Hypertext Transfer Protocol version 2."
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "cpaulik"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libnghttp2"
+     ]
+    },
+    "files":null,
+    "name":"libnghttp2",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "zlib >=1.2.3",
+      "libev >=4.11",
+      "c-ares >=1.7.5"
+     ],
+     "run":[
+      "zlib >=1.2.3",
+      "libev >=4.11",
+      "c-ares >=1.7.5"
+     ]
+    },
+    "test":{
+     "commands":"nghttp -nv https://nghttp2.org"
+    }
+   }
+  ],
+  "package":{
+   "name":"nghttp2",
+   "version":"1.41.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "zlib >=1.2.3",
+    "libev >=4.11",
+    "c-ares >=1.7.5"
+   ],
+   "run":[
+    "zlib >=1.2.3",
+    "libev >=4.11",
+    "c-ares >=1.7.5"
+   ]
+  },
+  "source":{
+   "sha256":"eacc6f0f8543583ecd659faf0a3f906ed03826f1d4157b536b4b385fe47c5bb8",
+   "url":"https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c-ares",
+    "libev",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

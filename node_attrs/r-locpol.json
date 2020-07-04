@@ -49,6 +49,80 @@
  },
  "feedstock_name":"r-locpol",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=locpol",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Computes local polynomial estimators for  the regression and also density. It comprises several  different utilities to handle kernel estimators."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-locpol",
+   "version":"0.7_0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"9516ffb4e17a3faf0f032e87abb50f8076aa2539e008e3e9e46b2640812d21dd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/locpol_0.7-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/locpol/locpol_0.7-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('locpol')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=locpol",
@@ -126,6 +200,80 @@
  },
  "name":"r-locpol",
  "new_version":"0.7_0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=locpol",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Computes local polynomial estimators for  the regression and also density. It comprises several  different utilities to handle kernel estimators."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-locpol",
+   "version":"0.7_0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"9516ffb4e17a3faf0f032e87abb50f8076aa2539e008e3e9e46b2640812d21dd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/locpol_0.7-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/locpol/locpol_0.7-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('locpol')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = '0.7-0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-locpol\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/locpol_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/locpol/locpol_{{ version }}.tar.gz\n  sha256: 9516ffb4e17a3faf0f032e87abb50f8076aa2539e008e3e9e46b2640812d21dd\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 2\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('locpol')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('locpol')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=locpol\n  license: GPL (>= 2)\n  summary: Computes local polynomial estimators for  the regression and also density. It comprises\n    several  different utilities to handle kernel estimators.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: locpol\n# Version: 0.7-0\n# Date: 2018-05-21\n# Title: Kernel Local Polynomial Regression\n# Author: Jorge Luis Ojeda Cabrera <jojeda@unizar.es>\n# Maintainer: Jorge Luis Ojeda Cabrera <jojeda@unizar.es>\n# Description: Computes local polynomial estimators for  the regression and also density. It comprises several  different utilities to handle kernel estimators.\n# Depends: R (>= 2.5.0), graphics, stats\n# License: GPL (>= 2)\n# NeedsCompilation: yes\n# Packaged: 2018-05-24 12:44:38 UTC; jorge\n# Repository: CRAN\n# Date/Publication: 2018-05-24 17:28:06 UTC\n",
  "req":{
@@ -214,5 +362,90 @@
   "https://cran.r-project.org/src/contrib/locpol_0.7-0.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/locpol/locpol_0.7-0.tar.gz"
  ],
- "version":"0.7_0"
+ "version":"0.7_0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=locpol",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Computes local polynomial estimators for  the regression and also density. It comprises several  different utilities to handle kernel estimators."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-locpol",
+   "version":"0.7_0"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs"
+   ]
+  },
+  "source":{
+   "sha256":"9516ffb4e17a3faf0f032e87abb50f8076aa2539e008e3e9e46b2640812d21dd",
+   "url":[
+    "https://cran.r-project.org/src/contrib/locpol_0.7-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/locpol/locpol_0.7-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('locpol')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

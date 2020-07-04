@@ -133,6 +133,93 @@
  },
  "feedstock_name":"pylibscrypt",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jvarho/pylibscrypt",
+   "doc_url":"https://github.com/jvarho/pylibscrypt",
+   "home":"https://github.com/jvarho/pylibscrypt",
+   "license":"ISC",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"Scrypt for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pylibscrypt",
+   "version":"1.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "openssl",
+    "scrypt"
+   ],
+   "run":[
+    "openssl",
+    "python",
+    "scrypt",
+    "libsodium"
+   ]
+  },
+  "source":{
+   "fn":"pylibscrypt-1.8.0.tar.gz",
+   "sha256":"893c4519afae05878f7aa313b76f6193e4d4b69d157b7febf6a5ef69ae3bf6e9",
+   "url":"https://pypi.io/packages/source/p/pylibscrypt/pylibscrypt-1.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX pylibscrypt",
+    "python -m pylibscrypt.tests",
+    "python -m pylibscrypt.pylibsodium",
+    "python -m pylibscrypt.pbkdf2"
+   ],
+   "imports":[
+    "pylibscrypt"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openssl",
+    "pip",
+    "python",
+    "scrypt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsodium",
+    "openssl",
+    "python",
+    "scrypt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jvarho/pylibscrypt",
@@ -217,6 +304,91 @@
  },
  "name":"pylibscrypt",
  "new_version":"1.8.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jvarho/pylibscrypt",
+   "doc_url":"https://github.com/jvarho/pylibscrypt",
+   "home":"https://github.com/jvarho/pylibscrypt",
+   "license":"ISC",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"Scrypt for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pylibscrypt",
+   "version":"1.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "openssl",
+    "scrypt"
+   ],
+   "run":[
+    "openssl",
+    "python",
+    "scrypt",
+    "libsodium"
+   ]
+  },
+  "source":{
+   "fn":"pylibscrypt-1.8.0.tar.gz",
+   "sha256":"893c4519afae05878f7aa313b76f6193e4d4b69d157b7febf6a5ef69ae3bf6e9",
+   "url":"https://pypi.io/packages/source/p/pylibscrypt/pylibscrypt-1.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX pylibscrypt",
+    "conda inspect objects -p $PREFIX pylibscrypt"
+   ],
+   "imports":[
+    "pylibscrypt"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "openssl",
+    "pip",
+    "python",
+    "scrypt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsodium",
+    "openssl",
+    "python",
+    "scrypt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.07",
  "raw_meta_yaml":"{% set name = \"pylibscrypt\" %}\n{% set version = \"1.8.0\" %}\n{% set sha256 = \"893c4519afae05878f7aa313b76f6193e4d4b69d157b7febf6a5ef69ae3bf6e9\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - openssl                      # [not win]\n    - scrypt\n  run:\n    - openssl                      # [not win]\n    - python\n    - scrypt\n    - libsodium\n\ntest:\n  imports:\n    - pylibscrypt\n  commands:\n    - conda inspect linkages -p $PREFIX pylibscrypt  # [not win]\n    - conda inspect objects -p $PREFIX pylibscrypt   # [osx]\n    - python -m pylibscrypt.tests                    # [not osx]\n    - python -m pylibscrypt.pylibsodium              # [not osx]\n    - python -m pylibscrypt.pbkdf2                   # [not osx]\n\nabout:\n  home: https://github.com/jvarho/pylibscrypt\n  license: ISC\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  dev_url: https://github.com/jvarho/pylibscrypt\n  doc_url: https://github.com/jvarho/pylibscrypt\n  summary: 'Scrypt for Python'\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "req":{
@@ -293,5 +465,87 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pylibscrypt/pylibscrypt-1.8.0.tar.gz",
- "version":"1.8.0"
+ "version":"1.8.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jvarho/pylibscrypt",
+   "doc_url":"https://github.com/jvarho/pylibscrypt",
+   "home":"https://github.com/jvarho/pylibscrypt",
+   "license":"ISC",
+   "license_family":"BSD",
+   "license_file":"/LICENSE",
+   "summary":"Scrypt for Python"
+  },
+  "build":{
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "holgern"
+   ]
+  },
+  "package":{
+   "name":"pylibscrypt",
+   "version":"1.8.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "scrypt"
+   ],
+   "run":[
+    "python",
+    "scrypt",
+    "libsodium"
+   ]
+  },
+  "source":{
+   "fn":"pylibscrypt-1.8.0.tar.gz",
+   "sha256":"893c4519afae05878f7aa313b76f6193e4d4b69d157b7febf6a5ef69ae3bf6e9",
+   "url":"https://pypi.io/packages/source/p/pylibscrypt/pylibscrypt-1.8.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pylibscrypt.tests",
+    "python -m pylibscrypt.pylibsodium",
+    "python -m pylibscrypt.pbkdf2"
+   ],
+   "imports":[
+    "pylibscrypt"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "scrypt"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libsodium",
+    "python",
+    "scrypt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

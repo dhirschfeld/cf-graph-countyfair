@@ -38,6 +38,87 @@
  "conda-forge.yml":{},
  "feedstock_name":"lemon",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://lemon.cs.elte.hu/trac/lemon",
+   "license":"Boost-1.0",
+   "license_file":"LICENSE",
+   "summary":"Library for Efficient Modeling and Optimization in Networks"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bluescarni"
+   ]
+  },
+  "package":{
+   "name":"lemon",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "glpk",
+    "coincbc",
+    "doxygen",
+    "graphviz",
+    "ghostscript"
+   ],
+   "run":[
+    "glpk",
+    "coincbc"
+   ]
+  },
+  "source":{
+   "fn":"lemon-1.3.1.tar.gz",
+   "patches":null,
+   "sha256":"71b7c725f4c0b4a8ccb92eb87b208701586cf7a96156ebd821ca3ed855bad3c8",
+   "url":"http://lemon.cs.elte.hu/pub/sources/lemon-1.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/lemon/glpk.h",
+    "test -f $PREFIX/lib/libemon.a"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "doxygen",
+    "ghostscript",
+    "glpk",
+    "graphviz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "glpk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://lemon.cs.elte.hu/trac/lemon",
@@ -113,6 +194,87 @@
  },
  "name":"lemon",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://lemon.cs.elte.hu/trac/lemon",
+   "license":"Boost-1.0",
+   "license_file":"LICENSE",
+   "summary":"Library for Efficient Modeling and Optimization in Networks"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bluescarni"
+   ]
+  },
+  "package":{
+   "name":"lemon",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "glpk",
+    "coincbc",
+    "doxygen",
+    "graphviz",
+    "ghostscript"
+   ],
+   "run":[
+    "glpk",
+    "coincbc"
+   ]
+  },
+  "source":{
+   "fn":"lemon-1.3.1.tar.gz",
+   "patches":null,
+   "sha256":"71b7c725f4c0b4a8ccb92eb87b208701586cf7a96156ebd821ca3ed855bad3c8",
+   "url":"http://lemon.cs.elte.hu/pub/sources/lemon-1.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/lemon/glpk.h",
+    "test -f $PREFIX/lib/libemon.a"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "doxygen",
+    "ghostscript",
+    "glpk",
+    "graphviz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "coincbc",
+    "glpk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.07.26",
  "raw_meta_yaml":"{% set name = \"lemon\" %}\n{% set version = \"1.3.1\" %}\n{% set sha256 = \"71b7c725f4c0b4a8ccb92eb87b208701586cf7a96156ebd821ca3ed855bad3c8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://lemon.cs.elte.hu/pub/sources/lemon-{{ version  }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n   # NOTE: this disables the installation of the glpk dlls\n   # from the lemon build system. An issue has been raised upstream\n   # for this:\n   # http://lemon.cs.elte.hu/pipermail/lemon-devel/2017-May/000392.html\n    - glpk_win.diff    # [win]\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - glpk\n    - coincbc       # [unix]\n    - doxygen\n    - graphviz\n    - ghostscript   # [unix]\n  run:\n    - glpk\n    - coincbc       # [unix]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/lemon/glpk.h                 # [unix]\n    - test -f $PREFIX/lib/libemon.a                        # [unix]\n    - if not exist %LIBRARY_INC%\\\\lemon\\\\glpk.h exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\lemon.lib exit 1         # [win]\n\nabout:\n  home: https://lemon.cs.elte.hu/trac/lemon\n  license: Boost-1.0\n  license_file: LICENSE\n  summary: 'Library for Efficient Modeling and Optimization in Networks'\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n",
  "req":{
@@ -193,5 +355,82 @@
   }
  },
  "url":"http://lemon.cs.elte.hu/pub/sources/lemon-1.3.1.tar.gz",
- "version":"1.3.1"
+ "version":"1.3.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://lemon.cs.elte.hu/trac/lemon",
+   "license":"Boost-1.0",
+   "license_file":"LICENSE",
+   "summary":"Library for Efficient Modeling and Optimization in Networks"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bluescarni"
+   ]
+  },
+  "package":{
+   "name":"lemon",
+   "version":"1.3.1"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "glpk",
+    "doxygen",
+    "graphviz"
+   ],
+   "run":[
+    "glpk"
+   ]
+  },
+  "source":{
+   "fn":"lemon-1.3.1.tar.gz",
+   "patches":[
+    "glpk_win.diff"
+   ],
+   "sha256":"71b7c725f4c0b4a8ccb92eb87b208701586cf7a96156ebd821ca3ed855bad3c8",
+   "url":"http://lemon.cs.elte.hu/pub/sources/lemon-1.3.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\\\lemon\\\\glpk.h exit 1",
+    "if not exist %LIBRARY_LIB%\\\\lemon.lib exit 1"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "doxygen",
+    "glpk",
+    "graphviz"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glpk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -114,6 +114,86 @@
  },
  "feedstock_name":"calculix",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A Free Software Three-Dimensional Structural Finite Element Program",
+   "dev_url":"http://www.dhondt.de/",
+   "doc_url":"http://www.dhondt.de/ccx_2.16.pdf",
+   "home":"http://www.dhondt.de/",
+   "license":"GPL 2",
+   "license_family":"GPL",
+   "license_file":"/LICENSE",
+   "summary":"3D Structural Finite Element Program"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo"
+   ]
+  },
+  "package":{
+   "name":"calculix",
+   "version":"2.16"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl"
+   ],
+   "host":[
+    "libblas",
+    "liblapack",
+    "arpack",
+    "spooles"
+   ],
+   "run":[
+    "arpack"
+   ]
+  },
+  "source":{
+   "fn":"calculix_2.16.tar.bz2",
+   "patches":null,
+   "sha256":"ebd95a0e4d52a3a8fb969eefc85417c82f649f25526bb6d83d69868ab44d47b7",
+   "url":"http://www.dhondt.de/ccx_2.16.src.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/bin/ccx"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "arpack",
+    "libblas",
+    "liblapack",
+    "spooles"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "arpack"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A Free Software Three-Dimensional Structural Finite Element Program",
@@ -190,6 +270,92 @@
  },
  "name":"calculix",
  "new_version":"2.16",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A Free Software Three-Dimensional Structural Finite Element Program",
+   "dev_url":"http://www.dhondt.de/",
+   "doc_url":"http://www.dhondt.de/ccx_2.16.pdf",
+   "home":"http://www.dhondt.de/",
+   "license":"GPL 2",
+   "license_family":"GPL",
+   "license_file":"/LICENSE",
+   "summary":"3D Structural Finite Element Program"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo"
+   ]
+  },
+  "package":{
+   "name":"calculix",
+   "version":"2.16"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "perl",
+    "llvm-openmp"
+   ],
+   "host":[
+    "libblas",
+    "liblapack",
+    "arpack",
+    "spooles",
+    "llvm-openmp"
+   ],
+   "run":[
+    "arpack",
+    "llvm-openmp"
+   ]
+  },
+  "source":{
+   "fn":"calculix_2.16.tar.bz2",
+   "patches":null,
+   "sha256":"ebd95a0e4d52a3a8fb969eefc85417c82f649f25526bb6d83d69868ab44d47b7",
+   "url":"http://www.dhondt.de/ccx_2.16.src.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/bin/ccx"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "llvm-openmp",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "arpack",
+    "libblas",
+    "liblapack",
+    "llvm-openmp",
+    "spooles"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "arpack",
+    "llvm-openmp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.17.11.45.02",
  "raw_meta_yaml":"{% set name = \"calculix\" %}\n{% set version = \"2.16\" %}\n{% set sha256 = \"ebd95a0e4d52a3a8fb969eefc85417c82f649f25526bb6d83d69868ab44d47b7\" %}\n\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}_{{ version }}.tar.bz2\n  url: http://www.dhondt.de/ccx_{{ version }}.src.tar.bz2\n  sha256: {{ sha256 }}\n  patches:\n    - mingw.patch  # [win]\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}  # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler(\"fortran\") }}  # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - perl\n    - llvm-openmp  # [osx]\n  host:\n    - libblas\n    - liblapack\n    - arpack\n    - spooles\n    - llvm-openmp  # [osx]\n  run:\n    - arpack\n    - llvm-openmp  # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/bin/ccx  # [unix]\n    - test -f %LIBRARY_PREFIX%\\bin\\ccx.exe  # [win]\n\nabout:\n  home: http://www.dhondt.de/\n  license: GPL 2\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 3D Structural Finite Element Program\n  description: A Free Software Three-Dimensional Structural\n               Finite Element Program\n  doc_url: http://www.dhondt.de/ccx_{{ version }}.pdf\n  dev_url: http://www.dhondt.de/\n\nextra:\n  recipe-maintainers:\n    - looooo\n",
  "req":{
@@ -278,5 +444,87 @@
   }
  },
  "url":"http://www.dhondt.de/ccx_2.15.src.tar.bz2",
- "version":"2.16"
+ "version":"2.16",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A Free Software Three-Dimensional Structural Finite Element Program",
+   "dev_url":"http://www.dhondt.de/",
+   "doc_url":"http://www.dhondt.de/ccx_2.16.pdf",
+   "home":"http://www.dhondt.de/",
+   "license":"GPL 2",
+   "license_family":"GPL",
+   "license_file":"/LICENSE",
+   "summary":"3D Structural Finite Element Program"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "looooo"
+   ]
+  },
+  "package":{
+   "name":"calculix",
+   "version":"2.16"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "perl"
+   ],
+   "host":[
+    "libblas",
+    "liblapack",
+    "arpack",
+    "spooles"
+   ],
+   "run":[
+    "arpack"
+   ]
+  },
+  "source":{
+   "fn":"calculix_2.16.tar.bz2",
+   "patches":[
+    "mingw.patch"
+   ],
+   "sha256":"ebd95a0e4d52a3a8fb969eefc85417c82f649f25526bb6d83d69868ab44d47b7",
+   "url":"http://www.dhondt.de/ccx_2.16.src.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f %LIBRARY_PREFIX%\\bin\\ccx.exe"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "m2w64_fortran_compiler_stub",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "arpack",
+    "libblas",
+    "liblapack",
+    "spooles"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "arpack"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

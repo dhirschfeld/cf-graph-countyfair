@@ -56,6 +56,74 @@
  },
  "feedstock_name":"clhep",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"It is intended to be a set of HEP specific foundation and utility classes such as\nrandom generators, physics vectors, geometry and linear algebra.\n",
+   "dev_url":"https://gitlab.cern.ch/CLHEP/CLHEP",
+   "doc_url":"http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu",
+   "home":"http://proj-clhep.web.cern.ch/proj-clhep/",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"CLHEP/COPYING.LESSER",
+   "summary":"A Class Library for High Energy Physics"
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"clhep",
+   "version":"2.4.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"clhep-2.4.1.0.tar.gz",
+   "sha256":"6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022",
+   "url":"https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.4.1.0.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libCLHEP.so",
+    "test -d ${PREFIX}/include/CLHEP",
+    "conda inspect linkages -p $PREFIX clhep"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"It is intended to be a set of HEP specific foundation and utility classes such as\nrandom generators, physics vectors, geometry and linear algebra.\n",
@@ -122,6 +190,75 @@
  },
  "name":"clhep",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"It is intended to be a set of HEP specific foundation and utility classes such as\nrandom generators, physics vectors, geometry and linear algebra.\n",
+   "dev_url":"https://gitlab.cern.ch/CLHEP/CLHEP",
+   "doc_url":"http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu",
+   "home":"http://proj-clhep.web.cern.ch/proj-clhep/",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"CLHEP/COPYING.LESSER",
+   "summary":"A Class Library for High Energy Physics"
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"clhep",
+   "version":"2.4.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"clhep-2.4.1.0.tar.gz",
+   "sha256":"6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022",
+   "url":"https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.4.1.0.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libCLHEP.dylib",
+    "test -d ${PREFIX}/include/CLHEP",
+    "conda inspect linkages -p $PREFIX clhep",
+    "conda inspect objects -p $PREFIX clhep"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.09.11",
  "raw_meta_yaml":"{% set name = \"clhep\" %}\n{% set version = \"2.4.1.0\" %}\n{% set sha256 = \"6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/{{ name }}-{{ version }}.tgz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1001\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libCLHEP.so  # [linux]\n    - test -f ${PREFIX}/lib/libCLHEP.dylib  # [osx]\n    - test -d ${PREFIX}/include/CLHEP\n    - conda inspect linkages -p $PREFIX clhep  # [not win]\n    - conda inspect objects -p $PREFIX clhep  # [osx]\n\nabout:\n  home: http://proj-clhep.web.cern.ch/proj-clhep/\n  license: LGPL-3.0\n  license_family: GPL\n  license_file: CLHEP/COPYING.LESSER\n  summary: A Class Library for High Energy Physics\n  description: |\n    It is intended to be a set of HEP specific foundation and utility classes such as\n    random generators, physics vectors, geometry and linear algebra.\n  doc_url: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu\n  dev_url: https://gitlab.cern.ch/CLHEP/CLHEP\n\nextra:\n  recipe-maintainers:\n      - giacomov\n      - jasercion\n      - Areustle\n",
  "req":{
@@ -179,5 +316,72 @@
   }
  },
  "url":"https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.4.1.0.tgz",
- "version":"2.4.1.0"
+ "version":"2.4.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"It is intended to be a set of HEP specific foundation and utility classes such as\nrandom generators, physics vectors, geometry and linear algebra.\n",
+   "dev_url":"https://gitlab.cern.ch/CLHEP/CLHEP",
+   "doc_url":"http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu",
+   "home":"http://proj-clhep.web.cern.ch/proj-clhep/",
+   "license":"LGPL-3.0",
+   "license_family":"GPL",
+   "license_file":"CLHEP/COPYING.LESSER",
+   "summary":"A Class Library for High Energy Physics"
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "giacomov",
+    "jasercion",
+    "Areustle"
+   ]
+  },
+  "package":{
+   "name":"clhep",
+   "version":"2.4.1.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null
+  },
+  "source":{
+   "fn":"clhep-2.4.1.0.tar.gz",
+   "sha256":"6939ea3b824bdd07e7673a969ccc983500889e1daf553277f80e3cd60fb3f022",
+   "url":"https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/clhep-2.4.1.0.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -d ${PREFIX}/include/CLHEP"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

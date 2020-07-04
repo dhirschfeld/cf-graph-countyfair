@@ -181,6 +181,88 @@
  },
  "feedstock_name":"ctds",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/zillow/ctds",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"DB API 2.0-compliant Linux driver for SQL Server"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "python setup.py build_ext --include-dirs=$PREFIX/include --library-dirs=$PREFIX/lib",
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"ctds",
+   "version":"1.11.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "freetds"
+   ],
+   "run":[
+    "python",
+    "freetds",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"ctds-1.11.0.tar.gz",
+   "sha256":"c16308a8489ff2f297f08f3927943287d7740d5d9c6097ab549d1ad43853898d",
+   "url":"https://pypi.io/packages/source/c/ctds/ctds-1.11.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages ctds"
+   ],
+   "imports":[
+    "ctds",
+    "ctds.pool"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/zillow/ctds",
@@ -262,6 +344,89 @@
  },
  "name":"ctds",
  "new_version":"1.12.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/zillow/ctds",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"DB API 2.0-compliant Linux driver for SQL Server"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "python setup.py build_ext --include-dirs=$PREFIX/include --library-dirs=$PREFIX/lib",
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"ctds",
+   "version":"1.11.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "freetds"
+   ],
+   "run":[
+    "python",
+    "freetds",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"ctds-1.11.0.tar.gz",
+   "sha256":"c16308a8489ff2f297f08f3927943287d7740d5d9c6097ab549d1ad43853898d",
+   "url":"https://pypi.io/packages/source/c/ctds/ctds-1.11.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages ctds",
+    "conda inspect objects"
+   ],
+   "imports":[
+    "ctds",
+    "ctds.pool"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"ctds\" %}\n{% set version = \"1.11.0\" %}\n{% set sha256 = \"c16308a8489ff2f297f08f3927943287d7740d5d9c6097ab549d1ad43853898d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py build_ext --include-dirs=%PREFIX%\\include --library-dirs=%PREFIX%\\lib  # [win]\n    - python setup.py build_ext --include-dirs=$PREFIX/include --library-dirs=$PREFIX/lib    # [not win]\n    - python setup.py install --single-version-externally-managed --record record.txt\n  # Due to this requiring stdbool.h and windows C compilers not having C99 Headers\n  # disable for now\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - freetds\n  run:\n    - python\n    - freetds\n    # package uses pkg_resources\n    - setuptools\n\ntest:\n  imports:\n    - ctds\n    - ctds.pool\n\n  commands:\n    - conda inspect linkages ctds  # [linux or osx]\n    - conda inspect objects   # [osx]\n\nabout:\n  home: https://github.com/zillow/ctds\n  license: MIT\n  license_file: LICENSE\n  summary: 'DB API 2.0-compliant Linux driver for SQL Server'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
@@ -332,5 +497,86 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/ctds/ctds-1.10.1.tar.gz",
- "version":"1.11.0"
+ "version":"1.11.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/zillow/ctds",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"DB API 2.0-compliant Linux driver for SQL Server"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "python setup.py build_ext --include-dirs=%PREFIX%\\include --library-dirs=%PREFIX%\\lib",
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"ctds",
+   "version":"1.11.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "setuptools",
+    "freetds"
+   ],
+   "run":[
+    "python",
+    "freetds",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"ctds-1.11.0.tar.gz",
+   "sha256":"c16308a8489ff2f297f08f3927943287d7740d5d9c6097ab549d1ad43853898d",
+   "url":"https://pypi.io/packages/source/c/ctds/ctds-1.11.0.tar.gz"
+  },
+  "test":{
+   "commands":null,
+   "imports":[
+    "ctds",
+    "ctds.pool"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetds",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"libdrm-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Direct Rendering Manager runtime library",
+   "home":"https://dri.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "summary":"(CDT) Direct Rendering Manager runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libdrm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libdrm-devel-cos7-aarch64",
+    "requirements":[
+     "libdrm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libdrm-cos7-aarch64",
+   "version":"2.4.91"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"89486bec2726191923af975933d147cc4aaac98e32d71f50f29d613cfd4c4d3c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-2.4.91-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"7400b959f014f7a1021b273f0a9868dacfcce343d9ec0672a1863563b4048402",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-devel-2.4.91-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so.2\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Direct Rendering Manager runtime library",
@@ -177,6 +278,107 @@
  },
  "name":"libdrm-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Direct Rendering Manager runtime library",
+   "home":"https://dri.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "summary":"(CDT) Direct Rendering Manager runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libdrm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libdrm-devel-cos7-aarch64",
+    "requirements":[
+     "libdrm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libdrm-cos7-aarch64",
+   "version":"2.4.91"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"89486bec2726191923af975933d147cc4aaac98e32d71f50f29d613cfd4c4d3c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-2.4.91-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"7400b959f014f7a1021b273f0a9868dacfcce343d9ec0672a1863563b4048402",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-devel-2.4.91-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so.2\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "libdrm-cos7-aarch64",
   "libdrm-devel-cos7-aarch64"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-2.4.91-3.el7.aarch64.rpm",
- "version":"2.4.91"
+ "version":"2.4.91",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Direct Rendering Manager runtime library",
+   "home":"https://dri.sourceforge.net",
+   "license":"MIT",
+   "license_family":"MIT",
+   "summary":"(CDT) Direct Rendering Manager runtime library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"libdrm-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"libdrm-devel-cos7-aarch64",
+    "requirements":[
+     "libdrm-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libdrm-cos7-aarch64",
+   "version":"2.4.91"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"89486bec2726191923af975933d147cc4aaac98e32d71f50f29d613cfd4c4d3c",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-2.4.91-3.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"7400b959f014f7a1021b273f0a9868dacfcce343d9ec0672a1863563b4048402",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/libdrm-devel-2.4.91-3.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libdrm.so.2\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdrm-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

@@ -112,6 +112,90 @@
  "conda-forge.yml":{},
  "feedstock_name":"anndata",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"AnnData provides a scalable way of keeping track of data and learned annotations.\nIt was initially built for Scanpy (Genome Biology, 2018).\n",
+   "dev_url":"https://github.com/theislab/anndata",
+   "doc_url":"http://anndata.rtfd.io",
+   "home":"https://github.com/theislab/anndata",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"An annotated data matrix."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakakokosar",
+    "pavlin-policar",
+    "flying-sheep"
+   ]
+  },
+  "package":{
+   "name":"anndata",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pathlib",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.23.0",
+    "scipy",
+    "h5py",
+    "natsort",
+    "importlib_metadata",
+    "packaging"
+   ]
+  },
+  "source":{
+   "sha256":"7b3f9c0272370ac6aa531bfcddd8904282997f90f596142999098c6e7f82965d",
+   "url":"https://pypi.io/packages/source/a/anndata/anndata-0.7.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "anndata"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pathlib",
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "importlib_metadata",
+    "natsort",
+    "packaging",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"AnnData provides a scalable way of keeping track of data and learned annotations.\nIt was initially built for Scanpy (Genome Biology, 2018).\n",
@@ -202,6 +286,90 @@
   "0.7.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"AnnData provides a scalable way of keeping track of data and learned annotations.\nIt was initially built for Scanpy (Genome Biology, 2018).\n",
+   "dev_url":"https://github.com/theislab/anndata",
+   "doc_url":"http://anndata.rtfd.io",
+   "home":"https://github.com/theislab/anndata",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"An annotated data matrix."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakakokosar",
+    "pavlin-policar",
+    "flying-sheep"
+   ]
+  },
+  "package":{
+   "name":"anndata",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pathlib",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.23.0",
+    "scipy",
+    "h5py",
+    "natsort",
+    "importlib_metadata",
+    "packaging"
+   ]
+  },
+  "source":{
+   "sha256":"7b3f9c0272370ac6aa531bfcddd8904282997f90f596142999098c6e7f82965d",
+   "url":"https://pypi.io/packages/source/a/anndata/anndata-0.7.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "anndata"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pathlib",
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "importlib_metadata",
+    "natsort",
+    "packaging",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.19.19.39.08",
  "raw_meta_yaml":"{% set name = \"anndata\" %}\n{% set version = \"0.7.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7b3f9c0272370ac6aa531bfcddd8904282997f90f596142999098c6e7f82965d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<35]\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pathlib\n    - setuptools_scm\n  run:\n    - python\n    - pandas >=0.23.0\n    - scipy\n    - h5py\n    - natsort\n    - importlib_metadata  # [py<38]\n    - packaging\n\ntest:\n  imports:\n    - anndata\n\nabout:\n  home: https://github.com/theislab/anndata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: An annotated data matrix.\n  description: |\n    AnnData provides a scalable way of keeping track of data and learned annotations. \n    It was initially built for Scanpy (Genome Biology, 2018).\n  doc_url: http://anndata.rtfd.io\n  dev_url: https://github.com/theislab/anndata\n\nextra:\n  recipe-maintainers:\n    - jakakokosar\n    - pavlin-policar\n    - flying-sheep\n",
  "req":{
@@ -284,5 +452,89 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/anndata/anndata-0.6.22.post1.tar.gz",
- "version":"0.7.3"
+ "version":"0.7.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"AnnData provides a scalable way of keeping track of data and learned annotations.\nIt was initially built for Scanpy (Genome Biology, 2018).\n",
+   "dev_url":"https://github.com/theislab/anndata",
+   "doc_url":"http://anndata.rtfd.io",
+   "home":"https://github.com/theislab/anndata",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"An annotated data matrix."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakakokosar",
+    "pavlin-policar",
+    "flying-sheep"
+   ]
+  },
+  "package":{
+   "name":"anndata",
+   "version":"0.7.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pathlib",
+    "setuptools_scm"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.23.0",
+    "scipy",
+    "h5py",
+    "natsort",
+    "importlib_metadata",
+    "packaging"
+   ]
+  },
+  "source":{
+   "sha256":"7b3f9c0272370ac6aa531bfcddd8904282997f90f596142999098c6e7f82965d",
+   "url":"https://pypi.io/packages/source/a/anndata/anndata-0.7.3.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "anndata"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pathlib",
+    "pip",
+    "python",
+    "setuptools_scm"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "h5py",
+    "importlib_metadata",
+    "natsort",
+    "packaging",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

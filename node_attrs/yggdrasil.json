@@ -163,6 +163,153 @@
  },
  "feedstock_name":"yggdrasil",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The Crops in Silico (CiS) framework, yggdrasil, provides support for\nconnecting scientific models written in different programming languages.\nTo connect two models, modelers add communications interfaces to the model code\nand provide declarative specification files that identfy the\nmodels that should be run and the inputs and outputs those models\nexpect. yggdrasil uses this information to launch the models\non parallel processes and orchestrate asynchronous communication between them.\nAlthough designed for connecting crop models, yggdrasil can be used to\nconnect scientific models from any domain.\n",
+   "dev_url":"https://github.com/cropsinsilico/yggdrasil",
+   "doc_url":"https://cropsinsilico.github.io/yggdrasil",
+   "home":"https://github.com/cropsinsilico/yggdrasil",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A framework for connecting computational models from multiple languages."
+  },
+  "build":{
+   "entry_points":[
+    "ygginfo = yggdrasil.command_line:ygginfo",
+    "yggrun = yggdrasil.command_line:yggrun",
+    "cisrun = yggdrasil.command_line:yggrun",
+    "yggcc = yggdrasil.command_line:yggcc",
+    "yggccflags = yggdrasil.command_line:cc_flags",
+    "yggldflags = yggdrasil.command_line:ld_flags",
+    "yggtest = yggdrasil:run_tsts",
+    "yggmetaschema = yggdrasil.command_line:regen_metaschema",
+    "yggschema = yggdrasil.command_line:regen_schema",
+    "yggbuildapi_c = yggdrasil.command_line:rebuild_c_api",
+    "yggconfig = yggdrasil.command_line:update_config",
+    "yggtime_comm = yggdrasil.command_line:yggtime_comm",
+    "yggtime_lang = yggdrasil.command_line:yggtime_lang",
+    "yggtime_os = yggdrasil.command_line:yggtime_os",
+    "yggtime_py = yggdrasil.command_line:yggtime_py",
+    "yggtime_paper = yggdrasil.command_line:yggtime_paper",
+    "yggvalidate = yggdrasil.command_line:validate_yaml",
+    "ygginstall = yggdrasil.command_line:ygginstall"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"yggdrasil",
+   "version":"1.2.0"
+  },
+  "requirements":{
+   "host":[
+    "czmq",
+    "pip",
+    "python",
+    "sysv_ipc",
+    "zeromq"
+   ],
+   "run":[
+    "cmake",
+    "czmq",
+    "flaky",
+    "git",
+    "GitPython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pyperf",
+    "psutil",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "sysv_ipc",
+    "unyt",
+    "zeromq"
+   ]
+  },
+  "source":{
+   "sha256":"b687c0018e1ae8ae7291e71b5d0881f88e99257487ec91e9a5b835a0df4d581a",
+   "url":"https://pypi.io/packages/source/y/yggdrasil-framework/yggdrasil-framework-1.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yggrun -h"
+   ],
+   "imports":[
+    "yggdrasil"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "czmq",
+    "pip",
+    "python",
+    "sysv_ipc",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "czmq",
+    "flaky",
+    "git",
+    "gitpython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "psutil",
+    "pyperf",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "sysv_ipc",
+    "unyt",
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The Crops in Silico (CiS) framework, yggdrasil, provides support for\nconnecting scientific models written in different programming languages.\nTo connect two models, modelers add communications interfaces to the model code\nand provide declarative specification files that identfy the\nmodels that should be run and the inputs and outputs those models\nexpect. yggdrasil uses this information to launch the models\non parallel processes and orchestrate asynchronous communication between them.\nAlthough designed for connecting crop models, yggdrasil can be used to\nconnect scientific models from any domain.\n",
@@ -371,6 +518,153 @@
   "1.2.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The Crops in Silico (CiS) framework, yggdrasil, provides support for\nconnecting scientific models written in different programming languages.\nTo connect two models, modelers add communications interfaces to the model code\nand provide declarative specification files that identfy the\nmodels that should be run and the inputs and outputs those models\nexpect. yggdrasil uses this information to launch the models\non parallel processes and orchestrate asynchronous communication between them.\nAlthough designed for connecting crop models, yggdrasil can be used to\nconnect scientific models from any domain.\n",
+   "dev_url":"https://github.com/cropsinsilico/yggdrasil",
+   "doc_url":"https://cropsinsilico.github.io/yggdrasil",
+   "home":"https://github.com/cropsinsilico/yggdrasil",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A framework for connecting computational models from multiple languages."
+  },
+  "build":{
+   "entry_points":[
+    "ygginfo = yggdrasil.command_line:ygginfo",
+    "yggrun = yggdrasil.command_line:yggrun",
+    "cisrun = yggdrasil.command_line:yggrun",
+    "yggcc = yggdrasil.command_line:yggcc",
+    "yggccflags = yggdrasil.command_line:cc_flags",
+    "yggldflags = yggdrasil.command_line:ld_flags",
+    "yggtest = yggdrasil:run_tsts",
+    "yggmetaschema = yggdrasil.command_line:regen_metaschema",
+    "yggschema = yggdrasil.command_line:regen_schema",
+    "yggbuildapi_c = yggdrasil.command_line:rebuild_c_api",
+    "yggconfig = yggdrasil.command_line:update_config",
+    "yggtime_comm = yggdrasil.command_line:yggtime_comm",
+    "yggtime_lang = yggdrasil.command_line:yggtime_lang",
+    "yggtime_os = yggdrasil.command_line:yggtime_os",
+    "yggtime_py = yggdrasil.command_line:yggtime_py",
+    "yggtime_paper = yggdrasil.command_line:yggtime_paper",
+    "yggvalidate = yggdrasil.command_line:validate_yaml",
+    "ygginstall = yggdrasil.command_line:ygginstall"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"yggdrasil",
+   "version":"1.2.0"
+  },
+  "requirements":{
+   "host":[
+    "czmq",
+    "pip",
+    "python",
+    "sysv_ipc",
+    "zeromq"
+   ],
+   "run":[
+    "cmake",
+    "czmq",
+    "flaky",
+    "git",
+    "GitPython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pyperf",
+    "psutil",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "sysv_ipc",
+    "unyt",
+    "zeromq"
+   ]
+  },
+  "source":{
+   "sha256":"b687c0018e1ae8ae7291e71b5d0881f88e99257487ec91e9a5b835a0df4d581a",
+   "url":"https://pypi.io/packages/source/y/yggdrasil-framework/yggdrasil-framework-1.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yggrun -h"
+   ],
+   "imports":[
+    "yggdrasil"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "czmq",
+    "pip",
+    "python",
+    "sysv_ipc",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "czmq",
+    "flaky",
+    "git",
+    "gitpython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "psutil",
+    "pyperf",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "sysv_ipc",
+    "unyt",
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"yggdrasil\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}-framework/{{ name }}-framework-{{ version }}.tar.gz\n  sha256: b687c0018e1ae8ae7291e71b5d0881f88e99257487ec91e9a5b835a0df4d581a\n\nbuild:\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '\n  skip: true  # [(win and vc<14) or py<35]\n  entry_points:\n    - ygginfo = yggdrasil.command_line:ygginfo\n    - yggrun = yggdrasil.command_line:yggrun\n    - cisrun = yggdrasil.command_line:yggrun\n    - yggcc = yggdrasil.command_line:yggcc\n    - yggccflags = yggdrasil.command_line:cc_flags\n    - yggldflags = yggdrasil.command_line:ld_flags\n    - yggtest = yggdrasil:run_tsts\n    - yggmetaschema = yggdrasil.command_line:regen_metaschema\n    - yggschema = yggdrasil.command_line:regen_schema\n    - yggbuildapi_c = yggdrasil.command_line:rebuild_c_api\n    - yggconfig = yggdrasil.command_line:update_config\n    - yggtime_comm = yggdrasil.command_line:yggtime_comm\n    - yggtime_lang = yggdrasil.command_line:yggtime_lang\n    - yggtime_os = yggdrasil.command_line:yggtime_os\n    - yggtime_py = yggdrasil.command_line:yggtime_py\n    - yggtime_paper = yggdrasil.command_line:yggtime_paper\n    - yggvalidate = yggdrasil.command_line:validate_yaml\n    - ygginstall = yggdrasil.command_line:ygginstall\n\nrequirements:\n  host:\n    - czmq\n    - pip\n    - python\n    - sysv_ipc  # [unix]\n    - zeromq\n  run:\n    - cmake\n    - czmq\n    - flaky\n    - git\n    - GitPython\n    - jsonschema\n    - matplotlib-base\n    - numpy\n    - pandas\n    - pyperf\n    - pint  # [py2k]\n    - psutil\n    - pystache\n    - python\n    - python-rapidjson  # [not py2k]\n    - pyyaml\n    - pyzmq\n    - r-base\n    - r-bit64\n    - r-r6\n    - r-reticulate\n    - r-units\n    - r-zeallot\n    - scipy\n    - six\n    - sysv_ipc  # [unix]\n    - unyt  # [not py2k]\n    - zeromq\n    - {{ compiler('c') }}  # [win]\n    - {{ compiler('cxx') }}  # [win]\n\ntest:\n  imports:\n    - yggdrasil\n  commands:\n    - yggrun -h\n\nabout:\n  home: https://github.com/cropsinsilico/yggdrasil\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A framework for connecting computational models from multiple languages.\n\n  description: |\n    The Crops in Silico (CiS) framework, yggdrasil, provides support for\n    connecting scientific models written in different programming languages.\n    To connect two models, modelers add communications interfaces to the model code\n    and provide declarative specification files that identfy the\n    models that should be run and the inputs and outputs those models\n    expect. yggdrasil uses this information to launch the models\n    on parallel processes and orchestrate asynchronous communication between them.\n    Although designed for connecting crop models, yggdrasil can be used to\n    connect scientific models from any domain.\n  doc_url: https://cropsinsilico.github.io/yggdrasil\n  dev_url: https://github.com/cropsinsilico/yggdrasil\n\nextra:\n  recipe-maintainers:\n    - langmm\n",
  "req":{
@@ -519,5 +813,153 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yggdrasil-framework/yggdrasil-framework-0.10.0.tar.gz",
- "version":"1.2.0"
+ "version":"1.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The Crops in Silico (CiS) framework, yggdrasil, provides support for\nconnecting scientific models written in different programming languages.\nTo connect two models, modelers add communications interfaces to the model code\nand provide declarative specification files that identfy the\nmodels that should be run and the inputs and outputs those models\nexpect. yggdrasil uses this information to launch the models\non parallel processes and orchestrate asynchronous communication between them.\nAlthough designed for connecting crop models, yggdrasil can be used to\nconnect scientific models from any domain.\n",
+   "dev_url":"https://github.com/cropsinsilico/yggdrasil",
+   "doc_url":"https://cropsinsilico.github.io/yggdrasil",
+   "home":"https://github.com/cropsinsilico/yggdrasil",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"A framework for connecting computational models from multiple languages."
+  },
+  "build":{
+   "entry_points":[
+    "ygginfo = yggdrasil.command_line:ygginfo",
+    "yggrun = yggdrasil.command_line:yggrun",
+    "cisrun = yggdrasil.command_line:yggrun",
+    "yggcc = yggdrasil.command_line:yggcc",
+    "yggccflags = yggdrasil.command_line:cc_flags",
+    "yggldflags = yggdrasil.command_line:ld_flags",
+    "yggtest = yggdrasil:run_tsts",
+    "yggmetaschema = yggdrasil.command_line:regen_metaschema",
+    "yggschema = yggdrasil.command_line:regen_schema",
+    "yggbuildapi_c = yggdrasil.command_line:rebuild_c_api",
+    "yggconfig = yggdrasil.command_line:update_config",
+    "yggtime_comm = yggdrasil.command_line:yggtime_comm",
+    "yggtime_lang = yggdrasil.command_line:yggtime_lang",
+    "yggtime_os = yggdrasil.command_line:yggtime_os",
+    "yggtime_py = yggdrasil.command_line:yggtime_py",
+    "yggtime_paper = yggdrasil.command_line:yggtime_paper",
+    "yggvalidate = yggdrasil.command_line:validate_yaml",
+    "ygginstall = yggdrasil.command_line:ygginstall"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv ",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "langmm"
+   ]
+  },
+  "package":{
+   "name":"yggdrasil",
+   "version":"1.2.0"
+  },
+  "requirements":{
+   "host":[
+    "czmq",
+    "pip",
+    "python",
+    "zeromq"
+   ],
+   "run":[
+    "cmake",
+    "czmq",
+    "flaky",
+    "git",
+    "GitPython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pyperf",
+    "psutil",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "unyt",
+    "zeromq",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "sha256":"b687c0018e1ae8ae7291e71b5d0881f88e99257487ec91e9a5b835a0df4d581a",
+   "url":"https://pypi.io/packages/source/y/yggdrasil-framework/yggdrasil-framework-1.2.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "yggrun -h"
+   ],
+   "imports":[
+    "yggdrasil"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "czmq",
+    "pip",
+    "python",
+    "zeromq"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "czmq",
+    "flaky",
+    "git",
+    "gitpython",
+    "jsonschema",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "psutil",
+    "pyperf",
+    "pystache",
+    "python",
+    "python-rapidjson",
+    "pyyaml",
+    "pyzmq",
+    "r-base",
+    "r-bit64",
+    "r-r6",
+    "r-reticulate",
+    "r-units",
+    "r-zeallot",
+    "scipy",
+    "six",
+    "unyt",
+    "zeromq"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

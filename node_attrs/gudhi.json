@@ -154,6 +154,124 @@
  },
  "feedstock_name":"gudhi",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The GUDHI library is a generic open source C++ library, with a Python\ninterface, for Topological Data Analysis (TDA) and Higher Dimensional\nGeometry Understanding. The library offers state-of-the-art data structures\nand algorithms to construct simplicial complexes and compute persistent\nhomology.\n",
+   "doc_url":"http://gudhi.gforge.inria.fr/python/3.2.0/",
+   "home":"http://gudhi.gforge.inria.fr/",
+   "license":"MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"Geometry Understanding in Higher Dimensions"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "VincentRouvreau"
+   ]
+  },
+  "package":{
+   "name":"gudhi",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "git",
+    "python",
+    "numpy",
+    "setuptools",
+    "cython",
+    "pybind11",
+    "boost-cpp",
+    "eigen",
+    "cgal-cpp 5.0.1"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "setuptools",
+    "boost-cpp",
+    "cgal-cpp 5.0.1"
+   ]
+  },
+  "source":{
+   "git_depth":"1",
+   "git_rev":"tags/gudhi-release-3.2.0",
+   "git_url":"https://github.com/GUDHI/gudhi-devel.git"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/gudhi/Simplex_tree.h",
+    "conda inspect linkages $PKG_NAME",
+    "pytest src/python/test/test_alpha_complex.py",
+    "pytest src/python/test/test_bottleneck_distance.py",
+    "pytest src/python/test/test_cubical_complex.py",
+    "pytest src/python/test/test_euclidean_witness_complex.py",
+    "pytest src/python/test/test_reader_utils.py",
+    "pytest src/python/test/test_rips_complex.py",
+    "pytest src/python/test/test_simplex_generators.py",
+    "pytest src/python/test/test_simplex_tree.py",
+    "pytest src/python/test/test_subsampling.py",
+    "pytest src/python/test/test_tangential_complex.py",
+    "pytest src/python/test/test_time_delay.py",
+    "pytest src/python/test/test_witness_complex.py"
+   ],
+   "requires":[
+    "pytest",
+    "python"
+   ],
+   "source_files":[
+    "src/python/test"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "cython",
+    "eigen",
+    "git",
+    "numpy",
+    "pybind11",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "python"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The GUDHI library is a generic open source C++ library, with a Python\ninterface, for Topological Data Analysis (TDA) and Higher Dimensional\nGeometry Understanding. The library offers state-of-the-art data structures\nand algorithms to construct simplicial complexes and compute persistent\nhomology.\n",
@@ -303,6 +421,125 @@
  },
  "name":"gudhi",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The GUDHI library is a generic open source C++ library, with a Python\ninterface, for Topological Data Analysis (TDA) and Higher Dimensional\nGeometry Understanding. The library offers state-of-the-art data structures\nand algorithms to construct simplicial complexes and compute persistent\nhomology.\n",
+   "doc_url":"http://gudhi.gforge.inria.fr/python/3.2.0/",
+   "home":"http://gudhi.gforge.inria.fr/",
+   "license":"MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"Geometry Understanding in Higher Dimensions"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "VincentRouvreau"
+   ]
+  },
+  "package":{
+   "name":"gudhi",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "git",
+    "python",
+    "numpy",
+    "setuptools",
+    "cython",
+    "pybind11",
+    "boost-cpp",
+    "eigen",
+    "cgal-cpp 5.0.1"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "setuptools",
+    "boost-cpp",
+    "cgal-cpp 5.0.1"
+   ]
+  },
+  "source":{
+   "git_depth":"1",
+   "git_rev":"tags/gudhi-release-3.2.0",
+   "git_url":"https://github.com/GUDHI/gudhi-devel.git"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/include/gudhi/Simplex_tree.h",
+    "conda inspect linkages $PKG_NAME",
+    "conda inspect objects $PKG_NAME",
+    "pytest src/python/test/test_alpha_complex.py",
+    "pytest src/python/test/test_bottleneck_distance.py",
+    "pytest src/python/test/test_cubical_complex.py",
+    "pytest src/python/test/test_euclidean_witness_complex.py",
+    "pytest src/python/test/test_reader_utils.py",
+    "pytest src/python/test/test_rips_complex.py",
+    "pytest src/python/test/test_simplex_generators.py",
+    "pytest src/python/test/test_simplex_tree.py",
+    "pytest src/python/test/test_subsampling.py",
+    "pytest src/python/test/test_tangential_complex.py",
+    "pytest src/python/test/test_time_delay.py",
+    "pytest src/python/test/test_witness_complex.py"
+   ],
+   "requires":[
+    "pytest",
+    "python"
+   ],
+   "source_files":[
+    "src/python/test"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "cython",
+    "eigen",
+    "git",
+    "numpy",
+    "pybind11",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "python"
+   ]
+  }
+ },
  "pinning_version":"2020.03.23",
  "raw_meta_yaml":"{% set version = \"3.2.0\" %}\n\npackage:\n  name: gudhi\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/GUDHI/gudhi-devel.git\n  git_rev: tags/gudhi-release-{{ version }}\n  git_depth: 1\n\nbuild:\n  number: 0\n  # for windows, no python 2.X\n  skip: true  # [win and py2k]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - git\n    - python\n    - numpy\n    - setuptools\n    - cython\n    - pybind11\n    - boost-cpp\n    - eigen\n    - cgal-cpp 5.0.1\n  run:\n    - python\n    - numpy\n    - setuptools\n    - boost-cpp\n    - cgal-cpp 5.0.1\n\ntest:\n  requires:\n    - pytest\n    - python\n  source_files:\n    - src/python/test\n  commands:\n    - test -f ${PREFIX}/include/gudhi/Simplex_tree.h  # [unix]\n    - if not exist %LIBRARY_INC%\\gudhi\\Simplex_tree.h exit 1  # [win]\n    - conda inspect linkages $PKG_NAME  # [not win]\n    - conda inspect objects $PKG_NAME  # [osx]\n    - pytest src/python/test/test_alpha_complex.py\n    - pytest src/python/test/test_bottleneck_distance.py\n    - pytest src/python/test/test_cubical_complex.py\n    - pytest src/python/test/test_euclidean_witness_complex.py\n    - pytest src/python/test/test_reader_utils.py\n    - pytest src/python/test/test_rips_complex.py\n    - pytest src/python/test/test_simplex_generators.py\n    - pytest src/python/test/test_simplex_tree.py\n    - pytest src/python/test/test_subsampling.py\n    - pytest src/python/test/test_tangential_complex.py\n    - pytest src/python/test/test_time_delay.py\n    - pytest src/python/test/test_witness_complex.py\nabout:\n  home: http://gudhi.gforge.inria.fr/\n  license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later\n  license_file: LICENSE\n  summary: Geometry Understanding in Higher Dimensions\n  description: |\n    The GUDHI library is a generic open source C++ library, with a Python\n    interface, for Topological Data Analysis (TDA) and Higher Dimensional\n    Geometry Understanding. The library offers state-of-the-art data structures\n    and algorithms to construct simplicial complexes and compute persistent\n    homology.\n  doc_url: http://gudhi.gforge.inria.fr/python/{{ version }}/\nextra:\n  recipe-maintainers:\n    - VincentRouvreau\n",
  "req":{
@@ -407,5 +644,122 @@
   }
  },
  "url":"https://github.com/GUDHI/gudhi-devel/archive/fa19484e31dbe0b63d50475f15e654a5e1a0c4e1.tar.gz",
- "version":"3.2.0"
+ "version":"3.2.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The GUDHI library is a generic open source C++ library, with a Python\ninterface, for Topological Data Analysis (TDA) and Higher Dimensional\nGeometry Understanding. The library offers state-of-the-art data structures\nand algorithms to construct simplicial complexes and compute persistent\nhomology.\n",
+   "doc_url":"http://gudhi.gforge.inria.fr/python/3.2.0/",
+   "home":"http://gudhi.gforge.inria.fr/",
+   "license":"MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later",
+   "license_file":"LICENSE",
+   "summary":"Geometry Understanding in Higher Dimensions"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "VincentRouvreau"
+   ]
+  },
+  "package":{
+   "name":"gudhi",
+   "version":"3.2.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "git",
+    "python",
+    "numpy",
+    "setuptools",
+    "cython",
+    "pybind11",
+    "boost-cpp",
+    "eigen",
+    "cgal-cpp 5.0.1"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "setuptools",
+    "boost-cpp",
+    "cgal-cpp 5.0.1"
+   ]
+  },
+  "source":{
+   "git_depth":"1",
+   "git_rev":"tags/gudhi-release-3.2.0",
+   "git_url":"https://github.com/GUDHI/gudhi-devel.git"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\gudhi\\Simplex_tree.h exit 1",
+    "pytest src/python/test/test_alpha_complex.py",
+    "pytest src/python/test/test_bottleneck_distance.py",
+    "pytest src/python/test/test_cubical_complex.py",
+    "pytest src/python/test/test_euclidean_witness_complex.py",
+    "pytest src/python/test/test_reader_utils.py",
+    "pytest src/python/test/test_rips_complex.py",
+    "pytest src/python/test/test_simplex_generators.py",
+    "pytest src/python/test/test_simplex_tree.py",
+    "pytest src/python/test/test_subsampling.py",
+    "pytest src/python/test/test_tangential_complex.py",
+    "pytest src/python/test/test_time_delay.py",
+    "pytest src/python/test/test_witness_complex.py"
+   ],
+   "requires":[
+    "pytest",
+    "python"
+   ],
+   "source_files":[
+    "src/python/test"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "cython",
+    "eigen",
+    "git",
+    "numpy",
+    "pybind11",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "boost-cpp",
+    "cgal-cpp",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pytest",
+    "python"
+   ]
+  }
+ }
 }

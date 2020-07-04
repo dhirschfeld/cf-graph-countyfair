@@ -4,6 +4,109 @@
  "conda-forge.yml":{},
  "feedstock_name":"mesa-libegl-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libEGL runtime libraries",
+   "home":"https://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libEGL runtime libraries"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek",
+    "mariusvniekerk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"mesa-libegl-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libegl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libegl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libegl-cos7-aarch64",
+   "version":"18.3.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f8a35fd7b832875ac13bce697a76bc2c00336d1d98fc4e53c1a69027e374ea7f",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-18.3.4-5.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d5b5b8470e7cc2249186f69a233e9b9c77bb2aab057c252b76b41ad90c9641b2",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-devel-18.3.4-5.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mesa-libegl-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Mesa libEGL runtime libraries",
@@ -181,6 +284,109 @@
  },
  "name":"mesa-libegl-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libEGL runtime libraries",
+   "home":"https://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libEGL runtime libraries"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek",
+    "mariusvniekerk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"mesa-libegl-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libegl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libegl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libegl-cos7-aarch64",
+   "version":"18.3.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f8a35fd7b832875ac13bce697a76bc2c00336d1d98fc4e53c1a69027e374ea7f",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-18.3.4-5.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d5b5b8470e7cc2249186f69a233e9b9c77bb2aab057c252b76b41ad90c9641b2",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-devel-18.3.4-5.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mesa-libegl-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "mesa-libegl-cos7-aarch64",
   "mesa-libegl-devel-cos7-aarch64"
@@ -238,5 +444,108 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-18.3.4-5.el7.aarch64.rpm",
- "version":"18.3.4"
+ "version":"18.3.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Mesa libEGL runtime libraries",
+   "home":"https://www.mesa3d.org",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"(CDT) Mesa libEGL runtime libraries"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jayfurmanek",
+    "mariusvniekerk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"mesa-libegl-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"mesa-libegl-devel-cos7-aarch64",
+    "requirements":[
+     "mesa-libegl-cos7-aarch64"
+    ],
+    "test":{
+     "commands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"mesa-libegl-cos7-aarch64",
+   "version":"18.3.4"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f8a35fd7b832875ac13bce697a76bc2c00336d1d98fc4e53c1a69027e374ea7f",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-18.3.4-5.el7.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"d5b5b8470e7cc2249186f69a233e9b9c77bb2aab057c252b76b41ad90c9641b2",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/mesa-libEGL-devel-18.3.4-5.el7.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libEGL_mesa.so.0\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "mesa-libegl-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

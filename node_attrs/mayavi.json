@@ -174,6 +174,113 @@
  },
  "feedstock_name":"mayavi",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/enthought/mayavi",
+   "doc_url":"http://docs.enthought.com/mayavi/mayavi",
+   "home":"https://github.com/enthought/mayavi",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The Mayavi scientific data 3-dimensional visualizers"
+  },
+  "build":{
+   "entry_points":[
+    "mayavi2 = mayavi.scripts.mayavi2:main",
+    "tvtk_doc = tvtk.tools.tvtk_doc:main"
+   ],
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "grlee77",
+    "hadim",
+    "dfroger",
+    "cadair"
+   ]
+  },
+  "package":{
+   "name":"mayavi",
+   "version":"4.7.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "pip",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools",
+    "envisage",
+    "pyqt >=4,<6",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"mayavi-4.7.1.tar.gz",
+   "sha256":"d679daf930751f0c531938f4664a51ac4bed994a807488ca5ea5a8c15fabf184",
+   "url":"https://github.com/enthought/mayavi/archive/4.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mayavi2 --help"
+   ],
+   "imports":[
+    "tvtk",
+    "tvtk.array_ext",
+    "mayavi"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "numpy",
+    "pip",
+    "python",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "envisage",
+    "numpy",
+    "pyqt",
+    "python",
+    "setuptools",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/enthought/mayavi",
@@ -301,6 +408,115 @@
  },
  "name":"mayavi",
  "new_version":"4.7.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/enthought/mayavi",
+   "doc_url":"http://docs.enthought.com/mayavi/mayavi",
+   "home":"https://github.com/enthought/mayavi",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The Mayavi scientific data 3-dimensional visualizers"
+  },
+  "build":{
+   "entry_points":[
+    "mayavi2 = mayavi.scripts.mayavi2:main",
+    "tvtk_doc = tvtk.tools.tvtk_doc:main"
+   ],
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "grlee77",
+    "hadim",
+    "dfroger",
+    "cadair"
+   ]
+  },
+  "package":{
+   "name":"mayavi",
+   "version":"4.7.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "pip",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools",
+    "sphinx"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools",
+    "envisage",
+    "pyqt >=4,<6",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"mayavi-4.7.1.tar.gz",
+   "sha256":"d679daf930751f0c531938f4664a51ac4bed994a807488ca5ea5a8c15fabf184",
+   "url":"https://github.com/enthought/mayavi/archive/4.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mayavi2 --help"
+   ],
+   "imports":[
+    "tvtk",
+    "tvtk.array_ext",
+    "mayavi"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "numpy",
+    "pip",
+    "python",
+    "sphinx",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "envisage",
+    "numpy",
+    "pyqt",
+    "python",
+    "setuptools",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.11.01",
  "raw_meta_yaml":"{% set version = \"4.7.1\" %}\n\npackage:\n  name: mayavi\n  version: {{ version }}\n\nsource:\n  fn: mayavi-{{ version }}.tar.gz\n  url: https://github.com/enthought/mayavi/archive/{{ version }}.tar.gz\n  sha256: d679daf930751f0c531938f4664a51ac4bed994a807488ca5ea5a8c15fabf184\n\nbuild:\n  number: 2\n  entry_points:\n    - mayavi2 = mayavi.scripts.mayavi2:main\n    - tvtk_doc = tvtk.tools.tvtk_doc:main\n  skip: True  # [win and py27]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n  host:\n    - python\n    - numpy\n    - pip\n    - vtk 8.2.0\n    - traitsui\n    - apptools\n    - sphinx  # [osx]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - vtk 8.2.0\n    - traitsui\n    - apptools\n    - envisage\n    - pyqt >=4,<6\n    - setuptools\n\ntest:\n  commands:\n    - mayavi2 --help\n  imports:\n    - tvtk\n    - tvtk.array_ext\n    - mayavi\n\nabout:\n  home: https://github.com/enthought/mayavi\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: The Mayavi scientific data 3-dimensional visualizers\n  doc_url: http://docs.enthought.com/mayavi/mayavi\n  dev_url: https://github.com/enthought/mayavi\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - grlee77\n    - hadim\n    - dfroger\n    - cadair\n",
  "req":{
@@ -399,5 +615,112 @@
   }
  },
  "url":"https://github.com/enthought/mayavi/archive/4.7.1.tar.gz",
- "version":"4.7.1"
+ "version":"4.7.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/enthought/mayavi",
+   "doc_url":"http://docs.enthought.com/mayavi/mayavi",
+   "home":"https://github.com/enthought/mayavi",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE.txt",
+   "summary":"The Mayavi scientific data 3-dimensional visualizers"
+  },
+  "build":{
+   "entry_points":[
+    "mayavi2 = mayavi.scripts.mayavi2:main",
+    "tvtk_doc = tvtk.tools.tvtk_doc:main"
+   ],
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "grlee77",
+    "hadim",
+    "dfroger",
+    "cadair"
+   ]
+  },
+  "package":{
+   "name":"mayavi",
+   "version":"4.7.1"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "pip",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "vtk 8.2.0",
+    "traitsui",
+    "apptools",
+    "envisage",
+    "pyqt >=4,<6",
+    "setuptools"
+   ]
+  },
+  "source":{
+   "fn":"mayavi-4.7.1.tar.gz",
+   "sha256":"d679daf930751f0c531938f4664a51ac4bed994a807488ca5ea5a8c15fabf184",
+   "url":"https://github.com/enthought/mayavi/archive/4.7.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "mayavi2 --help"
+   ],
+   "imports":[
+    "tvtk",
+    "tvtk.array_ext",
+    "mayavi"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "numpy",
+    "pip",
+    "python",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "apptools",
+    "envisage",
+    "numpy",
+    "pyqt",
+    "python",
+    "setuptools",
+    "traitsui",
+    "vtk"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

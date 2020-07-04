@@ -112,6 +112,92 @@
  },
  "feedstock_name":"neptune-notebooks",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/neptune-ai/neptune-notebooks",
+   "doc_url":"https://docs.neptune.ai",
+   "home":"https://neptune.ai/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Neptune's integration with Jupiter and JupiterLab notebooks"
+  },
+  "build":{
+   "entry_points":[
+    "neptune_notebooks = neptune_notebooks_plugin:notebook"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "szymon-kuklewicz",
+    "aniezurawski",
+    "hubertjaworskineptune",
+    "pitercl"
+   ]
+  },
+  "package":{
+   "name":"neptune-notebooks",
+   "version":"0.0.16"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "nodejs",
+    "openjdk"
+   ],
+   "run":[
+    "python",
+    "click >=7.0",
+    "future >=0.17.1",
+    "neptune-client >=0.4.92",
+    "notebook >=4.3.0",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"714037d2921a5eba5964db55447632da2facc6233906cd545a119c7ff0875931",
+   "url":"https://github.com/neptune-ai/neptune-notebooks/archive/0.0.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "neptune_notebooks"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nodejs",
+    "openjdk",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "neptune-client",
+    "notebook",
+    "path.py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/neptune-ai/neptune-notebooks",
@@ -207,6 +293,92 @@
   "0.0.16":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/neptune-ai/neptune-notebooks",
+   "doc_url":"https://docs.neptune.ai",
+   "home":"https://neptune.ai/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Neptune's integration with Jupiter and JupiterLab notebooks"
+  },
+  "build":{
+   "entry_points":[
+    "neptune_notebooks = neptune_notebooks_plugin:notebook"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "szymon-kuklewicz",
+    "aniezurawski",
+    "hubertjaworskineptune",
+    "pitercl"
+   ]
+  },
+  "package":{
+   "name":"neptune-notebooks",
+   "version":"0.0.16"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "nodejs",
+    "openjdk"
+   ],
+   "run":[
+    "python",
+    "click >=7.0",
+    "future >=0.17.1",
+    "neptune-client >=0.4.92",
+    "notebook >=4.3.0",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"714037d2921a5eba5964db55447632da2facc6233906cd545a119c7ff0875931",
+   "url":"https://github.com/neptune-ai/neptune-notebooks/archive/0.0.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "neptune_notebooks"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nodejs",
+    "openjdk",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "neptune-client",
+    "notebook",
+    "path.py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"neptune-notebooks\" %}\n{% set version = \"0.0.16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/neptune-ai/neptune-notebooks/archive/{{ version }}.tar.gz\n  sha256: 714037d2921a5eba5964db55447632da2facc6233906cd545a119c7ff0875931\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - neptune_notebooks = neptune_notebooks_plugin:notebook\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python\n    - nodejs\n    - openjdk\n  run:\n    - python\n    - click >=7.0\n    - future >=0.17.1\n    - neptune-client >=0.4.92\n    - notebook >=4.3.0\n    - path.py\n\ntest:\n  imports:\n    - neptune_notebooks\n\nabout:\n  home: https://neptune.ai/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Neptune's integration with Jupiter and JupiterLab notebooks\n  doc_url: https://docs.neptune.ai\n  dev_url: https://github.com/neptune-ai/neptune-notebooks\n\nextra:\n  recipe-maintainers:\n    - szymon-kuklewicz\n    - aniezurawski\n    - hubertjaworskineptune\n    - pitercl\n",
  "req":{
@@ -286,5 +458,91 @@
   }
  },
  "url":"https://github.com/neptune-ai/neptune-notebooks/archive/0.0.11.tar.gz",
- "version":"0.0.16"
+ "version":"0.0.16",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/neptune-ai/neptune-notebooks",
+   "doc_url":"https://docs.neptune.ai",
+   "home":"https://neptune.ai/",
+   "license":"Apache-2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Neptune's integration with Jupiter and JupiterLab notebooks"
+  },
+  "build":{
+   "entry_points":[
+    "neptune_notebooks = neptune_notebooks_plugin:notebook"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "szymon-kuklewicz",
+    "aniezurawski",
+    "hubertjaworskineptune",
+    "pitercl"
+   ]
+  },
+  "package":{
+   "name":"neptune-notebooks",
+   "version":"0.0.16"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python",
+    "nodejs",
+    "openjdk"
+   ],
+   "run":[
+    "python",
+    "click >=7.0",
+    "future >=0.17.1",
+    "neptune-client >=0.4.92",
+    "notebook >=4.3.0",
+    "path.py"
+   ]
+  },
+  "source":{
+   "sha256":"714037d2921a5eba5964db55447632da2facc6233906cd545a119c7ff0875931",
+   "url":"https://github.com/neptune-ai/neptune-notebooks/archive/0.0.16.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "neptune_notebooks"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "nodejs",
+    "openjdk",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "future",
+    "neptune-client",
+    "notebook",
+    "path.py",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -80,6 +80,87 @@
  },
  "feedstock_name":"mesas",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"mesas is a suite of tools for analyzing tracer data and modeling solute\ntransport in time-variable input-output flow systems. It is written in python wrapping\na fortran extension where the serious number-crunching happens\n",
+   "dev_url":"https://github.com/charman2/mesas",
+   "doc_url":"http://mesas.readthedocs.io/",
+   "home":"http://github.com/charman2/mesas",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"multiresolution estimation of storage selection"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "charman2"
+   ]
+  },
+  "package":{
+   "name":"mesas",
+   "version":"0.2020.0701"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib-base"
+   ]
+  },
+  "source":{
+   "sha256":"0b7dce9246f9d28757e1c3c5b0c2b05c657ed70e079f77aa43aad24e87f6b377",
+   "url":"https://github.com/charman2/mesas/archive/v0.2020.0701.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mesas"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"mesas is a suite of tools for analyzing tracer data and modeling solute\ntransport in time-variable input-output flow systems. It is written in python wrapping\na fortran extension where the serious number-crunching happens\n",
@@ -160,6 +241,87 @@
   "0.2020.0701":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"mesas is a suite of tools for analyzing tracer data and modeling solute\ntransport in time-variable input-output flow systems. It is written in python wrapping\na fortran extension where the serious number-crunching happens\n",
+   "dev_url":"https://github.com/charman2/mesas",
+   "doc_url":"http://mesas.readthedocs.io/",
+   "home":"http://github.com/charman2/mesas",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"multiresolution estimation of storage selection"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "charman2"
+   ]
+  },
+  "package":{
+   "name":"mesas",
+   "version":"0.2020.0701"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib-base"
+   ]
+  },
+  "source":{
+   "sha256":"0b7dce9246f9d28757e1c3c5b0c2b05c657ed70e079f77aa43aad24e87f6b377",
+   "url":"https://github.com/charman2/mesas/archive/v0.2020.0701.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mesas"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"mesas\" %}\n{% set version = \"0.2020.0701\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/charman2/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 0b7dce9246f9d28757e1c3c5b0c2b05c657ed70e079f77aa43aad24e87f6b377\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [py<36]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - pandas\n    - matplotlib-base\n\ntest:\n  imports:\n    - mesas\n\nabout:\n  home: http://github.com/charman2/mesas\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'multiresolution estimation of storage selection'\n\n  description: |\n    mesas is a suite of tools for analyzing tracer data and modeling solute\n    transport in time-variable input-output flow systems. It is written in python wrapping\n    a fortran extension where the serious number-crunching happens\n  doc_url: http://mesas.readthedocs.io/\n  dev_url: https://github.com/charman2/mesas\n\nextra:\n  recipe-maintainers:\n    - charman2\n \n",
  "req":{
@@ -237,5 +399,86 @@
   }
  },
  "url":"https://github.com/charman2/mesas/archive/v0.1111a.tar.gz",
- "version":"0.2020.0701"
+ "version":"0.2020.0701",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"mesas is a suite of tools for analyzing tracer data and modeling solute\ntransport in time-variable input-output flow systems. It is written in python wrapping\na fortran extension where the serious number-crunching happens\n",
+   "dev_url":"https://github.com/charman2/mesas",
+   "doc_url":"http://mesas.readthedocs.io/",
+   "home":"http://github.com/charman2/mesas",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE.txt",
+   "summary":"multiresolution estimation of storage selection"
+  },
+  "build":{
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "charman2"
+   ]
+  },
+  "package":{
+   "name":"mesas",
+   "version":"0.2020.0701"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "numpy"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib-base"
+   ]
+  },
+  "source":{
+   "sha256":"0b7dce9246f9d28757e1c3c5b0c2b05c657ed70e079f77aa43aad24e87f6b377",
+   "url":"https://github.com/charman2/mesas/archive/v0.2020.0701.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "mesas"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

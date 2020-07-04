@@ -264,6 +264,59 @@
  },
  "feedstock_name":"pandoc",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://pandoc.org/",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Universal markup converter (repackaged binaries)"
+  },
+  "build":{
+   "missing_dso_whitelist":null,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jankatins",
+    "ocefpaf",
+    "dhimmel",
+    "kiwi0fruit"
+   ]
+  },
+  "package":{
+   "name":"pandoc",
+   "version":"2.10"
+  },
+  "source":{
+   "sha256":"adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6",
+   "url":"https://github.com/jgm/pandoc/releases/download/2.10/pandoc-2.10-linux-amd64.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pandoc --version",
+    "pandoc --help"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://pandoc.org/",
@@ -320,6 +373,65 @@
   "2.10":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://pandoc.org/",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Universal markup converter (repackaged binaries)"
+  },
+  "build":{
+   "binary_relocation":false,
+   "missing_dso_whitelist":[
+    "/usr/lib/libiconv.2.dylib",
+    "/usr/lib/libz.1.dylib",
+    "/usr/lib/libcharset.1.dylib"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jankatins",
+    "ocefpaf",
+    "dhimmel",
+    "kiwi0fruit"
+   ]
+  },
+  "package":{
+   "name":"pandoc",
+   "version":"2.10"
+  },
+  "source":{
+   "sha256":"5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9",
+   "url":"https://github.com/jgm/pandoc/releases/download/2.10/pandoc-2.10-macOS.zip"
+  },
+  "test":{
+   "commands":[
+    "type pandoc",
+    "pandoc --version",
+    "pandoc --help"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set version = \"2.10\" %}\n\npackage:\n  name: pandoc\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]\n  sha256: adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6  # [linux64]\n\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]\n  sha256: 5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9  # [osx]\n\n  fn: pandoc.msi  # [win]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]\n  sha256: fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef  # [win]\n\nbuild:\n  number: 0\n  binary_relocation: false  # [osx]\n  missing_dso_whitelist:\n    - /usr/lib/libiconv.2.dylib  # [osx]\n    - /usr/lib/libz.1.dylib  # [osx]\n    - /usr/lib/libcharset.1.dylib  # [osx]\n\ntest:\n  commands:\n    - type pandoc  # [osx]\n    - pandoc --version\n    - pandoc --help\n\nabout:\n  home: http://pandoc.org/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Universal markup converter (repackaged binaries)\n\nextra:\n  recipe-maintainers:\n    - jankatins\n    - ocefpaf\n    - dhimmel\n    - kiwi0fruit\n",
  "req":{
@@ -365,5 +477,59 @@
   }
  },
  "url":"https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz",
- "version":"2.10"
+ "version":"2.10",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://pandoc.org/",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"Universal markup converter (repackaged binaries)"
+  },
+  "build":{
+   "missing_dso_whitelist":null,
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jankatins",
+    "ocefpaf",
+    "dhimmel",
+    "kiwi0fruit"
+   ]
+  },
+  "package":{
+   "name":"pandoc",
+   "version":"2.10"
+  },
+  "source":{
+   "fn":"pandoc.msi",
+   "sha256":"fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef",
+   "url":"https://github.com/jgm/pandoc/releases/download/2.10/pandoc-2.10-windows-x86_64.msi"
+  },
+  "test":{
+   "commands":[
+    "pandoc --version",
+    "pandoc --help"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

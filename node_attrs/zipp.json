@@ -227,6 +227,97 @@
  "conda-forge.yml":{},
  "feedstock_name":"zipp",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jaraco/zipp",
+   "doc_url":"https://zipp.readthedocs.io/en/latest",
+   "home":"https://github.com/jaraco/zipp",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A pathlib-compatible Zipfile object wrapper"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"zipp",
+   "version":"3.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm >=3.4.1",
+    "toml"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "patches":[
+    "use-scm-version.patch"
+   ],
+   "sha256":"c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96",
+   "url":"https://pypi.io/packages/source/z/zipp/zipp-3.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m unittest test_zipp.py",
+    "pip check"
+   ],
+   "imports":[
+    "zipp"
+   ],
+   "requires":[
+    "pip",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "func_timeout"
+   ],
+   "source_files":[
+    "test_zipp.py"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "func_timeout",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/jaraco/zipp",
@@ -320,6 +411,97 @@
  },
  "name":"zipp",
  "new_version":"3.1.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jaraco/zipp",
+   "doc_url":"https://zipp.readthedocs.io/en/latest",
+   "home":"https://github.com/jaraco/zipp",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A pathlib-compatible Zipfile object wrapper"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"zipp",
+   "version":"3.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm >=3.4.1",
+    "toml"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "patches":[
+    "use-scm-version.patch"
+   ],
+   "sha256":"c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96",
+   "url":"https://pypi.io/packages/source/z/zipp/zipp-3.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m unittest test_zipp.py",
+    "pip check"
+   ],
+   "imports":[
+    "zipp"
+   ],
+   "requires":[
+    "pip",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "func_timeout"
+   ],
+   "source_files":[
+    "test_zipp.py"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "func_timeout",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "pip"
+   ]
+  }
+ },
  "pinning_version":"2020.02.20",
  "raw_meta_yaml":"{% set name = \"zipp\" %}\n{% set version = \"3.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96\n  patches:\n    # See https://github.com/jaraco/zipp/pull/30\n    - use-scm-version.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n    - setuptools_scm >=3.4.1\n    - toml\n  run:\n    - python >=3.6\n\ntest:\n  source_files:\n    - test_zipp.py\n  requires:\n    - pip\n    # this is a downstream that has a version requirement on zipp\n    - importlib_metadata\n    - jaraco.itertools\n    - func_timeout\n  imports:\n    - zipp\n  commands:\n    - python -m unittest test_zipp.py\n    - pip check\n\nabout:\n  home: https://github.com/jaraco/zipp\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A pathlib-compatible Zipfile object wrapper\n  doc_url: https://zipp.readthedocs.io/en/latest\n  dev_url: https://github.com/jaraco/zipp\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "req":{
@@ -394,5 +576,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/z/zipp/zipp-0.6.0.tar.gz",
- "version":"3.1.0"
+ "version":"3.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/jaraco/zipp",
+   "doc_url":"https://zipp.readthedocs.io/en/latest",
+   "home":"https://github.com/jaraco/zipp",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A pathlib-compatible Zipfile object wrapper"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "nehaljwani"
+   ]
+  },
+  "package":{
+   "name":"zipp",
+   "version":"3.1.0"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6",
+    "setuptools_scm >=3.4.1",
+    "toml"
+   ],
+   "run":[
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "patches":[
+    "use-scm-version.patch"
+   ],
+   "sha256":"c599e4d75c98f6798c509911d08a22e6c021d074469042177c8c86fb92eefd96",
+   "url":"https://pypi.io/packages/source/z/zipp/zipp-3.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m unittest test_zipp.py",
+    "pip check"
+   ],
+   "imports":[
+    "zipp"
+   ],
+   "requires":[
+    "pip",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "func_timeout"
+   ],
+   "source_files":[
+    "test_zipp.py"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools_scm",
+    "toml"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "func_timeout",
+    "importlib_metadata",
+    "jaraco.itertools",
+    "pip"
+   ]
+  }
+ }
 }

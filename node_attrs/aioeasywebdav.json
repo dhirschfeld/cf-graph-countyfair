@@ -63,6 +63,81 @@
  },
  "feedstock_name":"aioeasywebdav",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"This project started as a port of the requests-based EasyWebDAV\n(http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\nsince been extended with additional features.\n",
+   "dev_url":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "home":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "license":"ISC",
+   "license_file":"LICENSE",
+   "summary":"A straight-forward WebDAV client, ported from easywebdav to use aiohttp."
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester"
+   ]
+  },
+  "package":{
+   "name":"aioeasywebdav",
+   "version":"2.4.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "aiohttp",
+    "six"
+   ],
+   "run":[
+    "python",
+    "aiohttp",
+    "six"
+   ]
+  },
+  "source":{
+   "fn":"aioeasywebdav-2.4.0.tar.gz",
+   "sha256":"216aa71e76bf810c2293fec93922475a532af999fce89b37b6788f0c237981ee",
+   "url":"https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-2.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aioeasywebdav"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "six"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"This project started as a port of the requests-based EasyWebDAV\n(http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\nsince been extended with additional features.\n",
@@ -132,6 +207,81 @@
  },
  "name":"aioeasywebdav",
  "new_version":"2.4.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"This project started as a port of the requests-based EasyWebDAV\n(http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\nsince been extended with additional features.\n",
+   "dev_url":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "home":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "license":"ISC",
+   "license_file":"LICENSE",
+   "summary":"A straight-forward WebDAV client, ported from easywebdav to use aiohttp."
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester"
+   ]
+  },
+  "package":{
+   "name":"aioeasywebdav",
+   "version":"2.4.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "aiohttp",
+    "six"
+   ],
+   "run":[
+    "python",
+    "aiohttp",
+    "six"
+   ]
+  },
+  "source":{
+   "fn":"aioeasywebdav-2.4.0.tar.gz",
+   "sha256":"216aa71e76bf810c2293fec93922475a532af999fce89b37b6788f0c237981ee",
+   "url":"https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-2.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aioeasywebdav"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "six"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.11.26",
  "raw_meta_yaml":"{% set version = \"2.4.0\" %}\n\npackage:\n  name: aioeasywebdav\n  version: {{ version }}\n\nsource:\n  fn: aioeasywebdav-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-{{ version }}.tar.gz\n  sha256: 216aa71e76bf810c2293fec93922475a532af999fce89b37b6788f0c237981ee\n\nbuild:\n  number: 1000\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  # this package does not support older Python versions\n  skip: true  # [py < 35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n    - aiohttp\n    - six\n\n  run:\n    - python\n    - aiohttp\n    - six\n\ntest:\n  imports:\n    - aioeasywebdav\n\nabout:\n  home: https://gitlab.alelec.net/corona/aioeasywebdav\n  license: ISC\n  license_file: LICENSE\n  summary: A straight-forward WebDAV client, ported from easywebdav to use aiohttp.\n  dev_url: https://gitlab.alelec.net/corona/aioeasywebdav\n  description: |\n    This project started as a port of the requests-based EasyWebDAV\n    (http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\n    since been extended with additional features.\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
  "req":{
@@ -203,5 +353,80 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-2.4.0.tar.gz",
- "version":"2.4.0"
+ "version":"2.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"This project started as a port of the requests-based EasyWebDAV\n(http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\nsince been extended with additional features.\n",
+   "dev_url":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "home":"https://gitlab.alelec.net/corona/aioeasywebdav",
+   "license":"ISC",
+   "license_file":"LICENSE",
+   "summary":"A straight-forward WebDAV client, ported from easywebdav to use aiohttp."
+  },
+  "build":{
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "johanneskoester"
+   ]
+  },
+  "package":{
+   "name":"aioeasywebdav",
+   "version":"2.4.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "aiohttp",
+    "six"
+   ],
+   "run":[
+    "python",
+    "aiohttp",
+    "six"
+   ]
+  },
+  "source":{
+   "fn":"aioeasywebdav-2.4.0.tar.gz",
+   "sha256":"216aa71e76bf810c2293fec93922475a532af999fce89b37b6788f0c237981ee",
+   "url":"https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-2.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "aioeasywebdav"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "setuptools",
+    "setuptools_scm",
+    "six"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "aiohttp",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

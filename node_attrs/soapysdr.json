@@ -48,6 +48,91 @@
  },
  "feedstock_name":"soapysdr",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"SoapySDR is an open-source generalized API and runtime library for interfacing with\nSDR devices. With SoapySDR, you can instantiate, configure, and stream with an SDR\ndevice in a variety of environments. Most off the shelf SDR hardware platforms are\nsupported by SoapySDR, and many open source applications rely on SoapySDR for\nhardware integration support. In additon, SoapySDR has bindings for development\nframeworks like GNU Radio and Pothos.\n",
+   "dev_url":"https://github.com/pothosware/SoapySDR",
+   "doc_url":"https://github.com/pothosware/SoapySDR/wiki",
+   "home":"https://github.com/pothosware/SoapySDR/wiki",
+   "license":"BSL-1.0",
+   "license_file":"LICENSE_1_0.txt",
+   "summary":"Vendor and platform neutral SDR support library"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "soapysdr"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"soapysdr",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "python",
+    "swig"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Get-Python-extension-suffix-from-sysconfig-and-set-i.patch"
+   ],
+   "sha256":"6eb4143fed115911884bdbbe6fe32dbd99b4ada210c9e126ac3c49c24414347a",
+   "url":"https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "SoapySDRUtil --info",
+    "test -f $PREFIX/include/SoapySDR/Version.h",
+    "test -f $PREFIX/include/SoapySDR/Version.hpp",
+    "test -f $PREFIX/lib/libSoapySDR${SHLIB_EXT}"
+   ],
+   "imports":[
+    "SoapySDR"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"SoapySDR is an open-source generalized API and runtime library for interfacing with\nSDR devices. With SoapySDR, you can instantiate, configure, and stream with an SDR\ndevice in a variety of environments. Most off the shelf SDR hardware platforms are\nsupported by SoapySDR, and many open source applications rely on SoapySDR for\nhardware integration support. In additon, SoapySDR has bindings for development\nframeworks like GNU Radio and Pothos.\n",
@@ -135,6 +220,91 @@
  },
  "name":"soapysdr",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"SoapySDR is an open-source generalized API and runtime library for interfacing with\nSDR devices. With SoapySDR, you can instantiate, configure, and stream with an SDR\ndevice in a variety of environments. Most off the shelf SDR hardware platforms are\nsupported by SoapySDR, and many open source applications rely on SoapySDR for\nhardware integration support. In additon, SoapySDR has bindings for development\nframeworks like GNU Radio and Pothos.\n",
+   "dev_url":"https://github.com/pothosware/SoapySDR",
+   "doc_url":"https://github.com/pothosware/SoapySDR/wiki",
+   "home":"https://github.com/pothosware/SoapySDR/wiki",
+   "license":"BSL-1.0",
+   "license_file":"LICENSE_1_0.txt",
+   "summary":"Vendor and platform neutral SDR support library"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "soapysdr"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"soapysdr",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":[
+    "python",
+    "swig"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Get-Python-extension-suffix-from-sysconfig-and-set-i.patch"
+   ],
+   "sha256":"6eb4143fed115911884bdbbe6fe32dbd99b4ada210c9e126ac3c49c24414347a",
+   "url":"https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "SoapySDRUtil --info",
+    "test -f $PREFIX/include/SoapySDR/Version.h",
+    "test -f $PREFIX/include/SoapySDR/Version.hpp",
+    "test -f $PREFIX/lib/libSoapySDR${SHLIB_EXT}"
+   ],
+   "imports":[
+    "SoapySDR"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.07.16.42.19",
  "raw_meta_yaml":"{% set name = \"SoapySDR\" %}\n{% set version = \"0.7.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pothosware/{{ name }}/archive/soapy-sdr-{{ version }}.tar.gz\n  sha256: 6eb4143fed115911884bdbbe6fe32dbd99b4ada210c9e126ac3c49c24414347a\n  patches:\n    - 0001-Get-Python-extension-suffix-from-sysconfig-and-set-i.patch\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage('soapysdr', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n    - make  # [not win]\n    - ninja  # [win]\n  host:\n    - python\n    - swig\n  run:\n    - python\n\ntest:\n  commands:\n    # verify that executables can be run\n    - SoapySDRUtil --info\n\n    # verify that (some) headers get installed\n    - test -f $PREFIX/include/{{ name }}/Version.h  # [not win]\n    - test -f $PREFIX/include/{{ name }}/Version.hpp  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\{{ name }}\\\\Version.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\{{ name }}\\\\Version.hpp exit 1  # [win]\n\n    # verify that libraries get installed\n    - test -f $PREFIX/lib/lib{{ name }}${SHLIB_EXT}  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\{{ name }}.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ name }}.lib exit 1  # [win]\n  imports:\n    - SoapySDR  # [not win]\n\nabout:\n  home: https://github.com/pothosware/SoapySDR/wiki\n  license: BSL-1.0\n  license_file: LICENSE_1_0.txt\n  summary: 'Vendor and platform neutral SDR support library'\n  description: |\n    SoapySDR is an open-source generalized API and runtime library for interfacing with\n    SDR devices. With SoapySDR, you can instantiate, configure, and stream with an SDR\n    device in a variety of environments. Most off the shelf SDR hardware platforms are\n    supported by SoapySDR, and many open source applications rely on SoapySDR for\n    hardware integration support. In additon, SoapySDR has bindings for development\n    frameworks like GNU Radio and Pothos.\n  doc_url: https://github.com/pothosware/SoapySDR/wiki\n  dev_url: https://github.com/pothosware/SoapySDR\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
@@ -207,5 +377,89 @@
   }
  },
  "url":"https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz",
- "version":"0.7.2"
+ "version":"0.7.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"SoapySDR is an open-source generalized API and runtime library for interfacing with\nSDR devices. With SoapySDR, you can instantiate, configure, and stream with an SDR\ndevice in a variety of environments. Most off the shelf SDR hardware platforms are\nsupported by SoapySDR, and many open source applications rely on SoapySDR for\nhardware integration support. In additon, SoapySDR has bindings for development\nframeworks like GNU Radio and Pothos.\n",
+   "dev_url":"https://github.com/pothosware/SoapySDR",
+   "doc_url":"https://github.com/pothosware/SoapySDR/wiki",
+   "home":"https://github.com/pothosware/SoapySDR/wiki",
+   "license":"BSL-1.0",
+   "license_file":"LICENSE_1_0.txt",
+   "summary":"Vendor and platform neutral SDR support library"
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "soapysdr"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"soapysdr",
+   "version":"0.7.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":[
+    "python",
+    "swig"
+   ],
+   "run":[
+    "python"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Get-Python-extension-suffix-from-sysconfig-and-set-i.patch"
+   ],
+   "sha256":"6eb4143fed115911884bdbbe6fe32dbd99b4ada210c9e126ac3c49c24414347a",
+   "url":"https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "SoapySDRUtil --info",
+    "if not exist %PREFIX%\\\\Library\\\\include\\\\SoapySDR\\\\Version.h exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\include\\\\SoapySDR\\\\Version.hpp exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\SoapySDR.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\lib\\\\SoapySDR.lib exit 1"
+   ],
+   "imports":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "swig"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

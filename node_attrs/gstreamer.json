@@ -130,6 +130,722 @@
  },
  "feedstock_name":"gstreamer",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
+   "doc_url":"https://gstreamer.freedesktop.org/documentation/",
+   "home":"http://gstreamer.freedesktop.org/",
+   "license":"LGPL-2.0",
+   "license_file":"COPYING",
+   "summary":"Library for constructing graphs of media-handling components"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "pcre",
+      "libffi",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "libxcb",
+      "pthread-stubs",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gstreamer_and_plugins",
+   "version":"1.14.5"
+  },
+  "source":[
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   }
+  ]
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "bison",
+    "c_compiler_stub",
+    "cdt_stub",
+    "cxx_compiler_stub",
+    "flex",
+    "m4",
+    "make",
+    "perl",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection",
+    "gst-plugins-base",
+    "gstreamer",
+    "libffi",
+    "libxcb",
+    "pcre",
+    "pthread-stubs",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gst-plugins-base",
+    "gstreamer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
+   "doc_url":"https://gstreamer.freedesktop.org/documentation/",
+   "home":"http://gstreamer.freedesktop.org/",
+   "license":"LGPL-2.0",
+   "license_file":"COPYING",
+   "summary":"Library for constructing graphs of media-handling components"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "pcre",
+      "libffi",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "libxcb",
+      "pthread-stubs",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gstreamer_and_plugins",
+   "version":"1.14.5"
+  },
+  "source":[
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   }
+  ]
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "bison",
+    "c_compiler_stub",
+    "cdt_stub",
+    "cxx_compiler_stub",
+    "flex",
+    "m4",
+    "make",
+    "perl",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection",
+    "gst-plugins-base",
+    "gstreamer",
+    "libffi",
+    "libxcb",
+    "pcre",
+    "pthread-stubs",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gst-plugins-base",
+    "gstreamer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
+   "doc_url":"https://gstreamer.freedesktop.org/documentation/",
+   "home":"http://gstreamer.freedesktop.org/",
+   "license":"LGPL-2.0",
+   "license_file":"COPYING",
+   "summary":"Library for constructing graphs of media-handling components"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "pcre",
+      "libffi",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "libxcb",
+      "pthread-stubs",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gstreamer_and_plugins",
+   "version":"1.14.5"
+  },
+  "source":[
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   }
+  ]
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "bison",
+    "c_compiler_stub",
+    "cdt_stub",
+    "cxx_compiler_stub",
+    "flex",
+    "m4",
+    "make",
+    "perl",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection",
+    "gst-plugins-base",
+    "gstreamer",
+    "libffi",
+    "libxcb",
+    "pcre",
+    "pthread-stubs",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gst-plugins-base",
+    "gstreamer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
@@ -145,6 +861,12 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan",
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan",
     "ccordoba12",
     "mingwandroid",
     "msarahan",
@@ -570,6 +1292,314 @@
       "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
      ]
     }
+   },
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "pcre",
+      "libffi",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "libxcb",
+      "pthread-stubs",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "pcre",
+      "libffi",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "libxcb",
+      "pthread-stubs",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
    }
   ],
   "package":{
@@ -618,11 +1648,256 @@
     "folder":"plugins_good",
     "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
     "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   },
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   },
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
    }
   ]
  },
  "name":"gstreamer_and_plugins",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
+   "doc_url":"https://gstreamer.freedesktop.org/documentation/",
+   "home":"http://gstreamer.freedesktop.org/",
+   "license":"LGPL-2.0",
+   "license_file":"COPYING",
+   "summary":"Library for constructing graphs of media-handling components"
+  },
+  "build":{
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "gettext",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "gettext",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstalpha.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstdebug.so",
+      "test -f $PREFIX/lib/gstreamer-1.0/libgstspectrum.so"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gstreamer_and_plugins",
+   "version":"1.14.5"
+  },
+  "source":[
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   }
+  ]
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "flex",
+    "m4",
+    "make",
+    "perl",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gettext",
+    "glib",
+    "gobject-introspection",
+    "gst-plugins-base",
+    "gstreamer",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gst-plugins-base",
+    "gstreamer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "gst-plugins-base",
   "gst-plugins-good",
@@ -750,5 +2025,216 @@
   }
  },
  "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz",
- "version":"1.14.5"
+ "version":"1.14.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/",
+   "doc_url":"https://gstreamer.freedesktop.org/documentation/",
+   "home":"http://gstreamer.freedesktop.org/",
+   "license":"LGPL-2.0",
+   "license_file":"COPYING",
+   "summary":"Library for constructing graphs of media-handling components"
+  },
+  "build":{
+   "number":"2",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ccordoba12",
+    "mingwandroid",
+    "msarahan"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":null,
+     "doc_source_url":"https://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs",
+     "summary":"Library for constructing graphs of media-handling components"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gstreamer"
+     ]
+    },
+    "name":"gstreamer",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "pkg-config",
+      "bison",
+      "flex",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gobject-introspection",
+      "glib",
+      "xz"
+     ]
+    },
+    "script":"install_gstreamer.sh",
+    "test":{
+     "commands":[
+      "gst-inspect-1.0 --version",
+      "gst-launch-1.0  --version",
+      "gst-stats-1.0 --version",
+      "gst-typefind-1.0 --version"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Base Plug-ins is a well-groomed and well-maintained collection of\nGStreamer plug-ins and elements, spanning the range of possible types of\nelements one would want to write for GStreamer.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-base/tree/master/docs",
+     "summary":"GStreamer Base Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-base"
+     ]
+    },
+    "name":"gst-plugins-base",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "pkg-config",
+      "m4",
+      "autoconf",
+      "automake",
+      "make",
+      "perl"
+     ],
+     "host":[
+      "gstreamer",
+      "gobject-introspection",
+      "glib",
+      "zlib",
+      "xz"
+     ],
+     "run":[
+      "gstreamer"
+     ]
+    },
+    "script":"install_base_plugins.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libgstallocators-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstapp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstaudio-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstfft-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstpbutils-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstriff-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstrtsp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstsdp-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgsttag-1.0${SHLIB_EXT}",
+      "test -f $PREFIX/lib/libgstvideo-1.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"GStreamer Good Plug-ins is A collection of plug-ins you'd\nwant to have right next to you on the battlefield.\nShooting sharp and making no mistakes, these plug-ins have it\nall: good looks, good code, and good licensing.  Documented and\ndressed up in tests.  If you're looking for a role model to\nbase your own plug-in on here it is.\n",
+     "doc_source_url":"https://github.com/GStreamer/gst-plugins-good/tree/master/docs",
+     "summary":"GStreamer Good Plug-ins"
+    },
+    "build":{
+     "activate_in_script":true,
+     "run_exports":[
+      "gst-plugins-good"
+     ]
+    },
+    "name":"gst-plugins-good",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gstreamer",
+      "gst-plugins-base",
+      "gobject-introspection",
+      "glib"
+     ],
+     "run":[
+      "gstreamer",
+      "gst-plugins-base"
+     ]
+    },
+    "script":"install_good_plugins.sh",
+    "test":{
+     "commands":null
+    }
+   }
+  ],
+  "package":{
+   "name":"gstreamer_and_plugins",
+   "version":"1.14.5"
+  },
+  "source":[
+   {
+    "sha256":"e40888752883177e97b2d90cd68591f87ccd213dc0178ff721d80a4cdaad34b5",
+    "url":"https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_base",
+    "sha256":"7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz"
+   },
+   {
+    "folder":"plugins_good",
+    "sha256":"678221b3f0208b31b90df3ffa509857cc8bfc337f3f5073d195c5b365d616503",
+    "url":"https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.5.tar.xz"
+   }
+  ]
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "autoconf",
+    "automake",
+    "bison",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "flex",
+    "m4",
+    "make",
+    "perl",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "glib",
+    "gobject-introspection",
+    "gst-plugins-base",
+    "gstreamer",
+    "xz",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gst-plugins-base",
+    "gstreamer"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

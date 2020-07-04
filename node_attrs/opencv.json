@@ -408,6 +408,269 @@
  },
  "feedstock_name":"opencv",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://opencv.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Computer vision and machine learning software library."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "libopencv"
+   ],
+   "string":"py[\"0\"][\"2\"]_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "zym1010",
+    "hajapy",
+    "ocefpaf",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libopencv"
+   },
+   {
+    "name":"opencv",
+    "requirements":{
+     "run":[
+      "libopencv",
+      "py-opencv"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "py-opencv"
+     ]
+    },
+    "name":"py-opencv",
+    "requirements":{
+     "host":[
+      "python",
+      "numpy"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "libopencv"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python run_py_test.py",
+      "if [[ $($PYTHON -c 'import cv2; print(cv2.__version__)') != $PKG_VERSION ]]; then exit 1; fi",
+      "python -c \"import cv2; assert 'Unknown' not in cv2.videoio_registry.getBackendName(cv2.CAP_V4L)\"",
+      "python -c \"import cv2, re; assert re.search('Lapack:\\s+YES', cv2.getBuildInformation())\""
+     ],
+     "files":[
+      "run_py_test.py",
+      "color_palette_alpha.png",
+      "test_1_c1.jpg"
+     ],
+     "imports":[
+      "cv2",
+      "cv2.xfeatures2d"
+     ],
+     "requires":[
+      "requests",
+      "certifi",
+      "liblapack * *mkl"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libopencv",
+   "version":"4.3.0"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub",
+    "cdt_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "hdf5",
+    "eigen 3.3.*",
+    "jasper",
+    "zlib",
+    "jpeg",
+    "libtiff",
+    "libwebp",
+    "harfbuzz",
+    "libpng",
+    "ffmpeg",
+    "qt 5.12.1",
+    "liblapacke",
+    "freetype"
+   ],
+   "run":[
+    "harfbuzz",
+    "qt 5.12",
+    "freetype"
+   ]
+  },
+  "source":[
+   {
+    "fn":"opencv-4.3.0.tar.gz",
+    "sha256":"36799186756c1e12adde97f0a8d1afc395d5b0f86d8ad9ef951bc33aa732f9b9",
+    "url":"https://codeload.github.com/opencv/opencv/zip/4.3.0"
+   },
+   {
+    "fn":"opencv_contrib-4.3.0.tar.gz",
+    "folder":"opencv_contrib",
+    "sha256":"acb8e89c9e7d1174e63e40532125b60d248b00e517255a98a419d415228c6a55",
+    "url":"https://codeload.github.com/opencv/opencv_contrib/tar.gz/4.3.0"
+   }
+  ],
+  "test":{
+   "commands":[
+    "OPENCV_FLAGS=`pkg-config --cflags opencv4`",
+    "$CXX -std=c++11 $RECIPE_DIR/test.cpp ${OPENCV_FLAGS} -o test",
+    "if [[ $(./test) != $PKG_VERSION ]]; then exit 1 ; fi",
+    "test -f $PREFIX/lib/libopencv_aruco${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_bgsegm${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_calib3d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ccalib${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_core${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_datasets${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_dnn${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_dpm${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_face${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_features2d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_flann${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_fuzzy${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_highgui${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_imgcodecs${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_imgproc${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_line_descriptor${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ml${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_objdetect${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_optflow${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_phase_unwrapping${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_photo${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_plot${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_reg${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_rgbd${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_saliency${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_shape${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_stereo${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_stitching${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_structured_light${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_superres${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_surface_matching${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_text${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_tracking${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_video${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_videoio${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_videostab${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xfeatures2d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ximgproc${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xobjdetect${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xphoto${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_bioinspired${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_hdf${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_freetype${SHLIB_EXT}",
+    "mkdir -p cmake_build_test && pushd cmake_build_test",
+    "cmake -G \"Ninja\" ..",
+    "cmake --build . --config Release",
+    "popd"
+   ],
+   "files":[
+    "CMakeLists.txt",
+    "test.cpp"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "pkg-config",
+    "liblapack * *mkl",
+    "cmake",
+    "ninja",
+    "qt 5.12.1"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "eigen",
+    "ffmpeg",
+    "freetype",
+    "harfbuzz",
+    "hdf5",
+    "jasper",
+    "jpeg",
+    "liblapacke",
+    "libpng",
+    "libtiff",
+    "libwebp",
+    "numpy",
+    "python",
+    "qt",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "harfbuzz",
+    "libopencv",
+    "numpy",
+    "py-opencv",
+    "python",
+    "qt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "certifi",
+    "cmake",
+    "cxx_compiler_stub",
+    "liblapack",
+    "ninja",
+    "pkg-config",
+    "qt",
+    "requests"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://opencv.org/",
@@ -911,6 +1174,256 @@
  "new_version_errors":{
   "4.3.0":"We found a problem parsing the recipe: \n\nwhile parsing a block mapping\n  in \"<unicode string>\", line 101, column 5:\n        requires:\n        ^ (line: 101)\nexpected <block end>, but found ','\n  in \"<unicode string>\", line 119, column 20:\n                \"aruco\",\n                       ^ (line: 119)"
  },
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://opencv.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Computer vision and machine learning software library."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "libopencv"
+   ],
+   "string":"py[\"0\"][\"2\"]_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "zym1010",
+    "hajapy",
+    "ocefpaf",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libopencv"
+   },
+   {
+    "name":"opencv",
+    "requirements":{
+     "run":[
+      "libopencv",
+      "py-opencv"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "py-opencv"
+     ]
+    },
+    "name":"py-opencv",
+    "requirements":{
+     "host":[
+      "python",
+      "numpy"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "libopencv"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python run_py_test.py",
+      "if [[ $($PYTHON -c 'import cv2; print(cv2.__version__)') != $PKG_VERSION ]]; then exit 1; fi",
+      "python -c \"import cv2, re; assert re.search('Lapack:\\s+YES', cv2.getBuildInformation())\""
+     ],
+     "files":[
+      "run_py_test.py",
+      "color_palette_alpha.png",
+      "test_1_c1.jpg"
+     ],
+     "imports":[
+      "cv2",
+      "cv2.xfeatures2d"
+     ],
+     "requires":[
+      "requests",
+      "certifi",
+      "liblapack * *mkl"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libopencv",
+   "version":"4.3.0"
+  },
+  "requirements":{
+   "build":[
+    "pkg-config",
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "hdf5",
+    "eigen 3.3.*",
+    "jasper",
+    "zlib",
+    "jpeg",
+    "libtiff",
+    "libwebp",
+    "harfbuzz",
+    "libpng",
+    "ffmpeg",
+    "liblapacke",
+    "freetype"
+   ],
+   "run":[
+    "harfbuzz",
+    "freetype"
+   ]
+  },
+  "source":[
+   {
+    "fn":"opencv-4.3.0.tar.gz",
+    "sha256":"36799186756c1e12adde97f0a8d1afc395d5b0f86d8ad9ef951bc33aa732f9b9",
+    "url":"https://codeload.github.com/opencv/opencv/zip/4.3.0"
+   },
+   {
+    "fn":"opencv_contrib-4.3.0.tar.gz",
+    "folder":"opencv_contrib",
+    "sha256":"acb8e89c9e7d1174e63e40532125b60d248b00e517255a98a419d415228c6a55",
+    "url":"https://codeload.github.com/opencv/opencv_contrib/tar.gz/4.3.0"
+   }
+  ],
+  "test":{
+   "commands":[
+    "export MACOSX_DEPLOYMENT_TARGET=",
+    "export CONDA_BUILD_SYSROOT=",
+    "OPENCV_FLAGS=`pkg-config --cflags opencv4`",
+    "$CXX -std=c++11 $RECIPE_DIR/test.cpp ${OPENCV_FLAGS} -o test",
+    "if [[ $(./test) != $PKG_VERSION ]]; then exit 1 ; fi",
+    "test -f $PREFIX/lib/libopencv_aruco${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_bgsegm${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_calib3d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ccalib${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_core${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_datasets${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_dnn${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_dpm${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_face${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_features2d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_flann${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_fuzzy${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_highgui${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_imgcodecs${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_imgproc${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_line_descriptor${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ml${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_objdetect${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_optflow${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_phase_unwrapping${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_photo${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_plot${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_reg${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_rgbd${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_saliency${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_shape${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_stereo${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_stitching${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_structured_light${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_superres${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_surface_matching${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_text${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_tracking${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_video${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_videoio${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_videostab${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xfeatures2d${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_ximgproc${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xobjdetect${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_xphoto${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_bioinspired${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_hdf${SHLIB_EXT}",
+    "test -f $PREFIX/lib/libopencv_freetype${SHLIB_EXT}",
+    "mkdir -p cmake_build_test && pushd cmake_build_test",
+    "cmake -G \"Ninja\" ..",
+    "cmake --build . --config Release",
+    "popd"
+   ],
+   "files":[
+    "CMakeLists.txt",
+    "test.cpp"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "pkg-config",
+    "liblapack * *mkl",
+    "cmake",
+    "ninja"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "eigen",
+    "ffmpeg",
+    "freetype",
+    "harfbuzz",
+    "hdf5",
+    "jasper",
+    "jpeg",
+    "liblapacke",
+    "libpng",
+    "libtiff",
+    "libwebp",
+    "numpy",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "harfbuzz",
+    "libopencv",
+    "numpy",
+    "py-opencv",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "certifi",
+    "cmake",
+    "cxx_compiler_stub",
+    "liblapack",
+    "ninja",
+    "pkg-config",
+    "requests"
+   ]
+  }
+ },
  "outputs_names":[
   "libopencv",
   "opencv",
@@ -1070,5 +1583,238 @@
   }
  },
  "url":"https://github.com/opencv/opencv/archive/4.1.1.tar.gz",
- "version":"4.3.0"
+ "version":"4.3.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://opencv.org/",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Computer vision and machine learning software library."
+  },
+  "build":{
+   "number":"1",
+   "run_exports":[
+    "libopencv"
+   ],
+   "string":"py[\"0\"][\"2\"]_"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "zym1010",
+    "hajapy",
+    "ocefpaf",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"libopencv"
+   },
+   {
+    "name":"opencv",
+    "requirements":{
+     "run":[
+      "libopencv",
+      "py-opencv"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "py-opencv"
+     ]
+    },
+    "name":"py-opencv",
+    "requirements":{
+     "host":[
+      "python",
+      "numpy"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "libopencv"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python run_py_test.py",
+      "python -c \"import cv2, re; assert re.search('Lapack:\\s+YES', cv2.getBuildInformation())\""
+     ],
+     "files":[
+      "run_py_test.py",
+      "color_palette_alpha.png",
+      "test_1_c1.jpg"
+     ],
+     "imports":[
+      "cv2",
+      "cv2.xfeatures2d"
+     ],
+     "requires":[
+      "requests",
+      "certifi",
+      "liblapack * *mkl"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"libopencv",
+   "version":"4.3.0"
+  },
+  "requirements":{
+   "build":[
+    "m2-patch",
+    "cmake",
+    "ninja",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "numpy",
+    "eigen 3.3.*",
+    "zlib",
+    "jpeg",
+    "libtiff",
+    "libwebp",
+    "libpng",
+    "qt 5.12.1",
+    "liblapacke",
+    "freetype"
+   ],
+   "run":[
+    "qt 5.12",
+    "freetype"
+   ]
+  },
+  "source":[
+   {
+    "fn":"opencv-4.3.0.tar.gz",
+    "sha256":"36799186756c1e12adde97f0a8d1afc395d5b0f86d8ad9ef951bc33aa732f9b9",
+    "url":"https://codeload.github.com/opencv/opencv/zip/4.3.0"
+   },
+   {
+    "fn":"opencv_contrib-4.3.0.tar.gz",
+    "folder":"opencv_contrib",
+    "sha256":"acb8e89c9e7d1174e63e40532125b60d248b00e517255a98a419d415228c6a55",
+    "url":"https://codeload.github.com/opencv/opencv_contrib/tar.gz/4.3.0"
+   }
+  ],
+  "test":{
+   "commands":[
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_aruco430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_bgsegm430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_calib3d430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_ccalib430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_core430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_datasets430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_dnn430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_dpm430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_face430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_features2d430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_flann430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_fuzzy430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_highgui430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_imgcodecs430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_imgproc430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_line_descriptor430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_ml430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_objdetect430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_optflow430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_phase_unwrapping430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_photo430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_plot430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_reg430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_rgbd430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_saliency430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_shape430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_stereo430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_stitching430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_structured_light430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_superres430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_surface_matching430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_text430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_tracking430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_video430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_videoio430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_videostab430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_xfeatures2d430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_ximgproc430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_xobjdetect430.dll exit 1",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\opencv_xphoto430.dll exit 1",
+    "mkdir -p cmake_build_test && pushd cmake_build_test",
+    "cmake -G \"Ninja\" ..",
+    "cmake --build . --config Release",
+    "popd"
+   ],
+   "files":[
+    "CMakeLists.txt",
+    "test.cpp"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "liblapack * *mkl",
+    "cmake",
+    "ninja"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "m2-patch",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "eigen",
+    "freetype",
+    "jpeg",
+    "liblapacke",
+    "libpng",
+    "libtiff",
+    "libwebp",
+    "numpy",
+    "python",
+    "qt",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "freetype",
+    "libopencv",
+    "numpy",
+    "py-opencv",
+    "python",
+    "qt"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "certifi",
+    "cmake",
+    "cxx_compiler_stub",
+    "liblapack",
+    "ninja",
+    "requests"
+   ]
+  }
+ }
 }

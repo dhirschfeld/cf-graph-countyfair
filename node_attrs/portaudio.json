@@ -46,6 +46,74 @@
  },
  "feedstock_name":"portaudio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.portaudio.com/",
+   "license":"PortAudio",
+   "license_file":"LICENSE.txt",
+   "summary":"PortAudio is a free, cross-platform, open-source, audio I/O library."
+  },
+  "build":{
+   "number":"3"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"portaudio",
+   "version":"19.6.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "alsa-lib"
+   ],
+   "run":[
+    "alsa-lib"
+   ]
+  },
+  "source":{
+   "sha256":"f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513",
+   "url":"http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libportaudio$SHLIB_EXT",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "alsa-lib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "alsa-lib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.portaudio.com/",
@@ -100,6 +168,68 @@
  },
  "name":"portaudio",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.portaudio.com/",
+   "license":"PortAudio",
+   "license_file":"LICENSE.txt",
+   "summary":"PortAudio is a free, cross-platform, open-source, audio I/O library."
+  },
+  "build":{
+   "number":"3",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"portaudio",
+   "version":"19.6.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":null,
+   "run":null
+  },
+  "source":{
+   "sha256":"f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513",
+   "url":"http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libportaudio$SHLIB_EXT",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set version = \"190600_20161030\" %}\n\npackage:\n  name: portaudio\n  version: 19.6.0\n\nsource:\n  url: http://www.portaudio.com/archives/pa_stable_v{{ version }}.tgz\n  sha256: f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513\n\nbuild:\n  number: 3\n  skip: True  # [osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}          # [unix]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_c') }}    # [win]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - posix  # [win]\n    - m2w64-toolchain  # [win]\n    - alsa-lib  # [linux]\n  run:\n    - alsa-lib  # [linux]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libportaudio$SHLIB_EXT  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.portaudio.com/\n  license: PortAudio\n  license_file: LICENSE.txt\n  summary: 'PortAudio is a free, cross-platform, open-source, audio I/O library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - scopatz\n",
  "req":{
@@ -169,5 +299,68 @@
   }
  },
  "url":"http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz",
- "version":"19.6.0"
+ "version":"19.6.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.portaudio.com/",
+   "license":"PortAudio",
+   "license_file":"LICENSE.txt",
+   "summary":"PortAudio is a free, cross-platform, open-source, audio I/O library."
+  },
+  "build":{
+   "number":"3"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"portaudio",
+   "version":"19.6.0"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub"
+   ],
+   "host":[
+    "posix",
+    "m2w64-toolchain"
+   ],
+   "run":null
+  },
+  "source":{
+   "sha256":"f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513",
+   "url":"http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "m2w64_c_compiler_stub",
+    "m2w64_cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "m2w64-toolchain",
+    "posix"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

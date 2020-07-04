@@ -1125,6 +1125,95 @@
  "conda-forge.yml":{},
  "feedstock_name":"dash",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/plotly/dash",
+   "home":"https://plot.ly/dash",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python framework for building reactive web-apps."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"dash",
+   "version":"1.13.4"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml >=5.1.1",
+    "flask >=1.0.2",
+    "flask-compress",
+    "plotly",
+    "dash-renderer ==1.5.1",
+    "dash-core-components ==1.10.1",
+    "dash-html-components ==1.0.3",
+    "dash-table ==4.8.1",
+    "future"
+   ]
+  },
+  "source":{
+   "fn":"dash-1.13.4.tar.gz",
+   "sha256":"70943518849167177e0532faf36f04ad2a57573eef9ef30428db5fc195fb6e8a",
+   "url":"https://pypi.io/packages/source/d/dash/dash-1.13.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "dash.dash",
+    "dash.dependencies",
+    "dash.exceptions",
+    "dash.resources"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dash-core-components",
+    "dash-html-components",
+    "dash-renderer",
+    "dash-table",
+    "flask",
+    "flask-compress",
+    "future",
+    "plotly",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/plotly/dash",
@@ -1229,6 +1318,95 @@
   "1.13.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/plotly/dash",
+   "home":"https://plot.ly/dash",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python framework for building reactive web-apps."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"dash",
+   "version":"1.13.4"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml >=5.1.1",
+    "flask >=1.0.2",
+    "flask-compress",
+    "plotly",
+    "dash-renderer ==1.5.1",
+    "dash-core-components ==1.10.1",
+    "dash-html-components ==1.0.3",
+    "dash-table ==4.8.1",
+    "future"
+   ]
+  },
+  "source":{
+   "fn":"dash-1.13.4.tar.gz",
+   "sha256":"70943518849167177e0532faf36f04ad2a57573eef9ef30428db5fc195fb6e8a",
+   "url":"https://pypi.io/packages/source/d/dash/dash-1.13.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "dash.dash",
+    "dash.dependencies",
+    "dash.exceptions",
+    "dash.resources"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dash-core-components",
+    "dash-html-components",
+    "dash-renderer",
+    "dash-table",
+    "flask",
+    "flask-compress",
+    "future",
+    "plotly",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.24.16.31.11",
  "raw_meta_yaml":"{% set name = \"dash\" %}\n{% set version = \"1.13.4\" %}\n{% set sha256 = \"70943518849167177e0532faf36f04ad2a57573eef9ef30428db5fc195fb6e8a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - pyyaml >=5.1.1\n    - flask >=1.0.2\n    - flask-compress\n    - plotly\n    - dash-renderer ==1.5.1\n    - dash-core-components ==1.10.1\n    - dash-html-components ==1.0.3\n    - dash-table ==4.8.1\n    - future\n\ntest:\n  imports:\n    - dash.dash\n    - dash.dependencies\n    - dash.exceptions\n    - dash.resources\n\nabout:\n  home: https://plot.ly/dash\n  dev_url: https://github.com/plotly/dash\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python framework for building reactive web-apps.\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "req":{
@@ -1317,5 +1495,94 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/dash/dash-1.2.0.tar.gz",
- "version":"1.13.4"
+ "version":"1.13.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/plotly/dash",
+   "home":"https://plot.ly/dash",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A Python framework for building reactive web-apps."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "moorepants"
+   ]
+  },
+  "package":{
+   "name":"dash",
+   "version":"1.13.4"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pyyaml >=5.1.1",
+    "flask >=1.0.2",
+    "flask-compress",
+    "plotly",
+    "dash-renderer ==1.5.1",
+    "dash-core-components ==1.10.1",
+    "dash-html-components ==1.0.3",
+    "dash-table ==4.8.1",
+    "future"
+   ]
+  },
+  "source":{
+   "fn":"dash-1.13.4.tar.gz",
+   "sha256":"70943518849167177e0532faf36f04ad2a57573eef9ef30428db5fc195fb6e8a",
+   "url":"https://pypi.io/packages/source/d/dash/dash-1.13.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "dash.dash",
+    "dash.dependencies",
+    "dash.exceptions",
+    "dash.resources"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "dash-core-components",
+    "dash-html-components",
+    "dash-renderer",
+    "dash-table",
+    "flask",
+    "flask-compress",
+    "future",
+    "plotly",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

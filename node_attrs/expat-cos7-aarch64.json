@@ -4,6 +4,107 @@
  "conda-forge.yml":{},
  "feedstock_name":"expat-cos7-aarch64",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.libexpat.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/expat-2.1.0/COPYING",
+   "summary":"(CDT) An XML parser library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"expat-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"expat-devel-cos7-aarch64",
+    "requirements":[
+     "expat-cos7-aarch64"
+    ],
+    "test":{
+     "cemmands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libexpat.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"expat-cos7-aarch64",
+   "version":"2.1.0"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f5313d176b7ea683b1abdf3152d6bee22903628b99e9d07372377985a1d25edb",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-2.1.0-10.el7_3.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"3feb40b3e54a9313750494730125931de854569e42e7a9bd72d77d52b1569469",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-devel-2.1.0-10.el7_3.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/bin/xmlwf\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "expat-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.libexpat.org/",
@@ -177,6 +278,107 @@
  },
  "name":"expat-cos7-aarch64",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.libexpat.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/expat-2.1.0/COPYING",
+   "summary":"(CDT) An XML parser library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"expat-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"expat-devel-cos7-aarch64",
+    "requirements":[
+     "expat-cos7-aarch64"
+    ],
+    "test":{
+     "cemmands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libexpat.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"expat-cos7-aarch64",
+   "version":"2.1.0"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f5313d176b7ea683b1abdf3152d6bee22903628b99e9d07372377985a1d25edb",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-2.1.0-10.el7_3.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"3feb40b3e54a9313750494730125931de854569e42e7a9bd72d77d52b1569469",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-devel-2.1.0-10.el7_3.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/bin/xmlwf\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "expat-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ },
  "outputs_names":[
   "expat-cos7-aarch64",
   "expat-devel-cos7-aarch64"
@@ -234,5 +436,106 @@
   }
  },
  "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-2.1.0-10.el7_3.aarch64.rpm",
- "version":"2.1.0"
+ "version":"2.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.libexpat.org/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"binary/usr/share/doc/expat-2.1.0/COPYING",
+   "summary":"(CDT) An XML parser library"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /binary/* ."
+     ]
+    },
+    "name":"expat-cos7-aarch64"
+   },
+   {
+    "build":{
+     "noarch":"generic",
+     "script":[
+      "mkdir -p /aarch64-conda_cos7-linux-gnu/sysroot",
+      "pushd /aarch64-conda_cos7-linux-gnu/sysroot > /dev/null 2>&1",
+      "cp -Rf /devel/* ."
+     ]
+    },
+    "name":"expat-devel-cos7-aarch64",
+    "requirements":[
+     "expat-cos7-aarch64"
+    ],
+    "test":{
+     "cemmands":[
+      "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/lib64/libexpat.so\""
+     ],
+     "requires":[
+      "zlib"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"expat-cos7-aarch64",
+   "version":"2.1.0"
+  },
+  "source":[
+   {
+    "folder":"binary/usr",
+    "sha256":"f5313d176b7ea683b1abdf3152d6bee22903628b99e9d07372377985a1d25edb",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-2.1.0-10.el7_3.aarch64.rpm"
+   },
+   {
+    "folder":"devel/usr",
+    "sha256":"3feb40b3e54a9313750494730125931de854569e42e7a9bd72d77d52b1569469",
+    "url":"http://mirror.centos.org/altarch/7/os/aarch64/Packages/expat-devel-2.1.0-10.el7_3.aarch64.rpm"
+   }
+  ],
+  "test":{
+   "commands":[
+    "test -f \"$PREFIX/aarch64-conda_cos7-linux-gnu/sysroot/usr/bin/xmlwf\""
+   ],
+   "requires":[
+    "zlib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "expat-cos7-aarch64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "zlib"
+   ]
+  }
+ }
 }

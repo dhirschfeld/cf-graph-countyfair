@@ -154,6 +154,71 @@
  "conda-forge.yml":{},
  "feedstock_name":"openfst",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A library for constructing, combining, optimizing, and searching weighted\nfinite-state transducers (FSTs)\n",
+   "doc_url":"http://www.openfst.org/twiki/bin/view/FST/FstQuickTour",
+   "home":"http://openfst.org",
+   "license":"Apache-2.0",
+   "license_file":"COPYING",
+   "summary":"Weighted finite-state transducers"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "kylebgorman",
+    "mcernak"
+   ]
+  },
+  "package":{
+   "name":"openfst",
+   "version":"1.7.8"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"d2ea5a757e159ae36397e2cce41e9892bab8610e2bf86e43eee37198cb733f2e",
+   "url":"http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.7.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "farinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstcompress --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstspecial --helpshort >/dev/null || [[ $? == 1 ]]",
+    "mpdtcompose --helpshort >/dev/null || [[ $? == 1 ]]",
+    "pdtcompose --helpshort >/dev/null || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A library for constructing, combining, optimizing, and searching weighted\nfinite-state transducers (FSTs)\n",
@@ -227,6 +292,71 @@
   "1.7.8":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A library for constructing, combining, optimizing, and searching weighted\nfinite-state transducers (FSTs)\n",
+   "doc_url":"http://www.openfst.org/twiki/bin/view/FST/FstQuickTour",
+   "home":"http://openfst.org",
+   "license":"Apache-2.0",
+   "license_file":"COPYING",
+   "summary":"Weighted finite-state transducers"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "kylebgorman",
+    "mcernak"
+   ]
+  },
+  "package":{
+   "name":"openfst",
+   "version":"1.7.8"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"d2ea5a757e159ae36397e2cce41e9892bab8610e2bf86e43eee37198cb733f2e",
+   "url":"http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.7.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "farinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstcompress --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstspecial --helpshort >/dev/null || [[ $? == 1 ]]",
+    "mpdtcompose --helpshort >/dev/null || [[ $? == 1 ]]",
+    "pdtcompose --helpshort >/dev/null || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.07.01.21.17.12",
  "raw_meta_yaml":"{% set name = \"openfst\" %}\n{% set version = \"1.7.8\" %}\n\npackage: \n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.openfst.org/twiki/pub/FST/FstDownload/{{ name }}-{{ version }}.tar.gz\n  sha256: d2ea5a757e159ae36397e2cce41e9892bab8610e2bf86e43eee37198cb733f2e\n  \nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - make\n\ntest:\n  # If behaving properly these will have return code 1.\n  commands:\n    - farinfo --helpshort >/dev/null || [[ $? == 1 ]]\n    - fstcompress --helpshort >/dev/null || [[ $? == 1 ]]\n    - fstinfo --helpshort >/dev/null || [[ $? == 1 ]]\n    - fstspecial --helpshort >/dev/null || [[ $? == 1 ]]\n    - mpdtcompose --helpshort >/dev/null || [[ $? == 1 ]]\n    - pdtcompose --helpshort >/dev/null || [[ $? == 1 ]]\n\nabout:\n  home: http://openfst.org\n  license: Apache-2.0\n  license_file: COPYING\n  summary: Weighted finite-state transducers\n  description: |\n    A library for constructing, combining, optimizing, and searching weighted \n    finite-state transducers (FSTs)\n  doc_url: http://www.openfst.org/twiki/bin/view/FST/FstQuickTour\n\nextra:\n  recipe-maintainers:\n    - 183amir\n    - kylebgorman\n    - mcernak\n",
  "req":{
@@ -281,5 +411,71 @@
   }
  },
  "url":"http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.6.1.tar.gz",
- "version":"1.7.8"
+ "version":"1.7.8",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A library for constructing, combining, optimizing, and searching weighted\nfinite-state transducers (FSTs)\n",
+   "doc_url":"http://www.openfst.org/twiki/bin/view/FST/FstQuickTour",
+   "home":"http://openfst.org",
+   "license":"Apache-2.0",
+   "license_file":"COPYING",
+   "summary":"Weighted finite-state transducers"
+  },
+  "build":{
+   "number":"0",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "183amir",
+    "kylebgorman",
+    "mcernak"
+   ]
+  },
+  "package":{
+   "name":"openfst",
+   "version":"1.7.8"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "sha256":"d2ea5a757e159ae36397e2cce41e9892bab8610e2bf86e43eee37198cb733f2e",
+   "url":"http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-1.7.8.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "farinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstcompress --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstinfo --helpshort >/dev/null || [[ $? == 1 ]]",
+    "fstspecial --helpshort >/dev/null || [[ $? == 1 ]]",
+    "mpdtcompose --helpshort >/dev/null || [[ $? == 1 ]]",
+    "pdtcompose --helpshort >/dev/null || [[ $? == 1 ]]"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

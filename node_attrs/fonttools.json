@@ -885,6 +885,93 @@
  },
  "feedstock_name":"fonttools",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"fontTools is a library for manipulating fonts, written in Python. The\nproject includes the TTX tool, that can convert TrueType and OpenType\nfonts to and from an XML text format, which is also called TTX. It\nsupports TrueType, OpenType, AFM and to an extent Type 1 and some\nMac-specific formats. The project has a BSD-style open-source licence.\n",
+   "dev_url":"https://github.com/fonttools/fonttools",
+   "doc_url":"https://groups.google.com/forum/#!forum/fonttools",
+   "home":"https://github.com/fonttools/fonttools",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"fontTools is a library for manipulating fonts, written in Python."
+  },
+  "build":{
+   "entry_points":[
+    "fonttools = fontTools.__main__:main",
+    "ttx = fontTools.ttx:main",
+    "pyftsubset = fontTools.subset:main",
+    "pyftmerge = fontTools.merge:main",
+    "pyftinspect = fontTools.inspect:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"fonttools",
+   "version":"4.12.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "brotli",
+    "unicodedata2 >=12.1.0",
+    "munkres"
+   ]
+  },
+  "source":{
+   "fn":"fonttools-4.12.1.zip",
+   "sha256":"4b790ebb2e009282b84db896cb6f31332038c79829b5c29c432481b6df058ece",
+   "url":"https://github.com/fonttools/fonttools/releases/download/4.12.1/fonttools-4.12.1.zip"
+  },
+  "test":{
+   "commands":[
+    "fonttools subset --help",
+    "ttx -h",
+    "pyftsubset --help"
+   ],
+   "imports":[
+    "fontTools",
+    "fontTools.ttLib"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "brotli",
+    "munkres",
+    "python",
+    "unicodedata2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"fontTools is a library for manipulating fonts, written in Python. The\nproject includes the TTX tool, that can convert TrueType and OpenType\nfonts to and from an XML text format, which is also called TTX. It\nsupports TrueType, OpenType, AFM and to an extent Type 1 and some\nMac-specific formats. The project has a BSD-style open-source licence.\n",
@@ -994,6 +1081,93 @@
   "4.9.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"fontTools is a library for manipulating fonts, written in Python. The\nproject includes the TTX tool, that can convert TrueType and OpenType\nfonts to and from an XML text format, which is also called TTX. It\nsupports TrueType, OpenType, AFM and to an extent Type 1 and some\nMac-specific formats. The project has a BSD-style open-source licence.\n",
+   "dev_url":"https://github.com/fonttools/fonttools",
+   "doc_url":"https://groups.google.com/forum/#!forum/fonttools",
+   "home":"https://github.com/fonttools/fonttools",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"fontTools is a library for manipulating fonts, written in Python."
+  },
+  "build":{
+   "entry_points":[
+    "fonttools = fontTools.__main__:main",
+    "ttx = fontTools.ttx:main",
+    "pyftsubset = fontTools.subset:main",
+    "pyftmerge = fontTools.merge:main",
+    "pyftinspect = fontTools.inspect:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"fonttools",
+   "version":"4.12.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "brotli",
+    "unicodedata2 >=12.1.0",
+    "munkres"
+   ]
+  },
+  "source":{
+   "fn":"fonttools-4.12.1.zip",
+   "sha256":"4b790ebb2e009282b84db896cb6f31332038c79829b5c29c432481b6df058ece",
+   "url":"https://github.com/fonttools/fonttools/releases/download/4.12.1/fonttools-4.12.1.zip"
+  },
+  "test":{
+   "commands":[
+    "fonttools subset --help",
+    "ttx -h",
+    "pyftsubset --help"
+   ],
+   "imports":[
+    "fontTools",
+    "fontTools.ttLib"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "brotli",
+    "munkres",
+    "python",
+    "unicodedata2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.16.21.09.39",
  "raw_meta_yaml":"{% set name = \"fonttools\" %}\n{% set version = \"4.12.1\" %}\n{% set sha256 = \"4b790ebb2e009282b84db896cb6f31332038c79829b5c29c432481b6df058ece\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - fonttools = fontTools.__main__:main\n    - ttx = fontTools.ttx:main\n    - pyftsubset = fontTools.subset:main\n    - pyftmerge = fontTools.merge:main\n    - pyftinspect = fontTools.inspect:main\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - brotli\n    - unicodedata2 >=12.1.0\n    - munkres\n\ntest:\n  imports:\n    - fontTools\n    - fontTools.ttLib\n  commands:\n    - fonttools subset --help\n    - ttx -h\n    - pyftsubset --help\n    # pyftmerge has no help option\n    # pyftinspect requires gtk\n\nabout:\n  home: https://github.com/fonttools/fonttools\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: fontTools is a library for manipulating fonts, written in Python.\n\n  description: |\n    fontTools is a library for manipulating fonts, written in Python. The\n    project includes the TTX tool, that can convert TrueType and OpenType\n    fonts to and from an XML text format, which is also called TTX. It\n    supports TrueType, OpenType, AFM and to an extent Type 1 and some\n    Mac-specific formats. The project has a BSD-style open-source licence.\n\n  doc_url: https://groups.google.com/forum/#!forum/fonttools\n  dev_url: https://github.com/fonttools/fonttools\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "req":{
@@ -1061,5 +1235,92 @@
   }
  },
  "url":"https://github.com/fonttools/fonttools/releases/download/4.0.0/fonttools-4.0.0.zip",
- "version":"4.12.1"
+ "version":"4.12.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"fontTools is a library for manipulating fonts, written in Python. The\nproject includes the TTX tool, that can convert TrueType and OpenType\nfonts to and from an XML text format, which is also called TTX. It\nsupports TrueType, OpenType, AFM and to an extent Type 1 and some\nMac-specific formats. The project has a BSD-style open-source licence.\n",
+   "dev_url":"https://github.com/fonttools/fonttools",
+   "doc_url":"https://groups.google.com/forum/#!forum/fonttools",
+   "home":"https://github.com/fonttools/fonttools",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"fontTools is a library for manipulating fonts, written in Python."
+  },
+  "build":{
+   "entry_points":[
+    "fonttools = fontTools.__main__:main",
+    "ttx = fontTools.ttx:main",
+    "pyftsubset = fontTools.subset:main",
+    "pyftmerge = fontTools.merge:main",
+    "pyftinspect = fontTools.inspect:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "CJ-Wright"
+   ]
+  },
+  "package":{
+   "name":"fonttools",
+   "version":"4.12.1"
+  },
+  "requirements":{
+   "host":[
+    "python >=3.6",
+    "pip"
+   ],
+   "run":[
+    "python >=3.6",
+    "brotli",
+    "unicodedata2 >=12.1.0",
+    "munkres"
+   ]
+  },
+  "source":{
+   "fn":"fonttools-4.12.1.zip",
+   "sha256":"4b790ebb2e009282b84db896cb6f31332038c79829b5c29c432481b6df058ece",
+   "url":"https://github.com/fonttools/fonttools/releases/download/4.12.1/fonttools-4.12.1.zip"
+  },
+  "test":{
+   "commands":[
+    "fonttools subset --help",
+    "ttx -h",
+    "pyftsubset --help"
+   ],
+   "imports":[
+    "fontTools",
+    "fontTools.ttLib"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "brotli",
+    "munkres",
+    "python",
+    "unicodedata2"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

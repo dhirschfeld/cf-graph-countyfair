@@ -82,6 +82,86 @@
  },
  "feedstock_name":"pygacode",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://gacode.io/",
+   "home":"https://gacode.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"PKG-INFO",
+   "summary":"Python interface to gacode profile and geometry tools."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalling",
+    "smithsp",
+    "orso82"
+   ]
+  },
+  "package":{
+   "name":"pygacode",
+   "version":"0.55"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "libgomp"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "numpy >=1.18",
+    "libgomp"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "libgomp"
+   ]
+  },
+  "source":{
+   "fn":"pygacode-0.55.tar.gz",
+   "patches":[
+    "0001-changing.patch"
+   ],
+   "sha256":"7a2607c961556e1462aae4a3f756e538254833baa9f6f33b0a9a422afe1d9607",
+   "url":"https://pypi.io/packages/source/p/pygacode/pygacode-0.55.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub",
+    "libgomp"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgomp",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libgomp",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "doc_url":"https://gacode.io/",
@@ -161,6 +241,84 @@
   "0.55":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://gacode.io/",
+   "home":"https://gacode.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"PKG-INFO",
+   "summary":"Python interface to gacode profile and geometry tools."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalling",
+    "smithsp",
+    "orso82"
+   ]
+  },
+  "package":{
+   "name":"pygacode",
+   "version":"0.55"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub",
+    "llvm-openmp"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "numpy >=1.18",
+    "llvm-openmp"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "llvm-openmp"
+   ]
+  },
+  "source":{
+   "fn":"pygacode-0.55.tar.gz",
+   "patches":null,
+   "sha256":"7a2607c961556e1462aae4a3f756e538254833baa9f6f33b0a9a422afe1d9607",
+   "url":"https://pypi.io/packages/source/p/pygacode/pygacode-0.55.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub",
+    "llvm-openmp"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "llvm-openmp",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "llvm-openmp",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.15.22.23.24",
  "raw_meta_yaml":"{% set name = \"pygacode\" %}\n{% set version = \"0.55\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7a2607c961556e1462aae4a3f756e538254833baa9f6f33b0a9a422afe1d9607\n  patches:\n    - 0001-changing.patch  # [linux]\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py27 or win or not x86_64]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - libgomp      # [linux]\n    - llvm-openmp  # [osx]\n  host:\n    - pip\n    - python\n    - numpy >=1.18\n    - libgomp      # [linux]\n    - llvm-openmp  # [osx]\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - libgomp      # [linux]\n    - llvm-openmp  # [osx]\n\nabout:\n  home: https://gacode.io/\n  license: MIT\n  license_family: MIT\n  license_file: PKG-INFO\n  summary: Python interface to gacode profile and geometry tools.\n  doc_url: https://gacode.io/\n\nextra:\n  recipe-maintainers:\n    - kalling\n    - smithsp\n    - orso82\n",
  "req":{
@@ -243,5 +401,78 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pygacode/pygacode-0.52.tar.gz",
- "version":"0.55"
+ "version":"0.55",
+ "win_64_meta_yaml":{
+  "about":{
+   "doc_url":"https://gacode.io/",
+   "home":"https://gacode.io/",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"PKG-INFO",
+   "summary":"Python interface to gacode profile and geometry tools."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . -vv",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kalling",
+    "smithsp",
+    "orso82"
+   ]
+  },
+  "package":{
+   "name":"pygacode",
+   "version":"0.55"
+  },
+  "requirements":{
+   "build":[
+    "fortran_compiler_stub"
+   ],
+   "host":[
+    "pip",
+    "python",
+    "numpy >=1.18"
+   ],
+   "run":[
+    "python",
+    "numpy"
+   ]
+  },
+  "source":{
+   "fn":"pygacode-0.55.tar.gz",
+   "patches":null,
+   "sha256":"7a2607c961556e1462aae4a3f756e538254833baa9f6f33b0a9a422afe1d9607",
+   "url":"https://pypi.io/packages/source/p/pygacode/pygacode-0.55.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "fortran_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

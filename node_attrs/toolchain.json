@@ -26,6 +26,73 @@
   }
  },
  "feedstock_name":"toolchain",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/toolchain-feedstock",
+   "license":"BSD 3-Clause",
+   "summary":"A meta-package to enable the right toolchain."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "pelson",
+    "scopatz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"toolchain",
+    "script":"install-toolchain.sh",
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/etc/conda/activate.d/toolchain_activate.sh\"",
+      "test -f \"${PREFIX}/etc/conda/deactivate.d/toolchain_deactivate.sh\""
+     ]
+    }
+   },
+   {
+    "name":"m2w64-toolchain_",
+    "requirements":[
+     "m2w64-toolchain"
+    ],
+    "run_exports":{
+     "strong":[
+      "m2w64-gcc-libs"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"toolchain",
+   "version":"2.4.0"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2w64-toolchain"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/conda-forge/toolchain-feedstock",
@@ -127,6 +194,73 @@
  },
  "name":"toolchain",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/toolchain-feedstock",
+   "license":"BSD 3-Clause",
+   "summary":"A meta-package to enable the right toolchain."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "pelson",
+    "scopatz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"toolchain",
+    "script":"install-toolchain.sh",
+    "test":{
+     "commands":[
+      "test -f \"${PREFIX}/etc/conda/activate.d/toolchain_activate.sh\"",
+      "test -f \"${PREFIX}/etc/conda/deactivate.d/toolchain_deactivate.sh\""
+     ]
+    }
+   },
+   {
+    "name":"m2w64-toolchain_",
+    "requirements":[
+     "m2w64-toolchain"
+    ],
+    "run_exports":{
+     "strong":[
+      "m2w64-gcc-libs"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"toolchain",
+   "version":"2.4.0"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2w64-toolchain"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "m2w64-toolchain_",
   "toolchain"
@@ -182,5 +316,70 @@
    "elements":[]
   }
  },
- "version":"2.4.0"
+ "version":"2.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/conda-forge/toolchain-feedstock",
+   "license":"BSD 3-Clause",
+   "summary":"A meta-package to enable the right toolchain."
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "pelson",
+    "scopatz"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"toolchain",
+    "test":{
+     "commands":[
+      "echo \"I'm on windows, and there's nothing to do here.\""
+     ]
+    }
+   },
+   {
+    "name":"m2w64-toolchain_",
+    "requirements":[
+     "m2w64-toolchain"
+    ],
+    "run_exports":{
+     "strong":[
+      "m2w64-gcc-libs"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"toolchain",
+   "version":"2.4.0"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "m2w64-toolchain"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

@@ -99,6 +99,95 @@
  },
  "feedstock_name":"bandit",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/PyCQA/bandit",
+   "doc_url":"https://bandit.readthedocs.io/en/latest/",
+   "home":"https://bandit.readthedocs.io/en/latest/",
+   "license":"Apache 2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Bandit is a tool designed to find common security issues in Python code.\nTo do this Bandit processes each file, builds an AST from it, and runs\nappropriate plugins against the AST nodes. Once Bandit has finished\nscanning all the files it generates a report.\n"
+  },
+  "build":{
+   "entry_points":[
+    "bandit=bandit.cli.main:main",
+    "bandit-config-generator=bandit.cli.config_generator:main",
+    "bandit-baseline=bandit.cli.baseline:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jkornblum"
+   ]
+  },
+  "package":{
+   "name":"bandit",
+   "version":"1.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pbr >=2.0.0",
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "GitPython >=1.0.1",
+    "pbr >=2.0.0",
+    "python",
+    "PyYAML >=3.13",
+    "setuptools",
+    "six >=1.10.0",
+    "stevedore >=1.20.0"
+   ]
+  },
+  "source":{
+   "sha256":"41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065",
+   "url":"https://pypi.io/packages/source/b/bandit/bandit-1.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "bandit --help"
+   ],
+   "imports":[
+    "bandit"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gitpython",
+    "pbr",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six",
+    "stevedore"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/PyCQA/bandit",
@@ -194,6 +283,95 @@
  },
  "name":"bandit",
  "new_version":"1.6.2",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/PyCQA/bandit",
+   "doc_url":"https://bandit.readthedocs.io/en/latest/",
+   "home":"https://bandit.readthedocs.io/en/latest/",
+   "license":"Apache 2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Bandit is a tool designed to find common security issues in Python code.\nTo do this Bandit processes each file, builds an AST from it, and runs\nappropriate plugins against the AST nodes. Once Bandit has finished\nscanning all the files it generates a report.\n"
+  },
+  "build":{
+   "entry_points":[
+    "bandit=bandit.cli.main:main",
+    "bandit-config-generator=bandit.cli.config_generator:main",
+    "bandit-baseline=bandit.cli.baseline:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jkornblum"
+   ]
+  },
+  "package":{
+   "name":"bandit",
+   "version":"1.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pbr >=2.0.0",
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "GitPython >=1.0.1",
+    "pbr >=2.0.0",
+    "python",
+    "PyYAML >=3.13",
+    "setuptools",
+    "six >=1.10.0",
+    "stevedore >=1.20.0"
+   ]
+  },
+  "source":{
+   "sha256":"41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065",
+   "url":"https://pypi.io/packages/source/b/bandit/bandit-1.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "bandit --help"
+   ],
+   "imports":[
+    "bandit"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gitpython",
+    "pbr",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six",
+    "stevedore"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.16",
  "raw_meta_yaml":"{% set name = \"bandit\" %}\n{% set version = \"1.6.2\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065\n\nbuild:\n  number: 0\n  entry_points: \n    - bandit=bandit.cli.main:main\n    - bandit-config-generator=bandit.cli.config_generator:main\n    - bandit-baseline=bandit.cli.baseline:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - pbr >=2.0.0\n    - pip\n    - python\n    - setuptools\n  run:\n    - colorama >=0.3.9  # [win]\n    - GitPython >=1.0.1\n    - pbr >=2.0.0\n    - python\n    - PyYAML >=3.13\n    - setuptools\n    - six >=1.10.0\n    - stevedore >=1.20.0\n\ntest:\n  imports:\n    - bandit\n  commands:\n    - bandit --help\n\nabout:\n  home: https://bandit.readthedocs.io/en/latest/\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: |\n    Bandit is a tool designed to find common security issues in Python code. \n    To do this Bandit processes each file, builds an AST from it, and runs \n    appropriate plugins against the AST nodes. Once Bandit has finished \n    scanning all the files it generates a report.\n  doc_url: https://bandit.readthedocs.io/en/latest/\n  dev_url: https://github.com/PyCQA/bandit\n\nextra:\n  recipe-maintainers:\n    - jkornblum\n",
  "req":{
@@ -277,5 +455,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/bandit/bandit-1.6.2.tar.gz",
- "version":"1.6.2"
+ "version":"1.6.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/PyCQA/bandit",
+   "doc_url":"https://bandit.readthedocs.io/en/latest/",
+   "home":"https://bandit.readthedocs.io/en/latest/",
+   "license":"Apache 2.0",
+   "license_family":"APACHE",
+   "license_file":"LICENSE",
+   "summary":"Bandit is a tool designed to find common security issues in Python code.\nTo do this Bandit processes each file, builds an AST from it, and runs\nappropriate plugins against the AST nodes. Once Bandit has finished\nscanning all the files it generates a report.\n"
+  },
+  "build":{
+   "entry_points":[
+    "bandit=bandit.cli.main:main",
+    "bandit-config-generator=bandit.cli.config_generator:main",
+    "bandit-baseline=bandit.cli.baseline:main"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed -vv "
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "jkornblum"
+   ]
+  },
+  "package":{
+   "name":"bandit",
+   "version":"1.6.2"
+  },
+  "requirements":{
+   "host":[
+    "pbr >=2.0.0",
+    "pip",
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "colorama >=0.3.9",
+    "GitPython >=1.0.1",
+    "pbr >=2.0.0",
+    "python",
+    "PyYAML >=3.13",
+    "setuptools",
+    "six >=1.10.0",
+    "stevedore >=1.20.0"
+   ]
+  },
+  "source":{
+   "sha256":"41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065",
+   "url":"https://pypi.io/packages/source/b/bandit/bandit-1.6.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "bandit --help"
+   ],
+   "imports":[
+    "bandit"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pbr",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "colorama",
+    "gitpython",
+    "pbr",
+    "python",
+    "pyyaml",
+    "setuptools",
+    "six",
+    "stevedore"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

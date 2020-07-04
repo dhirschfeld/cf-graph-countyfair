@@ -93,6 +93,88 @@
  "conda-forge.yml":{},
  "feedstock_name":"rocksdb",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/facebook/rocksdb",
+   "doc_url":"https://rocksdb.org/docs",
+   "home":"https://rocksdb.org",
+   "license":"Apache-2.0",
+   "license_file":"src/LICENSE.Apache",
+   "summary":"A library that provides an embeddable, persistent key-value store for fast storage."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "rocksdb"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benhuff",
+    "oblute",
+    "rluria14",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"rocksdb",
+   "version":"6.10.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.5.1,<4",
+    "ninja >=1.10,<2"
+   ],
+   "host":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "source":{
+   "folder":"src",
+   "sha256":"514b315c64159dd767bbbf6430d33313903c0c9240d4249bddead5c4297d128f",
+   "url":"https://github.com/facebook/rocksdb/archive/v6.10.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/librocksdb.a",
+    "test -f ${PREFIX}/lib/librocksdb.so",
+    "test -f ${PREFIX}/include/rocksdb/db.h"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/facebook/rocksdb",
@@ -188,6 +270,88 @@
   "6.8.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/facebook/rocksdb",
+   "doc_url":"https://rocksdb.org/docs",
+   "home":"https://rocksdb.org",
+   "license":"Apache-2.0",
+   "license_file":"src/LICENSE.Apache",
+   "summary":"A library that provides an embeddable, persistent key-value store for fast storage."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "rocksdb"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benhuff",
+    "oblute",
+    "rluria14",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"rocksdb",
+   "version":"6.10.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.5.1,<4",
+    "ninja >=1.10,<2"
+   ],
+   "host":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "source":{
+   "folder":"src",
+   "sha256":"514b315c64159dd767bbbf6430d33313903c0c9240d4249bddead5c4297d128f",
+   "url":"https://github.com/facebook/rocksdb/archive/v6.10.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/librocksdb.a",
+    "test -f ${PREFIX}/lib/librocksdb.dylib",
+    "test -f ${PREFIX}/include/rocksdb/db.h"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.10.22.19.47",
  "raw_meta_yaml":"{% set name = \"rocksdb\" %}\n{% set version = \"6.10.2\" %}\n\npackage:\n  name: rocksdb\n  version: {{ version }}\n\nsource:\n  folder: src\n  url: https://github.com/facebook/rocksdb/archive/v{{ version }}.tar.gz\n  sha256: 514b315c64159dd767bbbf6430d33313903c0c9240d4249bddead5c4297d128f\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    # Symbols are removed from a minor release to the next.\n    # https://abi-laboratory.pro/index.php?view=timeline&l=rocksdb\n    - {{ pin_subpackage(name, max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler(\"cxx\") }}\n    - cmake >=3.5.1,<4\n    - ninja >=1.10,<2\n  host:\n    - gflags\n    - jemalloc\n    - lz4-c\n    - snappy\n    - zstd\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/librocksdb.a\n    - test -f ${PREFIX}/lib/librocksdb.dylib  # [osx]\n    - test -f ${PREFIX}/lib/librocksdb.so     # [linux]\n    - test -f ${PREFIX}/include/rocksdb/db.h\n\nabout:\n  home: https://rocksdb.org\n  license: Apache-2.0\n  license_file: src/LICENSE.Apache\n  summary: A library that provides an embeddable, persistent key-value store for fast storage.\n\n  dev_url: https://github.com/facebook/rocksdb\n  doc_url: https://rocksdb.org/docs\n\nextra:\n  recipe-maintainers:\n    - benhuff\n    - oblute\n    - rluria14\n    - sodre\n",
  "req":{
@@ -262,5 +426,87 @@
   }
  },
  "url":"https://github.com/facebook/rocksdb/archive/v6.2.2.tar.gz",
- "version":"6.10.2"
+ "version":"6.10.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/facebook/rocksdb",
+   "doc_url":"https://rocksdb.org/docs",
+   "home":"https://rocksdb.org",
+   "license":"Apache-2.0",
+   "license_file":"src/LICENSE.Apache",
+   "summary":"A library that provides an embeddable, persistent key-value store for fast storage."
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "rocksdb"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "benhuff",
+    "oblute",
+    "rluria14",
+    "sodre"
+   ]
+  },
+  "package":{
+   "name":"rocksdb",
+   "version":"6.10.2"
+  },
+  "requirements":{
+   "build":[
+    "cxx_compiler_stub",
+    "cmake >=3.5.1,<4",
+    "ninja >=1.10,<2"
+   ],
+   "host":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "source":{
+   "folder":"src",
+   "sha256":"514b315c64159dd767bbbf6430d33313903c0c9240d4249bddead5c4297d128f",
+   "url":"https://github.com/facebook/rocksdb/archive/v6.10.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/librocksdb.a",
+    "test -f ${PREFIX}/include/rocksdb/db.h"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "gflags",
+    "jemalloc",
+    "lz4-c",
+    "snappy",
+    "zstd"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

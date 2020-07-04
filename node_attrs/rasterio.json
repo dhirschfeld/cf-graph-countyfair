@@ -618,6 +618,134 @@
  },
  "feedstock_name":"rasterio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/mapbox/rasterio",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Rasterio reads and writes geospatial raster datasets"
+  },
+  "build":{
+   "entry_points":[
+    "rio = rasterio.rio.main:main_group"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "ceholden",
+    "snowman2"
+   ]
+  },
+  "package":{
+   "name":"rasterio",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "libgdal"
+   ],
+   "run":[
+    "python",
+    "setuptools >=0.9.8",
+    "libgdal",
+    "affine",
+    "attrs",
+    "click >=4,<8",
+    "cligj >=0.5",
+    "numpy",
+    "snuggs >=1.4.1",
+    "click-plugins"
+   ]
+  },
+  "source":{
+   "sha256":"6a63e0b6ff1d7f87d07354c68591a30635a6ce006971504c27971f2cd9816984",
+   "url":"https://github.com/mapbox/rasterio/archive/1.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rio --help",
+    "rio info /test_data/test.tif",
+    "$PYTHON -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_mp_no_main_env or test_mp_main_env)\" tests",
+    "pip check"
+   ],
+   "files":[
+    "test_data/test.tif"
+   ],
+   "imports":[
+    "rasterio"
+   ],
+   "requires":[
+    "pip",
+    "pytest >=2.8.2",
+    "pytest-cov >=2.2.0",
+    "ipython >=2.0",
+    "boto3 >=1.2.4",
+    "matplotlib-base",
+    "packaging",
+    "hypothesis"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgdal",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "affine",
+    "attrs",
+    "click",
+    "click-plugins",
+    "cligj",
+    "libgdal",
+    "numpy",
+    "python",
+    "setuptools",
+    "snuggs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "hypothesis",
+    "ipython",
+    "matplotlib-base",
+    "packaging",
+    "pip",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/mapbox/rasterio",
@@ -777,6 +905,134 @@
   "1.1.5":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/mapbox/rasterio",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Rasterio reads and writes geospatial raster datasets"
+  },
+  "build":{
+   "entry_points":[
+    "rio = rasterio.rio.main:main_group"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "ceholden",
+    "snowman2"
+   ]
+  },
+  "package":{
+   "name":"rasterio",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "libgdal"
+   ],
+   "run":[
+    "python",
+    "setuptools >=0.9.8",
+    "libgdal",
+    "affine",
+    "attrs",
+    "click >=4,<8",
+    "cligj >=0.5",
+    "numpy",
+    "snuggs >=1.4.1",
+    "click-plugins"
+   ]
+  },
+  "source":{
+   "sha256":"6a63e0b6ff1d7f87d07354c68591a30635a6ce006971504c27971f2cd9816984",
+   "url":"https://github.com/mapbox/rasterio/archive/1.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rio --help",
+    "rio info /test_data/test.tif",
+    "$PYTHON -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset or test_mp_main_env)\" tests",
+    "pip check"
+   ],
+   "files":[
+    "test_data/test.tif"
+   ],
+   "imports":[
+    "rasterio"
+   ],
+   "requires":[
+    "pip",
+    "pytest >=2.8.2",
+    "pytest-cov >=2.2.0",
+    "ipython >=2.0",
+    "boto3 >=1.2.4",
+    "matplotlib-base",
+    "packaging",
+    "hypothesis"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgdal",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "affine",
+    "attrs",
+    "click",
+    "click-plugins",
+    "cligj",
+    "libgdal",
+    "numpy",
+    "python",
+    "setuptools",
+    "snuggs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "hypothesis",
+    "ipython",
+    "matplotlib-base",
+    "packaging",
+    "pip",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ },
  "pinning_version":"2020.06.02.12.20.38",
  "raw_meta_yaml":"{% set version = \"1.1.5\" %}\n\npackage:\n  name: rasterio\n  version: {{ version }}\n\nsource:\n  url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz\n  sha256: 6a63e0b6ff1d7f87d07354c68591a30635a6ce006971504c27971f2cd9816984\n\nbuild:\n  number: 0\n  skip: true  # [win and py27]\n  entry_points:\n    - rio = rasterio.rio.main:main_group\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n    - libgdal\n  run:\n    - python\n    - setuptools >=0.9.8\n    - libgdal\n    - affine\n    - attrs\n    - click >=4,<8\n    - cligj >=0.5\n    - {{ pin_compatible('numpy') }}\n    - snuggs >=1.4.1\n    - click-plugins\n    - enum34  # [py<34]\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pip\n    - pytest >=2.8.2\n    - pytest-cov >=2.2.0\n    - ipython >=2.0\n    - boto3 >=1.2.4\n    # needed to avoid `TclError: no display name and no $DISPLAY environment variable`\n    - matplotlib-base  # [not (win or py27)]\n    - packaging\n    - hypothesis\n    - mock  # [py2k]\n    - futures  # [py2k]\n  files:\n    - test_data/test.tif\n  imports:\n    - rasterio\n  commands:\n    - rio --help\n    - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]\n    - rio info {{ RECIPE_DIR }}\\\\test_data\\\\test.tif  # [win]\n    # test_mp_main_env segfaults\n    - $PYTHON -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_mp_no_main_env or test_mp_main_env)\" tests  # [linux]\n    # no idea why those two geom test do not pass on macOS\n    - $PYTHON -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset or test_mp_main_env)\" tests  # [osx]\n    # Skipping some tests in Windows due to, most of them looks like file lock issues.\n    - python -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context)\" tests  # [win]\n    - pip check\nabout:\n  home: https://github.com/mapbox/rasterio\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: Rasterio reads and writes geospatial raster datasets\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ceholden\n    - snowman2\n",
  "req":{
@@ -895,5 +1151,131 @@
   }
  },
  "url":"https://github.com/mapbox/rasterio/archive/1.0.27.tar.gz",
- "version":"1.1.5"
+ "version":"1.1.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/mapbox/rasterio",
+   "license":"BSD-3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Rasterio reads and writes geospatial raster datasets"
+  },
+  "build":{
+   "entry_points":[
+    "rio = rasterio.rio.main:main_group"
+   ],
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "ceholden",
+    "snowman2"
+   ]
+  },
+  "package":{
+   "name":"rasterio",
+   "version":"1.1.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "libgdal"
+   ],
+   "run":[
+    "python",
+    "setuptools >=0.9.8",
+    "libgdal",
+    "affine",
+    "attrs",
+    "click >=4,<8",
+    "cligj >=0.5",
+    "numpy",
+    "snuggs >=1.4.1",
+    "click-plugins"
+   ]
+  },
+  "source":{
+   "sha256":"6a63e0b6ff1d7f87d07354c68591a30635a6ce006971504c27971f2cd9816984",
+   "url":"https://github.com/mapbox/rasterio/archive/1.1.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "rio --help",
+    "rio info \\\\test_data\\\\test.tif",
+    "python -m pytest -v -m \"not wheel\" -rxXs -k \"not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context)\" tests",
+    "pip check"
+   ],
+   "files":[
+    "test_data/test.tif"
+   ],
+   "imports":[
+    "rasterio"
+   ],
+   "requires":[
+    "pip",
+    "pytest >=2.8.2",
+    "pytest-cov >=2.2.0",
+    "ipython >=2.0",
+    "boto3 >=1.2.4",
+    "packaging",
+    "hypothesis"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgdal",
+    "numpy",
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "affine",
+    "attrs",
+    "click",
+    "click-plugins",
+    "cligj",
+    "libgdal",
+    "numpy",
+    "python",
+    "setuptools",
+    "snuggs"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "boto3",
+    "hypothesis",
+    "ipython",
+    "packaging",
+    "pip",
+    "pytest",
+    "pytest-cov"
+   ]
+  }
+ }
 }

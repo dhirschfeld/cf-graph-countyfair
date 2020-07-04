@@ -4,6 +4,85 @@
  "conda-forge.yml":{},
  "feedstock_name":"pyadi-iio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"To simplify the use of different devices a python package was created interface\nwith the different IIO drivers. The module pyadi-iio, provides device-specific\nAPIs built on top of the current libIIO python bindings. These interfaces try to\nmatch the driver naming as much as possible without the need to understand the\ncomplexities of libIIO and IIO. In general, if you are familiar with python this\nis a great starting point for using different ADI parts and can even run on some\nADI development systems as well.\n",
+   "dev_url":"https://github.com/analogdevicesinc/pyadi-iio",
+   "doc_url":"https://analogdevicesinc.github.io/pyadi-iio/",
+   "home":"https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio",
+   "license":"LicenseRef-BSD-Analog-Devices",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Interfaces to stream data from ADI hardware"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"mv test adi/ &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"pyadi-iio",
+   "version":"0.0.5"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libiio",
+    "numpy",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44",
+   "url":"https://github.com/analogdevicesinc/pyadi-iio/archive/v0.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "adi"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libiio",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"To simplify the use of different devices a python package was created interface\nwith the different IIO drivers. The module pyadi-iio, provides device-specific\nAPIs built on top of the current libIIO python bindings. These interfaces try to\nmatch the driver naming as much as possible without the need to understand the\ncomplexities of libIIO and IIO. In general, if you are familiar with python this\nis a great starting point for using different ADI parts and can even run on some\nADI development systems as well.\n",
@@ -76,6 +155,85 @@
  },
  "name":"pyadi-iio",
  "new_version":"0.0.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"To simplify the use of different devices a python package was created interface\nwith the different IIO drivers. The module pyadi-iio, provides device-specific\nAPIs built on top of the current libIIO python bindings. These interfaces try to\nmatch the driver naming as much as possible without the need to understand the\ncomplexities of libIIO and IIO. In general, if you are familiar with python this\nis a great starting point for using different ADI parts and can even run on some\nADI development systems as well.\n",
+   "dev_url":"https://github.com/analogdevicesinc/pyadi-iio",
+   "doc_url":"https://analogdevicesinc.github.io/pyadi-iio/",
+   "home":"https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio",
+   "license":"LicenseRef-BSD-Analog-Devices",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Interfaces to stream data from ADI hardware"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"mv test adi/ &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"pyadi-iio",
+   "version":"0.0.5"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libiio",
+    "numpy",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44",
+   "url":"https://github.com/analogdevicesinc/pyadi-iio/archive/v0.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "adi"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libiio",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "raw_meta_yaml":"{% set name = \"pyadi-iio\" %}\n{% set version = \"0.0.5\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/analogdevicesinc/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44\n\nbuild:\n  number: 0\n  noarch: python\n  # moving test package into adi package to avoid possible global name conflict\n  script: mv test adi/ && {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - libiio\n    - numpy\n    - python >=3.6\n\ntest:\n  imports:\n    - adi\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio\n  summary: Interfaces to stream data from ADI hardware\n  license: LicenseRef-BSD-Analog-Devices\n  license_family: BSD\n  license_file: LICENSE\n  description: |\n    To simplify the use of different devices a python package was created interface\n    with the different IIO drivers. The module pyadi-iio, provides device-specific\n    APIs built on top of the current libIIO python bindings. These interfaces try to\n    match the driver naming as much as possible without the need to understand the\n    complexities of libIIO and IIO. In general, if you are familiar with python this\n    is a great starting point for using different ADI parts and can even run on some\n    ADI development systems as well.\n  doc_url: https://analogdevicesinc.github.io/pyadi-iio/\n  dev_url: https://github.com/analogdevicesinc/pyadi-iio\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n",
  "req":{
   "__set__":true,
@@ -142,5 +300,84 @@
   }
  },
  "url":"https://github.com/analogdevicesinc/pyadi-iio/archive/v0.0.5.tar.gz",
- "version":"0.0.5"
+ "version":"0.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"To simplify the use of different devices a python package was created interface\nwith the different IIO drivers. The module pyadi-iio, provides device-specific\nAPIs built on top of the current libIIO python bindings. These interfaces try to\nmatch the driver naming as much as possible without the need to understand the\ncomplexities of libIIO and IIO. In general, if you are familiar with python this\nis a great starting point for using different ADI parts and can even run on some\nADI development systems as well.\n",
+   "dev_url":"https://github.com/analogdevicesinc/pyadi-iio",
+   "doc_url":"https://analogdevicesinc.github.io/pyadi-iio/",
+   "home":"https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio",
+   "license":"LicenseRef-BSD-Analog-Devices",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Interfaces to stream data from ADI hardware"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"mv test adi/ &&  -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ryanvolz"
+   ]
+  },
+  "package":{
+   "name":"pyadi-iio",
+   "version":"0.0.5"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "libiio",
+    "numpy",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"bad27a4a425837c43cf1eb623b2c015f4cfecc6dbe57b875fb4edf04c05b7e44",
+   "url":"https://github.com/analogdevicesinc/pyadi-iio/archive/v0.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "adi"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libiio",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

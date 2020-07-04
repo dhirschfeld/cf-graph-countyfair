@@ -66,6 +66,399 @@
  },
  "feedstock_name":"zfpy",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
+   "dev_url":"https://github.com/LLNL/zfp",
+   "doc_url":"http://zfp.readthedocs.io/en/release0.5.5/",
+   "home":"https://computation.llnl.gov/projects/floating-point-compression",
+   "license":"BSD 3-Clause Modified",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/"
+   ],
+   "run_exports":[
+    "zfp"
+   ],
+   "script":"source ${RECIPE_DIR}/build_zfp.sh"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"zfp",
+   "version":"0.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "libgomp"
+   ],
+   "host":[
+    "libgomp"
+   ]
+  },
+  "source":{
+   "patches":[
+    "100-update-cmake.patch"
+   ],
+   "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
+   "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "libgomp",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgomp",
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
+   "dev_url":"https://github.com/LLNL/zfp",
+   "doc_url":"http://zfp.readthedocs.io/en/release0.5.5/",
+   "home":"https://computation.llnl.gov/projects/floating-point-compression",
+   "license":"BSD 3-Clause Modified",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/"
+   ],
+   "run_exports":[
+    "zfp"
+   ],
+   "script":"source ${RECIPE_DIR}/build_zfp.sh"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"zfp",
+   "version":"0.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "libgomp"
+   ],
+   "host":[
+    "libgomp"
+   ]
+  },
+  "source":{
+   "patches":[
+    "100-update-cmake.patch"
+   ],
+   "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
+   "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "libgomp",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgomp",
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
+   "dev_url":"https://github.com/LLNL/zfp",
+   "doc_url":"http://zfp.readthedocs.io/en/release0.5.5/",
+   "home":"https://computation.llnl.gov/projects/floating-point-compression",
+   "license":"BSD 3-Clause Modified",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/"
+   ],
+   "run_exports":[
+    "zfp"
+   ],
+   "script":"source ${RECIPE_DIR}/build_zfp.sh"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"zfp",
+   "version":"0.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "libgomp"
+   ],
+   "host":[
+    "libgomp"
+   ]
+  },
+  "source":{
+   "patches":[
+    "100-update-cmake.patch"
+   ],
+   "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
+   "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "libgomp",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "libgomp",
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
@@ -85,12 +478,24 @@
    "run_exports":[
     "zfp",
     "zfp",
+    "zfp",
+    "zfp",
     "zfp"
    ],
    "script":"source ${RECIPE_DIR}/build_zfp.sh"
   },
   "extra":{
    "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk",
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk",
     "kmpaul",
     "ToreAad",
     "lindstro",
@@ -207,6 +612,72 @@
       "zfpy"
      ]
     }
+   },
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   },
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
    }
   ],
   "package":{
@@ -227,6 +698,16 @@
     "cxx_compiler_stub",
     "cmake",
     "make",
+    "libgomp",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
+    "libgomp",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make",
     "libgomp"
    ],
    "host":[
@@ -235,6 +716,8 @@
   },
   "source":{
    "patches":[
+    "100-update-cmake.patch",
+    "100-update-cmake.patch",
     "100-update-cmake.patch",
     "100-update-cmake.patch",
     "100-update-cmake.patch"
@@ -254,12 +737,145 @@
     "test -f $PREFIX/include/zfp.h",
     "test -f $PREFIX/lib/libzfp.so.0.5.5",
     "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp",
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp",
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp.so.0.5.5",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
     "which zfp"
    ]
   }
  },
  "name":"zfp",
  "new_version":"0.5.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
+   "dev_url":"https://github.com/LLNL/zfp",
+   "doc_url":"http://zfp.readthedocs.io/en/release0.5.5/",
+   "home":"https://computation.llnl.gov/projects/floating-point-compression",
+   "license":"BSD 3-Clause Modified",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/"
+   ],
+   "run_exports":[
+    "zfp"
+   ],
+   "script":"source ${RECIPE_DIR}/build_zfp.sh"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"source ${RECIPE_DIR}/build_zfpy.sh"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "make"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"zfp",
+   "version":"0.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "make"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "100-update-cmake.patch"
+   ],
+   "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
+   "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/include/zfp.h",
+    "test -f $PREFIX/lib/libzfp${SHLIB_EXT}",
+    "which zfp"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "zfp",
   "zfpy"
@@ -354,5 +970,129 @@
   }
  },
  "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz",
- "version":"0.5.5"
+ "version":"0.5.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"zfp is an open source C/C++ library for compressed numerical arrays\nthat support high throughput read and write random access. zfp also\nsupports streaming compression of integer and floating-point data,\ne.g., for applications that read and write large data sets to and\nfrom disk. zfp is primarily written in C and C++ but also includes\nPython and Fortran bindings.\n",
+   "dev_url":"https://github.com/LLNL/zfp",
+   "doc_url":"http://zfp.readthedocs.io/en/release0.5.5/",
+   "home":"https://computation.llnl.gov/projects/floating-point-compression",
+   "license":"BSD 3-Clause Modified",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Library for compressed numerical arrays that support high throughput read and write random access"
+  },
+  "build":{
+   "number":"1",
+   "rpaths":null,
+   "run_exports":[
+    "zfp"
+   ],
+   "script":"\\bld_zfp.bat"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kmpaul",
+    "ToreAad",
+    "lindstro",
+    "GarrettDMorrison",
+    "hmaarrfk"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"zfp"
+   },
+   {
+    "build":{
+     "script":"\\bld_zfpy.bat"
+    },
+    "name":"zfpy",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "cmake",
+      "ninja"
+     ],
+     "host":[
+      "python",
+      "numpy",
+      "cython",
+      "zfp"
+     ],
+     "run":[
+      "python",
+      "numpy",
+      "zfp"
+     ]
+    },
+    "test":{
+     "imports":[
+      "zfpy"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"zfp",
+   "version":"0.5.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
+   ],
+   "host":null
+  },
+  "source":{
+   "patches":[
+    "100-update-cmake.patch"
+   ],
+   "sha256":"6a7f4934489087d9c117a4af327fd6495ea757924f4df467b9c537abf8bd86c4",
+   "url":"https://github.com/LLNL/zfp/archive/0.5.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not exist %LIBRARY_INC%\\zfp.h exit 1",
+    "if not exist %LIBRARY_BIN%\\zfp.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\zfp.lib exit 1",
+    "where zfp"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "python",
+    "zfp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

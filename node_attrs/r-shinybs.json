@@ -66,6 +66,90 @@
  },
  "feedstock_name":"r-shinybs",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://ebailey78.github.io/shinyBS",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Adds additional Twitter Bootstrap components to Shiny."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-shinybs",
+   "version":"0.61"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ],
+   "run":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ]
+  },
+  "source":{
+   "fn":"shinyBS_0.61.tar.gz",
+   "sha256":"51be29541e066d30c66e243393f20b0da705eba1b7ce7eeadea993bb2aa91166",
+   "url":[
+    "https://cran.r-project.org/src/contrib/shinyBS_0.61.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/shinyBS/shinyBS_0.61.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('shinyBS')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://ebailey78.github.io/shinyBS",
@@ -163,6 +247,90 @@
  },
  "name":"r-shinybs",
  "new_version":"0.61",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://ebailey78.github.io/shinyBS",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Adds additional Twitter Bootstrap components to Shiny."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-shinybs",
+   "version":"0.61"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ],
+   "run":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ]
+  },
+  "source":{
+   "fn":"shinyBS_0.61.tar.gz",
+   "sha256":"51be29541e066d30c66e243393f20b0da705eba1b7ce7eeadea993bb2aa91166",
+   "url":[
+    "https://cran.r-project.org/src/contrib/shinyBS_0.61.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/shinyBS/shinyBS_0.61.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('shinyBS')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = '0.61' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-shinybs\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: shinyBS_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/shinyBS_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/shinyBS/shinyBS_{{ version }}.tar.gz\n  sha256: 51be29541e066d30c66e243393f20b0da705eba1b7ce7eeadea993bb2aa91166\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-htmltools\n    - r-shiny >=0.11\n  run:\n    - r-base\n    - r-htmltools\n    - r-shiny >=0.11\n\ntest:\n  commands:\n    - $R -e \"library('shinyBS')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('shinyBS')\\\"\"  # [win]\n\nabout:\n  home: https://ebailey78.github.io/shinyBS\n  license: GPL-3\n  summary: 'Adds additional Twitter Bootstrap components to Shiny.'\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
@@ -235,5 +403,94 @@
   "https://cran.r-project.org/src/contrib/shinyBS_0.61.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/shinyBS/shinyBS_0.61.tar.gz"
  ],
- "version":"0.61"
+ "version":"0.61",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://ebailey78.github.io/shinyBS",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Adds additional Twitter Bootstrap components to Shiny."
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-shinybs",
+   "version":"0.61"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ],
+   "run":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny >=0.11"
+   ]
+  },
+  "source":{
+   "fn":"shinyBS_0.61.tar.gz",
+   "sha256":"51be29541e066d30c66e243393f20b0da705eba1b7ce7eeadea993bb2aa91166",
+   "url":[
+    "https://cran.r-project.org/src/contrib/shinyBS_0.61.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/shinyBS/shinyBS_0.61.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('shinyBS')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-htmltools",
+    "r-shiny"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

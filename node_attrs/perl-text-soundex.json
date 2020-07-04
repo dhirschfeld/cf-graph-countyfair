@@ -57,6 +57,71 @@
  },
  "feedstock_name":"perl-text-soundex",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English.\nThe goal is for names with the same pronunciation to be encoded to the same representation\nso that they can be matched despite minor differences in spelling. Soundex is the most\nwidely known of all phonetic algorithms and is often used (incorrectly) as a synonym for\n\"phonetic algorithm\". Improvements to Soundex are the basis for many modern phonetic\nalgorithms. (Wikipedia, 2007)\n",
+   "doc_url":"https://metacpan.org/pod/Text::Soundex",
+   "home":"https://metacpan.org/release/Text-Soundex",
+   "license":"Artistic-2.0",
+   "license_file":"LICENSE",
+   "summary":"Implementation of the soundex algorithm."
+  },
+  "build":{
+   "number":"1000",
+   "script":"perl Makefile.PL --no-xs && make && make test && make install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"perl-text-soundex",
+   "version":"3.05"
+  },
+  "requirements":{
+   "build":[
+    "perl",
+    "make"
+   ],
+   "run":[
+    "perl"
+   ]
+  },
+  "source":{
+   "fn":"Text-Soundex-3.05.tar.gz",
+   "sha256":"f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed",
+   "url":"http://cpan.metacpan.org/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "perl -e 'use Text::Soundex'"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "perl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English.\nThe goal is for names with the same pronunciation to be encoded to the same representation\nso that they can be matched despite minor differences in spelling. Soundex is the most\nwidely known of all phonetic algorithms and is often used (incorrectly) as a synonym for\n\"phonetic algorithm\". Improvements to Soundex are the basis for many modern phonetic\nalgorithms. (Wikipedia, 2007)\n",
@@ -112,6 +177,71 @@
  },
  "name":"perl-text-soundex",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English.\nThe goal is for names with the same pronunciation to be encoded to the same representation\nso that they can be matched despite minor differences in spelling. Soundex is the most\nwidely known of all phonetic algorithms and is often used (incorrectly) as a synonym for\n\"phonetic algorithm\". Improvements to Soundex are the basis for many modern phonetic\nalgorithms. (Wikipedia, 2007)\n",
+   "doc_url":"https://metacpan.org/pod/Text::Soundex",
+   "home":"https://metacpan.org/release/Text-Soundex",
+   "license":"Artistic-2.0",
+   "license_file":"LICENSE",
+   "summary":"Implementation of the soundex algorithm."
+  },
+  "build":{
+   "number":"1000",
+   "script":"perl Makefile.PL --no-xs && make && make test && make install"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"perl-text-soundex",
+   "version":"3.05"
+  },
+  "requirements":{
+   "build":[
+    "perl",
+    "make"
+   ],
+   "run":[
+    "perl"
+   ]
+  },
+  "source":{
+   "fn":"Text-Soundex-3.05.tar.gz",
+   "sha256":"f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed",
+   "url":"http://cpan.metacpan.org/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "perl -e 'use Text::Soundex'"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "perl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.08.28",
  "raw_meta_yaml":"{% set author = \"RJBS\" %}\n{% set name = \"Text-Soundex\" %}\n{% set version = \"3.05\" %}\n{% set sha256 = \"f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed\" %}\n\n\npackage:\n  name: perl-{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://cpan.metacpan.org/authors/id/{{ author[0] }}/{{ author[:2] }}/{{ author }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  skip: True  # [ win ]\n  script: perl Makefile.PL --no-xs && make && make test && make install\n\nrequirements:\n  build:\n    - perl\n    - make\n  run:\n    - perl\n\ntest:\n  commands:\n    - perl -e 'use {{ name|replace(\"-\",\"::\") }}'\n\nabout:\n  home: https://metacpan.org/release/Text-Soundex\n  license: Artistic-2.0\n  license_file: LICENSE\n  summary: 'Implementation of the soundex algorithm.'\n\n  description: |\n    Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English. \n    The goal is for names with the same pronunciation to be encoded to the same representation \n    so that they can be matched despite minor differences in spelling. Soundex is the most \n    widely known of all phonetic algorithms and is often used (incorrectly) as a synonym for\n    \"phonetic algorithm\". Improvements to Soundex are the basis for many modern phonetic \n    algorithms. (Wikipedia, 2007)\n  doc_url: https://metacpan.org/pod/Text::Soundex\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
  "req":{
@@ -170,5 +300,71 @@
   }
  },
  "url":"http://cpan.metacpan.org/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz",
- "version":"3.05"
+ "version":"3.05",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Soundex is a phonetic algorithm for indexing names by sound, as pronounced in English.\nThe goal is for names with the same pronunciation to be encoded to the same representation\nso that they can be matched despite minor differences in spelling. Soundex is the most\nwidely known of all phonetic algorithms and is often used (incorrectly) as a synonym for\n\"phonetic algorithm\". Improvements to Soundex are the basis for many modern phonetic\nalgorithms. (Wikipedia, 2007)\n",
+   "doc_url":"https://metacpan.org/pod/Text::Soundex",
+   "home":"https://metacpan.org/release/Text-Soundex",
+   "license":"Artistic-2.0",
+   "license_file":"LICENSE",
+   "summary":"Implementation of the soundex algorithm."
+  },
+  "build":{
+   "number":"1000",
+   "script":"perl Makefile.PL --no-xs && make && make test && make install",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pvanheus"
+   ]
+  },
+  "package":{
+   "name":"perl-text-soundex",
+   "version":"3.05"
+  },
+  "requirements":{
+   "build":[
+    "perl",
+    "make"
+   ],
+   "run":[
+    "perl"
+   ]
+  },
+  "source":{
+   "fn":"Text-Soundex-3.05.tar.gz",
+   "sha256":"f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed",
+   "url":"http://cpan.metacpan.org/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "perl -e 'use Text::Soundex'"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "make",
+    "perl"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "perl"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

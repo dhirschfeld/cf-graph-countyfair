@@ -4,6 +4,83 @@
  "conda-forge.yml":{},
  "feedstock_name":"timechart",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"TimeChart is a Python Qt-based graphing application for control systems.\nIt is intended to be the modern, feature-by-feature matching alternative\nto the Motif EPICS Strip Tool application.\n",
+   "dev_url":"https://github.com/slaclab/timechart",
+   "doc_url":"https://slaclab.github.io/timechart/",
+   "home":"https://github.com/slaclab/timechart",
+   "license":"SLAC Open",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"Charting Tool based on PyDM"
+  },
+  "build":{
+   "entry_points":[
+    "timechart = timechart_launcher.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"timechart",
+   "version":"1.2.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pydm >=1.6.0",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"166a6d96110af04f2048573a6cff99f81fd4657c6b334d074e29e1c7ea995b83",
+   "url":"https://github.com/slaclab/timechart/archive/v1.2.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "timechart --help"
+   ],
+   "imports":[
+    "timechart"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pydm",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"TimeChart is a Python Qt-based graphing application for control systems.\nIt is intended to be the modern, feature-by-feature matching alternative\nto the Motif EPICS Strip Tool application.\n",
@@ -76,6 +153,83 @@
  },
  "name":"timechart",
  "new_version":"1.2.3",
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"TimeChart is a Python Qt-based graphing application for control systems.\nIt is intended to be the modern, feature-by-feature matching alternative\nto the Motif EPICS Strip Tool application.\n",
+   "dev_url":"https://github.com/slaclab/timechart",
+   "doc_url":"https://slaclab.github.io/timechart/",
+   "home":"https://github.com/slaclab/timechart",
+   "license":"SLAC Open",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"Charting Tool based on PyDM"
+  },
+  "build":{
+   "entry_points":[
+    "timechart = timechart_launcher.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"timechart",
+   "version":"1.2.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pydm >=1.6.0",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"166a6d96110af04f2048573a6cff99f81fd4657c6b334d074e29e1c7ea995b83",
+   "url":"https://github.com/slaclab/timechart/archive/v1.2.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "timechart --help"
+   ],
+   "imports":[
+    "timechart"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pydm",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "raw_meta_yaml":"{% set name = \"TimeChart\" %}\n{% set version = \"1.2.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/slaclab/{{ name|lower }}/archive/v{{ version }}.tar.gz\n  sha256: 166a6d96110af04f2048573a6cff99f81fd4657c6b334d074e29e1c7ea995b83\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  entry_points:\n    - timechart = timechart_launcher.main:main\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pydm >=1.6.0\n    - six\n\ntest:\n  imports:\n    - timechart\n  commands:\n    - timechart --help\n\nabout:\n  home: https://github.com/slaclab/timechart\n  license: SLAC Open\n  license_family: OTHER \n  license_file: LICENSE.md\n  summary: 'Charting Tool based on PyDM'\n  description: |\n    TimeChart is a Python Qt-based graphing application for control systems.\n    It is intended to be the modern, feature-by-feature matching alternative\n    to the Motif EPICS Strip Tool application.\n  dev_url: https://github.com/slaclab/timechart\n  doc_url: https://slaclab.github.io/timechart/\n\nextra:\n  recipe-maintainers:\n    - hhslepicka\n",
  "req":{
   "__set__":true,
@@ -138,5 +292,82 @@
   }
  },
  "url":"https://github.com/slaclab/timechart/archive/v1.2.3.tar.gz",
- "version":"1.2.3"
+ "version":"1.2.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"TimeChart is a Python Qt-based graphing application for control systems.\nIt is intended to be the modern, feature-by-feature matching alternative\nto the Motif EPICS Strip Tool application.\n",
+   "dev_url":"https://github.com/slaclab/timechart",
+   "doc_url":"https://slaclab.github.io/timechart/",
+   "home":"https://github.com/slaclab/timechart",
+   "license":"SLAC Open",
+   "license_family":"OTHER",
+   "license_file":"LICENSE.md",
+   "summary":"Charting Tool based on PyDM"
+  },
+  "build":{
+   "entry_points":[
+    "timechart = timechart_launcher.main:main"
+   ],
+   "noarch":"python",
+   "number":"0",
+   "script":" -m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hhslepicka"
+   ]
+  },
+  "package":{
+   "name":"timechart",
+   "version":"1.2.3"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "pydm >=1.6.0",
+    "six"
+   ]
+  },
+  "source":{
+   "sha256":"166a6d96110af04f2048573a6cff99f81fd4657c6b334d074e29e1c7ea995b83",
+   "url":"https://github.com/slaclab/timechart/archive/v1.2.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "timechart --help"
+   ],
+   "imports":[
+    "timechart"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "pydm",
+    "python",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

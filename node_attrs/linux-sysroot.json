@@ -4,6 +4,151 @@
  "conda-forge.yml":{},
  "feedstock_name":"linux-sysroot",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"The glibc package contains standard libraries which are used by multiple\nprograms on the system. In order to save disk space and memory, as well as to\nmake upgrading easier, common system code is kept in one place and shared\nbetween programs. This particular package contains the most important sets of\nshared libraries: the standard C library and the standard math library.\nWithout these two libraries, a Linux system will not function.\n\nKernel-headers includes the C header files that specify the interface between\nthe Linux kernel and userspace libraries and programs.  The header files\ndefine structures and constants that are needed for building most standard\nprograms and are also needed for rebuilding the glibc package.\n",
+   "home":"http://sources.redhat.com/glibc/",
+   "license":"LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later",
+   "license_family":"GPL",
+   "summary":"(CDT) The GNU libc libraries and header files for the Linux kernel for use by glibc"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"7"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "scopatz",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"kernel-headers_",
+    "requirements":{
+     "run_constrained":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "script":"build-kernel-headers.sh",
+    "test":{
+     "commands":"test -f $PREFIX/--linux-gnu/sysroot/usr/include/linux/version.h"
+    },
+    "version":"4.18.0"
+   },
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"sysroot_",
+    "requirements":{
+     "run":[
+      "kernel-headers_"
+     ]
+    },
+    "script":"build-sysroot.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"sysroot--",
+    "requirements":{
+     "run":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"linux-sysroot",
+   "version":"2.17"
+  },
+  "source":[
+   {
+    "folder":"binary",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-common",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-common-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-devel",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-devel-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-tzdata",
+    "sha256":"a467bd14a5f0fec9e6227eae6aac92c155947a102e818c2bb62e2339e44a694a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/tzdata-2019c-1.el7.noarch.rpm"
+   },
+   {
+    "folder":"binary-glibc-headers",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-headers-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-kernel-headers"
+   }
+  ]
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kernel-headers_",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"The glibc package contains standard libraries which are used by multiple\nprograms on the system. In order to save disk space and memory, as well as to\nmake upgrading easier, common system code is kept in one place and shared\nbetween programs. This particular package contains the most important sets of\nshared libraries: the standard C library and the standard math library.\nWithout these two libraries, a Linux system will not function.\n\nKernel-headers includes the C header files that specify the interface between\nthe Linux kernel and userspace libraries and programs.  The header files\ndefine structures and constants that are needed for building most standard\nprograms and are also needed for rebuilding the glibc package.\n",
@@ -324,6 +469,151 @@
  },
  "name":"linux-sysroot",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"The glibc package contains standard libraries which are used by multiple\nprograms on the system. In order to save disk space and memory, as well as to\nmake upgrading easier, common system code is kept in one place and shared\nbetween programs. This particular package contains the most important sets of\nshared libraries: the standard C library and the standard math library.\nWithout these two libraries, a Linux system will not function.\n\nKernel-headers includes the C header files that specify the interface between\nthe Linux kernel and userspace libraries and programs.  The header files\ndefine structures and constants that are needed for building most standard\nprograms and are also needed for rebuilding the glibc package.\n",
+   "home":"http://sources.redhat.com/glibc/",
+   "license":"LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later",
+   "license_family":"GPL",
+   "summary":"(CDT) The GNU libc libraries and header files for the Linux kernel for use by glibc"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"7"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "scopatz",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"kernel-headers_",
+    "requirements":{
+     "run_constrained":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "script":"build-kernel-headers.sh",
+    "test":{
+     "commands":"test -f $PREFIX/--linux-gnu/sysroot/usr/include/linux/version.h"
+    },
+    "version":"4.18.0"
+   },
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"sysroot_",
+    "requirements":{
+     "run":[
+      "kernel-headers_"
+     ]
+    },
+    "script":"build-sysroot.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"sysroot--",
+    "requirements":{
+     "run":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"linux-sysroot",
+   "version":"2.17"
+  },
+  "source":[
+   {
+    "folder":"binary",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-common",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-common-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-devel",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-devel-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-tzdata",
+    "sha256":"a467bd14a5f0fec9e6227eae6aac92c155947a102e818c2bb62e2339e44a694a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/tzdata-2019c-1.el7.noarch.rpm"
+   },
+   {
+    "folder":"binary-glibc-headers",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-headers-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-kernel-headers"
+   }
+  ]
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kernel-headers_",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "kernel-headers_",
   "sysroot--",
@@ -381,5 +671,150 @@
   }
  },
  "url":"http://mirror.centos.org/centos/6.10/os/x86_64/Packages/glibc-2.12-1.212.el6.x86_64.rpm",
- "version":"2.17"
+ "version":"2.17",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"The glibc package contains standard libraries which are used by multiple\nprograms on the system. In order to save disk space and memory, as well as to\nmake upgrading easier, common system code is kept in one place and shared\nbetween programs. This particular package contains the most important sets of\nshared libraries: the standard C library and the standard math library.\nWithout these two libraries, a Linux system will not function.\n\nKernel-headers includes the C header files that specify the interface between\nthe Linux kernel and userspace libraries and programs.  The header files\ndefine structures and constants that are needed for building most standard\nprograms and are also needed for rebuilding the glibc package.\n",
+   "home":"http://sources.redhat.com/glibc/",
+   "license":"LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later",
+   "license_family":"GPL",
+   "summary":"(CDT) The GNU libc libraries and header files for the Linux kernel for use by glibc"
+  },
+  "build":{
+   "missing_dso_whitelist":[
+    "*"
+   ],
+   "noarch":"generic",
+   "number":"7"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf",
+    "scopatz",
+    "beckermr"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"kernel-headers_",
+    "requirements":{
+     "run_constrained":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "script":"build-kernel-headers.sh",
+    "test":{
+     "commands":"test -f $PREFIX/--linux-gnu/sysroot/usr/include/linux/version.h"
+    },
+    "version":"4.18.0"
+   },
+   {
+    "build":{
+     "binary_relocation":false,
+     "detect_binary_files_with_prefix":false,
+     "noarch":"generic",
+     "string":"_variant_h_7"
+    },
+    "name":"sysroot_",
+    "requirements":{
+     "run":[
+      "kernel-headers_"
+     ]
+    },
+    "script":"build-sysroot.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"generic"
+    },
+    "name":"sysroot--",
+    "requirements":{
+     "run":[
+      "sysroot_ ==2.17"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/lib/libc.so.6",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/sbin/ldconfig",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/lib/crt1.o",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/limits.h",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h",
+      "test -d $PREFIX/-conda-linux-gnu/sysroot/usr/share/locale",
+      "test -f $PREFIX/-conda-linux-gnu/sysroot/usr/bin/ldd",
+      "test -f $PREFIX/--linux-gnu/sysroot/lib/libc.so.6"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"linux-sysroot",
+   "version":"2.17"
+  },
+  "source":[
+   {
+    "folder":"binary",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-common",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-common-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-glibc-devel",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-devel-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-tzdata",
+    "sha256":"a467bd14a5f0fec9e6227eae6aac92c155947a102e818c2bb62e2339e44a694a",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/tzdata-2019c-1.el7.noarch.rpm"
+   },
+   {
+    "folder":"binary-glibc-headers",
+    "url":"http://mirror.centos.org/altarch/7/os/ppc64le/Packages/glibc-headers-2.17-307.el7.1..rpm"
+   },
+   {
+    "folder":"binary-kernel-headers"
+   }
+  ]
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "kernel-headers_",
+    "sysroot_"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

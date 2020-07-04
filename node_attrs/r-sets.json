@@ -95,6 +95,80 @@
  },
  "feedstock_name":"r-sets",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=sets",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Data structures and basic operations for ordinary sets, generalizations such as fuzzy sets, multisets, and fuzzy multisets, customizable sets, and intervals."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-sets",
+   "version":"1.0_18"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"74d1e057e5b84197edb120665831d7b0565e2945e903be56c6701e724131679b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sets_1.0-18.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sets/sets_1.0-18.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sets')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=sets",
@@ -172,6 +246,80 @@
  },
  "name":"r-sets",
  "new_version":"1.0_18",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=sets",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Data structures and basic operations for ordinary sets, generalizations such as fuzzy sets, multisets, and fuzzy multisets, customizable sets, and intervals."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-sets",
+   "version":"1.0_18"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"74d1e057e5b84197edb120665831d7b0565e2945e903be56c6701e724131679b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sets_1.0-18.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sets/sets_1.0-18.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sets')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = '1.0-18' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sets\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/sets_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sets/sets_{{ version }}.tar.gz\n  sha256: 74d1e057e5b84197edb120665831d7b0565e2945e903be56c6701e724131679b\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 2\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed               # [win]\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n\ntest:\n  commands:\n    - $R -e \"library('sets')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sets')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=sets\n  license: GPL-2\n  summary: Data structures and basic operations for ordinary sets, generalizations such as fuzzy\n    sets, multisets, and fuzzy multisets, customizable sets, and intervals.\n  license_family: GPL2\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: sets\n# Version: 1.0-18\n# Title: Sets, Generalized Sets, Customizable Sets and Intervals\n# Description: Data structures and basic operations for ordinary sets, generalizations such as fuzzy sets, multisets, and fuzzy multisets, customizable sets, and intervals.\n# Authors@R: c(person(given = \"David\", family = \"Meyer\", role = c(\"aut\", \"cre\"), email = \"David.Meyer@R-project.org\"), person(given = \"Kurt\", family = \"Hornik\", role = c(\"aut\")), person(given = \"Christian\", family = \"Buchta\", role = \"ctb\"))\n# Depends: R (>= 2.7.0)\n# Suggests: proxy\n# Imports: graphics,grDevices,stats,utils\n# License: GPL-2\n# NeedsCompilation: yes\n# Packaged: 2017-12-11 22:04:47 UTC; meyer\n# Author: David Meyer [aut, cre], Kurt Hornik [aut], Christian Buchta [ctb]\n# Maintainer: David Meyer <David.Meyer@R-project.org>\n# Repository: CRAN\n# Date/Publication: 2017-12-12 06:47:44 UTC\n",
  "req":{
@@ -260,5 +408,90 @@
   "https://cran.r-project.org/src/contrib/sets_1.0-18.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/sets/sets_1.0-18.tar.gz"
  ],
- "version":"1.0_18"
+ "version":"1.0_18",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=sets",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":"/lib/R/share/licenses/GPL-2",
+   "summary":"Data structures and basic operations for ordinary sets, generalizations such as fuzzy sets, multisets, and fuzzy multisets, customizable sets, and intervals."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-sets",
+   "version":"1.0_18"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils",
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs"
+   ]
+  },
+  "source":{
+   "sha256":"74d1e057e5b84197edb120665831d7b0565e2945e903be56c6701e724131679b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sets_1.0-18.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sets/sets_1.0-18.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('sets')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "make",
+    "sed",
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

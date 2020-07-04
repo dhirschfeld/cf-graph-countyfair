@@ -66,6 +66,83 @@
  },
  "feedstock_name":"r-nistunits",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NISTunits",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Fundamental physical constants (Quantity, Value, Uncertainty, Unit) for  SI (International System of Units) and non-SI units, plus unit conversions Based on the data from NIST (National Institute of Standards and Technology, USA)"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "npavlovikj"
+   ]
+  },
+  "package":{
+   "name":"r-nistunits",
+   "version":"1.0.1"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"NISTunits_1.0.1.tar.gz",
+   "sha256":"eaccd68db5c73d6a089ce5b323cdd51bc6a6a58ce467987158ba8c9be6a0a94e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NISTunits_1.0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NISTunits/NISTunits_1.0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('NISTunits')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=NISTunits",
@@ -154,6 +231,83 @@
  },
  "name":"r-nistunits",
  "new_version":"1.0.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NISTunits",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Fundamental physical constants (Quantity, Value, Uncertainty, Unit) for  SI (International System of Units) and non-SI units, plus unit conversions Based on the data from NIST (National Institute of Standards and Technology, USA)"
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "npavlovikj"
+   ]
+  },
+  "package":{
+   "name":"r-nistunits",
+   "version":"1.0.1"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"NISTunits_1.0.1.tar.gz",
+   "sha256":"eaccd68db5c73d6a089ce5b323cdd51bc6a6a58ce467987158ba8c9be6a0a94e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NISTunits_1.0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NISTunits/NISTunits_1.0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('NISTunits')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.05.46.47",
  "raw_meta_yaml":"{% set version = '1.0.1' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-nistunits\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: NISTunits_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/NISTunits_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/NISTunits/NISTunits_{{ version }}.tar.gz\n  sha256: eaccd68db5c73d6a089ce5b323cdd51bc6a6a58ce467987158ba8c9be6a0a94e\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1003\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('NISTunits')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('NISTunits')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=NISTunits\n  license: GPL (>= 3)\n  summary: Fundamental physical constants (Quantity, Value, Uncertainty, Unit) for  SI (International\n    System of Units) and non-SI units, plus unit conversions Based on the data from\n    NIST (National Institute of Standards and Technology, USA)\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n    - npavlovikj\n",
  "req":{
@@ -216,5 +370,87 @@
   "https://cran.r-project.org/src/contrib/NISTunits_1.0.1.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/NISTunits/NISTunits_1.0.1.tar.gz"
  ],
- "version":"1.0.1"
+ "version":"1.0.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=NISTunits",
+   "license":"GPL (>= 3)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Fundamental physical constants (Quantity, Value, Uncertainty, Unit) for  SI (International System of Units) and non-SI units, plus unit conversions Based on the data from NIST (National Institute of Standards and Technology, USA)"
+  },
+  "build":{
+   "merge_build_host":true,
+   "noarch":"generic",
+   "number":"1003",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "npavlovikj"
+   ]
+  },
+  "package":{
+   "name":"r-nistunits",
+   "version":"1.0.1"
+  },
+  "requirements":{
+   "build":[
+    "zip"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"NISTunits_1.0.1.tar.gz",
+   "sha256":"eaccd68db5c73d6a089ce5b323cdd51bc6a6a58ce467987158ba8c9be6a0a94e",
+   "url":[
+    "https://cran.r-project.org/src/contrib/NISTunits_1.0.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/NISTunits/NISTunits_1.0.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('NISTunits')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "zip"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

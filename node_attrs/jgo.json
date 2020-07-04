@@ -133,6 +133,83 @@
  },
  "feedstock_name":"jgo",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/scijava/jgo",
+   "doc_url":"https://github.com/scijava/jgo",
+   "home":"https://github.com/scijava/jgo",
+   "license":"PUBLIC-DOMAIN",
+   "license_family":"PUBLIC-DOMAIN",
+   "summary":"Launch Java code from the CLI, installation-free."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ctrueden",
+    "hanslovsky",
+    "hadim"
+   ]
+  },
+  "package":{
+   "name":"jgo",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "psutil"
+   ]
+  },
+  "source":{
+   "sha256":"0fa63c9cf5f57010e0c150f94dda313e6139287c57dfa325e3af914965ee10ed",
+   "url":"https://pypi.io/packages/source/j/jgo/jgo-0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test \"${JGO_CACHE_DIR}\" = \"${CONDA_PREFIX}/jgo\""
+   ],
+   "imports":[
+    "jgo"
+   ],
+   "requires":[
+    "openjdk",
+    "maven"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "maven",
+    "openjdk"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/scijava/jgo",
@@ -207,6 +284,83 @@
  },
  "name":"jgo",
  "new_version":"0.5.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/scijava/jgo",
+   "doc_url":"https://github.com/scijava/jgo",
+   "home":"https://github.com/scijava/jgo",
+   "license":"PUBLIC-DOMAIN",
+   "license_family":"PUBLIC-DOMAIN",
+   "summary":"Launch Java code from the CLI, installation-free."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ctrueden",
+    "hanslovsky",
+    "hadim"
+   ]
+  },
+  "package":{
+   "name":"jgo",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "psutil"
+   ]
+  },
+  "source":{
+   "sha256":"0fa63c9cf5f57010e0c150f94dda313e6139287c57dfa325e3af914965ee10ed",
+   "url":"https://pypi.io/packages/source/j/jgo/jgo-0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test \"${JGO_CACHE_DIR}\" = \"${CONDA_PREFIX}/jgo\""
+   ],
+   "imports":[
+    "jgo"
+   ],
+   "requires":[
+    "openjdk",
+    "maven"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "maven",
+    "openjdk"
+   ]
+  }
+ },
  "pinning_version":"2020.03.14",
  "raw_meta_yaml":"{% set name = \"jgo\" %}\n{% set version = \"0.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0fa63c9cf5f57010e0c150f94dda313e6139287c57dfa325e3af914965ee10ed\n\nbuild:\n  number: 1\n  skip: True  # [py2k]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - psutil\n\ntest:\n  requires:\n    - openjdk\n    - maven\n  imports:\n    - jgo\n  commands:\n    - test \"${JGO_CACHE_DIR}\" = \"${CONDA_PREFIX}/jgo\"  # [unix]\n    - if not \"%JGO_CACHE_DIR%\" == \"%CONDA_PREFIX%\\jgo\" exit 1  # [win]\n\nabout:\n  home: https://github.com/scijava/jgo\n  license: PUBLIC-DOMAIN\n  license_family: PUBLIC-DOMAIN\n  summary: 'Launch Java code from the CLI, installation-free.'\n  doc_url: https://github.com/scijava/jgo\n  dev_url: https://github.com/scijava/jgo\n\nextra:\n  recipe-maintainers:\n    - ctrueden\n    - hanslovsky\n    - hadim\n",
  "req":{
@@ -274,5 +428,82 @@
   }
  },
  "url":"https://pypi.io/packages/source/j/jgo/jgo-0.4.0.tar.gz",
- "version":"0.5.0"
+ "version":"0.5.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/scijava/jgo",
+   "doc_url":"https://github.com/scijava/jgo",
+   "home":"https://github.com/scijava/jgo",
+   "license":"PUBLIC-DOMAIN",
+   "license_family":"PUBLIC-DOMAIN",
+   "summary":"Launch Java code from the CLI, installation-free."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ctrueden",
+    "hanslovsky",
+    "hadim"
+   ]
+  },
+  "package":{
+   "name":"jgo",
+   "version":"0.5.0"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "psutil"
+   ]
+  },
+  "source":{
+   "sha256":"0fa63c9cf5f57010e0c150f94dda313e6139287c57dfa325e3af914965ee10ed",
+   "url":"https://pypi.io/packages/source/j/jgo/jgo-0.5.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "if not \"%JGO_CACHE_DIR%\" == \"%CONDA_PREFIX%\\jgo\" exit 1"
+   ],
+   "imports":[
+    "jgo"
+   ],
+   "requires":[
+    "openjdk",
+    "maven"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "psutil",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "maven",
+    "openjdk"
+   ]
+  }
+ }
 }

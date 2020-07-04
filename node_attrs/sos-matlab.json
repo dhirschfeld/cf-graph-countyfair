@@ -27,6 +27,120 @@
  },
  "feedstock_name":"sos-matlab",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/vatlab/sos-matlab",
+   "doc_url":"https://vatlab.github.io/sos-docs/",
+   "home":"https://github.com/vatlab/sos-matlab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"SoS language module for MATLAB and Octave"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BoPeng"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"sos-matlab",
+    "test":{
+     "imports":[
+      "sos_matlab"
+     ]
+    }
+   },
+   {
+    "name":"sos-octave",
+    "requirements":{
+     "run":[
+      "sos-matlab",
+      "octave",
+      "octave_kernel"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python test_octave.py"
+     ],
+     "files":[
+      "test_octave.py"
+     ],
+     "imports":[
+      "sos_matlab"
+     ],
+     "requires":[
+      "nose",
+      "pytest",
+      "selenium"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"sos-matlab",
+   "version":"0.18.4"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "sos-notebook >=0.20.0",
+    "scipy",
+    "numpy",
+    "pandas",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"4f109b1f6f007e00591e209a87d82f6cf0ba38e53a66701b859ea4c923336961",
+   "url":"https://pypi.io/packages/source/s/sos-matlab/sos-matlab-0.18.4.tar.gz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "octave",
+    "octave_kernel",
+    "pandas",
+    "python",
+    "scipy",
+    "sos-matlab",
+    "sos-notebook"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pytest",
+    "selenium"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/vatlab/sos-matlab",
@@ -199,6 +313,120 @@
   "0.18.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/vatlab/sos-matlab",
+   "doc_url":"https://vatlab.github.io/sos-docs/",
+   "home":"https://github.com/vatlab/sos-matlab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"SoS language module for MATLAB and Octave"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BoPeng"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"sos-matlab",
+    "test":{
+     "imports":[
+      "sos_matlab"
+     ]
+    }
+   },
+   {
+    "name":"sos-octave",
+    "requirements":{
+     "run":[
+      "sos-matlab",
+      "octave",
+      "octave_kernel"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python test_octave.py"
+     ],
+     "files":[
+      "test_octave.py"
+     ],
+     "imports":[
+      "sos_matlab"
+     ],
+     "requires":[
+      "nose",
+      "pytest",
+      "selenium"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"sos-matlab",
+   "version":"0.18.4"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "sos-notebook >=0.20.0",
+    "scipy",
+    "numpy",
+    "pandas",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"4f109b1f6f007e00591e209a87d82f6cf0ba38e53a66701b859ea4c923336961",
+   "url":"https://pypi.io/packages/source/s/sos-matlab/sos-matlab-0.18.4.tar.gz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "octave",
+    "octave_kernel",
+    "pandas",
+    "python",
+    "scipy",
+    "sos-matlab",
+    "sos-notebook"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pytest",
+    "selenium"
+   ]
+  }
+ },
  "outputs_names":[
   "sos-matlab",
   "sos-octave"
@@ -290,5 +518,119 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/sos-matlab/sos-matlab-0.18.3.tar.gz",
- "version":"0.18.4"
+ "version":"0.18.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/vatlab/sos-matlab",
+   "doc_url":"https://vatlab.github.io/sos-docs/",
+   "home":"https://github.com/vatlab/sos-matlab",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"SoS language module for MATLAB and Octave"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":[
+    "python -m pip install . -vv"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "BoPeng"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"sos-matlab",
+    "test":{
+     "imports":[
+      "sos_matlab"
+     ]
+    }
+   },
+   {
+    "name":"sos-octave",
+    "requirements":{
+     "run":[
+      "sos-matlab",
+      "octave",
+      "octave_kernel"
+     ]
+    },
+    "test":{
+     "commands":[
+      "python test_octave.py"
+     ],
+     "files":[
+      "test_octave.py"
+     ],
+     "imports":[
+      "sos_matlab"
+     ],
+     "requires":[
+      "nose",
+      "pytest",
+      "selenium"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"sos-matlab",
+   "version":"0.18.4"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python >=3.6"
+   ],
+   "run":[
+    "sos-notebook >=0.20.0",
+    "scipy",
+    "numpy",
+    "pandas",
+    "python >=3.6"
+   ]
+  },
+  "source":{
+   "sha256":"4f109b1f6f007e00591e209a87d82f6cf0ba38e53a66701b859ea4c923336961",
+   "url":"https://pypi.io/packages/source/s/sos-matlab/sos-matlab-0.18.4.tar.gz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numpy",
+    "octave",
+    "octave_kernel",
+    "pandas",
+    "python",
+    "scipy",
+    "sos-matlab",
+    "sos-notebook"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "nose",
+    "pytest",
+    "selenium"
+   ]
+  }
+ }
 }

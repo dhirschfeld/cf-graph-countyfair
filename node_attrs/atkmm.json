@@ -4,6 +4,114 @@
  "conda-forge.yml":{},
  "feedstock_name":"atkmm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/atkmm",
+   "home":"https://developer.gnome.org/atkmm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for atk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atkmm-1.6 >=2.28.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atkmm-1.6 >=2.28.0"
+     ]
+    },
+    "name":"atkmm-1.6",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "atk >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib"
+     ],
+     "run":[
+      "atk",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "atkmm 2.28.0"
+     ]
+    },
+    "script":"build_atkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libatkmm-1.6${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"atkmm",
+    "requirements":{
+     "run":[
+      "atkmm-1.6  2.28.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/atkmm-1.6.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atkmm",
+   "version":"2.28.0"
+  },
+  "source":{
+   "sha256":"4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/atkmm/2.28/atkmm-2.28.0.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "glib",
+    "glibmm",
+    "libsigcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm-1.6",
+    "glibmm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.gnome.org/GNOME/atkmm",
@@ -182,6 +290,114 @@
  },
  "name":"atkmm",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/atkmm",
+   "home":"https://developer.gnome.org/atkmm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for atk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atkmm-1.6 >=2.28.0"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atkmm-1.6 >=2.28.0"
+     ]
+    },
+    "name":"atkmm-1.6",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "atk >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib"
+     ],
+     "run":[
+      "atk",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "atkmm 2.28.0"
+     ]
+    },
+    "script":"build_atkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libatkmm-1.6${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"atkmm",
+    "requirements":{
+     "run":[
+      "atkmm-1.6  2.28.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/atkmm-1.6.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atkmm",
+   "version":"2.28.0"
+  },
+  "source":{
+   "sha256":"4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/atkmm/2.28/atkmm-2.28.0.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "glib",
+    "glibmm",
+    "libsigcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm-1.6",
+    "glibmm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "atkmm",
   "atkmm-1.6"
@@ -264,5 +480,114 @@
   }
  },
  "url":"https://ftp.gnome.org/pub/GNOME/sources/atkmm/2.28/atkmm-2.28.0.tar.xz",
- "version":"2.28.0"
+ "version":"2.28.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://gitlab.gnome.org/GNOME/atkmm",
+   "home":"https://developer.gnome.org/atkmm/",
+   "license":"LGPL-2.1-or-later",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for atk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "atkmm-1.6 >=2.28.0"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "atkmm-1.6 >=2.28.0"
+     ]
+    },
+    "name":"atkmm-1.6",
+    "requirements":{
+     "build":[
+      "cxx_compiler_stub",
+      "pkg-config",
+      "make"
+     ],
+     "host":[
+      "atk >=1.41.0",
+      "glibmm >=2.48.0",
+      "libsigcpp",
+      "glib"
+     ],
+     "run":[
+      "atk",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "atkmm 2.28.0"
+     ]
+    },
+    "script":"build_atkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libatkmm-1.6${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"atkmm",
+    "requirements":{
+     "run":[
+      "atkmm-1.6  2.28.0"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/atkmm-1.6.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"atkmm",
+   "version":"2.28.0"
+  },
+  "source":{
+   "sha256":"4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a",
+   "url":"https://ftp.gnome.org/pub/GNOME/sources/atkmm/2.28/atkmm-2.28.0.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "glib",
+    "glibmm",
+    "libsigcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm-1.6",
+    "glibmm"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

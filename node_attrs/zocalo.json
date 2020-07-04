@@ -91,6 +91,87 @@
  "conda-forge.yml":{},
  "feedstock_name":"zocalo",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/DiamondLightSource/zocalo-python",
+   "doc_url":"https://zocalo.readthedocs.io/en/latest/",
+   "home":"https://github.com/DiamondLightSource/zocalo-python",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Infrastructure components for automated data processing at Diamond Light Source"
+  },
+  "build":{
+   "entry_points":[
+    "zocalo.go = zocalo.cli.go:run",
+    "zocalo.service = zocalo.service:start_service",
+    "zocalo.wrap = zocalo.cli.wrap:run"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anthchirp"
+   ]
+  },
+  "package":{
+   "name":"zocalo",
+   "version":"0.6.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "source":{
+   "sha256":"309b11cf472b7dcf63dbf3e9b5759fba4601af46053e24bf755b1482a5a010ad",
+   "url":"https://pypi.io/packages/source/z/zocalo/zocalo-0.6.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "zocalo.service --help"
+   ],
+   "imports":[
+    "zocalo",
+    "zocalo.service"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/DiamondLightSource/zocalo-python",
@@ -178,6 +259,87 @@
   "0.6.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/DiamondLightSource/zocalo-python",
+   "doc_url":"https://zocalo.readthedocs.io/en/latest/",
+   "home":"https://github.com/DiamondLightSource/zocalo-python",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Infrastructure components for automated data processing at Diamond Light Source"
+  },
+  "build":{
+   "entry_points":[
+    "zocalo.go = zocalo.cli.go:run",
+    "zocalo.service = zocalo.service:start_service",
+    "zocalo.wrap = zocalo.cli.wrap:run"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anthchirp"
+   ]
+  },
+  "package":{
+   "name":"zocalo",
+   "version":"0.6.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "source":{
+   "sha256":"309b11cf472b7dcf63dbf3e9b5759fba4601af46053e24bf755b1482a5a010ad",
+   "url":"https://pypi.io/packages/source/z/zocalo/zocalo-0.6.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "zocalo.service --help"
+   ],
+   "imports":[
+    "zocalo",
+    "zocalo.service"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.14.17.14.20",
  "raw_meta_yaml":"{% set name = \"zocalo\" %}\n{% set version = \"0.6.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 309b11cf472b7dcf63dbf3e9b5759fba4601af46053e24bf755b1482a5a010ad\n\nbuild:\n  number: 1\n  noarch: python\n  entry_points:\n    - zocalo.go = zocalo.cli.go:run\n    - zocalo.service = zocalo.service:start_service\n    - zocalo.wrap = zocalo.cli.wrap:run\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv'\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - graypy\n    - python\n    - setuptools\n    - workflows\n\ntest:\n  imports:\n    - zocalo\n    - zocalo.service\n  commands:\n    - zocalo.service --help\n\nabout:\n  home: https://github.com/DiamondLightSource/zocalo-python\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Infrastructure components for automated data processing at Diamond Light Source\n  doc_url: https://zocalo.readthedocs.io/en/latest/\n  dev_url: https://github.com/DiamondLightSource/zocalo-python\n\nextra:\n  recipe-maintainers:\n    - anthchirp\n",
  "req":{
@@ -245,5 +407,86 @@
   }
  },
  "url":"https://pypi.io/packages/source/z/zocalo/zocalo-0.6.2.tar.gz",
- "version":"0.6.3"
+ "version":"0.6.3",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/DiamondLightSource/zocalo-python",
+   "doc_url":"https://zocalo.readthedocs.io/en/latest/",
+   "home":"https://github.com/DiamondLightSource/zocalo-python",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Infrastructure components for automated data processing at Diamond Light Source"
+  },
+  "build":{
+   "entry_points":[
+    "zocalo.go = zocalo.cli.go:run",
+    "zocalo.service = zocalo.service:start_service",
+    "zocalo.wrap = zocalo.cli.wrap:run"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":" -m pip install . --no-deps --ignore-installed -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "anthchirp"
+   ]
+  },
+  "package":{
+   "name":"zocalo",
+   "version":"0.6.3"
+  },
+  "requirements":{
+   "host":[
+    "pip",
+    "python"
+   ],
+   "run":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "source":{
+   "sha256":"309b11cf472b7dcf63dbf3e9b5759fba4601af46053e24bf755b1482a5a010ad",
+   "url":"https://pypi.io/packages/source/z/zocalo/zocalo-0.6.3.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "zocalo.service --help"
+   ],
+   "imports":[
+    "zocalo",
+    "zocalo.service"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "graypy",
+    "python",
+    "setuptools",
+    "workflows"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

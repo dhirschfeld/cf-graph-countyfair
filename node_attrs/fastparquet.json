@@ -182,6 +182,106 @@
  },
  "feedstock_name":"fastparquet",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/dask/fastparquet",
+   "home":"http://github.com/dask/fastparquet",
+   "license":"BSD-3",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python interface to the parquet format"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "rm fastparquet/*.c",
+    " -m pip install . --no-deps -vv "
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mrocklin",
+    "TomAugspurger"
+   ]
+  },
+  "package":{
+   "name":"fastparquet",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "pandas",
+    "pip",
+    "setuptools",
+    "numpy",
+    "pytest-runner",
+    "numba",
+    "packaging",
+    "thrift 0.11"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.19",
+    "numpy",
+    "packaging",
+    "numba >=0.28",
+    "thrift 0.11"
+   ]
+  },
+  "source":{
+   "sha256":"edb8c758c2d70a5d2958bb56dd0580519f69de95748bb6ea7d5f57cbe6a01c6a",
+   "url":"https://pypi.io/packages/source/f/fastparquet/fastparquet-0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "fastparquet"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools",
+    "thrift"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "thrift"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/dask/fastparquet",
@@ -296,6 +396,106 @@
   "0.4.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/dask/fastparquet",
+   "home":"http://github.com/dask/fastparquet",
+   "license":"BSD-3",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python interface to the parquet format"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "rm fastparquet/*.c",
+    " -m pip install . --no-deps -vv "
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mrocklin",
+    "TomAugspurger"
+   ]
+  },
+  "package":{
+   "name":"fastparquet",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "pandas",
+    "pip",
+    "setuptools",
+    "numpy",
+    "pytest-runner",
+    "numba",
+    "packaging",
+    "thrift 0.11"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.19",
+    "numpy",
+    "packaging",
+    "numba >=0.28",
+    "thrift 0.11"
+   ]
+  },
+  "source":{
+   "sha256":"edb8c758c2d70a5d2958bb56dd0580519f69de95748bb6ea7d5f57cbe6a01c6a",
+   "url":"https://pypi.io/packages/source/f/fastparquet/fastparquet-0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "fastparquet"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools",
+    "thrift"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "thrift"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.12.18.03.58",
  "raw_meta_yaml":"{% set name = \"fastparquet\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"edb8c758c2d70a5d2958bb56dd0580519f69de95748bb6ea7d5f57cbe6a01c6a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - del fastparquet\\*.c  # [win]      \n    - rm fastparquet/*.c   # [unix]      \n    - '{{ PYTHON }} -m pip install . --no-deps -vv '\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - cython\n    - pandas\n    - pip\n    - setuptools\n    - numpy\n    - pytest-runner\n    - numba\n    - packaging\n    - thrift 0.11\n  run:\n    - python\n    - pandas >=0.19\n    - numpy\n    - packaging\n    - numba >=0.28\n    - thrift 0.11\n\ntest:\n  imports:\n    - fastparquet\n\nabout:\n  home: http://github.com/dask/fastparquet\n  license: BSD-3\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python interface to the parquet format\n  dev_url: https://github.com/dask/fastparquet\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mrocklin\n    - TomAugspurger\n",
  "req":{
@@ -393,5 +593,105 @@
   }
  },
  "url":"https://pypi.io/packages/source/f/fastparquet/fastparquet-0.3.2.tar.gz",
- "version":"0.4.0"
+ "version":"0.4.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/dask/fastparquet",
+   "home":"http://github.com/dask/fastparquet",
+   "license":"BSD-3",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Python interface to the parquet format"
+  },
+  "build":{
+   "number":"0",
+   "script":[
+    "del fastparquet\\*.c",
+    " -m pip install . --no-deps -vv "
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mrocklin",
+    "TomAugspurger"
+   ]
+  },
+  "package":{
+   "name":"fastparquet",
+   "version":"0.4.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "cython",
+    "pandas",
+    "pip",
+    "setuptools",
+    "numpy",
+    "pytest-runner",
+    "numba",
+    "packaging",
+    "thrift 0.11"
+   ],
+   "run":[
+    "python",
+    "pandas >=0.19",
+    "numpy",
+    "packaging",
+    "numba >=0.28",
+    "thrift 0.11"
+   ]
+  },
+  "source":{
+   "sha256":"edb8c758c2d70a5d2958bb56dd0580519f69de95748bb6ea7d5f57cbe6a01c6a",
+   "url":"https://pypi.io/packages/source/f/fastparquet/fastparquet-0.4.0.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "fastparquet"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pip",
+    "pytest-runner",
+    "python",
+    "setuptools",
+    "thrift"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "numba",
+    "numpy",
+    "packaging",
+    "pandas",
+    "python",
+    "thrift"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

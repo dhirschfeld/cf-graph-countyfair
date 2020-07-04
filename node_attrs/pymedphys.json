@@ -398,6 +398,554 @@
  "conda-forge.yml":{},
  "feedstock_name":"pymedphys",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://pymedphys.com",
+   "license":"GNU Affero General Public v3 or later (AGPL-3.0+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE-AGPL-3.0-or-later",
+   "summary":"Medical Physics Python toolbox"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SimonBiggs",
+    "Matthew-Jennings"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "entry_points":[
+      "pymedphys = pymedphys.cli.main:pymedphys_cli"
+     ],
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "pymedphys_analysis",
+      "pymedphys_base",
+      "pymedphys_coordsandscales",
+      "pymedphys_databases",
+      "pymedphys_dicom",
+      "pymedphys_electronfactors",
+      "pymedphys_fileformats",
+      "pymedphys_gamma",
+      "pymedphys_labs",
+      "pymedphys_logfiles",
+      "pymedphys_mudensity",
+      "pymedphys_pinnacle",
+      "pymedphys_utilities",
+      "pymedphys_xlwings"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys",
+      "pymedphys.coordinates",
+      "pymedphys.dicom",
+      "pymedphys.electronfactors",
+      "pymedphys.film",
+      "pymedphys.gamma",
+      "pymedphys.geometry",
+      "pymedphys.logfile",
+      "pymedphys.mephysto",
+      "pymedphys.msq",
+      "pymedphys.mudensity",
+      "pymedphys.pinnacle",
+      "pymedphys.plt",
+      "pymedphys.trf",
+      "pymedphys.utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_analysis && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_analysis",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_analysis"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_base && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_base",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_base"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_coordsandscales && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_coordsandscales",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_coordsandscales"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_databases && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_databases",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "keyring",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "pymssql"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_databases"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_dicom && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_dicom",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "packaging",
+      "pydicom",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_dicom"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_electronfactors && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_electronfactors",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "scipy",
+      "shapely"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_electronfactors"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_fileformats && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_fileformats",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_fileformats"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_gamma && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_gamma",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pymedphys_dicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_gamma"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_labs && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_labs",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "Pillow",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_utilities",
+      "scipy",
+      "xarray"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_labs"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_logfiles && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_logfiles",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_databases",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "python-dateutil"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_logfiles"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_mudensity && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_mudensity",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_mudensity"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_pinnacle && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_pinnacle",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "PyYAML",
+      "numpy >=1.12",
+      "pydicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_pinnacle"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_utilities && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_utilities",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_xlwings && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_xlwings",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "pymedphys_fileformats",
+      "pymedphys_utilities",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_xlwings"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pymedphys-split",
+   "version":"0.11.0"
+  },
+  "source":[
+   {
+    "sha256":"bc33e266f6b9d37a64cea2fe62e087e1a8efee8992f7039b4f99db80eff2633d",
+    "url":"https://github.com/pymedphys/pymedphys/releases/download/v0.11.0/v0.11.0.tar.gz"
+   }
+  ]
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "yarn"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "attrs",
+    "keyring",
+    "matplotlib-base",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pillow",
+    "pydicom",
+    "pymedphys_analysis",
+    "pymedphys_base",
+    "pymedphys_coordsandscales",
+    "pymedphys_databases",
+    "pymedphys_dicom",
+    "pymedphys_electronfactors",
+    "pymedphys_fileformats",
+    "pymedphys_gamma",
+    "pymedphys_labs",
+    "pymedphys_logfiles",
+    "pymedphys_mudensity",
+    "pymedphys_pinnacle",
+    "pymedphys_utilities",
+    "pymedphys_xlwings",
+    "pymssql",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "scipy",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://pymedphys.com",
@@ -1845,6 +2393,554 @@
   "0.24.3":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://pymedphys.com",
+   "license":"GNU Affero General Public v3 or later (AGPL-3.0+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE-AGPL-3.0-or-later",
+   "summary":"Medical Physics Python toolbox"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SimonBiggs",
+    "Matthew-Jennings"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "entry_points":[
+      "pymedphys = pymedphys.cli.main:pymedphys_cli"
+     ],
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "pymedphys_analysis",
+      "pymedphys_base",
+      "pymedphys_coordsandscales",
+      "pymedphys_databases",
+      "pymedphys_dicom",
+      "pymedphys_electronfactors",
+      "pymedphys_fileformats",
+      "pymedphys_gamma",
+      "pymedphys_labs",
+      "pymedphys_logfiles",
+      "pymedphys_mudensity",
+      "pymedphys_pinnacle",
+      "pymedphys_utilities",
+      "pymedphys_xlwings"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys",
+      "pymedphys.coordinates",
+      "pymedphys.dicom",
+      "pymedphys.electronfactors",
+      "pymedphys.film",
+      "pymedphys.gamma",
+      "pymedphys.geometry",
+      "pymedphys.logfile",
+      "pymedphys.mephysto",
+      "pymedphys.msq",
+      "pymedphys.mudensity",
+      "pymedphys.pinnacle",
+      "pymedphys.plt",
+      "pymedphys.trf",
+      "pymedphys.utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_analysis && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_analysis",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_analysis"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_base && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_base",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_base"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_coordsandscales && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_coordsandscales",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_coordsandscales"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_databases && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_databases",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "keyring",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "pymssql"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_databases"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_dicom && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_dicom",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "packaging",
+      "pydicom",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_dicom"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_electronfactors && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_electronfactors",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "scipy",
+      "shapely"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_electronfactors"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_fileformats && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_fileformats",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_fileformats"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_gamma && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_gamma",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pymedphys_dicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_gamma"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_labs && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_labs",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "Pillow",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_utilities",
+      "scipy",
+      "xarray"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_labs"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_logfiles && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_logfiles",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_databases",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "python-dateutil"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_logfiles"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_mudensity && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_mudensity",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_mudensity"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_pinnacle && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_pinnacle",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "PyYAML",
+      "numpy >=1.12",
+      "pydicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_pinnacle"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_utilities && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_utilities",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_xlwings && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_xlwings",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "pymedphys_fileformats",
+      "pymedphys_utilities",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_xlwings"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pymedphys-split",
+   "version":"0.11.0"
+  },
+  "source":[
+   {
+    "sha256":"bc33e266f6b9d37a64cea2fe62e087e1a8efee8992f7039b4f99db80eff2633d",
+    "url":"https://github.com/pymedphys/pymedphys/releases/download/v0.11.0/v0.11.0.tar.gz"
+   }
+  ]
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "yarn"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "attrs",
+    "keyring",
+    "matplotlib-base",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pillow",
+    "pydicom",
+    "pymedphys_analysis",
+    "pymedphys_base",
+    "pymedphys_coordsandscales",
+    "pymedphys_databases",
+    "pymedphys_dicom",
+    "pymedphys_electronfactors",
+    "pymedphys_fileformats",
+    "pymedphys_gamma",
+    "pymedphys_labs",
+    "pymedphys_logfiles",
+    "pymedphys_mudensity",
+    "pymedphys_pinnacle",
+    "pymedphys_utilities",
+    "pymedphys_xlwings",
+    "pymssql",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "scipy",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "pymedphys",
   "pymedphys_analysis",
@@ -2007,5 +3103,553 @@
   }
  },
  "url":"https://github.com/pymedphys/pymedphys/releases/download/v0.10.0/v0.10.0.tar.gz",
- "version":"0.11.0"
+ "version":"0.11.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://pymedphys.com",
+   "license":"GNU Affero General Public v3 or later (AGPL-3.0+)",
+   "license_family":"AGPL",
+   "license_file":"LICENSE-AGPL-3.0-or-later",
+   "summary":"Medical Physics Python toolbox"
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "SimonBiggs",
+    "Matthew-Jennings"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "entry_points":[
+      "pymedphys = pymedphys.cli.main:pymedphys_cli"
+     ],
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "pymedphys_analysis",
+      "pymedphys_base",
+      "pymedphys_coordsandscales",
+      "pymedphys_databases",
+      "pymedphys_dicom",
+      "pymedphys_electronfactors",
+      "pymedphys_fileformats",
+      "pymedphys_gamma",
+      "pymedphys_labs",
+      "pymedphys_logfiles",
+      "pymedphys_mudensity",
+      "pymedphys_pinnacle",
+      "pymedphys_utilities",
+      "pymedphys_xlwings"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys",
+      "pymedphys.coordinates",
+      "pymedphys.dicom",
+      "pymedphys.electronfactors",
+      "pymedphys.film",
+      "pymedphys.gamma",
+      "pymedphys.geometry",
+      "pymedphys.logfile",
+      "pymedphys.mephysto",
+      "pymedphys.msq",
+      "pymedphys.mudensity",
+      "pymedphys.pinnacle",
+      "pymedphys.plt",
+      "pymedphys.trf",
+      "pymedphys.utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_analysis && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_analysis",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_analysis"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_base && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_base",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_base"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_coordsandscales && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_coordsandscales",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_coordsandscales"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_databases && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_databases",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "keyring",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "pymssql"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_databases"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_dicom && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_dicom",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "packaging",
+      "pydicom",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_dicom"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_electronfactors && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_electronfactors",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "scipy",
+      "shapely"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_electronfactors"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_fileformats && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_fileformats",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_base"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_fileformats"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_gamma && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_gamma",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pymedphys_dicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_gamma"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_labs && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_labs",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "Pillow",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_utilities",
+      "scipy",
+      "xarray"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_labs"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_logfiles && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_logfiles",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "attrs",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pandas",
+      "pymedphys_databases",
+      "pymedphys_fileformats",
+      "pymedphys_mudensity",
+      "pymedphys_utilities",
+      "python-dateutil"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_logfiles"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_mudensity && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_mudensity",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "matplotlib-base",
+      "numpy >=1.12",
+      "pymedphys_base",
+      "pymedphys_utilities"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_mudensity"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_pinnacle && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_pinnacle",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "PyYAML",
+      "numpy >=1.12",
+      "pydicom"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_pinnacle"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_utilities && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_utilities",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_utilities"
+     ]
+    }
+   },
+   {
+    "build":{
+     "noarch":"python",
+     "number":"1",
+     "script":[
+      "export SUBPACKAGE=pymedphys_xlwings && yarn conda-forge"
+     ]
+    },
+    "name":"pymedphys_xlwings",
+    "requirements":{
+     "host":[
+      "python >=3.7",
+      "pip",
+      "yarn"
+     ],
+     "run":[
+      "python >=3.7",
+      "numpy >=1.12",
+      "pydicom",
+      "pymedphys_dicom",
+      "pymedphys_fileformats",
+      "pymedphys_utilities",
+      "scipy"
+     ]
+    },
+    "test":{
+     "imports":[
+      "pymedphys_xlwings"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"pymedphys-split",
+   "version":"0.11.0"
+  },
+  "source":[
+   {
+    "sha256":"bc33e266f6b9d37a64cea2fe62e087e1a8efee8992f7039b4f99db80eff2633d",
+    "url":"https://github.com/pymedphys/pymedphys/releases/download/v0.11.0/v0.11.0.tar.gz"
+   }
+  ]
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "yarn"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "attrs",
+    "keyring",
+    "matplotlib-base",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pillow",
+    "pydicom",
+    "pymedphys_analysis",
+    "pymedphys_base",
+    "pymedphys_coordsandscales",
+    "pymedphys_databases",
+    "pymedphys_dicom",
+    "pymedphys_electronfactors",
+    "pymedphys_fileformats",
+    "pymedphys_gamma",
+    "pymedphys_labs",
+    "pymedphys_logfiles",
+    "pymedphys_mudensity",
+    "pymedphys_pinnacle",
+    "pymedphys_utilities",
+    "pymedphys_xlwings",
+    "pymssql",
+    "python",
+    "python-dateutil",
+    "pyyaml",
+    "scipy",
+    "shapely",
+    "xarray"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

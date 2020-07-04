@@ -72,6 +72,113 @@
  "conda-forge.yml":{},
  "feedstock_name":"seaborn",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Seaborn is a Python visualization library based on matplotlib. It\nprovides a high-level interface for drawing attractive statistical graphics.\n",
+   "dev_url":"https://github.com/mwaskom/seaborn",
+   "doc_url":"https://seaborn.pydata.org",
+   "home":"https://seaborn.pydata.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Statistical data visualization"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "r-jain1",
+    "croth1"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"seaborn-base",
+   "version":"0.10.1"
+  },
+  "source":{
+   "sha256":"2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0",
+   "url":"https://pypi.io/packages/source/s/seaborn/seaborn-0.10.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "seaborn"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "seaborn-base",
+    "statsmodels"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Seaborn is a Python visualization library based on matplotlib. It\nprovides a high-level interface for drawing attractive statistical graphics.\n",
@@ -230,6 +337,113 @@
   "0.10.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Seaborn is a Python visualization library based on matplotlib. It\nprovides a high-level interface for drawing attractive statistical graphics.\n",
+   "dev_url":"https://github.com/mwaskom/seaborn",
+   "doc_url":"https://seaborn.pydata.org",
+   "home":"https://seaborn.pydata.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Statistical data visualization"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "r-jain1",
+    "croth1"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"seaborn-base",
+   "version":"0.10.1"
+  },
+  "source":{
+   "sha256":"2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0",
+   "url":"https://pypi.io/packages/source/s/seaborn/seaborn-0.10.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "seaborn"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "seaborn-base",
+    "statsmodels"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ },
  "outputs_names":[
   "seaborn",
   "seaborn-base"
@@ -314,5 +528,112 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/seaborn/seaborn-0.9.0.tar.gz",
- "version":"0.10.1"
+ "version":"0.10.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Seaborn is a Python visualization library based on matplotlib. It\nprovides a high-level interface for drawing attractive statistical graphics.\n",
+   "dev_url":"https://github.com/mwaskom/seaborn",
+   "doc_url":"https://seaborn.pydata.org",
+   "home":"https://seaborn.pydata.org",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"Statistical data visualization"
+  },
+  "build":{
+   "noarch":"python",
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "r-jain1",
+    "croth1"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"seaborn-base",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip"
+     ],
+     "run":[
+      "python >=3.6",
+      "numpy >=1.13.3",
+      "matplotlib-base >=2.1.2",
+      "scipy >=1.0.1",
+      "pandas >=0.22.0"
+     ],
+     "test":{
+      "imports":[
+       "seaborn"
+      ]
+     }
+    },
+    "script":"build_base.bat"
+   },
+   {
+    "build":null,
+    "name":"seaborn",
+    "requirements":{
+     "run":[
+      "statsmodels >=0.8.0",
+      "seaborn-base"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"seaborn-base",
+   "version":"0.10.1"
+  },
+  "source":{
+   "sha256":"2d1a0c9d6bd1bc3cadb0364b8f06540f51322a670cf8438d0fde1c1c7317adc0",
+   "url":"https://pypi.io/packages/source/s/seaborn/seaborn-0.10.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pip check"
+   ],
+   "imports":[
+    "seaborn"
+   ],
+   "requires":[
+    "pip"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "python",
+    "scipy",
+    "seaborn-base",
+    "statsmodels"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pip"
+   ]
+  }
+ }
 }

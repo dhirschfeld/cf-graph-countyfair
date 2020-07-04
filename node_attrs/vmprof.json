@@ -124,6 +124,115 @@
  "conda-forge.yml":{},
  "feedstock_name":"vmprof",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"vmprof is a platform to understand and resolve performance bottlenecks in your code.\nIt includes a lightweight profiler for CPython 2.7, CPython 3 and PyPy and\nan assembler log visualizer for PyPy.\n",
+   "dev_url":"https://github.com/vmprof/vmprof-python",
+   "doc_url":"https://vmprof.readthedocs.io",
+   "home":"https://github.com/vmprof/vmprof-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"vmprof - a statistical program profiler"
+  },
+  "build":{
+   "entry_points":[
+    "vmprofshow = vmprof.show:main"
+   ],
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors"
+   ]
+  },
+  "package":{
+   "name":"vmprof",
+   "version":"0.4.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools",
+    "libunwind"
+   ],
+   "run":[
+    "python",
+    "requests",
+    "six",
+    "pytz",
+    "colorama",
+    "libunwind"
+   ]
+  },
+  "source":{
+   "sha256":"64c62cd737c88573447d1f90f29978fc3178a1663ddbdb60cdcb3f2c15e427da",
+   "url":"https://github.com/vmprof/vmprof-python/archive/0.4.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "vmprofshow --help",
+    "py.test vmprof/ -vrs"
+   ],
+   "imports":[
+    "vmprof",
+    "jitlog",
+    "vmshare"
+   ],
+   "requires":[
+    "pytest",
+    "cffi",
+    "hypothesis",
+    "toolchain"
+   ],
+   "source_files":[
+    "vmprof",
+    "src"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libunwind",
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "colorama",
+    "libunwind",
+    "python",
+    "pytz",
+    "requests",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "hypothesis",
+    "pytest",
+    "toolchain"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"vmprof is a platform to understand and resolve performance bottlenecks in your code.\nIt includes a lightweight profiler for CPython 2.7, CPython 3 and PyPy and\nan assembler log visualizer for PyPy.\n",
@@ -242,6 +351,111 @@
  },
  "name":"vmprof",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"vmprof is a platform to understand and resolve performance bottlenecks in your code.\nIt includes a lightweight profiler for CPython 2.7, CPython 3 and PyPy and\nan assembler log visualizer for PyPy.\n",
+   "dev_url":"https://github.com/vmprof/vmprof-python",
+   "doc_url":"https://vmprof.readthedocs.io",
+   "home":"https://github.com/vmprof/vmprof-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"vmprof - a statistical program profiler"
+  },
+  "build":{
+   "entry_points":[
+    "vmprofshow = vmprof.show:main"
+   ],
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors"
+   ]
+  },
+  "package":{
+   "name":"vmprof",
+   "version":"0.4.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "requests",
+    "six",
+    "pytz",
+    "colorama"
+   ]
+  },
+  "source":{
+   "sha256":"64c62cd737c88573447d1f90f29978fc3178a1663ddbdb60cdcb3f2c15e427da",
+   "url":"https://github.com/vmprof/vmprof-python/archive/0.4.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "vmprofshow --help",
+    "py.test vmprof/ -vrs"
+   ],
+   "imports":[
+    "vmprof",
+    "jitlog",
+    "vmshare"
+   ],
+   "requires":[
+    "pytest",
+    "cffi",
+    "hypothesis",
+    "toolchain"
+   ],
+   "source_files":[
+    "vmprof",
+    "src"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "colorama",
+    "python",
+    "pytz",
+    "requests",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "hypothesis",
+    "pytest",
+    "toolchain"
+   ]
+  }
+ },
  "pinning_version":"2020.03.16",
  "raw_meta_yaml":"{% set name = \"vmprof\" %}\n{% set version = \"0.4.12\" %}\n{% set sha256 = \"64c62cd737c88573447d1f90f29978fc3178a1663ddbdb60cdcb3f2c15e427da\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/vmprof/vmprof-python/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - vmprofshow = vmprof.show:main\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - libunwind  # [linux]\n  run:\n    - python\n    - requests\n    - six\n    - pytz\n    - colorama\n    - backports.shutil_which  # [py2k]\n    - libunwind  # [linux]\n\ntest:\n  imports:\n    - vmprof\n    - jitlog\n    - vmshare\n  commands:\n    - vmprofshow --help\n    - py.test vmprof/ -vrs\n  requires:\n    - pytest\n    - cffi\n    - hypothesis\n    - toolchain\n  source_files:\n    - vmprof\n    - src\n\n\nabout:\n  home: https://github.com/vmprof/vmprof-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'vmprof - a statistical program profiler'\n\n  description: |\n    vmprof is a platform to understand and resolve performance bottlenecks in your code. \n    It includes a lightweight profiler for CPython 2.7, CPython 3 and PyPy and \n    an assembler log visualizer for PyPy. \n  doc_url: https://vmprof.readthedocs.io\n  dev_url: https://github.com/vmprof/vmprof-python\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "req":{
@@ -335,5 +549,110 @@
   }
  },
  "url":"https://github.com/vmprof/vmprof-python/archive/0.4.12.tar.gz",
- "version":"0.4.12"
+ "version":"0.4.12",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"vmprof is a platform to understand and resolve performance bottlenecks in your code.\nIt includes a lightweight profiler for CPython 2.7, CPython 3 and PyPy and\nan assembler log visualizer for PyPy.\n",
+   "dev_url":"https://github.com/vmprof/vmprof-python",
+   "doc_url":"https://vmprof.readthedocs.io",
+   "home":"https://github.com/vmprof/vmprof-python",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"vmprof - a statistical program profiler"
+  },
+  "build":{
+   "entry_points":[
+    "vmprofshow = vmprof.show:main"
+   ],
+   "number":"0",
+   "script":"python -m pip install --no-deps --ignore-installed ."
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "synapticarbors"
+   ]
+  },
+  "package":{
+   "name":"vmprof",
+   "version":"0.4.12"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "requests",
+    "six",
+    "pytz",
+    "colorama"
+   ]
+  },
+  "source":{
+   "sha256":"64c62cd737c88573447d1f90f29978fc3178a1663ddbdb60cdcb3f2c15e427da",
+   "url":"https://github.com/vmprof/vmprof-python/archive/0.4.12.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "vmprofshow --help",
+    "py.test vmprof/ -vrs"
+   ],
+   "imports":[
+    "vmprof",
+    "jitlog",
+    "vmshare"
+   ],
+   "requires":[
+    "pytest",
+    "cffi",
+    "hypothesis",
+    "toolchain"
+   ],
+   "source_files":[
+    "vmprof",
+    "src"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "colorama",
+    "python",
+    "pytz",
+    "requests",
+    "six"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "hypothesis",
+    "pytest",
+    "toolchain"
+   ]
+  }
+ }
 }

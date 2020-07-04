@@ -66,6 +66,85 @@
  },
  "feedstock_name":"r-gbrd",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=gbRd",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Provides utilities for processing Rd objects and files. Extract argument descriptions and other parts of the help pages of functions."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-gbrd",
+   "version":"0.4_11"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"gbRd_0.4-11.tar.gz",
+   "sha256":"0251f6dd6ca987a74acc4765838b858f1edb08b71dbad9e563669b58783ea91b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/gbRd_0.4-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gbRd/gbRd_0.4-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('gbRd')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=gbRd",
@@ -159,6 +238,85 @@
  },
  "name":"r-gbrd",
  "new_version":"0.4_11",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=gbRd",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Provides utilities for processing Rd objects and files. Extract argument descriptions and other parts of the help pages of functions."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-gbrd",
+   "version":"0.4_11"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"gbRd_0.4-11.tar.gz",
+   "sha256":"0251f6dd6ca987a74acc4765838b858f1edb08b71dbad9e563669b58783ea91b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/gbRd_0.4-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gbRd/gbRd_0.4-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('gbRd')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.03.19.37.20",
  "raw_meta_yaml":"{% set version = \"0.4-11\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gbrd\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gbRd_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/gbRd_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/gbRd/gbRd_{{ version }}.tar.gz\n  sha256: 0251f6dd6ca987a74acc4765838b858f1edb08b71dbad9e563669b58783ea91b\n\nbuild:\n  noarch: generic\n  number: 1002\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('gbRd')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gbRd')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=gbRd\n  license: GPL-2.0-or-later\n  summary: Provides utilities for processing Rd objects and files. Extract argument descriptions and other parts of the help pages of functions.\n  license_family: GPL3\n\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - dpryan79\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "req":{
@@ -221,5 +379,84 @@
   "https://cran.r-project.org/src/contrib/gbRd_0.4-11.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/gbRd/gbRd_0.4-11.tar.gz"
  ],
- "version":"0.4_11"
+ "version":"0.4_11",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=gbRd",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Provides utilities for processing Rd objects and files. Extract argument descriptions and other parts of the help pages of functions."
+  },
+  "build":{
+   "noarch":"generic",
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "MathiasHaudgaard",
+    "FrodePedersen",
+    "ArneKr",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "package":{
+   "name":"r-gbrd",
+   "version":"0.4_11"
+  },
+  "requirements":{
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"gbRd_0.4-11.tar.gz",
+   "sha256":"0251f6dd6ca987a74acc4765838b858f1edb08b71dbad9e563669b58783ea91b",
+   "url":[
+    "https://cran.r-project.org/src/contrib/gbRd_0.4-11.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/gbRd/gbRd_0.4-11.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('gbRd')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

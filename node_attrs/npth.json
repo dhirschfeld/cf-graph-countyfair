@@ -44,6 +44,78 @@
  },
  "feedstock_name":"npth",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"nPth is a library to provide the GNU Pth API and thus a non-preemptive\nthreads implementation.\n\nIn contrast to GNU Pth is is based on the system's standard threads implementation.\nThis allows the use of libraries which are not compatible to GNU Pth. Experience\nwith a Windows Pth emulation showed that this is a solid way to provide a co-routine\nbased framework.\n",
+   "home":"https://www.gnupg.org/software/ntbtls/index.html",
+   "license":"LGPL-2",
+   "license_family":"GPL",
+   "license_file":"COPYING.LIB",
+   "summary":"The New GNU Portable Threads Library"
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "npth"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX",
+    "make",
+    "make install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"npth",
+   "version":"1.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "fn":"npth-1.6.tar.gz",
+   "sha256":"1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1",
+   "url":"https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages npth"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"nPth is a library to provide the GNU Pth API and thus a non-preemptive\nthreads implementation.\n\nIn contrast to GNU Pth is is based on the system's standard threads implementation.\nThis allows the use of libraries which are not compatible to GNU Pth. Experience\nwith a Windows Pth emulation showed that this is a solid way to provide a co-routine\nbased framework.\n",
@@ -112,6 +184,79 @@
  },
  "name":"npth",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"nPth is a library to provide the GNU Pth API and thus a non-preemptive\nthreads implementation.\n\nIn contrast to GNU Pth is is based on the system's standard threads implementation.\nThis allows the use of libraries which are not compatible to GNU Pth. Experience\nwith a Windows Pth emulation showed that this is a solid way to provide a co-routine\nbased framework.\n",
+   "home":"https://www.gnupg.org/software/ntbtls/index.html",
+   "license":"LGPL-2",
+   "license_family":"GPL",
+   "license_file":"COPYING.LIB",
+   "summary":"The New GNU Portable Threads Library"
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "npth"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX",
+    "make",
+    "make install"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"npth",
+   "version":"1.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "fn":"npth-1.6.tar.gz",
+   "sha256":"1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1",
+   "url":"https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages npth",
+    "conda inspect objects npth"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.08.21",
  "raw_meta_yaml":"{% set name = \"npth\" %}\n{% set version = \"1.6\" %}\n{% set sha256 = \"1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  script:\n    - ./configure --prefix=$PREFIX\n    - make\n    - make install\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('npth') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://www.gnupg.org/software/ntbtls/index.html\n  summary: The New GNU Portable Threads Library\n  license: LGPL-2\n  license_family: GPL\n  license_file: COPYING.LIB\n  description: |\n    nPth is a library to provide the GNU Pth API and thus a non-preemptive\n    threads implementation.\n\n    In contrast to GNU Pth is is based on the system's standard threads implementation.\n    This allows the use of libraries which are not compatible to GNU Pth. Experience\n    with a Windows Pth emulation showed that this is a solid way to provide a co-routine\n    based framework.\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
@@ -171,5 +316,76 @@
   }
  },
  "url":"https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2",
- "version":"1.6"
+ "version":"1.6",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"nPth is a library to provide the GNU Pth API and thus a non-preemptive\nthreads implementation.\n\nIn contrast to GNU Pth is is based on the system's standard threads implementation.\nThis allows the use of libraries which are not compatible to GNU Pth. Experience\nwith a Windows Pth emulation showed that this is a solid way to provide a co-routine\nbased framework.\n",
+   "home":"https://www.gnupg.org/software/ntbtls/index.html",
+   "license":"LGPL-2",
+   "license_family":"GPL",
+   "license_file":"COPYING.LIB",
+   "summary":"The New GNU Portable Threads Library"
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "npth"
+   ],
+   "script":[
+    "./configure --prefix=$PREFIX",
+    "make",
+    "make install"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"npth",
+   "version":"1.6"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "fn":"npth-1.6.tar.gz",
+   "sha256":"1393abd9adcf0762d34798dc34fdcf4d0d22a8410721e76f1e3afcd1daa4e2d1",
+   "url":"https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

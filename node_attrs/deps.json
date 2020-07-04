@@ -102,6 +102,102 @@
  },
  "feedstock_name":"deps",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/deps",
+   "doc_url":"https://github.com/ESSS/deps",
+   "home":"https://github.com/ESSS/deps",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"An utility to execute commands on multiple projects."
+  },
+  "build":{
+   "entry_points":[
+    "deps = deps.deps_cli:main_func"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu",
+    "nicoddemus",
+    "prusse-martin"
+   ]
+  },
+  "package":{
+   "name":"deps",
+   "version":"1.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "colorama",
+    "jinja2",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "sha256":"4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18",
+   "url":"https://github.com/ESSS/deps/archive/v1.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "deps --help",
+    "deps --version",
+    "python -m deps --version",
+    "pytest source/python"
+   ],
+   "imports":[
+    "deps"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-mock",
+    "future"
+   ],
+   "source_files":[
+    "source/python"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "colorama",
+    "jinja2",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "pytest",
+    "pytest-mock"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ESSS/deps",
@@ -209,6 +305,102 @@
  },
  "name":"deps",
  "new_version":"1.1.1",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/deps",
+   "doc_url":"https://github.com/ESSS/deps",
+   "home":"https://github.com/ESSS/deps",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"An utility to execute commands on multiple projects."
+  },
+  "build":{
+   "entry_points":[
+    "deps = deps.deps_cli:main_func"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu",
+    "nicoddemus",
+    "prusse-martin"
+   ]
+  },
+  "package":{
+   "name":"deps",
+   "version":"1.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "colorama",
+    "jinja2",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "sha256":"4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18",
+   "url":"https://github.com/ESSS/deps/archive/v1.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "deps --help",
+    "deps --version",
+    "python -m deps --version",
+    "pytest source/python"
+   ],
+   "imports":[
+    "deps"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-mock",
+    "future"
+   ],
+   "source_files":[
+    "source/python"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "colorama",
+    "jinja2",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "pytest",
+    "pytest-mock"
+   ]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set version = \"1.1.1\" %}\n\npackage:\n  name: deps\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ESSS/deps/archive/v{{ version }}.tar.gz\n  sha256: 4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  entry_points:\n    - deps = deps.deps_cli:main_func\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - click\n    - colorama\n    - jinja2\n    - pyyaml\n    - futures  # [py27]\n\ntest:\n  requires:\n    - pytest >=3\n    - pytest-mock\n    - future\n  imports:\n    - deps\n  commands:\n    - deps --help\n    - deps --version\n    - python -m deps --version\n    - pytest source/python\n  source_files:\n    - source/python\n\nabout:\n  home: https://github.com/ESSS/deps\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'An utility to execute commands on multiple projects.'\n  doc_url: https://github.com/ESSS/deps\n  dev_url: https://github.com/ESSS/deps\n\nextra:\n  recipe-maintainers:\n    - tadeu\n    - nicoddemus\n    - prusse-martin\n",
  "req":{
@@ -287,5 +479,101 @@
   }
  },
  "url":"https://github.com/ESSS/deps/archive/v1.1.1.tar.gz",
- "version":"1.1.1"
+ "version":"1.1.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/ESSS/deps",
+   "doc_url":"https://github.com/ESSS/deps",
+   "home":"https://github.com/ESSS/deps",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"An utility to execute commands on multiple projects."
+  },
+  "build":{
+   "entry_points":[
+    "deps = deps.deps_cli:main_func"
+   ],
+   "number":"0",
+   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu",
+    "nicoddemus",
+    "prusse-martin"
+   ]
+  },
+  "package":{
+   "name":"deps",
+   "version":"1.1.1"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "click",
+    "colorama",
+    "jinja2",
+    "pyyaml"
+   ]
+  },
+  "source":{
+   "sha256":"4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18",
+   "url":"https://github.com/ESSS/deps/archive/v1.1.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "deps --help",
+    "deps --version",
+    "python -m deps --version",
+    "pytest source/python"
+   ],
+   "imports":[
+    "deps"
+   ],
+   "requires":[
+    "pytest >=3",
+    "pytest-mock",
+    "future"
+   ],
+   "source_files":[
+    "source/python"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "click",
+    "colorama",
+    "jinja2",
+    "python",
+    "pyyaml"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "future",
+    "pytest",
+    "pytest-mock"
+   ]
+  }
+ }
 }

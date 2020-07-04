@@ -65,6 +65,87 @@
  },
  "feedstock_name":"feedstockrot",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/feedstockrot",
+   "license":"MIT",
+   "summary":"Tool to check how rotten conda-forge feedstocks are"
+  },
+  "build":{
+   "entry_points":[
+    "feedstockrot = feedstockrot.command_line:main_run"
+   ],
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kwilcox"
+   ]
+  },
+  "package":{
+   "name":"feedstockrot",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "requests",
+    "packaging",
+    "pygithub",
+    "pyyaml",
+    "jinja2"
+   ]
+  },
+  "source":{
+   "fn":"feedstockrot-1.1.0.tar.gz",
+   "sha256":"009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b",
+   "url":"https://github.com/axiom-data-science/feedstockrot/archive/1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "feedstockrot --help"
+   ],
+   "imports":[
+    "feedstockrot",
+    "feedstockrot.tests"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jinja2",
+    "packaging",
+    "pygithub",
+    "python",
+    "pyyaml",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/axiom-data-science/feedstockrot",
@@ -147,6 +228,87 @@
  },
  "name":"feedstockrot",
  "new_version":"1.1.0",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/feedstockrot",
+   "license":"MIT",
+   "summary":"Tool to check how rotten conda-forge feedstocks are"
+  },
+  "build":{
+   "entry_points":[
+    "feedstockrot = feedstockrot.command_line:main_run"
+   ],
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kwilcox"
+   ]
+  },
+  "package":{
+   "name":"feedstockrot",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "requests",
+    "packaging",
+    "pygithub",
+    "pyyaml",
+    "jinja2"
+   ]
+  },
+  "source":{
+   "fn":"feedstockrot-1.1.0.tar.gz",
+   "sha256":"009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b",
+   "url":"https://github.com/axiom-data-science/feedstockrot/archive/1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "feedstockrot --help"
+   ],
+   "imports":[
+    "feedstockrot",
+    "feedstockrot.tests"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jinja2",
+    "packaging",
+    "pygithub",
+    "python",
+    "pyyaml",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.03.20",
  "raw_meta_yaml":"{% set name = \"feedstockrot\" %}\n{% set version = \"1.1.0\" %}\n{% set build = 1000 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: feedstockrot-{{ version }}.tar.gz\n  url: https://github.com/axiom-data-science/feedstockrot/archive/{{ version }}.tar.gz\n  sha256: 009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b\n\nbuild:\n  skip: true  # [py<35]\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - feedstockrot = feedstockrot.command_line:main_run\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - requests\n    - packaging\n    - pygithub\n    - pyyaml\n    - jinja2\n\ntest:\n  imports:\n    - feedstockrot\n    - feedstockrot.tests\n  commands:\n    - feedstockrot --help\n\nabout:\n  home: https://github.com/axiom-data-science/feedstockrot\n  license: MIT\n  summary: Tool to check how rotten conda-forge feedstocks are\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "req":{
@@ -222,5 +384,86 @@
   }
  },
  "url":"https://github.com/axiom-data-science/feedstockrot/archive/1.1.0.tar.gz",
- "version":"1.1.0"
+ "version":"1.1.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/axiom-data-science/feedstockrot",
+   "license":"MIT",
+   "summary":"Tool to check how rotten conda-forge feedstocks are"
+  },
+  "build":{
+   "entry_points":[
+    "feedstockrot = feedstockrot.command_line:main_run"
+   ],
+   "number":"1000",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "kwilcox"
+   ]
+  },
+  "package":{
+   "name":"feedstockrot",
+   "version":"1.1.0"
+  },
+  "requirements":{
+   "build":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "setuptools",
+    "requests",
+    "packaging",
+    "pygithub",
+    "pyyaml",
+    "jinja2"
+   ]
+  },
+  "source":{
+   "fn":"feedstockrot-1.1.0.tar.gz",
+   "sha256":"009e8e907d2cc139bf1b2d6c52d52175570dfb30a393a5a9cd7b15e040dff85b",
+   "url":"https://github.com/axiom-data-science/feedstockrot/archive/1.1.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "feedstockrot --help"
+   ],
+   "imports":[
+    "feedstockrot",
+    "feedstockrot.tests"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "jinja2",
+    "packaging",
+    "pygithub",
+    "python",
+    "pyyaml",
+    "requests",
+    "setuptools"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

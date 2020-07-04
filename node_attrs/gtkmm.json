@@ -4,6 +4,148 @@
  "conda-forge.yml":{},
  "feedstock_name":"gtkmm",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for gtk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "gtkmm-3.0 >=3.24.2"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "gtkmm-3.0 >=3.24.2"
+     ]
+    },
+    "name":"gtkmm-3.0",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub",
+      "cdt_stub"
+     ],
+     "host":[
+      "gtk3 >=3.24.0",
+      "glibmm >=2.54.0",
+      "cairomm >=1.12.0",
+      "pangomm >=2.38.2",
+      "sigcpp-2.0",
+      "atkmm >=2.24.2",
+      "cairo",
+      "glib",
+      "atk",
+      "gdk-pixbuf >=2.35.5",
+      "pango",
+      "glib"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "gtkmm 3.24.2"
+     ]
+    },
+    "script":"build_gtkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtkmm-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"gtkmm",
+    "requirements":{
+     "run":[
+      "gtkmm-3.0  3.24.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/gtkmm-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gtkmm",
+   "version":"3.24.2"
+  },
+  "source":{
+   "sha256":"6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.24/gtkmm-3.24.2.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cdt_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm",
+    "cairo",
+    "cairomm",
+    "gdk-pixbuf",
+    "glib",
+    "glibmm",
+    "gtk3",
+    "pango",
+    "pangomm",
+    "sigcpp-2.0"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "gtkmm-3.0",
+    "pango"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.gtkmm.org",
@@ -225,6 +367,131 @@
  },
  "name":"gtkmm",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for gtk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "gtkmm-3.0 >=3.24.2"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "gtkmm-3.0 >=3.24.2"
+     ]
+    },
+    "name":"gtkmm-3.0",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gtk3 >=3.24.0",
+      "glibmm >=2.54.0",
+      "cairomm >=1.12.0",
+      "pangomm >=2.38.2",
+      "sigcpp-2.0",
+      "atkmm >=2.24.2",
+      "cairo",
+      "glib",
+      "atk",
+      "gdk-pixbuf >=2.35.5",
+      "pango",
+      "glib"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "gtkmm 3.24.2"
+     ]
+    },
+    "script":"build_gtkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtkmm-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"gtkmm",
+    "requirements":{
+     "run":[
+      "gtkmm-3.0  3.24.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/gtkmm-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gtkmm",
+   "version":"3.24.2"
+  },
+  "source":{
+   "sha256":"6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.24/gtkmm-3.24.2.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm",
+    "cairo",
+    "cairomm",
+    "gdk-pixbuf",
+    "glib",
+    "glibmm",
+    "gtk3",
+    "pango",
+    "pangomm",
+    "sigcpp-2.0"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "gtkmm-3.0",
+    "pango"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "outputs_names":[
   "gtkmm",
   "gtkmm-3.0"
@@ -334,5 +601,131 @@
   }
  },
  "url":"http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.24/gtkmm-3.24.2.tar.xz",
- "version":"3.24.2"
+ "version":"3.24.2",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://www.gtkmm.org",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"COPYING",
+   "summary":"C++ bindings for gtk"
+  },
+  "build":{
+   "number":"0",
+   "run_exports":[
+    "gtkmm-3.0 >=3.24.2"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "isuruf"
+   ]
+  },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "gtkmm-3.0 >=3.24.2"
+     ]
+    },
+    "name":"gtkmm-3.0",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cxx_compiler_stub",
+      "make",
+      "pkg-config"
+     ],
+     "host":[
+      "gtk3 >=3.24.0",
+      "glibmm >=2.54.0",
+      "cairomm >=1.12.0",
+      "pangomm >=2.38.2",
+      "sigcpp-2.0",
+      "atkmm >=2.24.2",
+      "cairo",
+      "glib",
+      "atk",
+      "gdk-pixbuf >=2.35.5",
+      "pango",
+      "glib"
+     ],
+     "run":[
+      "pango",
+      "glibmm"
+     ],
+     "run_constrained":[
+      "gtkmm 3.24.2"
+     ]
+    },
+    "script":"build_gtkmm.sh",
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/libgtkmm-3.0${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "name":"gtkmm",
+    "requirements":{
+     "run":[
+      "gtkmm-3.0  3.24.2"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f ${PREFIX}/lib/pkg-config/gtkmm-3.0.pc"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"gtkmm",
+   "version":"3.24.2"
+  },
+  "source":{
+   "sha256":"6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3",
+   "url":"http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.24/gtkmm-3.24.2.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "atk",
+    "atkmm",
+    "cairo",
+    "cairomm",
+    "gdk-pixbuf",
+    "glib",
+    "glibmm",
+    "gtk3",
+    "pango",
+    "pangomm",
+    "sigcpp-2.0"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "glibmm",
+    "gtkmm-3.0",
+    "pango"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

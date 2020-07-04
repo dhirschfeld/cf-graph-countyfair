@@ -74,6 +74,91 @@
  "conda-forge.yml":{},
  "feedstock_name":"gsl-lite",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/martinmoene/gsl-lite",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A single-file header-only version of ISO C++ Guidelines Support Library (GSL) for C++98, C++11 and later"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu"
+   ]
+  },
+  "package":{
+   "name":"gsl-lite",
+   "version":"0.37.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"gsl-lite-0.37.0.tar.gz",
+   "sha256":"a31d51b73742bb234acab8d2411223cf299e760ed713f0840ffed0dabe57ca38",
+   "url":"https://github.com/martinmoene/gsl-lite/archive/0.37.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd test",
+    "mkdir build_default",
+    "cd build_default",
+    "cmake .. -G\"$CMAKE_GENERATOR\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "./program",
+    "cd ..",
+    "mkdir build_ninja",
+    "cd build_ninja",
+    "cmake .. -G\"Ninja\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "./program"
+   ],
+   "files":[
+    "test"
+   ],
+   "requires":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/martinmoene/gsl-lite",
@@ -179,6 +264,91 @@
   "0.37.0":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/martinmoene/gsl-lite",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A single-file header-only version of ISO C++ Guidelines Support Library (GSL) for C++98, C++11 and later"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu"
+   ]
+  },
+  "package":{
+   "name":"gsl-lite",
+   "version":"0.37.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "source":{
+   "fn":"gsl-lite-0.37.0.tar.gz",
+   "sha256":"a31d51b73742bb234acab8d2411223cf299e760ed713f0840ffed0dabe57ca38",
+   "url":"https://github.com/martinmoene/gsl-lite/archive/0.37.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "cd test",
+    "mkdir build_default",
+    "cd build_default",
+    "cmake .. -G\"$CMAKE_GENERATOR\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "./program",
+    "cd ..",
+    "mkdir build_ninja",
+    "cd build_ninja",
+    "cmake .. -G\"Ninja\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "./program"
+   ],
+   "files":[
+    "test"
+   ],
+   "requires":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "make",
+    "ninja"
+   ]
+  }
+ },
  "pinning_version":"2020.05.13.13.23.43",
  "raw_meta_yaml":"{% set name = \"gsl-lite\" %}\n{% set version = \"0.37.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/martinmoene/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: a31d51b73742bb234acab8d2411223cf299e760ed713f0840ffed0dabe57ca38\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n    - make  # [unix]\n\ntest:\n  requires:\n    - cmake\n    - {{ compiler('cxx') }}\n    - make  # [unix]\n    - ninja\n  files:\n    - test\n\n  commands:\n    - echo on  # [win]\n    - cd test\n\n    - mkdir build_default\n    - cd build_default\n    - cmake .. -G\"NMake Makefiles\" -DCMAKE_BUILD_TYPE=Release  # [win]\n    - cmake .. -G\"$CMAKE_GENERATOR\" -DCMAKE_BUILD_TYPE=Release  # [unix]\n    - cmake --build . --config Release --verbose\n    - ./program  # [unix]\n    - program.exe  # [win]\n    - cd ..\n\n    - mkdir build_ninja\n    - cd build_ninja\n    - cmake .. -G\"Ninja\" -DCMAKE_BUILD_TYPE=Release\n    - cmake --build . --config Release --verbose\n    - ./program  # [unix]\n    - program.exe  # [win]\n\nabout:\n  home: https://github.com/martinmoene/gsl-lite\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A single-file header-only version of ISO C++ Guidelines Support Library (GSL) for C++98, C++11 and later\n\nextra:\n  recipe-maintainers:\n    - tadeu\n",
  "req":{
@@ -246,5 +416,87 @@
   }
  },
  "url":"https://github.com/martinmoene/gsl-lite/archive/v0.34.0.tar.gz",
- "version":"0.37.0"
+ "version":"0.37.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/martinmoene/gsl-lite",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"A single-file header-only version of ISO C++ Guidelines Support Library (GSL) for C++98, C++11 and later"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "tadeu"
+   ]
+  },
+  "package":{
+   "name":"gsl-lite",
+   "version":"0.37.0"
+  },
+  "requirements":{
+   "build":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "source":{
+   "fn":"gsl-lite-0.37.0.tar.gz",
+   "sha256":"a31d51b73742bb234acab8d2411223cf299e760ed713f0840ffed0dabe57ca38",
+   "url":"https://github.com/martinmoene/gsl-lite/archive/0.37.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "echo on",
+    "cd test",
+    "mkdir build_default",
+    "cd build_default",
+    "cmake .. -G\"NMake Makefiles\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "program.exe",
+    "cd ..",
+    "mkdir build_ninja",
+    "cd build_ninja",
+    "cmake .. -G\"Ninja\" -DCMAKE_BUILD_TYPE=Release",
+    "cmake --build . --config Release --verbose",
+    "program.exe"
+   ],
+   "files":[
+    "test"
+   ],
+   "requires":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
+   ]
+  }
+ }
 }

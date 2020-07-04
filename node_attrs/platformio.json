@@ -40,6 +40,94 @@
  "conda-forge.yml":{},
  "feedstock_name":"platformio",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/platformio/platformio-core",
+   "home":"https://platformio.org/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"PlatformIO is a new generation ecosystem for embedded development."
+  },
+  "build":{
+   "entry_points":[
+    "platformio = platformio.__main__:main",
+    "pio = platformio.__main__:main",
+    "piodebuggdb = platformio.__main__:debug_gdb_main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"platformio",
+   "version":"4.3.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "bottle",
+    "click >=5,!=7.1.0,!=7.1.1",
+    "colorama",
+    "pyserial >=3,!=3.3",
+    "requests >=2.4.0",
+    "semantic_version >=2.8.1",
+    "tabulate >=0.8.3",
+    "pyelftools >=0.25",
+    "marshmallow >=2"
+   ]
+  },
+  "source":{
+   "sha256":"9385860a7072ac7bb4a71c4d7644acf1cdd4bc1e88af8a5ab53ee0e935c31b07",
+   "url":"https://pypi.io/packages/source/p/platformio/platformio-4.3.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "platformio"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "click",
+    "colorama",
+    "marshmallow",
+    "pyelftools",
+    "pyserial",
+    "python",
+    "requests",
+    "semantic_version",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/platformio/platformio-core",
@@ -137,6 +225,94 @@
   "4.3.4":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/platformio/platformio-core",
+   "home":"https://platformio.org/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"PlatformIO is a new generation ecosystem for embedded development."
+  },
+  "build":{
+   "entry_points":[
+    "platformio = platformio.__main__:main",
+    "pio = platformio.__main__:main",
+    "piodebuggdb = platformio.__main__:debug_gdb_main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"platformio",
+   "version":"4.3.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "bottle",
+    "click >=5,!=7.1.0,!=7.1.1",
+    "colorama",
+    "pyserial >=3,!=3.3",
+    "requests >=2.4.0",
+    "semantic_version >=2.8.1",
+    "tabulate >=0.8.3",
+    "pyelftools >=0.25",
+    "marshmallow >=2"
+   ]
+  },
+  "source":{
+   "sha256":"9385860a7072ac7bb4a71c4d7644acf1cdd4bc1e88af8a5ab53ee0e935c31b07",
+   "url":"https://pypi.io/packages/source/p/platformio/platformio-4.3.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "platformio"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "click",
+    "colorama",
+    "marshmallow",
+    "pyelftools",
+    "pyserial",
+    "python",
+    "requests",
+    "semantic_version",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.20.21.21.18",
  "raw_meta_yaml":"{% set name = \"platformio\" %}\n{% set version = \"4.3.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9385860a7072ac7bb4a71c4d7644acf1cdd4bc1e88af8a5ab53ee0e935c31b07\n\nbuild:\n  noarch: python\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - platformio = platformio.__main__:main\n    - pio = platformio.__main__:main\n    - piodebuggdb = platformio.__main__:debug_gdb_main\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - bottle\n    # PlatformIO specifies max versions of software that does not exist yet\n    # I just removed the max version pinnings\n    - click >=5,!=7.1.0,!=7.1.1\n    - colorama\n    - pyserial >=3,!=3.3\n    - requests >=2.4.0\n    - semantic_version >=2.8.1\n    - tabulate >=0.8.3\n    - pyelftools >=0.25\n    # python 2 has additional constraints on marshmallow\n    - marshmallow >=2\n\ntest:\n  imports:\n    - platformio\n\nabout:\n  home: https://platformio.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: PlatformIO is a new generation ecosystem for embedded development.\n  dev_url: https://github.com/platformio/platformio-core\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
@@ -222,5 +398,93 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/platformio/platformio-4.2.1.tar.gz",
- "version":"4.3.4"
+ "version":"4.3.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/platformio/platformio-core",
+   "home":"https://platformio.org/",
+   "license":"Apache-2.0",
+   "license_family":"Apache",
+   "license_file":"LICENSE",
+   "summary":"PlatformIO is a new generation ecosystem for embedded development."
+  },
+  "build":{
+   "entry_points":[
+    "platformio = platformio.__main__:main",
+    "pio = platformio.__main__:main",
+    "piodebuggdb = platformio.__main__:debug_gdb_main"
+   ],
+   "noarch":"python",
+   "number":"1",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "hmaarrfk"
+   ]
+  },
+  "package":{
+   "name":"platformio",
+   "version":"4.3.4"
+  },
+  "requirements":{
+   "host":[
+    "python >=3",
+    "pip"
+   ],
+   "run":[
+    "python >=3",
+    "bottle",
+    "click >=5,!=7.1.0,!=7.1.1",
+    "colorama",
+    "pyserial >=3,!=3.3",
+    "requests >=2.4.0",
+    "semantic_version >=2.8.1",
+    "tabulate >=0.8.3",
+    "pyelftools >=0.25",
+    "marshmallow >=2"
+   ]
+  },
+  "source":{
+   "sha256":"9385860a7072ac7bb4a71c4d7644acf1cdd4bc1e88af8a5ab53ee0e935c31b07",
+   "url":"https://pypi.io/packages/source/p/platformio/platformio-4.3.4.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "platformio"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "bottle",
+    "click",
+    "colorama",
+    "marshmallow",
+    "pyelftools",
+    "pyserial",
+    "python",
+    "requests",
+    "semantic_version",
+    "tabulate"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

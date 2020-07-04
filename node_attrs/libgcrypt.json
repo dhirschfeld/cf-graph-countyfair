@@ -75,6 +75,72 @@
  },
  "feedstock_name":"libgcrypt",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"https://gnupg.org/software/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "summary":"a general purpose cryptographic library originally based on code from GnuPG."
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "libgcrypt"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgcrypt",
+   "version":"1.8.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "sha256":"f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227",
+   "url":"https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.4.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/libgcrypt.so",
+    "conda inspect linkages libgcrypt"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://gnupg.org/software/index.html",
@@ -136,6 +202,72 @@
  },
  "name":"libgcrypt",
  "new_version":"1.8.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"https://gnupg.org/software/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "summary":"a general purpose cryptographic library originally based on code from GnuPG."
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "libgcrypt"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgcrypt",
+   "version":"1.8.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "sha256":"f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227",
+   "url":"https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.4.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages libgcrypt",
+    "conda inspect objects libgcrypt"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2019.08.27",
  "raw_meta_yaml":"{% set name = \"libgcrypt\" %}\n{% set version = \"1.8.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gnupg.org/ftp/gcrypt/libgcrypt/{{ name }}-{{ version }}.tar.bz2\n  sha256: f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227\n\nbuild:\n  number: 1000\n  skip: True  # [win]\n  run_exports:\n   - {{ pin_subpackage('libgcrypt') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgcrypt.so  # [linux]\n    - conda inspect linkages {{ name }}\n    - conda inspect objects {{ name }}  # [osx]\n\nabout:\n  home: https://gnupg.org/software/index.html\n  license: GPL-2.0\n  license_family: GPL\n  summary: 'a general purpose cryptographic library originally based on code from GnuPG.'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mariusvniekerk\n",
  "req":{
@@ -195,5 +327,71 @@
   }
  },
  "url":"https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.4.tar.bz2",
- "version":"1.8.4"
+ "version":"1.8.4",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"https://gnupg.org/software/index.html",
+   "license":"GPL-2.0",
+   "license_family":"GPL",
+   "summary":"a general purpose cryptographic library originally based on code from GnuPG."
+  },
+  "build":{
+   "number":"1000",
+   "run_exports":[
+    "libgcrypt"
+   ],
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "martindurant",
+    "mariusvniekerk"
+   ]
+  },
+  "package":{
+   "name":"libgcrypt",
+   "version":"1.8.4"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ],
+   "host":[
+    "libgpg-error"
+   ]
+  },
+  "source":{
+   "sha256":"f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227",
+   "url":"https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.4.tar.bz2"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages libgcrypt"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libgpg-error"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

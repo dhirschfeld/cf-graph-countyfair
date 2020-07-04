@@ -57,6 +57,84 @@
  "conda-forge.yml":{},
  "feedstock_name":"bxa",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"Bayesian X-ray Analysis (BXA) allows reliable parameter inference and model comparison in X-ray astronomy.\n\nBXA connects the nested sampling algorithms MultiNest and UltraNest to the X-ray spectral analysis environments\nXspec (https://heasarc.gsfc.nasa.gov/xanadu/xspec/) and Sherpa (http://cxc.cfa.harvard.edu/sherpa/).\n\nThis allows reliable and automatic Bayesian parameter estimation and model comparison.\n",
+   "dev_url":"https://github.com/JohannesBuchner/BXA/",
+   "doc_url":"https://johannesbuchner.github.io/BXA/",
+   "home":"https://johannesbuchner.github.io/BXA/",
+   "license":"GPL3",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"BXA enables nested sampling in the X-ray spectral analysis environments Xspec/Sherpa for Bayesian Parameter Estimation and Model comparison."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "JohannesBuchner"
+   ]
+  },
+  "package":{
+   "name":"bxa",
+   "version":"3.4.1"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "matplotlib-base",
+    "ultranest",
+    "pymultinest",
+    "multinest"
+   ]
+  },
+  "source":{
+   "sha256":"5c68c00b4e52cf6dcba2352881c9e08c13fea3681d3489954ee17494e40c891f",
+   "url":"https://pypi.io/packages/source/b/bxa/bxa-3.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bxa"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "multinest",
+    "numpy",
+    "pymultinest",
+    "python",
+    "ultranest"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"Bayesian X-ray Analysis (BXA) allows reliable parameter inference and model comparison in X-ray astronomy.\n\nBXA connects the nested sampling algorithms MultiNest and UltraNest to the X-ray spectral analysis environments\nXspec (https://heasarc.gsfc.nasa.gov/xanadu/xspec/) and Sherpa (http://cxc.cfa.harvard.edu/sherpa/).\n\nThis allows reliable and automatic Bayesian parameter estimation and model comparison.\n",
@@ -134,6 +212,84 @@
   "3.4.1":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"Bayesian X-ray Analysis (BXA) allows reliable parameter inference and model comparison in X-ray astronomy.\n\nBXA connects the nested sampling algorithms MultiNest and UltraNest to the X-ray spectral analysis environments\nXspec (https://heasarc.gsfc.nasa.gov/xanadu/xspec/) and Sherpa (http://cxc.cfa.harvard.edu/sherpa/).\n\nThis allows reliable and automatic Bayesian parameter estimation and model comparison.\n",
+   "dev_url":"https://github.com/JohannesBuchner/BXA/",
+   "doc_url":"https://johannesbuchner.github.io/BXA/",
+   "home":"https://johannesbuchner.github.io/BXA/",
+   "license":"GPL3",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"BXA enables nested sampling in the X-ray spectral analysis environments Xspec/Sherpa for Bayesian Parameter Estimation and Model comparison."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "JohannesBuchner"
+   ]
+  },
+  "package":{
+   "name":"bxa",
+   "version":"3.4.1"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "matplotlib-base",
+    "ultranest",
+    "pymultinest",
+    "multinest"
+   ]
+  },
+  "source":{
+   "sha256":"5c68c00b4e52cf6dcba2352881c9e08c13fea3681d3489954ee17494e40c891f",
+   "url":"https://pypi.io/packages/source/b/bxa/bxa-3.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bxa"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "multinest",
+    "numpy",
+    "pymultinest",
+    "python",
+    "ultranest"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.06.12.14.12.47",
  "raw_meta_yaml":"{% set name = \"bxa\" %}\n{% set version = \"3.4.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5c68c00b4e52cf6dcba2352881c9e08c13fea3681d3489954ee17494e40c891f\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n    - ultranest\n    - pymultinest\n    - multinest\n\ntest:\n  imports:\n    - bxa\n\nabout:\n  home: https://johannesbuchner.github.io/BXA/\n  license: GPL3\n  license_family: GPL\n  license_file: LICENSE\n  summary: BXA enables nested sampling in the X-ray spectral analysis environments Xspec/Sherpa for Bayesian Parameter Estimation and Model comparison.\n\n  description: |\n    Bayesian X-ray Analysis (BXA) allows reliable parameter inference and model comparison in X-ray astronomy.\n\n    BXA connects the nested sampling algorithms MultiNest and UltraNest to the X-ray spectral analysis environments \n    Xspec (https://heasarc.gsfc.nasa.gov/xanadu/xspec/) and Sherpa (http://cxc.cfa.harvard.edu/sherpa/).\n\n    This allows reliable and automatic Bayesian parameter estimation and model comparison.\n\n  doc_url: https://johannesbuchner.github.io/BXA/\n  dev_url: https://github.com/JohannesBuchner/BXA/\n\nextra:\n  recipe-maintainers:\n    - JohannesBuchner\n",
  "req":{
@@ -207,5 +363,83 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/bxa/bxa-3.3.1.tar.gz",
- "version":"3.4.1"
+ "version":"3.4.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"Bayesian X-ray Analysis (BXA) allows reliable parameter inference and model comparison in X-ray astronomy.\n\nBXA connects the nested sampling algorithms MultiNest and UltraNest to the X-ray spectral analysis environments\nXspec (https://heasarc.gsfc.nasa.gov/xanadu/xspec/) and Sherpa (http://cxc.cfa.harvard.edu/sherpa/).\n\nThis allows reliable and automatic Bayesian parameter estimation and model comparison.\n",
+   "dev_url":"https://github.com/JohannesBuchner/BXA/",
+   "doc_url":"https://johannesbuchner.github.io/BXA/",
+   "home":"https://johannesbuchner.github.io/BXA/",
+   "license":"GPL3",
+   "license_family":"GPL",
+   "license_file":"LICENSE",
+   "summary":"BXA enables nested sampling in the X-ray spectral analysis environments Xspec/Sherpa for Bayesian Parameter Estimation and Model comparison."
+  },
+  "build":{
+   "noarch":"python",
+   "number":"0",
+   "script":"-m pip install . -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "JohannesBuchner"
+   ]
+  },
+  "package":{
+   "name":"bxa",
+   "version":"3.4.1"
+  },
+  "requirements":{
+   "build":null,
+   "host":[
+    "python",
+    "pip"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "matplotlib-base",
+    "ultranest",
+    "pymultinest",
+    "multinest"
+   ]
+  },
+  "source":{
+   "sha256":"5c68c00b4e52cf6dcba2352881c9e08c13fea3681d3489954ee17494e40c891f",
+   "url":"https://pypi.io/packages/source/b/bxa/bxa-3.4.1.tar.gz"
+  },
+  "test":{
+   "imports":[
+    "bxa"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "matplotlib-base",
+    "multinest",
+    "numpy",
+    "pymultinest",
+    "python",
+    "ultranest"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

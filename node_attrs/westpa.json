@@ -127,6 +127,324 @@
  },
  "feedstock_name":"westpa",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
+   "dev_url":"https://github.com/westpa",
+   "doc_url":"https://westpa.github.io/westpa/sphinx_index.html#tutorials",
+   "home":"https://westpa.github.io/westpa",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Interoperable, highly-scalable software for weighted ensemble simulation."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong"
+   ]
+  },
+  "package":{
+   "name":"westpa",
+   "version":"2020.03"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel"
+   ]
+  },
+  "source":{
+   "fn":"westpa-2020.03.tar.gz",
+   "sha256":"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c",
+   "url":"https://github.com/westpa/westpa/archive/v2020.03.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blessings",
+    "h5py",
+    "ipykernel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "pyzmq",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
+   "dev_url":"https://github.com/westpa",
+   "doc_url":"https://westpa.github.io/westpa/sphinx_index.html#tutorials",
+   "home":"https://westpa.github.io/westpa",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Interoperable, highly-scalable software for weighted ensemble simulation."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong"
+   ]
+  },
+  "package":{
+   "name":"westpa",
+   "version":"2020.03"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel"
+   ]
+  },
+  "source":{
+   "fn":"westpa-2020.03.tar.gz",
+   "sha256":"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c",
+   "url":"https://github.com/westpa/westpa/archive/v2020.03.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blessings",
+    "h5py",
+    "ipykernel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "pyzmq",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
+   "dev_url":"https://github.com/westpa",
+   "doc_url":"https://westpa.github.io/westpa/sphinx_index.html#tutorials",
+   "home":"https://westpa.github.io/westpa",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Interoperable, highly-scalable software for weighted ensemble simulation."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong"
+   ]
+  },
+  "package":{
+   "name":"westpa",
+   "version":"2020.03"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel"
+   ]
+  },
+  "source":{
+   "fn":"westpa-2020.03.tar.gz",
+   "sha256":"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c",
+   "url":"https://github.com/westpa/westpa/archive/v2020.03.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blessings",
+    "h5py",
+    "ipykernel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "pyzmq",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
@@ -158,6 +476,16 @@
     "ajoshpratt",
     "synapticarbors",
     "burntyellow",
+    "ltchong",
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong",
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
     "ltchong"
    ]
   },
@@ -167,6 +495,8 @@
   },
   "requirements":{
    "build":[
+    "c_compiler_stub",
+    "c_compiler_stub",
     "c_compiler_stub",
     "c_compiler_stub",
     "c_compiler_stub"
@@ -183,9 +513,35 @@
     "setuptools",
     "python",
     "cython",
+    "numpy 1.16.*",
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*",
+    "setuptools",
+    "python",
+    "cython",
     "numpy 1.16.*"
    ],
    "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel",
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel",
     "python",
     "numpy",
     "scipy",
@@ -257,6 +613,30 @@
     "$WEST_PYTHON -c 'import work_managers'",
     "$WEST_PYTHON -c 'import westtools'",
     "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'",
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'",
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
     "$WEST_PYTHON -c 'import mclib'"
    ]
   }
@@ -267,6 +647,112 @@
   "2020.02":1
  },
  "new_version_errors":{},
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
+   "dev_url":"https://github.com/westpa",
+   "doc_url":"https://westpa.github.io/westpa/sphinx_index.html#tutorials",
+   "home":"https://westpa.github.io/westpa",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Interoperable, highly-scalable software for weighted ensemble simulation."
+  },
+  "build":{
+   "number":"1"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong"
+   ]
+  },
+  "package":{
+   "name":"westpa",
+   "version":"2020.03"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel"
+   ]
+  },
+  "source":{
+   "fn":"westpa-2020.03.tar.gz",
+   "sha256":"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c",
+   "url":"https://github.com/westpa/westpa/archive/v2020.03.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blessings",
+    "h5py",
+    "ipykernel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "pyzmq",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.04.21.12.59.15",
  "raw_meta_yaml":"{% set name = \"westpa\" %}\n{% set version = \"2020.03\" %}\n{% set sha256 = \"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/westpa/westpa/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - setuptools\n    - python\n    - cython\n    - numpy 1.16.*\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - h5py 2.10.*\n    - pyyaml 5.3.*\n    - pyzmq 19.0.*\n    - matplotlib-base\n    - blessings 1.7.*\n    - ipykernel\n\ntest:\n  commands:\n    - \"source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh\"\n    - \"source ${WEST_ROOT}/bin/w_env\"\n    - \"$WEST_PYTHON -c 'import west'\"\n    - \"$WEST_PYTHON -c 'import west.propagators'\"\n    - \"$WEST_PYTHON -c 'import westpa'\"\n    - \"$WEST_PYTHON -c 'import westpa.binning'\"\n    - \"$WEST_PYTHON -c 'import westpa.kinetics'\"\n    - \"$WEST_PYTHON -c 'import westpa.reweight'\"\n    - \"$WEST_PYTHON -c 'import work_managers'\"\n    - \"$WEST_PYTHON -c 'import westtools'\"\n    - \"$WEST_PYTHON -c 'import fasthist'\"\n    - \"$WEST_PYTHON -c 'import mclib'\"\n    # Currently blocked by https://github.com/westpa/westpa/issues/70\n    #- \"$WEST_PYTHON -c 'import trajtree'\"\n\nabout:\n  home: https://westpa.github.io/westpa\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Interoperable, highly-scalable software for weighted ensemble simulation.'\n\n  description: |\n    WESTPA is a package for constructing and running stochastic simulations\n    using the \"weighted ensemble\" approach of Huber and Kim (1996).\n  doc_url: https://westpa.github.io/westpa/sphinx_index.html#tutorials\n  dev_url: https://github.com/westpa\n\nextra:\n  recipe-maintainers:\n    - mczwier\n    - ajoshpratt\n    - synapticarbors\n    - burntyellow\n    - ltchong\n",
  "req":{
@@ -359,5 +845,112 @@
   }
  },
  "url":"https://github.com/westpa/westpa/archive/v2017.10.tar.gz",
- "version":"2020.03"
+ "version":"2020.03",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"WESTPA is a package for constructing and running stochastic simulations\nusing the \"weighted ensemble\" approach of Huber and Kim (1996).\n",
+   "dev_url":"https://github.com/westpa",
+   "doc_url":"https://westpa.github.io/westpa/sphinx_index.html#tutorials",
+   "home":"https://westpa.github.io/westpa",
+   "license":"MIT",
+   "license_family":"MIT",
+   "license_file":"LICENSE",
+   "summary":"Interoperable, highly-scalable software for weighted ensemble simulation."
+  },
+  "build":{
+   "number":"1",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "mczwier",
+    "ajoshpratt",
+    "synapticarbors",
+    "burntyellow",
+    "ltchong"
+   ]
+  },
+  "package":{
+   "name":"westpa",
+   "version":"2020.03"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "setuptools",
+    "python",
+    "cython",
+    "numpy 1.16.*"
+   ],
+   "run":[
+    "python",
+    "numpy",
+    "scipy",
+    "h5py 2.10.*",
+    "pyyaml 5.3.*",
+    "pyzmq 19.0.*",
+    "matplotlib-base",
+    "blessings 1.7.*",
+    "ipykernel"
+   ]
+  },
+  "source":{
+   "fn":"westpa-2020.03.tar.gz",
+   "sha256":"8fca932aff56b67999900804cca6ebfce03c0d4d0b3a437e9b5b9539b9ecb30c",
+   "url":"https://github.com/westpa/westpa/archive/v2020.03.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "source ${PREFIX}/${PKG_NAME}-${PKG_VERSION}/westpa.sh",
+    "source ${WEST_ROOT}/bin/w_env",
+    "$WEST_PYTHON -c 'import west'",
+    "$WEST_PYTHON -c 'import west.propagators'",
+    "$WEST_PYTHON -c 'import westpa'",
+    "$WEST_PYTHON -c 'import westpa.binning'",
+    "$WEST_PYTHON -c 'import westpa.kinetics'",
+    "$WEST_PYTHON -c 'import westpa.reweight'",
+    "$WEST_PYTHON -c 'import work_managers'",
+    "$WEST_PYTHON -c 'import westtools'",
+    "$WEST_PYTHON -c 'import fasthist'",
+    "$WEST_PYTHON -c 'import mclib'"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cython",
+    "numpy",
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blessings",
+    "h5py",
+    "ipykernel",
+    "matplotlib-base",
+    "numpy",
+    "python",
+    "pyyaml",
+    "pyzmq",
+    "scipy"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

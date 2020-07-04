@@ -27,6 +27,75 @@
  },
  "feedstock_name":"jack",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://jackaudio.org/",
+   "license":"LGLP-2.0",
+   "license_file":"COPYING.LGPL",
+   "summary":"Audio connection kit."
+  },
+  "build":{
+   "number":"1001"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"jack",
+   "version":"0.125.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libdb"
+   ],
+   "run":[
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444",
+   "url":"http://jackaudio.org/downloads/jack-audio-connection-kit-0.125.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX jack"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://jackaudio.org/",
@@ -87,6 +156,77 @@
  },
  "name":"jack",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://jackaudio.org/",
+   "license":"LGLP-2.0",
+   "license_file":"COPYING.LGPL",
+   "summary":"Audio connection kit."
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"jack",
+   "version":"0.125.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libdb"
+   ],
+   "run":[
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444",
+   "url":"http://jackaudio.org/downloads/jack-audio-connection-kit-0.125.0.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "conda inspect linkages -p $PREFIX jack",
+    "conda inspect objects -p $PREFIX jack"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2018.09.20",
  "raw_meta_yaml":"{% set version = \"0.125.0\" %}\n\npackage:\n  name: jack\n  version: {{ version }}\n\nsource:\n  url: http://jackaudio.org/downloads/jack-audio-connection-kit-{{ version }}.tar.gz\n  sha256: 3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444\n\nbuild:\n  number: 1001\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - libdb\n  run:\n    - libdb\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX jack  # [not win]\n    - conda inspect objects -p $PREFIX jack  # [osx]\n\nabout:\n  home: http://jackaudio.org/\n  license: LGLP-2.0\n  license_file: COPYING.LGPL\n  summary: 'Audio connection kit.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - scopatz\n",
  "req":{
@@ -153,5 +293,73 @@
   }
  },
  "url":"http://jackaudio.org/downloads/jack-audio-connection-kit-0.125.0.tar.gz",
- "version":"0.125.0"
+ "version":"0.125.0",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://jackaudio.org/",
+   "license":"LGLP-2.0",
+   "license_file":"COPYING.LGPL",
+   "summary":"Audio connection kit."
+  },
+  "build":{
+   "number":"1001",
+   "skip":true
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"jack",
+   "version":"0.125.0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libdb"
+   ],
+   "run":[
+    "libdb"
+   ]
+  },
+  "source":{
+   "sha256":"3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444",
+   "url":"http://jackaudio.org/downloads/jack-audio-connection-kit-0.125.0.tar.gz"
+  },
+  "test":{
+   "commands":null
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libdb"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

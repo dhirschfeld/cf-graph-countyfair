@@ -83,6 +83,90 @@
  },
  "feedstock_name":"r-sna",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "home":"http://www.statnet.org",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A range of tools for social network analysis, including node and graph-level indices, structural distance and covariance methods, structural equivalence detection, network regression, random graph generation, and 2D/3D network visualization."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "stevierene82"
+   ]
+  },
+  "package":{
+   "name":"r-sna",
+   "version":"2.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ],
+   "run":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "source":{
+   "fn":"sna_2.5.tar.gz",
+   "sha256":"13b508cacb0bf1e79b55d5c8f7e9ada3b173468d4d6d5f1dc606990ac03071c8",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sna_2.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sna/sna_2.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sna')\""
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://www.statnet.org",
@@ -175,6 +259,90 @@
  },
  "name":"r-sna",
  "new_version":"2.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "home":"http://www.statnet.org",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A range of tools for social network analysis, including node and graph-level indices, structural distance and covariance methods, structural equivalence detection, network regression, random graph generation, and 2D/3D network visualization."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "stevierene82"
+   ]
+  },
+  "package":{
+   "name":"r-sna",
+   "version":"2.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ],
+   "run":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "source":{
+   "fn":"sna_2.5.tar.gz",
+   "sha256":"13b508cacb0bf1e79b55d5c8f7e9ada3b173468d4d6d5f1dc606990ac03071c8",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sna_2.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sna/sna_2.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('sna')\""
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.05.04.00.11.09",
  "raw_meta_yaml":"{% set version = \"2.5\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sna\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: sna_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/sna_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/sna/sna_{{ version }}.tar.gz\n  sha256: 13b508cacb0bf1e79b55d5c8f7e9ada3b173468d4d6d5f1dc606990ac03071c8\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}make\n    - {{ posix }}sed  # [win]\n    - {{ posix }}coreutils  # [win]\n\n  host:\n    - r-base\n    - r-network\n    - r-statnet.common\n\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - r-network\n    - r-statnet.common\n\ntest:\n  commands:\n    - $R -e \"library('sna')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sna')\\\"\"  # [win]\n\nabout:\n  home: http://www.statnet.org\n  license: GPL (>= 2)\n  summary: A range of tools for social network analysis, including node and graph-level indices,\n    structural distance and covariance methods, structural equivalence detection, network\n    regression, random graph generation, and 2D/3D network visualization.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - stevierene82\n",
  "req":{
@@ -270,5 +438,98 @@
   "https://cran.r-project.org/src/contrib/sna_2.4.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/sna/sna_2.4.tar.gz"
  ],
- "version":"2.5"
+ "version":"2.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "home":"http://www.statnet.org",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"A range of tools for social network analysis, including node and graph-level indices, structural distance and covariance methods, structural equivalence detection, network regression, random graph generation, and 2D/3D network visualization."
+  },
+  "build":{
+   "merge_build_host":true,
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "stevierene82"
+   ]
+  },
+  "package":{
+   "name":"r-sna",
+   "version":"2.5"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "filesystem",
+    "make",
+    "sed",
+    "coreutils"
+   ],
+   "host":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ],
+   "run":[
+    "r-base",
+    "gcc-libs",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "source":{
+   "fn":"sna_2.5.tar.gz",
+   "sha256":"13b508cacb0bf1e79b55d5c8f7e9ada3b173468d4d6d5f1dc606990ac03071c8",
+   "url":[
+    "https://cran.r-project.org/src/contrib/sna_2.5.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/sna/sna_2.5.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "\"%R%\" -e \"library('sna')\""
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "coreutils",
+    "filesystem",
+    "m2w64_c_compiler_stub",
+    "make",
+    "sed"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "gcc-libs",
+    "r-base",
+    "r-network",
+    "r-statnet.common"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

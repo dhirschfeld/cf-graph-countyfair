@@ -44,6 +44,200 @@
  "conda-forge.yml":{},
  "feedstock_name":"framel",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis recipe provides packages for the `libframel` shared library,\ncommand line utilities, and python bindings.\n",
+   "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"LIGO/Virgo Frame Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0"
+  },
+  "extra":{
+   "feedstock-name":"framel",
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the `libframel` shared library and development\nfiles.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "run_exports":[
+      "libframel"
+     ]
+    },
+    "files":[
+     "include/",
+     "lib/libframel.*",
+     "lib/pkgconfig/framel.pc"
+    ],
+    "name":"libframel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test \"$(pkg-config --print-errors --modversion framel)\" == \"${PKG_VERSION}\""
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the FrameL command line utilities.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "files":[
+     "bin/",
+     "share/doc/"
+    ],
+    "name":"framel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "libframel"
+     ],
+     "run":[
+      "libframel"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "FrChannels data/test.gwf",
+      "FrCheck -i data/test.gwf",
+      "FrCopy -i data/test.gwf -o copy.gwf",
+      "FrDiff -i1 data/test.gwf -i2 copy.gwf -t D1 -d 1",
+      "FrDump -i data/test.gwf -t D1",
+      "FrCopy -i data/test.gwf -o copy2.gwf -f 0 -l 1 -r 10",
+      "FrTrend -s 1 -p trend- -d 5 -c D1 -f 925484670 -l 925484680 copy2.gwf"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the python bindings.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "ignore_run_exports":null
+    },
+    "name":"python-framel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cmake >=3.16.0",
+      "make"
+     ],
+     "host":[
+      "libframel",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "libframel",
+      "numpy",
+      "python"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "python -c \"from pathlib import Path; from numpy.testing import assert_array_equal; import framel; indata = framel.frgetvect1d(str(Path('data') / 'test.gwf'), 'D1'); framel.frputvect('test2.gwf', [{'name': 'A1:TEST', 'data': indata[0], 'start': indata[1], 'dx': indata[3], 'x_unit': indata[4], 'y_unit': indata[5]}]); indata2 = framel.frgetvect1d('test2.gwf', 'A1:TEST'); assert_array_equal(indata[0], indata2[0], 'read-write data mismatch'); assert indata[1:] == indata2[1:], 'read-write metadata mismatch'; \"\n"
+     ],
+     "imports":[
+      "framel"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"framel-split",
+   "version":"8.40.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"ea4afcdf839f8eb49edc2d3190b5aebb08871146e426b644887f7efbae30a6b9",
+   "url":"http://software.igwn.org/sources/source/framel-8.40.1.tar.xz"
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis recipe provides packages for the `libframel` shared library,\ncommand line utilities, and python bindings.\n",
@@ -462,6 +656,202 @@
  },
  "name":"framel-split",
  "new_version":false,
+ "osx_64_meta_yaml":{
+  "about":{
+   "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis recipe provides packages for the `libframel` shared library,\ncommand line utilities, and python bindings.\n",
+   "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"LIGO/Virgo Frame Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0"
+  },
+  "extra":{
+   "feedstock-name":"framel",
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the `libframel` shared library and development\nfiles.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "run_exports":[
+      "libframel"
+     ]
+    },
+    "files":[
+     "include/",
+     "lib/libframel.*",
+     "lib/pkgconfig/framel.pc"
+    ],
+    "name":"libframel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test \"$(pkg-config --print-errors --modversion framel)\" == \"${PKG_VERSION}\""
+     ],
+     "requires":[
+      "pkg-config"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the FrameL command line utilities.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "files":[
+     "bin/",
+     "share/doc/"
+    ],
+    "name":"framel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "libframel"
+     ],
+     "run":[
+      "libframel"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "FrChannels data/test.gwf",
+      "FrCheck -i data/test.gwf",
+      "FrCopy -i data/test.gwf -o copy.gwf",
+      "FrDiff -i1 data/test.gwf -i2 copy.gwf -t D1 -d 1",
+      "FrDump -i data/test.gwf -t D1",
+      "FrCopy -i data/test.gwf -o copy2.gwf -f 0 -l 1 -r 10",
+      "FrTrend -s 1 -p trend- -d 5 -c D1 -f 925484670 -l 925484680 copy2.gwf"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the python bindings.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "ignore_run_exports":[
+      "python"
+     ]
+    },
+    "name":"python-framel",
+    "requirements":{
+     "build":[
+      "c_compiler_stub",
+      "cmake >=3.16.0",
+      "make"
+     ],
+     "host":[
+      "libframel",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "libframel",
+      "numpy",
+      "python"
+     ]
+    },
+    "script":"install-python.sh",
+    "test":{
+     "commands":[
+      "python -c \"from pathlib import Path; from numpy.testing import assert_array_equal; import framel; indata = framel.frgetvect1d(str(Path('data') / 'test.gwf'), 'D1'); framel.frputvect('test2.gwf', [{'name': 'A1:TEST', 'data': indata[0], 'start': indata[1], 'dx': indata[3], 'x_unit': indata[4], 'y_unit': indata[5]}]); indata2 = framel.frgetvect1d('test2.gwf', 'A1:TEST'); assert_array_equal(indata[0], indata2[0], 'read-write data mismatch'); assert indata[1:] == indata2[1:], 'read-write metadata mismatch'; \"\n"
+     ],
+     "imports":[
+      "framel"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"framel-split",
+   "version":"8.40.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "source":{
+   "patches":null,
+   "sha256":"ea4afcdf839f8eb49edc2d3190b5aebb08871146e426b644887f7efbae30a6b9",
+   "url":"http://software.igwn.org/sources/source/framel-8.40.1.tar.xz"
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cmake",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "pkg-config"
+   ]
+  }
+ },
  "outputs_names":[
   "framel",
   "libframel",
@@ -557,5 +947,198 @@
   }
  },
  "url":"http://software.igwn.org/sources/source/framel-8.39.2.tar.xz",
- "version":"8.40.1"
+ "version":"8.40.1",
+ "win_64_meta_yaml":{
+  "about":{
+   "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis recipe provides packages for the `libframel` shared library,\ncommand line utilities, and python bindings.\n",
+   "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+   "license":"LGPL-2.1-or-later",
+   "license_family":"LGPL",
+   "license_file":"LICENSE",
+   "summary":"LIGO/Virgo Frame Library"
+  },
+  "build":{
+   "error_overdepending":true,
+   "error_overlinking":true,
+   "number":"0"
+  },
+  "extra":{
+   "feedstock-name":"framel",
+   "recipe-maintainers":[
+    "duncanmmacleod"
+   ]
+  },
+  "outputs":[
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the `libframel` shared library and development\nfiles.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "run_exports":[
+      "libframel"
+     ]
+    },
+    "files":[
+     "Library/include/",
+     "Library/bin/libframel.dll",
+     "Library/lib/libframel.*",
+     "Library/lib/pkgconfig/framel.pc"
+    ],
+    "name":"libframel",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":null,
+     "requires":null
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the FrameL command line utilities.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "files":[
+     "Library/bin/Fr*",
+     "Library/share/doc/"
+    ],
+    "name":"framel",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub"
+     ],
+     "host":[
+      "libframel"
+     ],
+     "run":[
+      "libframel"
+     ],
+     "run_constained":[
+      "libframe >=9999"
+     ]
+    },
+    "test":{
+     "commands":[
+      "FrChannels data/test.gwf",
+      "FrCheck -i data/test.gwf",
+      "FrCopy -i data/test.gwf -o copy.gwf",
+      "FrDiff -i1 data/test.gwf -i2 copy.gwf -t D1 -d 1",
+      "FrDump -i data/test.gwf -t D1",
+      "FrCopy -i data/test.gwf -o copy2.gwf -f 0 -l 1 -r 10",
+      "FrTrend -s 1 -p trend- -d 5 -c D1 -f 925484670 -l 925484680 copy2.gwf"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   },
+   {
+    "about":{
+     "description":"A Common Data Frame Format for Interferometric Gravitational Wave\nDetector has been developed by VIRGO and LIGO.\nThe Frame Library is a software dedicated to the frame manipulation\nincluding file input/output.\nThis package provides the python bindings.\n",
+     "home":"http://lappweb.in2p3.fr/virgo/FrameL/",
+     "license":"LGPL-2.1-or-later",
+     "license_family":"LGPL",
+     "license_file":"LICENSE",
+     "summary":"LIGO/Virgo Frame Library"
+    },
+    "build":{
+     "ignore_run_exports":null
+    },
+    "name":"python-framel",
+    "requirements":{
+     "build":[
+      "m2w64_c_compiler_stub",
+      "cmake >=3.16.0",
+      "ninja"
+     ],
+     "host":[
+      "libframel",
+      "libpython",
+      "numpy",
+      "python"
+     ],
+     "run":[
+      "libframel",
+      "numpy",
+      "python"
+     ]
+    },
+    "script":"install-python.bat",
+    "test":{
+     "commands":[
+      "python -c \"from pathlib import Path; from numpy.testing import assert_array_equal; import framel; indata = framel.frgetvect1d(str(Path('data') / 'test.gwf'), 'D1'); framel.frputvect('test2.gwf', [{'name': 'A1:TEST', 'data': indata[0], 'start': indata[1], 'dx': indata[3], 'x_unit': indata[4], 'y_unit': indata[5]}]); indata2 = framel.frgetvect1d('test2.gwf', 'A1:TEST'); assert_array_equal(indata[0], indata2[0], 'read-write data mismatch'); assert indata[1:] == indata2[1:], 'read-write metadata mismatch'; \"\n"
+     ],
+     "imports":[
+      "framel"
+     ],
+     "source_files":[
+      "data/test.gwf"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"framel-split",
+   "version":"8.40.1"
+  },
+  "requirements":{
+   "build":[
+    "m2w64_c_compiler_stub",
+    "cmake",
+    "ninja"
+   ]
+  },
+  "source":{
+   "patches":[
+    "mkdir.patch"
+   ],
+   "sha256":"ea4afcdf839f8eb49edc2d3190b5aebb08871146e426b644887f7efbae30a6b9",
+   "url":"http://software.igwn.org/sources/source/framel-8.40.1.tar.xz"
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "cmake",
+    "m2w64_c_compiler_stub",
+    "ninja"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "libpython",
+    "numpy",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "libframel",
+    "numpy",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }

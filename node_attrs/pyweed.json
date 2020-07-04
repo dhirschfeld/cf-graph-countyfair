@@ -202,6 +202,97 @@
  },
  "feedstock_name":"pyweed",
  "hash_type":"sha256",
+ "linux_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/iris-edu/pyweed",
+   "home":"https://iris-edu.github.io/pyweed/",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"PyWEED: A cross-platform app for retrieving event-based seismic data."
+  },
+  "build":{
+   "entry_points":[
+    "pyweed = pyweed.pyweed_launcher:launch"
+   ],
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "adam-iris"
+   ]
+  },
+  "package":{
+   "name":"pyweed",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy 1.1*",
+    "pandas",
+    "pillow",
+    "pyqt 5.6*",
+    "qtconsole",
+    "pyzmq",
+    "pyproj",
+    "proj4 5*"
+   ]
+  },
+  "source":{
+   "sha256":"c3a812ad70723dac62d34e5a6abffb7966c60d188cd1adb57b62a170f63e412e",
+   "url":"https://pypi.io/packages/source/p/pyweed/pyweed-1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pyweed.tests"
+   ],
+   "imports":[
+    "pyweed"
+   ]
+  }
+ },
+ "linux_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy",
+    "pandas",
+    "pillow",
+    "proj4",
+    "pyproj",
+    "pyqt",
+    "python",
+    "pyzmq",
+    "qtconsole"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/iris-edu/pyweed",
@@ -297,6 +388,97 @@
  },
  "name":"pyweed",
  "new_version":"1.0.5",
+ "osx_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/iris-edu/pyweed",
+   "home":"https://iris-edu.github.io/pyweed/",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"PyWEED: A cross-platform app for retrieving event-based seismic data."
+  },
+  "build":{
+   "entry_points":[
+    "pyweed = pyweed.pyweed_launcher:launch"
+   ],
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "adam-iris"
+   ]
+  },
+  "package":{
+   "name":"pyweed",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy 1.1*",
+    "pandas",
+    "pillow",
+    "pyqt 5.6*",
+    "qtconsole",
+    "pyzmq",
+    "pyproj",
+    "proj4 5*"
+   ]
+  },
+  "source":{
+   "sha256":"c3a812ad70723dac62d34e5a6abffb7966c60d188cd1adb57b62a170f63e412e",
+   "url":"https://pypi.io/packages/source/p/pyweed/pyweed-1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pyweed.tests"
+   ],
+   "imports":[
+    "pyweed"
+   ]
+  }
+ },
+ "osx_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy",
+    "pandas",
+    "pillow",
+    "proj4",
+    "pyproj",
+    "pyqt",
+    "python",
+    "pyzmq",
+    "qtconsole"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "pinning_version":"2020.02.12",
  "raw_meta_yaml":"{% set name = \"pyweed\" %}\n{% set version = \"1.0.5\" %}\n{% set sha256 = \"c3a812ad70723dac62d34e5a6abffb7966c60d188cd1adb57b62a170f63e412e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  # pyqt and obspy greatly restrict the available platforms here\n  skip: True  # [py2k]\n  entry_points:\n    - pyweed = pyweed.pyweed_launcher:launch\n\nrequirements:\n  host:\n    - python\n    - setuptools\n  run:\n    - python\n    - basemap\n    - future\n    - matplotlib\n    - obspy 1.1*\n    - pandas\n    - pillow\n    - pyqt 5.6*\n    - qtconsole\n    - pyzmq\n    - pyproj\n    - proj4 5*\n\n\ntest:\n  imports:\n    - pyweed\n  commands:\n    - python -m pyweed.tests\n\nabout:\n  home: https://iris-edu.github.io/pyweed/\n  dev_url: https://github.com/iris-edu/pyweed\n  license: LGPL-3.0\n  license_file: LICENSE\n  summary: \"PyWEED: A cross-platform app for retrieving event-based seismic data.\"\n\nextra:\n  recipe-maintainers:\n    - adam-iris\n",
  "req":{
@@ -388,5 +570,96 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyweed/pyweed-1.0.4.tar.gz",
- "version":"1.0.5"
+ "version":"1.0.5",
+ "win_64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/iris-edu/pyweed",
+   "home":"https://iris-edu.github.io/pyweed/",
+   "license":"LGPL-3.0",
+   "license_file":"LICENSE",
+   "summary":"PyWEED: A cross-platform app for retrieving event-based seismic data."
+  },
+  "build":{
+   "entry_points":[
+    "pyweed = pyweed.pyweed_launcher:launch"
+   ],
+   "number":"1",
+   "script":"python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "adam-iris"
+   ]
+  },
+  "package":{
+   "name":"pyweed",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "setuptools"
+   ],
+   "run":[
+    "python",
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy 1.1*",
+    "pandas",
+    "pillow",
+    "pyqt 5.6*",
+    "qtconsole",
+    "pyzmq",
+    "pyproj",
+    "proj4 5*"
+   ]
+  },
+  "source":{
+   "sha256":"c3a812ad70723dac62d34e5a6abffb7966c60d188cd1adb57b62a170f63e412e",
+   "url":"https://pypi.io/packages/source/p/pyweed/pyweed-1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "python -m pyweed.tests"
+   ],
+   "imports":[
+    "pyweed"
+   ]
+  }
+ },
+ "win_64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "python",
+    "setuptools"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "basemap",
+    "future",
+    "matplotlib",
+    "obspy",
+    "pandas",
+    "pillow",
+    "proj4",
+    "pyproj",
+    "pyqt",
+    "python",
+    "pyzmq",
+    "qtconsole"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ }
 }
