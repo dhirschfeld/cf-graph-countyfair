@@ -71,10 +71,9 @@
    "summary":"Simulate electronic circuit using Python and the Ngspice / Xyce simulators"
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "script":[
-    " ${RECIPE_DIR}/write_init.py 1.4.2",
-    "-m pip install . -vv"
+    "setup.py install --single-version-externally-managed --record=record.txt"
    ]
   },
   "extra":{
@@ -85,7 +84,7 @@
   },
   "package":{
    "name":"pyspice",
-   "version":"1.4.2"
+   "version":"1.4.3"
   },
   "requirements":{
    "host":[
@@ -100,22 +99,19 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib"
+    "ngspice-lib >=32"
    ]
   },
   "source":{
-   "patches":[
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch"
-   ],
-   "sha256":"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82",
-   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.2.tar.gz"
+   "sha256":"3747030256fc7326fdaf5009a5d1cb23e464beca821d745b4613587fbbea9c45",
+   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.3.tar.gz"
   },
   "test":{
    "commands":[
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation"
+    "pyspice-post-installation --check-install",
+    "invoke test.run-examples"
    ],
    "imports":[
     "PySpice",
@@ -131,10 +127,16 @@
     "PySpice.Unit"
    ],
    "requires":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ],
    "source_files":[
-    "unit-test"
+    "examples",
+    "unit-test",
+    "invoke.yaml",
+    "tasks"
    ]
   }
  },
@@ -166,7 +168,10 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ]
   }
  },
@@ -182,14 +187,11 @@
    "summary":"Simulate electronic circuit using Python and the Ngspice / Xyce simulators"
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "script":[
-    " %RECIPE_DIR%\\write_init.py 1.4.2",
-    "-m pip install . -vv",
-    " ${RECIPE_DIR}/write_init.py 1.4.2",
-    "-m pip install . -vv",
-    " ${RECIPE_DIR}/write_init.py 1.4.2",
-    "-m pip install . -vv"
+    "setup.py install --single-version-externally-managed --record=record.txt",
+    "setup.py install --single-version-externally-managed --record=record.txt",
+    "setup.py install --single-version-externally-managed --record=record.txt"
    ]
   },
   "extra":{
@@ -204,7 +206,7 @@
   },
   "package":{
    "name":"pyspice",
-   "version":"1.4.2"
+   "version":"1.4.3"
   },
   "requirements":{
    "host":[
@@ -223,7 +225,7 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib",
+    "ngspice-lib >=32",
     "python",
     "pyyaml >=5.3",
     "cffi >=1.14",
@@ -231,7 +233,7 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib",
+    "ngspice-lib >=32",
     "python",
     "pyyaml >=5.3",
     "cffi >=1.14",
@@ -239,32 +241,31 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib"
+    "ngspice-lib >=32"
    ]
   },
   "source":{
-   "patches":[
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch",
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch",
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch"
-   ],
-   "sha256":"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82",
-   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.2.tar.gz"
+   "sha256":"3747030256fc7326fdaf5009a5d1cb23e464beca821d745b4613587fbbea9c45",
+   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.3.tar.gz"
   },
   "test":{
    "commands":[
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation",
+    "pyspice-post-installation --check-install",
+    "setx PySpiceLibraryPath %SRC_DIR%\\examples\\libraries",
+    "setx PYTHONLEGACYWINDOWSSTDIO utf_8",
+    "setx PYTHONIOENCODING utf_8",
+    "chcp 65001",
+    "invoke test.run-examples",
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation",
+    "pyspice-post-installation --check-install",
+    "invoke test.run-examples",
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation"
+    "pyspice-post-installation --check-install",
+    "invoke test.run-examples"
    ],
    "imports":[
     "PySpice",
@@ -302,14 +303,32 @@
     "PySpice.Unit"
    ],
    "requires":[
+    "invoke",
+    "pint",
     "pytest",
+    "requests",
+    "invoke",
+    "pint",
     "pytest",
-    "pytest"
+    "requests",
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ],
    "source_files":[
+    "examples",
     "unit-test",
+    "invoke.yaml",
+    "tasks",
+    "examples",
     "unit-test",
-    "unit-test"
+    "invoke.yaml",
+    "tasks",
+    "examples",
+    "unit-test",
+    "invoke.yaml",
+    "tasks"
    ]
   }
  },
@@ -333,10 +352,9 @@
    "summary":"Simulate electronic circuit using Python and the Ngspice / Xyce simulators"
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "script":[
-    " ${RECIPE_DIR}/write_init.py 1.4.2",
-    "-m pip install . -vv"
+    "setup.py install --single-version-externally-managed --record=record.txt"
    ]
   },
   "extra":{
@@ -347,7 +365,7 @@
   },
   "package":{
    "name":"pyspice",
-   "version":"1.4.2"
+   "version":"1.4.3"
   },
   "requirements":{
    "host":[
@@ -362,22 +380,19 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib"
+    "ngspice-lib >=32"
    ]
   },
   "source":{
-   "patches":[
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch"
-   ],
-   "sha256":"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82",
-   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.2.tar.gz"
+   "sha256":"3747030256fc7326fdaf5009a5d1cb23e464beca821d745b4613587fbbea9c45",
+   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.3.tar.gz"
   },
   "test":{
    "commands":[
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation"
+    "pyspice-post-installation --check-install",
+    "invoke test.run-examples"
    ],
    "imports":[
     "PySpice",
@@ -393,10 +408,16 @@
     "PySpice.Unit"
    ],
    "requires":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ],
    "source_files":[
-    "unit-test"
+    "examples",
+    "unit-test",
+    "invoke.yaml",
+    "tasks"
    ]
   }
  },
@@ -428,12 +449,15 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ]
   }
  },
  "pinning_version":"2020.05.14.17.14.20",
- "raw_meta_yaml":"{% set name = \"PySpice\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/FabriceSalvaire/PySpice/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n  patches:\n    # This fixes an issue in the test suite.\n    # Test were failing on Windows due to line ending mismatches.\n    - patches/fix-netlist-linesep.patch\n\n    # This will probably be fixed in the next release\n    - patches/fix-check-install-NameError.patch\n\nbuild:\n  number: 2\n  script:\n    # Create __init__.py this way instead of running tasks.release.update_git_sha(),\n    # which doesn't work because we're not using a git repo.\n    - \"{{ PYTHON }} ${RECIPE_DIR}/write_init.py {{ version }}\"  # [unix]\n    - \"{{ PYTHON }} %RECIPE_DIR%\\\\write_init.py {{ version }}\"  # [win]\n\n    - {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml >=5.3\n    - cffi >=1.14\n    - numpy >=1.18\n    - scipy >=1.4\n    - matplotlib-base >=3.1\n    - ply >=3.11\n    - ngspice-lib\n\ntest:\n  imports:\n    - PySpice\n    - PySpice.Config\n    - PySpice.Doc\n    - PySpice.Logging\n    - PySpice.Math\n    - PySpice.Physics\n    - PySpice.Plot\n    - PySpice.Probe\n    - PySpice.Spice\n    - PySpice.Tools\n    - PySpice.Unit\n  requires:\n    - pytest\n  source_files:\n    - unit-test\n  commands:\n    - python -c \"import PySpice; print(PySpice.__version__)\"\n    - pytest unit-test\n\n    # Note: In the next version of PySpice, this command will be renamed:\n    # pyspice_post_installation --check-install\n    - ngspice-check-installation\n\nabout:\n  home: https://pyspice.fabrice-salvaire.fr\n  doc_url: https://pyspice.fabrice-salvaire.fr\n  dev_url: https://github.com/FabriceSalvaire/PySpice\n\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n\n  summary: Simulate electronic circuit using Python and the Ngspice / Xyce simulators\n  description: |\n    PySpice is a free and open source Python module which interfaces Python to\n    the Ngspice and Xyce circuit simulators. PySpice implements a Ngspice\n    binding and provides an oriented object API on top of SPICE, the simulation\n    output is converted to Numpy arrays for convenience.\n\nextra:\n  recipe-maintainers:\n    - FabriceSalvaire\n    - stuarteberg\n",
+ "raw_meta_yaml":"{% set name = \"PySpice\" %}\n{% set version = \"1.4.3\" %}\n{% set sha256 = \"3747030256fc7326fdaf5009a5d1cb23e464beca821d745b4613587fbbea9c45\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/FabriceSalvaire/PySpice/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  # git_url: https://github.com/FabriceSalvaire/PySpice\n  # git_rev:\n\nbuild:\n  number: 0\n  script:\n    # Note: On Windows, pip handles console_scripts in a strange way, so we can't use it.\n    #- {{ PYTHON }} -m pip install . -vv\n    - {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyyaml >=5.3\n    - cffi >=1.14\n    - numpy >=1.18\n    - scipy >=1.4\n    - matplotlib-base >=3.1\n    - ply >=3.11\n    - ngspice-lib >=32  # ???\n\ntest:\n  imports:\n    - PySpice\n    - PySpice.Config\n    - PySpice.Doc\n    - PySpice.Logging\n    - PySpice.Math\n    - PySpice.Physics\n    - PySpice.Plot\n    - PySpice.Probe\n    - PySpice.Spice\n    - PySpice.Tools\n    - PySpice.Unit\n  requires:\n    - invoke\n    - pint\n    - pytest\n    - requests  # required ???\n    # - pyterate >=2.1.5\n  source_files:\n    - examples\n    - unit-test\n    - invoke.yaml\n    - tasks\n  commands:\n    - python -c \"import PySpice; print(PySpice.__version__)\"\n    - pytest unit-test\n    - pyspice-post-installation --check-install\n    - setx PySpiceLibraryPath %SRC_DIR%\\examples\\libraries  # [win]\n    - setx PYTHONLEGACYWINDOWSSTDIO utf_8  # [win]\n    - setx PYTHONIOENCODING utf_8  # [win]\n    - chcp 65001  # [win]\n    - invoke test.run-examples\n\n    #! - conda install --yes -c fabricesalvaire pyterate\n    #! - pyterate --config=%SRC_DIR%\\examples\\Settings.py --only-run  # [win]\n    #! - PySpiceLogLevel=DEBUG PySpiceLibraryPath=$PWD/examples/libraries pyterate --config=./examples/Settings.py --only-run  # [unix]\n\nabout:\n  home: https://pyspice.fabrice-salvaire.fr\n  doc_url: https://pyspice.fabrice-salvaire.fr\n  dev_url: https://github.com/FabriceSalvaire/PySpice\n\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n\n  summary: Simulate electronic circuit using Python and the Ngspice / Xyce simulators\n  description: |\n    PySpice is a free and open source Python module which interfaces Python to\n    the Ngspice and Xyce circuit simulators. PySpice implements a Ngspice\n    binding and provides an oriented object API on top of SPICE, the simulation\n    output is converted to Numpy arrays for convenience.\n\nextra:\n  recipe-maintainers:\n    - FabriceSalvaire\n    - stuarteberg\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -476,7 +500,10 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ]
   }
  },
@@ -499,7 +526,7 @@
    "elements":[
     "cffi >=1.14",
     "matplotlib-base >=3.1",
-    "ngspice-lib",
+    "ngspice-lib >=32",
     "numpy >=1.18",
     "ply >=3.11",
     "python",
@@ -510,12 +537,15 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ]
   }
  },
  "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.3.2.tar.gz",
- "version":"1.4.2",
+ "version":"1.4.3",
  "win_64_meta_yaml":{
   "about":{
    "description":"PySpice is a free and open source Python module which interfaces Python to\nthe Ngspice and Xyce circuit simulators. PySpice implements a Ngspice\nbinding and provides an oriented object API on top of SPICE, the simulation\noutput is converted to Numpy arrays for convenience.\n",
@@ -528,10 +558,9 @@
    "summary":"Simulate electronic circuit using Python and the Ngspice / Xyce simulators"
   },
   "build":{
-   "number":"2",
+   "number":"0",
    "script":[
-    " %RECIPE_DIR%\\write_init.py 1.4.2",
-    "-m pip install . -vv"
+    "setup.py install --single-version-externally-managed --record=record.txt"
    ]
   },
   "extra":{
@@ -542,7 +571,7 @@
   },
   "package":{
    "name":"pyspice",
-   "version":"1.4.2"
+   "version":"1.4.3"
   },
   "requirements":{
    "host":[
@@ -557,22 +586,23 @@
     "scipy >=1.4",
     "matplotlib-base >=3.1",
     "ply >=3.11",
-    "ngspice-lib"
+    "ngspice-lib >=32"
    ]
   },
   "source":{
-   "patches":[
-    "patches/fix-netlist-linesep.patch",
-    "patches/fix-check-install-NameError.patch"
-   ],
-   "sha256":"e8f8dfff36d1c79791dc9d951b32195cf5134b34593ab81d324c195c6428cc82",
-   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.2.tar.gz"
+   "sha256":"3747030256fc7326fdaf5009a5d1cb23e464beca821d745b4613587fbbea9c45",
+   "url":"https://github.com/FabriceSalvaire/PySpice/archive/v1.4.3.tar.gz"
   },
   "test":{
    "commands":[
     "python -c \"import PySpice; print(PySpice.__version__)\"",
     "pytest unit-test",
-    "ngspice-check-installation"
+    "pyspice-post-installation --check-install",
+    "setx PySpiceLibraryPath %SRC_DIR%\\examples\\libraries",
+    "setx PYTHONLEGACYWINDOWSSTDIO utf_8",
+    "setx PYTHONIOENCODING utf_8",
+    "chcp 65001",
+    "invoke test.run-examples"
    ],
    "imports":[
     "PySpice",
@@ -588,10 +618,16 @@
     "PySpice.Unit"
    ],
    "requires":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ],
    "source_files":[
-    "unit-test"
+    "examples",
+    "unit-test",
+    "invoke.yaml",
+    "tasks"
    ]
   }
  },
@@ -623,7 +659,10 @@
   "test":{
    "__set__":true,
    "elements":[
-    "pytest"
+    "invoke",
+    "pint",
+    "pytest",
+    "requests"
    ]
   }
  }
