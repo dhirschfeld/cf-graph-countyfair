@@ -47,6 +47,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444457786.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"7.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -195,9 +212,10 @@
   }
  },
  "name":"py-cpuinfo",
- "new_version":"6.0.0",
+ "new_version":"7.0.0",
  "new_version_attempts":{
-  "6.0.0":1
+  "6.0.0":1,
+  "7.0.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -274,7 +292,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.10.22.19.47",
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set name = \"py-cpuinfo\" %}\n{% set version = \"6.0.0\" %}\n{% set sha256 = \"7ffb31dea845b9f359b99bd5f7eea72dc70f852e0e34547d261a630f2b8c9c61\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - cpuinfo = cpuinfo:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cpuinfo\n  commands:\n    - cpuinfo\n\nabout:\n  home: https://github.com/workhorsy/py-cpuinfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A module for getting CPU info with Python 2 & 3\n  dev_url: https://github.com/workhorsy/py-cpuinfo\n\nextra:\n  recipe-maintainers:\n    - mstimberg\n",
  "req":{
   "__set__":true,
@@ -308,7 +326,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
