@@ -101,11 +101,7 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35"
- },
+ "conda-forge.yml":{},
  "feedstock_name":"lighttpd",
  "hash_type":"sha256",
  "linux_64_meta_yaml":{
@@ -120,7 +116,7 @@
    "summary":"Light, fast web server"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -233,7 +229,7 @@
    "summary":"Light, fast web server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -361,7 +357,7 @@
    "summary":"Light, fast web server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{
@@ -464,7 +460,7 @@
   }
  },
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set major_minor = \"1.4\" %}\n{% set version = major_minor + \".53\" %}\n\npackage:\n  name: lighttpd\n  version: {{ version }}\n\nsource:\n  url: http://download.lighttpd.net/lighttpd/releases-{{ major_minor }}.x/lighttpd-{{ version }}.tar.gz\n  sha256: 423b3951f212e3a30511eb86f4662a1848c6e857074289ff23fc310eef520266\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - pkg-config\n    - libtool\n    - perl  # Needed to run the tests\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - zlib\n    - bzip2\n    - pcre\n    - krb5\n    - openssl\n    - libxml2\n    - sqlite\n    - libuuid\n    - mysql\n  run:\n    - zlib\n    - bzip2\n    - pcre\n    - krb5\n    - openssl\n    - libxml2\n    - sqlite\n    - libuuid\n\ntest:\n  files:\n    - lighttpd.conf\n  commands:\n    - lighttpd -h\n    - lighttpd -v\n    - lighttpd -t -f lighttpd.conf\n\nabout:\n  home: http://www.lighttpd.net/\n  license: BSD 3-Clause\n  license_file: COPYING\n  summary: Light, fast web server\n  description: |\n    Lighttpd is rapidly redefining the efficiency of a webserver. It is\n    designed and optimized for high performance environments. With a small\n    memory footprint compared to other web-servers, effective management of\n    the cpu-load, and an advanced feature set, lighttpd is the perfect\n    solution for every server that is suffering load problems.\n  doc_url: http://redmine.lighttpd.net/projects/lighttpd/wiki\n  doc_source_url: http://redmine.lighttpd.net/projects/lighttpd/repository/revisions/master/show/doc\n  dev_url: https://github.com/lighttpd\n\nextra:\n  recipe-maintainers:\n    - sdvillal\n",
+ "raw_meta_yaml":"{% set major_minor = \"1.4\" %}\n{% set version = major_minor + \".53\" %}\n\npackage:\n  name: lighttpd\n  version: {{ version }}\n\nsource:\n  url: http://download.lighttpd.net/lighttpd/releases-{{ major_minor }}.x/lighttpd-{{ version }}.tar.gz\n  sha256: 423b3951f212e3a30511eb86f4662a1848c6e857074289ff23fc310eef520266\n\nbuild:\n  number: 1\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - pkg-config\n    - libtool\n    - perl  # Needed to run the tests\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n  host:\n    - zlib\n    - bzip2\n    - pcre\n    - krb5\n    - openssl\n    - libxml2\n    - sqlite\n    - libuuid\n    - mysql\n  run:\n    - zlib\n    - bzip2\n    - pcre\n    - krb5\n    - openssl\n    - libxml2\n    - sqlite\n    - libuuid\n\ntest:\n  files:\n    - lighttpd.conf\n  commands:\n    - lighttpd -h\n    - lighttpd -v\n    - lighttpd -t -f lighttpd.conf\n\nabout:\n  home: http://www.lighttpd.net/\n  license: BSD 3-Clause\n  license_file: COPYING\n  summary: Light, fast web server\n  description: |\n    Lighttpd is rapidly redefining the efficiency of a webserver. It is\n    designed and optimized for high performance environments. With a small\n    memory footprint compared to other web-servers, effective management of\n    the cpu-load, and an advanced feature set, lighttpd is the perfect\n    solution for every server that is suffering load problems.\n  doc_url: http://redmine.lighttpd.net/projects/lighttpd/wiki\n  doc_source_url: http://redmine.lighttpd.net/projects/lighttpd/repository/revisions/master/show/doc\n  dev_url: https://github.com/lighttpd\n\nextra:\n  recipe-maintainers:\n    - sdvillal\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -589,7 +585,7 @@
    "summary":"Light, fast web server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "skip":true
   },
   "extra":{

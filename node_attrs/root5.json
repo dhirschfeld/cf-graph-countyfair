@@ -191,7 +191,7 @@
    "summary":"A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other languages such as Python and R."
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
@@ -329,7 +329,7 @@
    "summary":"A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other languages such as Python and R."
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
@@ -488,7 +488,7 @@
    "summary":"A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other languages such as Python and R."
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
@@ -606,7 +606,7 @@
   }
  },
  "pinning_version":"2020.03.23",
- "raw_meta_yaml":"{% set name = \"root5\" %}\n{% set version = \"5.34.38\" %}\n{% set sha256 = \"2c3bda69601d94836bdd88283a6585b4774eafc813deb6aa348df0af2922c4d2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: root_v{{version}}.source.tar.gz\n  url: https://root.cern.ch/download/root_v{{version}}.source.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n   number: 1\n   skip: true  # [win]\n   skip: true  # [py3k]\n\nrequirements:\n \n build:\n     - cmake\n#     - {{ compiler('fortran') }}\n     - {{ compiler('c') }}\n     - {{ compiler('cxx') }}\n host:\n     - python\n     - fftw\n#     - cfitsio\n     - mesalib\n     - xorg-libxft  # [linux]\n     - xorg-libxpm  # [linux]\n     - xorg-libsm  # [linux]\n     - jpeg\n     - libpng\n     - zlib\n     - libxml2\n     - blas\n     - openblas\n     - gsl\n     - krb5\n     - readline\n     - icu\n\n run:\n     - python\n     - fftw\n#     - cfitsio\n     - mesalib\n     - xorg-libxft  # [linux]\n     - xorg-libxpm  # [linux]\n     - xorg-libsm  # [linux]\n     - jpeg\n     - libpng\n     - zlib\n     - libxml2\n     - blas\n     - openblas\n     - gsl\n     - krb5\n     - readline\n     - icu\n\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/root/libCore.so  # [linux]\n    - test -f ${PREFIX}/lib/root/libCore.so  # [osx]\n    - test -f ${PREFIX}/include/root/TROOT.h\n    # NOTE: it is normal for the following to complain about missing links to\n    # *.dll files of CINT. They will be found at runtime thanks to the system.rootrc\n    # file which is read when ROOT starts\n    # Committing these because they take too long and the Travis CI and Circle CI build\n    # would time out\n    #- conda inspect linkages -p $PREFIX root5  # [not win]\n    #- conda inspect objects -p $PREFIX root5  # [osx]\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null\n    - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py >& /dev/null\n    #- cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null\n\nabout:\n  home: https://root.cern.ch/\n  license: LGPL-2.1\n  summary: 'A modular scientific software framework. It provides all the\n  functionalities needed to deal with big data processing, statistical analysis,\n  visualisation and storage. It is mainly written in C++ but integrated with\n  other languages such as Python and R.'\n  license_family: LGPL\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - giacomov\n    - jasercion\n    - Areustle\n",
+ "raw_meta_yaml":"{% set name = \"root5\" %}\n{% set version = \"5.34.38\" %}\n{% set sha256 = \"2c3bda69601d94836bdd88283a6585b4774eafc813deb6aa348df0af2922c4d2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: root_v{{version}}.source.tar.gz\n  url: https://root.cern.ch/download/root_v{{version}}.source.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n   number: 2\n   skip: true  # [win]\n   skip: true  # [py3k]\n\nrequirements:\n \n build:\n     - cmake\n#     - {{ compiler('fortran') }}\n     - {{ compiler('c') }}\n     - {{ compiler('cxx') }}\n host:\n     - python\n     - fftw\n#     - cfitsio\n     - mesalib\n     - xorg-libxft  # [linux]\n     - xorg-libxpm  # [linux]\n     - xorg-libsm  # [linux]\n     - jpeg\n     - libpng\n     - zlib\n     - libxml2\n     - blas\n     - openblas\n     - gsl\n     - krb5\n     - readline\n     - icu\n\n run:\n     - python\n     - fftw\n#     - cfitsio\n     - mesalib\n     - xorg-libxft  # [linux]\n     - xorg-libxpm  # [linux]\n     - xorg-libsm  # [linux]\n     - jpeg\n     - libpng\n     - zlib\n     - libxml2\n     - blas\n     - openblas\n     - gsl\n     - krb5\n     - readline\n     - icu\n\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/root/libCore.so  # [linux]\n    - test -f ${PREFIX}/lib/root/libCore.so  # [osx]\n    - test -f ${PREFIX}/include/root/TROOT.h\n    # NOTE: it is normal for the following to complain about missing links to\n    # *.dll files of CINT. They will be found at runtime thanks to the system.rootrc\n    # file which is read when ROOT starts\n    # Committing these because they take too long and the Travis CI and Circle CI build\n    # would time out\n    #- conda inspect linkages -p $PREFIX root5  # [not win]\n    #- conda inspect objects -p $PREFIX root5  # [osx]\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null\n    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null\n    - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py >& /dev/null\n    #- cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null\n\nabout:\n  home: https://root.cern.ch/\n  license: LGPL-2.1\n  summary: 'A modular scientific software framework. It provides all the\n  functionalities needed to deal with big data processing, statistical analysis,\n  visualisation and storage. It is mainly written in C++ but integrated with\n  other languages such as Python and R.'\n  license_family: LGPL\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - giacomov\n    - jasercion\n    - Areustle\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -756,7 +756,7 @@
    "summary":"A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other languages such as Python and R."
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "skip":true
   },
   "extra":{
