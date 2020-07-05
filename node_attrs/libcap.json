@@ -186,6 +186,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444471202.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -475,13 +492,14 @@
   }
  },
  "name":"libcap",
- "new_version":"2.37",
+ "new_version":"2.38",
  "new_version_attempts":{
   "2.33":1,
   "2.34":1,
   "2.35":1,
   "2.36":1,
-  "2.37":1
+  "2.37":1,
+  "2.38":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -552,7 +570,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.03.10.54.45",
+ "pinning_version":"2020.07.05.20.11.47",
  "raw_meta_yaml":"{% set name = \"libcap\" %}\n{% set version = \"2.37\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-{{ version }}.tar.xz\n  sha256: 17ea6b808e06271886d3e2a55aa5df16f0976e36eb0391e8f630d6c735bec838\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n  run_exports:\n    - {{ pin_subpackage('libcap', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make\n    - pkg-config\n  host:\n    - attr\n\ntest:\n  commands:\n    - test -f \"$PREFIX/lib/libcap.so\"\n\nabout:\n  home: https://directory.fsf.org/wiki/Libcap\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: License\n  summary: Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "req":{
   "__set__":true,
