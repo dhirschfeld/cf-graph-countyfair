@@ -168,6 +168,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444387561.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -313,10 +330,11 @@
   }
  },
  "name":"pprofile",
- "new_version":"2.0.4",
+ "new_version":"2.0.5",
  "new_version_attempts":{
   "2.0.3":1,
-  "2.0.4":1
+  "2.0.4":1,
+  "2.0.5":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -389,7 +407,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.18.00.00.57",
+ "pinning_version":"2020.07.03.10.54.45",
  "raw_meta_yaml":"{% set name = \"pprofile\" %}\n{% set version = \"2.0.2\" %}\n{% set sha256 = \"3469102f462f9fc2d889970afcf73d89c0d89a36c49a4c262c3edc302b4a22da\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  entry_points:\n    - pprofile = pprofile:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - pprofile\n    - zpprofile\n  commands:\n    - pprofile --help\n\nabout:\n  home: http://github.com/vpelletier/pprofile\n  license: GPL2\n  license_file: COPYING\n  summary: Line-granularity, thread-aware deterministic and statistic pure-python profiler\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "req":{
   "__set__":true,
@@ -421,7 +439,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
