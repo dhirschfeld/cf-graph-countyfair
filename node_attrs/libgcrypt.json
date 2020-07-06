@@ -64,6 +64,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444825602.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.8.6"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -201,7 +218,11 @@
   }
  },
  "name":"libgcrypt",
- "new_version":"1.8.5",
+ "new_version":"1.8.6",
+ "new_version_attempts":{
+  "1.8.6":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://gnupg.org/software/index.html",
@@ -268,7 +289,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.08.27",
+ "pinning_version":"2020.07.06.14.07.53",
  "raw_meta_yaml":"{% set name = \"libgcrypt\" %}\n{% set version = \"1.8.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gnupg.org/ftp/gcrypt/libgcrypt/{{ name }}-{{ version }}.tar.bz2\n  sha256: f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227\n\nbuild:\n  number: 1000\n  skip: True  # [win]\n  run_exports:\n   - {{ pin_subpackage('libgcrypt') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - libgpg-error\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgcrypt.so  # [linux]\n    - conda inspect linkages {{ name }}\n    - conda inspect objects {{ name }}  # [osx]\n\nabout:\n  home: https://gnupg.org/software/index.html\n  license: GPL-2.0\n  license_family: GPL\n  summary: 'a general purpose cryptographic library originally based on code from GnuPG.'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
@@ -301,7 +322,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

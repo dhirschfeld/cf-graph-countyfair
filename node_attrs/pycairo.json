@@ -191,6 +191,8 @@
  "bad":false,
  "conda-forge.yml":{
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -286,6 +288,186 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/pygobject/pycairo/",
+   "home":"http://cairographics.org/pycairo/",
+   "license":"LGPL-2.1-only OR MPL-1.1",
+   "license_file":"COPYING",
+   "summary":"Python bindings for the Cairo graphics library."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"3"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"pycairo",
+   "version":"1.19.1"
+  },
+  "requirements":{
+   "build":[
+    "meson",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11 1.6.*",
+    "xorg-xproto"
+   ],
+   "run":[
+    "cairo",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"2c143183280feb67f5beb4e543fd49990c28e7df427301ede04fc550d3562e84",
+   "url":"https://github.com/pygobject/pycairo/releases/download/v1.19.1/pycairo-1.19.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/pkgconfig/py3cairo.pc",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "cairo"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "meson",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "dev_url":"https://github.com/pygobject/pycairo/",
+   "home":"http://cairographics.org/pycairo/",
+   "license":"LGPL-2.1-only OR MPL-1.1",
+   "license_file":"COPYING",
+   "summary":"Python bindings for the Cairo graphics library."
+  },
+  "build":{
+   "detect_binary_files_with_prefix":true,
+   "number":"3"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "pkgw"
+   ]
+  },
+  "package":{
+   "name":"pycairo",
+   "version":"1.19.1"
+  },
+  "requirements":{
+   "build":[
+    "meson",
+    "pkg-config",
+    "c_compiler_stub"
+   ],
+   "host":[
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11 1.6.*",
+    "xorg-xproto"
+   ],
+   "run":[
+    "cairo",
+    "python"
+   ]
+  },
+  "source":{
+   "sha256":"2c143183280feb67f5beb4e543fd49990c28e7df427301ede04fc550d3562e84",
+   "url":"https://github.com/pygobject/pycairo/releases/download/v1.19.1/pycairo-1.19.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f $PREFIX/lib/pkgconfig/py3cairo.pc",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ],
+   "imports":[
+    "cairo"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "meson",
+    "pkg-config"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11",
+    "xorg-xproto"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cairo",
+    "python"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "dev_url":"https://github.com/pygobject/pycairo/",
@@ -302,6 +484,8 @@
    "recipe-maintainers":[
     "pkgw",
     "pkgw",
+    "pkgw",
+    "pkgw",
     "pkgw"
    ]
   },
@@ -314,6 +498,12 @@
     "meson",
     "pkg-config",
     "posix",
+    "c_compiler_stub",
+    "meson",
+    "pkg-config",
+    "c_compiler_stub",
+    "meson",
+    "pkg-config",
     "c_compiler_stub",
     "meson",
     "pkg-config",
@@ -346,9 +536,29 @@
     "pytest",
     "python",
     "xorg-libx11 1.6.*",
+    "xorg-xproto",
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11 1.6.*",
+    "xorg-xproto",
+    "cairo",
+    "cython",
+    "flake8",
+    "pthread-stubs",
+    "pytest",
+    "python",
+    "xorg-libx11 1.6.*",
     "xorg-xproto"
    ],
    "run":[
+    "cairo",
+    "python",
+    "cairo",
+    "python",
     "cairo",
     "python",
     "cairo",
@@ -368,9 +578,15 @@
     "conda inspect linkages -p $PREFIX $PKG_NAME",
     "conda inspect objects -p $PREFIX $PKG_NAME",
     "test -f $PREFIX/lib/pkgconfig/py3cairo.pc",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "test -f $PREFIX/lib/pkgconfig/py3cairo.pc",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "test -f $PREFIX/lib/pkgconfig/py3cairo.pc",
     "conda inspect linkages -p $PREFIX $PKG_NAME"
    ],
    "imports":[
+    "cairo",
+    "cairo",
     "cairo",
     "cairo",
     "cairo"
