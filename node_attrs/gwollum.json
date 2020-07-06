@@ -166,7 +166,7 @@
   "build":{
    "error_overdepending":true,
    "error_overlinking":true,
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "gwollum"
    ]
@@ -178,7 +178,7 @@
   },
   "package":{
    "name":"gwollum",
-   "version":"2.4.0"
+   "version":"2.4.1"
   },
   "requirements":{
    "build":[
@@ -208,11 +208,10 @@
   "source":{
    "patches":[
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch"
+    "gsl-no-cblas.patch"
    ],
-   "sha256":"834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259",
-   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.0.tar.xz"
+   "sha256":"0518a516c83ea146d50befd3935dd2b3bc88fdce421a7803c21f1d00f97fc970",
+   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.1.tar.xz"
   },
   "test":{
    "commands":[
@@ -276,7 +275,7 @@
   "build":{
    "error_overdepending":true,
    "error_overlinking":true,
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "gwollum",
     "gwollum",
@@ -293,7 +292,7 @@
   },
   "package":{
    "name":"gwollum",
-   "version":"2.4.0"
+   "version":"2.4.1"
   },
   "requirements":{
    "build":[
@@ -353,17 +352,14 @@
   "source":{
    "patches":[
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch",
+    "gsl-no-cblas.patch",
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch",
+    "gsl-no-cblas.patch",
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch"
+    "gsl-no-cblas.patch"
    ],
-   "sha256":"834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259",
-   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.0.tar.xz"
+   "sha256":"0518a516c83ea146d50befd3935dd2b3bc88fdce421a7803c21f1d00f97fc970",
+   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.1.tar.xz"
   },
   "test":{
    "commands":[
@@ -402,7 +398,7 @@
   "build":{
    "error_overdepending":true,
    "error_overlinking":true,
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "gwollum"
    ]
@@ -414,7 +410,7 @@
   },
   "package":{
    "name":"gwollum",
-   "version":"2.4.0"
+   "version":"2.4.1"
   },
   "requirements":{
    "build":[
@@ -446,11 +442,10 @@
   "source":{
    "patches":[
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch"
+    "gsl-no-cblas.patch"
    ],
-   "sha256":"834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259",
-   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.0.tar.xz"
+   "sha256":"0518a516c83ea146d50befd3935dd2b3bc88fdce421a7803c21f1d00f97fc970",
+   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.1.tar.xz"
   },
   "test":{
    "commands":[
@@ -503,7 +498,7 @@
   }
  },
  "pinning_version":"2020.07.06.07.16.19",
- "raw_meta_yaml":"{% set name = \"gwollum\" %}\n{% set version = \"2.4.0\" %}\n{% set versions = version.split('.') %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.xz\n  sha256: 834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259\n  patches:\n    # use C++17 standard (required to link against ROOT>=6.14)\n    - c++17.patch\n    # update links\n    - streams-libraries.patch\n    - triggers-libraries.patch\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"gwollum\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.9.0\n    - make  # [unix]\n    - pkg-config  # [unix]\n  host:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n    - root-binaries\n  run:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n  run_constrained:\n    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default(\"10.9\") }}  # [osx]\n\ntest:\n  requires:\n    - pkg-config\n  commands:\n    # sanity check\n    - echo -e \"1 2 3\\n4 5 6\" > triggers.txt\n    - TxtToTree triggers.txt triggers a/I:b/I:c/I\n    # check pkg-config\n    - test \"$(pkg-config --print-errors --modversion gwollum)\" == \"${PKG_VERSION}\"  # [unix]\n\nabout:\n  home: http://virgo.in2p3.fr/GWOLLUM/v{{ versions[0] }}r{{ versions[1] }}/index.html?Main\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Tools for gravitational-wave analyses\n  description: |\n    The GWOLLUM package contains a set of software tools designed to perform\n    GW analyses.  Most of the code source is written with the C++ language\n    and it also heavily relies on the CERN ROOT libraries (also C++).\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
+ "raw_meta_yaml":"{% set name = \"gwollum\" %}\n{% set version = \"2.4.1\" %}\n{% set versions = version.split('.') %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.xz\n  sha256: 0518a516c83ea146d50befd3935dd2b3bc88fdce421a7803c21f1d00f97fc970\n  patches:\n    # use C++17 standard (required to link against ROOT>=6.14)\n    - c++17.patch\n    # update links\n    - gsl-no-cblas.patch\n\nbuild:\n  error_overdepending: true\n  error_overlinking: true\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"gwollum\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.9.0\n    - make  # [unix]\n    - pkg-config  # [unix]\n  host:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n    - root-binaries\n  run:\n    - fftw\n    - gsl\n    - hdf5\n    - libframel\n    - root_base\n  run_constrained:\n    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default(\"10.9\") }}  # [osx]\n\ntest:\n  requires:\n    - pkg-config\n  commands:\n    # sanity check\n    - echo -e \"1 2 3\\n4 5 6\" > triggers.txt\n    - TxtToTree triggers.txt triggers a/I:b/I:c/I\n    # check pkg-config\n    - test \"$(pkg-config --print-errors --modversion gwollum)\" == \"${PKG_VERSION}\"  # [unix]\n\nabout:\n  home: http://virgo.in2p3.fr/GWOLLUM/v{{ versions[0] }}r{{ versions[1] }}/index.html?Main\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Tools for gravitational-wave analyses\n  description: |\n    The GWOLLUM package contains a set of software tools designed to perform\n    GW analyses.  Most of the code source is written with the C++ language\n    and it also heavily relies on the CERN ROOT libraries (also C++).\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -601,7 +596,7 @@
   }
  },
  "url":"http://software.ligo.org/lscsoft/source/gwollum-2.3.12.tar.xz",
- "version":"2.4.0",
+ "version":"2.4.1",
  "win_64_meta_yaml":{
   "about":{
    "description":"The GWOLLUM package contains a set of software tools designed to perform\nGW analyses.  Most of the code source is written with the C++ language\nand it also heavily relies on the CERN ROOT libraries (also C++).\n",
@@ -614,7 +609,7 @@
   "build":{
    "error_overdepending":true,
    "error_overlinking":true,
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "gwollum"
    ],
@@ -627,7 +622,7 @@
   },
   "package":{
    "name":"gwollum",
-   "version":"2.4.0"
+   "version":"2.4.1"
   },
   "requirements":{
    "build":[
@@ -655,11 +650,10 @@
   "source":{
    "patches":[
     "c++17.patch",
-    "streams-libraries.patch",
-    "triggers-libraries.patch"
+    "gsl-no-cblas.patch"
    ],
-   "sha256":"834f80130f238762f9c9e287d4389e61fb5cf89634f0930b6bc1b9cd6df7d259",
-   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.0.tar.xz"
+   "sha256":"0518a516c83ea146d50befd3935dd2b3bc88fdce421a7803c21f1d00f97fc970",
+   "url":"http://software.ligo.org/lscsoft/source/gwollum-2.4.1.tar.xz"
   },
   "test":{
    "commands":[

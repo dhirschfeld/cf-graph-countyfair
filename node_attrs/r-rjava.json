@@ -113,6 +113,42 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444769907.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.9_13"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444772903.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":2,
+    "migrator_version":0,
+    "name":"r400"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -122,8 +158,6 @@
    "automerge":true
   },
   "provider":{
-   "linux_aarch64":"default",
-   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -132,13 +166,13 @@
  "linux_64_meta_yaml":{
   "about":{
    "home":"http://www.rforge.net/rJava/",
-   "license":"GPL-2",
+   "license":"GPL-2.0-only",
    "license_family":"GPL2",
    "license_file":"/lib/R/share/licenses/GPL-2",
    "summary":"Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -390,21 +424,15 @@
  "meta_yaml":{
   "about":{
    "home":"http://www.rforge.net/rJava/",
-   "license":"GPL-2",
+   "license":"GPL-2.0-only",
    "license_family":"GPL2",
    "license_file":"/lib/R/share/licenses/GPL-2",
    "summary":"Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields."
   },
   "build":{
    "merge_build_host":true,
-   "number":"0",
+   "number":"1",
    "rpaths":[
-    "lib/R/lib/",
-    "lib/",
-    "jre/lib/amd64/server/",
-    "lib/R/lib/",
-    "lib/",
-    "jre/lib/amd64/server/",
     "lib/R/lib/",
     "lib/",
     "jre/lib/amd64/server/",
@@ -418,10 +446,6 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "conda-forge/r",
-    "sodre",
-    "conda-forge/r",
-    "sodre",
     "conda-forge/r",
     "sodre",
     "conda-forge/r",
@@ -455,26 +479,13 @@
     "autoconf",
     "automake",
     "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "autoconf",
-    "automake",
-    "pkg-config",
-    "make",
-    "c_compiler_stub",
-    "autoconf",
-    "automake",
-    "pkg-config",
     "make"
    ],
    "host":[
     "r-base",
     "openjdk 8.*",
     "r-base",
-    "openjdk 8.*",
-    "r-base",
-    "openjdk 8.*",
-    "r-base",
+    "pcre2",
     "openjdk 8.*",
     "r-base",
     "openjdk 8.*"
@@ -482,10 +493,6 @@
    "run":[
     "r-base",
     "gcc-libs",
-    "openjdk 8.*",
-    "r-base",
-    "openjdk 8.*",
-    "r-base",
     "openjdk 8.*",
     "r-base",
     "openjdk 8.*",
@@ -501,10 +508,6 @@
     "https://cran.r-project.org/src/contrib/rJava_0.9-12.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/rJava/rJava_0.9-12.tar.gz",
     "https://cran.r-project.org/src/contrib/rJava_0.9-12.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/rJava/rJava_0.9-12.tar.gz",
-    "https://cran.r-project.org/src/contrib/rJava_0.9-12.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/rJava/rJava_0.9-12.tar.gz",
-    "https://cran.r-project.org/src/contrib/rJava_0.9-12.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/rJava/rJava_0.9-12.tar.gz"
    ]
   },
@@ -512,24 +515,26 @@
    "commands":[
     "\"%R%\" -e \"library('rJava')\"",
     "$R -e \"library('rJava')\"",
-    "$R -e \"library('rJava')\"",
-    "$R -e \"library('rJava')\"",
     "$R -e \"library('rJava')\""
    ]
   }
  },
  "name":"r-rjava",
- "new_version":"0.9_12",
+ "new_version":"0.9_13",
+ "new_version_attempts":{
+  "0.9_13":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"http://www.rforge.net/rJava/",
-   "license":"GPL-2",
+   "license":"GPL-2.0-only",
    "license_family":"GPL2",
    "license_file":"/lib/R/share/licenses/GPL-2",
    "summary":"Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -556,6 +561,7 @@
    ],
    "host":[
     "r-base",
+    "pcre2",
     "openjdk 8.*"
    ],
    "run":[
@@ -591,6 +597,7 @@
    "__set__":true,
    "elements":[
     "openjdk",
+    "pcre2",
     "r-base"
    ]
   },
@@ -606,8 +613,8 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.16.03.28.28",
- "raw_meta_yaml":"{% set version = \"0.9-12\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rjava\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/rJava_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/rJava/rJava_{{ version }}.tar.gz\n  sha256: 2248a8c73cacfecf75445ad0ebda4960409ec3f21afb180a1bc02a6de4057b0f\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n    - jre/lib/amd64/server/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{posix}}filesystem        # [win]\n    - {{posix}}sed               # [win]\n    - {{posix}}grep              # [win]\n    - {{posix}}autoconf\n    - {{posix}}automake          # [not win]\n    - {{posix}}automake-wrapper  # [win]\n    - {{posix}}pkg-config\n    - {{posix}}make\n    - {{posix}}coreutils         # [win]\n    - {{posix}}zip               # [win]\n  host:\n    - r-base\n    - openjdk 8.*\n  run:\n    - r-base\n    - {{native}}gcc-libs         # [win]\n    - openjdk 8.*\n\ntest:\n  commands:\n    - $R -e \"library('rJava')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rJava')\\\"\"  # [win]\n\nabout:\n  home: http://www.rforge.net/rJava/\n  license: GPL-2\n  summary: Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields.\n  license_family: GPL2\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - sodre\n\n# Package: rJava\n# Version: 0.9-11\n# Title: Low-Level R to Java Interface\n# Author: Simon Urbanek <simon.urbanek@r-project.org>\n# Maintainer: Simon Urbanek <simon.urbanek@r-project.org>\n# Depends: R (>= 2.5.0), methods\n# Description: Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields.\n# License: GPL-2\n# URL: http://www.rforge.net/rJava/\n# SystemRequirements: Java JDK 1.2 or higher (for JRI/REngine JDK 1.4 or higher), GNU make\n# BugReports: https://github.com/s-u/rJava/issues\n# NeedsCompilation: yes\n# Packaged: 2019-03-27 20:56:52 UTC; svnuser\n# Repository: CRAN\n# Date/Publication: 2019-03-29 06:53:31 UTC\n",
+ "pinning_version":"2020.07.06.07.16.19",
+ "raw_meta_yaml":"{% set version = \"0.9-12\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rjava\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/rJava_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/rJava/rJava_{{ version }}.tar.gz\n  sha256: 2248a8c73cacfecf75445ad0ebda4960409ec3f21afb180a1bc02a6de4057b0f\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 1\n  rpaths:\n    - lib/R/lib/\n    - lib/\n    - jre/lib/amd64/server/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ posix }}filesystem        # [win]\n    - {{ posix }}sed               # [win]\n    - {{ posix }}grep              # [win]\n    - {{ posix }}autoconf\n    - {{ posix }}automake          # [not win]\n    - {{ posix }}automake-wrapper  # [win]\n    - {{ posix }}pkg-config\n    - {{ posix }}make\n    - {{ posix }}coreutils         # [win]\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - pcre2  # [osx]\n    - openjdk 8.*\n  run:\n    - r-base\n    - {{ native }}gcc-libs         # [win]\n    - openjdk 8.*\n\ntest:\n  commands:\n    - $R -e \"library('rJava')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rJava')\\\"\"  # [win]\n\nabout:\n  home: http://www.rforge.net/rJava/\n  license: GPL-2.0-only\n  summary: Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields.\n  license_family: GPL2\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - sodre\n\n# Package: rJava\n# Version: 0.9-11\n# Title: Low-Level R to Java Interface\n# Author: Simon Urbanek <simon.urbanek@r-project.org>\n# Maintainer: Simon Urbanek <simon.urbanek@r-project.org>\n# Depends: R (>= 2.5.0), methods\n# Description: Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields.\n# License: GPL-2\n# URL: http://www.rforge.net/rJava/\n# SystemRequirements: Java JDK 1.2 or higher (for JRI/REngine JDK 1.4 or higher), GNU make\n# BugReports: https://github.com/s-u/rJava/issues\n# NeedsCompilation: yes\n# Packaged: 2019-03-27 20:56:52 UTC; svnuser\n# Repository: CRAN\n# Date/Publication: 2019-03-29 06:53:31 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -622,6 +629,7 @@
    "m2w64_c_compiler_stub",
    "make",
    "openjdk",
+   "pcre2",
    "pkg-config",
    "r-base",
    "sed",
@@ -650,6 +658,7 @@
    "__set__":true,
    "elements":[
     "openjdk",
+    "pcre2",
     "r-base"
    ]
   },
@@ -666,7 +675,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
@@ -690,6 +699,7 @@
    "__set__":true,
    "elements":[
     "openjdk 8.*",
+    "pcre2",
     "r-base"
    ]
   },
@@ -718,14 +728,14 @@
  "win_64_meta_yaml":{
   "about":{
    "home":"http://www.rforge.net/rJava/",
-   "license":"GPL-2",
+   "license":"GPL-2.0-only",
    "license_family":"GPL2",
    "license_file":"/lib/R/share/licenses/GPL-2",
    "summary":"Low-level interface to Java VM very much like .C/.Call and friends. Allows creation of objects, calling methods and accessing fields."
   },
   "build":{
    "merge_build_host":true,
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
