@@ -140,9 +140,6 @@
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "linux_aarch64":"default",
    "linux_ppc64le":"default"
@@ -161,7 +158,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups"
    ]
@@ -247,7 +244,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups"
    ]
@@ -333,7 +330,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups"
    ]
@@ -419,7 +416,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups",
     "libsemigroups",
@@ -539,7 +536,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups"
    ]
@@ -615,7 +612,7 @@
   }
  },
  "pinning_version":"2020.07.06.15.29.37",
- "raw_meta_yaml":"{% set name = \"libsemigroups\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"29c3e67b1c66f028e179d2e21ecf3348c9bd3035aa6220323f20e19480539623\" %}\n{% set repo = \"https://github.com/libsemigroups/libsemigroups\" %}\n{% set home = \"https://libsemigroups.github.io/libsemigroups/\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: {{ repo }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"libsemigroups\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n    - automake\n    - autoconf\n    - libtool\n    - pkg-config\n  host:\n    - fmt\n  run:\n    - {{ pin_compatible(\"fmt\") }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/libsemigroups                    # [unix]\n    - test -f ${PREFIX}/include/libsemigroups/libsemigroups.hpp  # [unix]\n    - test -f $PREFIX/lib/libsemigroups.dylib                    # [osx]\n    - test -f $PREFIX/lib/libsemigroups.so                       # [linux]\n    - test -f $PREFIX/lib/libsemigroups.a                        # [unix]\n\n    - if exist %LIBRARY_PREFIX%\\include\\libsemigroups\\libsemigroups.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: {{ home }}\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'C++ library for semigroups and monoids'\n\n  description: |\n    libsemigroups is a C++ library for semigroups and monoids.\n  doc_url: {{ home }}\n  dev_url: {{ repo }}\n\nextra:\n  recipe-maintainers:\n    - james-d-mitchell\n    - nthiery\n",
+ "raw_meta_yaml":"{% set name = \"libsemigroups\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"29c3e67b1c66f028e179d2e21ecf3348c9bd3035aa6220323f20e19480539623\" %}\n{% set repo = \"https://github.com/libsemigroups/libsemigroups\" %}\n{% set home = \"https://libsemigroups.github.io/libsemigroups/\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: {{ repo }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"libsemigroups\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n    - automake\n    - autoconf\n    - libtool\n    - pkg-config\n  host:\n    - fmt\n  run:\n    - {{ pin_compatible(\"fmt\") }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/libsemigroups                    # [unix]\n    - test -f ${PREFIX}/include/libsemigroups/libsemigroups.hpp  # [unix]\n    - test -f $PREFIX/lib/libsemigroups.dylib                    # [osx]\n    - test -f $PREFIX/lib/libsemigroups.so                       # [linux]\n    - test -f $PREFIX/lib/libsemigroups.a                        # [unix]\n\n    - if exist %LIBRARY_PREFIX%\\include\\libsemigroups\\libsemigroups.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: {{ home }}\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'C++ library for semigroups and monoids'\n\n  description: |\n    libsemigroups is a C++ library for semigroups and monoids.\n  doc_url: {{ home }}\n  dev_url: {{ repo }}\n\nextra:\n  recipe-maintainers:\n    - james-d-mitchell\n    - nthiery\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -704,7 +701,7 @@
    "summary":"C++ library for semigroups and monoids"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "libsemigroups"
    ],
