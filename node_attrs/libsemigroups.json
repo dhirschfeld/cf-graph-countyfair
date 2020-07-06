@@ -116,6 +116,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/444878740.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"fmt7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -595,7 +614,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.10.28",
+ "pinning_version":"2020.07.06.15.29.37",
  "raw_meta_yaml":"{% set name = \"libsemigroups\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"29c3e67b1c66f028e179d2e21ecf3348c9bd3035aa6220323f20e19480539623\" %}\n{% set repo = \"https://github.com/libsemigroups/libsemigroups\" %}\n{% set home = \"https://libsemigroups.github.io/libsemigroups/\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: {{ repo }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage(\"libsemigroups\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make\n    - automake\n    - autoconf\n    - libtool\n    - pkg-config\n  host:\n    - fmt\n  run:\n    - {{ pin_compatible(\"fmt\") }}\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/libsemigroups                    # [unix]\n    - test -f ${PREFIX}/include/libsemigroups/libsemigroups.hpp  # [unix]\n    - test -f $PREFIX/lib/libsemigroups.dylib                    # [osx]\n    - test -f $PREFIX/lib/libsemigroups.so                       # [linux]\n    - test -f $PREFIX/lib/libsemigroups.a                        # [unix]\n\n    - if exist %LIBRARY_PREFIX%\\include\\libsemigroups\\libsemigroups.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: {{ home }}\n  license: GPL-3.0-or-later\n  license_file: LICENSE\n  summary: 'C++ library for semigroups and monoids'\n\n  description: |\n    libsemigroups is a C++ library for semigroups and monoids.\n  doc_url: {{ home }}\n  dev_url: {{ repo }}\n\nextra:\n  recipe-maintainers:\n    - james-d-mitchell\n    - nthiery\n",
  "req":{
   "__set__":true,
@@ -640,7 +659,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
