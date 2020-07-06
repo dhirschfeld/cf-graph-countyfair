@@ -341,7 +341,18 @@
   }
  ],
  "archived":false,
- "bad":false,
+ "bad":{
+  "exception":"update() missing 1 required positional argument: 'data'",
+  "traceback":[
+   "Traceback (most recent call last):",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
+   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
+   "    ljpr.update(**pr_json)",
+   "TypeError: update() missing 1 required positional argument: 'data'",
+   ""
+  ]
+ },
  "conda-forge.yml":{
   "provider":{
    "linux":"azure",
@@ -359,7 +370,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -440,7 +451,6 @@
     "name":"matplotlib",
     "requirements":{
      "run":[
-      "pyqt",
       "matplotlib-base"
      ]
     },
@@ -520,7 +530,6 @@
     "matplotlib-base",
     "numpy",
     "pyparsing",
-    "pyqt",
     "python",
     "python-dateutil",
     "setuptools",
@@ -541,7 +550,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -721,7 +730,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -901,7 +910,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -997,7 +1006,6 @@
     "name":"matplotlib",
     "requirements":{
      "run":[
-      "pyqt",
       "matplotlib-base"
      ]
     },
@@ -1184,7 +1192,6 @@
     "name":"matplotlib",
     "requirements":{
      "run":[
-      "pyqt",
       "matplotlib-base"
      ]
     },
@@ -1430,7 +1437,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -1602,7 +1609,7 @@
   "mpl_sample_data"
  ],
  "pinning_version":"2020.07.03.10.54.45",
- "raw_meta_yaml":"# Full credit goes to https://github.com/conda/conda-recipes for providing this recipe.\n# It has been subsequently adapted for automated building with conda-forge.\n\n{% set version = \"3.2.2\" %}\n\npackage:\n  name: matplotlib-base\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/matplotlib/archive/v{{ version }}.tar.gz\n  sha256: dd4ff3e19f507a5a07612fa642e6e66fadbaf303483a43dc3acb04067f7ac522\n\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n\noutputs:\n  - name: matplotlib-base\n    script: build_base.bat  # [win]\n    script: build_base.sh  # [not win]\n    requirements:\n      build:\n        - pkg-config  # [not win]\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n      host:\n        - python\n        - pip\n        - numpy\n        - cycler >=0.10\n        - python-dateutil\n        - freetype\n        - nose\n        - pyparsing\n        - libpng\n        - zlib  # [win]\n        - tk  # [linux]\n        - icu  # [linux]\n      run:\n        - python\n        - setuptools\n        - {{ pin_compatible('numpy') }}\n        - cycler >=0.10\n        - python-dateutil\n        - freetype\n        - pyparsing\n        - libpng\n        - tk  # [linux]\n        - icu  # [linux]\n        - tornado\n        - kiwisolver\n    test:\n      requires:\n        - pytest\n      imports:\n        - matplotlib\n        - matplotlib.pyplot\n        - matplotlib._image\n        - matplotlib._path\n        - matplotlib._png\n        - matplotlib._tri\n        - matplotlib.backends._backend_agg\n        - matplotlib.ft2font\n        - matplotlib.ttconv\n        - matplotlib.backends._tkagg  # [not win]\n        - mpl_toolkits\n        - pylab\n\n  - name: matplotlib\n    build:\n    requirements:\n      run:\n        - pyqt  # [not osx and not aarch64 and not ppc64le]\n        - {{ pin_subpackage('matplotlib-base', max_pin=\"x.x.x.x\") }}\n    test:\n      imports:\n        - matplotlib\n\n  - name: mpl_sample_data\n    script: install-data.sh  # [not win]\n    script: install-data.bat  # [win]\n    build:\n      noarch: python\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        # match major/minor version, but allow noarch\n        - {{ pin_subpackage('matplotlib-base', max_pin=\"x.x\") }}\n    test:\n      imports:\n        - matplotlib.cbook\n      commands:\n        - python -c \"import matplotlib; matplotlib.cbook.get_sample_data('msft.csv', asfileobj=False)\"\n\nabout:\n  home: http://matplotlib.org/\n  license: PSF-based\n  license_url: http://matplotlib.sourceforge.net/users/license.html\n  license_family: PSF\n  license_file: LICENSE/LICENSE\n  summary: Publication quality figures in Python\n  description: |\n    matplotlib is a python 2D plotting library which produces publication\n    quality figures in a variety of hardcopy formats and interactive\n    environments across platforms. matplotlib can be used in Python scripts,\n    the Python and IPython shell (ala MATLAB or Mathematica), web\n    application servers, and six graphical user interface toolkits.\n  dev_url: https://github.com/matplotlib/matplotlib/\n  doc_url: http://matplotlib.org/contents.html\n\nextra:\n  recipe-maintainers:\n    - mdboom\n    - ocefpaf\n    - pelson\n    - tacaswell\n    - dopplershift\n",
+ "raw_meta_yaml":"# Full credit goes to https://github.com/conda/conda-recipes for providing this recipe.\n# It has been subsequently adapted for automated building with conda-forge.\n\n{% set version = \"3.2.2\" %}\n\npackage:\n  name: matplotlib-base\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/matplotlib/archive/v{{ version }}.tar.gz\n  sha256: dd4ff3e19f507a5a07612fa642e6e66fadbaf303483a43dc3acb04067f7ac522\n\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n\noutputs:\n  - name: matplotlib-base\n    script: build_base.bat  # [win]\n    script: build_base.sh  # [not win]\n    requirements:\n      build:\n        - pkg-config  # [not win]\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n      host:\n        - python\n        - pip\n        - numpy\n        - cycler >=0.10\n        - python-dateutil\n        - freetype\n        - nose\n        - pyparsing\n        - libpng\n        - zlib  # [win]\n        - tk  # [linux]\n        - icu  # [linux]\n      run:\n        - python\n        - setuptools\n        - {{ pin_compatible('numpy') }}\n        - cycler >=0.10\n        - python-dateutil\n        - freetype\n        - pyparsing\n        - libpng\n        - tk  # [linux]\n        - icu  # [linux]\n        - tornado\n        - kiwisolver\n    test:\n      requires:\n        - pytest\n      imports:\n        - matplotlib\n        - matplotlib.pyplot\n        - matplotlib._image\n        - matplotlib._path\n        - matplotlib._png\n        - matplotlib._tri\n        - matplotlib.backends._backend_agg\n        - matplotlib.ft2font\n        - matplotlib.ttconv\n        - matplotlib.backends._tkagg  # [not win]\n        - mpl_toolkits\n        - pylab\n\n  - name: matplotlib\n    build:\n    requirements:\n      run:\n        - pyqt  # [not osx and not aarch64 and not ppc64le and python_impl == \"cpython\"]\n        - {{ pin_subpackage('matplotlib-base', max_pin=\"x.x.x.x\") }}\n    test:\n      imports:\n        - matplotlib\n\n  - name: mpl_sample_data\n    script: install-data.sh  # [not win]\n    script: install-data.bat  # [win]\n    build:\n      skip: True   # [python_impl == \"pypy\"]\n      noarch: python\n    requirements:\n      host:\n        - python\n      run:\n        - python\n        # match major/minor version, but allow noarch\n        - {{ pin_subpackage('matplotlib-base', max_pin=\"x.x\") }}\n    test:\n      imports:\n        - matplotlib.cbook\n      commands:\n        - python -c \"import matplotlib; matplotlib.cbook.get_sample_data('msft.csv', asfileobj=False)\"\n\nabout:\n  home: http://matplotlib.org/\n  license: LicenseRef-PSF-based\n  license_url: http://matplotlib.sourceforge.net/users/license.html\n  license_family: PSF\n  license_file: LICENSE/LICENSE\n  summary: Publication quality figures in Python\n  description: |\n    matplotlib is a python 2D plotting library which produces publication\n    quality figures in a variety of hardcopy formats and interactive\n    environments across platforms. matplotlib can be used in Python scripts,\n    the Python and IPython shell (ala MATLAB or Mathematica), web\n    application servers, and six graphical user interface toolkits.\n  dev_url: https://github.com/matplotlib/matplotlib/\n  doc_url: http://matplotlib.org/contents.html\n\nextra:\n  recipe-maintainers:\n    - mdboom\n    - ocefpaf\n    - pelson\n    - tacaswell\n    - dopplershift\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1619,7 +1626,6 @@
    "pip",
    "pkg-config",
    "pyparsing",
-   "pyqt",
    "python",
    "python-dateutil",
    "setuptools",
@@ -1665,7 +1671,6 @@
     "matplotlib-base",
     "numpy",
     "pyparsing",
-    "pyqt",
     "python",
     "python-dateutil",
     "setuptools",
@@ -1719,7 +1724,6 @@
     "matplotlib-base",
     "numpy",
     "pyparsing",
-    "pyqt",
     "python",
     "python-dateutil",
     "setuptools",
@@ -1742,7 +1746,7 @@
    "dev_url":"https://github.com/matplotlib/matplotlib/",
    "doc_url":"http://matplotlib.org/contents.html",
    "home":"http://matplotlib.org/",
-   "license":"PSF-based",
+   "license":"LicenseRef-PSF-based",
    "license_family":"PSF",
    "license_file":"LICENSE/LICENSE",
    "license_url":"http://matplotlib.sourceforge.net/users/license.html",
@@ -1818,7 +1822,6 @@
     "name":"matplotlib",
     "requirements":{
      "run":[
-      "pyqt",
       "matplotlib-base"
      ]
     },
@@ -1895,7 +1898,6 @@
     "matplotlib-base",
     "numpy",
     "pyparsing",
-    "pyqt",
     "python",
     "python-dateutil",
     "setuptools",

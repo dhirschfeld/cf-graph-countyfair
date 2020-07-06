@@ -1,6 +1,17 @@
 {
  "archived":false,
- "bad":false,
+ "bad":{
+  "exception":"update() missing 1 required positional argument: 'data'",
+  "traceback":[
+   "Traceback (most recent call last):",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
+   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
+   "    ljpr.update(**pr_json)",
+   "TypeError: update() missing 1 required positional argument: 'data'",
+   ""
+  ]
+ },
  "conda-forge.yml":{},
  "feedstock_name":"access",
  "hash_type":"sha256",
@@ -150,7 +161,11 @@
   }
  },
  "name":"access",
- "new_version":"1.1.0",
+ "new_version":"1.1.1",
+ "new_version_attempts":{
+  "1.1.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"access is a class and function for calculating the spatial accessibility\nof resources.  It is designed for python 3.5 and higher.\nPandas (and numpy) are required, and geopandas allows for some additional functionality.\n",
