@@ -1,6 +1,17 @@
 {
  "archived":false,
- "bad":false,
+ "bad":{
+  "exception":"update() missing 1 required positional argument: 'data'",
+  "traceback":[
+   "Traceback (most recent call last):",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
+   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
+   "    ljpr.update(**pr_json)",
+   "TypeError: update() missing 1 required positional argument: 'data'",
+   ""
+  ]
+ },
  "conda-forge.yml":{},
  "feedstock_name":"opencensus-context",
  "hash_type":"sha256",
@@ -15,8 +26,7 @@
    "summary":"The OpenCensus Runtime Context."
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"cd context/opencensus-context &&  -m pip install . -vv"
   },
   "extra":{
@@ -34,8 +44,7 @@
     "pip"
    ],
    "run":[
-    "python",
-    "contextvars"
+    "python"
    ]
   },
   "source":{
@@ -63,7 +72,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "contextvars",
     "python"
    ]
   },
@@ -83,8 +91,7 @@
    "summary":"The OpenCensus Runtime Context."
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"cd context/opencensus-context &&  -m pip install . -vv"
   },
   "extra":{
@@ -109,11 +116,8 @@
    ],
    "run":[
     "python",
-    "contextvars",
     "python",
-    "contextvars",
-    "python",
-    "contextvars"
+    "python"
    ]
   },
   "source":{
@@ -131,7 +135,7 @@
  "name":"opencensus-context",
  "new_version":"0.7.10",
  "new_version_attempts":{
-  "0.7.10":3
+  "0.7.10":4
  },
  "new_version_errors":{
   "0.7.10":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.7.10' to make sure they exist!\n\nWe also found the following errors:\n\n - recipe did not appear to change even though the bot said it should have\n"
@@ -147,8 +151,7 @@
    "summary":"The OpenCensus Runtime Context."
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"cd context/opencensus-context &&  -m pip install . -vv"
   },
   "extra":{
@@ -166,8 +169,7 @@
     "pip"
    ],
    "run":[
-    "python",
-    "contextvars"
+    "python"
    ]
   },
   "source":{
@@ -195,7 +197,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "contextvars",
     "python"
    ]
   },
@@ -204,11 +205,10 @@
    "elements":[]
   }
  },
- "raw_meta_yaml":"{% set opensensus_version = \"0.7.10\" %}\n{% set version = \"0.1.2\" %}\n\npackage:\n  name: opencensus-context\n  version: {{ version }}\n\nsource:\n  url: https://github.com/census-instrumentation/opencensus-python/archive/v{{ opensensus_version }}.zip\n  sha256: 4ea0b5bac55c62f9ca5ddccc5acf8160c3575bf58bc5dab7bcb1f5a9cc578e71\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"cd context/opencensus-context && {{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - contextvars\n\ntest:\n  imports:\n    - opencensus.common.runtime_context\n\nabout:\n  home: https://github.com/census-instrumentation/opencensus-python\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: The OpenCensus Runtime Context.\n  description: |\n    The OpenCensus Runtime Context provides in-process context propagation.\n    By default, thread local storage is used for Python 2.7, 3.4 and 3.5;\n    contextvars is used for Python >= 3.6, which provides asyncio support.\n  doc_url: https://github.com/census-instrumentation/opencensus-python/tree/master/context/opencensus-context/examples\n  dev_url: https://github.com/census-instrumentation/opencensus-python/tree/master/context/opencensus-context\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "raw_meta_yaml":"{% set opensensus_version = \"0.7.10\" %}\n{% set version = \"0.1.2\" %}\n\npackage:\n  name: opencensus-context\n  version: {{ version }}\n\nsource:\n  url: https://github.com/census-instrumentation/opencensus-python/archive/v{{ opensensus_version }}.zip\n  sha256: 4ea0b5bac55c62f9ca5ddccc5acf8160c3575bf58bc5dab7bcb1f5a9cc578e71\n\nbuild:\n  number: 1\n  script: \"cd context/opencensus-context && {{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - contextvars  # [py<=3.7]\n\ntest:\n  imports:\n    - opencensus.common.runtime_context\n\nabout:\n  home: https://github.com/census-instrumentation/opencensus-python\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: The OpenCensus Runtime Context.\n  description: |\n    The OpenCensus Runtime Context provides in-process context propagation.\n    By default, thread local storage is used for Python 2.7, 3.4 and 3.5;\n    contextvars is used for Python >= 3.6, which provides asyncio support.\n  doc_url: https://github.com/census-instrumentation/opencensus-python/tree/master/context/opencensus-context/examples\n  dev_url: https://github.com/census-instrumentation/opencensus-python/tree/master/context/opencensus-context\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
  "req":{
   "__set__":true,
   "elements":[
-   "contextvars",
    "pip",
    "python"
   ]
@@ -228,7 +228,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "contextvars",
     "python"
    ]
   },
@@ -253,7 +252,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "contextvars",
     "python"
    ]
   },
@@ -275,8 +273,7 @@
    "summary":"The OpenCensus Runtime Context."
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
+   "number":"1",
    "script":"cd context/opencensus-context &&  -m pip install . -vv"
   },
   "extra":{
@@ -294,8 +291,7 @@
     "pip"
    ],
    "run":[
-    "python",
-    "contextvars"
+    "python"
    ]
   },
   "source":{
@@ -323,7 +319,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "contextvars",
     "python"
    ]
   },
