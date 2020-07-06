@@ -66,7 +66,7 @@
    "summary":"SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "graphblas"
    ]
@@ -83,7 +83,7 @@
   },
   "package":{
    "name":"graphblas",
-   "version":"3.2.2"
+   "version":"3.3.1"
   },
   "requirements":{
    "build":[
@@ -101,8 +101,8 @@
    ]
   },
   "source":{
-   "sha256":"21a6d3e277ef5a930f93a0208c72197fbe752948e0bbd0e42eedae6d41e88a9e",
-   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.2.2.tar.gz"
+   "sha256":"769c647663ddd227cfc5af38fb712bde669136da4fb38803fa0e95c82b19ae56",
+   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.3.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -149,7 +149,7 @@
    "summary":"SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "graphblas",
     "graphblas",
@@ -181,7 +181,7 @@
   },
   "package":{
    "name":"graphblas",
-   "version":"3.2.2"
+   "version":"3.3.1"
   },
   "requirements":{
    "build":[
@@ -209,8 +209,8 @@
    ]
   },
   "source":{
-   "sha256":"21a6d3e277ef5a930f93a0208c72197fbe752948e0bbd0e42eedae6d41e88a9e",
-   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.2.2.tar.gz"
+   "sha256":"769c647663ddd227cfc5af38fb712bde669136da4fb38803fa0e95c82b19ae56",
+   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.3.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -242,7 +242,7 @@
    "summary":"SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "graphblas"
    ]
@@ -259,7 +259,7 @@
   },
   "package":{
    "name":"graphblas",
-   "version":"3.2.2"
+   "version":"3.3.1"
   },
   "requirements":{
    "build":[
@@ -277,8 +277,8 @@
    ]
   },
   "source":{
-   "sha256":"21a6d3e277ef5a930f93a0208c72197fbe752948e0bbd0e42eedae6d41e88a9e",
-   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.2.2.tar.gz"
+   "sha256":"769c647663ddd227cfc5af38fb712bde669136da4fb38803fa0e95c82b19ae56",
+   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.3.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -317,7 +317,7 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"3.2.2\" %}\n\npackage:\n  name: graphblas\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v{{ version }}.tar.gz\n  sha256: 21a6d3e277ef5a930f93a0208c72197fbe752948e0bbd0e42eedae6d41e88a9e\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  run_exports:\n    - {{ pin_subpackage(\"graphblas\", max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - m4\n  host:\n    - openmp  # [linux]\n    - llvm-openmp  # [osx]\n  run:\n    - openmp  # [linux]\n    - llvm-openmp  # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/GraphBLAS.h\n    - test -f ${PREFIX}/lib/libgraphblas${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libgraphblas.a\n\nabout:\n  home: https://github.com/DrTimothyAldenDavis/GraphBLAS\n  license: Apache-2.0\n  license_family: Apache\n  license_file: Doc/License.txt\n  summary: SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard\n\nextra:\n  recipe-maintainers:\n    - grlee77\n    - jakirkham\n    - basnijholt\n    - minrk\n    - jayfurmanek\n    - jim22k\n",
+ "raw_meta_yaml":"{% set version = \"3.3.1\" %}\n\npackage:\n  name: graphblas\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v{{ version }}.tar.gz\n  sha256: 769c647663ddd227cfc5af38fb712bde669136da4fb38803fa0e95c82b19ae56\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  run_exports:\n    - {{ pin_subpackage(\"graphblas\", max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake\n    - make\n    - m4\n  host:\n    - openmp  # [linux]\n    - llvm-openmp  # [osx]\n  run:\n    - openmp  # [linux]\n    - llvm-openmp  # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/GraphBLAS.h\n    - test -f ${PREFIX}/lib/libgraphblas${SHLIB_EXT}\n    - test -f ${PREFIX}/lib/libgraphblas.a\n\nabout:\n  home: https://github.com/DrTimothyAldenDavis/GraphBLAS\n  license: Apache-2.0\n  license_family: Apache\n  license_file: Doc/License.txt\n  summary: SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard\n\nextra:\n  recipe-maintainers:\n    - grlee77\n    - jakirkham\n    - basnijholt\n    - minrk\n    - jayfurmanek\n    - jim22k\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -388,7 +388,7 @@
   }
  },
  "url":"http://faculty.cse.tamu.edu/davis/GraphBLAS/GraphBLAS-3.1.0.tar.gz",
- "version":"3.2.2",
+ "version":"3.3.1",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/DrTimothyAldenDavis/GraphBLAS",
@@ -398,7 +398,7 @@
    "summary":"SuiteSparse:GraphBLAS is a full implementation of the GraphBLAS standard"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "run_exports":[
     "graphblas"
    ],
@@ -416,7 +416,7 @@
   },
   "package":{
    "name":"graphblas",
-   "version":"3.2.2"
+   "version":"3.3.1"
   },
   "requirements":{
    "build":[
@@ -430,8 +430,8 @@
    "run":null
   },
   "source":{
-   "sha256":"21a6d3e277ef5a930f93a0208c72197fbe752948e0bbd0e42eedae6d41e88a9e",
-   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.2.2.tar.gz"
+   "sha256":"769c647663ddd227cfc5af38fb712bde669136da4fb38803fa0e95c82b19ae56",
+   "url":"https://github.com/DrTimothyAldenDavis/GraphBLAS/archive/v3.3.1.tar.gz"
   },
   "test":{
    "commands":[
