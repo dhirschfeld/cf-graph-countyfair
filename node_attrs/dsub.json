@@ -238,7 +238,18 @@
   }
  ],
  "archived":false,
- "bad":false,
+ "bad":{
+  "exception":"update() missing 1 required positional argument: 'data'",
+  "traceback":[
+   "Traceback (most recent call last):",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
+   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
+   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
+   "    ljpr.update(**pr_json)",
+   "TypeError: update() missing 1 required positional argument: 'data'",
+   ""
+  ]
+ },
  "conda-forge.yml":{},
  "feedstock_name":"dsub",
  "hash_type":"sha256",
@@ -485,9 +496,10 @@
   }
  },
  "name":"dsub",
- "new_version":"0.3.8",
+ "new_version":"0.3.9",
  "new_version_attempts":{
-  "0.3.8":1
+  "0.3.8":1,
+  "0.3.9":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
