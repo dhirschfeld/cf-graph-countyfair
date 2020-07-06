@@ -56,9 +56,6 @@
   "bot":{
    "automerge":true
   },
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "win":"azure"
   }
@@ -75,10 +72,10 @@
    "summary":"The Terraform DNSMadeEasy provider"
   },
   "build":{
-   "number":"1001",
+   "number":"0",
    "script":[
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4"
+    "go build -v -o terraform-provider-dme_v0.1.1_x4"
    ]
   },
   "extra":{
@@ -88,7 +85,7 @@
   },
   "package":{
    "name":"terraform-provider-dme",
-   "version":"0.1.0"
+   "version":"0.1.1"
   },
   "requirements":{
    "build":[
@@ -101,16 +98,16 @@
   "source":[
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    }
   ],
   "test":{
    "commands":[
-    "echo 'provider \"dme\" { version=\"0.1.0\" }' > init.tf",
+    "echo 'provider \"dme\" { version=\"0.1.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.0_x4"
+    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.1_x4"
    ]
   }
  },
@@ -146,14 +143,14 @@
    "summary":"The Terraform DNSMadeEasy provider"
   },
   "build":{
-   "number":"1001",
+   "number":"0",
    "script":[
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4",
+    "go build -v -o terraform-provider-dme_v0.1.1_x4",
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4",
+    "go build -v -o terraform-provider-dme_v0.1.1_x4",
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4"
+    "go build -v -o terraform-provider-dme_v0.1.1_x4"
    ]
   },
   "extra":{
@@ -165,7 +162,7 @@
   },
   "package":{
    "name":"terraform-provider-dme",
-   "version":"0.1.0"
+   "version":"0.1.1"
   },
   "requirements":{
    "build":[
@@ -182,34 +179,34 @@
   "source":[
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    },
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    },
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    }
   ],
   "test":{
    "commands":[
-    "echo provider \"dme\" { version=\"0.1.0\" } > init.tf",
+    "echo provider \"dme\" { version=\"0.1.1\" } > init.tf",
     "terraform init",
     "if not exist .terraform\\plugins\\_\\lock.json exit 1",
-    "if exist .terraform\\plugins\\_\\terraform-provider-dme_v0.1.0_x4 exit 1",
-    "echo 'provider \"dme\" { version=\"0.1.0\" }' > init.tf",
+    "if exist .terraform\\plugins\\_\\terraform-provider-dme_v0.1.1_x4 exit 1",
+    "echo 'provider \"dme\" { version=\"0.1.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.0_x4",
-    "echo 'provider \"dme\" { version=\"0.1.0\" }' > init.tf",
+    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.1_x4",
+    "echo 'provider \"dme\" { version=\"0.1.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.0_x4"
+    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.1_x4"
    ]
   }
  },
@@ -229,10 +226,10 @@
    "summary":"The Terraform DNSMadeEasy provider"
   },
   "build":{
-   "number":"1001",
+   "number":"0",
    "script":[
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4"
+    "go build -v -o terraform-provider-dme_v0.1.1_x4"
    ]
   },
   "extra":{
@@ -242,7 +239,7 @@
   },
   "package":{
    "name":"terraform-provider-dme",
-   "version":"0.1.0"
+   "version":"0.1.1"
   },
   "requirements":{
    "build":[
@@ -255,16 +252,16 @@
   "source":[
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    }
   ],
   "test":{
    "commands":[
-    "echo 'provider \"dme\" { version=\"0.1.0\" }' > init.tf",
+    "echo 'provider \"dme\" { version=\"0.1.1\" }' > init.tf",
     "terraform init",
     "test -f .terraform/plugins/_/lock.json",
-    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.0_x4"
+    "test ! -f .terraform/plugins/_/terraform-provider-dme_v0.1.1_x4"
    ]
   }
  },
@@ -291,7 +288,7 @@
   }
  },
  "pinning_version":"2020.07.06.07.16.19",
- "raw_meta_yaml":"{% set provider = \"DME\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"0.1.0\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('gopath/src/'+goname).replace(\"/\",os.sep) %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\n{% set sha256 = \"\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder:  {{ pkg_src }}\n    url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n    sha256: a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e\n\n\nbuild:\n  number: 1001\n  script:\n    - pushd {{ pkg_src }}\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_file: {{ pkg_src }}/LICENSE\n  summary: The Terraform DNSMadeEasy provider\n  doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n",
+ "raw_meta_yaml":"{% set provider = \"DME\" %}\n{% set goname = \"github.com/terraform-providers/terraform-provider-\"+provider.lower() %}\n{% set version = \"0.1.1\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = ('gopath/src/'+goname).replace(\"/\",os.sep) %}\n\n{% set x4_plugin = name + '_v' + version + \"_x4\" %}\n\n{% set sha256 = \"\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n    sha256: 890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca\n\n\nbuild:\n  number: 0\n  script:\n    - pushd {{ pkg_src }}\n    - go build -v -o {{ target_gobin }}{{ x4_plugin }}{{ target_goexe }}\n\nrequirements:\n  build:\n    - {{ compiler('go') }} 1.13\n  run:\n    - terraform 0.12\n\ntest:\n  commands:\n    # Create a sample init.tf loading the provider\n    - echo 'provider \"{{ provider|lower }}\" { version=\"{{ version }}\" }' > init.tf  # [unix]\n    - echo provider \"{{ provider|lower }}\" { version=\"{{ version }}\" } > init.tf    # [win]\n\n    # Initialize\n    - terraform init\n\n    # Tests that init was successful\n    - test -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/lock.json              # [unix]\n    - if not exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\lock.json exit 1  # [win]\n\n    # Test that the provider was not downloaded\n    - test ! -f .terraform/plugins/{{ target_goos }}_{{ target_goarch }}/{{ x4_plugin }}{{ target_goexe }}        # [unix]\n    - if exist .terraform\\plugins\\{{ target_goos }}_{{ target_goarch }}\\{{ x4_plugin }}{{ target_goexe }} exit 1  # [win]\n\nabout:\n  home: https://www.terraform.io\n  license: MPL-2.0\n  license_file: {{ pkg_src }}/LICENSE\n  summary: The Terraform DNSMadeEasy provider\n  doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html\n  dev_url: https://github.com/terraform-providers/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - conda-forge/terraform\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -346,7 +343,7 @@
   }
  },
  "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz",
- "version":"0.1.0",
+ "version":"0.1.1",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/terraform-providers/terraform-provider-dme",
@@ -357,10 +354,10 @@
    "summary":"The Terraform DNSMadeEasy provider"
   },
   "build":{
-   "number":"1001",
+   "number":"0",
    "script":[
     "pushd gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "go build -v -o terraform-provider-dme_v0.1.0_x4"
+    "go build -v -o terraform-provider-dme_v0.1.1_x4"
    ]
   },
   "extra":{
@@ -370,7 +367,7 @@
   },
   "package":{
    "name":"terraform-provider-dme",
-   "version":"0.1.0"
+   "version":"0.1.1"
   },
   "requirements":{
    "build":[
@@ -383,16 +380,16 @@
   "source":[
    {
     "folder":"gopath/src/github.com/terraform-providers/terraform-provider-dme",
-    "sha256":"a93f285fb7c6cfaea73ab30fa5432820780d937eee9fe32552c3ec5f8be1a61e",
-    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.0.tar.gz"
+    "sha256":"890525861e740ea0a24743030a15624133a7b1ce01ffcff52b4a1d0562420fca",
+    "url":"https://github.com/terraform-providers/terraform-provider-dme/archive/v0.1.1.tar.gz"
    }
   ],
   "test":{
    "commands":[
-    "echo provider \"dme\" { version=\"0.1.0\" } > init.tf",
+    "echo provider \"dme\" { version=\"0.1.1\" } > init.tf",
     "terraform init",
     "if not exist .terraform\\plugins\\_\\lock.json exit 1",
-    "if exist .terraform\\plugins\\_\\terraform-provider-dme_v0.1.0_x4 exit 1"
+    "if exist .terraform\\plugins\\_\\terraform-provider-dme_v0.1.1_x4 exit 1"
    ]
   }
  },
