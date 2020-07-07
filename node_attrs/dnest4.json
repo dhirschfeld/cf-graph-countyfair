@@ -33,6 +33,25 @@
     "migrator_name",
     "migrator_version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445134265.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -271,7 +290,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.12.02",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set name = \"dnest4\" %}\n{% set version = \"0.2.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ec164532413599c45969ad8c20a83e2c9504a1ca943bc36c7e9bfb5b67135387\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - numpy\n  run:\n    - python\n    - numpy\n    - matplotlib-base\n\ntest:\n  imports:\n    - dnest4\n\nabout:\n  home: https://github.com/eggplantbren/DNest4\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Diffusive Nested Sampling'\n  description: |\n    DNest4 is a C++11 implementation of Diffusive Nested Sampling,\n    a Markov Chain Monte Carlo (MCMC) algorithm for Bayesian\n    Inference and Statistical Mechanics.\n  doc_url: https://github.com/eggplantbren/DNest4\n  dev_url: https://github.com/eggplantbren/DNest4\n\nextra:\n  recipe-maintainers:\n    - dfm\n",
  "req":{
   "__set__":true,
@@ -313,7 +332,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.3",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
