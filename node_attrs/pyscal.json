@@ -186,6 +186,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445105233.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -456,7 +475,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set name = \"pyscal\" %}\n{% set version = \"2.3.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: dd158f82158dcc7c291bda3b588066d0587df00ff83396d90bd9e3a8c8e2c553\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py2k or win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - pip\n    - matplotlib-base >=3\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pyscal\n  commands:\n    - pip check\n\nabout:\n  home: https://pyscal.com\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Python library written in C++ for calculation of local atomic structural environment\n\n  description: |\n    pyscal is a python module for the calculation of local \n    atomic structural environments including Steinhardt's bond \n    orientational order parameters [1] during post-processing \n    of atomistic simulation data. The core functionality of \n    pyscal is written in C++ with python wrappers using \n    pybind11 which allows for fast calculations with possibilities \n    for easy expansion in python.\n  doc_url: https://pyscal.com\n  dev_url: https://github.com/srmnitc/pyscal/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - srmnitc\n",
  "req":{
   "__set__":true,
@@ -499,7 +518,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

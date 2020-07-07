@@ -88,6 +88,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445103481.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -398,7 +417,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.05.18.14.31.44",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set name = \"atomman\" %}\n{% set version = \"1.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 840acea340f13a379589f5c457e8b733a4087df581aff3ac6823bcb0ba1419dd\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<37]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n    - pip\n    - xmltodict\n    - datamodeldict\n    - numpy >=1.15\n    - matplotlib-base\n    - scipy\n    - pandas\n    - cython\n    - numericalunits\n    - toolz\n\ntest:\n  imports:\n    - atomman\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/usnistgov/atomman\n  license: OTHER\n  license_family: OTHER\n  license_file: LICENSE.TXT\n  summary: Atomistic Manipulation Toolkit\n\n  description: |\n    atomMan: the Atomistic Manipulation Toolkit is a Python library for \n    creating, representing, manipulating, and analyzing large-scale atomic \n    systems of atoms. The focus of the package is to facilitate the rapid \n    design and development of simulations that are fully documented and \n    easily adaptable to new potentials, configurations, etc. \n  doc_url: https://github.com/usnistgov/atomman\n  dev_url: https://github.com/usnistgov/atomman\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - lmhale99\n",
  "req":{
   "__set__":true,
@@ -453,7 +472,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

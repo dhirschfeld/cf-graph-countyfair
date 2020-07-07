@@ -103,6 +103,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445104142.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -376,7 +395,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.02.12",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set name = \"starry\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 955799a486afc8ec7337c272d41bbd5f327f6465abc73c049eb1d6d3f577a509\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - pybind11\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - matplotlib-base\n    - pillow\n\ntest:\n  imports:\n    - starry\n    - starry.maps\n\nabout:\n  home: http://github.com/rodluger/starry\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Analytic occultation light curves for astronomy'\n  description: |\n    The starry code package enables the computation of light curves for various\n    applications in astronomy including transits and secondary eclipses of\n    exoplanets, light curves of eclipsing binaries, rotational phase curves of\n    exoplanets, light curves of planet-planet and planet-moon occultations, and\n    more.\n  doc_url: https://rodluger.github.io/starry/\n  dev_url: https://github.com/rodluger/starry\n\nextra:\n  recipe-maintainers:\n    - dfm\n    - rodluger\n",
  "req":{
   "__set__":true,
@@ -424,7 +443,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.8",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
