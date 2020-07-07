@@ -188,6 +188,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445632234.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.8.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -348,13 +365,14 @@
   }
  },
  "name":"deepxde",
- "new_version":"0.8.1",
+ "new_version":"0.8.2",
  "new_version_attempts":{
   "0.6.0":1,
   "0.6.1":1,
   "0.7.0":1,
   "0.8.0":1,
-  "0.8.1":1
+  "0.8.1":1,
+  "0.8.2":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -437,7 +455,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.06.18.33.32",
+ "pinning_version":"2020.07.07.15.30.32",
  "raw_meta_yaml":"{% set name = \"DeepXDE\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9f9dba24fa97937203f963707ad67efa7a28b34a268c09d48c3f62b4e95e699a\n\nbuild:\n  number: 0\n  # Skip windows with Python 2.7 as TensorFlow does not support it well.\n  skip: true  # [win and py27]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - matplotlib-base\n    - salib\n    - scikit-learn\n    - scipy\n    - tensorflow\n\ntest:\n  imports:\n    # Skip the import test on Linux as TensorFlow require a more recent\n    # version of GLIBC++ than the VM used to build and test package.\n    - deepxde  # [not linux]\n\nabout:\n  home: https://github.com/lululxvi/deepxde\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Deep learning library for solving differential equations\n\n  description: |\n    DeepXDE is a deep learning library for solving differential equations on top of TensorFlow.\n    Use DeepXDE if you need a deep learning library that\n    solves partial differential equations (PDEs),\n    solves integro-differential equations (IDEs),\n    solves fractional partial differential equations (fPDEs),\n    solves inverse problems for differential equations,\n    approximates functions from a dataset with/without constraints,\n    approximates functions from multi-fidelity data,\n    and approximates operators.\n  doc_url: https://deepxde.readthedocs.io\n  dev_url: https://github.com/lululxvi/deepxde\n\nextra:\n  recipe-maintainers:\n    - lululxvi\n",
  "req":{
   "__set__":true,
@@ -482,7 +500,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
