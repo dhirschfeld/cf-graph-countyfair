@@ -38,7 +38,7 @@
   },
   "build":{
    "noarch":"generic",
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/"
@@ -123,7 +123,7 @@
   "build":{
    "merge_build_host":true,
    "noarch":"generic",
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -203,7 +203,7 @@
   },
   "build":{
    "noarch":"generic",
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/"
@@ -271,7 +271,7 @@
   }
  },
  "pinning_version":"2020.07.06.18.43.00",
- "raw_meta_yaml":"{% set version = '1.1.0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-httpcache\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/httpcache_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/httpcache/httpcache_{{ version }}.tar.gz\n  sha256: 690a5f9dd4871c3093b66198694aa14e6406f057a5c0a0afde6f492165600d86\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-digest\n    - r-httr >=1.0.0\n  run:\n    - r-base\n    - r-digest\n    - r-httr >=1.0.0\n\ntest:\n  commands:\n    - $R -e \"library('httpcache')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('httpcache')\\\"\"  # [win]\n\nabout:\n  home: http://enpiar.com/r/httpcache, https://github.com/nealrichardson/httpcache\n  license: MIT\n  summary: In order to improve performance for HTTP API clients, 'httpcache' provides simple\n    tools for caching and invalidating cache. It includes the HTTP verb functions GET,\n    PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr'\n    package. These functions are cache-aware and provide default settings for cache\n    invalidation suitable for RESTful APIs; the package also enables custom cache-management\n    strategies. Finally, 'httpcache' includes a basic logging framework to facilitate\n    the measurement of HTTP request time and cache performance.\n  license_family: MIT\n  license_file:\n    - '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT'\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: httpcache\n# Type: Package\n# Title: Query Cache for HTTP Clients\n# Description: In order to improve performance for HTTP API clients, 'httpcache' provides simple tools for caching and invalidating cache. It includes the HTTP verb functions GET, PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr' package. These functions are cache-aware and provide default settings for cache invalidation suitable for RESTful APIs; the package also enables custom cache-management strategies. Finally, 'httpcache' includes a basic logging framework to facilitate the measurement of HTTP request time and cache performance.\n# Version: 1.1.0\n# Authors@R: c(person(\"Neal\", \"Richardson\", role = c(\"aut\", \"cre\"), email = \"neal.p.richardson@gmail.com\"))\n# URL: http://enpiar.com/r/httpcache, https://github.com/nealrichardson/httpcache\n# BugReports: https://github.com/nealrichardson/httpcache/issues\n# License: MIT + file LICENSE\n# Depends: R (>= 3.0.0)\n# Imports: digest, httr (>= 1.0.0), utils\n# Suggests: httptest, knitr\n# RoxygenNote: 6.0.1\n# VignetteBuilder: knitr\n# NeedsCompilation: no\n# Packaged: 2017-10-17 05:20:34 UTC; neal.richardson\n# Author: Neal Richardson [aut, cre]\n# Maintainer: Neal Richardson <neal.p.richardson@gmail.com>\n# Repository: CRAN\n# Date/Publication: 2017-10-17 21:31:30 UTC\n",
+ "raw_meta_yaml":"{% set version = '1.1.0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-httpcache\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/httpcache_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/httpcache/httpcache_{{ version }}.tar.gz\n  sha256: 690a5f9dd4871c3093b66198694aa14e6406f057a5c0a0afde6f492165600d86\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-digest\n    - r-httr >=1.0.0\n  run:\n    - r-base\n    - r-digest\n    - r-httr >=1.0.0\n\ntest:\n  commands:\n    - $R -e \"library('httpcache')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('httpcache')\\\"\"  # [win]\n\nabout:\n  home: http://enpiar.com/r/httpcache, https://github.com/nealrichardson/httpcache\n  license: MIT\n  summary: In order to improve performance for HTTP API clients, 'httpcache' provides simple\n    tools for caching and invalidating cache. It includes the HTTP verb functions GET,\n    PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr'\n    package. These functions are cache-aware and provide default settings for cache\n    invalidation suitable for RESTful APIs; the package also enables custom cache-management\n    strategies. Finally, 'httpcache' includes a basic logging framework to facilitate\n    the measurement of HTTP request time and cache performance.\n  license_family: MIT\n  license_file:\n    - '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/MIT'\n    - LICENSE\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: httpcache\n# Type: Package\n# Title: Query Cache for HTTP Clients\n# Description: In order to improve performance for HTTP API clients, 'httpcache' provides simple tools for caching and invalidating cache. It includes the HTTP verb functions GET, PUT, PATCH, POST, and DELETE, which are drop-in replacements for those in the 'httr' package. These functions are cache-aware and provide default settings for cache invalidation suitable for RESTful APIs; the package also enables custom cache-management strategies. Finally, 'httpcache' includes a basic logging framework to facilitate the measurement of HTTP request time and cache performance.\n# Version: 1.1.0\n# Authors@R: c(person(\"Neal\", \"Richardson\", role = c(\"aut\", \"cre\"), email = \"neal.p.richardson@gmail.com\"))\n# URL: http://enpiar.com/r/httpcache, https://github.com/nealrichardson/httpcache\n# BugReports: https://github.com/nealrichardson/httpcache/issues\n# License: MIT + file LICENSE\n# Depends: R (>= 3.0.0)\n# Imports: digest, httr (>= 1.0.0), utils\n# Suggests: httptest, knitr\n# RoxygenNote: 6.0.1\n# VignetteBuilder: knitr\n# NeedsCompilation: no\n# Packaged: 2017-10-17 05:20:34 UTC; neal.richardson\n# Author: Neal Richardson [aut, cre]\n# Maintainer: Neal Richardson <neal.p.richardson@gmail.com>\n# Repository: CRAN\n# Date/Publication: 2017-10-17 21:31:30 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -357,7 +357,7 @@
   "build":{
    "merge_build_host":true,
    "noarch":"generic",
-   "number":"0",
+   "number":"1",
    "rpaths":[
     "lib/R/lib/",
     "lib/"

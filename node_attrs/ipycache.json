@@ -75,11 +75,7 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35"
- },
+ "conda-forge.yml":{},
  "feedstock_name":"ipycache",
  "hash_type":"md5",
  "linux_64_meta_yaml":{
@@ -90,10 +86,11 @@
    "summary":"Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file."
   },
   "build":{
-   "number":"1003",
+   "noarch":"python",
+   "number":"0",
    "script":[
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt"
+    "-m pip install . --no-deps -vv"
    ]
   },
   "extra":{
@@ -103,12 +100,12 @@
   },
   "package":{
    "name":"ipycache",
-   "version":"0.1.4"
+   "version":"0.1.5"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -116,16 +113,10 @@
    ]
   },
   "source":{
-   "fn":"ipycache-0.1.4.zip",
-   "md5":"c78c6094ffab45b0e33c2f556705fa11",
-   "url":"https://pypi.python.org/packages/source/i/ipycache/ipycache-0.1.4.zip"
+   "git_url":"https://github.com/rossant/ipycache/"
   },
   "test":{
    "commands":[
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests",
     "python ipynb_runner.py -v -s examples/example.ipynb",
     "python ipynb_runner.py -v -s examples/example_outputs.ipynb"
@@ -137,20 +128,25 @@
     "ipython",
     "nbformat",
     "ipykernel"
+   ],
+   "source_files":[
+    "ipynb_runner.py",
+    "examples",
+    "test_*"
    ]
   }
  },
  "linux_64_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -179,14 +175,15 @@
    "summary":"Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file."
   },
   "build":{
-   "number":"1003",
+   "noarch":"python",
+   "number":"0",
    "script":[
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt",
+    "-m pip install . --no-deps -vv",
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt",
+    "-m pip install . --no-deps -vv",
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt"
+    "-m pip install . --no-deps -vv"
    ]
   },
   "extra":{
@@ -198,16 +195,16 @@
   },
   "package":{
    "name":"ipycache",
-   "version":"0.1.4"
+   "version":"0.1.5"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools",
+    "pip",
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -219,28 +216,14 @@
    ]
   },
   "source":{
-   "fn":"ipycache-0.1.4.zip",
-   "md5":"c78c6094ffab45b0e33c2f556705fa11",
-   "url":"https://pypi.python.org/packages/source/i/ipycache/ipycache-0.1.4.zip"
+   "git_url":"https://github.com/rossant/ipycache/"
   },
   "test":{
    "commands":[
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests",
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests",
     "python ipynb_runner.py -v -s examples/example.ipynb",
     "python ipynb_runner.py -v -s examples/example_outputs.ipynb",
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests",
     "python ipynb_runner.py -v -s examples/example.ipynb",
     "python ipynb_runner.py -v -s examples/example_outputs.ipynb"
@@ -264,6 +247,17 @@
     "ipython",
     "nbformat",
     "ipykernel"
+   ],
+   "source_files":[
+    "ipynb_runner.py",
+    "examples",
+    "test_*",
+    "ipynb_runner.py",
+    "examples",
+    "test_*",
+    "ipynb_runner.py",
+    "examples",
+    "test_*"
    ]
   }
  },
@@ -277,10 +271,11 @@
    "summary":"Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file."
   },
   "build":{
-   "number":"1003",
+   "noarch":"python",
+   "number":"0",
    "script":[
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt"
+    "-m pip install . --no-deps -vv"
    ]
   },
   "extra":{
@@ -290,12 +285,12 @@
   },
   "package":{
    "name":"ipycache",
-   "version":"0.1.4"
+   "version":"0.1.5"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -303,16 +298,10 @@
    ]
   },
   "source":{
-   "fn":"ipycache-0.1.4.zip",
-   "md5":"c78c6094ffab45b0e33c2f556705fa11",
-   "url":"https://pypi.python.org/packages/source/i/ipycache/ipycache-0.1.4.zip"
+   "git_url":"https://github.com/rossant/ipycache/"
   },
   "test":{
    "commands":[
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests",
     "python ipynb_runner.py -v -s examples/example.ipynb",
     "python ipynb_runner.py -v -s examples/example_outputs.ipynb"
@@ -324,20 +313,25 @@
     "ipython",
     "nbformat",
     "ipykernel"
+   ],
+   "source_files":[
+    "ipynb_runner.py",
+    "examples",
+    "test_*"
    ]
   }
  },
  "osx_64_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -359,26 +353,26 @@
   }
  },
  "pinning_version":"2020.07.06.18.43.00",
- "raw_meta_yaml":"{% set version = \"0.1.4\" %}\n\npackage:\n  name: ipycache\n  version: {{ version }}\n\nsource:\n  fn: ipycache-{{ version }}.zip\n  url: https://pypi.python.org/packages/source/i/ipycache/ipycache-{{ version }}.zip\n  md5: c78c6094ffab45b0e33c2f556705fa11\n\nbuild:\n  number: 1003\n  script: \n    - cp {{ environ['RECIPE_DIR'] }}/LICENSE.md {{ environ['SRC_DIR'] }} \n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipython\n\ntest:  \n  commands:\n    - curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz\n    - mkdir source\n    - cd source\n    - tar --strip-components=1 -xvzf ../master.tgz\n    - nosetests \n    - python ipynb_runner.py -v -s examples/example.ipynb  # [not win]\n    - python ipynb_runner.py -v -s examples/example_outputs.ipynb  # [not win]\n  \n  requires:\n    - nose\n    - numpy\n    - matplotlib-base\n    - ipython\n    - nbformat\n    - ipykernel\n\nabout:\n  home: http://packages.python.org/ipycache\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n  summary: 'Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file.'\n  \nextra:\n  recipe-maintainers:\n    - jochym\n",
+ "raw_meta_yaml":"{% set version = \"0.1.5\" %}\n\npackage:\n  name: ipycache\n  version: {{ version }}\n\nsource:\n#  - url: https://pypi.python.org/packages/source/i/ipycache/ipycache-{{ version }}.zip\n#    md5: c78c6094ffab45b0e33c2f556705fa11\n#    fn: ipycache-{{ version }}.zip\n#    folder: .\n  git_url: https://github.com/rossant/ipycache/\n\nbuild:\n  number: 0\n  noarch: python\n  script: \n    - cp {{ environ['RECIPE_DIR'] }}/LICENSE.md {{ environ['SRC_DIR'] }} \n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - ipython\n\ntest:\n  source_files:\n    - ipynb_runner.py\n    - examples\n    - test_*\n\n  commands:\n    - nosetests \n    - python ipynb_runner.py -v -s examples/example.ipynb  # [not win]\n    - python ipynb_runner.py -v -s examples/example_outputs.ipynb  # [not win]\n  \n  requires:\n    - nose\n    - numpy\n    - matplotlib-base\n    - ipython\n    - nbformat\n    - ipykernel\n\nabout:\n  home: http://packages.python.org/ipycache\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n  summary: 'Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file.'\n  \nextra:\n  recipe-maintainers:\n    - jochym\n",
  "req":{
   "__set__":true,
   "elements":[
    "ipython",
-   "python",
-   "setuptools"
+   "pip",
+   "python"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -404,14 +398,14 @@
  "total_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
@@ -433,7 +427,7 @@
   }
  },
  "url":"https://pypi.python.org/packages/source/i/ipycache/ipycache-0.1.4.zip",
- "version":"0.1.4",
+ "version":"0.1.5",
  "win_64_meta_yaml":{
   "about":{
    "home":"http://packages.python.org/ipycache",
@@ -442,10 +436,11 @@
    "summary":"Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file."
   },
   "build":{
-   "number":"1003",
+   "noarch":"python",
+   "number":"0",
    "script":[
     "cp /LICENSE.md",
-    "python setup.py install --single-version-externally-managed --record=record.txt"
+    "-m pip install . --no-deps -vv"
    ]
   },
   "extra":{
@@ -455,12 +450,12 @@
   },
   "package":{
    "name":"ipycache",
-   "version":"0.1.4"
+   "version":"0.1.5"
   },
   "requirements":{
-   "build":[
+   "host":[
     "python",
-    "setuptools"
+    "pip"
    ],
    "run":[
     "python",
@@ -468,16 +463,10 @@
    ]
   },
   "source":{
-   "fn":"ipycache-0.1.4.zip",
-   "md5":"c78c6094ffab45b0e33c2f556705fa11",
-   "url":"https://pypi.python.org/packages/source/i/ipycache/ipycache-0.1.4.zip"
+   "git_url":"https://github.com/rossant/ipycache/"
   },
   "test":{
    "commands":[
-    "curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz",
-    "mkdir source",
-    "cd source",
-    "tar --strip-components=1 -xvzf ../master.tgz",
     "nosetests"
    ],
    "requires":[
@@ -487,20 +476,25 @@
     "ipython",
     "nbformat",
     "ipykernel"
+   ],
+   "source_files":[
+    "ipynb_runner.py",
+    "examples",
+    "test_*"
    ]
   }
  },
  "win_64_requirements":{
   "build":{
    "__set__":true,
-   "elements":[
-    "python",
-    "setuptools"
-   ]
+   "elements":[]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
