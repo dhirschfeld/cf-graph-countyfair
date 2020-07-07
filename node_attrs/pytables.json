@@ -227,6 +227,8 @@
  "bad":false,
  "conda-forge.yml":{
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -362,6 +364,266 @@
    ]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"PyTables is a package for managing hierarchical datasets and designed to\nefficiently and easily cope with extremely large amounts of data. PyTables\nis built on top of the HDF5 library, using the Python language and the\nNumPy package.\n",
+   "dev_url":"https://github.com/PyTables",
+   "doc_url":"http://www.pytables.org/",
+   "home":"http://www.pytables.org",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Brings together Python, HDF5 and NumPy to easily handle large amounts of data."
+  },
+  "build":{
+   "entry_points":[
+    "pt2to3 = tables.scripts.pt2to3:main",
+    "ptdump = tables.scripts.ptdump:main",
+    "ptrepack = tables.scripts.ptrepack:main",
+    "pttree = tables.scripts.pttree:main"
+   ],
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "ocefpaf",
+    "tomkooij",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"pytables",
+   "version":"3.6.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "blosc"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "hdf5",
+    "numexpr",
+    "blosc"
+   ],
+   "run":[
+    "python",
+    "six",
+    "numpy",
+    "numexpr",
+    "hdf5",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "blosc",
+    "mock"
+   ]
+  },
+  "source":{
+   "patches":[
+    "do_not_copy_dlls_into_package.patch",
+    "remove_dll_check.patch"
+   ],
+   "sha256":"49a972b8a7c27a8a173aeb05f67acb45fe608b64cd8e9fa667c0962a60b71b49",
+   "url":"https://pypi.io/packages/source/t/tables/tables-3.6.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pt2to3 -h",
+    "ptdump -h",
+    "ptrepack -h",
+    "pttree -h"
+   ],
+   "requires":[
+    "setuptools",
+    "mock"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "cython",
+    "hdf5",
+    "lzo",
+    "numexpr",
+    "numpy",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "hdf5",
+    "lzo",
+    "mock",
+    "numexpr",
+    "numpy",
+    "python",
+    "six",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "setuptools"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"PyTables is a package for managing hierarchical datasets and designed to\nefficiently and easily cope with extremely large amounts of data. PyTables\nis built on top of the HDF5 library, using the Python language and the\nNumPy package.\n",
+   "dev_url":"https://github.com/PyTables",
+   "doc_url":"http://www.pytables.org/",
+   "home":"http://www.pytables.org",
+   "license":"BSD 3-Clause",
+   "license_file":"LICENSE.txt",
+   "summary":"Brings together Python, HDF5 and NumPy to easily handle large amounts of data."
+  },
+  "build":{
+   "entry_points":[
+    "pt2to3 = tables.scripts.pt2to3:main",
+    "ptdump = tables.scripts.ptdump:main",
+    "ptrepack = tables.scripts.ptrepack:main",
+    "pttree = tables.scripts.pttree:main"
+   ],
+   "number":"2"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "msarahan",
+    "ocefpaf",
+    "tomkooij",
+    "scopatz"
+   ]
+  },
+  "package":{
+   "name":"pytables",
+   "version":"3.6.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "blosc"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "hdf5",
+    "numexpr",
+    "blosc"
+   ],
+   "run":[
+    "python",
+    "six",
+    "numpy",
+    "numexpr",
+    "hdf5",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "blosc",
+    "mock"
+   ]
+  },
+  "source":{
+   "patches":[
+    "do_not_copy_dlls_into_package.patch",
+    "remove_dll_check.patch"
+   ],
+   "sha256":"49a972b8a7c27a8a173aeb05f67acb45fe608b64cd8e9fa667c0962a60b71b49",
+   "url":"https://pypi.io/packages/source/t/tables/tables-3.6.1.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pt2to3 -h",
+    "ptdump -h",
+    "ptrepack -h",
+    "pttree -h"
+   ],
+   "requires":[
+    "setuptools",
+    "mock"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "c_compiler_stub",
+    "cxx_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "cython",
+    "hdf5",
+    "lzo",
+    "numexpr",
+    "numpy",
+    "pip",
+    "python",
+    "zlib"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "blosc",
+    "bzip2",
+    "hdf5",
+    "lzo",
+    "mock",
+    "numexpr",
+    "numpy",
+    "python",
+    "six",
+    "zlib"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "setuptools"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"PyTables is a package for managing hierarchical datasets and designed to\nefficiently and easily cope with extremely large amounts of data. PyTables\nis built on top of the HDF5 library, using the Python language and the\nNumPy package.\n",
@@ -374,6 +636,14 @@
   },
   "build":{
    "entry_points":[
+    "pt2to3 = tables.scripts.pt2to3:main",
+    "ptdump = tables.scripts.ptdump:main",
+    "ptrepack = tables.scripts.ptrepack:main",
+    "pttree = tables.scripts.pttree:main",
+    "pt2to3 = tables.scripts.pt2to3:main",
+    "ptdump = tables.scripts.ptdump:main",
+    "ptrepack = tables.scripts.ptrepack:main",
+    "pttree = tables.scripts.pttree:main",
     "pt2to3 = tables.scripts.pt2to3:main",
     "ptdump = tables.scripts.ptdump:main",
     "ptrepack = tables.scripts.ptrepack:main",
@@ -402,6 +672,14 @@
     "msarahan",
     "ocefpaf",
     "tomkooij",
+    "scopatz",
+    "msarahan",
+    "ocefpaf",
+    "tomkooij",
+    "scopatz",
+    "msarahan",
+    "ocefpaf",
+    "tomkooij",
     "scopatz"
    ]
   },
@@ -411,6 +689,12 @@
   },
   "requirements":{
    "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "blosc",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "blosc",
     "c_compiler_stub",
     "cxx_compiler_stub",
     "blosc",
@@ -436,6 +720,26 @@
     "cython",
     "numpy",
     "zlib",
+    "bzip2",
+    "hdf5",
+    "numexpr",
+    "blosc",
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "hdf5",
+    "numexpr",
+    "blosc",
+    "python",
+    "pip",
+    "cython",
+    "numpy",
+    "zlib",
+    "lzo",
     "bzip2",
     "hdf5",
     "numexpr",
@@ -479,11 +783,35 @@
     "lzo",
     "bzip2",
     "blosc",
+    "mock",
+    "python",
+    "six",
+    "numpy",
+    "numexpr",
+    "hdf5",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "blosc",
+    "mock",
+    "python",
+    "six",
+    "numpy",
+    "numexpr",
+    "hdf5",
+    "zlib",
+    "lzo",
+    "bzip2",
+    "blosc",
     "mock"
    ]
   },
   "source":{
    "patches":[
+    "do_not_copy_dlls_into_package.patch",
+    "remove_dll_check.patch",
+    "do_not_copy_dlls_into_package.patch",
+    "remove_dll_check.patch",
     "do_not_copy_dlls_into_package.patch",
     "remove_dll_check.patch",
     "do_not_copy_dlls_into_package.patch",
@@ -507,9 +835,21 @@
     "pt2to3 -h",
     "ptdump -h",
     "ptrepack -h",
+    "pttree -h",
+    "pt2to3 -h",
+    "ptdump -h",
+    "ptrepack -h",
+    "pttree -h",
+    "pt2to3 -h",
+    "ptdump -h",
+    "ptrepack -h",
     "pttree -h"
    ],
    "requires":[
+    "setuptools",
+    "mock",
+    "setuptools",
+    "mock",
     "setuptools",
     "mock",
     "setuptools",
