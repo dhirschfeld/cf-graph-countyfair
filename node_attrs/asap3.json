@@ -166,13 +166,13 @@
    "dev_url":"https://gitlab.com/asap/asap",
    "doc_url":"https://wiki.fysik.dtu.dk/asap/Manual",
    "home":"https://wiki.fysik.dtu.dk/asap",
-   "license":"LGPL-3.0",
+   "license":"LGPL-3.0-only",
    "license_family":"LGPL",
    "license_file":"LICENSE.txt",
    "summary":"ASAP is a calculator for doing large-scale classical molecular dynamics within ASE."
   },
   "build":{
-   "number":"2",
+   "number":"3",
    "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra":{
@@ -182,7 +182,7 @@
   },
   "package":{
    "name":"asap3",
-   "version":"3.11.10"
+   "version":"3.11.13"
   },
   "requirements":{
    "build":[
@@ -194,22 +194,23 @@
     "pip",
     "numpy",
     "openblas",
-    "openmpi"
+    null,
+    "kim-api"
    ],
    "run":[
     "python",
     "openblas",
+    "ase",
     "numpy",
-    "ase"
+    null,
+    "kim-api"
    ]
   },
   "source":{
+   "git_url":"https://gitlab.com/asap/asap.git",
    "patches":[
-    "bldlibrary.patch",
-    "ase_18_1_comapat.patch"
-   ],
-   "sha256":"da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261",
-   "url":"https://pypi.io/packages/source/a/asap3/asap3-3.11.10.tar.gz"
+    "bldlibrary.patch"
+   ]
   },
   "test":{
    "commands":[
@@ -226,7 +227,7 @@
     "asap3"
    ],
    "requires":[
-    "openmpi"
+    null
    ],
    "source_files":[
     "Test"
@@ -244,9 +245,9 @@
   "host":{
    "__set__":true,
    "elements":[
+    "kim-api",
     "numpy",
     "openblas",
-    "openmpi",
     "pip",
     "python"
    ]
@@ -255,6 +256,7 @@
    "__set__":true,
    "elements":[
     "ase",
+    "kim-api",
     "numpy",
     "openblas",
     "python"
@@ -262,9 +264,7 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "openmpi"
-   ]
+   "elements":[]
   }
  },
  "meta_yaml":{
@@ -273,13 +273,13 @@
    "dev_url":"https://gitlab.com/asap/asap",
    "doc_url":"https://wiki.fysik.dtu.dk/asap/Manual",
    "home":"https://wiki.fysik.dtu.dk/asap",
-   "license":"LGPL-3.0",
+   "license":"LGPL-3.0-only",
    "license_family":"LGPL",
    "license_file":"LICENSE.txt",
    "summary":"ASAP is a calculator for doing large-scale classical molecular dynamics within ASE."
   },
   "build":{
-   "number":"2",
+   "number":"3",
    "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
    "skip":true
   },
@@ -292,7 +292,7 @@
   },
   "package":{
    "name":"asap3",
-   "version":"3.11.10"
+   "version":"3.11.13"
   },
   "requirements":{
    "build":[
@@ -308,44 +308,49 @@
     "pip",
     "numpy",
     "openblas",
-    "openmpi",
+    null,
+    "kim-api",
     "python",
     "pip",
     "numpy",
     "openblas",
-    "openmpi",
+    null,
+    "kim-api",
     "python",
     "pip",
     "numpy",
     "openblas",
-    "openmpi"
+    null,
+    "kim-api"
    ],
    "run":[
     "python",
     "openblas",
-    "numpy",
     "ase",
+    "numpy",
+    null,
+    "kim-api",
     "python",
     "openblas",
-    "numpy",
     "ase",
+    "numpy",
+    null,
+    "kim-api",
     "python",
     "openblas",
+    "ase",
     "numpy",
-    "ase"
+    null,
+    "kim-api"
    ]
   },
   "source":{
+   "git_url":"https://gitlab.com/asap/asap.git",
    "patches":[
     "bldlibrary.patch",
-    "ase_18_1_comapat.patch",
     "bldlibrary.patch",
-    "ase_18_1_comapat.patch",
-    "bldlibrary.patch",
-    "ase_18_1_comapat.patch"
-   ],
-   "sha256":"da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261",
-   "url":"https://pypi.io/packages/source/a/asap3/asap3-3.11.10.tar.gz"
+    "bldlibrary.patch"
+   ]
   },
   "test":{
    "commands":[
@@ -376,9 +381,9 @@
     "asap3"
    ],
    "requires":[
-    "openmpi",
-    "openmpi",
-    "openmpi"
+    null,
+    null,
+    null
    ],
    "source_files":[
     "Test",
@@ -395,13 +400,13 @@
    "dev_url":"https://gitlab.com/asap/asap",
    "doc_url":"https://wiki.fysik.dtu.dk/asap/Manual",
    "home":"https://wiki.fysik.dtu.dk/asap",
-   "license":"LGPL-3.0",
+   "license":"LGPL-3.0-only",
    "license_family":"LGPL",
    "license_file":"LICENSE.txt",
    "summary":"ASAP is a calculator for doing large-scale classical molecular dynamics within ASE."
   },
   "build":{
-   "number":"2",
+   "number":"3",
    "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
    "skip":true
   },
@@ -412,7 +417,7 @@
   },
   "package":{
    "name":"asap3",
-   "version":"3.11.10"
+   "version":"3.11.13"
   },
   "requirements":{
    "build":[
@@ -424,22 +429,23 @@
     "pip",
     "numpy",
     "openblas",
-    "openmpi"
+    null,
+    "kim-api"
    ],
    "run":[
     "python",
     "openblas",
+    "ase",
     "numpy",
-    "ase"
+    null,
+    "kim-api"
    ]
   },
   "source":{
+   "git_url":"https://gitlab.com/asap/asap.git",
    "patches":[
-    "bldlibrary.patch",
-    "ase_18_1_comapat.patch"
-   ],
-   "sha256":"da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261",
-   "url":"https://pypi.io/packages/source/a/asap3/asap3-3.11.10.tar.gz"
+    "bldlibrary.patch"
+   ]
   },
   "test":{
    "commands":[
@@ -456,7 +462,7 @@
     "asap3"
    ],
    "requires":[
-    "openmpi"
+    null
    ],
    "source_files":[
     "Test"
@@ -474,9 +480,9 @@
   "host":{
    "__set__":true,
    "elements":[
+    "kim-api",
     "numpy",
     "openblas",
-    "openmpi",
     "pip",
     "python"
    ]
@@ -485,6 +491,7 @@
    "__set__":true,
    "elements":[
     "ase",
+    "kim-api",
     "numpy",
     "openblas",
     "python"
@@ -492,22 +499,20 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "openmpi"
-   ]
+   "elements":[]
   }
  },
  "pinning_version":"2020.03.24",
- "raw_meta_yaml":"{% set name = \"asap3\" %}\n{% set version = \"3.11.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261\n  patches:\n    - bldlibrary.patch\n    - ase_18_1_comapat.patch\n\nbuild:\n  number: 2\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - openblas\n    - openmpi\n  run:\n    - python\n    - openblas\n    - {{ pin_compatible('numpy') }}\n    - ase\n\ntest:\n  requires:\n    - openmpi\n  files:\n    - Verlet*.pickle\n    - hostfile\n  source_files:\n    - Test\n  imports:\n    - asap3\n  commands:\n    - cp Verlet*.pickle hostfile Test\n    - cd Test\n    - python TestAll.py\n    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel\n\nabout:\n  home: https://wiki.fysik.dtu.dk/asap\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE.txt\n  summary: 'ASAP is a calculator for doing large-scale classical molecular dynamics within ASE.'\n\n  description: |\n     ASAP is a tool for doing atomic-scale computer simulations\n     (mainly molecular dynamics) using classical potentials\n     (mainly Effective Medium Theory). It is intended to work \n     as an energy calculator in connection with the Atomic Simulation \n     Environment (ASE). However, some parts of the ASE are either \n     extended or reimplemented for reasons of efficiency and \n     ease-of-use on parallel computers.\n  doc_url: https://wiki.fysik.dtu.dk/asap/Manual\n  dev_url: https://gitlab.com/asap/asap\n\nextra:\n  recipe-maintainers:\n    - jochym\n",
+ "raw_meta_yaml":"{% set name = \"asap3\" %}\n{% set version = \"3.11.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  #sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261\n  git_url: https://gitlab.com/asap/asap.git\n  patches:\n    - bldlibrary.patch\n\nbuild:\n  number: 3\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: True  # [not linux or py2k]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - numpy\n    - openblas\n    - {{ mpi }}  # [mpi != 'nompi']\n    - kim-api\n  run:\n    - python\n    - openblas\n    - ase\n    - {{ pin_compatible('numpy') }}\n    - {{ mpi }}  # [mpi != 'nompi']    \n    - kim-api\n\ntest:\n  requires:\n    - {{ mpi }}  # [mpi != 'nompi']\n  files:\n    - Verlet*.pickle\n    - hostfile\n  source_files:\n    - Test\n  imports:\n    - asap3\n  commands:\n    - cp Verlet*.pickle hostfile Test\n    - cd Test\n    - python TestAll.py\n    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel  # [mpi != 'nompi']\n\nabout:\n  home: https://wiki.fysik.dtu.dk/asap\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE.txt\n  summary: 'ASAP is a calculator for doing large-scale classical molecular dynamics within ASE.'\n\n  description: |\n     ASAP is a tool for doing atomic-scale computer simulations\n     (mainly molecular dynamics) using classical potentials\n     (mainly Effective Medium Theory). It is intended to work \n     as an energy calculator in connection with the Atomic Simulation \n     Environment (ASE). However, some parts of the ASE are either \n     extended or reimplemented for reasons of efficiency and \n     ease-of-use on parallel computers.\n  doc_url: https://wiki.fysik.dtu.dk/asap/Manual\n  dev_url: https://gitlab.com/asap/asap\n\nextra:\n  recipe-maintainers:\n    - jochym\n",
  "req":{
   "__set__":true,
   "elements":[
    "ase",
    "c_compiler_stub",
    "cxx_compiler_stub",
+   "kim-api",
    "numpy",
    "openblas",
-   "openmpi",
    "pip",
    "python"
   ]
@@ -523,9 +528,9 @@
   "host":{
    "__set__":true,
    "elements":[
+    "kim-api",
     "numpy",
     "openblas",
-    "openmpi",
     "pip",
     "python"
    ]
@@ -534,6 +539,7 @@
    "__set__":true,
    "elements":[
     "ase",
+    "kim-api",
     "numpy",
     "openblas",
     "python"
@@ -541,9 +547,7 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "openmpi"
-   ]
+   "elements":[]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
@@ -559,9 +563,9 @@
   "host":{
    "__set__":true,
    "elements":[
+    "kim-api",
     "numpy",
     "openblas",
-    "openmpi",
     "pip",
     "python"
    ]
@@ -570,6 +574,7 @@
    "__set__":true,
    "elements":[
     "ase",
+    "kim-api",
     "numpy",
     "openblas",
     "python"
@@ -577,26 +582,24 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "openmpi"
-   ]
+   "elements":[]
   }
  },
  "url":"https://pypi.io/packages/source/a/asap3/asap3-3.10.10.tar.gz",
- "version":"3.11.10",
+ "version":"3.11.13",
  "win_64_meta_yaml":{
   "about":{
    "description":"ASAP is a tool for doing atomic-scale computer simulations\n(mainly molecular dynamics) using classical potentials\n(mainly Effective Medium Theory). It is intended to work\nas an energy calculator in connection with the Atomic Simulation\nEnvironment (ASE). However, some parts of the ASE are either\nextended or reimplemented for reasons of efficiency and\nease-of-use on parallel computers.\n",
    "dev_url":"https://gitlab.com/asap/asap",
    "doc_url":"https://wiki.fysik.dtu.dk/asap/Manual",
    "home":"https://wiki.fysik.dtu.dk/asap",
-   "license":"LGPL-3.0",
+   "license":"LGPL-3.0-only",
    "license_family":"LGPL",
    "license_file":"LICENSE.txt",
    "summary":"ASAP is a calculator for doing large-scale classical molecular dynamics within ASE."
   },
   "build":{
-   "number":"2",
+   "number":"3",
    "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
    "skip":true
   },
@@ -607,7 +610,7 @@
   },
   "package":{
    "name":"asap3",
-   "version":"3.11.10"
+   "version":"3.11.13"
   },
   "requirements":{
    "build":[
@@ -619,22 +622,23 @@
     "pip",
     "numpy",
     "openblas",
-    "openmpi"
+    null,
+    "kim-api"
    ],
    "run":[
     "python",
     "openblas",
+    "ase",
     "numpy",
-    "ase"
+    null,
+    "kim-api"
    ]
   },
   "source":{
+   "git_url":"https://gitlab.com/asap/asap.git",
    "patches":[
-    "bldlibrary.patch",
-    "ase_18_1_comapat.patch"
-   ],
-   "sha256":"da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261",
-   "url":"https://pypi.io/packages/source/a/asap3/asap3-3.11.10.tar.gz"
+    "bldlibrary.patch"
+   ]
   },
   "test":{
    "commands":[
@@ -651,7 +655,7 @@
     "asap3"
    ],
    "requires":[
-    "openmpi"
+    null
    ],
    "source_files":[
     "Test"
@@ -669,9 +673,9 @@
   "host":{
    "__set__":true,
    "elements":[
+    "kim-api",
     "numpy",
     "openblas",
-    "openmpi",
     "pip",
     "python"
    ]
@@ -680,6 +684,7 @@
    "__set__":true,
    "elements":[
     "ase",
+    "kim-api",
     "numpy",
     "openblas",
     "python"
@@ -687,9 +692,7 @@
   },
   "test":{
    "__set__":true,
-   "elements":[
-    "openmpi"
-   ]
+   "elements":[]
   }
  }
 }
