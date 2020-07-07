@@ -188,6 +188,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445122453.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -511,7 +530,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.24.08.48.19",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set name = \"galpy\" %}\n{% set version = \"1.6.0.post0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 721d3fa5b156a02a4d9e9ae58a29f946c716ff40a2bd6e4a6f8c06bdfe8f7c57\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  script:\n    - rm gsl-config.bat  # [win and py2k]\n    - python setup.py install --single-version-externally-managed --record=record.txt  # [win and py2k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt --no-openmp  # [win and py3k]\n  script: CPATH=\"$PREFIX/include:$CPATH\" python setup.py install --single-version-externally-managed --record=record.txt --no-openmp  # [osx]\n  script: CPATH=\"$PREFIX/include:$CPATH\" python setup.py install --single-version-externally-managed --record=record.txt  # [not win and not osx]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n    - scipy\n    - matplotlib-base\n    - six\n    - future\n    - gsl\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib-base\n    - six\n    - future\n    - gsl\n\ntest:\n  imports:\n    - galpy\n\nabout:\n  home: http://github.com/jobovy/galpy\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Galactic Dynamics in python\n  description: |\n    galpy is a Python 2 and 3 package for galactic dynamics. It supports orbit\n    integration in a variety of potentials, evaluating and sampling various\n    distribution functions, and the calculation of action-angle coordinates\n    for all static potentials. galpy is an astropy affiliated package and\n    provides full support for astropy\u2019s Quantity framework for variables with\n    units.\n  doc_url: http://galpy.readthedocs.io/en/latest/\n  dev_url: http://github.com/jobovy/galpy\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - jobovy\n",
  "req":{
   "__set__":true,
@@ -566,7 +585,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.17",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

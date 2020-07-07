@@ -69,6 +69,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445121077.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -310,7 +329,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.11.01",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set version = \"0.7.0\" %}\n{% set sha256 = \"69a8dcb85acda20862bd2c52b97f9c5b5f0fbc23c73c2824460269d0622b0b20\" %}\n{% set name = \"jupyter_dashboards\" %}\n\npackage:\n  name: {{ name }} \n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - {{ name.replace('_', '-') }} = jupyter_dashboards.extensionapp:main \n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - notebook\n    - python\n    - traitlets\n\ntest:\n  imports:\n    - {{ name }} \n  commands:\n    - {{ name.replace('_', '-') }} --help\n    - jupyter dashboards --help\n\nabout:\n  home: http://github.com/jupyter-incubator/dashboards\n  license: BSD 3-Clause \n  license_file: LICENSE.md\n  summary: Jupyter Dashboards Layout Extension \n  doc_url: https://{{ name }}-layout.readthedocs.io\n  dev_url: https://github.com/jupyter-incubator/dashboards\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - parente\n",
  "req":{
   "__set__":true,
@@ -346,7 +365,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

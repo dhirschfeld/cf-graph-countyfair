@@ -69,6 +69,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445120055.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -358,7 +377,7 @@
    ]
   }
  },
- "pinning_version":"2019.11.01",
+ "pinning_version":"2020.07.06.18.43.00",
  "raw_meta_yaml":"{% set gh_org = \"lgpage\" %}\n{% set gh_repo = \"nbtutor\" %}\n{% set version = \"1.0.4\" %}\n{% set sha256 = \"64d8f3ecccd77b16086710cd2dac8f2c0c1aef77916862770b7e948af9e05716\" %}\n\npackage:\n  name: {{ gh_repo|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - jsplumb.patch\n\nbuild:\n  number: 1003\n\nrequirements:\n  build:\n    - nodejs\n    - notebook >=4.2.0\n    - python\n    - setuptools\n\n  run:\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - nodejs\n    - notebook >=4.2.0\n    - pytest\n    - pytest-cov\n    - python\n    - requests\n\n  source_files:\n    - '*'\n\n  imports:\n    - nbtutor\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENCE.rst\n  summary: Visualize Python code execution in Jupyter Notebook cells\n\nextra:\n  recipe-maintainers:\n    - lgpage\n",
  "req":{
   "__set__":true,
@@ -403,7 +422,7 @@
    ]
   }
  },
- "smithy_version":"3.6.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
