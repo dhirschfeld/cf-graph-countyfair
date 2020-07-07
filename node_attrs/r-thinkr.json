@@ -86,14 +86,16 @@
  "linux_64_meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=thinkr",
-   "license":"GPL-3",
+   "license":"GPL-3.0-only",
    "license_family":"GPL3",
-   "license_file":"/lib/R/share/licenses/GPL-3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
    "summary":"Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best."
   },
   "build":{
    "noarch":"generic",
-   "number":"1002",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/"
@@ -101,24 +103,19 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast"
+    "conda-forge/r"
    ]
   },
   "package":{
    "name":"r-thinkr",
-   "version":"0.13"
+   "version":"0.15"
   },
   "requirements":{
    "build":null,
    "host":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -126,6 +123,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -134,6 +133,7 @@
    "run":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -141,6 +141,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -148,11 +150,11 @@
    ]
   },
   "source":{
-   "fn":"thinkr_0.13.tar.gz",
-   "sha256":"abedbf40ebef097242907043a5117e42fefa76202b8312676908c76cbfac83c8",
+   "fn":"thinkr_0.15.tar.gz",
+   "sha256":"8fb9043d827447a49806403327ee47e10cce37e0a0a34ffb467337750ce0ae9e",
    "url":[
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz"
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz"
    ]
   },
   "test":{
@@ -171,6 +173,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -178,6 +181,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -189,6 +194,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -196,6 +202,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -210,15 +218,19 @@
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=thinkr",
-   "license":"GPL-3",
+   "license":"GPL-3.0-only",
    "license_family":"GPL3",
-   "license_file":"/lib/R/share/licenses/GPL-3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3",
+    "/lib/R/share/licenses/GPL-3",
+    "/lib/R/share/licenses/GPL-3"
+   ],
    "summary":"Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best."
   },
   "build":{
    "merge_build_host":true,
    "noarch":"generic",
-   "number":"1002",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/",
@@ -231,37 +243,20 @@
   "extra":{
    "recipe-maintainers":[
     "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast",
     "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast",
-    "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast"
+    "conda-forge/r"
    ]
   },
   "package":{
    "name":"r-thinkr",
-   "version":"0.13"
+   "version":"0.15"
   },
   "requirements":{
    "build":null,
    "host":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -269,12 +264,15 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
     "r-tidyr",
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -282,12 +280,15 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
     "r-tidyr",
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -295,6 +296,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -303,6 +306,7 @@
    "run":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -310,12 +314,15 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
     "r-tidyr",
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -323,12 +330,15 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
     "r-tidyr",
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -336,6 +346,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -343,15 +355,15 @@
    ]
   },
   "source":{
-   "fn":"thinkr_0.13.tar.gz",
-   "sha256":"abedbf40ebef097242907043a5117e42fefa76202b8312676908c76cbfac83c8",
+   "fn":"thinkr_0.15.tar.gz",
+   "sha256":"8fb9043d827447a49806403327ee47e10cce37e0a0a34ffb467337750ce0ae9e",
    "url":[
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz"
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz"
    ]
   },
   "test":{
@@ -371,14 +383,16 @@
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=thinkr",
-   "license":"GPL-3",
+   "license":"GPL-3.0-only",
    "license_family":"GPL3",
-   "license_file":"/lib/R/share/licenses/GPL-3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
    "summary":"Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best."
   },
   "build":{
    "noarch":"generic",
-   "number":"1002",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/"
@@ -386,24 +400,19 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast"
+    "conda-forge/r"
    ]
   },
   "package":{
    "name":"r-thinkr",
-   "version":"0.13"
+   "version":"0.15"
   },
   "requirements":{
    "build":null,
    "host":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -411,6 +420,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -419,6 +430,7 @@
    "run":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -426,6 +438,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -433,11 +447,11 @@
    ]
   },
   "source":{
-   "fn":"thinkr_0.13.tar.gz",
-   "sha256":"abedbf40ebef097242907043a5117e42fefa76202b8312676908c76cbfac83c8",
+   "fn":"thinkr_0.15.tar.gz",
+   "sha256":"8fb9043d827447a49806403327ee47e10cce37e0a0a34ffb467337750ce0ae9e",
    "url":[
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz"
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz"
    ]
   },
   "test":{
@@ -456,6 +470,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -463,6 +478,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -474,6 +491,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -481,6 +499,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -493,12 +513,13 @@
   }
  },
  "pinning_version":"2020.07.07.15.30.32",
- "raw_meta_yaml":"{% set version = '0.13' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-thinkr\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: thinkr_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/thinkr_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/thinkr/thinkr_{{ version }}.tar.gz\n  sha256: abedbf40ebef097242907043a5117e42fefa76202b8312676908c76cbfac83c8\n\nbuild:\n  noarch: generic\n  merge_build_host: True  # [win]\n  number: 1002\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-assertthat\n    - r-devtools\n    - r-dplyr\n    - r-ggplot2\n    - r-lazyeval\n    - r-lubridate\n    - r-magrittr\n    - r-officer\n    - r-rvg\n    - r-stringi\n    - r-stringr\n    - r-tidyr\n  run:\n    - r-base\n    - r-assertthat\n    - r-devtools\n    - r-dplyr\n    - r-ggplot2\n    - r-lazyeval\n    - r-lubridate\n    - r-magrittr\n    - r-officer\n    - r-rvg\n    - r-stringi\n    - r-stringr\n    - r-tidyr\n\ntest:\n  commands:\n    - $R -e \"library('thinkr')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('thinkr')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=thinkr\n  license: GPL-3\n  summary: Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have\n    been working with 'Excel' for years built more or less complicated sheets with names,\n    characters, formats that are not homogeneous. To be able to use them in R nowadays,\n    we built a set of functions that will avoid the majority of importation problems\n    and keep all the data at best.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
+ "raw_meta_yaml":"{% set version = \"0.15\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-thinkr\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: thinkr_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/thinkr_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/thinkr/thinkr_{{ version }}.tar.gz\n  sha256: 8fb9043d827447a49806403327ee47e10cce37e0a0a34ffb467337750ce0ae9e\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-assertthat\n    - r-crayon\n    - r-devtools\n    - r-dplyr\n    - r-ggplot2\n    - r-lazyeval\n    - r-lubridate\n    - r-magrittr\n    - r-officer\n    - r-purrr\n    - r-readr\n    - r-rvg\n    - r-stringi\n    - r-stringr\n    - r-tidyr\n  run:\n    - r-base\n    - r-assertthat\n    - r-crayon\n    - r-devtools\n    - r-dplyr\n    - r-ggplot2\n    - r-lazyeval\n    - r-lubridate\n    - r-magrittr\n    - r-officer\n    - r-purrr\n    - r-readr\n    - r-rvg\n    - r-stringi\n    - r-stringr\n    - r-tidyr\n\ntest:\n  commands:\n    - $R -e \"library('thinkr')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('thinkr')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=thinkr\n  license: GPL-3.0-only\n  summary: Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority\n    of importation problems and keep all the data at best.\n  license_family: GPL3\n  license_file:\n    - {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n",
  "req":{
   "__set__":true,
   "elements":[
    "r-assertthat",
    "r-base",
+   "r-crayon",
    "r-devtools",
    "r-dplyr",
    "r-ggplot2",
@@ -506,6 +527,8 @@
    "r-lubridate",
    "r-magrittr",
    "r-officer",
+   "r-purrr",
+   "r-readr",
    "r-rvg",
    "r-stringi",
    "r-stringr",
@@ -522,6 +545,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -529,6 +553,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -540,6 +566,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -547,6 +574,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -570,6 +599,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -577,6 +607,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -588,6 +620,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -595,6 +628,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -614,19 +649,21 @@
   "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz"
  ],
- "version":"0.13",
+ "version":"0.15",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=thinkr",
-   "license":"GPL-3",
+   "license":"GPL-3.0-only",
    "license_family":"GPL3",
-   "license_file":"/lib/R/share/licenses/GPL-3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
    "summary":"Some tools for cleaning up messy 'Excel' files to be suitable for R. People who have been working with 'Excel' for years built more or less complicated sheets with names, characters, formats that are not homogeneous. To be able to use them in R nowadays, we built a set of functions that will avoid the majority of importation problems and keep all the data at best."
   },
   "build":{
    "merge_build_host":true,
    "noarch":"generic",
-   "number":"1002",
+   "number":"0",
    "rpaths":[
     "lib/R/lib/",
     "lib/"
@@ -634,18 +671,12 @@
   },
   "extra":{
    "recipe-maintainers":[
-    "conda-forge/r",
-    "johanneskoester",
-    "bgruening",
-    "daler",
-    "jdblischak",
-    "cbrueffer",
-    "dbast"
+    "conda-forge/r"
    ]
   },
   "package":{
    "name":"r-thinkr",
-   "version":"0.13"
+   "version":"0.15"
   },
   "requirements":{
    "build":[
@@ -654,6 +685,7 @@
    "host":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -661,6 +693,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -669,6 +703,7 @@
    "run":[
     "r-base",
     "r-assertthat",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -676,6 +711,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -683,11 +720,11 @@
    ]
   },
   "source":{
-   "fn":"thinkr_0.13.tar.gz",
-   "sha256":"abedbf40ebef097242907043a5117e42fefa76202b8312676908c76cbfac83c8",
+   "fn":"thinkr_0.15.tar.gz",
+   "sha256":"8fb9043d827447a49806403327ee47e10cce37e0a0a34ffb467337750ce0ae9e",
    "url":[
-    "https://cran.r-project.org/src/contrib/thinkr_0.13.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.13.tar.gz"
+    "https://cran.r-project.org/src/contrib/thinkr_0.15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/thinkr/thinkr_0.15.tar.gz"
    ]
   },
   "test":{
@@ -708,6 +745,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -715,6 +753,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
@@ -726,6 +766,7 @@
    "elements":[
     "r-assertthat",
     "r-base",
+    "r-crayon",
     "r-devtools",
     "r-dplyr",
     "r-ggplot2",
@@ -733,6 +774,8 @@
     "r-lubridate",
     "r-magrittr",
     "r-officer",
+    "r-purrr",
+    "r-readr",
     "r-rvg",
     "r-stringi",
     "r-stringr",
