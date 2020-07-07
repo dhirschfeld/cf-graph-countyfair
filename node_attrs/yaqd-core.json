@@ -138,18 +138,7 @@
   }
  ],
  "archived":false,
- "bad":{
-  "exception":"update() missing 1 required positional argument: 'data'",
-  "traceback":[
-   "Traceback (most recent call last):",
-   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
-   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
-   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
-   "    ljpr.update(**pr_json)",
-   "TypeError: update() missing 1 required positional argument: 'data'",
-   ""
-  ]
- },
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"yaqd-core",
  "hash_type":"sha256",
@@ -175,10 +164,14 @@
   },
   "package":{
    "name":"yaqd-core",
-   "version":"2020.6.2"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip"
    ],
@@ -186,13 +179,12 @@
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro"
    ]
   },
   "source":{
-   "sha256":"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761",
-   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.2.tar.gz"
+   "sha256":"ee88600e74f3cb1c59b82ab961eefcc92885b6bf8749dc51a4ce745ab02759ae",
+   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.7.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -208,8 +200,12 @@
   "host":{
    "__set__":true,
    "elements":[
+    "appdirs",
+    "fastavro",
+    "flit",
     "pip",
-    "python"
+    "python",
+    "toml"
    ]
   },
   "run":{
@@ -218,7 +214,6 @@
     "appdirs",
     "fastavro",
     "python",
-    "setuptools",
     "toml"
    ]
   },
@@ -253,14 +248,26 @@
   },
   "package":{
    "name":"yaqd-core",
-   "version":"2020.6.2"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip",
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip",
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip"
    ],
@@ -268,23 +275,20 @@
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro",
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro",
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro"
    ]
   },
   "source":{
-   "sha256":"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761",
-   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.2.tar.gz"
+   "sha256":"ee88600e74f3cb1c59b82ab961eefcc92885b6bf8749dc51a4ce745ab02759ae",
+   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.7.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -335,10 +339,14 @@
   },
   "package":{
    "name":"yaqd-core",
-   "version":"2020.6.2"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip"
    ],
@@ -346,13 +354,12 @@
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro"
    ]
   },
   "source":{
-   "sha256":"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761",
-   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.2.tar.gz"
+   "sha256":"ee88600e74f3cb1c59b82ab961eefcc92885b6bf8749dc51a4ce745ab02759ae",
+   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.7.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -368,8 +375,12 @@
   "host":{
    "__set__":true,
    "elements":[
+    "appdirs",
+    "fastavro",
+    "flit",
     "pip",
-    "python"
+    "python",
+    "toml"
    ]
   },
   "run":{
@@ -378,7 +389,6 @@
     "appdirs",
     "fastavro",
     "python",
-    "setuptools",
     "toml"
    ]
   },
@@ -388,15 +398,15 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.6.2\" %}\n{% set sha256 = \"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - setuptools \n    - fastavro\n\ntest:\n  imports:\n    - yaqd_core\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-core-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
+ "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.7.1\" %}\n{% set sha256 = \"ee88600e74f3cb1c59b82ab961eefcc92885b6bf8749dc51a4ce745ab02759ae\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - appdirs\n    - toml\n    - fastavro\n    - flit\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - fastavro\n\ntest:\n  imports:\n    - yaqd_core\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-core-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
   "elements":[
    "appdirs",
    "fastavro",
+   "flit",
    "pip",
    "python",
-   "setuptools",
    "toml"
   ]
  },
@@ -408,8 +418,12 @@
   "host":{
    "__set__":true,
    "elements":[
+    "appdirs",
+    "fastavro",
+    "flit",
     "pip",
-    "python"
+    "python",
+    "toml"
    ]
   },
   "run":{
@@ -418,7 +432,6 @@
     "appdirs",
     "fastavro",
     "python",
-    "setuptools",
     "toml"
    ]
   },
@@ -437,8 +450,12 @@
   "host":{
    "__set__":true,
    "elements":[
+    "appdirs",
+    "fastavro",
+    "flit",
     "pip",
-    "python >=3.7"
+    "python >=3.7",
+    "toml"
    ]
   },
   "run":{
@@ -447,7 +464,6 @@
     "appdirs",
     "fastavro",
     "python >=3.7",
-    "setuptools",
     "toml"
    ]
   },
@@ -457,7 +473,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-0.5.0.tar.gz",
- "version":"2020.6.2",
+ "version":"2020.7.1",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.com/yaq/yaqd-core-python",
@@ -480,10 +496,14 @@
   },
   "package":{
    "name":"yaqd-core",
-   "version":"2020.6.2"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
+    "appdirs",
+    "toml",
+    "fastavro",
+    "flit",
     "python >=3.7",
     "pip"
    ],
@@ -491,13 +511,12 @@
     "python >=3.7",
     "appdirs",
     "toml",
-    "setuptools",
     "fastavro"
    ]
   },
   "source":{
-   "sha256":"eba8464bbe67cd8f33709d12e8e5a7c56a88bdbf1fbb5ca9a75e28f4b2a92761",
-   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.6.2.tar.gz"
+   "sha256":"ee88600e74f3cb1c59b82ab961eefcc92885b6bf8749dc51a4ce745ab02759ae",
+   "url":"https://pypi.io/packages/source/y/yaqd-core/yaqd-core-2020.7.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -513,8 +532,12 @@
   "host":{
    "__set__":true,
    "elements":[
+    "appdirs",
+    "fastavro",
+    "flit",
     "pip",
-    "python"
+    "python",
+    "toml"
    ]
   },
   "run":{
@@ -523,7 +546,6 @@
     "appdirs",
     "fastavro",
     "python",
-    "setuptools",
     "toml"
    ]
   },

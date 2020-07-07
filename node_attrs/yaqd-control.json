@@ -19,18 +19,7 @@
   }
  ],
  "archived":false,
- "bad":{
-  "exception":"update() missing 1 required positional argument: 'data'",
-  "traceback":[
-   "Traceback (most recent call last):",
-   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 832, in main",
-   "    hash_type=attrs.get(\"hash_type\", \"sha256\"),",
-   "  File \"/root/repo/cf-scripts/conda_forge_tick/auto_tick.py\", line 276, in run",
-   "    ljpr.update(**pr_json)",
-   "TypeError: update() missing 1 required positional argument: 'data'",
-   ""
-  ]
- },
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"yaqd-control",
  "hash_type":"sha256",
@@ -60,7 +49,7 @@
   },
   "package":{
    "name":"yaqd_control",
-   "version":"2020.7.0"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
@@ -85,8 +74,8 @@
    ]
   },
   "source":{
-   "sha256":"ca61327a2cfb24a038bb297b212d0769439f43ace3cd203dcc593fa376ba40fc",
-   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd_control-2020.7.0.tar.gz"
+   "sha256":"cce371ca469ada355df8a52c634b80604774f4e8cda4039b4dfe1b9ba41ec984",
+   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd-control-2020.7.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -165,7 +154,7 @@
   },
   "package":{
    "name":"yaqd_control",
-   "version":"2020.7.0"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
@@ -222,8 +211,8 @@
    ]
   },
   "source":{
-   "sha256":"ca61327a2cfb24a038bb297b212d0769439f43ace3cd203dcc593fa376ba40fc",
-   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd_control-2020.7.0.tar.gz"
+   "sha256":"cce371ca469ada355df8a52c634b80604774f4e8cda4039b4dfe1b9ba41ec984",
+   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd-control-2020.7.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -276,7 +265,7 @@
   },
   "package":{
    "name":"yaqd_control",
-   "version":"2020.7.0"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
@@ -301,8 +290,8 @@
    ]
   },
   "source":{
-   "sha256":"ca61327a2cfb24a038bb297b212d0769439f43ace3cd203dcc593fa376ba40fc",
-   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd_control-2020.7.0.tar.gz"
+   "sha256":"cce371ca469ada355df8a52c634b80604774f4e8cda4039b4dfe1b9ba41ec984",
+   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd-control-2020.7.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -350,7 +339,7 @@
   }
  },
  "pinning_version":"2020.05.27.14.19.32",
- "raw_meta_yaml":"{% set name = \"yaqd_control\" %}\n{% set version = \"2020.7.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ca61327a2cfb24a038bb297b212d0769439f43ace3cd203dcc593fa376ba40fc\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - yaqd=yaqd_control.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - appdirs\n    - click\n    - colorama\n    - yaqc\n    - prettytable\n    - python >=3.7\n    - toml\n    - pip\n    - flit\n  run:\n    - appdirs\n    - click\n    - colorama\n    - yaqc\n    - prettytable\n    - python >=3.7\n    - toml\n\ntest:\n  imports:\n    - yaqd_control\n  commands:\n    - yaqd --help\n\nabout:\n  home: https://yaq.fyi\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Command line tools for inspecting and controlling yaq daemons.\n  doc_url: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-control\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
+ "raw_meta_yaml":"{% set name = \"yaqd_control\" %}\n{% set version = \"2020.7.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz\n  sha256: cce371ca469ada355df8a52c634b80604774f4e8cda4039b4dfe1b9ba41ec984\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - yaqd=yaqd_control.__main__:main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - appdirs\n    - click\n    - colorama\n    - yaqc\n    - prettytable\n    - python >=3.7\n    - toml\n    - pip\n    - flit\n  run:\n    - appdirs\n    - click\n    - colorama\n    - yaqc\n    - prettytable\n    - python >=3.7\n    - toml\n\ntest:\n  imports:\n    - yaqd_control\n  commands:\n    - yaqd --help\n\nabout:\n  home: https://yaq.fyi\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Command line tools for inspecting and controlling yaq daemons.\n  doc_url: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaqd-control\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -440,7 +429,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yaqd-control/yaqd-control-0.2.0.tar.gz",
- "version":"2020.7.0",
+ "version":"2020.7.1",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.com/yaq/yaqd-control",
@@ -467,7 +456,7 @@
   },
   "package":{
    "name":"yaqd_control",
-   "version":"2020.7.0"
+   "version":"2020.7.1"
   },
   "requirements":{
    "host":[
@@ -492,8 +481,8 @@
    ]
   },
   "source":{
-   "sha256":"ca61327a2cfb24a038bb297b212d0769439f43ace3cd203dcc593fa376ba40fc",
-   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd_control-2020.7.0.tar.gz"
+   "sha256":"cce371ca469ada355df8a52c634b80604774f4e8cda4039b4dfe1b9ba41ec984",
+   "url":"https://pypi.io/packages/source/y/yaqd_control/yaqd-control-2020.7.1.tar.gz"
   },
   "test":{
    "commands":[
