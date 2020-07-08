@@ -98,6 +98,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446512294.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.7.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -240,7 +257,11 @@
   }
  },
  "name":"flaky",
- "new_version":"3.6.1",
+ "new_version":"3.7.0",
+ "new_version_attempts":{
+  "3.7.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"Flaky is a plugin for nose or py.test that automatically reruns flaky\ntests.\n",
@@ -312,7 +333,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.07.26",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"flaky\" %}\n{% set version = \"3.6.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8cd5455bb00c677f787da424eaf8c4a58a922d0e97126d3085db5b279a98b698\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - flaky\n\nabout:\n  home: https://github.com/box/flaky\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Plugin for nose or py.test that automatically reruns flaky tests.\n  description: |\n    Flaky is a plugin for nose or py.test that automatically reruns flaky\n    tests.\n  dev_url: https://github.com/box/flaky\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n    - rlaverde\n",
  "req":{
   "__set__":true,
@@ -346,7 +367,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
