@@ -445,6 +445,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446041690.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.0.5"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -798,13 +815,14 @@
   }
  },
  "name":"isort",
- "new_version":"5.0.4",
+ "new_version":"5.0.5",
  "new_version_attempts":{
   "5.0.0":1,
   "5.0.1":1,
   "5.0.2":1,
   "5.0.3":1,
-  "5.0.4":1
+  "5.0.4":1,
+  "5.0.5":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -886,7 +904,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.06.07.16.19",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set version = \"5.0.4\" %}\n\npackage:\n  name: isort\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/isort/isort-{{ version }}.tar.gz\n  sha256: 6ae9cf5414e416954e3421f861cbbfc099b3ace63cb270cc76c6670efd960a0a\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - isort = isort.main:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - poetry >=0.12\n  run:\n    - python\n    - setuptools\n    - futures  # [py<32]\n    - backports.functools_lru_cache  # [py<32]\n\ntest:\n  imports:\n    - isort\n  commands:\n    - isort --help\n\nabout:\n  home: https://github.com/timothycrosley/isort\n  license: MIT\n  license_file: LICENSE\n  summary: A Python utility / library to sort Python imports.\n  description: |\n    isort is a Python utility / library to sort imports alphabetically, and\n    automatically separated into sections. It provides a command line utility,\n    Python library and plugins for various editors to quickly sort all your\n    imports. It currently cleanly supports Python 2.6 - 3.5 using pies to\n    achieve this without ugly hacks and/or py2to3.\n  doc_url: http://isort.readthedocs.io/en/latest/\n  doc_source_url: https://github.com/timothycrosley/isort/blob/develop/README.rst\n  dev_url: https://github.com/timothycrosley/isort\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - nicoddemus\n    - nehaljwani\n    - ocefpaf\n",
  "req":{
   "__set__":true,
