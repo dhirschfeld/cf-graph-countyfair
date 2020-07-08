@@ -79,6 +79,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446442372.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -239,10 +256,11 @@
   }
  },
  "name":"coveralls",
- "new_version":"2.1.0",
+ "new_version":"2.1.1",
  "new_version_attempts":{
   "2.0.0":1,
-  "2.1.0":1
+  "2.1.0":1,
+  "2.1.1":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -324,7 +342,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.07",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"coveralls\" %}\n{% set version = \"2.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ccdaf0b875ee9b30d8775f08aec78543898c6a10ae7b3c312348c6f96dc66bc5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - coveralls = coveralls.cli:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools\n  run:\n    - coverage >=4.1, <6.0\n    - docopt >=0.6.1\n    - python >=3.5\n    - pyyaml >=3.10\n    - requests >=1.0.0\n\ntest:\n  commands:\n    - coveralls --help\n\nabout:\n  home: https://github.com/coveralls-clients/coveralls-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Show coverage stats online via coveralls.io\n  description: |\n    coveralls.io is a service for publishing your coverage stats online. This\n    package provides seamless integration with coverage.py (and thus py.test,\n    nosetests, etc...) in your Python projects.\n  dev_url: https://github.com/coveralls-clients/coveralls-python\n\nextra:\n  recipe-maintainers:\n    - thekevjames\n",
  "req":{
   "__set__":true,
@@ -366,7 +384,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.15",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
