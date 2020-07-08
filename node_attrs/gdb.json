@@ -198,7 +198,10 @@
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
-  "max_r_ver":"35"
+  "max_r_ver":"35",
+  "provider":{
+   "osx":"travis"
+  }
  },
  "feedstock_name":"gdb",
  "hash_type":"sha256",
@@ -208,13 +211,16 @@
    "dev_url":"git://sourceware.org/git/binutils-gdb.git",
    "doc_url":"https://sourceware.org/gdb/current/onlinedocs/gdb/",
    "home":"https://www.gnu.org/software/gdb/",
-   "license":"GPL-2.0-only",
+   "license":"GPL-3.0-only",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":"gdb/COPYING",
    "summary":"GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed."
   },
   "build":{
-   "number":"2"
+   "number":"3",
+   "script_env":[
+    "TMPDIR"
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -251,12 +257,18 @@
    ]
   },
   "source":{
+   "patches":[
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch"
+   ],
    "sha256":"360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555",
    "url":"http://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
   },
   "test":{
    "commands":[
     "gdb --version"
+   ],
+   "requires":[
+    "c_compiler_stub"
    ]
   }
  },
@@ -293,7 +305,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "meta_yaml":{
@@ -302,13 +316,18 @@
    "dev_url":"git://sourceware.org/git/binutils-gdb.git",
    "doc_url":"https://sourceware.org/gdb/current/onlinedocs/gdb/",
    "home":"https://www.gnu.org/software/gdb/",
-   "license":"GPL-2.0-only",
+   "license":"GPL-3.0-only",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":"gdb/COPYING",
    "summary":"GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed."
   },
   "build":{
-   "number":"2",
+   "number":"3",
+   "script_env":[
+    "TMPDIR",
+    "TMPDIR",
+    "TMPDIR"
+   ],
    "skip":true
   },
   "extra":{
@@ -356,6 +375,8 @@
     "xz",
     "zlib",
     "readline",
+    "libiconv",
+    "expat",
     "python",
     "ncurses",
     "texinfo",
@@ -374,6 +395,8 @@
     "xz",
     "zlib",
     "six",
+    "libiconv",
+    "expat",
     "python",
     "ncurses",
     "xz",
@@ -382,6 +405,11 @@
    ]
   },
   "source":{
+   "patches":[
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch",
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch",
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch"
+   ],
    "sha256":"360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555",
    "url":"http://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
   },
@@ -390,6 +418,11 @@
     "gdb --version",
     "gdb --version",
     "gdb --version"
+   ],
+   "requires":[
+    "c_compiler_stub",
+    "c_compiler_stub",
+    "c_compiler_stub"
    ]
   }
  },
@@ -401,14 +434,16 @@
    "dev_url":"git://sourceware.org/git/binutils-gdb.git",
    "doc_url":"https://sourceware.org/gdb/current/onlinedocs/gdb/",
    "home":"https://www.gnu.org/software/gdb/",
-   "license":"GPL-2.0-only",
+   "license":"GPL-3.0-only",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":"gdb/COPYING",
    "summary":"GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed."
   },
   "build":{
-   "number":"2",
-   "skip":true
+   "number":"3",
+   "script_env":[
+    "TMPDIR"
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -434,23 +469,33 @@
     "texinfo",
     "xz",
     "zlib",
-    "readline"
+    "readline",
+    "libiconv",
+    "expat"
    ],
    "run":[
     "python",
     "ncurses",
     "xz",
     "zlib",
-    "six"
+    "six",
+    "libiconv",
+    "expat"
    ]
   },
   "source":{
+   "patches":[
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch"
+   ],
    "sha256":"360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555",
    "url":"http://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
   },
   "test":{
    "commands":[
     "gdb --version"
+   ],
+   "requires":[
+    "c_compiler_stub"
    ]
   }
  },
@@ -467,6 +512,8 @@
   "host":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "readline",
@@ -478,6 +525,8 @@
   "run":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "six",
@@ -487,17 +536,21 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"gdb\" %}\n{% set version = \"9.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnu.org/gnu/gdb/gdb-{{ version }}.tar.xz\n  sha256: 360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555\n\nbuild:\n  number: 2\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make >=3.82\n  host:\n    - python\n    - ncurses\n    - texinfo\n    - xz\n    - zlib\n    - readline\n  run:\n    - python\n    - ncurses\n    - xz\n    - zlib\n    - six\n\ntest:\n  commands:\n    - gdb --version\n\nabout:\n  home: https://www.gnu.org/software/gdb/\n  license: GPL-2.0-only\n  license_family: GPL\n  license_file: COPYING\n  summary: GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed.\n  description: |\n    GDB, the GNU Project debugger, allows you to see what is going on `inside'\n    another program while it executes -- or what another program was doing at\n    the moment it crashed.\n    The program being debugged can be written in Ada, C, C++, Objective-C,\n    Pascal (and many other languages). Those programs might be executing on the\n    same machine as GDB (native) or on another machine (remote).\n    GDB can run on most popular UNIX and Microsoft Windows variants.\n  doc_url: https://sourceware.org/gdb/current/onlinedocs/gdb/\n  dev_url: git://sourceware.org/git/binutils-gdb.git\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - marcelotrevisani\n    - phil-blain\n",
+ "raw_meta_yaml":"{% set name = \"gdb\" %}\n{% set version = \"9.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnu.org/gnu/gdb/gdb-{{ version }}.tar.xz\n  sha256: 360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555\n  patches:\n    - 0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch\n\nbuild:\n  number: 3\n  skip: True  # [win]\n  # needed by macOS codesigning script\n  script_env:\n   - TMPDIR\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - make >=3.82\n  host:\n    - python\n    - ncurses\n    - texinfo\n    - xz\n    - zlib\n    - readline\n    - libiconv  # [osx]\n    - expat     # [osx]\n  run:\n    - python\n    - ncurses\n    - xz\n    - zlib\n    - six\n    - libiconv  # [osx]\n    - expat     # [osx]\n\ntest:\n  commands:\n    - gdb --version\n  requires:\n    - {{ compiler('c') }}\n\nabout:\n  home: https://www.gnu.org/software/gdb/\n  license: GPL-3.0-only\n  license_family: GPL\n  license_file: gdb/COPYING\n  summary: GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed.\n  description: |\n    GDB, the GNU Project debugger, allows you to see what is going on `inside'\n    another program while it executes -- or what another program was doing at\n    the moment it crashed.\n    The program being debugged can be written in Ada, C, C++, Objective-C,\n    Pascal (and many other languages). Those programs might be executing on the\n    same machine as GDB (native) or on another machine (remote).\n    GDB can run on most popular UNIX and Microsoft Windows variants.\n  doc_url: https://sourceware.org/gdb/current/onlinedocs/gdb/\n  dev_url: git://sourceware.org/git/binutils-gdb.git\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - marcelotrevisani\n    - phil-blain\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cxx_compiler_stub",
+   "expat",
    "fortran_compiler_stub",
+   "libiconv",
    "make",
    "ncurses",
    "python",
@@ -521,6 +574,8 @@
   "host":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "readline",
@@ -532,6 +587,8 @@
   "run":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "six",
@@ -541,7 +598,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -559,6 +618,8 @@
   "host":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "readline",
@@ -570,6 +631,8 @@
   "run":{
    "__set__":true,
    "elements":[
+    "expat",
+    "libiconv",
     "ncurses",
     "python",
     "six",
@@ -579,7 +642,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  },
  "url":"http://ftp.gnu.org/gnu/gdb/gdb-8.3.tar.xz",
@@ -590,13 +655,16 @@
    "dev_url":"git://sourceware.org/git/binutils-gdb.git",
    "doc_url":"https://sourceware.org/gdb/current/onlinedocs/gdb/",
    "home":"https://www.gnu.org/software/gdb/",
-   "license":"GPL-2.0-only",
+   "license":"GPL-3.0-only",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":"gdb/COPYING",
    "summary":"GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed."
   },
   "build":{
-   "number":"2",
+   "number":"3",
+   "script_env":[
+    "TMPDIR"
+   ],
    "skip":true
   },
   "extra":{
@@ -634,12 +702,18 @@
    ]
   },
   "source":{
+   "patches":[
+    "0001-darwin-nat.c-do-not-hang-on-long-gone-thread.patch"
+   ],
    "sha256":"360cd7ae79b776988e89d8f9a01c985d0b1fa21c767a4295e5f88cb49175c555",
    "url":"http://ftp.gnu.org/gnu/gdb/gdb-9.2.tar.xz"
   },
   "test":{
    "commands":[
     "gdb --version"
+   ],
+   "requires":[
+    "c_compiler_stub"
    ]
   }
  },
@@ -676,7 +750,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "c_compiler_stub"
+   ]
   }
  }
 }
