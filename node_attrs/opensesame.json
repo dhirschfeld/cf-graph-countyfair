@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446144908.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.3.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -265,10 +282,11 @@
   }
  },
  "name":"opensesame",
- "new_version":"3.3.2",
+ "new_version":"3.3.3",
  "new_version_attempts":{
   "3.3.1":1,
-  "3.3.2":1
+  "3.3.2":1,
+  "3.3.3":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -378,7 +396,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.05.27.14.19.32",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"opensesame\" %}\n{% set pypiname = \"python-\" + name %}\n{% set version = \"3.3.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz\n  sha256: 52659165f2401e7fa7cc084f79c20b645efe140a20ec9765ba56791da8e5ab90\n\nbuild:\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  number: 0\n  entry_points:\n    - opensesame = libqtopensesame.__main__:opensesame\n    - opensesamerun = libqtopensesame.__main__:opensesamerun\n\nrequirements:\n  host:\n    - pyyaml\n    - pip\n    - python\n\n  run:\n    - python\n    - pyqt\n    - qdatamatrix >=0.1.21\n    - pseudorandom\n    - fileinspector\n    - qnotifications >=2.0.3\n    - pyyaml\n    - webcolors\n    - pyserial\n    - markdown\n    - pyflakes\n    - shapely\n    - pillow\n    - pyqode.core\n    - pyqode.python\n\ntest:\n  imports:\n    - libopensesame\n    - libqtopensesame\n\napp:\n  entry: opensesame\n  icon: opensesame.png\n  summary: Graphical experiment builder for the social sciences\n\nabout:\n  home: https://github.com/smathot/OpenSesame\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Graphical experiment builder for the social sciences\n  dev_url: https://github.com/smathot/OpenSesame\n  doc_url: http://osdoc.cogsci.nl\n\nextra:\n  recipe-maintainers:\n    - dschreij\n    - smathot\n",
  "req":{
   "__set__":true,
@@ -439,7 +457,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
