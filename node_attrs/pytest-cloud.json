@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/445925577.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
@@ -170,7 +189,11 @@
   }
  },
  "name":"pytest-cloud",
- "new_version":"4.0.0",
+ "new_version":"5.0.0",
+ "new_version_attempts":{
+  "5.0.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://github.com/pytest-dev/pytest-cloud",
@@ -254,6 +277,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"pytest-cloud\" %}\n{% set version = \"4.0.0\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e331d771729b3101232d4c99151fe07d25f7fbc38407acffc15755d5fe587641\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - psutil\n    - pytest >=3.6.1\n    - pytest-xdist >=1.26.0\n    - python\n    - setuptools\n    - six\n    - timeout-decorator >=0.3.2\n\ntest:\n  imports:\n    - pytest_cloud\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/pytest-dev/pytest-cloud\n  summary: Distributed tests planner plugin for pytest testing framework.\n  license: MIT\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
@@ -299,6 +323,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
