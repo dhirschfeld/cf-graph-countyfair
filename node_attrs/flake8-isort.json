@@ -112,7 +112,7 @@
   },
   "package":{
    "name":"flake8-isort",
-   "version":"3.0.0"
+   "version":"3.0.1"
   },
   "requirements":{
    "host":[
@@ -121,19 +121,25 @@
     "setuptools"
    ],
    "run":[
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures"
+    "testfixtures >=6.8.0,<7"
    ]
   },
   "source":{
-   "sha256":"3ce227b5c5342b6d63937d3863e8de8783ae21863cb035cf992cdb0ba5990aa3",
-   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.0.tar.gz"
+   "sha256":"5d976da513cc390232ad5a9bb54aee8a092466a15f442d91dfc525834bee727a",
+   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.1.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "flake8_isort"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -161,7 +167,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "meta_yaml":{
@@ -187,7 +195,7 @@
   },
   "package":{
    "name":"flake8-isort",
-   "version":"3.0.0"
+   "version":"3.0.1"
   },
   "requirements":{
    "host":[
@@ -202,29 +210,39 @@
     "setuptools"
    ],
    "run":[
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures",
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "testfixtures >=6.8.0,<7",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures",
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "testfixtures >=6.8.0,<7",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures"
+    "testfixtures >=6.8.0,<7"
    ]
   },
   "source":{
-   "sha256":"3ce227b5c5342b6d63937d3863e8de8783ae21863cb035cf992cdb0ba5990aa3",
-   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.0.tar.gz"
+   "sha256":"5d976da513cc390232ad5a9bb54aee8a092466a15f442d91dfc525834bee727a",
+   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.1.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "flake8_isort",
     "flake8_isort",
     "flake8_isort"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -256,7 +274,7 @@
   },
   "package":{
    "name":"flake8-isort",
-   "version":"3.0.0"
+   "version":"3.0.1"
   },
   "requirements":{
    "host":[
@@ -265,19 +283,25 @@
     "setuptools"
    ],
    "run":[
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures"
+    "testfixtures >=6.8.0,<7"
    ]
   },
   "source":{
-   "sha256":"3ce227b5c5342b6d63937d3863e8de8783ae21863cb035cf992cdb0ba5990aa3",
-   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.0.tar.gz"
+   "sha256":"5d976da513cc390232ad5a9bb54aee8a092466a15f442d91dfc525834bee727a",
+   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.1.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "flake8_isort"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -305,11 +329,13 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"flake8-isort\" %}\n{% set version = \"3.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3ce227b5c5342b6d63937d3863e8de8783ae21863cb035cf992cdb0ba5990aa3\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - flake8 >=3.2.1\n    - isort >=4.3.5\n    - python\n    - testfixtures\n\ntest:\n  imports:\n    - flake8_isort\n\nabout:\n  home: https://github.com/gforcada/flake8-isort\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: flake8 plugin that integrates isort .\n  dev_url: https://github.com/gforcada/flake8-isort\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"flake8-isort\" %}\n{% set version = \"3.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5d976da513cc390232ad5a9bb54aee8a092466a15f442d91dfc525834bee727a\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - flake8 >=3.2.1,<4\n    - isort >=4.3.5,<5\n    - python\n    - testfixtures >=6.8.0,<7\n\ntest:\n  imports:\n    - flake8_isort\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/gforcada/flake8-isort\n  license: GPL-2.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: flake8 plugin that integrates isort .\n  dev_url: https://github.com/gforcada/flake8-isort\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -345,7 +371,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
@@ -366,19 +394,21 @@
   "run":{
    "__set__":true,
    "elements":[
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures"
+    "testfixtures >=6.8.0,<7"
    ]
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-2.7.0.tar.gz",
- "version":"3.0.0",
+ "version":"3.0.1",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/gforcada/flake8-isort",
@@ -400,7 +430,7 @@
   },
   "package":{
    "name":"flake8-isort",
-   "version":"3.0.0"
+   "version":"3.0.1"
   },
   "requirements":{
    "host":[
@@ -409,19 +439,25 @@
     "setuptools"
    ],
    "run":[
-    "flake8 >=3.2.1",
-    "isort >=4.3.5",
+    "flake8 >=3.2.1,<4",
+    "isort >=4.3.5,<5",
     "python",
-    "testfixtures"
+    "testfixtures >=6.8.0,<7"
    ]
   },
   "source":{
-   "sha256":"3ce227b5c5342b6d63937d3863e8de8783ae21863cb035cf992cdb0ba5990aa3",
-   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.0.tar.gz"
+   "sha256":"5d976da513cc390232ad5a9bb54aee8a092466a15f442d91dfc525834bee727a",
+   "url":"https://pypi.io/packages/source/f/flake8-isort/flake8-isort-3.0.1.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "flake8_isort"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -449,7 +485,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  }
 }
