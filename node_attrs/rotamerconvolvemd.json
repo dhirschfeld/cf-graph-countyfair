@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446534675.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.3.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -182,7 +199,11 @@
   }
  },
  "name":"rotamerconvolvemd",
- "new_version":"1.3.0",
+ "new_version":"1.3.1",
+ "new_version_attempts":{
+  "1.3.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"This package analyses molecular dynamics trajectories or conformational ensembles in terms\nof spin-label distances as probed in double electron-electron resonance (DEER) experiments\nand spin-label to amide protin distances as probed in paramagnetic relaxation enhancement\n(PRE) experiments. The spin labels are fitted on trajectories and the spin label mobility\nis taken into account using a rotamer library.\n",
@@ -256,7 +277,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.05.31",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"RotamerConvolveMD\" %}\n{% set version = \"1.3.0\" %}\n{% set sha256 = \"dd94b16224ba915fe38bdbffe1cf90275ffa1ae248f2729ce84ce110dce70d1d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - mdanalysis>=0.16.2\n    - numpy\n\ntest:\n  imports:\n    - rotcon\n\nabout:\n  home: https://github.com/MDAnalysis/RotamerConvolveMD\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Analysis of protein MD trajectories or conformational ensembles in terms of DEER of PRE spin-label distances'\n  description: |\n      This package analyses molecular dynamics trajectories or conformational ensembles in terms\n      of spin-label distances as probed in double electron-electron resonance (DEER) experiments \n      and spin-label to amide protin distances as probed in paramagnetic relaxation enhancement \n      (PRE) experiments. The spin labels are fitted on trajectories and the spin label mobility\n      is taken into account using a rotamer library.\n  doc_url: https://www.mdanalysis.org/RotamerConvolveMD\n  dev_url: https://github.com/MDAnalysis/RotamerConvolveMD\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n",
  "req":{
   "__set__":true,
@@ -292,7 +313,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.3.4",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

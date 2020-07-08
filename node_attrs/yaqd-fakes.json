@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446534795.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.7.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -175,7 +194,11 @@
   }
  },
  "name":"yaqd-fakes",
- "new_version":"2020.7.1",
+ "new_version":"2020.7.2",
+ "new_version_attempts":{
+  "2020.7.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://gitlab.com/yaq/yaqd-fakes",
@@ -260,6 +283,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"yaqd-fakes\" %}\n{% set version = \"2020.7.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 052d13a7064c7537d0188dfa2c2d6613b4e42ae9defa4e1d170532ef9d350ddf \n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - yaqd-fake-continuous-hardware = yaqd_fakes._fake_continuous_hardware:FakeContinuousHardware.main\n    - yaqd-fake-discrete-hardware = yaqd_fakes._fake_discrete_hardware:FakeDiscreteHardware.main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - flit\n    - python >=3.7\n    - yaqd-core >=2020.05.1\n  run:\n    - python >=3.7\n    - yaqd-core >=2020.05.1\n\ntest:\n  imports:\n    - yaqd_fakes\n  commands:\n    - pip check\n    - yaqd-fake-continuous-hardware --help\n    - yaqd-fake-discrete-hardware --help\n  requires:\n    - pip\n\nabout:\n  home: https://gitlab.com/yaq/yaqd-fakes\n  summary: fake yaq daemons, for testing purposes\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden \n",
  "req":{
   "__set__":true,
@@ -298,6 +322,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
