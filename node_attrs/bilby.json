@@ -534,7 +534,7 @@
   },
   "package":{
    "name":"bilby",
-   "version":"0.6.9"
+   "version":"1.0.0"
   },
   "requirements":{
    "host":[
@@ -557,8 +557,8 @@
    ]
   },
   "source":{
-   "sha256":"0bdabad38187f4cac78add02f7eed5471d7768ab0fbac635615fa28662c10bc9",
-   "url":"https://pypi.io/packages/source/b/bilby/bilby-0.6.9.tar.gz"
+   "sha256":"aa3ffb41ee86c87ca65f6c08bb970735e8c35f3419b41d4ab700ddf0a922a0d7",
+   "url":"https://pypi.io/packages/source/b/bilby/bilby-1.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -656,7 +656,7 @@
   },
   "package":{
    "name":"bilby",
-   "version":"0.6.9"
+   "version":"1.0.0"
   },
   "requirements":{
    "host":[
@@ -707,8 +707,8 @@
    ]
   },
   "source":{
-   "sha256":"0bdabad38187f4cac78add02f7eed5471d7768ab0fbac635615fa28662c10bc9",
-   "url":"https://pypi.io/packages/source/b/bilby/bilby-0.6.9.tar.gz"
+   "sha256":"aa3ffb41ee86c87ca65f6c08bb970735e8c35f3419b41d4ab700ddf0a922a0d7",
+   "url":"https://pypi.io/packages/source/b/bilby/bilby-1.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -798,7 +798,7 @@
   },
   "package":{
    "name":"bilby",
-   "version":"0.6.9"
+   "version":"1.0.0"
   },
   "requirements":{
    "host":[
@@ -821,8 +821,8 @@
    ]
   },
   "source":{
-   "sha256":"0bdabad38187f4cac78add02f7eed5471d7768ab0fbac635615fa28662c10bc9",
-   "url":"https://pypi.io/packages/source/b/bilby/bilby-0.6.9.tar.gz"
+   "sha256":"aa3ffb41ee86c87ca65f6c08bb970735e8c35f3419b41d4ab700ddf0a922a0d7",
+   "url":"https://pypi.io/packages/source/b/bilby/bilby-1.0.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -886,7 +886,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"bilby\" %}\n{% set version = \"0.6.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0bdabad38187f4cac78add02f7eed5471d7768ab0fbac635615fa28662c10bc9\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - bilby_plot = cli_bilby.plot_multiple_posteriors:main\n    - bilby_result = cli_bilby.bilby_result:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools\n  run:\n    - corner\n    - dill\n    - dynesty >=1.0.0\n    - emcee\n    - future\n    - matplotlib-base >=2.0\n    - numpy >=1.9\n    - pandas\n    - python >=3.5\n    - scipy\n    - tqdm\n\ntest:\n  requires:\n    - gwpy\n    - python-lal\n    - python-lalsimulation\n  imports:\n    - bilby\n    - bilby.core\n    - bilby.core.sampler\n    - bilby.gw\n    - bilby.gw.detector\n    - bilby.gw.sampler\n    - bilby.hyper\n    - cli_bilby\n  commands:\n    # check entry points\n    - bilby_plot --help\n    - bilby_result --help\n    # check PSD from file works (validates data files)\n    - python -c \"from bilby.gw.detector import PowerSpectralDensity; print(PowerSpectralDensity.from_aligo().psd_array)\"\n\nabout:\n  home: https://git.ligo.org/lscsoft/bilby\n  dev_url: https://git.ligo.org/lscsoft/bilby\n  doc_url: https://lscsoft.docs.ligo.org/bilby/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: A user-friendly Bayesian inference library\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - GregoryAshton\n",
+ "raw_meta_yaml":"{% set name = \"bilby\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: aa3ffb41ee86c87ca65f6c08bb970735e8c35f3419b41d4ab700ddf0a922a0d7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - bilby_plot = cli_bilby.plot_multiple_posteriors:main\n    - bilby_result = cli_bilby.bilby_result:main\n\nrequirements:\n  host:\n    - pip\n    - python >=3.5\n    - setuptools\n  run:\n    - corner\n    - dill\n    - dynesty >=1.0.0\n    - emcee\n    - future\n    - matplotlib-base >=2.0\n    - numpy >=1.9\n    - pandas\n    - python >=3.5\n    - scipy\n    - tqdm\n\ntest:\n  requires:\n    - gwpy\n    - python-lal\n    - python-lalsimulation\n  imports:\n    - bilby\n    - bilby.core\n    - bilby.core.sampler\n    - bilby.gw\n    - bilby.gw.detector\n    - bilby.gw.sampler\n    - bilby.hyper\n    - cli_bilby\n  commands:\n    # check entry points\n    - bilby_plot --help\n    - bilby_result --help\n    # check PSD from file works (validates data files)\n    - python -c \"from bilby.gw.detector import PowerSpectralDensity; print(PowerSpectralDensity.from_aligo().psd_array)\"\n\nabout:\n  home: https://git.ligo.org/lscsoft/bilby\n  dev_url: https://git.ligo.org/lscsoft/bilby\n  doc_url: https://lscsoft.docs.ligo.org/bilby/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: A user-friendly Bayesian inference library\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - GregoryAshton\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -984,7 +984,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/b/bilby/bilby-0.5.6.tar.gz",
- "version":"0.6.9",
+ "version":"1.0.0",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://git.ligo.org/lscsoft/bilby",
@@ -1012,7 +1012,7 @@
   },
   "package":{
    "name":"bilby",
-   "version":"0.6.9"
+   "version":"1.0.0"
   },
   "requirements":{
    "host":[
@@ -1035,8 +1035,8 @@
    ]
   },
   "source":{
-   "sha256":"0bdabad38187f4cac78add02f7eed5471d7768ab0fbac635615fa28662c10bc9",
-   "url":"https://pypi.io/packages/source/b/bilby/bilby-0.6.9.tar.gz"
+   "sha256":"aa3ffb41ee86c87ca65f6c08bb970735e8c35f3419b41d4ab700ddf0a922a0d7",
+   "url":"https://pypi.io/packages/source/b/bilby/bilby-1.0.0.tar.gz"
   },
   "test":{
    "commands":[
