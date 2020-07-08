@@ -341,12 +341,12 @@
  "linux_64_meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -367,7 +367,9 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
@@ -390,7 +392,8 @@
   "test":{
    "imports":[
     "PIL",
-    "PIL.Image"
+    "PIL.Image",
+    "PIL.ImageCms"
    ]
   }
  },
@@ -406,9 +409,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -433,12 +438,12 @@
  "linux_aarch64_meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -459,7 +464,9 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
@@ -482,7 +489,8 @@
   "test":{
    "imports":[
     "PIL",
-    "PIL.Image"
+    "PIL.Image",
+    "PIL.ImageCms"
    ]
   }
  },
@@ -498,9 +506,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -525,12 +535,12 @@
  "linux_ppc64le_meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -551,7 +561,9 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
@@ -574,7 +586,8 @@
   "test":{
    "imports":[
     "PIL",
-    "PIL.Image"
+    "PIL.Image",
+    "PIL.ImageCms"
    ]
   }
  },
@@ -590,9 +603,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -617,12 +632,12 @@
  "meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -663,6 +678,7 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
     "libtiff",
     "jpeg",
@@ -670,28 +686,36 @@
     "tk",
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
     "tk",
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
     "tk",
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
     "tk",
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
@@ -745,12 +769,16 @@
     "PIL.Image",
     "PIL",
     "PIL.Image",
+    "PIL.ImageCms",
     "PIL",
     "PIL.Image",
+    "PIL.ImageCms",
     "PIL",
     "PIL.Image",
+    "PIL.ImageCms",
     "PIL",
-    "PIL.Image"
+    "PIL.Image",
+    "PIL.ImageCms"
    ]
   }
  },
@@ -764,12 +792,12 @@
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -790,7 +818,9 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
+    "lcms2",
     "libtiff",
     "jpeg",
     "freetype",
@@ -813,7 +843,8 @@
   "test":{
    "imports":[
     "PIL",
-    "PIL.Image"
+    "PIL.Image",
+    "PIL.ImageCms"
    ]
   }
  },
@@ -829,9 +860,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -854,17 +887,19 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"7.2.0\" %}\n\npackage:\n  name: pillow\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/P/Pillow/Pillow-{{ version }}.tar.gz\n  sha256: 97f9e7953a77d5a70f49b9a48da7776dc51e9b738151b22dacf101641594a626\n\nbuild:\n  number: 0\n  skip: true  # [py==27]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - zlib\n    - libtiff\n    - jpeg\n    - freetype\n    - tk\n  run:\n    - python\n    - jpeg\n    - zlib\n    - freetype\n    - libtiff\n    - olefile\n    - tk\n\ntest:\n  imports:\n    - PIL\n    - PIL.Image\n\nabout:\n  home: https://pillow.readthedocs.io\n  license: PIL\n  license_file: LICENSE\n  summary: Pillow is the friendly PIL fork by Alex Clark and Contributors\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - patricksnape\n    - pelson\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"7.2.0\" %}\n\npackage:\n  name: pillow\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/P/Pillow/Pillow-{{ version }}.tar.gz\n  sha256: 97f9e7953a77d5a70f49b9a48da7776dc51e9b738151b22dacf101641594a626\n\nbuild:\n  number: 1\n  skip: true  # [py==27]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - zlib\n    - lcms2  # [not win]\n    - libtiff\n    - jpeg\n    - freetype\n    - tk\n  run:\n    - python\n    - jpeg\n    - zlib\n    - freetype\n    - libtiff\n    - olefile\n    - tk\n\ntest:\n  imports:\n    - PIL\n    - PIL.Image\n    - PIL.ImageCms  # [not win]\n\nabout:\n  home: https://pillow.readthedocs.io\n  license: LicenseRef-PIL\n  license_file: LICENSE\n  summary: Pillow is the friendly PIL fork by Alex Clark and Contributors\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - patricksnape\n    - pelson\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "freetype",
    "jpeg",
+   "lcms2",
    "libtiff",
    "olefile",
    "pip",
    "python",
+   "setuptools",
    "tk",
    "zlib"
   ]
@@ -881,9 +916,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -919,9 +956,11 @@
    "elements":[
     "freetype",
     "jpeg",
+    "lcms2",
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
@@ -948,12 +987,12 @@
  "win_64_meta_yaml":{
   "about":{
    "home":"https://pillow.readthedocs.io",
-   "license":"PIL",
+   "license":"LicenseRef-PIL",
    "license_file":"LICENSE",
    "summary":"Pillow is the friendly PIL fork by Alex Clark and Contributors"
   },
   "build":{
-   "number":"0"
+   "number":"1"
   },
   "extra":{
    "recipe-maintainers":[
@@ -974,6 +1013,7 @@
    "host":[
     "python",
     "pip",
+    "setuptools",
     "zlib",
     "libtiff",
     "jpeg",
@@ -1016,6 +1056,7 @@
     "libtiff",
     "pip",
     "python",
+    "setuptools",
     "tk",
     "zlib"
    ]
