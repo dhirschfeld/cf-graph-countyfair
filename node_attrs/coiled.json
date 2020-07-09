@@ -80,7 +80,7 @@
   },
   "package":{
    "name":"coiled",
-   "version":"0.0.9"
+   "version":"0.0.10"
   },
   "requirements":{
    "host":[
@@ -91,17 +91,19 @@
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0"
    ]
   },
   "source":{
-   "sha256":"2bcfacb09b93be2ecde77a1ee22567cfb3292b304696dc565b1fe01beb6ec988",
-   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.9.tar.gz"
+   "sha256":"caf1d9716d26d5a88720a911ec52951f08b8553514db0caf3a08ff8c7502712c",
+   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.10.tar.gz"
   },
   "test":{
    "commands":[
     "pip check",
-    "coiled env create --help"
+    "coiled env create --help",
+    "coiled login --help"
    ],
    "imports":[
     "coiled"
@@ -128,6 +130,7 @@
    "elements":[
     "aiobotocore",
     "aiohttp",
+    "click",
     "distributed",
     "python"
    ]
@@ -166,7 +169,7 @@
   },
   "package":{
    "name":"coiled",
-   "version":"0.0.9"
+   "version":"0.0.10"
   },
   "requirements":{
    "host":[
@@ -181,29 +184,35 @@
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0",
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0",
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0"
    ]
   },
   "source":{
-   "sha256":"2bcfacb09b93be2ecde77a1ee22567cfb3292b304696dc565b1fe01beb6ec988",
-   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.9.tar.gz"
+   "sha256":"caf1d9716d26d5a88720a911ec52951f08b8553514db0caf3a08ff8c7502712c",
+   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.10.tar.gz"
   },
   "test":{
    "commands":[
     "pip check",
     "coiled env create --help",
+    "coiled login --help",
     "pip check",
     "coiled env create --help",
+    "coiled login --help",
     "pip check",
-    "coiled env create --help"
+    "coiled env create --help",
+    "coiled login --help"
    ],
    "imports":[
     "coiled",
@@ -248,7 +257,7 @@
   },
   "package":{
    "name":"coiled",
-   "version":"0.0.9"
+   "version":"0.0.10"
   },
   "requirements":{
    "host":[
@@ -259,17 +268,19 @@
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0"
    ]
   },
   "source":{
-   "sha256":"2bcfacb09b93be2ecde77a1ee22567cfb3292b304696dc565b1fe01beb6ec988",
-   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.9.tar.gz"
+   "sha256":"caf1d9716d26d5a88720a911ec52951f08b8553514db0caf3a08ff8c7502712c",
+   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.10.tar.gz"
   },
   "test":{
    "commands":[
     "pip check",
-    "coiled env create --help"
+    "coiled env create --help",
+    "coiled login --help"
    ],
    "imports":[
     "coiled"
@@ -296,6 +307,7 @@
    "elements":[
     "aiobotocore",
     "aiohttp",
+    "click",
     "distributed",
     "python"
    ]
@@ -308,12 +320,13 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"coiled\" %}\n{% set version = \"0.0.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2bcfacb09b93be2ecde77a1ee22567cfb3292b304696dc565b1fe01beb6ec988\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - aiohttp\n    - aiobotocore >=0.12.0,<0.13\n    - distributed >=2.19.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n    - coiled env create --help\n  imports:\n    - coiled\n\nabout:\n  home: https://coiled.io\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Deploy Dask cluster using Coiled Cloud\n\n  description: |\n    A Python package to easily create, manage, and connect to Dask deployments\n    using Coiled Cloud.\n  doc_url: https://coiled.io/cloud\n\nextra:\n  recipe-maintainers:\n    - jrbourbeau\n    - mrocklin\n",
+ "raw_meta_yaml":"{% set name = \"coiled\" %}\n{% set version = \"0.0.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: caf1d9716d26d5a88720a911ec52951f08b8553514db0caf3a08ff8c7502712c\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - aiohttp\n    - aiobotocore >=0.12.0,<0.13\n    - click\n    - distributed >=2.19.0\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n    - coiled env create --help\n    - coiled login --help\n  imports:\n    - coiled\n\nabout:\n  home: https://coiled.io\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Deploy Dask cluster using Coiled Cloud\n\n  description: |\n    A Python package to easily create, manage, and connect to Dask deployments\n    using Coiled Cloud.\n  doc_url: https://coiled.io/cloud\n\nextra:\n  recipe-maintainers:\n    - jrbourbeau\n    - mrocklin\n",
  "req":{
   "__set__":true,
   "elements":[
    "aiobotocore",
    "aiohttp",
+   "click",
    "distributed",
    "pip",
    "python"
@@ -336,6 +349,7 @@
    "elements":[
     "aiobotocore",
     "aiohttp",
+    "click",
     "distributed",
     "python"
    ]
@@ -366,6 +380,7 @@
    "elements":[
     "aiobotocore >=0.12.0,<0.13",
     "aiohttp",
+    "click",
     "distributed >=2.19.0",
     "python >=3.6"
    ]
@@ -378,7 +393,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.7.tar.gz",
- "version":"0.0.9",
+ "version":"0.0.10",
  "win_64_meta_yaml":{
   "about":{
    "description":"A Python package to easily create, manage, and connect to Dask deployments\nusing Coiled Cloud.\n",
@@ -402,7 +417,7 @@
   },
   "package":{
    "name":"coiled",
-   "version":"0.0.9"
+   "version":"0.0.10"
   },
   "requirements":{
    "host":[
@@ -413,17 +428,19 @@
     "python >=3.6",
     "aiohttp",
     "aiobotocore >=0.12.0,<0.13",
+    "click",
     "distributed >=2.19.0"
    ]
   },
   "source":{
-   "sha256":"2bcfacb09b93be2ecde77a1ee22567cfb3292b304696dc565b1fe01beb6ec988",
-   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.9.tar.gz"
+   "sha256":"caf1d9716d26d5a88720a911ec52951f08b8553514db0caf3a08ff8c7502712c",
+   "url":"https://pypi.io/packages/source/c/coiled/coiled-0.0.10.tar.gz"
   },
   "test":{
    "commands":[
     "pip check",
-    "coiled env create --help"
+    "coiled env create --help",
+    "coiled login --help"
    ],
    "imports":[
     "coiled"
@@ -450,6 +467,7 @@
    "elements":[
     "aiobotocore",
     "aiohttp",
+    "click",
     "distributed",
     "python"
    ]
