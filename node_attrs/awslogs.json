@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447104827.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.13.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -161,7 +180,11 @@
   }
  },
  "name":"awslogs",
- "new_version":"0.11.0",
+ "new_version":"0.13.0",
+ "new_version_attempts":{
+  "0.13.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://github.com/jorgebastida/awslogs",
@@ -242,6 +265,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"awslogs\" %}\n{% set version = \"0.11.0\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 6d0ce4fa759cb99fe1e4d7ee171d2f90925867662f1355510f1448960efb10e3\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - awslogs = awslogs.bin:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - boto3 >=1.2.1\n    - jmespath >=0.7.1,<1.0.0\n    - python\n    - python-dateutil >=2.4.0\n    - setuptools\n    - termcolor >=1.1.0\n\ntest:\n  imports:\n    - awslogs\n  commands:\n    - awslogs --help\n\nabout:\n  home: \"https://github.com/jorgebastida/awslogs\"\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: \"awslogs is a simple command line tool to read aws cloudwatch logs.\"\n\nextra:\n  recipe-maintainers:\n    - setu4993\n",
  "req":{
   "__set__":true,
@@ -283,6 +307,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
