@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446547047.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -175,7 +194,11 @@
   }
  },
  "name":"supermercado",
- "new_version":"0.0.5",
+ "new_version":"0.1.0",
+ "new_version_attempts":{
+  "0.1.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://github.com/mapbox/supermercado",
@@ -261,6 +284,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set version = \"0.0.5\" %}\n\npackage:\n  name: supermercado\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/supermercado/supermercado-{{ version }}.tar.gz\n  sha256: \"c0d7b8ce428681c597d3f3a51df8bc1b347a6cfc3c1d278a7e68fe6b991a5407\"\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - supermercado = supermercado.scripts.cli:cli\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - affine\n    - click\n    - click-plugins\n    - cligj\n    - mercantile\n    - numpy\n    - rasterio\n\ntest:\n  imports:\n    - supermercado\n    - supermercado.scripts\n  commands:\n    - supermercado --help\n\nabout:\n  home: https://github.com/mapbox/supermercado\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Supercharged mercantile\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -306,6 +330,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
