@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446879823.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.5.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -159,7 +178,11 @@
   }
  },
  "name":"paramspace",
- "new_version":"2.5.1",
+ "new_version":"2.5.2",
+ "new_version_attempts":{
+  "2.5.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"paramspace is a python package that makes it easy to iterate over a\nmultidimensional parameter space, where each point corresponds to a\ndict-like object. It integrates tightly with YAML to make definition of\nparameter spaces and sweeps super simple.\n",
@@ -241,6 +264,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"paramspace\" %}\n{% set version = \"2.5.1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 5a8d171663cfca822bef5688c667f6392f63440b2ba5294be25b0f408654f051\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - numpy >=1.17.3\n    - ruamel.yaml >=0.16.5\n    - xarray >=0.10.9\n\ntest:\n  imports:\n    - paramspace\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: \"https://ts-gitlab.iup.uni-heidelberg.de/yunus/paramspace\"\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n\n  summary: \"Dictionary-based, multi-dimensional parameter space iteration\"\n  description: |\n    paramspace is a python package that makes it easy to iterate over a\n    multidimensional parameter space, where each point corresponds to a\n    dict-like object. It integrates tightly with YAML to make definition of\n    parameter spaces and sweeps super simple.\n  doc_url: \"https://paramspace.readthedocs.io/en/latest/\"\n  dev_url: \"https://ts-gitlab.iup.uni-heidelberg.de/yunus/paramspace\"\n\nextra:\n  recipe-maintainers:\n    - blsqr\n",
  "req":{
   "__set__":true,
@@ -280,6 +304,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
