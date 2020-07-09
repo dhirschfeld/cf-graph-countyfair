@@ -16,6 +16,44 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/347f3e15-221a-4784-9562-61e6c87106cc.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/446816078.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -35,13 +73,18 @@
    "home":"https://git.ligo.org/cds/gpstime",
    "license":"GPL-3.0-or-later",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":[
+    "COPYING",
+    "COPYING-GPL-3"
+   ],
    "summary":"GPS-aware datetime module"
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
+   "entry_points":[
+    "gpstime = gpstime.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -75,7 +118,8 @@
   },
   "test":{
    "commands":[
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test"
    ],
    "imports":[
@@ -123,13 +167,24 @@
    "home":"https://git.ligo.org/cds/gpstime",
    "license":"GPL-3.0-or-later",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":[
+    "COPYING",
+    "COPYING-GPL-3",
+    "COPYING",
+    "COPYING-GPL-3",
+    "COPYING",
+    "COPYING-GPL-3"
+   ],
    "summary":"GPS-aware datetime module"
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
+   "entry_points":[
+    "gpstime = gpstime.__main__:main",
+    "gpstime = gpstime.__main__:main",
+    "gpstime = gpstime.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -158,7 +213,7 @@
     "setuptools"
    ],
    "run":[
-    "coreutils",
+    "m2-coreutils",
     "python",
     "python-dateutil",
     "requests",
@@ -183,11 +238,14 @@
   },
   "test":{
    "commands":[
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test",
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test",
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test"
    ],
    "imports":[
@@ -212,13 +270,18 @@
    "home":"https://git.ligo.org/cds/gpstime",
    "license":"GPL-3.0-or-later",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":[
+    "COPYING",
+    "COPYING-GPL-3"
+   ],
    "summary":"GPS-aware datetime module"
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
+   "entry_points":[
+    "gpstime = gpstime.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -252,7 +315,8 @@
   },
   "test":{
    "commands":[
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test"
    ],
    "imports":[
@@ -292,12 +356,13 @@
    ]
   }
  },
- "pinning_version":"2018.12.18",
- "raw_meta_yaml":"{% set version = \"0.4.4\" %}\n\npackage:\n  name: gpstime\n  version: {{ version }}\n\nsource:\n  url: https://git.ligo.org/cds/gpstime/-/archive/{{ version }}/gpstime-{{ version }}.tar.gz\n  sha256: 5908069f99884083881aee663a6c9bbb7b87a67b768d61eb299a04dd1c2db091\n  patches:\n    - entry_point.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - coreutils\n    - python\n    - python-dateutil\n    - requests\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - gpstime\n  commands:\n    - gpstime --help\n    - python -m unittest discover gpstime.test\n\nabout:\n  home: https://git.ligo.org/cds/gpstime\n  dev_url: https://git.ligo.org/cds/gpstime\n  doc_url: https://cds.docs.ligo.org/gpstime/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: COPYING\n  summary: GPS-aware datetime module\n  description: |\n    This package provides GPS time conversion utilities, including a\n    gpstime subclass of the built-in datetime class with the addition\n    of GPS time parsing and conversion methods.\n\n    Leap second data, necessary for GPS time conversion, is expected\n    to be provided by the core libc Time Zone Database tzdata.  If for\n    some reason the tzdata leapsecond file is not available, a local\n    cache of the IETF leap second record will be maintained:\n\n      https://www.ietf.org/timezones/data/leap-seconds.list\n\n    The package can be executed as a command-line GPS conversion utility.\n    that uses the gpstime module is also included.  It is a rough\n    work-alike to LIGO 'tconvert' utility.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - jrollins\n",
+ "pinning_version":"2020.07.07.19.27.52",
+ "raw_meta_yaml":"{% set name = \"gpstime\" %}\n{% set version = \"0.4.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://git.ligo.org/cds/{{ name }}/-/archive/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5908069f99884083881aee663a6c9bbb7b87a67b768d61eb299a04dd1c2db091\n  patches:\n    - entry_point.patch\n\nbuild:\n  entry_points:\n    - gpstime = gpstime.__main__:main\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - coreutils  # [not win]\n    - m2-coreutils  # [win]\n    - python\n    - python-dateutil\n    - requests\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - gpstime\n  commands:\n    - gpstime \"Jan 1\"\n    - gpstime 1261872018\n    - python -m unittest discover gpstime.test\n\nabout:\n  home: https://git.ligo.org/cds/gpstime\n  dev_url: https://git.ligo.org/cds/gpstime\n  doc_url: https://cds.docs.ligo.org/gpstime/\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file:\n    - COPYING\n    - COPYING-GPL-3\n  summary: GPS-aware datetime module\n  description: |\n    This package provides GPS time conversion utilities, including a\n    gpstime subclass of the built-in datetime class with the addition\n    of GPS time parsing and conversion methods.\n\n    Leap second data, necessary for GPS time conversion, is expected\n    to be provided by the core libc Time Zone Database tzdata.  If for\n    some reason the tzdata leapsecond file is not available, a local\n    cache of the IETF leap second record will be maintained:\n\n      https://www.ietf.org/timezones/data/leap-seconds.list\n\n    The package can be executed as a command-line GPS conversion utility.\n    that uses the gpstime module is also included.  It is a rough\n    work-alike to LIGO 'tconvert' utility.\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - jrollins\n",
  "req":{
   "__set__":true,
   "elements":[
    "coreutils",
+   "m2-coreutils",
    "pip",
    "python",
    "python-dateutil",
@@ -322,6 +387,7 @@
    "__set__":true,
    "elements":[
     "coreutils",
+    "m2-coreutils",
     "python",
     "python-dateutil",
     "requests"
@@ -334,7 +400,7 @@
    ]
   }
  },
- "smithy_version":"3.2.2",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "time":1568135297.773116,
  "total_requirements":{
@@ -354,6 +420,7 @@
    "__set__":true,
    "elements":[
     "coreutils",
+    "m2-coreutils",
     "python",
     "python-dateutil",
     "requests"
@@ -376,13 +443,18 @@
    "home":"https://git.ligo.org/cds/gpstime",
    "license":"GPL-3.0-or-later",
    "license_family":"GPL",
-   "license_file":"COPYING",
+   "license_file":[
+    "COPYING",
+    "COPYING-GPL-3"
+   ],
    "summary":"GPS-aware datetime module"
   },
   "build":{
-   "noarch":"python",
-   "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
+   "entry_points":[
+    "gpstime = gpstime.__main__:main"
+   ],
+   "number":"1",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -401,7 +473,7 @@
     "setuptools"
    ],
    "run":[
-    "coreutils",
+    "m2-coreutils",
     "python",
     "python-dateutil",
     "requests"
@@ -416,7 +488,8 @@
   },
   "test":{
    "commands":[
-    "gpstime --help",
+    "gpstime \"Jan 1\"",
+    "gpstime 1261872018",
     "python -m unittest discover gpstime.test"
    ],
    "imports":[
@@ -443,7 +516,7 @@
   "run":{
    "__set__":true,
    "elements":[
-    "coreutils",
+    "m2-coreutils",
     "python",
     "python-dateutil",
     "requests"

@@ -122,7 +122,7 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli"
    ]
@@ -149,6 +149,9 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -156,12 +159,12 @@
    "commands":[
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
-    "test -f $PREFIX/include/brotli/encode.h"
+    "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a"
    ]
   }
  },
@@ -196,7 +199,7 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli"
    ]
@@ -223,6 +226,9 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -230,12 +236,12 @@
    "commands":[
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
-    "test -f $PREFIX/include/brotli/encode.h"
+    "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a"
    ]
   }
  },
@@ -270,7 +276,7 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli"
    ]
@@ -297,6 +303,9 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -304,12 +313,12 @@
    "commands":[
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
-    "test -f $PREFIX/include/brotli/encode.h"
+    "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a"
    ]
   }
  },
@@ -344,15 +353,14 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli",
     "brotli",
     "brotli",
     "brotli",
     "brotli"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -404,6 +412,13 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch",
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch",
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch",
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch",
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -415,44 +430,44 @@
     "if not exist %LIBRARY_BIN%\\\\brotlidec.dll exit 1",
     "if not exist %LIBRARY_BIN%\\\\brotlienc.dll exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlicommon.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlidec.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlienc.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1",
     "if not exist %LIBRARY_INC%\\\\brotli\\\\encode.h exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1",
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
     "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a",
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
     "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a",
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
     "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a",
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
-    "test -f $PREFIX/include/brotli/encode.h"
+    "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a"
    ]
   }
  },
@@ -466,7 +481,7 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli"
    ]
@@ -493,6 +508,9 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -500,12 +518,12 @@
    "commands":[
     "brotli --help",
     "test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlienc-static.a",
     "test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlidec-static.a",
     "test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT",
-    "test -f $PREFIX/lib/libbrotlicommon-static.a",
-    "test -f $PREFIX/include/brotli/encode.h"
+    "test -f $PREFIX/include/brotli/encode.h",
+    "test ! -f $PREFIX/lib/libbrotlienc-static.a",
+    "test ! -f $PREFIX/lib/libbrotlidec-static.a",
+    "test ! -f $PREFIX/lib/libbrotlicommon-static.a"
    ]
   }
  },
@@ -533,7 +551,7 @@
   }
  },
  "pinning_version":"2019.06.09",
- "raw_meta_yaml":"{% set version = \"1.0.7\" %}\n\npackage:\n  name: brotli\n  version: {{ version }}\n\nsource:\n  fn: brotli-{{ version }}.tar.gz\n  url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz\n  sha256: 4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c\n\nbuild:\n  number: 1002\n  skip: true  # [win and vc<14]\n  run_exports:\n    # https://abi-laboratory.pro/index.php?view=timeline&l=brotli\n    # No minor versions to ensure ABI compatibility history\n    - {{ pin_subpackage('brotli', max_pin='x.x') }}\n\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - ninja\n  host:\n\ntest:\n  commands:\n    - brotli --help\n    - test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT     # [unix]\n    - test -f $PREFIX/lib/libbrotlienc-static.a      # [unix]\n    - test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT     # [unix]\n    - test -f $PREFIX/lib/libbrotlidec-static.a      # [unix]\n    - test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/lib/libbrotlicommon-static.a   # [unix]\n    - test -f $PREFIX/include/brotli/encode.h        # [unix]\n    - if not exist %LIBRARY_BIN%\\\\brotli.exe exit 1               # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlicommon.dll exit 1         # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlidec.dll exit 1            # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlienc.dll exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlicommon.lib exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlidec.lib exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlienc.lib exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1     # [win]\n    - if not exist %LIBRARY_INC%\\\\brotli\\\\encode.h exit 1         # [win]\n\nabout:\n  home: http://github.com/google/brotli\n  license: MIT\n  license_file: LICENSE\n  summary: 'Brotli compression format'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n    - CJ-Wright\n",
+ "raw_meta_yaml":"{% set version = \"1.0.7\" %}\n\npackage:\n  name: brotli\n  version: {{ version }}\n\nsource:\n  fn: brotli-{{ version }}.tar.gz\n  url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz\n  sha256: 4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c\n  patches:\n    - 0001-Add-separate-options-to-disable-shared-static-librar.patch\n\nbuild:\n  number: 1004\n  run_exports:\n    # https://abi-laboratory.pro/index.php?view=timeline&l=brotli\n    # No minor versions to ensure ABI compatibility history\n    - {{ pin_subpackage('brotli', max_pin='x.x') }}\n\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - ninja\n  host:\n\ntest:\n  commands:\n    - brotli --help\n    - test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT     # [unix]\n    - test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT     # [unix]\n    - test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT  # [unix]\n    - test -f $PREFIX/include/brotli/encode.h        # [unix]\n    - if not exist %LIBRARY_BIN%\\\\brotli.exe exit 1               # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlicommon.dll exit 1         # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlidec.dll exit 1            # [win]\n    - if not exist %LIBRARY_BIN%\\\\brotlienc.dll exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlicommon.lib exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlidec.lib exit 1            # [win]\n    - if not exist %LIBRARY_LIB%\\\\brotlienc.lib exit 1            # [win]\n    - if not exist %LIBRARY_INC%\\\\brotli\\\\encode.h exit 1         # [win]\n\n    # CFEP-18: Static libs shouldn't be part of the main package\n    - test ! -f $PREFIX/lib/libbrotlienc-static.a      # [unix]\n    - test ! -f $PREFIX/lib/libbrotlidec-static.a      # [unix]\n    - test ! -f $PREFIX/lib/libbrotlicommon-static.a   # [unix]\n    - if exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1  # [win]\n    - if exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1     # [win]\n    - if exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1     # [win]\n\nabout:\n  home: http://github.com/google/brotli\n  license: MIT\n  license_file: LICENSE\n  summary: 'Brotli compression format'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n    - CJ-Wright\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -601,11 +619,10 @@
    "summary":"Brotli compression format"
   },
   "build":{
-   "number":"1002",
+   "number":"1004",
    "run_exports":[
     "brotli"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -629,6 +646,9 @@
   },
   "source":{
    "fn":"brotli-1.0.7.tar.gz",
+   "patches":[
+    "0001-Add-separate-options-to-disable-shared-static-librar.patch"
+   ],
    "sha256":"4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c",
    "url":"https://github.com/google/brotli/archive/v1.0.7.tar.gz"
   },
@@ -640,12 +660,12 @@
     "if not exist %LIBRARY_BIN%\\\\brotlidec.dll exit 1",
     "if not exist %LIBRARY_BIN%\\\\brotlienc.dll exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlicommon.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlidec.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1",
     "if not exist %LIBRARY_LIB%\\\\brotlienc.lib exit 1",
-    "if not exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1",
-    "if not exist %LIBRARY_INC%\\\\brotli\\\\encode.h exit 1"
+    "if not exist %LIBRARY_INC%\\\\brotli\\\\encode.h exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlicommon-static.lib exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlidec-static.lib exit 1",
+    "if exist %LIBRARY_LIB%\\\\brotlienc-static.lib exit 1"
    ]
   }
  },
