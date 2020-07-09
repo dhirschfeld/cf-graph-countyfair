@@ -30,7 +30,7 @@
   },
   "package":{
    "name":"switch_model",
-   "version":"2.0.5"
+   "version":"2.0.5.post2"
   },
   "requirements":{
    "build":null,
@@ -40,7 +40,8 @@
    ],
    "run":[
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
@@ -48,8 +49,8 @@
    ]
   },
   "source":{
-   "sha256":"6dd2d6e1cf2a842e03a272131b4610062ee077ebd3ac5f30e80776ac929a4e43",
-   "url":"https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz"
+   "sha256":"e87c71211d4a436dba70e217005eaff157a744d191be9e42a59d382f8f38e542",
+   "url":"https://files.pythonhosted.org/packages/e9/b3/fd2dcec5972a846036b0ab3e821279af72e51e06c35eed46cbcc15375724/switch_model-2.0.5.post2.tar.gz"
   },
   "test":{
    "commands":[
@@ -88,6 +89,7 @@
     "pint",
     "pyomo",
     "python",
+    "pyutilib",
     "testfixtures"
    ]
   },
@@ -126,7 +128,7 @@
   },
   "package":{
    "name":"switch_model",
-   "version":"2.0.5"
+   "version":"2.0.5.post2"
   },
   "requirements":{
    "build":null,
@@ -140,19 +142,22 @@
    ],
    "run":[
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
     "glpk",
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
     "glpk",
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
@@ -160,8 +165,8 @@
    ]
   },
   "source":{
-   "sha256":"6dd2d6e1cf2a842e03a272131b4610062ee077ebd3ac5f30e80776ac929a4e43",
-   "url":"https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz"
+   "sha256":"e87c71211d4a436dba70e217005eaff157a744d191be9e42a59d382f8f38e542",
+   "url":"https://files.pythonhosted.org/packages/e9/b3/fd2dcec5972a846036b0ab3e821279af72e51e06c35eed46cbcc15375724/switch_model-2.0.5.post2.tar.gz"
   },
   "test":{
    "commands":[
@@ -224,7 +229,7 @@
   },
   "package":{
    "name":"switch_model",
-   "version":"2.0.5"
+   "version":"2.0.5.post2"
   },
   "requirements":{
    "build":null,
@@ -234,7 +239,8 @@
    ],
    "run":[
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
@@ -242,8 +248,8 @@
    ]
   },
   "source":{
-   "sha256":"6dd2d6e1cf2a842e03a272131b4610062ee077ebd3ac5f30e80776ac929a4e43",
-   "url":"https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz"
+   "sha256":"e87c71211d4a436dba70e217005eaff157a744d191be9e42a59d382f8f38e542",
+   "url":"https://files.pythonhosted.org/packages/e9/b3/fd2dcec5972a846036b0ab3e821279af72e51e06c35eed46cbcc15375724/switch_model-2.0.5.post2.tar.gz"
   },
   "test":{
    "commands":[
@@ -282,6 +288,7 @@
     "pint",
     "pyomo",
     "python",
+    "pyutilib",
     "testfixtures"
    ]
   },
@@ -290,7 +297,7 @@
    "elements":[]
   }
  },
- "raw_meta_yaml":"# {% set version = \"2.0.4\" %}\n\npackage:\n  name: switch_model\n  version: 2.0.5\n\nsource:\n  # url: https://pypi.io/packages/source/s/switch_model/switch_model-{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz\n  sha256: 6dd2d6e1cf2a842e03a272131b4610062ee077ebd3ac5f30e80776ac929a4e43\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - switch=switch_model.main:main\n\nrequirements:\n  build:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyomo\n    - pint\n    - testfixtures\n    - pandas\n    - glpk\n\ntest:\n  imports:\n    - switch_model\n  source_files:\n    - run_tests.py\n    - switch_model\n    - examples\n    - tests\n  commands:\n    - switch --help\n    - switch test\n    - python run_tests.py\n\nabout:\n  home: http://switch-model.org\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'A modern platform for planning high-renewable power systems'\n  description: |\n    Switch 2.0 is an open-source modeling platform for planning transitions to\n    low-emission electric power grids, designed to satisfy 21st century grid\n    planning requirements. Switch is capable of long-, medium- and short-term\n    planning of investments and operations with conventional or smart grids,\n    integrating large shares of renewable power, storage and/or demand response.\n    Applications include integrated resource planning, investment planning,\n    economic and policy analyses as well as basic research.\n  doc_url: http://switch-model.org\n  dev_url: https://github.com/switch-model/switch\n\nextra:\n  recipe-maintainers:\n    - mfripp\n",
+ "raw_meta_yaml":"# {% set version = \"2.0.4\" %}\n\npackage:\n  name: switch_model\n  version: 2.0.5.post2\n\nsource:\n  # url: https://pypi.io/packages/source/s/switch_model/switch_model-{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/e9/b3/fd2dcec5972a846036b0ab3e821279af72e51e06c35eed46cbcc15375724/switch_model-2.0.5.post2.tar.gz\n  sha256: e87c71211d4a436dba70e217005eaff157a744d191be9e42a59d382f8f38e542\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  entry_points:\n    - switch=switch_model.main:main\n\nrequirements:\n  build:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyomo <5.6.9a0\n    - pyutilib <6.0a0\n    - pint\n    - testfixtures\n    - pandas\n    - glpk\n\ntest:\n  imports:\n    - switch_model\n  source_files:\n    - run_tests.py\n    - switch_model\n    - examples\n    - tests\n  commands:\n    - switch --help\n    - switch test\n    - python run_tests.py\n\nabout:\n  home: http://switch-model.org\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'A modern platform for planning high-renewable power systems'\n  description: |\n    Switch 2.0 is an open-source modeling platform for planning transitions to\n    low-emission electric power grids, designed to satisfy 21st century grid\n    planning requirements. Switch is capable of long-, medium- and short-term\n    planning of investments and operations with conventional or smart grids,\n    integrating large shares of renewable power, storage and/or demand response.\n    Applications include integrated resource planning, investment planning,\n    economic and policy analyses as well as basic research.\n  doc_url: http://switch-model.org\n  dev_url: https://github.com/switch-model/switch\n\nextra:\n  recipe-maintainers:\n    - mfripp\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -300,6 +307,7 @@
    "pip",
    "pyomo",
    "python",
+   "pyutilib",
    "testfixtures"
   ]
  },
@@ -323,6 +331,7 @@
     "pint",
     "pyomo",
     "python",
+    "pyutilib",
     "testfixtures"
    ]
   },
@@ -350,8 +359,9 @@
     "glpk",
     "pandas",
     "pint",
-    "pyomo",
+    "pyomo <5.6.9a0",
     "python",
+    "pyutilib <6.0a0",
     "testfixtures"
    ]
   },
@@ -361,7 +371,7 @@
   }
  },
  "url":"https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz",
- "version":"2.0.5",
+ "version":"2.0.5.post2",
  "win_64_meta_yaml":{
   "about":{
    "description":"Switch 2.0 is an open-source modeling platform for planning transitions to\nlow-emission electric power grids, designed to satisfy 21st century grid\nplanning requirements. Switch is capable of long-, medium- and short-term\nplanning of investments and operations with conventional or smart grids,\nintegrating large shares of renewable power, storage and/or demand response.\nApplications include integrated resource planning, investment planning,\neconomic and policy analyses as well as basic research.\n",
@@ -388,7 +398,7 @@
   },
   "package":{
    "name":"switch_model",
-   "version":"2.0.5"
+   "version":"2.0.5.post2"
   },
   "requirements":{
    "build":null,
@@ -398,7 +408,8 @@
    ],
    "run":[
     "python",
-    "pyomo",
+    "pyomo <5.6.9a0",
+    "pyutilib <6.0a0",
     "pint",
     "testfixtures",
     "pandas",
@@ -406,8 +417,8 @@
    ]
   },
   "source":{
-   "sha256":"6dd2d6e1cf2a842e03a272131b4610062ee077ebd3ac5f30e80776ac929a4e43",
-   "url":"https://files.pythonhosted.org/packages/7c/cb/619851966d5965a79a91a144e410d1f4e6c6d7cb9ce471bd98712e910b3d/switch_model-2.0.5.tar.gz"
+   "sha256":"e87c71211d4a436dba70e217005eaff157a744d191be9e42a59d382f8f38e542",
+   "url":"https://files.pythonhosted.org/packages/e9/b3/fd2dcec5972a846036b0ab3e821279af72e51e06c35eed46cbcc15375724/switch_model-2.0.5.post2.tar.gz"
   },
   "test":{
    "commands":[
@@ -446,6 +457,7 @@
     "pint",
     "pyomo",
     "python",
+    "pyutilib",
     "testfixtures"
    ]
   },
