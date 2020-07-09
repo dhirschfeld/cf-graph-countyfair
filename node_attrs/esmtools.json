@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447139524.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.1.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -169,7 +188,11 @@
   }
  },
  "name":"esmtools",
- "new_version":"1.1.1",
+ "new_version":"1.1.2",
+ "new_version_attempts":{
+  "1.1.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/bradyrx/esmtools",
@@ -254,6 +277,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"esmtools\" %}\n{% set version = \"1.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fbccc6233d248296aec47b3e53f6d663dd9832abbae93173ee4e0341fa7ac6ca\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv --no-deps\"\n\nrequirements:\n  host:\n    - python >3.6\n    - pip\n    - setuptools_scm\n    - setuptools_scm_git_archive\n  run:\n    - python >3.6\n    - cftime\n    - climpred >=2.1.0\n    - numpy\n    - scipy\n    - statsmodels\n    - tqdm\n    - xarray >=0.15.1\n\ntest:\n  imports:\n    - esmtools \n\nabout:\n  home: http://github.com/bradyrx/esmtools\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'a toolbox for Earth System Model analysis'\n  doc_url: http://esmtools.readthedocs.io/\n  dev_url: https://github.com/bradyrx/esmtools\n\nextra:\n  recipe-maintainers:\n    - bradyrx \n",
  "req":{
   "__set__":true,
@@ -303,6 +327,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
