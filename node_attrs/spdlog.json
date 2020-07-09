@@ -263,6 +263,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447023035.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.7.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -383,11 +400,12 @@
   }
  },
  "name":"spdlog",
- "new_version":"1.6.1",
+ "new_version":"1.7.0",
  "new_version_attempts":{
   "1.5.0":1,
   "1.6.0":1,
-  "1.6.1":1
+  "1.6.1":1,
+  "1.7.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -449,7 +467,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.05.25.23.01.15",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"spdlog\" %}\n{% set version = \"1.6.1\" %}\n{% set sha256 = \"378a040d91f787aec96d269b0c39189f58a6b852e4cbf9150ccfacbe85ebbbfc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/gabime/{{ name|lower }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - test -e $PREFIX/include/spdlog/spdlog.h  # [not win]\n    - if not exist %PREFIX%\\Library\\include\\spdlog\\spdlog.h exit 1  # [win]\n\nabout:\n  home: https://github.com/gabime/spdlog\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Super fast C++ logging library.\n\n  description: |\n    spdlog is a header only library for Super fast C++ logging\n    to be used with a C++11 compiler.\n\nextra:\n  recipe-maintainers:\n    - druvus\n    - rongou\n",
  "req":{
   "__set__":true,
@@ -479,7 +497,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
