@@ -561,7 +561,8 @@
  "bad":false,
  "conda-forge.yml":{
   "provider":{
-   "win":"azure"
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
   }
  },
  "feedstock_name":"rpy2",
@@ -690,6 +691,254 @@
    ]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://rpy2.bitbucket.io/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"gpl-2.0.txt",
+   "summary":"Python interface to the R language (embedded R)"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bgruening",
+    "ceholden",
+    "johanneskoester",
+    "mingwandroid",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"rpy2",
+   "version":"3.3.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0"
+   ],
+   "run":[
+    "python",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Fix-multiprocessing-test.patch"
+   ],
+   "sha256":"2e12c99e56a1faa68f3b82a71b90e3389203c1e76cd53fe38946a8a7a31f9750",
+   "url":"https://pypi.io/packages/source/r/rpy2/rpy2-3.3.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -s -rxs -v rpy2/tests -k \"not test_display_args\""
+   ],
+   "imports":[
+    "rpy2",
+    "rpy2.rlike",
+    "rpy2.ipython",
+    "rpy2.rinterface",
+    "rpy2.robjects",
+    "rpy2.robjects.lib"
+   ],
+   "requires":[
+    "r-survival",
+    "r-ggplot2 >=2.2.1",
+    "ipython",
+    "numpy",
+    "pandas",
+    "pytest"
+   ],
+   "source_files":[
+    "rpy2/tests"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "jinja2",
+    "pip",
+    "python",
+    "pytz",
+    "r-base",
+    "simplegeneric",
+    "tzlocal"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "jinja2",
+    "python",
+    "pytz",
+    "r-base",
+    "simplegeneric",
+    "tzlocal"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "ipython",
+    "numpy",
+    "pandas",
+    "pytest",
+    "r-ggplot2",
+    "r-survival"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://rpy2.bitbucket.io/",
+   "license":"GPL-2.0-or-later",
+   "license_family":"GPL",
+   "license_file":"gpl-2.0.txt",
+   "summary":"Python interface to the R language (embedded R)"
+  },
+  "build":{
+   "number":"0"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "bgruening",
+    "ceholden",
+    "johanneskoester",
+    "mingwandroid",
+    "ocefpaf"
+   ]
+  },
+  "package":{
+   "name":"rpy2",
+   "version":"3.3.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "python",
+    "pip",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0"
+   ],
+   "run":[
+    "python",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0"
+   ]
+  },
+  "source":{
+   "patches":[
+    "0001-Fix-multiprocessing-test.patch"
+   ],
+   "sha256":"2e12c99e56a1faa68f3b82a71b90e3389203c1e76cd53fe38946a8a7a31f9750",
+   "url":"https://pypi.io/packages/source/r/rpy2/rpy2-3.3.2.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest -s -rxs -v rpy2/tests -k \"not test_display_args\""
+   ],
+   "imports":[
+    "rpy2",
+    "rpy2.rlike",
+    "rpy2.ipython",
+    "rpy2.rinterface",
+    "rpy2.robjects",
+    "rpy2.robjects.lib"
+   ],
+   "requires":[
+    "r-survival",
+    "r-ggplot2 >=2.2.1",
+    "ipython",
+    "numpy",
+    "pandas",
+    "pytest"
+   ],
+   "source_files":[
+    "rpy2/tests"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "jinja2",
+    "pip",
+    "python",
+    "pytz",
+    "r-base",
+    "simplegeneric",
+    "tzlocal"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "cffi",
+    "jinja2",
+    "python",
+    "pytz",
+    "r-base",
+    "simplegeneric",
+    "tzlocal"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "ipython",
+    "numpy",
+    "pandas",
+    "pytest",
+    "r-ggplot2",
+    "r-survival"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://rpy2.bitbucket.io/",
@@ -718,6 +967,16 @@
     "ceholden",
     "johanneskoester",
     "mingwandroid",
+    "ocefpaf",
+    "bgruening",
+    "ceholden",
+    "johanneskoester",
+    "mingwandroid",
+    "ocefpaf",
+    "bgruening",
+    "ceholden",
+    "johanneskoester",
+    "mingwandroid",
     "ocefpaf"
    ]
   },
@@ -730,9 +989,27 @@
     "posix",
     "m2w64_c_compiler_stub",
     "c_compiler_stub",
+    "c_compiler_stub",
+    "c_compiler_stub",
     "c_compiler_stub"
    ],
    "host":[
+    "python",
+    "pip",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0",
+    "python",
+    "pip",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0",
     "python",
     "pip",
     "r-base",
@@ -779,11 +1056,27 @@
     "pytz",
     "simplegeneric",
     "tzlocal",
+    "cffi >=1.0.0,!=1.13.0",
+    "python",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
+    "cffi >=1.0.0,!=1.13.0",
+    "python",
+    "r-base",
+    "jinja2",
+    "pytz",
+    "simplegeneric",
+    "tzlocal",
     "cffi >=1.0.0,!=1.13.0"
    ]
   },
   "source":{
    "patches":[
+    "0001-Fix-multiprocessing-test.patch",
+    "0001-Fix-multiprocessing-test.patch",
     "0001-Fix-multiprocessing-test.patch",
     "0001-Fix-multiprocessing-test.patch",
     "0001-Fix-multiprocessing-test.patch"
@@ -798,6 +1091,18 @@
    "imports":[
     "rpy2",
     "rpy2.rlike",
+    "rpy2",
+    "rpy2.rlike",
+    "rpy2.ipython",
+    "rpy2.rinterface",
+    "rpy2.robjects",
+    "rpy2.robjects.lib",
+    "rpy2",
+    "rpy2.rlike",
+    "rpy2.ipython",
+    "rpy2.rinterface",
+    "rpy2.robjects",
+    "rpy2.robjects.lib",
     "rpy2",
     "rpy2.rlike",
     "rpy2.ipython",
@@ -829,9 +1134,23 @@
     "ipython",
     "numpy",
     "pandas",
+    "pytest",
+    "r-survival",
+    "r-ggplot2 >=2.2.1",
+    "ipython",
+    "numpy",
+    "pandas",
+    "pytest",
+    "r-survival",
+    "r-ggplot2 >=2.2.1",
+    "ipython",
+    "numpy",
+    "pandas",
     "pytest"
    ],
    "source_files":[
+    "rpy2/tests",
+    "rpy2/tests",
     "rpy2/tests",
     "rpy2/tests",
     "rpy2/tests"
