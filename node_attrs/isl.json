@@ -136,7 +136,7 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl"
    ]
@@ -171,7 +171,7 @@
   },
   "test":{
    "commands":[
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\""
    ]
@@ -211,7 +211,7 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl"
    ]
@@ -246,7 +246,7 @@
   },
   "test":{
    "commands":[
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\""
    ]
@@ -286,7 +286,7 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl"
    ]
@@ -321,7 +321,7 @@
   },
   "test":{
    "commands":[
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\""
    ]
@@ -361,15 +361,14 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl",
     "isl",
     "isl",
     "isl",
     "isl"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -419,16 +418,16 @@
    "commands":[
     "if not exist %LIBRARY_LIB%\\\\isl.lib exit 1",
     "if not exist %LIBRARY_INC%\\\\isl\\\\options.h exit 1",
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\"",
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\"",
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\"",
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\""
    ]
@@ -449,7 +448,7 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl"
    ]
@@ -484,7 +483,7 @@
   },
   "test":{
    "commands":[
-    "test -f \"$PREFIX/lib/libisl.a\"",
+    "test ! -f \"$PREFIX/lib/libisl.a\"",
     "test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"",
     "test -d \"$PREFIX/include/isl\""
    ]
@@ -516,7 +515,7 @@
   }
  },
  "pinning_version":"2020.07.01.21.17.12",
- "raw_meta_yaml":"{% set version = \"0.22.1\" %}\n\npackage:\n  name: isl\n  version: {{ version }}\n\nsource:\n  fn: isl-{{ version }}.tar.bz2\n  url: http://isl.gforge.inria.fr/isl-{{ version }}.tar.bz2\n  sha256: 1a668ef92eb181a7c021e8531a3ca89fd71aa1b3744db56f68365ab0a224c5cd\n  patches:\n    # From https://github.com/msys2/MINGW-packages/blob/master/mingw-w64-isl/isl-0.14.1-no-undefined.patch\n    - no_undefined.patch  # [win]\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage(\"isl\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autotools_clang_conda  # [win]\n    - make                   # [unix]\n  host:\n    - gmp             # [unix]\n  run:\n    - gmp             # [unix]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_LIB%\\\\isl.lib exit 1            # [win]\n    - if not exist %LIBRARY_INC%\\\\isl\\\\options.h exit 1     # [win]\n    - test -f \"$PREFIX/lib/libisl.a\"            # [unix]\n    - test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"  # [unix]\n    - test -d \"$PREFIX/include/isl\"             # [unix]\n\nabout:\n  home: http://isl.gforge.inria.fr/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints.\n\nextra:\n  recipe-maintainers:\n    - frol\n    - isuruf\n",
+ "raw_meta_yaml":"{% set version = \"0.22.1\" %}\n\npackage:\n  name: isl\n  version: {{ version }}\n\nsource:\n  fn: isl-{{ version }}.tar.bz2\n  url: http://isl.gforge.inria.fr/isl-{{ version }}.tar.bz2\n  sha256: 1a668ef92eb181a7c021e8531a3ca89fd71aa1b3744db56f68365ab0a224c5cd\n  patches:\n    # From https://github.com/msys2/MINGW-packages/blob/master/mingw-w64-isl/isl-0.14.1-no-undefined.patch\n    - no_undefined.patch  # [win]\n\nbuild:\n  number: 1\n  run_exports:\n    - {{ pin_subpackage(\"isl\", max_pin=\"x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autotools_clang_conda  # [win]\n    - make                   # [unix]\n  host:\n    - gmp             # [unix]\n  run:\n    - gmp             # [unix]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_LIB%\\\\isl.lib exit 1            # [win]\n    - if not exist %LIBRARY_INC%\\\\isl\\\\options.h exit 1     # [win]\n    - test ! -f \"$PREFIX/lib/libisl.a\"          # [unix]\n    - test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"  # [unix]\n    - test -d \"$PREFIX/include/isl\"             # [unix]\n\nabout:\n  home: http://isl.gforge.inria.fr/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints.\n\nextra:\n  recipe-maintainers:\n    - frol\n    - isuruf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -591,11 +590,10 @@
    "summary":"a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints."
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "isl"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
