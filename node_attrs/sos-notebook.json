@@ -690,7 +690,7 @@
    "summary":"Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv",
     "-m sos_notebook.install --sys-prefix"
@@ -705,7 +705,7 @@
   },
   "package":{
    "name":"sos-notebook",
-   "version":"0.21.10"
+   "version":"0.21.11"
   },
   "requirements":{
    "host":[
@@ -734,8 +734,8 @@
    ]
   },
   "source":{
-   "sha256":"bb3b6c24b4d41f8c90c52ab0f85fa7e20102140cf9919822e2c2171ffdc6bc2a",
-   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.10.tar.gz"
+   "sha256":"b87af4de376800795b51e5717bfa2c8579cc26647325ea24489e7647ca78988c",
+   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.11.tar.gz"
   },
   "test":{
    "commands":[
@@ -810,7 +810,7 @@
    "summary":"Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv",
     "-m sos_notebook.install --sys-prefix",
@@ -835,7 +835,7 @@
   },
   "package":{
    "name":"sos-notebook",
-   "version":"0.21.10"
+   "version":"0.21.11"
   },
   "requirements":{
    "host":[
@@ -904,8 +904,8 @@
    ]
   },
   "source":{
-   "sha256":"bb3b6c24b4d41f8c90c52ab0f85fa7e20102140cf9919822e2c2171ffdc6bc2a",
-   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.10.tar.gz"
+   "sha256":"b87af4de376800795b51e5717bfa2c8579cc26647325ea24489e7647ca78988c",
+   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.11.tar.gz"
   },
   "test":{
    "commands":[
@@ -958,7 +958,7 @@
    "summary":"Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv",
     "-m sos_notebook.install --sys-prefix"
@@ -973,7 +973,7 @@
   },
   "package":{
    "name":"sos-notebook",
-   "version":"0.21.10"
+   "version":"0.21.11"
   },
   "requirements":{
    "host":[
@@ -1002,8 +1002,8 @@
    ]
   },
   "source":{
-   "sha256":"bb3b6c24b4d41f8c90c52ab0f85fa7e20102140cf9919822e2c2171ffdc6bc2a",
-   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.10.tar.gz"
+   "sha256":"b87af4de376800795b51e5717bfa2c8579cc26647325ea24489e7647ca78988c",
+   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.11.tar.gz"
   },
   "test":{
    "commands":[
@@ -1068,7 +1068,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"sos-notebook\" %}\n{% set version = \"0.21.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bb3b6c24b4d41f8c90c52ab0f85fa7e20102140cf9919822e2c2171ffdc6bc2a\n\nbuild:\n  number: 1\n  skip: true  # [py<36]\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n    - {{ PYTHON }} -m sos_notebook.install --sys-prefix\n\nrequirements:\n  host:\n    - ipython\n    - notebook >=5.0.0\n    - pip\n    - python\n    - setuptools\n  run:\n    - ipykernel\n    - ipython\n    - markdown\n    # see https://github.com/conda-forge/sos-notebook-feedstock/issues/43\n    # - matplotlib-base\n    - nbconvert >=5.1.1\n    - nbformat\n    - notebook >=5.0.0\n    - graphviz\n    - python-graphviz\n    - pillow\n    - pandas\n    - prometheus_client\n    - prompt_toolkit\n    - python\n    - sos >=0.19.2\n    - tabulate\n\ntest:\n  requires:\n    - nose\n    - pytest\n    - selenium\n  imports:\n    - sos_notebook\n  commands:\n    - jupyter kernelspec list | grep -w $PREFIX/share/jupyter/kernels/sos  # [unix]\n    - jupyter kernelspec list | findstr \\share\\jupyter\\kernels\\sos  # [win]\n    - jupyter run --kernel=sos ex.py\n  files:\n    - ex.py\n\nabout:\n  home: https://github.com/vatlab/SOS\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis'\n  doc_url: https://vatlab.github.io/sos-docs/\n  dev_url: https://github.com/vatlab/sos-notebook\n\nextra:\n  recipe-maintainers:\n    - BoPeng\n    - gaow\n    - jdblischak\n",
+ "raw_meta_yaml":"{% set name = \"sos-notebook\" %}\n{% set version = \"0.21.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: b87af4de376800795b51e5717bfa2c8579cc26647325ea24489e7647ca78988c\n\nbuild:\n  number: 0\n  skip: true  # [py<36]\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n    - {{ PYTHON }} -m sos_notebook.install --sys-prefix\n\nrequirements:\n  host:\n    - ipython\n    - notebook >=5.0.0\n    - pip\n    - python\n    - setuptools\n  run:\n    - ipykernel\n    - ipython\n    - markdown\n    # see https://github.com/conda-forge/sos-notebook-feedstock/issues/43\n    # - matplotlib-base\n    - nbconvert >=5.1.1\n    - nbformat\n    - notebook >=5.0.0\n    - graphviz\n    - python-graphviz\n    - pillow\n    - pandas\n    - prometheus_client\n    - prompt_toolkit\n    - python\n    - sos >=0.19.2\n    - tabulate\n\ntest:\n  requires:\n    - nose\n    - pytest\n    - selenium\n  imports:\n    - sos_notebook\n  commands:\n    - jupyter kernelspec list | grep -w $PREFIX/share/jupyter/kernels/sos  # [unix]\n    - jupyter kernelspec list | findstr \\share\\jupyter\\kernels\\sos  # [win]\n    - jupyter run --kernel=sos ex.py\n  files:\n    - ex.py\n\nabout:\n  home: https://github.com/vatlab/SOS\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis'\n  doc_url: https://vatlab.github.io/sos-docs/\n  dev_url: https://github.com/vatlab/sos-notebook\n\nextra:\n  recipe-maintainers:\n    - BoPeng\n    - gaow\n    - jdblischak\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1182,7 +1182,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.20.2.tar.gz",
- "version":"0.21.10",
+ "version":"0.21.11",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/vatlab/sos-notebook",
@@ -1194,7 +1194,7 @@
    "summary":"Script of Scripts (SoS): an interactive, cross-platform, and cross-language workflow system for reproducible data analysis"
   },
   "build":{
-   "number":"1",
+   "number":"0",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv",
     "-m sos_notebook.install --sys-prefix"
@@ -1209,7 +1209,7 @@
   },
   "package":{
    "name":"sos-notebook",
-   "version":"0.21.10"
+   "version":"0.21.11"
   },
   "requirements":{
    "host":[
@@ -1238,8 +1238,8 @@
    ]
   },
   "source":{
-   "sha256":"bb3b6c24b4d41f8c90c52ab0f85fa7e20102140cf9919822e2c2171ffdc6bc2a",
-   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.10.tar.gz"
+   "sha256":"b87af4de376800795b51e5717bfa2c8579cc26647325ea24489e7647ca78988c",
+   "url":"https://pypi.io/packages/source/s/sos-notebook/sos-notebook-0.21.11.tar.gz"
   },
   "test":{
    "commands":[
