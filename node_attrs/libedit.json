@@ -88,7 +88,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit"
    ]
@@ -128,7 +128,8 @@
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libedit.so"
+    "test -f $PREFIX/lib/libedit.so",
+    "test ! -f $PREFIX/lib/libedit.a"
    ]
   }
  },
@@ -171,7 +172,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit"
    ]
@@ -211,7 +212,8 @@
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libedit.so"
+    "test -f $PREFIX/lib/libedit.so",
+    "test ! -f $PREFIX/lib/libedit.a"
    ]
   }
  },
@@ -254,7 +256,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit"
    ]
@@ -294,7 +296,8 @@
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libedit.so"
+    "test -f $PREFIX/lib/libedit.so",
+    "test ! -f $PREFIX/lib/libedit.a"
    ]
   }
  },
@@ -337,7 +340,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit",
     "libedit",
@@ -426,7 +429,8 @@
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libedit.so"
+    "test -f $PREFIX/lib/libedit.so",
+    "test ! -f $PREFIX/lib/libedit.a"
    ]
   }
  },
@@ -442,7 +446,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit"
    ]
@@ -482,7 +486,8 @@
   },
   "test":{
    "commands":[
-    "test -f $PREFIX/lib/libedit.dylib"
+    "test -f $PREFIX/lib/libedit.dylib",
+    "test ! -f $PREFIX/lib/libedit.a"
    ]
   }
  },
@@ -516,7 +521,7 @@
   }
  },
  "pinning_version":"2019.01.21",
- "raw_meta_yaml":"{% set name = \"libedit\" %}\n{% set version = \"3.1\" %}\n{% set date = \"20191231\" %}\n{% set sha256 = \"dbb82cb7e116a5f8025d35ef5b4f7d4a3cdd0a3909a146a39112095a2d229071\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}.{{ date }}\n\nsource:\n  fn: {{ name }}-{{ date }}-{{ version }}.tar.gz\n  url: http://thrysoee.dk/editline/{{ name }}-{{ date }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # - 0001-Also-look-in-libtinfo-for-tgetent.patch\n\n\nbuild:\n  number: 0\n  run_exports:\n    # no info available.  Guessing at x.x.  Change if you know better.\n    - {{ pin_subpackage('libedit', max_pin='x.x') }}\n  skip: True   # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - automake\n    - autoconf\n    - perl\n    - make\n  host:\n    - m4\n    - ncurses\n\n  run:\n    - ncurses\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libedit.dylib  # [osx]\n    - test -f $PREFIX/lib/libedit.so     # [linux]\n\nabout:\n  home: http://thrysoee.dk/editline/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: Editline Library (libedit)\n  description: |\n    This is an autotool- and libtoolized port of the NetBSD Editline library\n    (libedit). This Berkeley-style licensed command line editor library provides\n    generic line editing, history, and tokenization functions, similar to those\n    found in GNU Readline\n\nextra:\n  recipe-maintainers:\n    - djsutherland\n    - scopatz\n    - mingwandroid\n",
+ "raw_meta_yaml":"{% set name = \"libedit\" %}\n{% set version = \"3.1\" %}\n{% set date = \"20191231\" %}\n{% set sha256 = \"dbb82cb7e116a5f8025d35ef5b4f7d4a3cdd0a3909a146a39112095a2d229071\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}.{{ date }}\n\nsource:\n  fn: {{ name }}-{{ date }}-{{ version }}.tar.gz\n  url: http://thrysoee.dk/editline/{{ name }}-{{ date }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # - 0001-Also-look-in-libtinfo-for-tgetent.patch\n\n\nbuild:\n  number: 1\n  run_exports:\n    # no info available.  Guessing at x.x.  Change if you know better.\n    - {{ pin_subpackage('libedit', max_pin='x.x') }}\n  skip: True   # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - automake\n    - autoconf\n    - perl\n    - make\n  host:\n    - m4\n    - ncurses\n\n  run:\n    - ncurses\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libedit.dylib  # [osx]\n    - test -f $PREFIX/lib/libedit.so     # [linux]\n    - test ! -f $PREFIX/lib/libedit.a   # [unix]\n\nabout:\n  home: http://thrysoee.dk/editline/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: Editline Library (libedit)\n  description: |\n    This is an autotool- and libtoolized port of the NetBSD Editline library\n    (libedit). This Berkeley-style licensed command line editor library provides\n    generic line editing, history, and tokenization functions, similar to those\n    found in GNU Readline\n\nextra:\n  recipe-maintainers:\n    - djsutherland\n    - scopatz\n    - mingwandroid\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -601,7 +606,7 @@
    "summary":"Editline Library (libedit)"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "libedit"
    ],
