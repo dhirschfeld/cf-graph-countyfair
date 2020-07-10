@@ -997,6 +997,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447590459.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"49.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -1400,7 +1417,7 @@
   }
  },
  "name":"setuptools",
- "new_version":"49.1.0",
+ "new_version":"49.1.1",
  "new_version_attempts":{
   "46.2.0":1,
   "46.3.0":1,
@@ -1415,7 +1432,8 @@
   "47.3.2":1,
   "48.0.0":1,
   "49.0.0":1,
-  "49.1.0":1
+  "49.1.0":1,
+  "49.1.1":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -1503,7 +1521,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.03.10.54.45",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set version = \"49.1.0\" %}\n\npackage:\n  name: setuptools\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pypa/setuptools/archive/v{{ version }}.tar.gz\n  sha256: 47bb70bc7ffe7b9e3119a0ce45a4c87713385410524c0694d9f7b0c5b3994c45\n  patches:\n    # Don't create requires.txt with exact pinnings\n    - 0001-Remove-exact-pinning-on-certifi-and-wincertstore.patch\n    # Modify setuptools to fail if used in conda build (encourage people to add all deps in meta.yaml).\n    - 0002-disable-downloads-inside-conda-build.patch\n\nbuild:\n  skip: true  # [py<35]\n  number: 0\n  entry_points:\n    - easy_install = setuptools.command.easy_install:main\n\nrequirements:\n  host:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n  run:\n    - python\n    - certifi  >=2016.9.26\n    - wincertstore  >=0.2  # [win]\n\ntest:\n  commands:\n    - easy_install --help\n  imports:\n    - setuptools\n    - easy_install\n    - pkg_resources\n\nabout:\n  home: https://github.com/pypa/setuptools\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Download, build, install, upgrade, and uninstall Python packages\n  description: |\n    Setuptools is a fully-featured, actively-maintained, and stable library\n    designed to facilitate packaging Python projects.\n  doc_url: http://pythonhosted.org/setuptools/\n  dev_url: https://github.com/pypa/setuptools\n  doc_source_url: https://github.com/pypa/setuptools/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - ocefpaf\n    - nicoddemus\n    - mingwandroid\n",
  "req":{
   "__set__":true,
