@@ -908,6 +908,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447347589.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"151"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -1110,7 +1127,7 @@
   }
  },
  "name":"diffoscope",
- "new_version":"150",
+ "new_version":"151",
  "new_version_attempts":{
   "140":1,
   "141":1,
@@ -1122,7 +1139,8 @@
   "147":1,
   "148":1,
   "149":1,
-  "150":1
+  "150":1,
+  "151":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -1219,7 +1237,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.02.17.22.00",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"diffoscope\" %}\n{% set version = \"150\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 0b9e4ae401fe4cbb8ce89b0bcabe608581d0ed53b91a28f18337179c7494af57\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - diffoscope = diffoscope.main:main\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - python-libarchive-c\n    - python-magic\n    - python-tlsh\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - file\n    - pip\n    - pytest\n  imports:\n    - diffoscope\n  commands:\n    - python -m pip check\n    - diffoscope --help\n    - diffoscope --list-tools\n    - diffoscope --version\n    - |-\n      pytest ./tests -k \"\\\n        not assert_non_existing \\\n        and not berkeley_db \\\n        and not test_icc \\\n        and not test_item1_elf \\\n        and not test_code_is_black_clean \\\n        and not ocaml \\\n        and not test_ignore_readelf_errors \\\n        and not test_libmix_differences \\\n        and not test_wasm\n      \"\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0-or-later\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  dev_url: https://anonscm.debian.org/cgit/reproducible/diffoscope.git\n  description: >\n    diffoscope will try to get to the bottom of what makes files or directories different. It will recursively unpack archives of many kinds and transform various binary formats into more human readable form to compare them. It can compare two tarballs, ISO images, or PDF just as easily.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
@@ -1261,7 +1279,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

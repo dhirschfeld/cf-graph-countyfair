@@ -368,7 +368,7 @@
   },
   "build":{
    "binary_relocation":false,
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -380,7 +380,7 @@
   },
   "package":{
    "name":"turbodbc",
-   "version":"4.0.0"
+   "version":"4.1.1"
   },
   "requirements":{
    "build":[
@@ -410,8 +410,8 @@
    ]
   },
   "source":{
-   "sha256":"3ea4dd75cde263f9143dab360c3ede9125aacc91da71b144dbe96b30d7e2590d",
-   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.0.0.tar.gz"
+   "sha256":"68c03b41cc4bd845d189130d7c92c103b63bf587dc02783fea788b062fab6f6c",
+   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.1.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -478,7 +478,7 @@
   },
   "build":{
    "binary_relocation":false,
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -498,7 +498,7 @@
   },
   "package":{
    "name":"turbodbc",
-   "version":"4.0.0"
+   "version":"4.1.1"
   },
   "requirements":{
    "build":[
@@ -564,8 +564,8 @@
    ]
   },
   "source":{
-   "sha256":"3ea4dd75cde263f9143dab360c3ede9125aacc91da71b144dbe96b30d7e2590d",
-   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.0.0.tar.gz"
+   "sha256":"68c03b41cc4bd845d189130d7c92c103b63bf587dc02783fea788b062fab6f6c",
+   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.1.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -602,7 +602,7 @@
   },
   "build":{
    "binary_relocation":false,
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -614,7 +614,7 @@
   },
   "package":{
    "name":"turbodbc",
-   "version":"4.0.0"
+   "version":"4.1.1"
   },
   "requirements":{
    "build":[
@@ -644,8 +644,8 @@
    ]
   },
   "source":{
-   "sha256":"3ea4dd75cde263f9143dab360c3ede9125aacc91da71b144dbe96b30d7e2590d",
-   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.0.0.tar.gz"
+   "sha256":"68c03b41cc4bd845d189130d7c92c103b63bf587dc02783fea788b062fab6f6c",
+   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.1.1.tar.gz"
   },
   "test":{
    "commands":[
@@ -703,7 +703,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"turbodbc\" %}\n{% set version = \"4.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 3ea4dd75cde263f9143dab360c3ede9125aacc91da71b144dbe96b30d7e2590d\n\nbuild:\n  number: 1\n  # turbodbc already has set the correct RPATHs, conda relocation breaks it\n  # so skip it.\n  binary_relocation: False\n  # Python 3.8 fails due to linking errors\n  skip: true  # [win and py==38]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - boost\n    - boost-cpp\n    - numpy 1.16.*\n    - pybind11\n    - python\n    - setuptools\n    - six\n    - unixodbc  # [unix]\n    - arrow-cpp\n    - pyarrow\n  run:\n    - python\n    # pkg_resources is used to determine the package version\n    - setuptools\n    - six\n    - {{ pin_compatible('numpy', lower_bound='1.16') }}\n    - unixodbc  # [unix]\n    - pyarrow\n\ntest:\n  requires:\n    - pip\n  imports:\n    - turbodbc\n    - turbodbc_arrow_support\n  commands:\n    # We need to remove pybind11 from the runtime dependencies for this to suceed. \n    # - pip check\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/blue-yonder/turbodbc\n  license: MIT\n  license_file: LICENSE\n  summary: 'access relational databases via the Open Database Connectivity (ODBC) interface'\n  description: |\n    Turbodbc is a Python module to access relational databases via the Open\n    Database Connectivity (ODBC) interface. In addition to complying with the\n    Python Database API Specification 2.0, turbodbc offers built-in NumPy and\n    Apache Arrow support. Don't wait minutes for your results, just blink.\n\nextra:\n  recipe-maintainers:\n    - MathMagique\n    - xhochy\n    - wesm\n    - fjetter\n",
+ "raw_meta_yaml":"{% set name = \"turbodbc\" %}\n{% set version = \"4.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 68c03b41cc4bd845d189130d7c92c103b63bf587dc02783fea788b062fab6f6c\n\nbuild:\n  number: 0\n  # turbodbc already has set the correct RPATHs, conda relocation breaks it\n  # so skip it.\n  binary_relocation: false\n  # Python 3.8 fails due to linking errors\n  skip: true  # [win and py==38]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - boost\n    - boost-cpp\n    - numpy 1.16.*\n    - pybind11\n    - python\n    - setuptools\n    - six\n    - unixodbc  # [unix]\n    - arrow-cpp\n    - pyarrow\n  run:\n    - python\n    # pkg_resources is used to determine the package version\n    - setuptools\n    - six\n    - {{ pin_compatible('numpy', lower_bound='1.16') }}\n    - unixodbc  # [unix]\n    - pyarrow\n\ntest:\n  requires:\n    - pip\n  imports:\n    - turbodbc\n    - turbodbc_arrow_support\n  commands:\n    # We need to remove pybind11 from the runtime dependencies for this to suceed. \n    # - pip check\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/blue-yonder/turbodbc\n  license: MIT\n  license_file: LICENSE\n  summary: access relational databases via the Open Database Connectivity (ODBC) interface\n  description: |\n    Turbodbc is a Python module to access relational databases via the Open\n    Database Connectivity (ODBC) interface. In addition to complying with the\n    Python Database API Specification 2.0, turbodbc offers built-in NumPy and\n    Apache Arrow support. Don't wait minutes for your results, just blink.\n\nextra:\n  recipe-maintainers:\n    - MathMagique\n    - xhochy\n    - wesm\n    - fjetter\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -809,7 +809,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-3.2.0.tar.gz",
- "version":"4.0.0",
+ "version":"4.1.1",
  "win_64_meta_yaml":{
   "about":{
    "description":"Turbodbc is a Python module to access relational databases via the Open\nDatabase Connectivity (ODBC) interface. In addition to complying with the\nPython Database API Specification 2.0, turbodbc offers built-in NumPy and\nApache Arrow support. Don't wait minutes for your results, just blink.\n",
@@ -820,7 +820,7 @@
   },
   "build":{
    "binary_relocation":false,
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -832,7 +832,7 @@
   },
   "package":{
    "name":"turbodbc",
-   "version":"4.0.0"
+   "version":"4.1.1"
   },
   "requirements":{
    "build":[
@@ -860,8 +860,8 @@
    ]
   },
   "source":{
-   "sha256":"3ea4dd75cde263f9143dab360c3ede9125aacc91da71b144dbe96b30d7e2590d",
-   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.0.0.tar.gz"
+   "sha256":"68c03b41cc4bd845d189130d7c92c103b63bf587dc02783fea788b062fab6f6c",
+   "url":"https://pypi.io/packages/source/t/turbodbc/turbodbc-4.1.1.tar.gz"
   },
   "test":{
    "commands":null,
