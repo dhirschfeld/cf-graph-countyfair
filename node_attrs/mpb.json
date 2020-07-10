@@ -192,11 +192,11 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*"
    ],
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -221,12 +221,12 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
@@ -284,11 +284,11 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*"
    ],
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -313,12 +313,12 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
@@ -376,11 +376,11 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*"
    ],
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -405,12 +405,12 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
@@ -468,7 +468,7 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*",
     "mpb * nompi_*",
@@ -477,7 +477,7 @@
     "mpb * nompi_*"
    ],
    "skip":true,
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -522,52 +522,52 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "libblas",
     "libcblas",
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "libblas",
     "libcblas",
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "libblas",
     "libcblas",
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "libblas",
     "libcblas",
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "fftw",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "fftw",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "fftw",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
@@ -597,11 +597,11 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*"
    ],
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -626,12 +626,12 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
@@ -680,7 +680,7 @@
   }
  },
  "pinning_version":"2020.07.03.10.54.45",
- "raw_meta_yaml":"{% set name = \"mpb\" %}\n{% set version = \"1.10.0\" %}\n{% set sha256 = \"3cd3366aca40eacb8fc01476adfd9e376fd0f81ef6109cef4f85b15218a3514f\" %}\n{% set buildnumber = 8 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n{% if mpi == \"nompi\" %}\n# prioritize nompi via build number\n{% set buildnumber = buildnumber + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/NanoComp/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ buildnumber }}\n  skip: true  # [win]\n  {% if mpi != \"nompi\" %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `mpb * mpi_mpich_*` for mpich\n  # `mpb * mpi_*` for any mpi\n  # `mpb * nompi_*` for no mpi\n  string: \"{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ buildnumber }}\"\n  run_exports:\n    - {{ name }} * {{ mpi_prefix }}_*\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - make\n  host:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - libblas\n    - libcblas\n    - liblapack\n    - fftw\n    - hdf5\n    - libctl >=4.2.0\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - fftw\n    - libctl >=4.2.0\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmpb${SHLIB_EXT}\n\nabout:\n  home: https://github.com/NanoComp/mpb\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: MIT Photonic-Bands - computation of photonic band structures in periodic media\n  doc_url: https://mpb.readthedocs.io\n  dev_url: https://github.com/NanoComp/mpb\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n    - oskooi\n",
+ "raw_meta_yaml":"{% set name = \"mpb\" %}\n{% set version = \"1.10.0\" %}\n{% set sha256 = \"3cd3366aca40eacb8fc01476adfd9e376fd0f81ef6109cef4f85b15218a3514f\" %}\n{% set buildnumber = 9 %}\n\n# recipe-lint fails if mpi is undefined\n{% set mpi = mpi or 'nompi' %}\n{% if mpi == \"nompi\" %}\n# prioritize nompi via build number\n{% set buildnumber = buildnumber + 100 %}\n{% endif %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/NanoComp/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ buildnumber }}\n  skip: true  # [win]\n  {% if mpi != \"nompi\" %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `mpb * mpi_mpich_*` for mpich\n  # `mpb * mpi_*` for any mpi\n  # `mpb * nompi_*` for no mpi\n  string: \"{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ buildnumber }}\"\n  run_exports:\n    - {{ name }} * {{ mpi_prefix }}_*\n\nrequirements:\n  build:\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - make\n  host:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - libblas\n    - libcblas\n    - liblapack\n    - fftw\n    - hdf5\n    - libctl >=4.5.0\n  run:\n    - {{ mpi }}  # [mpi != 'nompi']\n    - fftw\n    - libctl >=4.5.0\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmpb${SHLIB_EXT}\n\nabout:\n  home: https://github.com/NanoComp/mpb\n  license: GPL-2.0-or-later\n  license_file: COPYING\n  summary: MIT Photonic-Bands - computation of photonic band structures in periodic media\n  doc_url: https://mpb.readthedocs.io\n  dev_url: https://github.com/NanoComp/mpb\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n    - oskooi\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -748,7 +748,7 @@
     "hdf5",
     "libblas",
     "libcblas",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "liblapack",
     "nompi"
    ]
@@ -757,7 +757,7 @@
    "__set__":true,
    "elements":[
     "fftw",
-    "libctl >=4.2.0",
+    "libctl >=4.5.0",
     "nompi"
    ]
   },
@@ -778,12 +778,12 @@
    "summary":"MIT Photonic-Bands - computation of photonic band structures in periodic media"
   },
   "build":{
-   "number":"108",
+   "number":"109",
    "run_exports":[
     "mpb * nompi_*"
    ],
    "skip":true,
-   "string":"nompi_h_108"
+   "string":"nompi_h_109"
   },
   "extra":{
    "recipe-maintainers":[
@@ -808,12 +808,12 @@
     "liblapack",
     "fftw",
     "hdf5",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ],
    "run":[
     "nompi",
     "fftw",
-    "libctl >=4.2.0"
+    "libctl >=4.5.0"
    ]
   },
   "source":{
