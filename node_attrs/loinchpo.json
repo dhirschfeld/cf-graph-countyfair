@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447623158.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.0.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -152,7 +171,11 @@
   }
  },
  "name":"loinchpo",
- "new_version":"1.0.0",
+ "new_version":"1.0.1",
+ "new_version_attempts":{
+  "1.0.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"loinchpo is a simple and efficient library for mapping loinc test results\nto hpo terms. Pure python, 3.5+\n",
@@ -229,6 +252,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"loinchpo\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: a445727ca97c0d695e8e2aa281c654bbc977fb6df82d0e8eea2fed28b9ea559c\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n    - click\n\ntest:\n  requires:\n    - ddt\n    - setuptools\n  imports:\n    - loinchpo.models\n    - loinchpo.util\n    - loinchpo.errors\n    - loinchpo\n\nabout:\n  home: https://github.com/TheJacksonLaboratory/loinchpo\n  summary: 'Simple & Efficient Loinc To HPO for Python'\n  license: GPL-3.0\n  license_file: LICENSE.txt\n  description: |\n    loinchpo is a simple and efficient library for mapping loinc test results\n    to hpo terms. Pure python, 3.5+\n\nextra:\n  recipe-maintainers:\n    - iimpulse\n",
  "req":{
   "__set__":true,
@@ -265,6 +289,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
