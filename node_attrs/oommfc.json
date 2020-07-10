@@ -268,6 +268,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447363341.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.8.24"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -430,11 +447,12 @@
   }
  },
  "name":"oommfc",
- "new_version":"0.8.22",
+ "new_version":"0.8.24",
  "new_version_attempts":{
   "0.8.17":1,
   "0.8.20":1,
-  "0.8.22":1
+  "0.8.22":1,
+  "0.8.24":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -514,7 +532,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.24.16.31.11",
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"oommfc\" %}\n{% set version = \"0.8.22\" %}\n{% set sha256 = \"2295a3f28e6cd9188e79867796bd069daf38385cde95aca3537236f32530d4aa\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - oommf ==2.0a1\n    - micromagnetictests ==0.1.4\n    - ubermagtable ==0.1.12\n\ntest:\n  imports:\n    - oommfc\n  commands:\n    - python -c \"import sys; import oommfc as oc; sys.exit(oc.test())\"\n\nabout:\n  home: http://ubermag.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: OOMMF calculator.\n  doc_url: http://oommfc.readthedocs.io\n  dev_url: https://github.com/ubermag/oommfc\n\nextra:\n  recipe-maintainers:\n    - marijanbeg\n    - takluyver\n    - fangohr\n",
  "req":{
   "__set__":true,
@@ -552,7 +570,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
