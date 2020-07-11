@@ -135,6 +135,44 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447728178.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"python38"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447729069.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -153,7 +191,6 @@
    "summary":"Manage dynamic plugins for Python applications"
   },
   "build":{
-   "noarch":"python",
    "number":"0",
    "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
@@ -166,22 +203,23 @@
   },
   "package":{
    "name":"stevedore",
-   "version":"2.0.1"
+   "version":"3.0.0"
   },
   "requirements":{
    "host":[
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0"
    ],
    "run":[
-    "python >=3.6",
-    "pbr !=2.1.0,>=2.0.0"
+    "python",
+    "pbr !=2.1.0,>=2.0.0",
+    "importlib_metadata >=1.7.0"
    ]
   },
   "source":{
-   "sha256":"609912b87df5ad338ff8e44d13eaad4f4170a65b79ae9cb0aa5632598994a1b7",
-   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-2.0.1.tar.gz"
+   "sha256":"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180",
+   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-3.0.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -192,7 +230,8 @@
     "stevedore.extension",
     "stevedore.enabled",
     "stevedore.dispatch",
-    "stevedore.tests"
+    "stevedore.tests",
+    "stevedore._cache"
    ]
   }
  },
@@ -212,6 +251,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
     "pbr",
     "python"
    ]
@@ -232,7 +272,6 @@
    "summary":"Manage dynamic plugins for Python applications"
   },
   "build":{
-   "noarch":"python",
    "number":"0",
    "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
@@ -251,32 +290,35 @@
   },
   "package":{
    "name":"stevedore",
-   "version":"2.0.1"
+   "version":"3.0.0"
   },
   "requirements":{
    "host":[
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0",
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0",
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0"
    ],
    "run":[
-    "python >=3.6",
+    "python",
     "pbr !=2.1.0,>=2.0.0",
-    "python >=3.6",
+    "importlib_metadata >=1.7.0",
+    "python",
     "pbr !=2.1.0,>=2.0.0",
-    "python >=3.6",
-    "pbr !=2.1.0,>=2.0.0"
+    "importlib_metadata >=1.7.0",
+    "python",
+    "pbr !=2.1.0,>=2.0.0",
+    "importlib_metadata >=1.7.0"
    ]
   },
   "source":{
-   "sha256":"609912b87df5ad338ff8e44d13eaad4f4170a65b79ae9cb0aa5632598994a1b7",
-   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-2.0.1.tar.gz"
+   "sha256":"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180",
+   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-3.0.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -288,6 +330,7 @@
     "stevedore.enabled",
     "stevedore.dispatch",
     "stevedore.tests",
+    "stevedore._cache",
     "stevedore",
     "stevedore.named",
     "stevedore.driver",
@@ -296,6 +339,7 @@
     "stevedore.enabled",
     "stevedore.dispatch",
     "stevedore.tests",
+    "stevedore._cache",
     "stevedore",
     "stevedore.named",
     "stevedore.driver",
@@ -303,7 +347,8 @@
     "stevedore.extension",
     "stevedore.enabled",
     "stevedore.dispatch",
-    "stevedore.tests"
+    "stevedore.tests",
+    "stevedore._cache"
    ]
   }
  },
@@ -326,7 +371,6 @@
    "summary":"Manage dynamic plugins for Python applications"
   },
   "build":{
-   "noarch":"python",
    "number":"0",
    "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
@@ -339,22 +383,23 @@
   },
   "package":{
    "name":"stevedore",
-   "version":"2.0.1"
+   "version":"3.0.0"
   },
   "requirements":{
    "host":[
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0"
    ],
    "run":[
-    "python >=3.6",
-    "pbr !=2.1.0,>=2.0.0"
+    "python",
+    "pbr !=2.1.0,>=2.0.0",
+    "importlib_metadata >=1.7.0"
    ]
   },
   "source":{
-   "sha256":"609912b87df5ad338ff8e44d13eaad4f4170a65b79ae9cb0aa5632598994a1b7",
-   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-2.0.1.tar.gz"
+   "sha256":"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180",
+   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-3.0.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -365,7 +410,8 @@
     "stevedore.extension",
     "stevedore.enabled",
     "stevedore.dispatch",
-    "stevedore.tests"
+    "stevedore.tests",
+    "stevedore._cache"
    ]
   }
  },
@@ -385,6 +431,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
     "pbr",
     "python"
    ]
@@ -395,10 +442,11 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"stevedore\" %}\n{% set version = \"2.0.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash = \"609912b87df5ad338ff8e44d13eaad4f4170a65b79ae9cb0aa5632598994a1b7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python >=3.6\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python >=3.6\n    - pbr !=2.1.0,>=2.0.0\n\ntest:\n  imports:\n    - stevedore\n    - stevedore.named\n    - stevedore.driver\n    - stevedore.hook\n    - stevedore.extension\n    - stevedore.enabled\n    - stevedore.dispatch\n    - stevedore.tests\n\nabout:\n  home: http://docs.openstack.org/developer/stevedore/\n  license_file: LICENSE\n  license: Apache-2.0\n  license_family: Apache\n  summary: Manage dynamic plugins for Python applications\n  doc_url: http://docs.openstack.org/developer/stevedore/\n  dev_url: https://git.openstack.org/cgit/openstack/stevedore\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - tschoonj\n",
+ "raw_meta_yaml":"{% set name = \"stevedore\" %}\n{% set version = \"3.0.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash = \"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python\n    - pbr !=2.1.0,>=2.0.0\n    - importlib_metadata >=1.7.0  # [py<38]\n\ntest:\n  imports:\n    - stevedore\n    - stevedore.named\n    - stevedore.driver\n    - stevedore.hook\n    - stevedore.extension\n    - stevedore.enabled\n    - stevedore.dispatch\n    - stevedore.tests\n    - stevedore._cache\n\nabout:\n  home: http://docs.openstack.org/developer/stevedore/\n  license_file: LICENSE\n  license: Apache-2.0\n  license_family: Apache\n  summary: Manage dynamic plugins for Python applications\n  doc_url: http://docs.openstack.org/developer/stevedore/\n  dev_url: https://git.openstack.org/cgit/openstack/stevedore\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - tschoonj\n",
  "req":{
   "__set__":true,
   "elements":[
+   "importlib_metadata",
    "pbr",
    "pip",
    "python"
@@ -420,6 +468,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
     "pbr",
     "python"
    ]
@@ -441,14 +490,15 @@
    "elements":[
     "pbr !=2.1.0,>=2.0.0",
     "pip",
-    "python >=3.6"
+    "python"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata >=1.7.0",
     "pbr !=2.1.0,>=2.0.0",
-    "python >=3.6"
+    "python"
    ]
   },
   "test":{
@@ -457,7 +507,7 @@
   }
  },
  "url":"https://pypi.org/packages/source/s/stevedore/stevedore-1.30.1.tar.gz",
- "version":"2.0.1",
+ "version":"3.0.0",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://git.openstack.org/cgit/openstack/stevedore",
@@ -469,7 +519,6 @@
    "summary":"Manage dynamic plugins for Python applications"
   },
   "build":{
-   "noarch":"python",
    "number":"0",
    "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
@@ -482,22 +531,23 @@
   },
   "package":{
    "name":"stevedore",
-   "version":"2.0.1"
+   "version":"3.0.0"
   },
   "requirements":{
    "host":[
-    "python >=3.6",
+    "python",
     "pip",
     "pbr !=2.1.0,>=2.0.0"
    ],
    "run":[
-    "python >=3.6",
-    "pbr !=2.1.0,>=2.0.0"
+    "python",
+    "pbr !=2.1.0,>=2.0.0",
+    "importlib_metadata >=1.7.0"
    ]
   },
   "source":{
-   "sha256":"609912b87df5ad338ff8e44d13eaad4f4170a65b79ae9cb0aa5632598994a1b7",
-   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-2.0.1.tar.gz"
+   "sha256":"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180",
+   "url":"https://pypi.org/packages/source/s/stevedore/stevedore-3.0.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -508,7 +558,8 @@
     "stevedore.extension",
     "stevedore.enabled",
     "stevedore.dispatch",
-    "stevedore.tests"
+    "stevedore.tests",
+    "stevedore._cache"
    ]
   }
  },
@@ -528,6 +579,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "importlib_metadata",
     "pbr",
     "python"
    ]
