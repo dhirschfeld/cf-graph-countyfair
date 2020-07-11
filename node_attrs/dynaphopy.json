@@ -109,8 +109,8 @@
    "summary":"Phonon Analysis from Molecular Dynamics Data"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv"
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -119,7 +119,7 @@
   },
   "package":{
    "name":"dynaphopy",
-   "version":"1.16.8"
+   "version":"1.17.0"
   },
   "requirements":{
    "build":[
@@ -143,8 +143,8 @@
    "patches":[
     "compiler.patch"
    ],
-   "sha256":"c487480790d4d943bd0f8f7c558ac5926e5ede301d502600eb4a265f429a6c85",
-   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.16.8.tar.gz"
+   "sha256":"23bb4c0d84aba6bd3a309706a7c983b65167d683f6c8a7e512c2763fb81f44bd",
+   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.17.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -198,8 +198,8 @@
    "summary":"Phonon Analysis from Molecular Dynamics Data"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv",
+   "number":"0",
+   "script":"-m pip install . -vv",
    "skip":true
   },
   "extra":{
@@ -211,7 +211,7 @@
   },
   "package":{
    "name":"dynaphopy",
-   "version":"1.16.8"
+   "version":"1.17.0"
   },
   "requirements":{
    "build":[
@@ -257,8 +257,8 @@
     "compiler.patch",
     "compiler.patch"
    ],
-   "sha256":"c487480790d4d943bd0f8f7c558ac5926e5ede301d502600eb4a265f429a6c85",
-   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.16.8.tar.gz"
+   "sha256":"23bb4c0d84aba6bd3a309706a7c983b65167d683f6c8a7e512c2763fb81f44bd",
+   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.17.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -291,8 +291,8 @@
    "summary":"Phonon Analysis from Molecular Dynamics Data"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv"
+   "number":"0",
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -301,7 +301,7 @@
   },
   "package":{
    "name":"dynaphopy",
-   "version":"1.16.8"
+   "version":"1.17.0"
   },
   "requirements":{
    "build":[
@@ -325,8 +325,8 @@
    "patches":[
     "compiler.patch"
    ],
-   "sha256":"c487480790d4d943bd0f8f7c558ac5926e5ede301d502600eb4a265f429a6c85",
-   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.16.8.tar.gz"
+   "sha256":"23bb4c0d84aba6bd3a309706a7c983b65167d683f6c8a7e512c2763fb81f44bd",
+   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.17.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -369,7 +369,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"dynaphopy\" %}\n{% set version = \"1.16.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c487480790d4d943bd0f8f7c558ac5926e5ede301d502600eb4a265f429a6c85\n  patches: \n    - compiler.patch\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: true  # [win or py<37]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - pip\n    - phonopy\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - matplotlib-base\n\ntest:\n  imports:\n    - dynaphopy\n  commands:\n    - pip check\n\nabout:\n  home: http://abelcarreras.github.io/DynaPhoPy/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Phonon Analysis from Molecular Dynamics Data'\n\n  description: |\n    Software to calculate crystal microscopic anharmonic properties \n    from molecular dynamics (MD) using the normal-mode-decomposition \n    technique. These properties include the phonon frequency shifts and \n    linewidths, as well as the renormalized force constanst and thermal \n    properties by using quasiparticle theory. This code includes \n    interfaces for MD outputs from VASP and LAMMPS. PHONOPY code is used \n    to obtain harmonic phonon modes.\n  doc_url: http://abelcarreras.github.io/DynaPhoPy/\n  dev_url: https://github.com/abelcarreras/DynaPhoPy\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "raw_meta_yaml":"{% set name = \"dynaphopy\" %}\n{% set version = \"1.17.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 23bb4c0d84aba6bd3a309706a7c983b65167d683f6c8a7e512c2763fb81f44bd\n  patches:\n    - compiler.patch\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [win or py<37]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - pip\n    - phonopy\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - matplotlib-base\n\ntest:\n  imports:\n    - dynaphopy\n  commands:\n    - pip check\n\nabout:\n  home: http://abelcarreras.github.io/DynaPhoPy/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Phonon Analysis from Molecular Dynamics Data\n\n  description: |\n    Software to calculate crystal microscopic anharmonic properties \n    from molecular dynamics (MD) using the normal-mode-decomposition \n    technique. These properties include the phonon frequency shifts and \n    linewidths, as well as the renormalized force constanst and thermal \n    properties by using quasiparticle theory. This code includes \n    interfaces for MD outputs from VASP and LAMMPS. PHONOPY code is used \n    to obtain harmonic phonon modes.\n  doc_url: http://abelcarreras.github.io/DynaPhoPy/\n  dev_url: https://github.com/abelcarreras/DynaPhoPy\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -447,7 +447,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.16.5.tar.gz",
- "version":"1.16.8",
+ "version":"1.17.0",
  "win_64_meta_yaml":{
   "about":{
    "description":"Software to calculate crystal microscopic anharmonic properties\nfrom molecular dynamics (MD) using the normal-mode-decomposition\ntechnique. These properties include the phonon frequency shifts and\nlinewidths, as well as the renormalized force constanst and thermal\nproperties by using quasiparticle theory. This code includes\ninterfaces for MD outputs from VASP and LAMMPS. PHONOPY code is used\nto obtain harmonic phonon modes.\n",
@@ -460,8 +460,8 @@
    "summary":"Phonon Analysis from Molecular Dynamics Data"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . -vv",
+   "number":"0",
+   "script":"-m pip install . -vv",
    "skip":true
   },
   "extra":{
@@ -471,7 +471,7 @@
   },
   "package":{
    "name":"dynaphopy",
-   "version":"1.16.8"
+   "version":"1.17.0"
   },
   "requirements":{
    "build":[
@@ -495,8 +495,8 @@
    "patches":[
     "compiler.patch"
    ],
-   "sha256":"c487480790d4d943bd0f8f7c558ac5926e5ede301d502600eb4a265f429a6c85",
-   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.16.8.tar.gz"
+   "sha256":"23bb4c0d84aba6bd3a309706a7c983b65167d683f6c8a7e512c2763fb81f44bd",
+   "url":"https://pypi.io/packages/source/d/dynaphopy/dynaphopy-1.17.0.tar.gz"
   },
   "test":{
    "commands":[
