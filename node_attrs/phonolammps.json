@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447802006.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.6.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
@@ -153,7 +172,11 @@
   }
  },
  "name":"phonolammps",
- "new_version":"0.5.2",
+ "new_version":"0.6.0",
+ "new_version_attempts":{
+  "0.6.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"Calculate the 2nd order force constants using phonopy and LAMMPS.\n",
@@ -230,6 +253,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.07.19.27.52",
  "raw_meta_yaml":"{% set name = \"phonolammps\" %}\n{% set version = \"0.5.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/phonoLAMMPS/phonoLAMMPS-{{ version }}.tar.gz\n  sha256: 9b15861d4548e83ea8ae0a1198138e8c4b58e0e74bb64b61c10193082e37381c\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pip\n    - phonopy\n    - numpy\n\ntest:\n  imports:\n    - phonolammps\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/abelcarreras/phonolammps\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'LAMMPS interface for phonon calculations using phonopy'\n\n  description: |\n    Calculate the 2nd order force constants using phonopy and LAMMPS.\n  doc_url: https://phonolammps.readthedocs.io/\n  dev_url: https://github.com/abelcarreras/phonolammps\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "req":{
   "__set__":true,
@@ -266,6 +290,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
