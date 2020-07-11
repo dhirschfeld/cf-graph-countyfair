@@ -198,7 +198,7 @@
   },
   "package":{
    "name":"pymove",
-   "version":"1.4.0"
+   "version":"1.5.0"
   },
   "requirements":{
    "host":[
@@ -230,15 +230,16 @@
    ]
   },
   "source":{
-   "sha256":"268ca0315bc1571350d9ee69078536e276467b58e3e57a6a46aed55675107d5e",
-   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.4.0.tar.gz"
+   "sha256":"1e43b88a5d93e631a193e05a0f42fa48d094bbc6cf7621f4cab4b477e847c33d",
+   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.5.0.tar.gz"
   },
   "test":{
    "commands":[
     "pytest --pyargs pymove -k 'not test_utils_db'"
    ],
    "requires":[
-    "pytest"
+    "pytest",
+    "geopandas"
    ]
   }
  },
@@ -283,6 +284,7 @@
   "test":{
    "__set__":true,
    "elements":[
+    "geopandas",
     "pytest"
    ]
   }
@@ -311,7 +313,7 @@
   },
   "package":{
    "name":"pymove",
-   "version":"1.4.0"
+   "version":"1.5.0"
   },
   "requirements":{
    "host":[
@@ -389,8 +391,8 @@
    ]
   },
   "source":{
-   "sha256":"268ca0315bc1571350d9ee69078536e276467b58e3e57a6a46aed55675107d5e",
-   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.4.0.tar.gz"
+   "sha256":"1e43b88a5d93e631a193e05a0f42fa48d094bbc6cf7621f4cab4b477e847c33d",
+   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.5.0.tar.gz"
   },
   "test":{
    "commands":[
@@ -400,8 +402,11 @@
    ],
    "requires":[
     "pytest",
+    "geopandas",
     "pytest",
-    "pytest"
+    "geopandas",
+    "pytest",
+    "geopandas"
    ]
   }
  },
@@ -442,7 +447,7 @@
   },
   "package":{
    "name":"pymove",
-   "version":"1.4.0"
+   "version":"1.5.0"
   },
   "requirements":{
    "host":[
@@ -474,15 +479,16 @@
    ]
   },
   "source":{
-   "sha256":"268ca0315bc1571350d9ee69078536e276467b58e3e57a6a46aed55675107d5e",
-   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.4.0.tar.gz"
+   "sha256":"1e43b88a5d93e631a193e05a0f42fa48d094bbc6cf7621f4cab4b477e847c33d",
+   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.5.0.tar.gz"
   },
   "test":{
    "commands":[
     "pytest --pyargs pymove -k 'not test_utils_db'"
    ],
    "requires":[
-    "pytest"
+    "pytest",
+    "geopandas"
    ]
   }
  },
@@ -527,12 +533,13 @@
   "test":{
    "__set__":true,
    "elements":[
+    "geopandas",
     "pytest"
    ]
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"pymove\" %}\n{% set version = \"1.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 268ca0315bc1571350d9ee69078536e276467b58e3e57a6a46aed55675107d5e\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - branca\n    - dask\n    - folium >=0.10.1\n    - geojson\n    - holidays\n    - ipython\n    - ipywidgets\n    - joblib\n    - matplotlib-base\n    - mplleaflet\n    - numpy\n    - pandas\n    - psutil\n    - psycopg2\n    - pymongo\n    - python >=3.6\n    - pytz ==2019.3\n    - scikit-learn\n    - scipy\n    - shapely\n    - tqdm\n\ntest:\n  requires:\n    - pytest\n    # - postgresql\n    # - mongodb\n  commands:\n    - pytest --pyargs pymove -k 'not test_utils_db'\n\nabout:\n  home: https://github.com/InsightLab/PyMove\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A lib python to processing and visualization of trajectories and other spatial-temporal data\n  doc_url:\n  dev_url:\n\nextra:\n  recipe-maintainers:\n    - flych3r\n",
+ "raw_meta_yaml":"{% set name = \"pymove\" %}\n{% set version = \"1.5.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1e43b88a5d93e631a193e05a0f42fa48d094bbc6cf7621f4cab4b477e847c33d\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  noarch: python\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - branca\n    - dask\n    - folium >=0.10.1\n    - geojson\n    - holidays\n    - ipython\n    - ipywidgets\n    - joblib\n    - matplotlib-base\n    - mplleaflet\n    - numpy\n    - pandas\n    - psutil\n    - psycopg2\n    - pymongo\n    - python >=3.6\n    - pytz ==2019.3\n    - scikit-learn\n    - scipy\n    - shapely\n    - tqdm\n\ntest:\n  requires:\n    - pytest\n    - geopandas\n    # - postgresql\n    # - mongodb\n  commands:\n    - pytest --pyargs pymove -k 'not test_utils_db'\n\nabout:\n  home: https://github.com/InsightLab/PyMove\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A lib python to processing and visualization of trajectories and other spatial-temporal data\n  doc_url:\n  dev_url:\n\nextra:\n  recipe-maintainers:\n    - flych3r\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -601,6 +608,7 @@
   "test":{
    "__set__":true,
    "elements":[
+    "geopandas",
     "pytest"
    ]
   }
@@ -648,12 +656,13 @@
   "test":{
    "__set__":true,
    "elements":[
+    "geopandas",
     "pytest"
    ]
   }
  },
  "url":"https://pypi.io/packages/source/p/pymove/pymove-1.1.8.tar.gz",
- "version":"1.4.0",
+ "version":"1.5.0",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":null,
@@ -676,7 +685,7 @@
   },
   "package":{
    "name":"pymove",
-   "version":"1.4.0"
+   "version":"1.5.0"
   },
   "requirements":{
    "host":[
@@ -708,15 +717,16 @@
    ]
   },
   "source":{
-   "sha256":"268ca0315bc1571350d9ee69078536e276467b58e3e57a6a46aed55675107d5e",
-   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.4.0.tar.gz"
+   "sha256":"1e43b88a5d93e631a193e05a0f42fa48d094bbc6cf7621f4cab4b477e847c33d",
+   "url":"https://pypi.io/packages/source/p/pymove/pymove-1.5.0.tar.gz"
   },
   "test":{
    "commands":[
     "pytest --pyargs pymove -k 'not test_utils_db'"
    ],
    "requires":[
-    "pytest"
+    "pytest",
+    "geopandas"
    ]
   }
  },
@@ -761,6 +771,7 @@
   "test":{
    "__set__":true,
    "elements":[
+    "geopandas",
     "pytest"
    ]
   }
