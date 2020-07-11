@@ -251,8 +251,8 @@
    "summary":"Python interface to MySQL"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -261,7 +261,7 @@
   },
   "package":{
    "name":"mysqlclient",
-   "version":"1.4.6"
+   "version":"2.0.1"
   },
   "requirements":{
    "build":[
@@ -279,8 +279,8 @@
    ]
   },
   "source":{
-   "sha256":"f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16",
-   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-1.4.6.tar.gz"
+   "sha256":"fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5",
+   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-2.0.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -327,8 +327,8 @@
    "summary":"Python interface to MySQL"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
    "skip":true
   },
   "extra":{
@@ -340,7 +340,7 @@
   },
   "package":{
    "name":"mysqlclient",
-   "version":"1.4.6"
+   "version":"2.0.1"
   },
   "requirements":{
    "build":[
@@ -372,8 +372,8 @@
    ]
   },
   "source":{
-   "sha256":"f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16",
-   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-1.4.6.tar.gz"
+   "sha256":"fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5",
+   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-2.0.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -405,8 +405,8 @@
    "summary":"Python interface to MySQL"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -415,7 +415,7 @@
   },
   "package":{
    "name":"mysqlclient",
-   "version":"1.4.6"
+   "version":"2.0.1"
   },
   "requirements":{
    "build":[
@@ -433,8 +433,8 @@
    ]
   },
   "source":{
-   "sha256":"f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16",
-   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-1.4.6.tar.gz"
+   "sha256":"fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5",
+   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-2.0.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -473,7 +473,7 @@
   }
  },
  "pinning_version":"2020.07.02.17.22.00",
- "raw_meta_yaml":"{% set name = \"mysqlclient\" %}\n{% set version = \"1.4.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16\n\nbuild:\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - mysql-connector-c\n  run:\n    - python\n    - mysql-connector-c\n\ntest:\n  imports:\n    - MySQLdb\n    - MySQLdb.constants\n    - MySQLdb.cursors\n\nabout:\n  home: https://github.com/PyMySQL/mysqlclient-python\n  doc_url: https://mysqlclient.readthedocs.io/\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: 'Python interface to MySQL'\n\nextra:\n  recipe-maintainers:\n    - halldc\n",
+ "raw_meta_yaml":"{% set name = \"mysqlclient\" %}\n{% set version = \"2.0.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - mysql-connector-c\n  run:\n    - python\n    - mysql-connector-c\n\ntest:\n  imports:\n    - MySQLdb\n    - MySQLdb.constants\n    - MySQLdb.cursors\n\nabout:\n  home: https://github.com/PyMySQL/mysqlclient-python\n  doc_url: https://mysqlclient.readthedocs.io/\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: Python interface to MySQL\n\nextra:\n  recipe-maintainers:\n    - halldc\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -543,7 +543,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-1.4.3.tar.gz",
- "version":"1.4.6",
+ "version":"2.0.1",
  "win_64_meta_yaml":{
   "about":{
    "doc_url":"https://mysqlclient.readthedocs.io/",
@@ -553,8 +553,8 @@
    "summary":"Python interface to MySQL"
   },
   "build":{
-   "number":"1",
-   "script":" -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
+   "number":"0",
+   "script":"-m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
    "skip":true
   },
   "extra":{
@@ -564,7 +564,7 @@
   },
   "package":{
    "name":"mysqlclient",
-   "version":"1.4.6"
+   "version":"2.0.1"
   },
   "requirements":{
    "build":[
@@ -582,8 +582,8 @@
    ]
   },
   "source":{
-   "sha256":"f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16",
-   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-1.4.6.tar.gz"
+   "sha256":"fb2f75aea14722390d2d8ddf384ad99da708c707a96656210a7be8af20a2c5e5",
+   "url":"https://pypi.io/packages/source/m/mysqlclient/mysqlclient-2.0.1.tar.gz"
   },
   "test":{
    "imports":[
