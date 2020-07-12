@@ -543,6 +543,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447952509.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.9.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -781,7 +798,7 @@
   }
  },
  "name":"dtale",
- "new_version":"1.9.1",
+ "new_version":"1.9.2",
  "new_version_attempts":{
   "1.8.10":1,
   "1.8.11":1,
@@ -799,7 +816,8 @@
   "1.8.8":1,
   "1.8.9":1,
   "1.9.0":1,
-  "1.9.1":1
+  "1.9.1":1,
+  "1.9.2":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -910,7 +928,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.03.10.54.45",
+ "pinning_version":"2020.07.12.14.17.08",
  "raw_meta_yaml":"{% set name = \"dtale\" %}\n{% set version = \"1.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9d27435c0e395b8a39f65c5742f3a5e52f04174626e270e83700cbf1ed3aed52\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - dtale = dtale.cli.script:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - six\n  run:\n    - python\n    - lz4\n    - dash\n    - dash-bootstrap-components\n    - dash_colorscales\n    - dash-daq\n    - Flask-Compress\n    - Flask\n    - future\n    - itsdangerous\n    - pandas\n    - requests\n    - scikit-learn\n    - scipy\n    - six\n    - statsmodels\n    - xarray\n\ntest:\n  commands:\n    - dtale --help\n  imports:\n    - dtale\n    - dtale.cli\n\nabout:\n  home: https://github.com/man-group/dtale/\n  license: LGPL\n  license_file: LICENSE\n  summary: D-Tale is the combination of a Flask back-end and a React front-end to bring you an easy way to view & analyze Pandas data structures\n\n  doc_url: https://dtale.readthedocs.io\n  dev_url: https://github.com/man-group/dtale/\n\nextra:\n  recipe-maintainers:\n    - astrojuanlu\n    - AlexS12\n    - aschonfeld\n",
  "req":{
   "__set__":true,
