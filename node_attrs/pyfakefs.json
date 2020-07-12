@@ -135,6 +135,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/447935909.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"4.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -262,7 +279,11 @@
   }
  },
  "name":"pyfakefs",
- "new_version":"4.0.2",
+ "new_version":"4.1.0",
+ "new_version_attempts":{
+  "4.1.0":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"pyfakefs implements a fake file system that mocks the Python file system\nmodules. Using pyfakefs, your tests operate on a fake file system in\nmemory without touching the real disk. The software under test requires\nno modification to work with pyfakefs. pyfakefs works with Linux, Windows\nand MacOS.\n",
@@ -329,7 +350,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.03.04",
+ "pinning_version":"2020.07.12.14.17.08",
  "raw_meta_yaml":"{% set name = \"pyfakefs\" %}\n{% set version = \"4.0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c415e1c737e3aa72b92af41832a7e0a2c325eb8d3a72a210750714e00fcaeace\n\nbuild:\n  noarch: python\n  number: 0\n  # Note: --no-deps is currently required due to https://github.com/conda/conda-build/issues/3254\n  # Once resolved, it should be removed.\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python >=3.5\n    - pip\n  run:\n    - python >=3.5\n\ntest:\n  imports:\n    - pyfakefs\n\nabout:\n  home: https://github.com/jmcgeheeiv/pyfakefs\n  license: Apache-2.0\n  license_file: COPYING\n  summary: A fake file system that mocks the Python file system modules.\n\n  description: |\n    pyfakefs implements a fake file system that mocks the Python file system\n    modules. Using pyfakefs, your tests operate on a fake file system in\n    memory without touching the real disk. The software under test requires\n    no modification to work with pyfakefs. pyfakefs works with Linux, Windows\n    and MacOS.\n\n  doc_url: http://jmcgeheeiv.github.io/pyfakefs/\n  dev_url: https://github.com/jmcgeheeiv/pyfakefs\n\nextra:\n  recipe-maintainers:\n    - tswast\n",
  "req":{
   "__set__":true,
@@ -361,7 +382,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.9",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
