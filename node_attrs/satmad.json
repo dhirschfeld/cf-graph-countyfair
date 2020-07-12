@@ -20,7 +20,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"satmad",
  "hash_type":"sha256",
  "linux_64_meta_yaml":{
@@ -37,7 +41,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -46,7 +50,7 @@
   },
   "package":{
    "name":"satmad",
-   "version":"0.0.3.post1"
+   "version":"0.0.4"
   },
   "requirements":{
    "host":[
@@ -65,8 +69,8 @@
    ]
   },
   "source":{
-   "sha256":"113a5117c0b99d9c73677eec9deda29d2d9373dabe0fa446f745da2181e5617c",
-   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.3.post1.tar.gz"
+   "sha256":"c0be3cce7cd559a887b7e702bb1d729efe32a65ae0a11c47b05e0178ba2968a9",
+   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -133,7 +137,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -144,7 +148,7 @@
   },
   "package":{
    "name":"satmad",
-   "version":"0.0.3.post1"
+   "version":"0.0.4"
   },
   "requirements":{
    "host":[
@@ -183,8 +187,8 @@
    ]
   },
   "source":{
-   "sha256":"113a5117c0b99d9c73677eec9deda29d2d9373dabe0fa446f745da2181e5617c",
-   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.3.post1.tar.gz"
+   "sha256":"c0be3cce7cd559a887b7e702bb1d729efe32a65ae0a11c47b05e0178ba2968a9",
+   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -245,7 +249,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -254,7 +258,7 @@
   },
   "package":{
    "name":"satmad",
-   "version":"0.0.3.post1"
+   "version":"0.0.4"
   },
   "requirements":{
    "host":[
@@ -273,8 +277,8 @@
    ]
   },
   "source":{
-   "sha256":"113a5117c0b99d9c73677eec9deda29d2d9373dabe0fa446f745da2181e5617c",
-   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.3.post1.tar.gz"
+   "sha256":"c0be3cce7cd559a887b7e702bb1d729efe32a65ae0a11c47b05e0178ba2968a9",
+   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.4.tar.gz"
   },
   "test":{
    "commands":[
@@ -328,7 +332,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"satmad\" %}\n{% set version = \"0.0.3.post1\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 113a5117c0b99d9c73677eec9deda29d2d9373dabe0fa446f745da2181e5617c\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - flit-core\n    - pip\n    - python\n\n  run:\n    - astropy\n    - matplotlib-base\n    - numpy\n    - portion\n    - python\n    - scipy\n    - sgp4\n\ntest:\n  imports:\n    - satmad\n    - satmad.coordinates\n    - satmad.coordinates.tests\n    - satmad.propagation\n    - satmad.propagation.tests\n    - satmad.tests\n    - satmad.utils\n    - satmad.utils.tests\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: \"https://github.com/egemenimre/satmad/\"\n  license: \"GPL-3.0-or-later\"\n  license_family: GPL3\n  license_file: LICENSE.rst\n  summary: \"SatMAD: Satellite Mission Analysis and Design for Python\"\n  doc_url: https://satmad.readthedocs.io/\n  dev_url: https://github.com/egemenimre/satmad/\n  \n  description: |\n    SatMAD is an open source Python package, aiming at providing the base functionality to solve \n    satellite mission analysis and design as well as orbital mechanics problems with enough \n    precision and performance to be used in the design and operation of real satellites. \n    The target audience is academics and amateur satellite community, including Cubesats \n    (and anyone else who might be interested).\nextra:\n  recipe-maintainers:\n    - egemenimre\n",
+ "raw_meta_yaml":"{% set name = \"satmad\" %}\n{% set version = \"0.0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c0be3cce7cd559a887b7e702bb1d729efe32a65ae0a11c47b05e0178ba2968a9\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  noarch: python\n\nrequirements:\n  host:\n    - flit-core\n    - pip\n    - python\n\n  run:\n    - astropy\n    - matplotlib-base\n    - numpy\n    - portion\n    - python\n    - scipy\n    - sgp4\n\ntest:\n  imports:\n    - satmad\n    - satmad.coordinates\n    - satmad.coordinates.tests\n    - satmad.propagation\n    - satmad.propagation.tests\n    - satmad.tests\n    - satmad.utils\n    - satmad.utils.tests\n  requires:\n    - pip\n  commands:\n    - pip check\n\nabout:\n  home: https://github.com/egemenimre/satmad/\n  license: GPL-3.0-or-later\n  license_family: GPL3\n  license_file: LICENSE.rst\n  summary: 'SatMAD: Satellite Mission Analysis and Design for Python'\n  doc_url: https://satmad.readthedocs.io/\n  dev_url: https://github.com/egemenimre/satmad/\n\n  description: |\n    SatMAD is an open source Python package, aiming at providing the base functionality to solve \n    satellite mission analysis and design as well as orbital mechanics problems with enough \n    precision and performance to be used in the design and operation of real satellites. \n    The target audience is academics and amateur satellite community, including Cubesats \n    (and anyone else who might be interested).\nextra:\n  recipe-maintainers:\n    - egemenimre\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -410,7 +414,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.3.post1.tar.gz",
- "version":"0.0.3.post1",
+ "version":"0.0.4",
  "win_64_meta_yaml":{
   "about":{
    "description":"SatMAD is an open source Python package, aiming at providing the base functionality to solve\nsatellite mission analysis and design as well as orbital mechanics problems with enough\nprecision and performance to be used in the design and operation of real satellites.\nThe target audience is academics and amateur satellite community, including Cubesats\n(and anyone else who might be interested).\n",
@@ -425,7 +429,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps -vv"
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -434,7 +438,7 @@
   },
   "package":{
    "name":"satmad",
-   "version":"0.0.3.post1"
+   "version":"0.0.4"
   },
   "requirements":{
    "host":[
@@ -453,8 +457,8 @@
    ]
   },
   "source":{
-   "sha256":"113a5117c0b99d9c73677eec9deda29d2d9373dabe0fa446f745da2181e5617c",
-   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.3.post1.tar.gz"
+   "sha256":"c0be3cce7cd559a887b7e702bb1d729efe32a65ae0a11c47b05e0178ba2968a9",
+   "url":"https://pypi.io/packages/source/s/satmad/satmad-0.0.4.tar.gz"
   },
   "test":{
    "commands":[
