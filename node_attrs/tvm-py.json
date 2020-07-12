@@ -107,7 +107,7 @@
   },
   "package":{
    "name":"tvm-py",
-   "version":"0.6.0"
+   "version":"0.6.1"
   },
   "requirements":{
    "build":[
@@ -115,7 +115,7 @@
     "c_compiler_stub"
    ],
    "host":[
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -132,12 +132,12 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0"
+    "libtvm 0.6.1"
    ]
   },
   "source":{
-   "sha256":"e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e",
-   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz"
+   "sha256":"e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713",
+   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -223,7 +223,7 @@
   },
   "package":{
    "name":"tvm-py",
-   "version":"0.6.0"
+   "version":"0.6.1"
   },
   "requirements":{
    "build":[
@@ -235,7 +235,7 @@
     "c_compiler_stub"
    ],
    "host":[
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -244,7 +244,7 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -253,7 +253,7 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -270,26 +270,26 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "numpy",
     "scipy",
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "numpy",
     "scipy",
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0"
+    "libtvm 0.6.1"
    ]
   },
   "source":{
-   "sha256":"e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e",
-   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz"
+   "sha256":"e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713",
+   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -335,7 +335,7 @@
   },
   "package":{
    "name":"tvm-py",
-   "version":"0.6.0"
+   "version":"0.6.1"
   },
   "requirements":{
    "build":[
@@ -343,7 +343,7 @@
     "c_compiler_stub"
    ],
    "host":[
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -360,12 +360,12 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0"
+    "libtvm 0.6.1"
    ]
   },
   "source":{
-   "sha256":"e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e",
-   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz"
+   "sha256":"e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713",
+   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.1.tar.gz"
   },
   "test":{
    "imports":[
@@ -414,7 +414,7 @@
   }
  },
  "pinning_version":"2020.07.07.19.27.52",
- "raw_meta_yaml":"{% set name = \"tvm-py\" %}\n{% set version = \"0.6.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz\n  sha256: e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e\n\nbuild:\n  number: 0\n  script:\n    - cd python\n    - {{ PYTHON }} setup.py install -vv\n    - cd ../topi/python\n    - {{ PYTHON }} setup.py install -vv\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n  host:\n    - libtvm {{ version }}\n    - python\n    - cython\n    - numpy\n    - setuptools\n    - scipy\n    - psutil\n    - decorator\n    - attrs\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - psutil\n    - decorator\n    - attrs\n    - libtvm {{ version }}\n    \ntest:\n  imports:\n    - tvm\n    - topi\n\nabout:\n  home: https://tvm.apache.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Open Deep Learning Compiler Stack'\n  description: |\n    Apache TVM (incubating) is a compiler stack for deep learning systems.\n    It is designed to close the gap between the productivity-focused deep\n    learning frameworks, and the performance- and efficiency-focused hardware\n    backends. TVM works with deep learning frameworks to provide end to end\n    compilation to different backends.\n  doc_url: https://tvm.apache.org/docs/\n  dev_url: https://github.com/apache/incubator-tvm\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
+ "raw_meta_yaml":"{% set name = \"tvm-py\" %}\n{% set version = \"0.6.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/apache/incubator-tvm/archive/v{{ version }}.tar.gz\n  sha256: e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713\n\nbuild:\n  number: 0\n  script:\n    - cd python\n    - {{ PYTHON }} setup.py install -vv\n    - cd ../topi/python\n    - {{ PYTHON }} setup.py install -vv\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - {{ compiler('c') }}\n  host:\n    - libtvm {{ version }}\n    - python\n    - cython\n    - numpy\n    - setuptools\n    - scipy\n    - psutil\n    - decorator\n    - attrs\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - psutil\n    - decorator\n    - attrs\n    - libtvm {{ version }}\n\ntest:\n  imports:\n    - tvm\n    - topi\n\nabout:\n  home: https://tvm.apache.org/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Open Deep Learning Compiler Stack\n  description: |\n    Apache TVM (incubating) is a compiler stack for deep learning systems.\n    It is designed to close the gap between the productivity-focused deep\n    learning frameworks, and the performance- and efficiency-focused hardware\n    backends. TVM works with deep learning frameworks to provide end to end\n    compilation to different backends.\n  doc_url: https://tvm.apache.org/docs/\n  dev_url: https://github.com/apache/incubator-tvm\n\nextra:\n  recipe-maintainers:\n    - marcelotrevisani\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -486,7 +486,7 @@
     "attrs",
     "cython",
     "decorator",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "numpy",
     "psutil",
     "python",
@@ -499,7 +499,7 @@
    "elements":[
     "attrs",
     "decorator",
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "numpy",
     "psutil",
     "python",
@@ -512,7 +512,7 @@
   }
  },
  "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz",
- "version":"0.6.0",
+ "version":"0.6.1",
  "win_64_meta_yaml":{
   "about":{
    "description":"Apache TVM (incubating) is a compiler stack for deep learning systems.\nIt is designed to close the gap between the productivity-focused deep\nlearning frameworks, and the performance- and efficiency-focused hardware\nbackends. TVM works with deep learning frameworks to provide end to end\ncompilation to different backends.\n",
@@ -541,7 +541,7 @@
   },
   "package":{
    "name":"tvm-py",
-   "version":"0.6.0"
+   "version":"0.6.1"
   },
   "requirements":{
    "build":[
@@ -549,7 +549,7 @@
     "c_compiler_stub"
    ],
    "host":[
-    "libtvm 0.6.0",
+    "libtvm 0.6.1",
     "python",
     "cython",
     "numpy",
@@ -566,12 +566,12 @@
     "psutil",
     "decorator",
     "attrs",
-    "libtvm 0.6.0"
+    "libtvm 0.6.1"
    ]
   },
   "source":{
-   "sha256":"e9724ccb3e3bd4c1c48fa6b56450443d390329b02987465f58824d90337e090e",
-   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.0.tar.gz"
+   "sha256":"e2688526d24242bbf5f3adbc0590b1234c4fd0b7a8f61bd837af6c49e5020713",
+   "url":"https://github.com/apache/incubator-tvm/archive/v0.6.1.tar.gz"
   },
   "test":{
    "imports":[

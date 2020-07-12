@@ -107,6 +107,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -196,12 +198,182 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://ff.r-forge.r-project.org/",
+   "license":"GPL-2.0-only",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":" Package 'bit64' provides serializable S3 atomic 64bit (signed) integers.  These are useful for handling database keys and exact counting in +-2^63. WARNING: do not use them as replacement for 32bit integers, integer64 are not supported for subscripting by R-core and they have different semantics when  combined with double, e.g. integer64 + double => integer64.  Class integer64 can be used in vectors, matrices, arrays and data.frames.  Methods are available for coercion from and to logicals, integers, doubles,  characters and factors as well as many elementwise and summary functions.  Many fast algorithmic operations such as 'match' and 'order' support inter- active data exploration and manipulation and optionally leverage caching."
+  },
+  "build":{
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening"
+   ]
+  },
+  "package":{
+   "name":"r-bit64",
+   "version":"0.9_7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-bit >=1.1_12"
+   ],
+   "run":[
+    "r-base",
+    "r-bit >=1.1_12"
+   ]
+  },
+  "source":{
+   "fn":"bit64_0.9-7.tar.gz",
+   "sha256":"7b9aaa7f971198728c3629f9ba1a1b24d53db5c7e459498b0fdf86bbd3dff61f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('bit64')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-bit"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-bit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://ff.r-forge.r-project.org/",
+   "license":"GPL-2.0-only",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":" Package 'bit64' provides serializable S3 atomic 64bit (signed) integers.  These are useful for handling database keys and exact counting in +-2^63. WARNING: do not use them as replacement for 32bit integers, integer64 are not supported for subscripting by R-core and they have different semantics when  combined with double, e.g. integer64 + double => integer64.  Class integer64 can be used in vectors, matrices, arrays and data.frames.  Methods are available for coercion from and to logicals, integers, doubles,  characters and factors as well as many elementwise and summary functions.  Many fast algorithmic operations such as 'match' and 'order' support inter- active data exploration and manipulation and optionally leverage caching."
+  },
+  "build":{
+   "number":"1002",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening"
+   ]
+  },
+  "package":{
+   "name":"r-bit64",
+   "version":"0.9_7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-bit >=1.1_12"
+   ],
+   "run":[
+    "r-base",
+    "r-bit >=1.1_12"
+   ]
+  },
+  "source":{
+   "fn":"bit64_0.9-7.tar.gz",
+   "sha256":"7b9aaa7f971198728c3629f9ba1a1b24d53db5c7e459498b0fdf86bbd3dff61f",
+   "url":[
+    "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('bit64')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-bit"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-bit"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://ff.r-forge.r-project.org/",
    "license":"GPL-2.0-only",
    "license_family":"GPL2",
    "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2"
@@ -217,11 +389,23 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
+    "conda-forge/r",
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
     "conda-forge/r",
     "dpryan79",
     "johanneskoester",
@@ -251,9 +435,17 @@
     "c_compiler_stub",
     "make",
     "c_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "make",
+    "c_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-bit >=1.1_12",
+    "r-base",
+    "r-bit >=1.1_12",
     "r-base",
     "r-bit >=1.1_12",
     "r-base",
@@ -264,6 +456,10 @@
    "run":[
     "r-base",
     "gcc-libs",
+    "r-bit >=1.1_12",
+    "r-base",
+    "r-bit >=1.1_12",
+    "r-base",
     "r-bit >=1.1_12",
     "r-base",
     "r-bit >=1.1_12",
@@ -280,12 +476,18 @@
     "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz",
     "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/bit64_0.9-7.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/bit64/bit64_0.9-7.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('bit64')\"",
+    "$R -e \"library('bit64')\"",
+    "$R -e \"library('bit64')\"",
     "$R -e \"library('bit64')\"",
     "$R -e \"library('bit64')\""
    ]
