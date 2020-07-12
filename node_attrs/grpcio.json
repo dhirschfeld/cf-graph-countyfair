@@ -155,7 +155,7 @@
    "home":"https://grpc.io",
    "license":"Apache-2.0",
    "license_family":"APACHE",
-   "license_file":"/LICENSE",
+   "license_file":"LICENSE",
    "summary":"HTTP/2-based RPC framework"
   },
   "build":{
@@ -164,12 +164,13 @@
   "extra":{
    "recipe-maintainers":[
     "ocefpaf",
-    "jcrist"
+    "jcrist",
+    "bollwyvl"
    ]
   },
   "package":{
    "name":"grpcio",
-   "version":"1.27.2"
+   "version":"1.30.0"
   },
   "requirements":{
    "build":[
@@ -179,11 +180,13 @@
    "host":[
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
     "openssl",
-    "c-ares"
+    "c-ares",
+    "pthread-stubs"
    ],
    "run":[
     "python",
@@ -198,12 +201,16 @@
    "patches":[
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch"
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch"
    ],
-   "sha256":"5ae532b93cf9ce5a2a549b74a2c35e3b690b171ece9358519b3039c7b84c887e",
-   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.27.2.tar.gz"
+   "sha256":"e8f2f5d16e0164c415f1b31a8d9a81f2e4645a43d1b261375d6bab7b0adf511f",
+   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.30.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "python -m pip check"
+   ],
    "imports":[
     "grpc",
     "grpc._cython",
@@ -215,6 +222,9 @@
     "grpc.framework.interfaces",
     "grpc.framework.interfaces.base",
     "grpc.framework.interfaces.face"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -233,7 +243,9 @@
     "cython",
     "openssl",
     "pip",
+    "pthread-stubs",
     "python",
+    "setuptools",
     "six",
     "zlib"
    ]
@@ -251,7 +263,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "meta_yaml":{
@@ -259,7 +273,7 @@
    "home":"https://grpc.io",
    "license":"Apache-2.0",
    "license_family":"APACHE",
-   "license_file":"/LICENSE",
+   "license_file":"LICENSE",
    "summary":"HTTP/2-based RPC framework"
   },
   "build":{
@@ -269,15 +283,18 @@
    "recipe-maintainers":[
     "ocefpaf",
     "jcrist",
+    "bollwyvl",
     "ocefpaf",
     "jcrist",
+    "bollwyvl",
     "ocefpaf",
-    "jcrist"
+    "jcrist",
+    "bollwyvl"
    ]
   },
   "package":{
    "name":"grpcio",
-   "version":"1.27.2"
+   "version":"1.30.0"
   },
   "requirements":{
    "build":[
@@ -291,12 +308,14 @@
    "host":[
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
     "openssl",
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
@@ -304,11 +323,13 @@
     "c-ares",
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
     "openssl",
-    "c-ares"
+    "c-ares",
+    "pthread-stubs"
    ],
    "run":[
     "python",
@@ -334,18 +355,26 @@
    "patches":[
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch",
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch",
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch",
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch",
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch"
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch"
    ],
-   "sha256":"5ae532b93cf9ce5a2a549b74a2c35e3b690b171ece9358519b3039c7b84c887e",
-   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.27.2.tar.gz"
+   "sha256":"e8f2f5d16e0164c415f1b31a8d9a81f2e4645a43d1b261375d6bab7b0adf511f",
+   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.30.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "python -m pip check",
+    "python -m pip check",
+    "python -m pip check"
+   ],
    "imports":[
     "grpc",
     "grpc._cython",
@@ -377,6 +406,11 @@
     "grpc.framework.interfaces",
     "grpc.framework.interfaces.base",
     "grpc.framework.interfaces.face"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -392,7 +426,7 @@
    "home":"https://grpc.io",
    "license":"Apache-2.0",
    "license_family":"APACHE",
-   "license_file":"/LICENSE",
+   "license_file":"LICENSE",
    "summary":"HTTP/2-based RPC framework"
   },
   "build":{
@@ -401,12 +435,13 @@
   "extra":{
    "recipe-maintainers":[
     "ocefpaf",
-    "jcrist"
+    "jcrist",
+    "bollwyvl"
    ]
   },
   "package":{
    "name":"grpcio",
-   "version":"1.27.2"
+   "version":"1.30.0"
   },
   "requirements":{
    "build":[
@@ -416,6 +451,7 @@
    "host":[
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
@@ -435,12 +471,16 @@
    "patches":[
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch"
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch"
    ],
-   "sha256":"5ae532b93cf9ce5a2a549b74a2c35e3b690b171ece9358519b3039c7b84c887e",
-   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.27.2.tar.gz"
+   "sha256":"e8f2f5d16e0164c415f1b31a8d9a81f2e4645a43d1b261375d6bab7b0adf511f",
+   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.30.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "python -m pip check"
+   ],
    "imports":[
     "grpc",
     "grpc._cython",
@@ -452,6 +492,9 @@
     "grpc.framework.interfaces",
     "grpc.framework.interfaces.base",
     "grpc.framework.interfaces.face"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -471,6 +514,7 @@
     "openssl",
     "pip",
     "python",
+    "setuptools",
     "six",
     "zlib"
    ]
@@ -488,11 +532,13 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set version = \"1.27.2\" %}\n\npackage:\n  name: grpcio\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/grpcio/grpcio-{{ version }}.tar.gz\n  sha256: 5ae532b93cf9ce5a2a549b74a2c35e3b690b171ece9358519b3039c7b84c887e\n  patches:\n    - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch\n    - 0002-windows-ssl-lib-names.patch\n    - 0001-fix-win-setup-cmds.patch\n\nbuild:\n  number: 0\n  skip: true  # [python_impl == 'pypy']\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython\n    - six >=1.5.2\n    - zlib\n    - openssl\n    - c-ares            # [unix]\n  run:\n    - python\n    - setuptools\n    - six >=1.5.2\n    - zlib\n    - openssl\n    - {{ pin_compatible(\"c-ares\") }}  # [unix]\n\ntest:\n  imports:\n    - grpc\n    - grpc._cython\n    - grpc._cython._cygrpc\n    - grpc.beta\n    - grpc.framework\n    - grpc.framework.common\n    - grpc.framework.foundation\n    - grpc.framework.interfaces\n    - grpc.framework.interfaces.base\n    - grpc.framework.interfaces.face\n\nabout:\n  home: https://grpc.io\n  license: Apache-2.0\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  license_family: APACHE\n  summary: HTTP/2-based RPC framework\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jcrist\n",
+ "raw_meta_yaml":"{% set version = \"1.30.0\" %}\n\npackage:\n  name: grpcio\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/grpcio/grpcio-{{ version }}.tar.gz\n  sha256: e8f2f5d16e0164c415f1b31a8d9a81f2e4645a43d1b261375d6bab7b0adf511f\n  patches:\n    - 0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch\n    - 0002-windows-ssl-lib-names.patch\n    - 0001-fix-win-setup.patch\n    - 0001-fix-win-commands.patch\n\nbuild:\n  number: 0\n  skip: true  # [python_impl == 'pypy']\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    # TODO evaluate if this can be relaxed\n    - setuptools <48.0.0a0\n    - cython\n    - six >=1.5.2\n    - zlib\n    - openssl\n    - c-ares            # [unix]\n    - pthread-stubs     # [linux]\n  run:\n    - python\n    - setuptools\n    - six >=1.5.2\n    - zlib\n    - openssl\n    - {{ pin_compatible(\"c-ares\") }}  # [unix]\n\ntest:\n  requires:\n    - pip\n  imports:\n    - grpc\n    - grpc._cython\n    - grpc._cython._cygrpc\n    - grpc.beta\n    - grpc.framework\n    - grpc.framework.common\n    - grpc.framework.foundation\n    - grpc.framework.interfaces\n    - grpc.framework.interfaces.base\n    - grpc.framework.interfaces.face\n  commands:\n    - python -m pip check\n\nabout:\n  home: https://grpc.io\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: APACHE\n  summary: HTTP/2-based RPC framework\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jcrist\n    - bollwyvl\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -502,6 +548,7 @@
    "cython",
    "openssl",
    "pip",
+   "pthread-stubs",
    "python",
    "setuptools",
    "six",
@@ -523,7 +570,9 @@
     "cython",
     "openssl",
     "pip",
+    "pthread-stubs",
     "python",
+    "setuptools",
     "six",
     "zlib"
    ]
@@ -541,7 +590,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
@@ -561,7 +612,9 @@
     "cython",
     "openssl",
     "pip",
+    "pthread-stubs",
     "python",
+    "setuptools <48.0.0a0",
     "six >=1.5.2",
     "zlib"
    ]
@@ -579,17 +632,19 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.22.0.tar.gz",
- "version":"1.27.2",
+ "version":"1.30.0",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://grpc.io",
    "license":"Apache-2.0",
    "license_family":"APACHE",
-   "license_file":"/LICENSE",
+   "license_file":"LICENSE",
    "summary":"HTTP/2-based RPC framework"
   },
   "build":{
@@ -598,12 +653,13 @@
   "extra":{
    "recipe-maintainers":[
     "ocefpaf",
-    "jcrist"
+    "jcrist",
+    "bollwyvl"
    ]
   },
   "package":{
    "name":"grpcio",
-   "version":"1.27.2"
+   "version":"1.30.0"
   },
   "requirements":{
    "build":[
@@ -613,6 +669,7 @@
    "host":[
     "python",
     "pip",
+    "setuptools <48.0.0a0",
     "cython",
     "six >=1.5.2",
     "zlib",
@@ -630,12 +687,16 @@
    "patches":[
     "0001-Monkey-patch-distutils.ccompiler.spawn-to-elide-std-.patch",
     "0002-windows-ssl-lib-names.patch",
-    "0001-fix-win-setup-cmds.patch"
+    "0001-fix-win-setup.patch",
+    "0001-fix-win-commands.patch"
    ],
-   "sha256":"5ae532b93cf9ce5a2a549b74a2c35e3b690b171ece9358519b3039c7b84c887e",
-   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.27.2.tar.gz"
+   "sha256":"e8f2f5d16e0164c415f1b31a8d9a81f2e4645a43d1b261375d6bab7b0adf511f",
+   "url":"https://pypi.io/packages/source/g/grpcio/grpcio-1.30.0.tar.gz"
   },
   "test":{
+   "commands":[
+    "python -m pip check"
+   ],
    "imports":[
     "grpc",
     "grpc._cython",
@@ -647,6 +708,9 @@
     "grpc.framework.interfaces",
     "grpc.framework.interfaces.base",
     "grpc.framework.interfaces.face"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -665,6 +729,7 @@
     "openssl",
     "pip",
     "python",
+    "setuptools",
     "six",
     "zlib"
    ]
@@ -681,7 +746,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  }
 }
