@@ -552,7 +552,8 @@
    "recipe-maintainers":[
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -573,6 +574,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -609,6 +611,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
@@ -650,7 +653,8 @@
    "recipe-maintainers":[
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -671,6 +675,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -706,6 +711,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
@@ -747,7 +753,8 @@
    "recipe-maintainers":[
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -768,6 +775,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -803,6 +811,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
@@ -850,18 +859,23 @@
     "SylvainCorlay",
     "JohanMabille",
     "wolfv",
+    "ericmjl",
     "SylvainCorlay",
     "JohanMabille",
     "wolfv",
+    "ericmjl",
     "SylvainCorlay",
     "JohanMabille",
     "wolfv",
+    "ericmjl",
     "SylvainCorlay",
     "JohanMabille",
     "wolfv",
+    "ericmjl",
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -886,6 +900,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json",
     "setuptools",
     "python",
@@ -896,6 +911,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json",
     "setuptools",
     "python",
@@ -906,6 +922,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json",
     "setuptools",
     "python",
@@ -916,6 +933,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json",
     "setuptools",
     "python",
@@ -926,6 +944,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -1015,7 +1034,8 @@
    "recipe-maintainers":[
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -1036,6 +1056,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -1070,6 +1091,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
@@ -1092,7 +1114,7 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"mamba\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"985e8de16d64ec1bc90104f0c701500fa70f7f2eb1c7b79c7aea9a6876248e8d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/QuantStack/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  entry_points:\n    - mamba = mamba.mamba:main\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - pybind11\n    - conda >=4.8\n    - libsolv >=0.7.14\n    - libcurl\n    - openssl\n    - libarchive\n    - nlohmann_json\n  run:\n    - python\n    - conda >=4.8\n\ntest:\n  imports:\n    - mamba\n    - mamba.mamba_api\n  commands:\n    - mamba --help\n    # these tests work when run on win, but for some reason not during conda build\n    - mamba create -n test_py2 python=2.7 --dry-run  # [linux]\n    - mamba install xtensor xsimd -c conda-forge --dry-run  # [linux and x86_64]\n\nabout:\n  home: https://github.com/QuantStack/mamba\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  description: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  dev_url: https://github.com/QuantStack/mamba\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n",
+ "raw_meta_yaml":"{% set name = \"mamba\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"985e8de16d64ec1bc90104f0c701500fa70f7f2eb1c7b79c7aea9a6876248e8d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/QuantStack/mamba/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  entry_points:\n    - mamba = mamba.mamba:main\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - setuptools\n    - python\n    - pip\n    - pybind11\n    - conda >=4.8\n    - libsolv >=0.7.14\n    - libcurl\n    - openssl\n    - libarchive\n    - libiconv\n    - nlohmann_json\n  run:\n    - python\n    - conda >=4.8\n\ntest:\n  imports:\n    - mamba\n    - mamba.mamba_api\n  commands:\n    - mamba --help\n    # these tests work when run on win, but for some reason not during conda build\n    - mamba create -n test_py2 python=2.7 --dry-run  # [linux]\n    - mamba install xtensor xsimd -c conda-forge --dry-run  # [linux and x86_64]\n\nabout:\n  home: https://github.com/QuantStack/mamba\n  license: BSD-3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  description: A fast drop-in alternative to conda, using libsolv for dependency resolution\n  dev_url: https://github.com/QuantStack/mamba\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n    - wolfv\n    - ericmjl\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1100,6 +1122,7 @@
    "cxx_compiler_stub",
    "libarchive",
    "libcurl",
+   "libiconv",
    "libsolv",
    "nlohmann_json",
    "openssl",
@@ -1122,6 +1145,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
@@ -1158,6 +1182,7 @@
     "conda >=4.8",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv >=0.7.14",
     "nlohmann_json",
     "openssl",
@@ -1202,7 +1227,8 @@
    "recipe-maintainers":[
     "SylvainCorlay",
     "JohanMabille",
-    "wolfv"
+    "wolfv",
+    "ericmjl"
    ]
   },
   "package":{
@@ -1223,6 +1249,7 @@
     "libcurl",
     "openssl",
     "libarchive",
+    "libiconv",
     "nlohmann_json"
    ],
    "run":[
@@ -1257,6 +1284,7 @@
     "conda",
     "libarchive",
     "libcurl",
+    "libiconv",
     "libsolv",
     "nlohmann_json",
     "openssl",
