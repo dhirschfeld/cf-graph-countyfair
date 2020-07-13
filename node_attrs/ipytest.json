@@ -36,6 +36,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448356054.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.9.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -190,11 +207,12 @@
   }
  },
  "name":"ipytest",
- "new_version":"0.9.0",
+ "new_version":"0.9.1",
  "new_version_attempts":{
   "0.8.0":75,
   "0.8.1":1,
-  "0.9.0":1
+  "0.9.0":1,
+  "0.9.1":1
  },
  "new_version_errors":{
   "0.8.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.8.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/{{ arch }}/{{ name[0] }}/{{ name }}/{{ fn }}'\n"
@@ -274,7 +292,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.12.08.10.44",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"ipytest\" %}\n{% set version = \"0.8.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8e42fafbad433c418731dca833f0a165d581af0f376721ba7c0107b782d919e7\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.0\n  run:\n    - packaging\n    - python >=3.0\n\ntest:\n  imports:\n    - ipytest\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/ipytest/\n  summary: Unit tests in IPython notebooks.\n  description: |\n    Sometimes quick experiments in IPython grow large and you find yourself wanting unit tests. This module aims to make testing code in IPython notebooks easy. At its core, it offers a way to run pytest tests inside the notebook environment. It is also designed to make the transfer of the tests into proper python modules easy.\n  license: MIT\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - xhochy\n    - pmgrafe\n",
  "req":{
   "__set__":true,
