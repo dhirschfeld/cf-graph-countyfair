@@ -295,7 +295,7 @@
   },
   "package":{
    "name":"python-graphviz",
-   "version":"0.14"
+   "version":"0.14.1"
   },
   "requirements":{
    "build":[
@@ -311,9 +311,9 @@
    ]
   },
   "source":{
-   "fn":"python-graphviz-0.14.zip",
-   "sha256":"e104ba036c8aef84320ec80560e544cd3cad68c9f90394b4e2b87bc44ab09791",
-   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.zip"
+   "fn":"python-graphviz-0.14.1.zip",
+   "sha256":"f5aad52a652c06825dcc5ee018d920fca26aef339386866094597fb3f2f222ce",
+   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.1.zip"
   },
   "test":{
    "imports":[
@@ -396,7 +396,7 @@
   },
   "package":{
    "name":"python-graphviz",
-   "version":"0.14"
+   "version":"0.14.1"
   },
   "requirements":{
    "build":[
@@ -422,9 +422,9 @@
    ]
   },
   "source":{
-   "fn":"python-graphviz-0.14.zip",
-   "sha256":"e104ba036c8aef84320ec80560e544cd3cad68c9f90394b4e2b87bc44ab09791",
-   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.zip"
+   "fn":"python-graphviz-0.14.1.zip",
+   "sha256":"f5aad52a652c06825dcc5ee018d920fca26aef339386866094597fb3f2f222ce",
+   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.1.zip"
   },
   "test":{
    "imports":[
@@ -476,7 +476,7 @@
   },
   "package":{
    "name":"python-graphviz",
-   "version":"0.14"
+   "version":"0.14.1"
   },
   "requirements":{
    "build":[
@@ -492,9 +492,9 @@
    ]
   },
   "source":{
-   "fn":"python-graphviz-0.14.zip",
-   "sha256":"e104ba036c8aef84320ec80560e544cd3cad68c9f90394b4e2b87bc44ab09791",
-   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.zip"
+   "fn":"python-graphviz-0.14.1.zip",
+   "sha256":"f5aad52a652c06825dcc5ee018d920fca26aef339386866094597fb3f2f222ce",
+   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.1.zip"
   },
   "test":{
    "imports":[
@@ -534,7 +534,7 @@
   }
  },
  "pinning_version":"2020.07.13.05.23.11",
- "raw_meta_yaml":"{% set version = \"0.14\" %}\n{% set sha256 = \"e104ba036c8aef84320ec80560e544cd3cad68c9f90394b4e2b87bc44ab09791\" %}\n\npackage:\n  name: python-graphviz\n  version: {{ version }}\n\nsource:\n  fn: python-graphviz-{{ version }}.zip\n  url: https://pypi.io/packages/source/g/graphviz/graphviz-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    # Needed due to the Windows batch script wrappers in conda-forge Graphviz.\n    # see https://github.com/conda-forge/graphviz-feedstock/blob/bbfe3c7be2a448dd11db165a18c3edfd5ee6a95d/recipe/bld.bat#L27-L32\n    # Must patch manually as the source code and patch are CRLF and conda-build\n    # tries to convert the patch to LF, which then won't apply.\n    - pushd \"{{ RECIPE_DIR }}\"\n    - cp windows-bat.patch \"{{ SRC_DIR }}\"\n    - popd\n    - patch --binary -p0 -i windows-bat.patch\n    - python -m pip install --no-deps --ignore-installed \"${SRC_DIR}\"\n\nrequirements:\n  build:\n    - patch\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - graphviz\n\ntest:\n  imports:\n    - graphviz\n  requires:\n    - dask\n\nabout:\n  home: https://github.com/xflr6/graphviz\n  doc_url: https://graphviz.readthedocs.io\n  dev_url: https://github.com/xflr6/graphviz\n\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n\n  summary: Simple Python interface for Graphviz\n  description: |\n    This package facilitates the creation and rendering of graph\n    descriptions in the DOT language of the Graphviz graph\n    drawing software from Python.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - scopatz\n",
+ "raw_meta_yaml":"{% set version = \"0.14.1\" %}\n{% set sha256 = \"f5aad52a652c06825dcc5ee018d920fca26aef339386866094597fb3f2f222ce\" %}\n\npackage:\n  name: python-graphviz\n  version: {{ version }}\n\nsource:\n  fn: python-graphviz-{{ version }}.zip\n  url: https://pypi.io/packages/source/g/graphviz/graphviz-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    # Needed due to the Windows batch script wrappers in conda-forge Graphviz.\n    # see https://github.com/conda-forge/graphviz-feedstock/blob/bbfe3c7be2a448dd11db165a18c3edfd5ee6a95d/recipe/bld.bat#L27-L32\n    # Must patch manually as the source code and patch are CRLF and conda-build\n    # tries to convert the patch to LF, which then won't apply.\n    - pushd \"{{ RECIPE_DIR }}\"\n    - cp windows-bat.patch \"{{ SRC_DIR }}\"\n    - popd\n    - patch --binary -p0 -i windows-bat.patch\n    - python -m pip install --no-deps --ignore-installed \"${SRC_DIR}\"\n\nrequirements:\n  build:\n    - patch\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - graphviz\n\ntest:\n  imports:\n    - graphviz\n  requires:\n    - dask\n\nabout:\n  home: https://github.com/xflr6/graphviz\n  doc_url: https://graphviz.readthedocs.io\n  dev_url: https://github.com/xflr6/graphviz\n\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n\n  summary: Simple Python interface for Graphviz\n  description: |\n    This package facilitates the creation and rendering of graph\n    descriptions in the DOT language of the Graphviz graph\n    drawing software from Python.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -603,7 +603,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.13.zip",
- "version":"0.14",
+ "version":"0.14.1",
  "win_64_meta_yaml":{
   "about":{
    "description":"This package facilitates the creation and rendering of graph\ndescriptions in the DOT language of the Graphviz graph\ndrawing software from Python.\n",
@@ -634,7 +634,7 @@
   },
   "package":{
    "name":"python-graphviz",
-   "version":"0.14"
+   "version":"0.14.1"
   },
   "requirements":{
    "build":[
@@ -650,9 +650,9 @@
    ]
   },
   "source":{
-   "fn":"python-graphviz-0.14.zip",
-   "sha256":"e104ba036c8aef84320ec80560e544cd3cad68c9f90394b4e2b87bc44ab09791",
-   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.zip"
+   "fn":"python-graphviz-0.14.1.zip",
+   "sha256":"f5aad52a652c06825dcc5ee018d920fca26aef339386866094597fb3f2f222ce",
+   "url":"https://pypi.io/packages/source/g/graphviz/graphviz-0.14.1.zip"
   },
   "test":{
    "imports":[

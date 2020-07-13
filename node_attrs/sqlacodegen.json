@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448236739.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.3.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -190,9 +207,10 @@
   }
  },
  "name":"sqlacodegen",
- "new_version":"2.2.0",
+ "new_version":"2.3.0",
  "new_version_attempts":{
-  "2.2.0":1
+  "2.2.0":1,
+  "2.3.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -272,7 +290,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.06.02.30.37",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"sqlacodegen\" %}\n{% set version = \"2.2.0\" %}\n{% set sha256 = \"83e7ae401398cc1ae8324722a3294d7faadb694347cb7e2c0fb8c15a3f1eb515\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n  entry_points:\n    - sqlacodegen = sqlacodegen.main:main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools  >=36.2.7\n    - setuptools_scm  >=1.7.0\n\n  run:\n    - python\n    - sqlalchemy >=0.9.0\n    - inflect >=0.2.0\n\ntest:\n  imports:\n    - sqlacodegen\n\nabout:\n  home: http://pypi.python.org/pypi/sqlacodegen/\n  license: MIT\n  license_file: LICENSE\n  summary: Automatic model code generator for SQLAlchemy\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - rzillman\n    - dhirschfeld\n",
  "req":{
   "__set__":true,
@@ -312,7 +330,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
