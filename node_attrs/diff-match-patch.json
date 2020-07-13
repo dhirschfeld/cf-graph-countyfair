@@ -65,7 +65,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -75,20 +75,21 @@
   },
   "package":{
    "name":"diff-match-patch",
-   "version":"20181111"
+   "version":"20200713"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools >=38.6.0"
    ],
    "run":[
     "python"
    ]
   },
   "source":{
-   "sha256":"a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb",
-   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20181111.tar.gz"
+   "sha256":"da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18",
+   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20200713.tar.gz"
   },
   "test":{
    "imports":[
@@ -105,7 +106,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{
@@ -129,7 +131,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -143,16 +145,19 @@
   },
   "package":{
    "name":"diff-match-patch",
-   "version":"20181111"
+   "version":"20200713"
   },
   "requirements":{
    "host":[
     "python",
     "pip",
+    "setuptools >=38.6.0",
     "python",
     "pip",
+    "setuptools >=38.6.0",
     "python",
-    "pip"
+    "pip",
+    "setuptools >=38.6.0"
    ],
    "run":[
     "python",
@@ -161,8 +166,8 @@
    ]
   },
   "source":{
-   "sha256":"a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb",
-   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20181111.tar.gz"
+   "sha256":"da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18",
+   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20200713.tar.gz"
   },
   "test":{
    "imports":[
@@ -188,7 +193,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -198,20 +203,21 @@
   },
   "package":{
    "name":"diff-match-patch",
-   "version":"20181111"
+   "version":"20200713"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools >=38.6.0"
    ],
    "run":[
     "python"
    ]
   },
   "source":{
-   "sha256":"a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb",
-   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20181111.tar.gz"
+   "sha256":"da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18",
+   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20200713.tar.gz"
   },
   "test":{
    "imports":[
@@ -228,7 +234,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{
@@ -243,12 +250,13 @@
   }
  },
  "pinning_version":"2020.07.13.05.23.11",
- "raw_meta_yaml":"{% set version = \"20181111\" %}\n\npackage:\n  name: diff-match-patch\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz\n  sha256: a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - diff_match_patch\n\nabout:\n  home: http://code.google.com/p/google-diff-match-patch/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Diff Match Patch is a high-performance library in multiple languages that manipulates plain text'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ccordoba12\n",
+ "raw_meta_yaml":"{% set version = \"20200713\" %}\n\npackage:\n  name: diff-match-patch\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz\n  sha256: da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools >=38.6.0\n  run:\n    - python\n\ntest:\n  imports:\n    - diff_match_patch\n\nabout:\n  home: http://code.google.com/p/google-diff-match-patch/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: Diff Match Patch is a high-performance library in multiple languages that manipulates plain text\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ccordoba12\n",
  "req":{
   "__set__":true,
   "elements":[
    "pip",
-   "python"
+   "python",
+   "setuptools"
   ]
  },
  "requirements":{
@@ -260,7 +268,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{
@@ -285,7 +294,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools >=38.6.0"
    ]
   },
   "run":{
@@ -300,7 +310,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20181111.tar.gz",
- "version":"20181111",
+ "version":"20200713",
  "win_64_meta_yaml":{
   "about":{
    "home":"http://code.google.com/p/google-diff-match-patch/",
@@ -311,7 +321,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -321,20 +331,21 @@
   },
   "package":{
    "name":"diff-match-patch",
-   "version":"20181111"
+   "version":"20200713"
   },
   "requirements":{
    "host":[
     "python",
-    "pip"
+    "pip",
+    "setuptools >=38.6.0"
    ],
    "run":[
     "python"
    ]
   },
   "source":{
-   "sha256":"a809a996d0f09b9bbd59e9bbd0b71eed8c807922512910e05cbd3f9480712ddb",
-   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20181111.tar.gz"
+   "sha256":"da6f5a01aa586df23dfc89f3827e1cafbb5420be9d87769eeb079ddfd9477a18",
+   "url":"https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-20200713.tar.gz"
   },
   "test":{
    "imports":[
@@ -351,7 +362,8 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python"
+    "python",
+    "setuptools"
    ]
   },
   "run":{
