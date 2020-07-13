@@ -157,7 +157,7 @@
   },
   "package":{
    "name":"r-pkgbuild",
-   "version":"1.0.8"
+   "version":"1.1.0"
   },
   "requirements":{
    "build":null,
@@ -185,10 +185,10 @@
    ]
   },
   "source":{
-   "sha256":"b149fcf3e98ef148945ff9f4272512cd03e21408c235ec6c0548167fd41219a1",
+   "sha256":"b39bfb7661fc53f88962e2380fa9ded2e323c6ad43ac6b582195c749b0ccabbd",
    "url":[
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz"
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz"
    ]
   },
   "test":{
@@ -265,7 +265,7 @@
   },
   "package":{
    "name":"r-pkgbuild",
-   "version":"1.0.8"
+   "version":"1.1.0"
   },
   "requirements":{
    "build":null,
@@ -329,14 +329,14 @@
    ]
   },
   "source":{
-   "sha256":"b149fcf3e98ef148945ff9f4272512cd03e21408c235ec6c0548167fd41219a1",
+   "sha256":"b39bfb7661fc53f88962e2380fa9ded2e323c6ad43ac6b582195c749b0ccabbd",
    "url":[
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz"
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz"
    ]
   },
   "test":{
@@ -378,7 +378,7 @@
   },
   "package":{
    "name":"r-pkgbuild",
-   "version":"1.0.8"
+   "version":"1.1.0"
   },
   "requirements":{
    "build":null,
@@ -406,10 +406,10 @@
    ]
   },
   "source":{
-   "sha256":"b149fcf3e98ef148945ff9f4272512cd03e21408c235ec6c0548167fd41219a1",
+   "sha256":"b39bfb7661fc53f88962e2380fa9ded2e323c6ad43ac6b582195c749b0ccabbd",
    "url":[
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz"
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz"
    ]
   },
   "test":{
@@ -457,7 +457,7 @@
   }
  },
  "pinning_version":"2020.07.13.05.23.11",
- "raw_meta_yaml":"{% set version = \"1.0.8\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-pkgbuild\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/pkgbuild_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/pkgbuild/pkgbuild_{{ version }}.tar.gz\n  sha256: b149fcf3e98ef148945ff9f4272512cd03e21408c235ec6c0548167fd41219a1\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-r6\n    - r-callr >=3.2.0\n    - r-cli\n    - r-crayon\n    - r-desc\n    - r-prettyunits\n    - r-rprojroot\n    - r-withr >=2.1.2\n  run:\n    - r-base\n    - r-r6\n    - r-callr >=3.2.0\n    - r-cli\n    - r-crayon\n    - r-desc\n    - r-prettyunits\n    - r-rprojroot\n    - r-withr >=2.1.2\n\ntest:\n  commands:\n    - $R -e \"library('pkgbuild')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('pkgbuild')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/r-lib/pkgbuild\n  license: GPL-3.0-only\n  summary: Provides functions used to build R packages. Locates compilers needed to build R packages on various platforms and ensures the PATH is configured appropriately so R can use them.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: pkgbuild\n# Title: Find Tools Needed to Build R Packages\n# Version: 1.0.5\n# Authors@R: c( person(\"Hadley\", \"Wickham\", role = \"aut\"), person(\"Jim\", \"Hester\", , \"jim.hester@rstudio.com\", role = c(\"aut\", \"cre\")), person(\"RStudio\", role = \"cph\") )\n# Description: Provides functions used to build R packages. Locates compilers needed to build R packages on various platforms and ensures the PATH is configured appropriately so R can use them.\n# Imports: callr (>= 3.2.0), cli, crayon, desc, prettyunits, R6, rprojroot, withr (>= 2.1.2)\n# Suggests: Rcpp, testthat, covr\n# License: GPL-3\n# Encoding: UTF-8\n# LazyData: true\n# RoxygenNote: 6.1.1\n# URL: https://github.com/r-lib/pkgbuild\n# BugReports: https://github.com/r-lib/pkgbuild/issues\n# Depends: R (>= 3.1)\n# NeedsCompilation: no\n# Packaged: 2019-08-26 14:21:07 UTC; Administrator\n# Author: Hadley Wickham [aut], Jim Hester [aut, cre], RStudio [cph]\n# Maintainer: Jim Hester <jim.hester@rstudio.com>\n# Repository: CRAN\n# Date/Publication: 2019-08-26 15:30:02 UTC\n",
+ "raw_meta_yaml":"{% set version = \"1.1.0\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-pkgbuild\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/pkgbuild_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/pkgbuild/pkgbuild_{{ version }}.tar.gz\n  sha256: b39bfb7661fc53f88962e2380fa9ded2e323c6ad43ac6b582195c749b0ccabbd\n\nbuild:\n  merge_build_host: true  # [win]\n  number: 0\n  noarch: generic\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n  host:\n    - r-base\n    - r-r6\n    - r-callr >=3.2.0\n    - r-cli\n    - r-crayon\n    - r-desc\n    - r-prettyunits\n    - r-rprojroot\n    - r-withr >=2.1.2\n  run:\n    - r-base\n    - r-r6\n    - r-callr >=3.2.0\n    - r-cli\n    - r-crayon\n    - r-desc\n    - r-prettyunits\n    - r-rprojroot\n    - r-withr >=2.1.2\n\ntest:\n  commands:\n    - $R -e \"library('pkgbuild')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('pkgbuild')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/r-lib/pkgbuild\n  license: GPL-3.0-only\n  summary: Provides functions used to build R packages. Locates compilers needed to build R packages on various platforms and ensures the PATH is configured appropriately so R can use them.\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: pkgbuild\n# Title: Find Tools Needed to Build R Packages\n# Version: 1.0.5\n# Authors@R: c( person(\"Hadley\", \"Wickham\", role = \"aut\"), person(\"Jim\", \"Hester\", , \"jim.hester@rstudio.com\", role = c(\"aut\", \"cre\")), person(\"RStudio\", role = \"cph\") )\n# Description: Provides functions used to build R packages. Locates compilers needed to build R packages on various platforms and ensures the PATH is configured appropriately so R can use them.\n# Imports: callr (>= 3.2.0), cli, crayon, desc, prettyunits, R6, rprojroot, withr (>= 2.1.2)\n# Suggests: Rcpp, testthat, covr\n# License: GPL-3\n# Encoding: UTF-8\n# LazyData: true\n# RoxygenNote: 6.1.1\n# URL: https://github.com/r-lib/pkgbuild\n# BugReports: https://github.com/r-lib/pkgbuild/issues\n# Depends: R (>= 3.1)\n# NeedsCompilation: no\n# Packaged: 2019-08-26 14:21:07 UTC; Administrator\n# Author: Hadley Wickham [aut], Jim Hester [aut, cre], RStudio [cph]\n# Maintainer: Jim Hester <jim.hester@rstudio.com>\n# Repository: CRAN\n# Date/Publication: 2019-08-26 15:30:02 UTC\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -558,7 +558,7 @@
   "https://cran.r-project.org/src/contrib/pkgbuild_1.0.5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.5.tar.gz"
  ],
- "version":"1.0.8",
+ "version":"1.1.0",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/r-lib/pkgbuild",
@@ -583,7 +583,7 @@
   },
   "package":{
    "name":"r-pkgbuild",
-   "version":"1.0.8"
+   "version":"1.1.0"
   },
   "requirements":{
    "build":[
@@ -613,10 +613,10 @@
    ]
   },
   "source":{
-   "sha256":"b149fcf3e98ef148945ff9f4272512cd03e21408c235ec6c0548167fd41219a1",
+   "sha256":"b39bfb7661fc53f88962e2380fa9ded2e323c6ad43ac6b582195c749b0ccabbd",
    "url":[
-    "https://cran.r-project.org/src/contrib/pkgbuild_1.0.8.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.0.8.tar.gz"
+    "https://cran.r-project.org/src/contrib/pkgbuild_1.1.0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/pkgbuild/pkgbuild_1.1.0.tar.gz"
    ]
   },
   "test":{
