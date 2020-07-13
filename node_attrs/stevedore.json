@@ -173,6 +173,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448372976.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.1.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -353,11 +370,12 @@
   }
  },
  "name":"stevedore",
- "new_version":"3.0.0",
+ "new_version":"3.1.0",
  "new_version_attempts":{
   "2.0.0":1,
   "2.0.1":1,
-  "3.0.0":1
+  "3.0.0":1,
+  "3.1.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -441,7 +459,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"stevedore\" %}\n{% set version = \"3.0.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash = \"182d557078b4f840f412f148e6f3c2ace83a3e206a020f35f6c97d3b8d91f180\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ hash }}\n\nbuild:\n  number: 1\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python\n    - pbr !=2.1.0,>=2.0.0\n    - importlib_metadata >=1.7.0  # [py<38]\n\ntest:\n  imports:\n    - stevedore\n    - stevedore.named\n    - stevedore.driver\n    - stevedore.hook\n    - stevedore.extension\n    - stevedore.enabled\n    - stevedore.dispatch\n    - stevedore.tests\n    - stevedore._cache\n\nabout:\n  home: http://docs.openstack.org/developer/stevedore/\n  license_file: LICENSE\n  license: Apache-2.0\n  license_family: Apache\n  summary: Manage dynamic plugins for Python applications\n  doc_url: http://docs.openstack.org/developer/stevedore/\n  dev_url: https://git.openstack.org/cgit/openstack/stevedore\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - tschoonj\n",
  "req":{
   "__set__":true,
