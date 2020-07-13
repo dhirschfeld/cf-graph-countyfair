@@ -136,6 +136,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448219951.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.1.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -313,7 +330,11 @@
   }
  },
  "name":"pendulum",
- "new_version":"2.1.0",
+ "new_version":"2.1.1",
+ "new_version_attempts":{
+  "2.1.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"Drop-in replacement for the standard datetime class.\nIt behaves exactly like it but with many improvements.\n",
@@ -397,7 +418,7 @@
    ]
   }
  },
- "pinning_version":"2020.03.14",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set version = \"2.1.0\" %}\n\npackage:\n  name: pendulum\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pendulum/pendulum-{{ version }}.tar.gz\n  sha256: 093cab342e10516660e64b935a6da1a043e0286de36cc229fb48471415981ffe\n\nbuild:\n  number: 1\n  script:\n    - rm -f pyproject.toml  # [not win]\n    - del /f pyproject.toml  # [win]\n    - {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - python-dateutil >=2.6,<3.0\n    - pytzdata >=2018.3\n    - typing >=3.6,<4.0  # [py<35]\n\ntest:\n  requires:\n    - pip\n  commands:\n    - pip check\n  imports:\n    - pendulum\n\nabout:\n  home: https://pendulum.eustace.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python datetimes made easy\n  description: |\n    Drop-in replacement for the standard datetime class.\n    It behaves exactly like it but with many improvements.\n  doc_url: https://pendulum.eustace.io/docs/\n  dev_url: https://github.com/sdispater/pendulum\n\nextra:\n  recipe-maintainers:\n    - mcs07\n    - ocefpaf\n    - xylar\n",
  "req":{
   "__set__":true,
@@ -435,7 +456,7 @@
    ]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
