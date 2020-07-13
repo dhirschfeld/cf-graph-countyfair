@@ -102,6 +102,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448450752.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -368,7 +385,11 @@
   }
  },
  "name":"astro-gala",
- "new_version":"1.1",
+ "new_version":"1.2",
+ "new_version_attempts":{
+  "1.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"Gala is a Python package for Galactic astronomy and gravitational\ndynamics. The bulk of the package centers around implementations of\ngravitational potentials, numerical integration, and nonlinear dynamics.\n",
@@ -482,7 +503,7 @@
    ]
   }
  },
- "pinning_version":"2020.03.06",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"astro-gala\" %}\n{% set version = \"1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 33a5ef65df572669b74ee3ac6aafcbecee85f233d2f770b84743d5671a9e0fe0\n\nbuild:\n  number: 0\n  skip: true  # [win or py<35]\n  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build: {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm\n    - numpy\n    - gsl\n    - extension-helpers\n  run:\n    - python\n    - astropy\n    - gsl\n    - pyyaml\n    - scipy\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  requires:\n    - pytest-astropy\n  imports:\n    - gala\n    - gala.coordinates\n    - gala.dynamics\n    - gala.dynamics._genfunc\n    - gala.dynamics.lyapunov\n    - gala.dynamics.mockstream\n    - gala.integrate\n    - gala.integrate.cyintegrators\n    - gala.integrate.cyintegrators.dopri\n    - gala.integrate.pyintegrators\n    - gala.potential\n    - gala.potential.frame\n    - gala.potential.frame.builtin\n    - gala.potential.hamiltonian\n    - gala.potential.potential\n    - gala.potential.potential.builtin\n    - gala.potential.scf\n\nabout:\n  home: http://gala.adrian.pw/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Galactic and gravitational dynamics in Python\n  description: |\n    Gala is a Python package for Galactic astronomy and gravitational\n    dynamics. The bulk of the package centers around implementations of\n    gravitational potentials, numerical integration, and nonlinear dynamics.\n  doc_url: http://gala.adrian.pw\n  dev_url: https://github.com/adrn/gala\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - adrn\n",
  "req":{
   "__set__":true,
@@ -537,7 +558,7 @@
    ]
   }
  },
- "smithy_version":"3.6.10",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
