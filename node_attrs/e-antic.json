@@ -151,10 +151,29 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448060951.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"arb218"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "linux_aarch64":"default",
@@ -573,7 +592,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.13.02.15.08",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"E-ANTIC\" %}\n{% set version = \"0.1.7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://www.labri.fr/perso/vdelecro/{{ name | lower }}/{{ name | lower }}-{{ version }}.tar.gz\n  sha256: 031a7702296b41a76b17ea9fbca184ac6ffae539d7ed0bdd987c0db1ab825f0a\n\nbuild:\n  number: 0\n  # Upstream doesn't support MSVC yet.\n  skip: true  # [win]\n  run_exports:\n  # e-antic uses semantic versioning https://github.com/videlec/e-antic/issues/12\n    - {{ pin_subpackage(\"e-antic\") }}\n\n\nrequirements:\n  build:\n    - libtool   # [unix]\n    - automake  # [unix]\n    - make      # [unix]\n    - autotools_clang_conda  # [win]\n    - {{ compiler('cxx') }}\n  host:\n    # E-ANTIC depends on antic; since antic has never been released officially\n    # (https://github.com/wbhart/antic/issues/31,) E-ANTIC ships the relevant\n    # parts of ANTIC.\n    # - antic\n    - gmp       # [unix]\n    - mpir      # [win]\n    - arb\n    - libflint\n\ntest:\n  commands:\n    - test -f $PREFIX/include/e-antic/e-antic.h  # [linux or osx]\n    - test -f $PREFIX/lib/libeantic.so           # [linux]\n    - test -f $PREFIX/lib/libeanticxx.so         # [linux]\n    - test -f $PREFIX/lib/libeantic.dylib        # [osx]\n    - test -f $PREFIX/lib/libeanticxx.dylib      # [osx]\n\nabout:\n  home: https://github.com/videlec/e-antic\n  license: LGPL-3.0-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: embedded algebraic number fields\n  description: |\n    E-ANTIC is a C/C++ library to deal with real embedded number fields built\n    on top of ANTIC. Its aim is to have as fast as possible exact arithmetic\n    operations and comparisons.\n  dev_url: https://github.com/videlec/e-antic\n\nextra:\n  recipe-maintainers:\n    - saraedum\n    - videlec\n",
  "req":{
   "__set__":true,
@@ -618,7 +637,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
