@@ -205,6 +205,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448155720.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -401,10 +418,11 @@
   }
  },
  "name":"mnelab",
- "new_version":"0.5.6",
+ "new_version":"0.5.7",
  "new_version_attempts":{
   "0.5.5":1,
-  "0.5.6":1
+  "0.5.6":1,
+  "0.5.7":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -501,7 +519,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.12.09.54.30",
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"mnelab\" %}\n{% set version = \"0.5.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8d6024b1114cf20d696704661ffc7e300f1958ee58cec359e5f0c8609c209a8b\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - mnelab = mnelab.__main__:main\n  osx_is_app: true\n  skip: true  # [py<36]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - python.app                      # [osx]\n    - pyobjc-framework-cocoa >=5.2.0  # [osx]\n    - matplotlib-base >=2.1\n    - mne >=0.20\n    - numpy >=1.14.0\n    - pebble >=4.5.0\n    - pybv\n    - pyedflib\n    - python-picard\n    - pyxdf\n    - scikit-learn\n    - scipy >=1.0.0\n    - qtpy >=1.9.0\n\ntest:\n  imports:\n    - mnelab\n    - mnelab.utils\n\nabout:\n  home: https://github.com/cbrnr/mnelab\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Graphical user interface (GUI) for MNE, a Python-based toolbox for EEG/MEG analysis.\n\nextra:\n  recipe-maintainers:\n    - hoechenberger\n",
  "req":{
   "__set__":true,
@@ -559,7 +577,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
