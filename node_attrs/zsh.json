@@ -16,10 +16,29 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449011004.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"ncurses62"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -242,7 +261,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2018.11.3",
+ "pinning_version":"2020.07.14.15.32.37",
  "raw_meta_yaml":"{% set version = \"5.6.2\" %}\n\npackage:\n  name: zsh\n  version: {{ version }}\n\nsource:\n  url: https://sourceforge.net/projects/zsh/files/zsh/{{ version }}/zsh-{{ version }}.tar.xz/download\n  fn: zsh-{{ version }}.tar.xz\n  sha256: a50bd66c0557e8eca3b8fa24e85d0de533e775d7a22df042da90488623752e9e\n  patches:\n    # Skip a test that fails on CircleCI, some filesystem weirdness\n    - skip-N-cond-test.patch  # [linux]\n\nbuild:\n  number: 1000\n  skip: true  # [win]\n  script: |\n    ./configure --prefix=\"$PREFIX\" --with-tcsetpgrp --enable-pcre\n    make\n    make check\n    make install\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - ncurses\n    - pcre\n  run:\n    - ncurses\n\ntest:\n  commands:\n    - zsh --version\n    - zsh -c 'echo hi'\n\nabout:\n  home: http://www.zsh.org\n  license: Custom\n  license_family: MIT\n  license_file: LICENCE\n  summary: 'Zsh is a shell designed for interactive use, although it is also a powerful scripting language.'\n  doc_url: http://zsh.sourceforge.net/Doc/Release/zsh_toc.html\n  dev_url: https://sourceforge.net/p/zsh/code/ci/master/tree/\n\nextra:\n  recipe-maintainers:\n    - djsutherland\n",
  "req":{
   "__set__":true,
@@ -277,7 +296,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.1.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
