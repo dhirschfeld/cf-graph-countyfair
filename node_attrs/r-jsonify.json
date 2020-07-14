@@ -93,6 +93,10 @@
  "conda-forge.yml":{
   "bot":{
    "automerge":true
+  },
+  "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
   }
  },
  "feedstock_name":"r-jsonify",
@@ -183,12 +187,186 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=jsonify",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Conversions between 'R' objects and Javascript Object Notation (JSON) using the 'rapidjsonr' library <https://CRAN.R-project.org/package=rapidjsonr>."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-jsonify",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0"
+   ]
+  },
+  "source":{
+   "sha256":"929191ab32e34af6a02ad991e29314cc78ea40763fcf232388ef2d132137fbce",
+   "url":[
+    "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('jsonify')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rapidjsonr",
+    "r-rcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rapidjsonr",
+    "r-rcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=jsonify",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Conversions between 'R' objects and Javascript Object Notation (JSON) using the 'rapidjsonr' library <https://CRAN.R-project.org/package=rapidjsonr>."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-jsonify",
+   "version":"1.2.1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0"
+   ]
+  },
+  "source":{
+   "sha256":"929191ab32e34af6a02ad991e29314cc78ea40763fcf232388ef2d132137fbce",
+   "url":[
+    "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('jsonify')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rapidjsonr",
+    "r-rcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rapidjsonr",
+    "r-rcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=jsonify",
    "license":"GPL-2",
    "license_family":"GPL2",
    "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2"
@@ -204,11 +382,17 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r"
@@ -232,9 +416,21 @@
     "make",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0",
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0",
     "r-base",
     "r-rcpp >=0.12.18",
     "r-rapidjsonr >=1.2.0",
@@ -255,6 +451,12 @@
     "r-rapidjsonr >=1.2.0",
     "r-base",
     "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0",
+    "r-base",
+    "r-rcpp >=0.12.18",
+    "r-rapidjsonr >=1.2.0",
+    "r-base",
+    "r-rcpp >=0.12.18",
     "r-rapidjsonr >=1.2.0"
    ]
   },
@@ -266,12 +468,18 @@
     "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz",
     "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz",
+    "https://cran.r-project.org/src/contrib/jsonify_1.2.1.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/jsonify/jsonify_1.2.1.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('jsonify')\"",
+    "$R -e \"library('jsonify')\"",
+    "$R -e \"library('jsonify')\"",
     "$R -e \"library('jsonify')\"",
     "$R -e \"library('jsonify')\""
    ]

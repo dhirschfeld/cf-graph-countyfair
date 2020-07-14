@@ -144,6 +144,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -229,6 +231,166 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://github.com/bertcarnell/lhs",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Provides a number of methods for creating and augmenting Latin Hypercube Samples."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-lhs",
+   "version":"1.0.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "source":{
+   "sha256":"e2945192740fb088b210786006b311d3d4e7da967733a1998380d597320c1158",
+   "url":[
+    "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('lhs')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://github.com/bertcarnell/lhs",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Provides a number of methods for creating and augmenting Latin Hypercube Samples."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-lhs",
+   "version":"1.0.2"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "source":{
+   "sha256":"e2945192740fb088b210786006b311d3d4e7da967733a1998380d597320c1158",
+   "url":[
+    "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('lhs')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://github.com/bertcarnell/lhs",
@@ -246,11 +408,17 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r"
@@ -274,9 +442,19 @@
     "make",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-rcpp",
+    "r-base",
+    "r-rcpp",
     "r-base",
     "r-rcpp",
     "r-base",
@@ -287,6 +465,10 @@
    "run":[
     "r-base",
     "gcc-libs",
+    "r-rcpp",
+    "r-base",
+    "r-rcpp",
+    "r-base",
     "r-rcpp",
     "r-base",
     "r-rcpp",
@@ -302,12 +484,18 @@
     "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz",
     "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz",
+    "https://cran.r-project.org/src/contrib/lhs_1.0.2.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/lhs/lhs_1.0.2.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('lhs')\"",
+    "$R -e \"library('lhs')\"",
+    "$R -e \"library('lhs')\"",
     "$R -e \"library('lhs')\"",
     "$R -e \"library('lhs')\""
    ]
