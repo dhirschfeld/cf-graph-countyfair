@@ -126,6 +126,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -224,12 +226,200 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"http://pbil.univ-lyon1.fr/ADE-4",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "nick-youngblut"
+   ]
+  },
+  "package":{
+   "name":"r-ade4",
+   "version":"1.7_15"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "libblas",
+    "liblapack",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ],
+   "run":[
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "source":{
+   "sha256":"3286fa7d8c372a5596e82c970c058e4cca1139a09935f14b238ba38aa9fdfdf6",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ade4')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"http://pbil.univ-lyon1.fr/ADE-4",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "nick-youngblut"
+   ]
+  },
+  "package":{
+   "name":"r-ade4",
+   "version":"1.7_15"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "libblas",
+    "liblapack",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ],
+   "run":[
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "source":{
+   "sha256":"3286fa7d8c372a5596e82c970c058e4cca1139a09935f14b238ba38aa9fdfdf6",
+   "url":[
+    "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('ade4')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"http://pbil.univ-lyon1.fr/ADE-4",
    "license":"GPL-2",
    "license_family":"GPL2",
    "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2"
@@ -245,11 +435,19 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "nick-youngblut",
+    "conda-forge/r",
+    "nick-youngblut",
     "conda-forge/r",
     "nick-youngblut",
     "conda-forge/r",
@@ -273,9 +471,25 @@
     "c_compiler_stub",
     "make",
     "c_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "make",
+    "c_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "libblas",
+    "liblapack",
+    "r-mass",
+    "r-pixmap",
+    "r-sp",
+    "r-base",
+    "libblas",
+    "liblapack",
+    "r-mass",
+    "r-pixmap",
+    "r-sp",
     "r-base",
     "libblas",
     "liblapack",
@@ -308,6 +522,14 @@
     "r-base",
     "r-mass",
     "r-pixmap",
+    "r-sp",
+    "r-base",
+    "r-mass",
+    "r-pixmap",
+    "r-sp",
+    "r-base",
+    "r-mass",
+    "r-pixmap",
     "r-sp"
    ]
   },
@@ -319,12 +541,18 @@
     "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz",
     "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz",
+    "https://cran.r-project.org/src/contrib/ade4_1.7-15.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/ade4/ade4_1.7-15.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('ade4')\"",
+    "$R -e \"library('ade4')\"",
+    "$R -e \"library('ade4')\"",
     "$R -e \"library('ade4')\"",
     "$R -e \"library('ade4')\""
    ]
