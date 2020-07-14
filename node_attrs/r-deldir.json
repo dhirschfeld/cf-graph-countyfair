@@ -158,6 +158,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -241,12 +243,170 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=deldir",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Calculates the Delaunay triangulation and the Dirichlet or Voronoi tessellation (with respect to the entire plane) of a planar point set. Plots triangulations and tessellations in various ways.  Clips tessellations to sub-windows. Calculates perimeters of tessellations.  Summarises information about the tiles of the tessellation."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-deldir",
+   "version":"0.1_25"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"f0a2f2eb511e8e99423a8f9b6ebc9073967d79629db4c86824eb0696d1a6af4d",
+   "url":[
+    "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('deldir')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=deldir",
+   "license":"GPL-2",
+   "license_family":"GPL2",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-2"
+   ],
+   "summary":"Calculates the Delaunay triangulation and the Dirichlet or Voronoi tessellation (with respect to the entire plane) of a planar point set. Plots triangulations and tessellations in various ways.  Clips tessellations to sub-windows. Calculates perimeters of tessellations.  Summarises information about the tiles of the tessellation."
+  },
+  "build":{
+   "number":"1",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-deldir",
+   "version":"0.1_25"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "sha256":"f0a2f2eb511e8e99423a8f9b6ebc9073967d79629db4c86824eb0696d1a6af4d",
+   "url":[
+    "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('deldir')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=deldir",
    "license":"GPL-2",
    "license_family":"GPL2",
    "license_file":[
+    "/lib/R/share/licenses/GPL-2",
+    "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2",
     "/lib/R/share/licenses/GPL-2"
@@ -262,11 +422,17 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r"
@@ -290,9 +456,17 @@
     "make",
     "c_compiler_stub",
     "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-base",
     "r-base",
     "r-base",
     "r-base"
@@ -300,6 +474,8 @@
    "run":[
     "r-base",
     "gcc-libs",
+    "r-base",
+    "r-base",
     "r-base",
     "r-base"
    ]
@@ -312,12 +488,18 @@
     "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz",
     "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz",
+    "https://cran.r-project.org/src/contrib/deldir_0.1-25.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/deldir/deldir_0.1-25.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('deldir')\"",
+    "$R -e \"library('deldir')\"",
+    "$R -e \"library('deldir')\"",
     "$R -e \"library('deldir')\"",
     "$R -e \"library('deldir')\""
    ]

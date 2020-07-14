@@ -158,6 +158,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -247,6 +249,174 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://git.math.uzh.ch/reinhard.furrer/dotCall64",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Provides .C64(), which is an enhanced version of .C() and .Fortran() from the foreign function interface. .C64() supports long vectors, arguments of type 64-bit integer, and provides a mechanism to avoid unnecessary copies of read-only and write-only arguments. This makes it a convenient and fast interface to C/C++ and Fortran code."
+  },
+  "build":{
+   "number":"1005",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "jsignell",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-dotcall64",
+   "version":"1.0_0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"dotCall64_1.0-0.tar.gz",
+   "sha256":"69318dc6b8aecc54d4f789c8105e672198363b395f1a764ebaeb54c0473d17ad",
+   "url":[
+    "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('dotCall64')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://git.math.uzh.ch/reinhard.furrer/dotCall64",
+   "license":"GPL (>= 2)",
+   "license_family":"GPL3",
+   "license_file":"/lib/R/share/licenses/GPL-3",
+   "summary":"Provides .C64(), which is an enhanced version of .C() and .Fortran() from the foreign function interface. .C64() supports long vectors, arguments of type 64-bit integer, and provides a mechanism to avoid unnecessary copies of read-only and write-only arguments. This makes it a convenient and fast interface to C/C++ and Fortran code."
+  },
+  "build":{
+   "number":"1005",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r",
+    "jsignell",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast"
+   ]
+  },
+  "package":{
+   "name":"r-dotcall64",
+   "version":"1.0_0"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base"
+   ],
+   "run":[
+    "r-base"
+   ]
+  },
+  "source":{
+   "fn":"dotCall64_1.0-0.tar.gz",
+   "sha256":"69318dc6b8aecc54d4f789c8105e672198363b395f1a764ebaeb54c0473d17ad",
+   "url":[
+    "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('dotCall64')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://git.math.uzh.ch/reinhard.furrer/dotCall64",
@@ -264,11 +434,31 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "jsignell",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
+    "conda-forge/r",
+    "jsignell",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer",
+    "dbast",
     "conda-forge/r",
     "jsignell",
     "johanneskoester",
@@ -313,9 +503,17 @@
     "make",
     "c_compiler_stub",
     "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-base",
     "r-base",
     "r-base",
     "r-base"
@@ -323,6 +521,8 @@
    "run":[
     "r-base",
     "gcc-libs",
+    "r-base",
+    "r-base",
     "r-base",
     "r-base"
    ]
@@ -336,12 +536,18 @@
     "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz",
     "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz",
+    "https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/dotCall64/dotCall64_1.0-0.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('dotCall64')\"",
+    "$R -e \"library('dotCall64')\"",
+    "$R -e \"library('dotCall64')\"",
     "$R -e \"library('dotCall64')\"",
     "$R -e \"library('dotCall64')\""
    ]

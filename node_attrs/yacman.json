@@ -102,16 +102,16 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
-    "michalstolarczyk"
+    "stolarczyk"
    ]
   },
   "package":{
    "name":"yacman",
-   "version":"0.6.6"
+   "version":"0.6.9"
   },
   "requirements":{
    "host":[
@@ -123,12 +123,12 @@
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9"
+    "ubiquerg >=0.6.1"
    ]
   },
   "source":{
-   "sha256":"291d5ce759b4abe8e3d14634cb30ce4971995298e18f7197633371571f5bbf15",
-   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.6.tar.gz"
+   "sha256":"e51aa08fdd5d656deea58477b9567259b3cedce544b44d279022ee30ec2025cb",
+   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.9.tar.gz"
   },
   "test":{
    "imports":[
@@ -174,18 +174,18 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
-    "michalstolarczyk",
-    "michalstolarczyk",
-    "michalstolarczyk"
+    "stolarczyk",
+    "stolarczyk",
+    "stolarczyk"
    ]
   },
   "package":{
    "name":"yacman",
-   "version":"0.6.6"
+   "version":"0.6.9"
   },
   "requirements":{
    "host":[
@@ -201,22 +201,22 @@
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9",
+    "ubiquerg >=0.6.1",
     "attmap >=0.12.9",
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9",
+    "ubiquerg >=0.6.1",
     "attmap >=0.12.9",
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9"
+    "ubiquerg >=0.6.1"
    ]
   },
   "source":{
-   "sha256":"291d5ce759b4abe8e3d14634cb30ce4971995298e18f7197633371571f5bbf15",
-   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.6.tar.gz"
+   "sha256":"e51aa08fdd5d656deea58477b9567259b3cedce544b44d279022ee30ec2025cb",
+   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.9.tar.gz"
   },
   "test":{
    "imports":[
@@ -244,16 +244,16 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
-    "michalstolarczyk"
+    "stolarczyk"
    ]
   },
   "package":{
    "name":"yacman",
-   "version":"0.6.6"
+   "version":"0.6.9"
   },
   "requirements":{
    "host":[
@@ -265,12 +265,12 @@
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9"
+    "ubiquerg >=0.6.1"
    ]
   },
   "source":{
-   "sha256":"291d5ce759b4abe8e3d14634cb30ce4971995298e18f7197633371571f5bbf15",
-   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.6.tar.gz"
+   "sha256":"e51aa08fdd5d656deea58477b9567259b3cedce544b44d279022ee30ec2025cb",
+   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.9.tar.gz"
   },
   "test":{
    "imports":[
@@ -306,7 +306,7 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set name = \"yacman\" %}\n{% set version = \"0.6.6\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 291d5ce759b4abe8e3d14634cb30ce4971995298e18f7197633371571f5bbf15\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - attmap >=0.12.9\n    - oyaml\n    - python\n    - pyyaml >=3.13\n    - ubiquerg >=0.4.9\n\ntest:\n  imports:\n    - yacman\n\nabout:\n  home: \"https://github.com/databio/yacman/\"\n  license: \"BSD-2-Clause\"\n  license_family: \"BSD\"\n  license_file: \"LICENSE.txt\"\n  summary: \"A standardized configuration object for reference genome assemblies\"\n\nextra:\n  recipe-maintainers:\n    - michalstolarczyk\n",
+ "raw_meta_yaml":"{% set name = \"yacman\" %}\n{% set version = \"0.6.9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e51aa08fdd5d656deea58477b9567259b3cedce544b44d279022ee30ec2025cb\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - attmap >=0.12.9\n    - oyaml\n    - python\n    - pyyaml >=3.13\n    - ubiquerg >=0.6.1\n\ntest:\n  imports:\n    - yacman\n\nabout:\n  home: https://github.com/databio/yacman/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A standardized configuration object for reference genome assemblies\n\nextra:\n  recipe-maintainers:\n    - stolarczyk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -366,7 +366,7 @@
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9"
+    "ubiquerg >=0.6.1"
    ]
   },
   "test":{
@@ -375,7 +375,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.4.tar.gz",
- "version":"0.6.6",
+ "version":"0.6.9",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/databio/yacman/",
@@ -387,16 +387,16 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
-    "michalstolarczyk"
+    "stolarczyk"
    ]
   },
   "package":{
    "name":"yacman",
-   "version":"0.6.6"
+   "version":"0.6.9"
   },
   "requirements":{
    "host":[
@@ -408,12 +408,12 @@
     "oyaml",
     "python",
     "pyyaml >=3.13",
-    "ubiquerg >=0.4.9"
+    "ubiquerg >=0.6.1"
    ]
   },
   "source":{
-   "sha256":"291d5ce759b4abe8e3d14634cb30ce4971995298e18f7197633371571f5bbf15",
-   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.6.tar.gz"
+   "sha256":"e51aa08fdd5d656deea58477b9567259b3cedce544b44d279022ee30ec2025cb",
+   "url":"https://pypi.io/packages/source/y/yacman/yacman-0.6.9.tar.gz"
   },
   "test":{
    "imports":[
