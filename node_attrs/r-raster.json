@@ -178,6 +178,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -269,12 +271,186 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=raster",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"Reading, writing, manipulating, analyzing and modeling of gridded spatial data. The package implements basic and high-level functions. Processing of very large files is supported. There is a also support for vector data operations such as intersections. See the manual and tutorials on <https://rspatial.org/> to get started."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-raster",
+   "version":"3.3_7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0"
+   ]
+  },
+  "source":{
+   "sha256":"7ec1f2be25cd1db04f2edbd31f29d12132733ec93d3af00f9ece9dde84da9590",
+   "url":[
+    "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('raster')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://CRAN.R-project.org/package=raster",
+   "license":"GPL-3",
+   "license_family":"GPL3",
+   "license_file":[
+    "/lib/R/share/licenses/GPL-3"
+   ],
+   "summary":"Reading, writing, manipulating, analyzing and modeling of gridded spatial data. The package implements basic and high-level functions. Processing of very large files is supported. There is a also support for vector data operations such as intersections. See the manual and tutorials on <https://rspatial.org/> to get started."
+  },
+  "build":{
+   "number":"0",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-raster",
+   "version":"3.3_7"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0"
+   ],
+   "run":[
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0"
+   ]
+  },
+  "source":{
+   "sha256":"7ec1f2be25cd1db04f2edbd31f29d12132733ec93d3af00f9ece9dde84da9590",
+   "url":[
+    "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('raster')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp",
+    "r-sp"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-rcpp",
+    "r-sp"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://CRAN.R-project.org/package=raster",
    "license":"GPL-3",
    "license_family":"GPL3",
    "license_file":[
+    "/lib/R/share/licenses/GPL-3",
+    "/lib/R/share/licenses/GPL-3",
     "/lib/R/share/licenses/GPL-3",
     "/lib/R/share/licenses/GPL-3",
     "/lib/R/share/licenses/GPL-3"
@@ -290,11 +466,17 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r"
@@ -318,9 +500,21 @@
     "make",
     "c_compiler_stub",
     "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
     "make"
    ],
    "host":[
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0",
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0",
     "r-base",
     "r-rcpp",
     "r-sp >=1.2_0",
@@ -341,6 +535,12 @@
     "r-sp >=1.2_0",
     "r-base",
     "r-rcpp",
+    "r-sp >=1.2_0",
+    "r-base",
+    "r-rcpp",
+    "r-sp >=1.2_0",
+    "r-base",
+    "r-rcpp",
     "r-sp >=1.2_0"
    ]
   },
@@ -352,12 +552,18 @@
     "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz",
     "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz",
+    "https://cran.r-project.org/src/contrib/raster_3.3-7.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/raster/raster_3.3-7.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('raster')\"",
+    "$R -e \"library('raster')\"",
+    "$R -e \"library('raster')\"",
     "$R -e \"library('raster')\"",
     "$R -e \"library('raster')\""
    ]
