@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/448753440.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2.0.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -156,7 +175,11 @@
   }
  },
  "name":"jupyter_bokeh",
- "new_version":"2.0.2",
+ "new_version":"2.0.3",
+ "new_version_attempts":{
+  "2.0.3":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/bokeh/jupyter_bokeh",
@@ -235,6 +258,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.13.05.23.11",
  "raw_meta_yaml":"{% set name = \"jupyter_bokeh\" %}\n{% set version = \"2.0.2\" %}\n\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8dc63198833e478c3231ba5a1c5492bac859f875b1dc4e8190ce308276aa01fc\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - bokeh >=2.0.0\n    - ipywidgets >=7.5.0\n    - python >=3.6\n\ntest:\n  imports:\n    - jupyter_bokeh\n    - jupyter_bokeh.nbextension\n  commands:\n    - pip check\n    - jupyter nbextension list\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/jupyter-bokeh\n  summary: A Jupyter extension for rendering Bokeh content.\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  dev_url: https://github.com/bokeh/jupyter_bokeh\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "req":{
   "__set__":true,
@@ -272,6 +296,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
