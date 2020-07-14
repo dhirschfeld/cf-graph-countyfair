@@ -1010,6 +1010,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -1148,6 +1150,272 @@
    ]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "description":"uproot (originally \u03bcproot, for \u201cmicro-Python ROOT\u201d) is a reader and a writer\nof the ROOT file format using only Python and Numpy. Unlike the standard C++\nROOT implementation, uproot is only an I/O library, primarily intended to\nstream data into machine learning libraries in Python. Unlike PyROOT and\nroot_numpy, uproot does not depend on C++ ROOT. Instead, it uses Numpy calls\nto rapidly cast data blocks in the ROOT file as Numpy arrays.\n",
+   "dev_url":"https://github.com/scikit-hep/uproot",
+   "doc_url":"https://uproot.readthedocs.io/en/latest/",
+   "home":"https://github.com/scikit-hep/uproot",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ROOT I/O in pure Python and Numpy."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "jpivarski"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"uproot-base"
+   },
+   {
+    "name":"uproot",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "uproot-base",
+      "lz4",
+      "python-xxhash",
+      "requests",
+      "xrootd",
+      "zstandard"
+     ]
+    },
+    "test":{
+     "commands":[
+      "pytest ."
+     ],
+     "imports":[
+      "uproot"
+     ],
+     "requires":[
+      "pytest",
+      "mock"
+     ],
+     "source_files":[
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"uproot-base",
+   "version":"3.11.7"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.13.1",
+    "awkward >=0.12.0,<1.0",
+    "uproot-methods >=0.7.0",
+    "cachetools"
+   ]
+  },
+  "source":{
+   "sha256":"3fbf9dfe5ce996ffda3a49d16eba804b95fb05bc041fc4e7bc05317a03bf6cba",
+   "url":"https://pypi.io/packages/source/u/uproot/uproot-3.11.7.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest ."
+   ],
+   "imports":[
+    "uproot"
+   ],
+   "requires":[
+    "pytest",
+    "mock"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "awkward",
+    "cachetools",
+    "lz4",
+    "numpy",
+    "python",
+    "python-xxhash",
+    "requests",
+    "uproot-base",
+    "uproot-methods",
+    "xrootd",
+    "zstandard"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "pytest"
+   ]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "description":"uproot (originally \u03bcproot, for \u201cmicro-Python ROOT\u201d) is a reader and a writer\nof the ROOT file format using only Python and Numpy. Unlike the standard C++\nROOT implementation, uproot is only an I/O library, primarily intended to\nstream data into machine learning libraries in Python. Unlike PyROOT and\nroot_numpy, uproot does not depend on C++ ROOT. Instead, it uses Numpy calls\nto rapidly cast data blocks in the ROOT file as Numpy arrays.\n",
+   "dev_url":"https://github.com/scikit-hep/uproot",
+   "doc_url":"https://uproot.readthedocs.io/en/latest/",
+   "home":"https://github.com/scikit-hep/uproot",
+   "license":"BSD-3-Clause",
+   "license_family":"BSD",
+   "license_file":"LICENSE",
+   "summary":"ROOT I/O in pure Python and Numpy."
+  },
+  "build":{
+   "number":"0",
+   "script":"-m pip install . --no-deps -vv"
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "chrisburr",
+    "jpivarski"
+   ]
+  },
+  "outputs":[
+   {
+    "name":"uproot-base"
+   },
+   {
+    "name":"uproot",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "uproot-base",
+      "lz4",
+      "python-xxhash",
+      "requests",
+      "xrootd",
+      "zstandard"
+     ]
+    },
+    "test":{
+     "commands":[
+      "pytest ."
+     ],
+     "imports":[
+      "uproot"
+     ],
+     "requires":[
+      "pytest",
+      "mock"
+     ],
+     "source_files":[
+      "tests"
+     ]
+    }
+   }
+  ],
+  "package":{
+   "name":"uproot-base",
+   "version":"3.11.7"
+  },
+  "requirements":{
+   "host":[
+    "python",
+    "pip",
+    "pytest-runner"
+   ],
+   "run":[
+    "python",
+    "numpy >=1.13.1",
+    "awkward >=0.12.0,<1.0",
+    "uproot-methods >=0.7.0",
+    "cachetools"
+   ]
+  },
+  "source":{
+   "sha256":"3fbf9dfe5ce996ffda3a49d16eba804b95fb05bc041fc4e7bc05317a03bf6cba",
+   "url":"https://pypi.io/packages/source/u/uproot/uproot-3.11.7.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "pytest ."
+   ],
+   "imports":[
+    "uproot"
+   ],
+   "requires":[
+    "pytest",
+    "mock"
+   ],
+   "source_files":[
+    "tests"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "pip",
+    "pytest-runner",
+    "python"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "awkward",
+    "cachetools",
+    "lz4",
+    "numpy",
+    "python",
+    "python-xxhash",
+    "requests",
+    "uproot-base",
+    "uproot-methods",
+    "xrootd",
+    "zstandard"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[
+    "mock",
+    "pytest"
+   ]
+  }
+ },
  "meta_yaml":{
   "about":{
    "description":"uproot (originally \u03bcproot, for \u201cmicro-Python ROOT\u201d) is a reader and a writer\nof the ROOT file format using only Python and Numpy. Unlike the standard C++\nROOT implementation, uproot is only an I/O library, primarily intended to\nstream data into machine learning libraries in Python. Unlike PyROOT and\nroot_numpy, uproot does not depend on C++ ROOT. Instead, it uses Numpy calls\nto rapidly cast data blocks in the ROOT file as Numpy arrays.\n",
@@ -1165,6 +1433,10 @@
   },
   "extra":{
    "recipe-maintainers":[
+    "chrisburr",
+    "jpivarski",
+    "chrisburr",
+    "jpivarski",
     "chrisburr",
     "jpivarski",
     "chrisburr",
@@ -1277,6 +1549,76 @@
       "tests"
      ]
     }
+   },
+   {
+    "name":"uproot-base"
+   },
+   {
+    "name":"uproot",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "uproot-base",
+      "lz4",
+      "python-xxhash",
+      "requests",
+      "xrootd",
+      "zstandard"
+     ]
+    },
+    "test":{
+     "commands":[
+      "pytest ."
+     ],
+     "imports":[
+      "uproot"
+     ],
+     "requires":[
+      "pytest",
+      "mock"
+     ],
+     "source_files":[
+      "tests"
+     ]
+    }
+   },
+   {
+    "name":"uproot-base"
+   },
+   {
+    "name":"uproot",
+    "requirements":{
+     "host":[
+      "python"
+     ],
+     "run":[
+      "python",
+      "uproot-base",
+      "lz4",
+      "python-xxhash",
+      "requests",
+      "xrootd",
+      "zstandard"
+     ]
+    },
+    "test":{
+     "commands":[
+      "pytest ."
+     ],
+     "imports":[
+      "uproot"
+     ],
+     "requires":[
+      "pytest",
+      "mock"
+     ],
+     "source_files":[
+      "tests"
+     ]
+    }
    }
   ],
   "package":{
@@ -1285,6 +1627,12 @@
   },
   "requirements":{
    "host":[
+    "python",
+    "pip",
+    "pytest-runner",
+    "python",
+    "pip",
+    "pytest-runner",
     "python",
     "pip",
     "pytest-runner",
@@ -1310,6 +1658,16 @@
     "numpy >=1.13.1",
     "awkward >=0.12.0,<1.0",
     "uproot-methods >=0.7.0",
+    "cachetools",
+    "python",
+    "numpy >=1.13.1",
+    "awkward >=0.12.0,<1.0",
+    "uproot-methods >=0.7.0",
+    "cachetools",
+    "python",
+    "numpy >=1.13.1",
+    "awkward >=0.12.0,<1.0",
+    "uproot-methods >=0.7.0",
     "cachetools"
    ]
   },
@@ -1321,9 +1679,13 @@
    "commands":[
     "pytest .",
     "pytest .",
+    "pytest .",
+    "pytest .",
     "pytest ."
    ],
    "imports":[
+    "uproot",
+    "uproot",
     "uproot",
     "uproot",
     "uproot"
@@ -1334,9 +1696,15 @@
     "pytest",
     "mock",
     "pytest",
+    "mock",
+    "pytest",
+    "mock",
+    "pytest",
     "mock"
    ],
    "source_files":[
+    "tests",
+    "tests",
     "tests",
     "tests",
     "tests"
