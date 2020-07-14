@@ -141,6 +141,8 @@
    "automerge":true
   },
   "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default",
    "win":"azure"
   }
  },
@@ -234,12 +236,194 @@
    "elements":[]
   }
  },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://www.math.uzh.ch/pages/spam/",
+   "license":"LGPL-2 | BSD_3_clause",
+   "license_family":"LGPL",
+   "license_file":[
+    "/lib/R/share/licenses/LGPL-2",
+    "/lib/R/share/licenses/BSD_3_clause",
+    "LICENSE"
+   ],
+   "summary":"Set of functions for sparse matrix algebra. Differences with other sparse matrix packages are: (1) we only support (essentially) one sparse matrix format, (2) based on transparent and simple structure(s), (3) tailored for MCMC calculations within G(M)RF. (4) and it is fast and scalable (with the extension package spam64). Documentation about 'spam' is provided by vignettes included in this package, see also Furrer and Sain (2010) <doi:10.18637/jss.v036.i10>; see 'citation(\"spam\")' for details."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-spam",
+   "version":"2.5_1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64"
+   ],
+   "run":[
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "source":{
+   "sha256":"d145881a0d48351ce88678a57862c0d0f716d98f3166f6338d954acacc51c067",
+   "url":[
+    "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('spam')\""
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://www.math.uzh.ch/pages/spam/",
+   "license":"LGPL-2 | BSD_3_clause",
+   "license_family":"LGPL",
+   "license_file":[
+    "/lib/R/share/licenses/LGPL-2",
+    "/lib/R/share/licenses/BSD_3_clause",
+    "LICENSE"
+   ],
+   "summary":"Set of functions for sparse matrix algebra. Differences with other sparse matrix packages are: (1) we only support (essentially) one sparse matrix format, (2) based on transparent and simple structure(s), (3) tailored for MCMC calculations within G(M)RF. (4) and it is fast and scalable (with the extension package spam64). Documentation about 'spam' is provided by vignettes included in this package, see also Furrer and Sain (2010) <doi:10.18637/jss.v036.i10>; see 'citation(\"spam\")' for details."
+  },
+  "build":{
+   "number":"2",
+   "rpaths":[
+    "lib/R/lib/",
+    "lib/"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "conda-forge/r"
+   ]
+  },
+  "package":{
+   "name":"r-spam",
+   "version":"2.5_1"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ],
+   "host":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64"
+   ],
+   "run":[
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "source":{
+   "sha256":"d145881a0d48351ce88678a57862c0d0f716d98f3166f6338d954acacc51c067",
+   "url":[
+    "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz"
+   ]
+  },
+  "test":{
+   "commands":[
+    "$R -e \"library('spam')\""
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[
+    "r-base",
+    "r-dotcall64"
+   ]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
  "meta_yaml":{
   "about":{
    "home":"https://www.math.uzh.ch/pages/spam/",
    "license":"LGPL-2 | BSD_3_clause",
    "license_family":"LGPL",
    "license_file":[
+    "/lib/R/share/licenses/LGPL-2",
+    "/lib/R/share/licenses/BSD_3_clause",
+    "LICENSE",
+    "/lib/R/share/licenses/LGPL-2",
+    "/lib/R/share/licenses/BSD_3_clause",
+    "LICENSE",
     "/lib/R/share/licenses/LGPL-2",
     "/lib/R/share/licenses/BSD_3_clause",
     "LICENSE",
@@ -261,11 +445,17 @@
     "lib/R/lib/",
     "lib/",
     "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
+    "lib/",
+    "lib/R/lib/",
     "lib/"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "conda-forge/r",
+    "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r",
     "conda-forge/r"
@@ -289,9 +479,23 @@
     "make",
     "c_compiler_stub",
     "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
+    "make",
+    "c_compiler_stub",
+    "fortran_compiler_stub",
     "make"
    ],
    "host":[
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64",
+    "libblas",
+    "liblapack",
+    "r-base",
+    "r-dotcall64",
     "libblas",
     "liblapack",
     "r-base",
@@ -312,6 +516,10 @@
     "r-base",
     "r-dotcall64",
     "r-base",
+    "r-dotcall64",
+    "r-base",
+    "r-dotcall64",
+    "r-base",
     "r-dotcall64"
    ]
   },
@@ -323,12 +531,18 @@
     "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz",
     "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz",
+    "https://cran.r-project.org/src/contrib/spam_2.5-1.tar.gz",
     "https://cran.r-project.org/src/contrib/Archive/spam/spam_2.5-1.tar.gz"
    ]
   },
   "test":{
    "commands":[
     "\"%R%\" -e \"library('spam')\"",
+    "$R -e \"library('spam')\"",
+    "$R -e \"library('spam')\"",
     "$R -e \"library('spam')\"",
     "$R -e \"library('spam')\""
    ]
