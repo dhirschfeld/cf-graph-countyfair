@@ -105,6 +105,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449162639.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.7.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -349,12 +366,13 @@
   }
  },
  "name":"ddsp",
- "new_version":"0.5.1",
+ "new_version":"0.7.0",
  "new_version_attempts":{
   "0.2.4":1,
   "0.4.0":1,
   "0.5.0":1,
-  "0.5.1":1
+  "0.5.1":1,
+  "0.7.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -463,7 +481,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.06.04.13.55.38",
+ "pinning_version":"2020.07.14.15.32.37",
  "raw_meta_yaml":"{% set name = \"ddsp\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13\n\nbuild:\n  number: 0\n  entry_points:\n    - ddsp_run = ddsp.training.ddsp_run:console_entry_point\n    - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - absl-py\n    - crepe\n    - future\n    - gin-config\n    - librosa\n    - numpy\n    - pydub\n    - python\n    - scipy\n    - six\n    - tensorflow\n    - tensorflow-datasets\n    - apache-beam  # [unix]\n\ntest:\n  imports:\n    - ddsp\n    - ddsp.colab\n    - ddsp.training\n    - ddsp.training.data_preparation  # [unix]\n    - ddsp.training.gin\n    - ddsp.training.gin.datasets\n    - ddsp.training.gin.models\n    - ddsp.training.gin.optimization\n    - ddsp.training.gin.papers\n    - ddsp.training.gin.papers.iclr2020\n\nabout:\n  home: http://github.com/magenta/ddsp\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: Differentiable Digital Signal Processing\n  doc_url: https://pypi.org/project/ddsp/\n  dev_url: https://github.com/magenta/ddsp\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n",
  "req":{
   "__set__":true,
@@ -521,7 +539,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
