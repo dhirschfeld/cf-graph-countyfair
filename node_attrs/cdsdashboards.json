@@ -40,6 +40,7 @@
   "extra":{
    "feedstock-name":"cdsdashboards",
    "recipe-maintainers":[
+    "danlester",
     "fcollonval"
    ]
   },
@@ -105,11 +106,11 @@
   ],
   "package":{
    "name":"cdsdashboards-meta",
-   "version":"0.0.19"
+   "version":"0.1.0"
   },
   "source":{
-   "sha256":"ccc6eebb9e5471e6dcef8bc7d028561a8c8649b5d7b8dfcb3472ba3796fe7867",
-   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.0.19.tar.gz"
+   "sha256":"085b72fdbc572e5baea8ffc55985cc412554c376db15af7578ddb892aa3ac59a",
+   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.1.0.tar.gz"
   }
  },
  "linux_64_requirements":{
@@ -163,8 +164,11 @@
   "extra":{
    "feedstock-name":"cdsdashboards",
    "recipe-maintainers":[
+    "danlester",
     "fcollonval",
+    "danlester",
     "fcollonval",
+    "danlester",
     "fcollonval"
    ]
   },
@@ -346,11 +350,11 @@
   ],
   "package":{
    "name":"cdsdashboards-meta",
-   "version":"0.0.19"
+   "version":"0.1.0"
   },
   "source":{
-   "sha256":"ccc6eebb9e5471e6dcef8bc7d028561a8c8649b5d7b8dfcb3472ba3796fe7867",
-   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.0.19.tar.gz"
+   "sha256":"085b72fdbc572e5baea8ffc55985cc412554c376db15af7578ddb892aa3ac59a",
+   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.1.0.tar.gz"
   }
  },
  "name":"cdsdashboards-meta",
@@ -376,6 +380,7 @@
   "extra":{
    "feedstock-name":"cdsdashboards",
    "recipe-maintainers":[
+    "danlester",
     "fcollonval"
    ]
   },
@@ -441,11 +446,11 @@
   ],
   "package":{
    "name":"cdsdashboards-meta",
-   "version":"0.0.19"
+   "version":"0.1.0"
   },
   "source":{
-   "sha256":"ccc6eebb9e5471e6dcef8bc7d028561a8c8649b5d7b8dfcb3472ba3796fe7867",
-   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.0.19.tar.gz"
+   "sha256":"085b72fdbc572e5baea8ffc55985cc412554c376db15af7578ddb892aa3ac59a",
+   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.1.0.tar.gz"
   }
  },
  "osx_64_requirements":{
@@ -487,7 +492,7 @@
   "cdsdashboards-singleuser"
  ],
  "pinning_version":"2020.07.13.05.23.11",
- "raw_meta_yaml":"{% set name = \"cdsdashboards\" %}\n{% set version = \"0.0.19\" %}\n{% set build_number = \"0\" %}\n\npackage:\n  name: {{ name|lower }}-meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: ccc6eebb9e5471e6dcef8bc7d028561a8c8649b5d7b8dfcb3472ba3796fe7867\n\nbuild:\n  noarch: python\n  number: {{ build_number }}\n\noutputs:\n  - name: {{ name|lower }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n    script: build_base.sh\n    requirements:\n      host:\n        - python >=3.6.0,<4.0.0\n        - pip\n      run:\n        - python >=3.6.0,<4.0.0\n        - tornado >=5.1\n        - traitlets\n        - jupyterhub >=1.0.0\n        - alembic\n        - pluggy\n    test:\n      imports:\n        - cdsdashboards\n  - name: {{ name|lower }}-singleuser\n    build:\n      number: {{ build_number }}\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(name, exact=True) }}\n        - jhsingle-native-proxy >=0.3.1\n        - bokeh-root-cmd >=0.0.4\n        - plotlydash-tornado-cmd >=0.0.4\n    test:\n      requires:\n        - bokeh\n      imports:\n        - cdsdashboards\n        - jhsingle_native_proxy\n        - bokeh_root_cmd\n        - plotlydash_tornado_cmd\n      commands:\n        - jhsingle-native-proxy --help\n        - bokeh-root-cmd --help\n        - plotlydash-tornado-cmd --help\n\nabout:\n  home: https://github.com/ideonate/cdsdashboards\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A Dashboard publishing solution for Data Science teams to share results with decision makers.'\n  doc_url: https://cdsdashboards.readthedocs.io/\n  dev_url: https://github.com/ideonate/cdsdashboards\n\nextra:\n  feedstock-name: {{ name|lower }}\n  recipe-maintainers:\n    - fcollonval\n",
+ "raw_meta_yaml":"{% set name = \"cdsdashboards\" %}\n{% set version = \"0.1.0\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name|lower }}-meta\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 085b72fdbc572e5baea8ffc55985cc412554c376db15af7578ddb892aa3ac59a\n\nbuild:\n  noarch: python\n  number: {{ build_number }}\n\noutputs:\n  - name: {{ name|lower }}\n    build:\n      number: {{ build_number }}\n      noarch: python\n    script: build_base.sh\n    requirements:\n      host:\n        - python >=3.6.0,<4.0.0\n        - pip\n      run:\n        - python >=3.6.0,<4.0.0\n        - tornado >=5.1\n        - traitlets\n        - jupyterhub >=1.0.0\n        - alembic\n        - pluggy\n    test:\n      imports:\n        - cdsdashboards\n  - name: {{ name|lower }}-singleuser\n    build:\n      number: {{ build_number }}\n      noarch: generic\n    requirements:\n      run:\n        - {{ pin_subpackage(name, exact=True) }}\n        - jhsingle-native-proxy >=0.3.1\n        - bokeh-root-cmd >=0.0.4\n        - plotlydash-tornado-cmd >=0.0.4\n    test:\n      requires:\n        - bokeh\n      imports:\n        - cdsdashboards\n        - jhsingle_native_proxy\n        - bokeh_root_cmd\n        - plotlydash_tornado_cmd\n      commands:\n        - jhsingle-native-proxy --help\n        - bokeh-root-cmd --help\n        - plotlydash-tornado-cmd --help\n\nabout:\n  home: https://github.com/ideonate/cdsdashboards\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A Dashboard publishing solution for Data Science teams to share results with decision makers.\n  doc_url: https://cdsdashboards.readthedocs.io/\n  dev_url: https://github.com/ideonate/cdsdashboards\n\nextra:\n  feedstock-name: {{ name|lower }}\n  recipe-maintainers:\n    - danlester\n    - fcollonval\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -575,7 +580,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.0.19.tar.gz",
- "version":"0.0.19",
+ "version":"0.1.0",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/ideonate/cdsdashboards",
@@ -593,6 +598,7 @@
   "extra":{
    "feedstock-name":"cdsdashboards",
    "recipe-maintainers":[
+    "danlester",
     "fcollonval"
    ]
   },
@@ -658,11 +664,11 @@
   ],
   "package":{
    "name":"cdsdashboards-meta",
-   "version":"0.0.19"
+   "version":"0.1.0"
   },
   "source":{
-   "sha256":"ccc6eebb9e5471e6dcef8bc7d028561a8c8649b5d7b8dfcb3472ba3796fe7867",
-   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.0.19.tar.gz"
+   "sha256":"085b72fdbc572e5baea8ffc55985cc412554c376db15af7578ddb892aa3ac59a",
+   "url":"https://pypi.io/packages/source/c/cdsdashboards/cdsdashboards-0.1.0.tar.gz"
   }
  },
  "win_64_requirements":{
