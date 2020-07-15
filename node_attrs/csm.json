@@ -51,12 +51,12 @@
   "about":{
    "description":"csm is a C++ API for terrestrial and planetary sensor models\n",
    "home":"http://github.com/sminster/csm",
-   "license":"Public Domain",
+   "license":"Unlicense",
    "license_file":"LICENSE",
    "summary":"The Community Sensor Model API"
   },
   "build":{
-   "number":"1001"
+   "number":"1002"
   },
   "extra":{
    "recipe-maintainers":[
@@ -69,10 +69,9 @@
   },
   "requirements":{
    "build":[
-    "cxx_compiler_stub"
-   ],
-   "host":[
-    "cmake"
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
    ]
   },
   "source":{
@@ -94,14 +93,14 @@
   "build":{
    "__set__":true,
    "elements":[
-    "cxx_compiler_stub"
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[
-    "cmake"
-   ]
+   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -116,12 +115,12 @@
   "about":{
    "description":"csm is a C++ API for terrestrial and planetary sensor models\n",
    "home":"http://github.com/sminster/csm",
-   "license":"Public Domain",
+   "license":"Unlicense",
    "license_file":"LICENSE",
    "summary":"The Community Sensor Model API"
   },
   "build":{
-   "number":"1001"
+   "number":"1002"
   },
   "extra":{
    "recipe-maintainers":[
@@ -136,12 +135,13 @@
   },
   "requirements":{
    "build":[
-    "cxx_compiler_stub"
-   ],
-   "host":[
     "cmake",
+    "ninja",
     "cmake",
-    "cmake"
+    "ninja",
+    "cxx_compiler_stub",
+    "cmake",
+    "ninja"
    ]
   },
   "source":{
@@ -156,6 +156,7 @@
   "test":{
    "commands":[
     "if not exist %LIBRARY_BIN%\\csmapi.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\csmapi.lib exit 1",
     "if not exist %LIBRARY_INC%\\csm\\Ellipsoid.h exit 1",
     "test -e $PREFIX/lib/libcsmapi.dylib",
     "test -e $PREFIX/include/csm/Isd.h",
@@ -172,12 +173,12 @@
   "about":{
    "description":"csm is a C++ API for terrestrial and planetary sensor models\n",
    "home":"http://github.com/sminster/csm",
-   "license":"Public Domain",
+   "license":"Unlicense",
    "license_file":"LICENSE",
    "summary":"The Community Sensor Model API"
   },
   "build":{
-   "number":"1001"
+   "number":"1002"
   },
   "extra":{
    "recipe-maintainers":[
@@ -189,9 +190,9 @@
    "version":"v3.0.3.1"
   },
   "requirements":{
-   "build":null,
-   "host":[
-    "cmake"
+   "build":[
+    "cmake",
+    "ninja"
    ]
   },
   "source":{
@@ -212,13 +213,14 @@
  "osx_64_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake",
+    "ninja"
+   ]
   },
   "host":{
    "__set__":true,
-   "elements":[
-    "cmake"
-   ]
+   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -230,26 +232,27 @@
   }
  },
  "pinning_version":"2020.01.10",
- "raw_meta_yaml":"{% set name = \"csm\" %}\n{% set version = \"v3.0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sminster/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: dbb207704c54d9d0358c77e1773f6a11272110d4c609bde75f88eb78767da1a1\n  patches:\n     - patches/add_cmake.patch  # Adds the CMake build system\n\nbuild:\n  number: 1001\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [linux]\n  host:\n    - cmake\n\ntest:\n  commands:\n    - test -e $PREFIX/lib/libcsmapi.so  # [linux]\n    - test -e $PREFIX/lib/libcsmapi.dylib  # [osx]\n    - test -e $PREFIX/include/csm/Isd.h  # [not win]\n    - test -e $PREFIX/include/csm/csm.h  # [not win]\n    - if not exist %LIBRARY_BIN%\\csmapi.dll exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\csm\\Ellipsoid.h exit 1  # [win]\n\nabout:\n  home: http://github.com/sminster/csm\n  license: Public Domain\n  license_file: LICENSE\n  summary: 'The Community Sensor Model API'\n  description: |\n    csm is a C++ API for terrestrial and planetary sensor models\n\nextra:\n  recipe-maintainers:\n    - jlaura\n",
+ "raw_meta_yaml":"{% set name = \"csm\" %}\n{% set version = \"v3.0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sminster/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: dbb207704c54d9d0358c77e1773f6a11272110d4c609bde75f88eb78767da1a1\n  patches:\n     - patches/add_cmake.patch  # Adds the CMake build system\n\nbuild:\n  number: 1002\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}  # [linux]\n    - cmake\n    - ninja\n\ntest:\n  commands:\n    - test -e $PREFIX/lib/libcsmapi.so  # [linux]\n    - test -e $PREFIX/lib/libcsmapi.dylib  # [osx]\n    - test -e $PREFIX/include/csm/Isd.h  # [not win]\n    - test -e $PREFIX/include/csm/csm.h  # [not win]\n    - if not exist %LIBRARY_BIN%\\csmapi.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\csmapi.lib exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\csm\\Ellipsoid.h exit 1  # [win]\n\nabout:\n  home: http://github.com/sminster/csm\n  license: Unlicense\n  license_file: LICENSE\n  summary: 'The Community Sensor Model API'\n  description: |\n    csm is a C++ API for terrestrial and planetary sensor models\n\nextra:\n  recipe-maintainers:\n    - jlaura\n",
  "req":{
   "__set__":true,
   "elements":[
    "cmake",
-   "cxx_compiler_stub"
+   "cxx_compiler_stub",
+   "ninja"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "cxx_compiler_stub"
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[
-    "cmake"
-   ]
+   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -266,14 +269,14 @@
   "build":{
    "__set__":true,
    "elements":[
-    "cxx_compiler_stub"
+    "cmake",
+    "cxx_compiler_stub",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[
-    "cmake"
-   ]
+   "elements":[]
   },
   "run":{
    "__set__":true,
@@ -290,12 +293,12 @@
   "about":{
    "description":"csm is a C++ API for terrestrial and planetary sensor models\n",
    "home":"http://github.com/sminster/csm",
-   "license":"Public Domain",
+   "license":"Unlicense",
    "license_file":"LICENSE",
    "summary":"The Community Sensor Model API"
   },
   "build":{
-   "number":"1001"
+   "number":"1002"
   },
   "extra":{
    "recipe-maintainers":[
@@ -307,9 +310,9 @@
    "version":"v3.0.3.1"
   },
   "requirements":{
-   "build":null,
-   "host":[
-    "cmake"
+   "build":[
+    "cmake",
+    "ninja"
    ]
   },
   "source":{
@@ -322,6 +325,7 @@
   "test":{
    "commands":[
     "if not exist %LIBRARY_BIN%\\csmapi.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\csmapi.lib exit 1",
     "if not exist %LIBRARY_INC%\\csm\\Ellipsoid.h exit 1"
    ]
   }
@@ -329,13 +333,14 @@
  "win_64_requirements":{
   "build":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cmake",
+    "ninja"
+   ]
   },
   "host":{
    "__set__":true,
-   "elements":[
-    "cmake"
-   ]
+   "elements":[]
   },
   "run":{
    "__set__":true,
