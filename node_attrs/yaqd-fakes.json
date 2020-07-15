@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449187192.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.7.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -213,10 +230,11 @@
   }
  },
  "name":"yaqd-fakes",
- "new_version":"2020.7.3",
+ "new_version":"2020.7.4",
  "new_version_attempts":{
   "2020.7.2":1,
-  "2020.7.3":1
+  "2020.7.3":1,
+  "2020.7.4":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -304,7 +322,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.14.15.32.37",
  "raw_meta_yaml":"{% set name = \"yaqd-fakes\" %}\n{% set version = \"2020.7.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6eede868b1f91bbdc6663213f4fa8a671933a63e088eae6745fcdae660a3c086\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - yaqd-fake-continuous-hardware = yaqd_fakes._fake_continuous_hardware:FakeContinuousHardware.main\n    - yaqd-fake-discrete-hardware = yaqd_fakes._fake_discrete_hardware:FakeDiscreteHardware.main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - flit\n    - python >=3.7\n    - yaqd-core >=2020.05.1\n  run:\n    - python >=3.7\n    - yaqd-core >=2020.05.1\n\ntest:\n  imports:\n    - yaqd_fakes\n  commands:\n    - pip check\n    - yaqd-fake-continuous-hardware --help\n    - yaqd-fake-discrete-hardware --help\n  requires:\n    - pip\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaq-python\n  summary: fake yaq daemons, for testing purposes\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,

@@ -152,6 +152,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449187259.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.7.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -316,7 +333,7 @@
   }
  },
  "name":"yaqd-core",
- "new_version":"2020.7.2",
+ "new_version":"2020.7.3",
  "new_version_attempts":{
   "0.6.0":1,
   "0.7.0":1,
@@ -329,7 +346,8 @@
   "2020.6.3":14,
   "2020.7.0":3,
   "2020.7.1":1,
-  "2020.7.2":1
+  "2020.7.2":1,
+  "2020.7.3":1
  },
  "new_version_errors":{
   "2020.6.3":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '2020.6.3' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n",
@@ -415,7 +433,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.14.15.32.37",
  "raw_meta_yaml":"{% set name = \"yaqd-core\" %}\n{% set version = \"2020.7.2\" %}\n{% set sha256 = \"0fab5f66103b8ff49c5c3f52d91d16fbc3fe759293d18159e68e16d312c08207\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - appdirs\n    - toml\n    - fastavro\n    - flit\n    - python >=3.7\n    - pip\n  run:\n    - python >=3.7\n    - appdirs\n    - toml\n    - fastavro\n\ntest:\n  imports:\n    - yaqd_core\n\nabout:\n  home: https://yaq.fyi\n  dev_url: https://gitlab.com/yaq/yaq-python\n  license: LGPL-3.0-only\n  license_family: LGPL\n  license_file: LICENSE\n  summary: Core python package for implementing yaq deamons, and associated utilities.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
