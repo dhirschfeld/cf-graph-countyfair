@@ -37,7 +37,11 @@
  ],
  "archived":false,
  "bad":false,
- "conda-forge.yml":{},
+ "conda-forge.yml":{
+  "bot":{
+   "automerge":true
+  }
+ },
  "feedstock_name":"aws-okta-keyman",
  "hash_type":"sha256",
  "linux_64_meta_yaml":{
@@ -49,7 +53,7 @@
   },
   "build":{
    "entry_points":[
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point"
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point"
    ],
    "noarch":"python",
    "number":"0",
@@ -62,7 +66,7 @@
   },
   "package":{
    "name":"aws-okta-keyman",
-   "version":"0.8.1"
+   "version":"0.8.3"
   },
   "requirements":{
    "host":[
@@ -83,8 +87,8 @@
    ]
   },
   "source":{
-   "sha256":"00f2ff2776799388a2a4fb37910664eb2101ecb8b334d599da735a77726af112",
-   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.1.tar.gz"
+   "sha256":"865ba7ef2c5718b5db63007798b96b87b2390a609dca9fe8bd6b99df5c003a75",
+   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -143,9 +147,9 @@
   },
   "build":{
    "entry_points":[
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point",
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point",
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point"
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point",
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point",
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point"
    ],
    "noarch":"python",
    "number":"0",
@@ -160,7 +164,7 @@
   },
   "package":{
    "name":"aws-okta-keyman",
-   "version":"0.8.1"
+   "version":"0.8.3"
   },
   "requirements":{
    "host":[
@@ -205,8 +209,8 @@
    ]
   },
   "source":{
-   "sha256":"00f2ff2776799388a2a4fb37910664eb2101ecb8b334d599da735a77726af112",
-   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.1.tar.gz"
+   "sha256":"865ba7ef2c5718b5db63007798b96b87b2390a609dca9fe8bd6b99df5c003a75",
+   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -248,7 +252,7 @@
   },
   "build":{
    "entry_points":[
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point"
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point"
    ],
    "noarch":"python",
    "number":"0",
@@ -261,7 +265,7 @@
   },
   "package":{
    "name":"aws-okta-keyman",
-   "version":"0.8.1"
+   "version":"0.8.3"
   },
   "requirements":{
    "host":[
@@ -282,8 +286,8 @@
    ]
   },
   "source":{
-   "sha256":"00f2ff2776799388a2a4fb37910664eb2101ecb8b334d599da735a77726af112",
-   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.1.tar.gz"
+   "sha256":"865ba7ef2c5718b5db63007798b96b87b2390a609dca9fe8bd6b99df5c003a75",
+   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.3.tar.gz"
   },
   "test":{
    "commands":[
@@ -334,7 +338,7 @@
   }
  },
  "pinning_version":"2020.07.14.15.32.37",
- "raw_meta_yaml":"{% set name = \"aws-okta-keyman\" %}\n{% set version = \"0.8.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 00f2ff2776799388a2a4fb37910664eb2101ecb8b334d599da735a77726af112\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - aws_okta_keyman = aws_okta_keyman.main:entry_point\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - python >=3.6\n  run:\n    - beautifulsoup4 >=4.4.0\n    - boto3 >=1.4.0\n    - colorlog >=4.0.0\n    - configparser >=3.5.0\n    - future >=0.16.0\n    - keyring >=18.0.0\n    - python >=3.6\n    - pyyaml >=5.0\n    - requests >=2.10.0\n\ntest:\n  imports:\n    - aws_okta_keyman\n    - aws_okta_keyman.test\n  commands:\n    - pip check\n    - aws_okta_keyman --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/nathan-v/aws_okta_keyman\n  summary: AWS Okta Keyman\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "raw_meta_yaml":"{% set name = \"aws-okta-keyman\" %}\n{% set version = \"0.8.3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz\n  sha256: 865ba7ef2c5718b5db63007798b96b87b2390a609dca9fe8bd6b99df5c003a75\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - aws_okta_keyman = aws_okta_keyman.__main__:entry_point\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest-runner\n    - python >=3.6\n  run:\n    - beautifulsoup4 >=4.4.0\n    - boto3 >=1.4.0\n    - colorlog >=4.0.0\n    - configparser >=3.5.0\n    - future >=0.16.0\n    - keyring >=18.0.0\n    - python >=3.6\n    - pyyaml >=5.0\n    - requests >=2.10.0\n\ntest:\n  imports:\n    - aws_okta_keyman\n    - aws_okta_keyman.test\n  commands:\n    - pip check\n    - aws_okta_keyman --help\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/nathan-v/aws_okta_keyman\n  summary: AWS Okta Keyman\n  license: Apache-2.0\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -422,7 +426,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.1.tar.gz",
- "version":"0.8.1",
+ "version":"0.8.3",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/nathan-v/aws_okta_keyman",
@@ -432,7 +436,7 @@
   },
   "build":{
    "entry_points":[
-    "aws_okta_keyman = aws_okta_keyman.main:entry_point"
+    "aws_okta_keyman = aws_okta_keyman.__main__:entry_point"
    ],
    "noarch":"python",
    "number":"0",
@@ -445,7 +449,7 @@
   },
   "package":{
    "name":"aws-okta-keyman",
-   "version":"0.8.1"
+   "version":"0.8.3"
   },
   "requirements":{
    "host":[
@@ -466,8 +470,8 @@
    ]
   },
   "source":{
-   "sha256":"00f2ff2776799388a2a4fb37910664eb2101ecb8b334d599da735a77726af112",
-   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.1.tar.gz"
+   "sha256":"865ba7ef2c5718b5db63007798b96b87b2390a609dca9fe8bd6b99df5c003a75",
+   "url":"https://pypi.io/packages/source/a/aws-okta-keyman/aws_okta_keyman-0.8.3.tar.gz"
   },
   "test":{
    "commands":[
