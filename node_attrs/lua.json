@@ -61,6 +61,25 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449616812.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"ncurses62"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -338,7 +357,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.07.01",
+ "pinning_version":"2020.07.15.13.14.37",
  "raw_meta_yaml":"{% set version = \"5.3.5\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  - url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n    sha256: 0c2eed3f960446e1a3e4b9a1ca2f3ff893b6ce41942cf54d5dd59ab4b3b058ac\n    patches:\n      # Enables Lua to look for packages on a relative path\n      - luaconf.patch\n      # Enables readline on linux\n      - Makefile.patch\n  - path: CMakeLists.txt\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - vs2017_win-64  # [win64]\n    - vs2017_win-32  # [win32]\n    - ninja  # [win]\n    - cmake  # [win]\n    - sed  # [unix]\n  host:\n    - readline  # [not win]\n    - ncurses  # [not win]\n  run:\n    - readline  # [not win]\n    - ncurses  # [not win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\lua.h exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.dll exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\lua.exe exit 1  # [win]\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n  license_file: doc/readme.html\n\nextra:\n  recipe-maintainers:\n    - alexbw\n    - seanyen\n",
  "req":{
   "__set__":true,
@@ -382,7 +401,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.0",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
