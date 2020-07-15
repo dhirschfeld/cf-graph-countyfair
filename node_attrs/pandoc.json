@@ -266,6 +266,10 @@
  "hash_type":"sha256",
  "linux_64_meta_yaml":{
   "about":{
+   "description":"Pandoc is a Haskell library for converting from one markup format to\nanother, and a command-line tool that uses this library.\n",
+   "dev_url":"https://github.com/jgm/pandoc",
+   "doc_source_url":"https://github.com/jgm/pandoc/tree/master/doc",
+   "doc_url":"http://pandoc.org/MANUAL.html",
    "home":"http://pandoc.org/",
    "license":"GPL-2.0",
    "license_family":"GPL",
@@ -319,6 +323,10 @@
  },
  "meta_yaml":{
   "about":{
+   "description":"Pandoc is a Haskell library for converting from one markup format to\nanother, and a command-line tool that uses this library.\n",
+   "dev_url":"https://github.com/jgm/pandoc",
+   "doc_source_url":"https://github.com/jgm/pandoc/tree/master/doc",
+   "doc_url":"http://pandoc.org/MANUAL.html",
    "home":"http://pandoc.org/",
    "license":"GPL-2.0",
    "license_family":"GPL",
@@ -375,6 +383,10 @@
  "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
+   "description":"Pandoc is a Haskell library for converting from one markup format to\nanother, and a command-line tool that uses this library.\n",
+   "dev_url":"https://github.com/jgm/pandoc",
+   "doc_source_url":"https://github.com/jgm/pandoc/tree/master/doc",
+   "doc_url":"http://pandoc.org/MANUAL.html",
    "home":"http://pandoc.org/",
    "license":"GPL-2.0",
    "license_family":"GPL",
@@ -433,7 +445,7 @@
   }
  },
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"2.10\" %}\n\npackage:\n  name: pandoc\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]\n  sha256: adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6  # [linux64]\n\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]\n  sha256: 5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9  # [osx]\n\n  fn: pandoc.msi  # [win]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]\n  sha256: fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef  # [win]\n\nbuild:\n  number: 0\n  binary_relocation: false  # [osx]\n  missing_dso_whitelist:\n    - /usr/lib/libiconv.2.dylib  # [osx]\n    - /usr/lib/libz.1.dylib  # [osx]\n    - /usr/lib/libcharset.1.dylib  # [osx]\n\ntest:\n  commands:\n    - type pandoc  # [osx]\n    - pandoc --version\n    - pandoc --help\n\nabout:\n  home: http://pandoc.org/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Universal markup converter (repackaged binaries)\n\nextra:\n  recipe-maintainers:\n    - jankatins\n    - ocefpaf\n    - dhimmel\n    - kiwi0fruit\n",
+ "raw_meta_yaml":"{% set version = \"2.10\" %}\n\npackage:\n  name: pandoc\n  version: {{ version }}  # [not ppc64le]\n  version: 2.2.1  # [ppc64le]\n\nsource:\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]\n  sha256: adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6  # [linux64]\n\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]\n  sha256: 5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9  # [osx]\n\n  fn: pandoc.msi  # [win]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]\n  sha256: fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef  # [win]\n\n  # repackage the RPM built for EPEL\n  url: https://copr-be.cloud.fedoraproject.org/results/petersen/pandoc/epel-7-ppc64le/00770404-pandoc/pandoc-2.2.1-1.el7.ppc64le.rpm  # [ppc64le]\n  sha256: 5a9818493f8b14821c5fb44234c898f776faf011089dc77e1dcf6ba3e51e0a81  # [ppc64le]\n\nbuild:\n  number: 0\n  binary_relocation: false  # [osx]\n  missing_dso_whitelist:\n    - /usr/lib/libiconv.2.dylib  # [osx]\n    - /usr/lib/libz.1.dylib  # [osx]\n    - /usr/lib/libcharset.1.dylib  # [osx]\n\n# The pandoc binary from the RPM depends on libgmp, libz and libffi and system libraries.\n# Add these as host requirements to pick up the correct run_exports\n{% if ARCH == \"ppc64le\" %}\nrequirements:\n  build:\n    - patchelf\n    - {{ compiler('c') }}\n  host:\n    - gmp 6.1.2\n    - zlib 1.2.11\n    - libffi 3.3\n{% endif %}\n\ntest:\n  commands:\n    - type pandoc  # [osx]\n    - pandoc --version\n    - pandoc --help\n\nabout:\n  home: http://pandoc.org/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Universal markup converter (repackaged binaries)\n  description: |\n    Pandoc is a Haskell library for converting from one markup format to\n    another, and a command-line tool that uses this library.\n  doc_url: http://pandoc.org/MANUAL.html\n  dev_url: https://github.com/jgm/pandoc\n  doc_source_url: https://github.com/jgm/pandoc/tree/master/doc\n\nextra:\n  recipe-maintainers:\n    - jankatins\n    - ocefpaf\n    - dhimmel\n    - kiwi0fruit\n",
  "req":{
   "__set__":true,
   "elements":[]
@@ -480,6 +492,10 @@
  "version":"2.10",
  "win_64_meta_yaml":{
   "about":{
+   "description":"Pandoc is a Haskell library for converting from one markup format to\nanother, and a command-line tool that uses this library.\n",
+   "dev_url":"https://github.com/jgm/pandoc",
+   "doc_source_url":"https://github.com/jgm/pandoc/tree/master/doc",
+   "doc_url":"http://pandoc.org/MANUAL.html",
    "home":"http://pandoc.org/",
    "license":"GPL-2.0",
    "license_family":"GPL",
