@@ -115,6 +115,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449692088.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -276,10 +293,11 @@
   }
  },
  "name":"pytest-timeout",
- "new_version":"1.4.1",
+ "new_version":"1.4.2",
  "new_version_attempts":{
   "1.4.0":1,
-  "1.4.1":1
+  "1.4.1":1,
+  "1.4.2":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -362,7 +380,7 @@
    ]
   }
  },
- "pinning_version":"2020.06.15.11.48.40",
+ "pinning_version":"2020.07.15.18.18.04",
  "raw_meta_yaml":"{% set name = \"pytest-timeout\" %}\n{% set version = \"1.4.1\" %}\n{% set hash = \"6d0fb4ce74cebb81be252e4e0d9c2a91f30270b33208cfa0f1da6eed9abf18ac\" %}\n{% set ext = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ ext }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ ext }}\n  sha256: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n\nrequirements:\n  host:\n    - pip\n    - python\n    - setuptools\n  run:\n    - python\n    - pytest >=3.6.0\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - pytest_timeout\n  commands:\n    - py.test --help\n\nabout:\n  home: https://bitbucket.org/pytest-dev/pytest-timeout\n  license: MIT\n  license_file: LICENSE\n  summary: This is a plugin which will terminate tests after a certain timeout.\n  description: |\n    pytest-timeout is a plugin which will terminate tests after a certain timeout.\n    When doing so it will show a stack dump of all threads running at the time.\n  doc_url: https://pypi.python.org/pypi/pytest-timeout\n  dev_url: https://bitbucket.org/pytest-dev/pytest-timeout\n\nextra:\n  recipe-maintainers:\n    - flub\n    - nicoddemus\n",
  "req":{
   "__set__":true,
@@ -400,7 +418,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.3\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

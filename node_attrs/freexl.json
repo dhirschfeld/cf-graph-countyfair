@@ -54,7 +54,11 @@
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
-  "max_r_ver":"35"
+  "max_r_ver":"35",
+  "provider":{
+   "linux_aarch64":"default",
+   "linux_ppc64le":"default"
+  }
  },
  "feedstock_name":"freexl",
  "hash_type":"sha256",
@@ -85,10 +89,14 @@
    "build":[
     "c_compiler_stub"
    ],
-   "host":null
+   "host":[
+    "make"
+   ]
   },
   "source":{
-   "patches":null,
+   "patches":[
+    "aarch64.patch"
+   ],
    "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
    "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
   },
@@ -108,7 +116,143 @@
   },
   "host":{
    "__set__":true,
+   "elements":[
+    "make"
+   ]
+  },
+  "run":{
+   "__set__":true,
    "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_aarch64_meta_yaml":{
+  "about":{
+   "home":"https://www.gaia-gis.it/fossil/freexl/index",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"Extract valid data from within an Excel"
+  },
+  "build":{
+   "number":"1002",
+   "run_exports":[
+    "freexl"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"freexl",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "make"
+   ]
+  },
+  "source":{
+   "patches":[
+    "aarch64.patch"
+   ],
+   "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
+   "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libfreexl.a",
+    "conda inspect linkages -p ${PREFIX} $PKG_NAME"
+   ]
+  }
+ },
+ "linux_aarch64_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "make"
+   ]
+  },
+  "run":{
+   "__set__":true,
+   "elements":[]
+  },
+  "test":{
+   "__set__":true,
+   "elements":[]
+  }
+ },
+ "linux_ppc64le_meta_yaml":{
+  "about":{
+   "home":"https://www.gaia-gis.it/fossil/freexl/index",
+   "license":"LGPL-2.1",
+   "license_file":"COPYING",
+   "summary":"Extract valid data from within an Excel"
+  },
+  "build":{
+   "number":"1002",
+   "run_exports":[
+    "freexl"
+   ]
+  },
+  "extra":{
+   "recipe-maintainers":[
+    "ocefpaf",
+    "msarahan"
+   ]
+  },
+  "package":{
+   "name":"freexl",
+   "version":"1.0.5"
+  },
+  "requirements":{
+   "build":[
+    "c_compiler_stub"
+   ],
+   "host":[
+    "make"
+   ]
+  },
+  "source":{
+   "patches":[
+    "aarch64.patch"
+   ],
+   "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
+   "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
+  },
+  "test":{
+   "commands":[
+    "test -f ${PREFIX}/lib/libfreexl.a",
+    "conda inspect linkages -p ${PREFIX} $PKG_NAME"
+   ]
+  }
+ },
+ "linux_ppc64le_requirements":{
+  "build":{
+   "__set__":true,
+   "elements":[
+    "c_compiler_stub"
+   ]
+  },
+  "host":{
+   "__set__":true,
+   "elements":[
+    "make"
+   ]
   },
   "run":{
    "__set__":true,
@@ -131,11 +275,17 @@
    "run_exports":[
     "freexl",
     "freexl",
+    "freexl",
+    "freexl",
     "freexl"
    ]
   },
   "extra":{
    "recipe-maintainers":[
+    "ocefpaf",
+    "msarahan",
+    "ocefpaf",
+    "msarahan",
     "ocefpaf",
     "msarahan",
     "ocefpaf",
@@ -152,12 +302,30 @@
    "build":[
     "c_compiler_stub",
     "c_compiler_stub",
+    "c_compiler_stub",
+    "c_compiler_stub",
     "c_compiler_stub"
    ],
-   "host":null
+   "host":[
+    "libiconv",
+    "make",
+    "make",
+    "make",
+    "make",
+    "make"
+   ]
   },
   "source":{
-   "patches":null,
+   "patches":[
+    "makefile.vc.patch",
+    "nmake.opt.patch",
+    "freexl.c.patch",
+    "aarch64.patch",
+    "aarch64.patch",
+    "aarch64.patch",
+    "aarch64.patch",
+    "aarch64.patch"
+   ],
    "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
    "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
   },
@@ -197,10 +365,14 @@
    "build":[
     "c_compiler_stub"
    ],
-   "host":null
+   "host":[
+    "make"
+   ]
   },
   "source":{
-   "patches":null,
+   "patches":[
+    "aarch64.patch"
+   ],
    "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
    "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
   },
@@ -220,7 +392,9 @@
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "make"
+   ]
   },
   "run":{
    "__set__":true,
@@ -232,11 +406,13 @@
   }
  },
  "pinning_version":"2020.05.04.05.46.47",
- "raw_meta_yaml":"{% set version = \"1.0.5\" %}\n\npackage:\n  name: freexl\n  version: {{ version }}\n\nsource:\n  url: http://www.gaia-gis.it/gaia-sins/freexl-{{ version }}.tar.gz\n  sha256: 3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d\n  patches:\n    - makefile.vc.patch  # [win]\n    - nmake.opt.patch  # [win]\n    - freexl.c.patch  # [win]\n\nbuild:\n  number: 1002\n  run_exports:\n    - {{ pin_subpackage('freexl') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - libiconv  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libfreexl.a  # [unix]\n    - conda inspect linkages -p ${PREFIX} $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.gaia-gis.it/fossil/freexl/index\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: 'Extract valid data from within an Excel'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - msarahan\n",
+ "raw_meta_yaml":"{% set version = \"1.0.5\" %}\n\npackage:\n  name: freexl\n  version: {{ version }}\n\nsource:\n  url: http://www.gaia-gis.it/gaia-sins/freexl-{{ version }}.tar.gz\n  sha256: 3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d\n  patches:\n    - makefile.vc.patch  # [win]\n    - nmake.opt.patch  # [win]\n    - freexl.c.patch  # [win]\n    - aarch64.patch\n\nbuild:\n  number: 1002\n  run_exports:\n    - {{ pin_subpackage('freexl') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - libiconv  # [win]\n    - make\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libfreexl.a  # [unix]\n    - conda inspect linkages -p ${PREFIX} $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.gaia-gis.it/fossil/freexl/index\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: 'Extract valid data from within an Excel'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - msarahan\n",
  "req":{
   "__set__":true,
   "elements":[
-   "c_compiler_stub"
+   "c_compiler_stub",
+   "libiconv",
+   "make"
   ]
  },
  "requirements":{
@@ -248,7 +424,10 @@
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "libiconv",
+    "make"
+   ]
   },
   "run":{
    "__set__":true,
@@ -270,7 +449,10 @@
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "libiconv",
+    "make"
+   ]
   },
   "run":{
    "__set__":true,
@@ -311,14 +493,16 @@
     "c_compiler_stub"
    ],
    "host":[
-    "libiconv"
+    "libiconv",
+    "make"
    ]
   },
   "source":{
    "patches":[
     "makefile.vc.patch",
     "nmake.opt.patch",
-    "freexl.c.patch"
+    "freexl.c.patch",
+    "aarch64.patch"
    ],
    "sha256":"3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d",
    "url":"http://www.gaia-gis.it/gaia-sins/freexl-1.0.5.tar.gz"
@@ -337,7 +521,8 @@
   "host":{
    "__set__":true,
    "elements":[
-    "libiconv"
+    "libiconv",
+    "make"
    ]
   },
   "run":{
