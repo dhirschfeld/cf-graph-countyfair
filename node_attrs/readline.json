@@ -74,9 +74,6 @@
  "archived":false,
  "bad":"Upstream: unknown source",
  "conda-forge.yml":{
-  "compiler_stack":"comp7",
-  "max_py_ver":"37",
-  "max_r_ver":"35",
   "provider":{
    "linux_aarch64":"azure",
    "linux_ppc64le":"azure"
@@ -92,7 +89,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline"
    ]
@@ -174,7 +171,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline"
    ]
@@ -256,7 +253,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline"
    ]
@@ -338,7 +335,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline",
     "readline",
@@ -471,7 +468,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline"
    ]
@@ -546,7 +543,7 @@
   }
  },
  "pinning_version":"2020.07.14.15.32.37",
- "raw_meta_yaml":"{% set version = \"8.0\" %}\n\npackage:\n  name: readline\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz\n  sha256: e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  run_exports:\n    # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/\n    - {{ pin_subpackage('readline') }}\n\nrequirements:\n  build:\n    - pkg-config\n    - {{ compiler('c') }}\n    - make\n  host:\n    - ncurses\n  run:\n    - ncurses\n\ntest:\n  commands:\n  {% set readline_libs = [\n    'libreadline',\n    'libhistory'\n  ] %}\n  {% for lib in readline_libs %}\n    - test ! -f ${PREFIX}/lib/{{ lib }}.a\n    - test -f ${PREFIX}/lib/{{ lib }}${SHLIB_EXT}  # [not win]\n  {% endfor %}\n\nabout:\n  home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html\n  license: GPL-3.0\n  license_file: COPYING\n  summary: library for editing command lines as they are typed in\n\nextra:\n  recipe-maintainers:\n    - croth1\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - msarahan\n    - asmeurer\n    - msarahan\n    - mingwandroid\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"8.0\" %}\n\npackage:\n  name: readline\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz\n  sha256: e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461\n\nbuild:\n  skip: true  # [win]\n  number: 2\n  run_exports:\n    # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/\n    - {{ pin_subpackage('readline') }}\n\nrequirements:\n  build:\n    - pkg-config\n    - {{ compiler('c') }}\n    - make\n  host:\n    - ncurses\n  run:\n    - ncurses\n\ntest:\n  commands:\n  {% set readline_libs = [\n    'libreadline',\n    'libhistory'\n  ] %}\n  {% for lib in readline_libs %}\n    - test ! -f ${PREFIX}/lib/{{ lib }}.a\n    - test -f ${PREFIX}/lib/{{ lib }}${SHLIB_EXT}  # [not win]\n  {% endfor %}\n\nabout:\n  home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html\n  license: GPL-3.0\n  license_file: COPYING\n  summary: library for editing command lines as they are typed in\n\nextra:\n  recipe-maintainers:\n    - croth1\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - msarahan\n    - asmeurer\n    - msarahan\n    - mingwandroid\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -620,7 +617,7 @@
    "summary":"library for editing command lines as they are typed in"
   },
   "build":{
-   "number":"1",
+   "number":"2",
    "run_exports":[
     "readline"
    ],

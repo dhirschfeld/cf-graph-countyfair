@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449589518.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"2020.7.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -189,7 +208,11 @@
   }
  },
  "name":"yaqd-system-monitor",
- "new_version":"2020.7.1",
+ "new_version":"2020.7.2",
+ "new_version_attempts":{
+  "2020.7.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "dev_url":"https://gitlab.com/yaq/yaqd-control",
@@ -281,6 +304,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.15.13.14.37",
  "raw_meta_yaml":"{% set name = \"yaqd-system-monitor\" %}\n{% set version = \"2020.7.1\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9fdd6c1f8bec777d35fb2fb3acc1e252009c1e2a59d023283d92a5f56b9cc635\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - yaqd-system-monitor = yaqd_system_monitor._system_monitor:SystemMonitor.main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - psutil\n    - uptime\n    - yaqd-core\n    - flit\n    - python >=3.7\n  run:\n    - psutil\n    - python >=3.7\n    - uptime\n    - yaqd-core\n\ntest:\n  imports:\n    - yaqd_system_monitor\n  commands:\n    - pip check\n    - yaqd-system-monitor --help\n  requires:\n    - pip\n\nabout:\n  home: https://yaq.fyi\n  summary: yaq daemon for monitoring system usage\n  dev_url: https://gitlab.com/yaq/yaqd-control\n  license: LGPL-3.0-only\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "req":{
   "__set__":true,
@@ -325,6 +349,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
