@@ -136,6 +136,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/450419033.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"3.17.2"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -476,7 +493,11 @@
   }
  },
  "name":"simplejson",
- "new_version":"3.17.0",
+ "new_version":"3.17.2",
+ "new_version_attempts":{
+  "3.17.2":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"simplejson is a simple, fast, complete, correct and extensible\nJSON <http://json.org> encoder and decoder for Python 2.5+ and\nPython 3.3+. It is pure Python code with no dependencies, but includes\nan optional C extension for a serious speed boost.\n",
@@ -554,7 +575,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.03.10",
+ "pinning_version":"2020.07.15.18.18.04",
  "raw_meta_yaml":"{% set version = \"3.17.0\" %}\n\npackage:\n  name: simplejson\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/simplejson/simplejson-{{ version }}.tar.gz\n  sha256: 2b4b2b738b3b99819a17feaf118265d0753d5536049ea570b3c43b51c4701e81\n\nbuild:\n  number: 2\n  script:\n    - export REQUIRE_SPEEDUPS=1  # [not win]\n    - set REQUIRE_SPEEDUPS=1  # [win]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - simplejson\n    - simplejson._speedups   # [python_impl != 'pypy']\n    - simplejson.tests\n\nabout:\n  home: http://github.com/simplejson/simplejson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'\n\n  description: |\n    simplejson is a simple, fast, complete, correct and extensible\n    JSON <http://json.org> encoder and decoder for Python 2.5+ and\n    Python 3.3+. It is pure Python code with no dependencies, but includes\n    an optional C extension for a serious speed boost.\n  doc_url: http://simplejson.readthedocs.io/\n  dev_url: https://github.com/simplejson/simplejson\n\nextra:\n  recipe-maintainers:\n    - ainafp\n    - ocefpaf\n",
  "req":{
   "__set__":true,
@@ -589,7 +610,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.12",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
