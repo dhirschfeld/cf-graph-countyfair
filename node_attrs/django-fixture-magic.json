@@ -30,14 +30,14 @@
  "linux_64_meta_yaml":{
   "about":{
    "home":"http://github.com/davedash/django-fixture-magic",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
-   "summary":"A few extra management tools to handle fixtures."
+   "summary":"A few extra management tools to handle fixtures"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -46,7 +46,7 @@
   },
   "package":{
    "name":"django-fixture-magic",
-   "version":"0.1.3"
+   "version":"0.1.5"
   },
   "requirements":{
    "build":[
@@ -58,14 +58,20 @@
    ]
   },
   "source":{
-   "sha256":"f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a",
-   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.3.tar.gz"
+   "sha256":"d82a4d4f6ade078e942927b5157f0536d0cd0232adfeb943dced0858128dd734",
+   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.5.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "fixture_magic",
     "fixture_magic.management",
     "fixture_magic.management.commands"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -89,20 +95,22 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "meta_yaml":{
   "about":{
    "home":"http://github.com/davedash/django-fixture-magic",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
-   "summary":"A few extra management tools to handle fixtures."
+   "summary":"A few extra management tools to handle fixtures"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -113,7 +121,7 @@
   },
   "package":{
    "name":"django-fixture-magic",
-   "version":"0.1.3"
+   "version":"0.1.5"
   },
   "requirements":{
    "build":[
@@ -131,10 +139,15 @@
    ]
   },
   "source":{
-   "sha256":"f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a",
-   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.3.tar.gz"
+   "sha256":"d82a4d4f6ade078e942927b5157f0536d0cd0232adfeb943dced0858128dd734",
+   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.5.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check",
+    "pip check",
+    "pip check"
+   ],
    "imports":[
     "fixture_magic",
     "fixture_magic.management",
@@ -145,6 +158,11 @@
     "fixture_magic",
     "fixture_magic.management",
     "fixture_magic.management.commands"
+   ],
+   "requires":[
+    "pip",
+    "pip",
+    "pip"
    ]
   }
  },
@@ -160,14 +178,14 @@
  "osx_64_meta_yaml":{
   "about":{
    "home":"http://github.com/davedash/django-fixture-magic",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
-   "summary":"A few extra management tools to handle fixtures."
+   "summary":"A few extra management tools to handle fixtures"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -176,7 +194,7 @@
   },
   "package":{
    "name":"django-fixture-magic",
-   "version":"0.1.3"
+   "version":"0.1.5"
   },
   "requirements":{
    "build":[
@@ -188,14 +206,20 @@
    ]
   },
   "source":{
-   "sha256":"f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a",
-   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.3.tar.gz"
+   "sha256":"d82a4d4f6ade078e942927b5157f0536d0cd0232adfeb943dced0858128dd734",
+   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.5.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "fixture_magic",
     "fixture_magic.management",
     "fixture_magic.management.commands"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -219,11 +243,13 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "pinning_version":"2020.07.15.13.14.37",
- "raw_meta_yaml":"{% set version = \"0.1.3\" %}\n\npackage:\n  name: django-fixture-magic\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-{{ version }}.tar.gz\n  sha256: f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - fixture_magic\n    - fixture_magic.management\n    - fixture_magic.management.commands\n\nabout:\n  home: http://github.com/davedash/django-fixture-magic\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A few extra management tools to handle fixtures.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"0.1.5\" %}\n\npackage:\n  name: django-fixture-magic\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-{{ version }}.tar.gz\n  sha256: d82a4d4f6ade078e942927b5157f0536d0cd0232adfeb943dced0858128dd734\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - fixture_magic\n    - fixture_magic.management\n    - fixture_magic.management.commands\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: http://github.com/davedash/django-fixture-magic\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: A few extra management tools to handle fixtures\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -251,7 +277,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
@@ -277,22 +305,24 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  },
  "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.3.tar.gz",
- "version":"0.1.3",
+ "version":"0.1.5",
  "win_64_meta_yaml":{
   "about":{
    "home":"http://github.com/davedash/django-fixture-magic",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
-   "summary":"A few extra management tools to handle fixtures."
+   "summary":"A few extra management tools to handle fixtures"
   },
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":"python -m pip install --no-deps --ignore-installed ."
+   "script":"-m pip install . --no-deps -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -301,7 +331,7 @@
   },
   "package":{
    "name":"django-fixture-magic",
-   "version":"0.1.3"
+   "version":"0.1.5"
   },
   "requirements":{
    "build":[
@@ -313,14 +343,20 @@
    ]
   },
   "source":{
-   "sha256":"f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a",
-   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.3.tar.gz"
+   "sha256":"d82a4d4f6ade078e942927b5157f0536d0cd0232adfeb943dced0858128dd734",
+   "url":"https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-0.1.5.tar.gz"
   },
   "test":{
+   "commands":[
+    "pip check"
+   ],
    "imports":[
     "fixture_magic",
     "fixture_magic.management",
     "fixture_magic.management.commands"
+   ],
+   "requires":[
+    "pip"
    ]
   }
  },
@@ -344,7 +380,9 @@
   },
   "test":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "pip"
+   ]
   }
  }
 }
