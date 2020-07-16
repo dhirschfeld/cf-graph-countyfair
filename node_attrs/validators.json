@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/450116187.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.16.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -214,9 +231,10 @@
   }
  },
  "name":"validators",
- "new_version":"0.15.0",
+ "new_version":"0.16.0",
  "new_version_attempts":{
-  "0.15.0":1
+  "0.15.0":1,
+  "0.16.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -291,7 +309,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.05.06.22.15.02",
+ "pinning_version":"2020.07.15.18.18.04",
  "raw_meta_yaml":"{% set name = \"validators\" %}\n{% set version = \"0.15.0\" %}\n{% set sha256 = \"31e8bb01b48b48940a021b8a9576b840f98fa06b91762ef921d02cb96d38727a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - six >=1.4.0\n    - decorator >=3.4.0\n\ntest:\n  imports:\n    - validators\n    - validators.i18n\n\nabout:\n  home: https://github.com/kvesteri/validators\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python Data Validation for Humans\n\n  description: |\n    Python data validation for Humans.\n\n    Python has all kinds of data validation tools, but every one of them seems to require defining a schema or form. I wanted to create a simple validation library where validating a simple value does not require defining a form or a schema.\n  doc_url: https://validators.readthedocs.io/\n  dev_url: https://github.com/kvesteri/validators\n\nextra:\n  recipe-maintainers:\n    - brl0\n",
  "req":{
   "__set__":true,
@@ -327,7 +345,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.0\n",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
