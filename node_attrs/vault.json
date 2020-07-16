@@ -336,13 +336,12 @@
    "dev_url":"https://github.com/hashicorp/vault.git",
    "doc_url":"https://www.vaultproject.io/docs/index.html",
    "home":"https://www.vaultproject.io",
-   "license":"MPL 2.0",
+   "license":"MPL-2.0",
    "summary":"A tool for managing secrets."
   },
   "build":{
    "number":"0",
    "script":[
-    "pushd src/github.com/hashicorp/vault",
     "go install -v ."
    ]
   },
@@ -358,7 +357,7 @@
   },
   "package":{
    "name":"vault",
-   "version":"1.4.1"
+   "version":"1.4.3"
   },
   "requirements":{
    "build":[
@@ -367,9 +366,8 @@
   },
   "source":[
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    }
   ],
   "test":{
@@ -404,20 +402,16 @@
    "dev_url":"https://github.com/hashicorp/vault.git",
    "doc_url":"https://www.vaultproject.io/docs/index.html",
    "home":"https://www.vaultproject.io",
-   "license":"MPL 2.0",
+   "license":"MPL-2.0",
    "summary":"A tool for managing secrets."
   },
   "build":{
    "number":"0",
    "script":[
-    "pushd src/github.com/hashicorp/vault",
     "go install -v .",
-    "pushd src/github.com/hashicorp/vault",
     "go install -v .",
-    "pushd src/github.com/hashicorp/vault",
     "go install -v ."
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -443,7 +437,7 @@
   },
   "package":{
    "name":"vault",
-   "version":"1.4.1"
+   "version":"1.4.3"
   },
   "requirements":{
    "build":[
@@ -454,19 +448,16 @@
   },
   "source":[
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    },
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    },
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    }
   ],
   "test":{
@@ -492,13 +483,12 @@
    "dev_url":"https://github.com/hashicorp/vault.git",
    "doc_url":"https://www.vaultproject.io/docs/index.html",
    "home":"https://www.vaultproject.io",
-   "license":"MPL 2.0",
+   "license":"MPL-2.0",
    "summary":"A tool for managing secrets."
   },
   "build":{
    "number":"0",
    "script":[
-    "pushd src/github.com/hashicorp/vault",
     "go install -v ."
    ]
   },
@@ -514,7 +504,7 @@
   },
   "package":{
    "name":"vault",
-   "version":"1.4.1"
+   "version":"1.4.3"
   },
   "requirements":{
    "build":[
@@ -523,9 +513,8 @@
   },
   "source":[
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    }
   ],
   "test":{
@@ -555,7 +544,7 @@
   }
  },
  "pinning_version":"2020.07.02.17.22.00",
- "raw_meta_yaml":"{% set goname = \"github.com/hashicorp/vault\" %}\n{% set version = \"1.4.1\" %}\n\n{% set name = goname.split('/')[-1] %}\n{% set pkg_src = 'src' + os.sep + goname.replace(\"/\",os.sep) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - folder: {{ pkg_src }}\n    url: https://{{ goname }}/archive/v{{ version }}.tar.gz\n    sha256: c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a\n\nbuild:\n  number: 0\n  # windows builds disabled since we don't have a go compiler for 1.12\n  skip: true  # [win]\n  script:\n    - pushd {{ pkg_src }}\n    - go install -v .\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  commands:\n    - {{ name|lower }} -v\n\nabout:\n  home: https://www.vaultproject.io\n  license: MPL 2.0\n  summary: A tool for managing secrets.\n  description: |\n    Vault is a tool for securely accessing secrets. A secret is anything that you\n    want to tightly control access to, such as API keys, passwords, certificates,\n    and more. Vault provides a unified interface to any secret, while providing\n    tight access control and recording a detailed audit log.\n  doc_url: https://www.vaultproject.io/docs/index.html\n  dev_url: https://github.com/hashicorp/vault.git\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - sodre\n    - adbeda\n    - mariusvniekerk\n    - oblute\n    - rluria14\n",
+ "raw_meta_yaml":"{% set name = \"vault\" %}\n{% set version = \"1.4.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: 5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf\n\nbuild:\n  number: 0\n  script:\n    - go install -v .\n\nrequirements:\n  build:\n    - {{ compiler('go') }}\n\ntest:\n  commands:\n    - vault -v\n\nabout:\n  home: https://www.vaultproject.io\n  license: MPL-2.0\n  summary: A tool for managing secrets.\n  description: |\n    Vault is a tool for securely accessing secrets. A secret is anything that you\n    want to tightly control access to, such as API keys, passwords, certificates,\n    and more. Vault provides a unified interface to any secret, while providing\n    tight access control and recording a detailed audit log.\n  doc_url: https://www.vaultproject.io/docs/index.html\n  dev_url: https://github.com/hashicorp/vault.git\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - sodre\n    - adbeda\n    - mariusvniekerk\n    - oblute\n    - rluria14\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -606,23 +595,21 @@
   }
  },
  "url":"https://github.com/hashicorp/vault/archive/v1.3.1.tar.gz",
- "version":"1.4.1",
+ "version":"1.4.3",
  "win_64_meta_yaml":{
   "about":{
    "description":"Vault is a tool for securely accessing secrets. A secret is anything that you\nwant to tightly control access to, such as API keys, passwords, certificates,\nand more. Vault provides a unified interface to any secret, while providing\ntight access control and recording a detailed audit log.\n",
    "dev_url":"https://github.com/hashicorp/vault.git",
    "doc_url":"https://www.vaultproject.io/docs/index.html",
    "home":"https://www.vaultproject.io",
-   "license":"MPL 2.0",
+   "license":"MPL-2.0",
    "summary":"A tool for managing secrets."
   },
   "build":{
    "number":"0",
    "script":[
-    "pushd src/github.com/hashicorp/vault",
     "go install -v ."
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -636,7 +623,7 @@
   },
   "package":{
    "name":"vault",
-   "version":"1.4.1"
+   "version":"1.4.3"
   },
   "requirements":{
    "build":[
@@ -645,9 +632,8 @@
   },
   "source":[
    {
-    "folder":"src/github.com/hashicorp/vault",
-    "sha256":"c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a",
-    "url":"https://github.com/hashicorp/vault/archive/v1.4.1.tar.gz"
+    "sha256":"5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf",
+    "url":"https://github.com/hashicorp/vault/archive/v1.4.3.tar.gz"
    }
   ],
   "test":{
