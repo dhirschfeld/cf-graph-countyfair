@@ -67,6 +67,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/449940491.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.20.4"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -210,7 +227,11 @@
   }
  },
  "name":"sos-pbs",
- "new_version":"0.20.3",
+ "new_version":"0.20.4",
+ "new_version_attempts":{
+  "0.20.4":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "doc_url":"https://vatlab.github.io/sos-docs/",
@@ -282,7 +303,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.12.17",
+ "pinning_version":"2020.07.15.18.18.04",
  "raw_meta_yaml":"{% set name = \"sos-pbs\" %}\n{% set version = \"0.20.3\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 12b950fae00ffb4e77511cf6372e6b90e9d93782d1844739aed0452760f4f247\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv \"\n\nrequirements:\n  host:\n    - pip\n    - python >=3.6\n  run:\n    - python >=3.6\n    - setuptools\n    - sos >=0.17.0\n\ntest:\n  imports:\n    - sos_pbs\n\nabout:\n  home: https://github.com/vatlab/SOS\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: PBS task engine for Script of Scripts (SoS)\n  doc_url: https://vatlab.github.io/sos-docs/\n\nextra:\n  recipe-maintainers:\n    - BoPeng\n    - gaow\n    - jdblischak\n",
  "req":{
   "__set__":true,
@@ -318,7 +339,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.5",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
