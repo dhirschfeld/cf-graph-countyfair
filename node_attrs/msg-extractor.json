@@ -90,7 +90,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed -vv "
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -102,7 +102,7 @@
   },
   "package":{
    "name":"msg-extractor",
-   "version":"0.23.3"
+   "version":"0.24.4"
   },
   "requirements":{
    "host":[
@@ -116,12 +116,13 @@
     "imapclient",
     "olefile",
     "python",
-    "tzlocal"
+    "tzlocal",
+    "compressed-rtf"
    ]
   },
   "source":{
-   "sha256":"5128e975ed0c37b716b0936f45f8df93f45db1fbdde30726e794259a60d7ba2c",
-   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.23.3.tar.gz"
+   "sha256":"8f8cdf3288373a70bdfc85ef8d47598c54e4a753740b4ae0df5a6cbf78fc6f2b",
+   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.24.4.tar.gz"
   },
   "test":{
    "imports":[
@@ -147,6 +148,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
@@ -170,7 +172,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed -vv "
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -190,7 +192,7 @@
   },
   "package":{
    "name":"msg-extractor",
-   "version":"0.23.3"
+   "version":"0.24.4"
   },
   "requirements":{
    "host":[
@@ -215,19 +217,22 @@
     "olefile",
     "python",
     "tzlocal",
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
     "tzlocal",
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
-    "tzlocal"
+    "tzlocal",
+    "compressed-rtf"
    ]
   },
   "source":{
-   "sha256":"5128e975ed0c37b716b0936f45f8df93f45db1fbdde30726e794259a60d7ba2c",
-   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.23.3.tar.gz"
+   "sha256":"8f8cdf3288373a70bdfc85ef8d47598c54e4a753740b4ae0df5a6cbf78fc6f2b",
+   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.24.4.tar.gz"
   },
   "test":{
    "imports":[
@@ -255,7 +260,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed -vv "
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -267,7 +272,7 @@
   },
   "package":{
    "name":"msg-extractor",
-   "version":"0.23.3"
+   "version":"0.24.4"
   },
   "requirements":{
    "host":[
@@ -281,12 +286,13 @@
     "imapclient",
     "olefile",
     "python",
-    "tzlocal"
+    "tzlocal",
+    "compressed-rtf"
    ]
   },
   "source":{
-   "sha256":"5128e975ed0c37b716b0936f45f8df93f45db1fbdde30726e794259a60d7ba2c",
-   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.23.3.tar.gz"
+   "sha256":"8f8cdf3288373a70bdfc85ef8d47598c54e4a753740b4ae0df5a6cbf78fc6f2b",
+   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.24.4.tar.gz"
   },
   "test":{
    "imports":[
@@ -312,6 +318,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
@@ -324,10 +331,11 @@
   }
  },
  "pinning_version":"2020.06.23.15.05.51",
- "raw_meta_yaml":"{% set name = \"msg-extractor\" %}\n{% set version = \"0.23.3\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/e/extract-msg/extract_msg-{{ version }}.tar.gz\"\n  sha256: \"5128e975ed0c37b716b0936f45f8df93f45db1fbdde30726e794259a60d7ba2c\"\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv \"\n\nrequirements:\n  host:\n    - imapclient\n    - olefile\n    - pip\n    - python\n    - tzlocal\n  run:\n    - imapclient\n    - olefile\n    - python\n    - tzlocal\n\ntest:\n  imports:\n    - extract_msg\n\nabout:\n  home: https://github.com/mattgwwalker/msg-extractor\n  license: GPL 3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: \"Extracts emails and attachments saved in Microsoft Outlook's .msg files\"\n  dev_url: https://github.com/mattgwwalker/msg-extractor\n\nextra:\n  recipe-maintainers:\n    - agcopenhaver\n    - pmlandwehr\n    - rluria14\n    - oblute\n",
+ "raw_meta_yaml":"{% set name = \"msg-extractor\" %}\n{% set version = \"0.24.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/e/extract-msg/extract_msg-{{ version }}.tar.gz\n  sha256: 8f8cdf3288373a70bdfc85ef8d47598c54e4a753740b4ae0df5a6cbf78fc6f2b\n\nbuild:\n  number: 0\n  noarch: python\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n\nrequirements:\n  host:\n    - imapclient\n    - olefile\n    - pip\n    - python\n    - tzlocal\n  run:\n    - imapclient\n    - olefile\n    - python\n    - tzlocal\n    - compressed-rtf\n\ntest:\n  imports:\n    - extract_msg\n\nabout:\n  home: https://github.com/mattgwwalker/msg-extractor\n  license: GPL 3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: \"Extracts emails and attachments saved in Microsoft Outlook's .msg files\"\n  dev_url: https://github.com/mattgwwalker/msg-extractor\n\nextra:\n  recipe-maintainers:\n    - agcopenhaver\n    - pmlandwehr\n    - rluria14\n    - oblute\n",
  "req":{
   "__set__":true,
   "elements":[
+   "compressed-rtf",
    "imapclient",
    "olefile",
    "pip",
@@ -353,6 +361,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
@@ -384,6 +393,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
@@ -396,7 +406,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.23.2.tar.gz",
- "version":"0.23.3",
+ "version":"0.24.4",
  "win_64_meta_yaml":{
   "about":{
    "dev_url":"https://github.com/mattgwwalker/msg-extractor",
@@ -409,7 +419,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . --no-deps --ignore-installed -vv "
+   "script":"-m pip install . --no-deps --ignore-installed -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -421,7 +431,7 @@
   },
   "package":{
    "name":"msg-extractor",
-   "version":"0.23.3"
+   "version":"0.24.4"
   },
   "requirements":{
    "host":[
@@ -435,12 +445,13 @@
     "imapclient",
     "olefile",
     "python",
-    "tzlocal"
+    "tzlocal",
+    "compressed-rtf"
    ]
   },
   "source":{
-   "sha256":"5128e975ed0c37b716b0936f45f8df93f45db1fbdde30726e794259a60d7ba2c",
-   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.23.3.tar.gz"
+   "sha256":"8f8cdf3288373a70bdfc85ef8d47598c54e4a753740b4ae0df5a6cbf78fc6f2b",
+   "url":"https://pypi.io/packages/source/e/extract-msg/extract_msg-0.24.4.tar.gz"
   },
   "test":{
    "imports":[
@@ -466,6 +477,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "compressed-rtf",
     "imapclient",
     "olefile",
     "python",
