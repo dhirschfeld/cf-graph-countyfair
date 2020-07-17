@@ -287,12 +287,12 @@
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd"
    ]
@@ -306,7 +306,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -327,15 +327,16 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":null,
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
@@ -385,12 +386,12 @@
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd"
    ]
@@ -404,7 +405,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -425,15 +426,18 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":[
+    "utime-aarch64.patch"
+   ],
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
@@ -483,12 +487,12 @@
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd"
    ]
@@ -502,7 +506,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -523,15 +527,16 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":null,
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
@@ -581,20 +586,19 @@
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd",
     "zstd",
     "zstd",
     "zstd",
     "zstd"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -617,7 +621,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -679,9 +683,10 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":null,
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
@@ -689,30 +694,31 @@
     "if not exist %LIBRARY_INC%\\zstd.h exit 1",
     "if not exist %LIBRARY_BIN%\\libzstd.dll exit 1",
     "if not exist %LIBRARY_LIB%\\libzstd.lib exit 1",
+    "if exist %LIBRARY_LIB%\\libzstd_static.lib exit 1",
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.dylib",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
     "pkg-config --cflags libzstd",
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
     "pkg-config --cflags libzstd",
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
     "pkg-config --cflags libzstd",
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.so",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
@@ -735,12 +741,12 @@
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd"
    ]
@@ -754,7 +760,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -775,15 +781,16 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":null,
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
     "zstd -be -i5",
     "test -f ${PREFIX}/include/zstd.h",
-    "test -f ${PREFIX}/lib/libzstd.a",
+    "test ! -f ${PREFIX}/lib/libzstd.a",
     "test -f ${PREFIX}/lib/libzstd.dylib",
     "export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig",
     "test -f ${PREFIX}/lib/pkgconfig/libzstd.pc",
@@ -828,7 +835,7 @@
   }
  },
  "pinning_version":"2020.05.20.21.21.18",
- "raw_meta_yaml":"{% set name = \"zstd\" %}\n{% set version = \"1.4.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/facebook/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315\n\nbuild:\n  number: 3\n  skip: True  # [win and vc<14]\n  run_exports:\n    # pretty bad removal of symbols in every other micro release:\n    #   https://abi-laboratory.pro/tracker/timeline/zstd/\n    - {{ pin_subpackage('zstd', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - msinttypes  # [win and vc<14]\n    - make   # [unix]\n    - ninja  # [win]\n    - cmake\n  host:\n    - zlib\n    - xz\n    - lz4-c\n  run:\n    - zlib\n    - xz\n    - lz4-c\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n\n  commands:\n    - zstd -be -i5\n\n    - test -f ${PREFIX}/include/{{ name }}.h     # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.a      # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n\n    - if not exist %LIBRARY_INC%\\{{ name }}.h exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\lib{{ name }}.dll exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}.lib exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}_static.lib exit 1  # [win and vc>=14]\n\n    - export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig  # [unix]\n    - test -f ${PREFIX}/lib/pkgconfig/lib{{ name }}.pc  # [unix]\n    - pkg-config --cflags lib{{ name }}  # [unix]\n\nabout:\n  home: http://www.zstd.net\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: \"Zstandard - Fast real-time compression algorithm\"\n  description: |\n    Zstandard is a real-time compression algorithm, providing high compression\n    ratios. It offers a very wide range of compression / speed trade-off, while\n    being backed by a very fast decoder. It also offers a special mode for\n    small data, called dictionary compression, and can create dictionaries from\n    any sample set. Zstandard library is provided as open source software using\n    a BSD license.\n  doc_url: https://facebook.github.io/zstd/zstd_manual.html\n  dev_url: https://github.com/facebook/zstd\n\nextra:\n  recipe-maintainers:\n    - rmax\n    - msarahan\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"zstd\" %}\n{% set version = \"1.4.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/facebook/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e\n  patches:\n    - utime-aarch64.patch  # [aarch64]\n\nbuild:\n  number: 0\n  run_exports:\n    # pretty bad removal of symbols in every other micro release:\n    #   https://abi-laboratory.pro/tracker/timeline/zstd/\n    - {{ pin_subpackage('zstd', max_pin='x.x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - msinttypes  # [win]\n    - make   # [unix]\n    - ninja  # [win]\n    - cmake\n  host:\n    - zlib\n    - xz\n    - lz4-c\n  run:\n    - zlib\n    - xz\n    - lz4-c\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n\n  commands:\n    - zstd -be -i5\n\n    - test -f ${PREFIX}/include/{{ name }}.h     # [unix]\n    - test ! -f ${PREFIX}/lib/lib{{ name }}.a    # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n\n    - if not exist %LIBRARY_INC%\\{{ name }}.h exit 1          # [win]\n    - if not exist %LIBRARY_BIN%\\lib{{ name }}.dll exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}.lib exit 1     # [win]\n    - if exist %LIBRARY_LIB%\\lib{{ name }}_static.lib exit 1  # [win]\n\n    - export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig  # [unix]\n    - test -f ${PREFIX}/lib/pkgconfig/lib{{ name }}.pc  # [unix]\n    - pkg-config --cflags lib{{ name }}  # [unix]\n\nabout:\n  home: http://www.zstd.net\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: \"Zstandard - Fast real-time compression algorithm\"\n  description: |\n    Zstandard is a real-time compression algorithm, providing high compression\n    ratios. It offers a very wide range of compression / speed trade-off, while\n    being backed by a very fast decoder. It also offers a special mode for\n    small data, called dictionary compression, and can create dictionaries from\n    any sample set. Zstandard library is provided as open source software using\n    a BSD license.\n  doc_url: https://facebook.github.io/zstd/zstd_manual.html\n  dev_url: https://github.com/facebook/zstd\n\nextra:\n  recipe-maintainers:\n    - rmax\n    - msarahan\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -916,23 +923,22 @@
   }
  },
  "url":"https://github.com/facebook/zstd/releases/download/v1.4.0/zstd-1.4.0.tar.gz",
- "version":"1.4.4",
+ "version":"1.4.5",
  "win_64_meta_yaml":{
   "about":{
    "description":"Zstandard is a real-time compression algorithm, providing high compression\nratios. It offers a very wide range of compression / speed trade-off, while\nbeing backed by a very fast decoder. It also offers a special mode for\nsmall data, called dictionary compression, and can create dictionaries from\nany sample set. Zstandard library is provided as open source software using\na BSD license.\n",
    "dev_url":"https://github.com/facebook/zstd",
    "doc_url":"https://facebook.github.io/zstd/zstd_manual.html",
    "home":"http://www.zstd.net",
-   "license":"BSD 3-Clause",
+   "license":"BSD-3-Clause",
    "license_file":"LICENSE",
    "summary":"Zstandard - Fast real-time compression algorithm"
   },
   "build":{
-   "number":"3",
+   "number":"0",
    "run_exports":[
     "zstd"
-   ],
-   "skip":true
+   ]
   },
   "extra":{
    "recipe-maintainers":[
@@ -943,7 +949,7 @@
   },
   "package":{
    "name":"zstd",
-   "version":"1.4.4"
+   "version":"1.4.5"
   },
   "requirements":{
    "build":[
@@ -965,16 +971,18 @@
    ]
   },
   "source":{
-   "fn":"zstd-1.4.4.tar.gz",
-   "sha256":"59ef70ebb757ffe74a7b3fe9c305e2ba3350021a918d168a046c6300aeea9315",
-   "url":"https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz"
+   "fn":"zstd-1.4.5.tar.gz",
+   "patches":null,
+   "sha256":"98e91c7c6bf162bf90e4e70fdbc41a8188b9fa8de5ad840c401198014406ce9e",
+   "url":"https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz"
   },
   "test":{
    "commands":[
     "zstd -be -i5",
     "if not exist %LIBRARY_INC%\\zstd.h exit 1",
     "if not exist %LIBRARY_BIN%\\libzstd.dll exit 1",
-    "if not exist %LIBRARY_LIB%\\libzstd.lib exit 1"
+    "if not exist %LIBRARY_LIB%\\libzstd.lib exit 1",
+    "if exist %LIBRARY_LIB%\\libzstd_static.lib exit 1"
    ],
    "requires":null
   }
