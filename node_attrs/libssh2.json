@@ -180,10 +180,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -192,6 +189,47 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -218,15 +256,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
-   ]
   }
  },
  "linux_64_requirements":{
@@ -241,6 +270,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -268,10 +298,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -280,6 +307,47 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -306,15 +374,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
-   ]
   }
  },
  "linux_aarch64_requirements":{
@@ -329,6 +388,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -356,10 +416,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -368,6 +425,47 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -394,15 +492,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
-   ]
   }
  },
  "linux_ppc64le_requirements":{
@@ -417,6 +506,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -444,14 +534,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2",
-    "libssh2",
-    "libssh2",
-    "libssh2",
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -472,6 +555,202 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1",
+      "if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1",
+      "if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1",
+      "if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-binary",
+      "c_compiler_stub",
+      "ninja"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"bld_static.bat",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_LIB%\\libssh2_static.lib exit 1"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   },
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -534,34 +813,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1",
-    "if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1",
-    "if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1",
-    "if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1",
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}",
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}",
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}",
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
-   ]
   }
  },
  "name":"libssh2",
@@ -577,10 +828,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -589,6 +837,47 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/include/libssh2.h",
+      "test -f $PREFIX/include/libssh2_publickey.h",
+      "test -f $PREFIX/include/libssh2_sftp.h",
+      "test ! -f $PREFIX/lib/libssh2.a",
+      "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-no-system",
+      "c_compiler_stub",
+      "make"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"build_static.sh",
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libssh2.a"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -615,15 +904,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "test -f $PREFIX/include/libssh2.h",
-    "test -f $PREFIX/include/libssh2_publickey.h",
-    "test -f $PREFIX/include/libssh2_sftp.h",
-    "test ! -f $PREFIX/lib/libssh2.a",
-    "test -f $PREFIX/lib/libssh2${SHLIB_EXT}"
-   ]
   }
  },
  "osx_64_requirements":{
@@ -638,6 +918,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -654,14 +935,19 @@
    "elements":[]
   }
  },
+ "outputs_names":[
+  "libssh2",
+  "libssh2-static"
+ ],
  "pinning_version":"2019.06.18",
- "raw_meta_yaml":"{% set version = \"1.9.0\" %}\n\npackage:\n  name: libssh2\n  version: {{ version }}\n\nsource:\n  url: https://www.libssh2.org/download/libssh2-{{ version }}.tar.gz\n  sha256: d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd\n  patches:\n    # patch for CVE-2019-17498\n    # https://nvd.nist.gov/vuln/detail/CVE-2019-17498\n    # patch from the Fedora project\n    # https://src.fedoraproject.org/rpms/libssh2/c/41525baf\n    # merged into upstream in with small modification in:\n    # https://github.com/libssh2/libssh2/pull/402\n    - 0001-libssh2-1.9.0-CVE-2019-17498.patch\n    - 246c7cb0184b9e1a882c753b412825799c7a9118.patch\n\nbuild:\n  number: 3\n  run_exports:\n    - {{ pin_subpackage('libssh2') }}\n\nrequirements:\n  build:\n    # This breals a dependency cycle:\n    # curl->libssh2->cmake->curl\n    - cmake-binary     # [win]\n    - cmake-no-system  # [not win]\n    - {{ compiler('c') }}\n    - ninja  # [win]\n    - make   # [unix]\n  host:\n    - openssl\n    - zlib\n  run:\n    - openssl\n    - zlib\n\ntest:\n  commands:\n    - test -f $PREFIX/include/libssh2.h              # [not win]\n    - test -f $PREFIX/include/libssh2_publickey.h    # [not win]\n    - test -f $PREFIX/include/libssh2_sftp.h         # [not win]\n\n    - test ! -f $PREFIX/lib/libssh2.a          # [not win]\n    - test -f $PREFIX/lib/libssh2${SHLIB_EXT}  # [not win]\n\n    - if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1  # [win]\n\nabout:\n  home: https://www.libssh2.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'the SSH library'\n\n  description: |\n    libssh2 is a library implementing the SSH2 protocol, available under the revised BSD license.\n  dev_url: https://github.com/libssh2/libssh2\n\nextra:\n  recipe-maintainers:\n    - shadowwalkersb\n    - nehaljwani\n    - ocefpaf\n",
+ "raw_meta_yaml":"{% set version = \"1.9.0\" %}\n\npackage:\n  name: libssh2\n  version: {{ version }}\n\nsource:\n  url: https://www.libssh2.org/download/libssh2-{{ version }}.tar.gz\n  sha256: d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd\n  patches:\n    # patch for CVE-2019-17498\n    # https://nvd.nist.gov/vuln/detail/CVE-2019-17498\n    # patch from the Fedora project\n    # https://src.fedoraproject.org/rpms/libssh2/c/41525baf\n    # merged into upstream in with small modification in:\n    # https://github.com/libssh2/libssh2/pull/402\n    - 0001-libssh2-1.9.0-CVE-2019-17498.patch\n    - 246c7cb0184b9e1a882c753b412825799c7a9118.patch\n\nbuild:\n  number: 4\n\nrequirements:\n  build:\n    # This breals a dependency cycle:\n    # curl->libssh2->cmake->curl\n    - cmake-binary     # [win]\n    - cmake-no-system  # [not win]\n    - {{ compiler('c') }}\n    - ninja  # [win]\n    - make   # [unix]\n  host:\n    - openssl\n    - zlib\n  run:\n    - openssl\n    - zlib\n\noutputs:\n  - name: libssh2\n    build:\n      run_exports:\n      - {{ pin_subpackage('libssh2') }}\n    test:\n      commands:\n        - test -f $PREFIX/include/libssh2.h              # [not win]\n        - test -f $PREFIX/include/libssh2_publickey.h    # [not win]\n        - test -f $PREFIX/include/libssh2_sftp.h         # [not win]\n\n        - test ! -f $PREFIX/lib/libssh2.a          # [not win]\n        - test -f $PREFIX/lib/libssh2${SHLIB_EXT}  # [not win]\n\n        - if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1  # [win]\n        - if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1  # [win]\n        - if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1  # [win]\n        - if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1  # [win]\n\n  - name: libssh2-static\n    build:\n    script: build_static.sh  # [unix]\n    script: bld_static.bat  # [win]\n    requirements:\n      build:\n        # This breals a dependency cycle:\n        # curl->libssh2->cmake->curl\n        - cmake-binary     # [win]\n        - cmake-no-system  # [not win]\n        - {{ compiler('c') }}\n        - ninja  # [win]\n        - make   # [unix]\n      host:\n        - libssh2\n        - openssl\n        - zlib\n    test:\n      commands:\n        - test -f $PREFIX/lib/libssh2.a                         # [not win]\n        - if not exist %LIBRARY_LIB%\\libssh2_static.lib exit 1  # [win]\n\nabout:\n  home: https://www.libssh2.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'the SSH library'\n\n  description: |\n    libssh2 is a library implementing the SSH2 protocol, available under the revised BSD license.\n  dev_url: https://github.com/libssh2/libssh2\n\nextra:\n  recipe-maintainers:\n    - shadowwalkersb\n    - nehaljwani\n    - ocefpaf\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
    "cmake-binary",
    "cmake-no-system",
+   "libssh2",
    "make",
    "ninja",
    "openssl",
@@ -682,6 +968,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -714,6 +1001,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
@@ -743,10 +1031,7 @@
    "summary":"the SSH library"
   },
   "build":{
-   "number":"3",
-   "run_exports":[
-    "libssh2"
-   ]
+   "number":"4"
   },
   "extra":{
    "recipe-maintainers":[
@@ -755,6 +1040,46 @@
     "ocefpaf"
    ]
   },
+  "outputs":[
+   {
+    "build":{
+     "run_exports":[
+      "libssh2"
+     ]
+    },
+    "name":"libssh2",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1",
+      "if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1",
+      "if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1",
+      "if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1"
+     ]
+    }
+   },
+   {
+    "build":null,
+    "name":"libssh2-static",
+    "requirements":{
+     "build":[
+      "cmake-binary",
+      "c_compiler_stub",
+      "ninja"
+     ],
+     "host":[
+      "libssh2",
+      "openssl",
+      "zlib"
+     ]
+    },
+    "script":"bld_static.bat",
+    "test":{
+     "commands":[
+      "if not exist %LIBRARY_LIB%\\libssh2_static.lib exit 1"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"libssh2",
    "version":"1.9.0"
@@ -781,14 +1106,6 @@
    ],
    "sha256":"d5fb8bd563305fd1074dda90bd053fb2d29fc4bce048d182f96eaa466dfadafd",
    "url":"https://www.libssh2.org/download/libssh2-1.9.0.tar.gz"
-  },
-  "test":{
-   "commands":[
-    "if not exist %LIBRARY_INC%\\\\libssh2.h           exit 1",
-    "if not exist %LIBRARY_INC%\\\\libssh2_publickey.h exit 1",
-    "if not exist %LIBRARY_INC%\\\\libssh2_sftp.h      exit 1",
-    "if not exist %LIBRARY_LIB%\\\\libssh2.lib         exit 1"
-   ]
   }
  },
  "win_64_requirements":{
@@ -803,6 +1120,7 @@
   "host":{
    "__set__":true,
    "elements":[
+    "libssh2",
     "openssl",
     "zlib"
    ]
