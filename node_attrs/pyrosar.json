@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451208379.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.11.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -212,7 +231,11 @@
   }
  },
  "name":"pyrosar",
- "new_version":"0.11",
+ "new_version":"0.11.1",
+ "new_version_attempts":{
+  "0.11.1":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"The pyroSAR package aims at providing a complete solution for the scalable organization and processing of SAR satellite data.\n",
@@ -315,6 +338,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.17.07.14.20",
  "raw_meta_yaml":"{% set name = \"pyroSAR\" %}\n{% set version = \"0.11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1008a6ed23bc3509b511af634360bccfb187a81745cdc5a1760c8ad3aa47bbe4\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - gdal >=2.2\n    - spatialist >=0.5\n    - progressbar2\n    - pathos >=0.2\n    - numpy\n    - pyyaml\n    - requests\n    - psycopg2\n    - sqlalchemy\n    - sqlalchemy-utils\n    - geoalchemy2\n\ntest:\n  source_files:\n    - pyroSAR/tests\n  requires:\n    - pytest\n  imports:\n    - pyroSAR\n  commands:\n    - pytest --ignore=pyroSAR/tests/test_snap.py --ignore=pyroSAR/tests/test_drivers.py\n\nabout:\n  home: https://github.com/johntruckenbrodt/pyroSAR\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'A Python Framework for Large-Scale SAR Satellite Data Processing'\n\n  description: |\n    The pyroSAR package aims at providing a complete solution for the scalable organization and processing of SAR satellite data.\n  doc_url: https://pyroSAR.readthedocs.io\n  dev_url: https://github.com/johntruckenbrodt/pyroSAR\n\nextra:\n  recipe-maintainers:\n    - johntruckenbrodt\n",
  "req":{
   "__set__":true,
@@ -372,6 +396,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
