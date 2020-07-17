@@ -238,7 +238,7 @@
   },
   "package":{
    "name":"pywr",
-   "version":"1.7.2"
+   "version":"1.8.0"
   },
   "requirements":{
    "host":[
@@ -272,8 +272,8 @@
    ]
   },
   "source":{
-   "sha256":"1d4b59848fdb60d4c016118f4af9a4f6a37775fb03c98437504ece1c52f90cc9",
-   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.7.2.tar.gz"
+   "sha256":"e84f4f00854b4f2b3a468475b0cdab8888121cbdd63c97721ad84ba00af832bc",
+   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.8.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -350,7 +350,7 @@
   },
   "package":{
    "name":"pywr",
-   "version":"1.7.2"
+   "version":"1.8.0"
   },
   "requirements":{
    "host":[
@@ -435,8 +435,8 @@
    ]
   },
   "source":{
-   "sha256":"1d4b59848fdb60d4c016118f4af9a4f6a37775fb03c98437504ece1c52f90cc9",
-   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.7.2.tar.gz"
+   "sha256":"e84f4f00854b4f2b3a468475b0cdab8888121cbdd63c97721ad84ba00af832bc",
+   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.8.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -483,7 +483,7 @@
   },
   "package":{
    "name":"pywr",
-   "version":"1.7.2"
+   "version":"1.8.0"
   },
   "requirements":{
    "host":[
@@ -517,8 +517,8 @@
    ]
   },
   "source":{
-   "sha256":"1d4b59848fdb60d4c016118f4af9a4f6a37775fb03c98437504ece1c52f90cc9",
-   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.7.2.tar.gz"
+   "sha256":"e84f4f00854b4f2b3a468475b0cdab8888121cbdd63c97721ad84ba00af832bc",
+   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.8.0.tar.gz"
   },
   "test":{
    "imports":[
@@ -572,7 +572,7 @@
   }
  },
  "pinning_version":"2020.07.15.18.18.04",
- "raw_meta_yaml":"{% set name = \"pywr\" %}\n{% set version = \"1.7.2\" %}\n{% set sha256 = \"1d4b59848fdb60d4c016118f4af9a4f6a37775fb03c98437504ece1c52f90cc9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - {{ compiler('c') }}\n    - numpy\n    - cython\n    - packaging\n    - glpk\n    - lp_solve\n    - future\n    - packaging\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - networkx\n    - glpk\n    - lp_solve\n    - pytables\n    # Fix pytables on windows. See https://github.com/conda-forge/pytables-feedstock/issues/31#issuecomment-410695814\n    - snappy  # [win]\n    - xlrd\n    - scipy\n    - future\n    - packaging\n    - jupyter\n    - matplotlib-base\n\ntest:\n  imports:\n    - pywr\n    - pywr.core\n\nabout:\n  home: http://github.com/pywr/pywr\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Pywr is a generalised network resource allocation model written in Python\n  description: |\n    Pywr is a tool for solving network resource allocation problems at\n    discrete timesteps using a linear programming approach. It's principal\n    application is in resource allocation in water supply networks, although\n    other uses are conceivable. It uses Cython extensions for computational\n    efficiency.\n  doc_url: https://pywr.github.io/pywr-docs/index.html\n  dev_url: http://github.com/pywr/pywr\n\nextra:\n  recipe-maintainers:\n    - jetuk\n",
+ "raw_meta_yaml":"{% set name = \"pywr\" %}\n{% set version = \"1.8.0\" %}\n{% set sha256 = \"e84f4f00854b4f2b3a468475b0cdab8888121cbdd63c97721ad84ba00af832bc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<36]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    - {{ compiler('c') }}\n    - numpy\n    - cython\n    - packaging\n    - glpk\n    - lp_solve\n    - future\n    - packaging\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - pandas\n    - networkx\n    - glpk\n    - lp_solve\n    - pytables\n    # Fix pytables on windows. See https://github.com/conda-forge/pytables-feedstock/issues/31#issuecomment-410695814\n    - snappy  # [win]\n    - xlrd\n    - scipy\n    - future\n    - packaging\n    - jupyter\n    - matplotlib-base\n\ntest:\n  imports:\n    - pywr\n    - pywr.core\n\nabout:\n  home: http://github.com/pywr/pywr\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: Pywr is a generalised network resource allocation model written in Python\n  description: |\n    Pywr is a tool for solving network resource allocation problems at\n    discrete timesteps using a linear programming approach. It's principal\n    application is in resource allocation in water supply networks, although\n    other uses are conceivable. It uses Cython extensions for computational\n    efficiency.\n  doc_url: https://pywr.github.io/pywr-docs/index.html\n  dev_url: http://github.com/pywr/pywr\n\nextra:\n  recipe-maintainers:\n    - jetuk\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -690,7 +690,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pywr/pywr-1.2.0.tar.gz",
- "version":"1.7.2",
+ "version":"1.8.0",
  "win_64_meta_yaml":{
   "about":{
    "description":"Pywr is a tool for solving network resource allocation problems at\ndiscrete timesteps using a linear programming approach. It's principal\napplication is in resource allocation in water supply networks, although\nother uses are conceivable. It uses Cython extensions for computational\nefficiency.\n",
@@ -713,7 +713,7 @@
   },
   "package":{
    "name":"pywr",
-   "version":"1.7.2"
+   "version":"1.8.0"
   },
   "requirements":{
    "host":[
@@ -748,8 +748,8 @@
    ]
   },
   "source":{
-   "sha256":"1d4b59848fdb60d4c016118f4af9a4f6a37775fb03c98437504ece1c52f90cc9",
-   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.7.2.tar.gz"
+   "sha256":"e84f4f00854b4f2b3a468475b0cdab8888121cbdd63c97721ad84ba00af832bc",
+   "url":"https://pypi.io/packages/source/p/pywr/pywr-1.8.0.tar.gz"
   },
   "test":{
    "imports":[
