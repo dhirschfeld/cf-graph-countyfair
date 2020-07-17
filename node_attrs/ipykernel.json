@@ -275,6 +275,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451445898.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"5.3.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -797,12 +814,13 @@
   }
  },
  "name":"ipykernel",
- "new_version":"5.3.2",
+ "new_version":"5.3.3",
  "new_version_attempts":{
   "5.2.1":1,
   "5.3.0":1,
   "5.3.1":1,
-  "5.3.2":1
+  "5.3.2":1,
+  "5.3.3":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -913,7 +931,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.17.17.28.25",
  "raw_meta_yaml":"{% set version = \"5.3.2\" %}\n\npackage:\n  name: ipykernel\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ipykernel/ipykernel-{{ version }}.tar.gz\n  sha256: 89dc4bd19c7781f6d7eef0e666c59ce57beac56bb39b511544a71397b7b31cbb\n\nbuild:\n  number: 0\n  skip: true  # [py<34]\n  script:\n    - {{ PYTHON }} setup.py bdist_wheel\n    - cd dist\n    - {{ PYTHON }} -m pip install ipykernel-{{ version }}-py3-none-any.whl --no-deps -vv\n    - {{ PYTHON }} -m ipykernel install --sys-prefix\n    # TODO: this may be needed/desirable at some point\n    # - cd {{ RECIPE_DIR }} && {{ PYTHON }} fix_kernelspec.py\n\nrequirements:\n  host:\n    - ipython >=5.0\n    - jupyter_client\n    - pip\n    - python\n  run:\n    - ipython >=5.0\n    - jupyter_client\n    - python\n    - tornado >=4.2\n    - traitlets >=4.1\n\ntest:\n  requires:\n    - curio\n    - flaky\n    - ipython\n    - nose\n    - numpy\n    - pytest !=5.3.4\n  imports:\n    - ipykernel\n  commands:\n    - jupyter kernelspec list\n\nabout:\n  home: https://ipython.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING.md\n  summary: IPython Kernel for Jupyter\n  description: |\n    A powerful interactive Python shell and a Jupyter kernel to work with\n    Python code in Jupyter notebooks and other interactive frontends.\n  dev_url: https://github.com/ipython/ipykernel\n  doc_url: https://ipython.readthedocs.io\n  doc_source_url: https://github.com/ipython/ipykernel/blob/master/docs/index.rst\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - bollwyvl\n    - Carreau\n    - jakirkham\n    - minrk\n    - ocefpaf\n    - pelson\n",
  "req":{
   "__set__":true,
