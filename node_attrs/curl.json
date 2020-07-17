@@ -472,7 +472,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -492,7 +492,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -517,6 +517,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -617,7 +640,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -637,7 +660,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -662,6 +685,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -762,7 +808,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -782,7 +828,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -807,6 +853,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -907,7 +976,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -964,8 +1033,29 @@
       "libssh2"
      ]
     },
+    "script":"install_dll.bat",
     "test":{
      "commands":null
+    }
+   },
+   {
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "script":"install_static.bat",
+    "test":{
+     "commands":[
+      "if exist %LIBRARY_LIB%\\libcurl_a.lib (exit 0) else (exit 1)"
+     ]
     }
    },
    {
@@ -1004,7 +1094,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/*.dylib",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -1029,6 +1119,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -1067,7 +1180,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -1092,6 +1205,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -1130,7 +1266,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -1155,6 +1291,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -1193,7 +1352,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/libcurl.so*",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -1218,6 +1377,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -1327,7 +1509,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -1347,7 +1529,7 @@
     },
     "files":[
      "include/curl",
-     "lib/libcurl*",
+     "lib/*.dylib",
      "lib/pkgconfig/libcurl*",
      "bin/curl-config"
     ],
@@ -1372,6 +1554,29 @@
       "curl-config --protocols",
       "test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}",
       "test ! -f ${PREFIX}/lib/libcurl.a"
+     ]
+    }
+   },
+   {
+    "files":[
+     "lib/libcurl.a*"
+    ],
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "openssl",
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "test":{
+     "commands":[
+      "test -f $PREFIX/lib/libcurl.a"
      ]
     }
    },
@@ -1461,10 +1666,11 @@
  },
  "outputs_names":[
   "curl",
-  "libcurl"
+  "libcurl",
+  "libcurl-static"
  ],
  "pinning_version":"2020.06.24.16.31.11",
- "raw_meta_yaml":"{% set version = \"7.71.1\" %}\n\npackage:\n  name: curl_split_recipe\n  version: {{ version }}\n\nsource:\n  url: http://curl.haxx.se/download/curl-{{ version }}.tar.bz2\n  sha256: 9d52a4d80554f9b0d460ea2be5d7be99897a1a9f681ffafe739169afd6b4f224\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make             # [unix]\n    # perl is required to run the tests on UNIX.\n    - perl  # [unix]\n    - pkg-config  # [unix]\n  host:\n    - zlib\n    - krb5\n    - libssh2\n    - openssl        # [unix]\n    - zlib\n\n\noutputs:\n  - name: libcurl\n    requirements:\n      build:\n        - {{ compiler('c') }}\n      host:\n        - openssl   # [unix]\n        - zlib\n        - libssh2\n        - krb5\n      run:\n        - libssh2\n    build:\n      run_exports:\n        - {{ pin_subpackage('libcurl') }}\n    files:\n      - include/curl             # [unix]\n      - lib/libcurl*             # [unix]\n      - lib/pkgconfig/libcurl*   # [unix]\n      - bin/curl-config          # [unix]\n      - Library/bin/libcurl.dll  # [win]\n      - Library/include/curl     # [win]\n      - Library/lib/libcurl*     # [win]\n    test:\n      commands:\n        - curl-config --features       # [not win]\n        - curl-config --protocols      # [not win]\n        - test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}  # [not win]\n        - test ! -f ${PREFIX}/lib/libcurl.a          # [not win]\n\n  - name: curl\n    files:\n      - bin/curl               # [unix]\n      - Library/bin/curl.exe   # [win]\n      - Library/bin/curl.exe.manifest  # [win]\n    requirements:\n      build:\n        - {{ compiler('c') }}\n      host:\n        - {{ pin_subpackage('libcurl', exact=True) }}\n        - zlib\n        - libssh2\n        - krb5\n      run:\n        - {{ pin_subpackage('libcurl', exact=True) }}\n        - libssh2\n    test:\n      commands:\n        # curl help commands on Windows have non-zero status codes.  Need other test.\n        - curl --help\n        # Try downloading something from https to make sure the certs are used correctly.\n        - curl https://raw.githubusercontent.com/conda-forge/curl-feedstock/master/LICENSE\n\nabout:\n  home: http://curl.haxx.se/\n  license: MIT/X derivate (http://curl.haxx.se/docs/copyright.html)\n  license_family: MIT\n  license_file: COPYING\n  summary: tool and library for transferring data with URL syntax\n\n  description: |\n    Curl is an open source command line tool and library for transferring data\n    with URL syntax. It is used in command lines or scripts to transfer data.\n  doc_url: https://curl.haxx.se/docs/\n  dev_url: https://github.com/curl/curl\n  doc_source_url: https://github.com/curl/curl/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - jakirkham\n    - ocefpaf\n    - mingwandroid\n    - xylar\n",
+ "raw_meta_yaml":"{% set version = \"7.71.1\" %}\n\npackage:\n  name: curl_split_recipe\n  version: {{ version }}\n\nsource:\n  url: http://curl.haxx.se/download/curl-{{ version }}.tar.bz2\n  sha256: 9d52a4d80554f9b0d460ea2be5d7be99897a1a9f681ffafe739169afd6b4f224\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - make             # [unix]\n    # perl is required to run the tests on UNIX.\n    - perl  # [unix]\n    - pkg-config  # [unix]\n  host:\n    - zlib\n    - krb5\n    - libssh2\n    - openssl        # [unix]\n    - zlib\n\n\noutputs:\n  - name: libcurl\n    script: install_dll.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('c') }}\n      host:\n        - openssl   # [unix]\n        - zlib\n        - libssh2\n        - krb5\n      run:\n        - libssh2\n    build:\n      run_exports:\n        - {{ pin_subpackage('libcurl') }}\n    files:\n      - include/curl             # [unix]\n      - lib/libcurl.so*          # [linux]\n      - lib/*.dylib              # [osx]\n      - lib/pkgconfig/libcurl*   # [unix]\n      - bin/curl-config          # [unix]\n      - Library/bin/libcurl.dll  # [win]\n      - Library/include/curl     # [win]\n      - Library/lib/libcurl*     # [win]\n    test:\n      commands:\n        - curl-config --features       # [not win]\n        - curl-config --protocols      # [not win]\n        - test -f ${PREFIX}/lib/libcurl${SHLIB_EXT}  # [not win]\n        - test ! -f ${PREFIX}/lib/libcurl.a          # [not win]\n\n  - name: libcurl-static\n    script: install_static.bat  # [win]\n    requirements:\n      build:\n        - {{ compiler('c') }}\n      host:\n        - openssl   # [unix]\n        - zlib\n        - libssh2\n        - krb5\n        - libcurl\n    files:              # [unix]\n      - lib/libcurl.a*  # [unix]\n    test:\n      commands:\n        - test -f $PREFIX/lib/libcurl.a  # [not win]\n        - if exist %LIBRARY_LIB%\\libcurl_a.lib (exit 0) else (exit 1)  # [win]\n\n  - name: curl\n    files:\n      - bin/curl               # [unix]\n      - Library/bin/curl.exe   # [win]\n      - Library/bin/curl.exe.manifest  # [win]\n    requirements:\n      build:\n        - {{ compiler('c') }}\n      host:\n        - {{ pin_subpackage('libcurl', exact=True) }}\n        - zlib\n        - libssh2\n        - krb5\n      run:\n        - {{ pin_subpackage('libcurl', exact=True) }}\n        - libssh2\n    test:\n      commands:\n        # curl help commands on Windows have non-zero status codes.  Need other test.\n        - curl --help\n        # Try downloading something from https to make sure the certs are used correctly.\n        - curl https://raw.githubusercontent.com/conda-forge/curl-feedstock/master/LICENSE\n\nabout:\n  home: http://curl.haxx.se/\n  license: MIT/X derivate (http://curl.haxx.se/docs/copyright.html)\n  license_family: MIT\n  license_file: COPYING\n  summary: tool and library for transferring data with URL syntax\n\n  description: |\n    Curl is an open source command line tool and library for transferring data\n    with URL syntax. It is used in command lines or scripts to transfer data.\n  doc_url: https://curl.haxx.se/docs/\n  dev_url: https://github.com/curl/curl\n  doc_source_url: https://github.com/curl/curl/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - jakirkham\n    - ocefpaf\n    - mingwandroid\n    - xylar\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -1560,7 +1766,7 @@
    "summary":"tool and library for transferring data with URL syntax"
   },
   "build":{
-   "number":"1"
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -1597,8 +1803,29 @@
       "libssh2"
      ]
     },
+    "script":"install_dll.bat",
     "test":{
      "commands":null
+    }
+   },
+   {
+    "name":"libcurl-static",
+    "requirements":{
+     "build":[
+      "c_compiler_stub"
+     ],
+     "host":[
+      "zlib",
+      "libssh2",
+      "krb5",
+      "libcurl"
+     ]
+    },
+    "script":"install_static.bat",
+    "test":{
+     "commands":[
+      "if exist %LIBRARY_LIB%\\libcurl_a.lib (exit 0) else (exit 1)"
+     ]
     }
    },
    {
