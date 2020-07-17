@@ -174,7 +174,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8"
+   "number":"9"
   },
   "extra":{
    "recipe-maintainers":[
@@ -225,18 +225,17 @@
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
-    "lld 10.0.0.*"
+    "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*"
    ],
    "run":[
     "ocl-icd",
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -248,7 +247,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -281,6 +281,7 @@
    "__set__":true,
    "elements":[
     "clangdev",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -292,7 +293,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "libhwloc",
     "ocl-icd",
     "pocl"
@@ -318,7 +318,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8"
+   "number":"9"
   },
   "extra":{
    "recipe-maintainers":[
@@ -369,18 +369,17 @@
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
-    "lld 10.0.0.*"
+    "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*"
    ],
    "run":[
     "ocl-icd",
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -392,7 +391,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -425,6 +425,7 @@
    "__set__":true,
    "elements":[
     "clangdev",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -436,7 +437,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "libhwloc",
     "ocl-icd",
     "pocl"
@@ -462,7 +462,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8"
+   "number":"9"
   },
   "extra":{
    "recipe-maintainers":[
@@ -513,18 +513,17 @@
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
-    "lld 10.0.0.*"
+    "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*"
    ],
    "run":[
     "ocl-icd",
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -536,7 +535,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -569,6 +569,7 @@
    "__set__":true,
    "elements":[
     "clangdev",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -580,7 +581,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "libhwloc",
     "ocl-icd",
     "pocl"
@@ -614,7 +614,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8",
+   "number":"9",
    "skip":true
   },
   "extra":{
@@ -784,12 +784,14 @@
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
     "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*",
     "khronos-opencl-icd-loader",
     "libhwloc",
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
     "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*",
     "zlib",
     "ocl-icd",
     "libhwloc",
@@ -797,41 +799,38 @@
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
     "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*",
     "ocl-icd",
     "libhwloc",
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
     "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*",
     "ocl-icd",
     "libhwloc",
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
-    "lld 10.0.0.*"
+    "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*"
    ],
    "run":[
     "libhwloc",
-    "clang 10.0.0.*",
     "khronos-opencl-icd-loader",
     "ld64 >=530",
     "libhwloc",
-    "clang 10.0.0.*",
     "ocl-icd",
     "libhwloc",
-    "clang 10.0.0.*",
     "ocl-icd",
     "libhwloc",
-    "clang 10.0.0.*",
     "ocl-icd",
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -843,14 +842,14 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -862,14 +861,14 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -881,14 +880,14 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -900,14 +899,14 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
    },
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -919,7 +918,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -974,7 +974,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8"
+   "number":"9"
   },
   "extra":{
    "recipe-maintainers":[
@@ -1026,19 +1026,18 @@
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
     "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*",
     "zlib"
    ],
    "run":[
     "khronos-opencl-icd-loader",
     "ld64 >=530",
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -1050,7 +1049,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -1084,6 +1084,7 @@
    "elements":[
     "clangdev",
     "khronos-opencl-icd-loader",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -1095,7 +1096,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "khronos-opencl-icd-loader",
     "ld64",
     "libhwloc",
@@ -1115,16 +1115,16 @@
   "pocl-cuda"
  ],
  "pinning_version":"2020.04.03",
- "raw_meta_yaml":"{% set name = \"pocl\" %}\n{% set version = \"1.5\" %}\n{% set build_number = 8 %}\n{% set sha256 = \"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e\" %}\n{% set llvm_version = \"10.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    patches:\n      # https://github.com/pocl/pocl/issues/757#issuecomment-655275263\n      - patches/gh757.patch\n      - patches/gh814.patch\n      - patches/gh819.patch\n      - patches/gh822.patch\n      - patches/gh824.patch\n      - patches/gh-fdde088.patch\n      - patches/gh821.patch\n      - patches/gh-459d0bb.patch\n      - patches/gh834.patch\n      - patches/gh836.patch\n      - patches/gh-804bc73.patch\n      - patches/gh838.patch\n      - patches/gh-revert-6ba1495.patch\n\nbuild:\n  number: {{ build_number }}\n  skip: true  # [win]\n  merge_build_host: true  # [cxx_compiler=='gxx']\n  script_env:     # [enable_cuda]\n    - CUDA_HOME   # [enable_cuda]\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - pkg-config\n    - {{ compiler('cxx') }}\n  host:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - libhwloc\n    - llvmdev {{ llvm_version }}.*\n    - clangdev {{ llvm_version }}.*\n    - llvm {{ llvm_version }}.*\n    - lld {{ llvm_version }}.*\n    - zlib                               # [osx]\n  run:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    # TODO: Remove this when LLVM 10.0.1 is released\n    - ld64 >=530                         # [osx]\n    - {{ pin_compatible('libhwloc') }}\n    # TODO: Change this to libclang-cpp when `libclang-cpp` is separated\n    # into a different conda package\n    - clang {{ llvm_version }}.*\n\ntest:\n  requires:\n    - pyopencl\n    - curl\n  commands:\n    - test -f $PREFIX/lib/libpocl${SHLIB_EXT}     # [unix]\n    # Remove apple icd so that only pocl is found\n    - rm $PREFIX/etc/OpenCL/vendors/apple.icd     # [osx]\n    - export OCL_ICD_DEBUG=15                     # [linux]\n    - curl -O https://raw.githubusercontent.com/inducer/pyopencl/master/examples/demo.py\n    - python demo.py\n\noutputs:\n  - name: pocl\n\n  - name: pocl-cuda\n    build:\n      skip: True   # [not enable_cuda]\n    script: install-cuda.sh\n    requirements:\n      host:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n      run:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n    test:\n      commands:\n        - test -f $PREFIX/lib/pocl/libpocl-devices-cuda.so     # [unix]\n\nabout:\n  home: http://portablecl.org/\n  license: MIT\n  license_file:\n    - LICENSE\n    - LLVM-License.txt\n  summary: Portable Computing Language -- a CPU OpenCL implementation\n  dev_url: https://github.com/pocl/pocl\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - mattwala\n    - isuruf\n",
+ "raw_meta_yaml":"{% set name = \"pocl\" %}\n{% set version = \"1.5\" %}\n{% set build_number = 9 %}\n{% set sha256 = \"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e\" %}\n{% set llvm_version = \"10.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/{{ name }}/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    patches:\n      - patches/gh814.patch\n      - patches/gh819.patch\n      - patches/gh822.patch\n      - patches/gh824.patch\n      - patches/gh-fdde088.patch\n      - patches/gh821.patch\n      - patches/gh-459d0bb.patch\n      - patches/gh834.patch\n      - patches/gh836.patch\n      - patches/gh-804bc73.patch\n      - patches/gh838.patch\n      - patches/gh-revert-6ba1495.patch\n      - patches/gh850.patch\n\nbuild:\n  number: {{ build_number }}\n  skip: true  # [win]\n  merge_build_host: true  # [cxx_compiler=='gxx']\n  script_env:     # [enable_cuda]\n    - CUDA_HOME   # [enable_cuda]\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - pkg-config\n    - {{ compiler('cxx') }}\n  host:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    - libhwloc\n    - llvmdev {{ llvm_version }}.*\n    - clangdev {{ llvm_version }}.*\n    - llvm {{ llvm_version }}.*\n    - lld {{ llvm_version }}.*\n    - libclang-cpp {{ llvm_version }}.*\n    - zlib                               # [osx]\n  run:\n    - ocl-icd                            # [linux]\n    - khronos-opencl-icd-loader          # [osx]\n    # TODO: Remove this when LLVM 10.0.1 is released\n    - ld64 >=530                         # [osx]\n    - {{ pin_compatible('libhwloc') }}\n\ntest:\n  requires:\n    - pyopencl\n    - curl\n  commands:\n    - test -f $PREFIX/lib/libpocl${SHLIB_EXT}     # [unix]\n    # Remove apple icd so that only pocl is found\n    - rm $PREFIX/etc/OpenCL/vendors/apple.icd     # [osx]\n    - export OCL_ICD_DEBUG=15                     # [linux]\n    - curl -O https://raw.githubusercontent.com/inducer/pyopencl/master/examples/demo.py\n    - python demo.py\n\noutputs:\n  - name: pocl\n\n  - name: pocl-cuda\n    build:\n      skip: True   # [not enable_cuda]\n    script: install-cuda.sh\n    requirements:\n      host:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n      run:\n        - {{ pin_subpackage(\"pocl\", exact=True) }}\n    test:\n      commands:\n        - test -f $PREFIX/lib/pocl/libpocl-devices-cuda.so     # [unix]\n\nabout:\n  home: http://portablecl.org/\n  license: MIT\n  license_file:\n    - LICENSE\n    - LLVM-License.txt\n  summary: Portable Computing Language -- a CPU OpenCL implementation\n  dev_url: https://github.com/pocl/pocl\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - mattwala\n    - isuruf\n",
  "req":{
   "__set__":true,
   "elements":[
-   "clang",
    "clangdev",
    "cmake",
    "cxx_compiler_stub",
    "khronos-opencl-icd-loader",
    "ld64",
+   "libclang-cpp",
    "libhwloc",
    "lld",
    "llvm",
@@ -1151,6 +1151,7 @@
    "elements":[
     "clangdev",
     "khronos-opencl-icd-loader",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -1163,7 +1164,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "khronos-opencl-icd-loader",
     "ld64",
     "libhwloc",
@@ -1196,6 +1196,7 @@
    "elements":[
     "clangdev 10.0.0.*",
     "khronos-opencl-icd-loader",
+    "libclang-cpp 10.0.0.*",
     "libhwloc",
     "lld 10.0.0.*",
     "llvm 10.0.0.*",
@@ -1208,7 +1209,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang 10.0.0.*",
     "khronos-opencl-icd-loader",
     "ld64 >=530",
     "libhwloc",
@@ -1238,7 +1238,7 @@
    "summary":"Portable Computing Language -- a CPU OpenCL implementation"
   },
   "build":{
-   "number":"8",
+   "number":"9",
    "skip":true
   },
   "extra":{
@@ -1287,17 +1287,16 @@
     "llvmdev 10.0.0.*",
     "clangdev 10.0.0.*",
     "llvm 10.0.0.*",
-    "lld 10.0.0.*"
+    "lld 10.0.0.*",
+    "libclang-cpp 10.0.0.*"
    ],
    "run":[
-    "libhwloc",
-    "clang 10.0.0.*"
+    "libhwloc"
    ]
   },
   "source":[
    {
     "patches":[
-     "patches/gh757.patch",
      "patches/gh814.patch",
      "patches/gh819.patch",
      "patches/gh822.patch",
@@ -1309,7 +1308,8 @@
      "patches/gh836.patch",
      "patches/gh-804bc73.patch",
      "patches/gh838.patch",
-     "patches/gh-revert-6ba1495.patch"
+     "patches/gh-revert-6ba1495.patch",
+     "patches/gh850.patch"
     ],
     "sha256":"4fcf4618171727d165fc044d465a66e3119217bb4577a97374f94fcd8aed330e",
     "url":"https://github.com/pocl/pocl/archive/v1.5.tar.gz"
@@ -1340,6 +1340,7 @@
    "__set__":true,
    "elements":[
     "clangdev",
+    "libclang-cpp",
     "libhwloc",
     "lld",
     "llvm",
@@ -1350,7 +1351,6 @@
   "run":{
    "__set__":true,
    "elements":[
-    "clang",
     "libhwloc",
     "pocl"
    ]
