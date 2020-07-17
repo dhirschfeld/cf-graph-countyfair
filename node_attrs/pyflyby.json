@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451262442.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.6.3"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -171,7 +190,11 @@
   }
  },
  "name":"pyflyby",
- "new_version":"1.6.2",
+ "new_version":"1.6.3",
+ "new_version_attempts":{
+  "1.6.3":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "home":"https://pypi.org/project/pyflyby/",
@@ -255,6 +278,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.17.07.14.20",
  "raw_meta_yaml":"{% set name = \"pyflyby\" %}\n{% set version = \"1.6.2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5bebd9fe0f40d809bbf029e3d0d1bfa7bfe2a94379f5a8f383cb85d94fb9a88c\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - py = pyflyby._py:py_main\n    - py3 = pyflyby._py:py_main\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - pytest\n    - python\n  run:\n    - pyflakes\n    - six\n    - python\n\ntest:\n  imports:\n    - pyflyby\n  commands:\n    - pip check\n    - py --help\n  requires:\n    - pip\n\nabout:\n  home: https://pypi.org/project/pyflyby/\n  summary: pyflyby - Python development productivity tools, in particular automatic import management\n  license: MIT\n  license_file: doc/LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - scopatz\n",
  "req":{
   "__set__":true,
@@ -294,6 +318,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
