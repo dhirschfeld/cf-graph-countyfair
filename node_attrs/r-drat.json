@@ -163,7 +163,7 @@
   },
   "package":{
    "name":"r-drat",
-   "version":"0.1.7"
+   "version":"0.1.8"
   },
   "requirements":{
    "build":null,
@@ -175,11 +175,11 @@
    ]
   },
   "source":{
-   "fn":"drat_0.1.7.tar.gz",
-   "sha256":"70ca75e19e1ef0a676f2b53278b1f2eef93eefd06c9d20f8d1327506a95c7456",
+   "fn":"drat_0.1.8.tar.gz",
+   "sha256":"d36b5e0ece6c6b6fa02196f8545bb4acd4a42c0baa1592d850f000ef7a178536",
    "url":[
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz"
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz"
    ]
   },
   "test":{
@@ -258,7 +258,7 @@
   },
   "package":{
    "name":"r-drat",
-   "version":"0.1.7"
+   "version":"0.1.8"
   },
   "requirements":{
    "build":null,
@@ -274,15 +274,15 @@
    ]
   },
   "source":{
-   "fn":"drat_0.1.7.tar.gz",
-   "sha256":"70ca75e19e1ef0a676f2b53278b1f2eef93eefd06c9d20f8d1327506a95c7456",
+   "fn":"drat_0.1.8.tar.gz",
+   "sha256":"d36b5e0ece6c6b6fa02196f8545bb4acd4a42c0baa1592d850f000ef7a178536",
    "url":[
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz"
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz"
    ]
   },
   "test":{
@@ -330,7 +330,7 @@
   },
   "package":{
    "name":"r-drat",
-   "version":"0.1.7"
+   "version":"0.1.8"
   },
   "requirements":{
    "build":null,
@@ -342,11 +342,11 @@
    ]
   },
   "source":{
-   "fn":"drat_0.1.7.tar.gz",
-   "sha256":"70ca75e19e1ef0a676f2b53278b1f2eef93eefd06c9d20f8d1327506a95c7456",
+   "fn":"drat_0.1.8.tar.gz",
+   "sha256":"d36b5e0ece6c6b6fa02196f8545bb4acd4a42c0baa1592d850f000ef7a178536",
    "url":[
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz"
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz"
    ]
   },
   "test":{
@@ -378,7 +378,7 @@
   }
  },
  "pinning_version":"2020.07.18.02.18.36",
- "raw_meta_yaml":"{% set version = \"0.1.7\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-drat\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: drat_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/drat_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/drat/drat_{{ version }}.tar.gz\n  sha256: 70ca75e19e1ef0a676f2b53278b1f2eef93eefd06c9d20f8d1327506a95c7456\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 0\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('drat')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('drat')\\\"\"  # [win]\n\nabout:\n  home: http://dirk.eddelbuettel.com/code/drat.html\n  license: GPL (>= 2)\n  summary: 'Creation and use of R Repositories via helper functions to insert packages into a repository, and to add repository information  to the current R session. Two primary types of repositories are support: gh-pages at GitHub, as well as local repositories on either the same machine or a local network. Drat is a recursive\n    acronym: Drat R Archive Template.'\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
+ "raw_meta_yaml":"{% set version = \"0.1.8\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-drat\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: drat_{{ version }}.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/drat_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/drat/drat_{{ version }}.tar.gz\n  sha256: d36b5e0ece6c6b6fa02196f8545bb4acd4a42c0baa1592d850f000ef7a178536\n\nbuild:\n  noarch: generic\n  merge_build_host: true  # [win]\n  number: 0\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ posix }}zip               # [win]\n\n  host:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('drat')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('drat')\\\"\"  # [win]\n\nabout:\n  home: http://dirk.eddelbuettel.com/code/drat.html\n  license: GPL (>= 2)\n  summary: 'Creation and use of R Repositories via helper functions to insert packages into a repository, and to add repository information  to the current R session. Two primary types of repositories are support: gh-pages at GitHub, as well as local repositories on either the same machine or a local network. Drat is a recursive\n    acronym: Drat R Archive Template.'\n  license_family: GPL3\n  license_file: {{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - dbast\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -439,7 +439,7 @@
   "https://cran.r-project.org/src/contrib/drat_0.1.5.tar.gz",
   "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.5.tar.gz"
  ],
- "version":"0.1.7",
+ "version":"0.1.8",
  "win_64_meta_yaml":{
   "about":{
    "home":"http://dirk.eddelbuettel.com/code/drat.html",
@@ -470,7 +470,7 @@
   },
   "package":{
    "name":"r-drat",
-   "version":"0.1.7"
+   "version":"0.1.8"
   },
   "requirements":{
    "build":[
@@ -484,11 +484,11 @@
    ]
   },
   "source":{
-   "fn":"drat_0.1.7.tar.gz",
-   "sha256":"70ca75e19e1ef0a676f2b53278b1f2eef93eefd06c9d20f8d1327506a95c7456",
+   "fn":"drat_0.1.8.tar.gz",
+   "sha256":"d36b5e0ece6c6b6fa02196f8545bb4acd4a42c0baa1592d850f000ef7a178536",
    "url":[
-    "https://cran.r-project.org/src/contrib/drat_0.1.7.tar.gz",
-    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.7.tar.gz"
+    "https://cran.r-project.org/src/contrib/drat_0.1.8.tar.gz",
+    "https://cran.r-project.org/src/contrib/Archive/drat/drat_0.1.8.tar.gz"
    ]
   },
   "test":{
