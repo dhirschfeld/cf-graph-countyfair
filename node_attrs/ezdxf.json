@@ -302,6 +302,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451698992.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.13.1"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -458,7 +475,7 @@
   }
  },
  "name":"ezdxf",
- "new_version":"0.13",
+ "new_version":"0.13.1",
  "new_version_attempts":{
   "0.12":1,
   "0.12.1":1,
@@ -466,7 +483,8 @@
   "0.12.3":1,
   "0.12.4":1,
   "0.12.5":1,
-  "0.13":1
+  "0.13":1,
+  "0.13.1":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -546,7 +564,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.03.10.54.45",
+ "pinning_version":"2020.07.18.02.18.36",
  "raw_meta_yaml":"{% set name = \"ezdxf\" %}\n{% set version = \"0.13\" %}\n{% set sha256 = \"da6366f60a34b9465e503f3216efa96debf1bdeb02e4e6803106c9321e4a170b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\n  noarch: python\n  entry_points:\n    - dxfpp = ezdxf.pp.__main__:main\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - pyparsing >=2.0.1\n\ntest:\n  imports:\n    - ezdxf\n  commands:\n    - dxfpp --help\n    - python -c 'import ezdxf; ezdxf.new()'\n\nabout:\n  home: http://github.com/mozman/ezdxf\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python package to create/manipulate DXF drawings.\n  description: |\n    A Python package to create and modify DXF drawings, independent from the DXF version. You can open/save every DXF file without loosing any content (except comments), Unknown tags in the DXF file will be ignored but preserved for saving. With this behavior it is possible to open also DXF drawings that contains data from 3rd party applications.    \n\n  doc_url: https://pythonhosted.org/ezdxf\n  dev_url: http://github.com/mozman/ezdxf\n\nextra:\n  recipe-maintainers:\n    - csachs\n",
  "req":{
   "__set__":true,
