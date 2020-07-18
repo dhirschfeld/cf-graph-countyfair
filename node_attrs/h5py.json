@@ -195,8 +195,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -239,7 +239,8 @@
   "source":{
    "patches":[
     "remove_test.patch",
-    "ppc64le_test.patch"
+    "ppc64le_test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
@@ -300,8 +301,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -344,7 +345,8 @@
   "source":{
    "patches":[
     "remove_test.patch",
-    "ppc64le_test.patch"
+    "ppc64le_test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
@@ -405,8 +407,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -449,7 +451,8 @@
   "source":{
    "patches":[
     "remove_test.patch",
-    "ppc64le_test.patch"
+    "ppc64le_test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
@@ -510,8 +513,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -645,14 +648,19 @@
     "remove_test.patch",
     "ppc64le_test.patch",
     "skip-failing-unicode-test.patch",
+    "use-char-not-array-array.patch",
     "remove_test.patch",
     "ppc64le_test.patch",
+    "use-char-not-array-array.patch",
     "remove_test.patch",
     "ppc64le_test.patch",
+    "use-char-not-array-array.patch",
     "remove_test.patch",
     "ppc64le_test.patch",
+    "use-char-not-array-array.patch",
     "remove_test.patch",
-    "ppc64le_test.patch"
+    "ppc64le_test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
@@ -684,8 +692,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -728,7 +736,8 @@
   "source":{
    "patches":[
     "remove_test.patch",
-    "ppc64le_test.patch"
+    "ppc64le_test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
@@ -782,7 +791,7 @@
   }
  },
  "pinning_version":"2020.06.15.22.23.24",
- "raw_meta_yaml":"{% set version = \"2.10.0\" %}\n{% set build = 3 %}\n\n# mpi must be defined for conda-smithy lint\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'nompi' %}\n# prefer nompi builds via a build number offset\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: h5py\n  version: {{ version }}\n\nsource:\n  url: https://github.com/h5py/h5py/archive/{{ version }}.tar.gz\n  sha256: 2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e\n  patches:\n    - remove_test.patch\n    - remove_read_direct_chunk_test.patch  # [py < 30]\n    # see https://github.com/h5py/h5py/issues/1244\n    #     https://github.com/h5py/h5py/pull/1325\n    - ppc64le_test.patch\n    # skip failing unicode test on windows\n    - skip-failing-unicode-test.patch  # [win]\n\nbuild:\n  number: {{ build }}\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  # There are dependency conflicts for Python 2 on Windows\n  skip: True  # [win and py<30]\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `pkg * mpi_mpich_*` for mpich\n  # `hdf5 * mpi_*` for any mpi\n  # `hdf5 * nompi_*` for no mpi\n  string: \"{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n  host:\n    - python\n    - pip\n    - numpy\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    # need to list hdf5 twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - hdf5\n    - hdf5 * {{ mpi_prefix }}_*\n    - cython\n    - six\n    - pkgconfig\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    # hdf5 >=1.10.4 has run_exports\n    - hdf5\n    - six\n    - unittest2  # [py26 or py27]\n    - pyreadline  # [win]\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - h5py\n\nabout:\n  home: http://www.h5py.org/\n  license: BSD-3-Clause\n  license_file: licenses/license.txt\n  summary: Read and write HDF5 files from Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - tacaswell\n    - ocefpaf\n    - minrk\n    - scopatz\n",
+ "raw_meta_yaml":"{% set version = \"2.10.0\" %}\n{% set build = 4 %}\n\n# mpi must be defined for conda-smithy lint\n{% set mpi = mpi or 'nompi' %}\n\n{% if mpi == 'nompi' %}\n# prefer nompi builds via a build number offset\n{% set build = build + 100 %}\n{% endif %}\n\npackage:\n  name: h5py\n  version: {{ version }}\n\nsource:\n  url: https://github.com/h5py/h5py/archive/{{ version }}.tar.gz\n  sha256: 2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e\n  patches:\n    - remove_test.patch\n    - remove_read_direct_chunk_test.patch  # [py < 30]\n    # see https://github.com/h5py/h5py/issues/1244\n    #     https://github.com/h5py/h5py/pull/1325\n    - ppc64le_test.patch\n    # skip failing unicode test on windows\n    - skip-failing-unicode-test.patch  # [win]\n    - use-char-not-array-array.patch\n\nbuild:\n  number: {{ build }}\n  {% if mpi != 'nompi' %}\n  {% set mpi_prefix = \"mpi_\" + mpi %}\n  {% else %}\n  {% set mpi_prefix = \"nompi\" %}\n  {% endif %}\n  # There are dependency conflicts for Python 2 on Windows\n  skip: True  # [win and py<30]\n  # add build string so packages can depend on\n  # mpi or nompi variants\n  # dependencies:\n  # `pkg * mpi_mpich_*` for mpich\n  # `hdf5 * mpi_*` for any mpi\n  # `hdf5 * nompi_*` for no mpi\n  string: \"{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}\"\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n  host:\n    - python\n    - pip\n    - numpy\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    # need to list hdf5 twice to get version pinning from conda_build_config\n    # and build pinning from {{ mpi_prefix }}\n    - hdf5\n    - hdf5 * {{ mpi_prefix }}_*\n    - cython\n    - six\n    - pkgconfig\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - {{ mpi }}  # [mpi != 'nompi']\n    - mpi4py  # [mpi != 'nompi']\n    # hdf5 >=1.10.4 has run_exports\n    - hdf5\n    - six\n    - unittest2  # [py26 or py27]\n    - pyreadline  # [win]\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - h5py\n\nabout:\n  home: http://www.h5py.org/\n  license: BSD-3-Clause\n  license_file: licenses/license.txt\n  summary: Read and write HDF5 files from Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - tacaswell\n    - ocefpaf\n    - minrk\n    - scopatz\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -892,8 +901,8 @@
    "summary":"Read and write HDF5 files from Python"
   },
   "build":{
-   "number":"103",
-   "string":"nompi_pyh_103"
+   "number":"104",
+   "string":"nompi_pyh_104"
   },
   "extra":{
    "recipe-maintainers":[
@@ -938,7 +947,8 @@
    "patches":[
     "remove_test.patch",
     "ppc64le_test.patch",
-    "skip-failing-unicode-test.patch"
+    "skip-failing-unicode-test.patch",
+    "use-char-not-array-array.patch"
    ],
    "sha256":"2a8369f74d079dbfe35aebbf56b565a5d2e7bea6d3cdba682b4d456128a23b5e",
    "url":"https://github.com/h5py/h5py/archive/2.10.0.tar.gz"
