@@ -589,7 +589,7 @@
   },
   "package":{
    "name":"labelme",
-   "version":"4.5.5"
+   "version":"4.5.6"
   },
   "requirements":{
    "host":[
@@ -608,8 +608,8 @@
    ]
   },
   "source":{
-   "sha256":"c0ca8f364538bb2626cca4d3ab8d96193a69a18ad5cc7d3d8695fa0312912878",
-   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.5.tar.gz"
+   "sha256":"5967588d5bd8bf3c94742593a35798cfdcb1a4c1693c62d0819af2f2f093b440",
+   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.6.tar.gz"
   },
   "test":{
    "commands":[
@@ -695,7 +695,7 @@
   },
   "package":{
    "name":"labelme",
-   "version":"4.5.5"
+   "version":"4.5.6"
   },
   "requirements":{
    "host":[
@@ -715,6 +715,7 @@
     "pyyaml",
     "termcolor",
     "qtpy",
+    "colorama",
     "python",
     "imgviz >=0.10.2",
     "matplotlib-base",
@@ -734,8 +735,8 @@
    ]
   },
   "source":{
-   "sha256":"c0ca8f364538bb2626cca4d3ab8d96193a69a18ad5cc7d3d8695fa0312912878",
-   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.5.tar.gz"
+   "sha256":"5967588d5bd8bf3c94742593a35798cfdcb1a4c1693c62d0819af2f2f093b440",
+   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.6.tar.gz"
   },
   "test":{
    "commands":[
@@ -798,7 +799,7 @@
   },
   "package":{
    "name":"labelme",
-   "version":"4.5.5"
+   "version":"4.5.6"
   },
   "requirements":{
    "host":[
@@ -817,8 +818,8 @@
    ]
   },
   "source":{
-   "sha256":"c0ca8f364538bb2626cca4d3ab8d96193a69a18ad5cc7d3d8695fa0312912878",
-   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.5.tar.gz"
+   "sha256":"5967588d5bd8bf3c94742593a35798cfdcb1a4c1693c62d0819af2f2f093b440",
+   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.6.tar.gz"
   },
   "test":{
    "commands":[
@@ -862,10 +863,11 @@
   }
  },
  "pinning_version":"2020.07.15.18.18.04",
- "raw_meta_yaml":"{% set name = \"labelme\" %}\n{% set version = \"4.5.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c0ca8f364538bb2626cca4d3ab8d96193a69a18ad5cc7d3d8695fa0312912878\n  # patches:\n  #   - disable_automatic_install_of_qt.patch\n\nbuild:\n  number: 0\n  # too lazy to build python 2.7 for an interactive tool\n  skip: true  # [py==27]\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - labelme = labelme.__main__:main\n    - labelme_draw_json = labelme.cli.draw_json:main\n    - labelme_draw_label_png = labelme.cli.draw_label_png:main\n    - labelme_json_to_dataset = labelme.cli.json_to_dataset:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - imgviz >=0.10.2\n    - matplotlib-base\n    - numpy\n    - pillow\n    - pyyaml\n    - termcolor\n    - qtpy\n\ntest:\n  requires:\n    - pyqt\n  commands:\n    - labelme --help\n\napp:\n  entry: labelme\n  icon: {{ SRC_DIR }}/labelme/icons/icon.png\n  summary: Image Polygonal Annotation with Python\n  type: desk\n\nabout:\n  home: https://github.com/wkentaro/labelme\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).\n  description: |\n    Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\n    It is written in Python and uses Qt for its graphical interface.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml":"{% set name = \"labelme\" %}\n{% set version = \"4.5.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5967588d5bd8bf3c94742593a35798cfdcb1a4c1693c62d0819af2f2f093b440\n  # patches:\n  #   - disable_automatic_install_of_qt.patch\n\nbuild:\n  number: 0\n  # too lazy to build python 2.7 for an interactive tool\n  skip: true  # [py==27]\n  script: {{ PYTHON }} -m pip install . -vv\n  entry_points:\n    - labelme = labelme.__main__:main\n    - labelme_draw_json = labelme.cli.draw_json:main\n    - labelme_draw_label_png = labelme.cli.draw_label_png:main\n    - labelme_json_to_dataset = labelme.cli.json_to_dataset:main\n  osx_is_app: true\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - imgviz >=0.10.2\n    - matplotlib-base\n    - numpy\n    - pillow\n    - pyyaml\n    - termcolor\n    - qtpy\n    - colorama  # [win]\n\ntest:\n  requires:\n    - pyqt\n  commands:\n    - labelme --help\n\napp:\n  entry: labelme\n  icon: {{ SRC_DIR }}/labelme/icons/icon.png\n  summary: Image Polygonal Annotation with Python\n  type: desk\n\nabout:\n  home: https://github.com/wkentaro/labelme\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE\n  summary: Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).\n  description: |\n    Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\n    It is written in Python and uses Qt for its graphical interface.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
+   "colorama",
    "imgviz",
    "matplotlib-base",
    "numpy",
@@ -892,6 +894,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "colorama",
     "imgviz",
     "matplotlib-base",
     "numpy",
@@ -926,6 +929,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "colorama",
     "imgviz >=0.10.2",
     "matplotlib-base",
     "numpy",
@@ -944,7 +948,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/l/labelme/labelme-3.16.7.tar.gz",
- "version":"4.5.5",
+ "version":"4.5.6",
  "win_64_meta_yaml":{
   "about":{
    "description":"Labelme is a graphical image annotation tool inspired by http://labelme.csail.mit.edu.\nIt is written in Python and uses Qt for its graphical interface.\n",
@@ -978,7 +982,7 @@
   },
   "package":{
    "name":"labelme",
-   "version":"4.5.5"
+   "version":"4.5.6"
   },
   "requirements":{
    "host":[
@@ -993,12 +997,13 @@
     "pillow",
     "pyyaml",
     "termcolor",
-    "qtpy"
+    "qtpy",
+    "colorama"
    ]
   },
   "source":{
-   "sha256":"c0ca8f364538bb2626cca4d3ab8d96193a69a18ad5cc7d3d8695fa0312912878",
-   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.5.tar.gz"
+   "sha256":"5967588d5bd8bf3c94742593a35798cfdcb1a4c1693c62d0819af2f2f093b440",
+   "url":"https://pypi.io/packages/source/l/labelme/labelme-4.5.6.tar.gz"
   },
   "test":{
    "commands":[
@@ -1024,6 +1029,7 @@
   "run":{
    "__set__":true,
    "elements":[
+    "colorama",
     "imgviz",
     "matplotlib-base",
     "numpy",
