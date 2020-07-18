@@ -127,7 +127,7 @@
    "summary":"Python bindings for Flint and Arb"
   },
   "build":{
-   "number":"1003",
+   "number":"1004",
    "script":[
     " -m pip install . -vvv"
    ]
@@ -227,7 +227,7 @@
    "summary":"Python bindings for Flint and Arb"
   },
   "build":{
-   "number":"1003",
+   "number":"1004",
    "script":[
     "set \"INCLUDE=%INCLUDE%;%LIBRARY_INC%\\\\flint\"",
     " -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv",
@@ -337,7 +337,7 @@
    "summary":"Python bindings for Flint and Arb"
   },
   "build":{
-   "number":"1003",
+   "number":"1004",
    "script":[
     " -m pip install . -vvv"
    ]
@@ -427,7 +427,7 @@
   }
  },
  "pinning_version":"2020.07.13.05.23.11",
- "raw_meta_yaml":"{% set name = \"python-flint\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd\n  patches:\n    - gh9.patch\n\nbuild:\n  number: 1003\n  skip: True  # [win]\n  script:\n    - set \"INCLUDE=%INCLUDE%;%LIBRARY_INC%\\\\flint\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv\"  # [win]\n    - \"{{ PYTHON }} -m pip install . -vvv\"  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - cython\n    - pip\n    - arb\n    - libflint\n    - mpfr\n    - mpir    # [win]\n    - gmp     # [unix]\n    - numpy\n  run:\n    - python\n    - libflint\n    - mpfr\n    - mpir    # [win]\n    - gmp     # [unix]\n\ntest:\n  source_files:\n    - test/test.py\n  imports:\n    - flint\n  commands:\n    - python test/test.py\n\nabout:\n  home: https://github.com/fredrik-johansson/python-flint\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python bindings for Flint and Arb'\n  doc_url: http://fredrikj.net/python-flint\n  dev_url: https://github.com/fredrik-johansson/python-flint\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
+ "raw_meta_yaml":"{% set name = \"python-flint\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 947573a0f7e92ac58c08ff43c3c949379a3329e52df93e8e2420fe8041c8cfbd\n  patches:\n    - gh9.patch\n\nbuild:\n  number: 1004\n  skip: True  # [win]\n  script:\n    - set \"INCLUDE=%INCLUDE%;%LIBRARY_INC%\\\\flint\"  # [win]\n    - \"{{ PYTHON }} -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv\"  # [win]\n    - \"{{ PYTHON }} -m pip install . -vvv\"  # [unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - cython\n    - pip\n    - arb\n    - libflint\n    - mpfr\n    - mpir    # [win]\n    - gmp     # [unix]\n    - numpy\n  run:\n    - python\n    - libflint\n    - mpfr\n    - mpir    # [win]\n    - gmp     # [unix]\n\ntest:\n  source_files:\n    - test/test.py\n  imports:\n    - flint\n  commands:\n    - python test/test.py\n\nabout:\n  home: https://github.com/fredrik-johansson/python-flint\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python bindings for Flint and Arb'\n  doc_url: http://fredrikj.net/python-flint\n  dev_url: https://github.com/fredrik-johansson/python-flint\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -530,7 +530,7 @@
    "summary":"Python bindings for Flint and Arb"
   },
   "build":{
-   "number":"1003",
+   "number":"1004",
    "script":[
     "set \"INCLUDE=%INCLUDE%;%LIBRARY_INC%\\\\flint\"",
     " -m pip install . --global-option=build_ext --global-option=-DMSC_USE_DLL -vvv"
