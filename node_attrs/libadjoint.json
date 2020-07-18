@@ -166,6 +166,25 @@
     "__lazy_json__":"pr_json/405239021.json"
    },
    "data":{
+    "bot_rerun":1595107922.3504226,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"petsc313"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452158942.json"
+   },
+   "data":{
     "bot_rerun":false,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":1,
@@ -182,7 +201,7 @@
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{
   "compiler_stack":"comp7",
   "max_py_ver":"37",
@@ -473,7 +492,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.17.11.45.02",
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set version = \"2017.2.0\" %}\n{% set sha256 = \"01f49c13f07a1ae3f2f28c2a8890b41ac53ab4bdc31073fab9cece85e25f794d\" %}\n\npackage:\n  name: libadjoint\n  version: {{ version }}\n\nsource:\n  fn: libadjoint-{{ version }}.tar.gz\n  url: https://bitbucket.org/dolfin-adjoint/libadjoint/downloads/libadjoint-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1004\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - mpich\n    - petsc\n    - slepc\n  run:\n    - python\n    - mpich\n    - petsc\n    - slepc\n    - six\n    - numpy\n\ntest:\n  imports:\n    - libadjoint\n\nabout:\n  home: http://www.dolfin-adjoint.org/\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'library for the high-level algorithmic differentiation of scientific models'\n\n  description: |\n    libadjoint is a library for the high-level algorithmic differentiation of\n    scientific models. It's mainly used by dolfin-adjoint.\n  doc_url: http://www.dolfin-adjoint.org/en/latest/documentation/index.html\n  dev_url: https://bitbucket.org/dolfin-adjoint/libadjoint\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - funsim\n    - minrk\n",
  "req":{
   "__set__":true,
@@ -525,7 +544,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
