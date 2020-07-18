@@ -18,6 +18,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451597937.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -201,7 +218,7 @@
  "name":"inspiral-range",
  "new_version":"0.4.0",
  "new_version_attempts":{
-  "0.4.0":31
+  "0.4.0":32
  },
  "new_version_errors":{
   "0.4.0":"The recipe did not change in the version migration, a URL did not hash, or there is jinja2 syntax the bot cannot handle!\n\nPlease check the URLs in your recipe with version '0.4.0' to make sure they exist!\n\nWe also found the following errors:\n\n - could not hash URL template 'https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz'\n"
@@ -291,7 +308,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.07.15.30.32",
+ "pinning_version":"2020.07.17.17.28.25",
  "raw_meta_yaml":"{% set name = \"inspiral_range\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower|replace('_', '-') }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 503624248d3824266889a3343611ce412d50737591e31f62287265b25c7e9a0f\n\nbuild:\n  entry_points:\n    - inspiral-range = inspiral_range.__main__:main\n  number: 1\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - astropy  # [win]\n    - python-lal  # [not win]\n    - python-lalsimulation  # [not win]\n    - python\n    - scipy\n\ntest:\n  imports:\n    - inspiral_range\n  source_files:\n    - inspiral_range/test\n  commands:\n    - inspiral-range --asd inspiral_range/test/O2.txt\n    - inspiral-range --asd inspiral_range/test/O3.txt m1=30 m2=30\n\nabout:\n  home: https://git.ligo.org/gwinc/inspiral_range\n  dev_url: https://git.ligo.org/gwinc/inspiral_range\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file:\n    - COPYING\n    - COPYING-GPL-3\n  summary: GW detector inspiral range calculation tools\n  description: |\n    The inspiral_range package provides tools for calculating various binary\n    inspiral range measures useful as figures of merit for gravitational wave\n    detectors characterised by a strain noise spectral density.\n\n    It includes a command-line tool for calculating various inspiral ranges\n    from a supplied file of detector noise spectral density (either ASD or\n    PSD).\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n    - jrollins\n",
  "req":{
   "__set__":true,
