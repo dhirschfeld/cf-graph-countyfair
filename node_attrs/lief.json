@@ -112,7 +112,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -124,6 +124,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -131,17 +134,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -167,12 +171,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -184,7 +188,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -192,31 +196,35 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -225,18 +233,19 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "make",
-    "pkg-config",
-    "python"
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -254,7 +263,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "ninja"
    ]
   }
  },
@@ -270,7 +279,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -282,6 +291,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -289,17 +301,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -325,12 +338,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -342,7 +355,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -350,31 +363,35 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -383,18 +400,19 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "make",
-    "pkg-config",
-    "python"
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -412,7 +430,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "ninja"
    ]
   }
  },
@@ -428,7 +446,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -440,6 +458,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -447,17 +468,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -483,12 +505,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -500,7 +522,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -508,31 +530,35 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -541,18 +567,19 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "make",
-    "pkg-config",
-    "python"
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -570,7 +597,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "ninja"
    ]
   }
  },
@@ -586,8 +613,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1",
-   "skip":true
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -611,6 +637,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -618,16 +647,19 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
-      "jom",
-      "cmake"
+      "m2-patch",
+      "m2-gcc-libs",
+      "cmake",
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -653,11 +685,11 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
-      "jom",
-      "cmake"
+      "cmake",
+      "ninja"
      ]
     },
     "script":"install-liblief.bat",
@@ -669,13 +701,16 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "jom"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
    },
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -683,17 +718,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -719,12 +755,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -736,13 +772,16 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
    },
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -750,17 +789,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -786,12 +826,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -803,13 +843,16 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
    },
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -817,17 +860,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -853,12 +897,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -870,13 +914,16 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
    },
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -884,17 +931,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -920,12 +968,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -937,7 +985,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -945,106 +993,127 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
-    "jom",
+    "m2-patch",
+    "m2-gcc-libs",
     "cmake",
-    "python",
+    "ninja",
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python",
+    "ninja",
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python",
+    "ninja",
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python",
+    "ninja",
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    },
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    },
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    },
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    },
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -1062,7 +1131,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1"
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -1074,6 +1143,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -1081,17 +1153,18 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -1117,12 +1190,12 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
       "pkg-config",
       "cmake",
-      "make"
+      "ninja"
      ]
     },
     "script":"install-liblief.sh",
@@ -1134,7 +1207,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "make"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -1142,31 +1215,35 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
     "pkg-config",
+    "patch",
     "cmake",
-    "make",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -1175,18 +1252,19 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "make",
-    "pkg-config",
-    "python"
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -1204,7 +1282,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "make"
+    "ninja"
    ]
   }
  },
@@ -1213,17 +1291,20 @@
   "py-lief"
  ],
  "pinning_version":"2020.03.12",
- "raw_meta_yaml":"{% set version = \"0.9.0\" %}\n\npackage:\n  name: lief\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/lief-project/LIEF/archive/{{ version }}.tar.gz\n    fn: lief-{{ version }}.tar.gz\n    sha256: 8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7\n    patches:\n      - 0001-Allow-building-from-released-tarball.patch\n      - 0002-MSVC-Add-bigobj-flag.patch\n      - 0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch\n      - 0004-MachO-Fix-has_dynamic_symbol_command.patch\n      - 0005-Link-Python-extension-module-to-shared-LIEF-library.patch\n\nbuild:\n  number: 1\n  # Python 2.7 is not supported on Windows\n  # lief_easyloggingpp\\src\\easylogging++.h(327) : fatal error C1189: #error :  \"C++0x (or higher) support not detected! (Is `-std=c++11' missing?)\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - git\n    - pkg-config            # [not win]\n    - jom                   # [win]\n    - cmake\n    - make                  # [unix]\n    - python\n\noutputs:\n  - name: py-lief\n    script: install-py-lief.sh   # [unix]\n    script: install-py-lief.bat  # [win]\n    build:\n      run_exports:\n        - {{ pin_subpackage('py-lief', max_pin='x.x') }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - git\n        - pkg-config            # [not win]\n        - jom                   # [win]\n        - cmake\n        - make                  # [unix]\n      host:\n        - {{ pin_subpackage('liblief', exact=True) }}\n        - python\n        - setuptools\n      run:\n        - {{ pin_subpackage('liblief', exact=True) }}\n        - python\n    test:\n      requires:\n        - {{ compiler('cxx') }}\n      imports:\n        - lief\n\n  - name: liblief\n    script: install-liblief.sh        # [unix]\n    script: install-liblief.bat       # [win]\n    build:\n      run_exports:\n        - {{ pin_subpackage('liblief', max_pin='x.x') }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - git\n        - pkg-config            # [not win]\n        - jom                   # [win]\n        - cmake\n        - make                  # [unix]\n    test:\n      files:\n        - tests\n      script: run_test_liblief.sh\n      requires:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - cmake\n        - jom                   # [win]\n        - make                  # [unix]\n\nabout:\n  home: https://lief.quarkslab.com/\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: A cross platform library to parse, modify and abstract ELF, PE and MachO formats.\n  description: |\n    It turns out that many projects need to parse executable formats and they usually re-implement\n    their own parser. Moreover these parsers are usually bound to one language.\n    LIEF attempts to fill this void.\n  doc_url: https://lief.quarkslab.com/doc/stable/index.html\n  doc_source_url: https://github.com/lief-project/LIEF/tree/master/doc\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - mingwandroid\n    - msarahan\n",
+ "raw_meta_yaml":"{% set version = \"0.10.1\" %}\n\npackage:\n  name: lief\n  version: {{ version }}\n\nsource:\n  - url: https://github.com/lief-project/LIEF/archive/{{ version }}.tar.gz\n    fn: lief-{{ version }}.tar.gz\n    sha256: 6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a\n    patches:\n      - 0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch\n      - 0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch\n      - 0003-Export-BuildToolVersion.patch\n      - 0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch\n      - 0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch\n      - 0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch\n      - 0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch\n      # - 0008-Export-parse-in-include-LIEF-ELF-Parser.hpp.patch\n      - 0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch\n      - 0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch\n\nbuild:\n  number: 0\n  # Python 2.7 is not supported on Windows\n  # lief_easyloggingpp\\src\\easylogging++.h(327) : fatal error C1189: #error :  \"C++0x (or higher) support not detected! (Is `-std=c++11' missing?)\n  skip: True  # [win and py<30]\n\nrequirements:\n  build:\n    - ccache\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - pkg-config            # [not win]\n    - patch  # [not win]\n    - m2-patch  # [win]\n    - m2-gcc-libs  # [win]\n    - cmake\n    - ninja\n\noutputs:\n  - name: py-lief\n    script: install-py-lief.sh   # [unix]\n    script: install-py-lief.bat  # [win]\n    build:\n      run_exports:\n        - {{ pin_subpackage('py-lief', max_pin='x.x') }}\n      ignore_run_exports:\n        - python\n    requirements:\n      build:\n        - ccache\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - pkg-config            # [not win]\n        # When making a debug build on Windows, we need to patch CMake downloaded pybind11. Sorry.\n        - m2-patch  # [win]\n        - m2-gcc-libs  # [win]\n        - cmake\n        - ninja\n      host:\n        - {{ pin_subpackage('liblief', exact=True) }}\n        - python\n        - setuptools\n        - pip\n      run:\n        - {{ pin_subpackage('liblief', exact=True) }}\n        - python\n    test:\n      requires:\n        - {{ compiler('cxx') }}\n      imports:\n        - lief\n\n  - name: liblief\n    script: install-liblief.sh        # [unix]\n    script: install-liblief.bat       # [win]\n    build:\n      run_exports:\n        - {{ pin_subpackage('liblief', max_pin='x.x') }}\n    requirements:\n      build:\n        - ccache\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - pkg-config            # [not win]\n        - cmake\n        - ninja\n    test:\n      files:\n        - tests\n      script: run_test_liblief.sh\n      requires:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - cmake\n        - ninja\n\nabout:\n  home: https://lief.quarkslab.com/\n  license: Apache-2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: A cross platform library to parse, modify and abstract ELF, PE and MachO formats.\n  description: |\n    It turns out that many projects need to parse executable formats and they usually re-implement\n    their own parser. Moreover these parsers are usually bound to one language.\n    LIEF attempts to fill this void.\n  doc_url: https://lief.quarkslab.com/doc/stable/index.html\n  doc_source_url: https://github.com/lief-project/LIEF/tree/master/doc\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - mingwandroid\n    - msarahan\n",
  "req":{
   "__set__":true,
   "elements":[
    "c_compiler_stub",
+   "ccache",
    "cmake",
    "cxx_compiler_stub",
-   "git",
-   "jom",
    "liblief",
-   "make",
+   "m2-gcc-libs",
+   "m2-patch",
+   "ninja",
+   "patch",
+   "pip",
    "pkg-config",
    "python",
    "setuptools"
@@ -1234,19 +1315,21 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "jom",
-    "make",
-    "pkg-config",
-    "python"
+    "m2-gcc-libs",
+    "m2-patch",
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -1264,8 +1347,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "jom",
-    "make"
+    "ninja"
    ]
   }
  },
@@ -1276,19 +1358,21 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "jom",
-    "make",
-    "pkg-config",
-    "python"
+    "m2-gcc-libs",
+    "m2-patch",
+    "ninja",
+    "patch",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -1306,13 +1390,12 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "jom",
-    "make"
+    "ninja"
    ]
   }
  },
  "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz",
- "version":"0.9.0",
+ "version":"0.10.1",
  "win_64_meta_yaml":{
   "about":{
    "description":"It turns out that many projects need to parse executable formats and they usually re-implement\ntheir own parser. Moreover these parsers are usually bound to one language.\nLIEF attempts to fill this void.\n",
@@ -1325,8 +1408,7 @@
    "summary":"A cross platform library to parse, modify and abstract ELF, PE and MachO formats."
   },
   "build":{
-   "number":"1",
-   "skip":true
+   "number":"0"
   },
   "extra":{
    "recipe-maintainers":[
@@ -1338,6 +1420,9 @@
   "outputs":[
    {
     "build":{
+     "ignore_run_exports":[
+      "python"
+     ],
      "run_exports":[
       "py-lief"
      ]
@@ -1345,16 +1430,19 @@
     "name":"py-lief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
-      "jom",
-      "cmake"
+      "m2-patch",
+      "m2-gcc-libs",
+      "cmake",
+      "ninja"
      ],
      "host":[
       "liblief",
       "python",
-      "setuptools"
+      "setuptools",
+      "pip"
      ],
      "run":[
       "liblief",
@@ -1380,11 +1468,11 @@
     "name":"liblief",
     "requirements":{
      "build":[
+      "ccache",
       "c_compiler_stub",
       "cxx_compiler_stub",
-      "git",
-      "jom",
-      "cmake"
+      "cmake",
+      "ninja"
      ]
     },
     "script":"install-liblief.bat",
@@ -1396,7 +1484,7 @@
       "c_compiler_stub",
       "cxx_compiler_stub",
       "cmake",
-      "jom"
+      "ninja"
      ],
      "script":"run_test_liblief.sh"
     }
@@ -1404,30 +1492,35 @@
   ],
   "package":{
    "name":"lief",
-   "version":"0.9.0"
+   "version":"0.10.1"
   },
   "requirements":{
    "build":[
+    "ccache",
     "c_compiler_stub",
     "cxx_compiler_stub",
-    "git",
-    "jom",
+    "m2-patch",
+    "m2-gcc-libs",
     "cmake",
-    "python"
+    "ninja"
    ]
   },
   "source":[
    {
-    "fn":"lief-0.9.0.tar.gz",
+    "fn":"lief-0.10.1.tar.gz",
     "patches":[
-     "0001-Allow-building-from-released-tarball.patch",
-     "0002-MSVC-Add-bigobj-flag.patch",
-     "0003-Export-LIEF-Object-and-LIEF-MachO-DataCodeEntry-clas.patch",
-     "0004-MachO-Fix-has_dynamic_symbol_command.patch",
-     "0005-Link-Python-extension-module-to-shared-LIEF-library.patch"
+     "0001-python-Only-pass-NODEFAULTLIB-MSVCRT-when-not-BUILD_.patch",
+     "0002-Fix-typo-BuildeVersion-BuildVersion-which-may-lead-t.patch",
+     "0003-Export-BuildToolVersion.patch",
+     "0004-Do-not-annotate-static-ELF-Parser-s-parse-function-a.patch",
+     "0005-Update-LIEF_VERSION_PATCH-to-1-for-v0.10.1.patch",
+     "0006-Call-the-C-DLL-libLIEF.dll-so-it-does-not-clash-with.patch",
+     "0007-Add-LIEFOptions-for-BUILD_STATIC_LIBS-and-BUILD_SHAR.patch",
+     "0008-Add-_DEBUG-when-CMAKE_BUILD_TYPE-matches-Debug.patch",
+     "0009-Avoid-deprecated-get_config_var-SO-use-EXT_SUFFIX-lo.patch"
     ],
-    "sha256":"8f1a12d69d9f6bd8404d4f5809549d1c7f3138cacf3bccd1192cb4f46bfb9eb7",
-    "url":"https://github.com/lief-project/LIEF/archive/0.9.0.tar.gz"
+    "sha256":"6f30c98a559f137e08b25bcbb376c0259914b33c307b8b901e01ca952241d00a",
+    "url":"https://github.com/lief-project/LIEF/archive/0.10.1.tar.gz"
    }
   ]
  },
@@ -1436,17 +1529,19 @@
    "__set__":true,
    "elements":[
     "c_compiler_stub",
+    "ccache",
     "cmake",
     "cxx_compiler_stub",
-    "git",
-    "jom",
-    "python"
+    "m2-gcc-libs",
+    "m2-patch",
+    "ninja"
    ]
   },
   "host":{
    "__set__":true,
    "elements":[
     "liblief",
+    "pip",
     "python",
     "setuptools"
    ]
@@ -1464,7 +1559,7 @@
     "c_compiler_stub",
     "cmake",
     "cxx_compiler_stub",
-    "jom"
+    "ninja"
    ]
   }
  }
