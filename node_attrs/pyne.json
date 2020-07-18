@@ -174,68 +174,58 @@
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "features":[
-    "blas_openblas"
-   ],
-   "number":"0"
+   "number":"0",
+   "string":"nomoab_noopenmc_pyh_0"
   },
   "extra":{
    "recipe-maintainers":[
-    "scopatz"
+    "scopatz",
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise"
    ]
   },
   "package":{
    "name":"pyne",
-   "version":"0.5.11"
+   "version":"0.7.0"
   },
   "requirements":{
    "build":[
-    "toolchain3",
     "cmake",
     "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ],
+   "host":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "moab 4.*",
-    "cython",
-    "numpy 1.11.*",
-    "pytables"
+    "hdf5",
+    "numpy",
+    "pytables",
+    "cython"
    ],
    "run":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "moab 4.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran"
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2"
    ]
   },
   "source":{
-   "fn":"pyne-0.5.11-ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a.tar.gz",
-   "sha256":"ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a",
-   "url":"https://github.com/pyne/pyne/archive/0.5.11.tar.gz"
+   "fn":"pyne-0.7.0-19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3.tar.gz",
+   "sha256":"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3",
+   "url":"https://github.com/pyne/pyne/archive/0.7.0-rc1.tar.gz"
   },
   "test":{
    "requires":[
-    "setuptools",
-    "nose",
-    "pytables",
-    "jinja2"
+    "nose"
    ],
    "source_files":[
     "pyne",
@@ -248,55 +238,39 @@
   "build":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "c_compiler_stub",
     "cmake",
-    "cython",
-    "gcc",
-    "hdf5",
-    "libgcc",
-    "libgfortran",
-    "moab",
-    "numpy",
-    "openblas",
-    "pkg-config",
-    "pytables",
-    "python",
-    "setuptools",
-    "toolchain3",
-    "xz"
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cython",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "future",
     "hdf5",
-    "libgcc",
-    "libgfortran",
-    "moab",
+    "jinja2",
     "numpy",
-    "openblas",
     "pytables",
     "python",
-    "scipy",
-    "xz"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "jinja2",
-    "nose",
-    "pytables",
-    "setuptools"
+    "nose"
    ]
   }
  },
@@ -309,139 +283,111 @@
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "features":[
-    "blas_openblas",
-    "blas_openblas",
-    "blas_openblas"
-   ],
    "number":"0",
-   "skip":true
+   "skip":true,
+   "string":"nomoab_noopenmc_pyh_0"
   },
   "extra":{
    "recipe-maintainers":[
     "scopatz",
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise",
     "scopatz",
-    "scopatz"
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise",
+    "scopatz",
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise"
    ]
   },
   "package":{
    "name":"pyne",
-   "version":"0.5.11"
+   "version":"0.7.0"
   },
   "requirements":{
    "build":[
-    "toolchain3",
     "cmake",
     "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "cmake",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "cmake",
+    "pkg-config",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ],
+   "host":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "cython",
-    "numpy 1.11.*",
+    "hdf5",
+    "numpy",
     "pytables",
-    "toolchain3",
-    "cmake",
-    "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
-    "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
     "cython",
-    "numpy 1.11.*",
+    "python",
+    "hdf5",
+    "numpy",
     "pytables",
-    "toolchain3",
-    "cmake",
-    "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
-    "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "moab 4.*",
     "cython",
-    "numpy 1.11.*",
-    "pytables"
+    "python",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "cython"
    ],
    "run":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran",
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2",
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran",
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2",
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "moab 4.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran"
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2"
    ]
   },
   "source":{
-   "fn":"pyne-0.5.11-ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a.tar.gz",
-   "sha256":"ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a",
-   "url":"https://github.com/pyne/pyne/archive/0.5.11.tar.gz"
+   "fn":"pyne-0.7.0-19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3.tar.gz",
+   "sha256":"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3",
+   "url":"https://github.com/pyne/pyne/archive/0.7.0-rc1.tar.gz"
   },
   "test":{
    "requires":[
-    "setuptools",
     "nose",
-    "pytables",
-    "jinja2",
-    "setuptools",
     "nose",
-    "pytables",
-    "jinja2",
-    "setuptools",
-    "nose",
-    "pytables",
-    "jinja2"
+    "nose"
    ],
    "source_files":[
     "pyne",
@@ -467,66 +413,58 @@
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "features":[
-    "blas_openblas"
-   ],
-   "number":"0"
+   "number":"0",
+   "string":"nomoab_noopenmc_pyh_0"
   },
   "extra":{
    "recipe-maintainers":[
-    "scopatz"
+    "scopatz",
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise"
    ]
   },
   "package":{
    "name":"pyne",
-   "version":"0.5.11"
+   "version":"0.7.0"
   },
   "requirements":{
    "build":[
-    "toolchain3",
     "cmake",
     "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ],
+   "host":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "cython",
-    "numpy 1.11.*",
-    "pytables"
+    "hdf5",
+    "numpy",
+    "pytables",
+    "cython"
    ],
    "run":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran"
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2"
    ]
   },
   "source":{
-   "fn":"pyne-0.5.11-ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a.tar.gz",
-   "sha256":"ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a",
-   "url":"https://github.com/pyne/pyne/archive/0.5.11.tar.gz"
+   "fn":"pyne-0.7.0-19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3.tar.gz",
+   "sha256":"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3",
+   "url":"https://github.com/pyne/pyne/archive/0.7.0-rc1.tar.gz"
   },
   "test":{
    "requires":[
-    "setuptools",
-    "nose",
-    "pytables",
-    "jinja2"
+    "nose"
    ],
    "source_files":[
     "pyne",
@@ -539,135 +477,99 @@
   "build":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "c_compiler_stub",
     "cmake",
-    "cython",
-    "gcc",
-    "hdf5",
-    "libgcc",
-    "libgfortran",
-    "numpy",
-    "openblas",
-    "pkg-config",
-    "pytables",
-    "python",
-    "setuptools",
-    "toolchain3",
-    "xz"
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cython",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "future",
     "hdf5",
-    "libgcc",
-    "libgfortran",
+    "jinja2",
     "numpy",
-    "openblas",
     "pytables",
     "python",
-    "scipy",
-    "xz"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "jinja2",
-    "nose",
-    "pytables",
-    "setuptools"
+    "nose"
    ]
   }
  },
  "pinning_version":"2020.04.17.11.45.02",
- "raw_meta_yaml":"{% set version = \"0.5.11\" %}\n{% set org = \"pyne\" %}\n{% set sha256 = \"ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: pyne\n  version: {{ version }}\n\nsource:\n  fn: pyne-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/pyne/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # note that builds timeout on mac with many versions of python & numpy\n  skip: True  # [win or (osx and py34)]\n  detect_binary_files_with_prefix: true\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain3\n    - cmake\n    - pkg-config\n    - setuptools\n    - gcc\n    - libgcc\n    - libgfortran\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - boost-cpp 1.66.0\n    - hdf5 1.10.1\n    - bzip2 1.0.*\n    - xz 5.2.*\n    - moab 4.*  # [linux]\n    - cython\n    - numpy 1.11.*\n    - pytables\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - boost-cpp 1.66.0\n    - hdf5 1.10.1\n    - bzip2 1.0.*\n    - xz 5.2.*\n    - moab 4.*  # [linux]\n    - numpy >=1.11.*\n    - scipy\n    - pytables\n    - libgcc\n    - libgfortran\n\ntest:\n  requires:\n    - setuptools\n    - nose\n    - pytables\n    - jinja2\n  source_files:\n    - pyne\n    - src\n    - tests\n\nabout:\n  home: http://pyne.io/\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: \"The nuclear engineering toolkit\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "raw_meta_yaml":"{% set name = \"pyne\" %}\n{% set version = \"0.7.0\" %}\n{% set build = \"0\" %}\n{% set sha256 = \"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3\" %}\n\n# ensure moab is defined (needed for conda-smithy recipe-lint)\n{% set enable_moab = enable_moab or 'nomoab' %}\n\n# ensure openmc is defined (needed for conda-smithy recipe-lint)\n{% set enable_openmc = enable_openmc or 'noopenmc' %}\n\n\npackage:\n  name: pyne\n  version: {{ version }}\n\nsource:\n  fn: pyne-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ name }}/pyne/archive/{{ version }}-rc1.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  {% if enable_moab == 'moab' %}\n  {% set moab_prefix = \"moab\" %}\n  {% else %}\n  {% set moab_prefix = \"nomoab\" %}\n  {% endif %}\n  \n  {% if enable_openmc == 'openmc' %}\n  {% set openmc_prefix = \"openmc\" %}\n  {% else %}\n  {% set openmc_prefix = \"noopenmc\" %}\n  {% endif %}\n  \n  string: \"{{ moab_prefix }}_{{ openmc_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\n  skip: True  # [win or (osx and py34) or (py27 and enable_openmc == 'openmc') ]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - {{ compiler(\"fortran\") }}\n  host:\n    - python\n    - hdf5\n    - numpy\n    - pytables\n    - cython\n    - moab  # [ enable_moab == 'moab' ]\n    - openmc  # [ enable_openmc == 'openmc' ]\n  run:\n    - python\n    - hdf5\n    - pytables\n    - numpy\n    - scipy\n    - future\n    - jinja2\n    - moab  # [ enable_moab == 'moab' ]\n    - openmc  # [ enable_openmc == 'openmc' ]\ntest:\n  requires:\n    - nose\n  source_files:\n    - pyne\n    - src\n    - tests\n\nabout:\n  home: http://pyne.io/\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: \"The nuclear engineering toolkit\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - bam241\n    - kkiesling\n    - a-co\n    - opotowsky\n    - katyhuff\n    - pshriwise\n",
  "req":{
   "__set__":true,
   "elements":[
-   "blas",
-   "boost-cpp",
-   "bzip2",
+   "c_compiler_stub",
    "cmake",
+   "cxx_compiler_stub",
    "cython",
-   "gcc",
+   "fortran_compiler_stub",
+   "future",
    "hdf5",
-   "libgcc",
-   "libgfortran",
-   "moab",
+   "jinja2",
    "numpy",
-   "openblas",
    "pkg-config",
    "pytables",
    "python",
-   "scipy",
-   "setuptools",
-   "toolchain3",
-   "xz"
+   "scipy"
   ]
  },
  "requirements":{
   "build":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "c_compiler_stub",
     "cmake",
-    "cython",
-    "gcc",
-    "hdf5",
-    "libgcc",
-    "libgfortran",
-    "moab",
-    "numpy",
-    "openblas",
-    "pkg-config",
-    "pytables",
-    "python",
-    "setuptools",
-    "toolchain3",
-    "xz"
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cython",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "future",
     "hdf5",
-    "libgcc",
-    "libgfortran",
-    "moab",
+    "jinja2",
     "numpy",
-    "openblas",
     "pytables",
     "python",
-    "scipy",
-    "xz"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "jinja2",
-    "nose",
-    "pytables",
-    "setuptools"
+    "nose"
    ]
   }
  },
@@ -677,60 +579,44 @@
   "build":{
    "__set__":true,
    "elements":[
-    "blas 1.1 openblas",
-    "boost-cpp 1.66.0",
-    "bzip2 1.0.*",
+    "c_compiler_stub",
     "cmake",
-    "cython",
-    "gcc",
-    "hdf5 1.10.1",
-    "libgcc",
-    "libgfortran",
-    "moab 4.*",
-    "numpy 1.11.*",
-    "openblas 0.2.20|0.2.20.*",
-    "pkg-config",
-    "pytables",
-    "python",
-    "setuptools",
-    "toolchain3",
-    "xz 5.2.*"
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cython",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "blas 1.1 openblas",
-    "boost-cpp 1.66.0",
-    "bzip2 1.0.*",
-    "hdf5 1.10.1",
-    "libgcc",
-    "libgfortran",
-    "moab 4.*",
-    "numpy >=1.11.*",
-    "openblas 0.2.20|0.2.20.*",
+    "future",
+    "hdf5",
+    "jinja2",
+    "numpy",
     "pytables",
     "python",
-    "scipy",
-    "xz 5.2.*"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "jinja2",
-    "nose",
-    "pytables",
-    "setuptools"
+    "nose"
    ]
   }
  },
  "url":"https://github.com/pyne/pyne/archive/0.5.11.tar.gz",
- "version":"0.5.11",
+ "version":"0.7.0",
  "win_64_meta_yaml":{
   "about":{
    "home":"http://pyne.io/",
@@ -740,67 +626,59 @@
   },
   "build":{
    "detect_binary_files_with_prefix":true,
-   "features":[
-    "blas_openblas"
-   ],
    "number":"0",
-   "skip":true
+   "skip":true,
+   "string":"nomoab_noopenmc_pyh_0"
   },
   "extra":{
    "recipe-maintainers":[
-    "scopatz"
+    "scopatz",
+    "gonuke",
+    "bam241",
+    "kkiesling",
+    "a-co",
+    "opotowsky",
+    "katyhuff",
+    "pshriwise"
    ]
   },
   "package":{
    "name":"pyne",
-   "version":"0.5.11"
+   "version":"0.7.0"
   },
   "requirements":{
    "build":[
-    "toolchain3",
     "cmake",
     "pkg-config",
-    "setuptools",
-    "gcc",
-    "libgcc",
-    "libgfortran",
+    "c_compiler_stub",
+    "cxx_compiler_stub",
+    "fortran_compiler_stub"
+   ],
+   "host":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "cython",
-    "numpy 1.11.*",
-    "pytables"
+    "hdf5",
+    "numpy",
+    "pytables",
+    "cython"
    ],
    "run":[
     "python",
-    "blas 1.1 openblas",
-    "openblas 0.2.20|0.2.20.*",
-    "boost-cpp 1.66.0",
-    "hdf5 1.10.1",
-    "bzip2 1.0.*",
-    "xz 5.2.*",
-    "numpy >=1.11.*",
-    "scipy",
+    "hdf5",
     "pytables",
-    "libgcc",
-    "libgfortran"
+    "numpy",
+    "scipy",
+    "future",
+    "jinja2"
    ]
   },
   "source":{
-   "fn":"pyne-0.5.11-ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a.tar.gz",
-   "sha256":"ba05917b0de446ec520857655e77967a783e3bc723299faf5989f532d6b0647a",
-   "url":"https://github.com/pyne/pyne/archive/0.5.11.tar.gz"
+   "fn":"pyne-0.7.0-19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3.tar.gz",
+   "sha256":"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3",
+   "url":"https://github.com/pyne/pyne/archive/0.7.0-rc1.tar.gz"
   },
   "test":{
    "requires":[
-    "setuptools",
-    "nose",
-    "pytables",
-    "jinja2"
+    "nose"
    ],
    "source_files":[
     "pyne",
@@ -813,53 +691,39 @@
   "build":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "c_compiler_stub",
     "cmake",
-    "cython",
-    "gcc",
-    "hdf5",
-    "libgcc",
-    "libgfortran",
-    "numpy",
-    "openblas",
-    "pkg-config",
-    "pytables",
-    "python",
-    "setuptools",
-    "toolchain3",
-    "xz"
+    "cxx_compiler_stub",
+    "fortran_compiler_stub",
+    "pkg-config"
    ]
   },
   "host":{
    "__set__":true,
-   "elements":[]
+   "elements":[
+    "cython",
+    "hdf5",
+    "numpy",
+    "pytables",
+    "python"
+   ]
   },
   "run":{
    "__set__":true,
    "elements":[
-    "blas",
-    "boost-cpp",
-    "bzip2",
+    "future",
     "hdf5",
-    "libgcc",
-    "libgfortran",
+    "jinja2",
     "numpy",
-    "openblas",
     "pytables",
     "python",
-    "scipy",
-    "xz"
+    "scipy"
    ]
   },
   "test":{
    "__set__":true,
    "elements":[
-    "jinja2",
-    "nose",
-    "pytables",
-    "setuptools"
+    "nose"
    ]
   }
  }
