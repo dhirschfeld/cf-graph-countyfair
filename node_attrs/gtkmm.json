@@ -13,7 +13,7 @@
    "summary":"C++ bindings for gtk"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "gtkmm-3.0 >=3.24.2"
    ]
@@ -155,7 +155,7 @@
    "summary":"C++ bindings for gtk"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "gtkmm-3.0 >=3.24.2",
     "gtkmm-3.0 >=3.24.2",
@@ -376,7 +376,7 @@
    "summary":"C++ bindings for gtk"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "gtkmm-3.0 >=3.24.2"
    ]
@@ -496,7 +496,7 @@
   "gtkmm",
   "gtkmm-3.0"
  ],
- "raw_meta_yaml":"{% set name = \"gtkmm\" %}\n{% set version = \"3.24.2\" %}\n{% set ver_maj_min = \".\".join(version.split(\".\")[:2]) %}\n{% set abi_version = \"3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnome.org/pub/GNOME/sources/gtkmm/{{ ver_maj_min }}/gtkmm-{{ version }}.tar.xz\n  sha256: 6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3\n\nbuild:\n  number: 0\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  run_exports:\n    - gtkmm-{{ abi_version }} >={{ version }}\n\noutputs:\n  - name: gtkmm-{{ abi_version }}\n    script: build_gtkmm.sh\n    build:\n      run_exports:\n        - gtkmm-{{ abi_version }} >={{ version }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - make\n        - pkg-config\n        - {{ cdt('libice-devel') }}  # [linux]\n        - {{ cdt('libsm-devel') }}  # [linux]\n        - {{ cdt('libx11-devel') }}  # [linux]\n        - {{ cdt('libxcomposite-devel') }}  # [linux]\n        - {{ cdt('libxcursor-devel') }}  # [linux]\n        - {{ cdt('libxdamage-devel') }}  # [linux]\n        - {{ cdt('libxext-devel') }}  # [linux]\n        - {{ cdt('libxi-devel') }}  # [linux]\n        - {{ cdt('libxinerama-devel') }}  # [linux]\n        - {{ cdt('libxfixes-devel') }}  # [linux]\n        - {{ cdt('libxrandr-devel') }}  # [linux]\n        - {{ cdt('libxrender-devel') }}  # [linux]\n        - {{ cdt('libxtst-devel') }}  # [linux]\n        - {{ cdt('mesa-libEGL-devel') }}  # [linux]\n        - {{ cdt('mesa-libGL-devel') }}  # [linux]\n        - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n      host:\n        - gtk3 >=3.24.0\n        - glibmm >=2.54.0\n        - cairomm >=1.12.0\n        - pangomm >=2.38.2\n        - sigcpp-2.0\n        - atkmm >=2.24.2\n        - cairo\n        - glib\n        - atk\n        - gdk-pixbuf >=2.35.5\n        - pango\n        - glib\n      run:\n        - {{ pin_compatible(\"pango\") }}\n        - {{ pin_compatible(\"glibmm\") }}\n      run_constrained:\n        - gtkmm {{ version }}\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/libgtkmm-{{ abi_version }}${SHLIB_EXT}\n\n  - name: gtkmm\n    requirements:\n      run:\n        - gtkmm-{{ abi_version }}  {{ version }}\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/pkg-config/gtkmm-{{ abi_version }}.pc\n\n\nabout:\n  home: https://www.gtkmm.org\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: 'C++ bindings for gtk'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "raw_meta_yaml":"{% set name = \"gtkmm\" %}\n{% set version = \"3.24.2\" %}\n{% set ver_maj_min = \".\".join(version.split(\".\")[:2]) %}\n{% set abi_version = \"3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnome.org/pub/GNOME/sources/gtkmm/{{ ver_maj_min }}/gtkmm-{{ version }}.tar.xz\n  sha256: 6d71091bcd1863133460d4188d04102810e9123de19706fb656b7bb915b4adc3\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - gtkmm-{{ abi_version }} >={{ version }}\n\noutputs:\n  - name: gtkmm-{{ abi_version }}\n    script: build_gtkmm.sh\n    build:\n      run_exports:\n        - gtkmm-{{ abi_version }} >={{ version }}\n    requirements:\n      build:\n        - {{ compiler('c') }}\n        - {{ compiler('cxx') }}\n        - make\n        - pkg-config\n        - {{ cdt('libice-devel') }}  # [linux]\n        - {{ cdt('libsm-devel') }}  # [linux]\n        - {{ cdt('libx11-devel') }}  # [linux]\n        - {{ cdt('libxcomposite-devel') }}  # [linux]\n        - {{ cdt('libxcursor-devel') }}  # [linux]\n        - {{ cdt('libxdamage-devel') }}  # [linux]\n        - {{ cdt('libxext-devel') }}  # [linux]\n        - {{ cdt('libxi-devel') }}  # [linux]\n        - {{ cdt('libxinerama-devel') }}  # [linux]\n        - {{ cdt('libxfixes-devel') }}  # [linux]\n        - {{ cdt('libxrandr-devel') }}  # [linux]\n        - {{ cdt('libxrender-devel') }}  # [linux]\n        - {{ cdt('libxtst-devel') }}  # [linux]\n        - {{ cdt('mesa-libEGL-devel') }}  # [linux]\n        - {{ cdt('mesa-libGL-devel') }}  # [linux]\n        - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n      host:\n        - gtk3 >=3.24.0\n        - glibmm >=2.54.0\n        - cairomm >=1.12.0\n        - pangomm >=2.38.2\n        - sigcpp-2.0\n        - atkmm >=2.24.2\n        - cairo\n        - glib\n        - atk\n        - gdk-pixbuf >=2.35.5\n        - pango\n        - glib\n      run:\n        - {{ pin_compatible(\"pango\") }}\n        - {{ pin_compatible(\"glibmm\") }}\n      run_constrained:\n        - gtkmm {{ version }}\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/libgtkmm-{{ abi_version }}${SHLIB_EXT}\n\n  - name: gtkmm\n    requirements:\n      run:\n        - gtkmm-{{ abi_version }}  {{ version }}\n    test:\n      commands:\n        - test -f ${PREFIX}/lib/pkg-config/gtkmm-{{ abi_version }}.pc\n\n\nabout:\n  home: https://www.gtkmm.org\n  license: LGPL-2.1-or-later\n  license_family: LGPL\n  license_file: COPYING\n  summary: 'C++ bindings for gtk'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -611,7 +611,7 @@
    "summary":"C++ bindings for gtk"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "run_exports":[
     "gtkmm-3.0 >=3.24.2"
    ],
