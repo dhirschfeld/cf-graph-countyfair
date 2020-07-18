@@ -52,10 +52,29 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/451615838.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"gdal31"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{
   "provider":{
    "win":"azure"
@@ -340,7 +359,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.08.11",
+ "pinning_version":"2020.07.17.17.28.25",
  "raw_meta_yaml":"\n{% set name = \"entwine\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"4cbec4a3f13b6975d67c0c9194d52892c6975140139e093b7643127fccc201ad\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/connormanning/entwine/archive/{{version}}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 3\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - pdal\n    - gdal\n    - xz\n    - curl\n    - jsoncpp\n    - openssl\n  run:\n    - pdal\n    - gdal\n    - xz\n    - curl\n    - jsoncpp\n    - openssl\ntest:\n  commands:\n    - entwine --version\n\nabout:\n  home: https://entwine.io\n  license: LGPL-2.1-or-later\n  license_file: LICENSE.txt\n  summary: 'Point cloud spatial indexing library'\n\n  description: |\n    Entwine is a C/C++ library for organizing point clouds as a\n    octree tile structure.\n  doc_url: https://entwine.io\n  dev_url: https://github.com/connormanning/entwine\n\nextra:\n  recipe-maintainers:\n    - hobu\n    - connormanning\n    - chambbj\n",
  "req":{
   "__set__":true,
@@ -390,7 +409,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.4.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
