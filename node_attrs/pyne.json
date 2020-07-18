@@ -126,7 +126,7 @@
     "__lazy_json__":"pr_json/378505955.json"
    },
    "data":{
-    "bot_rerun":false,
+    "bot_rerun":1595100229.7034738,
     "migrator_name":"MigrationYaml",
     "migrator_object_version":2,
     "migrator_version":0,
@@ -143,6 +143,25 @@
   {
    "PR":{
     "__lazy_json__":"pr_json/405210919.json"
+   },
+   "data":{
+    "bot_rerun":1595100229.70386,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"hdf51106"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452102318.json"
    },
    "data":{
     "bot_rerun":false,
@@ -513,7 +532,7 @@
    ]
   }
  },
- "pinning_version":"2020.04.17.11.45.02",
+ "pinning_version":"2020.07.18.17.52.56",
  "raw_meta_yaml":"{% set name = \"pyne\" %}\n{% set version = \"0.7.0\" %}\n{% set build = \"0\" %}\n{% set sha256 = \"19e104a05aa56ef2e747f5e4a1c4cffefdb57a592a300823265ba72a1b55d4f3\" %}\n\n# ensure moab is defined (needed for conda-smithy recipe-lint)\n{% set enable_moab = enable_moab or 'nomoab' %}\n\n# ensure openmc is defined (needed for conda-smithy recipe-lint)\n{% set enable_openmc = enable_openmc or 'noopenmc' %}\n\n\npackage:\n  name: pyne\n  version: {{ version }}\n\nsource:\n  fn: pyne-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ name }}/pyne/archive/{{ version }}-rc1.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  {% if enable_moab == 'moab' %}\n  {% set moab_prefix = \"moab\" %}\n  {% else %}\n  {% set moab_prefix = \"nomoab\" %}\n  {% endif %}\n  \n  {% if enable_openmc == 'openmc' %}\n  {% set openmc_prefix = \"openmc\" %}\n  {% else %}\n  {% set openmc_prefix = \"noopenmc\" %}\n  {% endif %}\n  \n  string: \"{{ moab_prefix }}_{{ openmc_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}\"\n\n  skip: True  # [win or (osx and py34) or (py27 and enable_openmc == 'openmc') ]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - pkg-config\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n    - {{ compiler(\"fortran\") }}\n  host:\n    - python\n    - hdf5\n    - numpy\n    - pytables\n    - cython\n    - moab  # [ enable_moab == 'moab' ]\n    - openmc  # [ enable_openmc == 'openmc' ]\n  run:\n    - python\n    - hdf5\n    - pytables\n    - numpy\n    - scipy\n    - future\n    - jinja2\n    - moab  # [ enable_moab == 'moab' ]\n    - openmc  # [ enable_openmc == 'openmc' ]\ntest:\n  requires:\n    - nose\n  source_files:\n    - pyne\n    - src\n    - tests\n\nabout:\n  home: http://pyne.io/\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: \"The nuclear engineering toolkit\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - bam241\n    - kkiesling\n    - a-co\n    - opotowsky\n    - katyhuff\n    - pshriwise\n",
  "req":{
   "__set__":true,
@@ -573,7 +592,7 @@
    ]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
