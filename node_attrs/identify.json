@@ -605,6 +605,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452710496.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.4.24"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -790,7 +807,7 @@
   }
  },
  "name":"identify",
- "new_version":"1.4.23",
+ "new_version":"1.4.24",
  "new_version_attempts":{
   "1.4.15":1,
   "1.4.16":1,
@@ -800,7 +817,8 @@
   "1.4.20":1,
   "1.4.21":1,
   "1.4.22":1,
-  "1.4.23":1
+  "1.4.23":1,
+  "1.4.24":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -889,7 +907,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set name = \"identify\" %}\n{% set version = \"1.4.23\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/chriskuehl/identify/archive/v{{ version }}.tar.gz\n  sha256: 47269d1a29b5028e626eeae932cc8de25151227784d57ecaad90ecbaee2ff969\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n  noarch: python\n  entry_points:\n    - identify-cli = identify.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - editdistance\n    - python\n\ntest:\n  imports:\n    - identify\n  requires:\n    - pytest\n  source_files:\n    - LICENSE\n    - tests\n    - setup.py\n  commands:\n    - identify-cli --help\n    - pytest tests\n\nabout:\n  home: https://github.com/chriskuehl/identify\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: File identification library for Python\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "req":{
   "__set__":true,
