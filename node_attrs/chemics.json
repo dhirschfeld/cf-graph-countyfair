@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452803266.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"20.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{
@@ -172,7 +191,11 @@
   }
  },
  "name":"chemics",
- "new_version":"20.5",
+ "new_version":"20.7",
+ "new_version_attempts":{
+  "20.7":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"The Chemics package is a collection of Python functions for conducting\ncalculations in the field of chemical and fluidization engineering.\n",
@@ -257,6 +280,7 @@
    ]
   }
  },
+ "pinning_version":"2020.07.19.19.30.49",
  "raw_meta_yaml":"{% set name = \"chemics\" %}\n{% set version = \"20.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 81c691339431bdfb718fd46f30f8f734dd636b67bc1ab3a843eebffdebe784f9\n\nbuild:\n  number: 1\n  noarch: python\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - matplotlib-base\n    - numpy\n    - pandas\n    - python\n    - scipy\n\ntest:\n  imports:\n    - chemics\n  commands:\n    - pip check\n  requires:\n    - pip\n\nabout:\n  home: https://github.com/chemics/chemics\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A Python package for chemical reactor engineering\n\n  description: |\n    The Chemics package is a collection of Python functions for conducting \n    calculations in the field of chemical and fluidization engineering.\n  doc_url: https://github.com/chemics/chemics\n  dev_url: https://github.com/chemics/chemics\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n    - wigging\n",
  "req":{
   "__set__":true,
@@ -298,6 +322,7 @@
    ]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
