@@ -1,4 +1,23 @@
 {
+ "PRed":[
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452592994.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.4.1456"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
+  }
+ ],
  "archived":false,
  "bad":false,
  "conda-forge.yml":{},
@@ -174,7 +193,11 @@
   }
  },
  "name":"you-get",
- "new_version":"0.4.1432",
+ "new_version":"0.4.1456",
+ "new_version_attempts":{
+  "0.4.1456":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"Command line downloader for YouTube and many other online video/\naudio sources.\n",
@@ -256,6 +279,7 @@
    "elements":[]
   }
  },
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set name = \"you-get\" %}\n{% set version = \"0.4.1432\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: 421b71ee644afc63581c2d57bf6785c0e65c51d9debe74b8449685c90fd56f44\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - you-get = you_get.__main__:main\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - you_get\n    - you_get.cli_wrapper\n    - you_get.cli_wrapper.downloader\n    - you_get.cli_wrapper.openssl\n    - you_get.cli_wrapper.player\n    - you_get.cli_wrapper.transcoder\n    - you_get.extractors\n    - you_get.processor\n    - you_get.util\n  commands:\n    - you-get --help\n\nabout:\n  home: \"https://you-get.org/\"\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"Dumb downloader that scrapes the web\"\n  description: |\n    Command line downloader for YouTube and many other online video/\n    audio sources.\n  doc_url: \"https://you-get.org/\"\n  dev_url: \"https://github.com/soimort/you-get\"\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
  "req":{
   "__set__":true,
@@ -287,6 +311,7 @@
    "elements":[]
   }
  },
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{
