@@ -16,6 +16,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452617745.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.7"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -34,7 +51,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -43,7 +60,7 @@
   },
   "package":{
    "name":"pyilluminate",
-   "version":"0.5.4"
+   "version":"0.5.6"
   },
   "requirements":{
    "host":[
@@ -54,12 +71,13 @@
     "python",
     "pyserial",
     "dataclasses",
-    "xarray"
+    "xarray",
+    "filelock"
    ]
   },
   "source":{
-   "sha256":"5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5",
-   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.4.tar.gz"
+   "sha256":"5d8b194a86775113a1133c7c43af83159c8bd051d4dcaaad90088b1d6edf64e0",
+   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.6.tar.gz"
   },
   "test":{
    "imports":[
@@ -83,6 +101,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "filelock",
     "pyserial",
     "python",
     "xarray"
@@ -104,7 +123,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -115,7 +134,7 @@
   },
   "package":{
    "name":"pyilluminate",
-   "version":"0.5.4"
+   "version":"0.5.6"
   },
   "requirements":{
    "host":[
@@ -131,19 +150,22 @@
     "pyserial",
     "dataclasses",
     "xarray",
+    "filelock",
     "python",
     "pyserial",
     "dataclasses",
     "xarray",
+    "filelock",
     "python",
     "pyserial",
     "dataclasses",
-    "xarray"
+    "xarray",
+    "filelock"
    ]
   },
   "source":{
-   "sha256":"5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5",
-   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.4.tar.gz"
+   "sha256":"5d8b194a86775113a1133c7c43af83159c8bd051d4dcaaad90088b1d6edf64e0",
+   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.6.tar.gz"
   },
   "test":{
    "imports":[
@@ -154,9 +176,10 @@
   }
  },
  "name":"pyilluminate",
- "new_version":"0.5.6",
+ "new_version":"0.5.7",
  "new_version_attempts":{
-  "0.5.6":1
+  "0.5.6":1,
+  "0.5.7":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -170,7 +193,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -179,7 +202,7 @@
   },
   "package":{
    "name":"pyilluminate",
-   "version":"0.5.4"
+   "version":"0.5.6"
   },
   "requirements":{
    "host":[
@@ -190,12 +213,13 @@
     "python",
     "pyserial",
     "dataclasses",
-    "xarray"
+    "xarray",
+    "filelock"
    ]
   },
   "source":{
-   "sha256":"5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5",
-   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.4.tar.gz"
+   "sha256":"5d8b194a86775113a1133c7c43af83159c8bd051d4dcaaad90088b1d6edf64e0",
+   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.6.tar.gz"
   },
   "test":{
    "imports":[
@@ -219,6 +243,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "filelock",
     "pyserial",
     "python",
     "xarray"
@@ -230,11 +255,12 @@
   }
  },
  "pinning_version":"2020.07.18.20.56.00",
- "raw_meta_yaml":"{% set name = \"pyilluminate\" %}\n{% set version = \"0.5.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5\n\nbuild:\n  noarch: python\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyserial\n    - dataclasses\n    - xarray\n\ntest:\n  imports:\n    - pyilluminate\n\nabout:\n  home: https://github.com/ramonaoptics/pyilluminate\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python interface for controlling the Illuminate boards.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "raw_meta_yaml":"{% set name = \"pyilluminate\" %}\n{% set version = \"0.5.6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5d8b194a86775113a1133c7c43af83159c8bd051d4dcaaad90088b1d6edf64e0\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyserial\n    - dataclasses\n    - xarray\n    - filelock\n\ntest:\n  imports:\n    - pyilluminate\n\nabout:\n  home: https://github.com/ramonaoptics/pyilluminate\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python interface for controlling the Illuminate boards.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
   "elements":[
    "dataclasses",
+   "filelock",
    "pip",
    "pyserial",
    "python",
@@ -257,6 +283,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "filelock",
     "pyserial",
     "python",
     "xarray"
@@ -285,6 +312,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "filelock",
     "pyserial",
     "python",
     "xarray"
@@ -296,7 +324,7 @@
   }
  },
  "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.4.tar.gz",
- "version":"0.5.4",
+ "version":"0.5.6",
  "win_64_meta_yaml":{
   "about":{
    "home":"https://github.com/ramonaoptics/pyilluminate",
@@ -308,7 +336,7 @@
   "build":{
    "noarch":"python",
    "number":"0",
-   "script":" -m pip install . -vv"
+   "script":"-m pip install . -vv"
   },
   "extra":{
    "recipe-maintainers":[
@@ -317,7 +345,7 @@
   },
   "package":{
    "name":"pyilluminate",
-   "version":"0.5.4"
+   "version":"0.5.6"
   },
   "requirements":{
    "host":[
@@ -328,12 +356,13 @@
     "python",
     "pyserial",
     "dataclasses",
-    "xarray"
+    "xarray",
+    "filelock"
    ]
   },
   "source":{
-   "sha256":"5cb32cec3b031bfad80badc3961ffa08cc10c28e2619f2065f2cf6bac7af3ac5",
-   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.4.tar.gz"
+   "sha256":"5d8b194a86775113a1133c7c43af83159c8bd051d4dcaaad90088b1d6edf64e0",
+   "url":"https://pypi.io/packages/source/p/pyilluminate/pyilluminate-0.5.6.tar.gz"
   },
   "test":{
    "imports":[
@@ -357,6 +386,7 @@
    "__set__":true,
    "elements":[
     "dataclasses",
+    "filelock",
     "pyserial",
     "python",
     "xarray"
