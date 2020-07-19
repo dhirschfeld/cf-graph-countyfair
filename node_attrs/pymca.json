@@ -188,6 +188,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452349138.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -454,7 +473,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.04.12.13.56.44",
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set name = \"PyMca5\" %}\n{% set version = \"5.5.5\" %}\n\npackage:\n  name: pymca\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b\n\nbuild:\n  number: 0\n  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ cdt('mesa-libgl-devel') }}  # [linux]\n  host:\n    - fisx >=1.1.6\n    - h5py\n    - numpy\n    - pip\n    - python\n    - cython\n    - libglu  # [linux]\n  run:\n    - fisx >=1.1.6\n    - h5py\n    - numpy\n    - python\n\ntest:\n  imports:\n    - PyMca5\n\nabout:\n  home: http://pymca.sourceforge.net\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Mapping and X-Ray Fluorescence Analysis\n  doc_url: http://www.silx.org/doc/PyMca/latest/tutorials.html\n\nextra:\n  recipe-maintainers:\n    - tschoonj\n",
  "req":{
   "__set__":true,
@@ -504,7 +523,7 @@
    "elements":[]
   }
  },
- "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.6.16",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

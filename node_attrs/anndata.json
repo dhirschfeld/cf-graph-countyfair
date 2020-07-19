@@ -122,6 +122,25 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452349412.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
@@ -388,7 +407,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set name = \"anndata\" %}\n{% set version = \"0.7.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: da1c3a3ad8729907874fb464d4a22bab8d86d732e35d18adbfdfd8474fc75edb\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n  skip: true  # [py<35]\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pathlib\n    - setuptools_scm\n  run:\n    - python\n    - pandas >=0.23.0\n    - scipy\n    - h5py\n    - natsort\n    - importlib_metadata  # [py<38]\n    - packaging\n\ntest:\n  imports:\n    - anndata\n\nabout:\n  home: https://github.com/theislab/anndata\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: An annotated data matrix.\n  description: |\n    AnnData provides a scalable way of keeping track of data and learned annotations. \n    It was initially built for Scanpy (Genome Biology, 2018).\n  doc_url: http://anndata.rtfd.io\n  dev_url: https://github.com/theislab/anndata\n\nextra:\n  recipe-maintainers:\n    - jakakokosar\n    - pavlin-policar\n    - flying-sheep\n",
  "req":{
   "__set__":true,
