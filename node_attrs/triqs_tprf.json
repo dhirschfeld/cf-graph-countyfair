@@ -56,10 +56,29 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452361507.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"triqs_tprf",
  "hash_type":"sha256",
@@ -354,7 +373,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.17.17.28.25",
+ "pinning_version":"2020.07.18.20.56.00",
  "raw_meta_yaml":"{% set version = \"2.2.0\" %}\n\npackage:\n  name: triqs_tprf\n  version: {{ version }}\n\nsource:\n  url: https://github.com/TRIQS/tprf/releases/download/{{ version }}/tprf-{{ version }}.tar.gz\n  sha256: 87389c71bdf690e05b72a5cd7dd2f4f7d8a8ac69b15f1481de1960e7740efc9f\n\nbuild:\n  number: 2\n  skip: True  # [win or py>30]\n\nrequirements:\n  build:\n    - cmake\n    - make\n    - llvm-openmp  # [osx]\n    - libgomp      # [linux]\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - triqs {{ '.'.join(version.split('.')[:2]) }}\n    - boost-cpp\n    - fftw\n    - {{ mpi }}\n    - libblas\n    - liblapack\n    - python\n  run:\n    - {{ pin_compatible(\"triqs\", max_pin=\"x.x\") }}\n    - fftw\n    - {{ mpi }}\n    - libblas\n    - liblapack\n    - python\n\ntest:\n  imports:\n    - triqs_tprf\n\nabout:\n  home: https://triqs.github.io/tprf\n  license: GPL-3.0-or-later\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'The Two-Particle Response Function tool box for TRIQS'\n\nextra:\n  recipe-maintainers:\n    - wentzell\n    - pgunn\n",
  "req":{
   "__set__":true,
