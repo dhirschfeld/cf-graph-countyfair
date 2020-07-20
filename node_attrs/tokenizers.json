@@ -56,7 +56,7 @@
    "missing_dso_whitelist":[
     "/usr/lib64/libgcc_s.so.1"
    ],
-   "number":"0",
+   "number":"1",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv"
    ]
@@ -145,7 +145,7 @@
    "missing_dso_whitelist":[
     "/usr/lib64/libgcc_s.so.1"
    ],
-   "number":"0",
+   "number":"1",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv",
     "-m pip install . --no-deps --ignore-installed -vv",
@@ -247,7 +247,7 @@
    "missing_dso_whitelist":[
     "/usr/lib/libresolv.9.dylib"
    ],
-   "number":"0",
+   "number":"1",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv"
    ]
@@ -323,7 +323,7 @@
   }
  },
  "pinning_version":"2020.07.19.19.30.49",
- "raw_meta_yaml":"{% set name = \"tokenizers\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 703101ffc1cce87e39a8fa9754126a5c29590b03817a73727e3268474dc716e6\n\nbuild:\n  number: 0\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n  missing_dso_whitelist:\n    - /usr/lib/libresolv.9.dylib  # [osx]\n    - /usr/lib64/libgcc_s.so.1  # [linux]\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n  host:\n    - python\n    - pip\n    - setuptools-rust\n    - setuptools\n  run:\n    - python\n    - libgcc-ng                                                  # [linux]\n\ntest:\n  imports:\n    - tokenizers\n    - tokenizers.models\n    - tokenizers.decoders\n    - tokenizers.normalizers\n    - tokenizers.pre_tokenizers\n    - tokenizers.processors\n    - tokenizers.trainers\n    - tokenizers.implementations\n\nabout:\n  home: https://github.com/huggingface/tokenizers\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: \"Fast State-of-the-Art Tokenizers optimized for Research and Production\"\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n    - setu4993\n",
+ "raw_meta_yaml":"{% set name = \"tokenizers\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 703101ffc1cce87e39a8fa9754126a5c29590b03817a73727e3268474dc716e6\n\nbuild:\n  number: 1\n  script:\n    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv\n  missing_dso_whitelist:\n    - /usr/lib/libresolv.9.dylib  # [osx]\n    - /usr/lib64/libgcc_s.so.1  # [linux]\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('rust') }}\n  host:\n    - python\n    - pip\n    - setuptools-rust\n    - setuptools\n  run:\n    - python\n    - libgcc-ng                                                  # [linux]\n\ntest:\n  imports:\n    - tokenizers\n    - tokenizers.models\n    - tokenizers.decoders\n    - tokenizers.normalizers\n    - tokenizers.pre_tokenizers\n    - tokenizers.processors\n    - tokenizers.trainers\n    - tokenizers.implementations\n\nabout:\n  home: https://github.com/huggingface/tokenizers\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: \"Fast State-of-the-Art Tokenizers optimized for Research and Production\"\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n    - setu4993\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -405,7 +405,7 @@
   },
   "build":{
    "missing_dso_whitelist":null,
-   "number":"0",
+   "number":"1",
    "script":[
     "-m pip install . --no-deps --ignore-installed -vv"
    ],
