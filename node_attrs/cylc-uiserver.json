@@ -54,7 +54,7 @@
    "summary":"Cylc UI Server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv"
   },
   "extra":{
@@ -77,11 +77,12 @@
    "run":[
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1"
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4"
    ]
   },
   "source":{
@@ -119,6 +120,7 @@
     "graphql-ws",
     "jupyterhub",
     "python",
+    "rx",
     "tornado"
    ]
   },
@@ -139,7 +141,7 @@
    "summary":"Cylc UI Server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv",
    "skip":true
   },
@@ -175,25 +177,28 @@
    "run":[
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1",
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4",
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1",
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4",
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1"
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4"
    ]
   },
   "source":{
@@ -231,7 +236,7 @@
    "summary":"Cylc UI Server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv",
    "skip":true
   },
@@ -255,11 +260,12 @@
    "run":[
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1"
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4"
    ]
   },
   "source":{
@@ -297,6 +303,7 @@
     "graphql-ws",
     "jupyterhub",
     "python",
+    "rx",
     "tornado"
    ]
   },
@@ -306,7 +313,7 @@
   }
  },
  "pinning_version":"2020.07.15.18.18.04",
- "raw_meta_yaml":"{% set name = \"cylc-uiserver\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 796af6b1fb74b63cd87c1be304e56f7cc618d5264fc0b8dd974050271f673be8\n\nbuild:\n  number: 0\n  # cylc-uiserver provides JupyterHub extensions and a small Jupyter Application. As JupyterHub\n  # does not run on Windows, we skip the build for that platform here\n  skip: true  # [py<37 or not linux]\n  skip: true  # [py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    # TODO: build failed with pytest-runner only, because the setup.py of cylc-uiserver specifies this\n    # version of pytest-runner. Need to make pytest-runner a dependency only for python setup.py test\n    # and then remove this from requirements|host in the recipe\n    - pytest-runner ==4.4\n  run:\n    - python\n    - cylc-flow ==8.0a2\n    - jupyterhub >=1.1\n    - tornado >=6.0\n    - graphene-tornado >=2.6\n    - graphql-core <3,>=2.1\n    - graphql-ws ==0.3.1\n\ntest:\n  imports:\n    - cylc.uiserver\n  commands:\n    - cylc-uiserver --help\n\nabout:\n  home: https://github.com/cylc/cylc-uiserver\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: Cylc UI Server\n\n  description: |\n    This project contains the Cylc UI Server.\n    A JupyterHub-compatible application, used to display\n    the Cylc UI (or simply UI) to users, and to communicate\n    with Workflow Services (WFS).\n  doc_url: https://github.com/cylc/cylc-uiserver\n  dev_url: https://github.com/cylc/cylc-uiserver\n\nextra:\n  recipe-maintainers:\n    - hjoliver\n    - kinow\n    - oliver-sanders\n",
+ "raw_meta_yaml":"{% set name = \"cylc-uiserver\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 796af6b1fb74b63cd87c1be304e56f7cc618d5264fc0b8dd974050271f673be8\n\nbuild:\n  number: 1\n  # cylc-uiserver provides JupyterHub extensions and a small Jupyter Application. As JupyterHub\n  # does not run on Windows, we skip the build for that platform here\n  skip: true  # [py<37 or not linux]\n  skip: true  # [py2k]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n    # TODO: build failed with pytest-runner only, because the setup.py of cylc-uiserver specifies this\n    # version of pytest-runner. Need to make pytest-runner a dependency only for python setup.py test\n    # and then remove this from requirements|host in the recipe\n    - pytest-runner ==4.4\n  run:\n    - python\n    - cylc-flow ==8.0a2\n    - jupyterhub >=1.1.0,<1.2\n    - tornado >=6.0,<6.1\n    - graphene-tornado >=2.6.0,<2.7\n    - graphql-core <3,>=2.1\n    - rx >=1.6,<2 # TODO: https://github.com/conda-forge/cylc-feedstock/pull/3#issuecomment-660716268\n    - graphql-ws >=0.3.0,<0.4\n\ntest:\n  imports:\n    - cylc.uiserver\n  commands:\n    - cylc-uiserver --help\n\nabout:\n  home: https://github.com/cylc/cylc-uiserver\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: Cylc UI Server\n\n  description: |\n    This project contains the Cylc UI Server.\n    A JupyterHub-compatible application, used to display\n    the Cylc UI (or simply UI) to users, and to communicate\n    with Workflow Services (WFS).\n  doc_url: https://github.com/cylc/cylc-uiserver\n  dev_url: https://github.com/cylc/cylc-uiserver\n\nextra:\n  recipe-maintainers:\n    - hjoliver\n    - kinow\n    - oliver-sanders\n",
  "req":{
   "__set__":true,
   "elements":[
@@ -318,6 +325,7 @@
    "pip",
    "pytest-runner",
    "python",
+   "rx",
    "tornado"
   ]
  },
@@ -343,6 +351,7 @@
     "graphql-ws",
     "jupyterhub",
     "python",
+    "rx",
     "tornado"
    ]
   },
@@ -370,12 +379,13 @@
    "__set__":true,
    "elements":[
     "cylc-flow ==8.0a2",
-    "graphene-tornado >=2.6",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1",
-    "jupyterhub >=1.1",
+    "graphql-ws >=0.3.0,<0.4",
+    "jupyterhub >=1.1.0,<1.2",
     "python",
-    "tornado >=6.0"
+    "rx >=1.6,<2",
+    "tornado >=6.0,<6.1"
    ]
   },
   "test":{
@@ -397,7 +407,7 @@
    "summary":"Cylc UI Server"
   },
   "build":{
-   "number":"0",
+   "number":"1",
    "script":"-m pip install . -vv",
    "skip":true
   },
@@ -421,11 +431,12 @@
    "run":[
     "python",
     "cylc-flow ==8.0a2",
-    "jupyterhub >=1.1",
-    "tornado >=6.0",
-    "graphene-tornado >=2.6",
+    "jupyterhub >=1.1.0,<1.2",
+    "tornado >=6.0,<6.1",
+    "graphene-tornado >=2.6.0,<2.7",
     "graphql-core <3,>=2.1",
-    "graphql-ws ==0.3.1"
+    "rx >=1.6,<2",
+    "graphql-ws >=0.3.0,<0.4"
    ]
   },
   "source":{
@@ -463,6 +474,7 @@
     "graphql-ws",
     "jupyterhub",
     "python",
+    "rx",
     "tornado"
    ]
   },
