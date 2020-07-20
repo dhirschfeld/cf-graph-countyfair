@@ -18,6 +18,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/453211736.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.14"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -156,7 +173,11 @@
   }
  },
  "name":"jupyterhub-systemdspawner",
- "new_version":"0.13",
+ "new_version":"0.14",
+ "new_version_attempts":{
+  "0.14":1
+ },
+ "new_version_errors":{},
  "osx_64_meta_yaml":{
   "about":{
    "description":"If you want to use Linux Containers (Docker, rkt, etc) for isolation and\nsecurity benefits, but don't want the headache and complexity of container\nimage management, then you should use the SystemdSpawner.\n\nWith the systemdspawner, you get to use the familiar, traditional system\nadministration tools, whether you love or meh them, without having to learn\nan extra layer of container related tooling.\n",
@@ -228,7 +249,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2019.11.01",
+ "pinning_version":"2020.07.19.19.30.49",
  "raw_meta_yaml":"{% set name = \"jupyterhub-systemdspawner\" %}\n{% set version = \"0.13\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"542fba3d42c6f423f893d25eba33cc295a482bfa9de0b1fdc9e01f9f3df737bb\"\n\nbuild:\n  number: 0\n  skip: true  # [osx or win or py2k]\n  script: \"{{ PYTHON }} -m pip install . -vv \"\n\nrequirements:\n  host:\n    - pip\n    - python\n  run:\n    - jupyterhub >=0.9\n    - python\n    - tornado >=5.0\n\ntest:\n  imports:\n    - systemdspawner\n\nabout:\n  home: \"https://github.com/jupyterhub/systemdspawner\"\n  license: \"BSD-3-Clause\"\n  license_family: \"BSD\"\n  license_file: \"LICENSE\"\n  summary: \"JupyterHub Spawner using systemd for resource isolation\"\n  description: |\n    If you want to use Linux Containers (Docker, rkt, etc) for isolation and\n    security benefits, but don't want the headache and complexity of container\n    image management, then you should use the SystemdSpawner.\n\n    With the systemdspawner, you get to use the familiar, traditional system\n    administration tools, whether you love or meh them, without having to learn\n    an extra layer of container related tooling.\n  doc_url: \"https://github.com/jupyterhub/systemdspawner\"\n  dev_url: \"https://github.com/jupyterhub/systemdspawner\"\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n",
  "req":{
   "__set__":true,
@@ -264,7 +285,7 @@
    "elements":[]
   }
  },
- "smithy_version":"3.6.1",
+ "smithy_version":"No azure token. Create a token and\nput it in ~/.conda-smithy/azure.token\n3.7.4\n",
  "strong_exports":false,
  "total_requirements":{
   "build":{

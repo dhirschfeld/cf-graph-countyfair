@@ -54,6 +54,23 @@
     "migrator_version",
     "name"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/453211476.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"1.0.0"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -226,9 +243,10 @@
   }
  },
  "name":"sentencepiece",
- "new_version":"0.1.92",
+ "new_version":"1.0.0",
  "new_version_attempts":{
-  "0.1.92":1
+  "0.1.92":1,
+  "1.0.0":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -315,7 +333,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.19.19.30.49",
  "raw_meta_yaml":"{% set name = \"sentencepiece\" %}\n{% set version = \"0.1.91\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: https://github.com/google/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: acbc7ea12713cd2a8d64892f8d2033c7fd2bb4faecab39452496120ace9a4b1b\n\nbuild:\n  number: 1\n  skip: True  # [py<36 or win or osx]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('cxx') }}\n    - pkg-config\n    - gperftools\n    - make\n  host:\n    - pip\n    - python\n    - gperftools\n  run:\n    - python\n    - gperftools\n\ntest:\n  imports:\n    - sentencepiece\n  commands:\n    - spm_export_vocab --help\n    - spm_normalize --help\n\nabout:\n  home: \"https://github.com/google/sentencepiece/\"\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: \"SentencePiece is an unsupervised text tokenizer and detokenizer mainly for Neural Network-based text generation systems where the vocabulary size is predetermined prior to the neural model training.\"\n\nextra:\n  recipe-maintainers:\n    - setu4993\n",
  "req":{
   "__set__":true,
