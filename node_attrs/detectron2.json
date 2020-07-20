@@ -86,10 +86,29 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/453516105.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"MigrationYaml",
+    "migrator_object_version":1,
+    "migrator_version":0,
+    "name":"pypy"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_object_version",
+    "migrator_version",
+    "name"
+   ]
   }
  ],
  "archived":false,
- "bad":"Upstream: unknown source",
+ "bad":false,
  "conda-forge.yml":{},
  "feedstock_name":"detectron2",
  "hash_type":"sha256",
@@ -450,7 +469,7 @@
    ]
   }
  },
- "pinning_version":"2020.07.07.19.27.52",
+ "pinning_version":"2020.07.19.19.30.49",
  "raw_meta_yaml":"{% set name = \"detectron2\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/facebookresearch/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 8026519973eb0b670d8fb59ece15fbf70945ffbaa71e3f409c47e009235ab288\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - pytorch >=1.4\n  run:\n    - python\n    - cloudpickle\n    - future\n    - fvcore\n    - matplotlib-base\n    - pillow\n    - pycocotools\n    - pydot\n    - tensorboard\n    - termcolor >=1.1\n    - tqdm >4.29.0\n    - yacs >=0.1.6\n\ntest:\n  imports:\n    - detectron2\n  requires:\n    - black ==19.3b0\n    - flake8\n    - flake8-bugbear\n    - flake8-comprehensions\n    - isort\n    - pytorch\n\nabout:\n  home: https://github.com/facebookresearch/detectron2\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Detectron2 is FAIR's next-generation platform for object detection and segmentation.\n  doc_url: https://github.com/facebookresearch/detectron2\n  dev_url: https://github.com/facebookresearch/detectron2\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - rluria14\n    - ndmaxar\n",
  "req":{
   "__set__":true,

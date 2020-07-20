@@ -38,10 +38,11 @@
   },
   "build":{
    "entry_points":[
-    "black = black:patched_main"
+    "black = black:patched_main",
+    "blackd = blackd:patched_main"
    ],
-   "number":"0",
-   "script":" -m pip install . -vv"
+   "noarch":"python",
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -51,28 +52,51 @@
     "xhochy"
    ]
   },
+  "outputs":[
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"black",
    "version":"19.10b0"
-  },
-  "requirements":{
-   "host":[
-    "python",
-    "pip",
-    "setuptools_scm"
-   ],
-   "run":[
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3"
-   ]
   },
   "source":{
    "sha256":"c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539",
@@ -100,16 +124,17 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aiohttp",
+    "aiohttp-cors",
     "appdirs",
     "attrs",
+    "black",
     "click",
-    "mypy_extensions",
     "pathspec",
     "python",
     "regex",
     "toml",
-    "typed-ast",
-    "typing_extensions"
+    "typed-ast"
    ]
   },
   "test":{
@@ -131,11 +156,14 @@
   "build":{
    "entry_points":[
     "black = black:patched_main",
+    "blackd = blackd:patched_main",
     "black = black:patched_main",
-    "black = black:patched_main"
+    "blackd = blackd:patched_main",
+    "black = black:patched_main",
+    "blackd = blackd:patched_main"
    ],
-   "number":"0",
-   "script":" -m pip install . -vv"
+   "noarch":"python",
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -153,54 +181,131 @@
     "xhochy"
    ]
   },
+  "outputs":[
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   },
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   },
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"black",
    "version":"19.10b0"
-  },
-  "requirements":{
-   "host":[
-    "python",
-    "pip",
-    "setuptools_scm",
-    "python",
-    "pip",
-    "setuptools_scm",
-    "python",
-    "pip",
-    "setuptools_scm"
-   ],
-   "run":[
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3",
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3",
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3"
-   ]
   },
   "source":{
    "sha256":"c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539",
@@ -229,10 +334,11 @@
   },
   "build":{
    "entry_points":[
-    "black = black:patched_main"
+    "black = black:patched_main",
+    "blackd = blackd:patched_main"
    ],
-   "number":"0",
-   "script":" -m pip install . -vv"
+   "noarch":"python",
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -242,28 +348,51 @@
     "xhochy"
    ]
   },
+  "outputs":[
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"black",
    "version":"19.10b0"
-  },
-  "requirements":{
-   "host":[
-    "python",
-    "pip",
-    "setuptools_scm"
-   ],
-   "run":[
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3"
-   ]
   },
   "source":{
    "sha256":"c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539",
@@ -291,16 +420,17 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aiohttp",
+    "aiohttp-cors",
     "appdirs",
     "attrs",
+    "black",
     "click",
-    "mypy_extensions",
     "pathspec",
     "python",
     "regex",
     "toml",
-    "typed-ast",
-    "typing_extensions"
+    "typed-ast"
    ]
   },
   "test":{
@@ -308,23 +438,28 @@
    "elements":[]
   }
  },
+ "outputs_names":[
+  "black",
+  "blackd"
+ ],
  "pinning_version":"2019.11.01",
- "raw_meta_yaml":"{% set name = \"black\" %}\n{% set version = \"19.10b0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  skip: True  # [py<36]\n  entry_points:\n    - black = black:patched_main\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - click >=6.5\n    - attrs >=18.1.0\n    - appdirs\n    - toml >=0.9.4\n    - typed-ast >=1.4.0\n    - regex\n    - pathspec >=0.6,<1\n    - dataclasses >=0.6  # [py<37]\n    - typing_extensions >=3.7.4\n    - mypy_extensions >=0.4.3\n\ntest:\n  commands:\n    - black --help\n\nabout:\n  home: https://github.com/python/black\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The Uncompromising Code Formatter'\n\n  description: |\n    Black is the uncompromising Python code formatter. By using it, you agree\n    to cease control over minutiae of hand-formatting. In return, Black gives\n    you speed, determinism, and freedom from pycodestyle nagging about\n    formatting. You will save time and mental energy for more important matters.\n  doc_url: https://github.com/python/black\n  dev_url: https://github.com/python/black\n\nextra:\n  recipe-maintainers:\n    - carlodri\n    - ambv\n    - mariusvniekerk\n    - xhochy\n",
+ "raw_meta_yaml":"{% set name = \"black\" %}\n{% set version = \"19.10b0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539\n\nbuild:\n  number: 2\n  noarch: python\n  entry_points:\n    - black = black:patched_main\n    - blackd = blackd:patched_main\n\ntest:\n  commands:\n    - black --help\n\noutputs:\n  - name: {{ name }}\n    script: build_base.sh\n    requirements:\n      host:\n        - python >=3.6\n        - pip\n        - setuptools_scm\n      run:\n        - python >=3.6\n        - click >=6.5\n        - attrs >=18.1.0\n        - appdirs\n        - toml >=0.9.4\n        - typed-ast >=1.4.0\n        - regex\n        - pathspec >=0.6,<1\n  \n  - name: {{ name }}d\n    build:\n      noarch: python\n    requirements:\n      run:\n        - {{ pin_subpackage('black', exact=True) }}\n        - aiohttp >=3.3.2\n        - aiohttp-cors\n    test:\n      commands:\n        - black --help \n        - blackd --help\n\nabout:\n  home: https://github.com/python/black\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The Uncompromising Code Formatter'\n\n  description: |\n    Black is the uncompromising Python code formatter. By using it, you agree\n    to cease control over minutiae of hand-formatting. In return, Black gives\n    you speed, determinism, and freedom from pycodestyle nagging about\n    formatting. You will save time and mental energy for more important matters.\n  doc_url: https://github.com/python/black\n  dev_url: https://github.com/python/black\n\nextra:\n  recipe-maintainers:\n    - carlodri\n    - ambv\n    - mariusvniekerk\n    - xhochy\n",
  "req":{
   "__set__":true,
   "elements":[
+   "aiohttp",
+   "aiohttp-cors",
    "appdirs",
    "attrs",
+   "black",
    "click",
-   "mypy_extensions",
    "pathspec",
    "pip",
    "python",
    "regex",
    "setuptools_scm",
    "toml",
-   "typed-ast",
-   "typing_extensions"
+   "typed-ast"
   ]
  },
  "requirements":{
@@ -343,16 +478,17 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aiohttp",
+    "aiohttp-cors",
     "appdirs",
     "attrs",
+    "black",
     "click",
-    "mypy_extensions",
     "pathspec",
     "python",
     "regex",
     "toml",
-    "typed-ast",
-    "typing_extensions"
+    "typed-ast"
    ]
   },
   "test":{
@@ -371,23 +507,24 @@
    "__set__":true,
    "elements":[
     "pip",
-    "python",
+    "python >=3.6",
     "setuptools_scm"
    ]
   },
   "run":{
    "__set__":true,
    "elements":[
+    "aiohttp >=3.3.2",
+    "aiohttp-cors",
     "appdirs",
     "attrs >=18.1.0",
+    "black",
     "click >=6.5",
-    "mypy_extensions >=0.4.3",
     "pathspec >=0.6,<1",
-    "python",
+    "python >=3.6",
     "regex",
     "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "typing_extensions >=3.7.4"
+    "typed-ast >=1.4.0"
    ]
   },
   "test":{
@@ -410,10 +547,11 @@
   },
   "build":{
    "entry_points":[
-    "black = black:patched_main"
+    "black = black:patched_main",
+    "blackd = blackd:patched_main"
    ],
-   "number":"0",
-   "script":" -m pip install . -vv"
+   "noarch":"python",
+   "number":"2"
   },
   "extra":{
    "recipe-maintainers":[
@@ -423,28 +561,51 @@
     "xhochy"
    ]
   },
+  "outputs":[
+   {
+    "name":"black",
+    "requirements":{
+     "host":[
+      "python >=3.6",
+      "pip",
+      "setuptools_scm"
+     ],
+     "run":[
+      "python >=3.6",
+      "click >=6.5",
+      "attrs >=18.1.0",
+      "appdirs",
+      "toml >=0.9.4",
+      "typed-ast >=1.4.0",
+      "regex",
+      "pathspec >=0.6,<1"
+     ]
+    },
+    "script":"build_base.sh"
+   },
+   {
+    "build":{
+     "noarch":"python"
+    },
+    "name":"blackd",
+    "requirements":{
+     "run":[
+      "black",
+      "aiohttp >=3.3.2",
+      "aiohttp-cors"
+     ]
+    },
+    "test":{
+     "commands":[
+      "black --help",
+      "blackd --help"
+     ]
+    }
+   }
+  ],
   "package":{
    "name":"black",
    "version":"19.10b0"
-  },
-  "requirements":{
-   "host":[
-    "python",
-    "pip",
-    "setuptools_scm"
-   ],
-   "run":[
-    "python",
-    "click >=6.5",
-    "attrs >=18.1.0",
-    "appdirs",
-    "toml >=0.9.4",
-    "typed-ast >=1.4.0",
-    "regex",
-    "pathspec >=0.6,<1",
-    "typing_extensions >=3.7.4",
-    "mypy_extensions >=0.4.3"
-   ]
   },
   "source":{
    "sha256":"c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539",
@@ -472,16 +633,17 @@
   "run":{
    "__set__":true,
    "elements":[
+    "aiohttp",
+    "aiohttp-cors",
     "appdirs",
     "attrs",
+    "black",
     "click",
-    "mypy_extensions",
     "pathspec",
     "python",
     "regex",
     "toml",
-    "typed-ast",
-    "typing_extensions"
+    "typed-ast"
    ]
   },
   "test":{
