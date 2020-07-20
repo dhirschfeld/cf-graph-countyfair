@@ -33,6 +33,23 @@
     "migrator_version",
     "version"
    ]
+  },
+  {
+   "PR":{
+    "__lazy_json__":"pr_json/452932020.json"
+   },
+   "data":{
+    "bot_rerun":false,
+    "migrator_name":"Version",
+    "migrator_version":0,
+    "version":"0.5.9"
+   },
+   "keys":[
+    "bot_rerun",
+    "migrator_name",
+    "migrator_version",
+    "version"
+   ]
   }
  ],
  "archived":false,
@@ -176,11 +193,12 @@
   }
  },
  "name":"pyilluminate",
- "new_version":"0.5.8",
+ "new_version":"0.5.9",
  "new_version_attempts":{
   "0.5.6":1,
   "0.5.7":1,
-  "0.5.8":1
+  "0.5.8":1,
+  "0.5.9":1
  },
  "new_version_errors":{},
  "osx_64_meta_yaml":{
@@ -255,7 +273,7 @@
    "elements":[]
   }
  },
- "pinning_version":"2020.07.18.20.56.00",
+ "pinning_version":"2020.07.19.19.30.49",
  "raw_meta_yaml":"{% set name = \"pyilluminate\" %}\n{% set version = \"0.5.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 19dc4cc361989726a3aaca68bfbd2587f0961d7edfe78511dad3f789409803e5\n\nbuild:\n  noarch: python\n  number: 0\n  script: {{ PYTHON }} -m pip install . -vv\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - pyserial\n    - dataclasses\n    - xarray\n    - filelock\n\ntest:\n  imports:\n    - pyilluminate\n\nabout:\n  home: https://github.com/ramonaoptics/pyilluminate\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Python interface for controlling the Illuminate boards.\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
  "req":{
   "__set__":true,
